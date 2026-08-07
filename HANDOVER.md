@@ -162,10 +162,17 @@ triangle tops out ~1.45; front-corner triangles are legitimately ~1.0; the whole
 Revelate wedge family sits 1.25-1.95). Only `seatpack` 1.6 and `barroll` 1.5
 remain. If you add a threshold, calibrate it against published figures first.
 
-**Two fabricated dimensions found so far** (SILCA Grinta `len`, WOHO XTouring UL
-Pannier) — both back-computed from volume by an early automated pass and both
-caught only by comparing against a maker photo. Treat any dimension with no
-traceable source as suspect.
+**Three fabricated dimensions found so far** (SILCA Grinta `len`, WOHO XTouring
+UL Pannier, and Randi Jo Jeff 'n Joan's `wid`) — all back-computed from volume by
+an early automated pass and all caught only by comparing against the maker.
+Treat any dimension with no traceable source as suspect.
+
+**`dims_verified: "maker"` does not mean what it says.** The Jeff 'n Joan's
+`wid` of 7.6cm was back-calculated from volume *and carried
+`dims_verified: "maker"`* — the maker publishes 5.5 in / 14.0 cm directly, an
+84% error on that axis. **444 of 702 products carry that flag**, so it cannot be
+used as evidence that a figure was checked. Only a per-product `evidence` entry
+naming a photo or a page means anything.
 
 **Still unresolved by design:** Revelate Rifter depth (3.8cm cannot reconcile
 with the rated capacity; no maker or retailer publishes it — ask Revelate).
