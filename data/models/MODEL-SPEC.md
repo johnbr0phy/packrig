@@ -54,6 +54,31 @@ So every roll-top or otherwise variable-height product also carries:
   not a fabrication — but it must be traceable to an image you looked at.
 - If the height is fixed (a zipped, non-rolling bag), omit `render` entirely.
 
+#### When the minimum-of-range rule gives an absurd result
+
+Sometimes it does. Apidura publish 10–40cm for the Expedition Front Rack Pack;
+10cm on a 20-litre bag renders a pizza box, and the on-bike photos put the packed
+height nearer 18cm. `tools/apply-models.mjs` feeds `render.hgt_cm` straight to
+the geometry, so a wrong value here is drawn verbatim.
+
+Do **not** silently deviate, and do **not** bury the objection in prose — earlier
+records flagged exactly this conflict inside `basis`, where no tool could see it.
+Record it in fields:
+
+```json
+"render": {
+  "hgt_cm": 18,
+  "published_min_cm": 10,
+  "conflict": "10cm is the published minimum but renders a 20L bag as a slab; 18cm measured off the on-bike photo against the known 30.5cm width",
+  "rolls": 3,
+  "basis": "…"
+}
+```
+
+`hgt_cm` is always **what should be drawn**. When you override the rule,
+`published_min_cm` keeps the rule's answer and `conflict` says why you departed
+from it, so the decision is auditable instead of invisible.
+
 Never edit `dims_cm` to make the render come out right. The two fields exist so
 that honest data and correct drawing do not have to fight each other.
 

@@ -1,0 +1,907 @@
+{
+ "brand": "Blackburn Design",
+ "slug": "blackburn-design",
+ "reviewed_photos": 63,
+ "brand_notes": {
+  "materials": "The brand-level `fabric` field in brands.json says 'TPU laminate (shiny welded)' but that is only true of ONE product in this catalogue - the Outpost Elite Cargo Bag, which is a genuine welded-seam shiny TPU dry bag. Every other product reviewed (both Outpost and Grid frame/top-tube/seat bags, the Local top-tube bag, trunk bag and both panniers) is a MATTE ripstop-textured nylon with visible bar-tacked stitching, not welded seams. Outpost-line bags carry Blackburn's signature safety-orange bar-tack stitching and red zip-pull tabs on black fabric; Grid-line bags are stealth black-on-black with a red interior lining and minimal branding; Local-line bags are plain matte black/grey with a reflective grey-outlined 'G' logo patch. Do not render the whole catalogue as shiny TPU.",
+  "dimensionEvidence": "Nine of the sixteen products carry an official Blackburn dimensioned line-art diagram in their local photo set (frame bags x3, corner bag, both top-tube bags, both seat bags, the handlebar bag, the carryall/stem bag, the trunk bag, and both panniers - all except the two Grid SL/no-diagram products and the Local Saddle Bag). These are maker technical drawings, not estimates, and were used to correct the catalogue's prior `est:true` figures. Each correction was cross-checked against the stated capacity_l using the box/volume sanity rule in MODEL-SPEC step 3; in two cases (Outpost Frame Bag Medium and Large) the OLD catalogue figures produced a bounding box SMALLER than the stated capacity, which is physically impossible for a wedge that only partially fills its box, and confirms the old 'est' figures were wrong.",
+  "frameBagHeightConvention": "Blackburn's own diagrams for the Outpost Frame Bag family (Small/Medium/Large) each carry TWO stacked height figures at the tall (head-tube) end rather than one, mirroring the FOUR-number pattern already resolved for the Outpost Corner Bag elsewhere in this catalogue. Following that precedent, the LARGER of the two figures was used as `hgt` (the true top-to-bottom extent of the wedge at its tall end); the smaller figure is a sub-measurement (likely to a seam/pocket line) and is recorded in dims_note only. This reading was validated by volume: at the larger-height reading the Small/Medium/Large boxes come out to 1.47x/1.67x/1.49x their stated capacity, consistent with a wedge that fills roughly two-thirds of its bounding box; the old estimated figures gave impossible sub-1.0x ratios for Medium and Large.",
+  "outpostSeatBagFamily": "The local photo set for the Grid seat bags includes one composite Blackburn reference sheet (found under grid-large-seat-bag-Large-3.jpg) showing FOUR variants side by side - 'mtb', 'small', 'medium' and 'large' - but only Medium and Large exist as products in this catalogue. Flagging for awareness: a Grid MTB Seat Bag and a Grid Small Seat Bag appear to exist in Blackburn's lineup but are not present in data/brands.json, so they are out of scope here and were not added.",
+  "photoMismatch": "The local photo folder for 'Local Saddle Bag' (local-saddle-bag-std-1..4.jpg) does NOT show a saddle bag. All four images are duplicates of the Local Rear Pannier's own photos (a large flap-over pannier pair, its dimensioned diagram at 355x355x125mm, and a rack-hook close-up) - almost certainly a scraping/asset-naming error upstream. A WebFetch of the maker page (bellhelmets.com/product/local-saddle-bag/...) returned no usable product copy either. As a result the Local Saddle Bag record below carries NO photographic or textual evidence and its dimensions are unchanged from the prior catalogue estimate - flagged rather than guessed, per MODEL-SPEC.",
+  "closureCorrections": "Two products had a closure `type` in data/brands.json's features block that photographic evidence contradicts and which this record corrects: the Grid Handlebar Bag is a small zip-top 'gas tank' style pouch with a straight top zip, NOT a rolltop (there is no roll flap anywhere in the local photo set or the maker diagram); and the Local Rear Pannier closes with a top flap secured by a single side-release buckle strap (flap_buckle), NOT a rolltop."
+ },
+ "products": [
+  {
+   "line": "Outpost",
+   "name": "Frame Bag",
+   "size": "Small",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/outpost-frame-bag-small-Small-1.jpg",
+    "assets/products/blackburn-design/outpost-frame-bag-small-Small-2.jpg",
+    "assets/products/blackburn-design/outpost-frame-bag-small-Small-3.jpg",
+    "assets/products/blackburn-design/outpost-frame-bag-small-Small-4.jpg",
+    "assets/products/blackburn-design/outpost-frame-bag-small-Small-5.jpg",
+    "assets/products/blackburn-design/outpost-frame-bag-small-Small-6.jpg",
+    "https://www.bellhelmets.com/product/outpost-frame-bag-small/350170000100000059.html"
+   ],
+   "dims_cm": { "len": 34.3, "wid": 6, "hgt": 22.9 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram 'OUTPOST SMALL FRAME BAG #7099761': top rail 13.5in, and two stacked height figures 5.5in and 9in at the tall (head-tube) end. No width/depth given in the diagram.",
+   "dims_note": "len taken from the diagram's top-rail run (13.5in=34.3cm), replacing the catalogue's prior est. 40cm (which measured a longer diagonal/bottom edge, not the top-tube run this schema wants). hgt taken as the LARGER of the two stacked figures (9in=22.9cm) per the frameBagHeightConvention note - see brand_notes. wid (depth off the frame) is not shown in this side-elevation diagram and is carried unverified from the prior 6cm estimate. Volume check: 34.3x6x22.9=4714cc=4.71L against stated 3.2L, ratio 1.47 - a normal wedge ratio, and physically consistent (box larger than capacity).",
+   "capacity_l": 3.2,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.05, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Half-frame bag, flat mounting face against the top tube and down tube. Tall, near-vertical face at the head-tube end (front) carrying the Blackburn logo panel and a zip pocket; tapers in a straight run down to a near-zero point at the seat-tube end (rear), where a small webbing loop/buckle provides extra stability."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider, black zip tape with a red bar-tacked pull tab; runs the full top length of the bag"
+   },
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 3, "location": "underside", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "down_tube" },
+    { "role": "stability", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+   ],
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.5 },
+    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.3 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "small reflective pull-tab only; no large patch observed",
+    "valve": "grommet hydration-tube port on the lower front face (translucent tube visible threading out in a detail photo)",
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn, bar-tacked in orange thread at load points",
+    "fabric": "matte black ripstop-textured nylon, contrast-black zip tape"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Rigid-ish half-frame bag strapped flush to one side of the main triangle; tall face against the head tube/down tube junction, tapering to a point near the seat tube/BB. Ships as a single-side bag, not a full wraparound."
+   },
+   "colorways": [ { "name": "Black", "hex": "#262626" } ]
+  },
+  {
+   "line": "Outpost",
+   "name": "Frame Bag",
+   "size": "Medium",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/outpost-frame-bag-medium-Medium-1.jpg",
+    "assets/products/blackburn-design/outpost-frame-bag-medium-Medium-2.jpg",
+    "assets/products/blackburn-design/outpost-frame-bag-small-Small-6.jpg",
+    "https://www.bellhelmets.com/product/outpost-frame-bag-medium/350170000100000040.html"
+   ],
+   "dims_cm": { "len": 41.9, "wid": 6, "hgt": 27.9 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram 'OUTPOST MEDIUM FRAME BAG #7099762': top rail 16.5in, stacked height figures 7in and 11in.",
+   "dims_note": "Same reading convention as the Small (see brand_notes.frameBagHeightConvention): len=16.5in=41.9cm (top rail), hgt=11in=27.9cm (larger of the two stacked figures), wid unverified est. 6cm carried from prior catalogue. Volume check: 41.9x6x27.9=7015cc=7.02L against stated 4.2L, ratio 1.67 - plausible wedge. The OLD catalogue figures (len47 hgt12 wid6=3384cc=3.38L, ratio 0.80) put the box SMALLER than the stated capacity, which is physically impossible for a wedge and confirms those figures were wrong.",
+   "capacity_l": 4.2,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.05, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Same silhouette as the Small: flat-mounted half-frame wedge, tall logo/zip-pocket face at the head-tube end tapering to a near-zero point at the seat tube."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider, red pull tab, full-length top zip"
+   },
+   "zips": [ { "run": "top_centre", "finish": "matched" } ],
+   "straps": [
+    { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 3, "location": "underside", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "down_tube" },
+    { "role": "stability", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+   ],
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.5 },
+    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.3 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "small reflective pull-tab only",
+    "valve": "grommet hydration-tube port, lower front face",
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn, orange bar-tacks",
+    "fabric": "matte black ripstop-textured nylon"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Same mount pattern as Small; scales with frame size but keeps a near-constant cross-section."
+   },
+   "colorways": [ { "name": "Black", "hex": "#262626" } ]
+  },
+  {
+   "line": "Outpost",
+   "name": "Frame Bag",
+   "size": "Large",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/outpost-frame-bag-large-Large-1.jpg",
+    "assets/products/blackburn-design/outpost-frame-bag-large-Large-2.jpg",
+    "assets/products/blackburn-design/outpost-frame-bag-small-Small-6.jpg",
+    "https://www.bellhelmets.com/product/outpost-frame-bag-large/350170000100000047.html"
+   ],
+   "dims_cm": { "len": 48.9, "wid": 6, "hgt": 27.9 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram 'OUTPOST LARGE FRAME BAG #7099763': top rail 19.25in, stacked height figures 7in and 11in (identical height figures to the Medium; only length grows).",
+   "dims_note": "len=19.25in=48.9cm (top rail), hgt=11in=27.9cm (larger stacked figure, unchanged from Medium), wid unverified est. 6cm carried from prior catalogue. Volume check: 48.9x6x27.9=8188cc=8.19L against stated 5.5L, ratio 1.49 - plausible wedge. OLD catalogue figures (len53 hgt13 wid6=4134cc=4.13L, ratio 0.75) again put the box smaller than stated capacity - impossible, confirms the fix.",
+   "capacity_l": 5.5,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.05, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Longer version of the Small/Medium wedge; cross-section and taper unchanged, only the top-rail run grows."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider, red pull tab, full-length top zip"
+   },
+   "zips": [ { "run": "top_centre", "finish": "matched" } ],
+   "straps": [
+    { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 3, "location": "underside", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "down_tube" },
+    { "role": "stability", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+   ],
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.5 },
+    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.3 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "small reflective pull-tab only",
+    "valve": "grommet hydration-tube port, lower front face",
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn, orange bar-tacks",
+    "fabric": "matte black ripstop-textured nylon"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Same mount pattern as Small/Medium."
+   },
+   "colorways": [ { "name": "Black", "hex": "#262626" } ]
+  },
+  {
+   "line": "Outpost",
+   "name": "Corner Bag",
+   "size": "std",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/outpost-corner-bag-std-1.jpg",
+    "assets/products/blackburn-design/outpost-corner-bag-std-2.jpg",
+    "assets/products/blackburn-design/outpost-corner-bag-std-3.jpg",
+    "https://www.bellhelmets.com/product/outpost-corner-bag/350170000100000061.html"
+   ],
+   "dims_cm": { "len": 23.3, "wid": 5.1, "hgt": 12.7 },
+   "dims_state": "packed",
+   "dims_raw": "Dimensions: 233 x 108 x 127 x 51mm (9.2 x 4.3 x 5 x 2in); Capacity 0.7L; Weight 130g. A second local maker diagram gives 228mm/9.5in and 63mm/2.5in for the same bag, close to but not identical with the text spec.",
+   "dims_note": "These dims_cm were already maker-verified and corrected by a prior pass (see the existing dims_note carried in data/brands.json) - not re-altered here. hgt is the taller of Blackburn's two published height figures (127mm), matching the frameBagHeightConvention used across the Outpost frame-bag family. A second local diagram (outpost-corner-bag-std-3.jpg) gives slightly different rounded figures (228mm/63mm) for what is evidently the same reference drawing family; kept as supporting evidence only, text spec takes precedence as it is more precise.",
+   "capacity_l": 0.7,
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.15, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Small triangular wedge that fills the corner behind the head tube/top of the down tube. Rounded nose, sewn ripstop shell, elastic loop/bungee accessory pouch stitched to the outer face. Ships with a separate kit of mounting straps (2 short hook-loop straps, 1 long hook-loop wrap, 1 elastic strap, plus small red internal mesh/utility pouches) rather than sewn-on straps."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider with drawcord pull; red-lined interior with two cable/hydration grommets and a hook-loop internal divider"
+   },
+   "zips": [ { "run": "perimeter", "finish": "matched" } ],
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "side", "hardware": "velcro", "material": "included separate webbing loop straps" }
+   ],
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "underside", "sizeFrac": 0.2 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": "two internal grommets in the red lining for hydration/cable pass-through",
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon, red interior lining"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["head_tube", "top_tube", "down_tube"],
+    "contactFaces": ["nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Fills the small corner behind the head tube ahead of a frame bag; mounted with separately supplied straps rather than sewn tabs, so it can be fitted to a range of head-tube angles."
+   },
+   "colorways": [ { "name": "Black", "hex": "#262626" } ]
+  },
+  {
+   "line": "Outpost",
+   "name": "Top Tube Bag",
+   "size": "std",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/outpost-top-tube-bag-std-1.jpg",
+    "assets/products/blackburn-design/outpost-top-tube-bag-std-2.jpg",
+    "assets/products/blackburn-design/outpost-top-tube-bag-std-3.jpg",
+    "assets/products/blackburn-design/outpost-top-tube-bag-std-4.jpg",
+    "https://www.bellhelmets.com/product/outpost-top-tube-bag/350170000100000037.html"
+   ],
+   "dims_cm": { "len": 23.5, "wid": 6, "hgt": 12 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art side-elevation diagram: 235mm/9.25in length, 120mm/4.72in height. No width given.",
+   "dims_note": "len/hgt taken directly from the maker diagram (close to, and now superseding, the prior 22x10cm estimate). wid carried unverified from the prior 6cm estimate - not shown in the side elevation. Volume check: 23.5x6x12=1692cc=1.69L against stated 1L, ratio 1.69 - a normal wedge ratio.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.5, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Squared-off bento-style top-tube bag, taller/boxier at the head-tube end, sloping down toward the saddle end. Ships with a small kit of extra straps and pouches (elastic loop straps, red internal mesh pouches) similar to the Corner Bag."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "main compartment zip with cord-lock pull; separate small external zip pocket at the nose with its own cord-lock pull"
+   },
+   "zips": [
+    { "run": "top_centre", "finish": "matched" },
+    { "run": "front_panel", "finish": "matched" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "elastic tube-wrap loop", "wrapsAround": "top_tube" },
+    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing", "wrapsAround": "steerer" }
+   ],
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.25 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": "two internal grommets in the red lining, likely for a charging cable pass-through",
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon, red interior lining"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Straddles the top tube just behind the stem/head tube, straps down flush with no sag."
+   },
+   "colorways": [ { "name": "Black", "hex": "#262626" } ]
+  },
+  {
+   "line": "Outpost Elite",
+   "name": "Cargo Bag",
+   "size": "std",
+   "slot": "forkbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/outpost-elite-cargo-bag-std-1.jpg",
+    "assets/products/blackburn-design/outpost-elite-cargo-bag-std-2.jpg",
+    "assets/products/blackburn-design/outpost-elite-cargo-bag-std-3.jpg",
+    "assets/products/blackburn-design/outpost-elite-cargo-bag-std-4.jpg",
+    "assets/products/blackburn-design/outpost-elite-cargo-bag-std-5.jpg",
+    "assets/products/blackburn-design/outpost-elite-cargo-bag-std-6.jpg",
+    "assets/products/blackburn-design/outpost-elite-cargo-bag-std-7.jpg",
+    "assets/products/blackburn-design/outpost-elite-cargo-bag-std-8.jpg",
+    "https://www.bellhelmets.com/product/outpost-elite-cargo-bag/350170000100000079.html"
+   ],
+   "dims_cm": { "len": 15, "wid": 15, "hgt": 32.5 },
+   "dims_state": "maker_published",
+   "dims_raw": "6.5 liters at 325mm (three rolls) x 150mm; welded waterproof roll-top, 420D nylon, flat 840D bottom, daisy-chain pass-through for cage straps.",
+   "dims_note": "Already maker-verified and corrected by a prior pass (previously had a duplicated axis defect). Re-mapped here to MODEL-SPEC axis semantics: the 325mm figure is the bag's long axis, which mounts running roughly VERTICALLY alongside the fork leg (photos confirm), so it is recorded as hgt (top-to-bottom) rather than len; len/wid both carry the 150mm cross-sectional diameter. Blackburn's own figure is explicitly given 'at 325mm (3 rolls)', i.e. already the ready-to-ride rolled length, so no further render-block reduction is applied.",
+   "capacity_l": 6.5,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "notes": "Plain welded cylindrical dry bag, genuinely rigid-adjacent in the sense that the welded TPU/coated-nylon shell holds a firm cylindrical shape when rolled and buckled, but it is a SOFT dry bag, not a hard shell - it deforms readily when squeezed. Orange-stitched daisy-chain webbing ladder runs the length of the front face for the cargo-cage straps to pass through. Blackburn branding printed down the side."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "roll-top mouth pulled shut and clipped with a plastic side-release buckle at the carry handle"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "buckle", "material": "orange-stitched webbing (supplied by the cargo cage, not sewn to the bag)" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": true,
+    "reflective": true,
+    "valve": false,
+    "logo": { "type": "printed", "location": "side" },
+    "seams": "welded",
+    "fabric": "shiny welded TPU-laminate/coated nylon - the one genuinely TPU-laminate product in this catalogue (see brand_notes.materials)"
+   },
+   "mount": {
+    "axes": { "len": "+z", "wid": "+x", "hgt": "along_forkleg" },
+    "attachesTo": ["cargo_cage", "fork_leg"],
+    "contactFaces": ["side_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 20, "frame_mm": 0 },
+    "notes": "Not self-mounting - it is a dry bag that straps INTO a separate rigid fork/frame cargo cage (Blackburn Outpost Elite cage or similar), which is not itself a product in this catalogue. Photos show it standing vertically against the fork leg, roll-top up, secured by two horizontal cage straps with orange-accented side-release buckles."
+   },
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" } ]
+  },
+  {
+   "line": "Outpost",
+   "name": "Carryall Bag",
+   "size": "std",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/outpost-carryall-bag-std-1.jpg",
+    "assets/products/blackburn-design/outpost-carryall-bag-std-2.jpg",
+    "assets/products/blackburn-design/outpost-carryall-bag-std-3.jpg",
+    "assets/products/blackburn-design/outpost-carryall-bag-std-4.jpg",
+    "https://www.bellhelmets.com/product/outpost-carryall-bag/350170000100000058.html"
+   ],
+   "dims_cm": { "len": 10.2, "wid": 10.2, "hgt": 16.5 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram: body height 165mm/6.5in, diameter 101.6mm/4in (drawstring collar extends further when packed with tall items).",
+   "dims_note": "hgt = the diagram's 165mm body height (top-to-bottom, since this bag hangs vertically off the stem); len/wid = the 101.6mm diameter. Corrects the prior estimate of len18/hgt18/dia9 - that estimate had the body too tall and, per the on-bike banana photo, did not account for how far the topo-print drawstring collar can extend above the stitched body when packed full. Volume check: cylinder 10.2cm dia x 16.5cm = 1332cc=1.33L against stated 1L, ratio 1.33 - reasonable for a drawstring pouch not packed to the brim.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "notes": "Soft cylindrical pouch, semi-structured stiffened base and side panel, topo-print stretch-mesh drawstring collar that extends well above the stitched body height when full (see the on-bike banana photo). Not a rigid bag."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "elastic drawcord with a toggle cord-lock; topo-print liner fabric"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "side", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "steerer" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "steerer" }
+   ],
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "front", "sizeFrac": 0.3 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "valve": false,
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon body, printed topo-map stretch mesh collar"
+   },
+   "mount": {
+    "axes": { "len": "+x", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["stem", "steerer"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Hangs vertically just behind the stem/headset, strapped to the steerer area. On-bike photos show it used for a water bottle/hydration bladder and, separately, for snacks with the collar cinched loosely."
+   },
+   "colorways": [ { "name": "Black", "hex": "#262626" } ]
+  },
+  {
+   "line": "Grid",
+   "name": "Grid SL Frame Bag",
+   "size": "SL",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/blackburn-design/grid-sl-frame-bag-SL-1.jpg",
+    "assets/products/blackburn-design/grid-sl-frame-bag-SL-2.jpg",
+    "assets/products/blackburn-design/grid-sl-frame-bag-SL-3.jpg",
+    "assets/products/blackburn-design/grid-sl-frame-bag-SL-4.jpg",
+    "assets/products/blackburn-design/grid-sl-frame-bag-SL-7.jpg",
+    "https://www.bellhelmets.com/product/grid-sl-frame-bag/350170000100000082.html"
+   ],
+   "dims_cm": { "len": 38, "wid": 4.5, "hgt": 10 },
+   "dims_state": "single_published_est",
+   "dims_raw": "No maker diagram or dimensioned text found in the local photo set or on the linked page excerpt; catalogue estimate 38 x 10 x 4.5cm carried unchanged.",
+   "dims_note": "No dimensioned evidence found for this SKU (unlike its Outpost siblings, no line-art diagram was present in the local photo folder). dims_cm is the prior estimate, unverified. Geometry/hardware below IS confirmed from photos.",
+   "capacity_l": 1.5,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.1, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Same family silhouette as the Outpost frame bags - flat half-frame wedge, tall at the head-tube end tapering to a point at the seat tube - but a simpler build with a single zip pocket and no secondary hydration-port panel."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider with a red bar-tacked pull tab"
+   },
+   "zips": [ { "run": "top_centre", "finish": "matched" } ],
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "down_tube" }
+   ],
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "side", "sizeFrac": 0.4 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "valve": false,
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon, stealth black-on-black"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Same flat half-frame mount as the Outpost frame bags."
+   },
+   "colorways": [ { "name": "Black", "hex": "#232323" } ]
+  },
+  {
+   "line": "Grid",
+   "name": "Grid Handlebar Bag",
+   "size": "std",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/grid-handlebar-bag-std-1.jpg",
+    "assets/products/blackburn-design/grid-handlebar-bag-std-2.jpg",
+    "assets/products/blackburn-design/grid-handlebar-bag-std-3.jpg",
+    "assets/products/blackburn-design/grid-handlebar-bag-std-4.jpg",
+    "assets/products/blackburn-design/grid-handlebar-bag-std-6.jpg",
+    "assets/products/blackburn-design/grid-handlebar-bag-std-7.jpg",
+    "assets/products/blackburn-design/grid-handlebar-bag-std-8.jpg",
+    "https://www.bellhelmets.com/product/grid-handlebar-bag/350170000100000078.html"
+   ],
+   "dims_cm": { "len": 20.3, "wid": 8.9, "hgt": 8.9 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram '#7149607 GRID HANDLEBAR BAG': 8in/203mm length, 3.5in/89mm diameter.",
+   "dims_note": "Small zip-top 'gas tank' style barrel mounted centrally across the bar tops just behind the stem - NOT a full-width roll-top bar pack. len is the horizontal barrel run (along the bars), hgt=wid the cross-sectional diameter. Corrects the prior estimate of 24x12x10cm, which was both oversized and (per brands.json features) wrongly typed as a rolltop closure - see brand_notes.closureCorrections. Volume check: cylinder 8.9cm dia x 20.3cm = 1264cc=1.26L against stated 2.5L capacity, ratio 0.51 - the maker's own bounding cylinder is HALF the stated capacity. This is flagged as an open inconsistency rather than resolved: the diagram and stated capacity cannot both be right, and no further evidence was found to say which is at fault, so dims_cm follows the diagram (photographic + maker line art) and capacity_l is carried unchanged from brands.json.",
+   "capacity_l": 2.5,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "notes": "Compact padded barrel/pouch, semi-structured (holds its cylindrical shape well even unpacked) but soft-sided, not a hard shell."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider with a pull loop; NOT a rolltop - see brand_notes.closureCorrections"
+   },
+   "zips": [ { "run": "top_centre", "finish": "matched" } ],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "bar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "elastic bungee cord run diagonally under the bag" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "valve": false,
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon, red interior lining"
+   },
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Sits centrally across the bar tops immediately behind the stem/head unit, like a small 'gas tank' bag; on-bike photos show it used on both drop bars and flat/mtb bars."
+   },
+   "colorways": [ { "name": "Black", "hex": "#232323" } ]
+  },
+  {
+   "line": "Grid",
+   "name": "Grid Seat Bag",
+   "size": "Medium",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/grid-medium-seat-bag-Medium-1.jpg",
+    "assets/products/blackburn-design/grid-medium-seat-bag-Medium-4.jpg",
+    "assets/products/blackburn-design/grid-medium-seat-bag-Medium-5.jpg",
+    "https://www.bellhelmets.com/product/grid-medium-seat-bag/350170000100000065.html"
+   ],
+   "dims_cm": { "len": 17.8, "wid": 7, "hgt": 8.3 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram: 177.8mm/7in length, 82.5mm/3.25in height. No width given.",
+   "dims_note": "len/hgt taken from the diagram, correcting the prior estimate of 15x8cm for length/height (len was understated). wid carried unverified from the prior 7cm estimate - not shown in this side elevation. Volume check: 17.8x7x8.3=1034cc=1.03L against stated 0.55L, ratio 1.87 - normal for a wedge that is nearly empty at the tail.",
+   "capacity_l": 0.55,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.1, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Small wedge saddle bag, boxy zip-pocket nose at the saddle end tapering to a narrow tail with an elastic cord-lock loop (light mount)."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "front",
+    "hardware": "single slider running down the front face toward the tail, terminating in an elastic pull-loop at the tip"
+   },
+   "zips": [ { "run": "front_panel", "finish": "matched" } ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "wide webbing loop", "wrapsAround": "saddle_rails" },
+    { "role": "compression", "count": 1, "location": "girth", "hardware": "ladderlock", "material": "webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": false,
+    "logo": { "type": "printed", "location": "side" },
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 5,
+    "clearance": { "tyre_mm": 40, "frame_mm": 0 },
+    "notes": "Nose clamped to the saddle rails by a single wide velcro loop plus a horizontal compression strap; tail hangs free below the saddle."
+   },
+   "colorways": [ { "name": "Black", "hex": "#232323" } ]
+  },
+  {
+   "line": "Grid",
+   "name": "Grid Seat Bag",
+   "size": "Large",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/grid-large-seat-bag-Large-1.jpg",
+    "assets/products/blackburn-design/grid-large-seat-bag-Large-2.jpg",
+    "assets/products/blackburn-design/grid-large-seat-bag-Large-6.jpg",
+    "https://www.bellhelmets.com/product/grid-large-seat-bag/350170000100000066.html"
+   ],
+   "dims_cm": { "len": 20.3, "wid": 8, "hgt": 11.4 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram: 203mm/8in length, 114mm/4.5in height. No width given.",
+   "dims_note": "len/hgt taken from the diagram, correcting the prior estimate of 18x10cm. wid carried unverified from the prior 8cm estimate. Volume check: 20.3x8x11.4=1851cc=1.85L against stated 0.9L, ratio 2.06 - a bit high but plausible for a wedge that is mostly hollow toward the tail.",
+   "capacity_l": 0.9,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.1, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Same silhouette as the Medium, scaled up; boxy zip-pocket nose tapering to a narrow tail with an elastic light-mount loop."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "front",
+    "hardware": "single slider down the front face to an elastic pull-loop at the tail tip"
+   },
+   "zips": [ { "run": "front_panel", "finish": "matched" } ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "wide webbing loop", "wrapsAround": "saddle_rails" },
+    { "role": "compression", "count": 1, "location": "girth", "hardware": "ladderlock", "material": "webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": false,
+    "logo": { "type": "printed", "location": "side" },
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 5,
+    "clearance": { "tyre_mm": 40, "frame_mm": 0 },
+    "notes": "Same mount as the Medium; nose clamped to the saddle rails, tail hangs free."
+   },
+   "colorways": [ { "name": "Black", "hex": "#232323" } ]
+  },
+  {
+   "line": "Local",
+   "name": "Trunk Bag",
+   "size": "std",
+   "slot": "trunk",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/local-trunk-bag-std-1.jpg",
+    "assets/products/blackburn-design/local-trunk-bag-std-2.jpg",
+    "assets/products/blackburn-design/local-trunk-bag-std-3.jpg",
+    "assets/products/blackburn-design/local-trunk-bag-std-4.jpg",
+    "assets/products/blackburn-design/local-trunk-bag-std-5.jpg",
+    "https://www.bellhelmets.com/product/local-trunk-bag/350170000100000031.html"
+   ],
+   "dims_cm": { "len": 32, "wid": 21, "hgt": 21 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram: 320mm/12.5in length, 210mm/8in x 210mm/8in for the other two axes.",
+   "dims_note": "Corrects the prior estimate of 34x22x18cm - length is close, but height was overstated (18->21... actually reduced from an over-tall estimate) and depth corrected to match the diagram's near-square 21x21 cross-section. Volume check: 32x21x21=14112cc=14.1L against stated 11L, ratio 1.28 - normal for a boxy rack trunk.",
+   "capacity_l": 11,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_bottom",
+    "notes": "Rack-top trunk bag, rectangular body with a rounded/tapered front face where it sits close to the seatpost, structured enough to stand square on the rack (semi-rigid internal stiffening at the base) but the shell itself is soft ripstop fabric, not a hard case. Top-mounted webbing carry handle and full-width top zip."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider with molded pull, full-width top opening"
+   },
+   "zips": [ { "run": "top_centre", "finish": "matched" } ],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "hook", "material": "webbing with metal quick-release rack hooks", "wrapsAround": "rack_rail" }
+   ],
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "side", "sizeFrac": 0.3 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": false,
+    "logo": { "type": "printed", "location": "front_face" },
+    "lightMount": "elastic bungee loop at the rear for a blinky light (seen fitted in on-bike photos)",
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "+z", "hgt": "+y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Clips to a rear rack's top rails via two quick-release metal hooks; sits square and rigid on top of the rack, does not sag."
+   },
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" } ]
+  },
+  {
+   "line": "Local",
+   "name": "Saddle Bag",
+   "size": "std",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "low",
+   "evidence": [],
+   "dims_cm": { "len": 14, "wid": 7, "hgt": 8 },
+   "dims_state": "single_published_est",
+   "dims_raw": "No usable evidence found. All four images in assets/products/blackburn-design/local-saddle-bag-std-*.jpg are mismatched - they are duplicates of the Local Rear Pannier's own photos (pannier pair, pannier dimension diagram at 355x355x125mm, pannier rack-hook close-up), not a saddle bag. A WebFetch of the maker page (bellhelmets.com/product/local-saddle-bag/350170000100000028.html) returned no usable product copy.",
+   "dims_note": "dims_cm is the prior catalogue estimate, left UNCHANGED because no photographic or textual evidence could be found to verify or correct it - see brand_notes.photoMismatch. This is an honest gap, not a guess: no geometry, closure, strap or pocket detail below is asserted from evidence.",
+   "capacity_l": 0.6,
+   "geometry": {
+    "notes": "Not asserted - no reliable evidence. Presumed to be a small wedge saddle bag by name and by analogy with the Grid Seat Bag family in this same catalogue, but this is an inference, not an observation, and is intentionally not encoded as geometry.form."
+   },
+   "closure": {},
+   "zips": [],
+   "straps": [],
+   "pockets": [],
+   "details": {},
+   "mount": {
+    "notes": "Not asserted - no reliable evidence of how this specific SKU mounts. Almost certainly saddle-rail hung, by analogy with the rest of the catalogue's saddlebag slot, but not confirmed."
+   },
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" } ]
+  },
+  {
+   "line": "Local",
+   "name": "Local Plus Top Tube Bag",
+   "size": "std",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/local-plus-top-tube-bag-std-1.jpg",
+    "assets/products/blackburn-design/local-plus-top-tube-bag-std-2.jpg",
+    "assets/products/blackburn-design/local-plus-top-tube-bag-std-3.jpg",
+    "assets/products/blackburn-design/local-plus-top-tube-bag-std-4.jpg",
+    "https://www.bellhelmets.com/product/local-plus-top-tube-bag/350170000100000055.html"
+   ],
+   "dims_cm": { "len": 20.3, "wid": 7.6, "hgt": 8.9 },
+   "dims_state": "packed",
+   "dims_raw": "Dimensions: 76 x 89 x 203mm; Weight: 125g; touchscreen-friendly top for a phone. A local maker diagram (local-plus-top-tube-bag-std-4.jpg) independently confirms: 203mm/8in length, 89mm/3.5in height, 76mm/3in width.",
+   "dims_note": "Already maker-verified by a prior pass; the local diagram found in this review independently confirms the exact same triple (203/89/76mm), so no change made.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_bottom",
+    "notes": "Boxy 'bento' top-tube bag with a clear touchscreen-friendly waterproof window on the top face (over the phone compartment) and a separate lower zip compartment below."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "front",
+    "hardware": "single slider with a pull loop, opens the whole top/front clamshell-style"
+   },
+   "zips": [ { "run": "front_panel", "finish": "matched" } ],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" },
+    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "wide webbing loop", "wrapsAround": "steerer" }
+   ],
+   "pockets": [
+    { "type": "map", "count": 1, "location": "top", "sizeFrac": 0.6 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": false,
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Straddles the top tube behind the stem/head tube; touchscreen window faces up toward the rider."
+   },
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" } ]
+  },
+  {
+   "line": "Local",
+   "name": "Grocery Pannier",
+   "size": "16L",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/local-grocery-bag-16L-1.jpg",
+    "assets/products/blackburn-design/local-grocery-bag-16L-2.jpg",
+    "assets/products/blackburn-design/local-grocery-bag-16L-3.jpg",
+    "https://www.bellhelmets.com/product/local-grocery-bag/350170000100000026.html"
+   ],
+   "dims_cm": { "len": 33, "wid": 19, "hgt": 30 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram: 330mm/13in width, 300mm/11.8in height, 190mm/7.5in depth.",
+   "dims_note": "Corrects the prior estimate of 30x38x15cm - the old height (38cm) was substantially overstated and depth understated. len=width across the top (horizontal), hgt=vertical height, wid=depth against the rack. Volume check: 33x19x30=18810cc=18.81L against stated 16L, ratio 1.18 - normal for an open-top tote.",
+   "capacity_l": 16,
+   "geometry": {
+    "form": "bucket",
+    "crossSection": "flat_back",
+    "notes": "Open-top tote-style pannier, rectangular body, cinched shut with a stretch-mesh drawcord collar rather than a zip or flap. Two webbing tote carry handles sewn to the front face. Sold and shown singly (tote-bag format), not paired like the Rear Pannier."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "stretch mesh collar cinched by a drawcord and toggle"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "hook", "material": "elastic bungee cord with a metal hook, plus two rigid top hooks", "wrapsAround": "rack_rail" },
+    { "role": "compression", "count": 1, "location": "side", "hardware": "velcro", "material": "webbing loop" },
+    { "role": "shoulder", "count": 2, "location": "top", "hardware": "webbing loop", "material": "webbing tote handle" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": false,
+    "logo": { "type": "printed", "location": "side" },
+    "seams": "sewn",
+    "fabric": "matte dark-grey ripstop-textured nylon"
+   },
+   "mount": {
+    "axes": { "len": "+z", "wid": "-x", "hgt": "+y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["underside", "side_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 30, "frame_mm": 0 },
+    "notes": "Hangs off a rear rack's rails via two rigid top hooks plus a lower elastic bungee hook that clips to the rack leg for stability; doubles as a carry tote via the top handles."
+   },
+   "colorways": [ { "name": "Black/Grey", "hex": "#3b3b3b" } ]
+  },
+  {
+   "line": "Local",
+   "name": "Rear Pannier",
+   "size": "std",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/blackburn-design/local-rear-pannier-std-1.jpg",
+    "assets/products/blackburn-design/local-rear-pannier-std-2.jpg",
+    "assets/products/blackburn-design/local-rear-pannier-std-3.jpg",
+    "assets/products/blackburn-design/local-rear-pannier-std-4.jpg",
+    "assets/products/blackburn-design/local-rear-pannier-std-5.jpg",
+    "https://www.bellhelmets.com/product/local-rear-pannier/350170000100000027.html"
+   ],
+   "dims_cm": { "len": 35.5, "wid": 12.5, "hgt": 35.5 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Maker line-art diagram: 355mm/13.9-14in width, 355mm/14in height, 125mm/4.9in depth.",
+   "dims_note": "Corrects the prior estimate of 33x40x15cm - both height and depth were off; width/height are equal (a near-square flap panel) per the diagram. len=width across the top (horizontal), hgt=vertical height, wid=depth against the rack. Volume check: 35.5x12.5x35.5=15753cc=15.75L against stated 18L, ratio 0.88 - box slightly smaller than stated capacity, plausible since the overhanging top flap adds usable volume beyond the straight box.",
+   "capacity_l": 18,
+   "geometry": {
+    "form": "saddlebag_flap",
+    "crossSection": "flat_back",
+    "notes": "Boxy messenger-bag-style pannier with a full-width top flap that folds down over the front face and buckles shut - flat mounting face against the rack/wheel side, front slip pocket visible under the flap. Photographed and marketed as a mirrored pair, but capacity_l here is the single bag per MODEL-SPEC convention."
+   },
+   "closure": {
+    "type": "flap_buckle",
+    "location": "top",
+    "hardware": "single plastic side-release buckle on a webbing strap, NOT a rolltop - see brand_notes.closureCorrections"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "lid", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing" },
+    { "role": "compression", "count": 1, "location": "side", "hardware": "velcro", "material": "webbing loop" },
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "hook", "material": "webbing with metal quick-release rack hooks", "wrapsAround": "rack_rail" },
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "hook", "material": "elastic bungee cord with a metal hook", "wrapsAround": "rack_rail" }
+   ],
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "front", "sizeFrac": 0.3 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": false,
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "matte black ripstop-textured nylon"
+   },
+   "mount": {
+    "axes": { "len": "+z", "wid": "-x", "hgt": "+y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["underside", "side_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 30, "frame_mm": 0 },
+    "notes": "Hangs off a rear rack's rails via two rigid top hooks plus a lower elastic bungee hook to the rack leg; top flap folds down and over the front, buckled shut."
+   },
+   "colorways": [ { "name": "Black/Grey", "hex": "#3b3b3b" } ]
+  }
+ ]
+}

@@ -2777,9 +2777,11 @@
     }
    ],
    "render": {
-    "hgt_cm": 10,
+    "hgt_cm": 18,
     "rolls": 3,
-    "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 20L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-20l-2.jpg against its known 30.5 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note)."
+    "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 20L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-20l-2.jpg against its known 30.5 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
+    "published_min_cm": 10,
+    "conflict": "10cm is the published minimum of Apidura's 10-40cm range, but renders a 20L rack pack as a slab. 18cm measured off the on-bike photo against the known published width; the reviewer recommended this figure in `basis` and it is now applied rather than left as prose."
    }
   },
   {
@@ -2917,9 +2919,11 @@
     }
    ],
    "render": {
-    "hgt_cm": 10,
+    "hgt_cm": 18,
     "rolls": 3,
-    "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 30L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-30l-1.jpg against its known 41 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note)."
+    "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 30L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-30l-1.jpg against its known 41 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
+    "published_min_cm": 10,
+    "conflict": "10cm is the published minimum of Apidura's 10-40cm range, but renders a 30L rack pack as a slab. 18cm measured off the on-bike photo against the known published width; the reviewer recommended this figure in `basis` and it is now applied rather than left as prose."
    }
   },
   {

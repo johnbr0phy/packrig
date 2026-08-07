@@ -41,11 +41,18 @@ export async function loadCatalog() {
       if (!p.slot) p.slot = 'seatpack';
       // ensure sane dims in mm
       const d = p.dims_cm || {};
+      // `dims_cm` is the honest published record and is what the spec table
+      // shows. It is not always what should be DRAWN: Tailfin publish only a
+      // 42cm unrolled height for the CargoPack, but in every on-bike photo the
+      // roll is turned down three times and it stands ~23cm. Where a reviewer
+      // has established the drawn height it lands in `render.hgt_cm`, and that
+      // is what the geometry gets. See data/models/MODEL-SPEC.md.
+      const drawHgt = p.render?.hgt_cm ?? d.hgt;
       p.mm = {
         len: (d.len || 25) * 10,
         wid: (d.wid || d.dia || 12) * 10,
-        hgt: (d.hgt || d.dia || 12) * 10,
-        dia: (d.dia || Math.min(d.wid || 14, d.hgt || 14)) * 10,
+        hgt: (drawHgt || d.dia || 12) * 10,
+        dia: (d.dia || Math.min(d.wid || 14, drawHgt || 14)) * 10,
       };
     });
   });
