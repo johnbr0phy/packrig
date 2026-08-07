@@ -246,20 +246,35 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
       grp.add(web);
     }
   }
-  // rail straps: exactly two (one per side), each terminating in a loop that
-  // closes around the real rail rather than stopping in mid-air
+  // Rail straps: exactly two (one per side), each terminating in a loop that
+  // closes around the real rail rather than stopping in mid-air.
+  //
+  // The pack deliberately hangs below the rails (see railTarget), so something
+  // has to bridge that gap. On the real packs it is a Hypalon cradle the rail
+  // webbing is sewn into, pulled tight — not two bare straps standing in
+  // daylight, which is what this drew before and what read as slack:
+  //   - the webbing started at 0.72 of the profile radius, i.e. buried inside
+  //     the shell, so what showed was only the part in free air;
+  //   - `from` and `to` sat at different z, but wrapStrap only rotates its
+  //     riser about z, so the strap was drawn on a plane that met neither the
+  //     bag nor the rail — a thin stick between the two.
+  // Running both ends at the rail's own z puts each strap in a single vertical
+  // plane, so it leaves the pack's shoulder and reaches the rail square on.
   const rails = ctx.rails;
   if (rails) {
     const nRail = feats.railStraps ?? 2;
+    const perSide = Math.max(1, Math.round(nRail / 2));
     for (const side of [1, -1]) {
       const bar = side > 0 ? rails.right : rails.left;
-      for (let i = 0; i < Math.max(1, Math.round(nRail / 2)); i++) {
+      for (let i = 0; i < perSide; i++) {
         const f = nRail <= 2 ? 0.45 : 0.3 + 0.35 * i;
         const railPt = toLocal(bar[0].clone().lerp(bar[1], f));
         const tBody = 0.16 + 0.1 * i;
-        const from = v3(-tBody * len, profileR(tBody) * 0.72, side * profileR(tBody) * widScale * widAt(tBody, tailWid) * 0.55);
+        // Anchor ON the shell, not 28% inside it: the webbing has to visibly
+        // bite the bag, or the run reads as a strut that happens to end nearby.
+        const from = v3(-tBody * len, profileR(tBody) + lift * 0.3, side * rails.z);
         const to = v3(railPt.x, railPt.y, side * rails.z);
-        grp.add(wrapStrap(wm, hwm, { from, to, tubeR: rails.r, width: 15 }));
+        grp.add(wrapStrap(wm, hwm, { from, to, tubeR: rails.r, width: 20 }));
       }
     }
   }
