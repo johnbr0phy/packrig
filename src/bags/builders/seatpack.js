@@ -21,7 +21,11 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   // narrow in plan as well (Apidura Expedition quotes 15cm → 5cm nose to tail)
   const belly = vr.range(0.2, 0.3);
   const shoulder = vr.range(0.78, 0.86);    // where the tail starts closing
-  const tailWid = vr.range(0.34, 0.46);
+  // Plan-view narrowing toward the tail. Apidura quote 15cm → 5cm nose to tail
+  // on the Expedition, i.e. a third; 0.34-0.46 was far too weak to read as a
+  // blade from the side or above (HANDOVER item 3). The Apidura reviewer
+  // measured this family at nose 1.0 -> tail 0.33 linear; this brackets that.
+  const tailWid = vr.range(0.30, 0.40);
   const profileR = (t) => {
     if (shape === 'cylindrical') {
       return t < 0.06 ? tailR * Math.sqrt(t / 0.06) * 0.96 + 2
@@ -38,10 +42,23 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
       const r = t < 0.3 ? noseR + (tailR - noseR) * (t / 0.3) ** 0.6 : tailR * (1 - 0.55 * ((t - 0.3) / 0.7) ** 1.6);
       return Math.max(r, 2);
     }
-    if (t < 0.05) return noseR * Math.sqrt(t / 0.05) * 0.96 + 2;
-    if (t < belly) return noseR + (tailR - noseR) * ((t - 0.05) / (belly - 0.05)) ** vr.range(0.8, 1.05);
-    if (t < shoulder) return tailR;
-    return tailR * Math.sqrt(Math.max(0.0, 1 - ((t - shoulder) / (1 - shoulder)) ** 2));
+    // The comment above states the shape correctly; the code used to contradict
+    // it. It ran a small nose up to `tailR` by `belly` and then held that radius
+    // flat all the way to `shoulder` — a constant section across 55-65% of the
+    // bag, which is exactly why these read as a fat tube rather than a wedge
+    // (BUILDER-BRIEF §4, HANDOVER item 3).
+    //
+    // A rail-and-post pack is DEEPEST right behind the saddle, where the rails
+    // and the compression cradle hold it, and falls away to a blade at the tail.
+    // So: a squared shoulder at t=0 with only a slight round-over, then a
+    // continuous taper, then the tail closes.
+    const bladeR = tailR * vr.range(0.30, 0.42);
+    if (t < 0.07) return tailR * (0.90 + 0.10 * (t / 0.07));
+    if (t < shoulder) {
+      const k = (t - 0.07) / (shoulder - 0.07);
+      return tailR + (bladeR - tailR) * k ** vr.range(0.95, 1.15);
+    }
+    return bladeR * Math.sqrt(Math.max(0.0, 1 - ((t - shoulder) / (1 - shoulder)) ** 2));
   };
   // A roll closure is not a taper to a point: the body stops where the mouth is
   // and the folds take over. Running the lathe all the way to t=1 buried every
@@ -215,8 +232,33 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   const droopAtAxle = runToAxle * Math.tan(tilt);
   const tyreFloor = ctx.points.rearAxle.y + tyreOuter + 18 + profileR(belly)
     + droopAtAxle - anchorPos.y;
-  const dropY = Math.min(Math.max(railTarget, tyreFloor), -2);
-  grp.position.set(postXAt(anchorPos.y + dropY) - anchorPos.x - postR - 2, dropY, 0);
+  // Third floor, needed only since the nose became full-depth: a tapered nose
+  // could never reach the frame, but a squared one hangs `noseDrop` below the
+  // bag's centreline and lands on the top tube / seat-tube junction on the big
+  // 16-20L packs. framePoly[1] is that junction, frameEdgeR[1] its tube radius.
+  const noseDrop = profileR(0.02);
+  const ttJoint = ctx.framePoly?.[1];
+  const frameFloor = ttJoint
+    ? ttJoint.y + (ctx.frameEdgeR?.[1] ?? 16) + 12 + noseDrop - anchorPos.y
+    : -Infinity;
+  const dropY = Math.min(Math.max(railTarget, tyreFloor, frameFloor), -2);
+  // Sampling the post at the bag's centreline alone was fine while the nose
+  // tapered to a point. Now that it is a squared shoulder ~0.9 of full depth,
+  // the post leans across that whole face and its top corner dug 12mm in. Take
+  // the most forward the post gets anywhere over the nose's vertical extent.
+  // Two things the old placement could ignore while the nose tapered to a point,
+  // and cannot now that it is a squared shoulder ~0.9 of full depth:
+  //   1. the seatpost leans across the whole height of that face, so sample it
+  //      at the top and bottom of the nose, not just at the bag's centreline;
+  //   2. the pack is tilted tail-up by `tilt`, which swings the top of the nose
+  //      FORWARD by noseSpan*sin(tilt) — 14mm on a 9L pack — straight into the
+  //      post. That alone was most of a 12mm penetration.
+  const noseSpan = profileR(0.02);
+  const yNose = anchorPos.y + dropY;
+  const postXNose = Math.min(
+    postXAt(yNose - noseSpan), postXAt(yNose), postXAt(yNose + noseSpan));
+  const tiltSwing = Math.abs(Math.sin(tilt)) * noseSpan;
+  grp.position.set(postXNose - anchorPos.x - postR - 2 - tiltSwing, dropY, 0);
   grp.userData.noseX = grp.position.x + 30;
 
   const toLocal = (pFrame) => pFrame.clone().sub(anchorPos).sub(grp.position)
