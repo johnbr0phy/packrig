@@ -1,0 +1,1819 @@
+[
+  {
+    "name": "Alpkit",
+    "origin": "Hathersage / Nottinghamshire, UK",
+    "aesthetic": "Understated British-made bikepacking kit in matte X-Pac cotton-duck-faced laminate, earthy muted colourways (black, storm grey, mountain brown, olive) with small white wordmark and hypalon reinforcement patches.",
+    "palette": ["#1c1c1e", "#75797c", "#6b5138", "#4c5343", "#b4362a"],
+    "fabric": "X-Pac X11 3-layer laminate (cotton-duck face) / 1100D Cordura",
+    "products": [
+      {
+        "slot": "seatpack",
+        "line": "Koala",
+        "name": "Koala 7L Saddle Pack",
+        "size": "7L",
+        "liters": 7,
+        "dims_cm": { "len": 37, "hgt": 13, "wid": 17 },
+        "dims_state": "packed",
+        "dims_raw": "Height: 37cm | Width: 17cm | Depth: 13cm | Minimum clearance: 18cm",
+        "dims_note": "Alpkit's 'Height' 37cm is the fore/aft length of the pack when mounted, so mapped to len. Width 17 across, depth 13 vertical. 37x17x13 = 8.2L box vs 7L stated, consistent with a packed tapered bag, so treated as packed not unrolled.",
+        "colors": ["#1c1c1e", "#75797c", "#6b5138", "#4c5343"],
+        "src": "https://alpkit.com/products/koala-7-litre-saddle-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Panther Black", "hex": "#1c1c1e" },
+            { "name": "Storm Grey", "hex": "#75797c" },
+            { "name": "Mountain Brown", "hex": "#6b5138" },
+            { "name": "Olive Green", "hex": "#4c5343" }
+          ]
+        },
+        "images": [
+          "https://alpkit.com/cdn/shop/products/koala7_black.jpg",
+          "https://alpkit.com/cdn/shop/products/koala-7-grey.jpg",
+          "https://alpkit.com/cdn/shop/products/koala7_brown.jpg"
+        ]
+      },
+      {
+        "slot": "barroll",
+        "line": "Airlok",
+        "name": "Airlok Dual 13L",
+        "size": "13L",
+        "liters": 13,
+        "dims_cm": { "len": 44, "hgt": 18, "wid": 18 },
+        "dims_state": "packed",
+        "dims_raw": "Flat: 59cm L x 31cm W; Packed: 18cm diameter x 44cm W",
+        "dims_note": "Used the maker's own 'packed' figure (18cm diameter x 44cm long), not the 59x31 flat-panel figure. Cylindrical, so hgt=wid=diameter.",
+        "colors": ["#1c1c1e", "#b4362a"],
+        "src": "https://alpkit.com/products/airlok-xtra-dual-13-litre",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#1c1c1e" },
+            { "name": "Chilli", "hex": "#b4362a" }
+          ]
+        },
+        "images": [
+          "https://alpkit.com/cdn/shop/products/airlok-dual-13-black-1.jpg",
+          "https://alpkit.com/cdn/shop/products/airlok-dual-13-chilli.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Possum",
+        "name": "Possum Frame Bag",
+        "size": "47cm (2.2L)",
+        "liters": 2.2,
+        "dims_cm": { "len": 47, "hgt": 11, "wid": 5 },
+        "dims_state": "packed",
+        "dims_raw": "42cm: 1.9L, 42 x 10 x 5 cm | 47cm: 2.2L, 47 x 11 x 5 cm | 52cm: 2.5L, 52 x 13 x 5 cm",
+        "dims_note": "Mid size (47cm) taken as representative. Half-frame bag that hugs the top tube and leaves room for bottle cages below.",
+        "colors": ["#1c1c1e", "#75797c", "#6b5138", "#4c5343"],
+        "src": "https://alpkit.com/products/possum",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "zip" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Panther Black", "hex": "#1c1c1e" },
+            { "name": "Storm Grey", "hex": "#75797c" },
+            { "name": "Mountain Brown", "hex": "#6b5138" },
+            { "name": "Olive Green", "hex": "#4c5343" }
+          ]
+        },
+        "images": [
+          "https://alpkit.com/cdn/shop/products/possum-black.jpg",
+          "https://alpkit.com/cdn/shop/products/possum-grey.jpg",
+          "https://alpkit.com/cdn/shop/products/possum-brown.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Glider",
+        "name": "Glider Road Frame Bag",
+        "size": "48 (1.7L)",
+        "liters": 1.7,
+        "dims_cm": { "len": 48, "hgt": 11, "wid": 4 },
+        "dims_state": "packed",
+        "dims_raw": "46: 1.4L, 46 x 4 x 10 cm | 48: 1.7L, 48 x 4 x 11 cm | 50: 2.2L, 50 x 4 x 14 cm",
+        "dims_note": "Mid size (48) taken as representative. Alpkit lists L x W x H; remapped so wid=4 is the across-bike thickness.",
+        "colors": ["#1c1c1e", "#75797c", "#6b5138", "#4c5343"],
+        "src": "https://alpkit.com/products/glider",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "mesh" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Panther Black", "hex": "#1c1c1e" },
+            { "name": "Storm Grey", "hex": "#75797c" },
+            { "name": "Mountain Brown", "hex": "#6b5138" },
+            { "name": "Olive Green", "hex": "#4c5343" }
+          ]
+        },
+        "images": [
+          "https://alpkit.com/cdn/shop/products/glider-black.jpg",
+          "https://alpkit.com/cdn/shop/products/glider-brown.jpg"
+        ]
+      },
+      {
+        "slot": "stembag",
+        "line": "Stem Cell",
+        "name": "Stem Cell Cockpit Bag",
+        "size": "Medium (1L)",
+        "liters": 1,
+        "dims_cm": { "len": 10, "hgt": 17, "wid": 10 },
+        "dims_state": "packed",
+        "dims_raw": "Medium (1L): 17 x 10 cm | XL (1.5L): 20 x 12 cm",
+        "dims_note": "Two figures are height x diameter for an upright cylinder, so len=wid=10 (diameter), hgt=17.",
+        "colors": ["#1c1c1e", "#75797c", "#6b5138", "#4c5343"],
+        "src": "https://alpkit.com/products/stem-cell-2023",
+        "features": {
+          "closure": "drawcord",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "mesh" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "colorways": [
+            { "name": "Panther Black", "hex": "#1c1c1e" },
+            { "name": "Storm Grey", "hex": "#75797c" },
+            { "name": "Mountain Brown", "hex": "#6b5138" },
+            { "name": "Olive Green", "hex": "#4c5343" }
+          ]
+        },
+        "images": [
+          "https://alpkit.com/cdn/shop/files/stem-cell-1L-panther-black.jpg",
+          "https://alpkit.com/cdn/shop/files/stem-cell-1L-storm-grey.jpg",
+          "https://alpkit.com/cdn/shop/files/stem-cell-1L-mountain-brown.jpg"
+        ]
+      },
+      {
+        "slot": "forkbag",
+        "line": "Betonga",
+        "name": "Betonga Fork Cage Bag",
+        "size": "3L",
+        "liters": 3,
+        "dims_cm": { "len": 14.5, "hgt": 18, "wid": 14.5 },
+        "dims_state": "unrolled",
+        "dims_note": "Page quotes 36 x 14.5 x 14.5 cm (H x W x D), but 36cm tall at 14.5cm diameter is 7.5L against a stated 3L, so 36cm is the fully-unrolled height. Packed height derived from volume: 3000 cm3 / (pi * 7.25^2) = 18cm.",
+        "dims_raw": "36cm x 14.5cm x 14.5cm (H x W x D), 3 litres",
+        "colors": ["#1c1c1e", "#75797c", "#6b5138", "#4c5343"],
+        "src": "https://alpkit.com/products/betonga-fork-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": true,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Panther Black", "hex": "#1c1c1e" },
+            { "name": "Storm Grey", "hex": "#75797c" },
+            { "name": "Mountain Brown", "hex": "#6b5138" },
+            { "name": "Olive Green", "hex": "#4c5343" }
+          ]
+        },
+        "images": [
+          "https://alpkit.com/cdn/shop/products/betonga-black.jpg",
+          "https://alpkit.com/cdn/shop/products/betonga-grey.jpg",
+          "https://alpkit.com/cdn/shop/products/betonga-brown.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thule",
+    "origin": "Malmö, Sweden",
+    "aesthetic": "Scandinavian commuter-tech: hardware-free moulded roll-top panniers in matte nylon, mostly black with a single saturated accent colourway, clean grey Thule wordmark and no visible mounting clutter.",
+    "palette": ["#1a1a1a", "#4a4f54", "#c9682f", "#2f5d8c", "#6f7a5c"],
+    "fabric": "PU-coated nylon / polyester (welded)",
+    "products": [
+      {
+        "slot": "pannier",
+        "line": "Shield",
+        "name": "Thule Shield Pannier 13L",
+        "size": "13L (pair)",
+        "liters": 13,
+        "dims_cm": { "len": 31, "hgt": 31, "wid": 18 },
+        "dims_state": "packed",
+        "dims_raw": "12.2 x 7.09 x 12.2 in (L x W x H); 13 litres per bag, 26 litres total for the pair",
+        "dims_note": "Litres stored is the SINGLE bag figure (13L); the listing ships two, so 26L is the pair. Inches converted to cm. Box volume 31x18x31 = 17.3L exceeds the stated 13L because the roll-top is measured extended and the bag tapers.",
+        "colors": ["#1a1a1a", "#d9c33a"],
+        "src": "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-shield-pannier-13l-_-3205401",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 2,
+          "colorways": [
+            { "name": "Black", "hex": "#1a1a1a" },
+            { "name": "Yellow", "hex": "#d9c33a" }
+          ]
+        },
+        "images": [
+          "https://www.thule.com/-/p/TCWPxNRGRIMcxSJahD3S1AKRN2vNXTo8IttsheNGtgA/rs:fit/h:991/cb:1.4/w:991/plain/approved/std.lang.all/43/98/1384398.png",
+          "https://www.thule.com/-/p/hpnKc0gfCn8_p63avWs8zLbvWypKvrsgqWSEC4WKH90/rs:fit/h:991/cb:1.4/w:991/plain/approved/std.lang.all/43/99/1384399.png"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Shield",
+        "name": "Thule Shield Pannier 22L",
+        "size": "22L (single)",
+        "liters": 22,
+        "dims_cm": { "len": 35, "hgt": 40, "wid": 21 },
+        "dims_state": "packed",
+        "dims_raw": "13.78 x 8.27 x 15.75 in (L x W x H); 22 litres per bag",
+        "dims_note": "Sold as a single bag (unlike the 13L/25L two-packs). Inches converted to cm; 35 fore/aft, 21 across the bike, 40 tall.",
+        "colors": ["#1a1a1a"],
+        "src": "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-shield-pannier-22l-_-3205406",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "front", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 1,
+          "colorways": [{ "name": "Black", "hex": "#1a1a1a" }]
+        },
+        "images": [
+          "https://www.thule.com/-/p/Muy16PEXFJn6yOdfBtW8i96t8Kx2hsrCIWAccUkhDR0/rs:fit/h:1200/cb:2.1/w:1800/plain/approved/std.lang.all/43/84/1384384.png"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Shield",
+        "name": "Thule Shield Pannier 25L",
+        "size": "25L (pair)",
+        "liters": 25,
+        "dims_cm": { "len": 37, "hgt": 40, "wid": 20 },
+        "dims_state": "packed",
+        "dims_raw": "14.6 x 7.9 x 15.8 in (L x W x H); 25L per bag, 50L total for the pair",
+        "dims_note": "Litres stored is the SINGLE bag figure (25L); listing ships two so the 50L on the page is the pair. Inches converted to cm.",
+        "colors": ["#1a1a1a", "#d9c33a"],
+        "src": "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-shield-pannier-25l-_-3205288",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "front", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 2,
+          "colorways": [
+            { "name": "Black", "hex": "#1a1a1a" },
+            { "name": "Yellow", "hex": "#d9c33a" }
+          ]
+        },
+        "images": [
+          "https://www.thule.com/-/p/G6HIZSwDAfDYEOBX9Z_ncujIUOvGeHAV7zudaGRGUKQ/rs:fit/h:991/cb:1.4/w:991/plain/approved/std.lang.all/43/74/1384374.png"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Chasm",
+        "name": "Thule Chasm Handlebar Bag 2L",
+        "size": "2L",
+        "liters": 2,
+        "dims_cm": { "len": 12.4, "hgt": 19.1, "wid": 26.4 },
+        "dims_state": "packed",
+        "dims_raw": "10.4 x 4.9 x 7.5 in; 2 litres",
+        "dims_note": "Inches converted to cm. Mapped so the 26.4cm long axis runs across the bars, 12.4cm is fore/aft depth, 19.1cm tall.",
+        "colors": ["#1a1a1a", "#2f5d8c", "#c9682f"],
+        "src": "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-chasm-handlebar-bag-2l-_-3205473",
+        "features": {
+          "closure": "buckle",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "top", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#1a1a1a" },
+            { "name": "Mid Blue", "hex": "#2f5d8c" },
+            { "name": "Dusted Orange", "hex": "#c9682f" }
+          ]
+        },
+        "images": [
+          "https://www.thule.com/-/p/vGuqtyDdS24dlKg3nj3TQ8SUWkDWSjwWyxL9rZIgTzU/rs:fit/h:1200/cb:2.2/w:1800/plain/approved/std.lang.all/21/05/1572105.png"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Paramount",
+        "name": "Thule Paramount Hybrid Pannier 26L",
+        "size": "26L",
+        "liters": 26,
+        "dims_cm": { "len": 31.5, "hgt": 51.6, "wid": 27.9 },
+        "dims_state": "packed",
+        "dims_raw": "12.4 x 11.0 x 20.3 in; 26 litres (single bag)",
+        "dims_note": "Single-bag capacity, not a pair. Inches converted to cm. The 31.5 x 27.9 x 51.6 envelope is ~45L as a box against a stated 26L because these are outer dimensions of a tapered pannier-to-backpack shell including the flip-out harness panel.",
+        "colors": ["#6b5b4a", "#1a1a1a", "#6f7a5c"],
+        "src": "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-paramount-hybrid-pannier-26l-_-3205093",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "front", "type": "zip" }, { "face": "side", "type": "zip" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 1,
+          "colorways": [
+            { "name": "Nutria Brown", "hex": "#6b5b4a" },
+            { "name": "Black", "hex": "#1a1a1a" },
+            { "name": "Soft Green", "hex": "#6f7a5c" }
+          ]
+        },
+        "images": [
+          "https://www.thule.com/-/p/2WhzUFjFNue4hSPd10JPD4i7jfqXzej3Lmma-ufjGeE/rs:fit/h:1200/cb:1.6/w:1800/plain/approved/std.lang.all/42/86/1424286.png",
+          "https://www.thule.com/-/p/Ih8o2Mm_VXpn-DysCN5oSSdMCZHDUEv2Iiu0SnYs8vU/rs:fit/h:991/cb:2.4/w:991/plain/approved/std.lang.all/42/89/1424289.png"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Carradice",
+    "origin": "Nelson, Lancashire, UK",
+    "aesthetic": "Century-old British touring luggage: heavy waxed cotton duck in black, deep green or burgundy, tan leather straps, solid brass and steel buckles, cream canvas stitching and a woven label.",
+    "palette": ["#2b2b28", "#2f4032", "#5a2029", "#4b5a3c", "#8a6338"],
+    "fabric": "18oz waxed cotton duck / leather",
+    "products": [
+      {
+        "slot": "saddlebag",
+        "line": "Originals",
+        "name": "Nelson Longflap Saddlebag",
+        "size": "18L",
+        "liters": 18,
+        "dims_cm": { "len": 19, "hgt": 22, "wid": 36 },
+        "dims_state": "packed",
+        "dims_raw": "22x19x36(44)cms / 8.7\"x7.5\"x14.2(17.3\")",
+        "dims_note": "Carradice's ordering varies page to page; read here as height 22, depth 19, width 36, which matches the bag's known proportions and gives 15L unextended. The bracketed 44 is the longflap fully extended, which is where the quoted 18L comes from — stored dims are the unextended state.",
+        "colors": ["#2b2b28", "#2f4032", "#5a2029"],
+        "src": "https://www.carradice.co.uk/products/originals-nelson-saddlebag",
+        "features": {
+          "closure": "buckle",
+          "shape": "boxy",
+          "compressionStraps": 3,
+          "pockets": [{ "face": "side", "type": "slip" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#2b2b28" },
+            { "name": "Green", "hex": "#2f4032" },
+            { "name": "Burgundy", "hex": "#5a2029" }
+          ]
+        },
+        "images": [
+          "https://carradice.co.uk/cdn/shop/files/Nelson_Longflap_Burgundy_1.jpg?v=1738196041"
+        ]
+      },
+      {
+        "slot": "saddlebag",
+        "line": "Originals",
+        "name": "Barley Saddlebag",
+        "size": "9L",
+        "liters": 9,
+        "dims_cm": { "len": 15, "hgt": 18, "wid": 29 },
+        "dims_state": "packed",
+        "dims_raw": "18x15x29 cm (7.1\"x6\"x11.4\")",
+        "dims_note": "Read as height 18, depth 15, width 29 — the 29cm figure is the across-bike width in every published Barley spec. 18x15x29 = 7.8L box against a stated 9L, consistent with an over-stuffable flap bag.",
+        "colors": ["#2b2b28", "#2f4032", "#5a2029"],
+        "src": "https://www.carradice.co.uk/products/originals-barley-saddlebag",
+        "features": {
+          "closure": "buckle",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [{ "face": "side", "type": "slip" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#2b2b28" },
+            { "name": "Green", "hex": "#2f4032" },
+            { "name": "Burgundy", "hex": "#5a2029" }
+          ]
+        },
+        "images": [
+          "https://carradice.co.uk/cdn/shop/files/BarleyBCarradice_080.jpg?v=1702303872"
+        ]
+      },
+      {
+        "slot": "saddlebag",
+        "line": "Originals",
+        "name": "Camper Longflap Saddlebag",
+        "size": "24L",
+        "liters": 24,
+        "dims_cm": { "len": 22, "hgt": 26, "wid": 36 },
+        "dims_state": "packed",
+        "dims_raw": "36 x 26 x 22 cm (W x H x D)",
+        "dims_note": "Page labels the axes explicitly, so mapped directly: width 36 across the bike, height 26, depth 22 fore/aft. Box is 20.6L against a stated 24L, the balance coming from the longflap extension.",
+        "colors": ["#2b2b28", "#5a2029", "#4b5a3c"],
+        "src": "https://www.carradice.co.uk/products/originals-camper-longflap-saddlebag",
+        "features": {
+          "closure": "buckle",
+          "shape": "boxy",
+          "compressionStraps": 3,
+          "pockets": [{ "face": "side", "type": "slip" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#2b2b28" },
+            { "name": "Burgundy", "hex": "#5a2029" },
+            { "name": "Field Green", "hex": "#4b5a3c" }
+          ]
+        },
+        "images": [
+          "https://carradice.co.uk/cdn/shop/files/CamperLongFlapCarradice_050_1.jpg?v=1707826450"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Super C",
+        "name": "Super C SQR Slim",
+        "size": "16L",
+        "liters": 16,
+        "dims_cm": { "len": 15, "hgt": 36, "wid": 29 },
+        "dims_state": "packed",
+        "dims_raw": "29x36x15cm (11.4\"x14.2\"x5.9\")",
+        "dims_note": "Read as width 29, height 36, depth 15 — this bag hangs vertically off the SQR seatpost block, so the tall 36cm figure is height. 29x36x15 = 15.7L, matching the stated 16L closely.",
+        "colors": ["#2b2b28"],
+        "src": "https://www.carradice.co.uk/products/super-c-seatpost-qr-slim-saddlebag",
+        "features": {
+          "closure": "buckle",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [{ "face": "inside", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#2b2b28" }]
+        },
+        "images": [
+          "https://carradice.co.uk/cdn/shop/files/carradice-scsqrslim-8-_1.jpg?v=1699181998"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Super C",
+        "name": "Super C Rear Panniers",
+        "size": "27L each (54L pair)",
+        "liters": 27,
+        "dims_cm": { "len": 33, "hgt": 40, "wid": 22 },
+        "dims_state": "packed",
+        "dims_raw": "54 litres total (27 litres per pannier); 33x40x22cm (13\"x15.7\"x8.7\") per pannier",
+        "dims_note": "Stored litres is the SINGLE pannier (27L); the 54L headline figure is the pair. 33 fore/aft along the rack, 40 tall, 22 across the bike.",
+        "colors": ["#2b2b28"],
+        "src": "https://www.carradice.co.uk/products/super-c-rear-panniers-pair",
+        "features": {
+          "closure": "buckle",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [{ "face": "front", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 2,
+          "colorways": [{ "name": "Black", "hex": "#2b2b28" }]
+        },
+        "images": [
+          "https://carradice.co.uk/cdn/shop/files/SuperCCarradice-010-_1.jpg?v=1699181940"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Altura",
+    "origin": "Wetherby, West Yorkshire, UK",
+    "aesthetic": "Flat mid-grey welded TPU ripstop with black hypalon reinforcement and small white reflective logo — a deliberately plain, low-gloss British range where every bag in the Vortex line matches every other.",
+    "palette": ["#6e7378", "#1d1f21", "#9aa0a4", "#c8cdd0"],
+    "fabric": "TPU-coated nylon ripstop (welded seams)",
+    "products": [
+      {
+        "slot": "seatpack",
+        "line": "Vortex",
+        "name": "Vortex Waterproof 12L Cycling Seat Pack",
+        "size": "12L",
+        "liters": 12,
+        "dims_cm": { "len": 50, "hgt": 20, "wid": 19 },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "Altura publishes no dimensions for the Vortex line — nothing on the product page. Estimated from the stated 12L: a tapered roll-top seat pack of this volume runs roughly 50cm long, 20cm tall and 19cm wide at the saddle end (box 19L x ~0.63 taper/roll factor = 12L). Not a manufacturer figure.",
+        "colors": ["#6e7378"],
+        "src": "https://www.altura.co.uk/products/altura-vortex-12l-waterproof-seatpack",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "colorways": [{ "name": "Grey", "hex": "#6e7378" }]
+        },
+        "images": [
+          "https://www.altura.co.uk/cdn/shop/files/ALBV3SP12_57553_01.jpg",
+          "https://www.altura.co.uk/cdn/shop/files/ALBV3SP12_57553.jpg",
+          "https://www.altura.co.uk/cdn/shop/files/ALBV3SP12_57553_02.jpg"
+        ]
+      },
+      {
+        "slot": "barroll",
+        "line": "Vortex",
+        "name": "Vortex Waterproof 11L Cycling Handlebar Bag",
+        "size": "11L",
+        "liters": 11,
+        "dims_cm": { "len": 42, "hgt": 19, "wid": 19 },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "No dimensions published. Estimated from the stated 11L as a 19cm-diameter cylinder 42cm across the bars (pi*9.5^2*42 = 11.9L). Not a manufacturer figure.",
+        "colors": ["#6e7378"],
+        "src": "https://www.altura.co.uk/products/altura-vortex-11l-waterproof-handlebar-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 2,
+          "pockets": [{ "face": "front", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Grey", "hex": "#6e7378" }]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0618/4821/3735/files/ALBV3FR11_57547.jpg",
+          "https://cdn.shopify.com/s/files/1/0618/4821/3735/files/ALBV3FR11_57547_01.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Vortex",
+        "name": "Vortex Waterproof 4L Cycling Half Frame Pack",
+        "size": "4L",
+        "liters": 4,
+        "dims_cm": { "len": 45, "hgt": 14, "wid": 7 },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "No dimensions published. Estimated from the stated 4L as a half-frame wedge 45cm along the top tube, 14cm deep and 7cm across (box 4.4L, close after the wedge taper). Not a manufacturer figure.",
+        "colors": ["#6e7378"],
+        "src": "https://www.altura.co.uk/products/altura-vortex-4l-waterproof-half-frame-pack",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Grey", "hex": "#6e7378" }]
+        },
+        "images": [
+          "https://www.altura.co.uk/cdn/shop/files/ALBV3FP4_57551.jpg"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Vortex",
+        "name": "Vortex Bolt-On Waterproof Cycling Top Tube Pack",
+        "size": "1L",
+        "liters": 1,
+        "dims_cm": { "len": 20, "hgt": 9, "wid": 6 },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "No dimensions published. Estimated from the stated 1L as a 20 x 9 x 6cm bolt-on pack (1.08L box). Not a manufacturer figure.",
+        "colors": ["#6e7378"],
+        "src": "https://www.altura.co.uk/products/altura-vortex-1l-waterproof-bolt-on-top-tube-pack",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "inside", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Grey", "hex": "#6e7378" }]
+        },
+        "images": [
+          "https://www.altura.co.uk/cdn/shop/files/ALBV3TT1_57549_01.jpg"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Vortex",
+        "name": "Ultralite Vortex Waterproof Cycling Pannier",
+        "size": "15L (single)",
+        "liters": 15,
+        "dims_cm": { "len": 30, "hgt": 35, "wid": 15 },
+        "dims_state": "unknown",
+        "dims_raw": "15L per pannier, 260g per unit",
+        "dims_note": "15L is explicitly per pannier — Altura sells this singly or as a pair, so no pair-volume halving needed. No dimensions published; estimated from the stated 15L as 30 fore/aft x 35 tall x 15 across (15.75L box). Not a manufacturer figure.",
+        "colors": ["#6e7378"],
+        "src": "https://www.altura.co.uk/products/altura-ultralite-vortex-waterproof-cycling-pannier",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 1,
+          "colorways": [{ "name": "Grey", "hex": "#6e7378" }]
+        },
+        "images": [
+          "https://www.altura.co.uk/cdn/shop/files/PRODUCTIMG_ALBVORULP_41737_6171a314-f22c-4383-9b81-afa28bc1cfc7.webp"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Banjo Brothers",
+    "origin": "Minneapolis, Minnesota, USA",
+    "aesthetic": "Blunt, cheap-and-cheerful Midwestern commuter gear: plain black ballistic nylon and ripstop, reflective piping, orange interior linings and a screen-printed banjo logo. No pretension, no colourways.",
+    "palette": ["#141414", "#e8641c", "#4a4a4a", "#b0b3b5"],
+    "fabric": "840D ballistic nylon / ripstop with welded liner",
+    "products": [
+      {
+        "slot": "pannier",
+        "line": "Waterproof",
+        "name": "Waterproof Cycling Pannier",
+        "size": "16.4L (single)",
+        "liters": 16.4,
+        "dims_cm": { "len": 30.5, "hgt": 35.6, "wid": 17.8 },
+        "dims_state": "packed",
+        "dims_raw": "1000 cubic inches / 16.4 liters; 14\" H x 12\" L x 7\" W",
+        "dims_note": "Sold as a single pannier, not a pair. Inches converted to cm: 30.5 fore/aft, 35.6 tall, 17.8 across. Box is 19.3L against 16.4L stated, the difference being the roll-top allowance.",
+        "colors": ["#141414"],
+        "src": "https://www.banjobrothers.com/products/banjo-brothers-waterproof-cycling-pannier",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 1,
+          "colorways": [{ "name": "Black", "hex": "#141414" }]
+        },
+        "images": [
+          "https://banjobrothers.com/cdn/shop/products/waterproof_pannier_banjo_brothers_sku_01110_main_image.webp"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Deluxe",
+        "name": "Deluxe Seat Bag, Medium",
+        "size": "Medium (1.2L)",
+        "liters": 1.2,
+        "dims_cm": { "len": 17.1, "hgt": 7.6, "wid": 10.2 },
+        "dims_state": "packed",
+        "dims_raw": "65-81 cubic inches / 1.1-1.3 liters; 6.75\" L x 4\" W x 3\" H",
+        "dims_note": "Inches converted to cm. Capacity is quoted as a range because the bottom gusset expands; stored the midpoint 1.2L.",
+        "colors": ["#141414"],
+        "src": "https://www.banjobrothers.com/products/deluxe-seat-bag-medium",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "inside", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#141414" }]
+        },
+        "images": [
+          "https://banjobrothers.com/cdn/shop/products/03020_banjobrothers_medium_deluxe_seatbag_black.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Handlebar Bag",
+        "name": "Handlebar Bag, Small",
+        "size": "Small (2L)",
+        "liters": 2,
+        "dims_cm": { "len": 11.4, "hgt": 11.4, "wid": 20.3 },
+        "dims_state": "packed",
+        "dims_raw": "120 cubic inches / 2.0 liters; 8\" L x 4.5\" W x 4.5\" H",
+        "dims_note": "Inches converted to cm; the 20.3cm long axis runs across the bars, 11.4 deep and tall. Rigid liner so the shape does not collapse.",
+        "colors": ["#141414"],
+        "src": "https://www.banjobrothers.com/products/handlebar-bag-small",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#141414" }]
+        },
+        "images": [
+          "https://banjobrothers.com/cdn/shop/products/01061_banjobrothers_handlebar_bagsmall_A.jpg"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Top Tube Bag",
+        "name": "Top Tube Bag, Large",
+        "size": "Large (1.1L)",
+        "liters": 1.1,
+        "dims_cm": { "len": 17.8, "hgt": 10.2, "wid": 6.4 },
+        "dims_state": "packed",
+        "dims_raw": "65 cubic inches / 1.1 liters; 7\" L x 4\" H x 2.5\" W",
+        "dims_note": "Inches converted to cm. Gas-tank style pack sitting behind the stem; 17.8 along the top tube, 6.4 across.",
+        "colors": ["#141414"],
+        "src": "https://www.banjobrothers.com/products/top-tube-bag-large",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#141414" }]
+        },
+        "images": [
+          "https://banjobrothers.com/cdn/shop/products/01072_Banjo_Brothers_Top_Tube_Bag_Large_7af5b5cc-0659-41e4-aea5-aa221da389e5.jpg"
+        ]
+      },
+      {
+        "slot": "trunk",
+        "line": "Rack Top Bag",
+        "name": "Rack Top Bag",
+        "size": "8.4L",
+        "liters": 8.4,
+        "dims_cm": { "len": 37.5, "hgt": 17.1, "wid": 14 },
+        "dims_state": "packed",
+        "dims_raw": "510 cubic inches; 14.75\" L x 5.5\" W x 6.75\" H",
+        "dims_note": "The product page renders 510 cubic inches as '14.3L', which is wrong — 510 cu in is 8.36L, and the quoted box (37.5 x 14 x 17.1cm) is 9.0L, confirming the litre figure not the page's. Stored 8.4L.",
+        "colors": ["#141414"],
+        "src": "https://www.banjobrothers.com/products/banjo-brothers-rack-top-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#141414" }]
+        },
+        "images": [
+          "https://banjobrothers.com/cdn/shop/products/01035_banjobros_racktopbag_A.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Guru Gear",
+    "origin": "Boulder, Colorado, USA",
+    "aesthetic": "Loud one-off patchwork: every bag sewn from salvaged industrial tent vinyl, billboard scrap and bike inner tubes, so colourways are literally random — clashing oranges, teals and camo panels over black rubber tube facings.",
+    "palette": ["#1a1a1a", "#d95f18", "#2f7d72", "#6b6440", "#8e3b6b"],
+    "fabric": "Upcycled 420-600D packcloth / inner tube / vinyl tarp",
+    "products": [
+      {
+        "slot": "seatpack",
+        "line": "Hauler",
+        "name": "Hauler Bike Pack Saddle Bag",
+        "size": "16.2L",
+        "liters": 16.2,
+        "dims_cm": { "len": 55.9, "hgt": 12.7, "wid": 22.9 },
+        "dims_state": "packed",
+        "dims_raw": "990 cubic inches (16.2 liters); 9L x 5H x 22D inches (228 x 127 x 558 mm)",
+        "dims_note": "Green Guru's L/H/D labels mean width-across-bike / height / fore-aft depth on saddle bags (confirmed against the Clutch, whose 3L x 3.5H x 5D matches a small saddle bag exactly). So 22in is the fore/aft length. 9x5x22 in = 990 cu in = 16.2L, matching the stated capacity exactly, i.e. this is a packed box figure not an unrolled max.",
+        "colors": ["#d95f18", "#1a1a1a"],
+        "src": "https://www.greengurugear.com/products/gg-hauler-saddle-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Wild EcoPak Orange", "hex": "#d95f18" }]
+        },
+        "images": [
+          "https://www.greengurugear.com/cdn/shop/files/Untitled_design_14_2048x.png?v=1747391860",
+          "https://www.greengurugear.com/cdn/shop/files/Untitled_design_17_2048x.png?v=1747392063"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Clutch",
+        "name": "Clutch Saddle Bag",
+        "size": "0.8L",
+        "liters": 0.8,
+        "dims_cm": { "len": 12.7, "hgt": 8.9, "wid": 7.6 },
+        "dims_state": "packed",
+        "dims_raw": "52 cubic inches / 0.8 liters; 3 L x 3.5 H x 5 D inches (76.2 x 88.9 x 127 mm)",
+        "dims_note": "L=3in is across the bike, H=3.5in tall, D=5in fore/aft. Made from upcycled inner tube so colour varies per unit.",
+        "colors": ["#1a1a1a", "#2f7d72"],
+        "src": "https://www.greengurugear.com/products/clutch-bicycle-saddle-bag-made-from-recycled-and-upcycled-bike-tubes-in-usa",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Green", "hex": "#2f7d72" }]
+        },
+        "images": [
+          "https://www.greengurugear.com/cdn/shop/products/CLUTCH-LEFT-PERSPECTIVE_2048x.jpg?v=1747508987",
+          "https://www.greengurugear.com/cdn/shop/products/CLUTCH-SIDE-VIEW_2048x.jpg?v=1747509096"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Upshift",
+        "name": "Upshift Frame Bag",
+        "size": "2.7L",
+        "liters": 2.7,
+        "dims_cm": { "len": 38.1, "hgt": 22.9, "wid": 6.35 },
+        "dims_state": "packed",
+        "dims_raw": "2.7 liters / 168.7 cubic inches; 15\" L x 9\" H x 2.5\" D (381 x 228.6 x 63.5 mm)",
+        "dims_note": "On frame bags the L figure runs along the top tube and D is the across-bike thickness. Box is 5.5L against a stated 2.7L because the bag is a triangle, not a box.",
+        "colors": ["#d95f18", "#6b6440", "#1a1a1a"],
+        "src": "https://www.greengurugear.com/products/upshift-frame-bag-built-in-usa",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Wild", "hex": "#d95f18" },
+            { "name": "Earthtone", "hex": "#6b6440" },
+            { "name": "Camo", "hex": "#5c6047" }
+          ]
+        },
+        "images": [
+          "https://www.greengurugear.com/cdn/shop/files/Untitled_design_-_2025-05-17T232321.244_2048x.png?v=1747998535",
+          "https://www.greengurugear.com/cdn/shop/files/Untitled_design_-_2025-05-17T232311.485_2048x.png?v=1747998535"
+        ]
+      },
+      {
+        "slot": "framebag_full",
+        "line": "Fullshift",
+        "name": "Fullshift Frame Bag",
+        "size": "Medium (2.8L)",
+        "liters": 2.8,
+        "dims_cm": { "len": 52.1, "hgt": 31.8, "wid": 7.6 },
+        "dims_state": "packed",
+        "dims_raw": "Small 2.4L, Medium 2.8L, Large 3L, XLarge 3.4L. 600x Medium: 20.5\" TT x 23.4\" DT x 12.5\" SP x 3\"",
+        "dims_note": "Full-triangle bag sized by frame tube lengths rather than a bounding box. Mid size (600x Medium) taken: TT edge 52.1cm mapped to len, seat-post edge 31.8cm to hgt, 3in thickness to wid. The down-tube edge (23.4in) has no slot in this schema.",
+        "colors": ["#d95f18", "#8e3b6b", "#6b6440"],
+        "src": "https://www.greengurugear.com/products/fullshift-frame-bags-1",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "zip" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Orange", "hex": "#d95f18" },
+            { "name": "Pink/Purple", "hex": "#8e3b6b" },
+            { "name": "Earthtone", "hex": "#6b6440" }
+          ]
+        },
+        "images": [
+          "https://www.greengurugear.com/cdn/shop/files/Untitled_design_1_871414fa-6cd8-483a-9514-58116d8f8d5d_2048x.png?v=1750360294"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Tanker",
+        "name": "Tanker Top Tube Bag",
+        "size": "One Size",
+        "liters": 1.8,
+        "dims_cm": { "len": 22.9, "hgt": 10.2, "wid": 7.6 },
+        "dims_state": "packed",
+        "dims_raw": "9 L x 4 H x 3 D inches (228.6 x 101.6 x 76.2 mm); no capacity published",
+        "dims_note": "Green Guru publishes no litre figure for the Tanker. 9 x 4 x 3 in = 108 cu in = 1.77L, so 1.8L is derived from the maker's own dimensions rather than stated by them.",
+        "colors": ["#d95f18", "#6b6440", "#8e3b6b"],
+        "src": "https://www.greengurugear.com/products/top-tube-tanker",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Wild", "hex": "#d95f18" },
+            { "name": "Earthtone", "hex": "#6b6440" },
+            { "name": "EcoPak Pink/Purple", "hex": "#8e3b6b" }
+          ]
+        },
+        "images": [
+          "https://www.greengurugear.com/cdn/shop/files/Untitled_design_-_2025-05-17T001650.858_2048x.png?v=1758731879"
+        ]
+      },
+      {
+        "slot": "stembag",
+        "line": "Cotton Mouth",
+        "name": "Cotton Mouth Snack/Water Feedbag",
+        "size": "2.3L",
+        "liters": 2.3,
+        "dims_cm": { "len": 11.4, "hgt": 17.8, "wid": 11.4 },
+        "dims_state": "packed",
+        "dims_raw": "141 cubic inches / 2.3 liters; 4.5 L x 7 H x 4.5 D inches (114.3 x 177 x 114.3 mm)",
+        "dims_note": "Upright square-section feed bag; 4.5in on both horizontal axes, 7in tall. Insulated with upcycled sleeping pad foam.",
+        "colors": ["#d95f18", "#2f7d72", "#6b6440"],
+        "src": "https://www.greengurugear.com/products/snack-water-bottle-bag",
+        "features": {
+          "closure": "drawcord",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "colorways": [{ "name": "Assorted upcycled", "hex": "#d95f18" }]
+        },
+        "images": [
+          "https://www.greengurugear.com/cdn/shop/files/Untitled_design_2048x.png?v=1747408332",
+          "https://www.greengurugear.com/cdn/shop/files/Untitled_design_12_2048x.png?v=1747741122"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vincita",
+    "origin": "Bangkok, Thailand",
+    "aesthetic": "Matte charcoal-grey and forest-green Cordura with tarpaulin panels, camo-printed inner bags, tan webbing and Klickfix hardware — a tidy, squared-off touring look rather than a soft bikepacking one.",
+    "palette": ["#3c3f43", "#3d4a3a", "#6b5a44", "#2b3a55", "#c9c2ab"],
+    "fabric": "Water-resistant Cordura / tarpaulin",
+    "products": [
+      {
+        "slot": "barbag",
+        "line": "Strada",
+        "name": "Strada Bikepacking Handlebar Bag",
+        "size": "8.9L",
+        "liters": 8.9,
+        "dims_cm": { "len": 43, "hgt": 14, "wid": 19 },
+        "dims_state": "packed",
+        "dims_raw": "Width (Folded): 43 cm, Depth: 19 cm, Height: 14 cm; 8.9 L; 1.1 kg",
+        "dims_note": "Vincita's 'Width (Folded)' 43cm is the across-bars length with the extension panel folded away — the packed state, not an extended maximum. Box 11.4L against a stated 8.9L, the rest lost to the rounded ends.",
+        "colors": ["#3c3f43", "#3d4a3a"],
+        "src": "https://vincita.cc/products/b012bp-strada-bikepacking-handlebar-bag",
+        "features": {
+          "closure": "buckle",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [{ "face": "front", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "colorways": [
+            { "name": "Charcoal Grey / camo inner", "hex": "#3c3f43" },
+            { "name": "Forest Green / black inner", "hex": "#3d4a3a" }
+          ]
+        },
+        "images": [
+          "https://vincita.cc/cdn/shop/products/charcoal-grey-with-camo-inner-bag-th-b012bp-strada-bikepacking-handlebar-bag-vincita-co-ltd-bicycle-bag-1238807019535.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Strada",
+        "name": "Strada Bikepacking Saddle Bag",
+        "size": "9L",
+        "liters": 9,
+        "dims_cm": { "len": 35, "hgt": 12.5, "wid": 24 },
+        "dims_state": "packed",
+        "dims_raw": "Width: 24 cm, Depth: 35 cm, Height: 12.5 cm; 9 liters; 400 g",
+        "dims_note": "Vincita's 'Depth' is the fore/aft axis on saddle bags, so 35cm maps to len. Box 10.5L against a stated 9L.",
+        "colors": ["#3c3f43", "#3d4a3a"],
+        "src": "https://vincita.cc/products/b038bp-strada-bikepacking-saddle-bag",
+        "features": {
+          "closure": "buckle",
+          "shape": "tapered",
+          "compressionStraps": 2,
+          "pockets": [{ "face": "side", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Charcoal Grey", "hex": "#3c3f43" },
+            { "name": "Forest Green", "hex": "#3d4a3a" }
+          ]
+        },
+        "images": [
+          "https://vincita.cc/cdn/shop/products/charcoal-grey-th-b038bp-strada-bikepacking-saddle-bag-vincita-co-ltd-bicycle-bag-1574524354575.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Strada",
+        "name": "Strada Bikepacking Frame Bag",
+        "size": "2.6L",
+        "liters": 2.6,
+        "dims_cm": { "len": 35, "hgt": 25, "wid": 6 },
+        "dims_state": "packed",
+        "dims_raw": "Width: 35 cm, Depth: 6 cm, Height: 25 cm; 2.6 liters; 0.3 kg",
+        "dims_note": "On the frame bag Vincita's 'Width' runs along the top tube and 'Depth' is the across-bike thickness. Box 5.25L against a stated 2.6L because the bag is triangular.",
+        "colors": ["#3c3f43", "#3d4a3a"],
+        "src": "https://vincita.cc/products/b025bp-strada-bikepacking-frame-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Charcoal Grey", "hex": "#3c3f43" },
+            { "name": "Forest Green", "hex": "#3d4a3a" }
+          ]
+        },
+        "images": [
+          "https://vincita.cc/cdn/shop/products/charcoal-grey-th-b025bp-strada-bikepacking-frame-bag-vincita-co-ltd-bicycle-bag-1238829301775.jpg"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Strada",
+        "name": "Strada Bikepacking Top Tube Bag",
+        "size": "0.8L",
+        "liters": 0.8,
+        "dims_cm": { "len": 16, "hgt": 9, "wid": 6 },
+        "dims_state": "packed",
+        "dims_raw": "Width: 16 cm, Depth: 6 cm, Height: 9 cm; 0.8 liters; 0.2 kg",
+        "dims_note": "16cm along the top tube, 6cm across, 9cm tall. Box 0.86L, matching the stated 0.8L.",
+        "colors": ["#3c3f43", "#3d4a3a"],
+        "src": "https://vincita.cc/products/b026bp-strada-bikepacking-top-tube-bag",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Charcoal Grey", "hex": "#3c3f43" },
+            { "name": "Forest Green", "hex": "#3d4a3a" }
+          ]
+        },
+        "images": [
+          "https://vincita.cc/cdn/shop/files/strada-bikepacking-top-tube-bag-vincita-co-ltd-bicycle-bag-35764188315822.jpg",
+          "https://vincita.cc/cdn/shop/products/b026bp-strada-bikepacking-top-tube-bag-vincita-co-ltd-bicycle-bag-1238899654671.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Everywhere",
+        "name": "Everywhere Saddle Bag L",
+        "size": "L (10L)",
+        "liters": 10,
+        "dims_cm": { "len": 42, "hgt": 13, "wid": 19 },
+        "dims_state": "packed",
+        "dims_raw": "Width: 19 cm, Height: 42 cm, Depth: 13 cm; 10 liters; 0.65 kg",
+        "dims_note": "The 42cm figure is labelled 'Height' but is plainly the long fore/aft axis of the pack (19 x 42 x 13 = 10.4L, matching the stated 10L), so mapped to len.",
+        "colors": ["#1c1c1e", "#6b5a44", "#2b3a55", "#3d4a3a"],
+        "src": "https://vincita.cc/products/everywhere-saddle-bag-l",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#1c1c1e" },
+            { "name": "Brown", "hex": "#6b5a44" },
+            { "name": "Blue", "hex": "#2b3a55" },
+            { "name": "Green", "hex": "#3d4a3a" }
+          ]
+        },
+        "images": [
+          "https://vincita.cc/cdn/shop/files/black-everywhere-saddle-bag-l-vincita-co-ltd-34457030361262.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Everywhere",
+        "name": "Everywhere Handlebar Bag",
+        "size": "5L",
+        "liters": 5,
+        "dims_cm": { "len": 26, "hgt": 16, "wid": 16 },
+        "dims_state": "packed",
+        "dims_raw": "Width: 26 cm, Height: 16 cm, Depth: 16 cm; 5 liters; 0.4 kg",
+        "dims_note": "26cm across the bars, 16cm deep and tall. Box 6.7L against a stated 5L usable.",
+        "colors": ["#1c1c1e", "#6b5a44", "#2b3a55", "#3d4a3a"],
+        "src": "https://vincita.cc/products/everywhere-handlebar-bag",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#1c1c1e" },
+            { "name": "Brown", "hex": "#6b5a44" },
+            { "name": "Blue", "hex": "#2b3a55" },
+            { "name": "Green", "hex": "#3d4a3a" }
+          ]
+        },
+        "images": [
+          "https://vincita.cc/cdn/shop/files/black-everywhere-handlebar-bag-vincita-co-ltd-34222745026734.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Two Wheel Gear",
+    "origin": "Vancouver, British Columbia, Canada",
+    "aesthetic": "Pacific-Northwest commuter: flat graphite grey and black recycled diamond-ripstop with TPU backing, tidy reflective piping, KLICKfix rails hidden behind zip-away panels and the occasional tangerine or Tofino-blue accent.",
+    "palette": ["#1c1c1e", "#4c5155", "#2f5b7a", "#6b7042", "#d4763a"],
+    "fabric": "Recycled 600D poly ripstop with TPU coating",
+    "products": [
+      {
+        "slot": "barbag",
+        "line": "Alpha",
+        "name": "Alpha Handlebar Bag",
+        "size": "6L",
+        "liters": 6,
+        "dims_cm": { "len": 27.9, "hgt": 19.1, "wid": 15.2 },
+        "dims_state": "packed",
+        "dims_raw": "11\" Wide x 7.5\" High Rolled / 12.5\" High Unrolled x 6\" Deep; 6 litres",
+        "dims_note": "Two heights are published; used the maker's explicitly-labelled ROLLED height (7.5in = 19.1cm), not the 12.5in unrolled maximum. 27.9 across the bars, 15.2 fore/aft.",
+        "colors": ["#1c1c1e"],
+        "src": "https://twowheelgear.com/products/alpha-handlebar-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [{ "face": "inside", "type": "mesh" }, { "face": "front", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+        },
+        "images": [
+          "https://twowheelgear.com/cdn/shop/products/DAYLINER-SMART-21-BLK-onbike-front-square.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Dayliner",
+        "name": "Dayliner Handlebar & Trunk Box Bag",
+        "size": "20L",
+        "liters": 20,
+        "dims_cm": { "len": 36.8, "hgt": 19.1, "wid": 22.9 },
+        "dims_state": "packed",
+        "dims_raw": "14.5\" Wide x 7.5\" High x 9\" Deep; 20 Liters",
+        "dims_note": "Mounts either to the bars or on a rack top; filed as barbag since that is the primary mount. Box is 16.1L against a stated 20L, the balance coming from the roll-top extending above the quoted height.",
+        "colors": ["#4c5155"],
+        "src": "https://twowheelgear.com/products/dayliner-box-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [{ "face": "back", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "colorways": [{ "name": "Graphite Grey", "hex": "#4c5155" }]
+        },
+        "images": [
+          "https://twowheelgear.com/cdn/shop/products/bags-dayliner-handlebar-trunk-box-bag-25.jpg",
+          "https://twowheelgear.com/cdn/shop/files/TwoWheelGear-DaylinerBoxBag-GraphiteGrey-back-open_1.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Mamquam",
+        "name": "Mamquam Frame Bag L/XL",
+        "size": "L/XL (6L)",
+        "liters": 6,
+        "dims_cm": { "len": 50.8, "hgt": 24.1, "wid": 5.7 },
+        "dims_state": "packed",
+        "dims_raw": "20\" Wide x 9.5\" High x 2.25\" Deep; 6 Liters",
+        "dims_note": "20in runs along the top tube, 2.25in is the across-bike thickness. Box 7.0L against a stated 6L, consistent with a slightly tapered half-frame bag.",
+        "colors": ["#4c5155"],
+        "src": "https://twowheelgear.com/products/frame-bag-large",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Graphite Grey", "hex": "#4c5155" }]
+        },
+        "images": [
+          "https://twowheelgear.com/cdn/shop/products/TwoWheelGear-FRAME-BAG-LARGE-21-GG-onbike_9738aed2-0c17-4fd3-94bd-9c0b63b8549a.jpg",
+          "https://twowheelgear.com/cdn/shop/products/TwoWheelGear-FRAME-BAG-LARGE-21-GG-leftside_d5782dcc-3a28-4bc5-8b6e-a37ae0615abe.jpg"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Commute",
+        "name": "Commute Top Tube Bag",
+        "size": "1L",
+        "liters": 1,
+        "dims_cm": { "len": 22.9, "hgt": 8.6, "wid": 5.1 },
+        "dims_state": "packed",
+        "dims_raw": "9\" Wide x 9.5\" High x 2\" Deep; 1 Liter",
+        "dims_note": "Flat-panel trap: the quoted 9.5in height is the laid-flat panel including the wrap-around velcro strap wings, which would give a 2.8L box against a stated 1L. Mounted body height derived from volume instead: 1000 cm3 / (22.9 x 5.1) = 8.6cm.",
+        "colors": ["#1c1c1e", "#4c5155", "#2f5b7a"],
+        "src": "https://twowheelgear.com/products/commute-top-tube-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#1c1c1e" },
+            { "name": "Graphite Grey", "hex": "#4c5155" },
+            { "name": "Tofino Blue", "hex": "#2f5b7a" }
+          ]
+        },
+        "images": [
+          "https://twowheelgear.com/cdn/shop/files/TwoWheelGear-TOP-TUBE-20-GG-onbike-side_1.jpg",
+          "https://twowheelgear.com/cdn/shop/products/2061580001-TwoWheelGear-TOP-TUBE-22-BLK-4.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Commute",
+        "name": "Commute Seat Pack",
+        "size": "1.5L",
+        "liters": 1.5,
+        "dims_cm": { "len": 27.9, "hgt": 12.7, "wid": 11.4 },
+        "dims_state": "packed",
+        "dims_raw": "11\" Wide x 5\" High x 4.5\" Deep; 1.5 Liters",
+        "dims_note": "The 11in figure is the fore/aft length under the saddle. Box 4.0L against a stated 1.5L because the pack is a sharp wedge tapering to the seatpost, not a box.",
+        "colors": ["#1c1c1e", "#4c5155", "#2f5b7a"],
+        "src": "https://twowheelgear.com/products/commute-seat-pack",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "inside", "type": "mesh" }, { "face": "side", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#1c1c1e" },
+            { "name": "Graphite Grey", "hex": "#4c5155" },
+            { "name": "Tofino Blue", "hex": "#2f5b7a" }
+          ]
+        },
+        "images": [
+          "https://twowheelgear.com/cdn/shop/products/1708870003_SEAT-PACK-22-BLK-3.jpg",
+          "https://twowheelgear.com/cdn/shop/files/TwoWheelGear-SeatPack-AmazonMainPhotoscopy2.jpg"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Pannier Backpack Convertible",
+        "name": "Pannier Backpack Convertible 2.1 PLUS",
+        "size": "30L",
+        "liters": 30,
+        "dims_cm": { "len": 35.6, "hgt": 48.3, "wid": 20.3 },
+        "dims_state": "packed",
+        "dims_raw": "14\" Wide x 19\" High x 8\" Deep; 30 Liters; 3.2 lbs / 1.45 kg",
+        "dims_note": "Single bag, not a pair. 14in maps to fore/aft along the rack, 8in to the across-bike width. Mounts via a Rixen & Kaul KLICKfix Modul Rail that zips away for backpack use.",
+        "colors": ["#1c1c1e", "#4c5155", "#d4763a"],
+        "src": "https://twowheelgear.com/products/pannier-backpack-convertible-plus",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "front", "type": "zip" }, { "face": "inside", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 1,
+          "colorways": [
+            { "name": "Black Ripstop Recycled", "hex": "#1c1c1e" },
+            { "name": "Graphite Grey Recycled", "hex": "#4c5155" },
+            { "name": "Olive Tangerine Recycled", "hex": "#d4763a" }
+          ]
+        },
+        "images": [
+          "https://twowheelgear.com/cdn/shop/files/Two_Wheel_Gear_-_Pannier_Backpack_PLUS_2.1_-_3_Color_Options.webp"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Pannier Backpack Convertible",
+        "name": "Pannier Backpack Convertible 2.0 LITE",
+        "size": "22L",
+        "liters": 22,
+        "dims_cm": { "len": 31.8, "hgt": 43.2, "wid": 15.2 },
+        "dims_state": "packed",
+        "dims_raw": "12.5\" Wide x 17\" High x 6\" Deep; 22 Liters; 2.8 lbs / 1.27 kg",
+        "dims_note": "Single bag. Box 20.9L against a stated 22L — close, so these are true mounted dimensions. KLICKfix Kompakt Rail mount.",
+        "colors": ["#1c1c1e", "#d4763a"],
+        "src": "https://twowheelgear.com/products/pannier-backpack-convertible-lite",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "slip" }, { "face": "inside", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 1,
+          "colorways": [
+            { "name": "Black Ripstop Recycled", "hex": "#1c1c1e" },
+            { "name": "Olive Tangerine Recycled", "hex": "#d4763a" }
+          ]
+        },
+        "images": [
+          "https://twowheelgear.com/cdn/shop/products/BACKPACK-LITE-22-BLK-Main-Backpack-Square_2048xcomp.jpg"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Inverter",
+        "name": "Inverter Pannier Backpack Convertible",
+        "size": "24L",
+        "liters": 24,
+        "dims_cm": { "len": 33, "hgt": 48.3, "wid": 17.8 },
+        "dims_state": "packed",
+        "dims_raw": "13\" Wide x 19\" High x 7\" Deep; 24 Liters; 3.9 lbs / 1.77 kg",
+        "dims_note": "Single bag. The rear panel unzips and inverts to hide the harness for pannier mode, so the 7in depth is with straps stowed.",
+        "colors": ["#4c5155"],
+        "src": "https://twowheelgear.com/products/inverter-pannier-backpack",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "front", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 1,
+          "colorways": [{ "name": "Grey", "hex": "#4c5155" }]
+        },
+        "images": [
+          "https://twowheelgear.com/cdn/shop/files/PANNIER-BACKPACK-INV-GREY-1-WEB.jpg",
+          "https://twowheelgear.com/cdn/shop/files/PANNIER-BACKPACK-INV-GREY-11-WEB.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "SILCA",
+    "origin": "Indianapolis, Indiana, USA (founded Milan, Italy, 1917)",
+    "aesthetic": "Jewellery-grade black: welded TPU and CyclePet ripstop with no visible stitching, machined BOA dials as the only hardware, hypalon straps and a small copper-tone wordmark. Every bag is black.",
+    "palette": ["#111111", "#2b2b2b", "#b06a2c", "#d9d9d9"],
+    "fabric": "CyclePet 600D with kiss coating / RF-welded TPU composite",
+    "products": [
+      {
+        "slot": "seatpack",
+        "line": "Mattone",
+        "name": "Mattone Seat Pack",
+        "size": "0.5L",
+        "liters": 0.5,
+        "dims_cm": { "len": 12.5, "hgt": 8, "wid": 5 },
+        "dims_state": "packed",
+        "dims_raw": "125mm x 80mm x 50mm; 0.5L; 90g",
+        "dims_note": "Box works out to exactly the stated 0.5L, so these are true packed dimensions. Rigid-ish wedge held under the saddle by a BOA-tensioned hypalon strap.",
+        "colors": ["#111111"],
+        "src": "https://silca.cc/collections/bags/products/mattone-seat-pack",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 1,
+          "pockets": [{ "face": "inside", "type": "slip" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#111111" }]
+        },
+        "images": [
+          "https://silca.cc/cdn/shop/products/mattone_saddlerightangle-medium_1800x1800.png?v=1678450792",
+          "https://silca.cc/cdn/shop/files/mattone_saddlesideview_1800x1800.jpg?v=1715174621"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Mattone",
+        "name": "Mattone Grande",
+        "size": "0.74L",
+        "liters": 0.74,
+        "dims_cm": { "len": 15, "hgt": 9, "wid": 5.5 },
+        "dims_state": "packed",
+        "dims_raw": "150mm x 90mm x 55mm; 0.74L; 108g",
+        "dims_note": "Box is 0.74L, matching the stated capacity exactly.",
+        "colors": ["#111111"],
+        "src": "https://silca.cc/collections/bags/products/mattone-grande",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 1,
+          "pockets": [{ "face": "inside", "type": "slip" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#111111" }]
+        },
+        "images": []
+      },
+      {
+        "slot": "seatpack",
+        "line": "Mattone",
+        "name": "Mattone Ultimate Seat Pack",
+        "size": "0.4L",
+        "liters": 0.4,
+        "dims_cm": { "len": 12.5, "hgt": 9, "wid": 4 },
+        "dims_state": "packed",
+        "dims_raw": "125mm x 40mm x 90mm; 0.4L; 44g",
+        "dims_note": "SILCA lists this one as L x W x H (40mm is the across-bike thickness, 90mm the height), unlike the standard Mattone's L x H x W. Box 0.45L against a stated 0.4L.",
+        "colors": ["#111111"],
+        "src": "https://silca.cc/collections/bags/products/mattone-ultimate-seat-pack",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 1,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#111111" }]
+        },
+        "images": [
+          "https://silca.cc/cdn/shop/files/Mattone_Ultimate_3-4-angle_knockout_DSC_3629-preview_1800x1800.webp",
+          "https://silca.cc/cdn/shop/files/Mattone-Ultimate_frontview_knockout_1200x900_IMG_4673-preview_1800x1800.webp"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Seat Roll",
+        "name": "Seat Roll Asymmetrico",
+        "size": "One Size",
+        "liters": 0.5,
+        "dims_cm": { "len": 14, "hgt": 7, "wid": 6 },
+        "dims_state": "unknown",
+        "dims_raw": "No dimensions or capacity published; 85g; holds tubes up to 700x45",
+        "dims_note": "SILCA publishes neither dimensions nor litres for the Asymmetrico. Estimated from its stated payload (a 700x45 tube plus CO2, levers and a multi-tool) and its 85g weight as roughly 14 x 7 x 6cm / 0.5L. Not a manufacturer figure.",
+        "colors": ["#111111"],
+        "src": "https://silca.cc/collections/bags/products/seat-roll-asymmetrico",
+        "features": {
+          "closure": "boa",
+          "shape": "cylindrical",
+          "compressionStraps": 1,
+          "pockets": [{ "face": "inside", "type": "slip" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#111111" }]
+        },
+        "images": [
+          "https://silca.cc/cdn/shop/products/AsymmetricoCropped_1800x1800.png?v=1675104507",
+          "https://silca.cc/cdn/shop/files/asymmetrico_closed_front2-preview_1800x1800.webp?v=1786039684"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Grinta",
+        "name": "Grinta Roll Top Bag",
+        "size": "2-5L",
+        "liters": 2.9,
+        "dims_cm": { "len": 16.4, "hgt": 15, "wid": 15 },
+        "dims_state": "unrolled",
+        "dims_raw": "2-5 liters; 30cm x 15cm x 15cm (rolled to top of PE); 208g",
+        "dims_note": "The quoted 30cm length is the fully-extended state that yields the 5L top of the range. Applied the packed estimate min + 0.3*(max-min) = 2.9L, which at the fixed 15cm cross-section gives a 16.4cm packed length. Seatpost-mounted; explicitly not for aero posts.",
+        "colors": ["#111111"],
+        "src": "https://silca.cc/collections/bags/products/grinta-roll-top-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 1,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#111111" }]
+        },
+        "images": [
+          "https://silca.cc/cdn/shop/files/Large_seat_bag_side_knockout_0953-small_1800x1800.png?v=1709829417"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Grinta",
+        "name": "Grinta Handlebar Bag",
+        "size": "One Size",
+        "liters": 2.8,
+        "dims_cm": { "len": 23, "hgt": 11, "wid": 11 },
+        "dims_state": "packed",
+        "dims_raw": "23cm x 11cm x 11cm (approximately 9\" x 4.3\" x 4.3\"); 160g; no capacity published",
+        "dims_note": "SILCA publishes no litre figure. 23 x 11 x 11cm = 2.78L, so 2.8L is derived from the maker's own dimensions rather than stated by them. Internal rigid structure keeps the shape, so the box figure is realistic.",
+        "colors": ["#111111"],
+        "src": "https://silca.cc/collections/bags/products/grinta-handlebar-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#111111" }]
+        },
+        "images": [
+          "https://silca.cc/cdn/shop/files/Handlebar_bag_only_front_0948-medium_1800x1800.png?v=1709829307"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Giant",
+    "origin": "Taichung, Taiwan",
+    "aesthetic": "OEM-tidy: matte black ripstop over 1200D nylon with a muted forest-green alternate, moulded plastic liner plates, MIK rack hardware in grey and a small embossed Giant mark. Reads as bike-shop kit rather than cottage gear.",
+    "palette": ["#1a1a1a", "#3f5c3a", "#2f4a6b", "#6e7276"],
+    "fabric": "Ripstop nylon over 1200D nylon / H2Tex 3-layer laminate",
+    "products": [
+      {
+        "slot": "seatpack",
+        "line": "Scout",
+        "name": "Scout Saddle Bag",
+        "size": "9L",
+        "liters": 9,
+        "dims_cm": { "len": 56, "hgt": 18, "wid": 18 },
+        "dims_state": "unrolled",
+        "dims_raw": "9L (304oz); 56x30x18cm (22x11.8x7 inches); 491g",
+        "dims_note": "56 x 30 x 18 is a 30L box against a stated 9L, so the middle 30cm figure is the unrolled/flattened height, not the mounted one — the same convention Ortlieb uses for its Seat-Pack. Packed height taken as equal to the 18cm width: 56 x 18 x 18 x ~0.55 taper = 10L, matching the stated 9L.",
+        "colors": ["#1a1a1a", "#3f5c3a"],
+        "src": "https://www.giant-bicycles.com/int/scout-saddle-bag-2024",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#1a1a1a" },
+            { "name": "Green", "hex": "#3f5c3a" }
+          ]
+        },
+        "images": [
+          "https://images2.giant-bicycles.com/b_white%2Cc_fill%2Cg_auto%2Ch_400%2Cq_90%2Cw_600/xbrxe5t1wxatnfbij5r5/SCOUT-SADDLE-BAG@BLACK@9L@430000158@ACTION-SHOOT@1.jpg",
+          "https://images2.giant-bicycles.com/b_white%2Cc_fill%2Cg_auto%2Ch_400%2Cq_90%2Cw_600/uxaq46o0jdtrianh3z65/SCOUT-SADDLE-BAG@BLACK@9L@430000158@ACTION-SHOOT@2.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Scout",
+        "name": "Scout Burrito Bar Bag",
+        "size": "2.3L",
+        "liters": 2.3,
+        "dims_cm": { "len": 20, "hgt": 12, "wid": 12 },
+        "dims_state": "packed",
+        "dims_raw": "2.3L (77.8oz); 20x12x12 cm (7.8x4.7x4.7 inches); 188g",
+        "dims_note": "20cm runs across the bars, 12cm square section. Box 2.88L against a stated 2.3L; a rigid plastic liner plate holds the shape.",
+        "colors": ["#1a1a1a", "#3f5c3a"],
+        "src": "https://www.giant-bicycles.com/us/scout-burrito-bar-bag-2024",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "mesh" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#1a1a1a" },
+            { "name": "Green", "hex": "#3f5c3a" }
+          ]
+        },
+        "images": [
+          "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_100%2Cq_90%2Cw_100/cogz4eevpioktgceunyc/SCOUT-BURRITO-BAR-BAG@BLACK@430000160@1.jpg",
+          "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_100%2Cq_90%2Cw_100/r1oslzj1z5u9clajbbhb/SCOUT-BURRITO-BAR-BAG@GREEN@430000161@1.jpg"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Scout",
+        "name": "Scout Top Tube Bag",
+        "size": "1L",
+        "liters": 1,
+        "dims_cm": { "len": 22, "hgt": 10, "wid": 6.5 },
+        "dims_state": "packed",
+        "dims_raw": "1L (33.8oz); 22x10x6.5cm (8.6x3.9x2.5 inches); 159g",
+        "dims_note": "22cm along the top tube, 6.5cm across. Box 1.43L against a stated 1L usable. Mounts on hook-and-loop straps or top tube bolts.",
+        "colors": ["#1a1a1a", "#3f5c3a"],
+        "src": "https://www.giant-bicycles.com/int/scout-top-tube-bag-2024",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "zip" }, { "face": "inside", "type": "mesh" }],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Black", "hex": "#1a1a1a" },
+            { "name": "Green", "hex": "#3f5c3a" }
+          ]
+        },
+        "images": [
+          "https://images2.giant-bicycles.com/b_white%2Cc_fill%2Cg_auto%2Ch_400%2Cq_90%2Cw_600/g6rgmqxeo4ansl2xzwav/SCOUT-TOP-TUBE-BAG@BLACK@1L@430000162@ACTION-SHOOT@1.jpg",
+          "https://images2.giant-bicycles.com/b_white%2Cc_fill%2Cg_auto%2Ch_400%2Cq_90%2Cw_600/u0x8ctrxjjvndhwdh5d2/SCOUT-TOP-TUBE-BAG@BLACK@1L@430000162@ACTION-SHOOT@2.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "H2Pro",
+        "name": "H2Pro Frame Bag",
+        "size": "4L",
+        "liters": 4,
+        "dims_cm": { "len": 46.5, "hgt": 13, "wid": 6 },
+        "dims_state": "packed",
+        "dims_raw": "3L: 43.5 x 6 x 11.5cm | 4L: 46.5 x 6 x 13cm | XL 4.5L: 50 x 6 x 14 cm",
+        "dims_note": "Mid size (4L) taken. Giant lists length x thickness x height, so the 6cm figure is the across-bike width. Box 3.6L against a stated 4L.",
+        "colors": ["#1a1a1a"],
+        "src": "https://www.giant-bicycles.com/int/h2pro-frame-bag-2021",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [{ "name": "Black", "hex": "#1a1a1a" }]
+        },
+        "images": [
+          "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_100%2Cq_90%2Cw_100/vbgal0vfn1cvjmsluyzm/H2Pro-Frame-Bag-430000116-1.jpg",
+          "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_100%2Cq_90%2Cw_100/rjefsofo4dgevbrvoa3c/H2Pro-Frame-Bag-430000115-1.jpg"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Transporter",
+        "name": "Transporter MIK Pannier Bag 30L",
+        "size": "30L (single)",
+        "liters": 30,
+        "dims_cm": { "len": 40, "hgt": 30, "wid": 17 },
+        "dims_state": "packed",
+        "dims_raw": "30L per bag; 30*17*40cm (height x width x depth); 1400g",
+        "dims_note": "30L is explicitly per bag, not a pair. Giant labels the axes as height x width x depth, so depth 40 maps to len (fore/aft on the rack). Box is 20.4L against a stated 30L because the roll-top extends well above the quoted 30cm height.",
+        "colors": ["#2f4a6b", "#6e7276"],
+        "src": "https://www.giant-bicycles.com/int/transporter-mik-pannier-bag-30l",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "inside", "type": "slip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 1,
+          "colorways": [
+            { "name": "Blue", "hex": "#2f4a6b" },
+            { "name": "Gray", "hex": "#6e7276" }
+          ]
+        },
+        "images": [
+          "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_100%2Cq_90%2Cw_100/g9nscti0ac1febzd0ldn/Transporter-MIK-Pannier-Bag-M-Blue-430000135-2.jpg",
+          "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_100%2Cq_90%2Cw_100/mdy7nqcsk1jqtgvlxwph/Transporter-MIK-Pannier-Bag-M-Grey-430000136-2.jpg"
+        ]
+      },
+      {
+        "slot": "trunk",
+        "line": "Transit",
+        "name": "Transit MIK Trunk Bag 11L",
+        "size": "11L",
+        "liters": 11,
+        "dims_cm": { "len": 36, "hgt": 16, "wid": 22 },
+        "dims_state": "packed",
+        "dims_raw": "11 liters; 36 x 22 x 16 cm; 699g",
+        "dims_note": "Rack-top trunk bag: 36 along the rack, 22 across, 16 tall. Box 12.7L against a stated 11L. Locks to a MIK rack plate with a key.",
+        "colors": ["#2f4a6b", "#6e7276"],
+        "src": "https://www.giant-bicycles.com/int/transit-mik-trunk-bag-11l",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [{ "face": "side", "type": "zip" }],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "colorways": [
+            { "name": "Blue", "hex": "#2f4a6b" },
+            { "name": "Grey", "hex": "#6e7276" }
+          ]
+        },
+        "images": [
+          "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_100%2Cq_90%2Cw_100/fpv0jzzeeev6y3owonrb/Transit-MIK-Rear-Trunk-Bag-Blue_1.jpg",
+          "https://images2.giant-bicycles.com/b_white%2Cc_pad%2Ch_100%2Cq_90%2Cw_100/dznexljxldydm8a6vg4t/Transit-MIK-Trunk-Bag-Grey_1.jpg"
+        ]
+      }
+    ]
+  }
+]

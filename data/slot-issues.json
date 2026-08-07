@@ -1,0 +1,200 @@
+[
+ {
+  "kind": "line-outlier",
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Frame Module",
+  "size": "Medium",
+  "slot": "framebag_half",
+  "expected": "toptube",
+  "src": "https://www.apidura.com/shop/aero-frame-module/",
+  "detail": "3/5 of the \"Aero\" line are toptube, this one is framebag_half"
+ },
+ {
+  "kind": "line-outlier",
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Frame Module",
+  "size": "Large",
+  "slot": "framebag_half",
+  "expected": "toptube",
+  "src": "https://www.apidura.com/shop/aero-frame-module/",
+  "detail": "3/5 of the \"Aero\" line are toptube, this one is framebag_half"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack Toptube",
+  "size": "3L",
+  "slot": "framebag_half",
+  "expected": "toptube|toptube_rear",
+  "src": "https://us.ortlieb.com/products/frame-pack-toptube",
+  "detail": "name matches /\\btop ?tube\\b/ which implies toptube or toptube_rear, but slot is framebag_half"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack Toptube",
+  "size": "4L",
+  "slot": "framebag_half",
+  "expected": "toptube|toptube_rear",
+  "src": "https://us.ortlieb.com/products/frame-pack-toptube",
+  "detail": "name matches /\\btop ?tube\\b/ which implies toptube or toptube_rear, but slot is framebag_half"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack RC Toptube",
+  "size": "3L",
+  "slot": "framebag_half",
+  "expected": "toptube|toptube_rear",
+  "src": "https://us.ortlieb.com/products/frame-pack-rc-toptube",
+  "detail": "name matches /\\btop ?tube\\b/ which implies toptube or toptube_rear, but slot is framebag_half"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack RC Toptube",
+  "size": "4L",
+  "slot": "framebag_half",
+  "expected": "toptube|toptube_rear",
+  "src": "https://us.ortlieb.com/products/frame-pack-rc-toptube",
+  "detail": "name matches /\\btop ?tube\\b/ which implies toptube or toptube_rear, but slot is framebag_half"
+ },
+ {
+  "kind": "line-outlier",
+  "brand": "Restrap",
+  "line": "Switch",
+  "name": "Switch Top Bag",
+  "size": "15L",
+  "slot": "trunk",
+  "expected": "pannier",
+  "src": "https://restrap.com/products/switch-top-bag-15l",
+  "detail": "2/3 of the \"Switch\" line are pannier, this one is trunk"
+ },
+ {
+  "kind": "line-outlier",
+  "brand": "Blackburn Design",
+  "line": "Outpost",
+  "name": "Carryall Bag",
+  "size": "std",
+  "slot": "stembag",
+  "expected": "framebag_half",
+  "src": "https://www.bellhelmets.com/product/outpost-carryall-bag/350170000100000058.html",
+  "detail": "4/6 of the \"Outpost\" line are framebag_half, this one is stembag"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "Wizard Works",
+  "line": "Badjelly",
+  "name": "Badjelly Bar + Saddle Bag",
+  "size": "Small (10L)",
+  "slot": "barbag",
+  "expected": "saddlebag|seatpack",
+  "src": "https://www.wizard.works/shop/badjelly-bar-saddle-bag/",
+  "detail": "name matches /\\bsaddle ?bag\\b/ which implies saddlebag or seatpack, but slot is barbag"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "Wizard Works",
+  "line": "Badjelly",
+  "name": "Badjelly Bar + Saddle Bag",
+  "size": "Medium (15L)",
+  "slot": "barbag",
+  "expected": "saddlebag|seatpack",
+  "src": "https://www.wizard.works/shop/badjelly-bar-saddle-bag/",
+  "detail": "name matches /\\bsaddle ?bag\\b/ which implies saddlebag or seatpack, but slot is barbag"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "Wizard Works",
+  "line": "Badjelly",
+  "name": "Badjelly Bar + Saddle Bag",
+  "size": "Large (19L)",
+  "slot": "barbag",
+  "expected": "saddlebag|seatpack",
+  "src": "https://www.wizard.works/shop/badjelly-bar-saddle-bag/",
+  "detail": "name matches /\\bsaddle ?bag\\b/ which implies saddlebag or seatpack, but slot is barbag"
+ },
+ {
+  "kind": "line-outlier",
+  "brand": "Rockgeist",
+  "line": "52Hz",
+  "name": "Wedge 52Hz Waterproof Framebag",
+  "size": "Medium",
+  "slot": "framebag_half",
+  "expected": "framebag_full",
+  "src": "https://rockgeist.com/product/wedge-52hz-waterproof-framebag/",
+  "detail": "16/19 of the \"52Hz\" line are framebag_full, this one is framebag_half"
+ },
+ {
+  "kind": "line-outlier",
+  "brand": "Rockgeist",
+  "line": "52Hz",
+  "name": "Wedge 52Hz Waterproof Framebag",
+  "size": "Large",
+  "slot": "framebag_half",
+  "expected": "framebag_full",
+  "src": "https://rockgeist.com/product/wedge-52hz-waterproof-framebag/",
+  "detail": "16/19 of the \"52Hz\" line are framebag_full, this one is framebag_half"
+ },
+ {
+  "kind": "line-outlier",
+  "brand": "Rockgeist",
+  "line": "52Hz",
+  "name": "Wedge 52Hz Waterproof Framebag",
+  "size": "XL",
+  "slot": "framebag_half",
+  "expected": "framebag_full",
+  "src": "https://rockgeist.com/product/wedge-52hz-waterproof-framebag/",
+  "detail": "16/19 of the \"52Hz\" line are framebag_full, this one is framebag_half"
+ },
+ {
+  "kind": "line-outlier",
+  "brand": "Miss Grape",
+  "line": "Cluster",
+  "name": "Cluster 2 Waterproof",
+  "size": "2L",
+  "slot": "saddlebag",
+  "expected": "seatpack",
+  "src": "https://missgrape.net/en/road/seat-bags-road/cluster-2-waterproof/",
+  "detail": "3/4 of the \"Cluster\" line are seatpack, this one is saddlebag"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "Chrome Industries",
+  "line": "",
+  "name": "Holman Top Tube Bag",
+  "size": "",
+  "slot": "stembag",
+  "expected": "toptube|toptube_rear",
+  "src": "https://www.chromeindustries.com/products/holman-top-tube-bag",
+  "detail": "name matches /\\btop ?tube\\b/ which implies toptube or toptube_rear, but slot is stembag"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "AGU",
+  "line": "",
+  "name": "AGU Top-Tube Frame Bag Venture Extreme Waterproof",
+  "size": "",
+  "slot": "toptube",
+  "expected": "framebag_full|framebag_half",
+  "src": "https://agu.com/eu/41503401-000",
+  "detail": "name matches /\\bframe (bag|pack)\\b/ which implies framebag_full or framebag_half, but slot is toptube"
+ },
+ {
+  "kind": "name-mismatch",
+  "brand": "AGU",
+  "line": "",
+  "name": "AGU Essential Pannier Rack Bag (trunk)",
+  "size": "",
+  "slot": "trunk",
+  "expected": "pannier",
+  "src": "https://www.tradeinn.com/bikeinn/en/agu-essential-klickfix-12l-panniers/138066081/p",
+  "detail": "name matches /\\bpannier|panniers\\b/ which implies pannier, but slot is trunk"
+ }
+]

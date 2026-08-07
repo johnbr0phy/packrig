@@ -1,0 +1,167 @@
+[
+ {
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Frame Module",
+  "size": "Medium",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - framebag_half is correct. Photo assets/products/apidura/aero-frame-module-medium-2.jpg shows a black triangular wedge hanging INSIDE the main triangle, filling the space behind the head tube between the top tube and down tube - not sitting on top of the top tube. Apidura's own page: 'Two Hypalon load straps, silicone backed' around the top tube, 'Velcro transfer panel attaches to downtube', 'Rubber tension bands attach to steerer', and 'Transfer Panels bridge the gap behind the headtube and downtube'. Compare the sibling Aero Top Tube Module (aero-top-tube-module-0-4l-1.jpg), which is a completely different tent-profile box that straddles the TOP of the top tube on two bolt/strap mounts. The line-outlier heuristic just picked up that the Aero line happens to contain three top tube modules; the Frame Module is genuinely a different mount."
+ },
+ {
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Frame Module",
+  "size": "Large",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - framebag_half is correct. Photo assets/products/apidura/aero-frame-module-large-1.jpg shows the same triangular wedge mounted inside the front of the main triangle: top edge strapped under the top tube, front face wrapped against the head tube, bottom tab velcroed to the down tube. 31.5 x 19.5 x 4.5 cm is a slim frame wedge, not a top tube box. Same reasoning as the Medium."
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack Toptube",
+  "size": "3L",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - framebag_half is correct despite the name. Photos assets/products/ortlieb/frame-pack-frame-pack-toptube-3l-1.jpg and -4.jpg show a long slab whose three hook-and-loop straps run along the TOP edge and hang DOWNWARD, plus a strap off the front-bottom corner and one off the rear - it hangs below the top tube into the triangle. Ortlieb's page: the bag 'positions itself in your bike's main triangle' and the straps are 'fixed to the top tube, seat tube, and down tube'. The name means 'the Frame-Pack that lives up at the top tube', not 'a top tube bag'. Ortlieb's actual top tube bag is a separate product (toptube-toptube-bag-1-5l-1.jpg) - a small rigid box that bolts ON TOP of the tube. A toptube builder would draw this 39.9 cm slab as a stem-end box: wrong shape and wrong place."
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack Toptube",
+  "size": "4L",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - framebag_half is correct. Photo assets/products/ortlieb/frame-pack-frame-pack-toptube-4l-1.jpg is the same slab in the longer 50 x 13 cm size, straps along the top edge hanging down plus down tube and seat tube straps. At 50 cm long and only 13 cm tall it spans nearly the whole top tube and fills the upper strip of the main triangle - a half frame bag, not a stem-end box."
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack RC Toptube",
+  "size": "3L",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - framebag_half is correct. Photo assets/products/ortlieb/frame-pack-frame-pack-rc-toptube-3l-1.jpg shows the roll-closure version of the same slab: three velcro straps along the top edge hanging down, orange cinch cords, plus down tube and seat tube straps. Identical mount to the zip version; Ortlieb's page describes the same three-point top tube / seat tube / down tube attachment inside the main triangle."
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack RC Toptube",
+  "size": "4L",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - framebag_half is correct. Same slab as the RC Toptube 3L in the 50 x 13 cm size; assets/products/ortlieb/frame-pack-frame-pack-rc-toptube-4l-1.jpg shows the top-edge strap array that hangs the bag below the top tube. Named 'Toptube' for its position in the frame, not for a stem-end mount."
+ },
+ {
+  "brand": "Restrap",
+  "line": "Switch",
+  "name": "Switch Top Bag",
+  "size": "15L",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - trunk is correct. Photos assets/products/restrap/switch-switch-top-bag-15l-1.jpg and -2.jpg show the bag sitting squarely ON TOP of the Switch rack platform with straps wrapping down around the rack tubes; the head-on shot (-3.jpg) shows it centred over the wheel, not offset to one side. Restrap's page: 'Specifically designed to seamlessly attach to the Restrap Switch Rack' via the 'Hiplock X Restrap Switch fitting system'. Contrast the Switch Pannier (switch-switch-pannier-10l-1.jpg), which clearly hangs off the side of the rack. The Switch line is a rack system containing both panniers and a rack-top bag, so the line-majority heuristic misfires here."
+ },
+ {
+  "brand": "Blackburn Design",
+  "line": "Outpost",
+  "name": "Carryall Bag",
+  "size": "std",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - stembag is correct. No local image; Blackburn/retailer copy: 'easily mounts to your stem or handlebars in multiple locations for a secure fit' via hook-and-loop straps, 'ambidextrous fitting ... allowing you to run the bag on either side of the stem', with 'an adjustable drawstring closure' and 'drain holes at the bottom'. That is a cylindrical feed/stem bag, and the catalogue dims agree (18 cm tall x 9 cm dia, 1 L). The Outpost line is mostly frame bags, which is why the line-majority heuristic flagged it, but framebag_half would be plainly wrong for a 1 L drawstring cylinder."
+ },
+ {
+  "brand": "Wizard Works",
+  "line": "Badjelly",
+  "name": "Badjelly Bar + Saddle Bag",
+  "size": "Small (10L)",
+  "verified": true,
+  "confidence": "medium",
+  "dims_note": "FALSE POSITIVE - barbag is the right primary. Genuinely dual-mount, but the bar side wins on hardware: the bag ships with 'Aluminium Bar attachment for rock solid stability' plus 'Voile Nano Straps and Foam Spacer pack included' - foam spacers exist only to push the bag off the stem bolts when bar-mounted. Saddle mounting needs hardware NOT in the box: Brooks-style saddle loops, aftermarket loops, or a Bagman QR bracket. The 2025 redesign is bar-optimised - 'tapering toward the front of the bag to provide more room for fingers and shifters on drop bars'. Retail copy leads with bars: 'equally at home on the bars or saddle'. Shape confirms barbag over barroll: the rear-view photo (badjelly-2025-medium-rear-view.jpg) shows a hardshell squared-off box with a slotted horizontal attachment bar and two vertical straps - a structured box, not a cylindrical roll."
+ },
+ {
+  "brand": "Wizard Works",
+  "line": "Badjelly",
+  "name": "Badjelly Bar + Saddle Bag",
+  "size": "Medium (15L)",
+  "verified": true,
+  "confidence": "medium",
+  "dims_note": "FALSE POSITIVE - barbag is the right primary, same reasoning as the Small. Included hardware (aluminium bar attachment, Voile straps, foam stem-bolt spacers) is bar hardware; saddle mounting requires separately-bought saddle loops or a Bagman bracket. Product photos show a hardshell structured box that 'holds its shape whether empty or full', matching the barbag builder rather than barroll."
+ },
+ {
+  "brand": "Wizard Works",
+  "line": "Badjelly",
+  "name": "Badjelly Bar + Saddle Bag",
+  "size": "Large (19L)",
+  "verified": true,
+  "confidence": "medium",
+  "dims_note": "FALSE POSITIVE - barbag is the right primary, same reasoning as the Small and Medium. At 19 L / 36 x 30 x 20 cm this is the largest size and the one least likely to be hung off a saddle without a dedicated bracket, which reinforces bars as the primary mount."
+ },
+ {
+  "brand": "Rockgeist",
+  "line": "52Hz",
+  "name": "Wedge 52Hz Waterproof Framebag",
+  "size": "Medium",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - framebag_half is correct. Rockgeist's own size diagram (assets/products/rockgeist/52hz-wedge-52hz-waterproof-framebag-medium-2.webp) draws a shallow quadrilateral: 325 mm along the top tube, 223 mm deep at the head tube end, tapering to 73 mm at the seat tube end - it hugs the top tube and leaves the bottom of the triangle empty. Rockgeist's page: it fills 'the space near the head tube only' and 'leaves space for the rear shock for many full suspension bikes or water bottle access for hardtail mountain bikes'. The name 'Wedge' is the point: it is the deliberately partial member of an otherwise full-triangle 52Hz line, so the line-majority heuristic misfires."
+ },
+ {
+  "brand": "Rockgeist",
+  "line": "52Hz",
+  "name": "Wedge 52Hz Waterproof Framebag",
+  "size": "Large",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - framebag_half is correct. Rockgeist's Large diagram (52hz-wedge-52hz-waterproof-framebag-large-... / xl-3.webp series) shows 358 mm top edge, 220 mm at the head tube end tapering to 61 mm at the rear - the same shallow top-tube-hugging wedge, just longer. Still fills only the upper/front part of the main triangle."
+ },
+ {
+  "brand": "Rockgeist",
+  "line": "52Hz",
+  "name": "Wedge 52Hz Waterproof Framebag",
+  "size": "XL",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - framebag_half is correct. Same wedge profile scaled up (394 mm top edge, 216 mm at the head tube end, 61 mm at the rear per the Rockgeist diagram). Even at XL the bag is only ~16 cm tall against a 54 cm top edge - a half frame bag by proportion, and Rockgeist still describes it as filling the space near the head tube only."
+ },
+ {
+  "brand": "Miss Grape",
+  "line": "Cluster",
+  "name": "Cluster 2 Waterproof",
+  "size": "2L",
+  "verified": true,
+  "slot_should_be": "seatpack",
+  "confidence": "high",
+  "dims_note": "CHANGE saddlebag -> seatpack. On-bike photos assets/products/miss-grape/cluster-cluster-2-waterproof-2l-2.jpg and -4.jpg show a tapered soft roll clamped by two webbing straps around the SADDLE RAILS and a green stabiliser strap around the SEATPOST - no bracket, no structured box. It is a scaled-down version of the Cluster 7 (cluster-cluster-7-waterproof-7l-1.jpg), which is already slotted seatpack and uses the identical rail-plus-post harness. Catalogue dims agree with a mini seatpack: 30.1 cm long tapering from 15 cm wide, only 10 cm tall. saddlebag would hand it to the Carradice-style bracketed-box builder, which is the wrong shape entirely."
+ },
+ {
+  "brand": "Chrome Industries",
+  "line": "",
+  "name": "Holman Top Tube Bag",
+  "size": "",
+  "verified": true,
+  "slot_should_be": "toptube",
+  "confidence": "medium",
+  "dims_note": "CHANGE stembag -> toptube. Chrome's own on-bike shot (cdn.shopify.com/.../6_BG-357-BK_1.jpg from chromeindustries.com/products/holman-top-tube-bag.json) shows the bag sitting lengthwise ON the top tube directly behind the stem, held by two velcro straps under the tube plus a drawcord round the steerer. It is a slim tapered slab - the catalogue dims 22.2 x 4.5 x 10.2 cm match Chrome's spec '4in height, 7.25in width at top expanding to 8.75in at bottom, 1.75in depth' - and nothing like a cylindrical bar-mounted feed bag, so stembag is definitely wrong. MEDIUM not high because Chrome also photographs it at the seat tube end (5_BG-357-BK_1.jpg, cord around the seatpost); the product name is the unqualified 'Top Tube Bag' with no 'Rear' qualifier, so the stem end is the default reading and toptube_rear is the plausible alternative."
+ },
+ {
+  "brand": "AGU",
+  "line": "",
+  "name": "AGU Top-Tube Frame Bag Venture Extreme Waterproof",
+  "size": "",
+  "verified": true,
+  "confidence": "high",
+  "dims_note": "FALSE POSITIVE - toptube is correct; 'Frame Bag' in the name is marketing, not a mount. AGU's own page: 'You can attach this bag to the top tube of your frame and either your stem or seatpost', 0.7 L, '21 x 11 x 6 centimeters'. AGU's product image (agu.com/media/catalog/product/4/1/41503401_000_main_01_6.jpg) shows a small welded wedge with two velcro straps hanging off its underside and a cord loop at the front end - it straddles the top of the tube. At 0.7 L it is far too small to be any kind of frame bag."
+ },
+ {
+  "brand": "AGU",
+  "line": "",
+  "name": "AGU Essential Pannier Rack Bag (trunk)",
+  "size": "",
+  "verified": true,
+  "slot_should_be": "pannier",
+  "confidence": "high",
+  "dims_note": "CHANGE trunk -> pannier. The product image at tradeinn.com/f/13806/138066081/agu-essential-klickfix-12l-panniers.jpg shows a tall portrait-format flap-top bag with a single vertical buckle strap and a side mesh pocket - a one-sided rack pannier, not a rack-top box. The listing specifies mounting 'by means of KLICKfix Vario Top hooks (o 8-16mm)', which are the hook-over-the-rack-rail pannier fittings; AGU's actual rack-top bag is a different product ('Trunkbag Bag Performance KLICKfix UniKlip II') using a UniKlip rack-plate adapter. Every retailer files it under panniers. SIDE NOTE for the dims pass: source dims are 34 x 28 x 16 cm on a bag that is taller than it is long, so the catalogue's len 34 / wid 28 / hgt 16 looks like len and hgt are transposed for a pannier orientation (should read roughly len 28, hgt 34, wid 16)."
+ }
+]

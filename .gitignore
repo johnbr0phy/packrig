@@ -1,0 +1,5 @@
+node_modules/
+shots/
+assets/products/
+assets/hdri/
+.DS_Store

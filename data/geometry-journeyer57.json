@@ -1,0 +1,319 @@
+{
+  "source": "Salsa Journeyer 700c (gravel/adventure bikepacking bike), size 57cm — the closest published size to a 56cm/M-L. Frame geometry values marked 'published' are transcribed from Salsa Cycles' official geometry chart and frameset spec sheet (salsacycles.com). Values marked 'derived' were computed trigonometrically from the published chart and verified against it (computed wheelbase 1071.4 vs published 1072; computed effective top tube 569.8 vs published 570). Values marked 'standard' are industry-standard component dimensions, not from the bike's own chart. Cross-checked against Trek Checkpoint ALR size 56 (ETT 584, HT 145, HTA 72.2, STA 72.8, CS 435, WB 1048, BB drop 76, offset 45, trail 67, stack 592, reach 407) — the Journeyer is the slacker, longer-chainstay bikepacking-oriented geometry.",
+  "units": "millimeters unless the field name says degrees",
+
+  "frame_geometry": {
+    "_provenance": "published",
+    "size_label": "57cm",
+    "recommended_rider_height_cm": [173, 185],
+    "seat_tube_length_c_to_t": 490,
+    "effective_top_tube_horizontal": 570,
+    "head_tube_length": 180,
+    "head_tube_angle_deg": 69.5,
+    "seat_tube_angle_deg": 73.0,
+    "chainstay_length": 440,
+    "wheelbase": 1072,
+    "bb_drop": 70,
+    "bb_height_published": 283,
+    "bb_height_with_45mm_tire": 286,
+    "fork_offset_rake": 50,
+    "fork_axle_to_crown": 402,
+    "stack": 598,
+    "reach": 387,
+    "standover_at_seat_cluster": 756.5
+  },
+
+  "frame_geometry_derived": {
+    "_provenance": "derived — computed from the published chart, self-consistent to within 1mm",
+    "front_center_bb_to_front_axle_straight": 641.4,
+    "front_center_horizontal": 637.6,
+    "rear_center_horizontal": 434.4,
+    "trail_with_700x45_tire": 79.7,
+    "mechanical_trail": 74.6,
+    "actual_top_tube_slope_deg": 13.3,
+    "actual_top_tube_length": 546.7,
+    "front_wheel_flop_factor": 26.2
+  },
+
+  "key_points_xyz": {
+    "_provenance": "derived — origin at bottom bracket center, +X forward (toward front wheel), +Y up, +Z toward drive side (right)",
+    "bb_center": [0, 0, 0],
+    "rear_axle": [-434.4, 70, 0],
+    "front_axle": [637.6, 70, 0],
+    "head_tube_top_center": [387.0, 598.0, 0],
+    "head_tube_bottom_center": [450.0, 429.4, 0],
+    "fork_crown_race_seat": [450.0, 429.4, 0],
+    "seat_tube_top_center": [-143.3, 468.6, 0],
+    "top_tube_head_end": [390.5, 588.0, 0],
+    "top_tube_seat_end": [-141.5, 462.0, 0],
+    "down_tube_head_end": [445.0, 445.0, 0],
+    "down_tube_bb_end": [22.0, 26.0, 0],
+    "seat_stay_upper_junction": [-135.0, 452.0, 0],
+    "rear_dropout_center": [-434.4, 70, 68.0],
+    "head_tube_axis_unit_downward": [0.35021, -0.93667, 0],
+    "seat_tube_axis_unit_upward": [-0.29237, 0.95630, 0],
+    "steering_axis_ground_intersection_x": 700.5
+  },
+
+  "frame_tubing": {
+    "_provenance": "standard — typical hydroformed 6061-T6 aluminum gravel frame; Journeyer tube diameters are not published",
+    "head_tube_outer_diameter_top": 44.5,
+    "head_tube_outer_diameter_bottom": 56.0,
+    "head_tube_standard": "tapered, IS41 upper / IS52 lower integrated headset, 40mm crown race",
+    "steerer_diameter_top": 28.6,
+    "steerer_diameter_bottom": 38.1,
+    "top_tube_diameter_at_head_tube": 36.0,
+    "top_tube_diameter_at_seat_tube": 28.6,
+    "top_tube_shape": "ovalized, wider than tall at the head tube; model as tapered round 36 -> 28.6",
+    "down_tube_diameter_at_head_tube": 50.0,
+    "down_tube_diameter_mid": 45.0,
+    "down_tube_diameter_at_bb": 42.0,
+    "seat_tube_outer_diameter_upper": 31.8,
+    "seat_tube_outer_diameter_lower": 34.9,
+    "seat_tube_inner_diameter": 27.2,
+    "seat_clamp_diameter": 32.0,
+    "chainstay_section_at_bb": [30.0, 18.0],
+    "chainstay_section_at_dropout": [20.0, 14.0],
+    "seatstay_diameter_at_top": 20.0,
+    "seatstay_diameter_at_dropout": 14.0,
+    "bb_shell_standard": "68mm BSA threaded",
+    "bb_shell_width": 68.0,
+    "bb_shell_outer_diameter": 46.0,
+    "bb_shell_thread_diameter": 41.3,
+    "chainstay_spacing_at_bb_z": 42.0,
+    "chainstay_spacing_at_dropout_z": 68.0
+  },
+
+  "fork": {
+    "_provenance": "published for axle_to_crown / offset / clearance; standard for blade sections",
+    "axle_to_crown": 402,
+    "offset_rake": 50,
+    "blade_section_at_crown": [30.0, 22.0],
+    "blade_section_at_dropout": [22.0, 16.0],
+    "crown_width_between_blades_z": 100.0,
+    "dropout_spacing_z": 100.0,
+    "axle": "12 x 100mm thru-axle, M12 x 1.5",
+    "max_tire_700c": 50,
+    "max_tire_650b": 56.5,
+    "brake_mount": "flat mount, 160mm native, 180mm max"
+  },
+
+  "wheels": {
+    "_provenance": "standard — 700c gravel wheelset",
+    "rim_bsd": 622,
+    "rim_erd": 601,
+    "rim_depth": 21,
+    "rim_width_external": 25,
+    "rim_width_internal": 23,
+    "rim_outer_diameter_at_bead_flange": 628,
+    "rim_inner_diameter_at_spoke_bed": 580,
+    "spoke_count_front": 32,
+    "spoke_count_rear": 32,
+    "spoke_lacing": "3-cross",
+    "spoke_diameter_butted": [2.0, 1.8],
+    "nipple_length": 12,
+    "front_hub": {
+      "over_locknut_dimension": 100,
+      "axle_diameter": 12,
+      "shell_diameter": 40,
+      "flange_diameter": 45,
+      "flange_offset_from_center_disc_side": 27,
+      "flange_offset_from_center_non_disc_side": 33,
+      "spoke_hole_circle_diameter": 45
+    },
+    "rear_hub": {
+      "over_locknut_dimension": 142,
+      "axle_diameter": 12,
+      "shell_diameter": 42,
+      "flange_diameter_drive_side": 45,
+      "flange_diameter_non_drive_side": 45,
+      "flange_offset_from_center_drive_side": 18,
+      "flange_offset_from_center_non_drive_side": 36,
+      "freehub_body_length": 46.4,
+      "freehub_body_diameter": 34
+    }
+  },
+
+  "tires": {
+    "_provenance": "derived from nominal size; frame clears 700x50",
+    "nominal_size": "700 x 45c",
+    "bead_seat_diameter": 622,
+    "casing_width": 45,
+    "tread_width": 42,
+    "outer_diameter": 712,
+    "rolling_radius": 356,
+    "knob_depth": 2.0,
+    "sidewall_height": 45
+  },
+
+  "brakes": {
+    "_provenance": "standard flat-mount disc",
+    "rotor_diameter_front": 160,
+    "rotor_diameter_rear": 160,
+    "rotor_thickness": 1.8,
+    "rotor_braking_track_outer_diameter": 160,
+    "rotor_braking_track_inner_diameter": 130,
+    "rotor_pad_contact_mid_radius": 72.5,
+    "rotor_carrier_inner_diameter": 90,
+    "rotor_mount_bolt_circle_6bolt": 44,
+    "rotor_plane_offset_from_wheel_center_z_front": -47.5,
+    "rotor_plane_offset_from_wheel_center_z_rear": -47.5,
+    "caliper_body_size_lwh": [75, 45, 30],
+    "front_caliper_mount_bolt_spacing": 74,
+    "rear_caliper_mount_bolt_spacing": 37,
+    "front_caliper_pad_center_radius_from_axle": 72.5,
+    "front_caliper_pad_center_direction": "on the rear face of the left (non-drive) fork leg, 20 degrees rearward of the fork-leg axis measured from the axle, i.e. up and behind the front axle",
+    "rear_caliper_pad_center_radius_from_axle": 72.5,
+    "rear_caliper_pad_center_direction": "inboard of the left chainstay/seatstay junction, forward of the rear axle, approximately 25 degrees above the chainstay centerline"
+  },
+
+  "drivetrain": {
+    "_provenance": "standard — Shimano GRX RX600 class 1x11 gravel drivetrain (Q-factor and chainline are published Shimano figures)",
+    "crank_length": 172.5,
+    "q_factor": 151,
+    "chainline": 46.9,
+    "crank_arm_section": [30, 16],
+    "spindle_diameter": 24,
+    "chainring_teeth": 40,
+    "chainring_pitch_diameter": 161.7,
+    "chainring_tooth_tip_diameter": 169.0,
+    "chainring_thickness": 3.0,
+    "chainring_bcd": 110,
+    "chainring_bolt_count": 4,
+    "pedal_spindle_center_offset_from_crank_face": 53,
+    "pedal_body_lwh": [95, 70, 20],
+    "cassette_range": "11-42",
+    "cassette_speeds": 11,
+    "cassette_cog_pitch": 3.9,
+    "cassette_total_stack_width": 42.9,
+    "cassette_largest_cog_teeth": 42,
+    "cassette_largest_cog_pitch_diameter": 169.8,
+    "cassette_largest_cog_outer_diameter": 177.0,
+    "cassette_smallest_cog_teeth": 11,
+    "cassette_smallest_cog_pitch_diameter": 44.5,
+    "cassette_smallest_cog_outer_diameter": 51.0,
+    "cassette_cog_thickness": 1.8,
+    "cassette_center_plane_z": 46.9,
+    "cassette_largest_cog_plane_z": 27.3,
+    "cassette_smallest_cog_plane_z": 66.5,
+    "chain_pitch": 12.7,
+    "chain_outer_width": 5.62,
+    "chain_roller_diameter": 7.75,
+    "rear_derailleur_bounding_box_lwh": [110, 60, 90]
+  },
+
+  "cockpit": {
+    "_provenance": "published bar dimensions (Salsa Cowbell, the Journeyer's stock flared drop bar); stem length is typical for this size",
+    "handlebar_model": "Salsa Cowbell 44",
+    "handlebar_width_c_to_c_at_drop_ends": 440,
+    "handlebar_width_c_to_c_at_tops_hoods": 410,
+    "handlebar_reach": 68,
+    "handlebar_drop": 115,
+    "handlebar_flare_deg": 12,
+    "handlebar_ramp_angle_deg": 12,
+    "handlebar_clamp_diameter": 31.8,
+    "handlebar_clamp_area_length": 140,
+    "handlebar_tube_diameter_at_tops_and_drops": 23.8,
+    "handlebar_drop_tail_length_below_hook": 80,
+    "stem_length": 90,
+    "stem_angle_deg": -7,
+    "stem_bar_clamp_diameter": 31.8,
+    "stem_steerer_clamp_diameter": 28.6,
+    "stem_stack_height": 40,
+    "headset_spacers_under_stem": 20,
+    "headset_top_cap_stack": 10,
+    "brake_lever_hood_length": 130,
+    "brake_lever_hood_height_above_bar_top": 22,
+    "brake_lever_blade_length": 95,
+    "bar_tape_thickness": 3.0
+  },
+
+  "saddle_and_post": {
+    "_provenance": "standard; seatpost diameter is published",
+    "seatpost_diameter": 27.2,
+    "seatpost_total_length": 350,
+    "seatpost_setback": 20,
+    "seatpost_exposed_length": 200,
+    "seatpost_insertion_depth": 150,
+    "saddle_length": 270,
+    "saddle_width_max": 143,
+    "saddle_nose_width": 40,
+    "saddle_shell_thickness": 25,
+    "saddle_rail_diameter": 7,
+    "saddle_rail_spacing_z": 44,
+    "saddle_rail_usable_length": 70,
+    "saddle_top_to_rail_clamp_center": 50,
+    "saddle_height_from_bb_along_seat_tube": 740,
+    "saddle_top_xyz_from_bb": [-236.4, 707.7, 0],
+    "saddle_top_height_above_ground": 993.7
+  },
+
+  "mounts_and_bosses": {
+    "_provenance": "published mount inventory from Salsa's frameset spec; positions are standard/estimated within 10mm",
+    "boss_thread": "M5 x 0.8",
+    "boss_pair_spacing_standard": 64,
+    "three_pack_boss_spacing": 64,
+    "three_pack_total_span": 128,
+    "down_tube_bottle_inside_triangle": {
+      "count": 2,
+      "lower_boss_distance_from_bb_along_down_tube": 190,
+      "face": "upper/inside face of down tube"
+    },
+    "seat_tube_bottle_inside_triangle": {
+      "count": 2,
+      "lower_boss_distance_from_bb_along_seat_tube": 165,
+      "face": "front face of seat tube"
+    },
+    "third_bottle_or_cargo_under_down_tube": {
+      "count": 2,
+      "lower_boss_distance_from_bb_along_down_tube": 250,
+      "face": "underside of down tube"
+    },
+    "top_tube_bag_bosses": {
+      "count": 2,
+      "spacing": 50,
+      "front_boss_distance_behind_head_tube_along_top_tube": 60,
+      "face": "top face of top tube"
+    },
+    "fork_three_pack": {
+      "count_per_leg": 3,
+      "legs": 2,
+      "spacing": 64,
+      "lowest_boss_height_above_front_axle": 165,
+      "face": "outboard face of each fork leg"
+    },
+    "fork_lowrider_rack_bosses": {
+      "count_per_leg": 2,
+      "spacing": 70,
+      "lower_boss_height_above_front_axle": 120,
+      "face": "outboard face of each fork leg"
+    },
+    "fork_crown_fender_hole": {
+      "position": "rear of fork crown, on the steering axis, approximately 25mm below the crown race"
+    },
+    "rear_rack_mounts": {
+      "dropout_eyelets": "at rear dropout, 12mm behind and 10mm below the axle center",
+      "seatstay_eyelets_distance_below_seat_cluster_along_seatstay": 35
+    },
+    "fender_mounts": {
+      "chainstay_bridge_distance_behind_bb": 90,
+      "seatstay_bridge_distance_above_rear_axle_along_seatstay": 175
+    }
+  },
+
+  "frame_hardware": {
+    "_provenance": "published",
+    "bottom_bracket_standard": "68mm BSA threaded",
+    "front_axle": "12 x 100mm thru-axle, M12 x 1.5, 120mm length",
+    "rear_axle": "12 x 142mm thru-axle, M12 x 1.0, 169mm length",
+    "brake_standard": "flat mount",
+    "rear_rotor_native": 140,
+    "rear_rotor_max": 160,
+    "front_rotor_native": 160,
+    "front_rotor_max": 180,
+    "headset": "FSA No.42 ACB IS-2, IS41 upper / IS52 lower, 40mm crown race",
+    "max_tire_clearance_700c": 50,
+    "max_tire_clearance_650b": 50,
+    "dropper_post_routing": "internal"
+  }
+}

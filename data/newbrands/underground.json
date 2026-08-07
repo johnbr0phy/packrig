@@ -1,0 +1,4066 @@
+[
+  {
+    "name": "Venture Handmade",
+    "origin": "Durango, Colorado, USA",
+    "aesthetic": "The former Bedrock Bags, rebuilt under a new name: crisp welded-look rolltops in saturated single-colour X-Pac with contrasting bindings, sold as named colour recipes (Stealth Mode, Desert Campfire, Mountain Sunrise, Alpine Tundra, Space Cowboy) rather than plain swatches.",
+    "palette": [
+      "#1c1c1e",
+      "#9e3418",
+      "#2fa39b"
+    ],
+    "fabric": "X-Pac laminate / recycled-content waterproof sailcloth, HDPE skidplates, internal framesheets",
+    "products": [
+      {
+        "slot": "seatpack",
+        "line": "Bravo",
+        "name": "Bravo Seat Bag",
+        "size": "One Size (4.5-7L)",
+        "liters": 7,
+        "dims_cm": {
+          "len": 33.5,
+          "hgt": 16.5,
+          "wid": 16.5
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "WEIGHT: 13.9oz/396g, true measured VOLUME: 4.5-7L, depending how far you roll it down, true measured DIMENSIONS: 6.5\"W x 12-16\"L x 6.5\"H",
+        "dims_note": "Length quoted 12-16in is rolled-to-unrolled; packed len = 12 + 0.3*(16-12) = 13.2in = 33.5cm. Width and height are fixed at 6.5in = 16.5cm. liters holds the maker's 7L maximum, so the litre figure is the unrolled one while dims_cm is the packed estimate.",
+        "colors": [
+          "#1c1c1e",
+          "#9e3418",
+          "#1f5f8b"
+        ],
+        "src": "https://www.venturehandmade.com/gear/p/bravo-seat-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 1,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "saddle rails + seatpost, RailWing V2 anti-sway, Wolf Tooth seatpost clamp included",
+          "colorways": [
+            {
+              "name": "Stealth Mode",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Desert Campfire",
+              "hex": "#9e3418"
+            },
+            {
+              "name": "Mountain Sunrise",
+              "hex": "#e0a020"
+            },
+            {
+              "name": "Alpine Tundra",
+              "hex": "#1e4635"
+            },
+            {
+              "name": "Space Cowboy",
+              "hex": "#4a2a6b"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/71047890-89a1-405a-ad5d-e1777abf299b/Bravo+1.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/9cdae81a-5fea-46d2-9b79-b6e2fe2f2f5b/Bravo+10+Stealth+Mode.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/2b8a5cc8-74f7-4df3-a9f1-2f0b58daaf0a/Bravo+11+Desert+Campfire.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/627ab921-202c-4045-b552-7ec481ea2397/Bravo+12+Mountain+Sunrise.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/37eadc61-b2d2-4832-9bd7-9365a546255e/Bravo+13+Alpine+Tundra.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Charlie",
+        "name": "Charlie Seat Bag",
+        "size": "One Size (6-10L)",
+        "liters": 10,
+        "dims_cm": {
+          "len": 39.4,
+          "hgt": 17.8,
+          "wid": 19.1
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "WEIGHT: 15.5oz/440g, true measured VOLUME: 6-10L, depending on how far you roll it down, true measured DIMENSIONS: 7.5\"W x 14-19\"L x 7\"H",
+        "dims_note": "Length 14-19in is rolled-to-unrolled; packed len = 14 + 0.3*(19-14) = 15.5in = 39.4cm. liters is the 10L unrolled maximum.",
+        "colors": [
+          "#1c1c1e",
+          "#e0a020",
+          "#1e4635"
+        ],
+        "src": "https://www.venturehandmade.com/gear/p/charlie-seat-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 1,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "saddle rails + seatpost, RailWing V2 anti-sway",
+          "colorways": [
+            {
+              "name": "Stealth Mode",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Desert Campfire",
+              "hex": "#9e3418"
+            },
+            {
+              "name": "Mountain Sunrise",
+              "hex": "#e0a020"
+            },
+            {
+              "name": "Alpine Tundra",
+              "hex": "#1e4635"
+            },
+            {
+              "name": "Space Cowboy",
+              "hex": "#4a2a6b"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/3265af8d-00bb-4692-89d7-cc4416a89322/Charlie+9+Stealth+Mode.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/b444cc85-e1f7-465c-b6ff-aed3d7d459a8/Charlie+10+Desert+Campfire.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/33b393f0-16b0-4585-9978-1fc7af6b5641/Charlie+11+Mountain+Sunrise.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/48551bb3-39e7-4e84-9fcf-2362569619e1/Charlie+12+Alpine+Tundra.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/ecb4d266-d3c0-4ef7-9128-16077bb4ba03/Charlie+13+Space+Cowboy.jpg"
+        ]
+      },
+      {
+        "slot": "barroll",
+        "line": "Delta",
+        "name": "Delta Handlebar Bag",
+        "size": "One Size (10.5L max)",
+        "liters": 10.5,
+        "dims_cm": {
+          "len": 53.8,
+          "hgt": 14.0,
+          "wid": 14.0
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "VOLUME: 7-9L for the main bag, 1.5L pocket (10.5L max total) DIMENSIONS: 20-24\"W x 5.5\" diameter",
+        "dims_note": "Width 20-24in is rolled-to-unrolled; packed len = 20 + 0.3*(24-20) = 21.2in = 53.8cm. hgt and wid both taken from the stated 5.5in diameter. liters is the 10.5L combined maximum including the 1.5L pocket.",
+        "colors": [
+          "#1c1c1e",
+          "#9e3418",
+          "#4a2a6b"
+        ],
+        "src": "https://www.venturehandmade.com/gear/p/delta-handlebar-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 2,
+          "pockets": [
+            {
+              "face": "front",
+              "type": "zip"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "direct to handlebar, wraps the steering axis, replaceable head tube plate",
+          "colorways": [
+            {
+              "name": "Stealth Mode",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Desert Campfire",
+              "hex": "#9e3418"
+            },
+            {
+              "name": "Mountain Sunrise",
+              "hex": "#e0a020"
+            },
+            {
+              "name": "Alpine Tundra",
+              "hex": "#1e4635"
+            },
+            {
+              "name": "Space Cowboy",
+              "hex": "#4a2a6b"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/171df3c0-5b2b-48fe-96ed-0a7344db34df/Delta+6.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/2c700f42-4537-429a-8476-49800ebbd3de/Delta+14+Stealth+Mode.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/42fc2424-9f90-41f4-bbd2-7ae1b04cbb40/Delta+15+Desert+Campfire.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/d30e5a15-08b7-48cd-8351-4269bb920084/Delta+16+Mountain+Sunrise.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/39ba948a-728d-447e-b45a-d63e88b0b018/Delta+18+Space+Cowboy.jpg"
+        ]
+      },
+      {
+        "slot": "barroll",
+        "line": "Kilo",
+        "name": "Kilo Handlebar Bag",
+        "size": "One Size (12.5L max)",
+        "liters": 12.5,
+        "dims_cm": {
+          "len": 46.0,
+          "hgt": 17.8,
+          "wid": 17.8
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "VOLUME: 8-11L for the main bag depending on how far you roll it down, 1.5L for the pocket (12.5L max total), true measured DIMENSIONS: 16-23\"W x 7\" diameter",
+        "dims_note": "Width 16-23in is rolled-to-unrolled; packed len = 16 + 0.3*(23-16) = 18.1in = 46.0cm. hgt and wid from the stated 7in diameter. liters is the 12.5L maximum including the 1.5L pocket.",
+        "colors": [
+          "#1c1c1e",
+          "#e0a020",
+          "#2fa39b"
+        ],
+        "src": "https://www.venturehandmade.com/gear/p/kilo-handlebar-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 2,
+          "pockets": [
+            {
+              "face": "front",
+              "type": "zip"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "direct to handlebar, wraps the steering axis",
+          "colorways": [
+            {
+              "name": "Stealth Mode",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Desert Campfire",
+              "hex": "#9e3418"
+            },
+            {
+              "name": "Mountain Sunrise",
+              "hex": "#e0a020"
+            },
+            {
+              "name": "Alpine Tundra",
+              "hex": "#1e4635"
+            },
+            {
+              "name": "Space Cowboy",
+              "hex": "#4a2a6b"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/1d63650c-e778-41d6-8279-3d887cec9659/Kilo+10+Stealth+Mode.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/b36fc085-8d6f-402b-8cb1-a79966ebb3fc/Kilo+11+Desert+Campfire.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/943987dc-a119-4fd6-a48d-244d8d0cadc5/Kilo+12+Mountain+Sunrise.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/fc0ea768-2f99-450a-bd2c-05038e974ce4/Kilo+13+Alpine+Tundra.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/61c52d54-2d8c-49ce-8558-118a85ff4d7b/Kilo+14+Space+Cowboy.jpg"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Cache",
+        "name": "Cache Tank Bag",
+        "size": "One Size (1L)",
+        "liters": 1,
+        "dims_cm": {
+          "len": 25.4,
+          "hgt": 12.7,
+          "wid": 8.9
+        },
+        "dims_state": "packed",
+        "dims_raw": "WEIGHT: 6.5oz/187g VOLUME: 1L, true measured DIMENSIONS: 3.5\"W x 10\"L x 5\"H",
+        "dims_note": "Fixed padded box, no roll or expansion, so the printed figures convert directly: 10in len, 5in hgt, 3.5in wid.",
+        "colors": [
+          "#1c1c1e",
+          "#9e3418",
+          "#1f5f8b"
+        ],
+        "src": "https://www.venturehandmade.com/gear/p/cache-tank-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "top",
+              "type": "mesh"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "top tube velcro straps only, no stem attachment",
+          "colorways": [
+            {
+              "name": "Stealth Mode",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Desert Campfire",
+              "hex": "#9e3418"
+            },
+            {
+              "name": "Mountain Sunrise",
+              "hex": "#e0a020"
+            },
+            {
+              "name": "Alpine Tundra",
+              "hex": "#1e4635"
+            },
+            {
+              "name": "Space Cowboy",
+              "hex": "#4a2a6b"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/390d9319-e877-47ee-955b-9b78af8aad0a/Cache+13.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/d0dba637-d57e-40a8-ac6a-57a6d8c8889f/Cache+7+Stealth+Mode.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/66f0962e-a31d-4d64-b4a8-cf29512ae217/Cache+8+Desert+Campfire.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/ce618098-87cd-4e29-9082-f721c5b2f405/Cache+9+Mountain+Sunrise.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/dfa3d702-b1ca-43f8-a41f-d55433768e49/Cache+11+Space+Cowboy.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "EDC",
+        "name": "EDC Mini Frame Bag (Large)",
+        "size": "Large (1.4L)",
+        "liters": 1.4,
+        "dims_cm": {
+          "len": 25.4,
+          "hgt": 19.1,
+          "wid": 6.4
+        },
+        "dims_state": "packed",
+        "dims_raw": "VOLUME: Small, 0.75L - Medium, 1L - Large, 1.4L, true measured. DIMENSIONS: Large, 2.5\"W, 10\" top, 9.5\" bottom, 2\" front, 7.5\" back",
+        "dims_note": "Wedge shape quoted as four edge lengths. len taken from the 10in top edge, hgt from the 7.5in rear edge (the tall side), wid from the 2.5in spine. Small and Medium sizes also exist; this entry is the Large.",
+        "colors": [
+          "#1c1c1e",
+          "#4a5057",
+          "#7f6a4f"
+        ],
+        "src": "https://www.venturehandmade.com/gear/p/edc-mini-frame-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "top tube and seat tube straps, front triangle apex",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Slate Gray",
+              "hex": "#4a5057"
+            },
+            {
+              "name": "Coyote Brown",
+              "hex": "#7f6a4f"
+            },
+            {
+              "name": "Evergreen",
+              "hex": "#1e4635"
+            },
+            {
+              "name": "Cayenne",
+              "hex": "#9e3418"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/b822dc39-f2fc-43f5-a390-c3ea6a775aaf/Fabric+Colors.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_full",
+        "line": "Alpha",
+        "name": "Alpha Custom Frame Bag",
+        "size": "Made to measure (2-16L)",
+        "liters": 8,
+        "dims_cm": {
+          "len": 55,
+          "hgt": 30,
+          "wid": 6.4
+        },
+        "dims_state": "unknown",
+        "dims_raw": "VOLUME: Varies depending on the size of the bag, but generally between 2-16L. DIMENSIONS: I make most bags 2.5\" wide at the spine, which translates to 3-5\" wide in the middle, depending on the frame size.",
+        "dims_note": "Made to measure, so no fixed size exists. Only the 2.5in spine width is a real published number (converted to 6.4cm wid). len and hgt are my own estimate of a mid-range full-triangle bag consistent with the middle of the stated 2-16L range; liters likewise set to a mid-range 8L. Treat len and hgt as placeholders, not maker data.",
+        "colors": [
+          "#1c1c1e",
+          "#1e4635",
+          "#e0a020"
+        ],
+        "src": "https://www.venturehandmade.com/gear/p/custom-frame-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "triangular",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "zip"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "straps or full/partial bolt-on to frame bosses",
+          "custom": true,
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Evergreen",
+              "hex": "#1e4635"
+            },
+            {
+              "name": "Marigold",
+              "hex": "#e0a020"
+            },
+            {
+              "name": "Southwest Turquoise",
+              "hex": "#2fa39b"
+            },
+            {
+              "name": "Deep Purple",
+              "hex": "#4a2a6b"
+            },
+            {
+              "name": "Blaze Orange",
+              "hex": "#e2571e"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/0ac36fda-2b4c-4210-8ba0-e9f40c23746d/Alpha+7.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/287f3485-cfff-4b71-8887-77c12dba17af/Alpha+6.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/09fa970c-5b84-46a1-9238-fea5e7a271de/Alpha+19.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/0ff4dfd4-07a6-40d0-85a5-f07d74af741a/Alpha+21c.jpg"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Sierra",
+        "name": "Sierra SL Pannier",
+        "size": "One Size (10L each, 20L pair)",
+        "liters": 10,
+        "dims_cm": {
+          "len": 25.4,
+          "hgt": 34.3,
+          "wid": 12.7
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "DIMENSIONS: 10\"W x 5\"D x 12-17\"H (each side). VOLUME: 20L for the pair. Weight 1 lb 13 oz/820g for the pair. 15 lbs maximum per side.",
+        "dims_note": "PAIR VOLUME TRAP: the 20L figure is for both bags, so liters holds the single-bag 10L. Height 12-17in is rolled-to-unrolled; packed hgt = 12 + 0.3*(17-12) = 13.5in = 34.3cm. len from the 10in fore-aft width, wid from the 5in depth. Listing ships two bags.",
+        "colors": [
+          "#1c1c1e",
+          "#1e4635",
+          "#9e3418"
+        ],
+        "src": "https://www.venturehandmade.com/gear/p/sierra-sl-panniers",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 2,
+          "mount": "strap-and-buckle to rack rails, no hooks",
+          "colorways": [
+            {
+              "name": "Stealth Mode",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Desert Campfire",
+              "hex": "#9e3418"
+            },
+            {
+              "name": "Mountain Sunrise",
+              "hex": "#e0a020"
+            },
+            {
+              "name": "Alpine Tundra",
+              "hex": "#1e4635"
+            },
+            {
+              "name": "Space Cowboy",
+              "hex": "#4a2a6b"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/24d1a8bc-28ac-4dce-9d23-f23f63755f7e/Sierra+2.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/29afc265-d721-48d9-b70a-d308b59f2fc6/Sierra+12+Stealth+Mode.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/3df8f27e-d7bc-400f-a66f-49e34893169d/Sierra+13+Desert+Campfire.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/29e8e5c8-a751-4338-b7ac-e1dfa47b7dbe/Sierra+14+Mountain+Sunrise.jpg",
+          "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/522a6af6-aa94-43ea-bada-045287806e5e/Sierra+15+Alpine+Tundra.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ron's Bikes",
+    "origin": "Connecticut / New England, USA",
+    "aesthetic": "Hard-body roll-top basket bags with a deliberately un-technical wardrobe: waxed cotton in burgundy, goldilocks and bone alongside cotton-faced X11 laminate, side pockets on shock cord, Voile straps and dowels instead of racks-only hardware.",
+    "palette": [
+      "#b99b6e",
+      "#6e2733",
+      "#5d5f43"
+    ],
+    "fabric": "Waxed cotton canvas / cotton-faced X11 laminate / occasional X-Pac RX30",
+    "products": [
+      {
+        "slot": "barbag",
+        "line": "Fabio's Chest",
+        "name": "Fabio's Chest LARGE",
+        "size": "Large",
+        "liters": 19,
+        "dims_cm": {
+          "len": 36.8,
+          "hgt": 22.9,
+          "wid": 22.9
+        },
+        "dims_state": "unknown",
+        "dims_raw": "main body 14.5\" wide / total width (body and pockets) 20\" / depth 9\" / rackless recommended clearance between bottom of bars and top of tires 10.5\"",
+        "dims_note": "The page publishes width and depth but NO height and NO litre figure. len 14.5in and wid 9in are real. hgt is my estimate at 9in, matched to the depth on the assumption of a roughly square end profile, and liters is back-calculated from that box. Both are estimates. Total width including the side pockets is 20in (50.8cm) if the wider footprint matters.",
+        "colors": [
+          "#3a3a38",
+          "#6e2733",
+          "#5d5f43"
+        ],
+        "src": "https://ronsbikes.com/products/large-fabios-chest",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "front or rear rack (Shovel Research Rod Steward, Nitto M1, Mica rear support, Velo Orange Constructeur); rear use needs a dowel and Voile nano straps",
+          "colorways": [
+            {
+              "name": "Charcoal Waxed",
+              "hex": "#3a3a38"
+            },
+            {
+              "name": "Burgundy Waxed",
+              "hex": "#6e2733"
+            },
+            {
+              "name": "Olive Waxed",
+              "hex": "#5d5f43"
+            },
+            {
+              "name": "Tan Waxed",
+              "hex": "#b99b6e"
+            },
+            {
+              "name": "Goldilocks Waxed",
+              "hex": "#c8a15c"
+            },
+            {
+              "name": "Olive X11",
+              "hex": "#58604a"
+            },
+            {
+              "name": "Lavender X-Pac",
+              "hex": "#9b91bd"
+            },
+            {
+              "name": "Goldenrod X-Pac",
+              "hex": "#c9932c"
+            },
+            {
+              "name": "Tan X11",
+              "hex": "#b49a72"
+            },
+            {
+              "name": "Black X11",
+              "hex": "#1c1c1e"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0961.jpg",
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0454.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Fabio's Chest",
+        "name": "Fabio's Chest SMALL",
+        "size": "Small",
+        "liters": 14,
+        "dims_cm": {
+          "len": 26.7,
+          "hgt": 22.9,
+          "wid": 22.9
+        },
+        "dims_state": "unknown",
+        "dims_raw": "main body 10.5\" wide / total width (body and pockets) 16\" / depth 9\" / rackless recommended clearance between bottom of bars and top of tires 10.5\"",
+        "dims_note": "Same gap as the Large: width and depth published, no height and no litre figure. len 10.5in and wid 9in are real; hgt estimated at 9in to match the depth, and liters back-calculated from that box. The Large page states the Large is the same height as the Small, so the two share whatever the true height is.",
+        "colors": [
+          "#b99b6e",
+          "#6e2733",
+          "#9b91bd"
+        ],
+        "src": "https://ronsbikes.com/products/small-fabios-chest-coming-in-march",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "front or rear rack, or rackless off the bars with 10.5in tyre clearance",
+          "colorways": [
+            {
+              "name": "Olive X11",
+              "hex": "#58604a"
+            },
+            {
+              "name": "Black Tulips RX30",
+              "hex": "#262429"
+            },
+            {
+              "name": "Goldenrod X-Pac",
+              "hex": "#c9932c"
+            },
+            {
+              "name": "Lavender X-Pac",
+              "hex": "#9b91bd"
+            },
+            {
+              "name": "Charcoal Waxed",
+              "hex": "#3a3a38"
+            },
+            {
+              "name": "Tan Waxed Canvas",
+              "hex": "#b99b6e"
+            },
+            {
+              "name": "Olive Waxed Canvas",
+              "hex": "#5d5f43"
+            },
+            {
+              "name": "Burgundy Waxed Canvas",
+              "hex": "#6e2733"
+            },
+            {
+              "name": "Tan X11",
+              "hex": "#b49a72"
+            },
+            {
+              "name": "Black X11",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Goldilocks Waxed Canvas",
+              "hex": "#c8a15c"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0934.jpg",
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0462.jpg",
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0584-2.jpg",
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0594.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Fabio's Chest",
+        "name": "Fabio's Chest MINI",
+        "size": "Mini (11L)",
+        "liters": 11,
+        "dims_cm": {
+          "len": 25.4,
+          "hgt": 17.8,
+          "wid": 15.2
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "Body is 10\" wide, 12\" with side pockets full. 7\" in height and 6\" wide from the side. 11 liters of roll top hard bodied carrying capacity.",
+        "dims_note": "Only Fabio's Chest size with a published litre figure. The 10 x 7 x 6in body works out to about 6.9L, so the quoted 11L must include the rolled-up extension and the side pockets. dims_cm holds the rolled-down body; liters holds the maker's 11L maximum.",
+        "colors": [
+          "#9b91bd",
+          "#c9932c",
+          "#b99b6e"
+        ],
+        "src": "https://ronsbikes.com/products/fabios-chest-xs-coming-this-friday",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "handlebar, drop bars down to 42cm; split back buckles and adjustable flap; Fidlock shock-cord closure for basket mode",
+          "colorways": [
+            {
+              "name": "Tan X11",
+              "hex": "#b49a72"
+            },
+            {
+              "name": "Olive X11",
+              "hex": "#58604a"
+            },
+            {
+              "name": "Lavender X-Pac",
+              "hex": "#9b91bd"
+            },
+            {
+              "name": "Goldenrod X-Pac",
+              "hex": "#c9932c"
+            },
+            {
+              "name": "Charcoal Waxed",
+              "hex": "#3a3a38"
+            },
+            {
+              "name": "Tan Waxed",
+              "hex": "#b99b6e"
+            },
+            {
+              "name": "Burgundy Waxed",
+              "hex": "#6e2733"
+            },
+            {
+              "name": "Black Tulip X-Pac",
+              "hex": "#262429"
+            },
+            {
+              "name": "Olive Waxed",
+              "hex": "#5d5f43"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0927_ec48af54-db22-453d-afb6-38a61f83b45e.jpg",
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0935.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Fabio's",
+        "name": "Fabio's Clap Trap",
+        "size": "One Size (3.7L)",
+        "liters": 3.7,
+        "dims_cm": {
+          "len": 25.4,
+          "hgt": 9.4,
+          "wid": 16.5
+        },
+        "dims_state": "unknown",
+        "dims_raw": "10\" at the bottom, 8.5\" at the top, and 6.5\" deep. this 3.7L hard bodied top opening reverse randoesque bag sack. 296g - 336g. made in Vermont USA",
+        "dims_note": "Trapezoid quoted by bottom width (10in), top width (8.5in) and depth (6.5in) with NO height given. len uses the 10in bottom width, wid the 6.5in depth, and hgt is derived from the stated 3.7L against that footprint (about 3.7in / 9.4cm). The front of the bag is taller than the rear, so a single height is an approximation either way.",
+        "colors": [
+          "#1c1c1e",
+          "#5d5f43",
+          "#ded6c4"
+        ],
+        "src": "https://ronsbikes.com/products/the-clap-trap",
+        "features": {
+          "closure": "flap",
+          "shape": "trapezoid",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "handlebar via two 9in Voile nano straps plus a head tube dongle; elastic drawcord loops over the stem",
+          "colorways": [
+            {
+              "name": "Black Waxed",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Olive Waxed",
+              "hex": "#5d5f43"
+            },
+            {
+              "name": "Tan Waxed",
+              "hex": "#b99b6e"
+            },
+            {
+              "name": "Goldilocks Waxed",
+              "hex": "#c8a15c"
+            },
+            {
+              "name": "Bone Waxed",
+              "hex": "#ded6c4"
+            },
+            {
+              "name": "Navy Blue Waxed",
+              "hex": "#26344c"
+            },
+            {
+              "name": "Burgundy Waxed",
+              "hex": "#6e2733"
+            },
+            {
+              "name": "Grey Blue X11",
+              "hex": "#6b7a8a"
+            },
+            {
+              "name": "Black X11",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Pink Waxed",
+              "hex": "#d98fa0"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0507.jpg",
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0347.jpg",
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF9851.jpg",
+          "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF2091.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Andrew The Maker",
+    "origin": "Kansas City, Missouri, USA",
+    "aesthetic": "A one-man Cordura riot: two dozen stock colours including Baby Leopard, Zebra and four camos, yellow packcloth linings on everything, and custom frame bags laced or bolted to your exact triangle.",
+    "palette": [
+      "#c1272d",
+      "#e8547f",
+      "#f2d024"
+    ],
+    "fabric": "CORDURA / Challenge Outdoor / X-Pac VX42, yellow nylon packcloth interior",
+    "products": [
+      {
+        "slot": "toptube",
+        "line": "ATM",
+        "name": "ATM Top Tube Bag",
+        "size": "One Size",
+        "liters": 1.6,
+        "dims_cm": {
+          "len": 24.1,
+          "hgt": 11.4,
+          "wid": 5.7
+        },
+        "dims_state": "packed",
+        "dims_raw": "The bag measures 2.25\"W, 9.5\"L, and 4.5\"H. The main strap will be 5.5\"- 6\" from the headset depending on the frame.",
+        "dims_note": "Rigid zip bag with a plastic stiffener, so the printed figures convert straight across. No litre figure is published; liters is derived from the 9.5 x 4.5 x 2.25in box (about 1.6L) and is therefore mine, not the maker's.",
+        "colors": [
+          "#c1272d",
+          "#1c1c1e",
+          "#f2d024"
+        ],
+        "src": "https://www.andrewthemaker.com/shop/toptubebag",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": true,
+          "cord": false,
+          "valve": false,
+          "mount": "top tube straps or bolt-on (oblong holes, Wolftooth B-Rad compatible); cable pass-through at the front lower corner",
+          "colorways": [
+            {
+              "name": "Red",
+              "hex": "#c1272d"
+            },
+            {
+              "name": "Hot Pink",
+              "hex": "#e8547f"
+            },
+            {
+              "name": "Royal Blue",
+              "hex": "#23479c"
+            },
+            {
+              "name": "Bright Green",
+              "hex": "#3fae49"
+            },
+            {
+              "name": "Safety Orange",
+              "hex": "#f45c17"
+            },
+            {
+              "name": "Turquoise",
+              "hex": "#2fbfae"
+            },
+            {
+              "name": "Bright Yellow",
+              "hex": "#f2d024"
+            },
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Charcoal Grey",
+              "hex": "#4a4a4c"
+            },
+            {
+              "name": "Baby Leopard",
+              "hex": "#c9a06a"
+            },
+            {
+              "name": "Zebra",
+              "hex": "#e8e6e1"
+            },
+            {
+              "name": "Woodland Camo",
+              "hex": "#4b5340"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/588bf33df7e0abc8e7268e93/1702470762612-1NA12OO6N6557NKNINWT/_DSC0422+copy.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "BarBar",
+        "name": "BarBar Bag (10\")",
+        "size": "10 inch",
+        "liters": 2.1,
+        "dims_cm": {
+          "len": 25.4,
+          "hgt": 10.2,
+          "wid": 10.2
+        },
+        "dims_state": "packed",
+        "dims_raw": "It comes in two different widths, 8\" and 10\" with a diameter around 4\".",
+        "dims_note": "Cylinder: len from the 10in width, hgt and wid both from the approximate 4in diameter. No litre figure published; liters derived from that cylinder (about 2.1L). An 8in version exists at the same diameter.",
+        "colors": [
+          "#c1272d",
+          "#4a4a4c",
+          "#2fbfae"
+        ],
+        "src": "https://www.andrewthemaker.com/shop/barbar-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "handlebar and head tube straps, adjustable positions",
+          "colorways": [
+            {
+              "name": "Red",
+              "hex": "#c1272d"
+            },
+            {
+              "name": "Hot Pink",
+              "hex": "#e8547f"
+            },
+            {
+              "name": "Light Pink",
+              "hex": "#f2b6c6"
+            },
+            {
+              "name": "Royal Blue",
+              "hex": "#23479c"
+            },
+            {
+              "name": "Teal",
+              "hex": "#1f8a8a"
+            },
+            {
+              "name": "Gold Yellow",
+              "hex": "#d4a017"
+            },
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Light Brown",
+              "hex": "#a4763f"
+            },
+            {
+              "name": "Splatter",
+              "hex": "#8b8d8f"
+            },
+            {
+              "name": "X-Pac Lite Skin LS42",
+              "hex": "#9ba1a6"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/588bf33df7e0abc8e7268e93/1702481688308-RRA4VX5ZI0UPZ3TWPJAQ/_DSC0447+copy.jpg",
+          "https://images.squarespace-cdn.com/content/v1/588bf33df7e0abc8e7268e93/1702481687259-9J2OA6L0EC5MRHNJJZX2/_DSC0446+copy.jpg"
+        ]
+      },
+      {
+        "slot": "forkbag",
+        "line": "Many Things Sack",
+        "name": "Many Things Sack v1.2",
+        "size": "Standard (sold as a pair)",
+        "liters": 3.4,
+        "dims_cm": {
+          "len": 8.9,
+          "hgt": 25.4,
+          "wid": 16.5
+        },
+        "dims_state": "packed",
+        "dims_raw": "Standard 10\" h x 6.5-5.5\" tapered w x 3.5\" d",
+        "dims_note": "PAIR LISTING: every purchase option on the page is a 'Custom Pair of Manythings Sacks', so bagsPerListing is 2 and these dims and litres are for ONE bag. len from the 3.5in depth, hgt from the 10in height, wid from the wider 6.5in end of the taper. No litre figure published; liters derived from the tapered box (about 3.4L). It is a roll-top, so it stuffs beyond this.",
+        "colors": [
+          "#4e5545",
+          "#1c1c1e",
+          "#f45c17"
+        ],
+        "src": "https://www.andrewthemaker.com/shop/many-things-sack",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 1,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": true,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 2,
+          "mount": "4-point: sleeve over a King Many Things Cage, front compression strap through the lower cage loop, two velcro fork straps. Pannier attachment option available.",
+          "colorways": [
+            {
+              "name": "Olive",
+              "hex": "#6b6b3f"
+            },
+            {
+              "name": "Ranger Green",
+              "hex": "#4e5545"
+            },
+            {
+              "name": "Safety Orange",
+              "hex": "#f45c17"
+            },
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Dark Brown",
+              "hex": "#4c3320"
+            },
+            {
+              "name": "Digital Camo",
+              "hex": "#7d8471"
+            },
+            {
+              "name": "Multicam",
+              "hex": "#8a7a5c"
+            },
+            {
+              "name": "Urban Camo",
+              "hex": "#8b8d8f"
+            },
+            {
+              "name": "X-Pac VX42 Black",
+              "hex": "#232326"
+            },
+            {
+              "name": "X-Pac Liteskin LS42 Heather Grey",
+              "hex": "#9ba1a6"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/588bf33df7e0abc8e7268e93/1650024813518-G5VD8RWB9YWPWFPS513N/front.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Granny's Pantry",
+        "name": "Granny's Pantry",
+        "size": "One Size",
+        "liters": 5,
+        "dims_cm": {
+          "len": 22,
+          "hgt": 15,
+          "wid": 15
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "The page publishes no dimensions and no litre figure at all. It is described as 'kinda like a small Rando Style bag but, more stable and smaller', with a Klickfix bracket rated to 14lb. All three dims_cm values and the 5L figure are my estimate for a small rando bag and should not be treated as maker data.",
+        "colors": [
+          "#1c1c1e",
+          "#4c3320",
+          "#c1272d"
+        ],
+        "src": "https://www.andrewthemaker.com/shop/grannys-pantry",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "top",
+              "type": "velcro"
+            },
+            {
+              "face": "front",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "Klickfix quick-release bracket with aluminium rail, or strap version; shock cord closes the lid around the stem",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Dark Brown",
+              "hex": "#4c3320"
+            },
+            {
+              "name": "Red",
+              "hex": "#c1272d"
+            },
+            {
+              "name": "Ranger Green",
+              "hex": "#4e5545"
+            },
+            {
+              "name": "Charcoal Grey",
+              "hex": "#4a4a4c"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/588bf33df7e0abc8e7268e93/1557695567839-TWBCSDCIS01HTA17CO8M/main+edited.jpg",
+          "https://images.squarespace-cdn.com/content/v1/588bf33df7e0abc8e7268e93/1557695672275-WW6IOCWB3PBVARZF91SC/side+edit.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_full",
+        "line": "Custom Frame Bag",
+        "name": "Full Single Compartment Custom Frame Bag",
+        "size": "Made to measure",
+        "liters": 8,
+        "dims_cm": {
+          "len": 55,
+          "hgt": 30,
+          "wid": 6
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "Fully custom to a frame template, so the page carries no dimensions and no litre figure. Every value here is my own mid-range full-triangle estimate, not maker data.",
+        "colors": [
+          "#1c1c1e",
+          "#c1272d",
+          "#23479c"
+        ],
+        "src": "https://www.andrewthemaker.com/shop/full-frame-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "triangular",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "zip"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "custom": true,
+          "mount": "straps, lace-up, bolt-on, or lace-up/bolt-on",
+          "colorways": [
+            {
+              "name": "Poppy Red",
+              "hex": "#d63b28"
+            },
+            {
+              "name": "Baby Blue",
+              "hex": "#8fc3e3"
+            },
+            {
+              "name": "Turquoise",
+              "hex": "#2fbfae"
+            },
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Pink Leopard",
+              "hex": "#d9a3ac"
+            },
+            {
+              "name": "Zebra",
+              "hex": "#e8e6e1"
+            },
+            {
+              "name": "Black Multicam",
+              "hex": "#33353a"
+            },
+            {
+              "name": "Urban Camo",
+              "hex": "#8b8d8f"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/588bf33df7e0abc8e7268e93/1485994041068-38PHKKSWIMLYEKA04B56/DSC03347_Mod.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Gravel Banger",
+        "name": "Gravel Banger Half Bag",
+        "size": "Made to measure",
+        "liters": 4,
+        "dims_cm": {
+          "len": 42,
+          "hgt": 16,
+          "wid": 6
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "Custom built to each frame; no dimensions or litre figure are published. All values here are my estimate of a typical half-frame bag, not maker data. Typical lead time is quoted at 12-16 weeks.",
+        "colors": [
+          "#1c1c1e",
+          "#4e5545",
+          "#f45c17"
+        ],
+        "src": "https://www.andrewthemaker.com/shop/gravel-banger-half-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "triangular",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "zip"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "custom": true,
+          "mount": "lacing, straps, or bolt-on with a machined aluminium stiffener",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Ranger Green",
+              "hex": "#4e5545"
+            },
+            {
+              "name": "Safety Orange",
+              "hex": "#f45c17"
+            },
+            {
+              "name": "Royal Blue",
+              "hex": "#23479c"
+            },
+            {
+              "name": "Multicam",
+              "hex": "#8a7a5c"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/588bf33df7e0abc8e7268e93/1485908087163-NOSC3M0OZ7COFWNIAGH2/DSC02462_Mod.jpg"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "ATM",
+        "name": "Rear TT Sack",
+        "size": "One Size",
+        "liters": 1,
+        "dims_cm": {
+          "len": 15,
+          "hgt": 10,
+          "wid": 6
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "No dimensions and no litre figure on the page; it is only described as filling the wedge between seat tube and top tube and fitting 'a phone, wallet, and some snacks'. All values are my estimate.",
+        "colors": [
+          "#1c1c1e",
+          "#d63b28",
+          "#8a7a5c"
+        ],
+        "src": "https://www.andrewthemaker.com/shop/rear-top-tube-sack",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "two straps at the seat tube / top tube junction, rear-facing",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Poppy Red",
+              "hex": "#d63b28"
+            },
+            {
+              "name": "Multicam",
+              "hex": "#8a7a5c"
+            },
+            {
+              "name": "Pink Leopard",
+              "hex": "#d9a3ac"
+            },
+            {
+              "name": "Liteskin 42 Heather Grey",
+              "hex": "#9ba1a6"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/588bf33df7e0abc8e7268e93/1702473359248-RDYBYS2ILZTUDD4OL661/_DSC0433+copy.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nuke Sunrise Bike Bags",
+    "origin": "Moab, Utah, USA",
+    "aesthetic": "Veteran-owned desert workshop, formerly Nuclear Sunrise Stitchworks. Every panel is a separate colour choice from a twenty-plus X-Pac range that runs to Zebra, Cheetah, Newspaper Rock, Topo Map and Mexi-blanket, over black or grey spines, with hi-viz paracord and glow-in-the-dark zip pulls.",
+    "palette": [
+      "#1c1c1e",
+      "#2f7fa8",
+      "#b7d43f"
+    ],
+    "fabric": "Dimension Polyant X-Pac VX-21 / VX-42, yellow 200d packcloth liner, closed-cell foam, CNC-machined ABS stiffeners",
+    "products": [
+      {
+        "slot": "stembag",
+        "line": "Silo",
+        "name": "Silo",
+        "size": "One Size",
+        "liters": 1.2,
+        "dims_cm": {
+          "len": 10.2,
+          "hgt": 15.2,
+          "wid": 10.2
+        },
+        "dims_state": "packed",
+        "dims_raw": "Specifications - 6\" tall, 4\" diameter. 70 to 80 grams depending on fabric.",
+        "dims_note": "Cylinder: hgt from the 6in height, len and wid both from the 4in diameter. No litre figure published; liters derived from that cylinder (about 1.2L).",
+        "colors": [
+          "#1c1c1e",
+          "#2f7fa8",
+          "#b7d43f"
+        ],
+        "src": "https://www.nukesunrise.com/store/p73/silo.html",
+        "features": {
+          "closure": "cinch",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "OneWrap velcro to any bar diameter plus 3/4in webbing around the fork crown to stop sway",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Grey",
+              "hex": "#6e7377"
+            },
+            {
+              "name": "Purple",
+              "hex": "#5b3a86"
+            },
+            {
+              "name": "Bahama Blue",
+              "hex": "#2f9fd0"
+            },
+            {
+              "name": "Ranger Green",
+              "hex": "#4e5545"
+            },
+            {
+              "name": "Ripstop Blue",
+              "hex": "#2f5f9e"
+            },
+            {
+              "name": "Red",
+              "hex": "#b7242c"
+            },
+            {
+              "name": "Neon Lime",
+              "hex": "#b7d43f"
+            },
+            {
+              "name": "Liteskin Grey",
+              "hex": "#9ba1a6"
+            },
+            {
+              "name": "Coyote Brown",
+              "hex": "#7f6a4f"
+            },
+            {
+              "name": "Neon Orange",
+              "hex": "#f45c17"
+            },
+            {
+              "name": "Spanish Teal",
+              "hex": "#1f7a78"
+            },
+            {
+              "name": "Zebra",
+              "hex": "#e8e6e1"
+            },
+            {
+              "name": "Topo Map",
+              "hex": "#c8bfa4"
+            },
+            {
+              "name": "Mexi-blanket",
+              "hex": "#9e4b3f"
+            }
+          ]
+        },
+        "images": [
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p73_i1_w1080.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p73_i2_w1080.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p73_i3_w1080.png"
+        ]
+      },
+      {
+        "slot": "stembag",
+        "line": "Silo",
+        "name": "Giant Silo",
+        "size": "Giant",
+        "liters": 2.4,
+        "dims_cm": {
+          "len": 12.7,
+          "hgt": 19.1,
+          "wid": 12.7
+        },
+        "dims_state": "packed",
+        "dims_raw": "Specs - Main body 7.5\" tall, 5\" diameter. Cinch top extends 3\" at the top.",
+        "dims_note": "hgt is the 7.5in MAIN BODY only; the cinch top adds a further 3in (7.6cm) when extended, which is not included here. len and wid from the 5in diameter. No litre figure published; liters derived from the main-body cylinder (about 2.4L). Cross-section is D-shaped with a flat panel on the bar side, so a true cylinder slightly overstates it.",
+        "colors": [
+          "#6e7377",
+          "#7f6a4f",
+          "#1c1c1e"
+        ],
+        "src": "https://www.nukesunrise.com/store/p33/giantsilo.html",
+        "features": {
+          "closure": "cinch",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": true,
+          "cord": true,
+          "valve": false,
+          "mount": "handlebar with flat D-panel plus left or right fork crown webbing strap; PALS/MOLLE webbing on the attachment panel",
+          "colorways": [
+            {
+              "name": "Grey",
+              "hex": "#6e7377"
+            },
+            {
+              "name": "Coyote Brown",
+              "hex": "#7f6a4f"
+            },
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Yellow",
+              "hex": "#e8c62a"
+            },
+            {
+              "name": "Bahama Blue",
+              "hex": "#2f9fd0"
+            },
+            {
+              "name": "White",
+              "hex": "#f2f2ef"
+            },
+            {
+              "name": "Multicam",
+              "hex": "#8a7a5c"
+            },
+            {
+              "name": "Ranger Green",
+              "hex": "#4e5545"
+            },
+            {
+              "name": "Hot Pink",
+              "hex": "#e8547f"
+            },
+            {
+              "name": "Neon Lime",
+              "hex": "#b7d43f"
+            },
+            {
+              "name": "Rock Art",
+              "hex": "#a8845c"
+            }
+          ]
+        },
+        "images": [
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p33_i40_w3375.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p33_i41_w3375.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p33_i42_w3375.png"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Titan",
+        "name": "Titan Tank",
+        "size": "One Size",
+        "liters": 1.3,
+        "dims_cm": {
+          "len": 22.9,
+          "hgt": 11.4,
+          "wid": 5.1
+        },
+        "dims_state": "packed",
+        "dims_raw": "SPECS - 9\" long, 4.5\" tall, 2\" wide. 2\" main strap and 3/4\" Velcro OneWrap with foam spacer included.",
+        "dims_note": "Foam-stiffened bag with a hidden zip, so the printed figures convert directly. No litre figure published; liters derived from the 9 x 4.5 x 2in box (about 1.3L).",
+        "colors": [
+          "#1c1c1e",
+          "#2f9fd0",
+          "#b7242c"
+        ],
+        "src": "https://www.nukesunrise.com/store/p54/titan-top-tube-tank.html",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "adjustable-position 3/4in velcro OneWrap plus 2in sticky-back cinch strap, or bolt-on with washers and stiffener; also runs on the seatpost",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Newspaper Rock",
+              "hex": "#8a7f6b"
+            },
+            {
+              "name": "Cheetah",
+              "hex": "#c9a06a"
+            },
+            {
+              "name": "Zebra",
+              "hex": "#e8e6e1"
+            },
+            {
+              "name": "Topo Map",
+              "hex": "#c8bfa4"
+            },
+            {
+              "name": "Mexi-blanket",
+              "hex": "#9e4b3f"
+            },
+            {
+              "name": "Spanish Teal",
+              "hex": "#1f7a78"
+            },
+            {
+              "name": "Neon Orange",
+              "hex": "#f45c17"
+            },
+            {
+              "name": "Purple",
+              "hex": "#5b3a86"
+            },
+            {
+              "name": "Bahama Blue",
+              "hex": "#2f9fd0"
+            }
+          ]
+        },
+        "images": [
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p54_i24_w1500.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p54_i28_w1500.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p54_i30_w1500.png"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Titan",
+        "name": "MegaTitan",
+        "size": "Mega",
+        "liters": 2.4,
+        "dims_cm": {
+          "len": 28,
+          "hgt": 12,
+          "wid": 7
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "The MegaTitan page carries no dimensions and no litre figure, only that it is the larger Titan with internal divider pockets on both sides. All values here are my estimate scaled up from the measured Titan Tank, not maker data.",
+        "colors": [
+          "#1c1c1e",
+          "#6e7377",
+          "#f2a07a"
+        ],
+        "src": "https://www.nukesunrise.com/store/p71/megatitan.html",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "CNC-machined ABS insert with two straps for a standard top tube, one long plus one short strap for conjoined top/down tubes, or washers for bolt-on",
+          "colorways": [
+            {
+              "name": "Black X-Pac",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Grey X-Pac",
+              "hex": "#6e7377"
+            },
+            {
+              "name": "Deep Blue X-Pac",
+              "hex": "#22406e"
+            },
+            {
+              "name": "Peach X-Pac",
+              "hex": "#f2a07a"
+            },
+            {
+              "name": "Rock Art X-Pac",
+              "hex": "#a8845c"
+            },
+            {
+              "name": "Teal X-Pac",
+              "hex": "#1f7a78"
+            },
+            {
+              "name": "Neon Lime X-Pac",
+              "hex": "#b7d43f"
+            },
+            {
+              "name": "Zebra",
+              "hex": "#e8e6e1"
+            },
+            {
+              "name": "Mexi-blanket",
+              "hex": "#9e4b3f"
+            },
+            {
+              "name": "Topo Map",
+              "hex": "#c8bfa4"
+            }
+          ]
+        },
+        "images": [
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p71_i1_w3375.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p71_i2_w3375.png"
+        ]
+      },
+      {
+        "slot": "forkbag",
+        "line": "Wing Tank",
+        "name": "Wing Tank",
+        "size": "One Size (3.5L)",
+        "liters": 3.5,
+        "dims_cm": {
+          "len": 12.5,
+          "hgt": 28,
+          "wid": 12.5
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "DIMENSIONS - 5\" (12.5 cm) diameter with a maximum rolled height of about 11\" (28 cm). Approximately 215 cubic inches (3.5 L) volume. Approximately 3 oz (85 grams).",
+        "dims_note": "28cm is the MAXIMUM height with the roll-top fully extended, and the 3.5L figure matches that maximum (a 12.5cm x 28cm cylinder is about 3.4L), so dims and litres are consistent but both are maxima. Rolled down for a normal load it will be noticeably shorter; the page gives no minimum height to interpolate from.",
+        "colors": [
+          "#1c1c1e",
+          "#e8547f",
+          "#2f9fd0"
+        ],
+        "src": "https://www.nukesunrise.com/store/p51/wingtank.html",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 1,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "designed around the King Many Things cage, heavier VX-42 at the cage contact area; cage and Voile straps sold separately",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Grey",
+              "hex": "#6e7377"
+            },
+            {
+              "name": "Hot Pink",
+              "hex": "#e8547f"
+            },
+            {
+              "name": "Bahama Blue",
+              "hex": "#2f9fd0"
+            },
+            {
+              "name": "Deep Blue",
+              "hex": "#22406e"
+            },
+            {
+              "name": "Red",
+              "hex": "#b7242c"
+            },
+            {
+              "name": "Neon Lime",
+              "hex": "#b7d43f"
+            },
+            {
+              "name": "Teal",
+              "hex": "#1f7a78"
+            },
+            {
+              "name": "Neon Orange",
+              "hex": "#f45c17"
+            },
+            {
+              "name": "Coyote",
+              "hex": "#7f6a4f"
+            }
+          ]
+        },
+        "images": [
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p51_i10_w1800.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p51_i11_w1800.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p51_i1_w1800.png"
+        ]
+      },
+      {
+        "slot": "pannier",
+        "line": "Mini-Panniers",
+        "name": "Mini-Pannier",
+        "size": "One Size (6L each)",
+        "liters": 6,
+        "dims_cm": {
+          "len": 25,
+          "hgt": 25,
+          "wid": 12
+        },
+        "dims_state": "unknown",
+        "dims_raw": "Sold in pairs, these 6L capacity per pannier weigh in at 600 grams.",
+        "dims_note": "The 6L figure is explicitly PER PANNIER, not for the pair, so liters is correct as-is. No dimensions are published; all three dims_cm values are my estimate of a 6L mini-pannier and are not maker data. Default listing is a pair, though single left or right can be ordered.",
+        "colors": [
+          "#1c1c1e",
+          "#e8b0c0",
+          "#a8845c"
+        ],
+        "src": "https://www.nukesunrise.com/store/p69/panniers.html",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": true,
+          "cord": false,
+          "valve": false,
+          "bagsPerListing": 2,
+          "mount": "3-point Voile strap attachment to any rack, CNC'd ABS stiffener, three-row MOLLE side panel",
+          "colorways": [
+            {
+              "name": "Black X-Pac",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Pink Challenge Sail Cloth",
+              "hex": "#e8b0c0"
+            },
+            {
+              "name": "Rock Art",
+              "hex": "#a8845c"
+            },
+            {
+              "name": "Leopard",
+              "hex": "#c9a06a"
+            },
+            {
+              "name": "Maroon Cordura",
+              "hex": "#6e2733"
+            },
+            {
+              "name": "Peach X-Pac",
+              "hex": "#f2a07a"
+            },
+            {
+              "name": "Spanish Teal X-Pac",
+              "hex": "#1f7a78"
+            },
+            {
+              "name": "Mexi-blanket",
+              "hex": "#9e4b3f"
+            },
+            {
+              "name": "Topo Map",
+              "hex": "#c8bfa4"
+            },
+            {
+              "name": "Grey Liteskin",
+              "hex": "#9ba1a6"
+            }
+          ]
+        },
+        "images": [
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p69_i10_w3375.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p69_i13_w3375.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p69_i9_w3375.png"
+        ]
+      },
+      {
+        "slot": "framebag_full",
+        "line": "Custom Frame Bag",
+        "name": "Custom Frame Bag",
+        "size": "Made to measure",
+        "liters": 8,
+        "dims_cm": {
+          "len": 55,
+          "hgt": 30,
+          "wid": 6
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "Made to measure with options for standard triangle, horizontal-shock full suspension, vertical-shock full suspension, or half frame bag. No dimensions or litre figure published. All values here are my own mid-range estimate, not maker data.",
+        "colors": [
+          "#1c1c1e",
+          "#e8b04a",
+          "#1f7a78"
+        ],
+        "src": "https://www.nukesunrise.com/store/p50/frame-bag.html",
+        "features": {
+          "closure": "zip",
+          "shape": "triangular",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "zip"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "custom": true,
+          "mount": "fixed or multi-position velcro, lace attachment, or bolt-on using down tube / seat tube / top tube bosses",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Alpenglow",
+              "hex": "#e8926a"
+            },
+            {
+              "name": "Spanish Teal",
+              "hex": "#1f7a78"
+            },
+            {
+              "name": "Hi-Viz Lime",
+              "hex": "#b7d43f"
+            },
+            {
+              "name": "Hi-Viz Orange",
+              "hex": "#f45c17"
+            },
+            {
+              "name": "Navy Blue",
+              "hex": "#22406e"
+            },
+            {
+              "name": "Zebra",
+              "hex": "#e8e6e1"
+            },
+            {
+              "name": "Topo Map",
+              "hex": "#c8bfa4"
+            },
+            {
+              "name": "Mexi-blanket",
+              "hex": "#9e4b3f"
+            }
+          ]
+        },
+        "images": [
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p50_i17_w500.png",
+          "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p50_i18_w500.png"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gramm Tourpacking",
+    "origin": "Berlin, Germany",
+    "aesthetic": "Ultramodern rando: black-on-black X-Pac RX36 with an origami folding lid that opens toward the rider, Fidlock snaps onto matching Allygn racks, silver ECOPAK and white VX21 liners for visibility inside.",
+    "palette": [
+      "#1c1c1e",
+      "#2b2d31",
+      "#b9bcc0"
+    ],
+    "fabric": "X-Pac RX36 (100% recycled) / RX30 / VX21 / CORDURA 560dtex, ECOPAK EPX200 Silver Bullet liner, optional UHMWPE",
+    "products": [
+      {
+        "slot": "barbag",
+        "line": "Diamond Bag",
+        "name": "Diamond Bag 7.5 L",
+        "size": "7.5L",
+        "liters": 7.5,
+        "dims_cm": {
+          "len": 26,
+          "hgt": 19,
+          "wid": 17
+        },
+        "dims_state": "unknown",
+        "dims_raw": "Capacity: 7.5 liters. Fabric: Black X-Pac RX36 with side pockets made from UltraStretch or CORDURA 560dtex (no side pockets), liner X-Pac VX21 white. Mounting: Velcro and FIDLOCK SNAP buckle to Diamond Rack",
+        "dims_note": "Only the litre figure is published for this size; the page lists no dimensions. dims_cm is my estimate, scaled from the Tall Diamond Bag (which does publish 240-290 x 170 x 220-250mm) keeping the same 170mm depth. Treat len and hgt as estimates.",
+        "colors": [
+          "#1c1c1e",
+          "#2b2d31"
+        ],
+        "src": "https://www.gramm-tourpacking.com/shopnow/diamond-bag",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "stretch"
+            },
+            {
+              "face": "side",
+              "type": "stretch"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "Velcro plus FIDLOCK SNAP to the Allygn Diamond Rack; also Nitto M12/M18/Campee, Velo Orange Randonneur. Includes shoulder strap and a cable port for charging.",
+          "colorways": [
+            {
+              "name": "Black X-Pac RX36 + UltraStretch side pockets",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Black CORDURA 560dtex",
+              "hex": "#2b2d31"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/3a5cd3a9-85ab-494d-959b-9d8e8f1f4683/gramm%2Btourpacking%2BDiamond%2BBag%2BCordura.jpg",
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/0f3589e3-ff3a-412c-be3f-d9f96242f53e/gramm+tourpacking+Diamond+Bag+Cordura-18.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Diamond Bag",
+        "name": "Tall Diamond Bag 11 L",
+        "size": "Tall (11L)",
+        "liters": 11,
+        "dims_cm": {
+          "len": 25.5,
+          "hgt": 22.9,
+          "wid": 17
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "Capacity: 11 liters. Dimensions: 240 - 290 x 170 x 220 - 250 mm (W x D x H). Weight: 790 g",
+        "dims_note": "Width and height are both quoted as ranges because the origami lid expands. Packed len = 240 + 0.3*(290-240) = 255mm; packed hgt = 220 + 0.3*(250-220) = 229mm. Depth is fixed at 170mm. liters holds the 11L maximum, which corresponds to the top of both ranges.",
+        "colors": [
+          "#1c1c1e",
+          "#2b2d31"
+        ],
+        "src": "https://www.gramm-tourpacking.com/shopnow/diamondbagtallrx36black",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "stretch"
+            },
+            {
+              "face": "side",
+              "type": "stretch"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "Velcro plus FIDLOCK SNAP to the Allygn Diamond Rack and other rando front racks",
+          "colorways": [
+            {
+              "name": "Black X-Pac RX36",
+              "hex": "#1c1c1e"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/1723725711948-K1KPFTR6CRDPDHW3I14O/Gramm+Tourpacking+Diamond+Bag_-22.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Grill Bag",
+        "name": "Grill Bag 12 L",
+        "size": "12L",
+        "liters": 12,
+        "dims_cm": {
+          "len": 30,
+          "hgt": 20,
+          "wid": 21.5
+        },
+        "dims_state": "unknown",
+        "dims_raw": "Capacity: 12 liters. Main fabric: X-Pac RX36 Black + ECOPAK EPX200 Silver Bullet liner. [Grill Rack] Platform size: 300 x 215 mm (W x L)",
+        "dims_note": "TRAP AVOIDED: the only millimetre figures on the page (300 x 215 mm) are the RACK PLATFORM, not the bag. No bag dimensions are published. len and wid here assume the bag matches the platform footprint it is designed for, and hgt is derived from the stated 12L. All three are estimates.",
+        "colors": [
+          "#1c1c1e"
+        ],
+        "src": "https://www.gramm-tourpacking.com/shopnow/grill-bag-12l-rx36",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "Velcro plus FIDLOCK SNAP to the Allygn Grill Rack or any porteur rack with at least 200mm depth",
+          "colorways": [
+            {
+              "name": "Black X-Pac RX36",
+              "hex": "#1c1c1e"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/757694e0-f525-4d20-8f57-c91ad38e950e/Gramm%2BTourpacking%2BGrill%2BBag%2BRX36%2BBlack.jpg",
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/1613745224874-2Q7I2UK8X2QKV9KM7XHL/DSCF5029-6.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Seat Bag",
+        "name": "Custom Seat Bag 10 L",
+        "size": "Custom (10L)",
+        "liters": 10,
+        "dims_cm": {
+          "len": 45,
+          "hgt": 17,
+          "wid": 17
+        },
+        "dims_state": "unknown",
+        "dims_raw": "Weight: 510g (VX21). Volume: 10 liters. Dimensions: 550 x 300 x 180mm (L x W x H). Made in Berlin",
+        "dims_note": "The printed 550 x 300 x 180mm box works out to 29.7L against a stated 10L, so those figures cannot be a mounted packed size - they read as an unrolled/flat-panel maximum. I did NOT use them: dims_cm is instead derived from the stated 10L for a tapered seat pack of realistic proportions. The raw string is kept above so the real numbers are not lost.",
+        "colors": [
+          "#1c1c1e",
+          "#2b2d31"
+        ],
+        "src": "https://www.gramm-tourpacking.com/shopnow/custom-seat-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 1,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "custom": true,
+          "mount": "no-slip VELCRO strap plus 2x ITW buckles to saddle rails, semi-rigid shell, Hypalon reinforcement at contact areas",
+          "colorways": [
+            {
+              "name": "Black X-Pac VX21",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Bi-colour custom",
+              "hex": "#2b2d31"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/1666201532634-EMHS7MYGJHFQKMBZIIUX/gramm_tourpacking_-8.jpg",
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/1703157711105-6KJO5OW7Q6MWSCPYTTLG/stefanhaehnel_gramm-lr-20.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Seat Bag",
+        "name": "Mini Seat Bag 2-3 L",
+        "size": "Mini (2-3L)",
+        "liters": 3,
+        "dims_cm": {
+          "len": 34.2,
+          "hgt": 13,
+          "wid": 16
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "Measures closed: about 300 x 160 x 130 mm (L x W x H). Measures open: 440 x 160 x 130 mm (L x W x H)",
+        "dims_note": "This one publishes BOTH ends of the roll, which is the ideal case: packed len = 300 + 0.3*(440-300) = 342mm. Width and height do not change. liters holds the 3L top of the stated 2-3L range.",
+        "colors": [
+          "#1c1c1e",
+          "#33353a"
+        ],
+        "src": "https://www.gramm-tourpacking.com/shopnow/seat-bag-2-3l-x-pac-x50-blk",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 1,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "saddle rails and seatpost, Voile strap version available",
+          "colorways": [
+            {
+              "name": "X-Pac X50 Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "MultiCam Black",
+              "hex": "#33353a"
+            },
+            {
+              "name": "X-Pac X51 Marigold",
+              "hex": "#d19b2a"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/495d418e-fd68-405b-8c69-bbdd6ec20e2a/Gramm+Tourpacking_Mini+Seat+Bag+3L-3.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Seat Bag",
+        "name": "Multi-Tool Seat Bag",
+        "size": "One Size (0.5L)",
+        "liters": 0.5,
+        "dims_cm": {
+          "len": 14,
+          "hgt": 6,
+          "wid": 9
+        },
+        "dims_state": "packed",
+        "dims_raw": "Capacity: 0,5 L. Dimensions: 140 x 90 x 60 mm (L x W x H). Weight: 80 g",
+        "dims_note": "Fixed-size tool bag; the printed L x W x H maps straight onto len/wid/hgt.",
+        "colors": [
+          "#1c1c1e"
+        ],
+        "src": "https://www.gramm-tourpacking.com/shopnow/multi-tool-saddle-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "saddle rails and seatpost with the included Gramm Strap and Fixplus strap",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/1666201972287-UJPVXRBYYW9CISJKSE3B/gramm_tourpacking_-1.jpg"
+        ]
+      },
+      {
+        "slot": "barroll",
+        "line": "Hip Handlebar Bag",
+        "name": "Hip Handlebar Bag 2.5 L",
+        "size": "One Size (2.5L)",
+        "liters": 2.5,
+        "dims_cm": {
+          "len": 23,
+          "hgt": 13,
+          "wid": 13
+        },
+        "dims_state": "packed",
+        "dims_raw": "Capacity: 2,5 L. Dimensions: 230 mm length, O 130 mm. Includes 2x Fixplus Nano 23 cm (for handlebars up to 35 mm). Made in Germany",
+        "dims_note": "Cylinder: len from the 230mm length, hgt and wid both from the 130mm diameter. That box is about 3.1L against a stated 2.5L, the usual gap between a bounding cylinder and usable volume.",
+        "colors": [
+          "#1c1c1e",
+          "#33353a"
+        ],
+        "src": "https://www.gramm-tourpacking.com/shopnow/hip-handlebar-bag",
+        "features": {
+          "closure": "zip",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": true,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "two 23cm Fixplus Nano straps to any bar up to 35mm; converts to a hip or sling bag with the included carry strap",
+          "colorways": [
+            {
+              "name": "Black X-Pac RX36",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Multicam Black X-Pac X50",
+              "hex": "#33353a"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/02d4e7bd-c0c5-48d3-9ac9-1df7c9c904d1/Gramm+Tourpacking_Hip+Handlebar+Roll.jpg",
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/39bfc05b-cd3e-4bf0-8ffd-d1ede16479e4/Gramm+Tourpacking_Hip+Handlebar+Roll-2.jpg"
+        ]
+      },
+      {
+        "slot": "stembag",
+        "line": "Candy Bag",
+        "name": "Candy Bag",
+        "size": "One Size (0.5L)",
+        "liters": 0.5,
+        "dims_cm": {
+          "len": 9,
+          "hgt": 16,
+          "wid": 9
+        },
+        "dims_state": "packed",
+        "dims_raw": "Capacity: 0,5 L. X-Pac RX30 Black main fabric with Ultra Grid Black Out. Dimensions: 90 x 90 x 160 mm (L x W x H). Weight: 95 g. Made in Berlin, Germany",
+        "dims_note": "Printed L x W x H maps straight across. The 90 x 90 x 160mm box is about 1.3L while the stated capacity is 0.5L; that is because it is sized around a standard 90mm bottle rather than being a full-volume pouch.",
+        "colors": [
+          "#1c1c1e"
+        ],
+        "src": "https://www.gramm-tourpacking.com/shopnow/candy-bag",
+        "features": {
+          "closure": "open",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "three rubberised velcro straps to bar and stem plus a stabiliser strap to the fork crown; sold single or as a bundle of two",
+          "colorways": [
+            {
+              "name": "Black X-Pac RX30",
+              "hex": "#1c1c1e"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/af189c38-fc09-4f35-9b7e-d6ad0ba85b3c/gramm+tourpacking+Candy+Bag.jpg",
+          "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/d20e4543-0131-472d-8dc0-72a112ec0853/gramm+tourpacking+Candy+Bag-3.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Atelier Velocidade",
+    "origin": "Mirepoix, Ariège, France",
+    "aesthetic": "A tight five-colour French workshop palette - Charbon, Forêt, Rouge, Bleu, Sable - on matte technical cloth, with animal-named models and polyurethane strap mounts throughout; the saddlebag range still hangs off a Carradice Bagman.",
+    "palette": [
+      "#3a3a3c",
+      "#38503f",
+      "#c2ab86"
+    ],
+    "fabric": "Technical coated nylon with waterproof zips, polyurethane straps, made in Ariège",
+    "products": [
+      {
+        "slot": "seatpack",
+        "line": "Volcano",
+        "name": "Volcano",
+        "size": "One Size",
+        "liters": 8,
+        "dims_cm": {
+          "len": 40,
+          "hgt": 16,
+          "wid": 16
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "No dimensions and no litre figure on the page; it only says the volume is adjustable and that the seat tube attachment is reinforced with double canvas and rubber. Every value here is my estimate for a mid-size adjustable seat pack, not maker data.",
+        "colors": [
+          "#3a3a3c",
+          "#38503f",
+          "#a8322e"
+        ],
+        "src": "https://www.ateliervelocidade.com/en/products/volcano",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "double-canvas reinforced saddle attachment plus rubber-backed seat tube strap",
+          "colorways": [
+            {
+              "name": "Charbon",
+              "hex": "#3a3a3c"
+            },
+            {
+              "name": "Forêt",
+              "hex": "#38503f"
+            },
+            {
+              "name": "Rouge",
+              "hex": "#a8322e"
+            },
+            {
+              "name": "Bleu",
+              "hex": "#2d4f70"
+            },
+            {
+              "name": "Sable",
+              "hex": "#c2ab86"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/vagabonde_shop_volcano_bleu_1-2_594f3406-ee6d-443d-b30f-80bbf8997f0b.jpg",
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/atelier_velocidade_shop_logo_update_43_35b1b835-171d-4ef9-afb8-c0303d58a84e.jpg"
+        ]
+      },
+      {
+        "slot": "saddlebag",
+        "line": "Bivouac",
+        "name": "Bivouac",
+        "size": "One Size (7.5L)",
+        "liters": 7.5,
+        "dims_cm": {
+          "len": 30,
+          "hgt": 18,
+          "wid": 14
+        },
+        "dims_state": "unknown",
+        "dims_raw": "The BIVOUAC is ideal for day trips. With its 7.5L, this bag allows you to carry everything you need on the go.",
+        "dims_note": "Litre figure is published (7.5L) but no dimensions are. dims_cm is my estimate of a 7.5L Carradice-style saddlebag; the volume is the maker's, the shape is not. Ships with a décaleur kit for bar mounting; a Carradice Bagman support is strongly recommended for saddle use.",
+        "colors": [
+          "#c2ab86",
+          "#2d4f70",
+          "#3a3a3c"
+        ],
+        "src": "https://www.ateliervelocidade.com/en/products/bivouac",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "Carradice Bagman saddle support, or handlebars via the included décaleur kit; optional shoulder strap",
+          "colorways": [
+            {
+              "name": "Charbon",
+              "hex": "#3a3a3c"
+            },
+            {
+              "name": "Forêt",
+              "hex": "#38503f"
+            },
+            {
+              "name": "Rouge",
+              "hex": "#a8322e"
+            },
+            {
+              "name": "Bleu",
+              "hex": "#2d4f70"
+            },
+            {
+              "name": "Sable",
+              "hex": "#c2ab86"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/vagabonde_shop_bivouac_sable_1-2_cfb39679-13bb-45a5-b11c-94172ba47193.jpg",
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/vagabonde_shop_bivouac_bleu_1_6e041a6e-fc35-4c11-87b5-a9b8881c4659.jpg",
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/vagabonde_shop_bivouac_rouge_1.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Beluga",
+        "name": "Beluga",
+        "size": "One Size (4.5L)",
+        "liters": 4.5,
+        "dims_cm": {
+          "len": 28,
+          "hgt": 14,
+          "wid": 12
+        },
+        "dims_state": "unknown",
+        "dims_raw": "With a capacity of 4.5L, the BELUGA is spacious enough to store clothes or food.",
+        "dims_note": "Capacity is published, dimensions are not. dims_cm is my estimate of a 4.5L aerobar bag. Designed primarily to sit between tri-bar extensions, with 4 velcro straps for the extensions and 2 polyurethane straps for a plain handlebar.",
+        "colors": [
+          "#2d4f70",
+          "#3a3a3c",
+          "#c2ab86"
+        ],
+        "src": "https://www.ateliervelocidade.com/en/products/beluga",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "front",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "4 velcro straps to aero bar extensions or 2 polyurethane straps to the handlebar; external elastic with tightening buckle",
+          "colorways": [
+            {
+              "name": "Charbon",
+              "hex": "#3a3a3c"
+            },
+            {
+              "name": "Forêt",
+              "hex": "#38503f"
+            },
+            {
+              "name": "Rouge",
+              "hex": "#a8322e"
+            },
+            {
+              "name": "Bleu",
+              "hex": "#2d4f70"
+            },
+            {
+              "name": "Sable",
+              "hex": "#c2ab86"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/velocidade_shop_beluga_bleu_1-2.jpg",
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/velocidade_shop_beluga_charbon_1_bfb4a086-e657-4370-b7ff-46c9dbe376fd.jpg",
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/velocidade_shop_beluga_sable_2.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Gypaète",
+        "name": "Gypaète (Large)",
+        "size": "L (4.7L)",
+        "liters": 4.7,
+        "dims_cm": {
+          "len": 45,
+          "hgt": 15,
+          "wid": 7
+        },
+        "dims_state": "unknown",
+        "dims_raw": "The GYPAÈTE is a 1/3 frame bag with a capacity of 2.7L (size S), 4.2L (size M) or 4.7L (size L).",
+        "dims_note": "Litres are published per size (S 2.7L, M 4.2L, L 4.7L) but no dimensions are. This entry is the L. dims_cm is my estimate of a 4.7L third-triangle bag. Sold as 'Bearded Vulture' on the English store.",
+        "colors": [
+          "#c2ab86",
+          "#38503f",
+          "#3a3a3c"
+        ],
+        "src": "https://www.ateliervelocidade.com/en/products/gypaete",
+        "features": {
+          "closure": "zip",
+          "shape": "triangular",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "5 trimmable self-gripping velcro straps with multiple attachment positions along the bag",
+          "colorways": [
+            {
+              "name": "Charbon",
+              "hex": "#3a3a3c"
+            },
+            {
+              "name": "Forêt",
+              "hex": "#38503f"
+            },
+            {
+              "name": "Rouge",
+              "hex": "#a8322e"
+            },
+            {
+              "name": "Bleu",
+              "hex": "#2d4f70"
+            },
+            {
+              "name": "Sable",
+              "hex": "#c2ab86"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/vagabonde_shop_gipaete_sable_0_f51d72a8-7899-4eac-a323-1b85eb6b01b1.jpg",
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/dscf7562_38e635b0-c050-44f3-927d-d7dcb4702e46.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Avalanche",
+        "name": "Avalanche",
+        "size": "One Size",
+        "liters": 2,
+        "dims_cm": {
+          "len": 22,
+          "hgt": 12,
+          "wid": 6
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "No dimensions on the page. The only capacity signal is the store's '1-3 L' filter tag, so liters is set to the middle of that band and every dims_cm value is my estimate. A small seat-tube tool bag, not a real frame bag despite the site's 'Sacoches de Cadre' category.",
+        "colors": [
+          "#38503f",
+          "#c2ab86",
+          "#a8322e"
+        ],
+        "src": "https://www.ateliervelocidade.com/en/products/avalanche",
+        "features": {
+          "closure": "zip",
+          "shape": "wedge",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "velcro to the seat tube plus two polyurethane frame straps",
+          "colorways": [
+            {
+              "name": "Forêt",
+              "hex": "#38503f"
+            },
+            {
+              "name": "Sable",
+              "hex": "#c2ab86"
+            },
+            {
+              "name": "Bleu",
+              "hex": "#2d4f70"
+            },
+            {
+              "name": "Rouge",
+              "hex": "#a8322e"
+            },
+            {
+              "name": "Charbon",
+              "hex": "#3a3a3c"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/sacoche_cadre_bikepacking_avalanche_velocidade_5.jpg",
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/velocidade___atelier_bikepacking__sacoche_cadre_avalanche_2024___-15.jpg"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "Funambule",
+        "name": "Funambule",
+        "size": "One Size",
+        "liters": 1.2,
+        "dims_cm": {
+          "len": 20,
+          "hgt": 10,
+          "wid": 6
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "No dimensions and no litre figure. Described only as holding 'keys, half a baguette, a windbreaker, a phone'. All values are my estimate. The site files it under frame bags but it mounts to the stem and top tube, so it is catalogued here as a toptube bag. Sold as 'Tightrope walker' on the English store.",
+        "colors": [
+          "#3a3a3c",
+          "#a8322e",
+          "#2d4f70"
+        ],
+        "src": "https://www.ateliervelocidade.com/en/products/funambule",
+        "features": {
+          "closure": "zip",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "velcro to the stem plus two polyurethane frame straps",
+          "colorways": [
+            {
+              "name": "Charbon",
+              "hex": "#3a3a3c"
+            },
+            {
+              "name": "Forêt",
+              "hex": "#38503f"
+            },
+            {
+              "name": "Rouge",
+              "hex": "#a8322e"
+            },
+            {
+              "name": "Bleu",
+              "hex": "#2d4f70"
+            },
+            {
+              "name": "Sable",
+              "hex": "#c2ab86"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/funambule_cc5ea103-6e3c-4a68-8f9e-7006dfaef5df.jpg",
+          "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/velocidade___atelier_septembre_bikepacking___2023___-1176_88f8214e-1221-46a4-9afa-bf49d6b52083.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "JPaks",
+    "origin": "Denver, Colorado, USA",
+    "aesthetic": "One-man Denver shop with an X-Pac print habit: Donut Print, Rad Splatter, Trout Print, Black Topo with white contour lines, B&W Checkerboard, all cut against a plain HDPE-spined black body.",
+    "palette": [
+      "#1c1c1e",
+      "#e8547f",
+      "#2f5f9e"
+    ],
+    "fabric": "X-Pac VX21 / LS21 / LS42 Liteskin, HDPE spines, closed-cell foam, EPDM grip panels",
+    "products": [
+      {
+        "slot": "toptube",
+        "line": "SnakPak",
+        "name": "Standard SnakPak 9.5\"",
+        "size": "Standard (9.5 inch)",
+        "liters": 1.4,
+        "dims_cm": {
+          "len": 24.1,
+          "hgt": 10,
+          "wid": 6
+        },
+        "dims_state": "unknown",
+        "dims_raw": "Standard SnakPak - 9.5\"",
+        "dims_note": "The ONLY dimension JPaks publishes is the length baked into the product name (9.5in = 24.1cm), which is real. Height, width and the litre figure are all my estimates. The bag is tapered front to back for knee clearance, so the width is not constant.",
+        "colors": [
+          "#1c1c1e",
+          "#e8b04a",
+          "#b7242c"
+        ],
+        "src": "https://jpaks.com/shop-1/p/top-tube-storage",
+        "features": {
+          "closure": "zip",
+          "shape": "tapered",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": true,
+          "cord": false,
+          "valve": false,
+          "mount": "velcro, bolt-on, or both; multi-mount daisy chain on the underside",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Donut Print",
+              "hex": "#e8b8c4"
+            },
+            {
+              "name": "Rad Splatter",
+              "hex": "#7d6f8c"
+            },
+            {
+              "name": "Dark Camo",
+              "hex": "#4a4a3c"
+            },
+            {
+              "name": "Light Multicam",
+              "hex": "#a8977a"
+            },
+            {
+              "name": "LS21 Dark Grey",
+              "hex": "#55595e"
+            },
+            {
+              "name": "White Topo / Black lines",
+              "hex": "#e6e4df"
+            },
+            {
+              "name": "Black Topo / White lines",
+              "hex": "#232326"
+            },
+            {
+              "name": "LS42 Heather Grey",
+              "hex": "#9ba1a6"
+            },
+            {
+              "name": "B&W Checkerboard",
+              "hex": "#8c8c8c"
+            },
+            {
+              "name": "Red",
+              "hex": "#b7242c"
+            },
+            {
+              "name": "Blue",
+              "hex": "#2f5f9e"
+            },
+            {
+              "name": "Coyote",
+              "hex": "#7f6a4f"
+            },
+            {
+              "name": "Trout Print",
+              "hex": "#7f9a86"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/0d0cf3a9-56eb-4833-9dd9-26c80c59eb4f/std+SnakPak+_LS21.jpg",
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/0d8eedfe-ebf5-4f92-bb82-a055835fb1db/SnakPak+_trout_standard.jpg"
+        ]
+      },
+      {
+        "slot": "toptube",
+        "line": "SnakPak",
+        "name": "LargeFarva SnakPak 15\"",
+        "size": "LargeFarva (15 inch)",
+        "liters": 2.9,
+        "dims_cm": {
+          "len": 38.1,
+          "hgt": 11,
+          "wid": 7
+        },
+        "dims_state": "unknown",
+        "dims_raw": "LargeFarva SnakPak - 15\"",
+        "dims_note": "Length 15in = 38.1cm comes from the product name and is real; height, width and litres are my estimates. Two adjustable internal velcro dividers. Sizes in this family run 9.5in, 12in (Footlong), 12in EXT and 15in.",
+        "colors": [
+          "#1c1c1e",
+          "#e8b8c4",
+          "#7f9a86"
+        ],
+        "src": "https://jpaks.com/shop-1/p/top-tube-storage-84gfk",
+        "features": {
+          "closure": "zip",
+          "shape": "tapered",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": true,
+          "cord": false,
+          "valve": false,
+          "mount": "velcro or bolt-on, rubber gripper daisy chain underneath",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Donut Print",
+              "hex": "#e8b8c4"
+            },
+            {
+              "name": "Rad Splatter",
+              "hex": "#7d6f8c"
+            },
+            {
+              "name": "Dark Multicam",
+              "hex": "#4a4a3c"
+            },
+            {
+              "name": "Light Multicam",
+              "hex": "#a8977a"
+            },
+            {
+              "name": "LS21 Dark Grey",
+              "hex": "#55595e"
+            },
+            {
+              "name": "Trout Print",
+              "hex": "#7f9a86"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1674338678018-V8V3GLV5BA2Y59Q1AURH/_8504722.jpg",
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1674338714771-OUP8UNYDQNS23Z51TF6B/_8504721.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "DropperPak",
+        "name": "DropperPak V.2",
+        "size": "One Size",
+        "liters": 8,
+        "dims_cm": {
+          "len": 38,
+          "hgt": 16,
+          "wid": 15
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "No dimensions and no litre figure anywhere on the page. It is described only as adding length and clearance over V.1 with a third rear compression strap and an HDPE spine. Every value here is my estimate for a dropper-compatible seat pack. Bikepacking.com Gear of the Year 2020.",
+        "colors": [
+          "#1c1c1e",
+          "#9ba1a6",
+          "#b7242c"
+        ],
+        "src": "https://jpaks.com/shop-1/p/coming-soon-dropperpak-coming-soon",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 3,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "DropStop seatpost clamp holds the bag off the dropper stanchion and clears the seal head; HDPE spine",
+          "colorways": [
+            {
+              "name": "Black X-Pac",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "LS42 Heather Grey",
+              "hex": "#9ba1a6"
+            },
+            {
+              "name": "LS21 Dark Grey",
+              "hex": "#55595e"
+            },
+            {
+              "name": "Red X-Pac",
+              "hex": "#b7242c"
+            },
+            {
+              "name": "Blue X-Pac",
+              "hex": "#2f5f9e"
+            },
+            {
+              "name": "Coyote X-Pac",
+              "hex": "#7f6a4f"
+            },
+            {
+              "name": "Dark Camo X-Pac",
+              "hex": "#4a4a3c"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1698323433344-ISOCQVX6V3TT8VQAZ8YP/dropperv2_side+view.png",
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1698323439369-4UA6RAE5ILGWD3XRBFHQ/DropperPak+v2_side.png",
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/0e4fd188-a24c-405c-8ed2-48431d50acff/1000004528.jpg"
+        ]
+      },
+      {
+        "slot": "stembag",
+        "line": "RukSak",
+        "name": "RukSak V.2",
+        "size": "One Size",
+        "liters": 1.7,
+        "dims_cm": {
+          "len": 10,
+          "hgt": 17,
+          "wid": 10
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "No dimensions and no litre figure published. Sized around a water bottle or 'frosty beverage'; all values here are my estimate. Sold individually, not as a pair, which the page states explicitly.",
+        "colors": [
+          "#1c1c1e",
+          "#8c8c8c",
+          "#2f9fd0"
+        ],
+        "src": "https://jpaks.com/shop-1/p/ruksak",
+        "features": {
+          "closure": "cinch",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "mesh"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "bagsPerListing": 1,
+          "mount": "universal left or right of the stem; closed-cell foam liner, drain grommet in the base, pleated expandable mesh pouch wrapping a third of the body",
+          "colorways": [
+            {
+              "name": "Black/Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Dark Camo/Black",
+              "hex": "#4a4a3c"
+            },
+            {
+              "name": "Light Camo/Black",
+              "hex": "#a8977a"
+            },
+            {
+              "name": "Rad Splatter print",
+              "hex": "#7d6f8c"
+            },
+            {
+              "name": "Donut print",
+              "hex": "#e8b8c4"
+            },
+            {
+              "name": "Liteskin LS21",
+              "hex": "#55595e"
+            },
+            {
+              "name": "Black Topo",
+              "hex": "#232326"
+            },
+            {
+              "name": "B&W Checkered",
+              "hex": "#8c8c8c"
+            },
+            {
+              "name": "Coyote Brown",
+              "hex": "#7f6a4f"
+            },
+            {
+              "name": "Duck Camo",
+              "hex": "#6e6a52"
+            },
+            {
+              "name": "Urban Camo",
+              "hex": "#8b8d8f"
+            },
+            {
+              "name": "Trout Camo",
+              "hex": "#7f9a86"
+            },
+            {
+              "name": "Bahama Blue",
+              "hex": "#2f9fd0"
+            },
+            {
+              "name": "Purple",
+              "hex": "#5b3a86"
+            },
+            {
+              "name": "Evergreen",
+              "hex": "#1e4635"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1762990930446-TNJTJEO4EFGA7PPO3D44/RukSak+_rad+splat.jpg",
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1762990947987-LVQV0HZ4863KQ8Z4F1VI/RukSak_B%26W+cutout1.jpg",
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/21c11086-6a12-4b92-8d65-aa2dc97d92b1/Duck_Camo1.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_full",
+        "line": "FramePak",
+        "name": "FramePak (Custom)",
+        "size": "Made to measure",
+        "liters": 9,
+        "dims_cm": {
+          "len": 55,
+          "hgt": 32,
+          "wid": 6.5
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "Fully custom to the rider's triangle, so no dimensions or litres are published. All values here are my own mid-range estimate. JPaks' core product; local Denver customers can come in for a fitting.",
+        "colors": [
+          "#9e3418",
+          "#1c1c1e",
+          "#55595e"
+        ],
+        "src": "https://jpaks.com/framepaks",
+        "features": {
+          "closure": "zip",
+          "shape": "triangular",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "zip"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "custom": true,
+          "mount": "straps or bolt-on with JPaks mounting washers",
+          "colorways": [
+            {
+              "name": "RX30 Cayenne",
+              "hex": "#9e3418"
+            },
+            {
+              "name": "Black X-Pac",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "LS21 Dark Grey",
+              "hex": "#55595e"
+            },
+            {
+              "name": "LS42 Heather Grey",
+              "hex": "#9ba1a6"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/038f56e3-0e2e-490c-8985-9b674db5b603/RX30_cayenne+%281%29.jpg",
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1666636594691-GSY5618SKTP7ESX7YXAG/PXL_20220819_180511632.PORTRAIT.jpg"
+        ]
+      },
+      {
+        "slot": "barroll",
+        "line": "Refugi",
+        "name": "Refugi Harness",
+        "size": "One Size (harness only)",
+        "liters": 0,
+        "dims_cm": {
+          "len": 30,
+          "hgt": 12,
+          "wid": 8
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "This is a HARNESS, not a bag: roll-top drybags are sold separately, so liters is 0 by definition rather than unmeasured. No dimensions are published; dims_cm is my estimate of the foam mounting panel itself. Closed-cell foam panel with EPDM interior over an X-Pac exterior; includes Eye Patch head tube protector and 3D-printed H-Bar spacers.",
+        "colors": [
+          "#1c1c1e",
+          "#8c8c8c"
+        ],
+        "src": "https://jpaks.com/shop-1/p/refugi-harness",
+        "features": {
+          "closure": "strap",
+          "shape": "harness",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "JPaks quick-release system with adjustable foam mounting blocks; works on flat and drop bars. RockLockster acrylic buckles standard, Austere machined buckles as an upgrade.",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Checkered",
+              "hex": "#8c8c8c"
+            }
+          ]
+        },
+        "images": [
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1665075801496-16F6CKQUCY3H5L9EHY2R/jpaks-handlebar-harness-review_18.jpg",
+          "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1665077846513-OWLFRFLUX4UW3FE9ZUKU/jpaks-handlebar-harness-review_24.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Randi Jo Fabrications",
+    "origin": "Elkton, Oregon, USA",
+    "aesthetic": "Three-person family workshop in rural Oregon working almost entirely in 10.10oz waxed canvas, with colourways named after local plants - Black Oak, Wild Iris, Oregon Grape, Camas - and mesh drainage bottoms on every feed bag.",
+    "palette": [
+      "#4a3a2a",
+      "#6b5b8a",
+      "#5d5f43"
+    ],
+    "fabric": "10.10oz waxed canvas body, 6.25oz waxed canvas pockets, coated nylon diamond ripstop lining, 1/8in closed-cell foam",
+    "products": [
+      {
+        "slot": "stembag",
+        "line": "Bartender",
+        "name": "Bartender",
+        "size": "One Size",
+        "liters": 2.8,
+        "dims_cm": {
+          "len": 13,
+          "hgt": 17,
+          "wid": 13
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "The Bartender page carries no dimensions and no litre figure, only that it swallows a 32oz Nalgene. All values here are my estimate, sanity-checked against the Joey Pouch (same shop, 2.79L, 17in circumference) which is the nearest thing they do publish. In production since 2009.",
+        "colors": [
+          "#4a3a2a",
+          "#6b5b8a",
+          "#5d5f43"
+        ],
+        "src": "https://randijofab.com/products/bartender-1",
+        "features": {
+          "closure": "cinch",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "three 1in x 8in Total Hook straps to handlebar / stem / head tube; universal left or right using two vertical webbing options; mesh bottom for drainage",
+          "colorways": [
+            {
+              "name": "Black Oak",
+              "hex": "#4a3a2a"
+            },
+            {
+              "name": "Wild Iris",
+              "hex": "#6b5b8a"
+            },
+            {
+              "name": "Oregon Grape",
+              "hex": "#3f4a5c"
+            },
+            {
+              "name": "Camas",
+              "hex": "#5b6f9e"
+            },
+            {
+              "name": "Olive",
+              "hex": "#5d5f43"
+            },
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Charcoal",
+              "hex": "#43454a"
+            },
+            {
+              "name": "Brown",
+              "hex": "#6b4f33"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0339/0333/products/DSC6269.jpg",
+          "https://cdn.shopify.com/s/files/1/0339/0333/files/DSC5785.jpg",
+          "https://cdn.shopify.com/s/files/1/0339/0333/files/DSC5821.jpg"
+        ]
+      },
+      {
+        "slot": "stembag",
+        "line": "Bartender",
+        "name": "Bartender Plus",
+        "size": "One Size (with pockets)",
+        "liters": 2.8,
+        "dims_cm": {
+          "len": 15,
+          "hgt": 17,
+          "wid": 13
+        },
+        "dims_state": "unknown",
+        "dims_raw": "",
+        "dims_note": "Same gap as the plain Bartender: no dimensions, no litre figure. Values are my estimate, with a little extra depth over the plain Bartender to account for the deeper drawcord front pocket and two flush side pockets.",
+        "colors": [
+          "#3f4a5c",
+          "#5b6f9e",
+          "#6b4f33"
+        ],
+        "src": "https://randijofab.com/products/copy-of-bartender-plus-1",
+        "features": {
+          "closure": "cinch",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "front",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "three 1in Total Hook straps to bar / stem / head tube; pull-out lining for cleaning",
+          "colorways": [
+            {
+              "name": "Black Oak",
+              "hex": "#4a3a2a"
+            },
+            {
+              "name": "Wild Iris",
+              "hex": "#6b5b8a"
+            },
+            {
+              "name": "Oregon Grape",
+              "hex": "#3f4a5c"
+            },
+            {
+              "name": "Camas",
+              "hex": "#5b6f9e"
+            },
+            {
+              "name": "Olive",
+              "hex": "#5d5f43"
+            },
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Charcoal",
+              "hex": "#43454a"
+            },
+            {
+              "name": "Brown",
+              "hex": "#6b4f33"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0339/0333/products/EJR08973.jpg",
+          "https://cdn.shopify.com/s/files/1/0339/0333/files/DSC5814.jpg",
+          "https://cdn.shopify.com/s/files/1/0339/0333/files/BrownBT.jpg"
+        ]
+      },
+      {
+        "slot": "stembag",
+        "line": "Lil' Jo",
+        "name": "Joey Pouch",
+        "size": "One Size (2.79L)",
+        "liters": 2.79,
+        "dims_cm": {
+          "len": 13.7,
+          "hgt": 16,
+          "wid": 13.7
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "DIMENSIONS: 5.25\" tall plus 3.5\" to the top of the nylon drawcord section. 17\" circumference. 2.79 liter volume (170 cubic inches). WEIGHT: 3.7 oz",
+        "dims_note": "Height is quoted as 5.25in of body plus a further 3.5in of drawcord collar, i.e. 5.25in rolled down to 8.75in fully up; packed hgt = 5.25 + 0.3*3.5 = 6.3in = 16.0cm. len and wid are both derived from the 17in circumference (diameter 13.7cm). liters is the maker's own 2.79L.",
+        "colors": [
+          "#1c1c1e",
+          "#26344c",
+          "#e8761f"
+        ],
+        "src": "https://randijofab.com/products/handlebar-bag",
+        "features": {
+          "closure": "cinch",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "two side-release buckles with cam adjustment; mesh bottom drains spills; two-cord drawstring doubles as a carry handle",
+          "colorways": [
+            {
+              "name": "Black / Red",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Navy / Purple",
+              "hex": "#26344c"
+            },
+            {
+              "name": "Charcoal / Navy",
+              "hex": "#43454a"
+            },
+            {
+              "name": "Orange / Charcoal",
+              "hex": "#e8761f"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0339/0333/products/EJR07173_2.jpg",
+          "https://cdn.shopify.com/s/files/1/0339/0333/products/EJR07211.jpg",
+          "https://cdn.shopify.com/s/files/1/0339/0333/products/EJR01748.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Jeff 'n Joan's",
+        "name": "Jeff 'n Joan's Bag",
+        "size": "One Size (3L rolled, 5L expanded)",
+        "liters": 5,
+        "dims_cm": {
+          "len": 27.9,
+          "hgt": 17.4,
+          "wid": 7.6
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "11 inches wide by 5.5 inches deep (3 Liter). 5 inch roll-top closure for a max capacity of 10 inches of depth (5 Liter). WEIGHT: 7 oz, 7.5 oz with straps",
+        "dims_note": "Publishes both ends of the roll, which is ideal: depth 5.5in rolled to 10in expanded, so packed hgt = 5.5 + 0.3*(10-5.5) = 6.85in = 17.4cm. len is the stated 11in width across the bars. The third dimension is never stated; wid is back-calculated from 3L over the 11 x 5.5in face (about 3in / 7.6cm) and is therefore mine. liters holds the 5L expanded maximum; rolled down it is 3L.",
+        "colors": [
+          "#1c1c1e",
+          "#5d5f43",
+          "#6b4f33"
+        ],
+        "src": "https://randijofab.com/products/jeffs-joans-bar-bag",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": true,
+          "cord": true,
+          "valve": false,
+          "mount": "sits in the centre of a Jones H-Bar or Surly Moloko (also traditional bars) on five Total Hook straps, with a hook-and-cord attachment at the head tube; two 1in loops underneath for extra gear",
+          "colorways": [
+            {
+              "name": "Bonny Doon",
+              "hex": "#8a7a5c"
+            },
+            {
+              "name": "Safety Camo",
+              "hex": "#c8752a"
+            },
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Charcoal",
+              "hex": "#43454a"
+            },
+            {
+              "name": "Olive",
+              "hex": "#5d5f43"
+            },
+            {
+              "name": "Brown",
+              "hex": "#6b4f33"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0339/0333/products/DSC0718.jpg",
+          "https://cdn.shopify.com/s/files/1/0339/0333/files/DSC08561.jpg",
+          "https://cdn.shopify.com/s/files/1/0339/0333/products/DSC0812.jpg",
+          "https://cdn.shopify.com/s/files/1/0339/0333/products/DSC0781.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Carradice",
+    "origin": "Nelson, Lancashire, England",
+    "aesthetic": "The original: 18oz waterproof waxed cotton duck in Black, Burgundy and Field Green, leather straps and metal buckles, reproofable rather than replaceable — sitting alongside a newer 1000d Cordura Adventure range with orange taped linings.",
+    "palette": [
+      "#1c1c1e",
+      "#5e2530",
+      "#4d5b3c"
+    ],
+    "fabric": "18oz waterproof waxed cotton duck with self-sealing seams, or 1000d military-grade Cordura with taped orange lining",
+    "products": [
+      {
+        "slot": "saddlebag",
+        "line": "Originals",
+        "name": "Barley Saddlebag",
+        "size": "9L",
+        "liters": 9,
+        "dims_cm": {
+          "len": 29,
+          "hgt": 15,
+          "wid": 18
+        },
+        "dims_state": "packed",
+        "dims_raw": "Capacity: 9L. Material: 18 oz Waxed Cotton Duck. Dimensions (WxHxD): 18x15x29cms",
+        "dims_note": "AXIS ORDER REASSIGNED. The page labels 18x15x29 as WxHxD, which would make the Barley 18cm across the bike and 29cm front-to-back — the wrong shape for a Carradice saddlebag, and inconsistent with the Zipped Roll (28x15x10) and Camper Longflap (36x26x22) on the same site, where the first figure is clearly the across-bike width. I have kept their 15cm height and put the 29cm on the across-bike axis. Volume checks out either way at about 7.8L against a stated 9L.",
+        "colors": [
+          "#1c1c1e",
+          "#5e2530",
+          "#4d5b3c"
+        ],
+        "src": "https://www.carradice.co.uk/products/originals-barley-saddlebag",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 3,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "leather straps to saddle loops or a Bagman support rack",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Burgundy",
+              "hex": "#5e2530"
+            },
+            {
+              "name": "Green",
+              "hex": "#4d5b3c"
+            },
+            {
+              "name": "Black w/ Flag",
+              "hex": "#232326"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/BarleyGCarradice-086-_1.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/BarleyBCarradice_080.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/union_flag_barley_saddlebag_1_538815464.jpg"
+        ]
+      },
+      {
+        "slot": "saddlebag",
+        "line": "Originals",
+        "name": "Camper Longflap Saddlebag",
+        "size": "24L",
+        "liters": 24,
+        "dims_cm": {
+          "len": 36,
+          "hgt": 26,
+          "wid": 22
+        },
+        "dims_state": "packed",
+        "dims_raw": "Capacity: 24L. Material: 18 oz Waxed Cotton Duck. Dimensions (WxHxD): 36 x 26 x 22 cm",
+        "dims_note": "Printed WxHxD maps naturally here: 36cm across the bike, 26cm tall, 22cm front-to-back. That box is 20.6L against a stated 24L because the longflap extends upward over an overstuffed load, so the dims are the body and the litres include the flap. Largest bag in the Originals range.",
+        "colors": [
+          "#1c1c1e",
+          "#5e2530"
+        ],
+        "src": "https://www.carradice.co.uk/products/originals-camper-longflap-saddlebag",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 3,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "leather straps and metal buckles to saddle loops or the Bagman Expedition Support Rack",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            },
+            {
+              "name": "Burgundy",
+              "hex": "#5e2530"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/CamperLongFlapCarradice_050_1.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/CamperLongFlapCarradice-058-_1.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/CamperBurg.jpg"
+        ]
+      },
+      {
+        "slot": "saddlebag",
+        "line": "Originals",
+        "name": "Zipped Roll Saddlebag (Field Green)",
+        "size": "3.5L",
+        "liters": 3.5,
+        "dims_cm": {
+          "len": 28,
+          "hgt": 15,
+          "wid": 10
+        },
+        "dims_state": "packed",
+        "dims_raw": "Material: 18oz waxed cotton duck. Dimensions (W x H x D): 28 x 15 x 10 cm",
+        "dims_note": "Cleanest figures on the Carradice site: 28cm across the bike, 15cm tall, 10cm deep gives 4.2L against a stated 3.5L, the usual bounding-box overshoot. Field Green with burgundy leather and brown webbing is the only colourway for this version.",
+        "colors": [
+          "#4d5b3c"
+        ],
+        "src": "https://www.carradice.co.uk/products/field-green-zipped-roll-saddlebag-3-5l",
+        "features": {
+          "closure": "zip",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "leather straps to saddle loops and seatpost",
+          "colorways": [
+            {
+              "name": "Field Green",
+              "hex": "#4d5b3c"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/EM40025.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/EM40030.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/EM40026.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Adventure",
+        "name": "Cambrian Lightweight Saddlebag",
+        "size": "16L",
+        "liters": 16,
+        "dims_cm": {
+          "len": 28,
+          "hgt": 30,
+          "wid": 16
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "Capacity: 16L. Dimensions (WxHxD): 28 x 30 x 16cm. Waterproof 1000 military grade denier Cordura, taped sealed orange lining.",
+        "dims_note": "Roll-top, and only one height is published, so the 30cm must be the unrolled maximum — there is no rolled minimum on the page to interpolate from, hence dims_state unrolled with the figure left at the maximum. The 28 x 30 x 16 box is 13.4L against a stated 16L.",
+        "colors": [
+          "#1c1c1e"
+        ],
+        "src": "https://www.carradice.co.uk/products/cambrian-lightweight-saddlebag-16-litre",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": true,
+          "cord": true,
+          "valve": false,
+          "mount": "saddle and seatpost, or the patented Bagman Sport Quick Release support rack; rigid internal base support, D-rings on top",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/CAMBIAN_SADDLEBAG_16L_1124_01.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/CAMBIAN_SADDLEBAG_16L_1124_05.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/CAMBRIAN_SADDLEBAG_16L_QR_1213_01.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Adventure",
+        "name": "Bowland Bar Bag",
+        "size": "12L",
+        "liters": 12,
+        "dims_cm": {
+          "len": 30,
+          "hgt": 26,
+          "wid": 18
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "Dimensions (WxHxD): 12L: 30x18x26cm / 20L: 35x30x20cm",
+        "dims_note": "AXIS ORDER REASSIGNED for the 12L. Taken literally its WxHxD would be 30 wide, 18 tall, 26 deep — deeper than it is tall — while the 20L on the same line reads 35 wide, 30 tall, 20 deep. The 12L's last two figures are transposed, so I have used 30 x 26 x 18. Roll-top, so the height is a maximum. A 20L version exists at 35 x 30 x 20cm.",
+        "colors": [
+          "#1c1c1e"
+        ],
+        "src": "https://www.carradice.co.uk/products/bowland-bar-bag-12l",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": true,
+          "daisyChains": true,
+          "cord": true,
+          "valve": false,
+          "mount": "Bagman Bar Rack, with a velcro rack-secure flap, rigid base support and D-rings plus bungee on top",
+          "colorways": [
+            {
+              "name": "Black",
+              "hex": "#1c1c1e"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/BOWLAND_BARBAG_12L_1210_01_00cc2014-0c1c-49d5-bb16-0b6b513391ae.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/BOWLAND_BARBAG_12L_1210_06_a1da3399-2a11-4325-92b7-507e2a6b2c26.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/BOWLAND_BARBAG_20L_1211_01_21a52b5a-1653-4b7d-97bd-d571a8c174db.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Originals",
+        "name": "Baja Barbag (Field Green)",
+        "size": "5L",
+        "liters": 5,
+        "dims_cm": {
+          "len": 25,
+          "hgt": 15,
+          "wid": 13
+        },
+        "dims_state": "unknown",
+        "dims_raw": "With 5 litres of easy-access storage. Made from 100% waterproof 18oz waxed cotton duck with self-sealing seams. Finished in Field Green with burgundy leather details and brown webbing, four foam spacers included.",
+        "dims_note": "Unlike the rest of the Carradice range this listing publishes a capacity but NO dimensions. All three dims_cm values are my estimate for a 5L waxed-cotton bar bag; only the 5L is maker data.",
+        "colors": [
+          "#4d5b3c"
+        ],
+        "src": "https://www.carradice.co.uk/products/field-green-baja-barbag-5l",
+        "features": {
+          "closure": "flap",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "straps direct to the handlebar with four foam spacers for fit and stability",
+          "colorways": [
+            {
+              "name": "Field Green",
+              "hex": "#4d5b3c"
+            }
+          ]
+        },
+        "images": [
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/EM40041.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/EM40043.jpg",
+          "https://cdn.shopify.com/s/files/1/0776/9112/6087/files/Carradice_Field_Green-8.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fairweather",
+    "origin": "Tokyo, Japan (Blue Lug house brand)",
+    "aesthetic": "Blue Lug's own label: Cordura and grid ripstop in soft Japanese neutrals - light gray, olive/beige, avocado, tree camo, flash orange - with two-tone body/lid splits and waxed canvas on the Brompton range.",
+    "palette": [
+      "#b7b8b2",
+      "#6e7350",
+      "#c8752a"
+    ],
+    "fabric": "Cordura nylon / grid ripstop / Dyneema hybrid / waxed canvas, made in Japan",
+    "products": [
+      {
+        "slot": "barroll",
+        "line": "Handlebar Bag",
+        "name": "Handlebar Bag ADV",
+        "size": "One Size (19L)",
+        "liters": 19,
+        "dims_cm": {
+          "len": 42,
+          "hgt": 26.8,
+          "wid": 22
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "Capacity: 19L. Dimensions: length 22cm/8.5\" (when the roll top is stretched: 38cm/15\"), width 42cm/16.5\" (including side pockets), depth 22cm/8.5\". Material: Cordura Nylon Fabric",
+        "dims_note": "Their 'length' is the vertical roll dimension: 22cm rolled down, 38cm stretched, so packed hgt = 22 + 0.3*(38-22) = 26.8cm. len uses the stated 42cm across the bars, which INCLUDES the side pockets, so the main body alone is narrower. liters is the 19L maximum, which corresponds to the fully stretched roll. Needs 18-25cm bar-to-rack clearance with a rack, over 25cm without.",
+        "colors": [
+          "#b7b8b2",
+          "#232326"
+        ],
+        "src": "https://bluelug.com/en/contents/fairweather/handlebar-bag-adv.php",
+        "features": {
+          "closure": "rolltop",
+          "shape": "boxy",
+          "compressionStraps": 2,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "handlebar with or without a front rack / bag supporter; detachable top flap; removable waterproof rip-nylon liner",
+          "colorways": [
+            {
+              "name": "Cordura / Light Gray",
+              "hex": "#b7b8b2"
+            },
+            {
+              "name": "Rip Black",
+              "hex": "#232326"
+            }
+          ]
+        },
+        "images": [
+          "https://bluelug.com/en/contents/fairweather/images/handlebarbagadv/1.jpg",
+          "https://bluelug.com/en/contents/fairweather/images/handlebarbagadv/10.jpg",
+          "https://bluelug.com/en/contents/fairweather/images/handlebarbagadv/11.jpg"
+        ]
+      },
+      {
+        "slot": "seatpack",
+        "line": "Seat Bag",
+        "name": "Seat Bag",
+        "size": "One Size (3-6L)",
+        "liters": 6,
+        "dims_cm": {
+          "len": 34,
+          "hgt": 16,
+          "wid": 14
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "Capacity: 3-6 liters. Dimensions: L 28cm-48cm x W 14cm x H 16cm. Weight: 320g (AVG.)",
+        "dims_note": "Length 28-48cm is rolled-to-unrolled; packed len = 28 + 0.3*(48-28) = 34cm. Width and height are fixed. liters holds the 6L top of the stated 3-6L range, matching the unrolled length rather than the packed one.",
+        "colors": [
+          "#b7b8b2",
+          "#232326",
+          "#6e7350"
+        ],
+        "src": "https://bluelug.com/en/contents/fairweather/seat-bag.php",
+        "features": {
+          "closure": "rolltop",
+          "shape": "tapered",
+          "compressionStraps": 2,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "saddle rails and seatpost",
+          "colorways": [
+            {
+              "name": "Cordura / Light Gray",
+              "hex": "#b7b8b2"
+            },
+            {
+              "name": "Rip Black",
+              "hex": "#232326"
+            },
+            {
+              "name": "Olive",
+              "hex": "#6e7350"
+            }
+          ]
+        },
+        "images": [
+          "https://bluelug.com/en/contents/fairweather/images/seatbag/1_l.jpg",
+          "https://bluelug.com/en/contents/fairweather/images/seatbag/2.jpg"
+        ]
+      },
+      {
+        "slot": "barbag",
+        "line": "Road Bar Bag",
+        "name": "Road Bar Bag",
+        "size": "One Size (1.7L)",
+        "liters": 1.7,
+        "dims_cm": {
+          "len": 34.5,
+          "hgt": 14,
+          "wid": 14
+        },
+        "dims_state": "unrolled",
+        "dims_raw": "Capacity: 1.7L. Size: diameter 14cm, bag circumference 43cm, width 21cm (when side rolls are closed) - 66cm (when both side rolls are expanded). Weight: 170g (AVG.)",
+        "dims_note": "Width across the bars is 21cm with both side rolls closed and 66cm with both expanded; packed len = 21 + 0.3*(66-21) = 34.5cm. hgt and wid both come from the stated 14cm diameter. The 1.7L capacity is quoted for the main compartment, not the fully expanded state, so litres and packed length are not on the same footing here.",
+        "colors": [
+          "#b7b8b2",
+          "#c8752a",
+          "#232326"
+        ],
+        "src": "https://bluelug.com/en/contents/fairweather/road-bar-bag.php",
+        "features": {
+          "closure": "rolltop",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "handlebar straps; 5mm urethane interlining keeps the shape and protects the frame from scratches",
+          "colorways": [
+            {
+              "name": "Cordura / Light Gray",
+              "hex": "#b7b8b2"
+            },
+            {
+              "name": "Cordura / Flash Orange",
+              "hex": "#c8752a"
+            },
+            {
+              "name": "Rip Black",
+              "hex": "#232326"
+            }
+          ]
+        },
+        "images": [
+          "https://bluelug.com/en/contents/fairweather/images/roadbarbag/1.jpg",
+          "https://bluelug.com/en/contents/fairweather/images/roadbarbag/10.jpg"
+        ]
+      },
+      {
+        "slot": "stembag",
+        "line": "Stem Bag",
+        "name": "Stem Bag+",
+        "size": "Plus (1.9L)",
+        "liters": 1.9,
+        "dims_cm": {
+          "len": 11,
+          "hgt": 16,
+          "wid": 11
+        },
+        "dims_state": "packed",
+        "dims_raw": "Capacity: 1.9 liters. Dimentions: L 16cm x W 11cm x D 11cm. Weight: 90g (AVG.)",
+        "dims_note": "Their 'L 16cm' is the vertical height of the pouch, so it maps to hgt; the 11 x 11 square section gives len and wid. Fits a 32oz Nalgene. Smaller Stem Bag and Stem Bag Light versions also exist.",
+        "colors": [
+          "#c8752a",
+          "#e8c62a",
+          "#b7b8b2"
+        ],
+        "src": "https://bluelug.com/en/contents/fairweather/stem-bag-plus.php",
+        "features": {
+          "closure": "cinch",
+          "shape": "cylindrical",
+          "compressionStraps": 0,
+          "pockets": [
+            {
+              "face": "side",
+              "type": "open"
+            },
+            {
+              "face": "side",
+              "type": "open"
+            }
+          ],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": true,
+          "valve": false,
+          "mount": "stem and handlebar straps, one-handed drawcord; mesh bottom drains better than the plain Stem Bag; 4mm urethane foam sides",
+          "colorways": [
+            {
+              "name": "Cordura / Flash Orange",
+              "hex": "#c8752a"
+            },
+            {
+              "name": "Cordura / Flash Yellow",
+              "hex": "#e8c62a"
+            },
+            {
+              "name": "Cordura / Light Gray",
+              "hex": "#b7b8b2"
+            }
+          ]
+        },
+        "images": [
+          "https://bluelug.com/en/contents/fairweather/images/stembagplus/10.jpg",
+          "https://bluelug.com/en/contents/fairweather/images/stembagplus/11.jpg"
+        ]
+      },
+      {
+        "slot": "framebag_half",
+        "line": "Frame Bag",
+        "name": "Frame Bag ADV (Medium)",
+        "size": "Medium (4L)",
+        "liters": 4,
+        "dims_cm": {
+          "len": 34,
+          "hgt": 33,
+          "wid": 6
+        },
+        "dims_state": "packed",
+        "dims_raw": "Size small - Capacity: 3.6 liters, Dimension: L 33cm x H 27.5cm x W 6cm. Size medium - Capacity: 4L, Dimension: L 34cm x H 33cm x W 6cm. Weight: 141g (AVG.)",
+        "dims_note": "Fixed-size zip bag, printed L x H x W maps straight across. This entry is the Medium; a Small exists at 33 x 27.5 x 6cm / 3.6L. Fills roughly 3/4 of the triangle while leaving room for a bottle cage.",
+        "colors": [
+          "#6e7350",
+          "#b7b8b2"
+        ],
+        "src": "https://bluelug.com/en/contents/fairweather/frame-bag-adv.php",
+        "features": {
+          "closure": "zip",
+          "shape": "triangular",
+          "compressionStraps": 0,
+          "pockets": [],
+          "reflective": false,
+          "daisyChains": false,
+          "cord": false,
+          "valve": false,
+          "mount": "multiple strap loops so one bag fits a range of frame sizes",
+          "colorways": [
+            {
+              "name": "Grid Rip / Olive / Beige",
+              "hex": "#6e7350"
+            },
+            {
+              "name": "Grid Rip / Light Gray / Green",
+              "hex": "#b7b8b2"
+            }
+          ]
+        },
+        "images": [
+          "https://bluelug.com/en/contents/fairweather/images/framebagadv/1_l.jpg",
+          "https://bluelug.com/en/contents/fairweather/images/framebagadv/10.jpg"
+        ]
+      }
+    ]
+  }
+]

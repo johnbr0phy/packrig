@@ -1,0 +1,597 @@
+[
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Full Frame Pack",
+  "size": "4.6L",
+  "verified": true,
+  "dims_cm": {
+   "len": 38.5,
+   "hgt": 26.5,
+   "wid": 6.5
+  },
+  "dims_state": "packed",
+  "dims_raw": "38.5 cm top; 26.5 cm seat-tube side; 39.5 cm downtube diagonal; 6 cm bottom; 2.5 cm rear; Tapered Width: 6.5 - 6 cm",
+  "dims_note": "FALSE POSITIVE. Dimensions are correct as stored, straight off Apidura's own size diagram. Photo (assets/products/apidura/expedition-full-frame-pack-8l-1.jpg) shows a full main-triangle bag: long top-tube edge, tall seat-tube edge, ~6.5cm thick. A full-triangle frame bag CANNOT satisfy longest/middle >= 1.5 — a 56cm gravel frame's main triangle is roughly 4:3, so every correct framebag_full sits between 1.2 and 1.4. The check's elongation threshold is the thing that is wrong, not these numbers. Box is ~2x the stated litres in every size, exactly as expected for a triangle carried as a bounding box.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Full Frame Pack",
+  "size": "6.8L",
+  "verified": true,
+  "dims_cm": {
+   "len": 43,
+   "hgt": 31,
+   "wid": 6.5
+  },
+  "dims_state": "packed",
+  "dims_raw": "43 cm top; 31 cm seat-tube side; 44 cm downtube diagonal; 8 cm bottom; 3.5 cm rear; Tapered Width: 6.5 - 6 cm",
+  "dims_note": "FALSE POSITIVE. Dimensions are correct as stored, straight off Apidura's own size diagram. Photo (assets/products/apidura/expedition-full-frame-pack-8l-1.jpg) shows a full main-triangle bag: long top-tube edge, tall seat-tube edge, ~6.5cm thick. A full-triangle frame bag CANNOT satisfy longest/middle >= 1.5 — a 56cm gravel frame's main triangle is roughly 4:3, so every correct framebag_full sits between 1.2 and 1.4. The check's elongation threshold is the thing that is wrong, not these numbers. Box is ~2x the stated litres in every size, exactly as expected for a triangle carried as a bounding box.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Full Frame Pack",
+  "size": "8L",
+  "verified": true,
+  "dims_cm": {
+   "len": 46,
+   "hgt": 34.5,
+   "wid": 6.5
+  },
+  "dims_state": "packed",
+  "dims_raw": "46 cm top; 34.5 cm seat-tube side; 47 cm downtube diagonal; 7.5 cm bottom; 5 cm rear; Tapered Width: 6.5 - 6 cm",
+  "dims_note": "FALSE POSITIVE. Dimensions are correct as stored, straight off Apidura's own size diagram. Photo (assets/products/apidura/expedition-full-frame-pack-8l-1.jpg) shows a full main-triangle bag: long top-tube edge, tall seat-tube edge, ~6.5cm thick. A full-triangle frame bag CANNOT satisfy longest/middle >= 1.5 — a 56cm gravel frame's main triangle is roughly 4:3, so every correct framebag_full sits between 1.2 and 1.4. The check's elongation threshold is the thing that is wrong, not these numbers. Box is ~2x the stated litres in every size, exactly as expected for a triangle carried as a bounding box.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Full Frame Pack",
+  "size": "10L",
+  "verified": true,
+  "dims_cm": {
+   "len": 49,
+   "hgt": 39,
+   "wid": 6.5
+  },
+  "dims_state": "packed",
+  "dims_raw": "49 cm top; 39 cm seat-tube side; 49.5 cm downtube diagonal; 8.5 cm bottom; 7.5 cm rear; Tapered Width: 6.5 - 6 cm",
+  "dims_note": "FALSE POSITIVE. Dimensions are correct as stored, straight off Apidura's own size diagram. Photo (assets/products/apidura/expedition-full-frame-pack-8l-1.jpg) shows a full main-triangle bag: long top-tube edge, tall seat-tube edge, ~6.5cm thick. A full-triangle frame bag CANNOT satisfy longest/middle >= 1.5 — a 56cm gravel frame's main triangle is roughly 4:3, so every correct framebag_full sits between 1.2 and 1.4. The check's elongation threshold is the thing that is wrong, not these numbers. Box is ~2x the stated litres in every size, exactly as expected for a triangle carried as a bounding box.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Stem Pack",
+  "size": "1.3L",
+  "verified": true,
+  "dims_cm": {
+   "len": 7,
+   "hgt": 26,
+   "wid": 10,
+   "dia": 10
+  },
+  "dims_state": "packed",
+  "dims_raw": "10 cm wide; MIN 20 cm / MAX 26 cm tall; 7 cm deep",
+  "dims_note": "CORRECTED. len was 26, a duplicate of the 26cm height, which made the box 26x26x10 = 6.8L against a stated 1.3L. The page states three distinct figures: 10 cm wide (across the bike), 26 cm tall at MAX roll, 7 cm deep (fore-aft). Photo (assets/products/apidura/expedition-stem-pack-1-3l-1.jpg) confirms a shallow upright pouch that is wider across the bike than it is deep — nothing about it is 26cm fore-aft. len set to the stated 7cm depth: box 1.82L, cylinder read 1.43L against 1.3L rated. Note the len=hgt duplication is a house convention for upright cylinders elsewhere in the catalogue (Backcountry Food Pouch, Blackburn Outpost Carryall) and buildStembag ignores len, so this is a data fix, not a render fix.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Cargo Cage Pack",
+  "size": "1.5L",
+  "verified": true,
+  "dims_cm": {
+   "len": 8.5,
+   "hgt": 28,
+   "wid": 9,
+   "dia": 9
+  },
+  "dims_state": "packed",
+  "dims_raw": "9 cm wide; MIN 19 cm / MAX 28 cm tall; Width: 8.5 cm (3.3 in) fore-aft",
+  "dims_note": "CORRECTED. len was 28, a duplicate of the 28cm height (box 28x28x9 = 7.1L against 1.5L). The page gives 9 cm wide, MAX 28 cm tall, 8.5 cm fore-aft. Photo (assets/products/apidura/expedition-cargo-cage-pack-1-5l-1.jpg) is unambiguous: a tall thin dry-bag roughly 3x taller than wide, strapped to a cage. len set to 8.5: box 2.14L, cylinder read 1.68L against 1.5L rated. This one also mattered for rendering — buildForkbag sorts the three axes and takes the second-largest as girth, so the duplicated 28 was drawing a 28cm-fat blob instead of a 9cm tube. Kept MAX 28 rather than MIN 19: at 19cm the cylinder is 1.14L, below the rated capacity, and Apidura rates at MAX elsewhere (Expedition Saddle Pack 9L).",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Frame Pack",
+  "size": "1L",
+  "verified": true,
+  "dims_cm": {
+   "len": 22,
+   "hgt": 10.5,
+   "wid": 6
+  },
+  "dims_state": "packed",
+  "dims_raw": "22 cm long; 6 cm and 10.5 cm heights; 3.5 cm rear; Width: 6 cm (2.3 in)",
+  "dims_note": "FALSE POSITIVE. Ratio 2.10 against a 2.20 threshold. Dimensions unchanged and correct: 22cm along the top tube, 10.5cm at the tallest point, 6cm across. Box 1.39L against 1L rated, right for a wedge. A half-frame wedge is not a 2.2:1 object. Photos (racing-frame-pack-1l-1.jpg, backcountry-frame-pack-1l-1.jpg) show stubby triangles whose height is roughly two-thirds of their top-tube length. The framebag_half elongation threshold of 2.2 is too strict for the small sizes; these numbers are Apidura's own diagram figures.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Rear Top Tube Pack",
+  "size": "1L",
+  "verified": true,
+  "dims_cm": {
+   "len": 16.5,
+   "hgt": 15,
+   "wid": 4.5
+  },
+  "dims_state": "packed",
+  "dims_raw": "16.5 cm long x 15 cm tall; Width: 4.5 cm (1.8 in)",
+  "dims_note": "FALSE POSITIVE, and the clearest one in the batch. This is a REAR top tube pack — it stands up at the seat-tube junction, it is not a long thin tube bag. Photo (assets/products/apidura/backcountry-rear-top-tube-pack-1l-1.jpg) shows a tall wedge that is very nearly as tall as it is long, exactly as the 16.5 x 15 figures say. Box 1.11L against 1L rated — an almost perfect volume reconciliation, which is the strongest possible evidence the numbers are real. The toptube 2:1 rule should not be applied to rear/seat-tube-junction packs.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Frame Pack",
+  "size": "1L",
+  "verified": true,
+  "dims_cm": {
+   "len": 20.5,
+   "hgt": 13.5,
+   "wid": 5
+  },
+  "dims_state": "packed",
+  "dims_raw": "20.5 cm long; 7 cm front and 13.5 cm mid heights; 3.5 cm rear; Width: 5 cm (2 in)",
+  "dims_note": "FALSE POSITIVE. Ratio 1.52. Photo (assets/products/apidura/racing-frame-pack-1l-1.jpg) shows a short deep wedge — 13.5cm tall over a 20.5cm top edge is what the picture shows. Box 1.38L against 1L rated. A half-frame wedge is not a 2.2:1 object. Photos (racing-frame-pack-1l-1.jpg, backcountry-frame-pack-1l-1.jpg) show stubby triangles whose height is roughly two-thirds of their top-tube length. The framebag_half elongation threshold of 2.2 is too strict for the small sizes; these numbers are Apidura's own diagram figures.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Frame Pack",
+  "size": "2.4L",
+  "verified": true,
+  "dims_cm": {
+   "len": 29,
+   "hgt": 14,
+   "wid": 6
+  },
+  "dims_state": "packed",
+  "dims_raw": "29 cm long; 7 cm front, 14 cm mid, 5 cm rear heights; Width: 6 cm (2.4 in)",
+  "dims_note": "FALSE POSITIVE. Ratio 2.07 against a 2.20 threshold. Maker diagram figures, box 2.44L against 2.4L rated — a near-exact volume match, so the numbers are certainly right. A half-frame wedge is not a 2.2:1 object. Photos (racing-frame-pack-1l-1.jpg, backcountry-frame-pack-1l-1.jpg) show stubby triangles whose height is roughly two-thirds of their top-tube length. The framebag_half elongation threshold of 2.2 is too strict for the small sizes; these numbers are Apidura's own diagram figures.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Top Tube Pack",
+  "size": "0.5L",
+  "verified": true,
+  "dims_cm": {
+   "len": 17,
+   "hgt": 10,
+   "wid": 4.5
+  },
+  "dims_state": "packed",
+  "dims_raw": "17 cm long x 10 cm tall; Width: 4.5 cm (1.8 in)",
+  "dims_note": "FALSE POSITIVE. Ratio 1.70. Photo (assets/products/apidura/racing-top-tube-pack-0-5l-1.jpg) shows the bag mounted behind the stem: a compact humped wedge about 1.7x as long as it is tall, matching 17 x 10 exactly. Box 0.77L against 0.5L rated, normal for a tapered bag. The toptube 2:1 threshold is too strict for sub-1L packs.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Frame Module",
+  "size": "Medium",
+  "verified": true,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 17.5,
+   "wid": 4.5
+  },
+  "dims_state": "packed",
+  "dims_raw": "30.5 cm top length; 35 cm downtube diagonal; 17.5 cm front and 14 cm mid heights; 3 cm rear",
+  "dims_note": "FALSE POSITIVE on the flagged axis ratio (1.74). Photo (assets/products/apidura/aero-frame-module-medium-1.jpg) shows a long low module, tall at the head-tube end and tapering rearward — consistent with a 30.5cm top edge and a 17.5cm front height. len is already the top-tube length, not the 35cm downtube diagonal. CAVEAT unrelated to the flag: the Aero page publishes no width, so wid 4.5 is carried over and remains unverified; box 2.4L against 1.5L rated is plausible but rests on that unverified axis.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Frame Module",
+  "size": "Large",
+  "verified": true,
+  "dims_cm": {
+   "len": 31.5,
+   "hgt": 19.5,
+   "wid": 4.5
+  },
+  "dims_state": "packed",
+  "dims_raw": "31.5 cm top length; 36 cm downtube diagonal; 19.5 cm front and 16.5 cm mid heights; 6.5 cm rear",
+  "dims_note": "FALSE POSITIVE on the flagged axis ratio (1.62). Same geometry as the Medium: len is the top-tube edge, hgt the tallest (front) height, both from Apidura's diagram. Same caveat — the page gives no width, so wid 4.5 is carried over and unverified. Box 2.76L against 2.8L rated, which is a suspiciously good match and mild support for the 4.5cm guess.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Canyon Collab",
+  "name": "Frame Pack",
+  "size": "2.4L",
+  "verified": true,
+  "dims_cm": {
+   "len": 29,
+   "hgt": 14,
+   "wid": 6
+  },
+  "dims_state": "packed",
+  "dims_raw": "29 cm long; 7 cm front, 14 cm mid, 5 cm rear heights; Width: 6 cm (2.4 in)",
+  "dims_note": "FALSE POSITIVE. Identical product to the Racing Frame Pack 2.4L in Canyon livery and it shares that pack's diagram. Ratio 2.07, box 2.44L against 2.4L rated. A half-frame wedge is not a 2.2:1 object. Photos (racing-frame-pack-1l-1.jpg, backcountry-frame-pack-1l-1.jpg) show stubby triangles whose height is roughly two-thirds of their top-tube length. The framebag_half elongation threshold of 2.2 is too strict for the small sizes; these numbers are Apidura's own diagram figures.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "MAAP Collab",
+  "name": "Frame Pack",
+  "size": "1L",
+  "verified": true,
+  "dims_cm": {
+   "len": 20.5,
+   "hgt": 13.5,
+   "wid": 5
+  },
+  "dims_state": "packed",
+  "dims_raw": "20.5 cm long; 7 cm front and 13.5 cm mid heights; 3.5 cm rear; Width: 5 cm (2 in)",
+  "dims_note": "FALSE POSITIVE. Same body as the Racing Frame Pack 1L in MAAP livery, same diagram. Ratio 1.52, box 1.38L against 1L rated. A half-frame wedge is not a 2.2:1 object. Photos (racing-frame-pack-1l-1.jpg, backcountry-frame-pack-1l-1.jpg) show stubby triangles whose height is roughly two-thirds of their top-tube length. The framebag_half elongation threshold of 2.2 is too strict for the small sizes; these numbers are Apidura's own diagram figures.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "Bombtrack Collab",
+  "name": "Frame Pack",
+  "size": "2.4L",
+  "verified": true,
+  "dims_cm": {
+   "len": 31,
+   "hgt": 15,
+   "wid": 6
+  },
+  "dims_state": "packed",
+  "dims_raw": "31 cm long; 7.5 cm front, 15 cm mid, 5 cm rear heights; Width: 6 cm (2.4 in)",
+  "dims_note": "FALSE POSITIVE. Ratio 2.07. Maker diagram figures; box 2.79L against 2.4L rated. A half-frame wedge is not a 2.2:1 object. Photos (racing-frame-pack-1l-1.jpg, backcountry-frame-pack-1l-1.jpg) show stubby triangles whose height is roughly two-thirds of their top-tube length. The framebag_half elongation threshold of 2.2 is too strict for the small sizes; these numbers are Apidura's own diagram figures.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Apidura",
+  "line": "MAAP Collab",
+  "name": "Handlebar Pack",
+  "size": "9L",
+  "verified": true,
+  "dims_cm": {
+   "len": 43,
+   "hgt": 12,
+   "wid": 12,
+   "dia": 12
+  },
+  "dims_state": "packed",
+  "dims_raw": "12 cm tall; MIN 28.5 cm / MAX 43 cm wide; 22 cm front pocket; 13 cm strap spacing; Width: 12 cm (4.7 in)",
+  "dims_note": "VERIFIED, dims unchanged — the discrepancy is Apidura's, not the catalogue's. The dimension diagram on the product page is an SVG with the numerals converted to outlines, so I rendered it (headless Chrome) and read it: it says 12 cm tall, 13 cm strap spacing, 22 cm front pocket, MIN 28.5 cm / MAX 43 cm wide, and the page text adds Width: 12 cm. That is exactly what is stored. A 43 x 12 x 12 envelope is a 4.9L cylinder / 6.2L box, so the stated 9L cannot be an as-mounted volume. Corroboration: the Backcountry Handlebar Pack 7L carries the identical 43/12/12 diagram, i.e. Apidura rates the same envelope at 7L in one line and 9L in another. The litres are the optimistic figure (roll extended plus the 22cm external front pocket); the envelope is right. Left liters alone rather than invent a number the maker does not publish.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Wizard Works",
+  "line": "Go-Go",
+  "name": "Go-Go Top Tube Bag",
+  "size": "Medium (1L)",
+  "verified": true,
+  "dims_cm": {
+   "len": 21,
+   "hgt": 11,
+   "wid": 7
+  },
+  "dims_state": "packed",
+  "dims_raw": "Volume 0.8L / 1L; Size 21w x 7d x 8h cm (Small), 21w x 7d x 11h cm (Medium); Weight 110g / 125g",
+  "dims_note": "FALSE POSITIVE. Ratio 1.91 against a 2.00 threshold. The maker's SPECS tab gives 21w x 7d x 11h for the Medium; w is the run along the top tube, d the across-bike thickness, h the height, which is how it is stored. The Medium is simply the tall version of the Small (same 21 x 7 footprint, 11cm instead of 8cm high), so it is legitimately squatter than a 2:1 rule expects. Box 1.62L against 1L rated. No local image; wizard.works 403s plain HTTP clients behind Cloudflare, and the stored spec line was taken verbatim in a real browser session.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Wizard Works",
+  "line": "Alakazam",
+  "name": "Alakazam Basket Bag",
+  "size": "Wald 137",
+  "verified": true,
+  "dims_cm": {
+   "len": 36,
+   "hgt": 23.5,
+   "wid": 23
+  },
+  "dims_state": "packed",
+  "dims_raw": "Wald 137: Volume 9-38L (when fully unrolled), Size 36w x 23d x 13-48h cm, Weight 565g",
+  "dims_note": "FALSE POSITIVE of the volume-too-small kind: THE LITRES ARE THE MAXIMUM-ROLL FIGURE, not a packed capacity. Wizard Works quotes both the volume and the height range 'when fully unrolled' in the same breath, and dims_cm deliberately holds the packed height instead of that maximum, so comparing the packed box to the unrolled litres is comparing two different states. Dimensions unchanged. One real fix: dims_state was 'unrolled' while the height stored is a packed estimate — corrected to 'packed'. The packed height itself is a min + 0.3*(max-min) estimate, not a maker figure, hence medium confidence on hgt. No local image (wizard.works is behind Cloudflare); spec line captured verbatim in a browser session. Rolled right down this bag is 9L, and 36 x 23 x 13 = 10.8L, which reconciles cleanly.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Wizard Works",
+  "line": "Alakazam",
+  "name": "Alakazam Basket Bag",
+  "size": "Manivelle",
+  "verified": true,
+  "dims_cm": {
+   "len": 39,
+   "hgt": 21.8,
+   "wid": 27
+  },
+  "dims_state": "packed",
+  "dims_raw": "Manivelle: Volume 11-49L (when fully unrolled), Size 39w x 27d x 11-47h cm, Weight 655g",
+  "dims_note": "FALSE POSITIVE of the volume-too-small kind: THE LITRES ARE THE MAXIMUM-ROLL FIGURE, not a packed capacity. Wizard Works quotes both the volume and the height range 'when fully unrolled' in the same breath, and dims_cm deliberately holds the packed height instead of that maximum, so comparing the packed box to the unrolled litres is comparing two different states. Dimensions unchanged. One real fix: dims_state was 'unrolled' while the height stored is a packed estimate — corrected to 'packed'. The packed height itself is a min + 0.3*(max-min) estimate, not a maker figure, hence medium confidence on hgt. No local image (wizard.works is behind Cloudflare); spec line captured verbatim in a browser session. Rolled right down: 39 x 27 x 11 = 11.6L against the 11L bottom of the maker's range.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Wizard Works",
+  "line": "Forres",
+  "name": "Forres Full Frame Bag",
+  "size": "Medium",
+  "verified": true,
+  "dims_cm": {
+   "len": 49,
+   "hgt": 36,
+   "wid": 6
+  },
+  "dims_state": "packed",
+  "dims_raw": "Volume 5L / 6.5L / 7.8L / 9.5L; Size 45 x 29 x 6 cm / 49 x 36 x 6 cm / 52 x 39 x 6 cm / 55 x 44 x 6 cm",
+  "dims_note": "FALSE POSITIVE. Same rule error as the Apidura Expedition Full Frame Packs: a full main triangle is a ~4:3 object and can never reach longest/middle >= 1.5. The maker's SPECS tab lists all four sizes as a clean progression (45x29x6 / 49x36x6 / 52x39x6 / 55x44x6), which is exactly what is stored, and every size gives a box about 2x the stated litres — the signature of a triangle recorded as a bounding box.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Wizard Works",
+  "line": "Forres",
+  "name": "Forres Full Frame Bag",
+  "size": "Large",
+  "verified": true,
+  "dims_cm": {
+   "len": 52,
+   "hgt": 39,
+   "wid": 6
+  },
+  "dims_state": "packed",
+  "dims_raw": "Volume 5L / 6.5L / 7.8L / 9.5L; Size 45 x 29 x 6 cm / 49 x 36 x 6 cm / 52 x 39 x 6 cm / 55 x 44 x 6 cm",
+  "dims_note": "FALSE POSITIVE. Same rule error as the Apidura Expedition Full Frame Packs: a full main triangle is a ~4:3 object and can never reach longest/middle >= 1.5. The maker's SPECS tab lists all four sizes as a clean progression (45x29x6 / 49x36x6 / 52x39x6 / 55x44x6), which is exactly what is stored, and every size gives a box about 2x the stated litres — the signature of a triangle recorded as a bounding box.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Wizard Works",
+  "line": "Forres",
+  "name": "Forres Full Frame Bag",
+  "size": "XL",
+  "verified": true,
+  "dims_cm": {
+   "len": 55,
+   "hgt": 44,
+   "wid": 6
+  },
+  "dims_state": "packed",
+  "dims_raw": "Volume 5L / 6.5L / 7.8L / 9.5L; Size 45 x 29 x 6 cm / 49 x 36 x 6 cm / 52 x 39 x 6 cm / 55 x 44 x 6 cm",
+  "dims_note": "FALSE POSITIVE. Same rule error as the Apidura Expedition Full Frame Packs: a full main triangle is a ~4:3 object and can never reach longest/middle >= 1.5. The maker's SPECS tab lists all four sizes as a clean progression (45x29x6 / 49x36x6 / 52x39x6 / 55x44x6), which is exactly what is stored, and every size gives a box about 2x the stated litres — the signature of a triangle recorded as a bounding box.",
+  "confidence": "high"
+ },
+ {
+  "brand": "SILCA",
+  "line": "Mattone",
+  "name": "Mattone Seat Pack",
+  "size": "0.5L",
+  "verified": true,
+  "dims_cm": {
+   "len": 12.5,
+   "hgt": 8,
+   "wid": 5
+  },
+  "dims_state": "packed",
+  "dims_raw": "125mm x 80mm x 50mm; 0.5L; 90g",
+  "dims_note": "FALSE POSITIVE. Ratio 1.56 against a 1.60 threshold — a rounding-width miss. 12.5 x 8 x 5 = exactly 0.5L, matching the stated capacity to the litre, which is about as strong as dimensional evidence gets. This is a small rigid-backed wedge tensioned under the saddle by a BOA strap, not a tapered bikepacking seatpack, so the 1.6 elongation rule does not describe it.",
+  "confidence": "high"
+ },
+ {
+  "brand": "SILCA",
+  "line": "Mattone",
+  "name": "Mattone Ultimate Seat Pack",
+  "size": "0.4L",
+  "verified": true,
+  "dims_cm": {
+   "len": 12.5,
+   "hgt": 9,
+   "wid": 4
+  },
+  "dims_state": "packed",
+  "dims_raw": "125mm x 40mm x 90mm; 0.4L; 90g listed as 44g",
+  "dims_note": "FALSE POSITIVE. Ratio 1.39. SILCA lists this model L x W x H (40mm is the across-bike thickness, 90mm the height) — different from the standard Mattone's L x H x W — and the stored record already handles that. Photo (assets/products/silca/mattone-mattone-ultimate-seat-pack-0-4l-2.webp shown on a saddle) confirms a stubby deep wedge roughly 12.5cm fore-aft by 9cm deep vertically, thin across the bike. Box 0.45L against 0.4L rated.",
+  "confidence": "high"
+ },
+ {
+  "brand": "SILCA",
+  "line": "Grinta",
+  "name": "Grinta Roll Top Bag",
+  "size": "2-5L",
+  "verified": true,
+  "dims_cm": {
+   "len": 30,
+   "hgt": 15,
+   "wid": 15
+  },
+  "dims_state": "packed",
+  "dims_raw": "Dimensions: 30cm x 15cm x 15cm (rolled to top of PE); 2-5 liters; 208g",
+  "dims_note": "CORRECTED, and this one was genuinely broken. len had been overwritten with 16.4cm — a figure no source states, back-computed by an earlier pass from an assumed mid-roll volume — which turned the bag into a 16.4 x 15 x 15 cube and tripped both the too-cubic and near-cube flags. SILCA publishes one dimension set, 30 x 15 x 15, and explicitly qualifies it 'rolled to top of PE', i.e. it is already a rolled/packed figure, not an extended one. Restored len to the stated 30cm and set dims_state to packed. Photo (assets/products/silca/grinta-grinta-roll-top-bag-2-5l-1.png) settles it: a long tapering wedge roughly twice as long as it is deep — nothing like a ball. Box 6.75L against the stored 2.9L mid-roll capacity, ~2.3x, which is the expected ratio for a wedge whose fabric volume is about half its bounding box. Left liters alone: the maker's range is 2-5L and 2.9 sits inside it.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Green Guru Gear",
+  "line": "Clutch",
+  "name": "Clutch Saddle Bag",
+  "size": "0.8L",
+  "verified": true,
+  "dims_cm": {
+   "len": 12.7,
+   "hgt": 8.9,
+   "wid": 7.6
+  },
+  "dims_state": "packed",
+  "dims_raw": "52 cubic inches / 0.8 liters; 3 L x 3.5 H x 5 D inches (76.2 x 88.9 x 127 mm)",
+  "dims_note": "FALSE POSITIVE. Ratio 1.43. Green Guru's L figure (3in) is the across-bike width and D (5in) is the fore-aft depth, which the stored record already maps correctly. Photo (assets/products/green-guru-gear/clutch-clutch-saddle-bag-0-8l-1.jpg, mounted under a saddle) shows a chunky little inner-tube pouch about 12.7cm fore-aft and nearly as deep vertically as it is wide — a stubby object, not an elongated one. Box 0.86L against 0.8L rated.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Green Guru Gear",
+  "line": "Upshift",
+  "name": "Upshift Frame Bag",
+  "size": "2.7L",
+  "verified": true,
+  "dims_cm": {
+   "len": 38.1,
+   "hgt": 22.9,
+   "wid": 6.35
+  },
+  "dims_state": "packed",
+  "dims_raw": "2.7 liters / 168.7 cubic inches; 15\" L x 9\" H x 2.5\" D (381 x 228.6 x 63.5 mm)",
+  "dims_note": "FALSE POSITIVE. Ratio 1.66 against a 2.20 threshold. Photo (assets/products/green-guru-gear/upshift-upshift-frame-bag-2-7l-1.png) shows a right-triangle half-frame bag with a 15in top edge and a 9in drop — the numbers describe the picture. Green Guru's own arithmetic confirms the triangle: 15 x 9 x 2.5in = 337.5 cu in, and they publish 168.7 cu in, exactly half the box. So the dims and the litres agree with each other; only the elongation threshold disagrees.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Green Guru Gear",
+  "line": "Fullshift",
+  "name": "Fullshift Frame Bag",
+  "size": "Medium (2.8L)",
+  "verified": true,
+  "dims_cm": {
+   "len": 52.1,
+   "hgt": 31.8,
+   "wid": 7.6
+  },
+  "dims_state": "packed",
+  "dims_raw": "600x Medium: 20.5\" TT x 23.4\" DT x 12.5\" SP x 3\" / 2.8L",
+  "dims_note": "VERIFIED, dims unchanged — re-read the page and the size string is verbatim as stored. The 4.5x box-to-litres ratio has two causes and neither is a bad dimension. First, this is a full triangle sized by frame tube lengths, so the bounding box is about twice the fabric volume. Photo (assets/products/green-guru-gear/fullshift-fullshift-frame-bag-medium-2-8l-1.png) shows exactly that: a full main-triangle bag, long top edge, thin. Second, Green Guru's stated litres are inconsistent with their own convention — on the Upshift they publish precisely half the bounding box (168.7 of 337.5 cu in), but applying that same rule here would give ~6.3L, not 2.8L. Their 2.8L understates a bag whose measured triangle is ~6L. I have not overwritten capacity_l because 2.8L is what the maker publishes and I will not substitute a derived number, but treat the litres, not the dims, as the doubtful field on this product.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Swift Industries",
+  "line": "Giddy Up",
+  "name": "Giddy Up Wedge Frame Bag",
+  "size": "3.3L",
+  "verified": true,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 21.6,
+   "wid": 5.1
+  },
+  "dims_state": "packed",
+  "dims_raw": "Dimensions Measurements: 12” w X 8.5” h X 2” d; Capacity: 3.3 Liters; Weight: 5 oz",
+  "dims_note": "FALSE POSITIVE, and the dims are now maker-sourced where they were previously unsourced. The spec block is rendered client-side so a plain fetch returns nothing; pulled the page HTML directly and read the Specs tab: 12in w x 8.5in h x 2in d = 30.5 x 21.6 x 5.1cm, exactly the stored values. Box 3.35L against a stated 3.3L — a near-exact match, so these are true packed dimensions. Ratio 1.41 simply reflects that a small wedge frame bag is not a 2.2:1 object. dims_state should move from 'unknown' to 'packed' and the source from none to maker.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Swift Industries",
+  "line": "Gemini",
+  "name": "Gemini Cargo Pack",
+  "size": "4L",
+  "verified": true,
+  "dims_cm": {
+   "len": 12.7,
+   "hgt": 24.1,
+   "wid": 7.6
+  },
+  "dims_state": "packed",
+  "dims_raw": "Dimensions Measurements: 5” w x 9.5” h x 3” d; Capacity : 4 Liters; Weight: 3.5 oz",
+  "dims_note": "VERIFIED, dims unchanged, and now maker-sourced. Read the Specs tab out of the page HTML: 5in w x 9.5in h x 3in d = 12.7 x 24.1 x 7.6cm, precisely what was stored. THE LITRES ARE THE MAXIMUM-ROLL FIGURE: this is a roll-top cargo-cage bag and Swift's own box is 2.33L, so the stated 4L can only be the unrolled capacity. Dimensions are the rolled, as-mounted size, which is what this field wants. Slot checked and left as forkbag — the description is 'anything-style fork mounted cargo cages' and it is sold singly (the two variants are colours, Black and Coyote), so it is not a pannier despite the Gemini name. dims_state should move from 'unknown' to 'packed'.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Gramm Tourpacking",
+  "line": "Seat Bag",
+  "name": "Multi-Tool Seat Bag",
+  "size": "One Size (0.5L)",
+  "verified": true,
+  "dims_cm": {
+   "len": 14,
+   "hgt": 6,
+   "wid": 9
+  },
+  "dims_state": "packed",
+  "dims_raw": "Capacity: 0,5 L. Dimensions: 140 x 90 x 60 mm (L x W x H). Weight: 80 g",
+  "dims_note": "FALSE POSITIVE. Ratio 1.56 against a 1.60 threshold. Gramm labels the axes explicitly (L x W x H) and the stored record maps them straight across: 14cm fore-aft, 9cm across the bike, 6cm tall. Photo (assets/products/gramm-tourpacking/seat-bag-multi-tool-seat-bag-one-size-0-5l-1.jpg) shows a small fixed-size zip pouch, clearly longer fore-aft than tall, with the zip running the length — the proportions match. Box 0.76L against 0.5L rated, normal once the rounded ends are discounted.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Gramm Tourpacking",
+  "line": "Hip Handlebar Bag",
+  "name": "Hip Handlebar Bag 2.5 L",
+  "size": "One Size (2.5L)",
+  "verified": true,
+  "dims_cm": {
+   "len": 23,
+   "hgt": 13,
+   "wid": 13
+  },
+  "dims_state": "packed",
+  "dims_raw": "Capacity: 2,5 L. Dimensions: 230 mm length, Ø 130 mm",
+  "dims_note": "FALSE POSITIVE. Ratio 1.77 against a 1.80 threshold — it misses by 0.03. Gramm publishes a length and a diameter, not three axes, so hgt and wid both correctly carry the 130mm diameter; for a cylinder that is the right encoding, not a duplicated axis. Photo (assets/products/gramm-tourpacking/hip-handlebar-bag-hip-handlebar-bag-2-5-l-one-size-2-5l-1.jpg) shows a short fat barrel roughly 1.8x as long as it is thick — the picture and the numbers agree. Cylinder volume 3.05L against 2.5L rated.",
+  "confidence": "high"
+ },
+ {
+  "brand": "AGU",
+  "line": null,
+  "name": "AGU Top-Tube Frame Bag Venture Extreme Waterproof",
+  "size": null,
+  "verified": true,
+  "dims_cm": {
+   "len": 21,
+   "hgt": 6,
+   "wid": 11
+  },
+  "dims_state": "packed",
+  "dims_raw": "21 x 11 x 6 centimeters; 0.7 liters",
+  "dims_note": "FALSE POSITIVE, and the dims are now sourced where they had no source at all. The AGU page states 21 x 11 x 6 cm and 0.7L verbatim. The axis assignment is the part worth confirming and the photos do it: AGU's studio shot and their on-bike shot both show a broad, low, flat-topped wedge sitting on the top tube — the top face is wide and the side profile is shallow. So wid 11 (across the bike) and hgt 6 is right, unusual as that is for a top tube bag, and it should not be swapped to the more typical narrow-and-tall arrangement. Ratio 1.91 against a 2.00 threshold. Box 1.39L against 0.7L rated, right for a tapered wedge. dims_state should move from 'unknown' to 'packed'. Note this product carries no line or size key in brands.json; join on brand plus name.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Carradice",
+  "line": "Super C",
+  "name": "Super C SQR Slim",
+  "size": "16L",
+  "verified": true,
+  "dims_cm": {
+   "len": 15,
+   "hgt": 36,
+   "wid": 29
+  },
+  "dims_state": "packed",
+  "dims_raw": "Dimensions (WxHxD): 29x36x15cms 11.4”x 14.2”x 5.9”; Capacity: 16L",
+  "dims_note": "FALSE POSITIVE, after specifically testing the Carradice axis-order trap. The page labels the triple (WxHxD), and here the label is literal — I checked it against Carradice's own product photography rather than trusting it. The maker's studio shot of the bag's frame-side face (carradice.co.uk/cdn/shop/products/carradice_scsqrslim-2.jpg) shows the SQR mounting plate running vertically up a face that is distinctly TALLER than it is wide, roughly 0.8:1 — i.e. 29cm across the bike by 36cm tall, with a shallow 15cm fore-aft depth. That is the reverse of what the stored dims would look like if the axes had been transposed, so the stored mapping (len 15 fore-aft, hgt 36, wid 29) is correct. An on-bike customer photo (assets/products/carradice/super-c-super-c-sqr-slim-16l-1.jpg) reads ambiguously from its three-quarter angle and should not be used to overrule it. 29 x 36 x 15 = 15.7L against a stated 16L. The bag genuinely is a squat 1.24:1 box — a traditional saddlebag hanging off an SQR block, not a tapered bikepacking seatpack — so the seatpack elongation rule does not apply.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Ron's Bikes",
+  "line": "Fabio's Chest",
+  "name": "Fabio's Chest MINI",
+  "size": "Mini (11L)",
+  "verified": true,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 17.8,
+   "wid": 15.2
+  },
+  "dims_state": "packed",
+  "dims_raw": "Body is 10\" wide, 12\" with side pockets full. 7\" in height and 6\" wide from the side. 11 liters of roll top hard bodied carrying capacity.",
+  "dims_note": "CORRECTED (one axis) and the flag is otherwise explained. len was 25.4cm, the 10in bare-body width; the maker states the bag is 12in across once the side pockets are full, and this field wants the packed AS-MOUNTED size, so len becomes 30.5cm. Photo (assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-mini-mini-11l-1.jpg) shows the bag with its side pockets loaded and they are a substantial part of the silhouette, not trim. That takes the box from 6.9L to 8.25L. The remaining gap to 11L is not a bad dimension: THE LITRES ARE THE MAXIMUM-ROLL FIGURE — 7in is the rolled-down body height and the quoted 11L includes the roll extended. dims_state corrected from 'unrolled' to 'packed', which is what these numbers actually describe. Medium confidence because 12in is the loaded-pocket figure and how full the pockets are is a judgement call.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Randi Jo Fabrications",
+  "line": "Jeff 'n Joan's",
+  "name": "Jeff 'n Joan's Bag",
+  "size": "One Size (3L rolled, 5L expanded)",
+  "verified": true,
+  "dims_cm": {
+   "len": 27.9,
+   "hgt": 17.4,
+   "wid": 7.6
+  },
+  "dims_state": "packed",
+  "dims_raw": "11 inches wide by 5.5 inches deep (3 Liter). 5 inch roll-top closure for a max capacity of 10 inches of depth (5 Liter). WEIGHT: 7 oz, 7.5 oz with straps",
+  "dims_note": "FALSE POSITIVE. THE LITRES ARE THE MAXIMUM-ROLL FIGURE and the dims are the packed state, so the two were never comparable: Randi Jo publishes both ends of the roll (3L rolled, 5L expanded) and the stored liters holds the 5L expanded end while hgt holds a packed estimate. Against the rolled 3L the stored box of 3.7L is a perfectly ordinary 1.2x. Photo (assets/products/randi-jo-fabrications/jeff-n-joan-s-...-1.jpg, mounted on Jones bars) confirms the shape: wide across the bars, moderate height, and pressed flat against the bar — consistent with 27.9 x 17.4 and a slim fore-aft depth. dims_state corrected from 'unrolled' to 'packed'. Caveat: wid 7.6 is not published by the maker, it is back-calculated from 3L over the 11 x 5.5in face; the photo supports that order of magnitude but does not pin it, so that axis stays medium-confidence.",
+  "confidence": "medium"
+ }
+]

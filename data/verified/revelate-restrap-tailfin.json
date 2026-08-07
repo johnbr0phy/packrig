@@ -1,0 +1,5191 @@
+[
+ {
+  "brand": "Revelate Designs",
+  "line": "Spinelock",
+  "name": "Spinelock",
+  "size": "10L",
+  "src": "https://revelatedesigns.com/product/spinelock10/",
+  "verified": false,
+  "dims_cm": {
+   "len": 45,
+   "hgt": 20,
+   "wid": 18
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": true,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Spinelock",
+  "name": "Spinelock",
+  "size": "16L",
+  "src": "https://revelatedesigns.com/product/spinelock16/",
+  "verified": false,
+  "dims_cm": {
+   "len": 52,
+   "hgt": 24,
+   "wid": 21
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 16,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": true,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Terrapin",
+  "name": "Terrapin System",
+  "size": "8L",
+  "src": "https://revelatedesigns.com/product/terrapin8l/",
+  "verified": false,
+  "dims_cm": {
+   "len": 43.2,
+   "hgt": 13,
+   "wid": 13,
+   "dia": 12.9
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Clay",
+    "hex": "#b35a38"
+   },
+   {
+    "name": "Tundra",
+    "hex": "#7a7355"
+   },
+   {
+    "name": "Deep Purple",
+    "hex": "#5b4b78"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": true,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Terrapin",
+  "name": "Terrapin System",
+  "size": "14L",
+  "src": "https://revelatedesigns.com/product/terrapinsystem14l/",
+  "verified": false,
+  "dims_cm": {
+   "len": 43.2,
+   "hgt": 19.4,
+   "wid": 19.4,
+   "dia": 19.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 14,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Cascade Blue",
+    "hex": "#2c5f7d"
+   },
+   {
+    "name": "Clay",
+    "hex": "#b35a38"
+   },
+   {
+    "name": "Deep Purple",
+    "hex": "#5b4b78"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": true,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Shrew",
+  "name": "Shrew",
+  "size": "2.25L",
+  "src": "https://revelatedesigns.com/product/shrew/",
+  "verified": false,
+  "dims_cm": {
+   "len": 25.4,
+   "hgt": 12.7,
+   "wid": 12.7
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2.25,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Shrew",
+  "name": "Ultra Shrew",
+  "size": "2.25L",
+  "src": "https://revelatedesigns.com/product/ultra-shrew/",
+  "verified": false,
+  "dims_cm": {
+   "len": 25.4,
+   "hgt": 12.7,
+   "wid": 12.7
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2.25,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Stoat",
+  "name": "Stoat Seat Bag",
+  "size": "0.8L",
+  "src": "https://revelatedesigns.com/product/stoat/",
+  "verified": false,
+  "dims_cm": {
+   "len": 16.5,
+   "hgt": 8.9,
+   "wid": 8.9
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.8,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Sweetroll",
+  "name": "Sweetroll",
+  "size": "11L",
+  "src": "https://revelatedesigns.com/product/sweetroll/",
+  "verified": false,
+  "dims_cm": {
+   "len": 55.9,
+   "hgt": 15.9,
+   "wid": 15.9,
+   "dia": 15.9
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "front"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Sweetroll",
+  "name": "Sweetroll",
+  "size": "15L",
+  "src": "https://revelatedesigns.com/product/sweetroll/",
+  "verified": false,
+  "dims_cm": {
+   "len": 55.9,
+   "hgt": 17.8,
+   "wid": 17.8,
+   "dia": 17.8
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 15,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "front"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Saltyroll",
+  "name": "Saltyroll",
+  "size": "12L",
+  "src": "https://revelatedesigns.com/product/saltyroll/",
+  "verified": false,
+  "dims_cm": {
+   "len": 53.3,
+   "hgt": 16.8,
+   "wid": 16.8,
+   "dia": 16.8
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 12,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pronghorn",
+  "name": "Pronghorn",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/pronghorn/",
+  "verified": false,
+  "dims_cm": {
+   "len": 41.3,
+   "hgt": 11.4,
+   "wid": 14
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 7.5,
+  "colorways": [
+   {
+    "name": "Black/Ultra",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pronghorn",
+  "name": "Pronghorn",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/pronghorn/",
+  "verified": false,
+  "dims_cm": {
+   "len": 48.3,
+   "hgt": 16.5,
+   "wid": 17.8
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black/Ultra",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pronghorn",
+  "name": "Pronghorn",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/pronghorn/",
+  "verified": false,
+  "dims_cm": {
+   "len": 61,
+   "hgt": 19.1,
+   "wid": 21.6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 23,
+  "colorways": [
+   {
+    "name": "Black/Ultra",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Harness",
+  "name": "Hammerhead Harness",
+  "size": "One Size",
+  "src": "https://revelatedesigns.com/product/hammerhead-harness/",
+  "verified": false,
+  "dims_cm": {
+   "len": 26,
+   "hgt": 10,
+   "wid": 12
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "harness",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Egress",
+  "name": "Egress Pocket",
+  "size": "2.8L",
+  "src": "https://revelatedesigns.com/product/egress-pocket/",
+  "verified": false,
+  "dims_cm": {
+   "len": 24.1,
+   "hgt": 20.3,
+   "wid": 7.6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "lid"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Scrambler",
+  "name": "Scrambler Pocket",
+  "size": "3.5L",
+  "src": "https://revelatedesigns.com/product/scrambler-pocket/",
+  "verified": false,
+  "dims_cm": {
+   "len": 24.1,
+   "hgt": 22.9,
+   "wid": 7.6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Campamocha",
+  "name": "Campamocha",
+  "size": "2.3L",
+  "src": "https://revelatedesigns.com/product/campamocha/",
+  "verified": false,
+  "dims_cm": {
+   "len": 20,
+   "hgt": 13,
+   "wid": 9
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "front"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Speedbag",
+  "name": "Speedbag",
+  "size": "1L",
+  "src": "https://revelatedesigns.com/product/speedbag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 19,
+   "hgt": 9,
+   "wid": 7
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Chili",
+    "hex": "#b03a30"
+   },
+   {
+    "name": "White",
+    "hex": "#eeeeee"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "drawcord",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "front"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pitchfork",
+  "name": "Pitchfork Aerobar System",
+  "size": "One Size",
+  "src": "https://revelatedesigns.com/product/pitchfork/",
+  "verified": false,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 18.4,
+   "wid": 15.2
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 8,
+  "colorways": [
+   {
+    "name": "Black/Ultra",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "White DX40",
+    "hex": "#e8e8e6"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": false,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 1,
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "side"
+    },
+    {
+     "type": "stretch",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Mag-Tank",
+  "size": "0.5L",
+  "src": "https://revelatedesigns.com/product/mag-tank/",
+  "verified": false,
+  "dims_cm": {
+   "len": 19,
+   "hgt": 10,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.5,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Mag-Tank FastTrack",
+  "size": "0.5L",
+  "src": "https://revelatedesigns.com/product/mag-tank-fasttrack/",
+  "verified": false,
+  "dims_cm": {
+   "len": 19,
+   "hgt": 10,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.5,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Mag-Tank 2000",
+  "size": "1.4L",
+  "src": "https://revelatedesigns.com/product/magtank2000/",
+  "verified": false,
+  "dims_cm": {
+   "len": 22.2,
+   "hgt": 11.4,
+   "wid": 11.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1.4,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Legacy Mag-Tank",
+  "size": "0.9L",
+  "src": "https://revelatedesigns.com/product/magtank/",
+  "verified": false,
+  "dims_cm": {
+   "len": 21.6,
+   "hgt": 12.7,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.9,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Jerrycan",
+  "name": "Jerrycan",
+  "size": "Regular",
+  "src": "https://revelatedesigns.com/product/jerrycan/",
+  "verified": false,
+  "dims_cm": {
+   "len": 14,
+   "hgt": 12,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.6,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Jerrycan",
+  "name": "Jerrycan",
+  "size": "Bent",
+  "src": "https://revelatedesigns.com/product/jerrycan/",
+  "verified": false,
+  "dims_cm": {
+   "len": 14,
+   "hgt": 12,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.6,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Gas Tank",
+  "name": "Gas Tank",
+  "size": "1.1L",
+  "src": "https://revelatedesigns.com/product/gastank/",
+  "verified": false,
+  "dims_cm": {
+   "len": 22.9,
+   "hgt": 12.7,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1.1,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Extended Play",
+  "name": "Extended Play",
+  "size": "14in",
+  "src": "https://revelatedesigns.com/product/extended-play/",
+  "verified": false,
+  "dims_cm": {
+   "len": 35.6,
+   "hgt": 9,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1.5,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Extended Play",
+  "name": "Extended Play",
+  "size": "18in",
+  "src": "https://revelatedesigns.com/product/extended-play/",
+  "verified": false,
+  "dims_cm": {
+   "len": 45.7,
+   "hgt": 9,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Feedbag",
+  "name": "Mountain Feedbag",
+  "size": "1L",
+  "src": "https://revelatedesigns.com/product/mountainfeedbag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 15.2,
+   "hgt": 15.2,
+   "wid": 9.5,
+   "dia": 9.5
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ranger",
+  "name": "Ranger Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/ranger/",
+  "verified": false,
+  "dims_cm": {
+   "len": 41.3,
+   "hgt": 21,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ranger",
+  "name": "Ranger Frame Bag",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/ranger/",
+  "verified": false,
+  "dims_cm": {
+   "len": 47,
+   "hgt": 26,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 7.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ranger",
+  "name": "Ranger Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/ranger/",
+  "verified": false,
+  "dims_cm": {
+   "len": 50.8,
+   "hgt": 29.2,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 8.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ranger",
+  "name": "Ranger Frame Bag",
+  "size": "XL",
+  "src": "https://revelatedesigns.com/product/ranger/",
+  "verified": false,
+  "dims_cm": {
+   "len": 54.6,
+   "hgt": 34.9,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "verified": false,
+  "dims_cm": {
+   "len": 44.5,
+   "hgt": 34.3,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "verified": false,
+  "dims_cm": {
+   "len": 49.5,
+   "hgt": 37.5,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 6.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "verified": false,
+  "dims_cm": {
+   "len": 52.1,
+   "hgt": 43.2,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 7.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "XL",
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "verified": false,
+  "dims_cm": {
+   "len": 54.6,
+   "hgt": 50.2,
+   "wid": 6.4
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "verified": false,
+  "dims_cm": {
+   "len": 34.9,
+   "hgt": 24.8,
+   "wid": 3.8
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 4.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "verified": false,
+  "dims_cm": {
+   "len": 38.1,
+   "hgt": 28.6,
+   "wid": 3.8
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 5.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "verified": false,
+  "dims_cm": {
+   "len": 41.9,
+   "hgt": 32.4,
+   "wid": 3.8
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "XL",
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "verified": false,
+  "dims_cm": {
+   "len": 44.5,
+   "hgt": 36.2,
+   "wid": 3.8
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 8.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Tangle",
+  "name": "Tangle Frame Bag",
+  "size": "XS",
+  "src": "https://revelatedesigns.com/product/tangleframebag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 38.7,
+   "hgt": 11.4,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Tangle",
+  "name": "Tangle Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/tangleframebag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 44.5,
+   "hgt": 11.4,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Tangle",
+  "name": "Tangle Frame Bag",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/tangleframebag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 50.2,
+   "hgt": 11.4,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Tangle",
+  "name": "Tangle Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/tangleframebag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 54,
+   "hgt": 17.1,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Choss",
+  "name": "Choss Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/choss/",
+  "verified": false,
+  "dims_cm": {
+   "len": 35.6,
+   "hgt": 19.1,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Choss",
+  "name": "Choss Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/choss/",
+  "verified": false,
+  "dims_cm": {
+   "len": 40.6,
+   "hgt": 21.6,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Sandur",
+  "name": "Sandur Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/sandur/",
+  "verified": false,
+  "dims_cm": {
+   "len": 36.8,
+   "hgt": 19.1,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Sandur",
+  "name": "Sandur Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/sandur/",
+  "verified": false,
+  "dims_cm": {
+   "len": 38.1,
+   "hgt": 22.9,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Hopper",
+  "name": "Hopper Frame Bag",
+  "size": "One Size",
+  "src": "https://revelatedesigns.com/product/hopper/",
+  "verified": false,
+  "dims_cm": {
+   "len": 27.9,
+   "hgt": 17.8,
+   "wid": 6
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "flap",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Cranny",
+  "name": "Cranny Frame Bag",
+  "size": "0.6L",
+  "src": "https://revelatedesigns.com/product/cranny/",
+  "verified": false,
+  "dims_cm": {
+   "len": 22.9,
+   "hgt": 16.5,
+   "wid": 9.5
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Blue",
+    "hex": "#2c5f7d"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Nook",
+  "name": "Nook Frame Bag",
+  "size": "1.2L",
+  "src": "https://revelatedesigns.com/product/nook/",
+  "verified": false,
+  "dims_cm": {
+   "len": 24.1,
+   "hgt": 20.3,
+   "wid": 10.2
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1.2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Blue",
+    "hex": "#2c5f7d"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Joey",
+  "name": "Joey Downtube Bag",
+  "size": "1L",
+  "src": "https://revelatedesigns.com/product/joey-downtube-bag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 17.8,
+   "hgt": 10.2,
+   "wid": 10.2
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1.5,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Joey",
+  "name": "Joey Downtube Bag",
+  "size": "2L",
+  "src": "https://revelatedesigns.com/product/joey-downtube-bag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 22.9,
+   "hgt": 12.7,
+   "wid": 12.7
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2.4,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Joey",
+  "name": "Ultra Joey Downtube Bag",
+  "size": "2L",
+  "src": "https://revelatedesigns.com/product/ultra-joey-downtube-bag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 25.4,
+   "hgt": 10.8,
+   "wid": 10.8,
+   "dia": 10.8
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Polecat",
+  "name": "Polecat",
+  "size": "3.5L",
+  "src": "https://revelatedesigns.com/product/polecat/",
+  "verified": false,
+  "dims_cm": {
+   "len": 31.8,
+   "hgt": 31.8,
+   "wid": 13.3
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3.5,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rohn",
+  "name": "Rohn Rack Bag",
+  "size": "37L max",
+  "src": "https://revelatedesigns.com/product/rohn-rack-bag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 48,
+   "hgt": 25,
+   "wid": 30
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 37,
+  "colorways": [
+   {
+    "name": "Black/Ultra Grid",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "barrel",
+   "valve": false,
+   "cord": false,
+   "reflective": true,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "side"
+    },
+    {
+     "type": "stretch",
+     "face": "side"
+    }
+   ]
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Portage",
+  "name": "Portage Panniers",
+  "size": "10L",
+  "src": "https://revelatedesigns.com/product/portage-panniers/",
+  "verified": false,
+  "dims_cm": {
+   "len": 25,
+   "hgt": 35,
+   "wid": 11
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 3,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Portage",
+  "name": "Portage Panniers",
+  "size": "14L",
+  "src": "https://revelatedesigns.com/product/portage-panniers/",
+  "verified": false,
+  "dims_cm": {
+   "len": 28,
+   "hgt": 40,
+   "wid": 12
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 14,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 3,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Portage",
+  "name": "Portage Panniers",
+  "size": "18L",
+  "src": "https://revelatedesigns.com/product/portage-panniers/",
+  "verified": false,
+  "dims_cm": {
+   "len": 30,
+   "hgt": 45,
+   "wid": 13
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 18,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 3,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Nano",
+  "name": "Nano Panniers",
+  "size": "11L each",
+  "src": "https://revelatedesigns.com/product/nanopanniers/",
+  "verified": false,
+  "dims_cm": {
+   "len": 26.7,
+   "hgt": 25.4,
+   "wid": 10.2
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black/Ultra",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pannier Pod",
+  "name": "Pannier Pod",
+  "size": "5.7L",
+  "src": "https://revelatedesigns.com/product/pannierpod/",
+  "verified": false,
+  "dims_cm": {
+   "len": 26.7,
+   "hgt": 22.9,
+   "wid": 9.5
+  },
+  "dims_note": "revelatedesigns.com returned HTTP 403 to the product page, to the /shop/ index and to a direct curl with a browser user-agent; the site blocks automated fetches. Dimensions are unchanged from the existing catalogue and are NOT manufacturer-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 5.7,
+  "colorways": [
+   {
+    "name": "Black Dyneema",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": []
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Saddle Bag",
+  "size": "8L",
+  "src": "https://restrap.com/products/saddle-bag-holster-dry-bag-8-litres-black-black",
+  "verified": true,
+  "dims_cm": {
+   "len": 40,
+   "hgt": 16,
+   "wid": 16
+  },
+  "dims_note": "Size-guide diagram shows the bag as mounted and loaded; 160mm is the vertical/diameter dimension, used for both hgt and wid. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "400mm (length) x 160mm (height/diameter); recommended 200mm clearance between saddle rails and tyre",
+  "capacity_l": 8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Orange",
+    "hex": "#f4813a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_8L_SaddleBag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_8L_SaddleBag7.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_8L_SaddleBag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_8L_SaddleBag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_8L_SaddleBag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_8L_SaddleBag5.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-8L-Saddle-Bag-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "harness",
+   "shape": "tapered",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": true,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Saddle Bag",
+  "size": "14L",
+  "src": "https://restrap.com/products/saddle-bag-14-litres",
+  "verified": true,
+  "dims_cm": {
+   "len": 45,
+   "hgt": 18,
+   "wid": 18
+  },
+  "dims_note": "As-mounted diagram; 180mm used for hgt and wid. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "450mm x 180mm; recommended 240mm clearance between saddle rails and tyre",
+  "capacity_l": 14,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Orange",
+    "hex": "#f4813a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_14L_SaddleBag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_14L_SaddleBag7.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_14L_SaddleBag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_14L_SaddleBag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_14L_SaddleBag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_14L_SaddleBag5.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-14L-Saddle-Bag-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "harness",
+   "shape": "tapered",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": true,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Saddle Bag",
+  "size": "18L",
+  "src": "https://restrap.com/products/saddle-bag-18-litres",
+  "verified": true,
+  "dims_cm": {
+   "len": 58,
+   "hgt": 18,
+   "wid": 18
+  },
+  "dims_note": "As-mounted diagram; 180mm used for hgt and wid. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "580mm x 180mm; recommended 260mm clearance between saddle rails and tyre",
+  "capacity_l": 18,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Orange",
+    "hex": "#f4813a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_18L_SaddleBag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_18L_SaddleBag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_18L_SaddleBag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_18L_SaddleBag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_18L_SaddleBag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_18L_SaddleBag6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Saddle-Bag-18L-Size-Guide_31a43bbd-4cf5-4e5a-9c06-35c5835d7f37.png"
+  ],
+  "features": {
+   "closure": "harness",
+   "shape": "tapered",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": true,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Race Saddle Bag",
+  "size": "7L",
+  "src": "https://restrap.com/products/race-saddle-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 33,
+   "hgt": 16,
+   "wid": 16
+  },
+  "dims_note": "Diagram is explicitly the rolled-x3 (sealed) state, so this is already a packed figure. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "330mm Rolled x3 x 160mm; recommended 170mm clearance between saddle rails and tyre",
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceSaddleBag2025.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceSaddleBag20252.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceSaddleBag20253.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceSaddleBag20254.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceSaddleBag20255.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceSaddleBag20256.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Race-Saddle-Bag-Size-Guide_b296a52d-eaca-4c6a-96e9-ebb7db2ee4b6.png"
+  ],
+  "features": {
+   "closure": "harness",
+   "shape": "tapered",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Saddle Pack",
+  "size": "2.5L",
+  "src": "https://restrap.com/products/saddle-pack-2-5l",
+  "verified": true,
+  "dims_cm": {
+   "len": 26,
+   "hgt": 12,
+   "wid": 12
+  },
+  "dims_note": "Rolled-x3 state. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "260mm Rolled x3 x 120mm; 130mm clearance between saddle rail and bottom of bag",
+  "capacity_l": 2.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Olive",
+    "hex": "#52522a"
+   },
+   {
+    "name": "Orange",
+    "hex": "#f4813a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-2.5L-Black-1_21c76a5d-25c8-4c11-8114-fa29ba38629d.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-2.5L-Black-2_d9afc8f1-5e74-4c6f-ba5b-5d211d71aaf3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-2.5L-Black-3_d997130f-1284-4c07-b68d-a96ad4c8a965.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-2.5L-Black-4_2e5fdd78-1347-4292-bd06-54124b54ec75.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-2.5L-Black-5_c5593417-23b1-4df3-860d-f110f14eeb59.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-2.5L-Black-6_6183c250-6c35-447c-af70-d67e349d7937.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Saddle-Pack-2.5L-Size-Guide.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Saddle Pack",
+  "size": "4.5L",
+  "src": "https://restrap.com/products/saddle-pack-4-5l",
+  "verified": true,
+  "dims_cm": {
+   "len": 32,
+   "hgt": 14,
+   "wid": 14
+  },
+  "dims_note": "Rolled-x3 state. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "320mm Rolled x3 x 140mm; 160mm clearance between saddle rail and bottom of bag",
+  "capacity_l": 4.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Olive",
+    "hex": "#52522a"
+   },
+   {
+    "name": "Orange",
+    "hex": "#f4813a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-4.5L-Black-1.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-4.5L-Black-2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-4.5L-Black-3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-4.5L-Black-4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-4.5L-Black-5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Restrap-Saddle-Pack-4.5L-Black-6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Saddle-Pack-4.5L-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Bar Pack",
+  "size": "10L",
+  "src": "https://restrap.com/products/bar-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 25,
+   "hgt": 24,
+   "wid": 16
+  },
+  "dims_note": "Catalogue had this as a 50cm-long barroll; the diagram shows a 250mm-wide boxy bar pack 240mm tall. Depth is not published ('Variable on Load') so wid is left at the prior 16cm estimate. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "250mm (width across the bars) x 240mm Rolled x3 (height); depth 'Variable on Load'; recommended 220mm clearance between handlebars and tyre",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Olive",
+    "hex": "#52522a"
+   },
+   {
+    "name": "Orange",
+    "hex": "#f4813a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Bar-Pack-Restrap-Black.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Bar-Pack-Restrap-Black6.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Bar-Pack-Restrap-Black2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Bar-Pack-Restrap-Black3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Bar-Pack-Restrap-Black4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Bar-Pack-Restrap-Black5.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Bar-Pack-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "front"
+    }
+   ],
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "cord": true,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Holster Bar Bag",
+  "size": "14L",
+  "src": "https://restrap.com/products/holster-bar-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 54,
+   "dia": 18
+  },
+  "dims_note": "Restrap publishes no dimension diagram or spec figures for this bag; dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 14,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag6_620bd285-0e2b-4a78-b16c-799fb0c15927.jpg"
+  ],
+  "features": {
+   "closure": "harness",
+   "shape": "cylindrical",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": true,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Holster Bar Bag Plus",
+  "size": "18L",
+  "src": "https://restrap.com/products/holster-bar-bag-plus",
+  "verified": true,
+  "dims_cm": {
+   "len": 54,
+   "dia": 20
+  },
+  "dims_note": "Restrap publishes no dimension diagram or spec figures for this bag; dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 18,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag-plus.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag-plus2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag-plus3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag-plus4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag-plus5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/holster-bar-bag-plus6_79ec2add-ba1a-4ac9-9dc7-cfa4d137a752.jpg"
+  ],
+  "features": {
+   "closure": "harness",
+   "shape": "cylindrical",
+   "pockets": [
+    {
+     "type": "mesh",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": true,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Race Bar Bag - Drop Bar",
+  "size": "7L",
+  "src": "https://restrap.com/products/race-bar-bag-drop-bar",
+  "verified": true,
+  "dims_cm": {
+   "len": 28,
+   "dia": 15
+  },
+  "dims_note": "Only the 280mm width is published; diameter left at the prior 15cm estimate.",
+  "dims_state": "unknown",
+  "dims_raw": "a width of 280mm (product copy); optimised to fit within drop handlebars",
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-drop-bar.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-drop-bar2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-drop-bar3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-drop-bar4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-drop-bar5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-drop-bar6.jpg"
+  ],
+  "features": {
+   "closure": "harness",
+   "shape": "cylindrical",
+   "pockets": [
+    {
+     "type": "mesh",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Race Bar Bag - Flat Bar",
+  "size": "7L",
+  "src": "https://restrap.com/products/race-bar-bag-flat-bar",
+  "verified": true,
+  "dims_cm": {
+   "len": 47,
+   "dia": 16
+  },
+  "dims_note": "Only the 160mm diameter is published; length left at the prior 47cm estimate.",
+  "dims_state": "unknown",
+  "dims_raw": "a compact 160mm diameter (product copy); runs wider than the drop-bar version",
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-flat-bar.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-flat-bar2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-flat-bar3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-flat-bar4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-flat-bar5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/race-bar-bag-flat-bar6.jpg"
+  ],
+  "features": {
+   "closure": "harness",
+   "shape": "cylindrical",
+   "pockets": [
+    {
+     "type": "mesh",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Race Bar Bag - Aero",
+  "size": "7L",
+  "src": "https://restrap.com/products/race-aero-bar-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 33,
+   "hgt": 16,
+   "wid": 17
+  },
+  "dims_note": "Rolled-x3 state; 170mm is the fore-aft depth at the bar, 160mm the far-end height. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "330mm Rolled x3; 160mm; 170mm",
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceAeroBarBag2025.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceAeroBarBag20252.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceAeroBarBag20253.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceAeroBarBag20254.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceAeroBarBag20255.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceAeroBarBag20256.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Race-Aero-Bar-Bag-Size-Guide_cd817758-c9b6-49b5-a13a-227a19614284.png"
+  ],
+  "features": {
+   "closure": "harness",
+   "shape": "cylindrical",
+   "pockets": [],
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "cord": true,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Canister Bag",
+  "size": "1.5L",
+  "src": "https://restrap.com/products/canister-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 20,
+   "dia": 12
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "200mm x 120mm Diameter; recommended 120mm clearance between handlebars and tyre",
+  "capacity_l": 1.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Olive",
+    "hex": "#52522a"
+   },
+   {
+    "name": "Orange",
+    "hex": "#f4813a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Canister.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Canister2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Canister4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Canister5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Canister8.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Canister9_24a824ac-e84b-4030-86c5-eed821e452a9.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Canister-Bag-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "cylindrical",
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": true,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Rolltop Canister Bag",
+  "size": "4L",
+  "src": "https://restrap.com/products/rolltop-canister-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 30,
+   "dia": 13
+  },
+  "dims_note": "Restrap publishes no dimension diagram or spec figures for this bag; dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/rolltop-canister-bag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/rolltop-canister-bag10.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/rolltop-canister-bag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/rolltop-canister-bag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/rolltop-canister-bag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/rolltop-canister-bag5.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "pockets": [
+    {
+     "type": "mesh",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": true,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Frame Bag",
+  "size": "Small",
+  "src": "https://restrap.com/products/frame-bag-small",
+  "verified": true,
+  "dims_cm": {
+   "len": 30,
+   "hgt": 14,
+   "wid": 6
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "300mm (top) / 195mm (bottom) / 140mm (max height) / 55mm (rear edge) / 50mm (front edge) / 160mm (down-tube strap span) / 60mm Width",
+  "capacity_l": 2.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Small_Frame_Bag_1.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Frame_Bag_Small_2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Frame_Bag_Small_3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/Frame_Bag_Small_4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_small_5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Custom-Framebags6_f8e3bb81-42d3-41ec-b921-bf34abac326e.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Small-Frame-Bag-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Frame Bag",
+  "size": "Medium",
+  "src": "https://restrap.com/products/frame-bag-medium",
+  "verified": true,
+  "dims_cm": {
+   "len": 40,
+   "hgt": 14,
+   "wid": 6
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "400mm (top) / 250mm (bottom) / 140mm (max height) / 75mm / 50mm / 170mm / 60mm Width",
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_medium_1.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_medium_2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_medium_3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_medium_4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_medium_5.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Medium-Frame-Bag-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Frame Bag",
+  "size": "Large",
+  "src": "https://restrap.com/products/frame-bag-large",
+  "verified": true,
+  "dims_cm": {
+   "len": 50,
+   "hgt": 15,
+   "wid": 6
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "500mm (top) / 360mm (bottom) / 150mm (max height) / 80mm / 55mm / 180mm / 60mm Width",
+  "capacity_l": 4.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_large_1.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_large_2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_large_3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_large_4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_large_5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/frame_bag_large_6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Large-Frame-Bag-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Race Frame Bag",
+  "size": "Small",
+  "src": "https://restrap.com/products/race-frame-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 37,
+   "hgt": 9.5,
+   "wid": 5.5
+  },
+  "dims_note": "95mm is the tallest labelled edge; the page labels no mid-height. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "370mm (top) / 220mm (bottom) / 95mm (rear edge) / 55mm Width / 55mm (front edge) / 180mm",
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Small.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Small2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Small3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Small4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Small5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Small6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Race-Frame-Bag-Small-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    },
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Race Frame Bag",
+  "size": "Large",
+  "src": "https://restrap.com/products/race-frame-bag-large",
+  "verified": true,
+  "dims_cm": {
+   "len": 50,
+   "hgt": 8,
+   "wid": 5.5
+  },
+  "dims_note": "The Large guide labels only edge heights (80mm rear, 55mm front) and no mid-height, so hgt is the larger edge - it reads shallower than the Small, which is what the page says. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "500mm (top) / 360mm (bottom) / 80mm (rear edge) / 55mm Width / 55mm (front edge) / 180mm",
+  "capacity_l": 4.2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Large.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Large2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Large3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Large4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Large5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceFrameBag-Large6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Race-Frame-Bag-Large-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    },
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Full Frame Bag",
+  "size": "Small",
+  "src": "https://restrap.com/products/full-frame-bag-small",
+  "verified": true,
+  "dims_cm": {
+   "len": 41,
+   "hgt": 27,
+   "wid": 6
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "410mm (top tube) / 350mm (down tube) / 100mm (bottom) / 270mm (seat-tube edge) / 145mm (mid height) / 40mm (head-tube edge) / Width 60mm",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_small_1.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_small_2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_small_3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_small_4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_small_5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_small_6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Full-Frame-Bag-All-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Full Frame Bag",
+  "size": "Medium",
+  "src": "https://restrap.com/products/full-frame-bag-medium",
+  "verified": true,
+  "dims_cm": {
+   "len": 46,
+   "hgt": 29,
+   "wid": 6
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "460mm / 370mm / 145mm (bottom) / 290mm / 145mm / 40mm / Width 60mm",
+  "capacity_l": 7.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/restrap_full_frame_bag_medium_1.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/restrap_full_frame_bag_medium_2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/restrap_full_frame_bag_medium_3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/restrap_full_frame_bag_medium_4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/restrap_full_frame_bag_medium_5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/restrap_full_frame_bag_medium_6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Full-Frame-Bag-All-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Full Frame Bag",
+  "size": "Large",
+  "src": "https://restrap.com/products/full-frame-bag-large",
+  "verified": true,
+  "dims_cm": {
+   "len": 51,
+   "hgt": 32.5,
+   "wid": 6
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "510mm / 400mm / 170mm (bottom) / 325mm / 145mm / 50mm / Width 60mm",
+  "capacity_l": 9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_large_1.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_large_2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_large_3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_large_4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_large_5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/full_frame_bag_large_6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Full-Frame-Bag-All-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Top Tube Bag",
+  "size": "0.8L",
+  "src": "https://restrap.com/products/top-tube-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 25,
+   "hgt": 13,
+   "wid": 3
+  },
+  "dims_note": "30mm is the depth at the top edge; the bag flares toward the base. 25 x 13 x 3cm is consistent with the stated 0.8L. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "250mm (base) / 180mm (top) / 130mm (front height) / 50mm (rear height) / 30mm Depth",
+  "capacity_l": 0.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_TopTubeBag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_TopTubeBag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_TopTubeBag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_TopTubeBag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_TopTubeBag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_TopTubeBag6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Top-Tube-Bag-Size-Guide.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Bolt-on Top Tube Bag",
+  "size": "0.8L",
+  "src": "https://restrap.com/products/bolt-on-top-tube-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 25,
+   "hgt": 13,
+   "wid": 3
+  },
+  "dims_note": "Same shell as the strap-mount Top Tube Bag. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "250mm (base) / 180mm (top) / 130mm / 50mm / 30mm Depth; four bolt-hole options at 80mm-24-40-24-80mm",
+  "capacity_l": 0.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/s0fwukjOSkSZJXLQpLss_00_Top_Tube_Bag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/DJC0F2RoQMe23kNWVy5P_00_Top_Tube_Bag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/VN8GR2vSR9y6s4EMo3Vf_00_Top_Tube_Bag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/jgZHHfQkTTCmGDNrvj1Q_00_Top_Tube_Bag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/sZE7qv1dQR2WXNGig8It_00_Top_Tube_Bag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Top_Tube_Bag6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Bolt-On-Top-Tube-Size-Guide.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Race Top Tube Bag - Short",
+  "size": "1.2L",
+  "src": "https://restrap.com/products/race-top-tube-bag-short",
+  "verified": true,
+  "dims_cm": {
+   "len": 24,
+   "hgt": 12,
+   "wid": 4.5
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "240mm (base) / 190mm (top) / 120mm (rear height) / 70mm (front height) / 45mm width; 64mm bolt spacing",
+  "capacity_l": 1.2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTubeShort.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTubeShort2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTubeShort3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTubeShort4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTubeShort5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTubeShort6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Race-Top-Tube-Short-Size-Guide_083c48e8-476e-454f-bc80-2f1cc71d6384.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Race Top Tube Bag - Long",
+  "size": "2L",
+  "src": "https://restrap.com/products/race-top-tube-bag-long",
+  "verified": true,
+  "dims_cm": {
+   "len": 49,
+   "hgt": 11,
+   "wid": 4.5
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "490mm (base) / 450mm (top) / 110mm (front height) / 40mm (rear height) / 45mm width",
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTube-Long.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTube-Long7.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTube-Long2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTube-Long3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTube-Long4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/RaceTopTube-Long5.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Race-Top-Tube-Long-Size-Guide.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Aero Race Top Tube Bag",
+  "size": "0.6L",
+  "src": "https://restrap.com/products/aero-race-top-tube-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 25,
+   "hgt": 6,
+   "wid": 5
+  },
+  "dims_note": "Restrap publishes no dimension diagram or spec figures for this bag; dims_cm left as the existing catalogue estimate. Product copy gives only the 64mm top-tube bolt spacing.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/AeroRaceTopTubeBag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/AeroRaceTopTubeBag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/AeroRaceTopTubeBag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/AeroRaceTopTubeBag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/AeroRaceTopTubeBag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/AeroRaceTopTubeBag6.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Rear Top Tube Bag",
+  "size": "0.8L",
+  "src": "https://restrap.com/products/rear-top-tube-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 18,
+   "hgt": 13,
+   "wid": 5
+  },
+  "dims_note": "Width tapers 50mm at the base to 30mm at the top; wid is the larger. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "180mm (top) / 150mm (base) / 130mm height / 30mm Wide (top) / 50mm Wide (bottom)",
+  "capacity_l": 0.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Rear_Top_Tube_Bag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Rear_Top_Tube_Bag6.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Rear_Top_Tube_Bag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Rear_Top_Tube_Bag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Rear_Top_Tube_Bag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Rear_Top_Tube_Bag5.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Rear-Top-Tube-Bag-Size-Guide.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Stem Bag",
+  "size": "1.1L",
+  "src": "https://restrap.com/products/stem-bag",
+  "verified": true,
+  "dims_cm": {
+   "hgt": 20.5,
+   "dia": 11
+  },
+  "dims_note": "dia is the 110mm base width; the opening is 90mm. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "205mm (height) / 90mm Opening / 110mm Base Width",
+  "capacity_l": 1.1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/gkX3EJ1RoORvHjtQcNjG_00_Stem_Bag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/LzMSD41R2SLkp8yzNZPQ_00_Stem_Bag6.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/jDrgaScIS4qOoXcWS8dn_00_Stem_Bag7.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/QVutCADTX2R1YgEIzU8f_00_Stem_Bag8.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/lHaGtlyTQimGi5XTsWsr_00_Stem_Bag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/WN4NS1bT2qZ5LW91JW7B_00_Stem_Bag2.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Stem-Bag-Size-Guide.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Race",
+  "name": "Race Stem Bag",
+  "size": "1.1L",
+  "src": "https://restrap.com/products/race-stem-bag",
+  "verified": true,
+  "dims_cm": {
+   "hgt": 20,
+   "dia": 9
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "200mm (height) / 90mm (depth) / 110mm Mesh (mesh panel height)",
+  "capacity_l": 1.1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceStemBag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceStemBag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceStemBag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceStemBag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceStemBag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RaceStemBag6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Race-Stem-Bag-Size-Guide.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "City",
+  "name": "City Stem Bag",
+  "size": "1L",
+  "src": "https://restrap.com/products/city-stem-bag",
+  "verified": true,
+  "dims_cm": {
+   "hgt": 28,
+   "dia": 11
+  },
+  "dims_note": "Cross-section is a flattened oval 110 x 60mm, not round; dia is the 110mm width. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "280mm (height) / 110mm (width) / 60mm Depth",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Stem-Bag-Restrap-Black.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Stem-Bag-Restrap-Black2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Stem-Bag-Restrap-Black3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Stem-Bag-Restrap-Black4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Stem-Bag-Restrap-Black5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Stem-Bag-Restrap-Black6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-City-Stem-Bag-Size-Guide.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Fork Bag",
+  "size": "5L",
+  "src": "https://restrap.com/products/fork-bag",
+  "verified": true,
+  "dims_cm": {
+   "hgt": 30,
+   "dia": 19
+  },
+  "dims_note": "Rolled-x3 state. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "300mm Rolled x3 (height) / 190mm (width)",
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Fork_Bag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Fork_Bag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Fork_Bag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Fork_Bag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Fork_Bag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/00_Fork_Bag6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Fork-Bag-Size-Guide_0cf72910-ff95-4917-86d2-7d9c5d421f72.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Downtube Bag",
+  "size": "1.2L",
+  "src": "https://restrap.com/products/downtube-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 24,
+   "dia": 9
+  },
+  "dims_note": "Page gives both states; the 240mm rolled figure is used. Cross-section is 90 x 80mm, not round. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "240mm Rolled / 340mm Unrolled; 90mm Width; 80mm Depth; strap width 50mm; max tube circumference 190mm",
+  "capacity_l": 1.2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_DowntubeBag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_DowntubeBag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_DowntubeBag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_DowntubeBag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_DowntubeBag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/00_DowntubeBag6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Downtube-Bag-Size-Guide.png"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Pannier",
+  "size": "Small (13L)",
+  "src": "https://restrap.com/products/small-pannier",
+  "verified": true,
+  "dims_cm": {
+   "len": 30,
+   "hgt": 35,
+   "wid": 16
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "300mm (top width) / 250mm (bottom width) / 350mm Rolled x3 (height) / Max 160mm Depth",
+  "capacity_l": 13,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Olive",
+    "hex": "#52522a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/RStwMGSuRJGPWPsO9cy6_00_Panniers14.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/E2QASC3Sc2xDQ2shl7OA_00_Panniers18.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/074eI3SqRR6OD0p2MvUp_00_Panniers16.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/aDotYKTwRuCP1hHELCJ8_00_Panniers15.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/1eNsFa4mSjGdWs8aDeKv_00_Panniers17.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/mwQqyNoMS5WYvDTIZexc_00_Panniers20.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Small-Pannier-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Adventure",
+  "name": "Pannier",
+  "size": "Large (22L)",
+  "src": "https://restrap.com/products/restrap-large-pannier",
+  "verified": true,
+  "dims_cm": {
+   "len": 40,
+   "hgt": 43,
+   "wid": 20
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "400mm (top width) / 250mm (bottom width) / 430mm Rolled x3 (height) / Max 200mm Depth",
+  "capacity_l": 22,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Olive",
+    "hex": "#52522a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/mOoULd6wQS6M1604A2Rc_00_Panniers.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/EdiCFTW4QyKX7BVUWN00_00_Panniers5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/rkWA4liPRIqvlGI66XLO_00_Panniers3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/r70u4aIuQBSXCOPS2L4F_00_Panniers4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/nZuzV0lQdd1elXqU9NKA_00_Panniers2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/76bOQvD9Sp6LZakuLe11_00_Panniers6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Large-Pannier-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Switch",
+  "name": "Switch Pannier",
+  "size": "5L",
+  "src": "https://restrap.com/products/switch-pannier-5-litres",
+  "verified": true,
+  "dims_cm": {
+   "len": 18,
+   "hgt": 28,
+   "wid": 12
+  },
+  "dims_note": "Page states the sealed height explicitly, so 280mm is used rather than the 420mm unsealed figure. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "280mm Sealed with 3 x Rolls / 420mm Open and Unsealed; 180mm (width); 120mm (depth)",
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Switch_Pannier_5L.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Switch_Pannier_5L2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Switch_Pannier_5L3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Switch_Pannier_5L4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Switch_Pannier_5L5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/Switch_Pannier_5L6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Switch-Pannier-5L-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Switch",
+  "name": "Switch Pannier",
+  "size": "10L",
+  "src": "https://restrap.com/products/switch-pannier-10-litres-1",
+  "verified": true,
+  "dims_cm": {
+   "len": 22,
+   "hgt": 34,
+   "wid": 14
+  },
+  "dims_note": "Sealed height used, not the 480mm unsealed figure. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "340mm Sealed with 3 x Rolls / 480mm Open and Unsealed; 220mm (width); 140mm (depth)",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchPannier10L.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchPannier10L2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchPannier10L3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchPannier10L4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchPannier10L5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchPannier10L6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Switch-Pannier-10L-Size-Guide_10a984c6-3316-4db0-8ffb-9a96c3f6c1e8.png"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 1,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "Switch",
+  "name": "Switch Top Bag",
+  "size": "15L",
+  "src": "https://restrap.com/products/switch-top-bag-15l",
+  "verified": true,
+  "dims_cm": {
+   "len": 35,
+   "hgt": 21,
+   "wid": 20
+  },
+  "dims_note": " Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "350mm (length) / 210mm (height) / 200mm (width)",
+  "capacity_l": 15,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchTopBag.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchTopBag2.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchTopBag3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchTopBag4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchTopBag5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/files/SwitchTopBag6.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-Switch-Top-Bag-15L-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "side"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Restrap",
+  "line": "City",
+  "name": "City Loader",
+  "size": "20L",
+  "src": "https://restrap.com/products/city-loader",
+  "verified": true,
+  "dims_cm": {
+   "len": 35,
+   "hgt": 35,
+   "wid": 15
+  },
+  "dims_note": "Height is given as a 300-350mm range (fold-closure); the maximum is used. Source: Restrap's own Size Guide diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "350mm (width) / 300-350mm (height) / 150mm (depth)",
+  "capacity_l": 20,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2b2b2b"
+   },
+   {
+    "name": "Navy",
+    "hex": "#1c2836"
+   },
+   {
+    "name": "Olive",
+    "hex": "#52522a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Loader-Restrap-Black.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Loader-Restrap-Black4.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Loader-Restrap-Black3.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Loader-Restrap-Black5.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Loader-Restrap-Black6.jpg",
+   "https://cdn.shopify.com/s/files/1/1308/4941/products/City-Loader-Restrap-Black7.jpg",
+   "https://restrap.com/cdn/shop/files/Restrap-City-Loader-Size-Guide.png"
+  ],
+  "features": {
+   "closure": "flap",
+   "shape": "box",
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "side"
+    },
+    {
+     "type": "slip",
+     "face": "front"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": true,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "CargoPack",
+  "name": "CargoPack System",
+  "size": "18L",
+  "src": "https://www.tailfin.cc/product/racks-rear-systems/rear-systems/cargopack-system/",
+  "verified": true,
+  "dims_cm": {
+   "len": 43.5,
+   "hgt": 25,
+   "wid": 16.4
+  },
+  "dims_note": "Page height is explicitly the UNROLLED height. No rolled figure is published, so hgt is derived from the stated 18L over the stated 435 x 164mm footprint (=252mm). The same method reproduces the SpeedPack's catalogue height to within 5%, which is the cross-check. Never use the 420mm unrolled figure.",
+  "dims_state": "unrolled",
+  "dims_raw": "Top Bag Dimensions (width) 164mm (rear) / 128mm (front); (Length) 435mm; (Unrolled Height) 420mm (rear) / 380mm (front). Volume 18L (+3.0L Pockets)",
+  "capacity_l": 18,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/01/12151731/700X500-CARGOPACK-NEW-BRANDING-FEATURED-IMAGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "pockets": [
+    {
+     "type": "mesh",
+     "face": "side"
+    },
+    {
+     "type": "mesh",
+     "face": "side"
+    }
+   ],
+   "daisyChains": true,
+   "compressionStraps": 3,
+   "cord": false,
+   "reflective": true,
+   "valve": true
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "CargoPack",
+  "name": "CargoPack Top Bag",
+  "size": "18L",
+  "src": "https://www.tailfin.cc/product/pannier-rack-top-bags/rack-top-bags/cargopack-top-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 43.5,
+   "hgt": 25,
+   "wid": 16.4
+  },
+  "dims_note": "Same as CargoPack System: the 420mm is the unrolled height; hgt is a volume-derived packed estimate.",
+  "dims_state": "unrolled",
+  "dims_raw": "Top Bag Dimensions (width) 164mm (rear) / 128mm (front); (Length) 435mm; (Unrolled Height) 420mm (rear) / 380mm (front). Volume 18L (+3.0L Pockets)",
+  "capacity_l": 18,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/01/12143220/cargopack-removeable-tailfin-product-features.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/04/07162811/TB_20250325_Tailfin_Tankwa_2860.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/01/12143235/cargopack-removeable-tailfin-product-features-4.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/01/12143225/cargopack-removeable-tailfin-product-features-2.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/01/12143230/cargopack-removeable-tailfin-product-features-3.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/01/12143240/cargopack-removeable-tailfin-product-features-5.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "pockets": [
+    {
+     "type": "mesh",
+     "face": "side"
+    },
+    {
+     "type": "mesh",
+     "face": "side"
+    }
+   ],
+   "daisyChains": true,
+   "compressionStraps": 3,
+   "cord": false,
+   "reflective": true,
+   "valve": true
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "SpeedPack",
+  "name": "SpeedPack System",
+  "size": "10L",
+  "src": "https://www.tailfin.cc/product/racks-rear-systems/rear-systems/speedpack-system/",
+  "verified": true,
+  "dims_cm": {
+   "len": 43.5,
+   "hgt": 13,
+   "wid": 18.5
+  },
+  "dims_note": "Length and width verified; Tailfin publishes no height for this bag, so hgt is left at the prior 13cm (consistent with 10L over the stated footprint).",
+  "dims_state": "unknown",
+  "dims_raw": "Dimensions 185mm (rear width), 435mm (length). Volume 10L (+3.0L Pocket)",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2025/09/12115116/700X500-SPEEDPACK.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "pockets": [
+    {
+     "type": "mesh",
+     "face": "front"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": true,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "SpeedPack",
+  "name": "SpeedPack Top Bag",
+  "size": "10L",
+  "src": "https://www.tailfin.cc/product/pannier-rack-top-bags/rack-top-bags/speedpack-top-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 43.5,
+   "hgt": 13,
+   "wid": 18.5
+  },
+  "dims_note": "Length and width verified; no height published.",
+  "dims_state": "unknown",
+  "dims_raw": "Dimensions 185mm (rear width), 435mm (length). Volume 10L (+3.0L Pocket)",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2025/08/27113015/SPEEDPACK-TOP-BAG-700X500.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "pockets": [
+    {
+     "type": "mesh",
+     "face": "front"
+    }
+   ],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": true,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Panniers",
+  "name": "Mini Pannier",
+  "size": "5L",
+  "src": "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/",
+  "verified": true,
+  "dims_cm": {
+   "len": 17,
+   "hgt": 38,
+   "wid": 12
+  },
+  "dims_note": "From Tailfin's own Mini Panniers spec sheet; drawn rolled and buckled shut. Widths and depths taper - the larger value is used.",
+  "dims_state": "packed",
+  "dims_raw": "170mm (top width) / 110mm (bottom width) / 380mm (height) / 120mm (top depth) / 70mm (bottom depth)",
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/02/17163203/MINI-PANNIERS-FEATURED-IMAGE-GOTY.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Panniers",
+  "name": "Mini Pannier",
+  "size": "10L",
+  "src": "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/",
+  "verified": true,
+  "dims_cm": {
+   "len": 21,
+   "hgt": 40,
+   "wid": 15
+  },
+  "dims_note": "Tailfin Mini Panniers spec sheet; tapered, larger values used.",
+  "dims_state": "packed",
+  "dims_raw": "210mm / 140mm / 400mm / 150mm / 110mm",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/02/17163203/MINI-PANNIERS-FEATURED-IMAGE-GOTY.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Panniers",
+  "name": "Pannier",
+  "size": "16L",
+  "src": "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/",
+  "verified": true,
+  "dims_cm": {
+   "len": 26,
+   "hgt": 44,
+   "wid": 19
+  },
+  "dims_note": "Tailfin Panniers spec sheet; tapered, larger values used.",
+  "dims_state": "packed",
+  "dims_raw": "260mm (top width) / 170mm (bottom width) / 440mm (height) / 190mm (top depth) / 120mm (bottom depth)",
+  "capacity_l": 16,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/02/19105429/22L-FEATURED-IMAGE-700X500-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "pockets": [],
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": true,
+   "valve": true
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Panniers",
+  "name": "Pannier",
+  "size": "22L",
+  "src": "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/",
+  "verified": true,
+  "dims_cm": {
+   "len": 32,
+   "hgt": 44,
+   "wid": 22
+  },
+  "dims_note": "Tailfin Panniers spec sheet. Note both sizes are 440mm tall - the 22L is wider and deeper, not taller, correcting the prior 47cm.",
+  "dims_state": "packed",
+  "dims_raw": "320mm / 250mm / 440mm / 220mm / 130mm",
+  "capacity_l": 22,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/02/19105429/22L-FEATURED-IMAGE-700X500-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "pockets": [],
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": true,
+   "valve": true
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Fork Packs",
+  "name": "Fork Pack",
+  "size": "5L",
+  "src": "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/",
+  "verified": true,
+  "dims_cm": {
+   "hgt": 28,
+   "dia": 15
+  },
+  "dims_note": "Tailfin's specification block for this line publishes volume, weight and construction only - no linear dimensions (sizing is done via their printable template). dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2023/11/19160610/2F-5-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/19155207/5L-AND-10L-FRONT-SQ-1-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/19153557/F2-MB-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/19153106/waterproof-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/20100113/additional-imagery-2-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/27144222/additional-imagery-3.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Fork Packs",
+  "name": "Fork Pack",
+  "size": "10L",
+  "src": "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/",
+  "verified": true,
+  "dims_cm": {
+   "hgt": 35,
+   "dia": 19
+  },
+  "dims_note": "Tailfin's specification block for this line publishes volume, weight and construction only - no linear dimensions (sizing is done via their printable template). dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2023/11/19160610/2F-5-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/19155207/5L-AND-10L-FRONT-SQ-1-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/19153557/F2-MB-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/19153106/waterproof-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/20100113/additional-imagery-2-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/11/27144222/additional-imagery-3.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Cargo Cage System",
+  "name": "Cage Pack",
+  "size": "1.7L",
+  "src": "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/",
+  "verified": true,
+  "dims_cm": {
+   "hgt": 24,
+   "dia": 9.5
+  },
+  "dims_note": "Tailfin's specification block for this line publishes volume, weight and construction only - no linear dimensions (sizing is done via their printable template). dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2022/03/27104419/Cage-Pack-Product-15.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104420/Cage-Pack-Product-14.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104423/Cage-Pack-Product-2.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104426/Cage-Pack-Lifestyle-19.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104427/Cage-Pack-Lifestyle-17.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104429/Cage-Pack-Lifestyle-16.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Cargo Cage System",
+  "name": "Cage Pack",
+  "size": "3L",
+  "src": "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/",
+  "verified": true,
+  "dims_cm": {
+   "hgt": 30,
+   "dia": 11.3
+  },
+  "dims_note": "Tailfin's specification block for this line publishes volume, weight and construction only - no linear dimensions (sizing is done via their printable template). dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2022/03/27104419/Cage-Pack-Product-15.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104420/Cage-Pack-Product-14.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104423/Cage-Pack-Product-2.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104426/Cage-Pack-Lifestyle-19.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104427/Cage-Pack-Lifestyle-17.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104429/Cage-Pack-Lifestyle-16.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Cargo Cage System",
+  "name": "Cage Pack",
+  "size": "5L",
+  "src": "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/",
+  "verified": true,
+  "dims_cm": {
+   "hgt": 35,
+   "dia": 13.5
+  },
+  "dims_note": "Tailfin's specification block for this line publishes volume, weight and construction only - no linear dimensions (sizing is done via their printable template). dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2022/03/27104419/Cage-Pack-Product-15.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104420/Cage-Pack-Product-14.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104423/Cage-Pack-Product-2.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104426/Cage-Pack-Lifestyle-19.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104427/Cage-Pack-Lifestyle-17.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/03/27104429/Cage-Pack-Lifestyle-16.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Bar System",
+  "name": "Bar Bag System - Drop Bar",
+  "size": "Small (9.1L)",
+  "src": "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/",
+  "verified": true,
+  "dims_cm": {
+   "len": 33.6,
+   "dia": 16
+  },
+  "dims_note": "Page gives a min/max width range; packed = min + 0.3*(max-min). Diameter corrected from 17 to the stated 160mm.",
+  "dims_state": "unrolled",
+  "dims_raw": "Min. Width 290 MM / Max. Width 445 MM (2 rolls for waterproofing); Diameter 160MM; Volume 4.0L - 9.1L Small (+1.6L Pocket)",
+  "capacity_l": 9.1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/04/02163410/BAR-Bag-shop-all-drop-GOTY-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Bar System",
+  "name": "Bar Bag System - Drop Bar",
+  "size": "Large (12.5L)",
+  "src": "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/",
+  "verified": true,
+  "dims_cm": {
+   "len": 37.2,
+   "dia": 18
+  },
+  "dims_note": "packed = min + 0.3*(max-min). Diameter corrected from 18.5 to the stated 180mm.",
+  "dims_state": "unrolled",
+  "dims_raw": "Min. Width 335 MM / Max. Width 460 MM (2 rolls); Diameter 180MM; Volume 6.7L - 12.5L Large (+2.7L Pocket)",
+  "capacity_l": 12.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/04/02163410/BAR-Bag-shop-all-drop-GOTY-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Bar System",
+  "name": "Bar Bag System - MTB Flat Bar",
+  "size": "Small (14.9L)",
+  "src": "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/",
+  "verified": true,
+  "dims_cm": {
+   "len": 48.9,
+   "dia": 16
+  },
+  "dims_note": "packed = min + 0.3*(max-min). Diameter corrected from 19 to 160mm; capacity is 14.7L, not 14.9L.",
+  "dims_state": "unrolled",
+  "dims_raw": "Min. Width 420 MM / Max. Width 650 MM (3 rolls for waterproofing); Diameter 160MM; Volume 5.8L - 14.7L Small (+2.7L Pocket)",
+  "capacity_l": 14.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/04/02163410/BAR-Bag-shop-all-drop-GOTY-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Bar System",
+  "name": "Bar Bag System - MTB Flat Bar",
+  "size": "Large (18.9L)",
+  "src": "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/",
+  "verified": true,
+  "dims_cm": {
+   "len": 55.2,
+   "dia": 18
+  },
+  "dims_note": "packed = min + 0.3*(max-min). Diameter corrected from 20 to 180mm.",
+  "dims_state": "unrolled",
+  "dims_raw": "Min. Width 480 MM / Max. Width 720 MM (3 rolls); Diameter 180MM; Volume 8.7L - 18.9L Large (+3.5L Pocket)",
+  "capacity_l": 18.9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/04/02163410/BAR-Bag-shop-all-drop-GOTY-1.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Bar System",
+  "name": "Bar Cage Bag",
+  "size": "Small (8L)",
+  "src": "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 41.4,
+   "dia": 13.5
+  },
+  "dims_note": "Catalogue had 54cm - that is the fully extended maximum. packed = min + 0.3*(max-min).",
+  "dims_state": "unrolled",
+  "dims_raw": "Dimensions Width: Min 360mm Max 540mm; Diameter: 135mm",
+  "capacity_l": 8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2025/06/26162408/TailfinBarCage-03514_250623.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162012/TailfinBarCage-03437_250623.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162037/TailfinBarCage-03604_250624.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162042/TailfinBarCage-03608_250624.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162032/TailfinBarCage-03460_250623.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162026/TailfinBarCage-03449_250623.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "pockets": [],
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": true,
+   "valve": true
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Bar System",
+  "name": "Bar Cage Bag",
+  "size": "Medium (11L)",
+  "src": "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 42.1,
+   "dia": 16.5
+  },
+  "dims_note": "Catalogue had 54cm (the maximum). packed = min + 0.3*(max-min).",
+  "dims_state": "unrolled",
+  "dims_raw": "Width: Min 370mm Max 540mm; Diameter: 165mm",
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2025/06/26162408/TailfinBarCage-03514_250623.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162012/TailfinBarCage-03437_250623.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162037/TailfinBarCage-03604_250624.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162042/TailfinBarCage-03608_250624.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162032/TailfinBarCage-03460_250623.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162026/TailfinBarCage-03449_250623.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "pockets": [],
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": true,
+   "valve": true
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Bar System",
+  "name": "Bar Cage Bag",
+  "size": "Large (15L)",
+  "src": "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 43.4,
+   "dia": 18
+  },
+  "dims_note": "Catalogue had 56cm (the maximum). packed = min + 0.3*(max-min).",
+  "dims_state": "unrolled",
+  "dims_raw": "Width: Min 380mm Max 560mm; Diameter: 180mm",
+  "capacity_l": 15,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2025/06/26162408/TailfinBarCage-03514_250623.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162012/TailfinBarCage-03437_250623.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162037/TailfinBarCage-03604_250624.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162042/TailfinBarCage-03608_250624.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162032/TailfinBarCage-03460_250623.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/06/26162026/TailfinBarCage-03449_250623.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "pockets": [],
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "cord": false,
+   "reflective": true,
+   "valve": true
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Half Frame Bag",
+  "size": "2.3L",
+  "src": "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 36,
+   "hgt": 11,
+   "wid": 6
+  },
+  "dims_note": "Tailfin publishes volume, weight, construction and included straps for the Frame Bag range but no linear dimensions - fitment is via their printable A4/US-Letter sizing poster, which carries no labelled numbers. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/03/20161442/HFP-FEATURED-IMAGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Half Frame Bag",
+  "size": "3.0L",
+  "src": "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 40,
+   "hgt": 12.5,
+   "wid": 6
+  },
+  "dims_note": "Tailfin publishes volume, weight, construction and included straps for the Frame Bag range but no linear dimensions - fitment is via their printable A4/US-Letter sizing poster, which carries no labelled numbers. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/03/20161442/HFP-FEATURED-IMAGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Half Frame Bag",
+  "size": "3.8L",
+  "src": "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 44,
+   "hgt": 13.5,
+   "wid": 6.4
+  },
+  "dims_note": "Tailfin publishes volume, weight, construction and included straps for the Frame Bag range but no linear dimensions - fitment is via their printable A4/US-Letter sizing poster, which carries no labelled numbers. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/03/20161442/HFP-FEATURED-IMAGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Half Frame Bag",
+  "size": "4.5L",
+  "src": "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 48,
+   "hgt": 14.5,
+   "wid": 6.5
+  },
+  "dims_note": "Tailfin publishes volume, weight, construction and included straps for the Frame Bag range but no linear dimensions - fitment is via their printable A4/US-Letter sizing poster, which carries no labelled numbers. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 4.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/03/20161442/HFP-FEATURED-IMAGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Half Frame Bag",
+  "size": "5.3L",
+  "src": "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 52,
+   "hgt": 15.5,
+   "wid": 6.6
+  },
+  "dims_note": "Tailfin publishes volume, weight, construction and included straps for the Frame Bag range but no linear dimensions - fitment is via their printable A4/US-Letter sizing poster, which carries no labelled numbers. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 5.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/03/20161442/HFP-FEATURED-IMAGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Half Frame Bag",
+  "size": "6.5L",
+  "src": "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 56,
+   "hgt": 16.5,
+   "wid": 7
+  },
+  "dims_note": "Tailfin publishes volume, weight, construction and included straps for the Frame Bag range but no linear dimensions - fitment is via their printable A4/US-Letter sizing poster, which carries no labelled numbers. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 6.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/03/20161442/HFP-FEATURED-IMAGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Wedge Frame Bag",
+  "size": "1.9L",
+  "src": "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 32,
+   "hgt": 10,
+   "wid": 6
+  },
+  "dims_note": "Tailfin publishes volume, weight, construction and included straps for the Frame Bag range but no linear dimensions - fitment is via their printable A4/US-Letter sizing poster, which carries no labelled numbers. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1.9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/03/20153440/FEATURED-IMAGE-TAILFIN-FRAME-BAG-WEDGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Wedge Frame Bag",
+  "size": "2.7L",
+  "src": "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 36,
+   "hgt": 11.5,
+   "wid": 6.5
+  },
+  "dims_note": "Tailfin publishes volume, weight, construction and included straps for the Frame Bag range but no linear dimensions - fitment is via their printable A4/US-Letter sizing poster, which carries no labelled numbers. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 2.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/03/20153440/FEATURED-IMAGE-TAILFIN-FRAME-BAG-WEDGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Wedge Frame Bag",
+  "size": "3.5L",
+  "src": "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 40,
+   "hgt": 12.5,
+   "wid": 7
+  },
+  "dims_note": "Tailfin publishes volume, weight, construction and included straps for the Frame Bag range but no linear dimensions - fitment is via their printable A4/US-Letter sizing poster, which carries no labelled numbers. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/03/20153440/FEATURED-IMAGE-TAILFIN-FRAME-BAG-WEDGE.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "pockets": [],
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "cord": false,
+   "reflective": false,
+   "valve": false
+  }
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Downtube Pack (V-Mount)",
+  "size": "1.7L",
+  "src": "https://www.tailfin.cc/product/frame-bags/downtube-packs/",
+  "verified": true,
+  "dims_cm": {
+   "len": 38,
+   "hgt": 6,
+   "wid": 7.5
+  },
+  "dims_note": "Tailfin's specification block for this line publishes volume, weight and construction only - no linear dimensions (sizing is done via their printable template). dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 1.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2022/05/27104159/packing-advice-1.7L.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104158/packing-advice-3L.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104253/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-2-of-4.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104252/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-3-of-4.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104250/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-4-of-4.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104248/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-3-of-14.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Frame Bags",
+  "name": "Downtube Pack (V-Mount)",
+  "size": "3L",
+  "src": "https://www.tailfin.cc/product/frame-bags/downtube-packs/",
+  "verified": true,
+  "dims_cm": {
+   "len": 44,
+   "hgt": 7.6,
+   "wid": 9
+  },
+  "dims_note": "Tailfin's specification block for this line publishes volume, weight and construction only - no linear dimensions (sizing is done via their printable template). dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2022/05/27104159/packing-advice-1.7L.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104158/packing-advice-3L.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104253/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-2-of-4.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104252/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-3-of-4.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104250/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-4-of-4.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/05/27104248/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-3-of-14.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Top Tube",
+  "name": "Top Tube Bag",
+  "size": "0.8L Zip",
+  "src": "https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 22.4,
+   "hgt": 10,
+   "wid": 6.5
+  },
+  "dims_note": "From Tailfin's own Top Tube Bag dimensions sheet. Width corrected from 5.0 to 6.5cm.",
+  "dims_state": "packed",
+  "dims_raw": "224 MM (length) / 100 MM (height) / 65 MM (width) / 48 MM; 0.8L Top Tube Bag (Zip) Road/Gravel",
+  "capacity_l": 0.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/05/20094739/tailfin-top-tube-bag.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Top Tube",
+  "name": "Top Tube Bag",
+  "size": "1.1L Zip/Flip",
+  "src": "https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 24.9,
+   "hgt": 10.4,
+   "wid": 7.5
+  },
+  "dims_note": "Tailfin Top Tube Bag dimensions sheet. Width corrected from 6.0 to 7.5cm.",
+  "dims_state": "packed",
+  "dims_raw": "249 MM / 104 MM / 75 MM; 1.1L Top Tube Bag (Flip + Zip) Road/Gravel/MTB",
+  "capacity_l": 1.1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/05/20094739/tailfin-top-tube-bag.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Top Tube",
+  "name": "Top Tube Bag",
+  "size": "1.5L Zip/Flip",
+  "src": "https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 27.2,
+   "hgt": 11.4,
+   "wid": 9.0
+  },
+  "dims_note": "Tailfin Top Tube Bag dimensions sheet. Width corrected from 6.5 to 9.0cm.",
+  "dims_state": "packed",
+  "dims_raw": "272 MM / 114 MM / 90 MM; 1.5L Top Tube Bag (Flip + Zip) MTB",
+  "capacity_l": 1.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2026/05/20094739/tailfin-top-tube-bag.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Top Tube",
+  "name": "Long Top Tube Bag",
+  "size": "1.6L",
+  "src": "https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 37,
+   "hgt": 8.5,
+   "wid": 5.5
+  },
+  "dims_note": "From Tailfin's Long Top Tube Pack sizing poster. Length corrected from 40 to 37cm. Width is not published and is left at the prior estimate.",
+  "dims_state": "packed",
+  "dims_raw": "370 MM (length); 50 MM / 85 MM (heights)",
+  "capacity_l": 1.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2024/12/10173113/SHOP-ALL-LONG-TOP-TUBE-PACK-07-08-08.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Top Tube",
+  "name": "Long Top Tube Bag",
+  "size": "2.2L",
+  "src": "https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 47,
+   "hgt": 10.5,
+   "wid": 5.8
+  },
+  "dims_note": "Long Top Tube Pack sizing poster. Length corrected from 45 to 47cm; width not published.",
+  "dims_state": "packed",
+  "dims_raw": "470 MM (length); 65 MM / 105 MM (heights)",
+  "capacity_l": 2.2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2024/12/10173113/SHOP-ALL-LONG-TOP-TUBE-PACK-07-08-08.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Top Tube",
+  "name": "Long Top Tube Bag",
+  "size": "3L",
+  "src": "https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 50,
+   "hgt": 11.5,
+   "wid": 6.3
+  },
+  "dims_note": "Long Top Tube Pack sizing poster. Width not published.",
+  "dims_state": "packed",
+  "dims_raw": "500 MM (length); 68 MM / 115 MM (heights)",
+  "capacity_l": 3.0,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2024/12/10173113/SHOP-ALL-LONG-TOP-TUBE-PACK-07-08-08.jpg",
+   "https://media.tailfin.cc/app/uploads/2024/08/02111513/CarbonX.jpg",
+   "https://media.tailfin.cc/app/uploads/2022/02/27105229/RD_MEGA-MENU-01.jpg",
+   "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
+   "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Top Tube",
+  "name": "Rear Top Tube Bag",
+  "size": "0.9L Road/Gravel",
+  "src": "https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 25,
+   "hgt": 9,
+   "wid": 5
+  },
+  "dims_note": "Tailfin's Rear Top Tube Bag spec sheet is a print-at-home sizing template with no labelled dimensions; the page publishes volume and weight only. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2025/02/20152729/REAR-TOP-TUBE-BAG-FOOTBED-.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/11/03161200/Secondary-Feature-800x800px-5.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/04/30125200/TAPERED-SHAPE.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/11/03161154/Secondary-Feature-800x800px-4.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/11/03161149/Secondary-Feature-800x800px-3.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/11/03161508/Secondary-Feature-800x800px-6-1.jpg"
+  ],
+  "features": {}
+ },
+ {
+  "brand": "Tailfin",
+  "line": "Top Tube",
+  "name": "Rear Top Tube Bag",
+  "size": "0.8L MTB",
+  "src": "https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/",
+  "verified": true,
+  "dims_cm": {
+   "len": 25,
+   "hgt": 7,
+   "wid": 5.5
+  },
+  "dims_note": "Tailfin's Rear Top Tube Bag spec sheet is a print-at-home sizing template with no labelled dimensions; the page publishes volume and weight only. dims_cm left as the existing catalogue estimate.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 0.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://media.tailfin.cc/app/uploads/2025/02/20152729/REAR-TOP-TUBE-BAG-FOOTBED-.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/11/03161200/Secondary-Feature-800x800px-5.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/04/30125200/TAPERED-SHAPE.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/11/03161154/Secondary-Feature-800x800px-4.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/11/03161149/Secondary-Feature-800x800px-3.jpg",
+   "https://media.tailfin.cc/app/uploads/2025/11/03161508/Secondary-Feature-800x800px-6-1.jpg"
+  ],
+  "features": {}
+ }
+]

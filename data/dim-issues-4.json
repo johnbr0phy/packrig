@@ -1,0 +1,726 @@
+[
+ {
+  "brand": "Restrap",
+  "name": "Bar Pack",
+  "size": "10L",
+  "slot": "barroll",
+  "who": "Restrap | Adventure | Bar Pack | 10L",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.04 \u2014 25 x 16 x 24cm",
+  "sev": "medium",
+  "dims": {
+   "len": 25,
+   "dia": 16,
+   "wid": 16,
+   "hgt": 24
+  },
+  "liters": 10,
+  "src": "https://restrap.com/products/bar-pack",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Restrap",
+  "name": "Frame Bag",
+  "size": "Small",
+  "slot": "framebag_half",
+  "who": "Restrap | Adventure | Frame Bag | Small",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 2.14 \u2014 30 x 6 x 14cm",
+  "sev": "medium",
+  "dims": {
+   "len": 30,
+   "hgt": 14,
+   "wid": 6
+  },
+  "liters": 2.5,
+  "src": "https://restrap.com/products/frame-bag-small",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Restrap",
+  "name": "Race Frame Bag",
+  "size": "Small",
+  "slot": "framebag_half",
+  "who": "Restrap | Race | Race Frame Bag | Small",
+  "kind": "volume-too-small",
+  "detail": "box 1.9L vs stated 3L (ratio 0.64) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 37,
+   "hgt": 9.5,
+   "wid": 5.5
+  },
+  "liters": 3,
+  "src": "https://restrap.com/products/race-frame-bag",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Restrap",
+  "name": "Race Frame Bag",
+  "size": "Large",
+  "slot": "framebag_half",
+  "who": "Restrap | Race | Race Frame Bag | Large",
+  "kind": "volume-too-small",
+  "detail": "box 2.2L vs stated 4.2L (ratio 0.52) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 50,
+   "hgt": 8,
+   "wid": 5.5
+  },
+  "liters": 4.2,
+  "src": "https://restrap.com/products/race-frame-bag-large",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Restrap",
+  "name": "Top Tube Bag",
+  "size": "0.8L",
+  "slot": "toptube",
+  "who": "Restrap | Adventure | Top Tube Bag | 0.8L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.92 \u2014 25 x 3 x 13cm",
+  "sev": "medium",
+  "dims": {
+   "len": 25,
+   "hgt": 13,
+   "wid": 3
+  },
+  "liters": 0.8,
+  "src": "https://restrap.com/products/top-tube-bag",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Restrap",
+  "name": "Bolt-on Top Tube Bag",
+  "size": "0.8L",
+  "slot": "toptube",
+  "who": "Restrap | Adventure | Bolt-on Top Tube Bag | 0.8L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.92 \u2014 25 x 3 x 13cm",
+  "sev": "medium",
+  "dims": {
+   "len": 25,
+   "hgt": 13,
+   "wid": 3
+  },
+  "liters": 0.8,
+  "src": "https://restrap.com/products/bolt-on-top-tube-bag",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Restrap",
+  "name": "Rear Top Tube Bag",
+  "size": "0.8L",
+  "slot": "toptube",
+  "who": "Restrap | Adventure | Rear Top Tube Bag | 0.8L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.38 \u2014 18 x 5 x 13cm",
+  "sev": "medium",
+  "dims": {
+   "len": 18,
+   "hgt": 13,
+   "wid": 5
+  },
+  "liters": 0.8,
+  "src": "https://restrap.com/products/rear-top-tube-bag",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Oveja Negra",
+  "name": "Snack Pack",
+  "size": "Small",
+  "slot": "toptube",
+  "who": "Oveja Negra | Snack Pack | Snack Pack | Small",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.33 \u2014 15.2 x 5.1 x 11.4cm",
+  "sev": "medium",
+  "dims": {
+   "len": 15.2,
+   "hgt": 11.4,
+   "wid": 5.1
+  },
+  "liters": 0.6,
+  "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-top-tube-bag-small",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Oveja Negra",
+  "name": "Snack Pack",
+  "size": "Small Angle",
+  "slot": "toptube",
+  "who": "Oveja Negra | Snack Pack | Snack Pack | Small Angle",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.33 \u2014 15.2 x 5.1 x 11.4cm",
+  "sev": "medium",
+  "dims": {
+   "len": 15.2,
+   "hgt": 11.4,
+   "wid": 5.1
+  },
+  "liters": 0.6,
+  "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-small-angle",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Oveja Negra",
+  "name": "Snack Pack",
+  "size": "Large",
+  "slot": "toptube",
+  "who": "Oveja Negra | Snack Pack | Snack Pack | Large",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.99 \u2014 20.3 x 6.3 x 10.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 20.3,
+   "hgt": 10.2,
+   "wid": 6.3
+  },
+  "liters": 1,
+  "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-top-tube-bags-large-xl",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Oveja Negra",
+  "name": "Lunchbox Handlebar Bag",
+  "size": "One Size",
+  "slot": "barbag",
+  "who": "Oveja Negra | Lunchbox | Lunchbox Handlebar Bag | One Size",
+  "kind": "volume-too-small",
+  "detail": "box 2.2L vs stated 3L (ratio 0.75) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 21.6,
+   "hgt": 16.5,
+   "wid": 6.3
+  },
+  "liters": 3,
+  "src": "https://www.ovejanegrabikepacking.com/products/lunchbox-handlebar-bag",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Oveja Negra",
+  "name": "Superwedgie 2.0 Frame Bag",
+  "size": "S",
+  "slot": "framebag_half",
+  "who": "Oveja Negra | Superwedgie | Superwedgie 2.0 Frame Bag | S",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.44 \u2014 33 x 3.8 x 22.9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 33,
+   "hgt": 22.9,
+   "wid": 3.8
+  },
+  "liters": 3,
+  "src": "https://www.ovejanegrabikepacking.com/products/superwedgie-2-0-frame-bag",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Oveja Negra",
+  "name": "Superwedgie 2.0 Frame Bag",
+  "size": "L",
+  "slot": "framebag_half",
+  "who": "Oveja Negra | Superwedgie | Superwedgie 2.0 Frame Bag | L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.40 \u2014 38.1 x 3.8 x 27.3cm",
+  "sev": "medium",
+  "dims": {
+   "len": 38.1,
+   "hgt": 27.3,
+   "wid": 3.8
+  },
+  "liters": 4,
+  "src": "https://www.ovejanegrabikepacking.com/products/superwedgie-2-0-frame-bag",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Oveja Negra",
+  "name": "Bodega Full Frame Bag",
+  "size": "XL",
+  "slot": "framebag_full",
+  "who": "Oveja Negra | Bodega | Bodega Full Frame Bag | XL",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.38 \u2014 55 x 6 x 40cm",
+  "sev": "medium",
+  "dims": {
+   "len": 55,
+   "hgt": 40,
+   "wid": 6
+  },
+  "liters": 8,
+  "src": "https://www.ovejanegrabikepacking.com/products/full-frame-bags",
+  "dims_state": "unknown",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Ortlieb",
+  "name": "Seat-Pack",
+  "size": "11L",
+  "slot": "seatpack",
+  "who": "Ortlieb | Seat-Pack | Seat-Pack | 11L",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.54 \u2014 39.9 x 15 x 25.9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 39.9,
+   "hgt": 25.9,
+   "wid": 15
+  },
+  "liters": 11,
+  "src": "https://us.ortlieb.com/products/seat-pack",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Ortlieb",
+  "name": "Handlebar-Pack QR",
+  "size": "11L",
+  "slot": "barroll",
+  "who": "Ortlieb | Handlebar-Pack | Handlebar-Pack QR | 11L",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.45 \u2014 32 x 18 x 22.1cm",
+  "sev": "medium",
+  "dims": {
+   "len": 32,
+   "hgt": 22.1,
+   "wid": 18
+  },
+  "liters": 11,
+  "src": "https://us.ortlieb.com/products/handlebar-pack-qr",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Ortlieb",
+  "name": "Handlebar-Pack Plus",
+  "size": "11L",
+  "slot": "barroll",
+  "who": "Ortlieb | Handlebar-Pack | Handlebar-Pack Plus | 11L",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.45 \u2014 32 x 18 x 22.1cm",
+  "sev": "medium",
+  "dims": {
+   "len": 32,
+   "hgt": 22.1,
+   "wid": 18
+  },
+  "liters": 11,
+  "src": "https://us.ortlieb.com/products/handlebar-pack-plus",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Ortlieb",
+  "name": "Accessory-Pack",
+  "size": "3.5L",
+  "slot": "barbag",
+  "who": "Ortlieb | Handlebar-Pack | Accessory-Pack | 3.5L",
+  "kind": "volume-too-small",
+  "detail": "box 2.6L vs stated 3.5L (ratio 0.74) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 30,
+   "hgt": 17,
+   "wid": 5.1
+  },
+  "liters": 3.5,
+  "src": "https://us.ortlieb.com/products/accessory-pack",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Ortlieb",
+  "name": "Fuel-Pack",
+  "size": "1L",
+  "slot": "toptube",
+  "who": "Ortlieb | Fuel-Pack | Fuel-Pack | 1L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.77 \u2014 21.1 x 8.4 x 11.9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 21.1,
+   "hgt": 11.9,
+   "wid": 8.4
+  },
+  "liters": 1,
+  "src": "https://us.ortlieb.com/products/fuel-pack",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Ortlieb",
+  "name": "Toptube-Bag",
+  "size": "1.5L",
+  "slot": "toptube",
+  "who": "Ortlieb | Toptube | Toptube-Bag | 1.5L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.94 \u2014 23.1 x 8.4 x 11.9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 23.1,
+   "hgt": 11.9,
+   "wid": 8.4
+  },
+  "liters": 1.5,
+  "src": "https://us.ortlieb.com/products/toptube-bag",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Brooks England",
+  "name": "Handlebar Compact Bag",
+  "size": "10-12L",
+  "slot": "barroll",
+  "who": "Brooks England | Scape | Handlebar Compact Bag | 10-12L",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.36 \u2014 34 x 14 x 25cm",
+  "sev": "medium",
+  "dims": {
+   "len": 34,
+   "hgt": 25,
+   "wid": 14
+  },
+  "liters": 12,
+  "src": "https://www.brooksengland.com/en-us/products/scape-handlebar-compact-bag-mud-green-bhb02pla00401",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Brooks England",
+  "name": "Top Tube Bag",
+  "size": "0.9L",
+  "slot": "toptube",
+  "who": "Brooks England | Scape | Top Tube Bag | 0.9L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.91 \u2014 21 x 4 x 11cm",
+  "sev": "medium",
+  "dims": {
+   "len": 21,
+   "hgt": 11,
+   "wid": 4
+  },
+  "liters": 0.9,
+  "src": "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-black-btt01pla00000",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Brooks England",
+  "name": "Top Tube Bag with Bolts",
+  "size": "0.9L",
+  "slot": "toptube",
+  "who": "Brooks England | Scape | Top Tube Bag with Bolts | 0.9L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.91 \u2014 21 x 4 x 11cm",
+  "sev": "medium",
+  "dims": {
+   "len": 21,
+   "hgt": 11,
+   "wid": 4
+  },
+  "liters": 0.9,
+  "src": "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-with-bolts-mud-green-btt03pla00401",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Brooks England",
+  "name": "Haul Pannier",
+  "size": "22L",
+  "slot": "pannier",
+  "who": "Brooks England | Trekking | Haul Pannier | 22L",
+  "kind": "volume-too-small",
+  "detail": "box 15.9L vs stated 22L (ratio 0.72) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 33,
+   "hgt": 37,
+   "wid": 13
+  },
+  "liters": 22,
+  "src": "https://www.brooksengland.com/en-us/products/haul-pannier-seal-brown-btb0001a07291",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Blackburn Design",
+  "name": "Corner Bag",
+  "size": "std",
+  "slot": "framebag_half",
+  "who": "Blackburn Design | Outpost | Corner Bag | std",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 2.00 \u2014 24 x 6 x 12cm",
+  "sev": "medium",
+  "dims": {
+   "len": 24,
+   "hgt": 12,
+   "wid": 6
+  },
+  "liters": 1.5,
+  "src": "https://www.bellhelmets.com/product/outpost-corner-bag/350170000100000061.html",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Blackburn Design",
+  "name": "Cargo Bag",
+  "size": "std",
+  "slot": "forkbag",
+  "who": "Blackburn Design | Outpost Elite | Cargo Bag | std",
+  "kind": "volume-too-big",
+  "detail": "box 17.1L vs stated 4L (ratio 4.29) \u2014 a dimension is probably an unrolled/flat figure",
+  "sev": "high",
+  "dims": {
+   "len": 35,
+   "hgt": 35,
+   "wid": 14,
+   "dia": 14
+  },
+  "liters": 4,
+  "src": "https://www.bellhelmets.com/product/outpost-elite-cargo-bag/350170000100000079.html",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Blackburn Design",
+  "name": "Local Plus Top Tube Bag",
+  "size": "std",
+  "slot": "toptube",
+  "who": "Blackburn Design | Local | Local Plus Top Tube Bag | std",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.73 \u2014 19 x 8 x 11cm",
+  "sev": "medium",
+  "dims": {
+   "len": 19,
+   "hgt": 11,
+   "wid": 8
+  },
+  "liters": 1,
+  "src": "https://www.bellhelmets.com/product/local-plus-top-tube-bag/350170000100000055.html",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Arkel",
+  "name": "Rollpacker Rear 20L",
+  "size": "",
+  "slot": "seatpack",
+  "who": "Arkel | Rollpacker Rear 20L | ",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.36 \u2014 38 x 28 x 24cm",
+  "sev": "medium",
+  "dims": {
+   "len": 38,
+   "wid": 28,
+   "hgt": 24
+  },
+  "liters": 20,
+  "src": "https://arkel.ca/products/rollpacker-bikepacking-bag",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Arkel",
+  "name": "Arkel GT-54 Classic Touring Panniers",
+  "size": "",
+  "slot": "pannier",
+  "who": "Arkel | Arkel GT-54 Classic Touring Panniers | ",
+  "kind": "volume-too-small",
+  "detail": "box 24.4L vs stated 54L (ratio 0.45) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 33.7,
+   "wid": 20,
+   "hgt": 36.2
+  },
+  "liters": 54,
+  "src": "https://arkel.ca/products/gt-54-classic-touring-panniers",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Arkel",
+  "name": "Dolphin 24L",
+  "size": "",
+  "slot": "pannier",
+  "who": "Arkel | Dolphin 24L | ",
+  "kind": "volume-too-small",
+  "detail": "box 23.8L vs stated 48L (ratio 0.50) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 33,
+   "wid": 15,
+   "hgt": 48
+  },
+  "liters": 48,
+  "src": "https://arkel.ca/products/dolphin-24l-waterproof-pannier",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Bags by Bird",
+  "name": "Better Half Framebag",
+  "size": "",
+  "slot": "framebag_full",
+  "who": "Bags by Bird | Better Half Framebag | ",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.12 \u2014 35.6 x 7 x 31.8cm",
+  "sev": "medium",
+  "dims": {
+   "len": 35.6,
+   "wid": 7,
+   "hgt": 31.8
+  },
+  "liters": 5.5,
+  "src": "https://www.bagsxbird.com/product-page/better-half-large-long",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Bags by Bird",
+  "name": "Better Half Framebag",
+  "size": "",
+  "slot": "framebag_half",
+  "who": "Bags by Bird | Better Half Framebag | ",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.14 \u2014 31.8 x 7 x 27.9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 31.8,
+   "wid": 7,
+   "hgt": 27.9
+  },
+  "liters": 4.5,
+  "src": "https://www.bagsxbird.com/product-page/better-half-framebag-1",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Rapha",
+  "name": "Rapha Explore Handlebar Pack 10L",
+  "size": "",
+  "slot": "barroll",
+  "who": "Rapha | Rapha Explore Handlebar Pack 10L | ",
+  "kind": "volume-too-small",
+  "detail": "box 2.6L vs stated 10L (ratio 0.26) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 25,
+   "wid": 13,
+   "hgt": 8
+  },
+  "liters": 10,
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Rapha",
+  "name": "Essentials Bag",
+  "size": "",
+  "slot": "saddlebag",
+  "who": "Rapha | Essentials Bag | ",
+  "kind": "volume-too-big",
+  "detail": "box 1.7L vs stated 0.3L (ratio 5.78) \u2014 a dimension is probably an unrolled/flat figure",
+  "sev": "high",
+  "dims": {
+   "len": 21,
+   "wid": 5,
+   "hgt": 16.5
+  },
+  "liters": 0.3,
+  "src": "https://www.rapha.cc/us/en/product/essentials-bag/BKM02XXGRV",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Straight Cut Design",
+  "name": "Straight Cut Bagel Bar Bag",
+  "size": "",
+  "slot": "barroll",
+  "who": "Straight Cut Design | Straight Cut Bagel Bar Bag | ",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.25 \u2014 20 x 16 x 16cm",
+  "sev": "medium",
+  "dims": {
+   "len": 20,
+   "wid": 16,
+   "hgt": 16,
+   "dia": 12
+  },
+  "liters": 2.2,
+  "src": "https://straightcutdesign.com/products/bagel-bar-bag-black",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Buckhorn Bags",
+  "name": "Buckhorn Waxed Canvas Panniers",
+  "size": "",
+  "slot": "pannier",
+  "who": "Buckhorn Bags | Buckhorn Waxed Canvas Panniers | ",
+  "kind": "volume-too-small",
+  "detail": "box 11.4L vs stated 20L (ratio 0.57) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 30,
+   "wid": 10,
+   "hgt": 38
+  },
+  "liters": 20,
+  "src": "https://www.buckhornbags.com/shop/p/waxed-canvas-panniers",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Andrew The Maker",
+  "name": "Rear TT Sack",
+  "size": "One Size",
+  "slot": "toptube",
+  "who": "Andrew The Maker | ATM | Rear TT Sack | One Size",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.50 \u2014 15 x 6 x 10cm",
+  "sev": "medium",
+  "dims": {
+   "len": 15,
+   "hgt": 10,
+   "wid": 6
+  },
+  "liters": 1,
+  "src": "https://www.andrewthemaker.com/shop/rear-top-tube-sack",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Atelier Velocidade",
+  "name": "Avalanche",
+  "size": "One Size",
+  "slot": "framebag_half",
+  "who": "Atelier Velocidade | Avalanche | Avalanche | One Size",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.83 \u2014 22 x 6 x 12cm",
+  "sev": "medium",
+  "dims": {
+   "len": 22,
+   "hgt": 12,
+   "wid": 6
+  },
+  "liters": 2,
+  "src": "https://www.ateliervelocidade.com/en/products/avalanche",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ }
+]

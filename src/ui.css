@@ -1,0 +1,565 @@
+:root {
+  --ink: #ffffff;
+  --ink-dim: rgba(255, 255, 255, 0.55);
+  --ink-faint: rgba(255, 255, 255, 0.34);
+  --accent: #e8a848;
+  --accent-soft: rgba(232, 168, 72, 0.12);
+
+  /* one glass material, used by every piece of chrome */
+  --glass-bg: rgba(15, 17, 20, 0.62);
+  --glass-brd: rgba(255, 255, 255, 0.10);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --radius: 16px;
+
+  /* shared layout rhythm */
+  --gutter: 30px;
+  --panel-w: 320px;
+  --bar-h: 56px;
+  --bar-bottom: 28px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; background: #0d0f13; }
+#app { position: fixed; inset: 0; }
+#scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#ui-root { position: absolute; inset: 0; pointer-events: none; color: var(--ink); }
+#ui-root > * { pointer-events: auto; }
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid var(--glass-brd);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius);
+}
+
+/* ---- wordmark ----------------------------------------------------------- */
+#ui-root > .top-scrim { pointer-events: none; }
+.top-scrim {
+  position: absolute; top: 0; left: 0; width: 400px; height: 190px;
+  background: radial-gradient(105% 92% at 0% 0%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0) 72%);
+}
+.wordmark {
+  position: absolute; top: 26px; left: var(--gutter); user-select: none;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45), 0 0 40px rgba(0, 0, 0, 0.25);
+}
+.wordmark h1 { font-size: 21px; letter-spacing: 0.34em; font-weight: 800; color: #fff; }
+.wordmark p {
+  font-size: 10px; letter-spacing: 0.18em; color: rgba(255, 255, 255, 0.55);
+  margin-top: 4px; text-transform: uppercase; font-weight: 600;
+}
+
+/* ---- left panel --------------------------------------------------------- */
+.panel {
+  position: absolute; top: 92px; left: var(--gutter); width: var(--panel-w);
+  max-height: calc(100vh - 220px);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.panel-head {
+  padding: 15px 16px 9px; display: flex; align-items: baseline; gap: 7px;
+  font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
+}
+.panel-title { color: rgba(255, 255, 255, 0.62); }
+.panel-count { color: rgba(255, 255, 255, 0.55); font-weight: 700; letter-spacing: 0.08em; }
+
+.bag-list {
+  overflow-y: auto; padding: 2px 9px 8px; scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+.bag-list::-webkit-scrollbar { width: 6px; }
+.bag-list::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.16); border-radius: 3px; }
+.bag-list::-webkit-scrollbar-track { background: transparent; }
+.bag-list.fade-bottom {
+  mask-image: linear-gradient(#000 calc(100% - 34px), transparent);
+  -webkit-mask-image: linear-gradient(#000 calc(100% - 34px), transparent);
+}
+
+.empty-state {
+  padding: 14px 8px 18px; font-size: 12.5px; line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+}
+.empty-state span { color: var(--ink-faint); font-size: 11.5px; }
+
+.bag-card {
+  display: flex; align-items: center; gap: 11px;
+  min-height: 56px; padding: 9px 10px; border-radius: 12px;
+  border: 1px solid transparent; cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.bag-card:hover { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.09); }
+.bag-sw {
+  width: 34px; height: 34px; border-radius: 10px; flex: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.20), 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+.bag-txt { flex: 1; min-width: 0; }
+/* brand + mount: sentence case, wraps rather than truncating the brand */
+.bag-meta {
+  display: flex; flex-wrap: wrap; gap: 0 5px; align-items: baseline;
+  font-size: 11.5px; color: rgba(255, 255, 255, 0.55); line-height: 1.35;
+}
+.bag-meta .sep, .bag-meta .m { color: rgba(255, 255, 255, 0.38); }
+.bag-name-row { display: flex; align-items: baseline; gap: 8px; margin-top: 2px; }
+.bag-model {
+  flex: 1; min-width: 0;
+  font-size: 14px; font-weight: 600; color: #fff; line-height: 1.28;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  line-clamp: 2; overflow: hidden;
+}
+.bag-liters {
+  flex: none; font-size: 12.5px; font-weight: 600; color: rgba(255, 255, 255, 0.72);
+  font-variant-numeric: tabular-nums;
+}
+.bag-size { font-weight: 500; color: rgba(255, 255, 255, 0.5); }
+.bag-acts { flex: none; display: flex; gap: 4px; }
+.bag-act {
+  width: 22px; height: 22px; border: none; border-radius: 7px;
+  background: rgba(255, 255, 255, 0.08); color: rgba(255, 255, 255, 0.6);
+  font-size: 11px; line-height: 1; cursor: pointer;
+  opacity: 0; transition: opacity 0.14s, background 0.14s, color 0.14s;
+}
+.bag-card:hover .bag-act, .bag-act:focus-visible { opacity: 1; }
+.bag-act:hover { background: rgba(255, 255, 255, 0.2); color: #fff; }
+.bag-act.rm:hover { background: rgba(226, 88, 72, 0.42); color: #fff; }
+.bag-act.buy {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; color: rgba(255, 255, 255, 0.55);
+}
+.bag-act.buy:hover { background: rgba(232, 168, 72, 0.22); color: var(--accent); }
+
+.panel-foot { padding: 0 12px 10px; }
+.kit-summary {
+  display: none; align-items: baseline; justify-content: space-between;
+  padding: 11px 2px 12px; border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+.panel-foot.has-kit .kit-summary { display: flex; }
+.kit-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+.kit-total { font-size: 14px; font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; }
+
+.share-kit {
+  display: none; width: 100%; height: 32px; margin-top: 7px;
+  align-items: center; justify-content: center; gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.10); border-radius: 9px;
+  background: transparent; cursor: pointer;
+  font-size: 11.5px; font-weight: 600; letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.5); transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.panel-foot.has-kit .share-kit { display: flex; }
+.share-kit .ic { font-size: 12.5px; line-height: 1; }
+.share-kit:hover {
+  color: rgba(255, 255, 255, 0.9); border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+}
+.share-kit.done { color: var(--accent); border-color: rgba(232, 168, 72, 0.4); }
+
+.add-bag {
+  width: 100%; height: 40px; border-radius: 10px; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.10);
+  color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: 0.03em;
+  transition: border-color 0.15s, background 0.15s;
+}
+.add-bag .plus { font-size: 15px; font-weight: 500; margin-right: 3px; }
+.add-bag:hover { background: rgba(255, 255, 255, 0.16); border-color: rgba(255, 255, 255, 0.3); }
+
+/* ---- one bottom dock: actions left, environments right ------------------ */
+.bottom-bar {
+  position: absolute; bottom: var(--bar-bottom);
+  left: calc(var(--gutter) + var(--panel-w)); right: var(--gutter);
+  height: var(--bar-h); padding: 0 8px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.dock { display: flex; align-items: center; gap: 8px; }
+.envs { display: flex; align-items: center; gap: 3px; }
+
+.btn {
+  border: none; cursor: pointer; border-radius: 999px; white-space: nowrap; flex: none;
+  padding: 10px 15px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.09); color: var(--ink);
+  transition: background 0.15s, transform 0.1s;
+}
+.btn:hover { background: rgba(255, 255, 255, 0.16); }
+.btn:active { transform: scale(0.97); }
+/* the one filled-amber element in the whole UI */
+.btn.primary { background: var(--accent); color: #1a1207; }
+.btn.primary:hover { background: #f4bb60; }
+.btn .bolt { margin-right: 2px; color: #2b2113; }
+.btn.ghost { background: transparent; color: rgba(255, 255, 255, 0.6); }
+.btn.ghost:hover { background: rgba(226, 88, 72, 0.16); color: #ff9d92; }
+.btn.ghost.confirm { background: rgba(226, 88, 72, 0.28); color: #ffc4bd; }
+
+.divider { width: 1px; height: 28px; background: rgba(255, 255, 255, 0.10); flex: none; }
+/* label sits inline with its swatches, matching every other group in the bar */
+.paint-group { display: flex; flex-direction: row; align-items: center; gap: 0; }
+.group-label {
+  font-size: 9.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4); line-height: 1;
+}
+.paints { display: flex; gap: 6px; }
+.paint {
+  width: 26px; height: 26px; border-radius: 50%; border: none; cursor: pointer; padding: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.paint:hover { transform: scale(1.1); }
+.paint.on {
+  box-shadow: 0 0 0 2px #0f1114, 0 0 0 4px #fff;
+}
+
+.env-chip {
+  display: flex; align-items: center; gap: 7px;
+  border: none; cursor: pointer; border-radius: 10px;
+  padding: 0 8px 0 4px; height: 44px; font-size: 11px; font-weight: 500;
+  background: transparent; color: var(--ink-dim);
+  transition: color 0.15s;
+}
+.env-thumb {
+  position: relative; overflow: hidden; flex: none;
+  width: 56px; height: 36px; border-radius: 8px;
+  border: 2px solid transparent;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  transition: border-color 0.15s;
+}
+/* the mountain thumbnail gets a peak so it can't be mistaken for the lake */
+.env-thumb .peak {
+  position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: 30px; height: 17px; background: rgba(255, 255, 255, 0.82);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.env-label { white-space: nowrap; }
+.env-chip:hover { color: var(--ink); }
+.env-chip:hover .env-thumb { border-color: rgba(255, 255, 255, 0.35); }
+.env-chip.on { color: #fff; }
+.env-chip.on .env-label { font-weight: 600; }
+.env-chip.on .env-thumb { border-color: #fff; }
+
+/* ---- top-right camera tools --------------------------------------------- */
+.viewtools {
+  position: absolute; top: 26px; right: var(--gutter);
+  display: flex; align-items: center; padding: 3px; gap: 3px;
+}
+.tool-btn {
+  width: 40px; height: 40px; border: none; border-radius: 12px; cursor: pointer;
+  background: transparent; color: rgba(255, 255, 255, 0.85);
+  font-size: 20px; line-height: 1; transition: background 0.15s, color 0.15s;
+}
+.tool-btn:hover { background: rgba(255, 255, 255, 0.09); color: #fff; }
+.tool-btn.on, .tool-btn.on:hover { background: var(--accent); color: #1a1207; }
+.tool-divider { width: 1px; height: 22px; background: rgba(255, 255, 255, 0.10); }
+
+/* ---- picker overlay ----------------------------------------------------- */
+.picker-veil {
+  position: absolute; inset: 0; background: rgba(5, 7, 10, 0.58);
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  animation: fade 0.18s ease;
+}
+@keyframes fade { from { opacity: 0; } }
+.picker {
+  width: min(880px, calc(100vw - 80px)); max-height: min(660px, calc(100vh - 120px));
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.picker.mount-picker { width: min(720px, calc(100vw - 80px)); }
+.picker.brand-picker { width: min(560px, calc(100vw - 80px)); }
+.pk-head { padding: 18px 22px 14px; display: flex; align-items: center; gap: 12px; }
+.pk-title { flex: 1; min-width: 0; }
+.pk-title h2 { font-size: 17px; font-weight: 700; letter-spacing: 0.02em; }
+
+.pk-crumbs { display: flex; align-items: center; gap: 5px; margin-bottom: 5px; flex-wrap: wrap; }
+.crumb {
+  border: none; background: none; padding: 0; cursor: pointer;
+  font-size: 11.5px; color: rgba(255, 255, 255, 0.5); transition: color 0.15s;
+}
+.crumb:hover { color: #fff; text-decoration: underline; }
+.crumb.cur { color: rgba(255, 255, 255, 0.38); cursor: default; }
+.crumb-sep { font-size: 11px; color: rgba(255, 255, 255, 0.25); }
+.pk-title p {
+  font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint); margin-top: 4px; font-weight: 600;
+}
+.pk-back, .pk-close {
+  flex: none; width: 32px; height: 32px; border-radius: 10px; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.10); background: rgba(255, 255, 255, 0.04);
+  color: var(--ink-dim); font-size: 14px; line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+.pk-back:hover, .pk-close:hover { background: rgba(255, 255, 255, 0.12); color: var(--ink); }
+.pk-remove {
+  flex: none; border: 1px solid rgba(255, 255, 255, 0.12); background: transparent;
+  color: var(--ink-dim); border-radius: 999px; padding: 7px 14px;
+  font-size: 11.5px; font-weight: 600; cursor: pointer; transition: all 0.15s;
+}
+.pk-remove:hover { border-color: rgba(226, 88, 72, 0.6); color: #ff9d92; background: rgba(226, 88, 72, 0.12); }
+
+/* mount-zone picker */
+.zones { overflow-y: auto; padding: 2px 22px 22px; scrollbar-width: thin; }
+.zone + .zone { margin-top: 18px; }
+.zone-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-faint); margin-bottom: 9px;
+}
+.zone-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.mount-btn {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 3px;
+  text-align: left; padding: 11px 13px; border-radius: 12px; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.10); background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.15s, background 0.15s;
+}
+.mount-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.mount-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.mount-btn.occupied { border-color: rgba(232, 168, 72, 0.35); }
+.mb-name { font-size: 13px; font-weight: 600; color: #fff; }
+.mb-sub {
+  font-size: 11px; color: var(--ink-faint); max-width: 100%;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.mount-btn.occupied .mb-sub { color: var(--accent); }
+
+/* brand list */
+.brand-list { overflow-y: auto; padding: 2px 20px 20px; scrollbar-width: thin; }
+.brand-row {
+  width: 100%; display: flex; align-items: center; gap: 12px;
+  padding: 13px 14px; border-radius: 12px; cursor: pointer; text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.10); background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.15s, background 0.15s;
+}
+.brand-row + .brand-row { margin-top: 7px; }
+.brand-row:hover { border-color: var(--accent); background: var(--accent-soft); }
+.brand-row.on { border-color: var(--accent); background: rgba(232, 168, 72, 0.14); }
+.br-name { font-size: 14px; font-weight: 600; color: #fff; flex: none; }
+.br-palette { display: flex; gap: 3px; flex: 1; }
+.br-sw {
+  width: 13px; height: 13px; border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+.br-count { font-size: 11.5px; color: var(--ink-faint); flex: none; }
+.br-fitted {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); flex: none;
+}
+.br-go { font-size: 16px; color: rgba(255, 255, 255, 0.35); flex: none; line-height: 1; }
+
+/* product lines within one brand */
+.lines { overflow-y: auto; padding: 2px 20px 22px; scrollbar-width: thin; }
+.pline + .pline { margin-top: 18px; }
+.pline-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-faint); margin-bottom: 9px;
+}
+.card.has-sizes { cursor: default; }
+.card.has-sizes:hover { border-color: rgba(255, 255, 255, 0.10); background: rgba(255, 255, 255, 0.03); }
+.card.has-sizes.on:hover { border-color: var(--accent); background: rgba(232, 168, 72, 0.14); }
+.sizes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.size-chip {
+  border: 1px solid rgba(255, 255, 255, 0.16); background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.86); border-radius: 8px; cursor: pointer;
+  padding: 6px 11px; font-size: 12px; font-weight: 600;
+  font-variant-numeric: tabular-nums; transition: all 0.15s;
+}
+.size-chip:hover { border-color: var(--accent); background: rgba(232, 168, 72, 0.18); color: #fff; }
+.size-chip.on { border-color: var(--accent); background: var(--accent); color: #1a1207; }
+
+/* product cards */
+.cards {
+  overflow-y: auto; padding: 4px 20px 22px; scrollbar-width: thin;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px;
+}
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.10); border-radius: 12px; padding: 13px 14px;
+  cursor: pointer; background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.15s, background 0.15s;
+}
+.card:hover { border-color: var(--accent); background: var(--accent-soft); }
+.card.on { border-color: var(--accent); background: rgba(232, 168, 72, 0.14); }
+.card .brand {
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700;
+}
+.card .name {
+  font-size: 13.5px; font-weight: 600; margin: 0; line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  line-clamp: 2; overflow: hidden;
+}
+.card .meta {
+  font-size: 11px; color: var(--ink-dim); display: flex; align-items: center;
+  gap: 9px; margin-top: 9px; flex-wrap: wrap;
+}
+.card .liters { font-weight: 600; font-variant-numeric: tabular-nums; }
+.card .chips { display: flex; gap: 4px; }
+.card .chip { width: 12px; height: 12px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22); }
+.card .est { font-style: italic; color: var(--ink-faint); }
+.card .fitted {
+  color: var(--accent); font-weight: 700;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+/* link out to the maker's own product page */
+.buy-link {
+  margin-left: auto; flex: none; white-space: nowrap; text-decoration: none;
+  font-size: 11px; color: rgba(255, 255, 255, 0.55); transition: color 0.15s;
+}
+.buy-link:hover { color: var(--accent); text-decoration: underline; }
+
+/* ---- hint: floats above the dock, then removes itself ------------------- */
+.hint {
+  position: absolute; left: 50%; bottom: 100px;
+  transform: translateX(-50%); pointer-events: none;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid var(--glass-brd);
+  box-shadow: var(--glass-shadow);
+  border-radius: 999px; padding: 7px 15px;
+  font-size: 11.5px; color: var(--ink-dim); letter-spacing: 0.05em;
+  user-select: none; white-space: nowrap;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.hint.gone { opacity: 0; transform: translateX(-50%) translateY(4px); }
+
+/* ---- browse mode switch -------------------------------------------------
+   Brand-first and type-first are peers, not a primary route and a fallback,
+   so the control that swaps them sits in the header at equal weight. */
+.seg {
+  display: inline-flex; gap: 2px; padding: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+.seg-btn {
+  appearance: none; border: 0; cursor: pointer;
+  padding: 7px 15px; border-radius: 999px;
+  font: 600 12px/1 -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  letter-spacing: 0.01em;
+  color: var(--ink-dim); background: transparent;
+  transition: color .18s ease, background .18s ease;
+  white-space: nowrap;
+}
+.seg-btn:hover { color: var(--ink); }
+.seg-btn.on {
+  color: #14161a; background: #f2f3f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+}
+
+/* the header can now carry a wide control, so let it wrap gracefully */
+.pk-head { flex-wrap: wrap; row-gap: 10px; }
+.pk-head .seg { margin-left: auto; }
+
+/* ---- product thumbnails -------------------------------------------------
+   A real photo of the bag is the fastest way to recognise it; the render
+   alone is not enough when 589 products share a silhouette language. */
+.card { position: relative; }
+/* Maker photography is shot on pure white. Dropped straight into a dark panel
+   that glares, so the tile is a soft off-white with an inset edge — it reads as
+   a deliberate product surface rather than a hole punched in the UI. */
+.card-thumb {
+  width: 100%; aspect-ratio: 3 / 2; border-radius: 9px; overflow: hidden;
+  margin-bottom: 10px; background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.10);
+  display: block;
+}
+/* tile matches the photos' own white ground, so the two don't read as nested
+   rectangles; the shot already carries its own margin, so no extra padding */
+.card-thumb img {
+  width: 100%; height: 100%; object-fit: contain; display: block;
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+.card:hover .card-thumb img { transform: scale(1.035); }
+.card-thumb.empty {
+  display: grid; place-items: center;
+  color: var(--ink-faint); font-size: 11px; letter-spacing: 0.06em;
+}
+
+/* ---- colourway dots ----------------------------------------------------- */
+.ways { display: flex; gap: 5px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+.way {
+  width: 15px; height: 15px; border-radius: 50%; cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  padding: 0; appearance: none;
+  transition: transform .14s ease, border-color .14s ease;
+}
+.way:hover { transform: scale(1.16); border-color: rgba(255, 255, 255, 0.6); }
+.way.on { border-color: #fff; box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.45); }
+
+/* ---- bidon colour ------------------------------------------------------- */
+.bottle-group { display: flex; align-items: center; gap: 9px; }
+.bottle-group .lbl {
+  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-faint); font-weight: 700;
+}
+.bidons { display: flex; gap: 6px; }
+.bidon {
+  width: 19px; height: 19px; border-radius: 50%; cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, 0.2); appearance: none; padding: 0;
+  transition: transform .14s ease;
+}
+.bidon:hover { transform: scale(1.14); }
+.bidon.on { border-color: #fff; }
+
+/* ---- bottom bar, rebuilt -------------------------------------------------
+   Was three unrelated concerns in one strip, with the loudest visual weight
+   (a filled amber pill) on the least consequential action. Now: one rhythm,
+   build actions left, appearance right, nothing shouting. */
+.bottom-bar { padding: 9px 14px; }
+.dock { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+.btn.quiet {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: var(--ink);
+  font-weight: 600; font-size: 12.5px;
+  padding: 8px 14px; border-radius: 999px;
+  transition: background .18s ease, border-color .18s ease;
+}
+.btn.quiet:hover { background: rgba(255, 255, 255, 0.13); border-color: rgba(255, 255, 255, 0.2); }
+.btn.quiet .bolt { opacity: 0.75; margin-right: 5px; }
+
+.group-label {
+  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-faint); font-weight: 700; margin-right: 9px;
+}
+.paint-group { display: flex; align-items: center; }
+
+/* environment as swatches, not labelled photo cards */
+.envs.compact { display: flex; gap: 6px; }
+.envs.compact .env-chip {
+  width: 26px; height: 26px; border-radius: 8px; padding: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  cursor: pointer; appearance: none;
+  transition: transform .14s ease, border-color .14s ease;
+}
+.envs.compact .env-chip:hover { transform: translateY(-1px); border-color: rgba(255, 255, 255, 0.5); }
+.envs.compact .env-chip.on { border-color: #fff; box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4); }
+
+.divider { width: 1px; height: 24px; background: rgba(255, 255, 255, 0.1); }
+
+/* colourway row sits under the card's text column, not across the swatch */
+.bag-card { flex-wrap: wrap; }
+.bag-card .ways { flex-basis: 100%; margin: 8px 0 0 46px; }
+
+/* ---- a bag that will not fit this frame ---------------------------------
+   Shown rather than silently dropped, but clearly not part of the build. */
+.bag-card.unfit { opacity: 0.72; border-color: rgba(226, 138, 72, 0.30); }
+.bag-card.unfit .bag-sw { filter: grayscale(0.55); }
+.bag-card.unfit .bag-model { color: rgba(255, 255, 255, 0.72); }
+.unfit-msg {
+  margin-top: 4px; font-size: 11px; line-height: 1.35;
+  color: #e8a256; font-weight: 500;
+}
+
+/* ---- selection mirrored from the 3D scene -------------------------------
+   Hover is a whisper, selection is definite — same two-step the canvas uses. */
+.bag-card.hov { background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.12); }
+.bag-card.sel {
+  background: rgba(232, 168, 72, 0.13);
+  border-color: rgba(232, 168, 72, 0.55);
+}
+.bag-card.sel .bag-model { color: #fff; }
+.bag-card.sel .bag-act { opacity: 1; }
+
+/* product photo in the kit list — maker shots are on white, so give the tile
+   the same ground rather than a dark hole punched in the panel */
+.bag-sw.photo { background: #fff; overflow: hidden; padding: 2px; }
+.bag-sw.photo img { width: 100%; height: 100%; object-fit: contain; display: block; }

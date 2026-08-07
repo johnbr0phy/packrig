@@ -1,0 +1,2435 @@
+[
+ {
+  "brand": "Revelate Designs",
+  "line": "Spinelock",
+  "name": "Spinelock",
+  "size": "10L",
+  "src": "https://revelatedesigns.com/product/spinelock10/",
+  "verified": false,
+  "dims_cm": {
+   "len": 45,
+   "hgt": 20,
+   "wid": 18
+  },
+  "dims_note": "NO retailer or review source publishes outer dimensions for the Spinelock. bike-packing.de, CampfireCycling and The Radavist's launch article all give only fit clearances (20 cm (7.9\") tyre clearance, 16.4 cm exposed seatpost), volume in cubic inches (610 cu in for the 10L, 975 cu in for the 16L) and weight (638 g / 680 g). dims_cm left at the existing catalogue value and is NOT retailer-confirmed. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/f3/85/ff/1672933139/revelate-designs-spinelock-seat-bag-black-10l-001_24cb6222d01ebf2d8859052e3ad37db5.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": true,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-spinelock-saddlebag-black-10l-16l-black-10-l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Spinelock",
+  "name": "Spinelock",
+  "size": "16L",
+  "src": "https://revelatedesigns.com/product/spinelock16/",
+  "verified": false,
+  "dims_cm": {
+   "len": 52,
+   "hgt": 24,
+   "wid": 21
+  },
+  "dims_note": "NO retailer or review source publishes outer dimensions for the Spinelock. bike-packing.de, CampfireCycling and The Radavist's launch article all give only fit clearances (24 cm (9.4\") tyre clearance, 16.4 cm exposed seatpost), volume in cubic inches (610 cu in for the 10L, 975 cu in for the 16L) and weight (638 g / 680 g). dims_cm left at the existing catalogue value and is NOT retailer-confirmed. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "unknown",
+  "dims_raw": null,
+  "capacity_l": 16,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/f3/85/ff/1672933139/revelate-designs-spinelock-seat-bag-black-10l-001_24cb6222d01ebf2d8859052e3ad37db5.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": true,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-spinelock-saddlebag-black-10l-16l-black-10-l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Terrapin",
+  "name": "Terrapin System",
+  "size": "8L",
+  "src": "https://revelatedesigns.com/product/terrapin8l/",
+  "verified": false,
+  "dims_cm": {
+   "len": 43.2,
+   "hgt": 15.2,
+   "wid": 15.2,
+   "dia": 15.2
+  },
+  "dims_note": "Dimensions from the REI product spec table (rei.com/product/189291); revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Second source bike-packing.de publishes no outer dimensions at all, only clearances (17.8 cm saddle-rail-to-tyre, 12.7 cm free seatpost) and weights (holster 369 g, drybag 113 g), so REI is unconfirmed. REI's figures are rounded to whole inches. CORRECTION: the catalogue carried a 12.9 cm diameter, which back-computes to only 5.6 L for a 43.2 cm cylinder; REI's 15.2 cm gives 7.8 L, matching the 8 L rating, so REI's figure is taken.",
+  "dims_state": "packed",
+  "dims_raw": "REI: 17 x 6 x 6 in (43.2 x 15.2 x 15.2 cm); 8 L with closure rolled 3 times; 1 lb 1 oz",
+  "capacity_l": 8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Crushed Purple",
+    "hex": "#5d4a6e"
+   },
+   {
+    "name": "Alpine Camo",
+    "hex": "#8b8874"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/e4/f8/d4/1672932866/revelate-designs-terrapin-8l-black-0001_375509333cb98b6122c2b8e0d1edf7fa.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": true,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.rei.com/product/189291/revelate-designs-terrapin-system-seat-pack-8-liters"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Terrapin",
+  "name": "Terrapin System",
+  "size": "14L",
+  "src": "https://revelatedesigns.com/product/terrapinsystem14l/",
+  "verified": false,
+  "dims_cm": {
+   "len": 45.7,
+   "hgt": 20.3,
+   "wid": 17.8,
+   "dia": 19.0
+  },
+  "dims_note": "Dimensions from the REI product spec table (rei.com/product/188621); revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Second source bike-packing.de publishes no outer dimensions, only clearances (21.6 cm rail-to-tyre, 12.7 cm free seatpost) and weights (holster 425 g, drybag 142 g), so REI is unconfirmed. REI's figures are rounded to whole inches and REI does not label which axis is which; 18 in is taken as length and the 8/7 in pair as height/width, with dia set to their mean. Runs about 2.5 cm longer than the existing catalogue value.",
+  "dims_state": "packed",
+  "dims_raw": "REI: 18 x 8 x 7 in (45.7 x 20.3 x 17.8 cm); 14 L with closure rolled 3 times; 1 lb 5 oz",
+  "capacity_l": 14,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Blue",
+    "hex": "#2f5d8c"
+   },
+   {
+    "name": "Crushed Purple",
+    "hex": "#5d4a6e"
+   },
+   {
+    "name": "Multi-cam",
+    "hex": "#8b8874"
+   }
+  ],
+  "images": [
+   "https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/terrapin-14-liter-black-2019-1000x1000.jpg",
+   "https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/revelate-designs-terrapin-14l-multi-cam-stock.jpg",
+   "https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/revelate-designs-terrapin-14l-purple-crush-stock.jpg",
+   "https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/revelate-designs-terrapin-14l-blue-seat-bag.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": true,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.rei.com/product/188621/revelate-designs-terrapin-system-seat-pack-14-liters"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Shrew",
+  "name": "Shrew",
+  "size": "2.25L",
+  "src": "https://revelatedesigns.com/product/shrew/",
+  "verified": false,
+  "dims_cm": {
+   "len": 25.4,
+   "hgt": 12.7,
+   "wid": 12.7
+  },
+  "dims_note": "NO retailer publishes dimensions for the Shrew: bike-packing.de gives only 'up to 3 litres' and 142 g, CampfireCycling only 2.25 L and 4.5 oz. dims_cm left at the existing catalogue value, NOT retailer-confirmed. Note the 2.25 L / 3 L split is the rolled-vs-unrolled figure \u2014 CampfireCycling's own page carries both and flags the inconsistency; capacity_l stays at the packed 2.25 L. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "unknown",
+  "dims_raw": "up to 3 litres, 142 g",
+  "capacity_l": 2.25,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Hivis Lime",
+    "hex": "#c8d92a"
+   },
+   {
+    "name": "Blue",
+    "hex": "#2f5d8c"
+   },
+   {
+    "name": "Purple Crush",
+    "hex": "#5d4a6e"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/95/60/b9/1672933119/revelate-designs-shrew-seat-bag-black-0001_8a0084afc09e3f4cf1fe61a4ce6443cb.jpg",
+   "https://bike-packing.imgbolt.de/media/7b/d5/50/1672933104/revelate-designs-shrew-seat-bag-yellow-0001_1add37b787e4159428e1b13ee9fa4dd1.jpg",
+   "https://bike-packing.imgbolt.de/media/6c/d9/e6/1672933443/revelate-designs-shrew-seat-bag-blue-0001_9f781495ed2b88fc329f7bf2714f75fe.jpg",
+   "https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/revelate-designs-shrew-seat-bag-small-roll-top-purple-crush-1-1000x1000.jpg"
+  ],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-shrew-seat-bag-saddlebag-3l-black"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Shrew",
+  "name": "Ultra Shrew",
+  "size": "2.25L",
+  "src": "https://revelatedesigns.com/product/ultra-shrew/",
+  "verified": false,
+  "dims_cm": {
+   "len": 25.4,
+   "hgt": 12.7,
+   "wid": 12.7
+  },
+  "dims_note": "NO retailer publishes dimensions for the Ultra Shrew \u2014 CampfireCycling, Angry Catfish, REI, Wheat Ridge and BikeParts.com all list only volume (2.25 L), weight (under 5 oz) and fabric. Most retailers do not stock the Ultra variant separately at all. dims_cm left at the existing catalogue value, which is copied from the standard Shrew, and is NOT retailer-confirmed. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "unknown",
+  "dims_raw": "2.25 L; under 5 oz; Challenge Ultra 200 fabric",
+  "capacity_l": 2.25,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.campfirecycling.com/product/revelate-designs-shrew-seat-bag.html"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Stoat",
+  "name": "Stoat Seat Bag",
+  "size": "0.8L",
+  "src": "https://revelatedesigns.com/product/stoat/",
+  "verified": false,
+  "dims_cm": {
+   "len": 16.5,
+   "hgt": 8.9,
+   "wid": 8.9
+  },
+  "dims_note": "bike-packing.de lists no dimensions for the Stoat, only 0.8 L and 99 g. dims_cm left at the existing catalogue value, NOT retailer-confirmed. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "unknown",
+  "dims_raw": "0.8 litres, 99 g",
+  "capacity_l": 0.8,
+  "colorways": [
+   {
+    "name": "Black / Gray",
+    "hex": "#3a3a3c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/c4/af/68/1723764373/revelate-designs-stoat-seat-bag-000.jpg",
+   "https://bike-packing.imgbolt.de/media/35/50/b6/1723764373/revelate-designs-stoat-seat-bag-007.jpg"
+  ],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-stoat-seat-bag-saddle-bag-08l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Sweetroll",
+  "name": "Sweetroll",
+  "size": "11L",
+  "src": "https://revelatedesigns.com/product/sweetroll/",
+  "verified": false,
+  "dims_cm": {
+   "len": 55.9,
+   "hgt": 15.9,
+   "wid": 15.9,
+   "dia": 15.9
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. The 559 mm length is quoted WITH the ends rolled, so it is a packed figure, not an unrolled maximum. Agrees with the existing catalogue value to within 1 mm.",
+  "dims_state": "packed",
+  "dims_raw": "M: max length approx. 559 mm (ends rolled); diameter approx. 159 mm; 11 L; 439 g",
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "front"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-sweetroll-handlebar-bag-black-m"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Sweetroll",
+  "name": "Sweetroll",
+  "size": "15L",
+  "src": "https://revelatedesigns.com/product/sweetroll/",
+  "verified": false,
+  "dims_cm": {
+   "len": 55.9,
+   "hgt": 17.8,
+   "wid": 17.8,
+   "dia": 17.8
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Length quoted with ends rolled. Agrees with the existing catalogue value to within 1 mm.",
+  "dims_state": "packed",
+  "dims_raw": "L: max length approx. 559 mm (ends rolled); diameter approx. 178 mm; 15 L; 468 g",
+  "capacity_l": 15,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 2,
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "front"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-sweetroll-handlebar-bag-black-m"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Saltyroll",
+  "name": "Saltyroll",
+  "size": "12L",
+  "src": "https://revelatedesigns.com/product/saltyroll/",
+  "verified": false,
+  "dims_cm": {
+   "len": 53.3,
+   "hgt": 16.7,
+   "wid": 16.7,
+   "dia": 16.7
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. The 53.3 cm figure is the length with each end rolled 3 times (the state the 12 L rating refers to), so it is treated as packed; length shortens to 33.3 cm when rolled down further. Diameter 16.7 cm is 1 mm off the existing catalogue value.",
+  "dims_state": "packed",
+  "dims_raw": "diameter 16.7 cm; min length 33.3 cm; max length 53.3 cm (rolled 3x per end); 12 L; 185 g",
+  "capacity_l": 12,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/42/ef/28/1748990437/revelate-designs-saltyroll-drybag-update-01.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-saltyroll-dry-bag-12l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pronghorn",
+  "name": "Pronghorn",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/pronghorn/",
+  "verified": false,
+  "dims_cm": {
+   "len": 41.9,
+   "hgt": 14.0,
+   "wid": 11.4
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table (W x D x H, remapped to len/wid/hgt); revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Agrees with the existing catalogue value to within 1 cm on every axis.",
+  "dims_state": "packed",
+  "dims_raw": "S: 419 x 114 x 140 mm (W x D x H); 7.5 L; 213 g (238 g with pocket clips)",
+  "capacity_l": 7.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "VX21 Blue",
+    "hex": "#2f5d8c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/b1/34/9e/1703119436/revelate-designs-pronghorn-update-008.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-pronghorn-handlebar-bag-75-23l-l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pronghorn",
+  "name": "Pronghorn",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/pronghorn/",
+  "verified": false,
+  "dims_cm": {
+   "len": 48.3,
+   "hgt": 16.5,
+   "wid": 17.8
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table (W x D x H, remapped to len/wid/hgt); revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Agrees with the existing catalogue value to within 1 cm on every axis.",
+  "dims_state": "packed",
+  "dims_raw": "M: 483 x 178 x 165 mm (W x D x H); 11 L; 232 g (258 g with pocket clips)",
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "VX21 Blue",
+    "hex": "#2f5d8c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/c8/18/86/1703114985/revelate-designs-pronghorn-update-002.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-pronghorn-handlebar-bag-75-23l-l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pronghorn",
+  "name": "Pronghorn",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/pronghorn/",
+  "verified": false,
+  "dims_cm": {
+   "len": 61.0,
+   "hgt": 19.0,
+   "wid": 21.6
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table (W x D x H, remapped to len/wid/hgt); revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Agrees with the existing catalogue value to within 1 cm on every axis.",
+  "dims_state": "packed",
+  "dims_raw": "L: 610 x 216 x 190 mm (W x D x H); 23 L; 252 g (286 g with pocket clips)",
+  "capacity_l": 23,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "VX21 Blue",
+    "hex": "#2f5d8c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/32/4d/87/1703114986/revelate-designs-pronghorn-update-010.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-pronghorn-handlebar-bag-75-23l-l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Harness",
+  "name": "Hammerhead Harness",
+  "size": "One Size",
+  "src": "https://revelatedesigns.com/product/hammerhead-harness/",
+  "verified": false,
+  "dims_cm": {
+   "len": 30.0,
+   "hgt": 7.5,
+   "wid": 3.5
+  },
+  "dims_note": "Dimensions from the Cyclewerks (NZ) product spec block; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. This is a rigid cradle, not a bag: len is the carbon support-tube span, hgt the light-mount height, wid the offset from the bars. Existing catalogue value (26 x 10 x 12) was not retailer-supported and has been replaced. The Radavist and bikepacking.com both corroborate the 13 mm bar-clearance requirement and the load limit (quoted as 8 lb / 3.6 kg).",
+  "dims_state": "packed",
+  "dims_raw": "support tubes width 30 cm; light-mount height 7.5 cm (sling top to mount tube top); cargo offset from bars approx. 3.5 cm; max bracket spacing 80 mm; 336 g (410 g with accessory mount); load limit 3.6 kg",
+  "capacity_l": 0,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "harness",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.cyclewerks.co.nz/product/revelate-designs-hammerhead-harness"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Egress",
+  "name": "Egress Pocket",
+  "size": "2.8L",
+  "src": "https://revelatedesigns.com/product/egress-pocket/",
+  "verified": false,
+  "dims_cm": {
+   "len": 24.1,
+   "hgt": 20.3,
+   "wid": 7.6
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly on all three axes.",
+  "dims_state": "packed",
+  "dims_raw": "length 24.1 cm, width 7.6 cm, height 20.3 cm; 2.8 L; 284 g complete / 213 g without extra straps and inner pouch",
+  "capacity_l": 2.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "lid"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-egress-pocket-handlebar-bag-28l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Scrambler",
+  "name": "Scrambler Pocket",
+  "size": "3.5L",
+  "src": "https://revelatedesigns.com/product/scrambler-pocket/",
+  "verified": false,
+  "dims_cm": {
+   "len": 24.1,
+   "hgt": 22.9,
+   "wid": 7.6
+  },
+  "dims_note": "NO source publishes dimensions for the Scrambler Pocket. The Radavist's launch article and Abbotsford Cycles both give only the 3.5 L capacity and the fabrics; BIKEPACKING.com has not reviewed it and no stocking retailer lists a spec table (Abbotsford Cycles returned HTTP 503 on the attempt). dims_cm left at the existing catalogue value and is NOT retailer-confirmed. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "unknown",
+  "dims_raw": "up to 3.5 L; DP UVX40 main fabric reinforced with Ultra 200",
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://theradavist.com/revelate-designs-launches-the-hammerhead-harness"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Campamocha",
+  "name": "Campamocha",
+  "size": "2.3L",
+  "src": "https://revelatedesigns.com/product/campamocha/",
+  "verified": false,
+  "dims_cm": {
+   "len": 26.7,
+   "hgt": 8.9,
+   "wid": 14.0
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. MAJOR correction: the existing catalogue value (20 x 13 x 9) had the shape wrong \u2014 the Campamocha is a wide, shallow bar bag, 26.7 cm across the bars, only 8.9 cm tall and 14 cm fore-aft.",
+  "dims_state": "packed",
+  "dims_raw": "width 267 mm, height 89 mm, depth 140 mm; 2.3 L; 241 g",
+  "capacity_l": 2.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/47/35/74/1769722914/revelate-designs-Campamocha-handlebar-bag-007.jpg",
+   "https://bike-packing.imgbolt.de/media/60/4d/e6/1769726973/revelate-designs-Campamocha-main-open.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "front"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-campamocha-handlebar-bag-23l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Speedbag",
+  "name": "Speedbag",
+  "size": "1L",
+  "src": "https://revelatedesigns.com/product/speedbag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 8.9,
+   "hgt": 15.2,
+   "wid": 8.9,
+   "dia": 8.9
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Correction: the Speedbag is a cylindrical stem/feed pouch, not a box \u2014 the existing catalogue value (19 x 9 x 7) had the height wrong. Recorded as a cylinder: 15.2 cm tall, 8.9 cm max diameter at the top tapering to 8.3 cm at the base.",
+  "dims_state": "packed",
+  "dims_raw": "height approx. 15.2 cm; bottom width approx. 8.3 cm; max diameter (top) approx. 8.9 cm; 1 L; 94 g",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#e8e6e1"
+   },
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/aa/af/1d/1773736480/revelate-designs-speedbag-white.jpg"
+  ],
+  "features": {
+   "closure": "drawcord",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "front"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-speedbag-food-pouch"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pitchfork",
+  "name": "Pitchfork Aerobar System",
+  "size": "One Size",
+  "src": "https://revelatedesigns.com/product/pitchfork/",
+  "verified": false,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 18.4,
+   "wid": 15.2
+  },
+  "dims_note": "Dimensions from the Universal Cycles product spec block; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly (30.5 x 18.4 x 15.2). Volume note: Universal Cycles headlines 366 cu in (6.0 L) for the drybag alone while the same page and other retailers describe ~1 L per side pocket, giving the 8 L system figure the catalogue carries.",
+  "dims_state": "packed",
+  "dims_raw": "holster 7.25 in long; drybag 12 in long x 6 in wide; bar spacing adjustable 3.5-5 in; 170 g; drybag 6 L rolled 3 times, pockets ~1 L per side",
+  "capacity_l": 8,
+  "colorways": [
+   {
+    "name": "Black / Grey",
+    "hex": "#3a3a3c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "valve": false,
+   "cord": true,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 1,
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "side"
+    },
+    {
+     "type": "stretch",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.universalcycles.com/shopping/product_details.php?id=116276"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Mag-Tank",
+  "size": "0.5L",
+  "src": "https://revelatedesigns.com/product/mag-tank/",
+  "verified": false,
+  "dims_cm": {
+   "len": 21.6,
+   "hgt": 11.4,
+   "wid": 6.4
+  },
+  "dims_note": "Two retailer-grade sources DISAGREE. The Radavist's launch spec gives 22.9 x 11.4 x 7.6 cm; bike-packing.de's spec table gives 21.6 x 12.7 x 6.4 cm. Per the conservative rule the smaller value is taken on each axis: 21.6 x 11.4 x 6.4. Both sets are in dims_raw. Also note the retailers rate the current Mag-Tank at 0.9 L, not the 0.5 L the catalogue carries \u2014 capacity_l updated to 0.9. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "packed",
+  "dims_raw": "The Radavist: length 9 in, height 4.5 in, width 2 in rear / 3 in at buckle, 187 g. bike-packing.de: length 216 mm, max height 127 mm (tapering to 64 mm at the rear), width 64 mm at the head tube tapering to 38 mm, 0.9 L, 157 g with TPU liner",
+  "capacity_l": 0.9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Blue",
+    "hex": "#2f5d8c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-mag-tank-with-tpu-liner-top-tube-bag-09l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Mag-Tank FastTrack",
+  "size": "0.5L",
+  "src": "https://revelatedesigns.com/product/mag-tank-fasttrack/",
+  "verified": false,
+  "dims_cm": {
+   "len": 22.0,
+   "hgt": 11.4,
+   "wid": 6.4
+  },
+  "dims_note": "Two sources disagree slightly: bike-packing.de's bolt-on listing gives 22 x 13 x 6.4 cm; The Radavist gives 22.9 x 11.4 x 7.6 cm. Smaller value taken per axis. CAVEAT: bike-packing.de sells this as 'Mag Tank Bolt On' rather than by the FastTrack name \u2014 FastTrack is Revelate's bolt-on top-tube mount, so these are taken to be the same product, but that identification is inferred, not stated by the retailer. Retailers rate it 1 L against the catalogue's 0.5 L; capacity_l updated to 1.0. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "packed",
+  "dims_raw": "bike-packing.de (bolt-on): 220 x 64 x 130 mm (L x W x H), 1 L, 157 g with TPU liner. The Radavist: same envelope as the Mag-Tank \u2014 length 9 in, height 4.5 in, width 2 in rear / 3 in at buckle, 208 g",
+  "capacity_l": 1.0,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-mag-tank-bolt-on-with-tpu-liner-top-tube-bag-1l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Mag-Tank 2000",
+  "size": "1.4L",
+  "src": "https://revelatedesigns.com/product/magtank2000/",
+  "verified": false,
+  "dims_cm": {
+   "len": 22.2,
+   "hgt": 11.4,
+   "wid": 11.4
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly. Width tapers 11.4 -> 3.8 cm front to rear; the larger figure is recorded.",
+  "dims_state": "packed",
+  "dims_raw": "length 222 mm; height 114 mm; width 114 mm at the head tube tapering to 38 mm at the rear; 1.4 L; 176 g with TPU liner / 147 g without",
+  "capacity_l": 1.4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Blue",
+    "hex": "#2f5d8c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-mag-tank-2000-with-tpu-liner-top-tube-bag-14l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Legacy Mag-Tank",
+  "size": "0.9L",
+  "src": "https://revelatedesigns.com/product/magtank/",
+  "verified": false,
+  "dims_cm": {
+   "len": 21.6,
+   "hgt": 12.7,
+   "wid": 6.4
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly (21.6 x 12.7 x 6.4). Both height and width taper towards the rear; the larger figures are recorded.",
+  "dims_state": "packed",
+  "dims_raw": "length 216 mm; max height 127 mm (tapering to 64 mm at the rear); width 64 mm at the head tube tapering to 38 mm; 0.9 L; 157 g with TPU liner / 128 g without",
+  "capacity_l": 0.9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Blue",
+    "hex": "#2f5d8c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-mag-tank-with-tpu-liner-top-tube-bag-09l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Jerrycan",
+  "name": "Jerrycan",
+  "size": "Regular",
+  "src": "https://revelatedesigns.com/product/jerrycan/",
+  "verified": false,
+  "dims_cm": {
+   "len": 12.7,
+   "hgt": 10.2,
+   "wid": 5.0
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Correction: the existing catalogue value (14 x 12 x 6) was too large on every axis and identical for both Regular and Bent, which the retailer distinguishes.",
+  "dims_state": "packed",
+  "dims_raw": "Regular (95 deg): approx. 12.7 x 5 x 10.2 cm (L x W x H); approx. 0.57 L; approx. 75 g",
+  "capacity_l": 0.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-jerrycan-top-tube-bag-regular"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Jerrycan",
+  "name": "Jerrycan",
+  "size": "Bent",
+  "src": "https://revelatedesigns.com/product/jerrycan/",
+  "verified": false,
+  "dims_cm": {
+   "len": 15.2,
+   "hgt": 8.9,
+   "wid": 5.0
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Correction: the Bent is longer and shallower than the Regular \u2014 the catalogue had both at the same 14 x 12 x 6.",
+  "dims_state": "packed",
+  "dims_raw": "Bent (120 deg): approx. 15.2 x 5 x 8.9 cm (L x W x H); approx. 0.57 L; approx. 75 g",
+  "capacity_l": 0.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-jerrycan-top-tube-bag-regular"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Gas Tank",
+  "name": "Gas Tank",
+  "size": "1.1L",
+  "src": "https://revelatedesigns.com/product/gastank/",
+  "verified": false,
+  "dims_cm": {
+   "len": 22.8,
+   "hgt": 12.7,
+   "wid": 6.4
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Agrees with the existing catalogue value to within 1 mm. Both height and width taper to 3.8 cm at the rear; the larger figures are recorded.",
+  "dims_state": "packed",
+  "dims_raw": "length approx. 22.8 cm; height approx. 12.7 cm tapering to 3.8 cm; width approx. 6.4 cm tapering to 3.8 cm; 1.1 L; 100 g",
+  "capacity_l": 1.1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Blue",
+    "hex": "#2f5d8c"
+   },
+   {
+    "name": "Crushed Purple",
+    "hex": "#5d4a6e"
+   },
+   {
+    "name": "Alpine Camo",
+    "hex": "#8b8874"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/3a/42/7f/1723846896/revelate-designs-gas-tank-black-0001.jpg",
+   "https://bike-packing.imgbolt.de/media/f3/5b/42/1723846896/revelate-designs-gas-tank-black-0002.jpg"
+  ],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-gas-tank-top-tube-bag-black"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Extended Play",
+  "name": "Extended Play",
+  "size": "14in",
+  "src": "https://revelatedesigns.com/product/extended-play/",
+  "verified": false,
+  "dims_cm": {
+   "len": 35.6,
+   "hgt": 10.8,
+   "wid": 6.4
+  },
+  "dims_note": "Dimensions from the BIKEPACKING.com review spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. The Radavist independently confirms the 14 in length and 240 g weight. Correction: the catalogue's 9 cm height and 6 cm width were both understated \u2014 the tall end is 10.8 cm high and 6.4 cm wide, tapering to 5.7 x 5.1 cm.",
+  "dims_state": "packed",
+  "dims_raw": "14 in long; height 4.25 in tapering to 2.25 in; width 2.5 in tapering to 2 in; 1.5 L; 240 g",
+  "capacity_l": 1.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://bikepacking.com/gear/revelate-designs-extended-play-review/"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Extended Play",
+  "name": "Extended Play",
+  "size": "18in",
+  "src": "https://revelatedesigns.com/product/extended-play/",
+  "verified": false,
+  "dims_cm": {
+   "len": 45.7,
+   "hgt": 10.8,
+   "wid": 6.4
+  },
+  "dims_note": "Dimensions from the BIKEPACKING.com review spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. The Radavist independently confirms the 18 in length and 296 g weight. Same height/width correction as the 14 in: 10.8 x 6.4 cm at the tall end, tapering to 6.4 x 5.1 cm.",
+  "dims_state": "packed",
+  "dims_raw": "18 in long; height 4.25 in tapering to 2.5 in; width 2.5 in tapering to 2 in; 2 L; 296 g",
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://bikepacking.com/gear/revelate-designs-extended-play-review/"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Feedbag",
+  "name": "Mountain Feedbag",
+  "size": "1L",
+  "src": "https://revelatedesigns.com/product/mountainfeedbag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 9.5,
+   "hgt": 15.2,
+   "wid": 9.5,
+   "dia": 9.5
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Confirms 15.2 cm height and 9.5 cm diameter. The existing catalogue value carried len 15.2, duplicating the height on the long axis; len is set to the diameter here so the footprint is a correct cylinder. Retailer quotes 1.1 L against the catalogue's 1 L.",
+  "dims_state": "packed",
+  "dims_raw": "height 152 mm; inner diameter 95 mm; max length handlebar-to-fork-crown 300 mm; approx. 1.1 L; 105 g",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Lime",
+    "hex": "#c8d92a"
+   },
+   {
+    "name": "Blue",
+    "hex": "#2f5d8c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/0c/76/31/1767180379/revelate-designs-mountain-feedbag-black-update-001.jpg"
+  ],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-mountain-feedbag-handlebar-bag-black"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ranger",
+  "name": "Ranger Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/ranger/",
+  "verified": false,
+  "dims_cm": {
+   "len": 41.3,
+   "hgt": 19.1,
+   "wid": 6.4
+  },
+  "dims_note": "Length and height from the bike-packing.de size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. BIKE24 corroborates the per-size volumes (8.6 L Large, 10 L X-Large). Neither retailer publishes a depth, so wid is left at the catalogue's 6.4 cm and is NOT retailer-confirmed. The retailer figures run up to 1.9 cm smaller than the catalogue's on the M and XL and have been taken as the more conservative values.",
+  "dims_state": "packed",
+  "dims_raw": "S: length approx. 41.3 cm, height approx. 19.1 cm, 340 g",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-ranger-frame-bag-41-45-50-53-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ranger",
+  "name": "Ranger Frame Bag",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/ranger/",
+  "verified": false,
+  "dims_cm": {
+   "len": 45.1,
+   "hgt": 24.1,
+   "wid": 6.4
+  },
+  "dims_note": "Length and height from the bike-packing.de size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. BIKE24 corroborates the per-size volumes (8.6 L Large, 10 L X-Large). Neither retailer publishes a depth, so wid is left at the catalogue's 6.4 cm and is NOT retailer-confirmed. The retailer figures run up to 1.9 cm smaller than the catalogue's on the M and XL and have been taken as the more conservative values.",
+  "dims_state": "packed",
+  "dims_raw": "M: length approx. 45.1 cm, height approx. 24.1 cm, 370 g",
+  "capacity_l": 7.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-ranger-frame-bag-41-45-50-53-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ranger",
+  "name": "Ranger Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/ranger/",
+  "verified": false,
+  "dims_cm": {
+   "len": 50.2,
+   "hgt": 29.2,
+   "wid": 6.4
+  },
+  "dims_note": "Length and height from the bike-packing.de size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. BIKE24 corroborates the per-size volumes (8.6 L Large, 10 L X-Large). Neither retailer publishes a depth, so wid is left at the catalogue's 6.4 cm and is NOT retailer-confirmed. The retailer figures run up to 1.9 cm smaller than the catalogue's on the M and XL and have been taken as the more conservative values.",
+  "dims_state": "packed",
+  "dims_raw": "L: length approx. 50.2 cm, height approx. 29.2 cm, 425 g",
+  "capacity_l": 8.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-ranger-frame-bag-41-45-50-53-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ranger",
+  "name": "Ranger Frame Bag",
+  "size": "XL",
+  "src": "https://revelatedesigns.com/product/ranger/",
+  "verified": false,
+  "dims_cm": {
+   "len": 53.3,
+   "hgt": 34.3,
+   "wid": 6.4
+  },
+  "dims_note": "Length and height from the bike-packing.de size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. BIKE24 corroborates the per-size volumes (8.6 L Large, 10 L X-Large). Neither retailer publishes a depth, so wid is left at the catalogue's 6.4 cm and is NOT retailer-confirmed. The retailer figures run up to 1.9 cm smaller than the catalogue's on the M and XL and have been taken as the more conservative values.",
+  "dims_state": "packed",
+  "dims_raw": "XL: length approx. 53.3 cm, height approx. 34.3 cm, 482 g",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-ranger-frame-bag-41-45-50-53-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "verified": false,
+  "dims_cm": {
+   "len": 44.5,
+   "hgt": 34.3,
+   "wid": 6.4
+  },
+  "dims_note": "Length from the CampfireCycling A-E size table, which matches the existing catalogue length exactly on all four sizes (44.5 / 49.5 / 52.1 / 54.6 cm) \u2014 that is the one axis this record can call retailer-confirmed. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. CampfireCycling's B, C and D columns are keyed to a sizing DIAGRAM that is only published as an image, so they cannot be mapped to height and depth: C runs 45-52 cm, which is far too large to be the bag's height, and D is non-monotonic across the sizes. hgt and wid are therefore left at the existing catalogue values and are NOT retailer-confirmed; they do reconcile with the retailer's own volumes on a triangular-prism basis (44.5 x 34.3 x 6.4 / 2 = 4.9 L against a stated 5 L). Per-size volumes (5 / 6.3 / 7.7 / 9 L) match the catalogue and BIKE24 exactly. WEIGHT DISAGREEMENT: CampfireCycling gives 364/397/454/493 g while bike-packing.de gives 227/397/454/524 g.",
+  "dims_state": "packed",
+  "dims_raw": "Small: A 17.5\" (445 mm), B 1.0\" (25 mm), C 17.5\" (451 mm), D 2.75\" (70 mm), E 305 cu in (5 L); 13 oz (364 g)",
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.campfirecycling.com/product/revelate-designs-ripio-frame-bag-p-4139.html"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "verified": false,
+  "dims_cm": {
+   "len": 49.5,
+   "hgt": 37.5,
+   "wid": 6.4
+  },
+  "dims_note": "Length from the CampfireCycling A-E size table, which matches the existing catalogue length exactly on all four sizes (44.5 / 49.5 / 52.1 / 54.6 cm) \u2014 that is the one axis this record can call retailer-confirmed. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. CampfireCycling's B, C and D columns are keyed to a sizing DIAGRAM that is only published as an image, so they cannot be mapped to height and depth: C runs 45-52 cm, which is far too large to be the bag's height, and D is non-monotonic across the sizes. hgt and wid are therefore left at the existing catalogue values and are NOT retailer-confirmed; they do reconcile with the retailer's own volumes on a triangular-prism basis (44.5 x 34.3 x 6.4 / 2 = 4.9 L against a stated 5 L). Per-size volumes (5 / 6.3 / 7.7 / 9 L) match the catalogue and BIKE24 exactly. WEIGHT DISAGREEMENT: CampfireCycling gives 364/397/454/493 g while bike-packing.de gives 227/397/454/524 g.",
+  "dims_state": "packed",
+  "dims_raw": "Medium: A 19.5\" (495 mm), B 1.25\" (32 mm), C 18.5\" (470 mm), D 4.25\" (108 mm), E 385 cu in (6.3 L); 14 oz (397 g)",
+  "capacity_l": 6.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.campfirecycling.com/product/revelate-designs-ripio-frame-bag-p-4139.html"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "verified": false,
+  "dims_cm": {
+   "len": 52.1,
+   "hgt": 43.2,
+   "wid": 6.4
+  },
+  "dims_note": "Length from the CampfireCycling A-E size table, which matches the existing catalogue length exactly on all four sizes (44.5 / 49.5 / 52.1 / 54.6 cm) \u2014 that is the one axis this record can call retailer-confirmed. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. CampfireCycling's B, C and D columns are keyed to a sizing DIAGRAM that is only published as an image, so they cannot be mapped to height and depth: C runs 45-52 cm, which is far too large to be the bag's height, and D is non-monotonic across the sizes. hgt and wid are therefore left at the existing catalogue values and are NOT retailer-confirmed; they do reconcile with the retailer's own volumes on a triangular-prism basis (44.5 x 34.3 x 6.4 / 2 = 4.9 L against a stated 5 L). Per-size volumes (5 / 6.3 / 7.7 / 9 L) match the catalogue and BIKE24 exactly. WEIGHT DISAGREEMENT: CampfireCycling gives 364/397/454/493 g while bike-packing.de gives 227/397/454/524 g.",
+  "dims_state": "packed",
+  "dims_raw": "Large: A 20.5\" (521 mm), B 3.0\" (76 mm), C 19.0\" (483 mm), D 3.75\" (95 mm), E 470 cu in (7.7 L); 16 oz (454 g)",
+  "capacity_l": 7.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.campfirecycling.com/product/revelate-designs-ripio-frame-bag-p-4139.html"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "XL",
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "verified": false,
+  "dims_cm": {
+   "len": 54.6,
+   "hgt": 50.2,
+   "wid": 6.4
+  },
+  "dims_note": "Length from the CampfireCycling A-E size table, which matches the existing catalogue length exactly on all four sizes (44.5 / 49.5 / 52.1 / 54.6 cm) \u2014 that is the one axis this record can call retailer-confirmed. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. CampfireCycling's B, C and D columns are keyed to a sizing DIAGRAM that is only published as an image, so they cannot be mapped to height and depth: C runs 45-52 cm, which is far too large to be the bag's height, and D is non-monotonic across the sizes. hgt and wid are therefore left at the existing catalogue values and are NOT retailer-confirmed; they do reconcile with the retailer's own volumes on a triangular-prism basis (44.5 x 34.3 x 6.4 / 2 = 4.9 L against a stated 5 L). Per-size volumes (5 / 6.3 / 7.7 / 9 L) match the catalogue and BIKE24 exactly. WEIGHT DISAGREEMENT: CampfireCycling gives 364/397/454/493 g while bike-packing.de gives 227/397/454/524 g.",
+  "dims_state": "packed",
+  "dims_raw": "XL: A 21.5\" (546 mm), B 4.75\" (121 mm), C 20.5\" (521 mm), D 3.25\" (83 mm), E 550 cu in (9 L); 17.4 oz (493 g)",
+  "capacity_l": 9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.campfirecycling.com/product/revelate-designs-ripio-frame-bag-p-4139.html"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "verified": false,
+  "dims_cm": {
+   "len": 34.9,
+   "hgt": 25.4,
+   "wid": 3.8
+  },
+  "dims_note": "Length and height from the bike-packing.de size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Agrees with the existing catalogue value to within 1.3 cm on every axis. No depth is published, so wid is left at the catalogue's 3.8 cm and is NOT retailer-confirmed. VOLUME WARNING: bike-packing.de's Rifter volume column (6/7.3/8.6/10 L) is identical to the Ranger's and is almost certainly a copy-paste error; BIKEPACKING.com's review gives 3.7/4.4/5.7/7.1 L. capacity_l is left at the catalogue value, which sits between the two.",
+  "dims_state": "packed",
+  "dims_raw": "SM: 349 x 254 mm (L x H); 254 g",
+  "capacity_l": 4.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-rifter-frame-bag-35-38-41-44-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "verified": false,
+  "dims_cm": {
+   "len": 38.1,
+   "hgt": 27.9,
+   "wid": 3.8
+  },
+  "dims_note": "Length and height from the bike-packing.de size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Agrees with the existing catalogue value to within 1.3 cm on every axis. No depth is published, so wid is left at the catalogue's 3.8 cm and is NOT retailer-confirmed. VOLUME WARNING: bike-packing.de's Rifter volume column (6/7.3/8.6/10 L) is identical to the Ranger's and is almost certainly a copy-paste error; BIKEPACKING.com's review gives 3.7/4.4/5.7/7.1 L. capacity_l is left at the catalogue value, which sits between the two.",
+  "dims_state": "packed",
+  "dims_raw": "MD: 381 x 279 mm (L x H); 301 g",
+  "capacity_l": 5.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-rifter-frame-bag-35-38-41-44-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "verified": false,
+  "dims_cm": {
+   "len": 40.6,
+   "hgt": 31.8,
+   "wid": 3.8
+  },
+  "dims_note": "Length and height from the bike-packing.de size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Agrees with the existing catalogue value to within 1.3 cm on every axis. No depth is published, so wid is left at the catalogue's 3.8 cm and is NOT retailer-confirmed. VOLUME WARNING: bike-packing.de's Rifter volume column (6/7.3/8.6/10 L) is identical to the Ranger's and is almost certainly a copy-paste error; BIKEPACKING.com's review gives 3.7/4.4/5.7/7.1 L. capacity_l is left at the catalogue value, which sits between the two.",
+  "dims_state": "packed",
+  "dims_raw": "LG: 406 x 318 mm (L x H); 325 g",
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-rifter-frame-bag-35-38-41-44-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "XL",
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "verified": false,
+  "dims_cm": {
+   "len": 43.8,
+   "hgt": 35.6,
+   "wid": 3.8
+  },
+  "dims_note": "Length and height from the bike-packing.de size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Agrees with the existing catalogue value to within 1.3 cm on every axis. No depth is published, so wid is left at the catalogue's 3.8 cm and is NOT retailer-confirmed. VOLUME WARNING: bike-packing.de's Rifter volume column (6/7.3/8.6/10 L) is identical to the Ranger's and is almost certainly a copy-paste error; BIKEPACKING.com's review gives 3.7/4.4/5.7/7.1 L. capacity_l is left at the catalogue value, which sits between the two.",
+  "dims_state": "packed",
+  "dims_raw": "XL: 438 x 356 mm (L x H); 347 g",
+  "capacity_l": 8.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-rifter-frame-bag-35-38-41-44-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Tangle",
+  "name": "Tangle Frame Bag",
+  "size": "XS",
+  "src": "https://revelatedesigns.com/product/tangleframebag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 38.8,
+   "hgt": 11.4,
+   "wid": 6.0
+  },
+  "dims_note": "Length and height from the bike-packing.de per-size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Per-size volumes (3 / 3.5 / 4 / 6 L) match the catalogue exactly, which is a good cross-check. No depth is published, so wid is left at the catalogue's 6 cm and is NOT retailer-confirmed.",
+  "dims_state": "packed",
+  "dims_raw": "XS: length approx. 38.8 cm, height approx. 11.4 cm, 217 g",
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/da/56/12/1672932993/revelate-designs-tangle-rahmentasche-schwarz-01.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-tangle-frame-bag-39-45-50-53-cm-black-xs"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Tangle",
+  "name": "Tangle Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/tangleframebag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 44.5,
+   "hgt": 11.4,
+   "wid": 6.0
+  },
+  "dims_note": "Length and height from the bike-packing.de per-size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Per-size volumes (3 / 3.5 / 4 / 6 L) match the catalogue exactly, which is a good cross-check. No depth is published, so wid is left at the catalogue's 6 cm and is NOT retailer-confirmed.",
+  "dims_state": "packed",
+  "dims_raw": "SM: length approx. 44.5 cm, height approx. 11.4 cm, 224 g",
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/dc/32/5d/1672933124/revelate-designs-tangle-rahmentasche-schwarz-02.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-tangle-frame-bag-39-45-50-53-cm-black-xs"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Tangle",
+  "name": "Tangle Frame Bag",
+  "size": "MD",
+  "src": "https://revelatedesigns.com/product/tangleframebag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 50.2,
+   "hgt": 11.4,
+   "wid": 6.0
+  },
+  "dims_note": "Length and height from the bike-packing.de per-size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Per-size volumes (3 / 3.5 / 4 / 6 L) match the catalogue exactly, which is a good cross-check. No depth is published, so wid is left at the catalogue's 6 cm and is NOT retailer-confirmed.",
+  "dims_state": "packed",
+  "dims_raw": "MD: length approx. 50.2 cm, height approx. 11.4 cm, 250 g",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/65/20/78/1672933236/revelate-designs-tangle-rahmentasche-black-06.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-tangle-frame-bag-39-45-50-53-cm-black-xs"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Tangle",
+  "name": "Tangle Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/tangleframebag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 53.3,
+   "hgt": 16.5,
+   "wid": 6.0
+  },
+  "dims_note": "Length and height from the bike-packing.de per-size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Per-size volumes (3 / 3.5 / 4 / 6 L) match the catalogue exactly, which is a good cross-check. No depth is published, so wid is left at the catalogue's 6 cm and is NOT retailer-confirmed.",
+  "dims_state": "packed",
+  "dims_raw": "LG: length approx. 53.3 cm, height approx. 16.5 cm, 338 g",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/2b/77/ec/1672934638/revelate-designs-tangle-rahmentasche-2.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-tangle-frame-bag-39-45-50-53-cm-black-xs"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Choss",
+  "name": "Choss Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/choss/",
+  "verified": false,
+  "dims_cm": {
+   "len": 35.6,
+   "hgt": 19.1,
+   "wid": 6
+  },
+  "dims_note": "NO retailer publishes height or depth for the Choss. The only dimensional signal is bike-packing.de's product title, '(35/40 cm)', which on this retailer encodes bag LENGTH \u2014 a convention confirmed against their Ranger, Tangle, Rifter and Sandur listings, where the title numbers match the published per-size tables. That corroborates the catalogue's 35.6 cm length to within 1 cm; height and depth are left at the catalogue values and are NOT retailer-confirmed. Volume 2.7 L agrees across bike-packing.de, CampfireCycling, Universal Cycles and BIKEPACKING.com. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "unknown",
+  "dims_raw": "Small: 2.7 L / 165 cu in; 190 g; fits from 35 cm",
+  "capacity_l": 2.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-choss-frame-bag-35-40-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Choss",
+  "name": "Choss Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/choss/",
+  "verified": false,
+  "dims_cm": {
+   "len": 40.6,
+   "hgt": 21.6,
+   "wid": 6
+  },
+  "dims_note": "Same gap as the Small: no retailer publishes height or depth. bike-packing.de's title '(35/40 cm)' encodes bag length on this retailer (convention verified against their Ranger/Tangle/Rifter/Sandur tables), corroborating the catalogue's 40.6 cm to within 1 cm; height and depth left at catalogue values and NOT retailer-confirmed. VOLUME CORRECTION: Universal Cycles, CampfireCycling, BIKE24 and BIKEPACKING.com all give 3.4 L for the Large against the catalogue's 4 L; capacity_l lowered to 3.4. revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified.",
+  "dims_state": "unknown",
+  "dims_raw": "Large: 3.4 L / 205 cu in; 222 g; fits from 40 cm",
+  "capacity_l": 3.4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "slip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-choss-frame-bag-35-40-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Sandur",
+  "name": "Sandur Frame Bag",
+  "size": "SM",
+  "src": "https://revelatedesigns.com/product/sandur/",
+  "verified": false,
+  "dims_cm": {
+   "len": 36.8,
+   "hgt": 19.0,
+   "wid": 6.0
+  },
+  "dims_note": "Length and height from the CampfireCycling spec block; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value to within 1 mm on both axes. bike-packing.de independently corroborates via its product title, which encodes bag length as '36/38 cm' (that title convention is verified against the Ranger, Tangle and Rifter, where bike-packing.de publishes full per-size tables). The third CampfireCycling figure (10 in / 254 mm) is NOT the depth \u2014 a 25 cm-deep frame bag is impossible and it would blow the 2 L rating apart \u2014 so wid is left at the catalogue's 6 cm and is not retailer-confirmed.",
+  "dims_state": "packed",
+  "dims_raw": "Small: 14.5\" x 7.5\" x 10\" (368 x 190 x 254 mm); 2.0 L / 120 cu in; 7.6 oz (215 g)",
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.campfirecycling.com/product/revelate-designs-sandur-frame-bag.html"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Sandur",
+  "name": "Sandur Frame Bag",
+  "size": "LG",
+  "src": "https://revelatedesigns.com/product/sandur/",
+  "verified": false,
+  "dims_cm": {
+   "len": 38.1,
+   "hgt": 22.8,
+   "wid": 6.0
+  },
+  "dims_note": "Length and height from the CampfireCycling spec block; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value to within 1 mm on both axes. Third figure (12 in) is not the depth, so wid stays at the catalogue's 6 cm, not retailer-confirmed. VOLUME CORRECTION: CampfireCycling, bike-packing.de and BIKEPACKING.com all give 2.7 L for the Large against the catalogue's 3 L; capacity_l lowered to 2.7.",
+  "dims_state": "packed",
+  "dims_raw": "Large: 15\" x 9\" x 12\" (381 x 228 x 305 mm); 2.7 L / 165 cu in; 8.5 oz (241 g)",
+  "capacity_l": 2.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.campfirecycling.com/product/revelate-designs-sandur-frame-bag.html"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Hopper",
+  "name": "Hopper Frame Bag",
+  "size": "One Size",
+  "src": "https://revelatedesigns.com/product/hopper/",
+  "verified": false,
+  "dims_cm": {
+   "len": 33.0,
+   "hgt": 20.0,
+   "wid": 6.0
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Correction: the catalogue's 27.9 cm length looks to have been the 28 cm minimum FRAME size from the product title, not the bag's own length \u2014 the bag itself is 33 x 20 cm. No depth published, so wid stays at the catalogue's 6 cm, NOT retailer-confirmed. Volume 2.5 L matches.",
+  "dims_state": "packed",
+  "dims_raw": "length 33 cm; height 20 cm; fits from 28 cm frame; 2.5 L; 175 g",
+  "capacity_l": 2.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Red",
+    "hex": "#a52a2a"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "flap",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-hopper-frame-bag-25l-28-cm"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Cranny",
+  "name": "Cranny Frame Bag",
+  "size": "0.6L",
+  "src": "https://revelatedesigns.com/product/cranny/",
+  "verified": false,
+  "dims_cm": {
+   "len": 22.9,
+   "hgt": 16.5,
+   "wid": 9.5
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly on all three axes, and the 0.6 L volume matches too.",
+  "dims_state": "packed",
+  "dims_raw": "length/height (A) 22.9 cm; width (B) 16.5 cm; depth 9.5 cm; 0.6 L; 72 g",
+  "capacity_l": 0.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/c4/cb/26/1713950571/revelate-designs-cranny-frame-back-black.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-cranny-frame-bag"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Nook",
+  "name": "Nook Frame Bag",
+  "size": "1.2L",
+  "src": "https://revelatedesigns.com/product/nook/",
+  "verified": false,
+  "dims_cm": {
+   "len": 24.1,
+   "hgt": 20.3,
+   "wid": 10.2
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly on all three axes, and the 1.2 L volume matches too.",
+  "dims_state": "packed",
+  "dims_raw": "length (A) 24.1 cm; height (B) 20.3 cm; width 10.2 cm; 1.2 L; 85 g",
+  "capacity_l": 1.2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "wedge",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": true,
+   "compressionStraps": 0,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-nook-frame-bag"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Joey",
+  "name": "Joey Downtube Bag",
+  "size": "1L",
+  "src": "https://revelatedesigns.com/product/joey-downtube-bag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 17.8,
+   "hgt": 10.2,
+   "wid": 10.2,
+   "dia": 10.2
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly. Retailer rates it 1 L against the catalogue's 1.5 L; capacity_l lowered to the retailer's figure, which also matches the product's own name.",
+  "dims_state": "packed",
+  "dims_raw": "1 L: 10.2 cm diameter x 17.8 cm length; 109 g",
+  "capacity_l": 1.0,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-joey-downtube-bag"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Joey",
+  "name": "Joey Downtube Bag",
+  "size": "2L",
+  "src": "https://revelatedesigns.com/product/joey-downtube-bag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 22.9,
+   "hgt": 12.7,
+   "wid": 12.7,
+   "dia": 12.7
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly. Retailer rates it 2 L against the catalogue's 2.4 L; capacity_l lowered to the retailer's figure.",
+  "dims_state": "packed",
+  "dims_raw": "2 L: 12.7 cm diameter x 22.9 cm length; 137 g",
+  "capacity_l": 2.0,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-joey-downtube-bag"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Joey",
+  "name": "Ultra Joey Downtube Bag",
+  "size": "2L",
+  "src": "https://revelatedesigns.com/product/ultra-joey-downtube-bag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 25.4,
+   "hgt": 10.8,
+   "wid": 10.8,
+   "dia": 10.8
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly. The 25.4 cm length is quoted 'at max capacity', i.e. the packed rather than unrolled state.",
+  "dims_state": "packed",
+  "dims_raw": "length at max capacity 254 mm; max diameter 108 mm; 2 L; approx. 122 g",
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/a0/be/ed/1773913167/revelate-designs-ultra-joey-downtube-bag-2-liter.jpg"
+  ],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-ultra-joey-downtube-bag-2l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Polecat",
+  "name": "Polecat",
+  "size": "3.5L",
+  "src": "https://revelatedesigns.com/product/polecat/",
+  "verified": false,
+  "dims_cm": {
+   "len": 10.2,
+   "hgt": 31.8,
+   "wid": 13.3
+  },
+  "dims_note": "Dimensions from bike-packing.de spec table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Correction: the catalogue read 31.8 x 31.8 x 13.3, duplicating the height onto the length axis. The Polecat is a cargo-cage drybag 31.8 cm tall, 13.3 cm wide and only 10.2 cm deep. VOLUME DISAGREEMENT: bike-packing.de lists 4 L while Tree Fort Bikes, BikeParts.com and H8BIKES all list 3.5 L; capacity_l kept at the more conservative 3.5 L.",
+  "dims_state": "packed",
+  "dims_raw": "31.8 x 13.3 x 10.2 cm (H x W x D); 4 litres (bike-packing.de) / 3.5 L (Tree Fort Bikes, BikeParts.com, H8BIKES); 96 g",
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://bike-packing.imgbolt.de/media/a5/3b/3c/1748992393/revelate-designs-polecat-update-0001.jpg"
+  ],
+  "features": {},
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-polecat-dry-bag-4l"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rohn",
+  "name": "Rohn Rack Bag",
+  "size": "37L max",
+  "src": "https://revelatedesigns.com/product/rohn-rack-bag/",
+  "verified": false,
+  "dims_cm": {
+   "len": 61.0,
+   "hgt": 25.0,
+   "wid": 27.9
+  },
+  "dims_note": "Length and depth from the BIKEPACKING.com launch article; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Correction: the catalogue's 48 x 30 cm footprint was well short \u2014 the Rohn is 61 cm long and 27.9 cm wide. NO source publishes a height, so hgt is left at the catalogue's 25 cm and is NOT retailer-confirmed. This is a small-batch, direct-from-Anchorage item, so no retailer stocks it and no second source exists.",
+  "dims_state": "packed",
+  "dims_raw": "approximately 11 in (279 mm) by 24 in (610 mm) (D x L); 37 to 39 L; 320 g",
+  "capacity_l": 37,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "barrel",
+   "valve": false,
+   "cord": false,
+   "reflective": true,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "side"
+    },
+    {
+     "type": "stretch",
+     "face": "side"
+    }
+   ]
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://bikepacking.com/news/revelate-designs-rohn-rack-bag/"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Portage",
+  "name": "Portage Panniers",
+  "size": "10L",
+  "src": "https://revelatedesigns.com/product/portage-panniers/",
+  "verified": false,
+  "dims_cm": {
+   "len": 21.0,
+   "hgt": 43.2,
+   "wid": 10.2
+  },
+  "dims_note": "Dimensions from the bike-packing.de per-size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Figures are explicitly PER BAG (the panniers are sold as a pair), so capacity_l of 10 L is the single-bag volume. Correction: the catalogue's footprints were all too small and too deep \u2014 depth is a uniform 10.2 cm across the range. Note the 10 L is TALLER than the 14 L (43.2 vs 38.1 cm) because it is a narrow, tall bag; that is the retailer's table as printed, not a transcription slip.",
+  "dims_state": "packed",
+  "dims_raw": "10L: height 43.2 cm, width 21.0 cm, depth 10.2 cm, per bag (sold as a pair)",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 3,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-portage-panniers"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Portage",
+  "name": "Portage Panniers",
+  "size": "14L",
+  "src": "https://revelatedesigns.com/product/portage-panniers/",
+  "verified": false,
+  "dims_cm": {
+   "len": 26.7,
+   "hgt": 38.1,
+   "wid": 10.2
+  },
+  "dims_note": "Dimensions from the bike-packing.de per-size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Figures are explicitly PER BAG (the panniers are sold as a pair), so capacity_l of 14 L is the single-bag volume. Correction: the catalogue's footprints were all too small and too deep \u2014 depth is a uniform 10.2 cm across the range. Note the 10 L is TALLER than the 14 L (43.2 vs 38.1 cm) because it is a narrow, tall bag; that is the retailer's table as printed, not a transcription slip.",
+  "dims_state": "packed",
+  "dims_raw": "14L: height 38.1 cm, width 26.7 cm, depth 10.2 cm, per bag (sold as a pair)",
+  "capacity_l": 14,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 3,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-portage-panniers"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Portage",
+  "name": "Portage Panniers",
+  "size": "18L",
+  "src": "https://revelatedesigns.com/product/portage-panniers/",
+  "verified": false,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 40.6,
+   "wid": 10.2
+  },
+  "dims_note": "Dimensions from the bike-packing.de per-size table; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Figures are explicitly PER BAG (the panniers are sold as a pair), so capacity_l of 18 L is the single-bag volume. Correction: the catalogue's footprints were all too small and too deep \u2014 depth is a uniform 10.2 cm across the range. Note the 10 L is TALLER than the 14 L (43.2 vs 38.1 cm) because it is a narrow, tall bag; that is the retailer's table as printed, not a transcription slip.",
+  "dims_state": "packed",
+  "dims_raw": "18L: height 40.6 cm, width 30.5 cm, depth 10.2 cm, per bag (sold as a pair)",
+  "capacity_l": 18,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "shape": "cylindrical",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 3,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bike-packing.de/en/revelate-designs-portage-panniers"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Nano",
+  "name": "Nano Panniers",
+  "size": "11L each",
+  "src": "https://revelatedesigns.com/product/nanopanniers/",
+  "verified": false,
+  "dims_cm": {
+   "len": 26.6,
+   "hgt": 25.4,
+   "wid": 10.1
+  },
+  "dims_note": "Dimensions from the BikeParts.com spec block; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Agrees with the existing catalogue value to within 1 mm on every axis, and bike-packing.de independently confirms the ~10 cm width. capacity_l of 11 L is the SINGLE-bag figure (the pair is 22 L); bike-packing.de quotes 7-11 L per bag because the roll-top closure varies the volume.",
+  "dims_state": "packed",
+  "dims_raw": "BikeParts.com: 25.4 x 26.6 x 10.1 cm per bag; 680 cu in (11.0 L) each side; 510 g the pair. bike-packing.de: 7-11 L per bag (14-22 L the pair), width approx. 10 cm, 255 g per bag",
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Gray",
+    "hex": "#7d7d7d"
+   },
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   }
+  ],
+  "images": [
+   "https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/nano-panniers-1.jpg",
+   "https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/nano-panniers-4.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 2,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.bikeparts.com/BPC202216/revelate-designs-nano-pannier-bags-gray"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Pannier Pod",
+  "name": "Pannier Pod",
+  "size": "5.7L",
+  "src": "https://revelatedesigns.com/product/pannierpod/",
+  "verified": false,
+  "dims_cm": {
+   "len": 26.7,
+   "hgt": 22.9,
+   "wid": 9.5
+  },
+  "dims_note": "Dimensions from the CampfireCycling spec block; revelatedesigns.com blocks automated access (HTTP 403 to product pages, the /shop/ index and browser-UA curl), so nothing here is maker-verified. Matches the existing catalogue value exactly on all three axes, and 348 cu in converts to the catalogue's 5.7 L exactly.",
+  "dims_state": "packed",
+  "dims_raw": "10.5\" long x 9\" wide x 3.75\" deep (267 x 229 x 95 mm); 348 cu in (5.7 L); 2.2 oz",
+  "capacity_l": 5.7,
+  "colorways": [
+   {
+    "name": "Dyneema White",
+    "hex": "#e3e1da"
+   }
+  ],
+  "images": [
+   "https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/pannier-pod.jpg",
+   "https://campfirecycling-media.s3.us-west-1.amazonaws.com/wp-content/uploads/pannier-pod3.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "box",
+   "valve": false,
+   "cord": false,
+   "reflective": false,
+   "daisyChains": false,
+   "compressionStraps": 0,
+   "pockets": []
+  },
+  "dims_source": "retailer",
+  "dims_source_url": "https://www.campfirecycling.com/product/revelate-designs-pannier-pod.html"
+ }
+]

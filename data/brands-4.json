@@ -1,0 +1,43 @@
+[
+  {"name":"Arkel","origin":"Sherbrooke, Quebec, Canada","aesthetic":"Rugged, no-nonsense Canadian touring gear in heavy-duty Cordura with bold red or yellow panels against black, built for decades of loaded expedition riding.","palette":["#8B2331","#1A1A1A","#D4A017","#6B6B6B","#2B4C6F"],"fabric":"Cordura (matte woven) with TPU-welded waterproof roll-tops on Orca/Dolphin lines","products":[
+    {"type":"seat pack","name":"Arkel Rollpacker 25","liters":25,"dims_cm":{"len":48,"wid":24,"hgt":24},"colors":["#1A1A1A","#2B4C6F","#6B4423"],"est":true},
+    {"type":"handlebar bag","name":"Arkel Handlebar Bag (Large)","liters":9,"dims_cm":{"len":26,"wid":17,"hgt":15},"colors":["#1A1A1A","#D4A017"],"est":true},
+    {"type":"panniers","name":"Arkel Orca 45","liters":45,"dims_cm":{"len":36,"wid":28,"hgt":16},"colors":["#4A4A4A","#8B2331"],"est":true},
+    {"type":"panniers","name":"Arkel GT-54 Classic Touring Panniers","liters":54,"dims_cm":{"len":46,"wid":41,"hgt":20},"colors":["#8B2331","#1A1A1A"],"est":false},
+    {"type":"panniers","name":"Arkel Dolphin 48","liters":48,"dims_cm":{"len":42,"wid":30,"hgt":18},"colors":["#1A1A1A","#D4A017"],"est":true},
+    {"type":"trunk/tote bag","name":"Arkel TailRider Trunk Bag","liters":11,"dims_cm":{"len":34,"wid":20,"hgt":22},"colors":["#1A1A1A","#6E6E6E","#A4C639"],"est":true}]},
+  {"name":"WOHO","origin":"Taiwan","aesthetic":"Tactical-tech bikepacking gear defined by a geometric 'Cyber-Camo Diamond Black' print over rugged X-Pac/Cordura panels, built for ultra-distance racing.","palette":["#1C1F1A","#4B4F4D","#5A5A5A","#4A5D3A","#C2A878"],"fabric":"X-Pac (visible X ripstop grid) combined with Cordura reinforcement panels","products":[
+    {"type":"handlebar roll","name":"XTouring Handlebar Harness + Dry Bag 15L","liters":15,"dims_cm":{"len":44,"dia":20},"colors":["#1C1F1A","#5A5A5A"],"est":false},
+    {"type":"seat pack","name":"XTouring Saddle Bag Dry L","liters":18,"dims_cm":{"len":48,"wid":20,"hgt":20},"colors":["#1C1F1A","#5A5A5A"],"est":true},
+    {"type":"full frame bag","name":"XTouring Full Frame Bag Dry L","liters":12,"dims_cm":{"len":50,"wid":8,"hgt":36},"colors":["#1C1F1A","#5A5A5A"],"est":false},
+    {"type":"panniers","name":"XTouring UL Pannier Dry","liters":18,"dims_cm":{"len":40,"wid":24,"hgt":14},"colors":["#1C1F1A","#5A5A5A"],"est":true},
+    {"type":"top tube bag","name":"XTouring Top Tube Bag","liters":0.85,"dims_cm":{"len":20,"wid":9,"hgt":6.5},"colors":["#1C1F1A"],"est":false},
+    {"type":"fork cage bag","name":"XTouring Transforkage Dry Bag 15L","liters":15,"dims_cm":{"len":44,"dia":20},"colors":["#1C1F1A","#5A5A5A"],"est":false}]},
+  {"name":"EVOC","origin":"Munich, Germany","aesthetic":"Minimalist black/grey performance gear engineered for MTB, offset by a single earthy 'Loam' rust accent and Boa-dial precision fit.","palette":["#1C1C1C","#4A4A4A","#A0522D","#F6C945","#FFFFFF"],"fabric":"Cordura / TPU-laminate combination with welded seams","products":[
+    {"type":"handlebar bag","name":"EVOC Handlebar Pack WP","liters":5,"dims_cm":{"len":35,"wid":17,"hgt":15},"colors":["#4A4A4A","#A0522D"],"est":false},
+    {"type":"seat pack","name":"EVOC Seat Pack Boa WP L","liters":3,"dims_cm":{"len":37,"wid":11,"hgt":19},"colors":["#4A4A4A","#A0522D"],"est":false},
+    {"type":"full frame bag","name":"EVOC Frame Pack WP","liters":3.5,"dims_cm":{"len":47.5,"wid":5.5,"hgt":15},"colors":["#4A4A4A","#A0522D"],"est":false},
+    {"type":"half frame bag","name":"EVOC Multi Frame Pack WP","liters":1,"dims_cm":{"len":25,"wid":5,"hgt":15},"colors":["#4A4A4A","#A0522D"],"est":true},
+    {"type":"top tube bag","name":"EVOC Top Tube Pack WP","liters":0.6,"dims_cm":{"len":15,"wid":8,"hgt":6},"colors":["#1C1C1C","#4A4A4A"],"est":true},
+    {"type":"downtube bag","name":"EVOC Downtube Pack WP","liters":0.6,"dims_cm":{"len":16,"wid":10,"hgt":6},"colors":["#4A4A4A","#A0522D"],"est":true}]},
+  {"name":"VAUDE","origin":"Tettnang, Germany","aesthetic":"Eco-conscious, PVC-free touring gear in matte black with signature Vaude green branding, reflecting the brand's sustainability-first outdoor identity.","palette":["#3C8F3C","#1A1A1A","#9A9A9A","#2F5C8A","#7FBF3F"],"fabric":"Recycled ripstop / PU-coated tarpaulin (matte, waterproof, welded seams)","products":[
+    {"type":"panniers","name":"VAUDE Aqua Back Plus","liters":51,"dims_cm":{"len":44,"wid":33,"hgt":31},"colors":["#1A1A1A","#2F5C8A","#F4D03F"],"est":false},
+    {"type":"saddle bag","name":"VAUDE Trailsaddle Compact L","liters":10.5,"dims_cm":{"len":45,"wid":20,"hgt":20},"colors":["#1A1A1A","#7FBF3F"],"est":true},
+    {"type":"handlebar bag","name":"VAUDE Trailfront Cage","liters":10,"dims_cm":{"len":32,"wid":20,"hgt":20},"colors":["#1A1A1A"],"est":true},
+    {"type":"half frame bag","name":"VAUDE Trailframe L","liters":5,"dims_cm":{"len":50,"wid":16,"hgt":12},"colors":["#1A1A1A"],"est":true},
+    {"type":"top tube bag","name":"VAUDE Trailtop Tube","liters":1,"dims_cm":{"len":18,"wid":8,"hgt":7},"colors":["#1A1A1A"],"est":true},
+    {"type":"fork cage bag","name":"VAUDE Trailfork","liters":4,"dims_cm":{"len":25,"wid":14,"hgt":14},"colors":["#1A1A1A"],"est":true}]},
+  {"name":"Specialized x Fjällräven","origin":"California, USA x Sweden (collaboration)","aesthetic":"Scandinavian outdoor heritage meets performance cycling: waxed-canvas-look Vinylon panels in Fjällräven's iconic UN Blue and Fog Grey with fox-head branding.","palette":["#3B5875","#B7AFA3","#4B5320","#8B3A2E","#A9927D"],"fabric":"Vinylon F canvas (waxed-canvas look) with recycled nylon waterproof lining","products":[
+    {"type":"top tube bag","name":"Specialized/Fjällräven Top Tube Bag","liters":0.8,"dims_cm":{"len":26,"wid":10,"hgt":6},"colors":["#3B5875","#B7AFA3"],"est":false},
+    {"type":"handlebar bag","name":"Specialized/Fjällräven Handlebar Bag","liters":9,"dims_cm":{"len":28,"wid":23,"hgt":20},"colors":["#3B5875","#B7AFA3"],"est":false},
+    {"type":"half frame bag","name":"Specialized/Fjällräven Frame Bag S","liters":2,"dims_cm":{"len":41,"wid":7,"hgt":12},"colors":["#3B5875","#B7AFA3"],"est":true},
+    {"type":"full frame bag","name":"Specialized/Fjällräven Frame Bag L","liters":4,"dims_cm":{"len":54,"wid":7,"hgt":16},"colors":["#3B5875","#B7AFA3"],"est":true},
+    {"type":"seat pack","name":"Specialized/Fjällräven Seatbag Harness + Dry Bag 16L","liters":16,"dims_cm":{"len":45,"wid":20,"hgt":11},"colors":["#3B5875","#B7AFA3"],"est":true},
+    {"type":"stem bag","name":"Specialized/Fjällräven Snack Bag","liters":0.8,"dims_cm":{"len":15,"wid":9,"hgt":18},"colors":["#C68E17","#8B3A2E","#1A1A1A"],"est":true}]},
+  {"name":"Chrome Industries","origin":"Portland, Oregon, USA","aesthetic":"Urban bike-messenger heritage: matte black TPU-welded ripstop with the signature Chrome red buckle accent and truck-tarpaulin durability.","palette":["#101010","#C8102E","#6E6E6E","#5C5F4A","#1B2430"],"fabric":"TPU laminate (shiny welded) truck-tarp material with Cordura panels","products":[
+    {"type":"handlebar bag","name":"Doubletrack Handlebar Bag","liters":5,"dims_cm":{"len":24.8,"wid":21.6,"hgt":11.4},"colors":["#1B2430","#5C5F4A","#101010"],"est":false},
+    {"type":"stem bag","name":"Doubletrack Feed Bag","liters":1.5,"dims_cm":{"len":16.5,"wid":10.2,"hgt":7.6},"colors":["#6E6E6E","#101010"],"est":false},
+    {"type":"panniers","name":"Urban Ex Pannier 2.0","liters":21,"dims_cm":{"len":58.4,"wid":30.5,"hgt":15.2},"colors":["#101010"],"est":false},
+    {"type":"panniers","name":"Holman Pannier","liters":20,"dims_cm":{"len":39.4,"wid":29.2,"hgt":12.7},"colors":["#101010"],"est":false},
+    {"type":"saddle bag","name":"Doubletrack Saddle Roll","liters":1,"dims_cm":{"len":15.5,"dia":7.9},"colors":["#101010"],"est":true}]}
+]

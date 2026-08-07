@@ -1,0 +1,705 @@
+[
+ {
+  "brand": "Rockgeist",
+  "name": "Cache Top Tube Bag (Velcro)",
+  "size": "Small",
+  "slot": "toptube",
+  "who": "Rockgeist | Cache | Cache Top Tube Bag (Velcro) | Small",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.93 \u2014 19.7 x 7 x 10.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 19.7,
+   "hgt": 10.2,
+   "wid": 7
+  },
+  "liters": 0.8,
+  "src": "https://rockgeist.com/product/cache-top-tube-bag/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Rockgeist",
+  "name": "Cache Top Tube Bag (Velcro)",
+  "size": "XL",
+  "slot": "toptube",
+  "who": "Rockgeist | Cache | Cache Top Tube Bag (Velcro) | XL",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.94 \u2014 23.5 x 7 x 12.1cm",
+  "sev": "medium",
+  "dims": {
+   "len": 23.5,
+   "hgt": 12.1,
+   "wid": 7
+  },
+  "liters": 1.4,
+  "src": "https://rockgeist.com/product/cache-top-tube-bag/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Rockgeist",
+  "name": "Cache Top Tube Bag (Bolt On)",
+  "size": "Small",
+  "slot": "toptube",
+  "who": "Rockgeist | Cache | Cache Top Tube Bag (Bolt On) | Small",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.93 \u2014 19.7 x 7 x 10.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 19.7,
+   "hgt": 10.2,
+   "wid": 7
+  },
+  "liters": 0.8,
+  "src": "https://rockgeist.com/product/cache-top-tube-bag-bolt-on/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Rockgeist",
+  "name": "Cache Top Tube Bag (Bolt On)",
+  "size": "XL",
+  "slot": "toptube",
+  "who": "Rockgeist | Cache | Cache Top Tube Bag (Bolt On) | XL",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.94 \u2014 23.5 x 7 x 12.1cm",
+  "sev": "medium",
+  "dims": {
+   "len": 23.5,
+   "hgt": 12.1,
+   "wid": 7
+  },
+  "liters": 1.4,
+  "src": "https://rockgeist.com/product/cache-top-tube-bag-bolt-on/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Rockgeist",
+  "name": "Horton Front Pouch",
+  "size": "One Size",
+  "slot": "barbag",
+  "who": "Rockgeist | Horton | Horton Front Pouch | One Size",
+  "kind": "volume-too-small",
+  "detail": "box 3.1L vs stated 5.5L (ratio 0.56) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 29.2,
+   "hgt": 14,
+   "wid": 7.6
+  },
+  "liters": 5.5,
+  "src": "https://rockgeist.com/product/horton-front-pouch/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Rockgeist",
+  "name": "Dr. Jones Bag",
+  "size": "One Size",
+  "slot": "barbag",
+  "who": "Rockgeist | Dr. Jones | Dr. Jones Bag | One Size",
+  "kind": "volume-too-small",
+  "detail": "box 3.1L vs stated 10L (ratio 0.31) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 26.7,
+   "hgt": 15.2,
+   "wid": 7.6
+  },
+  "liters": 10,
+  "src": "https://rockgeist.com/product/jones-bag/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Rockgeist",
+  "name": "Microwave Panniers (Pair)",
+  "size": "13L each (pair)",
+  "slot": "pannier",
+  "who": "Rockgeist | Microwave | Microwave Panniers (Pair) | 13L each (pair)",
+  "kind": "volume-too-small",
+  "detail": "box 7.9L vs stated 13L (ratio 0.61) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 25.4,
+   "hgt": 30.5,
+   "wid": 10.2
+  },
+  "liters": 13,
+  "src": "https://rockgeist.com/product/microwave-panniers/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Rockgeist",
+  "name": "Bolt-on Stake Bag",
+  "size": "One Size",
+  "slot": "downtube",
+  "who": "Rockgeist | Stake | Bolt-on Stake Bag | One Size",
+  "kind": "volume-too-small",
+  "detail": "box 0.6L vs stated 0.8L (ratio 0.74) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 22.9,
+   "hgt": 5.1,
+   "wid": 5.1
+  },
+  "liters": 0.8,
+  "src": "https://rockgeist.com/product/bolt-on-stake-bag/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Lezyne",
+  "name": "Lezyne Caddy Sack M",
+  "size": "",
+  "slot": "downtube",
+  "who": "Lezyne | Lezyne Caddy Sack M | ",
+  "kind": "volume-too-small",
+  "detail": "box 0.3L vs stated 0.7L (ratio 0.41) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 14.8,
+   "wid": 12,
+   "hgt": 1.6
+  },
+  "liters": 0.7,
+  "src": "https://ride.lezyne.com/products/1-cs-caddy-v2m04",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Lezyne",
+  "name": "Lezyne Caddy Sack M",
+  "size": "",
+  "slot": "downtube",
+  "who": "Lezyne | Lezyne Caddy Sack M | ",
+  "kind": "too-cubic",
+  "detail": "downtube should be elongated (longest/middle >= 1.8) but is 1.23 \u2014 14.8 x 12 x 1.6cm",
+  "sev": "medium",
+  "dims": {
+   "len": 14.8,
+   "wid": 12,
+   "hgt": 1.6
+  },
+  "liters": 0.7,
+  "src": "https://ride.lezyne.com/products/1-cs-caddy-v2m04",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Lezyne",
+  "name": "Lezyne XL-Caddy",
+  "size": "",
+  "slot": "seatpack",
+  "who": "Lezyne | Lezyne XL-Caddy | ",
+  "kind": "volume-too-big",
+  "detail": "box 6.4L vs stated 1.3L (ratio 4.91) \u2014 a dimension is probably an unrolled/flat figure",
+  "sev": "high",
+  "dims": {
+   "len": 33,
+   "wid": 22,
+   "hgt": 8.8
+  },
+  "liters": 1.3,
+  "src": "https://ride.lezyne.com/products/1-sb-caddy-v2xl04",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Lezyne",
+  "name": "Lezyne XL-Caddy",
+  "size": "",
+  "slot": "seatpack",
+  "who": "Lezyne | Lezyne XL-Caddy | ",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.50 \u2014 33 x 22 x 8.8cm",
+  "sev": "medium",
+  "dims": {
+   "len": 33,
+   "wid": 22,
+   "hgt": 8.8
+  },
+  "liters": 1.3,
+  "src": "https://ride.lezyne.com/products/1-sb-caddy-v2xl04",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Lezyne",
+  "name": "Lezyne Bar Caddy",
+  "size": "",
+  "slot": "barroll",
+  "who": "Lezyne | Lezyne Bar Caddy | ",
+  "kind": "volume-too-small",
+  "detail": "box 2.3L vs stated 4L (ratio 0.56) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 25,
+   "wid": 5.6,
+   "hgt": 16.1
+  },
+  "liters": 4,
+  "src": "https://ride.lezyne.com/products/1-sb-bcaddy-v104",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Lezyne",
+  "name": "Lezyne Bar Caddy",
+  "size": "",
+  "slot": "barroll",
+  "who": "Lezyne | Lezyne Bar Caddy | ",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.55 \u2014 25 x 5.6 x 16.1cm",
+  "sev": "medium",
+  "dims": {
+   "len": 25,
+   "wid": 5.6,
+   "hgt": 16.1
+  },
+  "liters": 4,
+  "src": "https://ride.lezyne.com/products/1-sb-bcaddy-v104",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Lezyne",
+  "name": "Lezyne Energy Caddy XL",
+  "size": "",
+  "slot": "toptube",
+  "who": "Lezyne | Lezyne Energy Caddy XL | ",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.83 \u2014 22 x 6.6 x 12cm",
+  "sev": "medium",
+  "dims": {
+   "len": 22,
+   "wid": 6.6,
+   "hgt": 12
+  },
+  "liters": 0.8,
+  "src": "https://ride.lezyne.com/products/1-ec-xlcaddy-v104",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "name": "Drawcord Handlebar Bag",
+  "size": "2.6-4.9L",
+  "slot": "barbag",
+  "who": "Outer Shell Adventure | Bar Bags | Drawcord Handlebar Bag | 2.6-4.9L",
+  "kind": "volume-too-small",
+  "detail": "box 2.6L vs stated 4.9L (ratio 0.54) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 20.3,
+   "hgt": 12.7,
+   "wid": 10.2
+  },
+  "liters": 4.9,
+  "src": "https://www.outershell.com/products/handlebar-bag",
+  "dims_state": "unknown",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "name": "Mega Bar Bag",
+  "size": "10.6L (18.5L expanded)",
+  "slot": "barbag",
+  "who": "Outer Shell Adventure | Bar Bags | Mega Bar Bag | 10.6L (18.5L expanded)",
+  "kind": "volume-too-small",
+  "detail": "box 7.7L vs stated 10.6L (ratio 0.72) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 25.4,
+   "hgt": 21.6,
+   "wid": 14
+  },
+  "liters": 10.6,
+  "src": "https://www.outershell.com/products/mega-bar-bag",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "name": "Handlebar Harness",
+  "size": "One Size",
+  "slot": "barroll",
+  "who": "Outer Shell Adventure | Harness System | Handlebar Harness | One Size",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.12 \u2014 24.1 x 21.6 x 10.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 24.1,
+   "hgt": 10.2,
+   "wid": 21.6
+  },
+  "liters": 0,
+  "src": "https://www.outershell.com/products/stuff-sack-harness",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "name": "Oval Dry Bag",
+  "size": "5L",
+  "slot": "barroll",
+  "who": "Outer Shell Adventure | Harness System | Oval Dry Bag | 5L",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.43 \u2014 25.4 x 17.8 x 10.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 25.4,
+   "hgt": 10.2,
+   "wid": 17.8
+  },
+  "liters": 5,
+  "src": "https://www.outershell.com/products/oval-dry-bag",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "name": "Oval Dry Bag",
+  "size": "10L",
+  "slot": "barroll",
+  "who": "Outer Shell Adventure | Harness System | Oval Dry Bag | 10L",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.70 \u2014 36.8 x 21.6 x 12.7cm",
+  "sev": "medium",
+  "dims": {
+   "len": 36.8,
+   "hgt": 12.7,
+   "wid": 21.6
+  },
+  "liters": 10,
+  "src": "https://www.outershell.com/products/oval-dry-bag",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "name": "Stem Caddy",
+  "size": "1.2-1.7L",
+  "slot": "stembag",
+  "who": "Outer Shell Adventure | Stem Caddy | Stem Caddy | 1.2-1.7L",
+  "kind": "volume-too-small",
+  "detail": "box 1.2L vs stated 1.7L (ratio 0.71) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 8.9,
+   "hgt": 15.2,
+   "wid": 8.9
+  },
+  "liters": 1.7,
+  "src": "https://www.outershell.com/products/stem-caddy",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Miss Grape",
+  "name": "Internode 2 Waterproof",
+  "size": "2L",
+  "slot": "framebag_half",
+  "who": "Miss Grape | Internode | Internode 2 Waterproof | 2L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 2.07 \u2014 31 x 7 x 15cm",
+  "sev": "medium",
+  "dims": {
+   "len": 31,
+   "hgt": 15,
+   "wid": 7
+  },
+  "liters": 2,
+  "src": "https://missgrape.net/en/road/frame-bags/internode-2-waterproof/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Miss Grape",
+  "name": "Internode 4 Waterproof",
+  "size": "4L",
+  "slot": "framebag_half",
+  "who": "Miss Grape | Internode | Internode 4 Waterproof | 4L",
+  "kind": "volume-too-small",
+  "detail": "box 2.5L vs stated 4L (ratio 0.63) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 42,
+   "hgt": 10,
+   "wid": 6
+  },
+  "liters": 4,
+  "src": "https://missgrape.net/en/adventures/frame-bags/internode-4-waterproof/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Miss Grape",
+  "name": "Internode 5 Waterproof",
+  "size": "5L",
+  "slot": "framebag_half",
+  "who": "Miss Grape | Internode | Internode 5 Waterproof | 5L",
+  "kind": "volume-too-small",
+  "detail": "box 3.5L vs stated 5L (ratio 0.71) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 49,
+   "hgt": 12,
+   "wid": 6
+  },
+  "liters": 5,
+  "src": "https://missgrape.net/en/adventures/frame-bags/internode-5-waterproof/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Miss Grape",
+  "name": "Internode 6 Waterproof",
+  "size": "6L",
+  "slot": "framebag_half",
+  "who": "Miss Grape | Internode | Internode 6 Waterproof | 6L",
+  "kind": "volume-too-small",
+  "detail": "box 4.4L vs stated 6L (ratio 0.73) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 52,
+   "hgt": 14,
+   "wid": 6
+  },
+  "liters": 6,
+  "src": "https://missgrape.net/en/adventures/frame-bags/internode-6-waterproof/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Topeak",
+  "name": "MidLoader",
+  "size": "4.5L",
+  "slot": "framebag_half",
+  "who": "Topeak | Loader | MidLoader | 4.5L",
+  "kind": "volume-too-small",
+  "detail": "box 3.3L vs stated 4.5L (ratio 0.74) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 46,
+   "hgt": 12,
+   "wid": 6
+  },
+  "liters": 4.5,
+  "src": "https://www.topeak.com/global/en/product/967-MIDLOADER",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Topeak",
+  "name": "MidLoader",
+  "size": "6L",
+  "slot": "framebag_half",
+  "who": "Topeak | Loader | MidLoader | 6L",
+  "kind": "volume-too-small",
+  "detail": "box 4.4L vs stated 6L (ratio 0.74) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 54.5,
+   "hgt": 13.5,
+   "wid": 6
+  },
+  "liters": 6,
+  "src": "https://www.topeak.com/global/en/product/967-MIDLOADER",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Topeak",
+  "name": "TopLoader",
+  "size": "1L",
+  "slot": "toptube",
+  "who": "Topeak | Loader | TopLoader | 1L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.96 \u2014 23.5 x 7 x 12cm",
+  "sev": "medium",
+  "dims": {
+   "len": 23.5,
+   "hgt": 12,
+   "wid": 7
+  },
+  "liters": 1,
+  "src": "https://www.topeak.com/global/en/product/966-TOPLOADER",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Vincita",
+  "name": "Strada Bikepacking Saddle Bag",
+  "size": "9L",
+  "slot": "seatpack",
+  "who": "Vincita | Strada | Strada Bikepacking Saddle Bag | 9L",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.46 \u2014 35 x 24 x 12.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 35,
+   "hgt": 12.5,
+   "wid": 24
+  },
+  "liters": 9,
+  "src": "https://vincita.cc/products/b038bp-strada-bikepacking-saddle-bag",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Vincita",
+  "name": "Strada Bikepacking Frame Bag",
+  "size": "2.6L",
+  "slot": "framebag_half",
+  "who": "Vincita | Strada | Strada Bikepacking Frame Bag | 2.6L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.40 \u2014 35 x 6 x 25cm",
+  "sev": "medium",
+  "dims": {
+   "len": 35,
+   "hgt": 25,
+   "wid": 6
+  },
+  "liters": 2.6,
+  "src": "https://vincita.cc/products/b025bp-strada-bikepacking-frame-bag",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Vincita",
+  "name": "Strada Bikepacking Top Tube Bag",
+  "size": "0.8L",
+  "slot": "toptube",
+  "who": "Vincita | Strada | Strada Bikepacking Top Tube Bag | 0.8L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.78 \u2014 16 x 6 x 9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 16,
+   "hgt": 9,
+   "wid": 6
+  },
+  "liters": 0.8,
+  "src": "https://vincita.cc/products/b026bp-strada-bikepacking-top-tube-bag",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "VAUDE",
+  "name": "VAUDE Aqua Back Plus",
+  "size": "",
+  "slot": "pannier",
+  "who": "VAUDE | VAUDE Aqua Back Plus | ",
+  "kind": "volume-too-small",
+  "detail": "box 37.9L vs stated 51L (ratio 0.74) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 33,
+   "wid": 31,
+   "hgt": 37
+  },
+  "liters": 51,
+  "src": "https://www.vaude.com/int/en/45849-aqua-back-plus-bike-bags-recycled-main-material.html",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "VAUDE",
+  "name": "VAUDE Trailfront Cage",
+  "size": "",
+  "slot": "barbag",
+  "who": "VAUDE | VAUDE Trailfront Cage | ",
+  "kind": "too-big-for-frame",
+  "detail": "largest axis 54.0cm exceeds 48cm for barbag",
+  "sev": "high",
+  "dims": {
+   "len": 54,
+   "wid": 20,
+   "hgt": 20
+  },
+  "liters": 10,
+  "src": "https://www.vaude.com/int/en/48363-trailfront-cage-10-liter-bicycle-handlebar-bag.html",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Rogue Panda Designs",
+  "name": "Salsa Cutthroat Stock Frame Bag (58cm)",
+  "size": "",
+  "slot": "framebag_full",
+  "who": "Rogue Panda Designs | Salsa Cutthroat Stock Frame Bag (58cm) | ",
+  "kind": "volume-too-small",
+  "detail": "box 6.3L vs stated 12L (ratio 0.53) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 50,
+   "wid": 7,
+   "hgt": 18
+  },
+  "liters": 12,
+  "src": "https://roguepanda.com/products/stock-salsa-cutthroat-frame-bag",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Zefal",
+  "name": "Zefal Z Traveler 60",
+  "size": "",
+  "slot": "trunk",
+  "who": "Zefal | Zefal Z Traveler 60 | ",
+  "kind": "volume-too-small",
+  "detail": "box 12.7L vs stated 20L (ratio 0.63) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 32,
+   "wid": 18,
+   "hgt": 22
+  },
+  "liters": 20,
+  "src": "https://www.zefal.com/en/bags-for-racks/369-z-traveler-60.html",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Banjo Brothers",
+  "name": "Top Tube Bag, Large",
+  "size": "Large (1.1L)",
+  "slot": "toptube",
+  "who": "Banjo Brothers | Top Tube Bag | Top Tube Bag, Large | Large (1.1L)",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.75 \u2014 17.8 x 6.4 x 10.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 17.8,
+   "hgt": 10.2,
+   "wid": 6.4
+  },
+  "liters": 1.1,
+  "src": "https://www.banjobrothers.com/products/top-tube-bag-large",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Venture Handmade",
+  "name": "EDC Mini Frame Bag (Large)",
+  "size": "Large (1.4L)",
+  "slot": "framebag_half",
+  "who": "Venture Handmade | EDC | EDC Mini Frame Bag (Large) | Large (1.4L)",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.33 \u2014 25.4 x 6.4 x 19.1cm",
+  "sev": "medium",
+  "dims": {
+   "len": 25.4,
+   "hgt": 19.1,
+   "wid": 6.4
+  },
+  "liters": 1.4,
+  "src": "https://www.venturehandmade.com/gear/p/edc-mini-frame-bag",
+  "dims_state": "packed",
+  "dims_source": "none"
+ }
+]

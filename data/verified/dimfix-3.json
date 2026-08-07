@@ -1,0 +1,485 @@
+[
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Mag-Tank",
+  "size": "0.5L",
+  "verified": true,
+  "dims_cm": {
+   "len": 21.6,
+   "hgt": 11.4,
+   "wid": 6.4
+  },
+  "dims_state": "packed",
+  "dims_raw": "The Radavist: length 9 in, height 4.5 in, width 2 in rear / 3 in at buckle, 187 g. bike-packing.de: length 216 mm, max height 127 mm (tapering to 64 mm at the rear), width 64 mm at the head tube tapering to 38 mm, 0.9 L, 157 g with TPU liner",
+  "dims_note": "FALSE POSITIVE (too-cubic, 1.89 against a 2.0 threshold). Revelate's top-tube bags are WEDGES, not tubes: the photo of the sibling Gas Tank (assets/products/revelate-designs/gas-tank-gas-tank-1-1l-1.jpg and -2.jpg) shows a stubby teardrop that is tall and wide at the buckle end and tapers to a point at the head tube. Nothing in this family reaches the check's 2.0 length/height ratio, and none of them should. The elongation threshold is what is wrong, not these numbers. Volume also reconciles: the 21.6 x 11.4 x 6.4 box is 1.58 L against a rated 0.9 L (1.75x), exactly what a bounding box does to a doubly-tapered wedge. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Mag-Tank FastTrack",
+  "size": "0.5L",
+  "verified": true,
+  "dims_cm": {
+   "len": 22,
+   "hgt": 11.4,
+   "wid": 6.4
+  },
+  "dims_state": "packed",
+  "dims_raw": "bike-packing.de (bolt-on): 220 x 64 x 130 mm (L x W x H), 1 L, 157 g with TPU liner. The Radavist: same envelope as the Mag-Tank",
+  "dims_note": "FALSE POSITIVE (too-cubic, 1.93 against a 2.0 threshold). Revelate's top-tube bags are WEDGES, not tubes: the photo of the sibling Gas Tank (assets/products/revelate-designs/gas-tank-gas-tank-1-1l-1.jpg and -2.jpg) shows a stubby teardrop that is tall and wide at the buckle end and tapers to a point at the head tube. Nothing in this family reaches the check's 2.0 length/height ratio, and none of them should. The elongation threshold is what is wrong, not these numbers. Box 1.60 L against a rated 1.0 L (1.60x), consistent. The FastTrack is the same shell as the Mag-Tank on a bolt-on mount, so the same envelope is correct. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Mag-Tank 2000",
+  "size": "1.4L",
+  "verified": true,
+  "dims_cm": {
+   "len": 22.2,
+   "hgt": 11.4,
+   "wid": 11.4
+  },
+  "dims_state": "packed",
+  "dims_raw": "length 222 mm; height 114 mm; width 114 mm at the head tube tapering to 38 mm at the rear; 1.4 L; 176 g with TPU liner / 147 g without",
+  "dims_note": "FALSE POSITIVE (too-cubic, 1.95 against a 2.0 threshold). hgt and wid being equal at 11.4 cm looks like the duplicated-axis defect but is NOT: the retailer spec states both independently, height 114 mm and width 114 mm AT THE HEAD TUBE TAPERING TO 38 mm. The 2000 is the deep-section Mag-Tank and really is square in cross-section at its fat end. Revelate's top-tube bags are WEDGES, not tubes: the photo of the sibling Gas Tank (assets/products/revelate-designs/gas-tank-gas-tank-1-1l-1.jpg and -2.jpg) shows a stubby teardrop that is tall and wide at the buckle end and tapers to a point at the head tube. Nothing in this family reaches the check's 2.0 length/height ratio, and none of them should. The elongation threshold is what is wrong, not these numbers. Box 2.89 L against 1.4 L (2.06x) is high but expected when a bag that tapers 11.4 -> 3.8 cm over its length is carried as a box. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Mag-Tank",
+  "name": "Legacy Mag-Tank",
+  "size": "0.9L",
+  "verified": true,
+  "dims_cm": {
+   "len": 21.6,
+   "hgt": 12.7,
+   "wid": 6.4
+  },
+  "dims_state": "packed",
+  "dims_raw": "length 216 mm; max height 127 mm (tapering to 64 mm at the rear); width 64 mm at the head tube tapering to 38 mm; 0.9 L; 157 g with TPU liner / 128 g without",
+  "dims_note": "FALSE POSITIVE (too-cubic, 1.70 against a 2.0 threshold). Revelate's top-tube bags are WEDGES, not tubes: the photo of the sibling Gas Tank (assets/products/revelate-designs/gas-tank-gas-tank-1-1l-1.jpg and -2.jpg) shows a stubby teardrop that is tall and wide at the buckle end and tapers to a point at the head tube. Nothing in this family reaches the check's 2.0 length/height ratio, and none of them should. The elongation threshold is what is wrong, not these numbers. Both height and width taper towards the rear and the larger figures are recorded, so the box (1.76 L) overstates the rated 0.9 L by 1.95x as expected. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Jerrycan",
+  "name": "Jerrycan",
+  "size": "Regular",
+  "verified": true,
+  "dims_cm": {
+   "len": 12.7,
+   "hgt": 10.2,
+   "wid": 5
+  },
+  "dims_state": "packed",
+  "dims_raw": "Regular (95 deg): approx. 12.7 x 5 x 10.2 cm (L x W x H); approx. 0.57 L; approx. 75 g",
+  "dims_note": "FALSE POSITIVE (too-cubic, 1.25 against a 2.0 threshold). The Jerrycan is Revelate's SMALLEST top-tube bag, a stubby pod that sits in the head-tube/top-tube corner. It is short by design and cannot satisfy a 2.0 elongation rule. The decisive evidence is the volume: the 12.7 x 10.2 x 5 box is 0.65 L against a stated 0.57 L, a ratio of 1.14 -- as tight a reconciliation as any record in this batch. Three axes that agree with the litres to 14% are not transposed. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Jerrycan",
+  "name": "Jerrycan",
+  "size": "Bent",
+  "verified": true,
+  "dims_cm": {
+   "len": 15.2,
+   "hgt": 8.9,
+   "wid": 5
+  },
+  "dims_state": "packed",
+  "dims_raw": "Bent (120 deg): approx. 15.2 x 5 x 8.9 cm (L x W x H); approx. 0.57 L; approx. 75 g",
+  "dims_note": "FALSE POSITIVE (too-cubic, 1.71 against a 2.0 threshold). The Jerrycan is Revelate's SMALLEST top-tube bag, a stubby pod that sits in the head-tube/top-tube corner. It is short by design and cannot satisfy a 2.0 elongation rule. The Bent (120 deg head-tube angle) is longer and shallower than the Regular, which is why the two sizes differ; box 0.68 L against a stated 0.57 L (1.19x) confirms all three axes. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Gas Tank",
+  "name": "Gas Tank",
+  "size": "1.1L",
+  "verified": true,
+  "dims_cm": {
+   "len": 22.8,
+   "hgt": 12.7,
+   "wid": 6.4
+  },
+  "dims_state": "packed",
+  "dims_raw": "length approx. 22.8 cm; height approx. 12.7 cm tapering to 3.8 cm; width approx. 6.4 cm tapering to 3.8 cm; 1.1 L; 100 g",
+  "dims_note": "FALSE POSITIVE (too-cubic, 1.80 against a 2.0 threshold). SETTLED BY THE PHOTO: assets/products/revelate-designs/gas-tank-gas-tank-1-1l-1.jpg is a clean side view and gas-tank-gas-tank-1-1l-2.jpg a top-down three-quarter. Together they show a short, deep wedge -- roughly twice as long as it is tall, narrow across the bike, tapering to a point at the front. It is emphatically not a long thin tube, and 22.8 x 12.7 x 6.4 is the shape in the picture. This photo is the reference for the whole Mag-Tank / Jerrycan / Gas Tank family. Box 1.85 L against 1.1 L (1.69x), consistent with the double taper. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "SM",
+  "verified": true,
+  "dims_cm": {
+   "len": 44.5,
+   "hgt": 34.3,
+   "wid": 6.4
+  },
+  "dims_state": "packed",
+  "dims_raw": "Small: A 17.5\" (445 mm), B 1.0\" (25 mm), C 17.5\" (451 mm), D 2.75\" (70 mm), E 305 cu in (5 L); 13 oz (364 g)",
+  "dims_note": "FALSE POSITIVE (too-cubic). This is the same class the chunk-1 agent identified on the Apidura Full Frame Pack: a bag that fills a bike's main triangle CANNOT reach longest/middle >= 1.5, because a 56cm frame's main triangle is itself only about 4:3. Every correct framebag_full in this catalogue sits between 1.1 and 1.45 (Apidura 1.45, WOHO 1.39, Ripio 1.09-1.32). The threshold is wrong, not the numbers. Lengths are retailer-confirmed against the CampfireCycling A-E size table and match the catalogue exactly on all four sizes; heights and the 6.4 cm depth are carried over and are NOT retailer-confirmed, but they reconcile with the retailer's own per-size volumes on the correct triangular-prism basis (half the box). Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block. For this size the prism check gives 4.9 L against the rated volume.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "MD",
+  "verified": true,
+  "dims_cm": {
+   "len": 49.5,
+   "hgt": 37.5,
+   "wid": 6.4
+  },
+  "dims_state": "packed",
+  "dims_raw": "Medium: A 19.5\" (495 mm), B 1.25\" (32 mm), C 18.5\" (470 mm), D 4.25\" (108 mm), E 385 cu in (6.3 L); 14 oz (397 g)",
+  "dims_note": "FALSE POSITIVE (too-cubic). This is the same class the chunk-1 agent identified on the Apidura Full Frame Pack: a bag that fills a bike's main triangle CANNOT reach longest/middle >= 1.5, because a 56cm frame's main triangle is itself only about 4:3. Every correct framebag_full in this catalogue sits between 1.1 and 1.45 (Apidura 1.45, WOHO 1.39, Ripio 1.09-1.32). The threshold is wrong, not the numbers. Lengths are retailer-confirmed against the CampfireCycling A-E size table and match the catalogue exactly on all four sizes; heights and the 6.4 cm depth are carried over and are NOT retailer-confirmed, but they reconcile with the retailer's own per-size volumes on the correct triangular-prism basis (half the box). Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block. For this size the prism check gives 5.9 L against the rated volume.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "LG",
+  "verified": true,
+  "dims_cm": {
+   "len": 52.1,
+   "hgt": 43.2,
+   "wid": 6.4
+  },
+  "dims_state": "packed",
+  "dims_raw": "Large: A 20.5\" (521 mm), B 3.0\" (76 mm), C 19.0\" (483 mm), D 3.75\" (95 mm), E 470 cu in (7.7 L); 16 oz (454 g)",
+  "dims_note": "FALSE POSITIVE (too-cubic). This is the same class the chunk-1 agent identified on the Apidura Full Frame Pack: a bag that fills a bike's main triangle CANNOT reach longest/middle >= 1.5, because a 56cm frame's main triangle is itself only about 4:3. Every correct framebag_full in this catalogue sits between 1.1 and 1.45 (Apidura 1.45, WOHO 1.39, Ripio 1.09-1.32). The threshold is wrong, not the numbers. Lengths are retailer-confirmed against the CampfireCycling A-E size table and match the catalogue exactly on all four sizes; heights and the 6.4 cm depth are carried over and are NOT retailer-confirmed, but they reconcile with the retailer's own per-size volumes on the correct triangular-prism basis (half the box). Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block. For this size the prism check gives 7.2 L against the rated volume.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Ripio",
+  "name": "Ripio Frame Bag",
+  "size": "XL",
+  "verified": true,
+  "dims_cm": {
+   "len": 54.6,
+   "hgt": 50.2,
+   "wid": 6.4
+  },
+  "dims_state": "packed",
+  "dims_raw": "XL: A 21.5\" (546 mm), B 4.75\" (121 mm), C 20.5\" (521 mm), D 3.25\" (83 mm), E 550 cu in (9 L); 17.4 oz (493 g)",
+  "dims_note": "FALSE POSITIVE (too-cubic). This is the same class the chunk-1 agent identified on the Apidura Full Frame Pack: a bag that fills a bike's main triangle CANNOT reach longest/middle >= 1.5, because a 56cm frame's main triangle is itself only about 4:3. Every correct framebag_full in this catalogue sits between 1.1 and 1.45 (Apidura 1.45, WOHO 1.39, Ripio 1.09-1.32). The threshold is wrong, not the numbers. Lengths are retailer-confirmed against the CampfireCycling A-E size table and match the catalogue exactly on all four sizes; heights and the 6.4 cm depth are carried over and are NOT retailer-confirmed, but they reconcile with the retailer's own per-size volumes on the correct triangular-prism basis (half the box). Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block. For this size the prism check gives 8.8 L against the rated volume.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "SM",
+  "verified": false,
+  "dims_cm": {
+   "len": 34.9,
+   "hgt": 25.4,
+   "wid": 3.8
+  },
+  "dims_state": "packed",
+  "dims_raw": "REI: 13.75 x 10 in; bike-packing.de: 349 x 254 mm (L x H); 254 g",
+  "dims_note": "UNRESOLVED -- the depth is the problem and no source publishes one. Length and height ARE now confirmed: REI's listing for the Rifter gives the four sizes as 13.75 x 10 in, 15 x 11 in, 16 x 12.5 in and 17.25 x 14 in, which convert to 34.9 x 25.4 / 38.1 x 27.9 / 40.6 x 31.8 / 43.8 x 35.6 cm -- the catalogue values to the millimetre -- and states the capacity range as 4.5 to 8.5 L, also matching. So the flagged shortfall is NOT in len, hgt or the litres. It is the 3.8 cm wid, which no maker or retailer publishes and which cannot be reconciled with the rated capacity: BIKEPACKING.com's review says outright that 'the Rifter is wider than most of my custom frame bags and has a moderately flared front', and custom frame bags run 5-6.5 cm. A depth near the Ripio's retailer-published 6.4 cm would bring the box to 1.2-1.3x the litres and resolve the flag, but that is an inference and no source states it, so dims_cm is left exactly as found per the no-fabrication rule. RECOMMENDATION for a future pass: get the depth from Revelate directly; treat 3.8 cm as suspect. Separately, the too-cubic flag on this product is a FALSE POSITIVE for the same reason as the Ripio -- a frame bag cannot be 1.5:1. Note also that two volume sets are in circulation: BIKEPACKING.com's review gives 3.7/4.4/5.7/7.1 L (the launch figures) while REI and the catalogue carry 4.5/5.5/7/8.5 L; the catalogue's are the current ones and are left alone. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "low"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "MD",
+  "verified": false,
+  "dims_cm": {
+   "len": 38.1,
+   "hgt": 27.9,
+   "wid": 3.8
+  },
+  "dims_state": "packed",
+  "dims_raw": "REI: 15 x 11 in; bike-packing.de: 381 x 279 mm (L x H); 301 g",
+  "dims_note": "UNRESOLVED -- the depth is the problem and no source publishes one. Length and height ARE now confirmed: REI's listing for the Rifter gives the four sizes as 13.75 x 10 in, 15 x 11 in, 16 x 12.5 in and 17.25 x 14 in, which convert to 34.9 x 25.4 / 38.1 x 27.9 / 40.6 x 31.8 / 43.8 x 35.6 cm -- the catalogue values to the millimetre -- and states the capacity range as 4.5 to 8.5 L, also matching. So the flagged shortfall is NOT in len, hgt or the litres. It is the 3.8 cm wid, which no maker or retailer publishes and which cannot be reconciled with the rated capacity: BIKEPACKING.com's review says outright that 'the Rifter is wider than most of my custom frame bags and has a moderately flared front', and custom frame bags run 5-6.5 cm. A depth near the Ripio's retailer-published 6.4 cm would bring the box to 1.2-1.3x the litres and resolve the flag, but that is an inference and no source states it, so dims_cm is left exactly as found per the no-fabrication rule. RECOMMENDATION for a future pass: get the depth from Revelate directly; treat 3.8 cm as suspect. Separately, the too-cubic flag on this product is a FALSE POSITIVE for the same reason as the Ripio -- a frame bag cannot be 1.5:1. Note also that two volume sets are in circulation: BIKEPACKING.com's review gives 3.7/4.4/5.7/7.1 L (the launch figures) while REI and the catalogue carry 4.5/5.5/7/8.5 L; the catalogue's are the current ones and are left alone. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "low"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "LG",
+  "verified": false,
+  "dims_cm": {
+   "len": 40.6,
+   "hgt": 31.8,
+   "wid": 3.8
+  },
+  "dims_state": "packed",
+  "dims_raw": "REI: 16 x 12.5 in; bike-packing.de: 406 x 318 mm (L x H); 325 g",
+  "dims_note": "UNRESOLVED -- the depth is the problem and no source publishes one. Length and height ARE now confirmed: REI's listing for the Rifter gives the four sizes as 13.75 x 10 in, 15 x 11 in, 16 x 12.5 in and 17.25 x 14 in, which convert to 34.9 x 25.4 / 38.1 x 27.9 / 40.6 x 31.8 / 43.8 x 35.6 cm -- the catalogue values to the millimetre -- and states the capacity range as 4.5 to 8.5 L, also matching. So the flagged shortfall is NOT in len, hgt or the litres. It is the 3.8 cm wid, which no maker or retailer publishes and which cannot be reconciled with the rated capacity: BIKEPACKING.com's review says outright that 'the Rifter is wider than most of my custom frame bags and has a moderately flared front', and custom frame bags run 5-6.5 cm. A depth near the Ripio's retailer-published 6.4 cm would bring the box to 1.2-1.3x the litres and resolve the flag, but that is an inference and no source states it, so dims_cm is left exactly as found per the no-fabrication rule. RECOMMENDATION for a future pass: get the depth from Revelate directly; treat 3.8 cm as suspect. Separately, the too-cubic flag on this product is a FALSE POSITIVE for the same reason as the Ripio -- a frame bag cannot be 1.5:1. Note also that two volume sets are in circulation: BIKEPACKING.com's review gives 3.7/4.4/5.7/7.1 L (the launch figures) while REI and the catalogue carry 4.5/5.5/7/8.5 L; the catalogue's are the current ones and are left alone. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "low"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rifter",
+  "name": "Rifter Frame Bag",
+  "size": "XL",
+  "verified": false,
+  "dims_cm": {
+   "len": 43.8,
+   "hgt": 35.6,
+   "wid": 3.8
+  },
+  "dims_state": "packed",
+  "dims_raw": "REI: 17.25 x 14 in; bike-packing.de: 438 x 356 mm (L x H); 347 g",
+  "dims_note": "UNRESOLVED -- the depth is the problem and no source publishes one. Length and height ARE now confirmed: REI's listing for the Rifter gives the four sizes as 13.75 x 10 in, 15 x 11 in, 16 x 12.5 in and 17.25 x 14 in, which convert to 34.9 x 25.4 / 38.1 x 27.9 / 40.6 x 31.8 / 43.8 x 35.6 cm -- the catalogue values to the millimetre -- and states the capacity range as 4.5 to 8.5 L, also matching. So the flagged shortfall is NOT in len, hgt or the litres. It is the 3.8 cm wid, which no maker or retailer publishes and which cannot be reconciled with the rated capacity: BIKEPACKING.com's review says outright that 'the Rifter is wider than most of my custom frame bags and has a moderately flared front', and custom frame bags run 5-6.5 cm. A depth near the Ripio's retailer-published 6.4 cm would bring the box to 1.2-1.3x the litres and resolve the flag, but that is an inference and no source states it, so dims_cm is left exactly as found per the no-fabrication rule. RECOMMENDATION for a future pass: get the depth from Revelate directly; treat 3.8 cm as suspect. Separately, the too-cubic flag on this product is a FALSE POSITIVE for the same reason as the Ripio -- a frame bag cannot be 1.5:1. Note also that two volume sets are in circulation: BIKEPACKING.com's review gives 3.7/4.4/5.7/7.1 L (the launch figures) while REI and the catalogue carry 4.5/5.5/7/8.5 L; the catalogue's are the current ones and are left alone. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "low"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Cranny",
+  "name": "Cranny Frame Bag",
+  "size": "0.6L",
+  "verified": true,
+  "dims_cm": {
+   "len": 22.9,
+   "hgt": 16.5,
+   "wid": 9.5
+  },
+  "dims_state": "packed",
+  "dims_raw": "bike-packing.de spec table: \"Volume 0.6 liters; Weight 72 g; Dimensions (A / B) 22.9 / 16.5 cm; Width 9.5 cm\"",
+  "dims_note": "FALSE POSITIVE on both flags, but it took the photo to see why. assets/products/revelate-designs/cranny-cranny-frame-back-black (local copy cranny-cranny-frame-bag-0-6l-1.jpg) shows a small CRESCENT-shaped wedge with three velcro tabs -- fat and rounded where it meets the head-tube corner and tapering away to nothing along both edges. Its outline fills well under half its own bounding box, and the 9.5 cm width is the MAXIMUM at the fat end, not a uniform thickness. That is the whole explanation for the volume-too-big flag (box 3.6 L against 0.6 L): integrate a wedge that tapers from 9.5 cm to zero over a crescent outline and you land at roughly 0.6-0.7 L. Revelate quotes 38 cu in (0.62 L) and 72 g -- a 72 g bag is not a 3.6 L box. The too-cubic flag fails for the same reason: a corner wedge is not a top-tube sliver and cannot be 2.2:1. All three axes are bike-packing.de's as printed. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Nook",
+  "name": "Nook Frame Bag",
+  "size": "1.2L",
+  "verified": true,
+  "dims_cm": {
+   "len": 24.1,
+   "hgt": 20.3,
+   "wid": 10.2
+  },
+  "dims_state": "packed",
+  "dims_raw": "bike-packing.de spec table: \"Volume 1.2 liters; Weight 85 g; Dimensions (A / B) 24.1 / 20.3 cm; Width 10.2 cm\"",
+  "dims_note": "FALSE POSITIVE on both flags, same geometry as the Cranny -- Tree Fort Bikes describes the Cranny as 'about half the capacity of its larger counterpart, the Nook', and 0.6 vs 1.2 L confirms they are the same shape scaled. The 10.2 cm Width is the maximum at the fat corner of a tapered wedge, not a uniform depth, so the bounding box (5.0 L) necessarily overstates the rated 1.2 L; an 85 g bag is not a 5 L box. The too-cubic flag applies a top-tube-sliver rule to a corner wedge. A/B and Width are bike-packing.de's as printed. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Joey",
+  "name": "Joey Downtube Bag",
+  "size": "1L",
+  "verified": true,
+  "dims_cm": {
+   "len": 17.8,
+   "hgt": 10.2,
+   "wid": 10.2,
+   "dia": 10.2
+  },
+  "dims_state": "packed",
+  "dims_raw": "1 L: 10.2 cm diameter x 17.8 cm length; 109 g",
+  "dims_note": "FALSE POSITIVE (too-cubic, 1.75 against a 1.8 threshold -- a 3% miss). The Joey is a CYLINDER: the record carries a dia key, and hgt = wid = dia = 10.2 is the correct encoding of a round bag, not a duplicated axis. Volume confirms it: pi/4 x 10.2^2 x 17.8 = 1.45 L for a cylinder against a rated 1 L, whereas the square box the checker used is 1.85 L. The 1.8 rule is measuring the aspect of a downtube bottle-bag and the real article is 1.75:1. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Rohn",
+  "name": "Rohn Rack Bag",
+  "size": "37L max",
+  "verified": true,
+  "dims_cm": {
+   "len": 61,
+   "hgt": 25,
+   "wid": 27.9
+  },
+  "dims_state": "packed",
+  "dims_raw": "approximately 11 in (279 mm) by 24 in (610 mm) (D x L); 37 to 39 L; 320 g",
+  "dims_note": "FALSE POSITIVE (too-big-for-frame: 61 cm against a 52 cm cap for trunk). 61 cm is real and published -- BIKEPACKING.com's launch article gives 24 in x 11 in. The check's 52 cm trunk cap is calibrated for a compact rack-top box, but the Rohn is a 37 L expedition RACK DUFFEL that lies fore-aft along the rack and deliberately overhangs it at both ends; that is the product. Volume also confirms the footprint: 61 x 25 x 27.9 = 42.5 L against a rated 37-39 L (1.12x), which is exactly right and would be impossible at 52 cm. The 25 cm height is the one axis no source publishes; it is carried over unchanged and is the weak number here. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Portage",
+  "name": "Portage Panniers",
+  "size": "14L",
+  "verified": true,
+  "dims_cm": {
+   "len": 26.7,
+   "hgt": 38.1,
+   "wid": 10.2
+  },
+  "dims_state": "packed",
+  "dims_raw": "bike-packing.de size table: \"14 Liters | 445 g | Height 38.1 cm | Width 26.7 cm | Depth 10.2 cm\" (per bag; sold as a pair)",
+  "dims_note": "FALSE POSITIVE, and the answer to 'which is wrong' is: THE LITRES ARE THE MAXIMUM-ROLL FIGURE, not the dims. The Portage is not a fixed-volume pannier -- BIKEPACKING.com's review describes it as a 'roll top drybag you can instantly remove from its silent rack holster' with an 'expandable roll-top'. bike-packing.de's per-size table (quoted verbatim in dims_raw, re-fetched and confirmed for this pass) gives the ROLLED-DOWN envelope; the rated litres are the drybag unrolled. Depth is a uniform 10.2 cm across all three sizes, which is itself a sign the table is a real spec rather than a back-computation. Dims are correct as stored. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block. Rolled box 10.4 L against a rated 14 L (0.74) -- a 35% roll extension, normal for a drybag pannier.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Portage",
+  "name": "Portage Panniers",
+  "size": "18L",
+  "verified": true,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 40.6,
+   "wid": 10.2
+  },
+  "dims_state": "packed",
+  "dims_raw": "bike-packing.de size table: \"18 Liters | 488 g | Height 40.6 cm | Width 30.5 cm | Depth 10.2 cm\" (per bag; sold as a pair)",
+  "dims_note": "FALSE POSITIVE, and the answer to 'which is wrong' is: THE LITRES ARE THE MAXIMUM-ROLL FIGURE, not the dims. The Portage is not a fixed-volume pannier -- BIKEPACKING.com's review describes it as a 'roll top drybag you can instantly remove from its silent rack holster' with an 'expandable roll-top'. bike-packing.de's per-size table (quoted verbatim in dims_raw, re-fetched and confirmed for this pass) gives the ROLLED-DOWN envelope; the rated litres are the drybag unrolled. Depth is a uniform 10.2 cm across all three sizes, which is itself a sign the table is a real spec rather than a back-computation. Dims are correct as stored. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block. Rolled box 12.6 L against a rated 18 L (0.70). The 10 L size in the same table reconciles at 0.93, confirming the pattern is roll extension rather than a bad axis.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Revelate Designs",
+  "line": "Nano",
+  "name": "Nano Panniers",
+  "size": "11L each",
+  "verified": true,
+  "dims_cm": {
+   "len": 26.6,
+   "hgt": 25.4,
+   "wid": 10.1
+  },
+  "dims_state": "packed",
+  "dims_raw": "BikeParts.com: 25.4 x 26.6 x 10.1 cm per bag; 680 cu in (11.0 L) each side; 510 g the pair. bike-packing.de: 7-11 L per bag (14-22 L the pair), width approx. 10 cm, 255 g per bag",
+  "dims_note": "FALSE POSITIVE, and this one settles itself arithmetically. bike-packing.de rates the Nano at 7-11 L PER BAG because the roll-top varies the volume. The stored box is 26.6 x 25.4 x 10.1 = 6.8 L -- which lands on the 7 L ROLLED-DOWN figure to within 3%. So the dims are the packed envelope and the catalogue's 11 L is the maximum-roll figure; the checker compared one against the other. The photo (assets/products/revelate-designs/nano-nano-panniers-11l-each-1.jpg) shows exactly this: a tall roll-top sack photographed with the roll EXTENDED, standing well above the compression strap that marks the rolled-down height. Two independent sources agree on the ~10 cm width. Revelate blocks bots, so this figure is retailer-sourced (dims_source: retailer) and is weaker evidence than a maker spec block.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Fairweather",
+  "line": "Handlebar Bag",
+  "name": "Handlebar Bag ADV",
+  "size": "One Size (19L)",
+  "verified": true,
+  "dims_cm": {
+   "len": 42,
+   "hgt": 26.8,
+   "wid": 22
+  },
+  "dims_state": "unrolled",
+  "dims_raw": "Capacity: 19L. Dimensions: length 22cm/8.5\" (when the roll top is stretched: 38cm/15\"), width 42cm/16.5\" (including side pockets), depth 22cm/8.5\". Material: Cordura Nylon Fabric",
+  "dims_note": "DIMS ARE RIGHT, THE SLOT IS WRONG. The photos settle it: assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-1.jpg shows a structured, squared-off rando/porteur box sitting on a front rack with lidded side pockets and a MOLLE-webbed front panel, and -2.jpg shows the strap-to-bar mounting close up. It is not a drybag roll. Every other barroll in this catalogue is a cylinder 40-65 cm long and 15-20 cm in diameter (Sweetroll, Ortlieb Handlebar-Pack, Tailfin, WOHO); a 42 x 26.8 x 22 box is not in that family, which is precisely why the 1.8 elongation check fired at 1.57. Reclassified to barbag, where its nearest neighbour is the Swift Zeitgeist (48.3 x 22.9 x 17.8, 12 L). Dimensions themselves check out against the photo: measuring image 1, total width including side pockets is ~1.6x the body height, matching 42 vs 26.8. Box 24.8 L against a rated 19 L (1.3x), normal for a rolltop measured part-extended. Bluelug's 'length' is the vertical roll dimension (22 cm down, 38 cm stretched), which is why hgt sits between the two.",
+  "slot_should_be": "barbag",
+  "confidence": "high"
+ },
+ {
+  "brand": "Fairweather",
+  "line": "Frame Bag",
+  "name": "Frame Bag ADV (Medium)",
+  "size": "Medium (4L)",
+  "verified": true,
+  "dims_cm": {
+   "len": 34,
+   "hgt": 33,
+   "wid": 6
+  },
+  "dims_state": "packed",
+  "dims_raw": "Size small - Capacity: 3.6 liters, Dimension: L 33cm x H 27.5cm x W 6cm. Size medium - Capacity: 4L, Dimension: L 34cm x H 33cm x W 6cm. Weight: 141g (AVG.)",
+  "dims_note": "FALSE POSITIVE on BOTH flags, settled by the two photos. assets/products/fairweather/frame-bag-frame-bag-adv-medium-medium-4l-1.jpg (teal, on a bike) and -2.jpg (coyote, on a green MTB) both show a near-equilateral TRIANGLE hanging from the top tube -- measuring image 1, the bag's top edge and its vertical extent are the same length to within a few percent, which is 34 x 33 exactly as bluelug prints it. (1) too-cubic: the 2.2 elongation rule assumes a framebag_half is a long sliver under the top tube; this one is a full-height front-corner triangle, so 1.03 is the true shape, not a transposition. (2) too-big-for-frame at 33 cm: the photos ARE the disproof -- the bag is mounted on real bikes with a bottle cage still usable below it. A 56cm gravel main triangle is ~45 cm tall at the seat tube, so 33 cm fits with room to spare; the 30 cm cap is too tight. Volume reconciles on the correct triangular basis: 34 x 33 x 6 / 2 = 3.4 L against a rated 4 L, with the bulge making up the difference. Fixed-size zip bag, so L x H x W maps straight across.",
+  "confidence": "high"
+ },
+ {
+  "brand": "WOHO",
+  "line": null,
+  "name": "XTouring Full Frame Bag Dry L",
+  "size": null,
+  "verified": true,
+  "dims_cm": {
+   "len": 50,
+   "hgt": 36,
+   "wid": 8
+  },
+  "dims_state": "packed",
+  "dims_raw": "wohobike.com, size L: \"Capacity : 12 Liter / Weight : 244g / 8.6oz / Size : (L x W x H) : 50 x 36 x 8 cm / 19.7\" x 14\" x 3.15\"\"",
+  "dims_note": "FALSE POSITIVE (too-cubic, 1.39). Re-fetched the MAKER's own page and the numbers are exact: 50 x 36 x 8 cm for size L, 12 L. WOHO labels the axes L x W x H but their 'W' is the vertical drop and their 'H' the across-bike thickness, so the catalogue's len/hgt/wid mapping is already correct. Same class as the Apidura and Ripio full-frame flags from chunk 1: a bag shaped to a main triangle cannot reach 1.5:1. Box 14.4 L against 12 L is 1.20x -- if anything this is one of the better-reconciled records in the batch. Dims upgraded from unknown to maker-sourced; nothing changed.",
+  "confidence": "high"
+ },
+ {
+  "brand": "WOHO",
+  "line": null,
+  "name": "XTouring UL Pannier Dry",
+  "size": null,
+  "verified": true,
+  "dims_cm": {
+   "len": 32,
+   "hgt": 35,
+   "wid": 13
+  },
+  "dims_state": "packed",
+  "dims_raw": "Bikerumor (from WOHO): \"Size: 28cm to 49cm tall (depending on roll top), 32cm wide, and 13cm deep. Volume: 36 liters a pair (roll top fully open), 20 liters a pair (rolled three times). Weight: 350g (single), 700g (pair)\". BIKEPACKING.com launch: \"49cm (full)-35 (rolled 3 times) tall x 32cm wide x 13cm deep\"",
+  "dims_note": "CORRECTED -- the stored 40 x 24 x 14 matched no published axis on this bag and looks back-computed. Two independent press sources working from WOHO's own release agree: 32 cm wide (fore-aft on the rack), 13 cm deep (across the bike), and 28-49 cm tall depending on how far the roll-top is closed, with 35 cm being rolled three times. Recorded as the packed, as-mounted state: len 32, hgt 35, wid 13. On the volume-too-small flag the answer is THE LITRES ARE THE MAXIMUM-ROLL FIGURE: 36 L a pair fully open = 18 L per bag is the catalogue's number and is correct per bag, but it belongs to the 49 cm fully-open height (32 x 49 x 13 = 20.4 L, ratio 1.13). Rolled three times the bag is 14.6 L. capacity_l left at 18 per bag. One outlier noted and rejected: thecyclelist.co lists 8.25 x 5 x 19.25 in (21 x 12.7 x 48.9 cm), agreeing on the 13 cm depth and the 49 cm height but giving 21 cm where both press sources say 32 cm; a 21 cm-wide 18 L pannier is not credible. WOHO's own product URL for this model 404s, so this is press-sourced, not maker-page-sourced.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Specialized x Fjällräven",
+  "line": null,
+  "name": "Fjällräven Hoja Handlebar Rolltop",
+  "size": null,
+  "verified": true,
+  "dims_cm": {
+   "len": 21,
+   "wid": 22,
+   "hgt": 23
+  },
+  "dims_state": "packed",
+  "dims_raw": "Varuste.net (labelled): \"Height: 23 cm / Width: 21 cm / Depth: 22 cm / Volume: 13 l\"; Fjallraven and six other retailers: \"23 x 21 x 22 cm\", 13 L, 395 g",
+  "dims_note": "FALSE POSITIVE -- the bag really is a near-cube and these are Fjallraven's own figures. I went looking for a dropped or duplicated axis and found none: varuste.net publishes the dimensions WITH LABELS as Height 23 / Width 21 / Depth 22, which maps exactly onto the stored len 21 (across the bars) / hgt 23 / wid 22 (fore-aft), and the unlabelled '23 x 21 x 22 cm' is repeated verbatim by Fjallraven, BIKE24, MyFoxBag, Snowleader, MTBIKER and others. The Hoja is a small rolltop cube that mounts on a handlebar RACK rather than spanning the bars, which is why it has none of a barroll's length. One dissenting source, Miyar Adventures (selling the Specialized-branded version), gives 'Height: 23 cm, Width: 31cm, Depth: 22 cm' -- 31 rather than 21 would have been a tidy dropped-digit story and would fix the volume (15.7 L box against 13 L), but it is a single small dealer against the maker and six retailers, so it is rejected and recorded here only so the next pass does not re-derive it. The 10.6 L box against 13 L rated is the rolltop: 13 L is the roll-open figure. It will render as a ball because it is one.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Chrome Industries",
+  "line": null,
+  "name": "Holman Pannier",
+  "size": null,
+  "verified": true,
+  "dims_cm": {
+   "len": 29.2,
+   "hgt": 39.4,
+   "wid": 12.7
+  },
+  "dims_state": "packed",
+  "dims_raw": "Chrome spec (via Altitude Sports and Bikeinn, H x W x D): \"15.5\"x11.5\"(Top)-10.75\"(Base)x5\"\", Volume \"15-20L\", weight 1.1 kg",
+  "dims_note": "CORRECTED -- MISASSIGNED AXES, the defect the brief warns about. Chrome publishes the Holman as H x W x D = 15.5 x 11.5 (top, tapering to 10.75 at the base) x 5 inches. The catalogue had put the HEIGHT (15.5 in = 39.4 cm) into len and the DEPTH (5 in = 12.7 cm) into hgt, which renders a pannier lying on its side. Correct mapping for a bag hanging off a rack: hgt 39.4 (vertical), len 29.2 (fore-aft, the 11.5 in top edge), wid 12.7 (across the bike). That also resolves the volume-too-small flag for free, and the answer is THE LITRES ARE THE MAXIMUM-ROLL FIGURE: Chrome's own spec is a RANGE, '15-20L', and the box is 29.2 x 39.4 x 12.7 = 14.6 L -- within 3% of the 15 L rolled-down end of Chrome's own range. capacity_l left at the marketed 20 L, which is the roll-open end. Note the fore-aft edge tapers 29.2 cm at the top to 27.3 cm at the base; the larger figure is recorded.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Two Wheel Gear",
+  "line": "Mamquam",
+  "name": "Mamquam Frame Bag L/XL",
+  "size": "L/XL (6L)",
+  "verified": true,
+  "dims_cm": {
+   "len": 50.8,
+   "hgt": 24.1,
+   "wid": 5.7
+  },
+  "dims_state": "packed",
+  "dims_raw": "20\" Wide x 9.5\" High x 2.25\" Deep; 6 Liters",
+  "dims_note": "FALSE POSITIVE (too-cubic, 2.11 against a 2.2 threshold -- a 4% miss). The photo assets/products/two-wheel-gear/mamquam-mamquam-frame-bag-l-xl-l-xl-6l-1.jpg is a clean side-on studio shot of the bag mounted on a bike, and it shows exactly the long low sliver the framebag_half slot expects: measuring it, the bag runs about 2.3x as long as it is tall, which is the stored 50.8 / 24.1 = 2.11 within measurement error and on the correct side of it. Two Wheel Gear print the spec in inches (20 x 9.5 x 2.25) and it maps straight across, 20 in along the top tube and 2.25 in as the across-bike thickness. Box 7.0 L against a rated 6 L (1.16x), consistent with the tapered rear end visible in the photo. This is a threshold that wants relaxing, not a record that wants fixing.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Giant",
+  "line": "Transporter",
+  "name": "Transporter MIK Pannier Bag 30L",
+  "size": "30L (single)",
+  "verified": true,
+  "dims_cm": {
+   "len": 30,
+   "hgt": 40,
+   "wid": 17
+  },
+  "dims_state": "packed",
+  "dims_raw": "Giant: \"Size: 30*17*40cm\", \"Weight: 1400g\", \"Volume: 30L\"; multiple Giant dealers print \"Volume: 30L (15L per side)\"",
+  "capacity_l": 15,
+  "dims_note": "CORRECTED on two counts, and the photo drove both. assets/products/giant/transporter-transporter-mik-pannier-bag-30l-30l-single-1.jpg and -2.jpg show a DOUBLE pannier -- two bags joined by a saddle panel that drapes over the rack -- and each half is clearly PORTRAIT, measurably about 1.45x taller than it is long. (1) AXIS ORDER. Giant's page gives a bare '30*17*40cm' with no labels, and the catalogue had read the 40 as fore-aft depth, which would make each bag landscape -- the opposite of the photo. Remapped to len 30 (fore-aft along the rack), hgt 40 (vertical), wid 17 (across the bike). 40/30 = 1.33 against the ~1.45 measured off the photo, the difference being the roll top standing proud. A 40 cm fore-aft pannier would also foul the rider's heel; 30 x 40 x 17 is the standard commuter-pannier envelope (cf. Ortlieb Back-Roller at 32 x 42 x 17). (2) CAPACITY. The 30 L is the PAIR, not one bag. Giant dealers print 'Volume: 30L (15L per side)'; MIK ('Mounting Is Key') is a top-of-rack plate system, so a MIK pannier bag is necessarily a two-sided unit rather than a single hanging bag; and 1400 g is a double-bag weight. The catalogue models one side in the pannier slot, so capacity_l is set to 15. That also clears the volume-too-small flag: the per-side box is 20.4 L against 15 L per side, a ratio of 1.36, textbook for a roll-top. Note the size string still reads '30L (single)' and is misleading, but it is the join key so it is left alone.",
+  "confidence": "medium"
+ }
+]

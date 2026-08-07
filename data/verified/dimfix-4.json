@@ -1,0 +1,401 @@
+[
+ {
+  "brand": "Restrap", "line": "Adventure", "name": "Bar Pack", "size": "10L",
+  "slot": "barroll", "src": "https://restrap.com/products/bar-pack",
+  "verified": true,
+  "dims_cm": { "len": 25, "hgt": 24, "wid": 16 },
+  "dims_state": "packed",
+  "dims_raw": "250mm (width across the bars) / 240mm Rolled x3 (height) / depth 'Variable on Load' / recommended 220mm clearance between handlebars & tyre",
+  "dims_note": "FALSE POSITIVE on dims, WRONG SLOT. I downloaded Restrap's own size-guide PNG (Restrap-Bar-Pack-Size-Guide) and read it: it is a front elevation of a BOX bar bag sitting between the drop-bar hoods with a triangular front flap pocket, 250mm across the bars and 240mm tall with three rolls. It is not a cylindrical bar roll at all, which is exactly why the barroll elongation rule fired (1.04). Depth is genuinely unpublished ('Variable on Load'); the stored 16cm estimate gives 25x24x16 = 9.6L against the stated 10L, so it is a good estimate and I left it. The fix is the slot, not the numbers. One field dropped: the record carried a stray dia:16 alongside wid:16, which does not belong on a box bag - dia is omitted here.",
+  "slot_should_be": "barbag",
+  "confidence": "high"
+ },
+ {
+  "brand": "Restrap", "line": "Adventure", "name": "Frame Bag", "size": "Small",
+  "slot": "framebag_half", "src": "https://restrap.com/products/frame-bag-small",
+  "verified": true,
+  "dims_cm": { "len": 30, "hgt": 14, "wid": 6 },
+  "dims_state": "packed",
+  "dims_raw": "300mm (top) / 195mm (bottom) / 140mm (max height) / 55mm (rear edge) / 50mm (front edge) / 160mm (down-tube strap span) / 60mm Width",
+  "dims_note": "FALSE POSITIVE, threshold artefact. Ratio 2.14 against a 2.2 cut-off. Every axis is maker data and the guide labels an explicit '140mm (max height)', so hgt is not an edge length guess as it was on the Race bags. 30 x 14 x 6 = 2.52L against a stated 2.5L, a 1.01 reconciliation. Nothing to change.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Restrap", "line": "Race", "name": "Race Frame Bag", "size": "Small",
+  "slot": "framebag_half", "src": "https://restrap.com/products/race-frame-bag",
+  "verified": true,
+  "dims_cm": { "len": 37, "hgt": 17, "wid": 5.5 },
+  "dims_state": "packed",
+  "dims_raw": "370mm (top edge) / 220mm (bottom edge) / 95mm (rear edge) / 55mm (front edge) / 55mm Width / 180mm (down-tube strap span)",
+  "dims_note": "REAL ERROR: hgt was an EDGE LENGTH, not the bag's height. I downloaded and read Restrap's size-guide PNG. The 95mm arrow is the short angled rear edge where the bag meets the seat tube; the 55mm arrow at the right is the front edge at the head tube; the 180mm arrow lies along the down tube and is the strap span. None of them is the bag's depth. Scaling the drawing off the 370mm top edge, the maximum vertical extent of the bag body is ~170mm. That also reconciles the capacity: 37 x 17 x 5.5 = 3.46L against a stated 3L (ratio 1.15), where the old 9.5cm gave 1.9L, i.e. physically less than the rating. len and wid are maker figures and unchanged.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Restrap", "line": "Race", "name": "Race Frame Bag", "size": "Large",
+  "slot": "framebag_half", "src": "https://restrap.com/products/race-frame-bag-large",
+  "verified": true,
+  "dims_cm": { "len": 50, "hgt": 17, "wid": 5.5 },
+  "dims_state": "packed",
+  "dims_raw": "500mm (top edge) / 360mm (bottom edge) / 80mm (rear edge) / 55mm (front edge) / 55mm Width / 180mm (down-tube strap span)",
+  "dims_note": "Same defect as the Small: the stored 8cm was the 80mm rear-edge arrow off the size-guide diagram, not the bag's height. Read from the downloaded Restrap-Race-Frame-Bag-Large-Size-Guide PNG and cross-checked against the on-bike photo (assets/products/restrap/race-race-frame-bag-large-1.jpg), where the bag's vertical extent is roughly a third of its length. Scaling off the 500mm top edge gives ~170mm max height, the same as the Small - which is what Restrap's own litres imply, since capacity scales 3 -> 4.2L (1.40x) while length scales 37 -> 50cm (1.35x), i.e. the family grows lengthwise at constant depth. 50 x 17 x 5.5 = 4.68L against a stated 4.2L (ratio 1.11).",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Restrap", "line": "Adventure", "name": "Top Tube Bag", "size": "0.8L",
+  "slot": "toptube", "src": "https://restrap.com/products/top-tube-bag",
+  "verified": true,
+  "dims_cm": { "len": 25, "hgt": 13, "wid": 3 },
+  "dims_state": "packed",
+  "dims_raw": "250mm (base) / 180mm (top) / 130mm (front height) / 50mm (rear height) / 30mm Depth",
+  "dims_note": "FALSE POSITIVE, threshold artefact: 1.92 against a 2.0 cut-off. All three axes are maker figures and 25 x 13 x 3 = 0.98L against a stated 0.8L (ratio 1.22), which is exactly the band a correct soft bag sits in. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Restrap", "line": "Adventure", "name": "Bolt-on Top Tube Bag", "size": "0.8L",
+  "slot": "toptube", "src": "https://restrap.com/products/bolt-on-top-tube-bag",
+  "verified": true,
+  "dims_cm": { "len": 25, "hgt": 13, "wid": 3 },
+  "dims_state": "packed",
+  "dims_raw": "250mm (base) / 180mm (top) / 130mm / 50mm / 30mm Depth; four bolt-hole options at 80mm-24-40-24-80mm",
+  "dims_note": "FALSE POSITIVE, same shell as the strap-mount Top Tube Bag and the same 1.92-vs-2.0 threshold artefact. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Restrap", "line": "Adventure", "name": "Rear Top Tube Bag", "size": "0.8L",
+  "slot": "toptube", "src": "https://restrap.com/products/rear-top-tube-bag",
+  "verified": true,
+  "dims_cm": { "len": 18, "hgt": 13, "wid": 5 },
+  "dims_state": "packed",
+  "dims_raw": "180mm (top) / 150mm (base) / 130mm height / 30mm Wide (top) / 50mm Wide (bottom)",
+  "dims_note": "FALSE POSITIVE on shape. This is a rear/seat-tube wedge bag that fills the corner between seat tube and top tube, so it is SUPPOSED to be squat - the 2.0 elongation rule is written for a fore-aft top tube bag and does not describe this sub-type. Every axis is maker data; 18 x 13 x 5 = 1.17L against a stated 0.8L. Unchanged. (Same sub-type as Andrew The Maker's Rear TT Sack, also flagged in this batch.)",
+  "confidence": "high"
+ },
+ {
+  "brand": "Oveja Negra", "line": "Snack Pack", "name": "Snack Pack", "size": "Small",
+  "slot": "toptube", "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-top-tube-bag-small",
+  "verified": true,
+  "dims_cm": { "len": 15.2, "hgt": 11.4, "wid": 5.1 },
+  "dims_state": "packed",
+  "dims_raw": "6\" long x 4.5\" tall, width = 2\" (Oveja Negra size chart, Top Tube / Snack Pack Small)",
+  "dims_note": "FALSE POSITIVE. Photo assets/products/oveja-negra/snack-pack-snack-pack-small-1.jpg is a clean side elevation and measures 1.40 length/height against the stored 1.33 - the bag really is a short squat stem-side wedge, not an elongated top tube bag. Numbers are from ON's own size chart. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Oveja Negra", "line": "Snack Pack", "name": "Snack Pack", "size": "Small Angle",
+  "slot": "toptube", "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-small-angle",
+  "verified": true,
+  "dims_cm": { "len": 15.2, "hgt": 11.4, "wid": 5.1 },
+  "dims_state": "packed",
+  "dims_raw": "Small-Angle 6\" long x 4.5\" tall, width = 2\" (same ON chart, angled variant)",
+  "dims_note": "FALSE POSITIVE, identical shell to the Small with an angled front face. Same photo evidence. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Oveja Negra", "line": "Snack Pack", "name": "Snack Pack", "size": "Large",
+  "slot": "toptube", "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-top-tube-bags-large-xl",
+  "verified": true,
+  "dims_cm": { "len": 20.3, "hgt": 10.2, "wid": 6.3 },
+  "dims_state": "packed",
+  "dims_raw": "Large 8\" x 4\"; widths at max: L = 2.5\", XL = 3\"",
+  "dims_note": "FALSE POSITIVE, threshold artefact: 1.99 against a 2.0 cut-off. Maker chart data. 20.3 x 10.2 x 6.3 = 1.30L against a stated 1L. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Oveja Negra", "line": "Lunchbox", "name": "Lunchbox Handlebar Bag", "size": "One Size",
+  "slot": "barbag", "src": "https://www.ovejanegrabikepacking.com/products/lunchbox-handlebar-bag",
+  "verified": true,
+  "dims_cm": { "len": 21.6, "hgt": 16.5, "wid": 6.3 },
+  "dims_state": "packed",
+  "dims_raw": "DIMENSIONS : Top 8.5\", Bottom 8.5\", Height 6.5\", Width 2.5\"",
+  "dims_note": "FALSE POSITIVE, and the flag is explained rather than fixed. The photo (lunchbox-lunchbox-handlebar-bag-one-size-1.jpg) shows a flat-panelled box bag whose front face measures 1.44 wide/tall against the stored 1.31 - the face proportions are right. ON's 2.5\" width is measured FLAT on an unloaded bag; loaded, the soft side panels bow out and the bag reaches its 3L rating at roughly 8.5cm across. I have not substituted a bulged width because ON publishes none, so the box under-reads at 0.75x by design. All four figures are maker-verbatim. Unchanged.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Oveja Negra", "line": "Superwedgie", "name": "Superwedgie 2.0 Frame Bag", "size": "S",
+  "slot": "framebag_half", "src": "https://www.ovejanegrabikepacking.com/products/superwedgie-2-0-frame-bag",
+  "verified": true,
+  "dims_cm": { "len": 33, "hgt": 22.9, "wid": 3.8 },
+  "dims_state": "packed",
+  "dims_raw": "Small: 13\" top tube edge, 9\" rear (seat tube) edge, 14\" down tube edge, 1.5\" wide",
+  "dims_note": "FALSE POSITIVE, settled by the photo. superwedgie-superwedgie-2-0-frame-bag-s-1.jpg is a flat product elevation and measures 1.44 length/height - the stored 33 / 22.9 is 1.44 exactly. The Superwedgie is a deep wedge that drops most of the way to the down tube, not a slim top-tube-hugging half bag, so the 2.2 elongation rule is simply the wrong shape prior for it. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Oveja Negra", "line": "Superwedgie", "name": "Superwedgie 2.0 Frame Bag", "size": "L",
+  "slot": "framebag_half", "src": "https://www.ovejanegrabikepacking.com/products/superwedgie-2-0-frame-bag",
+  "verified": true,
+  "dims_cm": { "len": 38.1, "hgt": 27.3, "wid": 3.8 },
+  "dims_state": "packed",
+  "dims_raw": "Large: 15\" top tube edge, 10.75\" rear edge, 17.5\" down tube edge, 1.5\" wide",
+  "dims_note": "FALSE POSITIVE, same deep-wedge geometry as the S (photo superwedgie-superwedgie-2-0-frame-bag-l-1.jpg). Stored ratio 1.40 is the bag's real proportion. Maker chart data throughout. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Oveja Negra", "line": "Bodega", "name": "Bodega Full Frame Bag", "size": "XL",
+  "slot": "framebag_full", "src": "https://www.ovejanegrabikepacking.com/products/full-frame-bags",
+  "verified": true,
+  "dims_cm": { "len": 50.8, "hgt": 31.75, "wid": 6 },
+  "dims_state": "packed",
+  "dims_raw": "MODEL: Full Frame / SIZE: Extra Large - 20\" (top tube edge), 12.5\" (seat tube edge), 21.5\" (down tube edge), 2.5\" (head tube edge), 2.75\" (bottom edge)",
+  "dims_note": "REAL ERROR, and the previous note was wrong that ON publishes no XL chart. The chart exists - the product page links four size-chart JPEGs and I downloaded and read sizechart-XLfullframe_copy.jpg directly. It gives a 20\" top tube edge and a 12.5\" seat tube edge, so len 55 -> 50.8 and hgt 40 -> 31.75. Using the same axis convention as the S/M/L siblings (len = top tube edge, hgt = seat tube edge). Cross-check: shoelace area of the charted polygon is 179 sq in, which at ON's ~2.7\" body width is 7.9L against the stated 8L. The bounding box 50.8 x 31.75 x 6 = 9.7L (ratio 1.21) and the elongation is now 1.60, clearing the 1.5 rule. wid left at the stored 6cm - ON labels no width on these charts.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Ortlieb", "line": "Seat-Pack", "name": "Seat-Pack", "size": "11L",
+  "slot": "seatpack", "src": "https://us.ortlieb.com/products/seat-pack",
+  "verified": true,
+  "dims_cm": { "len": 39.9, "hgt": 25.9, "wid": 15 },
+  "dims_state": "packed",
+  "dims_raw": "Height 10.2 in, Width 15.7 in, Depth 5.9 in (25.9 x 39.9 x 15.0 cm); Volume 11 L; Weight 12.2 oz",
+  "dims_note": "FALSE POSITIVE, threshold artefact: 1.54 against a 1.6 cut-off. Photo seat-pack-seat-pack-11l-1.jpg shows the expected long tapered wedge - deep at the saddle, running out to a point at the tail - so the shape prior is satisfied in substance. The 25.9cm height is the maximum, at the saddle end only. Maker spec verbatim; 39.9 x 25.9 x 15 = 15.5L against 11L (ratio 1.41), normal for a tapered bag whose box is mostly empty at the tail. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Ortlieb", "line": "Handlebar-Pack", "name": "Handlebar-Pack QR", "size": "11L",
+  "slot": "barroll", "src": "https://us.ortlieb.com/products/handlebar-pack-qr",
+  "verified": true,
+  "dims_cm": { "len": 32, "hgt": 22.1, "wid": 18 },
+  "dims_state": "packed",
+  "dims_raw": "Height 8.7 in, Width 12.6 in, Depth 7.1 in (22.1 x 32.0 x 18.0 cm); Volume 11 L",
+  "dims_note": "FALSE POSITIVE on dims, WRONG SLOT. Photo handlebar-pack-handlebar-pack-qr-11l-1.jpg shows a squared roll-top drum on a Bar-Lock bracket with a side mesh pocket - a rando-style front bag, not the long cylinder the barroll rule assumes. Ortlieb's true bar roll is the 9L/15L Handlebar-Pack, a different product. The numbers are maker spec and reconcile: 32 x 22.1 x 18 = 12.7L against 11L (ratio 1.16). Only the slot is wrong.",
+  "slot_should_be": "barbag",
+  "confidence": "high"
+ },
+ {
+  "brand": "Ortlieb", "line": "Handlebar-Pack", "name": "Handlebar-Pack Plus", "size": "11L",
+  "slot": "barroll", "src": "https://us.ortlieb.com/products/handlebar-pack-plus",
+  "verified": true,
+  "dims_cm": { "len": 32, "hgt": 22.1, "wid": 18 },
+  "dims_state": "packed",
+  "dims_raw": "Height 8.7 in, Width 12.6 in, Depth 7.1 in (22.1 x 32.0 x 18.0 cm); Volume 11 L",
+  "dims_note": "FALSE POSITIVE on dims, WRONG SLOT - same body as the QR in the Cordura Plus fabric, confirmed by handlebar-pack-handlebar-pack-plus-11l-1.jpg (identical silhouette, grey webbing). Box bag, not a roll. Maker spec unchanged.",
+  "slot_should_be": "barbag",
+  "confidence": "high"
+ },
+ {
+  "brand": "Ortlieb", "line": "Handlebar-Pack", "name": "Accessory-Pack", "size": "3.5L",
+  "slot": "barbag", "src": "https://us.ortlieb.com/products/accessory-pack",
+  "verified": true,
+  "dims_cm": { "len": 30, "hgt": 17, "wid": 5.1 },
+  "dims_state": "packed",
+  "dims_raw": "Height 6.7 in, Width 11.8 in, Depth 2 in (17.0 x 30.0 x 5.1 cm); Volume 3.5 L",
+  "dims_note": "FALSE POSITIVE - the litres are the un-rolled figure, which is the second case the brief lists for volume-too-small. Photo handlebar-pack-accessory-pack-3-5l-1.jpg shows a roll-top pouch photographed with the top already rolled down and clamped; the 17cm height is that rolled height, and the 3.5L rating is reached with the closure let out. Ortlieb publishes only the one rolled figure per bag. Dims are maker spec and unchanged; the 0.74 ratio is expected, not an error.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Ortlieb", "line": "Fuel-Pack", "name": "Fuel-Pack", "size": "1L",
+  "slot": "toptube", "src": "https://us.ortlieb.com/products/fuel-pack",
+  "verified": true,
+  "dims_cm": { "len": 21.1, "hgt": 11.9, "wid": 8.4 },
+  "dims_state": "packed",
+  "dims_raw": "Height 4.7 in, Width 8.3 in, Depth 3.3 in (11.9 x 21.1 x 8.4 cm); Volume 1 L",
+  "dims_note": "FALSE POSITIVE, threshold artefact: 1.77 against a 2.0 cut-off. Photo fuel-pack-fuel-pack-1l-1.jpg confirms the fat lozenge profile that overhangs the top tube on both sides, so the 8.4cm depth is real and not a transposition. 21.1 x 11.9 x 8.4 = 2.1L against 1L, which is normal for a shape this heavily rounded. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Ortlieb", "line": "Toptube", "name": "Toptube-Bag", "size": "1.5L",
+  "slot": "toptube", "src": "https://us.ortlieb.com/products/toptube-bag",
+  "verified": true,
+  "dims_cm": { "len": 23.1, "hgt": 11.9, "wid": 8.4 },
+  "dims_state": "packed",
+  "dims_raw": "Height 4.7 in, Width 9.1 in, Depth 3.3 in (11.9 x 23.1 x 8.4 cm); Volume 1.5 L",
+  "dims_note": "FALSE POSITIVE, threshold artefact: 1.94 against a 2.0 cut-off. Same body family as the Fuel-Pack, 2cm longer, confirmed by toptube-toptube-bag-1-5l-1.jpg. Maker spec verbatim. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Brooks England", "line": "Scape", "name": "Handlebar Compact Bag", "size": "10-12L",
+  "slot": "barroll", "src": "https://www.brooksengland.com/en-us/products/scape-handlebar-compact-bag-mud-green-bhb02pla00401",
+  "verified": true,
+  "dims_cm": { "len": 34, "hgt": 25, "wid": 14 },
+  "dims_state": "packed",
+  "dims_raw": "Height 250 mm / Length 140 mm / Width 340 mm / Capacity 10 - 12 L / Max load 5 kg / Weight 475 g",
+  "dims_note": "FALSE POSITIVE on dims, WRONG SLOT. The two Brooks photos settle it: scape-handlebar-compact-bag-10-12l-1.jpg is a rigid rectangular case with a zipped front pocket and a carry handle, and -3.jpg shows a KLICKfix bracket screwed to the back panel. This is a bracket-mounted front case, not a roll. Brooks' inconsistent labels resolve cleanly here - Width 340 = across the bars (len), Height 250 = hgt, Length 140 = depth (wid) - and 34 x 25 x 14 = 11.9L, dead centre of the stated 10-12L. The numbers are right; the barroll elongation rule fired only because the product is filed as a roll.",
+  "slot_should_be": "barbag",
+  "confidence": "high"
+ },
+ {
+  "brand": "Brooks England", "line": "Scape", "name": "Top Tube Bag", "size": "0.9L",
+  "slot": "toptube", "src": "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-black-btt01pla00000",
+  "verified": true,
+  "dims_cm": { "len": 21, "hgt": 11, "wid": 4 },
+  "dims_state": "packed",
+  "dims_raw": "Height 110 mm / Length 40 mm / Width 210 mm / Capacity 0,9 L / Max load 1 kg / Weight 100 g",
+  "dims_note": "FALSE POSITIVE, threshold artefact: 1.91 against a 2.0 cut-off. Photo scape-top-tube-bag-0-9l-1.jpg is a straight side elevation and measures ~1.75 length/height, consistent with the stored 21/11 once the sloping nose is allowed for. The Brooks axis assignment also self-checks: 21 x 11 x 4 = 0.92L against the printed 0,9 L. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Brooks England", "line": "Scape", "name": "Top Tube Bag with Bolts", "size": "0.9L",
+  "slot": "toptube", "src": "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-with-bolts-mud-green-btt03pla00401",
+  "verified": true,
+  "dims_cm": { "len": 21, "hgt": 11, "wid": 4 },
+  "dims_state": "packed",
+  "dims_raw": "Height 110 mm / Length 40 mm / Width 210 mm / Capacity 0,9 L / Max load 1 kg / Weight 100 g",
+  "dims_note": "FALSE POSITIVE. scape-top-tube-bag-with-bolts-0-9l-1.jpg is the identical silhouette to the strap version in a different colourway; same shell, same 1.91-vs-2.0 threshold artefact. Unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Brooks England", "line": "Trekking", "name": "Haul Pannier", "size": "22L",
+  "slot": "pannier", "src": "https://www.brooksengland.com/en-us/products/haul-pannier-seal-brown-btb0001a07291",
+  "verified": true,
+  "dims_cm": { "len": 33, "hgt": 37, "wid": 20 },
+  "dims_state": "packed",
+  "dims_raw": "Height 370 mm / Length 130 mm / Width 330 mm / Capacity 22 L / Max load 7 kg / Weight 900 g (Brooks' 130 mm 'Length' is the flat body panel, not the loaded depth)",
+  "dims_note": "REAL ERROR on depth. Brooks' front and side studio shots (trekking-haul-pannier-22l-1.jpg and -2.jpg) are framed identically - the bag occupies the same 150-740px vertical band in both - so they can be compared directly. The front view gives width/height 0.93 against Brooks' 330/370 = 0.89, confirming the scale is trustworthy. The side view then gives depth/height 0.53, i.e. 20cm at a 37cm height, not the 13cm on the spec sheet. The side photo shows why: the body is a rounded box and a full-height mesh pocket stands proud of each face, none of which is in Brooks' flat 130mm panel figure. 33 x 37 x 20 = 24.4L against the stated 22L (ratio 1.11); the old 13cm gave 15.9L, less than the rating. len and hgt unchanged.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Blackburn Design", "line": "Outpost", "name": "Corner Bag", "size": "std",
+  "slot": "framebag_half", "src": "https://www.bellhelmets.com/product/outpost-corner-bag/350170000100000061.html",
+  "verified": true,
+  "dims_cm": { "len": 23.3, "hgt": 12.7, "wid": 5.1 },
+  "dims_state": "packed",
+  "dims_raw": "Dimensions: 233 x 108 x 127 x 51mm (9.2 x 4.3 x 5 x 2\"); Capacity: 0.7 liter; Weight: 130g / 4.6oz",
+  "dims_note": "REAL ERROR on capacity, small correction on dims. Blackburn quotes FOUR numbers because the bag is a wedge that sits in the corner behind the head tube: 233mm long, two heights of 108 and 127mm, and 51mm wide. hgt is the taller of the two heights. The catalogue also carried 1.5L against Blackburn's published 0.7L - more than double - which is what made the shape flag look worse than it was. 23.3 x 12.7 x 5.1 = 1.51L bounding box against 0.7L, exactly right for a triangular wedge that fills about half its box.",
+  "capacity_l": 0.7,
+  "confidence": "high"
+ },
+ {
+  "brand": "Blackburn Design", "line": "Outpost Elite", "name": "Cargo Bag", "size": "std",
+  "slot": "forkbag", "src": "https://www.bellhelmets.com/product/outpost-elite-cargo-bag/350170000100000079.html",
+  "verified": true,
+  "dims_cm": { "len": 32.5, "hgt": 15, "wid": 15, "dia": 15 },
+  "dims_state": "packed",
+  "dims_raw": "6.5 liters at 325mm (three rolls) x 150mm; welded waterproof roll-top, 420D nylon, flat 840D bottom, daisy chain pass-through for cage straps",
+  "dims_note": "DUPLICATED AXIS - the defect the brief warned about. The record held len 35 and hgt 35, the same number twice, plus wid 14 and dia 14, and 4L. Blackburn publishes '6.5 liters at 325mm (3 rolls) x 150mm': it is a plain cylindrical roll-top dry bag strapped into a fork or frame cargo cage, so there is only a length and a diameter. Corrected to a 32.5cm cylinder of 15cm diameter, giving 7.3L of box against the published 6.5L (ratio 1.12) where the old figures gave 17.1L against 4L (ratio 4.29). Litres also corrected from 4 to Blackburn's published 6.5.",
+  "capacity_l": 6.5,
+  "confidence": "high"
+ },
+ {
+  "brand": "Blackburn Design", "line": "Local", "name": "Local Plus Top Tube Bag", "size": "std",
+  "slot": "toptube", "src": "https://www.bellhelmets.com/product/local-plus-top-tube-bag/350170000100000055.html",
+  "verified": true,
+  "dims_cm": { "len": 20.3, "hgt": 8.9, "wid": 7.6 },
+  "dims_state": "packed",
+  "dims_raw": "Dimensions: 76 x 89 x 203mm; Weight: 125g; touchscreen-friendly top for a phone",
+  "dims_note": "REAL ERROR, now maker-sourced. The record had no source at all (dims_source none) and carried 19 x 11 x 8, which is too short and too tall. Blackburn publishes 76 x 89 x 203mm: 203 is unambiguously the length, and of the remaining pair 89 is the height and 76 the width, the usual proportion for a phone-over-the-top-tube bag. The correction also clears the flag on its own - 20.3/8.9 = 2.28 now passes the 2.0 elongation rule where the stored figures gave 1.73. 20.3 x 8.9 x 7.6 = 1.37L against the stated 1L.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Arkel", "line": "", "name": "Rollpacker Rear 20L", "size": "",
+  "slot": "seatpack", "src": "https://arkel.ca/products/rollpacker-bikepacking-bag",
+  "verified": true,
+  "dims_cm": { "len": 28, "hgt": 24, "wid": 38 },
+  "dims_state": "packed",
+  "dims_raw": "Closed width: 38 cm (15\"); Open width: 46.5 cm (18.3\"); Height of main compartment: 9\" (24 cm); Depth excluding front pocket: 28 cm; Depth including front pocket: 13.5\" (43.3 cm); 20L (1220.5 cu. in.) plus a 2L front pocket",
+  "dims_note": "TRANSPOSED AXES. The record had no source and read len 38 / wid 28. Arkel's published figures are 'closed width 38 cm' and 'depth excluding front pocket 28 cm', and for a seat pack len is the fore-aft dimension, so those two were the wrong way round: len = 28 (depth), wid = 38 (across-bike width). hgt 24 was already Arkel's 'height of main compartment' and is unchanged. The elongation rule still fails at 1.36 and that is a genuine shape, not an error - the Rollpacker is Arkel's unusually wide box-shaped rear bag carried on its own rigid rack, not a tapered saddle tube. 28 x 24 x 38 = 25.5L against a rated 20L (ratio 1.28). ROLL RANGE: Arkel give 'closed width 38 cm / open width 46.5 cm'; wid uses the CLOSED end per the closed-end rule, so this record is already compliant - do not swap it to 46.5. (The other Arkel range, depth 28cm excluding vs 43.3cm including the front pocket, is a with/without-pocket figure rather than a roll, and 28cm is the one that matches the 20L main-compartment rating; the front pocket is rated separately at 2L.)",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Arkel", "line": "", "name": "Arkel GT-54 Classic Touring Panniers", "size": "",
+  "slot": "pannier", "src": "https://arkel.ca/products/gt-54-classic-touring-panniers",
+  "verified": true,
+  "dims_cm": { "len": 33.7, "hgt": 36.2, "wid": 20 },
+  "dims_state": "packed",
+  "dims_raw": "Arkel spec: 'Volume: 54 L (3300 cu. in.)'; listing title 'GT-54 Classic Touring Panniers (Pair)'; scope of delivery one left and one right pannier",
+  "dims_note": "PAIR/SINGLE MISMATCH, not a dimension error. The 54L is Arkel's PAIR total - the listing ships a left and a right bag and Arkel names the model after the combined volume, exactly as it does with the Dolphin (24L each, 48L per pair). The stored dims are per-bag, so the checker was comparing one bag's box against two bags' capacity. Per bag the reconciliation is fine: 33.7 x 36.2 x 20 = 24.4L against 27L (ratio 0.90), the remainder taken up by the expanding outer pockets and the drawstring collar. Dims unchanged; litres corrected to the per-bag figure.",
+  "capacity_l": 27,
+  "confidence": "medium"
+ },
+ {
+  "brand": "Arkel", "line": "", "name": "Dolphin 24L", "size": "",
+  "slot": "pannier", "src": "https://arkel.ca/products/dolphin-24l-waterproof-pannier",
+  "verified": true,
+  "dims_cm": { "len": 33, "hgt": 48, "wid": 15 },
+  "dims_state": "packed",
+  "dims_raw": "Arkel spec: 'Total Volume (per bag): 24L'; sold as a single pannier ($179.99) or as a pair ($339.99)",
+  "dims_note": "PAIR/SINGLE MISMATCH, same defect as the GT-54. The product is named 'Dolphin 24L' and Arkel states 24L PER BAG, but the record carried 48 - the pair total - while the dims were for one bag. Arkel's page confirms both a single and a pair purchase option. The dims are right and need no change: 33 x 48 x 15 = 23.8L against 24L per bag, a 0.99 reconciliation. On the closed-end rule: Arkel publish NO height range for the Dolphin, only the single 24L per-bag rating, and the stored 48cm is the one height that reproduces it, so there is no range to take the closed end of and the rule does not bite here. If a range does surface later this is the record to revisit, since a rolled-down Dolphin is certainly shorter than 48cm.",
+  "capacity_l": 24,
+  "confidence": "high"
+ },
+ {
+  "brand": "Bags by Bird", "line": "", "name": "Better Half Framebag", "size": "",
+  "slot": "framebag_full", "src": "https://www.bagsxbird.com/product-page/better-half-large-long",
+  "verified": true,
+  "dims_cm": { "len": 40.6, "hgt": 31.8, "wid": 7 },
+  "dims_state": "packed",
+  "dims_raw": "Sizing infographic, LARGE - LONG cell: 16\" (top tube edge), 4\" (head tube edge), 14\" (down tube edge), 13.5\" (rear edge). Page: 'Capacity (approx) Large Short: 2L, Large Long: 5.5L'",
+  "dims_note": "REAL ERROR on len, FALSE POSITIVE on shape. Bags by Bird publish dimensions only inside a sizing infographic image; I pulled it off the Wix CDN and read it. It gives four edge lengths per size. The stored len 35.6cm is 14\", which is the DOWN TUBE edge - the diagonal - not the bag's length; the top tube edge is 16\" = 40.6cm. Closing the polygon (16\" top, 4\" head tube edge, 14\" and 13.5\" diagonals meeting at a bottom apex) puts the apex 12.55\" below the top edge, which is the stored hgt of 31.8cm, so hgt was already right. The same construction gives a 122.6 sq in profile, and 5.5L over that area needs a 2.74\" body - the stored wid of 7cm, so that was right too. The too-cubic flag itself is a false positive: the on-bike photo on the product page shows a bag that is very nearly as tall as it is long, which is the whole point of a wedge that fills the front triangle of a horizontal-top-tube road frame. Ratio only moves 1.12 -> 1.27.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Bags by Bird", "line": "", "name": "Better Half Framebag", "size": "",
+  "slot": "framebag_half", "src": "https://www.bagsxbird.com/product-page/better-half-framebag-1",
+  "verified": true,
+  "dims_cm": { "len": 40.6, "hgt": 27.9, "wid": 7 },
+  "dims_state": "packed",
+  "dims_raw": "Sizing infographic, SMALL - LONG cell: 16\" (top tube edge), 2.5\" (head tube edge), 14\" (down tube edge), 12\" (rear edge). Page: 'Capacity (approx) Small Short: 2L, Small Long: 4.5L'",
+  "dims_note": "REAL ERROR on len, FALSE POSITIVE on shape - identical defect to the Large Long. Matched to the Small Long by its 4.5L figure, which is the only size on this page at that capacity. The stored len 31.8cm is 12.5\", read off the wrong arrow; the top tube edge is 16\" = 40.6cm. Closing the polygon puts the bottom apex 11.0\" down, matching the stored hgt 27.9cm, and 4.5L over the resulting 101.9 sq in profile needs a 2.69\" body, matching the stored wid 7cm. Ratio moves 1.14 -> 1.46, still under the 2.2 rule, and correctly so - the bag really is a squat wedge. Note the two Better Half records share brand+name+size and are only separable by slot and src.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Rapha", "line": "", "name": "Rapha Explore Handlebar Pack 10L", "size": "",
+  "slot": "barroll",
+  "verified": false,
+  "dims_cm": { "len": 25, "hgt": 8, "wid": 13 },
+  "dims_state": "unknown",
+  "dims_raw": "Rapha publishes no bag dimensions for this product - only 'Capacity 10L removable roll-top waterproof dry bag with air release valve', 'harness width 25cm without dry bag, with a dry bag min 32cm to max 62cm depending on fill', total system weight 510g, max load 5kg, clamp 53/65/77mm",
+  "dims_note": "UNRESOLVED, but the error is diagnosed. The stored 25 x 13 x 8 gives 2.6L - a quarter of the rated 10L, so it cannot be this bag. Two things point at where it came from: 25cm is exactly Rapha's stated harness width WITHOUT the dry bag, and 25 x 13 x 8 = 2.6L is the size of Rapha's separate Explore BAR BAG (listed elsewhere at 2.4L), a different product. So this looks like specs lifted from the wrong Rapha item rather than a transposition. I checked rapha.cc (US and the BEZ01XX product pages), all4cycling, steedcycles and the bikepacking.com launch article; none publishes a length or diameter for the 10L roll. The only usable figure is that the loaded roll spans 32-62cm across the bars, which brackets the length but does not fix it, and no source gives a diameter at all. Rather than back-compute a cylinder from the 10L rating I am leaving the dims untouched and flagging them as not-this-product. FOR WHOEVER PICKS THIS UP under the closed-end rule: the 32-62cm span IS a roll range, so the closed end gives a defensible len of 32cm. I have not written it in because dims_cm must stay as-is on a verified:false record and because a length alone is not a record - the diameter is still missing from every source I checked, and deriving it from the 10L rating would be exactly the fabrication the brief warns about. Fill in len 32 the moment a diameter turns up.",
+  "confidence": "low"
+ },
+ {
+  "brand": "Rapha", "line": "", "name": "Essentials Bag", "size": "",
+  "slot": "saddlebag", "src": "https://www.rapha.cc/us/en/product/essentials-bag/BKM02XXGRV",
+  "verified": true,
+  "dims_cm": { "len": 21, "hgt": 16.5, "wid": 5 },
+  "dims_state": "packed",
+  "dims_raw": "Rapha: 'W 21cm x H 16.5cm'. On capacity, verbatim: 'the Essentials bag is a slim design and therefore Rapha is not able to provide a litre capacity, however the bag is a good size to hold a smartphone, wallet and keys with a little room to spare for a snack on the road.'",
+  "dims_note": "THE LITRES ARE FABRICATED, NOT THE DIMS - the flag is pointing at the wrong field. 21 x 16.5 is Rapha's own published W x H, so len and hgt are sound; the 5cm depth is an estimate (Rapha publish none) but is right for a slim zip pouch. The 0.3L is the invented number: Rapha explicitly decline to state a litre capacity for this bag, and 0.3L is what Rapha quote for their SMALL SADDLE BAG, a different product. I have not substituted a capacity because none exists to substitute - the honest value is unknown, and the 5.78x volume ratio disappears the moment the bogus 0.3L does. Separately, this is not a bike-mounted bag: it carries on an adjustable reflective cord shoulder strap with a small stabiliser hook, so the saddlebag slot is wrong, but I have not proposed a replacement because there is no shoulder/musette slot in the vocabulary - flagging it for a catalogue-membership decision instead.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Straight Cut Design", "line": "", "name": "Straight Cut Bagel Bar Bag", "size": "",
+  "slot": "barroll", "src": "https://straightcutdesign.com/products/bagel-bar-bag-black",
+  "verified": true,
+  "dims_cm": { "len": 20, "hgt": 12, "wid": 12, "dia": 12 },
+  "dims_state": "packed",
+  "dims_raw": "Medium (Split): Dimensions 200 x 120mm(diameter); Capacity 2.2L; Weight 178g (6.2oz)",
+  "dims_note": "REAL ERROR: hgt and wid were both 16 on a bag the maker specifies as a 120mm-diameter cylinder. The page gives '200 x 120mm(diameter)' - the o symbol makes it explicit - and the existing dia field already held the correct 12. A cylinder 20cm long and 12cm across is 2.26L, matching the published 2.2L to within 3%, whereas the stored 20 x 16 x 16 gave a 5.1L box for a 2.2L bag. Set hgt and wid to the diameter. It stays under the 1.8 elongation rule at 1.67 and that is honest - the Bagel is a genuinely stubby little barrel, which is where the name comes from.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Buckhorn Bags", "line": "", "name": "Buckhorn Waxed Canvas Panniers", "size": "",
+  "slot": "pannier", "src": "https://www.buckhornbags.com/shop/p/waxed-canvas-panniers",
+  "verified": true,
+  "dims_cm": { "len": 30, "hgt": 30.5, "wid": 10 },
+  "dims_state": "unrolled",
+  "dims_raw": "11-3/4\" Wide x 12\"-17\" Tall x 4\" Deep; 9L-13L each; sold in pairs ($300.00 for both bags)",
+  "dims_note": "TWO FIXES: a pair/single mismatch on the litres, and the roll range. Buckhorn publish 11-3/4 x 12-17 x 4 inches = 29.8 x 30.5-43.2 x 10.2cm. The stored hgt of 38cm sat mid-way up the 12-17\" roll range, which is the superseded blend; under the closed-end rule hgt is the 12\" figure, 30.5cm, and the bag is drawn rolled down. len 30 and wid 10 are the single-valued maker figures and are unchanged. Separately the 20L in the record is the PAIR figure - Buckhorn state '9L-13L each' - so capacity_l is corrected to 11L, the midpoint of the maker's per-bag rating. NOTE THE DELIBERATE CONSEQUENCE: the drawn box is now 29.8 x 30.5 x 10.2 = 9.3L against an 11L rating, a 0.85 ratio, so this record will re-trip the volume-too-small check. That is the closed-end rule working as intended, not a defect - Buckhorn pair '12\"-17\" Tall' with '9L-13L each', so the 12\" end IS the 9L end, and the rated 11L is only reached part-way up the roll. I kept capacity_l at the rated midpoint rather than dropping it to 9L because capacity_l answers what the bag holds, while dims_cm now answers how it is drawn; if you would rather the two endpoints stay paired, 9L is the maker-published partner to 30.5cm.",
+  "capacity_l": 11,
+  "confidence": "high"
+ },
+ {
+  "brand": "Andrew The Maker", "line": "ATM", "name": "Rear TT Sack", "size": "One Size",
+  "slot": "toptube_rear", "src": "https://www.andrewthemaker.com/shop/rear-top-tube-sack",
+  "verified": true,
+  "dims_cm": { "len": 15, "hgt": 10, "wid": 6 },
+  "dims_state": "unknown",
+  "dims_raw": "",
+  "dims_note": "FALSE POSITIVE on shape; the absolute scale remains an estimate. Photo assets/products/andrew-the-maker/atm-rear-tt-sack-one-size-1.jpg is a clean side elevation and measures 1.43 length/height against the stored ratio of 1.50 - so the proportion in the record is right, and the bag really is a stubby wedge. That is inherent to the type: it fills the triangle between seat tube and top tube behind the saddle, so the 2.0 fore-aft elongation rule does not apply to it (Restrap's Rear Top Tube Bag, also in this batch, is the same sub-type and flagged the same way). Andrew The Maker publishes no dimensions and no litre figure for this bag, so 15 x 10 x 6 stays an estimate - a defensible one, since it matches the photographed proportion and the page's 'a phone, wallet, and some snacks'. Verified in the sense that the flag is wrong, not in the sense that the numbers are maker data.",
+  "confidence": "medium"
+ },
+ {
+  "brand": "Andrew The Maker", "line": "Many Things Sack", "name": "Many Things Sack v1.2", "size": "Standard (sold as a pair)",
+  "slot": "forkbag", "src": "https://www.andrewthemaker.com/shop/many-things-sack",
+  "verified": true,
+  "dims_cm": { "len": 8.9, "hgt": 25.4, "wid": 16.5 },
+  "dims_state": "packed",
+  "dims_raw": "Standard 10\" h x 6.5-5.5\" tapered w x 3.5\" d",
+  "dims_note": "SPECIFICALLY CHECKED, AND THE FORKBAG SLOT IS CORRECT - it is not a pannier. The page states in the first line that it is 'specifically made for the King Many Things Cage', describes those cages as titanium units that 'fit on any fork with bolts or on round fork legs with the use of the King USB clamps', and lists a 4-point mount system and a roll-top compression strap. The photo (many-things-sack-many-things-sack-v1-2-standard-sold-as-a-pa-1.jpg) confirms it: an upright sack with a flap, a single vertical compression strap and webbing loops for cage straps - there are no pannier hooks and no rack rail anywhere on it. The pair framing in the size field is a purchase option, not the mount: the page sells it individually as well as in custom pairs, with or without cages, and 'pannier attachments' are listed as one optional extra among several, which is what the pair listing was probably read from. Dims match the maker line verbatim (hgt from the 10\" height, wid from the wider 6.5\" end of the taper, len from the 3.5\" depth); not flagged, unchanged.",
+  "confidence": "high"
+ },
+ {
+  "brand": "Atelier Velocidade", "line": "Avalanche", "name": "Avalanche", "size": "One Size",
+  "slot": "framebag_half", "src": "https://www.ateliervelocidade.com/en/products/avalanche",
+  "verified": true,
+  "dims_cm": { "len": 16, "hgt": 12, "wid": 4.5 },
+  "dims_state": "packed",
+  "dims_raw": "Width x Height x Depth: 16 x 12 x 4.5 cm; 2 Liters; 89 grams; attaches to the seat tube with Velcro and two polyurethane straps",
+  "dims_note": "REAL ERROR, and the record is now maker-sourced rather than estimated. The previous note said the page carried no dimensions; it does - 'Width x Height x Depth: 16 x 12 x 4.5 cm'. len 22 -> 16 and wid 6 -> 4.5; hgt 12 was already right. The photo (avalanche-avalanche-one-size-1.jpg) corroborates: a flat rounded-triangular pouch measuring ~1.5 long/tall against the maker's 1.33, and visibly thin rather than the 6cm the record claimed. It still fails the 2.2 elongation rule at 1.33, correctly - this is a small seat-tube tool pouch, not a half-frame bag, as the earlier note also observed. Two things worth flagging rather than silently fixing: the maker's own 2L is not reconcilable with a 16 x 12 x 4.5cm box (0.86L), so that figure is optimistic; and the framebag_half slot is a poor fit for a seat-tube-mounted pouch, though the vocabulary offers nothing better.",
+  "confidence": "high"
+ }
+]

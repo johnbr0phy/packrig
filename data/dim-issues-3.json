@@ -1,0 +1,704 @@
+[
+ {
+  "brand": "Revelate Designs",
+  "name": "Mag-Tank",
+  "size": "0.5L",
+  "slot": "toptube",
+  "who": "Revelate Designs | Mag-Tank | Mag-Tank | 0.5L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.89 \u2014 21.6 x 6.4 x 11.4cm",
+  "sev": "medium",
+  "dims": {
+   "len": 21.6,
+   "hgt": 11.4,
+   "wid": 6.4
+  },
+  "liters": 0.9,
+  "src": "https://revelatedesigns.com/product/mag-tank/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Mag-Tank FastTrack",
+  "size": "0.5L",
+  "slot": "toptube",
+  "who": "Revelate Designs | Mag-Tank | Mag-Tank FastTrack | 0.5L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.93 \u2014 22 x 6.4 x 11.4cm",
+  "sev": "medium",
+  "dims": {
+   "len": 22,
+   "hgt": 11.4,
+   "wid": 6.4
+  },
+  "liters": 1,
+  "src": "https://revelatedesigns.com/product/mag-tank-fasttrack/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Mag-Tank 2000",
+  "size": "1.4L",
+  "slot": "toptube",
+  "who": "Revelate Designs | Mag-Tank | Mag-Tank 2000 | 1.4L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.95 \u2014 22.2 x 11.4 x 11.4cm",
+  "sev": "medium",
+  "dims": {
+   "len": 22.2,
+   "hgt": 11.4,
+   "wid": 11.4
+  },
+  "liters": 1.4,
+  "src": "https://revelatedesigns.com/product/magtank2000/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Legacy Mag-Tank",
+  "size": "0.9L",
+  "slot": "toptube",
+  "who": "Revelate Designs | Mag-Tank | Legacy Mag-Tank | 0.9L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.70 \u2014 21.6 x 6.4 x 12.7cm",
+  "sev": "medium",
+  "dims": {
+   "len": 21.6,
+   "hgt": 12.7,
+   "wid": 6.4
+  },
+  "liters": 0.9,
+  "src": "https://revelatedesigns.com/product/magtank/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Jerrycan",
+  "size": "Regular",
+  "slot": "toptube",
+  "who": "Revelate Designs | Jerrycan | Jerrycan | Regular",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.25 \u2014 12.7 x 5 x 10.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 12.7,
+   "hgt": 10.2,
+   "wid": 5
+  },
+  "liters": 0.6,
+  "src": "https://revelatedesigns.com/product/jerrycan/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Jerrycan",
+  "size": "Bent",
+  "slot": "toptube",
+  "who": "Revelate Designs | Jerrycan | Jerrycan | Bent",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.71 \u2014 15.2 x 5 x 8.9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 15.2,
+   "hgt": 8.9,
+   "wid": 5
+  },
+  "liters": 0.6,
+  "src": "https://revelatedesigns.com/product/jerrycan/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Gas Tank",
+  "size": "1.1L",
+  "slot": "toptube",
+  "who": "Revelate Designs | Gas Tank | Gas Tank | 1.1L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.80 \u2014 22.8 x 6.4 x 12.7cm",
+  "sev": "medium",
+  "dims": {
+   "len": 22.8,
+   "hgt": 12.7,
+   "wid": 6.4
+  },
+  "liters": 1.1,
+  "src": "https://revelatedesigns.com/product/gastank/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Ripio Frame Bag",
+  "size": "SM",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Ripio | Ripio Frame Bag | SM",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.30 \u2014 44.5 x 6.4 x 34.3cm",
+  "sev": "medium",
+  "dims": {
+   "len": 44.5,
+   "hgt": 34.3,
+   "wid": 6.4
+  },
+  "liters": 5,
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Ripio Frame Bag",
+  "size": "MD",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Ripio | Ripio Frame Bag | MD",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.32 \u2014 49.5 x 6.4 x 37.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 49.5,
+   "hgt": 37.5,
+   "wid": 6.4
+  },
+  "liters": 6.3,
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Ripio Frame Bag",
+  "size": "LG",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Ripio | Ripio Frame Bag | LG",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.21 \u2014 52.1 x 6.4 x 43.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 52.1,
+   "hgt": 43.2,
+   "wid": 6.4
+  },
+  "liters": 7.7,
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Ripio Frame Bag",
+  "size": "XL",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Ripio | Ripio Frame Bag | XL",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.09 \u2014 54.6 x 6.4 x 50.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 54.6,
+   "hgt": 50.2,
+   "wid": 6.4
+  },
+  "liters": 9,
+  "src": "https://revelatedesigns.com/product/ripio/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Rifter Frame Bag",
+  "size": "SM",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Rifter | Rifter Frame Bag | SM",
+  "kind": "volume-too-small",
+  "detail": "box 3.4L vs stated 4.5L (ratio 0.75) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 34.9,
+   "hgt": 25.4,
+   "wid": 3.8
+  },
+  "liters": 4.5,
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Rifter Frame Bag",
+  "size": "SM",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Rifter | Rifter Frame Bag | SM",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.37 \u2014 34.9 x 3.8 x 25.4cm",
+  "sev": "medium",
+  "dims": {
+   "len": 34.9,
+   "hgt": 25.4,
+   "wid": 3.8
+  },
+  "liters": 4.5,
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Rifter Frame Bag",
+  "size": "MD",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Rifter | Rifter Frame Bag | MD",
+  "kind": "volume-too-small",
+  "detail": "box 4.0L vs stated 5.5L (ratio 0.73) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 38.1,
+   "hgt": 27.9,
+   "wid": 3.8
+  },
+  "liters": 5.5,
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Rifter Frame Bag",
+  "size": "MD",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Rifter | Rifter Frame Bag | MD",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.37 \u2014 38.1 x 3.8 x 27.9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 38.1,
+   "hgt": 27.9,
+   "wid": 3.8
+  },
+  "liters": 5.5,
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Rifter Frame Bag",
+  "size": "LG",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Rifter | Rifter Frame Bag | LG",
+  "kind": "volume-too-small",
+  "detail": "box 4.9L vs stated 7L (ratio 0.70) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 40.6,
+   "hgt": 31.8,
+   "wid": 3.8
+  },
+  "liters": 7,
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Rifter Frame Bag",
+  "size": "LG",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Rifter | Rifter Frame Bag | LG",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.28 \u2014 40.6 x 3.8 x 31.8cm",
+  "sev": "medium",
+  "dims": {
+   "len": 40.6,
+   "hgt": 31.8,
+   "wid": 3.8
+  },
+  "liters": 7,
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Rifter Frame Bag",
+  "size": "XL",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Rifter | Rifter Frame Bag | XL",
+  "kind": "volume-too-small",
+  "detail": "box 5.9L vs stated 8.5L (ratio 0.70) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 43.8,
+   "hgt": 35.6,
+   "wid": 3.8
+  },
+  "liters": 8.5,
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Rifter Frame Bag",
+  "size": "XL",
+  "slot": "framebag_full",
+  "who": "Revelate Designs | Rifter | Rifter Frame Bag | XL",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.23 \u2014 43.8 x 3.8 x 35.6cm",
+  "sev": "medium",
+  "dims": {
+   "len": 43.8,
+   "hgt": 35.6,
+   "wid": 3.8
+  },
+  "liters": 8.5,
+  "src": "https://revelatedesigns.com/product/rifter/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Cranny Frame Bag",
+  "size": "0.6L",
+  "slot": "framebag_half",
+  "who": "Revelate Designs | Cranny | Cranny Frame Bag | 0.6L",
+  "kind": "volume-too-big",
+  "detail": "box 3.6L vs stated 0.6L (ratio 5.98) \u2014 a dimension is probably an unrolled/flat figure",
+  "sev": "high",
+  "dims": {
+   "len": 22.9,
+   "hgt": 16.5,
+   "wid": 9.5
+  },
+  "liters": 0.6,
+  "src": "https://revelatedesigns.com/product/cranny/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Cranny Frame Bag",
+  "size": "0.6L",
+  "slot": "framebag_half",
+  "who": "Revelate Designs | Cranny | Cranny Frame Bag | 0.6L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.39 \u2014 22.9 x 9.5 x 16.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 22.9,
+   "hgt": 16.5,
+   "wid": 9.5
+  },
+  "liters": 0.6,
+  "src": "https://revelatedesigns.com/product/cranny/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Nook Frame Bag",
+  "size": "1.2L",
+  "slot": "framebag_half",
+  "who": "Revelate Designs | Nook | Nook Frame Bag | 1.2L",
+  "kind": "volume-too-big",
+  "detail": "box 5.0L vs stated 1.2L (ratio 4.16) \u2014 a dimension is probably an unrolled/flat figure",
+  "sev": "high",
+  "dims": {
+   "len": 24.1,
+   "hgt": 20.3,
+   "wid": 10.2
+  },
+  "liters": 1.2,
+  "src": "https://revelatedesigns.com/product/nook/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Nook Frame Bag",
+  "size": "1.2L",
+  "slot": "framebag_half",
+  "who": "Revelate Designs | Nook | Nook Frame Bag | 1.2L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.19 \u2014 24.1 x 10.2 x 20.3cm",
+  "sev": "medium",
+  "dims": {
+   "len": 24.1,
+   "hgt": 20.3,
+   "wid": 10.2
+  },
+  "liters": 1.2,
+  "src": "https://revelatedesigns.com/product/nook/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Joey Downtube Bag",
+  "size": "1L",
+  "slot": "downtube",
+  "who": "Revelate Designs | Joey | Joey Downtube Bag | 1L",
+  "kind": "too-cubic",
+  "detail": "downtube should be elongated (longest/middle >= 1.8) but is 1.75 \u2014 17.8 x 10.2 x 10.2cm",
+  "sev": "medium",
+  "dims": {
+   "len": 17.8,
+   "hgt": 10.2,
+   "wid": 10.2,
+   "dia": 10.2
+  },
+  "liters": 1,
+  "src": "https://revelatedesigns.com/product/joey-downtube-bag/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Rohn Rack Bag",
+  "size": "37L max",
+  "slot": "trunk",
+  "who": "Revelate Designs | Rohn | Rohn Rack Bag | 37L max",
+  "kind": "too-big-for-frame",
+  "detail": "largest axis 61.0cm exceeds 52cm for trunk",
+  "sev": "high",
+  "dims": {
+   "len": 61,
+   "hgt": 25,
+   "wid": 27.9
+  },
+  "liters": 37,
+  "src": "https://revelatedesigns.com/product/rohn-rack-bag/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Portage Panniers",
+  "size": "14L",
+  "slot": "pannier",
+  "who": "Revelate Designs | Portage | Portage Panniers | 14L",
+  "kind": "volume-too-small",
+  "detail": "box 10.4L vs stated 14L (ratio 0.74) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 26.7,
+   "hgt": 38.1,
+   "wid": 10.2
+  },
+  "liters": 14,
+  "src": "https://revelatedesigns.com/product/portage-panniers/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Portage Panniers",
+  "size": "18L",
+  "slot": "pannier",
+  "who": "Revelate Designs | Portage | Portage Panniers | 18L",
+  "kind": "volume-too-small",
+  "detail": "box 12.6L vs stated 18L (ratio 0.70) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 30.5,
+   "hgt": 40.6,
+   "wid": 10.2
+  },
+  "liters": 18,
+  "src": "https://revelatedesigns.com/product/portage-panniers/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Revelate Designs",
+  "name": "Nano Panniers",
+  "size": "11L each",
+  "slot": "pannier",
+  "who": "Revelate Designs | Nano | Nano Panniers | 11L each",
+  "kind": "volume-too-small",
+  "detail": "box 6.8L vs stated 11L (ratio 0.62) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 26.6,
+   "hgt": 25.4,
+   "wid": 10.1
+  },
+  "liters": 11,
+  "src": "https://revelatedesigns.com/product/nanopanniers/",
+  "dims_state": "packed",
+  "dims_source": "retailer"
+ },
+ {
+  "brand": "Fairweather",
+  "name": "Handlebar Bag ADV",
+  "size": "One Size (19L)",
+  "slot": "barroll",
+  "who": "Fairweather | Handlebar Bag | Handlebar Bag ADV | One Size (19L)",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.57 \u2014 42 x 22 x 26.8cm",
+  "sev": "medium",
+  "dims": {
+   "len": 42,
+   "hgt": 26.8,
+   "wid": 22
+  },
+  "liters": 19,
+  "src": "https://bluelug.com/en/contents/fairweather/handlebar-bag-adv.php",
+  "dims_state": "unrolled",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Fairweather",
+  "name": "Frame Bag ADV (Medium)",
+  "size": "Medium (4L)",
+  "slot": "framebag_half",
+  "who": "Fairweather | Frame Bag | Frame Bag ADV (Medium) | Medium (4L)",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.03 \u2014 34 x 6 x 33cm",
+  "sev": "medium",
+  "dims": {
+   "len": 34,
+   "hgt": 33,
+   "wid": 6
+  },
+  "liters": 4,
+  "src": "https://bluelug.com/en/contents/fairweather/frame-bag-adv.php",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Fairweather",
+  "name": "Frame Bag ADV (Medium)",
+  "size": "Medium (4L)",
+  "slot": "framebag_half",
+  "who": "Fairweather | Frame Bag | Frame Bag ADV (Medium) | Medium (4L)",
+  "kind": "too-big-for-frame",
+  "detail": "hgt 33cm exceeds 30cm for framebag_half",
+  "sev": "high",
+  "dims": {
+   "len": 34,
+   "hgt": 33,
+   "wid": 6
+  },
+  "liters": 4,
+  "src": "https://bluelug.com/en/contents/fairweather/frame-bag-adv.php",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "WOHO",
+  "name": "XTouring Full Frame Bag Dry L",
+  "size": "",
+  "slot": "framebag_full",
+  "who": "WOHO | XTouring Full Frame Bag Dry L | ",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.39 \u2014 50 x 8 x 36cm",
+  "sev": "medium",
+  "dims": {
+   "len": 50,
+   "wid": 8,
+   "hgt": 36
+  },
+  "liters": 12,
+  "src": "https://www.wohobike.com/products/xtouring-full-frame-bag-dry",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "WOHO",
+  "name": "XTouring UL Pannier Dry",
+  "size": "",
+  "slot": "pannier",
+  "who": "WOHO | XTouring UL Pannier Dry | ",
+  "kind": "volume-too-small",
+  "detail": "box 13.4L vs stated 18L (ratio 0.75) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 40,
+   "wid": 24,
+   "hgt": 14
+  },
+  "liters": 18,
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Specialized x Fj\u00e4llr\u00e4ven",
+  "name": "Fj\u00e4llr\u00e4ven Hoja Handlebar Rolltop",
+  "size": "",
+  "slot": "barbag",
+  "who": "Specialized x Fj\u00e4llr\u00e4ven | Fj\u00e4llr\u00e4ven Hoja Handlebar Rolltop | ",
+  "kind": "near-cube",
+  "detail": "all three axes within 15% (21 x 22 x 23cm) \u2014 renders as a ball",
+  "sev": "medium",
+  "dims": {
+   "len": 21,
+   "wid": 22,
+   "hgt": 23
+  },
+  "liters": 13,
+  "src": "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-handlebar-rolltop/",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Chrome Industries",
+  "name": "Holman Pannier",
+  "size": "",
+  "slot": "pannier",
+  "who": "Chrome Industries | Holman Pannier | ",
+  "kind": "volume-too-small",
+  "detail": "box 14.6L vs stated 20L (ratio 0.73) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 39.4,
+   "wid": 29.2,
+   "hgt": 12.7
+  },
+  "liters": 20,
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Two Wheel Gear",
+  "name": "Mamquam Frame Bag L/XL",
+  "size": "L/XL (6L)",
+  "slot": "framebag_half",
+  "who": "Two Wheel Gear | Mamquam | Mamquam Frame Bag L/XL | L/XL (6L)",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 2.11 \u2014 50.8 x 5.7 x 24.1cm",
+  "sev": "medium",
+  "dims": {
+   "len": 50.8,
+   "hgt": 24.1,
+   "wid": 5.7
+  },
+  "liters": 6,
+  "src": "https://twowheelgear.com/products/frame-bag-large",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Giant",
+  "name": "Transporter MIK Pannier Bag 30L",
+  "size": "30L (single)",
+  "slot": "pannier",
+  "who": "Giant | Transporter | Transporter MIK Pannier Bag 30L | 30L (single)",
+  "kind": "volume-too-small",
+  "detail": "box 20.4L vs stated 30L (ratio 0.68) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 40,
+   "hgt": 30,
+   "wid": 17
+  },
+  "liters": 30,
+  "src": "https://www.giant-bicycles.com/int/transporter-mik-pannier-bag-30l",
+  "dims_state": "packed",
+  "dims_source": "none"
+ }
+]

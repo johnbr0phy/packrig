@@ -1,0 +1,727 @@
+[
+ {
+  "brand": "Apidura",
+  "name": "Full Frame Pack",
+  "size": "4.6L",
+  "slot": "framebag_full",
+  "who": "Apidura | Expedition | Full Frame Pack | 4.6L",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.45 \u2014 38.5 x 6.5 x 26.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 38.5,
+   "hgt": 26.5,
+   "wid": 6.5
+  },
+  "liters": 4.6,
+  "src": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Full Frame Pack",
+  "size": "6.8L",
+  "slot": "framebag_full",
+  "who": "Apidura | Expedition | Full Frame Pack | 6.8L",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.39 \u2014 43 x 6.5 x 31cm",
+  "sev": "medium",
+  "dims": {
+   "len": 43,
+   "hgt": 31,
+   "wid": 6.5
+  },
+  "liters": 6.8,
+  "src": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Full Frame Pack",
+  "size": "8L",
+  "slot": "framebag_full",
+  "who": "Apidura | Expedition | Full Frame Pack | 8L",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.33 \u2014 46 x 6.5 x 34.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 46,
+   "hgt": 34.5,
+   "wid": 6.5
+  },
+  "liters": 8,
+  "src": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Full Frame Pack",
+  "size": "10L",
+  "slot": "framebag_full",
+  "who": "Apidura | Expedition | Full Frame Pack | 10L",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.26 \u2014 49 x 6.5 x 39cm",
+  "sev": "medium",
+  "dims": {
+   "len": 49,
+   "hgt": 39,
+   "wid": 6.5
+  },
+  "liters": 10,
+  "src": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Stem Pack",
+  "size": "1.3L",
+  "slot": "stembag",
+  "who": "Apidura | Expedition | Stem Pack | 1.3L",
+  "kind": "volume-too-big",
+  "detail": "box 6.8L vs stated 1.3L (ratio 5.20) \u2014 a dimension is probably an unrolled/flat figure",
+  "sev": "high",
+  "dims": {
+   "len": 26,
+   "hgt": 26,
+   "wid": 10,
+   "dia": 10
+  },
+  "liters": 1.3,
+  "src": "https://www.apidura.com/shop/expedition-stem-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Cargo Cage Pack",
+  "size": "1.5L",
+  "slot": "forkbag",
+  "who": "Apidura | Expedition | Cargo Cage Pack | 1.5L",
+  "kind": "volume-too-big",
+  "detail": "box 7.1L vs stated 1.5L (ratio 4.70) \u2014 a dimension is probably an unrolled/flat figure",
+  "sev": "high",
+  "dims": {
+   "len": 28,
+   "hgt": 28,
+   "wid": 9,
+   "dia": 9
+  },
+  "liters": 1.5,
+  "src": "https://www.apidura.com/shop/expedition-cargo-cage-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Frame Pack",
+  "size": "1L",
+  "slot": "framebag_half",
+  "who": "Apidura | Backcountry | Frame Pack | 1L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 2.10 \u2014 22 x 6 x 10.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 22,
+   "hgt": 10.5,
+   "wid": 6
+  },
+  "liters": 1,
+  "src": "https://www.apidura.com/shop/backcountry-frame-pack-1l/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Rear Top Tube Pack",
+  "size": "1L",
+  "slot": "toptube",
+  "who": "Apidura | Backcountry | Rear Top Tube Pack | 1L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.10 \u2014 16.5 x 4.5 x 15cm",
+  "sev": "medium",
+  "dims": {
+   "len": 16.5,
+   "hgt": 15,
+   "wid": 4.5
+  },
+  "liters": 1,
+  "src": "https://www.apidura.com/shop/backcountry-rear-top-tube-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Frame Pack",
+  "size": "1L",
+  "slot": "framebag_half",
+  "who": "Apidura | Racing | Frame Pack | 1L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.52 \u2014 20.5 x 5 x 13.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 20.5,
+   "hgt": 13.5,
+   "wid": 5
+  },
+  "liters": 1,
+  "src": "https://www.apidura.com/shop/racing-frame-pack-1l/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Frame Pack",
+  "size": "2.4L",
+  "slot": "framebag_half",
+  "who": "Apidura | Racing | Frame Pack | 2.4L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 2.07 \u2014 29 x 6 x 14cm",
+  "sev": "medium",
+  "dims": {
+   "len": 29,
+   "hgt": 14,
+   "wid": 6
+  },
+  "liters": 2.4,
+  "src": "https://www.apidura.com/shop/racing-frame-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Top Tube Pack",
+  "size": "0.5L",
+  "slot": "toptube",
+  "who": "Apidura | Racing | Top Tube Pack | 0.5L",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.70 \u2014 17 x 4.5 x 10cm",
+  "sev": "medium",
+  "dims": {
+   "len": 17,
+   "hgt": 10,
+   "wid": 4.5
+  },
+  "liters": 0.5,
+  "src": "https://www.apidura.com/shop/racing-top-tube-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Frame Module",
+  "size": "Medium",
+  "slot": "framebag_half",
+  "who": "Apidura | Aero | Frame Module | Medium",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.74 \u2014 30.5 x 4.5 x 17.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 30.5,
+   "hgt": 17.5,
+   "wid": 4.5
+  },
+  "liters": 1.5,
+  "src": "https://www.apidura.com/shop/aero-frame-module/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Frame Module",
+  "size": "Large",
+  "slot": "framebag_half",
+  "who": "Apidura | Aero | Frame Module | Large",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.62 \u2014 31.5 x 4.5 x 19.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 31.5,
+   "hgt": 19.5,
+   "wid": 4.5
+  },
+  "liters": 2.8,
+  "src": "https://www.apidura.com/shop/aero-frame-module/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Frame Pack",
+  "size": "2.4L",
+  "slot": "framebag_half",
+  "who": "Apidura | Canyon Collab | Frame Pack | 2.4L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 2.07 \u2014 29 x 6 x 14cm",
+  "sev": "medium",
+  "dims": {
+   "len": 29,
+   "hgt": 14,
+   "wid": 6
+  },
+  "liters": 2.4,
+  "src": "https://www.apidura.com/shop/apidura-x-canyon-frame-pack/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Handlebar Pack",
+  "size": "9L",
+  "slot": "barroll",
+  "who": "Apidura | MAAP Collab | Handlebar Pack | 9L",
+  "kind": "volume-too-small",
+  "detail": "box 6.2L vs stated 9L (ratio 0.69) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 43,
+   "hgt": 12,
+   "wid": 12,
+   "dia": 12
+  },
+  "liters": 9,
+  "src": "https://www.apidura.com/shop/maap-x-apidura-handlebar-pack-9l-v2/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Frame Pack",
+  "size": "1L",
+  "slot": "framebag_half",
+  "who": "Apidura | MAAP Collab | Frame Pack | 1L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.52 \u2014 20.5 x 5 x 13.5cm",
+  "sev": "medium",
+  "dims": {
+   "len": 20.5,
+   "hgt": 13.5,
+   "wid": 5
+  },
+  "liters": 1,
+  "src": "https://www.apidura.com/shop/maap-x-apidura-frame-pack-1l-v2/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Apidura",
+  "name": "Frame Pack",
+  "size": "2.4L",
+  "slot": "framebag_half",
+  "who": "Apidura | Bombtrack Collab | Frame Pack | 2.4L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 2.07 \u2014 31 x 6 x 15cm",
+  "sev": "medium",
+  "dims": {
+   "len": 31,
+   "hgt": 15,
+   "wid": 6
+  },
+  "liters": 2.4,
+  "src": "https://www.apidura.com/shop/apidura-bombtrack-frame-pack-2-4l/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Wizard Works",
+  "name": "Go-Go Top Tube Bag",
+  "size": "Medium (1L)",
+  "slot": "toptube",
+  "who": "Wizard Works | Go-Go | Go-Go Top Tube Bag | Medium (1L)",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.91 \u2014 21 x 7 x 11cm",
+  "sev": "medium",
+  "dims": {
+   "len": 21,
+   "hgt": 11,
+   "wid": 7
+  },
+  "liters": 1,
+  "src": "https://www.wizard.works/shop/go-go-top-tube-bag/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Wizard Works",
+  "name": "Alakazam Basket Bag",
+  "size": "Wald 137",
+  "slot": "randobag",
+  "who": "Wizard Works | Alakazam | Alakazam Basket Bag | Wald 137",
+  "kind": "volume-too-small",
+  "detail": "box 19.5L vs stated 38L (ratio 0.51) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 36,
+   "hgt": 23.5,
+   "wid": 23
+  },
+  "liters": 38,
+  "src": "https://www.wizard.works/shop/alakazam-basket-bag/",
+  "dims_state": "unrolled",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Wizard Works",
+  "name": "Alakazam Basket Bag",
+  "size": "Manivelle",
+  "slot": "randobag",
+  "who": "Wizard Works | Alakazam | Alakazam Basket Bag | Manivelle",
+  "kind": "volume-too-small",
+  "detail": "box 23.0L vs stated 49L (ratio 0.47) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 39,
+   "hgt": 21.8,
+   "wid": 27
+  },
+  "liters": 49,
+  "src": "https://www.wizard.works/shop/alakazam-basket-bag/",
+  "dims_state": "unrolled",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Wizard Works",
+  "name": "Forres Full Frame Bag",
+  "size": "Medium",
+  "slot": "framebag_full",
+  "who": "Wizard Works | Forres | Forres Full Frame Bag | Medium",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.36 \u2014 49 x 6 x 36cm",
+  "sev": "medium",
+  "dims": {
+   "len": 49,
+   "hgt": 36,
+   "wid": 6
+  },
+  "liters": 6.5,
+  "src": "https://www.wizard.works/shop/forres-full-frame-bag/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Wizard Works",
+  "name": "Forres Full Frame Bag",
+  "size": "Large",
+  "slot": "framebag_full",
+  "who": "Wizard Works | Forres | Forres Full Frame Bag | Large",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.33 \u2014 52 x 6 x 39cm",
+  "sev": "medium",
+  "dims": {
+   "len": 52,
+   "hgt": 39,
+   "wid": 6
+  },
+  "liters": 7.8,
+  "src": "https://www.wizard.works/shop/forres-full-frame-bag/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "Wizard Works",
+  "name": "Forres Full Frame Bag",
+  "size": "XL",
+  "slot": "framebag_full",
+  "who": "Wizard Works | Forres | Forres Full Frame Bag | XL",
+  "kind": "too-cubic",
+  "detail": "framebag_full should be elongated (longest/middle >= 1.5) but is 1.25 \u2014 55 x 6 x 44cm",
+  "sev": "medium",
+  "dims": {
+   "len": 55,
+   "hgt": 44,
+   "wid": 6
+  },
+  "liters": 9.5,
+  "src": "https://www.wizard.works/shop/forres-full-frame-bag/",
+  "dims_state": "packed",
+  "dims_source": "maker"
+ },
+ {
+  "brand": "SILCA",
+  "name": "Mattone Seat Pack",
+  "size": "0.5L",
+  "slot": "seatpack",
+  "who": "SILCA | Mattone | Mattone Seat Pack | 0.5L",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.56 \u2014 12.5 x 5 x 8cm",
+  "sev": "medium",
+  "dims": {
+   "len": 12.5,
+   "hgt": 8,
+   "wid": 5
+  },
+  "liters": 0.5,
+  "src": "https://silca.cc/collections/bags/products/mattone-seat-pack",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "SILCA",
+  "name": "Mattone Ultimate Seat Pack",
+  "size": "0.4L",
+  "slot": "seatpack",
+  "who": "SILCA | Mattone | Mattone Ultimate Seat Pack | 0.4L",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.39 \u2014 12.5 x 4 x 9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 12.5,
+   "hgt": 9,
+   "wid": 4
+  },
+  "liters": 0.4,
+  "src": "https://silca.cc/collections/bags/products/mattone-ultimate-seat-pack",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "SILCA",
+  "name": "Grinta Roll Top Bag",
+  "size": "2-5L",
+  "slot": "seatpack",
+  "who": "SILCA | Grinta | Grinta Roll Top Bag | 2-5L",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.09 \u2014 16.4 x 15 x 15cm",
+  "sev": "medium",
+  "dims": {
+   "len": 16.4,
+   "hgt": 15,
+   "wid": 15
+  },
+  "liters": 2.9,
+  "src": "https://silca.cc/collections/bags/products/grinta-roll-top-bag",
+  "dims_state": "unrolled",
+  "dims_source": "none"
+ },
+ {
+  "brand": "SILCA",
+  "name": "Grinta Roll Top Bag",
+  "size": "2-5L",
+  "slot": "seatpack",
+  "who": "SILCA | Grinta | Grinta Roll Top Bag | 2-5L",
+  "kind": "near-cube",
+  "detail": "all three axes within 15% (16.4 x 15 x 15cm) \u2014 renders as a ball",
+  "sev": "medium",
+  "dims": {
+   "len": 16.4,
+   "hgt": 15,
+   "wid": 15
+  },
+  "liters": 2.9,
+  "src": "https://silca.cc/collections/bags/products/grinta-roll-top-bag",
+  "dims_state": "unrolled",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Green Guru Gear",
+  "name": "Clutch Saddle Bag",
+  "size": "0.8L",
+  "slot": "seatpack",
+  "who": "Green Guru Gear | Clutch | Clutch Saddle Bag | 0.8L",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.43 \u2014 12.7 x 7.6 x 8.9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 12.7,
+   "hgt": 8.9,
+   "wid": 7.6
+  },
+  "liters": 0.8,
+  "src": "https://www.greengurugear.com/products/clutch-bicycle-saddle-bag-made-from-recycled-and-upcycled-bike-tubes-in-usa",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Green Guru Gear",
+  "name": "Upshift Frame Bag",
+  "size": "2.7L",
+  "slot": "framebag_half",
+  "who": "Green Guru Gear | Upshift | Upshift Frame Bag | 2.7L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.66 \u2014 38.1 x 6.35 x 22.9cm",
+  "sev": "medium",
+  "dims": {
+   "len": 38.1,
+   "hgt": 22.9,
+   "wid": 6.35
+  },
+  "liters": 2.7,
+  "src": "https://www.greengurugear.com/products/upshift-frame-bag-built-in-usa",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Green Guru Gear",
+  "name": "Fullshift Frame Bag",
+  "size": "Medium (2.8L)",
+  "slot": "framebag_full",
+  "who": "Green Guru Gear | Fullshift | Fullshift Frame Bag | Medium (2.8L)",
+  "kind": "volume-too-big",
+  "detail": "box 12.6L vs stated 2.8L (ratio 4.50) \u2014 a dimension is probably an unrolled/flat figure",
+  "sev": "high",
+  "dims": {
+   "len": 52.1,
+   "hgt": 31.8,
+   "wid": 7.6
+  },
+  "liters": 2.8,
+  "src": "https://www.greengurugear.com/products/fullshift-frame-bags-1",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Swift Industries",
+  "name": "Giddy Up Wedge Frame Bag",
+  "size": "3.3L",
+  "slot": "framebag_half",
+  "who": "Swift Industries | Giddy Up | Giddy Up Wedge Frame Bag | 3.3L",
+  "kind": "too-cubic",
+  "detail": "framebag_half should be elongated (longest/middle >= 2.2) but is 1.41 \u2014 30.5 x 5.1 x 21.6cm",
+  "sev": "medium",
+  "dims": {
+   "len": 30.5,
+   "hgt": 21.6,
+   "wid": 5.1
+  },
+  "liters": 3.3,
+  "src": "https://builtbyswift.com/products/giddy-up-wedge-frame-bag",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Swift Industries",
+  "name": "Gemini Cargo Pack",
+  "size": "4L",
+  "slot": "forkbag",
+  "who": "Swift Industries | Gemini | Gemini Cargo Pack | 4L",
+  "kind": "volume-too-small",
+  "detail": "box 2.3L vs stated 4L (ratio 0.58) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 12.7,
+   "hgt": 24.1,
+   "wid": 7.6
+  },
+  "liters": 4,
+  "src": "https://builtbyswift.com/products/gemini-cargo-pack",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Gramm Tourpacking",
+  "name": "Multi-Tool Seat Bag",
+  "size": "One Size (0.5L)",
+  "slot": "seatpack",
+  "who": "Gramm Tourpacking | Seat Bag | Multi-Tool Seat Bag | One Size (0.5L)",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.56 \u2014 14 x 9 x 6cm",
+  "sev": "medium",
+  "dims": {
+   "len": 14,
+   "hgt": 6,
+   "wid": 9
+  },
+  "liters": 0.5,
+  "src": "https://www.gramm-tourpacking.com/shopnow/multi-tool-saddle-bag",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Gramm Tourpacking",
+  "name": "Hip Handlebar Bag 2.5 L",
+  "size": "One Size (2.5L)",
+  "slot": "barroll",
+  "who": "Gramm Tourpacking | Hip Handlebar Bag | Hip Handlebar Bag 2.5 L | One Size (2.5L)",
+  "kind": "too-cubic",
+  "detail": "barroll should be elongated (longest/middle >= 1.8) but is 1.77 \u2014 23 x 13 x 13cm",
+  "sev": "medium",
+  "dims": {
+   "len": 23,
+   "hgt": 13,
+   "wid": 13
+  },
+  "liters": 2.5,
+  "src": "https://www.gramm-tourpacking.com/shopnow/hip-handlebar-bag",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "AGU",
+  "name": "AGU Top-Tube Frame Bag Venture Extreme Waterproof",
+  "size": "",
+  "slot": "toptube",
+  "who": "AGU | AGU Top-Tube Frame Bag Venture Extreme Waterproof | ",
+  "kind": "too-cubic",
+  "detail": "toptube should be elongated (longest/middle >= 2) but is 1.91 \u2014 21 x 11 x 6cm",
+  "sev": "medium",
+  "dims": {
+   "len": 21,
+   "wid": 11,
+   "hgt": 6
+  },
+  "liters": 0.7,
+  "src": "https://agu.com/eu/41503401-000",
+  "dims_state": "unknown",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Carradice",
+  "name": "Super C SQR Slim",
+  "size": "16L",
+  "slot": "seatpack",
+  "who": "Carradice | Super C | Super C SQR Slim | 16L",
+  "kind": "too-cubic",
+  "detail": "seatpack should be elongated (longest/middle >= 1.6) but is 1.24 \u2014 15 x 29 x 36cm",
+  "sev": "medium",
+  "dims": {
+   "len": 15,
+   "hgt": 36,
+   "wid": 29
+  },
+  "liters": 16,
+  "src": "https://www.carradice.co.uk/products/super-c-seatpost-qr-slim-saddlebag",
+  "dims_state": "packed",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Ron's Bikes",
+  "name": "Fabio's Chest MINI",
+  "size": "Mini (11L)",
+  "slot": "barbag",
+  "who": "Ron's Bikes | Fabio's Chest | Fabio's Chest MINI | Mini (11L)",
+  "kind": "volume-too-small",
+  "detail": "box 6.9L vs stated 11L (ratio 0.62) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 25.4,
+   "hgt": 17.8,
+   "wid": 15.2
+  },
+  "liters": 11,
+  "src": "https://ronsbikes.com/products/fabios-chest-xs-coming-this-friday",
+  "dims_state": "unrolled",
+  "dims_source": "none"
+ },
+ {
+  "brand": "Randi Jo Fabrications",
+  "name": "Jeff 'n Joan's Bag",
+  "size": "One Size (3L rolled, 5L expanded)",
+  "slot": "barbag",
+  "who": "Randi Jo Fabrications | Jeff 'n Joan's | Jeff 'n Joan's Bag | One Size (3L rolled, 5L expanded)",
+  "kind": "volume-too-small",
+  "detail": "box 3.7L vs stated 5L (ratio 0.74) \u2014 dims too small for the capacity",
+  "sev": "high",
+  "dims": {
+   "len": 27.9,
+   "hgt": 17.4,
+   "wid": 7.6
+  },
+  "liters": 5,
+  "src": "https://randijofab.com/products/jeffs-joans-bar-bag",
+  "dims_state": "unrolled",
+  "dims_source": "none"
+ }
+]

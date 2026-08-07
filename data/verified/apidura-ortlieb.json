@@ -1,0 +1,4615 @@
+[
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Saddle Pack",
+  "size": "9L",
+  "src": "https://www.apidura.com/shop/expedition-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 42,
+   "hgt": 16,
+   "wid": 15
+  },
+  "dims_note": "Diagram gives MIN 36 / MAX 42 cm length. MAX is the length at the rated 9 L (42x16x15 = 10 L box), so MAX is used; MIN is the fully-rolled-down length at reduced volume. Width tapers 15 cm at the saddle to 5 cm at the tail.",
+  "dims_state": "packed",
+  "dims_raw": "MIN 36 cm / MAX 42 cm length; 16 cm height; Tapered Width: 15 - 5 cm (5.9 - 1.9 in); 13 cm diagonal",
+  "capacity_l": 9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-saddle-pack-9l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-saddle-pack-9l-on-bike-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-saddle-pack-9l-2.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckle",
+   "shape": "tapered",
+   "attachment": "two Hypalon buckled straps to saddle rails + one Hypalon stability strap to seatpost",
+   "compressionStraps": 1,
+   "compressionCradle": "Hypalon cradle with quick-release buckle",
+   "pockets": "two cargo mesh side pockets",
+   "valve": "SoftVent air valve",
+   "lightMount": "integrated 3-prong rear light mount",
+   "lashTab": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Saddle Pack",
+  "size": "13L",
+  "src": "https://www.apidura.com/shop/expedition-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 48,
+   "hgt": 17,
+   "wid": 15
+  },
+  "dims_note": "MAX 48 cm is the length at rated capacity; MIN 38 cm is fully rolled down. Width tapers 15 -> 5 cm.",
+  "dims_state": "packed",
+  "dims_raw": "MIN 38 cm / MAX 48 cm length; 17 cm height; Tapered Width: 15 - 5 cm; 15 cm diagonal",
+  "capacity_l": 13,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-saddle-pack-13l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-saddle-pack-13l-on-bike-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-saddle-pack-13l-2.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckle",
+   "shape": "tapered",
+   "attachment": "two Hypalon buckled straps to saddle rails + one Hypalon stability strap to seatpost",
+   "compressionStraps": 1,
+   "compressionCradle": "Hypalon cradle with quick-release buckle",
+   "pockets": "two cargo mesh side pockets",
+   "valve": "SoftVent air valve",
+   "lightMount": "integrated 3-prong rear light mount",
+   "lashTab": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Saddle Pack",
+  "size": "16L",
+  "src": "https://www.apidura.com/shop/expedition-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 54,
+   "hgt": 18,
+   "wid": 15
+  },
+  "dims_note": "MAX 54 cm is the length at rated capacity; MIN 38 cm is fully rolled down. Width tapers 15 -> 5 cm.",
+  "dims_state": "packed",
+  "dims_raw": "MIN 38 cm / MAX 54 cm length; 18 cm height; Tapered Width: 15 - 5 cm; 15 cm diagonal",
+  "capacity_l": 16,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-saddle-pack-16l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-saddle-pack-16l-on-bike-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-saddle-pack-16l-2.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckle",
+   "shape": "tapered",
+   "attachment": "two Hypalon buckled straps to saddle rails + one Hypalon stability strap to seatpost",
+   "compressionStraps": 1,
+   "compressionCradle": "Hypalon cradle with quick-release buckle",
+   "pockets": "two cargo mesh side pockets",
+   "valve": "SoftVent air valve",
+   "lightMount": "integrated 3-prong rear light mount",
+   "lashTab": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Handlebar Pack",
+  "size": "9L",
+  "src": "https://www.apidura.com/shop/expedition-handlebar-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 54,
+   "hgt": 15,
+   "wid": 15
+  },
+  "dims_note": "MIN 30 / MAX 54 cm is the roll-in range across the bars. MAX corresponds to the rated 9 L (pi/4 x 15 x 15 x 54 = 9.5 L). Depth is not separately specced; the section is round, so wid = the 15 cm height.",
+  "dims_state": "packed",
+  "dims_raw": "MIN 30 cm / MAX 54 cm width; 15 cm height; bar clearance MIN 4.5 / MAX 6.9 cm, 3 cm stem drop",
+  "capacity_l": 9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition2-handlebar-system-9L-dimension-diagram-cm-1.svg"
+  ],
+  "features": {
+   "closure": "roll-down ends with g-hook closures",
+   "attachment": "BarSpace tool-free mount, stability cord round bars and stem, preload strap round steerer",
+   "compressionStraps": 2,
+   "pockets": "single main compartment",
+   "valve": "SoftVent air valve",
+   "accessoryMounts": "two 3-prong points for GPS/lights, Anchor Rails",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Handlebar Pack",
+  "size": "14L",
+  "src": "https://www.apidura.com/shop/expedition-handlebar-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 54,
+   "hgt": 17,
+   "wid": 17
+  },
+  "dims_note": "MAX 54 cm is the width at rated capacity; MIN 30 cm is fully rolled in. Round section, so wid = 17 cm height.",
+  "dims_state": "packed",
+  "dims_raw": "MIN 30 cm / MAX 54 cm width; 17 cm height; bar clearance MIN 4.5 / MAX 6.9 cm",
+  "capacity_l": 14,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition2-handlebar-system-14L-dimension-diagram-cm-1-1.svg"
+  ],
+  "features": {
+   "closure": "roll-down ends with g-hook closures",
+   "attachment": "BarSpace tool-free mount, stability cord round bars and stem, preload strap round steerer",
+   "compressionStraps": 2,
+   "pockets": "single main compartment",
+   "valve": "SoftVent air valve",
+   "accessoryMounts": "two 3-prong points for GPS/lights, Anchor Rails",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Front Accessory Pack",
+  "size": "3.5L",
+  "src": "https://www.apidura.com/shop/expedition-front-accessory-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 27,
+   "hgt": 23,
+   "wid": 7
+  },
+  "dims_note": "Fixed-dimension diagram, no roll range. 19 cm is the height of the body below the roll-top.",
+  "dims_state": "packed",
+  "dims_raw": "27 cm wide x 23 cm tall (19 cm to top of mesh) x 7 cm deep",
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-front-accessory-pack-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-front-accessory-pack-on-bike-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-front-accessory-pack-2.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with magnetic seal and cord hook",
+   "attachment": "adjustable webbing hooks to handlebar; Anchor Rails; removable cord crossbody strap",
+   "pockets": "internal zip pocket with key hook, external mesh pocket",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Frame Pack",
+  "size": "2.8L",
+  "src": "https://www.apidura.com/shop/expedition-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 38.5,
+   "hgt": 12,
+   "wid": 6.5
+  },
+  "dims_note": "Zippered pack, no roll range. wid is the max of the 6.5 -> 6 cm taper.",
+  "dims_state": "packed",
+  "dims_raw": "38.5 cm top length; 26 cm bottom length; 10 cm and 12 cm heights; 2.5 cm rear height; Tapered Width: 6.5 - 6 cm (2.56 - 2.36 in)",
+  "capacity_l": 2.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-expedition-frame-pack-2.8l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-frame-pack-2.8l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with internal fibreglass rails",
+   "attachment": "three Hypalon stability straps to top tube, one to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal mesh pocket",
+   "cablePort": true,
+   "framefitPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Frame Pack",
+  "size": "3.8L",
+  "src": "https://www.apidura.com/shop/expedition-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 43,
+   "hgt": 14.5,
+   "wid": 6.5
+  },
+  "dims_note": "wid is the max of the 6.5 -> 6 cm taper.",
+  "dims_state": "packed",
+  "dims_raw": "43 cm top length; 30 cm bottom length; 12 cm and 14.5 cm heights; 3.5 cm rear height; Tapered Width: 6.5 - 6 cm",
+  "capacity_l": 3.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-expedition-frame-pack-3.8l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-frame-pack-3.8l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with internal fibreglass rails",
+   "attachment": "three Hypalon stability straps to top tube, one to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal mesh pocket",
+   "cablePort": true,
+   "framefitPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Frame Pack",
+  "size": "4.3L",
+  "src": "https://www.apidura.com/shop/expedition-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 46,
+   "hgt": 17,
+   "wid": 6.5
+  },
+  "dims_note": "wid is the max of the 6.5 -> 6 cm taper.",
+  "dims_state": "packed",
+  "dims_raw": "46 cm top length; 31 cm bottom length; 14.5 cm and 17 cm heights; 5 cm rear height; Tapered Width: 6.5 - 6 cm",
+  "capacity_l": 4.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-expedition-frame-pack-4.3l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-frame-pack-4.3l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with internal fibreglass rails",
+   "attachment": "three Hypalon stability straps to top tube, one to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal mesh pocket",
+   "cablePort": true,
+   "framefitPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Frame Pack",
+  "size": "5.7L",
+  "src": "https://www.apidura.com/shop/expedition-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 49,
+   "hgt": 18,
+   "wid": 6.5
+  },
+  "dims_note": "wid is the max of the 6.5 -> 6 cm taper.",
+  "dims_state": "packed",
+  "dims_raw": "49 cm top length; 36 cm bottom length; 15 cm and 18 cm heights; 7.5 cm rear height; Tapered Width: 6.5 - 6 cm",
+  "capacity_l": 5.7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-expedition-frame-pack-5.7l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-frame-pack-5.7l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with internal fibreglass rails",
+   "attachment": "three Hypalon stability straps to top tube, one to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal mesh pocket",
+   "cablePort": true,
+   "framefitPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Full Frame Pack",
+  "size": "4.6L",
+  "src": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 38.5,
+   "hgt": 26.5,
+   "wid": 6.5
+  },
+  "dims_note": "Zippered, no roll range. hgt is the seat-tube side.",
+  "dims_state": "packed",
+  "dims_raw": "38.5 cm top; 26.5 cm seat-tube side; 39.5 cm downtube diagonal; 6 cm bottom; 2.5 cm rear; Tapered Width: 6.5 - 6 cm",
+  "capacity_l": 4.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/expedition-full-frame-pack-4.8L-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/expedition-full-frame-pack-4.8L-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with internal fibreglass rails, upper and lower access",
+   "attachment": "six Hypalon stability straps (three top tube, three downtube, two seat tube)",
+   "pockets": "anti-rattle pocket non-drive side, internal mesh pocket, internal foldable shelf divider",
+   "cablePort": true,
+   "hydrationCompatible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Full Frame Pack",
+  "size": "6.8L",
+  "src": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 43,
+   "hgt": 31,
+   "wid": 6.5
+  },
+  "dims_note": "hgt is the seat-tube side.",
+  "dims_state": "packed",
+  "dims_raw": "43 cm top; 31 cm seat-tube side; 44 cm downtube diagonal; 8 cm bottom; 3.5 cm rear; Tapered Width: 6.5 - 6 cm",
+  "capacity_l": 6.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/expedition-full-frame-pack-6.8L-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/expedition-full-frame-pack-6.8L-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with internal fibreglass rails, upper and lower access",
+   "attachment": "six Hypalon stability straps (three top tube, three downtube, two seat tube)",
+   "pockets": "anti-rattle pocket non-drive side, internal mesh pocket, internal foldable shelf divider",
+   "cablePort": true,
+   "hydrationCompatible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Full Frame Pack",
+  "size": "8L",
+  "src": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 46,
+   "hgt": 34.5,
+   "wid": 6.5
+  },
+  "dims_note": "hgt is the seat-tube side.",
+  "dims_state": "packed",
+  "dims_raw": "46 cm top; 34.5 cm seat-tube side; 47 cm downtube diagonal; 7.5 cm bottom; 5 cm rear; Tapered Width: 6.5 - 6 cm",
+  "capacity_l": 8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/expedition-full-frame-pack-8L-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/expedition-full-frame-pack-8L-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with internal fibreglass rails, upper and lower access",
+   "attachment": "six Hypalon stability straps (three top tube, three downtube, two seat tube)",
+   "pockets": "anti-rattle pocket non-drive side, internal mesh pocket, internal foldable shelf divider",
+   "cablePort": true,
+   "hydrationCompatible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Full Frame Pack",
+  "size": "10L",
+  "src": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 49,
+   "hgt": 39,
+   "wid": 6.5
+  },
+  "dims_note": "hgt is the seat-tube side.",
+  "dims_state": "packed",
+  "dims_raw": "49 cm top; 39 cm seat-tube side; 49.5 cm downtube diagonal; 8.5 cm bottom; 7.5 cm rear; Tapered Width: 6.5 - 6 cm",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/expedition-full-frame-pack-10L-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/expedition-full-frame-pack-10L-on-bike-1-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with internal fibreglass rails, upper and lower access",
+   "attachment": "six Hypalon stability straps (three top tube, three downtube, two seat tube)",
+   "pockets": "anti-rattle pocket non-drive side, internal mesh pocket, internal foldable shelf divider",
+   "cablePort": true,
+   "hydrationCompatible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Top Tube Pack",
+  "size": "0.6L",
+  "src": "https://www.apidura.com/shop/expedition-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 23.5,
+   "hgt": 7,
+   "wid": 5
+  },
+  "dims_note": "wid is the max of the 5 -> 4 cm taper.",
+  "dims_state": "packed",
+  "dims_raw": "23.5 cm long x 7 cm tall; Tapered Width: 5 - 4 cm (2 - 1.6 in)",
+  "capacity_l": 0.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-top-tube-pack-0.6l-1-REV1-3.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-top-tube-pack-0.6l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zipper",
+   "attachment": "two Hypalon stability straps to top tube + one soft-touch velcro strap to steerer",
+   "pockets": "single main compartment, wipe-clean interior",
+   "cablePort": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Top Tube Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/expedition-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 23.5,
+   "hgt": 10,
+   "wid": 5
+  },
+  "dims_note": "wid is the max of the 5 -> 4 cm taper.",
+  "dims_state": "packed",
+  "dims_raw": "23.5 cm long x 10 cm tall; Tapered Width: 5 - 4 cm",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-top-tube-pack-1l-1-REV1-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-top-tube-pack-1l-on-bike-1-2.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zipper",
+   "attachment": "two Hypalon stability straps to top tube + one soft-touch velcro strap to steerer",
+   "pockets": "single main compartment, wipe-clean interior",
+   "cablePort": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Bolt-On Top Tube Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/expedition-bolt-on-top-tube-pack-1l/",
+  "verified": true,
+  "dims_cm": {
+   "len": 23,
+   "hgt": 10,
+   "wid": 5
+  },
+  "dims_note": "wid is the max of the 5 -> 4 cm taper. Bolts to top-tube bosses at 64 mm spacing.",
+  "dims_state": "packed",
+  "dims_raw": "23 cm long x 10 cm tall; Tapered Width: 5 - 4 cm; bolt spacing 6.4 cm",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-bolt-on-top-tube-pack-1l-1-REV1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/02/apidura-expedition-bolt-on-top-tube-pack-1l-on-bike-1-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zipper",
+   "attachment": "two tool-free bolts to top tube bosses + one soft-touch velcro strap to steerer",
+   "pockets": "single main compartment",
+   "cablePort": true,
+   "removablePaddedBase": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Stem Pack",
+  "size": "1.3L",
+  "src": "https://www.apidura.com/shop/expedition-stem-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 26,
+   "hgt": 26,
+   "wid": 10
+  },
+  "dims_note": "MIN 20 / MAX 26 cm is the compression range; MAX is the height at rated 1.3 L. Fore-aft depth 7 cm.",
+  "dims_state": "packed",
+  "dims_raw": "10 cm wide; MIN 20 cm / MAX 26 cm tall; 7 cm deep",
+  "capacity_l": 1.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2025/03/apidura-expedition-apidura-expedition-stem-pack-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2025/03/apidura-expedition-stem-pack-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "Fidlock magnetic snap, one-handed",
+   "attachment": "three-point mounting system, vertical and horizontal mounting points",
+   "pockets": "single main compartment",
+   "shape": "tapered to clear the knee",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Downtube Pack",
+  "size": "1.5L",
+  "src": "https://www.apidura.com/shop/expedition-downtube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 27,
+   "hgt": 6.5,
+   "wid": 8
+  },
+  "dims_note": "MIN 21 / MAX 27 cm is the roll-down range; MAX is the length at rated 1.5 L.",
+  "dims_state": "packed",
+  "dims_raw": "8 cm wide (top view); 6.5 cm tall; MIN 21 cm / MAX 27 cm long",
+  "capacity_l": 1.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-expedition-downtube-pack-1.5l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-expedition-downtube-pack-1.5l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "roll-down with quick-release buckle",
+   "attachment": "velcro Hypalon stability strap with silicone print, moulded stability channel",
+   "pockets": "single main compartment",
+   "foamBumpers": true,
+   "shape": "asymmetric base tapered to clear the chainring",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "E-Bike Charger Pack",
+  "size": "1.6L",
+  "src": "https://www.apidura.com/shop/expedition-ebike-charger-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 30,
+   "hgt": 7,
+   "wid": 8
+  },
+  "dims_note": "MIN 20.5 / MAX 30 cm is the roll-down range; MAX is the length at rated 1.6 L.",
+  "dims_state": "packed",
+  "dims_raw": "MIN 20.5 cm / MAX 30 cm long; 7 cm tall; Width: 8 cm (3.1 in)",
+  "capacity_l": 1.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2024/02/apidura-expedition-e-bike-charger-pack-product-alone-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2024/02/apidura-expedition-e-bike-charger-pack-product-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "roll-down with quick-release buckle",
+   "attachment": "velcro Hypalon stability strap with silicone print, moulded stability channel",
+   "pockets": "single main compartment",
+   "foamBumpers": true,
+   "shape": "asymmetric base tapered to clear the chainring",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Cargo Cage Pack",
+  "size": "1.5L",
+  "src": "https://www.apidura.com/shop/expedition-cargo-cage-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 28,
+   "hgt": 28,
+   "wid": 9
+  },
+  "dims_note": "MIN 19 / MAX 28 cm is the roll-down range; MAX is the height at rated 1.5 L. len and hgt both carry the 28 cm height (upright bag); fore-aft depth is 8.5 cm.",
+  "dims_state": "packed",
+  "dims_raw": "9 cm wide; MIN 19 cm / MAX 28 cm tall; Width: 8.5 cm (3.3 in) fore-aft",
+  "capacity_l": 1.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/apidura-expedition-cargo-cage-pack-1.5l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/06/apidura-expedition-cargo-cage-pack-1.5l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "roll-down with quick-release buckle",
+   "attachment": "four Hypalon-reinforced trimmable velcro straps for cargo cages",
+   "pockets": "single main compartment",
+   "valve": "SoftVent air valve",
+   "pullTab": true,
+   "abrasionPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Cargo Cage Pack",
+  "size": "3.5L",
+  "src": "https://www.apidura.com/shop/expedition-cargo-cage-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 28,
+   "hgt": 28,
+   "wid": 13
+  },
+  "dims_note": "MIN 20 / MAX 28 cm roll-down range; MAX used. Fore-aft depth 12 cm.",
+  "dims_state": "packed",
+  "dims_raw": "13 cm wide; MIN 20 cm / MAX 28 cm tall; Width: 12 cm (4.7 in) fore-aft",
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/06/apidura-expedition-cargo-cage-pack-3.5l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "roll-down with quick-release buckle",
+   "attachment": "four Hypalon-reinforced trimmable velcro straps for cargo cages",
+   "pockets": "single main compartment",
+   "valve": "SoftVent air valve",
+   "pullTab": true,
+   "abrasionPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Tool Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/expedition-tool-pack-1l/",
+  "verified": true,
+  "dims_cm": {
+   "len": 28,
+   "hgt": 8,
+   "wid": 4
+  },
+  "dims_note": "CORRECTION: catalogue had wid 8; the diagram's plan view is 4 cm across and the 8 cm figure is the side-view height. MIN 24 / MAX 28 cm roll range, MAX used.",
+  "dims_state": "packed",
+  "dims_raw": "MIN 24 cm / MAX 28 cm long; 8 cm tall; 4 cm wide (page: Width 8 cm / 3.2 in)",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/apidura-expedition-tool-pack-1l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/03/apidura-expedition-tool-pack-1l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with magnetic seal / Fidlock magnetic buckle",
+   "attachment": "one Hypalon stability strap on saddle rails + one soft-touch velcro strap on seatpost, silicone grip",
+   "pockets": "single main compartment",
+   "abrasionPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Front Rack Pack",
+  "size": "20L",
+  "src": "https://www.apidura.com/shop/expedition-front-rack-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 27,
+   "wid": 24.5
+  },
+  "dims_note": "CORRECTION: catalogue had 40 x 26 x 24 with the unrolled height in the len slot. The page gives width 30.5, depth 24.5 and a roll range of MIN 10 to MAX 40 cm height. MAX 40 is fully unrolled; 27 cm is the height that gives the rated 20 L over the 30.5 x 24.5 cm footprint.",
+  "dims_state": "unrolled",
+  "dims_raw": "30.5 cm wide; MIN 10 cm / MAX 40 cm tall; Depth: 24.5 cm (9.6 in); base strap spacing 7.5 cm",
+  "capacity_l": 20,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2025/07/apidura-expedition-front-rack-pack-20l-on-bike-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2025/07/apidura-expedition-front-rack-pack-20l-on-bike-2.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with magnetic seal, compression panel and G-hook",
+   "attachment": "three base straps with buckles; removable shoulder strap",
+   "compressionStraps": 3,
+   "pockets": "internal mesh pocket, internal zip pocket, external mesh side pockets",
+   "structure": "reinforced HDPE thermoplastic frame, silicone base grips",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Expedition",
+  "name": "Front Rack Pack",
+  "size": "30L",
+  "src": "https://www.apidura.com/shop/expedition-front-rack-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 41,
+   "hgt": 24.5,
+   "wid": 30
+  },
+  "dims_note": "CORRECTION: catalogue had 46 x 30 x 26. Page gives width 41, depth 30, roll range MIN 10 to MAX 40 cm height. 24.5 cm is the height giving the rated 30 L over the 41 x 30 cm footprint; MAX 40 is fully unrolled.",
+  "dims_state": "unrolled",
+  "dims_raw": "41 cm wide; MIN 10 cm / MAX 40 cm tall; Depth: 30 cm (11.8 in); base strap spacing 12 cm",
+  "capacity_l": 30,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2025/07/apidura-expedition-front-rack-pack-30l-on-bike-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2025/07/apidura-expedition-front-rack-pack-30l-1.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with magnetic seal, compression panel and G-hook",
+   "attachment": "three base straps with buckles; removable shoulder strap",
+   "compressionStraps": 3,
+   "pockets": "internal mesh pocket, internal zip pocket, external mesh side pockets",
+   "structure": "reinforced HDPE thermoplastic frame, silicone base grips",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Saddle Pack",
+  "size": "4.5L",
+  "src": "https://www.apidura.com/shop/backcountry-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 30,
+   "hgt": 14,
+   "wid": 14
+  },
+  "dims_note": "CORRECTION: catalogue had wid 12; page states Width 14 cm. MIN 24 / MAX 30 cm roll range, MAX is the length at rated 4.5 L.",
+  "dims_state": "packed",
+  "dims_raw": "14 cm tall; MIN 24 cm / MAX 30 cm long; 2.5 cm tail; Width: 14 cm (5.5 in)",
+  "capacity_l": 4.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/06/apidura-backcountry-saddle-pack-4.5l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/06/apidura-backcountry-saddle-pack-4.5l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckles",
+   "shape": "tapered",
+   "attachment": "3-point anti-sway: Hypalon velcro strap(s) to seatpost (two on 10 L) + two buckle straps to saddle rails",
+   "pockets": "single main compartment",
+   "valve": "air release valve",
+   "cord": true,
+   "lightMount": true,
+   "dropperCompatible": true,
+   "abrasionPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Saddle Pack",
+  "size": "6L",
+  "src": "https://www.apidura.com/shop/backcountry-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 36,
+   "hgt": 15,
+   "wid": 16
+  },
+  "dims_note": "CORRECTION: catalogue had wid 13; page states Width 16 cm. MAX 36 cm used.",
+  "dims_state": "packed",
+  "dims_raw": "15 cm tall; MIN 24 cm / MAX 36 cm long; 2.5 cm tail; Width: 16 cm (6.2 in)",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-saddle-pack-6l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-saddle-pack-6l-on-bike-1-1.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckles",
+   "shape": "tapered",
+   "attachment": "3-point anti-sway: Hypalon velcro strap(s) to seatpost (two on 10 L) + two buckle straps to saddle rails",
+   "pockets": "single main compartment",
+   "valve": "air release valve",
+   "cord": true,
+   "lightMount": true,
+   "dropperCompatible": true,
+   "abrasionPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Saddle Pack",
+  "size": "10L",
+  "src": "https://www.apidura.com/shop/backcountry-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 42,
+   "hgt": 16,
+   "wid": 18
+  },
+  "dims_note": "CORRECTION: catalogue had wid 14; page states Width 18 cm. MAX 42 cm used.",
+  "dims_state": "packed",
+  "dims_raw": "16 cm tall; MIN 30 cm / MAX 42 cm long; 6 cm tail; Width: 18 cm (7.0 in)",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-saddle-pack-10l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-saddle-pack-10l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckles",
+   "shape": "tapered",
+   "attachment": "3-point anti-sway: Hypalon velcro strap(s) to seatpost (two on 10 L) + two buckle straps to saddle rails",
+   "pockets": "single main compartment",
+   "valve": "air release valve",
+   "cord": true,
+   "lightMount": true,
+   "dropperCompatible": true,
+   "abrasionPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Handlebar Pack",
+  "size": "7L",
+  "src": "https://www.apidura.com/shop/backcountry-handlebar-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 43,
+   "hgt": 12,
+   "wid": 12
+  },
+  "dims_note": "MIN 28.5 / MAX 43 cm is the roll-in range across the bars; MAX is the width at rated 7 L.",
+  "dims_state": "packed",
+  "dims_raw": "12 cm tall; MIN 28.5 cm / MAX 43 cm wide; 13 cm strap spacing; Width: 12 cm (4.7 in)",
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-handlebar-pack-7l-1-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-handlebar-pack-7l-on-bike-1-2.jpg"
+  ],
+  "features": {
+   "closure": "roll-down with quick-release buckles",
+   "attachment": "two reinforced velcro straps to handlebar + one strap to head tube",
+   "pockets": "single main compartment",
+   "valve": "air release valve",
+   "cord": true,
+   "abrasionPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Handlebar Pack",
+  "size": "11L",
+  "src": "https://www.apidura.com/shop/backcountry-handlebar-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 54,
+   "hgt": 14,
+   "wid": 14
+  },
+  "dims_note": "MIN 30 / MAX 54 cm roll-in range; MAX used.",
+  "dims_state": "packed",
+  "dims_raw": "14 cm tall; MIN 30 cm / MAX 54 cm wide; 13 cm strap spacing; Width: 14 cm (5.5 in)",
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-handlebar-pack-11l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-handlebar-pack-11l-on-bike-1-1.jpg"
+  ],
+  "features": {
+   "closure": "roll-down with quick-release buckles",
+   "attachment": "two reinforced velcro straps to handlebar + one strap to head tube",
+   "pockets": "single main compartment",
+   "valve": "air release valve",
+   "cord": true,
+   "abrasionPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Frame Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/backcountry-frame-pack-1l/",
+  "verified": true,
+  "dims_cm": {
+   "len": 22,
+   "hgt": 10.5,
+   "wid": 6
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5; page states Width 6 cm.",
+  "dims_state": "packed",
+  "dims_raw": "22 cm long; 6 cm and 10.5 cm heights; 3.5 cm rear; Width: 6 cm (2.3 in)",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2022/09/apidura-backcountry-frame-pack-1l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2022/09/apidura-backcountry-frame-pack-1l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers",
+   "attachment": "two Hypalon velcro straps to top tube + one or two nylon straps to downtube",
+   "pockets": "main compartment with internal lash tab",
+   "reversible": true,
+   "cablePort": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Frame Pack",
+  "size": "2L",
+  "src": "https://www.apidura.com/shop/backcountry-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 32,
+   "hgt": 13,
+   "wid": 6
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5; page states Width 6 cm.",
+  "dims_state": "packed",
+  "dims_raw": "32 cm long; 7.5 cm and 13 cm heights; 4 cm rear; Width: 6 cm (2.3 in)",
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2025/09/apidura-backcountry-frame-pack-2l-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2025/09/apidura-backcountry-frame-pack-2l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers",
+   "attachment": "two Hypalon velcro straps to top tube + one or two nylon straps to downtube",
+   "pockets": "main compartment with internal lash tab",
+   "reversible": true,
+   "cablePort": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Full Frame Pack",
+  "size": "2.5L",
+  "src": "https://www.apidura.com/shop/backcountry-full-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 30,
+   "hgt": 18,
+   "wid": 6
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5.5; page states Width 6 cm.",
+  "dims_state": "packed",
+  "dims_raw": "30 cm top; 18 cm seat-tube side; 31.5 cm downtube diagonal; 8 cm bottom; 5 cm rear; Width: 6 cm (2.4 in)",
+  "capacity_l": 2.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2022/03/apidura-backcountry-full-frame-pack-2.5l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2022/03/apidura-backcountry-full-frame-pack-2.5l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers, dual zip opening on drive side",
+   "attachment": "three Hypalon velcro straps to top tube (two on 2.5 L), two to seat tube, three nylon straps to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal zip pocket, internal lash tabs",
+   "hydrationCompatible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Full Frame Pack",
+  "size": "4L",
+  "src": "https://www.apidura.com/shop/backcountry-full-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 38,
+   "hgt": 22,
+   "wid": 6
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5.5; page states Width 6 cm.",
+  "dims_state": "packed",
+  "dims_raw": "38 cm top; 22 cm seat-tube side; 38 cm downtube diagonal; 9 cm bottom; 5 cm rear; Width: 6 cm (2.4 in)",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-full-frame-pack-4L-1-3.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-full-frame-pack-4l-on-bike-1-2.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers, dual zip opening on drive side",
+   "attachment": "three Hypalon velcro straps to top tube (two on 2.5 L), two to seat tube, three nylon straps to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal zip pocket, internal lash tabs",
+   "hydrationCompatible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Full Frame Pack",
+  "size": "6L",
+  "src": "https://www.apidura.com/shop/backcountry-full-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 44,
+   "hgt": 29,
+   "wid": 6
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5.5; page states Width 6 cm.",
+  "dims_state": "packed",
+  "dims_raw": "44 cm top; 29 cm seat-tube side; 43 cm downtube diagonal; 9 cm bottom; 5 cm rear; Width: 6 cm (2.4 in)",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-full-frame-pack-6L-1-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2018/07/apidura-backcountry-full-frame-pack-6l-on-bike-1-3.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers, dual zip opening on drive side",
+   "attachment": "three Hypalon velcro straps to top tube (two on 2.5 L), two to seat tube, three nylon straps to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal zip pocket, internal lash tabs",
+   "hydrationCompatible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Top Tube Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/backcountry-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 23,
+   "hgt": 10,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5; page states Width 4.5 cm.",
+  "dims_state": "packed",
+  "dims_raw": "23 cm long x 10 cm tall; Width: 4.5 cm (1.8 in)",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2024/01/apidura-backcountry-top-tube-pack-2l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2024/01/apidura-backcountry-top-tube-pack-2l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zipper with one-finger puller",
+   "attachment": "two Hypalon velcro straps to top tube + one to steerer",
+   "pockets": "single main compartment",
+   "foamPadding": true,
+   "cablePort": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Long Top Tube Pack",
+  "size": "1.8L",
+  "src": "https://www.apidura.com/shop/backcountry-long-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 37,
+   "hgt": 10,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5; page states Width 4.5 cm. hgt is the taller rear end.",
+  "dims_state": "packed",
+  "dims_raw": "37 cm long; 7 cm front and 10 cm rear heights; Width: 4.5 cm (1.8 in)",
+  "capacity_l": 1.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2020/11/apidura-backcountry-long-top-tube-pack-1.8l-1-3.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2020/11/apidura-backcountry-long-top-tube-pack-1.8l-on-bike-1-3.jpg"
+  ],
+  "features": {
+   "closure": "waterproof two-way zipper",
+   "attachment": "three Hypalon velcro straps to top tube + one to steerer",
+   "pockets": "internal mesh pocket, adjustable internal divider",
+   "foamPadding": true,
+   "cablePort": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Rear Top Tube Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/backcountry-rear-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 16.5,
+   "hgt": 15,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5; page states Width 4.5 cm.",
+  "dims_state": "packed",
+  "dims_raw": "16.5 cm long x 15 cm tall; Width: 4.5 cm (1.8 in)",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2024/01/apidura-backcountry-rear-top-tube-pack-1l-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2024/01/apidura-backcountry-rear-top-tube-pack-1l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zipper with one-finger puller",
+   "attachment": "one Hypalon velcro strap to top tube + two to seatpost",
+   "pockets": "internal mesh pocket",
+   "foamPadding": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Food Pouch",
+  "size": "0.8L",
+  "src": "https://www.apidura.com/shop/backcountry-food-pouch/",
+  "verified": true,
+  "dims_cm": {
+   "len": 16,
+   "hgt": 16,
+   "wid": 9
+  },
+  "dims_note": "Upright pouch: len and hgt both carry the 16 cm height, wid is the 9 cm diameter. Fore-aft depth 6 cm.",
+  "dims_state": "packed",
+  "dims_raw": "9 cm wide x 16 cm tall x 6 cm deep; Diameter: 9 cm (3.5 in)",
+  "capacity_l": 0.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2024/01/apidura-backcountry-food-pouch-0.8l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2024/01/apidura-backcountry-food-pouch-0.8l-2.jpg"
+  ],
+  "features": {
+   "closure": "drawcord, one-handed",
+   "attachment": "two Hypalon velcro straps to handlebar + one nylon strap with quick-release buckle to fork",
+   "pockets": "single main compartment",
+   "shape": "tapered to clear the knee"
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Food Pouch",
+  "size": "1.2L",
+  "src": "https://www.apidura.com/shop/backcountry-food-pouch/",
+  "verified": true,
+  "dims_cm": {
+   "len": 19,
+   "hgt": 19,
+   "wid": 10
+  },
+  "dims_note": "Upright pouch: len and hgt carry the 19 cm height, wid is the 10 cm diameter.",
+  "dims_state": "packed",
+  "dims_raw": "10 cm wide x 19 cm tall x 7 cm deep; Diameter: 10 cm (3.9 in)",
+  "capacity_l": 1.2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2024/01/apidura-backcountry-food-pouch-1.2l-1-2.jpg"
+  ],
+  "features": {
+   "closure": "drawcord, one-handed",
+   "attachment": "two Hypalon velcro straps to handlebar + one nylon strap with quick-release buckle to fork",
+   "pockets": "single main compartment",
+   "shape": "tapered to clear the knee"
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Food Pouch Plus",
+  "size": "1.2L Plus",
+  "src": "https://www.apidura.com/shop/backcountry-food-pouch/",
+  "verified": true,
+  "dims_cm": {
+   "len": 19,
+   "hgt": 19,
+   "wid": 10
+  },
+  "dims_note": "Same envelope as the 1.2 L; the Plus adds an external mesh pocket and a drainage hole.",
+  "dims_state": "packed",
+  "dims_raw": "10 cm wide x 19 cm tall x 7 cm deep; Diameter: 9 cm (3.5 in) stated for the Plus",
+  "capacity_l": 1.2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2024/01/apidura-backcountry-food-pouch-1.2l-1-2.jpg"
+  ],
+  "features": {
+   "closure": "drawcord, one-handed",
+   "attachment": "two Hypalon velcro straps to handlebar + one nylon strap with quick-release buckle to fork",
+   "pockets": "main compartment + external mesh pockets",
+   "drainageHole": true,
+   "shape": "tapered to clear the knee"
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Backcountry",
+  "name": "Downtube Pack",
+  "size": "1.8L",
+  "src": "https://www.apidura.com/shop/backcountry-downtube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 24,
+   "hgt": 9,
+   "wid": 9.5
+  },
+  "dims_note": "CORRECTION: catalogue had wid 9; page states Width 9.5 cm. MIN 16 / MAX 24 cm roll range, MAX used.",
+  "dims_state": "packed",
+  "dims_raw": "4 cm strap; 9 cm tall; MIN 16 cm / MAX 24 cm long; Width: 9.5 cm (3.7 in)",
+  "capacity_l": 1.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2022/04/apidura-backcountry-downtube-pack-1.8l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2022/04/apidura-backcountry-downtube-pack-1.8l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "roll-down with quick-release buckle",
+   "attachment": "Hypalon-reinforced velcro strap for 12-20 cm tube circumference",
+   "pockets": "single main compartment",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Saddle Pack",
+  "size": "3L",
+  "src": "https://www.apidura.com/shop/racing-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 24,
+   "hgt": 14.5,
+   "wid": 12
+  },
+  "dims_note": "CORRECTION: catalogue had wid 11; page states Width 12 cm. MIN 19 / MAX 24 cm roll range, MAX used.",
+  "dims_state": "packed",
+  "dims_raw": "14.5 cm tall; MIN 19 cm / MAX 24 cm long; 2.5 cm tail; Width: 12 cm (4.7 in)",
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-saddle-pack-3l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-saddle-pack-3l-on-bike-1-2.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckles",
+   "shape": "tapered",
+   "attachment": "3-point anti-sway: one velcro strap to seatpost + two buckle straps to saddle rails",
+   "pockets": "single main compartment",
+   "valve": "air release valve",
+   "lightMount": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Saddle Pack",
+  "size": "5L",
+  "src": "https://www.apidura.com/shop/racing-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 33,
+   "hgt": 15,
+   "wid": 14
+  },
+  "dims_note": "CORRECTION: catalogue had wid 12; page states Width 14 cm. MAX 33 cm used.",
+  "dims_state": "packed",
+  "dims_raw": "15 cm tall; MIN 23 cm / MAX 33 cm long; 4 cm tail; Width: 14 cm (5.5 in)",
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-saddle-pack-5l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-saddle-pack-5l-on-bike-1-2.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckles",
+   "shape": "tapered",
+   "attachment": "3-point anti-sway: one velcro strap to seatpost + two buckle straps to saddle rails",
+   "pockets": "single main compartment",
+   "valve": "air release valve",
+   "lightMount": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Saddle Pack",
+  "size": "7L",
+  "src": "https://www.apidura.com/shop/racing-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 39.5,
+   "hgt": 18,
+   "wid": 16
+  },
+  "dims_note": "CORRECTION: catalogue had wid 13; page states Width 16 cm. MAX 39.5 cm used.",
+  "dims_state": "packed",
+  "dims_raw": "18 cm tall; MIN 29.5 cm / MAX 39.5 cm long; 4 cm tail; Width: 16 cm (6.3 in)",
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-saddle-pack-7l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-saddle-pack-7l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckles",
+   "shape": "tapered",
+   "attachment": "3-point anti-sway: one velcro strap to seatpost + two buckle straps to saddle rails",
+   "pockets": "single main compartment",
+   "valve": "air release valve",
+   "lightMount": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Handlebar Pack",
+  "size": "2L",
+  "src": "https://www.apidura.com/shop/racing-handlebar-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 23,
+   "hgt": 20,
+   "wid": 10
+  },
+  "dims_note": "CORRECTION: catalogue had wid 8; page states Depth 10 cm. MIN 15 / MAX 20 cm is the stretch-panel range; MAX is the height at rated 2 L.",
+  "dims_state": "packed",
+  "dims_raw": "23 cm wide; MIN 15 cm / MAX 20 cm tall; Depth: 10 cm (3.9 in)",
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2022/05/apidura-racing-handlebar-pack-2l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2022/05/apidura-racing-handlebar-pack-2l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "fold-over with velcro strips, full-width access",
+   "attachment": "two velcro-reinforced straps to handlebar + one nylon buckle strap to head tube",
+   "pockets": "internal mesh pocket",
+   "stretchPanels": true,
+   "lightMount": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Aerobar Pack",
+  "size": "2.5L",
+  "src": "https://www.apidura.com/shop/racing-aerobar-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 26,
+   "hgt": 9.5,
+   "wid": 11
+  },
+  "dims_note": "CORRECTION: catalogue had wid 10; page states Width 11 cm. MIN 22 / MAX 26 cm roll range, MAX used.",
+  "dims_state": "packed",
+  "dims_raw": "9.5 cm tall; MIN 22 cm / MAX 26 cm long; Width: 11 cm (4.3 in)",
+  "capacity_l": 2.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Reflective silver / yellow graphics",
+    "hex": "#d8d24a"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2021/07/apidura-racing-aerobar-pack-2.5l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2021/07/apidura-racing-aerobar-pack-2.5l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "roll-down with quick-release buckles",
+   "attachment": "four Hypalon-reinforced velcro straps to aerobars",
+   "pockets": "single main compartment",
+   "cord": true,
+   "lightMount": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Frame Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/racing-frame-pack-1l/",
+  "verified": true,
+  "dims_cm": {
+   "len": 20.5,
+   "hgt": 13.5,
+   "wid": 5
+  },
+  "dims_note": "Dimensions read from the size diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "20.5 cm long; 7 cm front and 13.5 cm mid heights; 3.5 cm rear; Width: 5 cm (2 in)",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2023/10/apidura-racing-frame-pack-1l-product-alone-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2023/10/apidura-racing-frame-pack-1l-on-bike-1-1-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers",
+   "attachment": "two Hypalon velcro straps to top tube (three on 4 L) + one or two nylon straps to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal lash tab",
+   "cablePort": true,
+   "reversible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Frame Pack",
+  "size": "2.4L",
+  "src": "https://www.apidura.com/shop/racing-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 29,
+   "hgt": 14,
+   "wid": 6
+  },
+  "dims_note": "Dimensions read from the size diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "29 cm long; 7 cm front, 14 cm mid, 5 cm rear heights; Width: 6 cm (2.4 in)",
+  "capacity_l": 2.4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-frame-pack-2.4l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-frame-pack-2.4l-on-bike-1-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers",
+   "attachment": "two Hypalon velcro straps to top tube (three on 4 L) + one or two nylon straps to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal lash tab",
+   "cablePort": true,
+   "reversible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Frame Pack",
+  "size": "4L",
+  "src": "https://www.apidura.com/shop/racing-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 42,
+   "hgt": 14,
+   "wid": 6
+  },
+  "dims_note": "Dimensions read from the size diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "42 cm long; 7 cm front, 14 cm mid, 5 cm rear heights; Width: 6 cm (2.4 in)",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-frame-pack-4l-1-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2019/05/apidura-racing-frame-pack-4l-on-bike-1-2.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers",
+   "attachment": "two Hypalon velcro straps to top tube (three on 4 L) + one or two nylon straps to downtube",
+   "pockets": "anti-rattle pocket non-drive side, internal lash tab",
+   "cablePort": true,
+   "reversible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Top Tube Pack",
+  "size": "0.5L",
+  "src": "https://www.apidura.com/shop/racing-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 17,
+   "hgt": 10,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5; page states Width 4.5 cm.",
+  "dims_state": "packed",
+  "dims_raw": "17 cm long x 10 cm tall; Width: 4.5 cm (1.8 in)",
+  "capacity_l": 0.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2022/08/apidura-racing-top-tube-pack-0.5l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "magnetic flip-top, one-handed",
+   "attachment": "two Hypalon velcro straps to top tube + one to steerer",
+   "pockets": "single main compartment",
+   "cablePort": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Top Tube Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/racing-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 23.5,
+   "hgt": 10,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5; page states Width 4.5 cm.",
+  "dims_state": "packed",
+  "dims_raw": "23.5 cm long x 10 cm tall; Width: 4.5 cm (1.8 in)",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2022/08/apidura-racing-top-tube-pack-1l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "magnetic flip-top, one-handed",
+   "attachment": "two Hypalon velcro straps to top tube + one to steerer",
+   "pockets": "single main compartment",
+   "cablePort": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Bolt-On Top Tube Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/racing-bolt-on-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 23.5,
+   "hgt": 10,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5; page states Width 4.5 cm.",
+  "dims_state": "packed",
+  "dims_raw": "23.5 cm long x 10 cm tall; Width: 4.5 cm (1.8 in); bolt spacing 6.4 cm",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2023/06/apidura-racing-bolt-on-top-tube-pack-1l-2.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2020/01/apidura-racing-bolt-on-top-tube-pack-1l-on-bike-1-1.jpg"
+  ],
+  "features": {
+   "closure": "magnetic flip-top, one-handed",
+   "attachment": "two tool-free bolts to top tube bosses + one Hypalon velcro strap to steerer",
+   "pockets": "single main compartment",
+   "cablePort": true,
+   "removablePaddedBase": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Racing",
+  "name": "Long Top Tube Pack",
+  "size": "2L",
+  "src": "https://www.apidura.com/shop/racing-long-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 44,
+   "hgt": 10,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5; page states Width 4.5 cm. hgt is the taller rear end.",
+  "dims_state": "packed",
+  "dims_raw": "44 cm long; 4.5 cm front and 10 cm rear heights; Width: 4.5 cm (1.8 in)",
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2020/10/apidura-racing-long-top-tube-pack-2l-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2020/10/apidura-racing-long-top-tube-pack-2l-on-bike-1-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof two-way zipper with one-finger pullers",
+   "attachment": "three Hypalon velcro straps to top tube + one to steerer",
+   "pockets": "internal mesh pocket, adjustable internal divider",
+   "cablePort": true,
+   "foamPadding": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Frame Module",
+  "size": "Medium",
+  "src": "https://www.apidura.com/shop/aero-frame-module/",
+  "verified": true,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 17.5,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had len 35, which is the downtube diagonal. The top-tube length is 30.5 cm. Page gives no width figure; wid 4.5 cm carried over from the catalogue, unverified.",
+  "dims_state": "packed",
+  "dims_raw": "30.5 cm top length; 35 cm downtube diagonal; 17.5 cm front and 14 cm mid heights; 3 cm rear",
+  "capacity_l": 1.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-aero-frame-module-s-m-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-aero-frame-module-s-m-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "attachment": "two Hypalon load straps with silicone backing, velcro transfer panel to downtube, elastic tension bands round head tube, cam lock",
+   "pockets": "single main compartment with optional internal lash loop",
+   "cablePort": true,
+   "transferPanel": true,
+   "structure": "internal HDPE thermoplastic frame"
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Frame Module",
+  "size": "Large",
+  "src": "https://www.apidura.com/shop/aero-frame-module/",
+  "verified": true,
+  "dims_cm": {
+   "len": 31.5,
+   "hgt": 19.5,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had len 36, which is the downtube diagonal. Top-tube length is 31.5 cm. No width on the page; wid 4.5 cm carried over, unverified.",
+  "dims_state": "packed",
+  "dims_raw": "31.5 cm top length; 36 cm downtube diagonal; 19.5 cm front and 16.5 cm mid heights; 6.5 cm rear",
+  "capacity_l": 2.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-aero-frame-module-l-xl-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "attachment": "two Hypalon load straps with silicone backing, velcro transfer panel to downtube, elastic tension bands round head tube, cam lock",
+   "pockets": "single main compartment with optional internal lash loop",
+   "cablePort": true,
+   "transferPanel": true,
+   "structure": "internal HDPE thermoplastic frame"
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Top Tube Module",
+  "size": "0.4L",
+  "src": "https://www.apidura.com/shop/aero-top-tube-module/",
+  "verified": true,
+  "dims_cm": {
+   "len": 22,
+   "hgt": 6,
+   "wid": 5
+  },
+  "dims_note": "Dimensions read from the size diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "22 cm long; 6 cm front and 3 cm rear heights; 5 cm wide",
+  "capacity_l": 0.4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-aero-top-tube-module-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-aero-top-tube-module-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "fast-entry magnetic closure",
+   "attachment": "two Hypalon load straps with silicone backing and cam lock",
+   "pockets": "single main compartment with soft interior base",
+   "transferPanel": true,
+   "structure": "internal HDPE thermoplastic frame"
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Bolt-On Top Tube Module",
+  "size": "0.4L",
+  "src": "https://www.apidura.com/shop/aero-bolt-on-top-tube-module/",
+  "verified": true,
+  "dims_cm": {
+   "len": 22,
+   "hgt": 6,
+   "wid": 5
+  },
+  "dims_note": "Two M5 bolts at 64 mm spacing with 5 cm fore-aft adjustment.",
+  "dims_state": "packed",
+  "dims_raw": "22 cm long; 6 cm front and 3 cm rear heights; 5 cm wide; bolt spacing 6.4 cm",
+  "capacity_l": 0.4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/05/apidura-aero-bolt-on-top-tube-module-1-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/05/apidura-aero-bolt-on-top-tube-module-on-bike-2-1.jpg"
+  ],
+  "features": {
+   "closure": "fast-entry magnetic closure (not waterproof)",
+   "attachment": "two M5 hex bolts to top tube mounts, 64 mm spacing, 5 cm fore-aft adjustment",
+   "pockets": "single main compartment",
+   "removablePaddedBase": true,
+   "transferPanel": true,
+   "carbonReinforced": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Aero",
+  "name": "Bolt-On Long Top Tube Module",
+  "size": "0.8L",
+  "src": "https://www.apidura.com/shop/aero-bolt-on-long-top-tube-module/",
+  "verified": true,
+  "dims_cm": {
+   "len": 34,
+   "hgt": 6,
+   "wid": 5
+  },
+  "dims_note": "Dimensions read from the size diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "34 cm long; 6 cm front and 3 cm rear heights; 5 cm wide; bolt spacing 6.4 cm",
+  "capacity_l": 0.8,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2026/05/apidura-aero-long-bolt-on-top-tube-module-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2026/05/apidura-aero-bolt-on-long-top-tube-module-on-bike-2-1.jpg"
+  ],
+  "features": {
+   "closure": "full-length waterproof zipper",
+   "attachment": "two M5 hex bolts, strapless",
+   "pockets": "single main compartment",
+   "transferPanel": true,
+   "carbonReinforced": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "City",
+  "name": "Handlebar Pack",
+  "size": "2L",
+  "src": "https://www.apidura.com/shop/city-handlebar-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 20,
+   "hgt": 20,
+   "wid": 10
+  },
+  "dims_note": "MIN 15 / MAX 20 cm is the stretch-panel range; MAX used.",
+  "dims_state": "packed",
+  "dims_raw": "20 cm wide; MIN 15 cm / MAX 20 cm tall; Depth: 10 cm (3.9 in)",
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "CT400 Marle (grey marl)",
+    "hex": "#6f7174"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2022/02/apidura-city-handlebar-pack-2l-1-1-225x150.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2022/02/apidura-city-handlebar-pack-2l-on-bike-1-225x150.jpg"
+  ],
+  "features": {
+   "closure": "fold-over with velcro strips",
+   "attachment": "two quick-release straps to handlebar + one reinforced anti-sway strap to head tube",
+   "pockets": "internal mesh pocket, external back slip pocket",
+   "stretchPanels": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Canyon Collab",
+  "name": "Handlebar Pack",
+  "size": "2L",
+  "src": "https://www.apidura.com/shop/apidura-x-canyon-handlebar-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 23,
+   "hgt": 20,
+   "wid": 10
+  },
+  "dims_note": "CORRECTION: catalogue had wid 8; page states Depth 10 cm. The page links the Racing 2 L dimension diagram.",
+  "dims_state": "packed",
+  "dims_raw": "Depth: 10 cm (3.9 in); shares the Racing Handlebar Pack 2 L diagram: 23 cm wide, MIN 15 / MAX 20 cm tall",
+  "capacity_l": 2,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2023/02/apidura-canyon-handlebar-pack-2l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2023/02/apidura-canyon-handlebar-pack-2l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "zip-free fold-over",
+   "attachment": "handlebar straps with removable spacers",
+   "pockets": "interior mesh pocket",
+   "stretchPanels": true,
+   "lightMount": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Canyon Collab",
+  "name": "Saddle Pack",
+  "size": "5L",
+  "src": "https://www.apidura.com/shop/apidura-x-canyon-saddle-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 33,
+   "hgt": 15,
+   "wid": 14
+  },
+  "dims_note": "CORRECTION: catalogue had wid 12; page states 14 cm. MAX 33 cm used.",
+  "dims_state": "packed",
+  "dims_raw": "15 cm tall; MIN 23 cm / MAX 33 cm long; 4 cm tail; Depth: 14 cm (5.5 in)",
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2021/05/apidura-canyon-saddle-pack-5l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2021/05/apidura-canyon-saddle-pack-5l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "shape": "tapered",
+   "attachment": "3-point anti-sway system",
+   "pockets": "single main compartment",
+   "lightMount": "laser-cut light attachment",
+   "abrasionPanels": "420D nylon",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Canyon Collab",
+  "name": "Frame Pack",
+  "size": "2.4L",
+  "src": "https://www.apidura.com/shop/apidura-x-canyon-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 29,
+   "hgt": 14,
+   "wid": 6
+  },
+  "dims_note": "Dimensions read from the size diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "29 cm long; 7 cm front, 14 cm mid, 5 cm rear heights; Width: 6 cm (2.4 in)",
+  "capacity_l": 2.4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2021/05/apidura-canyon-frame-pack-2.4l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2021/05/apidura-canyon-frame-pack-2.4l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zip designed to shed mud",
+   "attachment": "Hypalon-reinforced straps",
+   "pockets": "two compartments plus anti-rattle pocket, internal lash tab",
+   "cablePort": true,
+   "abrasionPanels": "420D nylon"
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Canyon Collab",
+  "name": "Frame Pack",
+  "size": "4.5L",
+  "src": "https://www.apidura.com/shop/apidura-x-canyon-frame-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 42,
+   "hgt": 14.5,
+   "wid": 6
+  },
+  "dims_note": "CORRECTION: catalogue had wid 6.5; page states Width 6 cm (6.5 cm is the rear-end height in the diagram).",
+  "dims_state": "packed",
+  "dims_raw": "42 cm long; 8 cm front, 14.5 cm mid, 6.5 cm rear heights; Width: 6 cm (2.4 in)",
+  "capacity_l": 4.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2021/05/apidura-canyon-frame-pack-lifestyle-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zip designed to shed mud",
+   "attachment": "Hypalon-reinforced straps",
+   "pockets": "two compartments plus anti-rattle pocket, internal lash tab",
+   "cablePort": true,
+   "abrasionPanels": "420D nylon"
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Canyon Collab",
+  "name": "Bolt-On Top Tube Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/apidura-x-canyon-bolt-on-top-tube-pack/",
+  "verified": true,
+  "dims_cm": {
+   "len": 23.5,
+   "hgt": 10,
+   "wid": 4.5
+  },
+  "dims_note": "CORRECTION: catalogue had wid 6.5; page states Width 4.5 cm (6.5 cm in the diagram is the base-plate depth).",
+  "dims_state": "packed",
+  "dims_raw": "23.5 cm long x 10 cm tall; Width: 4.5 cm (1.8 in); bolt spacing 6.4 cm",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2021/05/apidura-canyon-bolt-on-top-tube-pack-1l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2021/05/apidura-canyon-bolt-on-top-tube-pack-1l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "magnetic quick-access flip-top",
+   "attachment": "tool-free bolts to top tube bosses",
+   "pockets": "single main compartment",
+   "removablePaddedBase": true,
+   "cablePort": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "MAAP Collab",
+  "name": "Handlebar Pack",
+  "size": "9L",
+  "src": "https://www.apidura.com/shop/maap-x-apidura-handlebar-pack-9l-v2/",
+  "verified": true,
+  "dims_cm": {
+   "len": 43,
+   "hgt": 12,
+   "wid": 12
+  },
+  "dims_note": "MIN 28.5 / MAX 43 cm roll-in range; MAX used.",
+  "dims_state": "packed",
+  "dims_raw": "12 cm tall; MIN 28.5 cm / MAX 43 cm wide; 22 cm front pocket; 13 cm strap spacing; Width: 12 cm (4.7 in)",
+  "capacity_l": 9,
+  "colorways": [
+   {
+    "name": "MAAP Alt Road (loam green)",
+    "hex": "#6f7358"
+   },
+   {
+    "name": "Graphite accents",
+    "hex": "#4a4b48"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2025/05/apidura-maap-handlebar-pack-9l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2025/05/apidura-maap-handlebar-pack-9L-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "roll-down with quick-release buckles",
+   "attachment": "two nylon straps to handlebar + bungee drawcord to head tube",
+   "pockets": "waterproof front pocket",
+   "valve": "air release valve",
+   "lightMount": "laser-cut light attachment",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "MAAP Collab",
+  "name": "Saddle Pack",
+  "size": "7L",
+  "src": "https://www.apidura.com/shop/maap-x-apidura-saddle-pack-7l-v2/",
+  "verified": true,
+  "dims_cm": {
+   "len": 39.5,
+   "hgt": 18,
+   "wid": 16
+  },
+  "dims_note": "CORRECTION: catalogue had wid 13; page states Width 16 cm. MAX 39.5 cm used.",
+  "dims_state": "packed",
+  "dims_raw": "18 cm tall; MIN 29.5 cm / MAX 39.5 cm long; 4 cm tail; Width: 16 cm (6.3 in)",
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "MAAP Alt Road (loam green)",
+    "hex": "#6f7358"
+   },
+   {
+    "name": "Graphite accents",
+    "hex": "#4a4b48"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2025/05/apidura-maap-saddle-pack-7l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2025/05/apidura-maap-saddle-pack-7l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with quick-release buckles",
+   "shape": "tapered",
+   "attachment": "3-point anti-sway: one velcro strap to seatpost + two buckle straps to saddle rails",
+   "pockets": "single main compartment",
+   "valve": "air release valve",
+   "cord": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "MAAP Collab",
+  "name": "Frame Pack",
+  "size": "1L",
+  "src": "https://www.apidura.com/shop/maap-x-apidura-frame-pack-1l-v2/",
+  "verified": true,
+  "dims_cm": {
+   "len": 20.5,
+   "hgt": 13.5,
+   "wid": 5
+  },
+  "dims_note": "Dimensions read from the size diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "20.5 cm long; 7 cm front and 13.5 cm mid heights; 3.5 cm rear; Width: 5 cm (2 in)",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "MAAP Alt Road (loam green)",
+    "hex": "#6f7358"
+   },
+   {
+    "name": "Graphite accents",
+    "hex": "#4a4b48"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2025/05/apidura-maap-frame-pack-1l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2025/05/apidura-maap-frame-pack-1l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with oversized pull tab",
+   "attachment": "two Hypalon velcro straps to top tube + one nylon strap to downtube",
+   "pockets": "main compartment with internal lash tab",
+   "cablePort": true,
+   "reversible": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "MAAP Collab",
+  "name": "Frame Pack",
+  "size": "4L",
+  "src": "https://www.apidura.com/shop/maap-x-apidura-frame-pack-4l-v2/",
+  "verified": true,
+  "dims_cm": {
+   "len": 42,
+   "hgt": 14,
+   "wid": 6
+  },
+  "dims_note": "Dimensions read from the size diagram on the product page.",
+  "dims_state": "packed",
+  "dims_raw": "42 cm long; 7 cm front and 14 cm mid heights; 5 cm rear; Width: 6 cm (2.4 in)",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "MAAP Alt Road (loam green)",
+    "hex": "#6f7358"
+   },
+   {
+    "name": "Graphite accents",
+    "hex": "#4a4b48"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2025/04/apidura-maap-frame-pack-4l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2025/04/apidura-maap-frame-pack-4l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zippers with oversized pull tabs",
+   "attachment": "three Hypalon velcro straps to top tube + two nylon straps to downtube",
+   "pockets": "main compartment + external mesh pocket",
+   "cablePort": true,
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Apidura",
+  "line": "Bombtrack Collab",
+  "name": "Frame Pack",
+  "size": "2.4L",
+  "src": "https://www.apidura.com/shop/apidura-bombtrack-frame-pack-2-4l/",
+  "verified": true,
+  "dims_cm": {
+   "len": 31,
+   "hgt": 15,
+   "wid": 6
+  },
+  "dims_note": "CORRECTION: catalogue had wid 5.5; page states Width 6 cm.",
+  "dims_state": "packed",
+  "dims_raw": "31 cm long; 7.5 cm front, 15 cm mid, 5 cm rear heights; Width: 6 cm (2.4 in)",
+  "capacity_l": 2.4,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://medias.apidura.com/sHRQ6jzh/2022/08/apidura-apidurabombtrack-frame-pack-2.4l-1.jpg",
+   "https://medias.apidura.com/sHRQ6jzh/2022/08/apidura-apidurabombtrack-frame-pack-2.4l-on-bike-1.jpg"
+  ],
+  "features": {
+   "closure": "waterproof zip with Woojin buckles",
+   "attachment": "Hypalon-reinforced velcro straps",
+   "pockets": "two compartments",
+   "cablePort": "battery lead and hose port",
+   "fabric": "Dimension-Polyant VX21",
+   "reflective": true
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Seat-Pack",
+  "name": "Seat-Pack",
+  "size": "11L",
+  "src": "https://us.ortlieb.com/products/seat-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 39.9,
+   "hgt": 25.9,
+   "wid": 15.0
+  },
+  "dims_note": "Roll closures on the sides adjust volume; the stated figures are the bag at its 11 L rating. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 10.2 in, Width 15.7 in, Depth 5.9 in (25.9 x 39.9 x 15.0 cm); Volume 11 L; Weight 12.2 oz; sold as a SINGLE bag - scope of delivery \"1x saddle bag with hook and loop fastener, valve, adjustable straps and inner stiffener\"",
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9912-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9913-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9912-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9912-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9912-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9912-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9912-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9912-detail-3.jpg"
+  ],
+  "features": {
+   "closure": "rolltop, roll closures on the sides for volume adjustment",
+   "attachment": "two hook-and-loop straps to the saddle rails + seatpost strap",
+   "valve": "compression valve",
+   "stiffener": "inner stiffener",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "actsAsFender": true,
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x saddle bag with hook and loop fastener, valve, adjustable straps and inner stiffener"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Seat-Pack",
+  "name": "Seat-Pack",
+  "size": "16.5L",
+  "src": "https://us.ortlieb.com/products/seat-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 64.0,
+   "hgt": 30.0,
+   "wid": 22.1
+  },
+  "dims_note": "Roll closures on the sides adjust volume; figures are the bag at its 16.5 L rating. The box volume far exceeds 16.5 L because the pack tapers sharply to the tail. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 11.8 in, Width 25.2 in, Depth 8.7 in (30.0 x 64.0 x 22.1 cm); Volume 16.5 L; Weight 17.3 oz; sold as a SINGLE bag - scope of delivery \"1x saddle bag with hook and loop fastener, valve, adjustable straps and inner stiffener\"",
+  "capacity_l": 16.5,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Cyber Blue",
+    "hex": "#2e6fb7"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9902-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9905-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/f990502-seat-pack-16-5l-cyber-blue-pink-front-01.webp",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9902-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9902-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9902-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9902-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9902-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "rolltop, roll closures on the sides for volume adjustment",
+   "attachment": "two hook-and-loop straps to the saddle rails + seatpost strap",
+   "valve": "compression valve",
+   "stiffener": "inner stiffener",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "actsAsFender": true,
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x saddle bag with hook and loop fastener, valve, adjustable straps and inner stiffener"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "11 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Seat-Pack",
+  "name": "Seat-Pack QR",
+  "size": "7.5L",
+  "src": "https://us.ortlieb.com/products/seat-pack-qr",
+  "verified": true,
+  "dims_cm": {
+   "len": 41.9,
+   "hgt": 16.0,
+   "wid": 22.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 6.3 in, Width 16.5 in, Depth 8.7 in (16.0 x 41.9 x 22.1 cm); Volume 7.5 L; Weight 17.3 oz; sold as a SINGLE bag - scope of delivery \"1x saddle bag with Seat-Lock mounting system\"",
+  "capacity_l": 7.5,
+  "colorways": [
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9907-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9906-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with five compression straps",
+   "attachment": "patented Seat-Lock: two levers hook onto the saddle frame, adapter clamp on the seatpost, tool-free",
+   "compressionStraps": 5,
+   "cord": "elastic cord outside for extra gear",
+   "valve": "valve with handle strap",
+   "protectivePlate": true,
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x saddle bag with Seat-Lock mounting system",
+    "1 adapter clamp for dropper posts"
+   ],
+   "mountingSystem": "Seat-Lock",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Seat-Pack",
+  "name": "Seat-Pack QR",
+  "size": "13L",
+  "src": "https://us.ortlieb.com/products/seat-pack-qr",
+  "verified": true,
+  "dims_cm": {
+   "len": 48.0,
+   "hgt": 27.9,
+   "wid": 22.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 11 in, Width 18.9 in, Depth 8.7 in (27.9 x 48.0 x 22.1 cm); Volume 13 L; Weight 22.0 oz; sold as a SINGLE bag - scope of delivery \"1x saddle bag with Seat-Lock mounting system\"",
+  "capacity_l": 13,
+  "colorways": [
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9903-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9904-detail-3.jpg"
+  ],
+  "features": {
+   "closure": "rolltop with five compression straps",
+   "attachment": "patented Seat-Lock: two levers hook onto the saddle frame, adapter clamp on the seatpost, tool-free",
+   "compressionStraps": 5,
+   "cord": "elastic cord outside for extra gear",
+   "valve": "valve with handle strap",
+   "protectivePlate": true,
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x saddle bag with Seat-Lock mounting system",
+    "1 adapter clamp for dropper posts"
+   ],
+   "mountingSystem": "Seat-Lock",
+   "maxLoad": "11 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack",
+  "size": "4L",
+  "src": "https://us.ortlieb.com/products/frame-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 39.9,
+   "hgt": 23.9,
+   "wid": 6.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 9.4 in, Width 15.7 in, Depth 2.4 in (23.9 x 39.9 x 6.1 cm); Volume 4 L; Weight 7.1 oz; sold as a SINGLE bag - scope of delivery \"1x frame\"",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9973-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9973-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9973-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9973-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9973-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9973-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9973-avatar.jpg"
+  ],
+  "features": {
+   "closure": "waterproof TIZIP zipper",
+   "attachment": "hook-and-loop straps to top tube, seat tube and down tube (3 on 4 L, 4 on 6 L)",
+   "pockets": "single main compartment",
+   "waterproof": "IP67",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x frame",
+    "3-4x hook and loop fastener for attachment (size 4 L: 3 straps , size 6 L: 4 straps)"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack",
+  "size": "6L",
+  "src": "https://us.ortlieb.com/products/frame-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 50.0,
+   "hgt": 29.0,
+   "wid": 6.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 11.4 in, Width 19.7 in, Depth 2.4 in (29.0 x 50.0 x 6.1 cm); Volume 6 L; Weight 8.5 oz; sold as a SINGLE bag - scope of delivery \"1x frame\"",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9974-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9974-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9974-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9974-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9974-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9974-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9974-avatar.jpg"
+  ],
+  "features": {
+   "closure": "waterproof TIZIP zipper",
+   "attachment": "hook-and-loop straps to top tube, seat tube and down tube (3 on 4 L, 4 on 6 L)",
+   "pockets": "single main compartment",
+   "waterproof": "IP67",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x frame",
+    "3-4x hook and loop fastener for attachment (size 4 L: 3 straps , size 6 L: 4 straps)"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack RC",
+  "size": "4L",
+  "src": "https://us.ortlieb.com/products/frame-pack-rc",
+  "verified": true,
+  "dims_cm": {
+   "len": 39.9,
+   "hgt": 23.9,
+   "wid": 6.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 9.4 in, Width 15.7 in, Depth 2.4 in (23.9 x 39.9 x 6.1 cm); Volume 4 L; Weight 7.8 oz; sold as a SINGLE bag - scope of delivery \"1x frame bag\"",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9975-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9975-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9975-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9975-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9975-detail.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9975-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closure secured by three silicone rings",
+   "attachment": "hook-and-loop straps round the frame (3 on 4 L, 4 on 6 L)",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x frame bag",
+    "3-4x hook and loop straps for attachment (size 4 L: 3 straps , size 6 L: 4 straps)"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack RC",
+  "size": "6L",
+  "src": "https://us.ortlieb.com/products/frame-pack-rc",
+  "verified": true,
+  "dims_cm": {
+   "len": 50.0,
+   "hgt": 29.0,
+   "wid": 6.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 11.4 in, Width 19.7 in, Depth 2.4 in (29.0 x 50.0 x 6.1 cm); Volume 6 L; Weight 9.2 oz; sold as a SINGLE bag - scope of delivery \"1x frame bag\"",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9976-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9976-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9976-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9976-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9976-detail.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9976-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closure secured by three silicone rings",
+   "attachment": "hook-and-loop straps round the frame (3 on 4 L, 4 on 6 L)",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x frame bag",
+    "3-4x hook and loop straps for attachment (size 4 L: 3 straps , size 6 L: 4 straps)"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack Toptube",
+  "size": "3L",
+  "src": "https://us.ortlieb.com/products/frame-pack-toptube",
+  "verified": true,
+  "dims_cm": {
+   "len": 39.9,
+   "hgt": 15.0,
+   "wid": 6.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 5.9 in, Width 15.7 in, Depth 2.4 in (15.0 x 39.9 x 6.1 cm); Volume 3 L; Weight 6.0 oz; sold as a SINGLE bag - scope of delivery \"1x frame bag\"",
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Cyber Pink",
+    "hex": "#e35a9b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9946-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9944-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/f994603-frame-pack-3l-zip-cyber-blue-pink-front-01.webp",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9946-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9946-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9946-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9946-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9946-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "waterproof TIZIP zipper",
+   "attachment": "three hook-and-loop straps to top tube, seat tube and down tube",
+   "pockets": "single main compartment",
+   "waterproof": "IP67",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x frame bag",
+    "3x hook and loop straps for attachment"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack Toptube",
+  "size": "4L",
+  "src": "https://us.ortlieb.com/products/frame-pack-toptube",
+  "verified": true,
+  "dims_cm": {
+   "len": 50.0,
+   "hgt": 13.0,
+   "wid": 6.1
+  },
+  "dims_note": "The 4 L is longer but shallower than the 3 L (5.1 in vs 5.9 in height). Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 5.1 in, Width 19.7 in, Depth 2.4 in (13.0 x 50.0 x 6.1 cm); Volume 4 L; Weight 7.1 oz; sold as a SINGLE bag - scope of delivery \"1x frame bag\"",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9947-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9942-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9947-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9947-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9947-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9947-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9947-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9947-avatar.jpg"
+  ],
+  "features": {
+   "closure": "waterproof TIZIP zipper",
+   "attachment": "three hook-and-loop straps to top tube, seat tube and down tube",
+   "pockets": "single main compartment",
+   "waterproof": "IP67",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x frame bag",
+    "3x hook and loop straps for attachment"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack RC Toptube",
+  "size": "3L",
+  "src": "https://us.ortlieb.com/products/frame-pack-rc-toptube",
+  "verified": true,
+  "dims_cm": {
+   "len": 39.9,
+   "hgt": 15.0,
+   "wid": 6.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 5.9 in, Width 15.7 in, Depth 2.4 in (15.0 x 39.9 x 6.1 cm); Volume 3 L; Weight 6.9 oz; sold as a SINGLE bag - scope of delivery \"1x frame bag\"",
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9945-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9948-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9945-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9945-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9945-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9945-detail.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9945-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closure, wider opening for bulky gear",
+   "attachment": "two hook-and-loop straps to top tube, seat tube and down tube",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x frame bag",
+    "2x hook and loop straps for attachment"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Frame-Pack",
+  "name": "Frame-Pack RC Toptube",
+  "size": "4L",
+  "src": "https://us.ortlieb.com/products/frame-pack-rc-toptube",
+  "verified": true,
+  "dims_cm": {
+   "len": 50.0,
+   "hgt": 13.0,
+   "wid": 6.1
+  },
+  "dims_note": "The 4 L is longer but shallower than the 3 L. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 5.1 in, Width 19.7 in, Depth 2.4 in (13.0 x 50.0 x 6.1 cm); Volume 4 L; Weight 7.8 oz; sold as a SINGLE bag - scope of delivery \"1x frame bag\"",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9943-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9949-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9943-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9943-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9943-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9943-detail.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9943-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closure, wider opening for bulky gear",
+   "attachment": "two hook-and-loop straps to top tube, seat tube and down tube",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x frame bag",
+    "2x hook and loop straps for attachment"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Handlebar-Pack",
+  "name": "Handlebar-Pack",
+  "size": "9L",
+  "src": "https://us.ortlieb.com/products/handlebar-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 39.9,
+   "hgt": 16.0,
+   "wid": 16.0
+  },
+  "dims_note": "Page also states a packed length of 40 cm, matching the 15.7 in width. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 6.3 in, Width 15.7 in, Depth 6.3 in (16.0 x 39.9 x 16.0 cm); Volume 9 L; Weight 13.2 oz; sold as a SINGLE bag - scope of delivery \"1x handlebar bag including inner stiffener, compression straps, valve and elastic cord\"",
+  "capacity_l": 9,
+  "colorways": [
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Cyber Blue",
+    "hex": "#2e6fb7"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9933-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9932-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/f993303-handlebar-pack-9l-cyber-blue-pink-front-01.webp",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9933-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9933-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9933-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9933-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9933-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "roll closures at both ends (drawstrings on the 15 L)",
+   "attachment": "two hook-and-loop straps with spacers + head-tube stabiliser",
+   "compressionStraps": 2,
+   "pockets": "mesh side pockets, stiffened interior",
+   "accessoryMounts": "four hooks for the Accessory-Pack",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x handlebar bag including inner stiffener, compression straps, valve and elastic cord",
+    "3x strap for mounting",
+    "4x spacer"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "11 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Handlebar-Pack",
+  "name": "Handlebar-Pack",
+  "size": "15L",
+  "src": "https://us.ortlieb.com/products/handlebar-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 57.9,
+   "hgt": 20.1,
+   "wid": 20.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 7.9 in, Width 22.8 in, Depth 7.9 in (20.1 x 57.9 x 20.1 cm); Volume 15 L; Weight 14.8 oz; sold as a SINGLE bag - scope of delivery \"1x handlebar bag including inner stiffener, compression straps, valve and elastic cord\"",
+  "capacity_l": 15,
+  "colorways": [
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9925-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9922-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9925-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9925-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9925-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9925-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9925-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9925-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closures at both ends (drawstrings on the 15 L)",
+   "attachment": "two hook-and-loop straps with spacers + head-tube stabiliser",
+   "compressionStraps": 2,
+   "pockets": "mesh side pockets, stiffened interior",
+   "accessoryMounts": "four hooks for the Accessory-Pack",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x handlebar bag including inner stiffener, compression straps, valve and elastic cord",
+    "3x strap for mounting",
+    "4x spacer"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "11 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Handlebar-Pack",
+  "name": "Handlebar-Pack QR",
+  "size": "11L",
+  "src": "https://us.ortlieb.com/products/handlebar-pack-qr",
+  "verified": true,
+  "dims_cm": {
+   "len": 32.0,
+   "hgt": 22.1,
+   "wid": 18.0
+  },
+  "dims_note": "Top-loading drum rather than a bar roll, so the 12.6 in width is the across-bar dimension. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 8.7 in, Width 12.6 in, Depth 7.1 in (22.1 x 32.0 x 18.0 cm); Volume 11 L; Weight 18.7 oz; sold as a SINGLE bag - scope of delivery \"1x handlebar bag including  Bar-Lock mounting system\"",
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9923-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9926-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9923-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9923-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9923-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9923-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9923-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9923-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closure, adjustable height, top loading",
+   "attachment": "Bar-Lock quick-release mount with stabilising cord",
+   "compressionStraps": 2,
+   "pockets": "two lateral outer pockets",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x handlebar bag including  Bar-Lock mounting system",
+    "2x protective cap for the handlebar"
+   ],
+   "mountingSystem": "Bar-Lock",
+   "maxLoad": "11 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Handlebar-Pack",
+  "name": "Handlebar-Pack Plus",
+  "size": "11L",
+  "src": "https://us.ortlieb.com/products/handlebar-pack-plus",
+  "verified": true,
+  "dims_cm": {
+   "len": 32.0,
+   "hgt": 22.1,
+   "wid": 18.0
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 8.7 in, Width 12.6 in, Depth 7.1 in (22.1 x 32.0 x 18.0 cm); Volume 11 L; Weight 17.6 oz; sold as a SINGLE bag - scope of delivery \"1x handlebar bag with inner pocket and outer mesh pocket\"",
+  "capacity_l": 11,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   },
+   {
+    "name": "Dark Chili",
+    "hex": "#7c2b25"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f3253-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f3254-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f3253-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f3253-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f3253-inside-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f3253-inside-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f3253-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f3253-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "roll closure",
+   "attachment": "connector for the Handlebar Mounting-Set with integrated adapter plate",
+   "pockets": "interior zip pocket, exterior mesh pockets both sides",
+   "shoulderStrap": true,
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x handlebar bag with inner pocket and outer mesh pocket",
+    "1x carrying strap",
+    "1x adapter plate for fastening on the separately available Handlebar Mounting-Set"
+   ],
+   "mountingSystem": "Connector for Handlebar Mounting-Sets",
+   "maxLoad": "11 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Handlebar-Pack",
+  "name": "Handlebar-Pack Flex",
+  "size": "9L",
+  "src": "https://us.ortlieb.com/products/handlebar-pack-flex",
+  "verified": true,
+  "dims_cm": {
+   "len": 39.9,
+   "hgt": 16.0,
+   "wid": 16.0
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 6.3 in, Width 15.7 in, Depth 6.3 in (16.0 x 39.9 x 16.0 cm); Volume 9 L; Weight 14.5 oz; sold as a SINGLE bag - scope of delivery \"1x handlebar bag including inner stiffener, compression straps, valve and elastic cord\"",
+  "capacity_l": 9,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9919-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9920-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "roll closures at both ends with drawstrings",
+   "attachment": "Bar-Lock connector (handlebar mount sold separately)",
+   "compressionStraps": 2,
+   "pockets": "mesh side pockets",
+   "accessoryMounts": "four hooks",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x handlebar bag including inner stiffener, compression straps, valve and elastic cord",
+    "1x adapter plate for mounting on the separately available Bar-Lock mounting system"
+   ],
+   "mountingSystem": "Connector for Handlebar Mounting-Sets",
+   "maxLoad": "11 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Handlebar-Pack",
+  "name": "Handlebar-Pack Flex",
+  "size": "15L",
+  "src": "https://us.ortlieb.com/products/handlebar-pack-flex",
+  "verified": true,
+  "dims_cm": {
+   "len": 53.1,
+   "hgt": 20.1,
+   "wid": 20.1
+  },
+  "dims_note": "Flex 15 L is 20.9 in wide against 22.8 in for the standard Handlebar-Pack 15 L. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 7.9 in, Width 20.9 in, Depth 7.9 in (20.1 x 53.1 x 20.1 cm); Volume 15 L; Weight 16.2 oz; sold as a SINGLE bag - scope of delivery \"1x handlebar bag including inner stiffener, compression straps, valve and elastic cord\"",
+  "capacity_l": 15,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9928-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closures at both ends with drawstrings",
+   "attachment": "Bar-Lock connector (handlebar mount sold separately)",
+   "compressionStraps": 2,
+   "pockets": "mesh side pockets",
+   "accessoryMounts": "four hooks",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x handlebar bag including inner stiffener, compression straps, valve and elastic cord",
+    "1x adapter plate for mounting on the separately available Bar-Lock mounting system"
+   ],
+   "mountingSystem": "Connector for Handlebar Mounting-Sets",
+   "maxLoad": "11 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Handlebar-Pack",
+  "name": "Accessory-Pack",
+  "size": "3.5L",
+  "src": "https://us.ortlieb.com/products/accessory-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 30.0,
+   "hgt": 17.0,
+   "wid": 5.1
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 6.7 in, Width 11.8 in, Depth 2 in (17.0 x 30.0 x 5.1 cm); Volume 3.5 L; Weight 7.2 oz; sold as a SINGLE bag - scope of delivery \"1x Accessory-Pack including hook and loop straps for fastening\"",
+  "capacity_l": 3.5,
+  "colorways": [
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand - 2024",
+    "hex": "#bcab90"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9957-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9956-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9953-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9957-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9957-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9957-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9957-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9957-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "roll closure",
+   "attachment": "hook-and-loop straps and four metal hooks onto the Handlebar-Pack or the bar",
+   "pockets": "single main compartment",
+   "shoulderStrap": "detachable",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x Accessory-Pack including hook and loop straps for fastening",
+    "1x carrying strap"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "2.2 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Fuel-Pack",
+  "name": "Fuel-Pack",
+  "size": "1L",
+  "src": "https://us.ortlieb.com/products/fuel-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 21.1,
+   "hgt": 11.9,
+   "wid": 8.4
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 4.7 in, Width 8.3 in, Depth 3.3 in (11.9 x 21.1 x 8.4 cm); Volume 1 L; Weight 5.6 oz; sold as a SINGLE bag - scope of delivery \"1x top tube bag including mounting plate for screwing onto the top tube (direct mounting)\"",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9963-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9967-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9963-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9963-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9963-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9963-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9963-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9963-avatar.jpg"
+  ],
+  "features": {
+   "closure": "magnetic lid, one-handed",
+   "attachment": "Tube-Lock: bolts to top-tube eyelets or rubberised O-straps for tubes up to 60 mm",
+   "pockets": "reinforced outer mesh pocket",
+   "cablePort": true,
+   "waterproof": "IP53",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x top tube bag including mounting plate for screwing onto the top tube (direct mounting)",
+    "2x O-straps for alternative attachment, suitable for top tube diameters up to 60 mm"
+   ],
+   "mountingSystem": "Straps",
+   "maxLoad": "2.2 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Toptube",
+  "name": "Toptube-Bag",
+  "size": "1.5L",
+  "src": "https://us.ortlieb.com/products/toptube-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 23.1,
+   "hgt": 11.9,
+   "wid": 8.4
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 4.7 in, Width 9.1 in, Depth 3.3 in (11.9 x 23.1 x 8.4 cm); Volume 1.5 L; Weight 8.8 oz; sold as a SINGLE bag - scope of delivery \"1x top tube bag including mounting hardware\"",
+  "capacity_l": 1.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8242-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8244-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8242-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8242-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8242-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8242-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8242-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8242-detail-3.jpg"
+  ],
+  "features": {
+   "closure": "magnetic lid, one-handed",
+   "attachment": "Tube-Lock: bolts to frame eyelets or rubberised O-straps",
+   "pockets": "inner mesh pocket, silicone phone holder on the lid",
+   "cablePort": true,
+   "waterproof": "IP53",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x top tube bag including mounting hardware"
+   ],
+   "mountingSystem": "Mounting-Set Toptube Bags",
+   "maxLoad": "2.2 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Fork-Pack",
+  "name": "Fork-Pack",
+  "size": "4.1L",
+  "src": "https://us.ortlieb.com/products/fork-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 27.9,
+   "hgt": 27.9,
+   "wid": 17.5
+  },
+  "dims_note": "Upright fork bag: len and hgt both carry the 11 in height; wid is the 6.9 in width. Fore-aft depth is 4.3 in (10.9 cm). Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 11 in, Width 6.9 in, Depth 4.3 in (27.9 x 17.5 x 10.9 cm); Volume 4.1 L; Weight 10.2 oz; sold as a SINGLE bag - scope of delivery \"1x Fork-Pack with QLS adapter plate including mounting accessories\"",
+  "capacity_l": 4.1,
+  "colorways": [
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9994-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9991-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9994-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9994-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9994-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9994-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9994-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9994-avatar.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Quick-Lock S adapter, three M5 points at 64 mm spacing; metal bands for 30-42 mm fork legs",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x Fork-Pack with QLS adapter plate including mounting accessories"
+   ],
+   "mountingSystem": "Quick-LockS",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Fork-Pack",
+  "name": "Fork-Pack",
+  "size": "5.8L",
+  "src": "https://us.ortlieb.com/products/fork-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 30.5,
+   "wid": 19.6
+  },
+  "dims_note": "Upright fork bag: len and hgt carry the 12 in height; wid is the 7.7 in width. Fore-aft depth 5.1 in (13 cm). Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 12 in, Width 7.7 in, Depth 5.1 in (30.5 x 19.6 x 13.0 cm); Volume 5.8 L; Weight 11.1 oz; sold as a SINGLE bag - scope of delivery \"1x Fork-Pack with QLS adapter plate including mounting accessories\"",
+  "capacity_l": 5.8,
+  "colorways": [
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Black",
+    "hex": "#111214"
+   },
+   {
+    "name": "Dark Chili",
+    "hex": "#7c2b25"
+   },
+   {
+    "name": "Cyber Blue",
+    "hex": "#2e6fb7"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9995-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9992-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6402-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6403-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/f999501-fork-pack-5-8l-cyber-blue-pink-front-01.webp",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9995-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9995-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9995-inside.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Quick-Lock S adapter, three M5 points at 64 mm spacing; metal bands for 30-42 mm fork legs",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x Fork-Pack with QLS adapter plate including mounting accessories"
+   ],
+   "mountingSystem": "Quick-LockS",
+   "maxLoad": "6.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Gravel-Pack",
+  "name": "Gravel-Pack",
+  "size": "Pair (14.5L/bag)",
+  "src": "https://us.ortlieb.com/products/gravel-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 25.9,
+   "hgt": 37.1,
+   "wid": 11.9
+  },
+  "dims_note": "Sold as a pair, 29 L combined; figures are per bag. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. PAIR: this listing ships 2 bags. capacity_l holds the SINGLE-bag volume (14.5 L); the pair totals 29 L. dims_cm are one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 14.6 in, Width 10.2 in, Depth 4.7 in (37.1 x 25.9 x 11.9 cm); Volume 14.5 L; Weight 20.5 oz; sold as a PAIR - scope of delivery \"2x pannier with QL2.1 mounting system\". Volume 14.5 L is PER BAG (29 L for the 2 bags together); the stated dimensions and weight are also per bag",
+  "capacity_l": 14.5,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9982-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9997-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9982-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9982-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9982-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9982-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9982-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9982-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "roll closure",
+   "attachment": "Quick-Lock rack mount; see mountingSystem (QL2.1 on the pair, QL3.1 on the single)",
+   "pockets": "no inside pockets",
+   "carryStrap": "optional carrying strap with carabiners",
+   "waterproof": "IP64",
+   "bagsPerListing": 2,
+   "scopeOfDelivery": [
+    "2x pannier with QL2.1 mounting system",
+    "2x set of reduction inserts (8 mm, 10 mm, and 12 mm; one pair each)"
+   ],
+   "mountingSystem": "Quick-Lock2.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Gravel-Pack",
+  "name": "Gravel-Pack Single",
+  "size": "14.5L",
+  "src": "https://us.ortlieb.com/products/gravel-pack-single",
+  "verified": true,
+  "dims_cm": {
+   "len": 25.9,
+   "hgt": 37.1,
+   "wid": 11.9
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 14.6 in, Width 10.2 in, Depth 4.7 in (37.1 x 25.9 x 11.9 cm); Volume 14.5 L; Weight 19.0 oz; sold as a SINGLE bag - scope of delivery \"1x pannier with QL3.1 moutning system\"",
+  "capacity_l": 14.5,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Cyber Pink",
+    "hex": "#e35a9b"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9987-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9988-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/f999002-gravel-pack-14-5l-cyber-pink-front-01.webp",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9987-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9987-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9987-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9987-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9987-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "roll closure",
+   "attachment": "Quick-Lock rack mount; see mountingSystem (QL2.1 on the pair, QL3.1 on the single)",
+   "pockets": "no inside pockets",
+   "carryStrap": "optional carrying strap with carabiners",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x pannier with QL3.1 moutning system",
+    "3x QL3.1 studs"
+   ],
+   "mountingSystem": "Quick-Lock3.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Back-Roller",
+  "name": "Back-Roller",
+  "size": "20L",
+  "src": "https://us.ortlieb.com/products/back-roller-20l",
+  "verified": true,
+  "dims_cm": {
+   "len": 32.0,
+   "hgt": 41.9,
+   "wid": 17.0
+  },
+  "dims_note": "CORRECTION: catalogue listed 4 colourways; the page offers 13. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 16.5 in, Width 12.6 in, Depth 6.7 in (41.9 x 32.0 x 17.0 cm); Volume 20 L; Weight 29.5 oz; sold as a SINGLE bag - scope of delivery \"1x pannier with QL2.1 mounting system\"",
+  "capacity_l": 20,
+  "colorways": [
+   {
+    "name": "Ash Rose",
+    "hex": "#c1908c"
+   },
+   {
+    "name": "Pepper",
+    "hex": "#4b4640"
+   },
+   {
+    "name": "Ink",
+    "hex": "#222834"
+   },
+   {
+    "name": "Neon Reflective",
+    "hex": "#d5f04d"
+   },
+   {
+    "name": "Black Reflective",
+    "hex": "#26282b"
+   },
+   {
+    "name": "Lake",
+    "hex": "#3f7fa8"
+   },
+   {
+    "name": "Jellyfish",
+    "hex": "#b95a8c"
+   },
+   {
+    "name": "Cyber Blue",
+    "hex": "#2e6fb7"
+   },
+   {
+    "name": "Cyber Pink",
+    "hex": "#e35a9b"
+   },
+   {
+    "name": "Route No. 1",
+    "hex": "#6a6a68"
+   },
+   {
+    "name": "Morning Routine",
+    "hex": "#a8896a"
+   },
+   {
+    "name": "Camo Chain",
+    "hex": "#5d6350"
+   },
+   {
+    "name": "Wave Lines",
+    "hex": "#4a6f8a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5508-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5502-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5506-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5504-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5505-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5530-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5531-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5537-front.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Quick-Lock2.1 tool-free rack mount",
+   "pockets": "inner pocket",
+   "shoulderStrap": "removable",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x pannier with QL2.1 mounting system",
+    "1x shoulder strap",
+    "1x set of reduction inserts (8 mm, 10 mm, and 12 mm; one pair each)"
+   ],
+   "mountingSystem": "Quick-Lock2.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Back-Roller",
+  "name": "Back-Roller Plus",
+  "size": "23L",
+  "src": "https://us.ortlieb.com/products/back-roller-plus",
+  "verified": true,
+  "dims_cm": {
+   "len": 32.0,
+   "hgt": 41.9,
+   "wid": 17.0
+  },
+  "dims_note": "Same envelope as the 20 L Back-Roller; the extra 3 L comes from the outer pocket. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 16.5 in, Width 12.6 in, Depth 6.7 in (41.9 x 32.0 x 17.0 cm); Volume 23 L; Weight 32.1 oz; sold as a SINGLE bag - scope of delivery \"1x pannier with QL2.2 mounting system\"",
+  "capacity_l": 23,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   },
+   {
+    "name": "Dark Chili",
+    "hex": "#7c2b25"
+   },
+   {
+    "name": "Denim",
+    "hex": "#3c4f66"
+   },
+   {
+    "name": "Moss Green",
+    "hex": "#59654a"
+   },
+   {
+    "name": "Pepper",
+    "hex": "#4b4640"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5212-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5213-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5214-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5215-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5536-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5212-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5212-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5212-detail-1.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Quick-Lock2.1 tool-free rack mount",
+   "pockets": "inner pocket + outer pocket",
+   "shoulderStrap": "removable",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x pannier with QL2.2 mounting system",
+    "1x shoulder strap"
+   ],
+   "mountingSystem": "Quick-Lock2.2",
+   "maxLoad": "27.6 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Back-Roller",
+  "name": "Back-Roller Core",
+  "size": "20L",
+  "src": "https://us.ortlieb.com/products/back-roller-core",
+  "verified": true,
+  "dims_cm": {
+   "len": 32.0,
+   "hgt": 41.9,
+   "wid": 17.0
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 16.5 in, Width 12.6 in, Depth 6.7 in (41.9 x 32.0 x 17.0 cm); Volume 20 L; Weight 28.9 oz; sold as a SINGLE bag - scope of delivery \"1x pannier with QL2.1 mounting system\"",
+  "capacity_l": 20,
+  "colorways": [
+   {
+    "name": "Red",
+    "hex": "#c1372c"
+   },
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5006-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5005-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5006-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5006-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5006-detail.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5006-avatar.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Quick-Lock2.1 rack mount",
+   "pockets": "no inner pocket",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x pannier with QL2.1 mounting system",
+    "1x set of reduction inserts (8 mm, 10 mm, and 12 mm; one pair each)"
+   ],
+   "mountingSystem": "Quick-Lock2.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Back-Roller",
+  "name": "Back-Roller XL",
+  "size": "Pair (35L/bag)",
+  "src": "https://us.ortlieb.com/products/back-roller-35l-mesh-pocket-pair",
+  "verified": true,
+  "dims_cm": {
+   "len": 35.8,
+   "hgt": 45.0,
+   "wid": 25.9
+  },
+  "dims_note": "Sold as a pair, 70 L combined; figures are per bag. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. PAIR: this listing ships 2 bags. capacity_l holds the SINGLE-bag volume (35 L); the pair totals 70 L. dims_cm are one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 17.7 in, Width 14.1 in, Depth 10.2 in (45.0 x 35.8 x 25.9 cm); Volume 35 L; Weight 42.3 oz; sold as a PAIR - scope of delivery \"2x pannier with QL2.1 mounting system\". Volume 35 L is PER BAG (70 L for the 2 bags together); the stated dimensions and weight are also per bag",
+  "capacity_l": 35,
+  "colorways": [
+   {
+    "name": "Red",
+    "hex": "#c1372c"
+   },
+   {
+    "name": "Asphalt",
+    "hex": "#4a4e52"
+   },
+   {
+    "name": "Granite",
+    "hex": "#71757a"
+   },
+   {
+    "name": "Dark Chili",
+    "hex": "#7c2b25"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5352-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5355-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5251-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5256-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5352-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5352-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5352-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f5352-inside.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Quick-Lock2.1 rack mount",
+   "pockets": "outer mesh pocket",
+   "shoulderStrap": "removable",
+   "waterproof": "IP64",
+   "bagsPerListing": 2,
+   "scopeOfDelivery": [
+    "2x pannier with QL2.1 mounting system",
+    "2x shoulder strap",
+    "2x set of reduction inserts (8 mm, 10 mm, and 12 mm; one pair each)"
+   ],
+   "mountingSystem": "Quick-Lock2.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Sport-Roller",
+  "name": "Sport-Roller",
+  "size": "14.5L",
+  "src": "https://us.ortlieb.com/products/sport-roller-14-5l",
+  "verified": true,
+  "dims_cm": {
+   "len": 25.9,
+   "hgt": 37.1,
+   "wid": 11.9
+  },
+  "dims_note": "CORRECTION: catalogue listed 4 colourways; the page offers 8. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 14.6 in, Width 10.2 in, Depth 4.7 in (37.1 x 25.9 x 11.9 cm); Volume 14.5 L; Weight 25.4 oz; sold as a SINGLE bag - scope of delivery \"1x pannier with QL2.1 mounting system\"",
+  "capacity_l": 14.5,
+  "colorways": [
+   {
+    "name": "Moss Green",
+    "hex": "#59654a"
+   },
+   {
+    "name": "Granite",
+    "hex": "#71757a"
+   },
+   {
+    "name": "Dark Chili",
+    "hex": "#7c2b25"
+   },
+   {
+    "name": "Denim",
+    "hex": "#3c4f66"
+   },
+   {
+    "name": "Pure Black",
+    "hex": "#0d0d0f"
+   },
+   {
+    "name": "Neon Reflective",
+    "hex": "#d5f04d"
+   },
+   {
+    "name": "Black Reflective",
+    "hex": "#26282b"
+   },
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6211-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6208-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6209-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6210-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6110-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6153-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6154-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6211-back.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Quick-Lock2.1 tool-free rack mount",
+   "pockets": "inner pocket",
+   "shoulderStrap": "removable",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x pannier with QL2.1 mounting system",
+    "1x shoulder strap",
+    "1x set of reduction inserts (8 mm, 10 mm, and 12 mm; one pair each)"
+   ],
+   "mountingSystem": "Quick-Lock2.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Sport-Roller",
+  "name": "Sport-Roller Core",
+  "size": "14.5L",
+  "src": "https://us.ortlieb.com/products/sport-roller-core",
+  "verified": true,
+  "dims_cm": {
+   "len": 25.9,
+   "hgt": 37.1,
+   "wid": 11.9
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 14.6 in, Width 10.2 in, Depth 4.7 in (37.1 x 25.9 x 11.9 cm); Volume 14.5 L; Weight 25.0 oz; sold as a SINGLE bag - scope of delivery \"1x pannier with QL2.1 mounting system\"",
+  "capacity_l": 14.5,
+  "colorways": [
+   {
+    "name": "Red",
+    "hex": "#c1372c"
+   },
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6006-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6005-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6006-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6006-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6006-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6006-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6006-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f6006-avatar.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Quick-Lock2.1 rack mount",
+   "pockets": "no inner pocket",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x pannier with QL2.1 mounting system",
+    "1x set of reduction inserts (8 mm, 10 mm, and 12 mm; one pair each)"
+   ],
+   "mountingSystem": "Quick-Lock2.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Sport-Packer",
+  "name": "Sport-Packer",
+  "size": "15L",
+  "src": "https://us.ortlieb.com/products/sport-packer",
+  "verified": true,
+  "dims_cm": {
+   "len": 24.9,
+   "hgt": 39.9,
+   "wid": 14.0
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. PAIR: this listing ships 2 bags. capacity_l holds the SINGLE-bag volume (15 L); the pair totals 30 L. dims_cm are one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 15.7 in, Width 9.8 in, Depth 5.5 in (39.9 x 24.9 x 14.0 cm); Volume 15 L; Weight 30.8 oz; sold as a PAIR - scope of delivery \"2x pannier with QL2.1 mounting system\". Volume 15 L is PER BAG (30 L for the 2 bags together); the stated dimensions and weight are also per bag",
+  "capacity_l": 15,
+  "colorways": [
+   {
+    "name": "Red",
+    "hex": "#c1372c"
+   },
+   {
+    "name": "Black",
+    "hex": "#111214"
+   },
+   {
+    "name": "Petrol",
+    "hex": "#1f5a63"
+   },
+   {
+    "name": "Granite",
+    "hex": "#71757a"
+   },
+   {
+    "name": "Dark Chili",
+    "hex": "#7c2b25"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f4801-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f4803-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f4804-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f4904-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f4905-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f4801-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f4801-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f4801-side.jpg"
+  ],
+  "features": {
+   "closure": "flap lid with buckles",
+   "attachment": "Quick-Lock2.1 rack mount",
+   "pockets": "outer pocket under the lid",
+   "waterproof": "IP64",
+   "bagsPerListing": 2,
+   "scopeOfDelivery": [
+    "2x pannier with QL2.1 mounting system",
+    "2x shoulder strap",
+    "2x set of reduction inserts (8 mm, 10 mm, and 12 mm; one pair each)"
+   ],
+   "mountingSystem": "Quick-Lock2.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Bike-Packer",
+  "name": "Bike-Packer",
+  "size": "20L",
+  "src": "https://us.ortlieb.com/products/bike-packer",
+  "verified": true,
+  "dims_cm": {
+   "len": 32.0,
+   "hgt": 41.9,
+   "wid": 17.0
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. PAIR: this listing ships 2 bags. capacity_l holds the SINGLE-bag volume (20 L); the pair totals 40 L. dims_cm are one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 16.5 in, Width 12.6 in, Depth 6.7 in (41.9 x 32.0 x 17.0 cm); Volume 20 L; Weight 36.7 oz; sold as a PAIR - scope of delivery \"2x pannier with QL2.1 mounting system\". Volume 20 L is PER BAG (40 L for the 2 bags together); the stated dimensions and weight are also per bag",
+  "capacity_l": 20,
+  "colorways": [
+   {
+    "name": "Red",
+    "hex": "#c1372c"
+   },
+   {
+    "name": "Black",
+    "hex": "#111214"
+   },
+   {
+    "name": "Petrol",
+    "hex": "#1f5a63"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2601-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2603-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2604-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2601-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2601-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2601-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2601-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2601-detail-1.jpg"
+  ],
+  "features": {
+   "closure": "flap lid with buckles",
+   "attachment": "Quick-Lock2.1 rack mount",
+   "pockets": "outer pocket under the lid",
+   "waterproof": "IP64",
+   "bagsPerListing": 2,
+   "scopeOfDelivery": [
+    "2x pannier with QL2.1 mounting system",
+    "2x shoulder strap",
+    "2x set of reduction inserts (8 mm, 10 mm, and 12 mm; one pair each)"
+   ],
+   "mountingSystem": "Quick-Lock2.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Bike-Packer",
+  "name": "Bike-Packer Plus",
+  "size": "21L",
+  "src": "https://us.ortlieb.com/products/bike-packer-plus",
+  "verified": true,
+  "dims_cm": {
+   "len": 32.0,
+   "hgt": 41.9,
+   "wid": 22.1
+  },
+  "dims_note": "Deeper than the standard Bike-Packer: 8.7 in against 6.7 in. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. PAIR: this listing ships 2 bags. capacity_l holds the SINGLE-bag volume (21 L); the pair totals 42 L. dims_cm are one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 16.5 in, Width 12.6 in, Depth 8.7 in (41.9 x 32.0 x 22.1 cm); Volume 21 L; Weight 38.8 oz; sold as a PAIR - scope of delivery \"2x pannier with QL2.1 mounting system\". Volume 21 L is PER BAG (42 L for the 2 bags together); the stated dimensions and weight are also per bag",
+  "capacity_l": 21,
+  "colorways": [
+   {
+    "name": "Dark Chili",
+    "hex": "#7c2b25"
+   },
+   {
+    "name": "Granite",
+    "hex": "#71757a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2705-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2704-pair.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2705-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2705-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2705-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2705-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2705-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f2705-detail-2.jpg"
+  ],
+  "features": {
+   "closure": "flap lid with buckles",
+   "attachment": "Quick-Lock2.1 rack mount",
+   "pockets": "outer pocket under the lid",
+   "waterproof": "IP64",
+   "bagsPerListing": 2,
+   "scopeOfDelivery": [
+    "2x pannier with QL2.1 mounting system",
+    "2x shoulder strap",
+    "2x set of reduction inserts (8 mm, 10 mm, and 12 mm; one pair each)"
+   ],
+   "mountingSystem": "Quick-Lock2.1",
+   "maxLoad": "19.8 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Saddle-Bag",
+  "name": "Saddle-Bag",
+  "size": "1.6L",
+  "src": "https://us.ortlieb.com/products/saddle-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 19.1,
+   "hgt": 11.9,
+   "wid": 16.0
+  },
+  "dims_note": "len is the 7.5 in fore-aft depth; wid is the 6.3 in width. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 4.7 in, Width 6.3 in, Depth 7.5 in (11.9 x 16.0 x 19.1 cm); Volume 1.6 L; Weight 7.8 oz; sold as a SINGLE bag - scope of delivery \"1x saddle bag with mounting system\"",
+  "capacity_l": 1.6,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9414-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9414-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9414-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9414-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9414-detail.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9414-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closure with side buckles",
+   "attachment": "snap-buckle adapter under the saddle + hook-and-loop strap on the seatpost",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x saddle bag with mounting system"
+   ],
+   "mountingSystem": "Saddle-Bag Mounting-Set",
+   "maxLoad": "4.4 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Saddle-Bag",
+  "name": "Saddle-Bag",
+  "size": "4.1L",
+  "src": "https://us.ortlieb.com/products/saddle-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 27.9,
+   "hgt": 14.0,
+   "wid": 21.1
+  },
+  "dims_note": "len is the 11 in fore-aft depth; wid is the 8.3 in width. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 5.5 in, Width 8.3 in, Depth 11 in (14.0 x 21.1 x 27.9 cm); Volume 4.1 L; Weight 9.2 oz; sold as a SINGLE bag - scope of delivery \"1x saddle bag with mounting system\"",
+  "capacity_l": 4.1,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   },
+   {
+    "name": "Neon Reflective",
+    "hex": "#d5f04d"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9424-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9425-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9485-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9424-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9424-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9424-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9424-detail.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9424-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closure with side buckles",
+   "attachment": "snap-buckle adapter under the saddle + hook-and-loop strap on the seatpost",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x saddle bag with mounting system"
+   ],
+   "mountingSystem": "Saddle-Bag Mounting-Set",
+   "maxLoad": "4.4 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Micro-Bag",
+  "name": "Micro-Bag",
+  "size": "0.5L",
+  "src": "https://us.ortlieb.com/products/micro-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 11.9,
+   "hgt": 7.1,
+   "wid": 11.9
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 2.8 in, Width 4.7 in, Depth 4.7 in (7.1 x 11.9 x 11.9 cm); Volume 0.5 L; Weight 4.2 oz; sold as a SINGLE bag - scope of delivery \"1x saddle bag with mounting system\"",
+  "capacity_l": 0.5,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Cyber Pink",
+    "hex": "#e35a9b"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9664-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9666-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9665-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9664-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9664-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9664-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9664-detail.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9664-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closure with elastic drawstrings",
+   "attachment": "Saddle-Bag Mounting-Set bracket and snap buckle on the seat rails",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x saddle bag with mounting system"
+   ],
+   "mountingSystem": "Saddle-Bag Mounting-Set",
+   "maxLoad": "2.2 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Micro-Bag",
+  "name": "Micro-Bag",
+  "size": "0.8L",
+  "src": "https://us.ortlieb.com/products/micro-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 14.0,
+   "hgt": 8.9,
+   "wid": 11.9
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 3.5 in, Width 4.7 in, Depth 5.5 in (8.9 x 11.9 x 14.0 cm); Volume 0.8 L; Weight 4.9 oz; sold as a SINGLE bag - scope of delivery \"1x saddle bag with mounting system\"",
+  "capacity_l": 0.8,
+  "colorways": [
+   {
+    "name": "Black Matt",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Dark Sand",
+    "hex": "#b3a184"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9674-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9675-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9674-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9674-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9674-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9674-detail.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9674-avatar.jpg"
+  ],
+  "features": {
+   "closure": "roll closure with elastic drawstrings",
+   "attachment": "Saddle-Bag Mounting-Set bracket and snap buckle on the seat rails",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x saddle bag with mounting system"
+   ],
+   "mountingSystem": "Saddle-Bag Mounting-Set",
+   "maxLoad": "2.2 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Trunk-Bag",
+  "name": "Trunk-Bag",
+  "size": "10L",
+  "src": "https://us.ortlieb.com/products/trunk-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 32.0,
+   "hgt": 20.1,
+   "wid": 18.0
+  },
+  "dims_note": "Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. SINGLE bag: capacity_l, dims_cm and weight are all for the one bag.",
+  "dims_state": "packed",
+  "dims_raw": "Height 7.9 in, Width 12.6 in, Depth 7.1 in (20.1 x 32.0 x 18.0 cm); Volume 10 L; Weight 34.6 oz; sold as a SINGLE bag - scope of delivery \"1x Trunk-Bag with universal Top-Lock mounting system\"",
+  "capacity_l": 10,
+  "colorways": [
+   {
+    "name": "Petrol",
+    "hex": "#1f5a63"
+   },
+   {
+    "name": "Black",
+    "hex": "#111214"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8241-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8240-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8241-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8241-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8241-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8241-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8241-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8241-avatar.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Top-Lock adapter on the rack",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "scopeOfDelivery": [
+    "1x Trunk-Bag with universal Top-Lock mounting system",
+    "1x shoulder strap"
+   ],
+   "mountingSystem": "Top-Lock",
+   "maxLoad": "22 lb"
+  }
+ },
+ {
+  "brand": "Ortlieb",
+  "line": "Trunk-Bag",
+  "name": "Trunk-Bag RC",
+  "size": "12L",
+  "src": "https://us.ortlieb.com/products/trunk-bag-rc",
+  "verified": true,
+  "dims_cm": {
+   "len": 38.1,
+   "hgt": 30.0,
+   "wid": 20.1
+  },
+  "dims_note": "On the RC the 15 in figure is labelled Depth and is the fore-aft length of the rack-top bag. Ortlieb specs one fixed Height/Width/Depth per size in inches; converted to cm at 2.54. No unrolled/packed range is published. Quantity per listing not stated on the page. Treated as a single bag; it is a rack-top bag, not a pannier sold in pairs.",
+  "dims_state": "packed",
+  "dims_raw": "Height 11.8 in, Width 7.9 in, Depth 15 in (30.0 x 20.1 x 38.1 cm); Volume 12 L; Weight 28.2 oz; this page publishes no scope-of-delivery list, so the number of bags per listing is NOT stated - treated as a single rack-top bag",
+  "capacity_l": 12,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#111214"
+   },
+   {
+    "name": "Pepper",
+    "hex": "#4b4640"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8422-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8520-front.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8422-back.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8422-side.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8422-inside.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8422-detail-1.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8422-detail-2.jpg",
+   "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f8422-detail-3.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "attachment": "Top-Lock adapter on the rack",
+   "pockets": "single main compartment",
+   "waterproof": "IP64",
+   "bagsPerListing": 1,
+   "mountingSystem": "Top-Lock",
+   "maxLoad": "22 lb"
+  }
+ }
+]
