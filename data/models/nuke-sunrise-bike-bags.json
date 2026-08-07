@@ -1,0 +1,438 @@
+{
+ "brand": "Nuke Sunrise Bike Bags",
+ "slug": "nuke-sunrise-bike-bags",
+ "reviewed_photos": 19,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Dimension Polyant X-Pac VX-21 / VX-42, yellow 200d packcloth liner, closed-cell foam, CNC-machined ABS stiffeners'. This holds up well catalogue-wide: a diagonal diamond-quilted X-Pac stitch grid is visibly pressed into the shell fabric on all 7 products - clearest on the Silo, Giant Silo, Titan Tank and Custom Frame Bag close-ups, fainter but present on the tan/teal Wing Tank. The yellow packcloth drawcord liner is confirmed inside both Silo sizes. Unlike the Blackburn/Swift cases flagged elsewhere, this brand's fabric string is not overclaimed.",
+  "logoVariant": "Two different woven/printed patches appear across the catalogue: a square black patch reading 'NUKE SUNRISE BIKE BAGS / Moab, UT' (Silo, Giant Silo, Mini-Pannier, Custom Frame Bag) and a round patch reading 'NUCLEAR SUNRISE STITCHWORKS' with a mushroom-cloud mark (Titan Tank, MegaTitan). Same shop location, same webbing/stitch style, same construction quality in every photo - read as a rebrand/renaming over time, not a wrong-product mixup. Not flagged per-product."
+ },
+ "products": [
+  {
+   "line": "Silo",
+   "name": "Silo",
+   "size": "One Size",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/nuke-sunrise-bike-bags/silo-silo-one-size-1.png",
+    "assets/products/nuke-sunrise-bike-bags/silo-silo-one-size-2.png",
+    "assets/products/nuke-sunrise-bike-bags/silo-silo-one-size-3.png",
+    "https://www.nukesunrise.com/store/p73/silo.html"
+   ],
+   "dims_cm": { "len": 10.2, "wid": 10.2, "hgt": 15.2 },
+   "dims_state": "maker",
+   "dims_raw": "Specifications - 6\" tall, 4\" diameter.",
+   "dims_note": "Fixed cylinder, no roll/extend axis - the drawcord liner gathers at the mouth but the 15.2cm (6in) shell height does not shorten or lengthen. len and wid both the 10.2cm (4in) diameter.",
+   "capacity_l": 1.2,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "notes": "Straight-walled fabric cylinder, quilted X-Pac diamond stitch visible on the shell. One black webbing compression band at mid-height. Yellow packcloth drawcord liner visible above the shell rim, cinched by an orange cord and black cord-lock."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "orange drawcord through the yellow liner mouth, black cord-lock, small side-release buckle tab"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "X-Pac, visible diamond quilt stitch; yellow 200d packcloth liner"
+   },
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["handlebar", "fork_crown"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 80 },
+    "notes": "OneWrap velcro strap around any bar diameter at the stem, plus a 3/4in webbing strap down to the fork crown to stop the bag swaying side to side. Sits upright directly ahead of the stem."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Grey", "hex": "#6e7377" },
+    { "name": "Purple", "hex": "#5b3a86" },
+    { "name": "Bahama Blue", "hex": "#2f9fd0" },
+    { "name": "Ranger Green", "hex": "#4e5545" },
+    { "name": "Red", "hex": "#b7242c" },
+    { "name": "Neon Lime", "hex": "#b7d43f" }
+   ]
+  },
+  {
+   "line": "Silo",
+   "name": "Giant Silo",
+   "size": "Giant",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/nuke-sunrise-bike-bags/silo-giant-silo-giant-1.png",
+    "assets/products/nuke-sunrise-bike-bags/silo-giant-silo-giant-2.png",
+    "assets/products/nuke-sunrise-bike-bags/silo-giant-silo-giant-3.png",
+    "https://www.nukesunrise.com/store/p33/giantsilo.html"
+   ],
+   "dims_cm": { "len": 12.7, "wid": 12.7, "hgt": 19.1 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Specs - Main body 7.5\" tall, 5\" diameter. Cinch top extends 3\" at the top.",
+   "dims_note": "hgt is the 19.1cm (7.5in) MAIN BODY, i.e. the minimum/packed-down figure per the new rule; the cinch-top neck adds a further 7.6cm (3in) when pulled up, not included in dims_cm. len/wid from the 12.7cm (5in) diameter.",
+   "capacity_l": 2.4,
+   "render": {
+    "hgt_cm": 19.1,
+    "rolls": 1,
+    "basis": "main-body height as photographed with the drawcord neck cinched down flush, matching giant-silo-3 which shows the neck barely proud of the shell rim"
+   },
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "d_shape",
+    "notes": "Flat panel on the bar-facing side (the mesh pocket and MOLLE webbing sit on this flat face), rounded elsewhere - a true cylinder overstates the diameter slightly. One black webbing compression band at mid-height. Yellow packcloth liner and drawcord identical to the standard Silo."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "orange/red drawcord through the yellow liner mouth, black cord-lock"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "side", "sizeFrac": 0.4 }
+   ],
+   "details": {
+    "daisyChains": true,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "X-Pac, visible diamond quilt stitch; yellow 200d packcloth liner",
+    "molle": "PALS/MOLLE webbing rows on the flat attachment panel, plus a small side D-ring loop"
+   },
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["handlebar", "fork_crown"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 70 },
+    "notes": "Same mounting method as the Silo (bar velcro plus fork-crown webbing strap) but the flat D-panel and MOLLE row face the rider, with the mesh side pocket visible in-profile."
+   },
+   "colorways": [
+    { "name": "Grey", "hex": "#6e7377" },
+    { "name": "Coyote Brown", "hex": "#7f6a4f" },
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Bahama Blue", "hex": "#2f9fd0" },
+    { "name": "Hot Pink", "hex": "#e8547f" }
+   ]
+  },
+  {
+   "line": "Titan",
+   "name": "Titan Tank",
+   "size": "One Size",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/nuke-sunrise-bike-bags/titan-titan-tank-one-size-1.png",
+    "assets/products/nuke-sunrise-bike-bags/titan-titan-tank-one-size-2.png",
+    "assets/products/nuke-sunrise-bike-bags/titan-titan-tank-one-size-3.png",
+    "https://www.nukesunrise.com/store/p54/titan-top-tube-tank.html"
+   ],
+   "dims_cm": { "len": 22.9, "wid": 5.1, "hgt": 11.4 },
+   "dims_state": "maker",
+   "dims_raw": "SPECS - 9\" long, 4.5\" tall, 2\" wide.",
+   "dims_note": "Foam/plastic-stiffened rigid shell, single fixed figure, no range. len is the 9in run along the top tube, hgt the 4.5in nose height, wid the 2in top-tube straddle width.",
+   "capacity_l": 1.3,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_bottom",
+    "taper": { "nose": 1.0, "tail": 0.35, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Tall squared nose at the head-tube end tapering along a straight top-zip line down to a low, narrow tail. Flat bottom straddles the top tube."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single exposed YKK slider, orange pull, no storm flap"
+   },
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" },
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "X-Pac, visible diamond quilt stitch"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["toptube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Adjustable-position 3/4in velcro OneWrap plus a 2in sticky-back cinch strap; can also bolt on with washers/stiffener, or run on the seatpost per the maker copy. Rigid shell sits flush on the tube, no droop."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Newspaper Rock", "hex": "#8a7f6b" },
+    { "name": "Cheetah", "hex": "#c9a06a" },
+    { "name": "Spanish Teal", "hex": "#1f7a78" },
+    { "name": "Bahama Blue", "hex": "#2f9fd0" }
+   ]
+  },
+  {
+   "line": "Titan",
+   "name": "MegaTitan",
+   "size": "Mega",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/nuke-sunrise-bike-bags/titan-megatitan-mega-1.png",
+    "assets/products/nuke-sunrise-bike-bags/titan-megatitan-mega-2.png",
+    "https://www.nukesunrise.com/store/p71/megatitan.html"
+   ],
+   "dims_cm": { "len": 28, "wid": 7, "hgt": 12 },
+   "dims_state": "unknown",
+   "dims_raw": "",
+   "dims_note": "The MegaTitan page carries no dimensions and no litre figure at all, only that it's the larger Titan with internal divider pockets on both sides. dims_cm is a scaled-up estimate from the measured Titan Tank (same wedge proportions, visibly larger in-photo), not maker data. Not adjusted from brands.json's prior estimate - no better source found.",
+   "capacity_l": 2.4,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_bottom",
+    "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Same wedge family as the Titan Tank, larger. Photos show a sloped top zip running the full length and two bolt-on/strap tabs at the base; no external side pockets are visible in either photo despite the maker copy describing the storage as 'internal divider pockets on both sides' - corrected from brands.json's external side/open pockets below."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single exposed YKK slider, orange pull, no storm flap"
+   },
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" },
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" }
+   ],
+   "pockets": [
+    { "type": "slip", "count": 2, "location": "internal" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "X-Pac, visible diamond quilt stitch"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["toptube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Maker copy: CNC-machined ABS insert with two straps for a standard top tube, one long plus one short strap for conjoined top/down tubes on full-suspension frames, or washers for bolt-on. Not directly visible in these two studio photos - same mount family as the Titan Tank."
+   },
+   "colorways": [
+    { "name": "Black X-Pac", "hex": "#1c1c1e" },
+    { "name": "Grey X-Pac", "hex": "#6e7377" },
+    { "name": "Deep Blue X-Pac", "hex": "#22406e" },
+    { "name": "Peach X-Pac", "hex": "#f2a07a" },
+    { "name": "Teal X-Pac", "hex": "#1f7a78" }
+   ]
+  },
+  {
+   "line": "Wing Tank",
+   "name": "Wing Tank",
+   "size": "One Size (3.5L)",
+   "slot": "forkbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/nuke-sunrise-bike-bags/wing-tank-wing-tank-one-size-3-5l-1.png",
+    "assets/products/nuke-sunrise-bike-bags/wing-tank-wing-tank-one-size-3-5l-2.png",
+    "assets/products/nuke-sunrise-bike-bags/wing-tank-wing-tank-one-size-3-5l-3.png",
+    "https://www.nukesunrise.com/store/p51/wingtank.html"
+   ],
+   "dims_cm": { "len": 12.5, "wid": 12.5, "hgt": 28 },
+   "dims_state": "unfurled_max_only",
+   "dims_raw": "DIMENSIONS - 5\" (12.5 cm) diameter with a maximum rolled height of about 11\" (28 cm). Approximately 215 cubic inches (3.5 L) volume.",
+   "dims_note": "len/wid are the fixed 12.5cm diameter (a cylinder, no taper). hgt in dims_cm is kept at the maker's 28cm MAXIMUM per the honesty rule - no minimum is published to take instead - but see render.hgt_cm for what is actually drawn.",
+   "capacity_l": 3.5,
+   "render": {
+    "hgt_cm": 19,
+    "published_min_cm": 28,
+    "conflict": "28cm is the maker's only published figure and it is an unrolled maximum, not a minimum - drawing it verbatim would show the bag fully extended and untouched. wing-tank-3 is an on-bike photo of the bag compressed under two Voile straps on a King-style cage; measured against its own known 12.5cm diameter in that photo, the rolled/strapped height reads at roughly 1.5x the diameter, about 19cm.",
+    "rolls": 2,
+    "basis": "on-bike photo wing-tank-wing-tank-one-size-3-5l-3.png, proportion against the 12.5cm diameter"
+   },
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "notes": "Straight fabric cylinder, flat sewn base with a small logo tag. Faint diagonal X-Pac quilt visible even in the plain-color tan/teal shells."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "side-release buckle on a short webbing tab"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "X-Pac, faint diamond quilt stitch"
+   },
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "along_forkleg" },
+    "attachesTo": ["fork_cage"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 30 },
+    "notes": "Requires a third-party triple-boss cargo cage (maker copy: 'designed around the King Many Things cage', heavier VX-42 fabric at the cage-contact panel; cage and Voile straps sold separately) - does not strap to a bare fork leg. On-bike photo shows it slung in a cage on the fork with two orange compression straps cinching it down well short of its unrolled 28cm."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Hot Pink", "hex": "#e8547f" },
+    { "name": "Bahama Blue", "hex": "#2f9fd0" },
+    { "name": "Deep Blue", "hex": "#22406e" },
+    { "name": "Coyote", "hex": "#7f6a4f" }
+   ]
+  },
+  {
+   "line": "Mini-Panniers",
+   "name": "Mini-Pannier",
+   "size": "One Size (6L each)",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/nuke-sunrise-bike-bags/mini-panniers-mini-pannier-one-size-6l-each-1.png",
+    "assets/products/nuke-sunrise-bike-bags/mini-panniers-mini-pannier-one-size-6l-each-2.png",
+    "assets/products/nuke-sunrise-bike-bags/mini-panniers-mini-pannier-one-size-6l-each-3.png",
+    "https://www.nukesunrise.com/store/p69/panniers.html"
+   ],
+   "dims_cm": { "len": 25, "wid": 12, "hgt": 25 },
+   "dims_state": "unknown",
+   "dims_raw": "Sold in pairs, these 6L capacity per pannier weigh in at 600 grams.",
+   "dims_note": "The 6L is explicitly PER PANNIER, so capacity_l is correct as-is. No dimensions are published anywhere on the page; dims_cm is an unchanged estimate for a 6L panel bag of the shape seen in-photo (roughly square face, chamfered lower-front corner), not maker data.",
+   "capacity_l": 6,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "notes": "Near-square face panel with the lower-front corner chamfered off at roughly 45 degrees (heel/spoke clearance), flat back against the wheel. Three horizontal MOLLE/PALS webbing rows run across the front face."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider with a reflective pull tab, small D-ring loop at the zip end"
+   },
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+   "straps": [
+    { "role": "compression", "count": 3, "location": "front_face", "hardware": "velcro", "material": "webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": true,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "X-Pac, visible diamond quilt stitch"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["rack_rail"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "confidence": "low",
+    "notes": "Two mount systems appear in the source material and do not obviously reconcile: the back-panel photo (mini-panniers-...-2, watermarked 'v1 attachment') shows a rigid metal top rail with two spring hooks and a single centre buckle strap - a QR rail-hanger system; the maker's current page copy instead describes '3-point Voile strap attachment to any rack'. Read as an older rail-hook version superseded by a simpler strap version, but not confirmed which is current - treat the rail-hook mechanism as illustrative only."
+   },
+   "colorways": [
+    { "name": "Black X-Pac", "hex": "#1c1c1e" },
+    { "name": "Pink Challenge Sail Cloth", "hex": "#e8b0c0" },
+    { "name": "Rock Art", "hex": "#a8845c" },
+    { "name": "Maroon Cordura", "hex": "#6e2733" }
+   ]
+  },
+  {
+   "line": "Custom Frame Bag",
+   "name": "Custom Frame Bag",
+   "size": "Made to measure",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/nuke-sunrise-bike-bags/custom-frame-bag-custom-frame-bag-made-to-measure-1.png",
+    "assets/products/nuke-sunrise-bike-bags/custom-frame-bag-custom-frame-bag-made-to-measure-2.png",
+    "https://www.nukesunrise.com/store/p50/frame-bag.html"
+   ],
+   "dims_cm": { "len": 55, "hgt": 30, "wid": 6 },
+   "dims_state": "unknown",
+   "dims_raw": "",
+   "dims_note": "Made to measure with options for standard triangle, horizontal/vertical-shock full-suspension, or half frame bag; no dimensions or litre figure published anywhere. dims_cm is an unchanged mid-range full-triangle estimate, not maker data.",
+   "capacity_l": 8,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Full main-triangle wedge, tall squared nose at the head tube tapering to a narrow tail at the seat tube/BB. On-bike photo shows two zip runs (a main compartment across the top slope and a second smaller zip lower on the panel, likely an accessory pocket) and a continuous strip of loop tabs around the whole perimeter for lacing/zip-tying to the frame rather than buckle straps."
+   },
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "single slider on the main compartment; a second smaller straight zip lower on the panel for an accessory pocket"
+   },
+   "zips": [
+    { "run": "top_side", "finish": "matched" },
+    { "run": "front_panel", "finish": "matched" }
+   ],
+   "straps": [],
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.25 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "X-Pac, visible diamond quilt stitch"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["toptube", "downtube", "seattube"],
+    "contactFaces": ["top_edge", "underside"],
+    "sag_deg": 0,
+    "notes": "Continuous perimeter loop-tab strip is laced through with cord (visible as orange/white paracord zig-zagged through the top-tube loops in the on-bike photo) rather than buckled - fixed/custom mount, or bolt-on via down tube / seat tube / top tube bosses per the maker copy."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Alpenglow", "hex": "#e8926a" },
+    { "name": "Spanish Teal", "hex": "#1f7a78" },
+    { "name": "Hi-Viz Lime", "hex": "#b7d43f" }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,443 @@
+{
+ "brand": "Alpkit",
+ "slug": "alpkit",
+ "reviewed_photos": 16,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'X-Pac X11 3-layer laminate (cotton-duck face) / 1100D Cordura'. This is confirmed VERBATIM on the maker's own Technical Details for Koala, Stem Cell, Possum, and Betonga ('Exterior: X-Pac® X11 3-layer laminate (100% organic cotton duck / recycled polyester X-PLY / polyester film backer), 1100D Cordura® nylon'), and the flat matte texture in every photo of those four is consistent with it: X11 uses a cotton-duck FACE fabric bonded over the internal X-PLY grid, so (unlike VX21/VX42 X-Pac) the diagonal diamond-stitch grid is not visible from outside - flat and matte is the correct look for this laminate, not a sign the fabric string is wrong. Two products break the blanket string and should not be rendered with it: (1) Glider's own page lists 'EPLX600 3-Layer laminate (600d high tenacity polyester / recycled polyester X-PLY / polyester film backer)' - a related X-ply construction but a harder-faced polyester weave, not X11/cotton-duck; the photos show a slightly crisper, less matte face than Possum alongside it, consistent with this. (2) Airlok Dual 13L's page lists 'Fabric: Waterproof TPU' with 'Buckles: 20mm Duraflex Stealth' - a fully seam-taped TPU dry-bag film, not X-Pac or Cordura at all; the photos show a glossy, slightly translucent-at-the-seams dry-bag finish with no fabric weave visible, consistent with TPU and not with the brand string.",
+  "method": "Dimensions cross-checked against alpkit.com product pages via curl (rendered fetch of these Shopify pages returns only JS scaffolding, matching the Swift Industries finding noted by other reviewers) rather than WebFetch; all six pages returned a plain 'Technical details > Dimensions' block with no client-side tab required."
+ },
+ "products": [
+  {
+   "line": "Koala",
+   "name": "Koala 7L Saddle Pack",
+   "size": "7L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/alpkit/koala-koala-7l-saddle-pack-7l-1.jpg",
+    "assets/products/alpkit/koala-koala-7l-saddle-pack-7l-2.jpg",
+    "assets/products/alpkit/koala-koala-7l-saddle-pack-7l-3.jpg",
+    "https://alpkit.com/products/koala-7-litre-saddle-bag"
+   ],
+
+   "dims_cm": { "len": 37, "wid": 17, "hgt": 13 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Technical details > Dimensions: 'Height: 37cm | Width: 17cm | Depth: 13cm | Minimum clearance: 18cm'. Single fixed figures, no range given.",
+   "dims_note": "Alpkit's own labels are for the bag standing upright off the bike; as mounted, 'Height' (37cm) is the fore/aft run under the saddle so it maps to len, 'Width' (17cm) is side-to-side so it maps to wid, and 'Depth' (13cm) is the vertical thickness so it maps to hgt. This mapping is consistent with the photos: the bag reads clearly longer (nose-to-tail) than it is tall, and wider side-to-side near the saddle than it is thick top-to-bottom - a flattened wedge, not a round bag. No published range, so the new unfurled/min-height rule does not apply here; there is nothing to pick between.",
+   "capacity_l": 7,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.55, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Flattened wedge, wider than it is tall at the saddle end, rolling down to a narrower blunt tail. Two-tone construction in every colorway photographed: a black underside/tail panel and a colored (grey, tan, or all-black) top/nose panel."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "side-release buckle at the tail roll"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "webbing", "wrapsAround": "seatpost" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "seams": "sewn, not seam-taped (maker copy: 'Waterproof X11 and Cordura fabrics (not seam-taped)')",
+    "fabric": "X-Pac X11 3-layer laminate (cotton-duck face) / 1100D Cordura - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "notes": "Nose strapped to the saddle rails and seatpost; maker also lists it as compatible with their Exo-Rail accessory (sold separately) for reduced sway on heavier loads - not modelled here since it is a separate SKU."
+   },
+
+   "colorways": [
+    { "name": "Panther Black", "hex": "#1c1c1e" },
+    { "name": "Storm Grey", "hex": "#75797c" },
+    { "name": "Mountain Brown", "hex": "#6b5138" },
+    { "name": "Olive Green", "hex": "#4c5343" }
+   ],
+   "images": ["assets/products/alpkit/koala-koala-7l-saddle-pack-7l-1.jpg"]
+  },
+
+  {
+   "line": "Airlok",
+   "name": "Airlok Dual 13L",
+   "size": "13L",
+   "slot": "barroll",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/alpkit/airlok-airlok-dual-13l-13l-1.jpg",
+    "assets/products/alpkit/airlok-airlok-dual-13l-13l-2.jpg",
+    "https://alpkit.com/products/airlok-xtra-dual-13-litre"
+   ],
+
+   "dims_cm": { "len": 44, "wid": 18, "hgt": 18 },
+   "dims_state": "maker_packed",
+   "dims_raw": "Technical details > Dimensions: 'Flat size: 59cm x 31cm (L x W); Packed size: 18cm x 44cm (⌀ x W)'.",
+   "dims_note": "This is a straight tube dry bag that rolls closed at BOTH ends, not a bag that rolls down on one 'height' axis, so the spec's len/wid-unfurled + min-height rule does not map cleanly onto it. 'Flat size' (59 x 31cm) is the sewn tube laid flat BEFORE either end is rolled and clipped - it is a fabrication-pattern measurement, not a usable on-bike length, and using it as len would draw a bag 15cm longer than the bike's own bar-to-bar span in the mounted photo. 'Packed size' (44cm long x 18cm diameter) is explicitly labelled by the maker as the packed/in-use state and matches the on-bike photo's proportions, so it is used directly for len/wid/hgt (wid=hgt=diameter, since the cross-section is round).",
+   "capacity_l": 13,
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Straight-sided fabric tube, rounded ends rolled down and buckled shut at both ends. A slight waist is visible at the two compression straps in the mounted photo."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "both_ends",
+    "hardware": "side-release buckle at each end (both ends roll independently)"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "fully taped (maker copy: 'Taped seams for waterproof construction')",
+    "fabric": "Waterproof TPU, not X-Pac/Cordura - see brand_notes.fabric for why this breaks brands.json's blanket fabric string"
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 60, "frame_mm": 0 },
+    "notes": "Straps directly to the bar with 2 girth straps (as photographed, on a flat mountain bar); maker copy notes it 'can be attached directly to the handlebar or used with a stability harness' (Alpkit Kanga, sold separately, not modelled here). No steerer strap visible in these photos."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Chilli", "hex": "#b4362a" }
+   ],
+   "images": ["assets/products/alpkit/airlok-airlok-dual-13l-13l-1.jpg"]
+  },
+
+  {
+   "line": "Possum",
+   "name": "Possum Frame Bag",
+   "size": "47cm (2.2L)",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/alpkit/possum-possum-frame-bag-47cm-2-2l-1.jpg",
+    "assets/products/alpkit/possum-possum-frame-bag-47cm-2-2l-2.jpg",
+    "assets/products/alpkit/possum-possum-frame-bag-47cm-2-2l-3.jpg",
+    "https://alpkit.com/products/possum"
+   ],
+
+   "dims_cm": { "len": 47, "wid": 5, "hgt": 11 },
+   "dims_state": "maker_fixed_size_run",
+   "dims_raw": "Sized dimensions table: '42cm: 1.9L, 42 x 10 x 5cm | 47cm: 2.2L, 47 x 11 x 5cm | 52cm: 2.5L, 52 x 13 x 5cm'.",
+   "dims_note": "Rigid-shape half-frame bag, no roll axis, so no unfurled/packed distinction applies. Mid (47cm) size taken as representative, matching the existing catalogue entry. Maker's own L x H x W order remapped: len=47 (along toptube), hgt=11 (vertical drop below the toptube), wid=5 (thickness off the frame's side, matching photo - clearly a slim panel bag, not a boxy one).",
+   "capacity_l": 2.2,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Slim wedge that tapers from tallest near the head-tube end down to a low point near the seat-tube end, flat back against the frame's side. Two-tone: black top strip along the toptube edge, colored (grey/tan/black) main panel below."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single YKK AquaGuard water-resistant zip, offset toward the top edge, running most of the bag's length"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "wrapsAround": "toptube" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.3 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "X-Pac X11 3-layer laminate (cotton-duck face) / 1100D Cordura - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["toptube"],
+    "contactFaces": ["top_edge", "frame_side"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "3 velcro straps around the toptube, visible in every photo. Maker copy also lists 'internal hypalon tabs to strap tent poles to' and an 'external pocket for phones and cards' - the external pocket is not visible in these on-bike side photos (it is on the bag's opposite, unphotographed face), so its location is taken on the maker's word, not confirmed by image."
+   },
+
+   "colorways": [
+    { "name": "Panther Black", "hex": "#1c1c1e" },
+    { "name": "Storm Grey", "hex": "#75797c" },
+    { "name": "Mountain Brown", "hex": "#6b5138" },
+    { "name": "Olive Green", "hex": "#4c5343" }
+   ],
+   "images": ["assets/products/alpkit/possum-possum-frame-bag-47cm-2-2l-2.jpg"]
+  },
+
+  {
+   "line": "Glider",
+   "name": "Glider Road Frame Bag",
+   "size": "48 (1.7L)",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/alpkit/glider-glider-road-frame-bag-48-1-7l-1.jpg",
+    "assets/products/alpkit/glider-glider-road-frame-bag-48-1-7l-2.jpg",
+    "https://alpkit.com/products/glider"
+   ],
+
+   "dims_cm": { "len": 48, "wid": 4, "hgt": 11 },
+   "dims_state": "maker_fixed_size_run",
+   "dims_raw": "Sized dimensions table: '46: 1.4L, 46 x 4 x 10cm | 48: 1.7L, 48 x 4 x 11cm | 50: 2.2L, 50 x 4 x 14cm'.",
+   "dims_note": "Same rigid-panel construction as Possum, no roll axis. Mid (48) size taken as representative. Maker's own order is L x W x H with W as the across-bike thickness; remapped so wid=4 is that thickness, hgt=11 is the vertical drop, len=48 runs along the toptube.",
+   "capacity_l": 1.7,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Same silhouette family as Possum - tallest near the head-tube end, tapering to a low point at the seat-tube end - but slimmer (4cm vs Possum's 5cm) and built for a road/gravel front triangle rather than a mountain-bike one."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single YKK AquaGuard water-resistant zip, offset toward the top edge"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "wrapsAround": "toptube" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.3 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "EPLX600 3-layer laminate (600d high-tenacity polyester / X-PLY / film backer), NOT X-Pac X11 - see brand_notes.fabric, this is the one Alpkit product that breaks the brand's blanket fabric string"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["toptube"],
+    "contactFaces": ["top_edge", "frame_side"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Same 3-velcro-strap toptube mounting as Possum. Maker copy also lists an 'external pocket for phones and cards' not visible in these on-bike photos (opposite face)."
+   },
+
+   "colorways": [
+    { "name": "Panther Black", "hex": "#1c1c1e" },
+    { "name": "Storm Grey", "hex": "#75797c" },
+    { "name": "Mountain Brown", "hex": "#6b5138" },
+    { "name": "Olive Green", "hex": "#4c5343" }
+   ],
+   "images": ["assets/products/alpkit/glider-glider-road-frame-bag-48-1-7l-2.jpg"]
+  },
+
+  {
+   "line": "Stem Cell",
+   "name": "Stem Cell Cockpit Bag",
+   "size": "Medium (1L)",
+   "slot": "stembag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/alpkit/stem-cell-stem-cell-cockpit-bag-medium-1l-1.jpg",
+    "assets/products/alpkit/stem-cell-stem-cell-cockpit-bag-medium-1l-2.jpg",
+    "assets/products/alpkit/stem-cell-stem-cell-cockpit-bag-medium-1l-3.jpg",
+    "https://alpkit.com/products/stem-cell-2023"
+   ],
+
+   "dims_cm": { "len": 10, "wid": 10, "hgt": 17 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Technical details > Dimensions: 'Medium: 17 x 10, 1 litre; XL: 20 x 12cm, 1.5 litres'.",
+   "dims_note": "Upright cylinder, figures given as height x diameter. len=wid=10 (diameter), hgt=17. No range published for the medium size, so no unfurled/min-height choice to make. Maker copy notes an 'expansion tube for storage of taller bottles and stoves' - a collar that can extend hgt beyond 17cm, but no figure is given for how much, so hgt is left at the base 17cm rather than guessed.",
+   "capacity_l": 1,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Upright cylinder, drawcord collar at the top, single wide webbing band around the middle carrying the branding and the stem-attachment loop."
+   },
+
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "one-handed pull-cord with cord lock (maker copy: 'one-handed pull cord closure for accessing items on the move')"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "girth", "hardware": "velcro", "wrapsAround": "stem" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "wrapsAround": "fork_crown", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "valve": "drainage eyelet in the base",
+    "lightMount": "hypalon light loop on the front face",
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "sewn, not seam-taped",
+    "fabric": "X-Pac X11 3-layer laminate (cotton-duck face) / 1100D Cordura - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
+    "attachesTo": ["stem", "handlebar"],
+    "contactFaces": ["girth"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Velcro loop clamps around one side of the stem; maker copy adds a 'webbing ladder to allow for a versatile fixing' to the bar and an 'additional fork crown attachment point... for added stability', both present in the photos as the visible strap running down from the bag toward the headset. The catalogue's earlier record listed a side mesh pocket for this product; neither these three photos nor the maker's own feature-bullet list mention or show one, so pockets is left empty here rather than carried forward unverified."
+   },
+
+   "colorways": [
+    { "name": "Panther Black", "hex": "#1c1c1e" },
+    { "name": "Storm Grey", "hex": "#75797c" },
+    { "name": "Mountain Brown", "hex": "#6b5138" },
+    { "name": "Olive Green", "hex": "#4c5343" }
+   ],
+   "images": ["assets/products/alpkit/stem-cell-stem-cell-cockpit-bag-medium-1l-1.jpg"]
+  },
+
+  {
+   "line": "Betonga",
+   "name": "Betonga Fork Cage Bag",
+   "size": "3L",
+   "slot": "forkbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/alpkit/betonga-betonga-fork-cage-bag-3l-1.jpg",
+    "assets/products/alpkit/betonga-betonga-fork-cage-bag-3l-2.jpg",
+    "assets/products/alpkit/betonga-betonga-fork-cage-bag-3l-3.jpg",
+    "https://alpkit.com/products/betonga-fork-bag"
+   ],
+
+   "dims_cm": { "len": 14.5, "wid": 14.5, "hgt": 36 },
+   "dims_state": "maker_labelled_packed",
+   "dims_raw": "Technical details > Dimensions: 'Packed size: 36cm x 14.5cm x 14.5cm (H x W x D)'.",
+   "dims_note": "The maker explicitly labels 36cm as the PACKED (not flat/unrolled) height, so per the spec's 'do not invent, use the published figure' rule dims_cm.hgt is kept at 36cm verbatim rather than back-computed from volume - the earlier record in this catalogue back-computed an 18cm height from the 3L capacity, which is exactly the fabricated-by-volume mistake the spec now warns against, so that figure is not reused. See render.hgt_cm for what is actually drawn and why.",
+   "capacity_l": 3,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Cylindrical roll-top, cinched at the middle by the criss-crossing attachment strap."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 2,
+    "hardware": "side-release buckle at the top roll"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "girth", "hardware": "buckle", "material": "webbing", "wrapsAround": "fork_cage" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "sewn, not seam-taped",
+    "fabric": "X-Pac X11 3-layer laminate (cotton-duck face) / 1100D Cordura - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "y", "wid": "+x", "hgt": "y" },
+    "attachesTo": ["fork_cage"],
+    "contactFaces": ["girth"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 40, "frame_mm": 0 },
+    "notes": "Fork-mounted product requiring a third-party or Alpkit's own bolt-on triple-boss cargo cage - maker copy: 'webbing ladder offers multiple attachment points to fork cages' and 'the webbing ladder with dual straps provides secure, adjustable attachment to your fork cage', and the product page cross-sells Alpkit's own 'Sonder ExoCage'. No bare-fork-leg strapping; a cage is required and is not included or modelled here, matching how other brands in this catalogue flag cage-dependent fork/cargo bags (see swift-industries.json's Gemini Cargo Pack note for the same pattern)."
+   },
+
+   "render": {
+    "hgt_cm": 23,
+    "published_min_cm": 36,
+    "conflict": "36cm is the maker's own labelled 'packed size' figure, but a 36cm-tall x 14.5cm-diameter cylinder is 5.95L against the stated 3L capacity (ratio 1.98, high even for a roll-top with slack) and, more importantly, does not match the on-bike photos: height-to-width proportions measured against the bag's own stated 14.5cm width in betonga-betonga-fork-cage-bag-3l-3.jpg give a height of roughly 22-23cm, not 36cm. Drawn at 23cm per the photo rather than the maker's figure or a volume back-calculation (which the spec explicitly warns against).",
+    "rolls": 2,
+    "basis": "Proportion measured against the bag's own 14.5cm width in betonga-betonga-fork-cage-bag-3l-3.jpg (tan colorway, full bag visible top to bottom against the fork leg)."
+   },
+
+   "colorways": [
+    { "name": "Panther Black", "hex": "#1c1c1e" },
+    { "name": "Storm Grey", "hex": "#75797c" },
+    { "name": "Mountain Brown", "hex": "#6b5138" },
+    { "name": "Olive Green", "hex": "#4c5343" }
+   ],
+   "images": ["assets/products/alpkit/betonga-betonga-fork-cage-bag-3l-3.jpg"]
+  }
+ ]
+}

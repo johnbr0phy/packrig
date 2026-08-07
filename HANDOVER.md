@@ -85,8 +85,17 @@ builders** — check each against the bike geometry it should derive from.
 Products carry a `slot` string and nothing else, which caused: the Brompton bag
 being offered (now `fits: "brompton"`, filtered in `catalog.js`), the Rear TT
 Sack having no matching mount (now `toptube_rear`), and the Many Things Sack
-slotted `forkbag` when it sells only as a pair (probably a pannier — dimfix-4
-was asked to confirm).
+slotted `forkbag` when it sells only as a pair.
+
+**Many Things Sack — RESOLVED (7 Aug).** It is a fork bag; `slot: forkbag` is
+correct. The photo shows an upright tapered sack with a fold-down triangular
+flap, one vertical buckle strap and side webbing loops for cage retention — no
+rack hooks, no rail clips, no flat back panel. It slides over a King Many Things
+Cage on a single fork leg. "Sold as a pair" is a purchase quantity (one per fork
+leg), not a two-compartment product, and the 3.4L capacity is **per bag**. Its
+long axis is `hgt` 25.4cm — treating `len` as the long axis is what previously
+collapsed it to a sphere. Closure is a flap-and-buckle, not the roll-top the
+source data claimed.
 
 **Still undecided:** 7 bags need a front BASKET (Wald 137/139, Manivelle), not
 just the rack we draw — Swift Sugarloaf, Outer Shell 137 + Rack Bag, Wizard
