@@ -1,0 +1,478 @@
+{
+ "brand": "Gramm Tourpacking",
+ "slug": "gramm-tourpacking",
+ "reviewed_photos": 19,
+ "brand_notes": {
+  "materials": "brands.json's fabric string ('X-Pac RX36 (100% recycled) / RX30 / VX21 / CORDURA 560dtex, ECOPAK EPX200 Silver Bullet liner, optional UHMWPE') matches what is visible. The Candy Bag, Hip Handlebar Bag, and Mini Seat Bag all show the fine ripstop-grid X-Pac face fabric their pages specify (RX30/RX36/X50). The Diamond Bag 7.5L's local photos show the plain black CORDURA 560dtex colorway (one of two fabric options the page lists); the Tall Diamond Bag's on-bike reference photos show the X-Pac RX36 ripstop colorway. The light grey/white diamond-quilted interior visible in ref-diamond-rx36-studio.jpg matches the stated 'ECOPAK EPX200 Silver Bullet' liner. No mismatch found.",
+  "dimensionEvidence": "Gramm publishes precise mm figures for the Tall Diamond Bag and Mini Seat Bag (both as open/closed or min/max ranges — the good case). The Diamond Bag 7.5L and Grill Bag publish NO bag dimensions at all: the 7.5L page gives only a litre figure, and the Grill Bag page's only mm figures (300x215mm) are the rack platform, not the bag (avoided, consistent with the prior pass's own note on this product). Both are estimated here — the 7.5L scaled off the corrected Tall Diamond Bag figures at fixed 170mm depth, the Grill Bag from its own stated platform footprint and litre figure — and flagged accordingly. The Custom Seat Bag's only published figure (550x300x180mm) is physically impossible as a packed size (29.7L against a stated 10L) and was correctly not used by the prior pass; that estimate is carried forward.",
+  "photoMismatch": "Two products have a wrong-product photo in their local folder, the same class of error flagged elsewhere in this catalogue for other brands. Grill Bag's second local image (grill-bag-grill-bag-12-l-12l-2.jpg) shows a rear rack and dynamo hub light in close-up — no bag is visible. Custom Seat Bag's first local image (seat-bag-custom-seat-bag-10-l-custom-10l-1.jpg) shows a small hand-held zip pouch full of tools/tyre-lever hardware — clearly not a 10L saddle bag. Neither was used as evidence; confidence is lowered on both records as a result.",
+  "closureCorrections": "Two closures in brands.json's features block are contradicted by the local photos. The Candy Bag is catalogued as closure 'open' but every photo shows a drawcord-and-cordlock cinch top with a visible pull cord and toggle — corrected to drawcord here. The Mini Seat Bag is catalogued as 'rolltop' but its photo shows a straight zip running the top spine with a visible slider/pull, plus a wide velcro strap panel across the front that may be what was originally mistaken for a roll flap — corrected to zip_straight here, medium confidence since only one photo exists.",
+  "techDrawingNote": "ref-tech-drawing.jpg (215mm / 155mm / 280mm / 112mm) is a CAD-style line drawing of a front-rack platform, not any bag — the dimensions belong to a rack (most likely the Diamond Rack or Grill Rack), and were not applied to any bag record."
+ },
+ "products": [
+  {
+   "line": "Diamond Bag",
+   "name": "Diamond Bag 7.5 L",
+   "size": "7.5L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/gramm-tourpacking/diamond-bag-diamond-bag-7-5-l-7-5l-1.jpg",
+    "assets/products/gramm-tourpacking/diamond-bag-diamond-bag-7-5-l-7-5l-2.jpg",
+    "assets/products/gramm-tourpacking/ref-diamond-cordura-17.jpg",
+    "assets/products/gramm-tourpacking/ref-diamond-onbike.jpg",
+    "assets/products/gramm-tourpacking/ref-diamond-rx36-studio.jpg",
+    "https://www.gramm-tourpacking.com/shopnow/diamond-bag"
+   ],
+   "dims_cm": { "len": 24.1, "wid": 17.0, "hgt": 18.3 },
+   "dims_state": "estimated_from_family",
+   "dims_raw": "Capacity: 7.5 liters. No bag dimensions published on this page. Fabric: Black X-Pac RX36 with side pockets (UltraStretch or CORDURA 560dtex, no side pockets); liner X-Pac VX21 white.",
+   "dims_note": "No dimensions are published for this size. Scaled from the corrected Tall Diamond Bag figures (see that record) keeping the family's fixed 17.0cm depth and its len:hgt aspect ratio, solved to land on the stated 7.5L: 24.1 x 17.0 x 18.3 = 7500cc = 7.5L exactly. Treat len and hgt as estimates, not maker data.",
+   "capacity_l": 7.5,
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Rigid-ish boxy shell, hinged flip-top lid. Photographed here in the plain black CORDURA colorway (no visible ripstop grid), one of two fabric options the page offers."
+   },
+   "closure": {
+    "type": "flap_strap",
+    "location": "top",
+    "hardware": "hinged flip-top lid retained by an elastic bungee cord crossed in an X between two webbing loop anchors at front and rear of the lid; a FIDLOCK SNAP buckle plus a velcro plate underneath locks the whole bag onto the rack platform (a rigid quick-release plate, not a fabric strap)"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "plastic snap plate + velcro", "wrapsAround": "diamond_rack" }
+   ],
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "front", "sizeFrac": 0.3 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none observed in local photos",
+    "valve": false,
+    "cablePort": "grommet port for a charging cable, per maker copy; not independently confirmed in local photos",
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn, bar-tacked (not welded — this is the CORDURA colorway, not a laminate)",
+    "fabric": "Black CORDURA 560dtex (photographed colorway); brand also offers X-Pac RX36 with UltraStretch side pockets"
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
+    "attachesTo": ["front_rack"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 50, "frame_mm": 0 },
+    "notes": "Rack-top mounted, not a strap-to-bar bag — requires the Allygn Diamond Rack or a compatible rando front rack (Nitto M12/M18/Campee, Velo Orange Randonneur per maker copy). clearance is an estimate for steering-lock front-wheel clearance, not measured."
+   },
+   "colorways": [
+    { "name": "Black X-Pac RX36 + UltraStretch side pockets", "hex": "#1c1c1e" },
+    { "name": "Black CORDURA 560dtex", "hex": "#2b2d31" }
+   ]
+  },
+  {
+   "line": "Diamond Bag",
+   "name": "Tall Diamond Bag 11 L",
+   "size": "Tall (11L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/gramm-tourpacking/diamond-bag-tall-diamond-bag-11-l-tall-11l-1.jpg",
+    "assets/products/gramm-tourpacking/ref-diamond-onbike.jpg",
+    "assets/products/gramm-tourpacking/ref-diamond-onbike2.jpg",
+    "assets/products/gramm-tourpacking/ref-diamond-rx36-studio.jpg",
+    "assets/products/gramm-tourpacking/ref-diamond-tall-4.jpg",
+    "https://www.gramm-tourpacking.com/shopnow/diamondbagtallrx36black"
+   ],
+   "dims_cm": { "len": 29.0, "wid": 17.0, "hgt": 22.0 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Capacity: 11 liters. Dimensions: 240-290 x 170 x 220-250 mm (W x D x H). Weight: 790g",
+   "dims_note": "Per the new MODEL-SPEC rule, len (the W figure, the box's fore-aft footprint on the rack) takes the UNFURLED maximum: 290mm=29.0cm (previously interpolated to 25.5cm). hgt takes the MINIMUM of its range: 220mm=22.0cm (previously interpolated to 22.9cm — close by coincidence, now exactly the rule's minimum). Depth (wid) is fixed at 170mm=17.0cm. The height range describes an origami-style lid that raises/expands, not a roll, but it is the same 'variable height' case MODEL-SPEC's render block covers.",
+   "capacity_l": 11,
+   "render": {
+    "hgt_cm": 22.0,
+    "basis": "The 220-250mm height range is the origami lid collapsed vs fully raised, not a roll count. 22.0cm (the collapsed/minimum reading) matches the lid's flattened profile seen in ref-diamond-onbike.jpg and the local studio photo; no 'rolls' field applies since this isn't a roll-down closure."
+   },
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Same hinged flip-top box construction as the 7.5L Diamond Bag, taller. Photographed in the black X-Pac RX36 ripstop colorway (fine grid ripstop visible, unlike the smooth CORDURA of the 7.5L)."
+   },
+   "closure": {
+    "type": "flap_strap",
+    "location": "top",
+    "hardware": "hinged flip-top lid retained by an elastic bungee cord crossed in an X between two webbing loop anchors; FIDLOCK SNAP buckle plus velcro plate underneath locks onto the rack platform"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "plastic snap plate + velcro", "wrapsAround": "diamond_rack" }
+   ],
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "front", "sizeFrac": 0.3 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none observed in local photos",
+    "valve": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "taped/welded (X-Pac laminate)",
+    "fabric": "Black X-Pac RX36, fine ripstop-grid face, matte, with white VX21 interior liner"
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
+    "attachesTo": ["front_rack"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 45, "frame_mm": 0 },
+    "notes": "Rack-top mounted, requires the Allygn Diamond Rack or a compatible rando front rack. clearance is an estimate, not measured."
+   },
+   "colorways": [
+    { "name": "Black X-Pac RX36", "hex": "#1c1c1e" }
+   ]
+  },
+  {
+   "line": "Grill Bag",
+   "name": "Grill Bag 12 L",
+   "size": "12L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/gramm-tourpacking/grill-bag-grill-bag-12-l-12l-1.jpg",
+    "https://www.gramm-tourpacking.com/shopnow/grill-bag-12l-rx36"
+   ],
+   "dims_cm": { "len": 30.0, "wid": 21.5, "hgt": 18.6 },
+   "dims_state": "estimated",
+   "dims_raw": "Capacity: 12 liters. Main fabric: X-Pac RX36 Black + ECOPAK EPX200 Silver Bullet liner. [Grill Rack] Platform size: 300 x 215 mm (W x L)",
+   "dims_note": "No bag dimensions are published — the only mm figures on the page (300 x 215mm) are the RACK PLATFORM the bag is designed to sit on, per brand_notes.techDrawingNote. len/wid taken directly as that platform footprint (30.0 x 21.5cm); hgt is solved from the stated 12L: 12000/(30.0*21.5)=18.6cm. All three values are estimates. Only one usable local photo exists — see brand_notes.photoMismatch for the second (wrong-product) image.",
+   "capacity_l": 12,
+   "geometry": {
+    "form": "basket_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Same hinged flip-top box family as the Diamond Bag, sized to sit fully supported on a flat porteur-rack platform rather than hanging from straps. Inferred by construction similarity from the single available photo, not independently confirmed."
+   },
+   "closure": {
+    "type": "flap_strap",
+    "location": "top",
+    "hardware": "hinged flip-top lid retained by an elastic bungee cord crossed in an X between two webbing loop anchors, matching the Diamond Bag family construction visible in the one local photo"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "plastic snap plate + velcro", "wrapsAround": "grill_rack" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none observed in local photos",
+    "valve": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "taped/welded (X-Pac laminate)",
+    "fabric": "Black X-Pac RX36, EPX200 Silver Bullet liner (per maker copy; liner not visible in the one available photo)"
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
+    "attachesTo": ["front_rack"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 50, "frame_mm": 0 },
+    "notes": "Requires the Allygn Grill Rack or any porteur rack with at least 200mm platform depth, per maker copy — cannot mount without a rack. clearance is an estimate, not measured."
+   },
+   "colorways": [
+    { "name": "Black X-Pac RX36", "hex": "#1c1c1e" }
+   ]
+  },
+  {
+   "line": "Seat Bag",
+   "name": "Custom Seat Bag 10 L",
+   "size": "Custom (10L)",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/gramm-tourpacking/seat-bag-custom-seat-bag-10-l-custom-10l-2.jpg (hero/group shot; the bag itself is small in frame)",
+    "https://www.gramm-tourpacking.com/shopnow/custom-seat-bag"
+   ],
+   "dims_cm": { "len": 45, "wid": 17, "hgt": 17 },
+   "dims_state": "unknown",
+   "dims_raw": "Weight: 510g (VX21). Volume: 10 liters. Dimensions: 550 x 300 x 180mm (L x W x H). Made in Berlin",
+   "dims_note": "The printed 550x300x180mm box is 29.7L against a stated 10L — physically impossible as a packed/mounted size, almost certainly an unrolled flat-panel maximum. Not used. dims_cm is instead a proportion-based estimate for a tapered seat pack at the stated 10L (45x17x17=13005cc, a plausible box for a wedge that fills roughly 3/4 of its envelope). Photographic verification is weak — see evidence note.",
+   "capacity_l": 10,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.45, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Per maker copy, a semi-rigid shell with Hypalon reinforcement at contact areas. Not independently confirmed — see evidence note; this product's own local photo (seat-bag-custom-seat-bag-10-l-custom-10l-1.jpg) shows an unrelated small tool pouch, not this bag (brand_notes.photoMismatch), and the only other local image is a distant hero/group shot."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "hardware": "per maker copy only — not independently photo-verified"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "webbing", "wrapsAround": "seatpost" },
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": false,
+    "cord": true,
+    "logo": { "type": "woven_patch", "location": "nose_side" },
+    "seams": "taped/welded (X-Pac laminate)",
+    "fabric": "X-Pac VX21, per maker copy; not independently photo-verified — see evidence note"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 3,
+    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "notes": "'No-slip VELCRO strap plus 2x ITW buckles to saddle rails, semi-rigid shell, Hypalon reinforcement at contact areas' per maker copy. clearance is an estimate, not measured."
+   },
+   "colorways": [
+    { "name": "Black X-Pac VX21", "hex": "#1c1c1e" },
+    { "name": "Bi-colour custom", "hex": "#2b2d31" }
+   ]
+  },
+  {
+   "line": "Seat Bag",
+   "name": "Mini Seat Bag 2-3 L",
+   "size": "Mini (2-3L)",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/gramm-tourpacking/seat-bag-mini-seat-bag-2-3-l-mini-2-3l-1.jpg",
+    "https://www.gramm-tourpacking.com/shopnow/seat-bag-2-3l-x-pac-x50-blk"
+   ],
+   "dims_cm": { "len": 44.0, "wid": 16.0, "hgt": 13.0 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Measures closed: about 300 x 160 x 130 mm (L x W x H). Measures open: 440 x 160 x 130 mm (L x W x H)",
+   "dims_note": "Per the new MODEL-SPEC rule len takes the UNFURLED (open) maximum: 440mm=44.0cm (previously interpolated to 34.2cm — a large change). Width and height are fixed (identical in both the closed and open readings): 16.0cm and 13.0cm. No render block needed since hgt is not a range.",
+   "capacity_l": 3,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.5, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Multicam colourway shown. Moderate wedge taper toward the tail."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider zip runs the top spine nose to tail; a wide velcro/webbing strap panel crosses the front near the nose for saddle-rail attachment. brands.json's features block lists this closure as 'rolltop', but the local photo clearly shows a zip pull and no roll flap anywhere — corrected here, see brand_notes.closureCorrections. The 300mm-vs-440mm closed/open figures most likely describe a zip-gusset expansion, not a roll."
+   },
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none observed in local photos",
+    "valve": false,
+    "logo": { "type": "woven_patch", "location": "nose_side" },
+    "seams": "taped/welded (X-Pac laminate)",
+    "fabric": "X-Pac X50, fine ripstop-grid face, matte, MultiCam Black colourway shown"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 3,
+    "clearance": { "tyre_mm": 45, "frame_mm": 0 },
+    "notes": "A Voile-strap version is also offered per maker copy (not photographed). clearance is an estimate, not measured."
+   },
+   "colorways": [
+    { "name": "X-Pac X50 Black", "hex": "#1c1c1e" },
+    { "name": "MultiCam Black", "hex": "#33353a" },
+    { "name": "X-Pac X51 Marigold", "hex": "#d19b2a" }
+   ]
+  },
+  {
+   "line": "Seat Bag",
+   "name": "Multi-Tool Seat Bag",
+   "size": "One Size (0.5L)",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/gramm-tourpacking/seat-bag-multi-tool-seat-bag-one-size-0-5l-1.jpg",
+    "https://www.gramm-tourpacking.com/shopnow/multi-tool-saddle-bag"
+   ],
+   "dims_cm": { "len": 14, "wid": 9, "hgt": 6 },
+   "dims_state": "packed",
+   "dims_raw": "Capacity: 0.5 L. Dimensions: 140 x 90 x 60 mm (L x W x H). Weight: 80 g",
+   "dims_note": "Fixed small zip pouch, no range published, axes labelled explicitly (L x W x H) so the mapping is direct: 14cm fore-aft, 9cm across, 6cm tall. Photo confirms a small pouch clearly longer fore-aft than tall, zip running the length. Unchanged by the dimension-rule update.",
+   "capacity_l": 0.5,
+   "geometry": {
+    "form": "slab",
+    "crossSection": "rounded_rect",
+    "shoulder": "rounded",
+    "notes": "Small fixed zip pouch, olive/black colourway shown, no taper."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider zip running the top length of the pouch"
+   },
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "ladderlock", "material": "webbing", "wrapsAround": "seatpost" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none observed in local photos",
+    "valve": false,
+    "logo": { "type": "woven_patch", "location": "underside" },
+    "seams": "sewn, bar-tacked",
+    "fabric": "matte black nylon (fabric not specified on the product page)"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Included Gramm Strap and Fixplus strap per maker copy; small enough that tyre clearance is not a concern."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" }
+   ]
+  },
+  {
+   "line": "Hip Handlebar Bag",
+   "name": "Hip Handlebar Bag 2.5 L",
+   "size": "One Size (2.5L)",
+   "slot": "barroll",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/gramm-tourpacking/hip-handlebar-bag-hip-handlebar-bag-2-5-l-one-size-2-5l-1.jpg",
+    "assets/products/gramm-tourpacking/hip-handlebar-bag-hip-handlebar-bag-2-5-l-one-size-2-5l-2.jpg",
+    "https://www.gramm-tourpacking.com/shopnow/hip-handlebar-bag"
+   ],
+   "dims_cm": { "len": 23, "wid": 13, "hgt": 13 },
+   "dims_state": "packed",
+   "dims_raw": "Capacity: 2.5 L. Dimensions: 230mm length, Ø 130mm",
+   "dims_note": "Maker publishes a length and a diameter, not three axes, so hgt and wid both correctly carry the 130mm diameter for this cylinder. No range published, unchanged by the dimension-rule update. Photo shows a short fat barrel roughly 1.8x as long as it is thick, consistent with the numbers.",
+   "capacity_l": 2.5,
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "Short fat cylindrical roll. One end has a textured rubberised/mesh grippy panel (matches the Ultra Grid style seen on the Candy Bag); a full-length top zip runs the body."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider zip running the full top length; matches brands.json's 'zip' closure, no correction needed here"
+   },
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "girth", "hardware": "velcro", "material": "rubberised strap (FIXPLUS Nano)", "wrapsAround": "handlebar" }
+   ],
+   "pockets": [
+    { "type": "open", "count": 2, "location": "side", "sizeFrac": 0.2 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "valve": false,
+    "cord": true,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "taped/welded (X-Pac laminate)",
+    "fabric": "X-Pac RX36, fine ripstop-grid face, matte"
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 35, "frame_mm": 0 },
+    "notes": "Two branded FIXPLUS Nano rubber straps (visible in local photos) attach to any bar up to 35mm. Converts to a hip/sling bag with an included carry strap per maker copy. clearance is an estimate, not measured."
+   },
+   "colorways": [
+    { "name": "Black X-Pac RX36", "hex": "#1c1c1e" },
+    { "name": "Multicam Black X-Pac X50", "hex": "#33353a" }
+   ]
+  },
+  {
+   "line": "Candy Bag",
+   "name": "Candy Bag",
+   "size": "One Size (0.5L)",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/gramm-tourpacking/candy-bag-candy-bag-one-size-0-5l-1.jpg",
+    "assets/products/gramm-tourpacking/candy-bag-candy-bag-one-size-0-5l-2.jpg",
+    "https://www.gramm-tourpacking.com/shopnow/candy-bag"
+   ],
+   "dims_cm": { "len": 9, "wid": 9, "hgt": 16 },
+   "dims_state": "packed",
+   "dims_raw": "Capacity: 0.5 L. X-Pac RX30 Black main fabric with Ultra Grid Black Out. Dimensions: 90 x 90 x 160 mm (L x W x H). Weight: 95 g",
+   "dims_note": "Fixed cylindrical stem bag, printed L x W x H maps straight across. No range published, unchanged by the dimension-rule update. Box (90x90x160mm=1.3L) is oversized relative to the stated 0.5L capacity because it is sized around a standard 90mm bottle, not sewn to a full-volume fill — noted, not corrected.",
+   "capacity_l": 0.5,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "Bottle-cage-style stem bag. Lower/rear panel is a distinct black rubberised waffle-textured fabric (the maker's 'Ultra Grid Black Out'), visible as a grippy grid pattern on the base and one side."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "drawcord with a plastic cordlock toggle cinches the top shut. brands.json's features block lists this closure as 'open', but both local photos clearly show a functional drawcord and pull toggle — corrected here, see brand_notes.closureCorrections."
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "girth", "hardware": "velcro", "material": "rubberised webbing", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "ladderlock", "material": "webbing", "wrapsAround": "fork_crown" }
+   ],
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "side", "sizeFrac": 0.5 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none observed in local photos",
+    "valve": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "taped/welded (X-Pac laminate)",
+    "fabric": "X-Pac RX30 Black main fabric with a rubberised 'Ultra Grid Black Out' panel on the base/rear"
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
+    "attachesTo": ["handlebar", "stem", "head_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Three rubberised velcro straps to bar and stem plus a stabiliser strap to the fork crown, per maker copy; the 'ADJUST LENGTH' branded ladderlock buckle is visible in both local photos. Sold single or as a bundle of two."
+   },
+   "colorways": [
+    { "name": "Black X-Pac RX30", "hex": "#1c1c1e" }
+   ]
+  }
+ ]
+}

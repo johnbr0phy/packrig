@@ -137,12 +137,13 @@ any other verdict.
 problems.** Corrected dimensions did not shift them, so they are builder bugs and
 belong to Track B, not to another round of catalogue review.
 
-Worst individual offenders: Randi Jo Bartender Plus (stem bag, −8.5 mm into the
-top tube), Revelate Terrapin 14L (seat pack, −4.3 mm into the top tube), Road
-Runner Drafter (saddle bag, −5.1 mm into the seat tube). In the seat pack slot
-the 20 clashes are concentrated in Revelate Spinelock and Terrapin, Topeak
-Backloader and Backloader X, and Outer Shell Seatpack; the 9 tyre cases bottom
-out at 9.1 mm (Bags by Bird Goldback).
+Worst individual offenders now: Randi Jo Bartender Plus (stem bag, −8.5 mm into
+the top tube) and Revelate Terrapin 14L (seat pack, −4.3 mm into the top tube).
+The 13 seat pack clashes sit in a tight band of −1.7 to −4.3 mm and span
+Revelate Spinelock and Terrapin, Rockgeist Mr Fusion, Topeak Backloader, WOHO
+XTouring, Zéfal Z Adventure and Altura Vortex — a spread of makers at almost
+identical depth, which points at the builder rather than at any one product. The
+9 tyre cases bottom out at 9.1 mm (Bags by Bird Goldback).
 
 > **A correction, and a tool fix.** An earlier version of this document reported
 > 29 tyre violations in the fork bag slot, all clustered at exactly 9.0 mm, and

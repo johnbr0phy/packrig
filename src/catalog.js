@@ -64,7 +64,18 @@ export async function loadCatalog() {
  * bolts to Brompton's proprietary front carrier block and cannot mount on a
  * drop-bar gravel frame at all. Offering it here is simply wrong.
  */
-const fitsThisBike = (p) => !p.fits || p.fits === 'universal';
+// `fits` records what a bag needs in order to mount, and most values describe
+// hardware this frame HAS — `rack_only` is simply a pannier, and we draw a rack.
+// The old rule was "anything not 'universal' cannot fit", which was safe while
+// exactly one product carried the field; the moment tools/apply-models.mjs
+// merged the reviewers' notes it silently hid 37 products instead of 1, 30 of
+// them wrongly. Only these values mean the bag genuinely cannot go on this bike.
+const CANNOT_FIT = new Set([
+  'brompton',   // proprietary front carrier block
+  'basket',     // needs a wire front basket we do not model (see HANDOVER.md)
+  'none',       // an insert or an add-on that mounts to another bag, not the bike
+]);
+const fitsThisBike = (p) => !p.fits || !CANNOT_FIT.has(String(p.fits).trim().toLowerCase());
 
 export function productsForSlot(catalog, slot) {
   const out = [];
