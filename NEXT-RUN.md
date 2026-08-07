@@ -116,34 +116,39 @@ and ours renders as a fat tube; `tailWid` (0.34–0.46) is far too weak.
 **Four slots audited in full** (190 products). Nothing is dropped anywhere, so
 the resolver is placing everything — these are fidelity problems, not fitment:
 
-| Slot | Products | Dropped | Clash into a non-mount part | Under 15 mm to a tyre | Floating |
-|---|---:|---:|---:|---:|---:|
-| seatpack | 79 | 0 | 20 | 9 | 0 |
-| saddlebag | 44 | 0 | 1 | 1 | 0 |
-| stembag | 38 | 0 | 4 | 0 | 1 |
-| forkbag | 29 | 0 | 0 | **29** | 5 |
+| Slot | Products | Dropped | Clash into a non-mount part | Under 15 mm to a tyre |
+|---|---:|---:|---:|---:|
+| seatpack | 79 | 0 | 20 | 9 |
+| saddlebag | 44 | 0 | 1 | 1 |
+| stembag | 38 | 0 | 4 | 0 |
+| forkbag | 29 | 0 | 0 | 0 |
 
-"Floating" means the bag is more than 15 mm from everything it is supposed to
-strap to — `BUILDER-BRIEF.md` §3 calls that as wrong as being buried in it.
+Worst individual offenders: Randi Jo Bartender Plus (stem bag, −8.5 mm into the
+top tube), Revelate Terrapin 14L (seat pack, −4.3 mm into the top tube), Road
+Runner Drafter (saddle bag, −5.1 mm into the seat tube). In the seat pack slot
+the 20 clashes are concentrated in Revelate Spinelock and Terrapin, Topeak
+Backloader and Backloader X, and Outer Shell Seatpack; the 9 tyre cases bottom
+out at 9.1 mm (Bags by Bird Goldback).
 
-**The fork bag slot has one bug, not twenty-nine.** Every fork bag is too close
-to the front tyre, and **22 of the 29 read *exactly* 9.0 mm** — a bag's size
-makes no difference to its clearance. `src/bags/builders/forkbag.js:24` is why:
-
-```js
-grp.position.z = side * Math.max(r + 64 - anchorZ, 8);
-```
-
-The `r` cancels, so the bag's inner face always lands at the same lateral
-offset — `64 - anchorZ` — whatever the product's radius. `64` is a magic number
-derived from neither the tyre width (45 mm) nor the fork blade. This is exactly
-Rule 1 in `BUILDER-BRIEF.md`, and fixing that one line should move the whole
-slot at once. The 5 floating fork bags are the same expression clamping at its
-`, 8)` floor.
-
-Worst individual offenders elsewhere: Randi Jo Bartender Plus (stem bag, −8.5 mm
-into the top tube), Revelate Terrapin 14L (seat pack, −4.3 mm into the top
-tube), Road Runner Drafter (saddle bag, −5.1 mm into the seat tube).
+> **A correction, and a tool fix.** An earlier version of this document reported
+> 29 tyre violations in the fork bag slot, all clustered at exactly 9.0 mm, and
+> blamed a hard-coded offset in `forkbag.js:24`. That was wrong. `bagshot.mjs`
+> was sampling *every* mesh in the bag, including geometry flagged
+> `userData.noCollide` — cargo-cage arms, rack hooks, bar standoffs, the straps
+> that wrap a tube. That hardware is supposed to reach into the bike; it is how
+> the bag attaches, and `src/bags/resolve.js:59` has always excluded it. What the
+> tool was measuring was one cage arm reaching for the fork blade, which is why
+> 22 readings were identical.
+>
+> `bagshot.mjs` now honours `noCollide`, matching the resolver. Re-run: **all 29
+> fork bags read 38.9 mm to the front tyre — the slot is clean.** The other three
+> slots re-measured *identically*, so their numbers above are unaffected and
+> real.
+>
+> Two lessons worth carrying: a constant reading across many products is a
+> signature of the measurement, not the thing measured; and "does the bag touch
+> what it mounts to" can no longer be answered from these numbers for
+> cage-mounted bags, because the part that does the touching is now excluded.
 
 **Not yet audited:** `framebag_full`, `framebag_half`, `toptube`, `downtube`,
 `barbag`, `barroll`, `randobag`, `pannier`, `trunk` — 511 products. Budget about
@@ -161,14 +166,18 @@ front basket modelled rather than the bare rack.
 
 ## 5. The work, in dependency order
 
-**Before spinning up any agents**, two things are worth doing by hand in ten
-minutes, because both are one-line changes with slot-wide effects and both will
-otherwise be re-discovered independently by several agents:
+**Before spinning up any agents**, run the nine unaudited slots so the geometry
+agents start with numbers instead of spending their first hour generating them,
+and so any *tool* problems surface before six agents independently trip over
+them — as happened with the `noCollide` bug above.
 
-1. `forkbag.js:24` — the constant lateral offset above. Fixes 29 tyre violations
-   and 5 floating bags in one edit.
-2. Run the remaining nine slot audits so the geometry agents start with numbers
-   instead of spending their first hour generating them.
+Two things also worth knowing before assigning brand reviewers (§ Track A):
+
+- **16 of the 41 unreviewed brands have no local product photos at all.** They
+  need `node tools/fetch-images.mjs` first, or the agent has nothing to review.
+- **Wizard Works is the largest unreviewed brand (27 products) but has only 2
+  photos**, because its CDN blocks hotlinking. Do not lead with it despite the
+  size; it needs its images sourced another way first.
 
 ### Track A — finish the catalogue (blocks Track B)
 

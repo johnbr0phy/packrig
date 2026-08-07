@@ -226,10 +226,25 @@ function measureInPage(uiSlot) {
   });
 
   // Bag surface points, in frame-local mm, decimated so this stays fast.
+  //
+  // Skip anything flagged `noCollide` — cargo-cage arms, rack hooks, bar
+  // standoffs, the straps that wrap a tube. That hardware is SUPPOSED to reach
+  // into the bike; it is how the bag attaches. src/bags/resolve.js:59 has always
+  // excluded it, and this tool not doing so made every cargo-cage fork bag read
+  // as 9mm from the front tyre when what it was measuring was the cage arm
+  // reaching for the fork blade.
+  const noCollide = (o) => {
+    for (let n = o; n; n = n.parent) {
+      if (n.userData?.noCollide) return true;
+      if (n === bagRoot) break;
+    }
+    return false;
+  };
   const pts = [];
   bagRoot.updateWorldMatrix(true, true);
   bagRoot.traverse((o) => {
     if (!o.isMesh || !o.geometry?.attributes?.position) return;
+    if (noCollide(o)) return;
     const pos = o.geometry.attributes.position;
     const M = localMat(o);
     const step = Math.max(1, Math.floor(pos.count / 700));
