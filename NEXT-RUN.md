@@ -116,12 +116,26 @@ and ours renders as a fat tube; `tailWid` (0.34–0.46) is far too weak.
 **Four slots audited in full** (190 products). Nothing is dropped anywhere, so
 the resolver is placing everything — these are fidelity problems, not fitment:
 
-| Slot | Products | Dropped | Clash into a non-mount part | Under 15 mm to a tyre |
+| Slot | Products | Dropped | Clashing products | Under 15 mm to a tyre |
 |---|---:|---:|---:|---:|
-| seatpack | 79 | 0 | 20 | 9 |
-| saddlebag | 44 | 0 | 1 | 1 |
-| stembag | 38 | 0 | 4 | 0 |
+| seatpack | 79 | 0 | 13 | 9 |
+| saddlebag | 44 | 0 | 0 | 1 |
+| stembag | 38 | 0 | 3 | 0 |
 | forkbag | 29 | 0 | 0 | 0 |
+
+(Counted as distinct *products*. An earlier version of this table counted
+clearance *entries*, which double-counts a bag that fouls both the seat tube and
+the top tube — seatpack was reported as 20 on that basis, and is 13 bags.)
+
+**These numbers are post-merge**, i.e. after `tools/apply-models.mjs` pushed 113
+corrected dimensions into the catalogue. That merge fixed exactly one clash —
+the Road Runner Drafter, which went from 5.1 mm *inside* the seat tube to 20.6 mm
+clear once its dimensions were corrected — and moved many bags without changing
+any other verdict.
+
+**That is the useful result: the remaining seat pack clashes are not data
+problems.** Corrected dimensions did not shift them, so they are builder bugs and
+belong to Track B, not to another round of catalogue review.
 
 Worst individual offenders: Randi Jo Bartender Plus (stem bag, −8.5 mm into the
 top tube), Revelate Terrapin 14L (seat pack, −4.3 mm into the top tube), Road
