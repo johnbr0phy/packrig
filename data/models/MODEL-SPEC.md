@@ -31,6 +31,32 @@ roll-down axis must be at its shortest so the bag never digs into the tyre or
 the frame. Put the full range verbatim in `dims_raw` and explain your pick in
 `dims_note`.
 
+### The `render` block — what the bag is actually DRAWN at
+
+`dims_cm` is the honest record of what the maker publishes. It is not always
+what should be drawn: Tailfin publish only a 42cm *unrolled* height for the
+CargoPack, but in every on-bike photo the roll is turned down three times and
+the bag stands 22–26cm. Drawing 42cm would be absurd.
+
+So every roll-top or otherwise variable-height product also carries:
+
+```json
+"render": {
+  "hgt_cm": 24,
+  "rolls": 3,
+  "basis": "three turn-downs; measured against the rack deck in the on-bike photos"
+}
+```
+
+- If the maker publishes a **range**, `render.hgt_cm` is the **minimum** of it.
+- If the maker publishes only the **unfurled** figure, estimate the rolled-down
+  height **from an on-bike photo** and say so in `basis`. That is an observation,
+  not a fabrication — but it must be traceable to an image you looked at.
+- If the height is fixed (a zipped, non-rolling bag), omit `render` entirely.
+
+Never edit `dims_cm` to make the render come out right. The two fields exist so
+that honest data and correct drawing do not have to fight each other.
+
 **Tapered axes:** put the LARGER value in `dims_cm` and describe the taper in
 the `geometry.taper` block, which is what actually shapes the mesh.
 
