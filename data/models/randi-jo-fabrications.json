@@ -1,0 +1,294 @@
+{
+ "brand": "Randi Jo Fabrications",
+ "slug": "randi-jo-fabrications",
+ "reviewed_photos": 13,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is '10.10oz waxed canvas body, 6.25oz waxed canvas pockets, coated nylon diamond ripstop lining'. This holds up well across all four products photographed: the waxed-canvas texture (visible crinkling, worn sheen, mottled wax patches) is unmistakable on every body panel (Bartender, Bartender Plus, Jeff 'n Joan's Bag), and the drawcord collars/liners on the Bartender Plus, Joey Pouch and Jeff 'n Joan's Bag show a clear diagonal diamond-stitch ripstop pattern in a contrasting coated nylon (red, navy, lavender, tan) exactly matching 'coated nylon diamond ripstop lining'. No mismatch to flag for this brand.",
+  "stemBagMountFindings": "Team lead flagged a clash in the stem-bag slot: Bartender Plus 8.5mm inside the top tube + 0.2mm into the down tube, plain Bartender 5.7mm into the down tube, Joey Pouch 3mm into the down tube. Photo evidence splits these into two genuinely different mounting behaviours (see each product's mount block for the specifics): (1) Bartender and Bartender Plus strap to THREE points - handlebar, stem, AND head tube (bartender-bartender-one-size-1.jpg shows this on a drop/flare-bar bike, hanging low and tight beside the stem, its lower body reaching down toward where the top tube meets the head tube). These are correctly classified as stembag and correctly hang close to the head-tube/top-tube/down-tube junction - that's a genuinely tight zone on most frames, not necessarily a data error - but they MUST render offset to one side of the frame's centre-plane (the strap tab is on the SIDE panel, for universal left-or-right mounting), never centred/straddling the tube junction. If the renderer currently centres these bags on the head-tube axis, that alone would walk them straight into the top tube and down tube where those tubes converge, which matches the reported overlap almost exactly. (2) The Joey Pouch (Lil' Jo line) is a different animal: its own product page URL is literally '/products/handlebar-bag', not a stem-bag URL, and both its photos (lil-jo-joey-pouch-...-1.jpg and -2.jpg) show it mounted CENTRED on the handlebar directly in front of the stem via two side-release buckles only - no head-tube strap at all, hanging with almost no drop, well above and clear of the head tube/top-tube junction. A 3mm down-tube overlap on this product most likely means it is being rendered with the same low, frame-hugging drop as the Bartender family, when the photo evidence says it should sit high and centred at bar height. I have left slot as stembag for all three (capacity and hardware are stem/feed-bag scale, not bar-bag scale) but the mount blocks below spell out the axis and offset differences explicitly per the team lead's request."
+ },
+ "products": [
+  {
+   "line": "Bartender",
+   "name": "Bartender",
+   "size": "One Size",
+   "slot": "stembag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/randi-jo-fabrications/bartender-bartender-one-size-1.jpg",
+    "assets/products/randi-jo-fabrications/bartender-bartender-one-size-2.jpg",
+    "assets/products/randi-jo-fabrications/bartender-bartender-one-size-3.jpg",
+    "https://randijofab.com/products/bartender-1"
+   ],
+
+   "dims_cm": { "len": 13, "wid": 13, "hgt": 17 },
+   "dims_state": "estimate",
+   "dims_raw": "No dimensions or litre figure published; the page only says it swallows a 32oz Nalgene bottle. In production since 2009.",
+   "dims_note": "No maker figures at all. Estimated against a standard 32oz wide-mouth Nalgene (~8.6cm diameter x ~21.6cm tall) with room around it for the waxed-canvas body plus mesh-bottom drainage panel, and cross-checked against the shop's own Joey Pouch (13.7cm diameter, 16cm packed height) which is a smaller, more fully published bag from the same shop. verified stays false - this is a reasoned estimate, not a measurement.",
+   "capacity_l": 2.8,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "Roughly cylindrical body, flat on the mounting side where the vertical webbing strap loop is sewn (bartender-bartender-one-size-2.jpg, -3.jpg show a flat panel with a stitched-on webbing loop on one side, used for universal left/right mounting), mesh drainage band visible at the base."
+   },
+
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "single drawcord with cord-lock and pull tab"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "side", "hardware": "hook", "material": "webbing", "wrapsAround": "handlebar" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "leather_patch", "location": "side_face" },
+    "seams": "sewn",
+    "fabric": "10.10oz waxed canvas body, contrast coated-nylon diamond-ripstop drawcord collar - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["handlebar", "stem", "head_tube"],
+    "contactFaces": ["side_flat", "nose_top"],
+    "sag_deg": 5,
+    "clearance": { "frame_mm": 8 },
+    "notes": "Three 1in x 8in 'Total Hook' straps to handlebar, stem, and head tube ('universal left or right using two vertical webbing options' per source text) - this bag hangs OFFSET to one side of the stem, its flat mounting panel (wid axis, z) pressed against the stem/steerer, NOT centred on the frame's median plane. It hangs low and close beside the stem, its lower body approaching the top-tube/head-tube junction, which is genuinely a tight zone - but wid must be shifted off z=0 by roughly half the stem clamp width plus half the bag's own width before checking frame clearance, and len (fore-aft) should sit forward of the head tube toward the front wheel (+x), not coincident with the tube intersection. If it is currently rendered centred on the head-tube axis, that alone would explain an into-the-frame overlap - see brand_notes.stemBagMountFindings."
+   },
+
+   "colorways": [
+    { "name": "Black Oak", "hex": "#4a3a2a" },
+    { "name": "Wild Iris", "hex": "#6b5b8a" },
+    { "name": "Olive", "hex": "#5d5f43" },
+    { "name": "Black", "hex": "#1c1c1e" }
+   ]
+  },
+
+  {
+   "line": "Bartender",
+   "name": "Bartender Plus",
+   "size": "One Size (with pockets)",
+   "slot": "stembag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/randi-jo-fabrications/bartender-bartender-plus-one-size-with-pockets-1.jpg",
+    "assets/products/randi-jo-fabrications/bartender-bartender-plus-one-size-with-pockets-2.jpg",
+    "assets/products/randi-jo-fabrications/bartender-bartender-plus-one-size-with-pockets-3.jpg",
+    "https://randijofab.com/products/copy-of-bartender-plus-1"
+   ],
+
+   "dims_cm": { "len": 15, "wid": 13, "hgt": 17 },
+   "dims_state": "estimate",
+   "dims_raw": "Same gap as the plain Bartender: no dimensions, no litre figure published.",
+   "dims_note": "Same base estimate as the plain Bartender (same body/diameter/height), with len (fore-aft depth) increased by 2cm to account for the deep drawcord front pocket and two flush side pockets clearly visible in all three photos - front pocket alone adds real bulk in the on-bike shot (bartender-bartender-plus-...-1.jpg).",
+   "capacity_l": 2.8,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "Same cylindrical body as the plain Bartender, plus a separate deep drawcord-top pocket stitched to the front face and a pair of flush open pockets on the sides. On-bike photo (image 1) shows it mounted at the front of a mountain-bike front triangle, nestled tight beside a QR skewer/lockout-lever cluster right at the head tube."
+   },
+
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "single drawcord with cord-lock and pull tab on the main body; separate drawcord on the front pocket"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "side", "hardware": "hook", "material": "webbing", "wrapsAround": "handlebar" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "front" },
+    { "type": "slip", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "leather_patch", "location": "side_face" },
+    "seams": "sewn",
+    "fabric": "10.10oz waxed canvas body and pockets, contrast coated-nylon diamond-ripstop drawcord collar - see brand_notes.fabric",
+    "notes": "Pull-out lining for cleaning, per source text; not visible in these photos."
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["handlebar", "stem", "head_tube"],
+    "contactFaces": ["side_flat", "nose_top"],
+    "sag_deg": 5,
+    "clearance": { "frame_mm": 8 },
+    "notes": "Identical mount to the plain Bartender - three straps to bar/stem/head tube, hangs OFFSET to one side of the stem (wid axis away from z=0), not centred on the frame plane. This is the worst clash the team lead reported (8.5mm into the top tube, 0.2mm into the down tube) and it is also the largest bag of the three (added front/side pockets push len out further) mounted in the tightest real-world position of the three - the on-bike photo shows it wedged directly beside the head tube on a mountain bike. Given both the added bulk and the tight mount point are confirmed by photo, this is the single most likely product to still show SOME clearance conflict even once the centring bug (see brand_notes.stemBagMountFindings) is fixed; if it still clips the frame after correcting the offset, the pocket-inflated len is the next thing to re-check, not the slot."
+   },
+
+   "colorways": [
+    { "name": "Oregon Grape", "hex": "#3f4a5c" },
+    { "name": "Camas", "hex": "#5b6f9e" },
+    { "name": "Brown", "hex": "#6b4f33" }
+   ]
+  },
+
+  {
+   "line": "Lil' Jo",
+   "name": "Joey Pouch",
+   "size": "One Size (2.79L)",
+   "slot": "stembag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/randi-jo-fabrications/lil-jo-joey-pouch-one-size-2-79l-1.jpg",
+    "assets/products/randi-jo-fabrications/lil-jo-joey-pouch-one-size-2-79l-2.jpg",
+    "assets/products/randi-jo-fabrications/lil-jo-joey-pouch-one-size-2-79l-3.jpg",
+    "https://randijofab.com/products/handlebar-bag"
+   ],
+
+   "dims_cm": { "len": 13.7, "wid": 13.7, "hgt": 16 },
+   "dims_state": "unrolled_min_height",
+   "dims_raw": "DIMENSIONS: 5.25\" tall plus 3.5\" to the top of the nylon drawcord section. 17\" circumference. 2.79 liter volume (170 cubic inches). WEIGHT: 3.7 oz",
+   "dims_note": "len/wid both derived from the 17in circumference (diameter 13.7cm) - fixed, no unfurled distinction since it's a round base. hgt is the packed/minimum figure per the new rule: 5.25in body + drawcord fully cinched down (approximated as 30% of the 3.5in collar) = 6.3in = 16.0cm; the collar can extend up to 8.75in (22.2cm) fully open, which is the unfurled max. liters is the maker's own 2.79L.",
+   "capacity_l": 2.79,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "True round cylinder, no flat mounting panel visible in any photo (unlike the Bartender family) - it hangs free from two buckle straps rather than pressing flat against the stem."
+   },
+
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "two-cord drawstring that doubles as a carry handle, per source text"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "leather_patch", "location": "side_face" },
+    "seams": "sewn",
+    "fabric": "10.10oz waxed canvas body, coated-nylon diamond-ripstop drawcord collar - see brand_notes.fabric",
+    "valve": "mesh bottom drains spills, per source text"
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 1,
+    "clearance": { "frame_mm": 60 },
+    "notes": "Genuinely different mount from the Bartender family: two side-release buckles clamp it to the handlebar ONLY (no head-tube strap), and both on-bike photos show it hanging CENTRED directly in front of the stem (wid centred at z=0, not offset like Bartender) with almost no vertical drop - it sits at bar height, well clear of the top tube/down tube/head-tube junction even on a small kids' bike frame in the reference photo. The maker's own product-page URL is '/products/handlebar-bag', not a stem-bag URL, which matches this centred, bar-level mounting rather than the low, offset, frame-hugging mount used by Bartender/Bartender Plus. If this is rendering with the same downward sag/offset as the Bartender family, that difference alone would walk it into the down tube - see brand_notes.stemBagMountFindings. Left slot as stembag since capacity and hardware scale (single small drawcord pouch) still match that class better than a full bar bag, but slot_should_be could reasonably be revisited if the builder wants a distinct bar-centred mount profile."
+   },
+
+   "colorways": [
+    { "name": "Black / Red", "hex": "#1c1c1e" },
+    { "name": "Navy / Purple", "hex": "#26344c" },
+    { "name": "Orange / Charcoal", "hex": "#e8761f" }
+   ]
+  },
+
+  {
+   "line": "Jeff 'n Joan's",
+   "name": "Jeff 'n Joan's Bag",
+   "size": "One Size (3L rolled, 5L expanded)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/randi-jo-fabrications/jeff-n-joan-s-jeff-n-joan-s-bag-one-size-3l-rolled-5l-expand-1.jpg",
+    "assets/products/randi-jo-fabrications/jeff-n-joan-s-jeff-n-joan-s-bag-one-size-3l-rolled-5l-expand-2.jpg",
+    "assets/products/randi-jo-fabrications/jeff-n-joan-s-jeff-n-joan-s-bag-one-size-3l-rolled-5l-expand-3.jpg",
+    "assets/products/randi-jo-fabrications/jeff-n-joan-s-jeff-n-joan-s-bag-one-size-3l-rolled-5l-expand-4.jpg",
+    "https://randijofab.com/products/jeffs-joans-bar-bag"
+   ],
+
+   "dims_cm": { "len": 27.9, "wid": 14, "hgt": 17.4 },
+   "dims_state": "packed_min_height",
+   "dims_raw": "11 inches wide by 5.5 inches deep (3 Liter). 5 inch roll-top closure for a max capacity of 10 inches of depth (5 Liter). WEIGHT: 7 oz, 7.5 oz with straps.",
+   "dims_note": "CORRECTION to a prior record: wid was previously back-calculated at 7.6cm from volume math and flagged medium-confidence; the maker in fact PUBLISHES this figure directly - '5.5 inches deep' = 14.0cm - so I have replaced the back-calculated number with the maker's own. len=11in=27.9cm is the fixed bar-spanning width (does not roll, no unfurled/packed distinction on this axis). hgt is the rolling axis: base body plus up to 10in (25.4cm) of unrolled fill depth for 5L; the studio and on-bike photos both show it rolled down to roughly 2 turns, consistent with the shorter, squatter 17.4cm figure used here for the 3L rolled state, which is what capacity_l now reflects (see below).",
+   "capacity_l": 3,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Wide, flat-bottomed box that sits on top of a wide flat/Jones-style bar, roll-top closure across the full top width. On-bike photo (image 1) is mounted on a Jones H-Bar with 3 visible strap loops plus a head-tube cord/hook."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 2,
+    "hardware": "single side-release buckle at the roll centre"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 5, "location": "top", "hardware": "hook", "material": "webbing", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "hook", "material": "cord", "wrapsAround": "head_tube" },
+    { "role": "daisy", "count": 2, "location": "underside", "hardware": "daisy_loop" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "10.10oz waxed canvas body, coated-nylon diamond-ripstop roll-top collar - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "x", "hgt": "-y" },
+    "attachesTo": ["handlebar", "head_tube"],
+    "contactFaces": ["top", "rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 45, "frame_mm": 5 },
+    "notes": "Sits centred in the middle of a wide flat bar (Jones H-Bar/Surly Moloko per maker; also works on traditional drop bars per source text), five Total Hook straps across the bar plus a hook-and-cord stabiliser down to the head tube. Two underside loops for extra gear lashing."
+   },
+
+   "colorways": [
+    { "name": "Bonny Doon", "hex": "#8a7a5c" },
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#5d5f43" }
+   ],
+
+   "render": {
+    "hgt_cm": 17.4,
+    "rolls": 2,
+    "basis": "No minimum/packed height figure is published, only the 10in max-fill depth for the 5L expanded state. Estimated from the on-bike Jones-bar photo (image 1) and the studio front-on photos (images 3, 4), which show the bag rolled down roughly twice against the known fixed 11in/27.9cm bar-spanning width - consistent with the 3L rolled capacity used for capacity_l."
+   }
+  }
+ ]
+}
