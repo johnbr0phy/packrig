@@ -7,12 +7,33 @@ import { seamRing, strapAssembly } from '../hardware.js';
 import { featuresOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
-export function buildStembag(p, brand, main, accent) {
+// Axis mapping for this slot: the bag is a vertical cylinder hanging from the
+// stemL/stemR anchor. Local +y is world up; the bag hangs into -y. `p.mm.dia`
+// is its across-bike / fore-aft girth, `p.mm.hgt` its drop. Lateral placement is
+// derived from the bag's own radius and the anchor the bike gives us — never a
+// literal offset.
+export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
   const r = Math.min(p.mm.dia, 130) / 2;
   const h = Math.min(p.mm.hgt, 240);
+
+  // A stem bag hangs BESIDE the stem, off the frame's centre plane. This builder
+  // used to take no bike reference at all and simply hung off the anchor, so a
+  // fat bag's inner face reached back across the centreline: the Randi Jo
+  // Bartender Plus (r = 65mm on an 80mm anchor) sat 8.5mm inside the top tube
+  // and grazed the down tube, and the drop bar passed straight through it.
+  // Real ones are strapped to bar, stem and head tube and hang clearly outboard.
+  // Push out only as far as this bag's own radius requires, never inboard.
+  // The obstacle is the head tube, not the top tube: bike.js draws it at
+  // frameEdgeR[2] (24mm) with headset cups 2.5mm proud of that. Straps, cinch
+  // and patch also carry the bag ~10mm past its own radius, so clear from the
+  // hardware envelope rather than from `r`.
+  const anchorZ = Math.abs(ctx?.anchors?.[side > 0 ? 'stemR' : 'stemL']?.position.z ?? 80);
+  const headR = (ctx?.frameEdgeR?.[2] ?? 24) + 2.5;
+  const CLEAR = 8;
+  grp.position.z = side * Math.max(headR + (r + 10) + CLEAR - anchorZ, 0);
   const taper = vr.range(0.82, 0.95);
   const body = soft(new THREE.CylinderGeometry(r, r * taper, h, 30, 8), main, {
     amp: vr.range(1.7, 2.5), freq: vr.range(0.04, 0.052), seed: vr.seed % 929,
