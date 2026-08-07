@@ -1,0 +1,2241 @@
+{
+ "brand": "Topeak",
+ "slug": "topeak",
+ "reviewed_photos": 102,
+ "render_policy": "Where the `render` block was and was not applied. `render.hgt_cm` only bites when the bag's HEIGHT axis is the variable one, and in this brand it usually is not. (a) OMITTED on everything zipped, magnetic or moulded - the whole MidLoader / TopLoader / FastFuel / Tubular / Aero Wedge / DynaPack / MTX group - because the height is fixed by a zip line or a rigid shell. (b) OMITTED on the roll-tops whose roll runs along LENGTH rather than height: the BackLoader and BackLoader X seat packs roll at the tail, the FrontLoader and RackLoader roll at both end caps, the two fork bags roll at the top of an axis that lies along the fork leg, and the Wedge DryBags roll at the tail. Their published heights are fixed cross-sections and need no override; where their LENGTH figure is the extended one that is said in dims_note instead, since the spec gives no render.len_cm. (c) APPLIED to three products only: BarLoader, Pannier DryBag 16 L and Pannier DryBag 24 L. All three roll down a VERTICAL axis, so the height is the variable one; in each case Topeak already publish the rolled-shut figure rather than an unfurled one, and the render block records that finding with its evidence so that a later pass does not read those heights as unfurled and stretch the bags upward. No Topeak product needed an estimated-from-photo render height. One candidate, the RackLoader DryBag, looked at first like a case where the drawn height should be lower than the published one; measuring its two orthographic studio views showed the real problem was a transposed axis in the source data, which was fixed in dims_cm instead - see that record.",
+ "notes": "Topeak is the odd brand out in this catalogue: roughly half of these products are STRUCTURED - injection-moulded mounting hardware, rigid EVA foam shells, welded TPU panels that hold their own shape - and must not be rendered as slumped fabric sacks. The three mounting families a builder has to know are (1) QuickClick / Fixer, a moulded male rail on the bag that slides into a bolt-on or clamp-on female bracket (DynaPack DX uses Fixer 7 on the seatpost, Wedge DryBag S/M use F25 on the saddle rails); (2) MTX QuickTrack 2.0, a long moulded plate on the underside of the bag that slides fore-to-aft into a matching Topeak rack rail and locks - MTX bags cannot mount on anything else; (3) the plain hook-and-loop / Omni Strap soft mounts used by the bikepacking Loader line. Where an axis follows a tube rather than a world direction the mount.axes block says so (along_toptube, along_forkleg). Topeak's own spec strings are consistently ordered LENGTH x HEIGHT x WIDTH - that is verified against six separate product pages in this brand - and every dims_cm below is decoded on that basis.",
+ "products": [
+  {
+   "line": "Loader",
+   "name": "BackLoader",
+   "size": "6L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-backloader-15l-1.png",
+    "assets/products/topeak/loader-backloader-6l-2.jpg",
+    "assets/products/topeak/loader-backloader-15l-3.jpg",
+    "https://www.topeak.com/global/en/product/969-BACKLOADER"
+   ],
+   "dims_cm": { "len": 50, "wid": 15, "hgt": 16 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "SIZE 50 (max) x 16 x 15 cm / 19.7\" (max) x 6.3\" x 5.9\" (6 L); 60 (max) x 20 x 18 cm (10 L); 67 (max) x 28 x 18 cm (15 L). CAPACITY 6 L / 366 ci. MAX LOAD 5 kg / 11 lb. ART NO TBP-BL3B",
+   "dims_note": "Topeak's triple is length x height x width. The '(max)' qualifier on the length is the fully-extended (unrolled-and-repacked) figure, which is exactly what the unfurled rule asks for, so len = 50. Height and width are single published figures, no range to take a minimum from.",
+   "capacity_l": 6,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.35, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "SOFT bag, no internal frame. Fat rounded nose at the saddle, tapering to a narrow rolled blade at the tail. The upper surface is a hex-embossed ripstop panel; the lower half and the nose wrap are a smoother coated fabric. The tail droops noticeably when loaded."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "the tail rolls down and is captured under the long tail-wrap compression strap; a cord-lock bungee laces over the top deck"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "cam", "material": "nylon webbing" },
+    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "cam", "material": "nylon webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "cord": "reflective-fleck shock cord laced in a shallow X across the top deck, single barrel cord-lock at the nose end",
+    "reflective": "reflective fleck in the deck shock cord only; no reflective panels",
+    "valve": "air purge valve",
+    "logo": { "type": "moulded_badge", "location": "side_upper", "detail": "grey Topeak triangle" },
+    "seams": "stitched outer over a welded waterproof inner bag",
+    "fabric": "polyethylene / nylon, hex-embossed on the upper deck, matte",
+    "innerBag": "removable waterproof carry bag, 10,000 mm",
+    "maxLoad_kg": 5,
+    "weight_g": 445,
+    "optional": "BackLoader Wishbone anti-sway stabiliser (separate part, not modelled)"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 4,
+    "clearance": { "tyre_mm": 60, "frame_mm": 0 },
+    "notes": "Nose is cinched hard against the saddle rails by two hook-and-loop straps and against the seatpost by a third. Topeak publish this as an L1/L2 fitment: L1 is the vertical drop the bag needs behind the saddle nose, L2 the exposed seatpost length. Tail hangs free over the rear tyre."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "BackLoader",
+   "size": "10L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-backloader-15l-1.png",
+    "assets/products/topeak/loader-backloader-10l-3.jpg",
+    "https://www.topeak.com/global/en/product/969-BACKLOADER"
+   ],
+   "dims_cm": { "len": 60, "wid": 18, "hgt": 20 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "SIZE 60 (max) x 20 x 18 cm (10 L). CAPACITY 10 L / 610 ci. MAX LOAD 5 kg / 11 lb. ART NO TBP-BL3B",
+   "dims_note": "Length x height x width per Topeak's convention. '(max)' length is the fully-extended figure, taken as the unfurled length. No height range published.",
+   "capacity_l": 10,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.35, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Identical silhouette to the 6L, scaled up. Soft, unframed, hex-embossed upper deck."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "tail rolls down under the tail-wrap compression strap"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "cam", "material": "nylon webbing" },
+    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "cam", "material": "nylon webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "cord": "reflective-fleck shock cord in a shallow X across the top deck with a barrel cord-lock",
+    "reflective": "reflective fleck in the deck shock cord only",
+    "valve": "air purge valve",
+    "logo": { "type": "moulded_badge", "location": "side_upper" },
+    "fabric": "polyethylene / nylon, hex-embossed upper deck",
+    "innerBag": "removable waterproof carry bag, 10,000 mm",
+    "maxLoad_kg": 5,
+    "weight_g": 480
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 5,
+    "clearance": { "tyre_mm": 60, "frame_mm": 0 },
+    "notes": "At 60 cm this needs a long exposed seatpost; on a 56 cm frame the tail sweeps well past the rear axle."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "BackLoader",
+   "size": "15L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-backloader-15l-1.png",
+    "assets/products/topeak/loader-backloader-15l-2.jpg",
+    "assets/products/topeak/loader-backloader-15l-3.jpg",
+    "assets/products/topeak/loader-backloader-15l-4.jpg",
+    "https://www.topeak.com/global/en/product/969-BACKLOADER"
+   ],
+   "dims_cm": { "len": 67, "wid": 18, "hgt": 28 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "SIZE 67 (max) x 28 x 18 cm (15 L). CAPACITY 15 L / 915 ci. MAX LOAD 5 kg / 11 lb. ART NO TBP-BL3B",
+   "dims_note": "Length x height x width. The 28 cm is the height at the saddle end, not the width - this is the deepest of the three and the profile is visibly taller than it is wide.",
+   "capacity_l": 15,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Soft. The largest size is markedly deeper than it is wide (28 h x 18 w), so the cross-section is a tall rounded rectangle, not a circle."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "tail rolls down under the tail-wrap compression strap"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "cam", "material": "nylon webbing" },
+    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "cam", "material": "nylon webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "cord": "reflective-fleck shock cord in a shallow X across the top deck with a barrel cord-lock",
+    "reflective": "reflective fleck in the deck shock cord only",
+    "valve": "air purge valve",
+    "logo": { "type": "moulded_badge", "location": "side_upper" },
+    "fabric": "polyethylene / nylon, hex-embossed upper deck",
+    "innerBag": "removable waterproof carry bag, 10,000 mm",
+    "maxLoad_kg": 5,
+    "weight_g": 565
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 6,
+    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "notes": "The 28 cm nose depth is the limiting dimension: Topeak's own L1/L2 diagram exists because this size needs substantial seatpost showing before the bag clears the tyre."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "BackLoader X",
+   "size": "10L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-backloader-x-10l-1.png",
+    "assets/products/topeak/loader-backloader-x-10l-2.jpg",
+    "assets/products/topeak/loader-backloader-x-10l-4.jpg",
+    "https://www.topeak.com/global/en/product/1423-BACKLOADER-X"
+   ],
+   "dims_cm": { "len": 46, "wid": 22, "hgt": 24 },
+   "dims_state": "as_mounted",
+   "dims_raw": "SIZE 46 x 24 x 22 cm / 18.1\" x 9.4\" x 8.7\" (10 L). CAPACITY 10 L / 610 ci. MAX LOAD 5 kg / 11 lb. ART NO TBP-BLX3B",
+   "dims_note": "Length x height x width. No '(max)' qualifier here, unlike the plain BackLoader - the X is a holster plus a separate drybag and Topeak quote the assembled, mounted envelope, so there is nothing to unfurl and no height range.",
+   "capacity_l": 10,
+   "geometry": {
+    "form": "holster",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.45, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "TWO-PART, PART-STRUCTURED. A stiffened black holster cradle (moulded nose plate, hex-textured anti-slip PU leather saddle panel) carries a separate soft grey drybag. Build it as a rigid open-topped cradle for the lower third plus a slumped roll-top bag sitting in it - the seam between the black cradle and the grey liner runs diagonally from the nose top down to the tail and is the most recognisable line on the product. Nose is square and blunt; tail is much less pointed than the standard BackLoader."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "grey inner drybag rolls at the tail and clips to a side-release buckle on the holster spine"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "wide nylon webbing over an anti-slip PU leather pad", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "nylon webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "ladderlock", "material": "nylon webbing" },
+    { "role": "lid", "count": 1, "location": "top", "hardware": "buckle", "material": "nylon webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none visible",
+    "valve": "screw-cap air release purge valve, moulded plastic with an embossed Topeak triangle, on the upper side of the grey drybag",
+    "lightMount": "webbing light-attachment strap across the tail of the holster, sized for a clip-on rear light",
+    "logo": { "type": "moulded_badge", "location": "side_upper" },
+    "fabric": "holster: polyethylene / anti-slip PU leather / engineering-grade polymer. Liner: grey diamond-ripstop laminate",
+    "innerBag": "removable waterproof carry bag, 10,000 mm",
+    "maxLoad_kg": 5,
+    "weight_g": 575,
+    "webbingText": "'EXPLORE' printed on the grey pull tab at the tail"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 60, "frame_mm": 0 },
+    "notes": "The stiffened holster nose braces against the saddle rails so the X sags far less than the plain BackLoader. The anti-slip textured pad is the face that touches the saddle."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" },
+    { "name": "Silver", "hex": "#b6b9bc" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "BackLoader X",
+   "size": "15L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-backloader-x-10l-1.png",
+    "assets/products/topeak/loader-backloader-x-15l-2.jpg",
+    "assets/products/topeak/loader-backloader-x-15l-3.jpg",
+    "https://www.topeak.com/global/en/product/1423-BACKLOADER-X"
+   ],
+   "dims_cm": { "len": 51, "wid": 22, "hgt": 24 },
+   "dims_state": "as_mounted",
+   "dims_raw": "SIZE 51 x 24 x 22 cm / 20.1\" x 9.4\" x 8.7\" (15 L). CAPACITY 15 L / 915 ci. MAX LOAD 5 kg / 11 lb. ART NO TBP-BLX3B",
+   "dims_note": "Length x height x width. Only the length changes between the 10L and 15L; the cross-section is identical, so the 15L is simply a longer version of the same holster.",
+   "capacity_l": 15,
+   "geometry": {
+    "form": "holster",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.45, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Same two-part stiffened-holster-plus-drybag construction as the 10L, 5 cm longer. Cross-section unchanged at 24 h x 22 w."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "grey inner drybag rolls at the tail and clips to a side-release buckle on the holster spine"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "wide nylon webbing over an anti-slip PU leather pad", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "nylon webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "ladderlock", "material": "nylon webbing" },
+    { "role": "lid", "count": 1, "location": "top", "hardware": "buckle", "material": "nylon webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none visible",
+    "valve": "screw-cap air release purge valve on the grey drybag",
+    "lightMount": "webbing light-attachment strap across the tail of the holster",
+    "logo": { "type": "moulded_badge", "location": "side_upper" },
+    "fabric": "holster: polyethylene / anti-slip PU leather / engineering-grade polymer. Liner: grey diamond-ripstop laminate",
+    "innerBag": "removable waterproof carry bag, 10,000 mm",
+    "maxLoad_kg": 5,
+    "weight_g": 605
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 3,
+    "clearance": { "tyre_mm": 60, "frame_mm": 0 },
+    "notes": "Stiffened nose braces on the rails; minimal droop. Optional Wishbone anti-sway strut fits between the tail and the seatstays."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" },
+    { "name": "Silver", "hex": "#b6b9bc" }
+   ]
+  },
+  {
+   "line": "DynaPack",
+   "name": "DynaPack DX",
+   "size": "9.7L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/topeak/dynapack-dynapack-dx-9-7l-1.jpg",
+    "assets/products/topeak/dynapack-dynapack-dx-9-7l-2.jpg",
+    "assets/products/topeak/dynapack-dynapack-dx-9-7l-3.jpg",
+    "assets/products/topeak/dynapack-dynapack-dx-9-7l-4.png",
+    "https://www.topeak.com/global/en/product/1631-DYNAPACK-DX"
+   ],
+   "dims_cm": { "len": 45, "wid": 23.3, "hgt": 24 },
+   "dims_state": "as_mounted",
+   "dims_raw": "Size 45 x 24 x 23.3 cm. Capacity 9.7 L. Max load capacity 4.5 kg. Weight 720 g. ART NO TC2713B2",
+   "dims_note": "Length x height x width. Rigid shell, no roll and no range, so nothing to unfurl. CAUTION for the builder: on the studio photos the moulded seatpost boom occupies roughly a quarter of the overall length, so the visible bag body is nearer 33-35 cm and the remaining 10-12 cm is the arm reaching forward to the seatpost clamp. Topeak do not break the figure down and I have not guessed a split - dims_cm is their published overall.",
+   "capacity_l": 9.7,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "oval",
+    "shoulder": "rounded",
+    "notes": "STRUCTURED / HARD-SHELLED. Moulded rigid EVA foam under 600D polyester - it is a hard suitcase, not a sack, and holds a clean egg/oval plan with a slightly domed top. It cantilevers off the seatpost on a moulded black plastic boom, so there is an air gap between the bag and the seatpost and it floats above the tyre. Two moulded yellow-flecked feet at the lower rear corners. Model the boom as a separate rigid part: a flat-oval tube leaving the front-bottom of the bag and ending in a barrel clamp collar."
+   },
+   "closure": {
+    "type": "clamshell",
+    "location": "top",
+    "hardware": "perimeter zip running around the upper half of the oval; the lid hinges upward like a shell"
+   },
+   "zips": [
+    { "run": "perimeter", "count": 1, "finish": "matched", "location": "upper shell seam, all the way round", "notes": "the clamshell lid zip" },
+    { "run": "pocket", "count": 1, "finish": "matched", "location": "side lower, drive side", "notes": "external flat zip pocket, 'DynaPack' printed on its face" }
+   ],
+   "straps": [],
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "side", "sizeFrac": 0.45 },
+    { "type": "mesh", "count": 1, "location": "internal", "sizeFrac": 0.6, "notes": "zipped mesh pocket in the underside of the lid" },
+    { "type": "slip", "count": 1, "location": "internal", "notes": "padded divider splitting the main compartment" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "3M reflective strip on the tail panel, horizontal, beneath the yellow Topeak triangle",
+    "lightMount": "rear light clip on the tail below the reflective strip",
+    "logo": { "type": "printed", "location": "top_spine", "detail": "'TOPEAK' along the upper seam; yellow triangle badge on the tail" },
+    "handle": "webbing carry handle along the top spine",
+    "insulation": "moulded rigid EVA foam shell",
+    "fabric": "600 denier polyester over moulded EVA",
+    "maxLoad_kg": 4.5,
+    "weight_g": 720,
+    "hardware": "QuickClick Fixer 7 quick-release seatpost clamp, moulded engineering polymer, fits round seatposts 25.4-34.9 mm"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["seatpost"],
+    "contactFaces": ["nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 80, "frame_mm": 0 },
+    "notes": "Does NOT touch the saddle or the saddle rails - the whole load is cantilevered off a single QuickClick Fixer 7 clamp on the round seatpost, and the bag body hangs behind and above the tyre with clear air all round. Needs a 25.4-34.9 mm ROUND seatpost; will not fit an aero or D-shaped post. Zero sag by design; the boom is rigid."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Loader",
+   "name": "FrontLoader",
+   "size": "12L",
+   "slot": "barroll",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-frontloader-12l-1.jpg",
+    "assets/products/topeak/loader-frontloader-12l-2.jpg",
+    "assets/products/topeak/loader-frontloader-12l-3.jpg",
+    "assets/products/topeak/loader-frontloader-12l-4.jpg",
+    "https://www.topeak.com/global/en/product/1290-FRONTLOADER"
+   ],
+   "dims_cm": { "len": 50, "wid": 15, "hgt": 15 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "SIZE 33 x 28.7 x 5 cm / 13\" x 11.3\" x 2\" (harness); 50 x 15 x 15 cm / 19.7\" X 5.9\" x 5.9\" (Waterproof Carry Bag). Capacity 12 L. Max load 5 kg / 11 lb",
+   "dims_note": "Two published sizes. dims_cm is the CARRY BAG, because that is the visible object on the bike; the 33 x 28.7 x 5 cm figure is the flat harness panel that wraps it and should be modelled as a separate strap assembly, not as the bag envelope.",
+   "capacity_l": 12,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "SOFT drybag in a semi-rigid harness. 50 cm long, 15 cm diameter, closed by rolling BOTH ends inward toward the middle - the ends gather into the classic two-cone bar-roll shape rather than a flat end cap. The harness is a stiff textured backing panel that curls around the rear of the roll; the two moulded NBR rubber bar spacers stand the roll off the bar and are conspicuous black wave-profile blocks about 8 cm long."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 3,
+    "hardware": "both ends roll inward and are cinched by the harness straps"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "nylon webbing", "wrapsAround": "handlebar", "notes": "each strap passes through a moulded NBR rubber spacer block that clamps on the bar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "nylon webbing", "wrapsAround": "head_tube" },
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "buckle", "material": "nylon webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none visible",
+    "valve": "screw-cap air release valve, moulded with an embossed Topeak triangle, on the upper face of the carry bag",
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "welded",
+    "fabric": "polyethylene / EVA harness with anti-slip textured PU leather; carry bag is coated ripstop, 10,000 mm",
+    "maxLoad_kg": 5,
+    "weight_g": 325,
+    "hardware": "two moulded NBR rubber bar spacers (132 g the pair) - a defining visual feature; they are ribbed wave-profile blocks visible between the bag and the bar"
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar", "head_tube"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 40, "frame_mm": 25 },
+    "notes": "Hangs in front of and slightly below the bar, held off it by the two rubber spacers so cables and levers clear. At 50 cm it is WIDER than the drops of a 56 cm gravel bar - the ends will project past the hoods and should be modelled doing so. The lower stabiliser strap runs back to the head tube."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "BarLoader",
+   "size": "6.5L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-barloader-6-5l-1.jpg",
+    "assets/products/topeak/loader-barloader-6-5l-2.jpg",
+    "assets/products/topeak/loader-barloader-6-5l-3.jpg",
+    "assets/products/topeak/loader-barloader-6-5l-4.jpg",
+    "https://www.topeak.com/global/en/product/1301-BARLOADER"
+   ],
+   "dims_cm": { "len": 31, "wid": 8.9, "hgt": 25.8 },
+   "dims_state": "single_published",
+   "dims_raw": "SIZE 31 x 25.8 x 8.9 cm / 12.2\" x 10.2\" x 3.5\". CAPACITY 6.5 L / 395 ci. MAX LOAD 3 kg / 6.61 lb. WEIGHT 325 g (w/ inner bag). ART NO TBP-BRL1B",
+   "dims_note": "Length x height x width, single published triple with no range. NOTE the brands.json shape field says 'cylindrical' - it is not. The BarLoader is a FLAT SLAB, 31 wide by 25.8 tall by only 8.9 deep, hanging in front of the bar like a small musette. Rendering it as a cylinder would be badly wrong.",
+   "capacity_l": 6.5,
+   "render": {
+    "hgt_cm": 25.8,
+    "rolls": 2,
+    "basis": "This is the one Topeak bar bag whose roll runs down a VERTICAL axis, so the height is the variable one and the block applies. Topeak's published 25.8 cm is already the ROLLED-DOWN height, not an unfurled figure, on two independent checks: the box 31 x 25.8 x 8.9 comes to 7.1 L against a 6.5 L rating, a ratio of only 1.1 which an unfurled figure could not produce; and the studio shot loader-barloader-6-5l-1.jpg shows the bag photographed rolled twice around its stiffener rod at that proportion, confirmed against loader-barloader-6-5l-2.jpg where it hangs on the bar slightly wider than it is tall. Drawn height therefore equals the published height - recorded explicitly so that a later pass does not mistake 25.8 for an unrolled dimension and stretch it."
+   },
+   "geometry": {
+    "form": "slab",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "PART-STRUCTURED. A flat rectangular translucent grey TPU envelope; the yellow removable inner bag shows through the shell. The roll at the top is stiffened by a rigid rod that runs the full width and protrudes as a visible dark tube at each end - that rod is the single most distinctive feature of the silhouette. The BACK is a rigid moulded black plate with a webbing cross over it."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 2,
+    "hardware": "top rolls down around a full-width stiffener rod and is pulled down by one central vertical front strap into a side-release buckle"
+   },
+   "zips": [
+    { "run": "pocket", "count": 1, "finish": "storm_flap", "location": "side, non-drive end", "notes": "weathertight zip on the end panel giving side access without unrolling" }
+   ],
+   "straps": [
+    { "role": "lid", "count": 1, "location": "front_face", "hardware": "buckle", "material": "nylon webbing", "notes": "single vertical strap down the centre of the front face, side-release buckle at mid height" },
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "hook", "material": "nylon webbing", "wrapsAround": "handlebar", "notes": "quick-release hooks on short straps at the top corners of the back plate" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "ladderlock", "material": "nylon webbing", "wrapsAround": "head_tube", "notes": "long lower strap with an elastic take-up loop" },
+    { "role": "shoulder", "count": 1, "location": "side", "hardware": "hook", "material": "nylon webbing", "notes": "detachable, for off-bike carry" }
+   ],
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "internal", "notes": "detachable yellow inner organiser bag" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "four short vertical reflective dashes low on the front face, non-drive side",
+    "valve": false,
+    "logo": { "type": "printed", "location": "front_face", "detail": "white Topeak triangle upper centre" },
+    "seams": "sonically welded",
+    "fabric": "translucent grey TPU; yellow inner bag visible through it",
+    "maxLoad_kg": 3,
+    "weight_g": 325,
+    "hardware": "rigid moulded back plate with a webbing cross; full-width roll stiffener rod",
+    "stacking": "designed to hang over a FrontLoader as a second-tier accessory bag"
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "-y" },
+    "attachesTo": ["handlebar", "head_tube"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 30, "frame_mm": 20 },
+    "notes": "Hangs vertically DOWN in front of the bar - the long axis is horizontal across the bike, the 25.8 cm runs downward. Two hooks over the bar carry the load, a lower strap to the head tube stops it swinging into the front tyre."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Tubular",
+   "name": "Tubular BarBag",
+   "size": "3.8L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/tubular-tubular-barbag-3-8l-1.jpg",
+    "assets/products/topeak/tubular-tubular-barbag-3-8l-2.jpg",
+    "assets/products/topeak/tubular-tubular-barbag-3-8l-3.jpg",
+    "assets/products/topeak/tubular-tubular-barbag-3-8l-4.jpg",
+    "https://www.topeak.com/global/en/product/1550-TUBULAR-BARBAG"
+   ],
+   "dims_cm": { "len": 23, "wid": 14, "hgt": 14 },
+   "dims_state": "single_published",
+   "dims_raw": "SIZE 23 x ø14 cm. CAPACITY 3.8 L. MAX LOAD 3 kg. WEIGHT 258 g. ART NO TC2312B. Fits handlebars ø30-55 mm, head tube ø35-100 mm",
+   "dims_note": "Quoted as length x diameter. Written as a full triple here: 23 long by 14 across by 14 tall, i.e. a round-section barrel.",
+   "capacity_l": 3.8,
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "SOFT but well-structured - it holds a clean drum shape with flat circular end caps rather than slumping. Body is a heather-textured 600D polyester; the end caps are a contrasting darker smooth panel. A black webbing MOLLE ladder band runs horizontally across the front face at mid height."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "full-length zip along the top of the barrel with a single slider and a moulded pull"
+   },
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "matched", "location": "along the top of the barrel, full length" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "anti-slip webbing", "wrapsAround": "handlebar", "notes": "two loops on the top face, spaced either side of the stem" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "daisy_loop", "material": "reflective-fleck shock cord with a barrel cord-lock", "wrapsAround": "head_tube" },
+    { "role": "girth", "count": 1, "location": "girth", "hardware": "ladderlock", "material": "nylon webbing", "notes": "single band round the barrel that also carries the front bungee" }
+   ],
+   "pockets": [
+    { "type": "mesh", "count": 2, "location": "side", "sizeFrac": 0.7, "notes": "one stretch mesh pocket on each circular end cap" }
+   ],
+   "details": {
+    "daisyChains": true,
+    "molle": "MOLLE ladder webbing band across the front face, plus a second across the top",
+    "cord": "reflective-fleck elastic cord with a barrel cord-lock, hanging from the front girth strap, used to lash to the head tube",
+    "reflective": "reflective fleck in the shock cord and reflective stitch dots along the MOLLE band",
+    "logo": { "type": "moulded_badge", "location": "front_face", "detail": "rubber Topeak triangle, centred below the MOLLE band" },
+    "fabric": "600D heather-look polyester, water repellent",
+    "maxLoad_kg": 3,
+    "weight_g": 258,
+    "twoPositionMount": "can be slung under the bar or above it"
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar", "head_tube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 60, "frame_mm": 20 },
+    "notes": "Slings below the bar with the barrel axis running across the bike, two velcro loops over the bar tops and the elastic cord back to the head tube. At 23 cm it sits comfortably inside the width of a gravel drop bar and clears the cables."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Tubular",
+   "name": "Tubular BarBag Slim",
+   "size": "1.5L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/tubular-tubular-barbag-slim-1-5l-1.jpg",
+    "assets/products/topeak/tubular-tubular-barbag-slim-1-5l-2.jpg",
+    "assets/products/topeak/tubular-tubular-barbag-slim-1-5l-3.jpg",
+    "assets/products/topeak/tubular-tubular-barbag-slim-1-5l-4.jpg",
+    "https://www.topeak.com/global/en/product/1621-TUBULAR-BARBAG-slim"
+   ],
+   "dims_cm": { "len": 19, "wid": 10, "hgt": 10 },
+   "dims_state": "single_published",
+   "dims_raw": "SIZE 19 x ø10 cm. CAPACITY 1.5 L. MAX LOAD 1.5 kg. WEIGHT 94 g. ART NO TC2328G. Fits handlebars up to 56 mm",
+   "dims_note": "Quoted as length x diameter; written as a full triple, 19 long by 10 across by 10 tall.",
+   "capacity_l": 1.5,
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "SOFT, holds a clean small drum shape. Same heather-textured 600D as the 3.8 L but noticeably slimmer and, importantly, WITHOUT the stretch end-cap pockets - the end caps are plain rounded panels. Black MOLLE ladder band across the front face with reflective stitch dashes along its lower edge."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "full-length zip along the top of the barrel, single slider, moulded teardrop pull"
+   },
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "matched", "location": "along the top of the barrel, full length" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "anti-slip webbing", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "daisy_loop", "material": "reflective-fleck shock cord with a barrel cord-lock", "wrapsAround": "head_tube" },
+    { "role": "girth", "count": 1, "location": "girth", "hardware": "ladderlock", "material": "nylon webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": true,
+    "molle": "MOLLE ladder webbing band across the front face",
+    "cord": "reflective-fleck elastic cord with a barrel cord-lock on the underside",
+    "reflective": "reflective stitch dashes along the MOLLE band edge and fleck in the cord",
+    "logo": { "type": "moulded_badge", "location": "front_face", "detail": "rubber Topeak triangle, centred" },
+    "fabric": "600D heather-look polyester",
+    "maxLoad_kg": 1.5,
+    "weight_g": 94
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar", "head_tube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 70, "frame_mm": 20 },
+    "notes": "Small enough to sit between the hoods on a drop bar without fouling the levers; two velcro loops over the bar, elastic cord to the head tube."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "MidLoader",
+   "size": "3L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/topeak/loader-midloader-3l-1.jpg",
+    "assets/products/topeak/loader-midloader-6l-2.png",
+    "assets/products/topeak/loader-midloader-3l-3.jpg",
+    "https://www.topeak.com/global/en/product/967-MIDLOADER"
+   ],
+   "dims_cm": { "len": 37.5, "wid": 6, "hgt": 12 },
+   "dims_state": "published_flat_width",
+   "dims_raw": "SIZE 37.5 x 12 x 6 cm / 14.8\" x 4.7\" x 2.4\" (3 L). Tapered outline L1 (top) 37.5 cm, L2 (bottom) 28 cm, H 12 cm. Capacity 3 L / 183 ci. Max Load 6.5 kg. ART NO TBP-ML6B",
+   "dims_note": "len is L1, the LONGER (top) edge, per the tapered-axis rule; the 28 cm bottom edge is carried in geometry.taper. WIDTH IS THE PUBLISHED 6 cm AND THAT IS THE FLAT PANEL WIDTH, NOT THE PACKED WIDTH: 6 cm cannot hold the rated litres (37.5/28 tapered x 12 x 6 is only about 2.4 L against a 3 L rating), and the photos show a strongly bulging round cross-section. I have deliberately NOT back-computed a replacement number - the bulge is described in geometry instead. An earlier pass silently rewrote the 4.5 L and 6 L widths to 8 cm by exactly that back-computation; I have reverted those to Topeak's figure so all three sizes are consistent and traceable.",
+   "capacity_l": 3,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "oval",
+    "taper": { "nose": 1.0, "tail": 0.75, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "SOFT. A long lozenge, not a sharp triangle: the top edge is 37.5 cm, the bottom edge 28 cm, and both ends round off into blunt noses rather than points. The cross-section bulges to roughly 8-9 cm at the centre when packed even though the flat panel is 6 cm - build it as a lens/oval section that swells at mid-height and pinches to the seam at the top and bottom edges. Hex-embossed ripstop face."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "side",
+    "hardware": "one water-resistant zip on EACH side face, running the length just below the top edge; Topeak call this dual-side access"
+   },
+   "zips": [
+    { "run": "side_full", "count": 2, "finish": "storm_flap", "location": "one per side face, running nearly the full length below the top edge", "notes": "the drive-side pull parks at the rear, beside the Topeak triangle badge" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "top_tube", "notes": "three loops evenly spaced along the top edge" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "ladderlock", "material": "velcro-faced webbing", "wrapsAround": "seat_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "ladderlock", "material": "velcro-faced webbing", "wrapsAround": "down_tube" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "valve": false,
+    "logo": { "type": "moulded_badge", "location": "side_rear", "detail": "grey Topeak triangle beside the zip pull" },
+    "fabric": "polyethylene / nylon, hex-embossed, water repellent",
+    "maxLoad_kg": 6.5,
+    "weight_g": 169,
+    "fitRange": "top tube ø45-66 mm, down tube ø38-70 mm, seat tube ø28-60 mm"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "seat_tube", "down_tube"],
+    "contactFaces": ["top", "rear_end", "front_end"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Hangs under the top tube in the rear half of the main triangle, top edge against the tube, and is pulled forward and back by the seat-tube and down-tube straps. Leaves the bottle bosses clear at 3 L. Symmetrical - it sits on the centreline, straddling the top tube."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "MidLoader",
+   "size": "4.5L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/topeak/loader-midloader-6l-2.png",
+    "assets/products/topeak/loader-midloader-4-5l-3.jpg",
+    "assets/products/topeak/loader-midloader-4-5l-4.jpg",
+    "https://www.topeak.com/global/en/product/967-MIDLOADER"
+   ],
+   "dims_cm": { "len": 46, "wid": 6, "hgt": 12 },
+   "dims_state": "published_flat_width",
+   "dims_raw": "SIZE 46 x 12 x 6 cm (4.5 L). Tapered outline L1 (top) 46 cm, L2 (bottom) 36 cm, H 12 cm. Capacity 4.5 L / 275 ci. Max Load 6.5 kg. ART NO TBP-ML6B",
+   "dims_note": "len is L1, the longer top edge. REVERTED: an earlier pass replaced Topeak's 6 cm width with 8 cm by dividing the rated litres by the plan area. That is exactly the back-from-volume fabrication the spec forbids, and it left the 3 L size at 6 cm while this one read 8 cm. Restored to the published 6 cm flat width; the packed bulge (about 8-9 cm at the centre) is described in geometry so the mesh still reads correctly.",
+   "capacity_l": 4.5,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "oval",
+    "taper": { "nose": 1.0, "tail": 0.78, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "SOFT. Top edge 46 cm, bottom edge 36 cm, blunt rounded ends. Cross-section swells to roughly 8-9 cm at mid-height when packed against a 6 cm flat panel width - a lens section, not a slab."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "side",
+    "hardware": "one water-resistant zip on each side face"
+   },
+   "zips": [
+    { "run": "side_full", "count": 2, "finish": "storm_flap", "location": "one per side face, running nearly the full length below the top edge" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "ladderlock", "material": "velcro-faced webbing", "wrapsAround": "seat_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "ladderlock", "material": "velcro-faced webbing", "wrapsAround": "down_tube" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "logo": { "type": "moulded_badge", "location": "side_rear" },
+    "fabric": "polyethylene / nylon, hex-embossed",
+    "maxLoad_kg": 6.5,
+    "weight_g": 195,
+    "fitRange": "top tube ø45-66 mm, down tube ø38-70 mm, seat tube ø28-60 mm"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "seat_tube", "down_tube"],
+    "contactFaces": ["top", "rear_end", "front_end"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Fills most of the top-tube run of a 56 cm main triangle; the down-tube strap lands close to the top bottle boss."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "MidLoader",
+   "size": "6L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/topeak/loader-midloader-6l-1.jpg",
+    "assets/products/topeak/loader-midloader-6l-2.png",
+    "assets/products/topeak/loader-midloader-6l-3.jpg",
+    "assets/products/topeak/loader-midloader-6l-4.jpg",
+    "https://www.topeak.com/global/en/product/967-MIDLOADER"
+   ],
+   "dims_cm": { "len": 54.5, "wid": 6, "hgt": 13.5 },
+   "dims_state": "published_flat_width",
+   "dims_raw": "SIZE 54.5 x 13.5 x 6 cm (6 L). Tapered outline L1 (top) 54.5 cm, L2 (bottom) 44 cm, H 13.5 cm. Capacity 6 L / 366 ci. Max Load 6.5 kg. ART NO TBP-ML6B",
+   "dims_note": "len is L1, the longer top edge. Width reverted to Topeak's published 6 cm for the same reason as the 4.5 L - see that record. The packed bulge is in geometry, not in the dimension.",
+   "capacity_l": 6,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "oval",
+    "taper": { "nose": 1.0, "tail": 0.81, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "SOFT. Top edge 54.5 cm, bottom edge 44 cm, height 13.5 cm - the deepest MidLoader. Rounded blunt ends. Lens cross-section bulging to roughly 8-9 cm at mid-height."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "side",
+    "hardware": "one water-resistant zip on each side face"
+   },
+   "zips": [
+    { "run": "side_full", "count": 2, "finish": "storm_flap", "location": "one per side face, running nearly the full length below the top edge" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "ladderlock", "material": "velcro-faced webbing", "wrapsAround": "seat_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "ladderlock", "material": "velcro-faced webbing", "wrapsAround": "down_tube" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "logo": { "type": "moulded_badge", "location": "side_rear" },
+    "fabric": "polyethylene / nylon, hex-embossed",
+    "maxLoad_kg": 6.5,
+    "weight_g": 337,
+    "fitRange": "top tube ø45-66 mm, down tube ø38-70 mm, seat tube ø28-60 mm"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "seat_tube", "down_tube"],
+    "contactFaces": ["top", "rear_end", "front_end"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "At 54.5 cm this runs essentially the whole top tube of a 56 cm frame and its down-tube strap will land on or below the top bottle boss - expect a bottle conflict."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "MidLoader DryBag",
+   "size": "S 2L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-midloader-drybag-s-2l-4.jpg",
+    "assets/products/topeak/loader-midloader-drybag-s-2l-3.jpg",
+    "assets/products/topeak/loader-midloader-drybag-m-3l-2.png",
+    "https://www.topeak.com/global/en/product/1842-MIDLOADER-DRYBAG"
+   ],
+   "dims_cm": { "len": 30.3, "wid": 6, "hgt": 12.9 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 30.3 x 12.9 x 6 cm (S); 48 x 13.2 x 6 cm / body: 45 x 13.2 x 6 cm (M); 56.5 x 15 x 6 cm / body: 52.5 x 15 x 6 cm (L). Capacity 2 L. Max load 2 kg. Weight 107 g. ART NO TBP-MD3B",
+   "dims_note": "Length x height x width. Topeak publish no separate 'body' figure for the S, only the one triple, so it is used as given. As with the fabric MidLoader the 6 cm is the flat panel width and the packed bag bulges past it; that is described in geometry rather than substituted into the dimension.",
+   "capacity_l": 2,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "oval",
+    "taper": { "nose": 1.0, "tail": 0.55, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SEMI-STRUCTURED welded TPU - noticeably crisper and more panel-like than the fabric MidLoader, with sharp welded edges and a squared-off front (down-tube) end. The plan is a true wedge: tall and square at the FRONT, tapering rearward to a low rounded tail. Front lower corner carries a large embossed chevron/hatch graphic panel that is also the reflective element - it is a strong visual marker and should be modelled as a surface relief, not a print."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "hidden weatherproof zipper under a welded flap cover, running the full length just below the top edge. NOTE brands.json records this as a rolltop; Topeak's own feature list says 'HIDDEN WEATHERPROOF ZIPPER WITH FLAP COVER' and the photographs agree - there is no roll."
+   },
+   "zips": [
+    { "run": "side_full", "count": 1, "finish": "storm_flap", "location": "top edge, full length, hidden under a welded flap", "notes": "slider parks at the FRONT (down-tube) end with a small D-ring pull" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "welded webbing loops", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "velcro", "material": "welded webbing", "wrapsAround": "seat_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "velcro", "material": "welded webbing", "wrapsAround": "down_tube" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "embossed reflective chevron/hatch graphic on the lower front panel, both sides",
+    "logo": { "type": "printed", "location": "side_rear", "detail": "'TOPEAK' wordmark in tonal grey on the upper rear" },
+    "seams": "welded",
+    "fabric": "eco-friendly TPU with polyester strap webbing, matte",
+    "waterproof": true,
+    "maxLoad_kg": 2,
+    "weight_g": 107,
+    "fitRange": "top tube ø30-66 mm, seat tube ø30-66 mm, down tube ø45-100 mm",
+    "compartments": "single (the dual compartment is M and L only)"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "seat_tube", "down_tube"],
+    "contactFaces": ["top", "rear_end", "front_end"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Topeak describe a deliberately forward-shifted centre of gravity: the mass sits toward the head-tube end of the top tube, so place the tall end forward. Small enough at 30.3 cm to leave both bottle bosses usable."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Loader",
+   "name": "MidLoader DryBag",
+   "size": "M 3L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-midloader-drybag-m-3l-2.png",
+    "assets/products/topeak/loader-midloader-drybag-m-3l-3.jpg",
+    "assets/products/topeak/loader-midloader-drybag-m-3l-4.jpg",
+    "assets/products/topeak/loader-midloader-drybag-m-3l-1.jpg",
+    "https://www.topeak.com/global/en/product/1842-MIDLOADER-DRYBAG"
+   ],
+   "dims_cm": { "len": 45, "wid": 6, "hgt": 13.2 },
+   "dims_state": "single_published",
+   "dims_raw": "48 x 13.2 x 6 cm / body: 45 x 13.2 x 6 cm (M). Capacity 3 L. Max load 3 kg. Weight 172 g. ART NO TBP-MD3B",
+   "dims_note": "len uses Topeak's own 'body' figure of 45 cm; the 48 cm overall includes the projecting strap tabs, which are modelled as straps rather than as bag envelope. Width is the flat panel width - see the S record.",
+   "capacity_l": 3,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "oval",
+    "taper": { "nose": 1.0, "tail": 0.5, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SEMI-STRUCTURED welded TPU wedge. Tall squared front (down-tube) end, long straight top edge, low rounded tail. Embossed chevron/hatch reflective panel on the lower front. Crisp welded edges - do not render as soft fabric."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "hidden weatherproof zipper under a welded flap cover, full length just below the top edge"
+   },
+   "zips": [
+    { "run": "side_full", "count": 1, "finish": "storm_flap", "location": "top edge, full length, hidden under a welded flap", "notes": "slider parks at the front end with a small D-ring pull" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "welded webbing loops", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "velcro", "material": "welded webbing", "wrapsAround": "seat_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "velcro", "material": "welded webbing", "wrapsAround": "down_tube" }
+   ],
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "internal", "notes": "second compartment - Topeak list dual compartment on the M and L only" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "embossed reflective chevron/hatch graphic on the lower front panel, both sides",
+    "logo": { "type": "printed", "location": "side_rear", "detail": "'TOPEAK' wordmark in tonal grey" },
+    "seams": "welded",
+    "fabric": "eco-friendly TPU with polyester strap webbing",
+    "waterproof": true,
+    "maxLoad_kg": 3,
+    "weight_g": 172,
+    "fitRange": "top tube ø30-66 mm, seat tube ø30-66 mm, down tube ø45-100 mm"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "seat_tube", "down_tube"],
+    "contactFaces": ["top", "rear_end", "front_end"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Tall end forward (forward-shifted centre of gravity by design). The front strap wraps the down tube, so on a 56 cm frame it lands just above the top bottle boss."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Loader",
+   "name": "MidLoader DryBag",
+   "size": "L 4.5L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-midloader-drybag-m-3l-2.png",
+    "assets/products/topeak/loader-midloader-drybag-l-4-5l-1.jpg",
+    "assets/products/topeak/loader-midloader-drybag-s-2l-4.jpg",
+    "https://www.topeak.com/global/en/product/1842-MIDLOADER-DRYBAG"
+   ],
+   "dims_cm": { "len": 52.5, "wid": 6, "hgt": 15 },
+   "dims_state": "single_published",
+   "dims_raw": "56.5 x 15 x 6 cm / body: 52.5 x 15 x 6 cm (L). Capacity 4.5 L. Max load 4 kg. Weight 217 g. ART NO TBP-MD3B",
+   "dims_note": "len uses Topeak's 'body' figure of 52.5 cm; the 56.5 cm overall includes the strap tabs. Width is the flat panel width - see the S record.",
+   "capacity_l": 4.5,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "oval",
+    "taper": { "nose": 1.0, "tail": 0.45, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SEMI-STRUCTURED welded TPU wedge, the largest of the three. 15 cm tall at the squared front end tapering to a low rounded tail over 52.5 cm. Embossed chevron reflective panel on the lower front."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "hidden weatherproof zipper under a welded flap cover, full length"
+   },
+   "zips": [
+    { "run": "side_full", "count": 1, "finish": "storm_flap", "location": "top edge, full length, hidden under a welded flap" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "welded webbing loops", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "velcro", "material": "welded webbing", "wrapsAround": "seat_tube" },
+    { "role": "attachment", "count": 1, "location": "end_cap", "hardware": "velcro", "material": "welded webbing", "wrapsAround": "down_tube" }
+   ],
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "internal", "notes": "second compartment - M and L only" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "embossed reflective chevron/hatch graphic on the lower front panel, both sides",
+    "logo": { "type": "printed", "location": "side_rear" },
+    "seams": "welded",
+    "fabric": "eco-friendly TPU with polyester strap webbing",
+    "waterproof": true,
+    "maxLoad_kg": 4,
+    "weight_g": 217,
+    "fitRange": "top tube ø30-66 mm, seat tube ø30-66 mm, down tube ø45-100 mm"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "seat_tube", "down_tube"],
+    "contactFaces": ["top", "rear_end", "front_end"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "At 52.5 cm this fills the top tube of a 56 cm frame; the down-tube strap will conflict with a bottle in the top cage."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Loader",
+   "name": "TopLoader",
+   "size": "1L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-toploader-1l-1.jpg",
+    "assets/products/topeak/loader-toploader-1l-2.jpg",
+    "assets/products/topeak/loader-toploader-1l-3.jpg",
+    "https://www.topeak.com/global/en/product/966-TOPLOADER"
+   ],
+   "dims_cm": { "len": 23.5, "wid": 7, "hgt": 12 },
+   "dims_state": "single_published",
+   "dims_raw": "SIZE 23.5 x 12 x 7 cm / 9.3\" x 4.7\" x 2.8\". Capacity 1 L. Weight 169 g (Black), 155 g (Green). ART NO TBP-TL1B",
+   "dims_note": "Length x height x width, one published triple, no range. The 12 cm is the MAXIMUM height, reached at the stem end; the bag tapers down to roughly half that at the tail, which is why the 1.97 L bounding box reconciles fine against the 1 L rating.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "teardrop",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.45, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SOFT but padded and self-supporting. Classic stem-bag wedge: tall and blunt at the front (stem) end, falling away in a long curve to a low tail. Hex-embossed ripstop side panels with a smoother crown."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top spine, front to rear, with a fabric zip garage at the front end"
+   },
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "matched", "location": "along the top spine, full length" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "head_tube" }
+   ],
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "internal", "notes": "padded divider splitting the main compartment" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "rainCover": "hidden pull-out rain cover stowed in the bag - shown fitted in the second product photo as a loose elasticated black shell over the whole bag",
+    "logo": { "type": "moulded_badge", "location": "side_front", "detail": "grey Topeak triangle high on the front flank" },
+    "fabric": "polyethylene / nylon, hex-embossed, water repellent",
+    "weight_g": 169,
+    "fitRange": "top tube 38-170 mm"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside", "nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Sits ON TOP of the top tube immediately behind the stem, tall end forward against the head tube/steerer. Two velcro straps under the tube plus one round the head tube. Must clear the rider's knees, so the 7 cm width matters."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "Loader",
+   "name": "TopLoader DryBag",
+   "size": "1L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/topeak/loader-toploader-drybag-1l-2.png",
+    "assets/products/topeak/loader-toploader-drybag-1l-3.jpg",
+    "assets/products/topeak/loader-toploader-drybag-1l-4.jpg",
+    "https://www.topeak.com/global/en/product/1711-TOPLOADER-DRYBAG"
+   ],
+   "dims_cm": { "len": 24, "wid": 6, "hgt": 10 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 24 x 10 x 6 cm. Capacity 1 L. Weight 121 g. ART NO TC3203B",
+   "dims_note": "Length x height x width, single published triple.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "teardrop",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.4, "profile": "curved" },
+    "shoulder": "squared",
+    "notes": "STRUCTURED welded TPU - it holds a crisp shape with a hard-edged flat bottom and sharply defined welded seams, quite unlike the soft fabric TopLoader. Blunt vertical front face at the stem end, long convex top curve falling to a low tail. Matte black, no texture."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "welded waterproof zip running the length of the crown, single slider with a moulded O-ring pull parked at the front. CAUTION: brands.json records this as a rolltop; the studio and detail photos plainly show a welded zip and slider, and there is no roll. Topeak's own page does not state the closure either way, so this is a photo-based correction."
+   },
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "waterproof_welded", "location": "along the crown, full length" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "head_tube" },
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube", "notes": "alternatively bolts to top-tube bosses through the moulded base" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "logo": { "type": "moulded_badge", "location": "side_front", "detail": "tonal Topeak triangle on the front flank" },
+    "seams": "welded",
+    "fabric": "TPU, matte",
+    "waterproof": true,
+    "weight_g": 121,
+    "hardware": "moulded base plate with slotted bolt-on holes so it can either strap or bolt to top-tube bosses"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside", "nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Sits on the top tube behind the stem, tall end forward. Either bolt-on through the base or strapped."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Loader",
+   "name": "TopLoader DryShell",
+   "size": "1L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-toploader-dryshell-1l-1.png",
+    "assets/products/topeak/loader-toploader-dryshell-1l-2.jpg",
+    "assets/products/topeak/loader-toploader-dryshell-1l-3.jpg",
+    "https://www.topeak.com/global/en/product/1843-TOPLOADER-DRYSHELL"
+   ],
+   "dims_cm": { "len": 24, "wid": 6.3, "hgt": 10.5 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 24 x 10.5 x 6.3 cm. Capacity 1 L. Weight 148 g. Fits smartphones up to 6.9\" (16.3 x 7.7 cm). ART NO TC3205B",
+   "dims_note": "Length x height x width, single published triple.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "box",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "THE MOST STRUCTURED SMALL BAG IN THE BRAND. A faceted, origami-like hard shell in canvas-textured 500D TPU that holds sharp creased planes and flat facets - build it from flat polygons with crisp folded edges, absolutely not as a rounded pouch. The front (stem) end is a tall vertical trapezoid; the crown is a fold-over flap lid that runs the full length and overhangs the sides; the tail falls away in a straight angled facet. Bright yellow interior lining is visible whenever the lid is open."
+   },
+   "closure": {
+    "type": "magnetic",
+    "location": "top",
+    "hardware": "magnetic catch: a rectangular moulded plate on the underside of the lid front meets a matching plate on the body. Topeak's own feature list says 'Magnetic closure for quick access'. The lid folds over the top and down the front face."
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing", "wrapsAround": "head_tube" },
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube", "notes": "or bolt-on through the base" }
+   ],
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "internal", "notes": "phone slot sized for a 6.9 inch handset" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "cablePort": "two rubber-flap cable ports on the front end panel, side by side, for a charging lead",
+    "logo": { "type": "printed", "location": "lid", "detail": "'TOPEAK' wordmark on the lid; small triangle badge on the front-left facet" },
+    "seams": "welded",
+    "fabric": "500D TPU with a canvas weave texture, matte black",
+    "lining": "bright yellow",
+    "waterproof": true,
+    "weight_g": 148,
+    "fitRange": "head tube ø35-75 mm, top tube ø35-120 mm"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside", "nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Sits on the top tube behind the stem, tall faceted end forward. Strap-on or bolt-on. The lid opens upward and forward, so it needs clearance in front of the rider's hands."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "FastFuel",
+   "name": "FastFuel Bag Bolt-On",
+   "size": "0.5L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/fastfuel-fastfuel-bag-bolt-on-0-5l-3.png",
+    "assets/products/topeak/fastfuel-fastfuel-bag-bolt-on-0-5l-2.jpg",
+    "assets/products/topeak/fastfuel-fastfuel-bag-bolt-on-0-5l-4.jpg",
+    "assets/products/topeak/fastfuel-fastfuel-bag-bolt-on-0-5l-1.jpg",
+    "https://www.topeak.com/global/en/product/1551-FASTFUEL-BAG-bolt-on"
+   ],
+   "dims_cm": { "len": 18.7, "wid": 4, "hgt": 8.2 },
+   "dims_state": "single_published",
+   "dims_raw": "SIZE 18.7 x 8.2 x 4 cm / 7.4\" x 3.2\" x 1.6\". CAPACITY 0.5 L. WEIGHT 70 g. ART NO TC2313B",
+   "dims_note": "Length x height x width, single published triple. Very narrow at 4 cm - this is a slim knee-clearance bag.",
+   "capacity_l": 0.5,
+   "geometry": {
+    "form": "teardrop",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.35, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SEMI-STRUCTURED. Slim ballistic-nylon wedge over a rigid moulded base plate. Blunt tall front, long straight fall to a low pointed tail. The rigid base is a visible flat black plate on the underside carrying two elongated bolt slots."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top spine, moulded slider parked at the front"
+   },
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "matched", "location": "along the top spine, full length" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "head_tube" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "cablePort": "cable port under the front edge, at the stem end",
+    "logo": { "type": "moulded_badge", "location": "side_front", "detail": "rubber Topeak triangle on the front flank; woven 'TOPEAK' tab at the tail" },
+    "fabric": "500D polyester / PU leather / TPE over an engineering-grade polymer base",
+    "weight_g": 70,
+    "hardware": "RIGID MOULDED BASE PLATE with two elongated bolt slots for top-tube accessory bosses, plus a central webbing keeper so it can also be strapped. The bolt slots are the defining feature of this model."
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside", "nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Bolts through the rigid base into integrated top-tube bosses if the frame has them, otherwise straps. Sits flush on the tube behind the stem with the tall end forward; the front velcro loop takes the steerer."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "FastFuel",
+   "name": "FastFuel DryBag II",
+   "size": "0.8L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/fastfuel-fastfuel-drybag-ii-0-8l-2.png",
+    "assets/products/topeak/fastfuel-fastfuel-drybag-ii-0-8l-1.jpg",
+    "assets/products/topeak/fastfuel-fastfuel-drybag-ii-0-8l-3.jpg",
+    "assets/products/topeak/fastfuel-fastfuel-drybag-ii-0-8l-4.jpg",
+    "https://www.topeak.com/global/en/product/1712-FASTFUEL-DRYBAG-II"
+   ],
+   "dims_cm": { "len": 25.6, "wid": 5.3, "hgt": 8.1 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 25.6 x 8.1 x 5.3 cm. Capacity 0.8 L. Weight 112 g. ART NO TC3202B",
+   "dims_note": "Length x height x width, single published triple. Long and low - 25.6 cm along the tube but only 8.1 cm tall.",
+   "capacity_l": 0.8,
+   "geometry": {
+    "form": "teardrop",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.35, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "STRUCTURED welded TPU. Long low wedge with a flat bottom, crisp welded seams and a blunt vertical front face. Holds its shape empty. Matte black with a white 'TOPEAK' wordmark on the flank - the only white marking on the bag."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "welded waterproof zip along the crown, single slider with a moulded O-ring pull at the front"
+   },
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "waterproof_welded", "location": "along the crown, full length" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "head_tube" },
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "logo": { "type": "printed", "location": "side_front", "detail": "white 'TOPEAK' wordmark" },
+    "seams": "welded",
+    "fabric": "TPU, matte",
+    "waterproof": true,
+    "weight_g": 112,
+    "hardware": "moulded base with two yellow-ringed elongated bolt slots for top-tube bosses plus two grippy rectangular pads for strap mounting - both options are visible on the underside"
+   },
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside", "nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Bolt-on or strap-on. On-bike photos show one velcro strap round the steerer plus two round the top tube, the bag lying flat along the tube with its tall end tight to the stem."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Loader",
+   "name": "FreeLoader",
+   "size": "1L",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/loader-freeloader-1l-1.jpg",
+    "assets/products/topeak/loader-freeloader-1l-2.jpg",
+    "assets/products/topeak/loader-freeloader-1l-3.jpg",
+    "assets/products/topeak/loader-freeloader-1l-4.jpg",
+    "https://www.topeak.com/global/en/product/1300-FREELOADER"
+   ],
+   "dims_cm": { "len": 9.5, "wid": 9.5, "hgt": 17 },
+   "dims_state": "single_published",
+   "dims_raw": "SIZE 17 x ø9.5 cm / 6.7\" x ø3.7\". CAPACITY 1 L / 60 ci. MAX LOAD 1 kg / 2.20 lb. WEIGHT 125 g. ART NO TBP-FRL1B",
+   "dims_note": "CORRECTED AXES. brands.json carried len 17 AND hgt 17 with dia 9.5, which double-counts the long axis. This is an upright cylinder: 17 cm is the HEIGHT and 9.5 cm the diameter, so the triple is 9.5 x 9.5 x 17. Written whole.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "bucket",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "SOFT, upright open-topped cylinder that slumps and creases when empty - the softest item in the brand. Flat circular base, straight walls, gathered cinch top. Nylon outer over EVA stiffening at the base with a bright yellow removable liner."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "elastic drawcord with a barrel cord-lock gathering the mouth; the mouth stays open in use and a bottle protrudes"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "side", "hardware": "velcro", "material": "webbing", "wrapsAround": "handlebar" },
+    { "role": "attachment", "count": 1, "location": "side", "hardware": "velcro", "material": "webbing", "wrapsAround": "stem" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "ladderlock", "material": "webbing", "wrapsAround": "head_tube" }
+   ],
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.5, "notes": "flat outer pocket for gels, on the outboard face" },
+    { "type": "mesh", "count": 1, "location": "internal" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "drainHole": "grommet drain hole in the base of the yellow liner",
+    "liner": "removable, washable, bright yellow - clearly visible when the bag is open",
+    "logo": { "type": "printed", "location": "side" },
+    "fabric": "nylon over EVA",
+    "maxLoad_kg": 1,
+    "weight_g": 125
+   },
+   "mount": {
+    "axes": { "len": "x", "wid": "z", "hgt": "+y" },
+    "attachesTo": ["handlebar", "stem", "head_tube"],
+    "contactFaces": ["side", "underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 100, "frame_mm": 0 },
+    "notes": "Stands UPRIGHT beside the stem, mouth open at the top. Two velcro straps take the bar and the stem, one adjustable strap runs down to the head tube or fork crown to stop it swinging. On a drop bar it lives inboard of the hood."
+   },
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Green", "hex": "#3f5a3a" }
+   ]
+  },
+  {
+   "line": "DryBag",
+   "name": "Fork DryBag",
+   "size": "4L",
+   "slot": "forkbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/drybag-fork-drybag-4l-3.png",
+    "assets/products/topeak/drybag-fork-drybag-4l-1.jpg",
+    "assets/products/topeak/drybag-fork-drybag-4l-2.jpg",
+    "assets/products/topeak/drybag-fork-drybag-4l-4.jpg",
+    "https://www.topeak.com/global/en/product/1746-FORK-DRYBAG-4L"
+   ],
+   "dims_cm": { "len": 38, "wid": 12.8, "hgt": 13 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 38 x 13 x 12.8 cm. Capacity 4 L. Max load 3 kg. Weight 123 g. ART NO TC3705B",
+   "dims_note": "Length x height x width. The 38 cm long axis is NOT horizontal in use - it lies along the fork leg. mount.axes.len is set to along_forkleg to say so unambiguously rather than swapping len and hgt, which would fight the rest of the catalogue. Nearly square cross-section, 13 x 12.8.",
+   "capacity_l": 4,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "flat_back",
+    "shoulder": "rounded",
+    "notes": "SOFT welded TPU drybag, flattened on the side that meets the fork leg or cage. Rolled and buckled at the upper end, flat rounded base at the lower end. Two vertical webbing sleeves run down the front face and hold the horizontal mounting straps in place - those sleeves are visible dark stripes on the studio image."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "single side-release buckle clipping across the rolled top"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "girth", "hardware": "ladderlock", "material": "nylon webbing printed 'TOPEAK PREPARE TO RIDE'", "wrapsAround": "fork_leg", "notes": "two horizontal straps encircling the bag, threaded through the vertical face sleeves; wrap either a 3-pack cage or the bare fork leg" },
+    { "role": "lid", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "valve": "round screw-cap air release valve with an embossed Topeak triangle, centred low on the front face",
+    "logo": { "type": "printed", "location": "front_face", "detail": "grey 'TOPEAK' wordmark high on the face" },
+    "seams": "welded",
+    "fabric": "TPU with a fine diamond emboss, matte",
+    "waterproof": true,
+    "maxLoad_kg": 3,
+    "weight_g": 123
+   },
+   "mount": {
+    "axes": { "len": "along_forkleg", "wid": "z", "hgt": "x" },
+    "attachesTo": ["fork_leg", "cargo_cage"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 25, "frame_mm": 15 },
+    "notes": "Stands on end against the outside of the fork leg, roll at the top, base near the dropout. Because it stands up, its own 'hgt' axis (12.8 cm) points fore-and-aft on the bike and its 'wid' axis points outboard. Straps directly to the leg or to a 3-pack cargo cage - no bosses required, which is what separates it from the QR Fork DryBag."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "DryBag",
+   "name": "QR Fork DryBag Bolt-On",
+   "size": "5.8L",
+   "slot": "forkbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/drybag-qr-fork-drybag-bolt-on-5-8l-1.png",
+    "assets/products/topeak/drybag-qr-fork-drybag-bolt-on-5-8l-3.jpg",
+    "assets/products/topeak/drybag-qr-fork-drybag-bolt-on-5-8l-2.jpg",
+    "assets/products/topeak/drybag-qr-fork-drybag-bolt-on-5-8l-4.jpg",
+    "https://www.topeak.com/global/en/product/1744-QR-FORK-DRYBAG-5.8L-Bolt-on"
+   ],
+   "dims_cm": { "len": 43.5, "wid": 16, "hgt": 18 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 43.5 x 18 x 16 cm. Capacity 5.8 L. Max load 3 kg. Weight 272 g. ART NO TC3703B",
+   "dims_note": "Length x height x width. As with the 4 L Fork DryBag the 43.5 cm long axis lies along the fork leg, stated in mount.axes rather than by swapping the triple.",
+   "capacity_l": 5.8,
+   "geometry": {
+    "form": "truncated_cylinder",
+    "crossSection": "flat_back",
+    "taper": { "nose": 0.75, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SOFT bag on a HARD BACK. The body is a welded TPU drybag that is visibly wider at the base than at the roll - a truncated cone standing on its wide end. The back face carries a large injection-moulded black QuickClick bracket: a vertical rail with a release lever and three visible metal bolt heads through the fabric. That bracket is the whole point of the product and must be modelled as rigid black plastic standing proud of the bag."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "single side-release buckle across the rolled top"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "lid", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "large silver reflective rectangle low on the outboard face, with a small vertical 'TOPEAK' wordmark on it",
+    "valve": "round screw-cap air release valve with an embossed Topeak triangle, mid height on the outboard face",
+    "logo": { "type": "printed", "location": "side_lower" },
+    "seams": "welded",
+    "fabric": "TPU with a fine diamond emboss",
+    "waterproof": true,
+    "maxLoad_kg": 3,
+    "weight_g": 272,
+    "hardware": "injection-moulded quick-release bracket bolted through the back panel, mating with a base plate that bolts to the fork's three-pack cargo bosses"
+   },
+   "mount": {
+    "axes": { "len": "along_forkleg", "wid": "z", "hgt": "x" },
+    "attachesTo": ["fork_bosses"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 25, "frame_mm": 15 },
+    "notes": "REQUIRES three-pack cargo bosses on the fork leg - there are no straps on this model, the bag simply clicks onto a bolted base plate. A 56 cm gravel bike with a plain fork cannot mount it; a gravel fork with cargo mounts can. Stands on end with the wide base near the dropout and the roll at the top."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Wedge",
+   "name": "Aero Wedge Pack (strap)",
+   "size": "Micro",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-micro-1.png",
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-micro-2.jpg",
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-large-3.jpg",
+    "https://www.topeak.com/global/en/product/129-AERO-WEDGE-PACK"
+   ],
+   "dims_cm": { "len": 16, "wid": 7.5, "hgt": 8 },
+   "dims_state": "expanded_published",
+   "dims_raw": "Size 16 x 8 x 7.5 cm (Micro). Capacity 0.41 L. Weight 85 g. Fits seatposts 27.2-34.9 mm. ART NO TC2261B",
+   "dims_note": "Length x height x width. Topeak quote the size at full extension, which is the unfurled figure the rule wants; the Micro has a single fixed capacity so there is no range to take a minimum from.",
+   "capacity_l": 0.41,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.4, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SEMI-STRUCTURED, padded 1200D polyester that holds a firm wedge. Narrow at the NOSE (saddle rails) and deepest at the TAIL - the opposite taper to a bikepacking seat pack. Squared-off vertical tail panel. Note the shell photograph is shared across all four sizes; only the scale changes."
+   },
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "horseshoe zip with two sliders meeting at the tail; the lid hinges toward the nose"
+   },
+   "zips": [
+    { "run": "horseshoe_top", "count": 1, "finish": "matched", "location": "up and over the tail, dual slider", "notes": "the two pulls park together at the rear" },
+    { "run": "perimeter", "count": 1, "finish": "matched", "location": "girth, mid height", "notes": "expander gusset zip - opening it adds a wedge of volume. Topeak only publish an expanded capacity range for the Medium and Large, so treat the expander on the Micro as visually present but functionally small." }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "nylon webbing", "wrapsAround": "seatpost", "notes": "side-release buckle, visible on the underside of the nose" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "horizontal white 3M reflective strip across the tail panel",
+    "lightMount": "moulded light clip patch on the tail below the reflective strip",
+    "logo": { "type": "moulded_badge", "location": "side_rear", "detail": "YELLOW Topeak triangle - the only splash of colour on the bag" },
+    "lining": "yellow, with an internal mesh divider pocket",
+    "fabric": "1200 denier polyester with a hard-woven carbon-look panel around the tail",
+    "weight_g": 85
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 120, "frame_mm": 0 },
+    "notes": "Tucks up under the saddle nose-first with the deep tail hanging out behind. Velcro strap over the rails, buckled strap round the seatpost. Fits round posts 27.2-34.9 mm."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Wedge",
+   "name": "Aero Wedge Pack (strap)",
+   "size": "Small",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-small-1.png",
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-large-3.jpg",
+    "https://www.topeak.com/global/en/product/129-AERO-WEDGE-PACK"
+   ],
+   "dims_cm": { "len": 18, "wid": 8.5, "hgt": 11 },
+   "dims_state": "expanded_published",
+   "dims_raw": "Size 18 x 11 x 8.5 cm (Small). Capacity 0.66 L. Weight 100 g. ART NO TC2261B",
+   "dims_note": "Length x height x width, size quoted at full extension. Single fixed capacity, no range.",
+   "capacity_l": 0.66,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.4, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SEMI-STRUCTURED padded wedge, narrow at the nose and deep at the squared tail. Same shell as the other three sizes."
+   },
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "horseshoe zip, dual slider parking at the tail"
+   },
+   "zips": [
+    { "run": "horseshoe_top", "count": 1, "finish": "matched", "location": "up and over the tail, dual slider" },
+    { "run": "perimeter", "count": 1, "finish": "matched", "location": "girth, mid height", "notes": "expander gusset zip" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "nylon webbing", "wrapsAround": "seatpost" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "horizontal white 3M reflective strip across the tail panel",
+    "lightMount": "moulded light clip patch on the tail below the reflective strip",
+    "logo": { "type": "moulded_badge", "location": "side_rear", "detail": "yellow Topeak triangle" },
+    "lining": "yellow, internal mesh divider",
+    "fabric": "1200 denier polyester",
+    "weight_g": 100
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 110, "frame_mm": 0 },
+    "notes": "Nose-first under the saddle, deep tail projecting rearward. Fits round seatposts 27.2-34.9 mm."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Wedge",
+   "name": "Aero Wedge Pack (strap)",
+   "size": "Medium",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-medium-1.png",
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-micro-2.jpg",
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-large-4.jpg",
+    "https://www.topeak.com/global/en/product/129-AERO-WEDGE-PACK"
+   ],
+   "dims_cm": { "len": 20, "wid": 11, "hgt": 12 },
+   "dims_state": "expanded_published",
+   "dims_raw": "Size 20 x 12 x 11 cm (Medium). Capacity 0.98 - 1.31 L. Weight 130 g. ART NO TC2261B",
+   "dims_note": "Length x height x width, quoted at full extension - the capacity range exists because of the expander gusset zip and Topeak's stated size is the EXPANDED size, which is the unfurled figure the rule asks for. capacity_l is the expanded maximum, with the collapsed 0.98 L kept in dims_raw.",
+   "capacity_l": 1.31,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.4, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SEMI-STRUCTURED padded wedge. Topeak's own expansion diagram shows the extra volume appearing as a vertical band inserted in the MIDDLE of the body, so the expanded bag is longer in the middle rather than deeper at the tail."
+   },
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "horseshoe zip, dual slider parking at the tail"
+   },
+   "zips": [
+    { "run": "horseshoe_top", "count": 1, "finish": "matched", "location": "up and over the tail, dual slider" },
+    { "run": "perimeter", "count": 1, "finish": "matched", "location": "girth, mid height", "notes": "expander gusset zip; opening it takes the bag from 0.98 L to 1.31 L" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "nylon webbing", "wrapsAround": "seatpost" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "horizontal white 3M reflective strip across the tail panel",
+    "lightMount": "moulded light clip patch on the tail below the reflective strip",
+    "logo": { "type": "moulded_badge", "location": "side_rear", "detail": "yellow Topeak triangle" },
+    "lining": "yellow, internal mesh divider",
+    "fabric": "1200 denier polyester",
+    "weight_g": 130
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 100, "frame_mm": 0 },
+    "notes": "Nose-first under the saddle. Fits round seatposts 27.2-34.9 mm."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Wedge",
+   "name": "Aero Wedge Pack (strap)",
+   "size": "Large",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-large-1.png",
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-large-2.jpg",
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-large-3.jpg",
+    "assets/products/topeak/wedge-aero-wedge-pack-strap-large-4.jpg",
+    "https://www.topeak.com/global/en/product/129-AERO-WEDGE-PACK"
+   ],
+   "dims_cm": { "len": 23, "wid": 13, "hgt": 14 },
+   "dims_state": "expanded_published",
+   "dims_raw": "Size 23 x 14 x 13 cm (Large). Capacity 1.48 - 1.97 L. Weight 165 g. ART NO TC2261B",
+   "dims_note": "Length x height x width at full extension. capacity_l is the expanded maximum; the collapsed 1.48 L is kept in dims_raw. The Large is unusually chunky for its length - 14 tall and 13 wide on a 23 cm body - so do not slim it down.",
+   "capacity_l": 1.97,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.4, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "SEMI-STRUCTURED padded wedge, the fullest of the four. Narrow nose, deep squared tail, hard-woven carbon-look panel wrapping the tail and lower flanks."
+   },
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "horseshoe zip, dual slider parking at the tail"
+   },
+   "zips": [
+    { "run": "horseshoe_top", "count": 1, "finish": "matched", "location": "up and over the tail, dual slider" },
+    { "run": "perimeter", "count": 1, "finish": "matched", "location": "girth, mid height", "notes": "expander gusset zip; 1.48 L closed, 1.97 L opened" }
+   ],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "nylon webbing", "wrapsAround": "seatpost" }
+   ],
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "internal", "sizeFrac": 0.5 }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "horizontal white 3M reflective strip across the tail panel",
+    "lightMount": "moulded light clip patch on the tail below the reflective strip, sized for a Topeak clip-on rear light",
+    "logo": { "type": "moulded_badge", "location": "side_rear", "detail": "yellow Topeak triangle" },
+    "lining": "yellow, internal mesh divider pocket",
+    "fabric": "1200 denier polyester",
+    "weight_g": 165
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 90, "frame_mm": 0 },
+    "notes": "Nose-first under the saddle, tail projecting well behind. Fits round seatposts 27.2-34.9 mm."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Wedge",
+   "name": "Wedge DryBag",
+   "size": "S",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/wedge-wedge-drybag-m-1.jpg",
+    "assets/products/topeak/wedge-wedge-drybag-m-2.jpg",
+    "assets/products/topeak/wedge-wedge-drybag-m-4.jpg",
+    "https://www.topeak.com/global/en/product/328-WEDGE-DRYBAG"
+   ],
+   "dims_cm": { "len": 15, "wid": 9, "hgt": 9 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 15 x 9 x 9 cm (Small). Capacity 0.6 L. Weight 140 g. ART NO TT9822B (QuickClick / F25 version)",
+   "dims_note": "Length x height x width, single published triple.",
+   "capacity_l": 0.6,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.45, "tail": 1.0, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "SEMI-RIGID. Sonically welded 210/420D nylon over a semi-rigid EVA foam core, so it holds a firm wedge and does not slump. Narrow at the nose, fuller at the rolled tail. The nose is a smooth welded panel with an embossed 'TOPEAK' wordmark. Gloss welded finish, distinctly shinier than the matte Aero Wedge."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "the tail rolls and is pulled forward by a single strap running over the crown into a cam buckle at the nose"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "lid", "count": 1, "location": "top", "hardware": "cam", "material": "nylon webbing", "notes": "runs tail-to-nose over the crown, holding the roll shut" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none on the S",
+    "lightMount": "two moulded vertical slots plus a hook-and-loop patch on the tail panel, below the badge",
+    "logo": { "type": "moulded_badge", "location": "side_rear", "detail": "yellow Topeak triangle on a welded plaque" },
+    "seams": "sonically welded",
+    "insulation": "semi-rigid EVA foam",
+    "fabric": "210/420 denier waterproof nylon, gloss",
+    "waterproof": true,
+    "weight_g": 140,
+    "hardware": "QuickClick F25 - a female moulded receiver on the top face of the bag mating with a black moulded saddle-rail bracket that clamps both rails with a single bolt. The bracket is supplied and stays on the bike; the bag clicks on and off."
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 130, "frame_mm": 0 },
+    "notes": "Hangs from a QuickClick F25 bracket clamped to the saddle rails - it does NOT wrap or strap to the seatpost, and there is a visible black plastic bracket between the saddle and the bag. Slides on fore-to-aft and locks."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Wedge",
+   "name": "Wedge DryBag",
+   "size": "M",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/wedge-wedge-drybag-m-1.jpg",
+    "assets/products/topeak/wedge-wedge-drybag-m-2.jpg",
+    "assets/products/topeak/wedge-wedge-drybag-m-3.jpg",
+    "assets/products/topeak/wedge-wedge-drybag-m-4.jpg",
+    "https://www.topeak.com/global/en/product/328-WEDGE-DRYBAG"
+   ],
+   "dims_cm": { "len": 18.5, "wid": 11, "hgt": 11.5 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 18.5 x 11.5 x 11 cm (Medium). Capacity 1 L. Weight 170 g. ART NO TT9822B (QuickClick / F25 version)",
+   "dims_note": "Length x height x width, single published triple.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.45, "tail": 1.0, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "SEMI-RIGID welded nylon over EVA foam. Narrow nose, full rolled tail, gloss welded finish."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "tail rolls; one strap over the crown into a cam buckle at the nose"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "lid", "count": 1, "location": "top", "hardware": "cam", "material": "nylon webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "lightMount": "two moulded vertical slots plus a hook-and-loop patch on the tail panel - the product photography shows a red Topeak Alien-style light clipped there",
+    "logo": { "type": "moulded_badge", "location": "side_rear", "detail": "yellow Topeak triangle on a welded plaque" },
+    "seams": "sonically welded",
+    "insulation": "semi-rigid EVA foam",
+    "fabric": "210/420 denier waterproof nylon, gloss",
+    "waterproof": true,
+    "weight_g": 170,
+    "hardware": "QuickClick F25 saddle-rail bracket, supplied"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 125, "frame_mm": 0 },
+    "notes": "Clicks onto the F25 bracket on the saddle rails, no seatpost strap. The bracket is a visible black moulded part sitting between the saddle and the bag."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Wedge",
+   "name": "Wedge DryBag",
+   "size": "L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/wedge-wedge-drybag-l-1.jpg",
+    "assets/products/topeak/wedge-wedge-drybag-l-2.jpg",
+    "assets/products/topeak/wedge-wedge-drybag-l-3.jpg",
+    "assets/products/topeak/wedge-wedge-drybag-l-4.jpg",
+    "https://www.topeak.com/global/en/product/329-WEDGE-DRYBAG"
+   ],
+   "dims_cm": { "len": 23, "wid": 11, "hgt": 13 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 23 x 13 x 11 cm (Large). Capacity 1.5 L. Weight 245 g. ART NO TT9817B (STRAP MOUNT version; the QuickClick page lists 235 g for the same size)",
+   "dims_note": "Length x height x width. This entry points at the 329 product page, which is the STRAP-MOUNT variant, not the QuickClick one used for the S and M - a real difference in the visible hardware, not just a part number.",
+   "capacity_l": 1.5,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.45, "tail": 1.0, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "SEMI-RIGID welded nylon. Wide flat welded nose panel with an embossed 'TOPEAK' wordmark, narrowing rearward from the crown then swelling to the rolled tail. Gloss welded finish."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "tail rolls; one strap over the crown into a cam buckle at the nose"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "lid", "count": 1, "location": "top", "hardware": "cam", "material": "nylon webbing" },
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "velcro", "material": "nylon webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "ladderlock", "material": "nylon webbing", "wrapsAround": "seatpost" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective panel on the outboard tail flank",
+    "lightMount": "two moulded vertical slots plus a hook-and-loop patch on the tail",
+    "logo": { "type": "embossed", "location": "nose", "detail": "'TOPEAK' embossed into the welded nose panel; yellow triangle badge on the tail" },
+    "seams": "sonically welded",
+    "fabric": "210/420 denier waterproof nylon, gloss",
+    "waterproof": true,
+    "weight_g": 245
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 110, "frame_mm": 0 },
+    "notes": "STRAP MOUNT, unlike the S and M: velcro straps over the saddle rails and a webbing strap round the seatpost, no QuickClick bracket. Nose-first under the saddle with the rolled tail behind."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "Burrito",
+   "name": "Burrito Pack",
+   "size": "std",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "low",
+   "evidence": [
+    "https://www.topeak.com/global/en/product/1283-BURRITO-PACK"
+   ],
+   "dims_cm": { "len": 15, "wid": 10.5, "hgt": 2 },
+   "dims_state": "flat_published",
+   "dims_raw": "SIZE 15 x 10.5 x 2 cm / 5.9\" x 4.1\" x 0.8\". WEIGHT 91 g. ART NO TC2308B. Fits one inner tube 26\" x 1.75 - 29\" x 2.35 or 700c, a CO2 inflater, cartridges and tyre levers",
+   "dims_note": "NO LOCAL PHOTOS EXIST for this product and none of the four assets folders contain it - this record is page-only. The published 15 x 10.5 x 2 cm is the FLAT, laid-open pack; in use it is rolled into a bundle and Topeak publish no rolled figure, so I have not invented one. A builder should expect the mounted object to read as a roughly 10-11 cm long cylinder of about 5 cm diameter, but that is an inference, not a specification, which is why confidence is low.",
+   "geometry": {
+    "form": "slab",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "PAGE-ONLY, no photo verified. A flat three-compartment tool wrap with internal organiser sleeves that rolls up into a bundle and is held by a single strap. Not a bag with a mouth - it is a wallet that becomes a roll."
+   },
+   "closure": {
+    "type": "flap_strap",
+    "location": "girth",
+    "hardware": "single securing strap round the rolled bundle, tool-free"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "girth", "hardware": "velcro", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+   "pockets": [
+    { "type": "slip", "count": 3, "location": "internal", "notes": "three compartments with internal organisers - one tube, one inflater plus cartridges, one levers" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "unknown",
+    "fabric": "polyethylene / engineering-grade polymer with a durable water repellent coating",
+    "weight_g": 91
+   },
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "top_tube"],
+    "contactFaces": ["girth"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 140, "frame_mm": 0 },
+    "notes": "Rolled and lashed either directly to the saddle rails or under the top tube. The roll axis runs across the bike when it is under the saddle. Confidence is low on the mounted orientation because no photograph of this product was available locally."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "DryBag",
+   "name": "Pannier DryBag",
+   "size": "16L",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/drybag-pannier-drybag-16l-1.png",
+    "assets/products/topeak/drybag-pannier-drybag-16l-3.jpg",
+    "assets/products/topeak/drybag-pannier-drybag-16l-4.jpg",
+    "assets/products/topeak/drybag-pannier-drybag-16l-2.jpg",
+    "https://www.topeak.com/global/en/product/1327-PANNIER-DRYBAG"
+   ],
+   "dims_cm": { "len": 26, "wid": 15, "hgt": 45 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "SIZE 45 x 26 x 15 / 17.7\" x 10.2\" x 5.9\" (16 L / Closure). CAPACITY 16 L per single bag. WEIGHT 700 g. ART NO TT9860B",
+   "dims_note": "Topeak qualify this '/ Closure', i.e. measured rolled SHUT, so the 45 cm is already the minimum of the height range that the rule asks for - unrolled it is taller. On a pannier the biggest number is the height, not the length. capacity_l is the SINGLE bag, as Topeak state.",
+   "capacity_l": 16,
+   "render": {
+    "hgt_cm": 45,
+    "rolls": 3,
+    "basis": "Roll runs down the vertical axis, so the height is the variable one. Topeak's own '/ Closure' qualifier means the 45 cm was measured ROLLED SHUT, so it is already the minimum of the range and the drawn height equals the published height. Cross-checked against drybag-pannier-drybag-16l-1.png and -4.jpg, where the bag is photographed with the top turned down about three times and both side straps clipped, at that proportion. Recorded explicitly because an unqualified reading of the unfurled rule would tempt a later pass to stretch this bag upward - it must not be."
+   },
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "SOFT bag on a HARD BACK. Welded TPU body with a flat rigid rear panel carrying the moulded mounting hardware; the outboard face is gently domed and the lower corners are rounded off so they do not catch the heel. Tonal Topeak 'V' chevron graphic and two horizontal tonal bands are subtly visible on the outboard face - same colour, different sheen."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "top rolls down and the two side straps clip forward and back into side-release buckles on the body"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "lid", "count": 2, "location": "side", "hardware": "buckle", "material": "nylon webbing", "notes": "one at each end of the roll, clipping down the front and rear faces" },
+    { "role": "shoulder", "count": 1, "location": "side", "hardware": "hook", "material": "nylon webbing", "notes": "removable, for off-bike carry" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "grey reflective patch low on the outboard face",
+    "handle": "moulded grab handle integrated into the upper mounting rail",
+    "logo": { "type": "printed", "location": "front_face", "detail": "tonal Topeak triangle upper centre; yellow triangle on the top edge of the roll" },
+    "seams": "sonically welded",
+    "fabric": "welded TPU laminate, matte with tonal gloss graphics",
+    "waterproof": true,
+    "weight_g": 700,
+    "hardware": "HANDLE LOC: an upper injection-moulded rail carrying two laterally-adjustable rack hooks with the carry handle built into it, plus a lower moulded rail with a rotating anchor hook and a rubberised abrasion patch. Fits rack tubes 8 / 10 / 12 / 16 mm. All of this is black moulded plastic standing proud of the flat back panel and is the most structural thing on the bag."
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 20, "frame_mm": 10 },
+    "notes": "Hooks over the top rail of a rear rack and is anchored low by the rotating bottom hook, hanging vertically outboard of the wheel. Needs a rear rack - it cannot mount to a bare 56 cm gravel frame - but it fits any standard rack tube 8-16 mm, it is NOT MTX-specific. At 45 cm tall on a 16 L bag, heel clearance and the 26 cm fore-aft length are the numbers that matter."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "DryBag",
+   "name": "Pannier DryBag",
+   "size": "24L",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/topeak/drybag-pannier-drybag-24l-1.png",
+    "assets/products/topeak/drybag-pannier-drybag-16l-3.jpg",
+    "assets/products/topeak/drybag-pannier-drybag-16l-4.jpg",
+    "https://www.topeak.com/global/en/product/1327-PANNIER-DRYBAG"
+   ],
+   "dims_cm": { "len": 31.3, "wid": 15, "hgt": 47 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "SIZE 47 x 31.3 x 15 / 18.5\" x 12.3\" x 5.9\" (24 L / Closure). CAPACITY 24 L per single bag. WEIGHT 784 g. ART NO TT9860B",
+   "dims_note": "'/ Closure' = measured rolled shut, already the minimum height. Height 47, fore-aft length 31.3, width 15. Capacity is per single bag. Only the length and height grow over the 16 L; the 15 cm width is shared.",
+   "capacity_l": 24,
+   "render": {
+    "hgt_cm": 47,
+    "rolls": 3,
+    "basis": "Same as the 16 L: Topeak's '/ Closure' qualifier means 47 cm was measured rolled shut, so it is already the minimum and the drawn height equals the published height. Checked against drybag-pannier-drybag-24l-1.png, which shows the same three turn-downs with the side straps clipped."
+   },
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Same welded-TPU-on-a-rigid-back construction as the 16 L, 5 cm longer fore-aft and 2 cm taller. Rounded lower rear corner for heel clearance."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "top rolls down; two side straps clip into side-release buckles on the front and rear faces"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "lid", "count": 2, "location": "side", "hardware": "buckle", "material": "nylon webbing" },
+    { "role": "shoulder", "count": 1, "location": "side", "hardware": "hook", "material": "nylon webbing" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "grey reflective patch low on the outboard face",
+    "handle": "moulded grab handle in the upper mounting rail",
+    "logo": { "type": "printed", "location": "front_face" },
+    "seams": "sonically welded",
+    "fabric": "welded TPU laminate",
+    "waterproof": true,
+    "weight_g": 784,
+    "hardware": "Handle Loc: upper moulded rail with two adjustable rack hooks and integrated handle, lower moulded rail with a rotating anchor hook and rubberised abrasion patch. Fits rack tubes 8 / 10 / 12 / 16 mm."
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 15, "frame_mm": 10 },
+    "notes": "Hangs vertically off a rear rack rail. At 31.3 cm fore-aft this is close to the full usable length of a typical rear rack, so on a 56 cm frame expect heel strike unless the rack has good setback. Any standard rack, not MTX-specific."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "MTX 2.0",
+   "name": "MTX TrunkBag DX",
+   "size": "12.3L",
+   "slot": "trunk",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/topeak/mtx-2-0-mtx-trunkbag-dx-12-3l-1.jpg",
+    "https://www.topeak.com/global/en/product/1686-MTX-TRUNKBAG-DX-(MTX-2.0)"
+   ],
+   "dims_cm": { "len": 36, "wid": 29, "hgt": 25 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Size 36 x 25 x 21.5-29 cm. Capacity 12.3 L. Weight 970 g. Storage: 1 divided main, two side zippered, multi-expanding top. Max load limited to the rack's maximum load rating. ART NO TT9648B2",
+   "dims_note": "CHANGED. Length x height x width, and the width is published as a RANGE 21.5-29 cm because the bag expands. The unfurled rule says take the full unfurled figure for width, so wid = 29, not the 23.8 cm that a previous pass produced by interpolating 30 percent into the range - that number was not a Topeak figure at all. Height 25 is a single published value with no range. The only local image for this product is Topeak's QuickTrack rack-compatibility chart, not a product photograph, so the geometry below is read off the spec text and is the weakest record in this file.",
+   "capacity_l": 12.3,
+   "geometry": {
+    "form": "basket_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "STRUCTURED / HARD-SHELLED. Moulded RIGID EVA foam panels under 600 denier polyester - this is a firm box that keeps square corners and a flat lid, the antithesis of a soft bikepacking bag. Expanding side panels take the width from 21.5 to 29 cm; when they are stowed the bag is a plain trunk box, when deployed it grows lateral bulges over the rack. Flat moulded underside carrying the full-length MTX rail. CONFIDENCE NOTE: no product photograph was available locally, so which panels expand (Topeak's text mentions both an expanding top panel and two side zippered compartments) is taken from the spec wording, not seen."
+   },
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "horseshoe zip round the lid; the lid hinges at the front"
+   },
+   "zips": [
+    { "run": "horseshoe_top", "count": 1, "finish": "matched", "location": "round the lid perimeter" },
+    { "run": "pocket", "count": 2, "finish": "matched", "location": "one on each side panel", "notes": "the two side compartments" }
+   ],
+   "straps": [],
+   "pockets": [
+    { "type": "zip", "count": 2, "location": "side" },
+    { "type": "mesh", "count": 1, "location": "lid" },
+    { "type": "slip", "count": 1, "location": "front" },
+    { "type": "bottle", "count": 1, "location": "rear", "notes": "water bottle holder on the rear face" },
+    { "type": "slip", "count": 1, "location": "internal", "notes": "divider splitting the main compartment" }
+   ],
+   "details": {
+    "daisyChains": false,
+    "cord": "reflective elastic cargo cord across the top panel",
+    "reflective": "3M reflective strip plus the reflective top cord",
+    "lightMount": "safety light clip on the tail",
+    "handle": "carry handle",
+    "shoulderStrap": true,
+    "insulation": "rigid EVA foam",
+    "fabric": "600 denier polyester over moulded EVA",
+    "weight_g": 970,
+    "expandable": "width 21.5 to 29 cm",
+    "hardware": "MTX QuickTrack 2.0 - a long injection-moulded rail moulded into the base of the bag that slides fore-to-aft into the matching channel on a Topeak MTX rack and locks with a lever. It is a large, visible, structural black plastic part running most of the length of the underside."
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "+y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "MOUNTS ONLY ON A TOPEAK MTX-COMPATIBLE RACK. The QuickTrack 2.0 rail on the base slides into the rack's channel from the rear and locks - it will not strap to anything else, and it will not fit an ordinary tubular rack top. Topeak's own compatibility chart (the one local image) lists MTX 2.0 bags as working on the Tubular Rack, TetraRack and MTX BeamRack, and explicitly NOT on the RX BeamRack or Roadie Rack. Sits flat on top of the rack with the expanding side panels overhanging the wheel."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  },
+  {
+   "line": "DryBag",
+   "name": "RackLoader DryBag",
+   "size": "12L",
+   "slot": "trunk",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/topeak/drybag-rackloader-drybag-12l-3.png",
+    "assets/products/topeak/drybag-rackloader-drybag-12l-1.jpg",
+    "assets/products/topeak/drybag-rackloader-drybag-12l-2.jpg",
+    "assets/products/topeak/drybag-rackloader-drybag-12l-4.jpg",
+    "https://www.topeak.com/global/en/product/1845-RACKLOADER-DRYBAG"
+   ],
+   "dims_cm": { "len": 41, "wid": 22, "hgt": 16.5 },
+   "dims_state": "single_published",
+   "dims_raw": "Size 41 x 22 x 16.5 cm. Capacity 12 L. Weight 362 g (bag) + 47 g x2 (Omni Straps). ART NO TC5103B",
+   "dims_note": "CORRECTED, TRANSPOSED AXES - written as a whole triple. This is the one product in the brand where Topeak's string is NOT their usual length x height x width: here it is length x WIDTH x HEIGHT. Established from the two orthographic studio views in drybag-rackloader-drybag-12l-2.jpg, which show the same bag from the side and from above in one image at a common scale. The side elevation is about 0.40 as tall as it is long, giving 0.40 x 41 = 16.3 cm of height; the plan view is about 0.55 as deep as it is long, giving 0.55 x 41 = 22 cm across. The on-bike shot drybag-rackloader-drybag-12l-4.jpg agrees - strapped to the rack it is plainly a flattened pillow much wider than it is tall. So hgt = 16.5 and wid = 22, the reverse of what brands.json carried. This also removes the caveat an earlier draft of this record carried about the two figures 'effectively swapping' once cinched: they are not swapping under load, they were simply the wrong way round.",
+   "capacity_l": 12,
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "oval",
+    "shoulder": "rounded",
+    "notes": "SOFT drybag on a SEMI-RIGID harness panel. Distinctly FLATTENED in section - 22 cm across but only 16.5 cm tall - so draw a squashed lens, not a round barrel. The bag is a plain welded pillow whose BOTH ends gather and roll inward, giving the twin-cone look. Over it sits a separate flat harness panel with a MOLLE ladder grid, two moulded 'TOPEAK' reinforcement plaques and reflective-look bands. The two straps are Topeak Omni Straps: perforated black TPE ladder straps with moulded buckles - they look like heavy rubber cable ties and are the most recognisable hardware on the product."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 2,
+    "hardware": "each end gathers and rolls, secured by a small clip"
+   },
+   "zips": [],
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "girth", "hardware": "ladderlock", "material": "TPE Omni Strap, 80 cm, perforated", "wrapsAround": "rear_rack", "notes": "pass over the bag, through the harness panel and round the rack tubes" }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": true,
+    "molle": "MOLLE ladder grid across the harness panel",
+    "reflective": "grey banding on the harness panel",
+    "logo": { "type": "embossed", "location": "top", "detail": "'TOPEAK' embossed on the two moulded plaques on the harness panel" },
+    "seams": "welded",
+    "fabric": "600D polyethylene bag with an engineering-grade polymer harness and TPE straps",
+    "waterproof": true,
+    "weight_g": 362,
+    "hardware": "two 80 cm TPE Omni Straps with moulded ratchet buckles, supplied separately from the bag"
+   },
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack", "front_rack"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Strapped down onto a rack platform with two Omni Straps - no bracket, no rail, so it works on almost any front or rear rack including the Topeak TetraRack. On a REAR rack the barrel runs fore-and-aft (len = -x, as recorded). Topeak's own on-bike photograph shows it on a FRONT rack with the barrel running ACROSS the bike instead; a builder targeting the front-rack case should read len as z. Needs a rack of some kind; it cannot mount to a bare frame."
+   },
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }]
+  }
+ ]
+}

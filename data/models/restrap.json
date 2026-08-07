@@ -1,0 +1,4199 @@
+{
+ "brand": "Restrap",
+ "slug": "restrap",
+ "reviewed_photos": 74,
+ "reviewed_pages": 14,
+ "brand_notes": {
+  "signature_hardware": "Restrap's whole visual identity is hardware on webbing. Four fittings recur across the range and a model without them does not read as a Restrap: (1) the FIDLOCK magnetic buckle - a two-part moulded block roughly 45 x 20 x 12mm, matte black body with a brushed metal-look face plate, sitting on a 25mm webbing tail; it closes by self-aligning magnets and releases by sliding sideways. It is the single closure on every holster product (Saddle Bag 8/14/18L, Race Saddle Bag, Race Aero Bar Bag, Rolltop Canister, Holster Bar Bag Plus, City Loader). (2) The FLAT MOULDED HOOK - a low-profile black plate about 35 x 18mm with an upturned tongue, bar-tacked onto the end of a 25mm webbing strap, caught by a thin black elastic loop that stretches round the tube; used on every top-tube bag head-tube strap and on the bar bags' head-tube retention. (3) The CAM LOCK - a flat black moulded cam lever, about 40 x 22mm, on 25mm webbing; used on all frame bags, both Switch bags and (spring-loaded) as the handlebar clamp on the Bar Pack and Holster Bar Bags. (4) Reflective PARACORD laced through reinforced metal eyelets around the circular end cap of the Adventure Saddle Bag holster - about fourteen eyelets round a 16-18cm disc, laced like a shoe. All webbing is heavy and visibly bar-tacked at every terminus.",
+  "labels": "Two vegan PU 'leather-look' labels in tan/amber (#c8862a-ish) with a black outline: a landscape RECTANGLE reading RESTRAP (about 55 x 18mm) and a DIAMOND about 40mm across carrying a crossed-needles / sundial mark. One or the other appears on nearly every bag. The lightweight Race line drops the leather label for a white screen-printed RESTRAP wordmark with a needle-and-line device, and the dry bags carry a white circular RESTRAP ambigram logo (readable either way up) on the end cap.",
+  "fabrics": "Adventure and City lines: 'textured nylon', a matte woven canvas-look coated fabric with visible weave, plus glossy TPU-coated laminated panels on lower halves, zip tapes and Switch bags. Race line: X-Pac (visible X-grid) and TPX technical outer, plus recycled ripstop on the Aero TT bag. All dry bags are a smooth lightweight coated nylon that reads noticeably lighter and shinier than the holster around it. Hypalon is used for reinforcement spines, moulded strap keepers and the Bar Pack front-compartment flap. Orange accents throughout: orange cord zip pulls, orange RESTRAP webbing tabs, orange lining in the Fork Bag and Bar Pack.",
+  "holster_architecture": "The saddle packs and bar packs above 7L are TWO products, not one: a hard-shell HOLSTER that clamps to the bike and a separate DRY BAG that drops into it. The dry bag is retained by a hook-and-loop 'GripTight' patch plus a Fidlock strap. Bar-mounted dry bags are DOUBLE-ENDED - they roll shut at both ends and both rolled ends protrude beyond the holster shell. Saddle-mounted dry bags roll at the tail only; the nose is a closed cap that sits against the holster's disc bulkhead."
+ },
+ "products": [
+  {
+   "line": "Adventure",
+   "name": "Saddle Bag",
+   "size": "8L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-saddle-bag-8l-1.jpg",
+    "assets/products/restrap/adventure-saddle-bag-8l-2.jpg",
+    "assets/products/restrap/adventure-saddle-bag-8l-3.jpg",
+    "assets/products/restrap/adventure-saddle-bag-8l-4.jpg",
+    "https://restrap.com/products/saddle-bag-holster-dry-bag-8-litres-black-black"
+   ],
+   "dims_cm": {
+    "len": 40,
+    "wid": 16,
+    "hgt": 16
+   },
+   "dims_state": "as_mounted_single_figure",
+   "dims_raw": "400mm (length) x 160mm (height/diameter); recommended 200mm clearance between saddle rails and tyre; 427g",
+   "dims_note": "Restrap publish only the as-mounted figures on their own size-guide diagram - no unfurled length exists on the page, so under the unfurled rule this len is the single published figure and is used as-is. It is the drybag-rolled length and therefore understates the fabric extent. 160mm is the round drybag section and serves both wid and hgt.",
+   "capacity_l": 8,
+   "render": {
+    "hgt_cm": 16,
+    "rolls": 3,
+    "basis": "160mm is Restrap's own AS-MOUNTED size-guide figure, i.e. the dry bag already cinched into the holster with the girth strap tensioned, not the dry bag laid flat. Confirmed against assets/products/restrap/adventure-saddle-bag-8l-1.jpg, where the loaded bag's depth reads the same as the holster's disc bulkhead."
+   },
+   "geometry": {
+    "form": "holster",
+    "crossSection": "round",
+    "taper": {
+     "nose": 1,
+     "tail": 0.55,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Two-part. The HOLSTER is a hard-shell coated-canvas cradle whose forward end is a flat CIRCULAR bulkhead disc about 16cm across, standing vertically against the seatpost; from that disc a pair of curved wings sweep rearward and taper away, cradling the underside and sides of the dry bag for roughly the front half of its length. The DRY BAG is a smooth lightweight coated-nylon tube that sits in the cradle, full-diameter at the nose and tapering as it rolls down to a flattened blade at the tail."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "the dry bag rolls at the tail and is held by its own webbing strap; the holster itself closes over the dry bag with a Fidlock magnetic buckle"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_top",
+     "hardware": "ladderlock",
+     "material": "nylon webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "buckle",
+     "material": "wide coated webbing with an X-box stitched backing pad",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "nylon webbing, Fidlock magnetic buckle at the side"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective paracord laced through the eyelets around the disc bulkhead",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the forward disc bulkhead",
+     "shape": "diamond, tan PU with crossed-needles mark"
+    },
+    "seams": "stitched and taped",
+    "fabric": "textured nylon holster with nylon webbing reinforcement; separate lighter coated-nylon dry bag",
+    "cordLacing": "reflective paracord laced through about 14 reinforced eyelets around the perimeter of the circular bulkhead - the single most identifiable Restrap detail on this bag"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 4,
+    "clearance": {
+     "tyre_mm": 200,
+     "frame_mm": 0
+    },
+    "notes": "The disc bulkhead is clamped flat against the seatpost by a wide wrap strap; two shorter straps rise from the top of the disc to the saddle rails. The bag runs rearward and slightly nose-up. Restrap specify 200mm of clearance between the saddle rails and the tyre for this size."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Orange",
+     "hex": "#f4813a"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Saddle Bag",
+   "size": "14L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-saddle-bag-14l-1.jpg",
+    "assets/products/restrap/adventure-saddle-bag-14l-3.jpg",
+    "https://restrap.com/products/saddle-bag-14-litres"
+   ],
+   "dims_cm": {
+    "len": 45,
+    "wid": 18,
+    "hgt": 18
+   },
+   "dims_state": "as_mounted_single_figure",
+   "dims_raw": "450mm x 180mm; recommended 240mm clearance between saddle rails and tyre",
+   "dims_note": "Single published as-mounted figure per axis on Restrap's size-guide diagram; no unfurled length is published, so the published 450mm is used. 180mm is the drybag section and serves both wid and hgt.",
+   "capacity_l": 14,
+   "render": {
+    "hgt_cm": 18,
+    "rolls": 3,
+    "basis": "180mm as-mounted size-guide figure (cinched into the holster). Checked against assets/products/restrap/adventure-saddle-bag-14l-1.jpg - loaded depth matches the disc bulkhead."
+   },
+   "geometry": {
+    "form": "holster",
+    "crossSection": "round",
+    "taper": {
+     "nose": 1,
+     "tail": 0.55,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Identical architecture to the 8L, scaled up: circular coated-canvas bulkhead disc at the seatpost with paracord lacing round its rim, curved cradle wings sweeping rearward, and a separate lighter coated-nylon dry bag rolling down to a flattened tail."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "dry bag rolls at the tail; the holster's girth strap closes with a Fidlock magnetic buckle"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_top",
+     "hardware": "ladderlock",
+     "material": "nylon webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "buckle",
+     "material": "wide coated webbing with X-box stitched pad",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "nylon webbing with Fidlock magnetic buckle at the side"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective paracord lacing round the bulkhead disc; a shock-cord loop with a moulded toggle hangs at the tail",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the forward disc bulkhead",
+     "shape": "diamond, tan PU"
+    },
+    "fabric": "textured nylon holster; separate coated-nylon dry bag",
+    "cordLacing": "reflective paracord laced through eyelets around the disc rim"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 4,
+    "clearance": {
+     "tyre_mm": 240,
+     "frame_mm": 0
+    },
+    "notes": "Needs 240mm between saddle rails and tyre. The bag sits nose-high; the tail cantilevers well behind the saddle."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Orange",
+     "hex": "#f4813a"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Saddle Bag",
+   "size": "18L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-saddle-bag-18l-1.jpg",
+    "assets/products/restrap/adventure-saddle-bag-18l-4.jpg",
+    "https://restrap.com/products/saddle-bag-18-litres"
+   ],
+   "dims_cm": {
+    "len": 58,
+    "wid": 18,
+    "hgt": 18
+   },
+   "dims_state": "as_mounted_single_figure",
+   "dims_raw": "580mm x 180mm; recommended 260mm clearance between saddle rails and tyre",
+   "dims_note": "Single published as-mounted figure per axis; no unfurled length published. 580mm is the longest bag in the catalogue and the on-bike photos confirm it overhangs the rear wheel substantially.",
+   "capacity_l": 18,
+   "render": {
+    "hgt_cm": 18,
+    "rolls": 3,
+    "basis": "180mm as-mounted size-guide figure. The 18L is longer than the 14L but not deeper, which assets/products/restrap/adventure-saddle-bag-18l-1.jpg confirms - same disc, same section, more length."
+   },
+   "geometry": {
+    "form": "holster",
+    "crossSection": "round",
+    "taper": {
+     "nose": 1,
+     "tail": 0.5,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Same holster architecture, longest version. The cradle wings extend further back than on the 8/14L and carry two strap runs rather than one."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "dry bag rolls at the tail; girth straps close with Fidlock magnetic buckles"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_top",
+     "hardware": "cam",
+     "material": "nylon webbing with metal-faced sliders",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "buckle",
+     "material": "wide coated webbing with X-box stitched pad",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "nylon webbing, Fidlock magnetic buckles on the side of the body"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective paracord lacing round the disc; shock-cord loop with toggle at the tail underside",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the forward disc bulkhead",
+     "shape": "diamond, tan PU"
+    },
+    "fabric": "textured nylon holster; separate coated-nylon dry bag"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 5,
+    "clearance": {
+     "tyre_mm": 260,
+     "frame_mm": 0
+    },
+    "notes": "Longest seat pack Restrap make; needs 260mm of rail-to-tyre clearance and will foul a 56cm frame with a short seatpost. Two girth straps rather than one because of the length."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Orange",
+     "hex": "#f4813a"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Race Saddle Bag",
+   "size": "7L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/race-race-saddle-bag-7l-1.jpg",
+    "assets/products/restrap/race-race-saddle-bag-7l-2.jpg",
+    "assets/products/restrap/race-race-saddle-bag-7l-3.jpg",
+    "assets/products/restrap/race-race-saddle-bag-7l-4.jpg",
+    "https://restrap.com/products/race-saddle-bag"
+   ],
+   "dims_cm": {
+    "len": 33,
+    "wid": 16,
+    "hgt": 16
+   },
+   "dims_state": "rolled_single_figure",
+   "dims_raw": "330mm Rolled x3 x 160mm; recommended 170mm clearance between saddle rails and tyre; 253g including the 7L dry bag",
+   "dims_note": "Restrap's diagram is explicitly the rolled-x3 sealed state and no unfurled length is published anywhere on the page, so the single published figure is used. 160mm is the section and serves both wid and hgt.",
+   "capacity_l": 7,
+   "render": {
+    "hgt_cm": 16,
+    "rolls": 3,
+    "basis": "160mm alongside an explicitly 'Rolled x3' length on Restrap's diagram, so this is the sealed, strapped-down state. Matches the loaded section in assets/products/restrap/race-race-saddle-bag-7l-1.jpg."
+   },
+   "geometry": {
+    "form": "holster",
+    "crossSection": "round",
+    "taper": {
+     "nose": 1,
+     "tail": 0.5,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Lighter racing version of the holster idea. The holster is an OPEN horseshoe - a hard-shell X-Pac/TPX yoke that clamps to the saddle rails and drops two padded wings either side of the dry bag, with a large open gap in the middle rather than a solid disc bulkhead. The dry bag is a tapered coated-nylon tube; its forward end is a flat round cap carrying the white circular RESTRAP ambigram, and it rolls down to a puckered blade at the tail."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "dry bag rolls at the tail; the holster's single wide strap closes with a Fidlock magnetic buckle"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "ladderlock",
+     "material": "wide nylon webbing running from the saddle rails down over the drybag nose to a ladderlock at the bottom of the yoke",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "buckle",
+     "material": "Hypalon strap over a foam block",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "webbing with Fidlock magnetic buckle"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "grey reflective band round the dry bag near the forward cap",
+    "logo": {
+     "type": "screen_print",
+     "location": "forward end cap of the dry bag",
+     "shape": "white circular RESTRAP ambigram with crossed needles"
+    },
+    "fabric": "hardshell holster in TPX/X-Pac with Hypalon detailing; separate lightweight coated-nylon dry bag",
+    "accent": "orange RESTRAP webbing tab on the holster nose",
+    "cord": "thin shock cord with a moulded toggle running round the open outer edge of the yoke"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 2,
+    "clearance": {
+     "tyre_mm": 170,
+     "frame_mm": 0
+    },
+    "notes": "Short and high: the yoke clamps hard to the rails and a foam-backed Hypalon strap pulls the nose against the seatpost. Only 170mm of rail-to-tyre clearance needed, so this is the one Restrap seat pack that fits a small frame or a dropper."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Saddle Pack",
+   "size": "2.5L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-saddle-pack-2-5l-1.jpg",
+    "https://restrap.com/products/saddle-pack-2-5l"
+   ],
+   "dims_cm": {
+    "len": 26,
+    "wid": 12,
+    "hgt": 12
+   },
+   "dims_state": "rolled_single_figure",
+   "dims_raw": "260mm Rolled x3 x 120mm; 130mm clearance between saddle rail and bottom of bag",
+   "dims_note": "Only the rolled-x3 figure is published; no unfurled length appears on the page, so the single published figure is used.",
+   "capacity_l": 2.5,
+   "render": {
+    "hgt_cm": 12,
+    "rolls": 3,
+    "basis": "The roll axis on this bag is the LENGTH, not the height - the 120mm section is set by the fixed nose blade and does not change with the roll. Drawn height equals dims_cm.hgt; see assets/products/restrap/adventure-saddle-pack-2-5l-1.jpg."
+   },
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.35,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "A single integrated bag, NOT a holster. Side profile is a fat teardrop: a tall rounded blade at the seatpost end, deepest just behind the saddle nose, tapering to a small rolled tube at the tail. Coated textured-nylon canvas throughout."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "rolled tail secured by a small moulded hook clip at the top of the roll"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_top",
+     "hardware": "hook",
+     "material": "nylon webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "buckle",
+     "material": "wide coated webbing",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "nylon webbing with a flat black Restrap buckle on the side of the body"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "leather_patch",
+     "location": "side of the body toward the seatpost end",
+     "shape": "diamond, tan PU with crossed-needles mark"
+    },
+    "fabric": "textured nylon coated canvas, matte",
+    "pullTab": "small webbing pull loop at the bottom of the nose"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 3,
+    "clearance": {
+     "tyre_mm": 130,
+     "frame_mm": 0
+    },
+    "notes": "Small enough to clear almost any frame. Restrap quote 130mm between the saddle rail and the bottom of the bag, i.e. the body hangs well below the rails."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Olive",
+     "hex": "#52522a"
+    },
+    {
+     "name": "Orange",
+     "hex": "#f4813a"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Saddle Pack",
+   "size": "4.5L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-saddle-pack-4-5l-1.jpg",
+    "assets/products/restrap/adventure-saddle-pack-4-5l-2.jpg",
+    "assets/products/restrap/adventure-saddle-pack-4-5l-4.jpg",
+    "https://restrap.com/products/saddle-pack-4-5l"
+   ],
+   "dims_cm": {
+    "len": 32,
+    "wid": 14,
+    "hgt": 14
+   },
+   "dims_state": "rolled_single_figure",
+   "dims_raw": "320mm Rolled x3 x 140mm; 160mm clearance between saddle rail and bottom of bag",
+   "dims_note": "Only the rolled-x3 figure is published; no unfurled length on the page, so the single published figure is used.",
+   "capacity_l": 4.5,
+   "render": {
+    "hgt_cm": 14,
+    "rolls": 3,
+    "basis": "Roll axis is the length; the 140mm section is fixed by the nose blade. Drawn height equals dims_cm.hgt; see assets/products/restrap/adventure-saddle-pack-4-5l-2.jpg."
+   },
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.35,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Same integrated single-bag design as the 2.5L, scaled up. Deep rounded blade at the seatpost end, flat-ish bottom, tapering to a rolled tube at the tail. The drive side is a plain panel; the non-drive side carries the leather diamond."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "rolled tail with a moulded hook clip"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_top",
+     "hardware": "hook",
+     "material": "nylon webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "buckle",
+     "material": "wide coated webbing",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "nylon webbing with a flat black Restrap buckle on the side of the body"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "minimal",
+    "logo": {
+     "type": "leather_patch",
+     "location": "non-drive side of the body",
+     "shape": "diamond, tan PU"
+    },
+    "fabric": "textured nylon coated canvas, matte",
+    "pullTab": "webbing pull loop at the bottom of the nose"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 3,
+    "clearance": {
+     "tyre_mm": 160,
+     "frame_mm": 0
+    },
+    "notes": "Hangs low behind the seatpost with the body clearly below the rail line; Restrap quote 160mm from rail to the bottom of the bag."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Olive",
+     "hex": "#52522a"
+    },
+    {
+     "name": "Orange",
+     "hex": "#f4813a"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Bar Pack",
+   "size": "10L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/adventure-bar-pack-10l-1.jpg",
+    "assets/products/restrap/adventure-bar-pack-10l-2.jpg",
+    "assets/products/restrap/adventure-bar-pack-10l-3.jpg",
+    "assets/products/restrap/adventure-bar-pack-10l-4.jpg",
+    "https://restrap.com/products/bar-pack"
+   ],
+   "dims_cm": {
+    "len": 25,
+    "wid": 16,
+    "hgt": 24
+   },
+   "dims_state": "rolled_min_height",
+   "dims_raw": "250mm (width across the bars) / 240mm Rolled x3 (height) / depth 'Variable on Load' / recommended 220mm clearance between handlebars & tyre; 585g",
+   "dims_note": "len is the 250mm across-the-bars figure and hgt the 240mm rolled-x3 figure, both maker data - the roll axis here is the height and only the rolled state is published, which is what the minimum-height rule wants. Depth is genuinely unpublished ('Variable on Load'); 16cm is the prior catalogue estimate, retained, and 25 x 16 x 24 = 9.6L against a stated 10L.",
+   "capacity_l": 10,
+   "render": {
+    "hgt_cm": 24,
+    "rolls": 3,
+    "basis": "240mm is published as 'Rolled x3', i.e. already the turned-down state, so dims_cm.hgt and the drawn height coincide. assets/products/restrap/adventure-bar-pack-10l-1.jpg shows both compartments rolled to about this height between the hoods."
+   },
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "shoulder": "rounded",
+    "notes": "Not a bar roll - a structured box that hangs on the front of the bars between the hoods, with a hard shell back panel and internal stiffener. TWO separate roll-top compartments side by side front-to-back: the rear compartment rolls shut at the top (an orange lining shows at the fold), and a front compartment closes under a downward-pointing TRIANGULAR Hypalon flap carrying the rectangular leather label. Between the two compartments is a vertical slot sized as a mini D-lock holster. Ends are rounded; the bottom is rounded."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "two waterproof roll-tops; the front compartment is tensioned by a triangular Hypalon flap onto a side-release buckle"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "cam",
+     "material": "spring-loaded cam locks with foam bar spacers",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "MOLLE adjustable head-tube retention strip at the bottom centre of the front face",
+     "wrapsAround": "head_tube"
+    },
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "triangular Hypalon flap over the front compartment"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.5
+    },
+    {
+     "type": "stretch",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.3
+    }
+   ],
+   "details": {
+    "daisyChains": true,
+    "reflective": "reflective detailing throughout; orange piping visible along the top roll fold",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the triangular front flap",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "100% waterproof textured nylon outer, hard shell back panel, internal stiffener",
+    "cord": "elasticated drawcord across the front face for gloves and jackets",
+    "dLockSlot": "mini D-lock holster slot between the two compartments",
+    "hardware": "D-ring loop on each end cap"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "rear_panel",
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 220,
+     "frame_mm": 10
+    },
+    "notes": "Hangs on the FRONT of the bar, hard back panel against the bar, opening upward. Two spring-loaded cam locks clamp the bar over foam spacers so the bag cannot rotate; a MOLLE strip at the bottom of the front face wraps the head tube to stop it swinging. Needs 220mm between bar and tyre. At 250mm wide it sits comfortably inside drop-bar hoods."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Olive",
+     "hex": "#52522a"
+    },
+    {
+     "name": "Orange",
+     "hex": "#f4813a"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Holster Bar Bag",
+   "size": "14L",
+   "slot": "barroll",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/adventure-holster-bar-bag-14l-1.jpg",
+    "assets/products/restrap/adventure-holster-bar-bag-14l-2.jpg",
+    "assets/products/restrap/adventure-holster-bar-bag-14l-3.jpg",
+    "https://restrap.com/products/holster-bar-bag"
+   ],
+   "dims_cm": {
+    "len": 36,
+    "wid": 20,
+    "hgt": 20
+   },
+   "dims_state": "photo_scaled_estimate",
+   "dims_raw": "No dimensions published. Capacity 14 litres sealed, weight 480g.",
+   "dims_note": "MATERIAL CORRECTION. The stored 54cm length was a catalogue estimate and is far too wide - a 54cm bar roll would overhang a 46cm flared gravel bar by 4cm each side, which the photos flatly contradict. Scaled off assets/products/restrap/adventure-holster-bar-bag-14l-1.jpg using the drop-bar tips as a reference (about 46-50cm outer on the pictured 56cm Enigma, cross-checked against the Race Bar Bag Drop Bar's published 280mm width photographed on the same bike): the drybag span including both rolled ends measures about 36cm and the holster shell itself about 24cm; vertical extent about 20cm. Depth taken equal to height for a cylindrical drybag. Scale error is roughly plus or minus 10 percent, so verified stays false.",
+   "capacity_l": 14,
+   "render": {
+    "hgt_cm": 20,
+    "rolls": 3,
+    "basis": "No published figure. Scaled off assets/products/restrap/adventure-holster-bar-bag-14l-1.jpg with the dry bag rolled at both ends and cinched under the holster's two front straps - vertical extent about 20cm against the drop-bar reference."
+   },
+   "geometry": {
+    "form": "holster",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "Two-part. The HOLSTER is a coated-canvas saddle that wraps over the top and down the front of the dry bag, forming a flat-fronted D shape about two thirds of the bag's width; the leather rectangle sits centred on its front face. The DRY BAG is a lightweight coated-nylon cylinder that is DOUBLE-ENDED - it rolls shut at both ends and both puckered rolled ends protrude beyond the holster shell, left and right, which is the silhouette's defining feature."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 3,
+    "hardware": "double-ended dry bag, rolled and cinched at each end; the holster cinches over it with two front straps"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "nylon webbing running vertically down the holster face, side-release buckles at mid height"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "cam",
+     "material": "cam locks on the handlebar",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing fast strap descending to the fork crown",
+     "wrapsAround": "fork_crown"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the holster front face",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "textured nylon holster; separate lightweight coated-nylon double-ended dry bag",
+    "gripTight": "hook-and-loop GripTight patch inside the holster stops the dry bag sliding side to side",
+    "accent": "orange webbing bar spacer tab visible at the bar centre",
+    "hardware": "a small side-release buckle on each end face of the holster"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "fork_crown"
+    ],
+    "contactFaces": [
+     "rear_panel",
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 120,
+     "frame_mm": 15
+    },
+    "notes": "Cam locks clamp the holster to the bar; a single long webbing fast strap runs down the front and wraps the fork crown to stop the load rotating. The bag hangs BELOW and slightly forward of the bar, opening at the two ends rather than the top, so it must clear cables and the tyre in front."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Holster Bar Bag Plus",
+   "size": "18L",
+   "slot": "barroll",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/restrap/adventure-holster-bar-bag-plus-18l-1.jpg",
+    "assets/products/restrap/adventure-holster-bar-bag-plus-18l-2.jpg",
+    "https://restrap.com/products/holster-bar-bag-plus"
+   ],
+   "dims_cm": {
+    "len": 36,
+    "wid": 28,
+    "hgt": 21
+   },
+   "dims_state": "photo_scaled_estimate",
+   "dims_raw": "No dimensions published. '18L (with Rolltop Canister Bag)'. Total weight 755g.",
+   "dims_note": "STRUCTURAL CORRECTION, not just a number. The 18L is NOT a larger bag: Restrap's own page states it is the 14L Holster Bar Bag with the 4L Rolltop Canister Bag mounted on its front face via the 3P D-ring system. So len and hgt are carried from the 14L photo-scaled figures and only the fore-aft depth grows, by roughly the canister's own depth. wid 28 is therefore a compounded estimate and is the weakest number in this record - confidence low, verified false.",
+   "capacity_l": 18,
+   "render": {
+    "hgt_cm": 21,
+    "rolls": 3,
+    "basis": "As the 14L, plus the Rolltop Canister's own roll standing slightly proud on the front face; scaled off assets/products/restrap/adventure-holster-bar-bag-plus-18l-2.jpg in the strapped-down state."
+   },
+   "geometry": {
+    "form": "holster",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "The 14L holster and double-ended dry bag, with a second bag - the Rolltop Canister - strapped flat onto the front face. Front elevation therefore reads as a squared canvas pouch with its own roll top and mesh side pockets, sitting proud of the holster, with the dry bag's two puckered rolled ends projecting either side behind it."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 3,
+    "hardware": "double-ended dry bag rolled at both ends; the front canister closes with a FIDLOCK magnetic buckle on a vertical reflective-stitched strap"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "vertical webbing over the canister, one with a Fidlock magnetic buckle at the top"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "cam",
+     "material": "cam locks on the handlebar",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing fast strap to the fork crown",
+     "wrapsAround": "fork_crown"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "daisy_loop",
+     "material": "elastic stowage strap across the canister face"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.35
+    },
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.8
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "vertical reflective-stitched webbing strip up the centre of the canister face",
+    "logo": {
+     "type": "leather_patch",
+     "location": "right of centre on the canister face",
+     "shape": "diamond, tan PU"
+    },
+    "fabric": "textured nylon holster and canister; lightweight coated-nylon double-ended dry bag",
+    "lightMount": "moulded rubber light-mount loop on the left of the canister face",
+    "gripTight": "hook-and-loop GripTight patch retains the dry bag"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "fork_crown"
+    ],
+    "contactFaces": [
+     "rear_panel",
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 120,
+     "frame_mm": 15
+    },
+    "notes": "As the 14L, but the canister pushes the mass a further 8-10cm forward of the bar, so cable and tyre clearance are tighter. The fork-crown fast strap is doing real work here."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Race Bar Bag - Drop Bar",
+   "size": "7L",
+   "slot": "barroll",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/race-race-bar-bag-drop-bar-7l-1.jpg",
+    "assets/products/restrap/race-race-bar-bag-drop-bar-7l-2.jpg",
+    "assets/products/restrap/race-race-bar-bag-drop-bar-7l-3.jpg",
+    "https://restrap.com/products/race-bar-bag-drop-bar"
+   ],
+   "dims_cm": {
+    "len": 28,
+    "wid": 16,
+    "hgt": 16
+   },
+   "dims_state": "published_width_plus_family_diameter",
+   "dims_raw": "a width of 280mm (product copy); 7L; 325g including dry bag; optimised to fit within drop handlebars",
+   "dims_note": "280mm width is maker data. Restrap publish no diameter for the drop-bar version, but the flat-bar version - identical 7L drum, same TPX holster, same double-roll dry bag - is published as 'a compact 160mm diameter', so 16cm is used for both cross-section axes. Photo-scaling the vertical extent in race-race-bar-bag-drop-bar-7l-1.jpg against the bar gives about 15cm, which agrees.",
+   "capacity_l": 7,
+   "render": {
+    "hgt_cm": 16,
+    "rolls": 3,
+    "basis": "160mm is the sibling flat-bar model's published diameter for the same 7L drum. Scaling the loaded, strap-cinched drum in assets/products/restrap/race-race-bar-bag-drop-bar-7l-1.jpg gives about 15cm, so 16 is the correct drawn section, not an unfurled figure."
+   },
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "A compact drum sitting under and in front of the bar tops, deliberately narrow enough to live inside the hoods. Lightweight coated-nylon dry bag in a minimal TPX holster; both ends roll shut and pucker slightly inward, so the silhouette is a barrel with softly gathered ends rather than flat caps. The white circular RESTRAP ambigram sits dead centre on the front face."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 3,
+    "hardware": "double roll closure, one at each end"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "nylon webbing running vertically over the drum and up over the bar, buckles sitting just under the bar on the front face",
+     "wrapsAround": "handlebar"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.4
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing on the dry bag",
+    "logo": {
+     "type": "screen_print",
+     "location": "centre front face",
+     "shape": "white circular RESTRAP ambigram with crossed needles"
+    },
+    "fabric": "TPX outer holster, IP6K6, over a lightweight coated-nylon double-ended dry bag",
+    "accent": "orange RESTRAP webbing tab at the top left",
+    "barSpacer": "moulded black spacer block clamped to the bar behind the bag",
+    "gripTight": "hook-and-loop GripTight patch retains the dry bag in the holster"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 100,
+     "frame_mm": 10
+    },
+    "notes": "Two straps pass over the drum and round the bar; a moulded spacer block holds the bag off the cables. At 280mm it fits entirely between the hoods of a 42cm drop bar - that narrowness is the whole point of this model and must show in the render."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Race Bar Bag - Flat Bar",
+   "size": "7L",
+   "slot": "barroll",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/race-race-bar-bag-flat-bar-7l-1.jpg",
+    "https://restrap.com/products/race-bar-bag-flat-bar"
+   ],
+   "dims_cm": {
+    "len": 47,
+    "wid": 16,
+    "hgt": 16
+   },
+   "dims_state": "published_diameter_estimated_length",
+   "dims_raw": "a compact 160mm diameter (product copy); 7L; 305g including dry bag; runs wider than the drop-bar version",
+   "dims_note": "The 160mm diameter is maker data and is used for both cross-section axes. Length is NOT published. Photo-scaling race-race-bar-bag-flat-bar-7l-1.jpg against the pictured flat bar (assumed 760-800mm grip-to-grip) gives 42-45cm, which brackets the prior catalogue estimate of 47cm, so 47 is retained rather than replaced by a scaling that rests on an assumed bar width. verified stays false for len.",
+   "capacity_l": 7,
+   "render": {
+    "hgt_cm": 16,
+    "rolls": 3,
+    "basis": "160mm is Restrap's published diameter for this model and describes the drum as strapped to the bar; assets/products/restrap/race-race-bar-bag-flat-bar-7l-1.jpg shows that loaded section."
+   },
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "Same 7L drum as the drop-bar version but stretched long and thin to suit a flat bar - low diameter, long span, with softly gathered rolled ends. White circular RESTRAP ambigram centred on the front face."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 3,
+    "hardware": "double roll closure with openings at either end"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "nylon webbing over the drum and round the bar",
+     "wrapsAround": "handlebar"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.4
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing on the dry bag",
+    "logo": {
+     "type": "screen_print",
+     "location": "centre front face",
+     "shape": "white circular RESTRAP ambigram"
+    },
+    "fabric": "TPX outer holster over a lightweight coated-nylon double-ended dry bag",
+    "gripTight": "hook-and-loop GripTight patch"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 100,
+     "frame_mm": 10
+    },
+    "notes": "Wide and low under a flat bar with the controls outboard of it. On a 56cm drop-bar gravel bike this version is too wide to sit inside the hoods - the drop-bar model is the correct one for that build."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Race Bar Bag - Aero",
+   "size": "7L",
+   "slot": "barroll",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/race-race-bar-bag-aero-7l-1.jpg",
+    "assets/products/restrap/race-race-bar-bag-aero-7l-2.jpg",
+    "assets/products/restrap/race-race-bar-bag-aero-7l-4.jpg",
+    "https://restrap.com/products/race-aero-bar-bag"
+   ],
+   "dims_cm": {
+    "len": 33,
+    "wid": 17,
+    "hgt": 16
+   },
+   "dims_state": "rolled_single_figure",
+   "dims_raw": "330mm Rolled x3; 160mm; 170mm; 7L; 278g",
+   "dims_note": "All three are maker figures off Restrap's size-guide diagram; 330mm is the rolled-x3 span across the bar and no unfurled figure is published, 170mm is the fore-aft depth at the bar and 160mm the far-end height.",
+   "capacity_l": 7,
+   "render": {
+    "hgt_cm": 16,
+    "rolls": 3,
+    "basis": "160mm sits alongside an explicitly 'Rolled x3' span on Restrap's diagram, so it is the sealed height. Matches the cinched drum under the extensions in assets/products/restrap/race-race-bar-bag-aero-7l-2.jpg."
+   },
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "taper": {
+     "nose": 1,
+     "tail": 0.85,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "A drum slung under the aero extensions, running across the bar. The non-drive end is a flat round cap carrying the white circular RESTRAP ambigram; the body swells slightly and then gathers into a rolled end on the far side. Hardshell TPX holster with laser-cut Hypalon loops, dry bag inside."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 3,
+    "hardware": "dry bag rolled x3; retained in the holster by a FIDLOCK magnetic buckle"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing through laser-cut Hypalon loops, wrapping over the aero extensions, side-release buckles on the outer face",
+     "wrapsAround": "aero_extensions"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": true,
+    "reflective": "reflective detailing on the dry bag",
+    "logo": {
+     "type": "screen_print",
+     "location": "non-drive end cap",
+     "shape": "white circular RESTRAP ambigram"
+    },
+    "fabric": "hardshell holster with TPX technical outer and laser-cut Hypalon loops; lightweight coated-nylon dry bag",
+    "accent": "orange RESTRAP webbing tab on the holster top",
+    "cord": "elastic cord across the top of the holster for storage between the extensions"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "aero_extensions"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 100,
+     "frame_mm": 10
+    },
+    "notes": "IMPORTANT FITMENT NOTE: this bag hangs from clip-on AERO EXTENSIONS, not from the bar tops - the Hypalon loops wrap the extensions themselves. A stock 56cm drop-bar gravel bike cannot take it without aero bars fitted. It hangs forward of and below the bar, between the extensions."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Canister Bag",
+   "size": "1.5L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/adventure-canister-bag-1-5l-1.jpg",
+    "assets/products/restrap/adventure-canister-bag-1-5l-3.jpg",
+    "assets/products/restrap/adventure-canister-bag-1-5l-4.jpg",
+    "https://restrap.com/products/canister-bag"
+   ],
+   "dims_cm": {
+    "len": 20,
+    "wid": 12,
+    "hgt": 12
+   },
+   "dims_state": "published_single_figures",
+   "dims_raw": "200mm x 120mm Diameter; recommended 120mm clearance between handlebars and tyre",
+   "dims_note": "Both figures are maker data. 'Diameter' is misleading: the photos show a flat-fronted rounded box with rounded ends, not a cylinder, so the 120mm figure is applied to both cross-section axes and the real fore-aft depth is probably nearer 100mm. Not enough to justify changing a published number.",
+   "capacity_l": 1.5,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "shoulder": "rounded",
+    "notes": "A small flat-fronted pouch across the bars, rounded at both ends and along the bottom, flat on the front face. Coated textured-nylon canvas."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single top zip with an orange cord pull and moulded cord lock at the drive-side end"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "matched",
+     "pull": "orange cord loop with a moulded cord lock, drive-side end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "flat hook-and-loop straps over the bar onto landing pads on the bag's top face",
+     "wrapsAround": "handlebar"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.5
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "leather_patch",
+     "location": "front face, right of centre",
+     "shape": "diamond, tan PU with crossed-needles mark"
+    },
+    "fabric": "textured nylon coated canvas, matte",
+    "lightMount": "raised moulded rubber D-loop on the front face, left of centre"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 120,
+     "frame_mm": 10
+    },
+    "notes": "Hangs straight off the bar tops on two velcro straps, front face forward, zip opening upward. Small enough to sit between the hoods with room either side."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Olive",
+     "hex": "#52522a"
+    },
+    {
+     "name": "Orange",
+     "hex": "#f4813a"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Rolltop Canister Bag",
+   "size": "4L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/restrap/adventure-rolltop-canister-bag-4l-1.jpg",
+    "assets/products/restrap/adventure-rolltop-canister-bag-4l-3.jpg",
+    "https://restrap.com/products/rolltop-canister-bag"
+   ],
+   "dims_cm": {
+    "len": 30,
+    "wid": 13,
+    "hgt": 19
+   },
+   "dims_state": "photo_scaled_estimate",
+   "dims_raw": "No dimensions published. 4L, 275g.",
+   "dims_note": "Restrap publish no dimensions for this bag. len 30 and hgt 19 (rolled state, as photographed) are scaled off adventure-rolltop-canister-bag-4l-1.jpg using the drop-bar tips as a reference, roughly plus or minus 2cm; the 30cm agrees with the prior catalogue estimate. wid 13 is the prior catalogue estimate carried forward and has NOT been independently established - the bag is visibly shallower than it is tall, so 13 may be generous.",
+   "capacity_l": 4,
+   "render": {
+    "hgt_cm": 19,
+    "rolls": 3,
+    "basis": "No published figure. Scaled off assets/products/restrap/adventure-rolltop-canister-bag-4l-1.jpg with the roll turned down and the Fidlock strap tensioned - about 19cm including the roll fold, plus or minus 2cm."
+   },
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "The Canister Bag's taller sibling: a flat-fronted coated-canvas box across the bars with a smooth coated-nylon roll-top section rising above it. Rounded ends, flat front face, squared roll fold along the top."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "single vertical centre strap over the roll closing on a FIDLOCK magnetic buckle at the top - one-handed operation"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "vertical webbing with a white reflective stitch line up its centre, Fidlock magnetic buckle at the top"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing fast straps over the bar",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "hook",
+     "material": "elastic toggle to the head tube",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.5
+    }
+   ],
+   "details": {
+    "daisyChains": true,
+    "reflective": "white reflective stitch line running the full height of the centre closure strap",
+    "logo": {
+     "type": "leather_patch",
+     "location": "front face, right of centre",
+     "shape": "diamond, tan PU"
+    },
+    "fabric": "textured nylon coated canvas body with a smooth coated roll-top collar, IP6K6",
+    "lightMount": "moulded rubber light-mount D-loop on the front face, left of centre",
+    "modular": "3P attachment system with D-rings lets it mount onto the Holster Bar Bag to make the 18L Plus; a paracord shoulder strap is supplied for off-bike carry"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "rear_panel",
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 120,
+     "frame_mm": 10
+    },
+    "notes": "Two fast straps over the bar plus an elastic toggle round the head tube. Also mounts on the front of a Holster Bar Bag via D-rings and a velcro strap rather than on the bar."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Frame Bag",
+   "size": "Small",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-frame-bag-small-1.jpg",
+    "https://restrap.com/products/frame-bag-small"
+   ],
+   "dims_cm": {
+    "len": 30,
+    "wid": 6,
+    "hgt": 14
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "300mm (top) / 195mm (bottom) / 140mm (max height) / 55mm (rear edge) / 50mm (front edge) / 160mm (down-tube strap span) / 60mm Width",
+   "dims_note": "Every axis is maker data and the guide labels an explicit '140mm (max height)'. 30 x 14 x 6 = 2.52L against a stated 2.5L.",
+   "capacity_l": 2.5,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.65,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "A shallow slab hung under the top tube filling the top-front corner of the main triangle. Top edge 300mm straight along the top tube, bottom edge 195mm, so the panel narrows downward to a rounded lower belly. The upper edge and the whole zip line are bound in a glossy TPU-laminated tape; the body panel is matte coated canvas."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single laminated waterproof zip running the full top edge, opening rearward to forward"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_side",
+     "finish": "waterproof_welded",
+     "pull": "orange cord loop at the front (head-tube) end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "hook",
+     "material": "wide rubberised coated webbing wrapping the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "25mm nylon webbing on flat black cam-lock buckles",
+     "wrapsAround": "down_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing on the zip tape",
+    "logo": {
+     "type": "leather_patch",
+     "location": "lower front of the drive-side panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "matte textured-nylon canvas body with glossy TPU-laminated top binding and zip tape"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Sits inside the main triangle, hard up under the top tube and against the head tube. At 60mm wide it will foul a bottle cage on the down tube if one is fitted high; the 160mm down-tube strap span is where the two cam straps sit."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Frame Bag",
+   "size": "Medium",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-frame-bag-medium-1.jpg",
+    "assets/products/restrap/adventure-frame-bag-medium-3.jpg",
+    "https://restrap.com/products/frame-bag-medium"
+   ],
+   "dims_cm": {
+    "len": 40,
+    "wid": 6,
+    "hgt": 14
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "400mm (top) / 250mm (bottom) / 140mm (max height) / 75mm / 50mm / 170mm / 60mm Width",
+   "dims_note": "All maker data from Restrap's size-guide diagram. 40 x 14 x 6 = 3.36L against a stated 3.5L.",
+   "capacity_l": 3.5,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.63,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Same slab as the Small, longer: 400mm top edge, 250mm bottom edge, rounded lower belly, glossy laminated top binding over a matte canvas body."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single laminated waterproof zip along the full top edge"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_side",
+     "finish": "waterproof_welded",
+     "pull": "orange cord loop at the front end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "hook",
+     "material": "wide rubberised coated webbing over the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "25mm nylon webbing on flat black cam-lock buckles",
+     "wrapsAround": "down_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "cam",
+     "material": "25mm webbing on a cam lock",
+     "wrapsAround": "seat_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing on the zip tape",
+    "logo": {
+     "type": "leather_patch",
+     "location": "lower front of the drive-side panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "matte textured-nylon canvas with glossy TPU-laminated top binding"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Spans most of the top tube on a 56cm frame. Down-tube strap span 170mm; will clear a single bottle cage on a 56cm frame but only just."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Frame Bag",
+   "size": "Large",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-frame-bag-large-1.jpg",
+    "https://restrap.com/products/frame-bag-large"
+   ],
+   "dims_cm": {
+    "len": 50,
+    "wid": 6,
+    "hgt": 15
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "500mm (top) / 360mm (bottom) / 150mm (max height) / 80mm / 55mm / 180mm / 60mm Width",
+   "dims_note": "All maker data. 50 x 15 x 6 = 4.5L against a stated 4.5L - an exact reconciliation.",
+   "capacity_l": 4.5,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.72,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Longest of the half-frame slabs: 500mm top edge, 360mm bottom, 150mm deep at the deepest. Glossy laminated top binding, matte canvas body, rounded lower belly."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single laminated waterproof zip along the full top edge"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_side",
+     "finish": "waterproof_welded",
+     "pull": "orange cord loop at the front end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "hook",
+     "material": "wide rubberised coated webbing over the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "down_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "side",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "seat_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing on the zip tape",
+    "logo": {
+     "type": "leather_patch",
+     "location": "lower front of the drive-side panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "matte textured-nylon canvas with glossy TPU-laminated top binding"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Fills the top tube end to end on a 56cm frame and reaches down far enough to conflict with a down-tube bottle cage."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Race Frame Bag",
+   "size": "Small",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/race-race-frame-bag-small-3.jpg",
+    "https://restrap.com/products/race-frame-bag"
+   ],
+   "dims_cm": {
+    "len": 37,
+    "wid": 5.5,
+    "hgt": 17
+   },
+   "dims_state": "published_len_wid_scaled_height",
+   "dims_raw": "370mm (top edge) / 220mm (bottom edge) / 95mm (rear edge) / 55mm (front edge) / 55mm Width / 180mm (down-tube strap span)",
+   "dims_note": "len and wid are maker figures. Restrap publish no height for this bag - the 95mm and 55mm arrows on their diagram are the short angled REAR and FRONT edge lengths, not the bag's depth, and a previous pass had wrongly stored 9.5cm as the height. Scaling the diagram off the 370mm top edge gives a maximum vertical extent of about 170mm; 37 x 17 x 5.5 = 3.46L against a stated 3L, where 9.5cm would have given 1.9L, i.e. less than the rating.",
+   "capacity_l": 3,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.6,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "The Race line's frame bag: an X-Pac panel (visible X-grid weave) with a glossy laminated binding round the whole lower edge, coming to a soft point at the rear-bottom corner. Slimmer than the Adventure Frame Bag at 55mm and much sleeker in profile."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top edge under a full-length fabric storm flap"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_side",
+     "finish": "storm_flap",
+     "pull": "orange cord loop at the front (head-tube) end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "hook",
+     "material": "wide rubberised coated webbing over the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "down_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detail",
+    "logo": {
+     "type": "screen_print",
+     "location": "lower front of the drive-side panel",
+     "shape": "white RESTRAP wordmark with a needle-and-line device beneath"
+    },
+    "fabric": "X-Pac with glossy TPU-laminated edge binding"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Down-tube strap span 180mm. At 55mm wide it is narrow enough to keep both knees clear."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Race Frame Bag",
+   "size": "Large",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/race-race-frame-bag-large-1.jpg",
+    "https://restrap.com/products/race-frame-bag-large"
+   ],
+   "dims_cm": {
+    "len": 50,
+    "wid": 5.5,
+    "hgt": 17
+   },
+   "dims_state": "published_len_wid_scaled_height",
+   "dims_raw": "500mm (top edge) / 360mm (bottom edge) / 80mm (rear edge) / 55mm (front edge) / 55mm Width / 180mm (down-tube strap span)",
+   "dims_note": "Same defect as the Small: the 80mm arrow on Restrap's diagram is the short rear EDGE, not the bag's height, and had been stored as 8cm. Scaling off the 500mm top edge gives about 170mm max height - the same as the Small, which is what the litres imply since capacity grows 3 to 4.2L (1.40x) while length grows 37 to 50cm (1.35x). 50 x 17 x 5.5 = 4.68L against a stated 4.2L.",
+   "capacity_l": 4.2,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.72,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Longer version of the Race Frame Bag. X-Pac panel, glossy laminated lower binding, soft point at the rear-bottom corner, zip hidden under a full-length flap."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top edge under a full-length storm flap"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_side",
+     "finish": "storm_flap",
+     "pull": "orange cord loop at the front end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "hook",
+     "material": "wide rubberised coated webbing over the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "down_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detail",
+    "logo": {
+     "type": "screen_print",
+     "location": "lower front of the drive-side panel",
+     "shape": "white RESTRAP wordmark with needle-and-line device"
+    },
+    "fabric": "X-Pac with glossy TPU-laminated edge binding"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Runs the full top tube of a 56cm frame; down-tube strap span 180mm."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Full Frame Bag",
+   "size": "Small",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-full-frame-bag-small-1.jpg",
+    "https://restrap.com/products/full-frame-bag-small"
+   ],
+   "dims_cm": {
+    "len": 41,
+    "wid": 6,
+    "hgt": 27
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "410mm (top tube) / 350mm (down tube) / 100mm (bottom) / 270mm (seat-tube edge) / 145mm (mid height) / 40mm (head-tube edge) / Width 60mm",
+   "dims_note": "All maker data from Restrap's size-guide diagram. len is the 410mm top-tube edge and hgt the 270mm seat-tube edge, the bag's tallest vertical run.",
+   "capacity_l": 6,
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Fills the whole main triangle. Tall at the seat-tube edge (270mm), narrowing to a 40mm point at the head tube, with a 100mm flat bottom edge above the bottom bracket. The upper two thirds are matte coated canvas; the lower panel is a distinctly glossy TPU-laminated sheet, and that two-tone split is the bag's most recognisable feature."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "two independent laminated zips, one per compartment"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_side",
+     "finish": "waterproof_welded",
+     "pull": "orange cord loop at the head-tube end"
+    },
+    {
+     "count": 1,
+     "run": "side_full",
+     "finish": "waterproof_welded",
+     "pull": "orange cord loop at the head-tube end; runs along the top of the glossy lower panel into the second compartment"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "hook",
+     "material": "wide rubberised coated webbing over the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "down_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "side",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "seat_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "internal",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.35
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing on the zip tapes",
+    "logo": {
+     "type": "leather_patch",
+     "location": "upper rear of the drive-side panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "matte textured-nylon canvas upper panel over a glossy TPU-laminated lower panel"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Occupies the entire main triangle - no bottle cages can be used inside the frame with this fitted. Two compartments, both opening from the drive side."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Full Frame Bag",
+   "size": "Medium",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-full-frame-bag-medium-1.jpg",
+    "assets/products/restrap/adventure-full-frame-bag-medium-3.jpg",
+    "https://restrap.com/products/full-frame-bag-medium"
+   ],
+   "dims_cm": {
+    "len": 46,
+    "wid": 6,
+    "hgt": 29
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "460mm / 370mm / 145mm (bottom) / 290mm / 145mm / 40mm / Width 60mm",
+   "dims_note": "All maker data. len is the 460mm top-tube edge, hgt the 290mm seat-tube edge.",
+   "capacity_l": 7.5,
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Full-triangle bag, two-tone: matte canvas upper, glossy TPU-laminated lower panel. 290mm at the seat-tube edge narrowing to a 40mm point at the head tube, 145mm flat bottom."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "two independent laminated zips"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_side",
+     "finish": "waterproof_welded",
+     "pull": "orange cord loop at the head-tube end"
+    },
+    {
+     "count": 1,
+     "run": "side_full",
+     "finish": "waterproof_welded",
+     "pull": "orange cord loop at the head-tube end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "hook",
+     "material": "wide rubberised coated webbing over the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "down_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "side",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "seat_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "internal",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.35
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing on the zip tapes",
+    "logo": {
+     "type": "leather_patch",
+     "location": "upper rear of the drive-side panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "matte textured-nylon canvas upper over a glossy TPU-laminated lower panel"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "This is the size that suits a 56cm frame. Fills the triangle completely; bottle cages must move to the fork or the underside of the down tube."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Full Frame Bag",
+   "size": "Large",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-full-frame-bag-large-1.jpg",
+    "https://restrap.com/products/full-frame-bag-large"
+   ],
+   "dims_cm": {
+    "len": 51,
+    "wid": 6,
+    "hgt": 32.5
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "510mm / 400mm / 170mm (bottom) / 325mm / 145mm / 50mm / Width 60mm",
+   "dims_note": "All maker data. len is the 510mm top-tube edge, hgt the 325mm seat-tube edge.",
+   "capacity_l": 9,
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Largest full-triangle bag. 325mm at the seat-tube edge, 50mm point at the head tube, 170mm flat bottom. Same matte-over-glossy two-tone split."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "two independent laminated zips"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_side",
+     "finish": "waterproof_welded",
+     "pull": "orange cord loop at the head-tube end"
+    },
+    {
+     "count": 1,
+     "run": "side_full",
+     "finish": "waterproof_welded",
+     "pull": "orange cord loop at the head-tube end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "hook",
+     "material": "wide rubberised coated webbing over the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "down_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "side",
+     "hardware": "cam",
+     "material": "25mm webbing on cam locks",
+     "wrapsAround": "seat_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "internal",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.35
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing on the zip tapes",
+    "logo": {
+     "type": "leather_patch",
+     "location": "upper rear of the drive-side panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "matte textured-nylon canvas upper over a glossy TPU-laminated lower panel"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Sized for a frame larger than 56cm; on a 56cm it will overhang the bottom bracket corner. Fills the triangle entirely."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Top Tube Bag",
+   "size": "0.8L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-top-tube-bag-0-8l-1.jpg",
+    "assets/products/restrap/adventure-top-tube-bag-0-8l-3.jpg",
+    "https://restrap.com/products/top-tube-bag"
+   ],
+   "dims_cm": {
+    "len": 25,
+    "wid": 3,
+    "hgt": 13
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "250mm (base) / 180mm (top) / 130mm (front height) / 50mm (rear height) / 30mm Depth",
+   "dims_note": "All three axes are maker data; 25 x 13 x 3 = 0.98L against a stated 0.8L, well inside the normal band for a soft bag.",
+   "capacity_l": 0.8,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_bottom",
+    "taper": {
+     "nose": 1,
+     "tail": 0.38,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "A thin blade sitting on top of the top tube behind the stem, TALLEST AT THE FRONT (130mm at the head tube) and falling away to 50mm at the rear. Base 250mm on the tube, top edge 180mm, so the rear face rakes back sharply. Coated textured-nylon canvas, only 30mm wide."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top edge"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "matched",
+     "pull": "orange cord loop with a moulded cord lock at the front-top corner"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "hook",
+     "material": "wide 25mm webbing round the steerer/head tube, terminating in a flat moulded hook caught by a thin elastic loop",
+     "wrapsAround": "head_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hook-and-loop straps under the top tube",
+     "wrapsAround": "top_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "leather_patch",
+     "location": "low on the side panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "textured nylon coated canvas, matte",
+    "hardware": "the head-tube strap's flat moulded hook plus stretched elastic loop is Restrap's signature fastener and is clearly visible from the side"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Sits ON TOP of the top tube with its tall end butted against the back of the head tube. Two velcro straps pass under the tube; the front strap wraps the steerer below the stem. Nothing hangs below the tube."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Bolt-on Top Tube Bag",
+   "size": "0.8L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-bolt-on-top-tube-bag-0-8l-3.jpg",
+    "https://restrap.com/products/bolt-on-top-tube-bag"
+   ],
+   "dims_cm": {
+    "len": 25,
+    "wid": 3,
+    "hgt": 13
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "250mm (base) / 180mm (top) / 130mm / 50mm / 30mm Depth; four bolt-hole options at 80mm-24-40-24-80mm",
+   "dims_note": "Same shell as the strap-mount Top Tube Bag; all axes maker data.",
+   "capacity_l": 0.8,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_bottom",
+    "taper": {
+     "nose": 1,
+     "tail": 0.38,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Identical shell to the strap-mount Top Tube Bag - tall at the head tube, raking away to a shallow tail - but with a bolt plate in the base carrying four hole positions so it can sit flush on top-tube bosses."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top edge"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "matched",
+     "pull": "orange cord loop with a moulded cord lock at the front-top corner"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "hook",
+     "material": "wide 25mm webbing round the steerer, flat moulded hook caught by a thin elastic loop",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "leather_patch",
+     "location": "low on the side panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "textured nylon coated canvas, matte",
+    "boltPattern": "four hole options spaced 80-24-40-24-80mm along the base"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube_bosses",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Bolts to top-tube bosses, so it sits lower and flatter than the strapped version, with the head-tube hook strap still fitted for fore-aft location. Requires a frame with top-tube bosses."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Race Top Tube Bag - Short",
+   "size": "1.2L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/race-race-top-tube-bag-short-1-2l-1.jpg",
+    "https://restrap.com/products/race-top-tube-bag-short"
+   ],
+   "dims_cm": {
+    "len": 24,
+    "wid": 4.5,
+    "hgt": 12
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "240mm (base) / 190mm (top) / 120mm (rear height) / 70mm (front height) / 45mm width; 64mm bolt spacing",
+   "dims_note": "All maker data. Note the taper runs the OPPOSITE way to the Adventure Top Tube Bag: this one is tallest at the REAR (120mm) and falls to 70mm at the head tube.",
+   "capacity_l": 1.2,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_bottom",
+    "taper": {
+     "nose": 0.58,
+     "tail": 1,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "X-Pac slab on the top tube behind the stem, tallest at the rear and sloping down toward the head tube - the reverse rake of the Adventure bag. The lower rear flank carries a laser-perforated black panel. A separate padded wrap panel goes round the steerer at the front."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "YKK laminated waterproof zip full length of the top"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "waterproof_welded",
+     "pull": "orange cord pull at the rear-top corner"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hook-and-loop strap under the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "hook",
+     "material": "wide padded wrap round the steerer/head tube with a moulded hook and elastic loop",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detail on the laser-perforated flank panel",
+    "logo": {
+     "type": "screen_print",
+     "location": "side panel, low and forward",
+     "shape": "white RESTRAP wordmark with a needle-and-line device beneath"
+    },
+    "fabric": "X-Pac with a glossy laminated top binding and a laser-perforated lower flank panel",
+    "boltPattern": "64mm top-tube bolt spacing as an alternative to the straps",
+    "pullTab": "small webbing pull loop at the rear-bottom corner"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Sits on top of the top tube immediately behind the stem. One under-tube strap plus a steerer wrap, or 64mm bosses. Nothing hangs below the tube."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Race Top Tube Bag - Long",
+   "size": "2L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/race-race-top-tube-bag-long-2l-1.jpg",
+    "https://restrap.com/products/race-top-tube-bag-long"
+   ],
+   "dims_cm": {
+    "len": 49,
+    "wid": 4.5,
+    "hgt": 11
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "490mm (base) / 450mm (top) / 110mm (front height) / 40mm (rear height) / 45mm width",
+   "dims_note": "All maker data. Tallest at the FRONT (110mm) tapering to 40mm at the rear - opposite to the Short version.",
+   "capacity_l": 2,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_bottom",
+    "taper": {
+     "nose": 1,
+     "tail": 0.36,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "A very long, very low X-Pac blade running almost the whole top tube. 110mm at the head tube falling to a 40mm sliver at the seat tube. Laser-perforated black flank panel at the front. Glossy laminated binding along the whole top edge."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "YKK laminated waterproof zip running the full 450mm top edge"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "waterproof_welded",
+     "pull": "orange cord pull at the front-top; a second orange tab at the rear end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hook-and-loop straps under the top tube",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "hook",
+     "material": "wide wrap round the steerer with a moulded hook and elastic loop",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detail",
+    "logo": {
+     "type": "screen_print",
+     "location": "mid side panel",
+     "shape": "white RESTRAP wordmark with needle-and-line device"
+    },
+    "fabric": "X-Pac with glossy laminated top binding and a laser-perforated flank panel"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "At 490mm it takes essentially the entire top tube of a 56cm frame and will conflict with any other top-tube bag. Three under-tube straps plus a steerer wrap."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Aero Race Top Tube Bag",
+   "size": "0.6L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/restrap/race-aero-race-top-tube-bag-0-6l-1.jpg",
+    "https://restrap.com/products/aero-race-top-tube-bag"
+   ],
+   "dims_cm": {
+    "len": 28,
+    "wid": 4,
+    "hgt": 9
+   },
+   "dims_state": "photo_scaled_estimate",
+   "dims_raw": "No dimensions published; a size-guide image exists but carries no figures in text. 0.6L, 100g without straps, 64mm bolt spacing.",
+   "dims_note": "Restrap publish no numbers. Scaled off race-aero-race-top-tube-bag-0-6l-1.jpg using the pictured top tube as a 35mm reference: length about 28cm, maximum height about 9cm at the front falling to a point at the rear, width about 4cm. As a wedge that reconciles to roughly 0.56L against a stated 0.6L. The prior catalogue estimate of 25 x 5 x 6 gave a fatter, shorter box that does not match the photograph. Scale error is at least 15 percent so verified stays false.",
+   "capacity_l": 0.6,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_bottom",
+    "taper": {
+     "nose": 1,
+     "tail": 0.15,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "The lowest, sharpest bag Restrap make: a long narrow aero blade that sits flat on the top tube, squared and tallest at the head-tube end and drawn out to a fine rounded point at the rear. A U-shaped internal stiffener and a laser-cut contoured foam base hold that shape, so it should render crisp rather than soft."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "YKK waterproof zip running the full top edge"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "waterproof_welded",
+     "pull": "orange cord pull at the front-top corner"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "fast straps under the top tube; removable if bolting to 64mm bosses",
+     "wrapsAround": "top_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "stretch",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.2
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detail",
+    "logo": {
+     "type": "screen_print",
+     "location": "side panel",
+     "shape": "white RESTRAP wordmark inside a thin rectangular outline"
+    },
+    "fabric": "recycled ripstop with a glossy laminated top binding",
+    "hardware": "two moulded round black studs on the side panel",
+    "boltPattern": "64mm top-tube bolt spacing; remove the foam base and fast straps to bolt on"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "top_tube_bosses"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Sits flat on the top tube behind the stem on two straps, or bolts to 64mm bosses. Unlike the other Restrap top-tube bags there is no head-tube wrap - the U-stiffener does that job."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Rear Top Tube Bag",
+   "size": "0.8L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-rear-top-tube-bag-0-8l-1.jpg",
+    "assets/products/restrap/adventure-rear-top-tube-bag-0-8l-3.jpg",
+    "https://restrap.com/products/rear-top-tube-bag"
+   ],
+   "dims_cm": {
+    "len": 18,
+    "wid": 5,
+    "hgt": 13
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "180mm (top) / 150mm (base) / 130mm height / 30mm Wide (top) / 50mm Wide (bottom)",
+   "dims_note": "All maker data. This is a seat-tube-corner bag, so it is meant to be squat - the 180mm top edge is LONGER than the 150mm base, i.e. it overhangs rearward, and the body tapers from 50mm wide at the bottom to 30mm at the top.",
+   "capacity_l": 0.8,
+   "geometry": {
+    "form": "halfmoon",
+    "crossSection": "flat_bottom",
+    "taper": {
+     "nose": 1,
+     "tail": 0.5,
+     "profile": "curved"
+    },
+    "shoulder": "rounded",
+    "notes": "A quarter-round wedge that fills the corner behind the seatpost. The FRONT face is flat and vertical, sitting hard against the seatpost; from the top of that face a convex curve sweeps back and down to meet the top tube at the rear. Base sits flat on the tube. Coated textured-nylon canvas."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip following the curved top edge"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "matched",
+     "pull": "orange cord loop with a moulded cord lock at the front-top corner"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "moulded seatpost clamp bands, one above the other",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hook-and-loop strap under the top tube at the rear",
+     "wrapsAround": "top_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "leather_patch",
+     "location": "low on the side panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "textured nylon coated canvas, matte",
+    "pullTab": "small webbing loop at the rear-bottom corner"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "seatpost",
+     "top_tube"
+    ],
+    "contactFaces": [
+     "front_face",
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Fills the seatpost/top-tube corner, opening upward, and extends REARWARD from the seatpost along the top tube. Two clamp bands round the seatpost carry the load; one strap under the top tube stops it rocking. Sits behind the rider's thighs, so nothing must protrude sideways."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Stem Bag",
+   "size": "1.1L",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-stem-bag-1-1l-1.jpg",
+    "assets/products/restrap/adventure-stem-bag-1-1l-3.jpg",
+    "https://restrap.com/products/stem-bag"
+   ],
+   "dims_cm": {
+    "len": 11,
+    "wid": 9,
+    "hgt": 20.5
+   },
+   "dia": 11,
+   "dims_state": "published_all_axes",
+   "dims_raw": "205mm (height) / 90mm Opening / 110mm Base Width",
+   "dims_note": "All maker data. len is the 110mm base width, wid the 90mm opening. The bag is WIDER AT THE BASE than at the mouth - an inverted taper - which is unusual and should show in the mesh.",
+   "capacity_l": 1.1,
+   "render": {
+    "hgt_cm": 20.5,
+    "rolls": 1,
+    "basis": "Drawcord collar, so the height is variable. 205mm is Restrap's published figure with the grey collar standing, which is how it appears mounted in assets/products/restrap/adventure-stem-bag-1-1l-1.jpg. Cinched fully down it loses about 4cm."
+   },
+   "geometry": {
+    "form": "bucket",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 0.82,
+     "tail": 1,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "An upright bucket beside the stem. Rounded-rectangular section, not round: 110mm across the base narrowing to a 90mm mouth. The body is matte coated canvas; above it a contrasting GREY smooth coated-nylon collar gathers into a drawcord."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "orange shock cord through the grey collar with a moulded black cord lock"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing band round the upper body wrapping the bar",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "velcro",
+     "material": "webbing band round the mid body wrapping the stem or steerer",
+     "wrapsAround": "stem"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "lower strap to the fork crown or head tube",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "leather_patch",
+     "location": "outer face, low",
+     "shape": "diamond, tan PU with crossed-needles mark"
+    },
+    "fabric": "textured nylon coated canvas body with a grey coated-nylon drawcord collar",
+    "accent": "bright orange shock cord and toggle - the loudest colour accent on any Restrap bag"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "stem",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "side",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 80,
+     "frame_mm": 5
+    },
+    "notes": "Stands upright in the corner between bar, stem and steerer, mouth up. Two horizontal webbing bands round the body catch the bar and stem; a third strap runs down to the head tube. Must clear the brake hoses and the front tyre when the bar is turned."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Race",
+   "name": "Race Stem Bag",
+   "size": "1.1L",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/race-race-stem-bag-1-1l-1.jpg",
+    "https://restrap.com/products/race-stem-bag"
+   ],
+   "dims_cm": {
+    "len": 9,
+    "wid": 9,
+    "hgt": 20
+   },
+   "dia": 9,
+   "dims_state": "published_height_and_depth",
+   "dims_raw": "200mm (height) / 90mm (depth) / 110mm Mesh (mesh panel height)",
+   "dims_note": "200mm height and 90mm depth are maker data; the 110mm figure labels the MESH PANEL height, not the bag's width. Restrap publish no width, so the 90mm depth is carried to both horizontal axes - the photos show a squarish section, so this is close but not established.",
+   "capacity_l": 1.1,
+   "render": {
+    "hgt_cm": 20,
+    "rolls": 1,
+    "basis": "Drawcord closure. 200mm published height, matching the mounted bag in assets/products/restrap/race-race-stem-bag-1-1l-1.jpg."
+   },
+   "geometry": {
+    "form": "bucket",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "A slim upright slab-sided bucket beside the stem, squarer and flatter-sided than the Adventure Stem Bag. Ripstop body with a full-height stretch mesh panel down the outer face."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "orange shock cord with a moulded cord lock"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing band round the top of the body wrapping the bar",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "lower strap to the head tube",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.55
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detail",
+    "logo": {
+     "type": "screen_print",
+     "location": "outer face, low",
+     "shape": "white RESTRAP wordmark with a needle-and-line device beneath"
+    },
+    "fabric": "lightweight ripstop with a stretch mesh outer panel",
+    "accent": "orange shock cord drawcord"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "side",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 80,
+     "frame_mm": 5
+    },
+    "notes": "Upright beside the stem, mouth up. One band round the bar and one strap to the head tube - a simpler mount than the Adventure Stem Bag."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "City",
+   "name": "City Stem Bag",
+   "size": "1L",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/city-city-stem-bag-1l-1.jpg",
+    "https://restrap.com/products/city-stem-bag"
+   ],
+   "dims_cm": {
+    "len": 11,
+    "wid": 6,
+    "hgt": 28
+   },
+   "dia": 11,
+   "dims_state": "published_all_axes",
+   "dims_raw": "280mm (height) / 110mm (width) / 60mm Depth",
+   "dims_note": "All maker data. The section is a flattened oval 110 x 60mm, NOT round - this bag is markedly taller and thinner than the other two stem bags.",
+   "capacity_l": 1,
+   "render": {
+    "hgt_cm": 28,
+    "rolls": 1,
+    "basis": "Drawcord collar. 280mm published height with the collar standing, as mounted in assets/products/restrap/city-city-stem-bag-1l-1.jpg."
+   },
+   "geometry": {
+    "form": "bucket",
+    "crossSection": "oval",
+    "shoulder": "squared",
+    "notes": "A tall narrow flattened bucket. 280mm high on a 110 x 60mm oval section, so it reads as a bottle sleeve rather than a food pouch. Matte coated canvas body with a grey smooth coated collar above."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "reflective black drawcord with a moulded cord lock through a grey coated collar"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing band round the top of the body wrapping the bar",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "side",
+     "hardware": "velcro",
+     "material": "strap round the head tube",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective drawcord",
+    "logo": {
+     "type": "leather_patch",
+     "location": "outer face, low",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "textured nylon coated canvas with a grey coated collar"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "side",
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 60,
+     "frame_mm": 5
+    },
+    "notes": "Upright beside the stem. At 280mm tall it stands well proud of the bar and its base drops low toward the head tube, so on a small frame it can foul the front tyre when the bar is turned."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Fork Bag",
+   "size": "5L",
+   "slot": "forkbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/restrap/adventure-fork-bag-5l-1.jpg",
+    "assets/products/restrap/adventure-fork-bag-5l-3.jpg",
+    "https://restrap.com/products/fork-bag"
+   ],
+   "dims_cm": {
+    "len": 19,
+    "wid": 12,
+    "hgt": 30
+   },
+   "dims_state": "published_two_axes_estimated_depth",
+   "dims_raw": "300mm Rolled x3 (height) / 190mm (width); 5L sealed; 187g",
+   "dims_note": "The 300mm rolled height and 190mm width are maker figures; the roll axis is the height and only the rolled state is published, which is what the minimum-height rule wants. Fore-aft DEPTH is not published. 12cm is a photo estimate - the bag is clearly flatter front-to-back than it is wide where it lies against the fork leg - and 19 x 12 x 30 reconciles to about 5L for a rounded body, where treating 190mm as a diameter would give 8.5L, far too much. capacity_l is the SINGLE bag.",
+   "capacity_l": 5,
+   "render": {
+    "hgt_cm": 30,
+    "rolls": 3,
+    "basis": "300mm is published as 'Rolled x3', already the turned-down state, so dims_cm.hgt and the drawn height coincide. assets/products/restrap/adventure-fork-bag-5l-1.jpg shows the bag at about this height beside the fork blade."
+   },
+   "geometry": {
+    "form": "bucket",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "A tall vertical stuff sack against the fork leg. Flat on the fork side, rounded on the outer face. Heavy matte coated-canvas body with a full-height Hypalon spine panel down the mounting face carrying three moulded webbing keepers. Rolls shut at the top."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "rolled top with a webbing strap across the fold"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "side",
+     "hardware": "g_hook",
+     "material": "20mm webbing running horizontally through the Hypalon keepers, each closing on a moulded black G-hook at the outboard edge",
+     "wrapsAround": "fork_leg"
+    },
+    {
+     "role": "daisy",
+     "count": 4,
+     "location": "side",
+     "hardware": "daisy_loop",
+     "material": "four sturdy attachment loops on the spine for bolting to a fork cage"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": true,
+    "logo": {
+     "type": "leather_patch",
+     "location": "bottom of the Hypalon spine panel",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "textured nylon outer with durable Hypalon detailing; ORANGE interior lining",
+    "hardware": "three moulded Hypalon webbing keepers stacked vertically down the spine - a signature Restrap detail visible even from a distance"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "along_forkleg"
+    },
+    "attachesTo": [
+     "fork_leg",
+     "fork_cage"
+    ],
+    "contactFaces": [
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 25,
+     "frame_mm": 10
+    },
+    "notes": "Stands upright OUTBOARD of the fork leg with the flat spine face against the blade and the roll top at the top. Two 20mm straps with moulded G-hooks wrap the blade directly, or the four loops bolt it to a Restrap Carry Cage or any three-pack cage (cage not included). The body sits between the blade and the spokes, so lateral clearance to the tyre matters more than fore-aft."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Downtube Bag",
+   "size": "1.2L",
+   "slot": "downtube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-downtube-bag-1-2l-1.jpg",
+    "assets/products/restrap/adventure-downtube-bag-1-2l-3.jpg",
+    "https://restrap.com/products/downtube-bag"
+   ],
+   "dims_cm": {
+    "len": 34,
+    "wid": 9,
+    "hgt": 8
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "240mm Rolled / 340mm Unrolled; 90mm Width; 80mm Depth; strap width 50mm; max tube circumference 190mm",
+   "dims_note": "CHANGED under the unfurled rule. Restrap publish both states and the roll axis here is the LENGTH along the tube, so len takes the 340mm UNFURLED figure (previously stored as the 240mm rolled figure). The cross-section is 90 x 80mm and is not round - 90mm across the bike, 80mm hanging below the tube.",
+   "capacity_l": 1.2,
+   "render": {
+    "hgt_cm": 8,
+    "len_cm": 24,
+    "rolls": 3,
+    "basis": "SCHEMA NOTE: on this bag the roll axis is the LENGTH, not the height, so hgt_cm alone cannot fix the render. dims_cm.len is now the published 340mm UNFURLED figure per the dimension rule, but assets/products/restrap/adventure-downtube-bag-1-2l-1.jpg shows it mounted rolled down to Restrap's other published figure, 240mm - drawing 34cm under the down tube would be the absurd case the render block exists to prevent. len_cm 24 is therefore supplied as an extension to the block; hgt_cm 8 is the fixed 80mm section."
+   },
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "flat_back",
+    "shoulder": "rounded",
+    "notes": "A soft tube clamped under the down tube near the bottom bracket. Flat on the tube side, rounded below. Matte coated canvas at the mounting end, smooth glossy coated nylon at the rolled end. Rolls down toward the bottom bracket so the packed length is well short of the 340mm unfurled figure."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 3,
+    "hardware": "rolled end secured by a small moulded hook clip"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "girth",
+     "hardware": "velcro",
+     "material": "one very wide (50mm) rubberised coated wrap band round the down tube - the single most visible piece of hardware on this bag",
+     "wrapsAround": "down_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "leather_patch",
+     "location": "lower end of the body",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "textured nylon coated canvas with a smooth coated roll section",
+    "fitLimit": "maximum tube circumference 190mm"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_downtube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 20,
+     "frame_mm": 0
+    },
+    "notes": "Hangs UNDER the down tube, low and close to the bottom bracket, with the roll opening pointing up the tube toward the head tube. A single 50mm wrap band takes the whole load. Fouls a down-tube bottle cage and must clear the front tyre at full lock and the chainrings behind."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Pannier",
+   "size": "Small (13L)",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-pannier-small-13l-1.jpg",
+    "https://restrap.com/products/small-pannier"
+   ],
+   "dims_cm": {
+    "len": 30,
+    "wid": 16,
+    "hgt": 35
+   },
+   "dims_state": "rolled_single_figure",
+   "dims_raw": "300mm (top width) / 250mm (bottom width) / 350mm Rolled x3 (height) / Max 160mm Depth",
+   "dims_note": "All maker data. The roll axis is the HEIGHT and only the rolled-x3 figure is published, which is what the minimum-height rule wants. len takes the LARGER of the two widths (300mm top) with the taper to 250mm recorded in the taper block. capacity_l is the SINGLE bag.",
+   "capacity_l": 13,
+   "render": {
+    "hgt_cm": 35,
+    "rolls": 3,
+    "basis": "350mm is published as 'Rolled x3', already the turned-down state. assets/products/restrap/adventure-pannier-small-13l-1.jpg shows the roll folded down to about this height alongside the wheel."
+   },
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.83,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Classic roll-top pannier. Side elevation is a rounded trapezoid - 300mm across the top narrowing to 250mm at the bottom, corners softened - hanging outboard of the rack. Matte coated-canvas outer face."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "roll folded down and pulled taut by a vertical strap on each end face"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "end_cap",
+     "hardware": "buckle",
+     "material": "vertical webbing from the top of the roll down each end face, side-release buckle engaging a moulded twin-slot keeper plate so the roll can be set at two heights"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the outer face",
+     "shape": "diamond, tan PU with crossed-needles mark"
+    },
+    "fabric": "textured nylon coated canvas, matte",
+    "handle": "olive-green webbing carry handle across the top",
+    "hardware": "orange-levered rail hooks on the top rear plus a lower hook; the orange release levers are the only bright hardware on the bag"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack",
+     "front_rack"
+    ],
+    "contactFaces": [
+     "rear_panel",
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 30,
+     "frame_mm": 20
+    },
+    "notes": "Needs a rack. Hooks over the rack rail on two orange-levered hooks with a lower hook catching the rack stay; hangs outboard with the roll top uppermost. The bottom taper is what keeps the heel clear on a short-stay frame."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Olive",
+     "hex": "#52522a"
+    }
+   ]
+  },
+  {
+   "line": "Adventure",
+   "name": "Pannier",
+   "size": "Large (22L)",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/adventure-pannier-large-22l-1.jpg",
+    "assets/products/restrap/adventure-pannier-large-22l-3.jpg",
+    "assets/products/restrap/adventure-pannier-large-22l-4.jpg",
+    "https://restrap.com/products/restrap-large-pannier"
+   ],
+   "dims_cm": {
+    "len": 40,
+    "wid": 20,
+    "hgt": 43
+   },
+   "dims_state": "rolled_single_figure",
+   "dims_raw": "400mm (top width) / 250mm (bottom width) / 430mm Rolled x3 (height) / Max 200mm Depth",
+   "dims_note": "All maker data. Roll axis is the height and only the rolled-x3 figure is published. len takes the LARGER width (400mm top); the taper down to 250mm at the base is pronounced on this size and is in the taper block. capacity_l is the SINGLE bag.",
+   "capacity_l": 22,
+   "render": {
+    "hgt_cm": 43,
+    "rolls": 3,
+    "basis": "430mm is published as 'Rolled x3'. assets/products/restrap/adventure-pannier-large-22l-1.jpg shows the sealed roll at that height, dropping close to the axle line."
+   },
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.63,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "The big roll-top pannier. Strongly trapezoid in side view - 400mm across the top down to 250mm at the base - which is what keeps the rider's heel out of it. Matte coated canvas."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "roll folded down, one vertical strap per end face onto a moulded twin-slot keeper plate"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "end_cap",
+     "hardware": "buckle",
+     "material": "vertical webbing with a side-release buckle engaging a moulded black twin-slot keeper plate"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective detailing",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the outer face",
+     "shape": "diamond, tan PU with crossed-needles mark"
+    },
+    "fabric": "textured nylon coated canvas, matte",
+    "handle": "olive-green webbing carry handle across the top",
+    "hardware": "two orange-levered rail hooks on a black top rail plus a lower hook"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "rear_panel",
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 30,
+     "frame_mm": 20
+    },
+    "notes": "Needs a rear rack. At 430mm deep it drops close to the axle line, so on a 56cm frame with short stays the heel clearance comes entirely from the trapezoid taper."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Olive",
+     "hex": "#52522a"
+    }
+   ]
+  },
+  {
+   "line": "Switch",
+   "name": "Switch Pannier",
+   "size": "5L",
+   "slot": "pannier",
+   "slot_should_be": "forkbag",
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/switch-switch-pannier-5l-1.jpg",
+    "https://restrap.com/products/switch-pannier-5-litres"
+   ],
+   "dims_cm": {
+    "len": 18,
+    "wid": 12,
+    "hgt": 28
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "280mm Sealed with 3 x Rolls / 420mm Open and Unsealed; 180mm (width); 120mm (depth)",
+   "dims_note": "The roll axis is the HEIGHT and Restrap publish both states (280 sealed / 420 open), so under the minimum-height rule the 280mm sealed figure is correct and is retained. len and wid are single published figures. capacity_l is the SINGLE bag.",
+   "capacity_l": 5,
+   "render": {
+    "hgt_cm": 28,
+    "rolls": 3,
+    "basis": "Restrap publish a range - 280mm sealed with 3 rolls / 420mm open and unsealed - so the drawn height is the MINIMUM, 280mm. assets/products/restrap/switch-switch-pannier-5l-1.jpg shows it sealed at that height on the fork."
+   },
+   "geometry": {
+    "form": "slab",
+    "crossSection": "rounded_rect",
+    "shoulder": "rounded",
+    "notes": "A small tall roll-top slab with heavily rounded corners. Two-tone: the outer face is matte coated canvas, while the leading edge, trailing edge and base are a glossy TPU-coated panel - the two fabrics meet in a clean vertical seam that is the bag's signature line."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "three folds required for the waterproof seal, held by the girth strap"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "cam",
+     "material": "webbing girth strap with a flat black cam-lock buckle on the outer face"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "rear_panel",
+     "hardware": "boa",
+     "material": "injection-moulded clip that drops into the Hiplok x Restrap Switch mount"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective webbing details with white stitching on the side loops",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the outer face",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "waterproof coated outer, fully seam-sealed inner, IP6K6",
+    "loadLimit": "maximum 3kg total, no more than 1.5kg per bottle-boss mount"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "fork_bosses",
+     "bottle_bosses",
+     "switch_rack"
+    ],
+    "contactFaces": [
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 25,
+     "frame_mm": 10
+    },
+    "notes": "NOT a hook pannier. A hard injection-moulded clip on the back panel drops into a Hiplok x Restrap Switch mount, and that mount bolts to any bottle bosses at 5Nm - in the product photo it is on the FORK three-pack, which is why slot_should_be is forkbag for this size. Tool-free to remove. Load limit 3kg."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Switch",
+   "name": "Switch Pannier",
+   "size": "10L",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/switch-switch-pannier-10l-1.jpg",
+    "assets/products/restrap/switch-switch-pannier-10l-3.jpg",
+    "https://restrap.com/products/switch-pannier-10-litres-1"
+   ],
+   "dims_cm": {
+    "len": 22,
+    "wid": 14,
+    "hgt": 34
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "340mm Sealed with 3 x Rolls / 480mm Open and Unsealed; 220mm (width); 140mm (depth); 520g including fitting",
+   "dims_note": "Roll axis is the HEIGHT and both states are published, so the 340mm sealed figure is the correct minimum-height pick and is retained. capacity_l is the SINGLE bag.",
+   "capacity_l": 10,
+   "render": {
+    "hgt_cm": 34,
+    "rolls": 3,
+    "basis": "Published range 340mm sealed / 480mm open; drawn height is the minimum, 340mm, which is the state shown in assets/products/restrap/switch-switch-pannier-10l-1.jpg."
+   },
+   "geometry": {
+    "form": "slab",
+    "crossSection": "rounded_rect",
+    "shoulder": "rounded",
+    "notes": "Larger version of the 5L: tall rounded-corner slab, matte coated-canvas outer face against glossy TPU-coated leading/trailing edges and base. Roll top folds over toward the wheel."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "three folds for the waterproof seal, held by two girth straps"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "girth",
+     "hardware": "cam",
+     "material": "two horizontal webbing girth straps, each with a flat black cam-lock buckle on the outer face and keepers on both edges"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "rear_panel",
+     "hardware": "boa",
+     "material": "injection-moulded clip into the Hiplok x Restrap Switch mount"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective webbing details",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the outer face",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "waterproof coated outer with fully seam-sealed inner, IP6K6",
+    "loadLimit": "maximum 3kg total"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "switch_rack",
+     "bottle_bosses"
+    ],
+    "contactFaces": [
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 25,
+     "frame_mm": 15
+    },
+    "notes": "A hard moulded clip on the back panel drops into a Hiplok x Restrap Switch mount; the mount bolts to bottle bosses or lives on a Switch rack. Photographed on both a rear rack and a front rack. Quick-release and tool-free. Load limit 3kg, so this is a light-duty pannier."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "Switch",
+   "name": "Switch Top Bag",
+   "size": "15L",
+   "slot": "trunk",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/switch-switch-top-bag-15l-1.jpg",
+    "assets/products/restrap/switch-switch-top-bag-15l-3.jpg",
+    "https://restrap.com/products/switch-top-bag-15l"
+   ],
+   "dims_cm": {
+    "len": 35,
+    "wid": 20,
+    "hgt": 21
+   },
+   "dims_state": "published_all_axes",
+   "dims_raw": "350mm (length) / 210mm (height) / 200mm (width); 870g",
+   "dims_note": "All three are maker figures from Restrap's size-guide diagram; no ranges are published.",
+   "capacity_l": 15,
+   "render": {
+    "hgt_cm": 21,
+    "rolls": 3,
+    "basis": "210mm is Restrap's single published height and corresponds to the sealed roll shown in assets/products/restrap/switch-switch-top-bag-15l-3.jpg, where the two lid straps are pulled down into their cam buckles."
+   },
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.75,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "A long low rack-top duffel running fore-aft. Widest across the top and narrowing to the rack platform, so the cross-section is a soft inverted trapezoid. Glossy TPU-coated dark fabric rather than the Adventure line's woven canvas, with a roll top running the length of the top."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "roll folded along the top and pulled down by two transverse straps into cam buckles on the flanks"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "lid",
+     "count": 2,
+     "location": "top",
+     "hardware": "cam",
+     "material": "webbing with white reflective stitching running over the roll and down each flank into a flat cam buckle"
+    },
+    {
+     "role": "attachment",
+     "count": 4,
+     "location": "underside",
+     "hardware": "cam",
+     "material": "four lash straps down to the rack rails, two per side, via the Hiplok x Restrap Switch fitting system"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "stretch",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.5
+    }
+   ],
+   "details": {
+    "daisyChains": true,
+    "reflective": "white reflective stitching down both lid straps",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the rear face between the two lid straps",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "glossy TPU-coated waterproof fabric, IP6K6",
+    "lightMount": "rear light loop on the tail face",
+    "shoulderStrap": "shoulder strap loop option",
+    "hardware": "moulded webbing keeper below the label; wide elasticated side bands"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "switch_rack"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 40,
+     "frame_mm": 0
+    },
+    "notes": "Sits ON TOP of a rack platform, running fore-aft, roll opening upward. Restrap state it is designed specifically for the Restrap Switch Rack via the Hiplok x Restrap Switch fitting system with tool-free quick release - hence fits: rack_only. The mesh side pockets and lash straps hang outboard of the rack rails."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    }
+   ]
+  },
+  {
+   "line": "City",
+   "name": "City Loader",
+   "size": "20L",
+   "slot": "pannier",
+   "slot_should_be": "barbag",
+   "fits": "brompton",
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/restrap/city-city-loader-20l-1.jpg",
+    "assets/products/restrap/city-city-loader-20l-3.jpg",
+    "https://restrap.com/products/city-loader"
+   ],
+   "dims_cm": {
+    "len": 35,
+    "wid": 15,
+    "hgt": 30
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "350mm (width) / 300-350mm (height) / 150mm (depth); 1.3kg",
+   "dims_note": "CHANGED under the minimum-height rule: the height is published as a 300-350mm RANGE because of the fold closure, and the low end (300mm) is now taken - a previous pass had stored the 350mm maximum. len is the 350mm across-the-bike width and wid the 150mm fore-aft depth.",
+   "capacity_l": 20,
+   "render": {
+    "hgt_cm": 30,
+    "rolls": 2,
+    "basis": "Restrap publish the height as a 300-350mm RANGE because of the fold closure, so the drawn height is the minimum, 300mm. assets/products/restrap/city-city-loader-20l-1.jpg shows the top folded down to about that height."
+   },
+   "geometry": {
+    "form": "basket_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "A big square front box. Rigid, held square by external and internal stiffeners, so it should render with hard edges rather than slumping. Roll/fold top along the whole width. A large flap pocket covers most of the front face."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 2,
+    "hardware": "two fold-closure compartments; the external front pocket uses an adjustable fastening strap on a FIDLOCK magnetic buckle"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "adjustable fastening strap with a Fidlock magnetic buckle across the front pocket"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "side",
+     "hardware": "cam",
+     "material": "side compression straps on flat cam buckles"
+    },
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "top",
+     "hardware": "ladderlock",
+     "material": "removable shoulder strap; a carry handle at the rear"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "rear_panel",
+     "hardware": "boa",
+     "material": "Brompton front carrier block compatible fitting"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.55
+    },
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.4
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective panel incorporated into the front pocket, plus a reflective strip low on the front face",
+    "logo": {
+     "type": "leather_patch",
+     "location": "centre of the front pocket flap",
+     "shape": "rectangle reading RESTRAP, tan PU"
+    },
+    "fabric": "100% waterproof textured nylon with a tape-sealed lining; olive-grey contrast trim on the front pocket",
+    "cord": "shock cord with a moulded pull toggle closing the front pocket",
+    "dLockSlot": "dedicated D-lock slot",
+    "hardware": "moulded rubber grab loop on the top corner"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "brompton_front_carrier_block"
+    ],
+    "contactFaces": [
+     "rear_panel"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 60,
+     "frame_mm": 0
+    },
+    "notes": "FITMENT: this is a FRONT bag on a Brompton, not a pannier. It mounts on the Brompton front carrier block on the head tube, so it does not turn with the bar and it cannot fit a 56cm drop-bar gravel bike at all without that block. Restrap state it clears the Brompton front light, dyno light and reflector and does not affect the fold, but it is not compatible with the Brompton Electric. slot is recorded as pannier in the catalogue and should be a front/bar slot."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b2b"
+    },
+    {
+     "name": "Navy",
+     "hex": "#1c2836"
+    },
+    {
+     "name": "Olive",
+     "hex": "#52522a"
+    }
+   ]
+  }
+ ]
+}

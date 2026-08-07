@@ -1,0 +1,4366 @@
+{
+  "brand": "Tailfin",
+  "slug": "tailfin",
+  "reviewed_photos": 31,
+  "review_notes": [
+    "assets/products/tailfin/ holds 156 files but only 31 are distinct images. Three generic marketing shots (a bare Cannondale, an 'R&D Division' portrait collage, and a rider pointing at a road) are duplicated 26 times each as the -2/-3/-4 slots of most products, and most size variants of a line share a single -1 photo. Every image path listed in an `evidence` array was opened; duplicates are cited once against the line rather than repeated per size.",
+    "There is NO AeroPack in this catalogue. The 39 products contain the CargoPack System and the SpeedPack System, which are the same architecture the AeroPack established: a thru-axle-mounted rear rack with a seatpost top stay, carrying a bag that is clamped to the rack rather than strapped to the saddle. Everything the brief says about the AeroPack applies to those two records, and it is spelled out in their `mount` blocks.",
+    "Two non-spec keys are used deliberately: `mount.requires` (an explicit list of the hardware a product cannot mount without) and an extra `dia` key inside `dims_cm` on cylindrical products (preserving the catalogue's existing convention alongside the len/wid/hgt triple the spec asks for). Both are additive; the spec fields are all present and correct.",
+    "Tailfin publishes no linear dimensions at all for the Frame Bags, Fork Packs, Downtube Packs and Rear Top Tube Bags - those lines are sized by a printable A4/US-Letter template with no labelled numbers. Those records carry `verified: false` and leave dims_cm at the existing catalogue estimate rather than back-computing from volume.",
+    "`render` block added per the amended spec. 22 of 39 products carry one; the 17 that do not are the 9 frame bags and 8 top-tube bags, all of which are zipped, non-rolling and fixed in height.",
+    "SCHEMA EXTENSION NEEDING RATIFICATION: the spec's `render` block only offers `hgt_cm`, but on Tailfin's bar rolls and downtube packs the variable axis is LENGTH, not height - they roll at the ends or at the top of a pack lying along a tube. Drawing dims_cm.len for the MTB Large bar bag would put a 72cm bag on the bars, which is the same category of error the CargoPack's 42cm height was. Those 9 products therefore carry `render.len_cm` instead of `render.hgt_cm`, populated by the same rule (minimum of the published range where one exists). If the builder only reads `hgt_cm` these 9 will still render at their unfurled length - please confirm whether `len_cm` should be adopted spec-wide.",
+    "`proprietary_mount` added to all 39 products: a string naming the Tailfin-only hardware required, or `false` for genuinely universal products. 20 need Tailfin hardware, 19 do not. This is deliberately separate from `fits`, which stays reserved for the spec's four values and is set to `rack_only` only on the 6 products that actually need a rack. Fork Packs, Cage Packs and Bar Cage Bags use proprietary Tailfin mounts but are NOT rack-mounted and DO fit a 56cm drop-bar gravel bike that has the relevant bosses, so tagging them `rack_only` would be wrong.",
+    "Frame bags: Tailfin publish no per-size fit chart at all - they replaced it with a machine-learning sizing web app. The one linear figure that exists for the range is that the nine models suit bike sizes 47-61 cm; it is now in every frame bag's dims_note. The design notes also revealed an internal size-specific CARBON SPACE FRAME (two rods along the top edge and under the zip, user-removable), which is what the visible rib in the studio photos is - now in every frame bag's details.rigid_structure."
+  ],
+  "products": [
+    {
+      "line": "CargoPack",
+      "name": "CargoPack System",
+      "size": "18L",
+      "slot": "trunk",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/cargopack-cargopack-system-18l-1.jpg",
+        "assets/products/tailfin/cargopack-cargopack-top-bag-18l-1.jpg",
+        "assets/products/tailfin/cargopack-cargopack-top-bag-18l-2.jpg",
+        "assets/products/tailfin/cargopack-cargopack-top-bag-18l-3.jpg",
+        "assets/products/tailfin/cargopack-cargopack-top-bag-18l-4.jpg",
+        "https://www.tailfin.cc/product/racks-rear-systems/rear-systems/cargopack-system/"
+      ],
+      "dims_cm": {
+        "len": 43.5,
+        "wid": 16.4,
+        "hgt": 42
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Top Bag Dimensions (width) 164mm (rear) / 128mm (front); (Length) 435mm; (Unrolled Height) 420mm (rear) / 380mm (front). Volume 18L (+3.0L Pockets)",
+      "dims_note": "MATERIAL CHANGE: hgt was 25 cm in the catalogue, back-computed from the 18L volume over the stated footprint. The spec forbids deriving a dimension from volume, so that number is gone. 42 cm is Tailfin's UNROLLED height at the rear panel (front panel 38 cm) and is the ONLY height Tailfin publishes - per the spec's 'where only one figure is published, use it and say so' clause it is recorded here. It is NOT the packed height: in every on-bike photo the roll is turned down three times and the bag stands roughly 22-26 cm. A builder should treat 42 as the fabric extent and drive the render off the roll count. len 43.5 and wid 16.4 are the maker's plan figures; both horizontal axes taper toward the front (see geometry.taper).",
+      "capacity_l": 18,
+      "geometry": {
+        "form": "rounded_box",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 0.78,
+          "tail": 1,
+          "profile": "linear"
+        },
+        "notes": "A big squared rolltop block sitting on a flat rack deck, NOT a soft wedge hanging off a saddle. Nose = the forward end nearest the seatpost, which is the narrow end (128mm wide, 380mm unrolled tall); tail = the rear end over the wheel, which is the full 164mm x 420mm. The top-front shoulder is chamfered so the bag clears the back of the saddle. Side panels are flat and near-vertical with a hard crease where they meet the base; the base is a stiffened moulded footbed that sits flush on the rack deck and gives the bag its shape when empty.",
+        "shoulder": "chamfered"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "single webbing strap runs fore-aft over the turned-down roll into a moulded buckle on a Hypalon tab on the front face"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 1,
+          "location": "top",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "buckle",
+          "material": "webbing"
+        },
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "underside",
+          "hardware": "hook",
+          "material": "moulded_alloy",
+          "wrapsAround": "rack_deck_rails"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "mesh",
+          "count": 2,
+          "location": "side",
+          "sizeFrac": 0.55
+        },
+        {
+          "type": "stretch",
+          "count": 1,
+          "location": "front",
+          "sizeFrac": 0.4
+        }
+      ],
+      "details": {
+        "daisyChains": true,
+        "reflective": "block of five horizontal white bars on the rear end panel, plus a matching block low on each side panel",
+        "valve": "round moulded one-way air valve in the centre of the front stretch pocket panel",
+        "lightMount": "rear light rides on a bracket clamped to the RACK tail, not on the bag - model it as rack hardware",
+        "logo": {
+          "type": "screen_print",
+          "location": "side_rear"
+        },
+        "seams": "ultrasonically welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte, with a visible hex-diamond weave on the upper panels",
+        "rigid_structure": "the RACK is a rigid structure and must be modelled: a Toray T700 carbon (317g) or 6061-T6 alloy (542g) arch spanning the rear wheel, a flat top deck with side rails, and a pair of top stays running forward to a branded seatpost clamp. Rated 27kg. The bag itself has a semi-rigid moulded base and stiffened side panels.",
+        "two_horizontal_lash_slots_on_rear_panel": true
+      },
+      "mount": {
+        "axes": {
+          "len": "-x",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "tailfin_rear_rack_deck",
+          "rear_thru_axle",
+          "seatpost"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 90,
+          "frame_mm": 20
+        },
+        "requires": [
+          "Tailfin carbon or alloy rear rack (included in the System)",
+          "rear thru-axle 12mm (single, universal or QR axle supplied)",
+          "enough exposed seatpost for the top stay - XS-L or XL+ stay length"
+        ],
+        "notes": "CRITICAL FOR THE BUILDER: this does not hang from the saddle. The rack takes the whole load through the rear thru-axle at the dropouts, arches over the wheel, and is triangulated forward by two top stays to a clamp on the seatpost. The bag sits ON the flat deck at the top of that arch, its long axis pointing rearward (-x), and clamps down to the deck rails; it may be run fixed-to-rack or as a quick-release removable bag. The bag's underside is dead flat and horizontal - it does not droop, and the tail does not sweep down toward the tyre. Deck height is roughly level with the saddle nose."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/racks-rear-systems/rear-systems/cargopack-system/"
+      ],
+      "render": {
+        "hgt_cm": 23,
+        "rolls": 3,
+        "basis": "measured in assets/products/tailfin/cargopack-cargopack-top-bag-18l-1.jpg. Scale taken from the bag's own published 435mm length in that same frame (652px across); the packed body then measures ~343px from the rack deck to the top of the turned-down roll, i.e. ~229mm at the rear falling to ~214mm at the front. Drawn at 23cm. The dims_cm value of 42 is Tailfin's UNROLLED height and must not be drawn. Cross-check only, not the method: 43.5 x 16.4 x 23 = 16.4L against a stated 18L, consistent for a bag that bulges past a plain box."
+      },
+      "proprietary_mount": "Tailfin rear rack (carbon or alloy) - INCLUDED with this SKU. Rack is thru-axle mounted with a seatpost top stay; the bag-to-deck interface is Tailfin-only."
+    },
+    {
+      "line": "CargoPack",
+      "name": "CargoPack Top Bag",
+      "size": "18L",
+      "slot": "trunk",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/cargopack-cargopack-top-bag-18l-1.jpg",
+        "assets/products/tailfin/cargopack-cargopack-top-bag-18l-2.jpg",
+        "assets/products/tailfin/cargopack-cargopack-top-bag-18l-3.jpg",
+        "assets/products/tailfin/cargopack-cargopack-top-bag-18l-4.jpg",
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rack-top-bags/cargopack-top-bag/"
+      ],
+      "fits": "rack_only",
+      "dims_cm": {
+        "len": 43.5,
+        "wid": 16.4,
+        "hgt": 42
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Top Bag Dimensions (width) 164mm (rear) / 128mm (front); (Length) 435mm; (Unrolled Height) 420mm (rear) / 380mm (front). Volume 18L (+3.0L Pockets)",
+      "dims_note": "Identical bag to the CargoPack System, sold without the rack. Same correction: hgt 25 -> 42, because the 25 was a volume back-computation and 42 cm is the only height Tailfin publishes (unrolled, rear panel; front 38 cm). Packed height in photos is roughly 22-26 cm.",
+      "capacity_l": 18,
+      "geometry": {
+        "form": "rounded_box",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 0.78,
+          "tail": 1,
+          "profile": "linear"
+        },
+        "notes": "Same body as the CargoPack System: squared rolltop block, chamfered top-front shoulder to clear the saddle, flat near-vertical sides, stiffened moulded flat base.",
+        "shoulder": "chamfered"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "single fore-aft webbing strap over the roll into a moulded buckle on a Hypalon front tab"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 1,
+          "location": "top",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "buckle",
+          "material": "webbing"
+        },
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "underside",
+          "hardware": "hook",
+          "material": "moulded_alloy",
+          "wrapsAround": "rack_deck_rails"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "mesh",
+          "count": 2,
+          "location": "side",
+          "sizeFrac": 0.55
+        },
+        {
+          "type": "stretch",
+          "count": 1,
+          "location": "front",
+          "sizeFrac": 0.4
+        }
+      ],
+      "details": {
+        "daisyChains": true,
+        "reflective": "five-bar reflective block on the rear end panel and low on each side",
+        "valve": "round moulded one-way air valve on the front pocket panel",
+        "logo": {
+          "type": "screen_print",
+          "location": "side_rear"
+        },
+        "seams": "ultrasonically welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte hex weave",
+        "rigid_structure": "semi-rigid moulded base and stiffened side panels; the bag holds its shape empty"
+      },
+      "mount": {
+        "axes": {
+          "len": "-x",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "tailfin_rear_rack_deck"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 90,
+          "frame_mm": 20
+        },
+        "requires": [
+          "a Tailfin rear rack (AeroPack / CargoPack / SpeedPack carbon or alloy rack), sold separately"
+        ],
+        "notes": "Bag only. It clamps to the Tailfin rack's deck rails and will not sit on a generic tubular rear rack - the interface is proprietary. Flat underside, long axis pointing rearward, no sag."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rack-top-bags/cargopack-top-bag/"
+      ],
+      "render": {
+        "hgt_cm": 23,
+        "rolls": 3,
+        "basis": "measured in assets/products/tailfin/cargopack-cargopack-top-bag-18l-1.jpg. Scale taken from the bag's own published 435mm length in that same frame (652px across); the packed body then measures ~343px from the rack deck to the top of the turned-down roll, i.e. ~229mm at the rear falling to ~214mm at the front. Drawn at 23cm. The dims_cm value of 42 is Tailfin's UNROLLED height and must not be drawn. Cross-check only, not the method: 43.5 x 16.4 x 23 = 16.4L against a stated 18L, consistent for a bag that bulges past a plain box."
+      },
+      "proprietary_mount": "Tailfin rear rack, SOLD SEPARATELY. Proprietary deck-rail interface; will not sit on a generic tubular rack."
+    },
+    {
+      "line": "SpeedPack",
+      "name": "SpeedPack System",
+      "size": "10L",
+      "slot": "trunk",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/speedpack-speedpack-system-10l-1.jpg",
+        "assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg",
+        "https://www.tailfin.cc/product/racks-rear-systems/rear-systems/speedpack-system/"
+      ],
+      "dims_cm": {
+        "len": 43.5,
+        "wid": 18.5,
+        "hgt": 13
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Dimensions 185mm (rear width), 435mm (length). Volume 10L (+3.0L Pocket)",
+      "dims_note": "len 43.5 and wid 18.5 are Tailfin's published plan figures and are correct. Tailfin publishes NO height for this bag at all, rolled or unrolled, so hgt is left at the existing catalogue estimate of 13 cm and this record is marked unverified for that axis. 13 cm is consistent with the low aero slab in the photos and with 10L over the stated 43.5 x 18.5 footprint, but it is an estimate, not a maker figure.",
+      "capacity_l": 10,
+      "geometry": {
+        "form": "slab",
+        "crossSection": "flat_bottom",
+        "taper": {
+          "nose": 1,
+          "tail": 0.65,
+          "profile": "linear"
+        },
+        "notes": "A low, wide, aero slab lying flat on the rack deck - far shallower than the CargoPack. Domed top, dead-flat bottom, generous radius on all four top edges. The forward end (nose, at the seatpost) is the full-height blunt end; the body narrows and drops toward the rear where the fabric gathers into a vertical roll. Height is under a third of the width, which is what makes it read as a SpeedPack rather than a trunk bag.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "tail",
+        "rolls": 3,
+        "hardware": "rear-entry: the tail end panel rolls down vertically and is drawn forward by a strap to a side-release buckle on each side wall"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 2,
+          "location": "tail_wrap",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "rolled_tail"
+        },
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "underside",
+          "hardware": "hook",
+          "material": "moulded_alloy",
+          "wrapsAround": "rack_deck_rails"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "stretch",
+          "count": 1,
+          "location": "front",
+          "sizeFrac": 0.5
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "ultrasonically welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte, with a smoother laminated top panel",
+        "rigid_structure": "the RACK is rigid and must be modelled: Toray T700 carbon (317g) or 6061-T6 alloy (542g) arch over the rear wheel, flat deck, twin top stays to a seatpost clamp. Rated 27kg."
+      },
+      "mount": {
+        "axes": {
+          "len": "-x",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "tailfin_rear_rack_deck",
+          "rear_thru_axle",
+          "seatpost"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 90,
+          "frame_mm": 20
+        },
+        "requires": [
+          "Tailfin carbon or alloy rear rack (included in the System)",
+          "rear thru-axle or QR rear hub - there is no seatpost-only option",
+          "exposed seatpost for the top stay"
+        ],
+        "notes": "Same architecture as the CargoPack System: load goes through the rear thru-axle, the arch clears the wheel, twin top stays triangulate forward to a seatpost clamp. The bag lies flat on the deck with its opening pointing REARWARD (Tailfin call it 'rear entry'), so the roll faces away from the rider. The front stretch pocket wraps around the seatpost end. No sag, no saddle contact at all."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/racks-rear-systems/rear-systems/speedpack-system/"
+      ],
+      "render": {
+        "hgt_cm": 18,
+        "rolls": 3,
+        "basis": "measured in assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg. Scale from the bag's published 435mm length in the same frame (550px across); the packed body measures ~240px from the rack deck to the top edge at the rear and ~220px at mid-length, i.e. 175-190mm. Drawn at 18cm. NOTE this DISAGREES with dims_cm.hgt of 13, which was never a maker figure - Tailfin publish no height for this bag - and now looks too low. dims_cm is left untouched per the spec. The roll is at the tail, not the top, so length rather than height is this bag's variable axis; the published 43.5cm length matches the photo and needs no correction. Cross-check only: 43.5 x 18.5 x 18 = 14.5L bounding box, about 10L for a tapered domed slab, matching the stated 10L."
+      },
+      "proprietary_mount": "Tailfin rear rack (carbon or alloy) - INCLUDED with this SKU. Thru-axle mounted with a seatpost top stay."
+    },
+    {
+      "line": "SpeedPack",
+      "name": "SpeedPack Top Bag",
+      "size": "10L",
+      "slot": "trunk",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg",
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rack-top-bags/speedpack-top-bag/"
+      ],
+      "fits": "rack_only",
+      "dims_cm": {
+        "len": 43.5,
+        "wid": 18.5,
+        "hgt": 13
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Dimensions 185mm (rear width), 435mm (length). Volume 10L (+3.0L Pocket)",
+      "dims_note": "Same bag as the SpeedPack System without the rack. len/wid are maker figures; no height is published anywhere, so hgt stays at the 13 cm catalogue estimate and this record is unverified for that axis.",
+      "capacity_l": 10,
+      "geometry": {
+        "form": "slab",
+        "crossSection": "flat_bottom",
+        "taper": {
+          "nose": 1,
+          "tail": 0.65,
+          "profile": "linear"
+        },
+        "notes": "Low aero slab, domed top, flat bottom, blunt full-height nose at the seatpost end narrowing to a vertical roll at the rear.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "tail",
+        "rolls": 3,
+        "hardware": "rear-entry roll drawn forward by a strap to a side-release buckle on each side wall"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 2,
+          "location": "tail_wrap",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "rolled_tail"
+        },
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "underside",
+          "hardware": "hook",
+          "material": "moulded_alloy",
+          "wrapsAround": "rack_deck_rails"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "stretch",
+          "count": 1,
+          "location": "front",
+          "sizeFrac": 0.5
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "ultrasonically welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte"
+      },
+      "mount": {
+        "axes": {
+          "len": "-x",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "tailfin_rear_rack_deck"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 90,
+          "frame_mm": 20
+        },
+        "requires": [
+          "a Tailfin rear rack (carbon or alloy), sold separately"
+        ],
+        "notes": "Bag only, proprietary interface. Lies flat on the Tailfin deck, opening pointing rearward. Will not fit a generic tubular rack."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rack-top-bags/speedpack-top-bag/"
+      ],
+      "render": {
+        "hgt_cm": 18,
+        "rolls": 3,
+        "basis": "measured in assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg. Scale from the bag's published 435mm length in the same frame (550px across); the packed body measures ~240px from the rack deck to the top edge at the rear and ~220px at mid-length, i.e. 175-190mm. Drawn at 18cm. NOTE this DISAGREES with dims_cm.hgt of 13, which was never a maker figure - Tailfin publish no height for this bag - and now looks too low. dims_cm is left untouched per the spec. The roll is at the tail, not the top, so length rather than height is this bag's variable axis; the published 43.5cm length matches the photo and needs no correction. Cross-check only: 43.5 x 18.5 x 18 = 14.5L bounding box, about 10L for a tapered domed slab, matching the stated 10L."
+      },
+      "proprietary_mount": "Tailfin rear rack, SOLD SEPARATELY. Proprietary deck-rail interface."
+    },
+    {
+      "line": "Panniers",
+      "name": "Mini Pannier",
+      "size": "5L",
+      "slot": "pannier",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/panniers-mini-pannier-5l-1.jpg",
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/"
+      ],
+      "fits": "rack_only",
+      "dims_cm": {
+        "len": 17,
+        "wid": 12,
+        "hgt": 38
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "170mm (top width) / 110mm (bottom width) / 380mm (height) / 120mm (top depth) / 70mm (bottom depth)",
+      "dims_note": "Tailfin's own Mini Panniers spec sheet, drawn rolled and buckled shut - so 380mm already IS the minimum-height figure the rule asks for, not an unrolled one. The two horizontal axes do not change with rolling, so the published plan figures stand: len 17 is the fore-aft top width and wid 12 the outboard top depth. Both taper hard toward the bottom (110mm and 70mm) - larger value recorded here, taper in geometry.",
+      "capacity_l": 5,
+      "geometry": {
+        "form": "tapered_wedge",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.6,
+          "profile": "linear"
+        },
+        "notes": "A tall drybag that tapers downward, not fore-aft: it is 170 x 120mm at the shoulders and only 110 x 70mm at the base, so the silhouette is a truncated pyramid standing on end with soft rounded corners. The mounting face (inboard, against the rack or fork) is flat and stiffened; the outboard face bulges. The rolled top is a horizontal tube across the shoulders. Model taper along the HEIGHT axis (nose = top, tail = bottom), not along len.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "the top rolls down and each end of the roll clips to a G-hook on a vertical webbing ladder running down each end panel"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 2,
+          "location": "end_cap",
+          "hardware": "g_hook",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "hook",
+          "material": "webbing"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "reflective": "small reflective logo panel low on the outboard face",
+        "valve": "internal air valve",
+        "logo": {
+          "type": "screen_print",
+          "location": "side_rear"
+        },
+        "seams": "ultrasonically welded, 100% waterproof",
+        "fabric": "Hypalon / ripstop nylon, matte with a fine hex texture",
+        "rigid_structure": "the entire inboard face is a moulded semi-rigid back panel carrying the X-Clamp hardware - a CNC-machined 6061 alloy stop-action clamp with two jaws plus a lower hook. That assembly is hard, black-anodised and clearly visible; do not model the back as soft fabric."
+      },
+      "mount": {
+        "axes": {
+          "len": "-x",
+          "wid": "z",
+          "hgt": "-y"
+        },
+        "attachesTo": [
+          "rear_rack_top_rail",
+          "fork_leg_mount"
+        ],
+        "contactFaces": [
+          "inboard_back_panel"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 30,
+          "frame_mm": 15
+        },
+        "requires": [
+          "a rear rack top rail - Tailfin's own, or a third-party rack using the supplied rack inserts (the Mini's lower hook IS angle-adjustable, unlike the 16/22L)",
+          "OR the optional Mini Pannier Fork Pack Conversion Kit to hang it on a fork leg (V2 bags only)"
+        ],
+        "notes": "The X-Clamp grips the rack's top rail in two places and a lower hook pulls the bag in against the rack arch, so there is no swing and no sag - the bag hangs dead vertical and rigid. The photo shows it hung on a FORK leg via the conversion kit, which is a genuine second mounting position for this size. The flat back panel is the only contact face."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/"
+      ],
+      "render": {
+        "hgt_cm": 38,
+        "rolls": 3,
+        "basis": "Tailfin's spec-sheet height of 380mm is drawn with the bag already rolled and buckled shut, so it IS the rolled figure - no unfurled height is published anywhere and no estimate is needed. Confirmed against assets/products/tailfin/panniers-mini-pannier-5l-1.jpg, where the bag hangs at roughly this proportion of its own published width."
+      },
+      "proprietary_mount": "Tailfin X-Clamp QR moulded into the bag's back panel. Needs a rack rail; Tailfin's own is the design target, and third-party rack inserts are supplied. This size's lower hook IS angle-adjustable, so generic racks are workable."
+    },
+    {
+      "line": "Panniers",
+      "name": "Mini Pannier",
+      "size": "10L",
+      "slot": "pannier",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/panniers-mini-pannier-10l-1.jpg",
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/"
+      ],
+      "fits": "rack_only",
+      "dims_cm": {
+        "len": 21,
+        "wid": 15,
+        "hgt": 40
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "210mm (top width) / 140mm (bottom width) / 400mm (height) / 150mm (top depth) / 110mm (bottom depth)",
+      "dims_note": "Tailfin Mini Panniers spec sheet, drawn rolled and buckled - 400mm is already the minimum height. Plan axes taper to 140 x 110mm at the base; larger values recorded, taper in geometry.",
+      "capacity_l": 10,
+      "geometry": {
+        "form": "tapered_wedge",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.7,
+          "profile": "linear"
+        },
+        "notes": "Same truncated-pyramid-on-end silhouette as the 5L but less severely tapered (140/210 and 110/150 at the base). Flat stiffened inboard face, bulging outboard face, horizontal rolled tube across the shoulders.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "roll clipped at each end to a G-hook on a vertical webbing ladder"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 2,
+          "location": "end_cap",
+          "hardware": "g_hook",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "hook",
+          "material": "webbing"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "reflective": "small reflective logo panel low on the outboard face",
+        "valve": "internal air valve",
+        "logo": {
+          "type": "screen_print",
+          "location": "side_rear"
+        },
+        "seams": "ultrasonically welded, 100% waterproof",
+        "fabric": "Hypalon / ripstop nylon, matte hex texture",
+        "rigid_structure": "moulded semi-rigid back panel carrying the CNC 6061 alloy X-Clamp and lower hook"
+      },
+      "mount": {
+        "axes": {
+          "len": "-x",
+          "wid": "z",
+          "hgt": "-y"
+        },
+        "attachesTo": [
+          "rear_rack_top_rail",
+          "fork_leg_mount"
+        ],
+        "contactFaces": [
+          "inboard_back_panel"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 30,
+          "frame_mm": 15
+        },
+        "requires": [
+          "a rear rack top rail - Tailfin's own or a third-party rack with the supplied inserts",
+          "OR the Mini Pannier Fork Pack Conversion Kit for fork mounting (V2 only)"
+        ],
+        "notes": "X-Clamp grips the rack rail in two places, lower hook pulls the base in to the arch. Hangs dead vertical, rigid, no swing."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/"
+      ],
+      "render": {
+        "hgt_cm": 40,
+        "rolls": 3,
+        "basis": "Tailfin's spec-sheet height of 400mm is drawn with the bag already rolled and buckled shut, so it IS the rolled figure - no unfurled height is published anywhere and no estimate is needed. Confirmed against assets/products/tailfin/panniers-mini-pannier-10l-1.jpg, where the bag hangs at roughly this proportion of its own published width."
+      },
+      "proprietary_mount": "Tailfin X-Clamp QR moulded into the bag's back panel. Third-party rack inserts supplied and the lower hook IS angle-adjustable, so generic racks are workable."
+    },
+    {
+      "line": "Panniers",
+      "name": "Pannier",
+      "size": "16L",
+      "slot": "pannier",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/panniers-pannier-16l-1.jpg",
+        "assets/products/tailfin/fork-packs-fork-pack-5l-4.jpg",
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/"
+      ],
+      "fits": "rack_only",
+      "dims_cm": {
+        "len": 26,
+        "wid": 19,
+        "hgt": 44
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "260mm (top width) / 170mm (bottom width) / 440mm (height) / 190mm (top depth) / 120mm (bottom depth)",
+      "dims_note": "Tailfin Panniers spec sheet, drawn rolled and buckled shut - 440mm is already the minimum height, so no change is needed under the new rule. Plan axes taper to 170 x 120mm at the base; larger values recorded here.",
+      "capacity_l": 16,
+      "geometry": {
+        "form": "tapered_wedge",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.63,
+          "profile": "linear"
+        },
+        "notes": "Tall drybag tapering downward - 260 x 190mm at the shoulders to 170 x 120mm at the base, so it reads as a soft truncated pyramid standing on end. The taper is along HEIGHT, not along len. Inboard face flat and hard; outboard face bulges when loaded. Rolled top forms a horizontal tube across the shoulders with a G-hook clipped down each end.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "roll clipped at each end to a G-hook on a vertical webbing ladder down each end panel"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 2,
+          "location": "end_cap",
+          "hardware": "g_hook",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "hook",
+          "material": "webbing"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "daisyChains": true,
+        "reflective": "reflective detailing on the outboard face",
+        "valve": "air valve for purging air when packing",
+        "lightMount": "integrated light mount on the outboard face",
+        "logo": {
+          "type": "screen_print",
+          "location": "side_rear"
+        },
+        "seams": "ultrasonically welded, 100% waterproof",
+        "fabric": "Hypalon / ripstop nylon",
+        "rigid_structure": "the whole inboard face is a hard moulded back panel. Visible on it: a black-anodised CNC 6061 alloy X-Clamp block across the upper third (two jaws either side of a central knurled release), and a moulded lower hook rail across the lower third. Also a rubberised anti-abrasion strip at the base. Model this as rigid geometry - it is the most visible hardware on the product."
+      },
+      "mount": {
+        "axes": {
+          "len": "-x",
+          "wid": "z",
+          "hgt": "-y"
+        },
+        "attachesTo": [
+          "rear_rack_top_rail"
+        ],
+        "contactFaces": [
+          "inboard_back_panel"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 25,
+          "frame_mm": 15
+        },
+        "requires": [
+          "a rear rack top rail. Tailfin's own rack is the design target; third-party rack inserts are supplied but the lower hook on the 16/22L is NOT adjustable, so third-party fit is not guaranteed."
+        ],
+        "notes": "X-Clamp clamps the rack's top rail in two places and the lower hook pulls the base in against the rack arch, giving a rattle-free rigid mount. Hangs dead vertical with zero sag or swing. The flat back panel is the only contact face; the bag sits close in to the arch rather than standing off it."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/"
+      ],
+      "render": {
+        "hgt_cm": 44,
+        "rolls": 3,
+        "basis": "Tailfin's spec-sheet height of 440mm is drawn with the bag already rolled and buckled shut, so it IS the rolled figure - no unfurled height is published anywhere and no estimate is needed. Confirmed against assets/products/tailfin/panniers-pannier-16l-1.jpg, where the bag hangs at roughly this proportion of its own published width."
+      },
+      "proprietary_mount": "Tailfin X-Clamp QR moulded into the bag's back panel. Third-party rack inserts are supplied BUT the lower hook on the 16/22L is not adjustable, so fit on a generic rack is not guaranteed."
+    },
+    {
+      "line": "Panniers",
+      "name": "Pannier",
+      "size": "22L",
+      "slot": "pannier",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/panniers-pannier-22l-1.jpg",
+        "assets/products/tailfin/fork-packs-fork-pack-5l-4.jpg",
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/"
+      ],
+      "fits": "rack_only",
+      "dims_cm": {
+        "len": 32,
+        "wid": 22,
+        "hgt": 44
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "320mm (top width) / 250mm (bottom width) / 440mm (height) / 220mm (top depth) / 130mm (bottom depth)",
+      "dims_note": "Tailfin Panniers spec sheet, rolled and buckled - 440mm is already the minimum height. Note both sizes are 440mm tall: the 22L is wider and deeper, NOT taller. An earlier catalogue value of 47cm was wrong and stays corrected.",
+      "capacity_l": 22,
+      "geometry": {
+        "form": "tapered_wedge",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.72,
+          "profile": "linear"
+        },
+        "notes": "Same family as the 16L but noticeably fuller - 320 x 220mm at the shoulders down to 250 x 130mm at the base. Taper runs down the HEIGHT axis. Flat hard inboard face, bulging outboard face.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "roll clipped at each end to a G-hook on a vertical webbing ladder"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 2,
+          "location": "end_cap",
+          "hardware": "g_hook",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "hook",
+          "material": "webbing"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "daisyChains": true,
+        "reflective": "reflective detailing on the outboard face",
+        "valve": "air valve",
+        "lightMount": "integrated light mount on the outboard face",
+        "logo": {
+          "type": "screen_print",
+          "location": "side_rear"
+        },
+        "seams": "ultrasonically welded, 100% waterproof",
+        "fabric": "Hypalon / ripstop nylon",
+        "rigid_structure": "hard moulded inboard back panel carrying the CNC 6061 alloy X-Clamp block and a moulded lower hook rail"
+      },
+      "mount": {
+        "axes": {
+          "len": "-x",
+          "wid": "z",
+          "hgt": "-y"
+        },
+        "attachesTo": [
+          "rear_rack_top_rail"
+        ],
+        "contactFaces": [
+          "inboard_back_panel"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 25,
+          "frame_mm": 15
+        },
+        "requires": [
+          "a rear rack top rail; Tailfin's own rack is the design target and the 22L's lower hook is not adjustable for third-party racks"
+        ],
+        "notes": "X-Clamp on the rack rail plus a fixed lower hook. Rigid, vertical, no sag. At 22L per side check heel clearance - the bag is 32cm fore-aft."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/"
+      ],
+      "render": {
+        "hgt_cm": 44,
+        "rolls": 3,
+        "basis": "Tailfin's spec-sheet height of 440mm is drawn with the bag already rolled and buckled shut, so it IS the rolled figure - no unfurled height is published anywhere and no estimate is needed. Confirmed against assets/products/tailfin/panniers-pannier-22l-1.jpg, where the bag hangs at roughly this proportion of its own published width."
+      },
+      "proprietary_mount": "Tailfin X-Clamp QR moulded into the bag's back panel. Lower hook not adjustable; generic rack fit not guaranteed."
+    },
+    {
+      "line": "Fork Packs",
+      "name": "Fork Pack",
+      "size": "5L",
+      "slot": "forkbag",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/fork-packs-fork-pack-5l-1.jpg",
+        "assets/products/tailfin/fork-packs-fork-pack-5l-2.jpg",
+        "assets/products/tailfin/fork-packs-fork-pack-5l-3.jpg",
+        "assets/products/tailfin/fork-packs-fork-pack-5l-4.jpg",
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/"
+      ],
+      "dims_cm": {
+        "len": 15,
+        "wid": 15,
+        "hgt": 28,
+        "dia": 15
+      },
+      "dims_state": "unknown",
+      "dims_raw": "no linear dimensions published - the page gives volume (5L), weight and construction only; fitment is by printable template",
+      "dims_note": "UNVERIFIED. Tailfin publishes no linear dimensions for this line, so dims_cm is left at the existing catalogue estimate (28cm tall, 15cm across, previously stored as hgt+dia). The estimate is written out here as a proper len/wid/hgt triple, with dia preserved. Do not treat any of these three as a maker figure. The studio pair shot confirms the 5L is roughly three-quarters the height of the 10L, which is consistent with 28 vs 35.",
+      "capacity_l": 5,
+      "geometry": {
+        "form": "tapered_wedge",
+        "crossSection": "d_shape",
+        "taper": {
+          "nose": 1,
+          "tail": 0.6,
+          "profile": "linear"
+        },
+        "notes": "A tall drybag hanging on the fork leg, wider at the shoulders and tapering to a narrower rounded base - a smaller sibling of the Mini Pannier, not a horizontal cylinder. Cross-section is a flattened D: flat on the inboard face against the fork, rounded outboard. Taper runs down the HEIGHT axis. The studio pair shot shows the 5L and 10L side by side with the same silhouette and the same vertical webbing ladder down each end.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "roll clipped down at each end to a hook on a vertical webbing ladder running the full height of each end panel"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 2,
+          "location": "end_cap",
+          "hardware": "g_hook",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "hook",
+          "material": "webbing"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "ultrasonically welded, fully waterproof",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte with a hex weave; some photos show mesh-textured abrasion gussets on the end panels",
+        "rigid_structure": "hard moulded inboard back panel carrying the same X-Clamp assembly as the panniers - a black-anodised CNC alloy stop-action clamp with a central release, plus a lower hook rail. The FORK MOUNT itself is a separate rigid part: a long CNC-machined, hard-anodised 7075-T6 alloy rail bolted to the fork's bosses with three M5 T25 screws, with a hinged collar at its top end. Both are prominent black hardware."
+      },
+      "mount": {
+        "axes": {
+          "len": "x",
+          "wid": "z",
+          "hgt": "along_forkleg"
+        },
+        "attachesTo": [
+          "tailfin_fork_pack_mount",
+          "fork_leg"
+        ],
+        "contactFaces": [
+          "inboard_back_panel"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 25,
+          "frame_mm": 10
+        },
+        "requires": [
+          "Tailfin Fork Pack Mount (7075-T6 CNC alloy rail, sold with the pack)",
+          "a fork with triple or double boss eyelets at 64mm spacing - a bare fork with no bosses cannot take this",
+          "3 x M5x16 T25 screws (2 permitted with a 3kg limit)"
+        ],
+        "notes": "This does NOT strap to a bare fork leg and does NOT need a rack. The alloy mount rail bolts to the fork's 3-pack bosses on the outboard face of the blade; the bag's X-Clamp then snaps onto that rail single-handed and tool-free, with a lower hook pulling the base in. The bag hangs dead vertical alongside the blade with no sag or swing. Max 1.5kg per boss."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/"
+      ],
+      "render": {
+        "hgt_cm": 28,
+        "rolls": 3,
+        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/fork-packs-fork-pack-5l-2.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+      },
+      "proprietary_mount": "Tailfin Fork Pack Mount (7075-T6 CNC hard-anodised alloy rail) PLUS the same X-Clamp QR as the panniers. Also needs fork bosses at 64mm spacing. No rack involved."
+    },
+    {
+      "line": "Fork Packs",
+      "name": "Fork Pack",
+      "size": "10L",
+      "slot": "forkbag",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/fork-packs-fork-pack-10l-1.jpg",
+        "assets/products/tailfin/fork-packs-fork-pack-10l-2.jpg",
+        "assets/products/tailfin/fork-packs-fork-pack-10l-3.jpg",
+        "assets/products/tailfin/fork-packs-fork-pack-10l-4.jpg",
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/"
+      ],
+      "dims_cm": {
+        "len": 19,
+        "wid": 19,
+        "hgt": 35,
+        "dia": 19
+      },
+      "dims_state": "unknown",
+      "dims_raw": "no linear dimensions published - volume (10L), weight and construction only; fitment by printable template",
+      "dims_note": "UNVERIFIED. No maker dimensions exist for this line. dims_cm is the existing catalogue estimate rewritten as a proper triple with dia preserved. The studio pair shot confirms the 10L is clearly taller and fuller than the 5L, consistent with 35 vs 28, but no number here is sourced.",
+      "capacity_l": 10,
+      "geometry": {
+        "form": "tapered_wedge",
+        "crossSection": "d_shape",
+        "taper": {
+          "nose": 1,
+          "tail": 0.65,
+          "profile": "linear"
+        },
+        "notes": "Tall drybag on the fork leg, wider at the shoulders tapering to a rounded base. Flattened-D cross-section, flat inboard against the fork. Taper runs down the HEIGHT axis.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "roll clipped at each end to a hook on a full-height vertical webbing ladder"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 2,
+          "location": "end_cap",
+          "hardware": "g_hook",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "hook",
+          "material": "webbing"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "ultrasonically welded, fully waterproof",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave",
+        "rigid_structure": "hard moulded inboard back panel with the X-Clamp block and lower hook rail; separate 7075-T6 CNC hard-anodised alloy fork mount rail bolted to the fork bosses"
+      },
+      "mount": {
+        "axes": {
+          "len": "x",
+          "wid": "z",
+          "hgt": "along_forkleg"
+        },
+        "attachesTo": [
+          "tailfin_fork_pack_mount",
+          "fork_leg"
+        ],
+        "contactFaces": [
+          "inboard_back_panel"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 25,
+          "frame_mm": 10
+        },
+        "requires": [
+          "Tailfin Fork Pack Mount",
+          "fork with triple or double bosses at 64mm spacing",
+          "3 x M5x16 T25 screws"
+        ],
+        "notes": "Bolt-on alloy mount rail on the fork blade, bag clips to it with the X-Clamp. Vertical, rigid, no sag. At 10L check tyre and downtube clearance - this is a substantial bag on a 700c gravel fork."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/"
+      ],
+      "render": {
+        "hgt_cm": 35,
+        "rolls": 3,
+        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/fork-packs-fork-pack-10l-2.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+      },
+      "proprietary_mount": "Tailfin Fork Pack Mount plus the X-Clamp QR, and fork bosses at 64mm spacing. No rack involved."
+    },
+    {
+      "line": "Cargo Cage System",
+      "name": "Cage Pack",
+      "size": "1.7L",
+      "slot": "forkbag",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-1.jpg",
+        "assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-2.jpg",
+        "assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-3.jpg",
+        "assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-4.jpg",
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
+      ],
+      "dims_cm": {
+        "len": 9.5,
+        "wid": 9.5,
+        "hgt": 24,
+        "dia": 9.5
+      },
+      "dims_state": "unknown",
+      "dims_raw": "no linear dimensions published - volume 1.7L, weight 115g, max load 1.5kg per bolt",
+      "dims_note": "UNVERIFIED. Tailfin publish volume and weight only for the Cage Packs. dims_cm is the existing catalogue estimate rewritten as a proper triple with dia preserved. The three-size studio shot confirms the size ladder (1.7L clearly shortest, 5L tallest and fattest) but carries no scale.",
+      "capacity_l": 1.7,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "d_shape",
+        "taper": {
+          "nose": 1,
+          "tail": 0.85,
+          "profile": "linear"
+        },
+        "notes": "A slim vertical drybag - narrow, tall, slightly flattened on the face that sits against the cage. Squared shoulders where the roll turns down, softly rounded base. The 5L is proportionally fatter than the 1.7L. A builder should read this as a stubby vertical cylinder, not a bar-roll lying on its side.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "the roll turns down and is closed across its width by a single small side-release buckle sitting on top of the roll"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 1,
+          "location": "top",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "hook",
+          "material": "punched_tpu_ladder_webbing",
+          "wrapsAround": "cargo_cage"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded, 100% waterproof",
+        "fabric": "Hypalon / ripstop nylon, matte",
+        "rigid_structure": "the CARGO CAGE is a rigid part and should be modelled with the bag: a moulded three-bolt cage bolted to the frame or fork bosses. The two attachment straps are the brand's most distinctive detail - wide TPU bands punched with a full ladder of oval holes, engaging a 'Speed Hook' buckle. Draw the holes; they read instantly as Tailfin.",
+        "strap_length": "40cm cargo straps for the 1.7L"
+      },
+      "mount": {
+        "axes": {
+          "len": "x",
+          "wid": "z",
+          "hgt": "along_forkleg"
+        },
+        "attachesTo": [
+          "cargo_cage",
+          "fork_leg",
+          "downtube",
+          "seattube"
+        ],
+        "contactFaces": [
+          "inboard_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 20,
+          "frame_mm": 10
+        },
+        "requires": [
+          "a Tailfin Cargo Cage (Small or Large), sold separately",
+          "Tailfin Cargo Straps, sold separately",
+          "3-bolt mounting points on the frame, fork or an Alloy Journey Rack"
+        ],
+        "notes": "Cannot be used standalone - the pack has no structure of its own and must be strapped into a cage. Two punched TPU ladder straps wrap the girth and hook to the cage. Mounts anywhere there are 3-bolt bosses: fork blades most often, but also the underside of the down tube or the seat tube. Deliberately narrow so it clears the cranks. Sits parallel to the tube it is mounted on with zero sag."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
+      ],
+      "render": {
+        "hgt_cm": 24,
+        "rolls": 3,
+        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-3.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+      },
+      "proprietary_mount": "Tailfin Cargo Cage (Small) plus Tailfin Cargo Straps, both sold separately, plus 3-bolt bosses. The pack has no structure of its own and cannot be used standalone."
+    },
+    {
+      "line": "Cargo Cage System",
+      "name": "Cage Pack",
+      "size": "3L",
+      "slot": "forkbag",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/cargo-cage-system-cage-pack-3l-1.jpg",
+        "assets/products/tailfin/cargo-cage-system-cage-pack-3l-3.jpg",
+        "assets/products/tailfin/cargo-cage-system-cage-pack-3l-4.jpg",
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
+      ],
+      "dims_cm": {
+        "len": 11.3,
+        "wid": 11.3,
+        "hgt": 30,
+        "dia": 11.3
+      },
+      "dims_state": "unknown",
+      "dims_raw": "no linear dimensions published - volume 3L, weight 154g, max load 1.5kg per bolt",
+      "dims_note": "UNVERIFIED. Volume and weight only from the maker; dims_cm is the existing catalogue estimate rewritten as a triple with dia preserved.",
+      "capacity_l": 3,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "d_shape",
+        "taper": {
+          "nose": 1,
+          "tail": 0.85,
+          "profile": "linear"
+        },
+        "notes": "Middle size of the three - slim vertical drybag, slightly flattened against the cage, squared shoulders, rounded base.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "single small side-release buckle across the top of the turned-down roll"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 1,
+          "location": "top",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "hook",
+          "material": "punched_tpu_ladder_webbing",
+          "wrapsAround": "cargo_cage"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded, 100% waterproof",
+        "fabric": "Hypalon / ripstop nylon, matte",
+        "rigid_structure": "moulded three-bolt Cargo Cage; punched-hole TPU ladder straps with Speed Hook buckles",
+        "strap_length": "50cm cargo straps"
+      },
+      "mount": {
+        "axes": {
+          "len": "x",
+          "wid": "z",
+          "hgt": "along_forkleg"
+        },
+        "attachesTo": [
+          "cargo_cage",
+          "fork_leg",
+          "downtube",
+          "seattube"
+        ],
+        "contactFaces": [
+          "inboard_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 20,
+          "frame_mm": 10
+        },
+        "requires": [
+          "Tailfin Cargo Cage (Small or Large)",
+          "Tailfin Cargo Straps",
+          "3-bolt mounting points"
+        ],
+        "notes": "No standalone mount. Two punched TPU straps wrap the girth into the cage. Fork blades, down tube underside or seat tube. Parallel to its tube, no sag."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
+      ],
+      "render": {
+        "hgt_cm": 30,
+        "rolls": 3,
+        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/cargo-cage-system-cage-pack-3l-3.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+      },
+      "proprietary_mount": "Tailfin Cargo Cage plus Tailfin Cargo Straps, sold separately, plus 3-bolt bosses. Cannot be used standalone."
+    },
+    {
+      "line": "Cargo Cage System",
+      "name": "Cage Pack",
+      "size": "5L",
+      "slot": "forkbag",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/cargo-cage-system-cage-pack-5l-1.jpg",
+        "assets/products/tailfin/cargo-cage-system-cage-pack-5l-3.jpg",
+        "assets/products/tailfin/cargo-cage-system-cage-pack-5l-4.jpg",
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
+      ],
+      "dims_cm": {
+        "len": 13.5,
+        "wid": 13.5,
+        "hgt": 35,
+        "dia": 13.5
+      },
+      "dims_state": "unknown",
+      "dims_raw": "no linear dimensions published - volume 5L, weight 183g, max load 1.5kg per bolt",
+      "dims_note": "UNVERIFIED. Volume and weight only; dims_cm is the existing catalogue estimate rewritten as a triple with dia preserved.",
+      "capacity_l": 5,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "d_shape",
+        "taper": {
+          "nose": 1,
+          "tail": 0.85,
+          "profile": "linear"
+        },
+        "notes": "Largest of the three and proportionally the fattest - a full vertical drybag, flattened against the cage, squared shoulders, rounded base.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "single side-release buckle across the top of the turned-down roll"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 1,
+          "location": "top",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "hook",
+          "material": "punched_tpu_ladder_webbing",
+          "wrapsAround": "cargo_cage"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "hook",
+          "material": "webbing"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "valve": "one-way air vent - the 5L is the only size with one",
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded, 100% waterproof",
+        "fabric": "Hypalon / ripstop nylon, matte",
+        "rigid_structure": "moulded three-bolt Cargo Cage; punched-hole TPU ladder straps with Speed Hook buckles",
+        "strap_length": "50cm or 65cm cargo straps; optional side compression and T-Hook straps"
+      },
+      "mount": {
+        "axes": {
+          "len": "x",
+          "wid": "z",
+          "hgt": "along_forkleg"
+        },
+        "attachesTo": [
+          "cargo_cage",
+          "fork_leg",
+          "downtube",
+          "seattube"
+        ],
+        "contactFaces": [
+          "inboard_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 20,
+          "frame_mm": 10
+        },
+        "requires": [
+          "Tailfin Cargo Cage (Large for this size)",
+          "Tailfin Cargo Straps",
+          "3-bolt mounting points"
+        ],
+        "notes": "No standalone mount. Two punched TPU straps into the cage, plus optional side compression straps on this size. Narrow profile to clear the cranks."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
+      ],
+      "render": {
+        "hgt_cm": 35,
+        "rolls": 3,
+        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/cargo-cage-system-cage-pack-5l-3.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+      },
+      "proprietary_mount": "Tailfin Cargo Cage (Large) plus Tailfin Cargo Straps, sold separately, plus 3-bolt bosses. Cannot be used standalone."
+    },
+    {
+      "line": "Bar System",
+      "name": "Bar Bag System - Drop Bar",
+      "size": "Small (9.1L)",
+      "slot": "barroll",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/bar-system-bar-bag-system-drop-bar-small-9-1l-1.jpg",
+        "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
+      ],
+      "dims_cm": {
+        "len": 44.5,
+        "wid": 16,
+        "hgt": 16,
+        "dia": 16
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Min. Width 290 MM / Max. Width 445 MM (2 rolls for waterproofing); Diameter 160MM; Volume 4.0L - 9.1L Small (+1.6L Pocket)",
+      "dims_note": "MATERIAL CHANGE: len was 33.6 (a min+0.3*range interpolation). The new rule takes the UNFURLED figure for the horizontal axes, so len is now the published MAX width of 445mm. Diameter 160mm is a maker figure and fixes both wid and hgt. IMPORTANT CAVEAT for the builder: on drop bars Tailfin's WaveLock closure pulls each end IN by up to 35mm to keep the hoods clear, so the width actually presented at the bar is roughly 445 - 70 = 375mm. Draw 44.5 as the fabric extent, but check hood clearance against ~37.5cm.",
+      "capacity_l": 9.1,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "round",
+        "notes": "A horizontal drybag held forward of the bar on a rigid clamp harness. Round in section, near-constant diameter along its length, with both ends gathered into vertical rolls that fold inward. The front face carries a flat moulded panel and is the visible 'face' of the bag; the rear face is flattened where it presses against the harness.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "end_cap",
+        "rolls": 2,
+        "hardware": "WaveLock - both ends roll inward and lock, folding the ends back toward the centre so they clear the hoods and hand positions (drop-bar version). Two rolls for waterproofing."
+      },
+      "zips": [
+        {
+          "run": "front_panel",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "horizontal zip across the upper front face opening the +1.6L front pocket, single slider, pull on the drive side"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "bar_harness"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "zip",
+          "count": 1,
+          "location": "front",
+          "sizeFrac": 0.5
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "end_cap"
+        },
+        "seams": "welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte hex weave",
+        "rigid_structure": "the HARNESS is rigid and must be modelled: a black moulded/alloy clamp bracket bolted around the handlebar either side of the stem, standing the bag forward and clear of the bar and cables. It carries moulded accessory rails for a Wahoo/Garmin computer mount, GoPro mounts and 22.2mm side bar mounts. Two moulded lash slots on the bag's front face take the harness straps.",
+        "accessory_mounts": "22.2mm side bar mounts, computer mount kit, GoPro central and side mounts"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_bar",
+          "wid": "x",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "handlebar",
+          "tailfin_bar_harness"
+        ],
+        "contactFaces": [
+          "rear_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 120,
+          "frame_mm": 25
+        },
+        "requires": [
+          "the Tailfin bar harness (included in the System)",
+          "drop bar 38cm or wider for the Small"
+        ],
+        "notes": "The bag does not touch the bar - it is clamped to a rigid harness that stands it forward, leaving cable and lever room behind. Long axis runs across the bike along the bar; the rolled ends point outboard toward the hoods. No droop."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
+      ],
+      "render": {
+        "len_cm": 29,
+        "rolls": 2,
+        "basis": "maker publishes a width RANGE of 290-445mm, so render.len_cm is the MINIMUM (290mm) exactly as the spec does for a height range. dims_cm.len is the 445mm unfurled max and must not be drawn on a drop bar: on top of the min/max range, WaveLock pulls each end in a further <=35mm to clear the hoods. Confirmed rolled short in assets/products/tailfin/bar-system-bar-bag-system-drop-bar-small-9-1l-1.jpg."
+      },
+      "proprietary_mount": "Tailfin bar harness - INCLUDED with the System SKU. The bag clamps to the harness, not to the bar."
+    },
+    {
+      "line": "Bar System",
+      "name": "Bar Bag System - Drop Bar",
+      "size": "Large (12.5L)",
+      "slot": "barroll",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/bar-system-bar-bag-system-drop-bar-large-12-5l-1.jpg",
+        "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
+      ],
+      "dims_cm": {
+        "len": 46,
+        "wid": 18,
+        "hgt": 18,
+        "dia": 18
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Min. Width 335 MM / Max. Width 460 MM (2 rolls); Diameter 180MM; Volume 6.7L - 12.5L Large (+2.7L Pocket)",
+      "dims_note": "MATERIAL CHANGE: len was 37.2 (an interpolation). New rule takes the UNFURLED max width, 460mm. Diameter 180mm is a maker figure and fixes wid and hgt. WaveLock draws each end in by up to 35mm on drop bars, so the effective width at the bar is roughly 39cm.",
+      "capacity_l": 12.5,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "round",
+        "notes": "Same silhouette as the Small, one diameter step up. Horizontal drybag on a rigid clamp harness, round section, both ends rolled and folded inward, flat moulded panel on the front face, flattened rear face against the harness.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "end_cap",
+        "rolls": 2,
+        "hardware": "WaveLock - both ends roll inward and lock, keeping the hoods clear"
+      },
+      "zips": [
+        {
+          "run": "front_panel",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "horizontal zip across the upper front face for the +2.7L front pocket"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "bar_harness"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "zip",
+          "count": 1,
+          "location": "front",
+          "sizeFrac": 0.5
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "end_cap"
+        },
+        "seams": "welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte hex weave",
+        "rigid_structure": "rigid bar harness clamped either side of the stem, standing the bag forward off the bar; moulded accessory rails for computer and GoPro mounts",
+        "accessory_mounts": "22.2mm side bar mounts, computer mount kit, GoPro central and side mounts"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_bar",
+          "wid": "x",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "handlebar",
+          "tailfin_bar_harness"
+        ],
+        "contactFaces": [
+          "rear_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 120,
+          "frame_mm": 25
+        },
+        "requires": [
+          "the Tailfin bar harness (included in the System)",
+          "drop bar 40cm or wider for the Large"
+        ],
+        "notes": "Clamped to a rigid harness standing forward of the bar, cables routed behind. Long axis along the bar, rolled ends outboard, no droop."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
+      ],
+      "render": {
+        "len_cm": 33.5,
+        "rolls": 2,
+        "basis": "maker range 335-460mm; render.len_cm is the minimum 335mm. dims_cm.len is the 460mm unfurled max. WaveLock draws each end in a further <=35mm on drop bars. See assets/products/tailfin/bar-system-bar-bag-system-drop-bar-large-12-5l-1.jpg."
+      },
+      "proprietary_mount": "Tailfin bar harness - INCLUDED with the System SKU."
+    },
+    {
+      "line": "Bar System",
+      "name": "Bar Bag System - MTB Flat Bar",
+      "size": "Small (14.9L)",
+      "slot": "barroll",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-small-14-9l-1.jpg",
+        "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
+      ],
+      "dims_cm": {
+        "len": 65,
+        "wid": 16,
+        "hgt": 16,
+        "dia": 16
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Min. Width 420 MM / Max. Width 650 MM (3 rolls for waterproofing); Diameter 160MM; Volume 5.8L - 14.7L Small (+2.7L Pocket)",
+      "dims_note": "MATERIAL CHANGE: len was 48.9 (an interpolation). New rule takes the UNFURLED max width, 650mm - this is the flat-bar version and 65cm across a flat bar is realistic. Diameter 160mm is a maker figure. Note the true capacity is 14.7L, not the 14.9L in the product title. On flat bars the ends close with side-release buckles rather than WaveLock, so there is no inward fold and the full 65cm is presented.",
+      "capacity_l": 14.7,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "round",
+        "notes": "A long horizontal drybag on a rigid clamp harness - much longer than the drop-bar version at the same 160mm diameter, so it reads as a slender tube. Ends roll three times and are buckled shut rather than folded inward.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "end_cap",
+        "rolls": 3,
+        "hardware": "flat-bar version: each end rolls three times and is closed with a side-release buckle (no WaveLock inward fold)"
+      },
+      "zips": [
+        {
+          "run": "front_panel",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "horizontal zip across the upper front face for the +2.7L front pocket"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "bar_harness"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "zip",
+          "count": 1,
+          "location": "front",
+          "sizeFrac": 0.5
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "end_cap"
+        },
+        "seams": "welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte hex weave",
+        "rigid_structure": "rigid bar harness clamped either side of the stem with moulded accessory rails",
+        "accessory_mounts": "22.2mm side bar mounts, computer mount kit, GoPro central and side mounts"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_bar",
+          "wid": "x",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "handlebar",
+          "tailfin_bar_harness"
+        ],
+        "contactFaces": [
+          "rear_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 120,
+          "frame_mm": 25
+        },
+        "requires": [
+          "the Tailfin bar harness (included in the System)",
+          "a flat bar wide enough for 65cm of bag - not intended for drop bars"
+        ],
+        "notes": "Flat-bar geometry. Clamped forward of the bar on a rigid harness. Long axis along the bar, buckled ends outboard, no droop. On a 56cm drop-bar gravel bike this size is too wide - use the drop-bar version."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
+      ],
+      "render": {
+        "len_cm": 42,
+        "rolls": 3,
+        "basis": "maker range 420-650mm; render.len_cm is the minimum 420mm. dims_cm.len is the 650mm unfurled max. Flat-bar ends buckle rather than WaveLock, so there is no extra inward fold. See assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-small-14-9l-1.jpg."
+      },
+      "proprietary_mount": "Tailfin bar harness - INCLUDED with the System SKU."
+    },
+    {
+      "line": "Bar System",
+      "name": "Bar Bag System - MTB Flat Bar",
+      "size": "Large (18.9L)",
+      "slot": "barroll",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-large-18-9l-1.jpg",
+        "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
+      ],
+      "dims_cm": {
+        "len": 72,
+        "wid": 18,
+        "hgt": 18,
+        "dia": 18
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Min. Width 480 MM / Max. Width 720 MM (3 rolls); Diameter 180MM; Volume 8.7L - 18.9L Large (+3.5L Pocket)",
+      "dims_note": "MATERIAL CHANGE: len was 55.2 (an interpolation). New rule takes the UNFURLED max width, 720mm - the largest bag in the Tailfin catalogue and matched to a wide flat bar. Diameter 180mm is a maker figure. Flat-bar ends buckle rather than WaveLock, so the full 72cm is presented at the bar.",
+      "capacity_l": 18.9,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "round",
+        "notes": "The longest and fattest bar bag - a 72cm horizontal tube at 180mm diameter. Ends roll three times and buckle shut. Flat moulded panel on the front face; rear face flattened against the harness.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "end_cap",
+        "rolls": 3,
+        "hardware": "each end rolls three times and is closed with a side-release buckle"
+      },
+      "zips": [
+        {
+          "run": "front_panel",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "horizontal zip across the upper front face for the +3.5L front pocket"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "bar_harness"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "zip",
+          "count": 1,
+          "location": "front",
+          "sizeFrac": 0.5
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "end_cap"
+        },
+        "seams": "welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte hex weave",
+        "rigid_structure": "rigid bar harness clamped either side of the stem with moulded accessory rails",
+        "accessory_mounts": "22.2mm side bar mounts, computer mount kit, GoPro central and side mounts"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_bar",
+          "wid": "x",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "handlebar",
+          "tailfin_bar_harness"
+        ],
+        "contactFaces": [
+          "rear_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 120,
+          "frame_mm": 25
+        },
+        "requires": [
+          "the Tailfin bar harness (included in the System)",
+          "a wide flat bar - 72cm of bag will foul the levers on any drop bar"
+        ],
+        "notes": "Flat-bar only in practice. Clamped forward of the bar on a rigid harness, long axis along the bar, no droop. Do not fit this to the 56cm drop-bar reference build."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
+      ],
+      "render": {
+        "len_cm": 48,
+        "rolls": 3,
+        "basis": "maker range 480-720mm; render.len_cm is the minimum 480mm. dims_cm.len is the 720mm unfurled max, which is the widest bag in the catalogue and unusable on a drop bar. See assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-large-18-9l-1.jpg."
+      },
+      "proprietary_mount": "Tailfin bar harness - INCLUDED with the System SKU."
+    },
+    {
+      "line": "Bar System",
+      "name": "Bar Cage Bag",
+      "size": "Small (8L)",
+      "slot": "barroll",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/bar-system-bar-cage-bag-small-8l-1.jpg",
+        "assets/products/tailfin/bar-system-bar-cage-bag-small-8l-2.jpg",
+        "assets/products/tailfin/bar-system-bar-cage-bag-small-8l-3.jpg",
+        "assets/products/tailfin/bar-system-bar-cage-bag-small-8l-4.jpg",
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/"
+      ],
+      "dims_cm": {
+        "len": 54,
+        "wid": 13.5,
+        "hgt": 13.5,
+        "dia": 13.5
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Dimensions Width: Min 360mm Max 540mm; Diameter: 135mm; weight 222g",
+      "dims_note": "MATERIAL CHANGE: len was 41.4 (an interpolation of the min/max). The new rule takes the UNFURLED figure, so len is the published max of 540mm. Diameter 135mm is a maker figure and fixes wid and hgt. A builder rendering a lightly-packed bag should shorten toward the 360mm minimum - the full range is in dims_raw.",
+      "capacity_l": 8,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "round",
+        "notes": "A horizontal drybag sitting in a big moulded plastic cage in front of the bar. Round in section, both ends rolled inward. The front face carries a moulded rectangular pad; abrasion patches sit where the two straps cross. Slimmer than the Bar Bag System at the same length, so it reads as a long slender tube.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "end_cap",
+        "rolls": 3,
+        "hardware": "both ends roll and tuck back along the body; the two girth straps trap the rolls in place"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "hook",
+          "material": "punched_tpu_ladder_webbing",
+          "wrapsAround": "bar_cage"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "reflective": "reflective detailing on the front face",
+        "valve": "air valve for compressing the packed bag",
+        "logo": {
+          "type": "screen_print",
+          "location": "end_cap"
+        },
+        "seams": "welded",
+        "fabric": "210D Hypalon & 210D Diamond RipStop with integrated abrasion patches under the straps",
+        "rigid_structure": "TWO rigid parts to model. (1) Inside the bag, a carbon rod runs its length to stop it collapsing - the bag holds a straight tube shape even half-empty. (2) The BAR CAGE: a large moulded black plastic tray, deeply ribbed, embossed 'Technical Bikepacking Equipment', bolted to a Tailfin-branded alloy clamp bracket on the handlebar. The cage is as visually prominent as the bag.",
+        "strap_length": "pair of 50cm TPU cargo straps with Speed Hooks"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_bar",
+          "wid": "x",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "tailfin_bar_cage",
+          "handlebar"
+        ],
+        "contactFaces": [
+          "rear_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 120,
+          "frame_mm": 25
+        },
+        "requires": [
+          "the Tailfin Bar Cage plus its handlebar clamp bracket, sold separately",
+          "handlebar 38cm or wider - this is the recommended size for drop bars"
+        ],
+        "notes": "Different mount from the Bar Bag System: the bag drops into a moulded cage and is held by two punched TPU ladder straps hooked over the top, rather than clamping to a harness. Cage stands the bag forward of the bar with cable room behind. Long axis along the bar, rolled ends outboard. Third-party dry bags also fit the cage."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/"
+      ],
+      "render": {
+        "len_cm": 36,
+        "rolls": 3,
+        "basis": "maker range 360-540mm; render.len_cm is the minimum 360mm. dims_cm.len is the 540mm unfurled max. Rolled short in assets/products/tailfin/bar-system-bar-cage-bag-small-8l-4.jpg."
+      },
+      "proprietary_mount": "Tailfin Bar Cage plus its handlebar clamp bracket, SOLD SEPARATELY. Different mount from the Bar Bag System harness."
+    },
+    {
+      "line": "Bar System",
+      "name": "Bar Cage Bag",
+      "size": "Medium (11L)",
+      "slot": "barroll",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/bar-system-bar-cage-bag-medium-11l-1.jpg",
+        "assets/products/tailfin/bar-system-bar-cage-bag-medium-11l-2.jpg",
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/"
+      ],
+      "dims_cm": {
+        "len": 54,
+        "wid": 16.5,
+        "hgt": 16.5,
+        "dia": 16.5
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Width: Min 370mm Max 540mm; Diameter: 165mm; weight 255g",
+      "dims_note": "MATERIAL CHANGE: len was 42.1 (an interpolation). New rule takes the UNFURLED max, 540mm. Diameter 165mm is a maker figure. Same length as the Small - the Medium gains volume through diameter, not length.",
+      "capacity_l": 11,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "round",
+        "notes": "Same 540mm length as the Small but a fatter 165mm tube. Horizontal drybag in a moulded bar cage, both ends rolled inward, moulded pad on the front face.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "end_cap",
+        "rolls": 3,
+        "hardware": "both ends roll and tuck back along the body, trapped by the two girth straps"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "hook",
+          "material": "punched_tpu_ladder_webbing",
+          "wrapsAround": "bar_cage"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "reflective": "reflective detailing on the front face",
+        "valve": "air valve for compression",
+        "logo": {
+          "type": "screen_print",
+          "location": "end_cap"
+        },
+        "seams": "welded",
+        "fabric": "210D Hypalon & 210D Diamond RipStop with abrasion patches under the straps",
+        "rigid_structure": "internal carbon rod along the length; moulded ribbed Bar Cage on an alloy handlebar clamp bracket",
+        "strap_length": "pair of 65cm TPU cargo straps with Speed Hooks"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_bar",
+          "wid": "x",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "tailfin_bar_cage",
+          "handlebar"
+        ],
+        "contactFaces": [
+          "rear_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 120,
+          "frame_mm": 25
+        },
+        "requires": [
+          "Tailfin Bar Cage plus handlebar clamp bracket, sold separately",
+          "a wider bar than the 8L - suits flat bars better than drops"
+        ],
+        "notes": "Drops into the moulded cage, held by two punched TPU ladder straps. Long axis along the bar, rolled ends outboard, no droop."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/"
+      ],
+      "render": {
+        "len_cm": 37,
+        "rolls": 3,
+        "basis": "maker range 370-540mm; render.len_cm is the minimum 370mm. dims_cm.len is the 540mm unfurled max."
+      },
+      "proprietary_mount": "Tailfin Bar Cage plus handlebar clamp bracket, SOLD SEPARATELY."
+    },
+    {
+      "line": "Bar System",
+      "name": "Bar Cage Bag",
+      "size": "Large (15L)",
+      "slot": "barroll",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/bar-system-bar-cage-bag-large-15l-1.jpg",
+        "assets/products/tailfin/bar-system-bar-cage-bag-large-15l-2.jpg",
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/"
+      ],
+      "dims_cm": {
+        "len": 56,
+        "wid": 18,
+        "hgt": 18,
+        "dia": 18
+      },
+      "dims_state": "unfurled_min_height",
+      "dims_raw": "Width: Min 380mm Max 560mm; Diameter: 180mm; weight 285g",
+      "dims_note": "MATERIAL CHANGE: len was 43.4 (an interpolation). New rule takes the UNFURLED max, 560mm. Diameter 180mm is a maker figure.",
+      "capacity_l": 15,
+      "geometry": {
+        "form": "cylinder",
+        "crossSection": "round",
+        "notes": "Longest and fattest of the three cage bags - a 560mm tube at 180mm diameter. Horizontal drybag in a moulded bar cage, both ends rolled inward, moulded pad on the front face.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "end_cap",
+        "rolls": 3,
+        "hardware": "both ends roll and tuck back along the body, trapped by the two girth straps"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "hook",
+          "material": "punched_tpu_ladder_webbing",
+          "wrapsAround": "bar_cage"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "reflective": "reflective detailing on the front face",
+        "valve": "air valve for compression",
+        "logo": {
+          "type": "screen_print",
+          "location": "end_cap"
+        },
+        "seams": "welded",
+        "fabric": "210D Hypalon & 210D Diamond RipStop with abrasion patches under the straps",
+        "rigid_structure": "internal carbon rod along the length; moulded ribbed Bar Cage on an alloy handlebar clamp bracket",
+        "strap_length": "pair of 65cm TPU cargo straps with Speed Hooks"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_bar",
+          "wid": "x",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "tailfin_bar_cage",
+          "handlebar"
+        ],
+        "contactFaces": [
+          "rear_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 120,
+          "frame_mm": 25
+        },
+        "requires": [
+          "Tailfin Bar Cage plus handlebar clamp bracket, sold separately",
+          "a wide flat bar - 56cm at 180mm diameter will crowd drop-bar hoods"
+        ],
+        "notes": "Drops into the moulded cage, two punched TPU ladder straps over the top. Long axis along the bar, rolled ends outboard."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/"
+      ],
+      "render": {
+        "len_cm": 38,
+        "rolls": 3,
+        "basis": "maker range 380-560mm; render.len_cm is the minimum 380mm. dims_cm.len is the 560mm unfurled max."
+      },
+      "proprietary_mount": "Tailfin Bar Cage plus handlebar clamp bracket, SOLD SEPARATELY."
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Half Frame Bag",
+      "size": "2.3L",
+      "slot": "framebag_half",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-half-frame-bag-2-3l-1.jpg",
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+        "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
+        "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
+      ],
+      "dims_cm": {
+        "len": 36,
+        "wid": 6,
+        "hgt": 11
+      },
+      "dims_state": "unknown",
+      "dims_raw": "XS, 2.3L, 200g bag only / 248g with straps - no linear dimensions published; fitment is by printable A4/US-Letter sizing poster which carries no labelled numbers",
+      "dims_note": "UNVERIFIED. Tailfin publish volume and weight for all six sizes but no linear dimensions at all. dims_cm is left at the existing catalogue estimate. Do not treat it as sourced. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "capacity_l": 2.3,
+      "geometry": {
+        "form": "triangle_panel",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.25,
+          "profile": "linear"
+        },
+        "notes": "A moulded, semi-rigid blade that fills the front-upper corner of the main triangle. Straight top edge running along the top tube; the front edge drops steeply where it follows the down tube; the body tapers rearward to a narrow point near the seat tube. The face is not flat - a moulded rib runs the length near the top edge and the lower third is a separate lighter grey textured panel. Tailfin's own phrase is 'no bulge, no budge': it keeps its shape fully loaded, so do not model it as a sagging soft pouch.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "custom water-resistant zip with a moulded zip garage at each end; single-handed pull with a cord tab"
+      },
+      "zips": [
+        {
+          "run": "top_side",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "one long straight zip running fore-aft high on the drive side, just below the top edge, the full length of the bag. Zip garages at both ends. Silent-running."
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 3,
+          "location": "top",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "attachment",
+          "count": 1,
+          "location": "front_face",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "downtube"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "internal",
+          "count": 1,
+          "location": "internal"
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded, 100% waterproof",
+        "fabric": "210D Hypalon & 210D Diamond RipStop; matte black with a fine hex weave, plus a lighter textured panel along the lower edge",
+        "rigid_structure": "INTERNAL CARBON SPACE FRAME - two lightweight carbon rods run internally along the upper edges and below the zip, linking to the top V-Mounts. They stop the pack sagging between attachment points, keep the zip line straight and prevent the bulge that causes knee rub. The struts are SIZE-SPECIFIC (tuned per bag size) and user-removable. This is what the visible moulded rib along the top of the bag in the photos actually is - model it as a straight rigid spine, not a soft fold. Outside that: semi-rigid moulded panel construction; stiff branded TPU straps with slim 'tailfin' ladderlock clips sitting proud of the tube.",
+        "hydration_port": true,
+        "internal_storage_cover": true,
+        "strap_kit": "3 x 18.5cm cargo straps + 1 x 29cm cargo strap; deliberately no seat tube or head tube attachment"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "downtube"
+        ],
+        "contactFaces": [
+          "top_edge",
+          "front_edge"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal - straps only, no bosses, no rack, no proprietary carrier. Three straps over the TOP TUBE and one around the DOWN TUBE; Tailfin deliberately avoid the seat tube and head tube. The bag hangs inside the main triangle on the drive side with its top edge pressed flat against the underside of the top tube. Symmetrical enough to run either side. No sag."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Half Frame Bag",
+      "size": "3.0L",
+      "slot": "framebag_half",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-half-frame-bag-3-0l-1.jpg",
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+        "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
+        "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
+      ],
+      "dims_cm": {
+        "len": 40,
+        "wid": 6,
+        "hgt": 12.5
+      },
+      "dims_state": "unknown",
+      "dims_raw": "S, 3.0L, 242g bag only / 290g with straps - no linear dimensions published",
+      "dims_note": "UNVERIFIED. No maker linear dimensions for this line; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "capacity_l": 3,
+      "geometry": {
+        "form": "triangle_panel",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.25,
+          "profile": "linear"
+        },
+        "notes": "Moulded semi-rigid blade filling the front-upper corner of the main triangle: straight top edge on the top tube, steep front edge following the down tube, tapering rearward to a point. Moulded rib near the top edge, lighter textured panel along the bottom. Self-supporting, no bulge.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "water-resistant zip with moulded garages at both ends, single-handed cord pull"
+      },
+      "zips": [
+        {
+          "run": "top_side",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "one long straight zip fore-aft high on the drive side, full length, garages both ends"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 3,
+          "location": "top",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "attachment",
+          "count": 1,
+          "location": "front_face",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "downtube"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "internal",
+          "count": 1,
+          "location": "internal"
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded, 100% waterproof",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave with a lighter lower panel",
+        "rigid_structure": "INTERNAL CARBON SPACE FRAME - two lightweight carbon rods run internally along the upper edges and below the zip, linking to the top V-Mounts. They stop the pack sagging between attachment points, keep the zip line straight and prevent the bulge that causes knee rub. The struts are SIZE-SPECIFIC (tuned per bag size) and user-removable. This is what the visible moulded rib along the top of the bag in the photos actually is - model it as a straight rigid spine, not a soft fold. Outside that: semi-rigid moulded panel construction; stiff branded TPU straps with slim 'tailfin' ladderlock clips sitting proud of the tube.",
+        "hydration_port": true,
+        "internal_storage_cover": true,
+        "strap_kit": "3 x 18.5cm + 1 x 29cm cargo straps; no seat tube or head tube attachment"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "downtube"
+        ],
+        "contactFaces": [
+          "top_edge",
+          "front_edge"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Universal strap-on. Three top-tube straps, one down-tube strap. Hangs inside the main triangle, top edge flat to the underside of the top tube, no sag."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Half Frame Bag",
+      "size": "3.8L",
+      "slot": "framebag_half",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-half-frame-bag-3-8l-1.jpg",
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+        "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
+        "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
+      ],
+      "dims_cm": {
+        "len": 44,
+        "wid": 6.4,
+        "hgt": 13.5
+      },
+      "dims_state": "unknown",
+      "dims_raw": "M, 3.8L, 284g bag only / 332g with straps - no linear dimensions published",
+      "dims_note": "UNVERIFIED. No maker linear dimensions; dims_cm left at the existing catalogue estimate. This is the size shown in the shared studio photo on a pink Canyon, where the bag spans most of the top tube and reaches roughly a third of the way down the down tube. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "capacity_l": 3.8,
+      "geometry": {
+        "form": "triangle_panel",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.25,
+          "profile": "linear"
+        },
+        "notes": "Moulded semi-rigid blade: straight top edge along the top tube, steep front edge down the down tube, tapering rearward to a narrow point. A moulded rib runs the length near the top edge; the lower third is a lighter grey textured panel with a distinct welded seam line. Self-supporting when loaded.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "water-resistant zip with moulded garages, single-handed cord pull"
+      },
+      "zips": [
+        {
+          "run": "top_side",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "one long straight zip running fore-aft high on the drive side, full length, cord pull toward the front, garages both ends"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 3,
+          "location": "top",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "attachment",
+          "count": 1,
+          "location": "front_face",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "downtube"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "internal",
+          "count": 1,
+          "location": "internal"
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded, 100% waterproof",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave with a lighter lower panel",
+        "rigid_structure": "INTERNAL CARBON SPACE FRAME - two lightweight carbon rods run internally along the upper edges and below the zip, linking to the top V-Mounts. They stop the pack sagging between attachment points, keep the zip line straight and prevent the bulge that causes knee rub. The struts are SIZE-SPECIFIC (tuned per bag size) and user-removable. This is what the visible moulded rib along the top of the bag in the photos actually is - model it as a straight rigid spine, not a soft fold. Outside that: semi-rigid moulded panel construction; stiff branded TPU straps with slim 'tailfin' ladderlock clips sitting proud of the tube.",
+        "hydration_port": true,
+        "internal_storage_cover": true,
+        "strap_kit": "3 x 18.5cm + 1 x 29cm cargo straps; no seat tube or head tube attachment"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "downtube"
+        ],
+        "contactFaces": [
+          "top_edge",
+          "front_edge"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Universal strap-on, no hardware needed. Three top-tube straps and one down-tube strap. Sits inside the main triangle with the top edge pressed flat under the top tube. No sag."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Half Frame Bag",
+      "size": "4.5L",
+      "slot": "framebag_half",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-half-frame-bag-4-5l-1.jpg",
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+        "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
+        "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
+      ],
+      "dims_cm": {
+        "len": 48,
+        "wid": 6.5,
+        "hgt": 14.5
+      },
+      "dims_state": "unknown",
+      "dims_raw": "L, 4.5L, 302g bag only / 350g with straps - no linear dimensions published",
+      "dims_note": "UNVERIFIED. No maker linear dimensions; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "capacity_l": 4.5,
+      "geometry": {
+        "form": "triangle_panel",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.25,
+          "profile": "linear"
+        },
+        "notes": "Moulded semi-rigid blade, straight top edge, steep front edge down the down tube, tapering rearward to a point. Moulded rib near the top, lighter textured lower panel. Self-supporting.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "water-resistant zip with moulded garages, single-handed cord pull"
+      },
+      "zips": [
+        {
+          "run": "top_side",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "one long straight zip fore-aft high on the drive side, full length"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 3,
+          "location": "top",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "attachment",
+          "count": 1,
+          "location": "front_face",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "downtube"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "internal",
+          "count": 1,
+          "location": "internal"
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded, 100% waterproof",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave",
+        "rigid_structure": "INTERNAL CARBON SPACE FRAME - two lightweight carbon rods run internally along the upper edges and below the zip, linking to the top V-Mounts. They stop the pack sagging between attachment points, keep the zip line straight and prevent the bulge that causes knee rub. The struts are SIZE-SPECIFIC (tuned per bag size) and user-removable. This is what the visible moulded rib along the top of the bag in the photos actually is - model it as a straight rigid spine, not a soft fold. Outside that: semi-rigid moulded panel construction; stiff branded TPU straps with slim 'tailfin' ladderlock clips sitting proud of the tube.",
+        "hydration_port": true,
+        "internal_storage_cover": true,
+        "strap_kit": "3 x 18.5cm + 1 x 29cm cargo straps"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "downtube"
+        ],
+        "contactFaces": [
+          "top_edge",
+          "front_edge"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Universal strap-on. Three top-tube straps, one down-tube strap, no seat tube or head tube contact. No sag."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Half Frame Bag",
+      "size": "5.3L",
+      "slot": "framebag_half",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-half-frame-bag-5-3l-1.jpg",
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+        "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
+        "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
+      ],
+      "dims_cm": {
+        "len": 52,
+        "wid": 6.6,
+        "hgt": 15.5
+      },
+      "dims_state": "unknown",
+      "dims_raw": "XL, 5.3L, 316g bag only / 364g with straps - no linear dimensions published",
+      "dims_note": "UNVERIFIED. No maker linear dimensions; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "capacity_l": 5.3,
+      "geometry": {
+        "form": "triangle_panel",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.25,
+          "profile": "linear"
+        },
+        "notes": "Moulded semi-rigid blade, straight top edge, steep front edge, tapering rearward to a point. Moulded rib near the top, lighter textured lower panel. Self-supporting.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "water-resistant zip with moulded garages, single-handed cord pull"
+      },
+      "zips": [
+        {
+          "run": "top_side",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "one long straight zip fore-aft high on the drive side, full length"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 3,
+          "location": "top",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "attachment",
+          "count": 1,
+          "location": "front_face",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "downtube"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "internal",
+          "count": 1,
+          "location": "internal"
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded, 100% waterproof",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave",
+        "rigid_structure": "INTERNAL CARBON SPACE FRAME - two lightweight carbon rods run internally along the upper edges and below the zip, linking to the top V-Mounts. They stop the pack sagging between attachment points, keep the zip line straight and prevent the bulge that causes knee rub. The struts are SIZE-SPECIFIC (tuned per bag size) and user-removable. This is what the visible moulded rib along the top of the bag in the photos actually is - model it as a straight rigid spine, not a soft fold. Outside that: semi-rigid moulded panel construction; stiff branded TPU straps with slim 'tailfin' ladderlock clips sitting proud of the tube.",
+        "hydration_port": true,
+        "internal_storage_cover": true,
+        "strap_kit": "3 x 18.5cm + 1 x 29cm cargo straps"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "downtube"
+        ],
+        "contactFaces": [
+          "top_edge",
+          "front_edge"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Universal strap-on. Three top-tube straps, one down-tube strap. On a 56cm frame this size nearly fills the main triangle - check bottle cage clearance."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Half Frame Bag",
+      "size": "6.5L",
+      "slot": "framebag_half",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-half-frame-bag-6-5l-1.jpg",
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
+        "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
+        "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
+      ],
+      "dims_cm": {
+        "len": 56,
+        "wid": 7,
+        "hgt": 16.5
+      },
+      "dims_state": "unknown",
+      "dims_raw": "XXL, 6.5L, 334g bag only / 382g with straps - no linear dimensions published",
+      "dims_note": "UNVERIFIED. No maker linear dimensions; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "capacity_l": 6.5,
+      "geometry": {
+        "form": "triangle_panel",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.25,
+          "profile": "linear"
+        },
+        "notes": "Largest of the six. Moulded semi-rigid blade, straight top edge, steep front edge, tapering rearward to a point. Moulded rib near the top, lighter textured lower panel.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "water-resistant zip with moulded garages, single-handed cord pull"
+      },
+      "zips": [
+        {
+          "run": "top_side",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "one long straight zip fore-aft high on the drive side, full length"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 3,
+          "location": "top",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "attachment",
+          "count": 1,
+          "location": "front_face",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "downtube"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "internal",
+          "count": 1,
+          "location": "internal"
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded, 100% waterproof",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave",
+        "rigid_structure": "INTERNAL CARBON SPACE FRAME - two lightweight carbon rods run internally along the upper edges and below the zip, linking to the top V-Mounts. They stop the pack sagging between attachment points, keep the zip line straight and prevent the bulge that causes knee rub. The struts are SIZE-SPECIFIC (tuned per bag size) and user-removable. This is what the visible moulded rib along the top of the bag in the photos actually is - model it as a straight rigid spine, not a soft fold. Outside that: semi-rigid moulded panel construction; stiff branded TPU straps with slim 'tailfin' ladderlock clips sitting proud of the tube.",
+        "hydration_port": true,
+        "internal_storage_cover": true,
+        "strap_kit": "3 x 18.5cm + 1 x 29cm cargo straps"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "downtube"
+        ],
+        "contactFaces": [
+          "top_edge",
+          "front_edge"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Universal strap-on. Three top-tube straps, one down-tube strap. Needs a large main triangle - on a 56cm frame it will displace the down tube bottle."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/half-frame-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Wedge Frame Bag",
+      "size": "1.9L",
+      "slot": "framebag_half",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-wedge-frame-bag-1-9l-1.jpg",
+        "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/",
+        "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
+        "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
+      ],
+      "dims_cm": {
+        "len": 32,
+        "wid": 6,
+        "hgt": 10
+      },
+      "dims_state": "unknown",
+      "dims_raw": "Small, 1.9L, 170g bag only / 208g with straps - no linear dimensions published",
+      "dims_note": "UNVERIFIED. Tailfin publish volume and weight only for the Wedge range. dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "capacity_l": 1.9,
+      "geometry": {
+        "form": "trapezoid_panel",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.2,
+          "profile": "linear"
+        },
+        "notes": "Shorter and steeper than the Half Frame Bag: a compact wedge tucked under the top tube. Straight top edge, a deep blunt front end near the head tube, and a long shallow taper rearward to a sharp point. Same moulded semi-rigid construction with a rib along the top and a lighter textured lower panel. 'No bulge, no budge' - it holds shape loaded.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "custom water-resistant 'silent' zip with moulded zip garages, one-handed operation"
+      },
+      "zips": [
+        {
+          "run": "top_side",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "single straight zip running fore-aft high on the drive side with a cord pull, garages at both ends"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "top",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "attachment",
+          "count": 1,
+          "location": "front_face",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "downtube"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "internal",
+          "count": 1,
+          "location": "internal"
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave with a lighter lower panel",
+        "rigid_structure": "INTERNAL CARBON SPACE FRAME - two lightweight carbon rods run internally along the upper edges and below the zip, linking to the top V-Mounts. They stop the pack sagging between attachment points, keep the zip line straight and prevent the bulge that causes knee rub. The struts are SIZE-SPECIFIC (tuned per bag size) and user-removable. This is what the visible moulded rib along the top of the bag in the photos actually is - model it as a straight rigid spine, not a soft fold. Outside that: semi-rigid moulded panel construction; stiff branded TPU straps with slim 'tailfin' ladderlock clips sitting proud of the tube.",
+        "cable_port": true,
+        "strap_kit": "2 x 18.5cm cargo straps + 1 x 29cm cargo strap"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "downtube"
+        ],
+        "contactFaces": [
+          "top_edge",
+          "front_edge"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Universal strap-on, no hardware. Two straps over the top tube and one around the down tube - one fewer top strap than the Half Frame Bag. Leaves the lower triangle free for bottles, which is the main reason to pick it over the Half Frame."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Wedge Frame Bag",
+      "size": "2.7L",
+      "slot": "framebag_half",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-wedge-frame-bag-2-7l-1.jpg",
+        "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/",
+        "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
+        "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
+      ],
+      "dims_cm": {
+        "len": 36,
+        "wid": 6.5,
+        "hgt": 11.5
+      },
+      "dims_state": "unknown",
+      "dims_raw": "Medium, 2.7L, 194g bag only / 232g with straps - no linear dimensions published",
+      "dims_note": "UNVERIFIED. Volume and weight only; dims_cm left at the existing catalogue estimate. This is the size in the shared studio photo, where it occupies roughly the front half of the top tube and drops about a third of the frame depth. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "capacity_l": 2.7,
+      "geometry": {
+        "form": "trapezoid_panel",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.2,
+          "profile": "linear"
+        },
+        "notes": "Compact wedge under the top tube: straight top edge, deep blunt front end near the head tube, long shallow taper rearward to a sharp point. Moulded semi-rigid panels with a rib along the top and a lighter textured lower panel.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "custom water-resistant 'silent' zip with moulded garages, one-handed operation"
+      },
+      "zips": [
+        {
+          "run": "top_side",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "single straight zip fore-aft high on the drive side, cord pull, garages both ends"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "top",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "attachment",
+          "count": 1,
+          "location": "front_face",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "downtube"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "internal",
+          "count": 1,
+          "location": "internal"
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave with a lighter lower panel",
+        "rigid_structure": "INTERNAL CARBON SPACE FRAME - two lightweight carbon rods run internally along the upper edges and below the zip, linking to the top V-Mounts. They stop the pack sagging between attachment points, keep the zip line straight and prevent the bulge that causes knee rub. The struts are SIZE-SPECIFIC (tuned per bag size) and user-removable. This is what the visible moulded rib along the top of the bag in the photos actually is - model it as a straight rigid spine, not a soft fold. Outside that: semi-rigid moulded panel construction; stiff branded TPU straps with slim 'tailfin' ladderlock clips sitting proud of the tube.",
+        "cable_port": true,
+        "strap_kit": "2 x 18.5cm + 1 x 29cm cargo straps"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "downtube"
+        ],
+        "contactFaces": [
+          "top_edge",
+          "front_edge"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Universal strap-on. Two top-tube straps, one down-tube strap. Leaves the lower triangle clear for bottles."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Wedge Frame Bag",
+      "size": "3.5L",
+      "slot": "framebag_half",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-wedge-frame-bag-3-5l-1.jpg",
+        "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/",
+        "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
+        "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
+      ],
+      "dims_cm": {
+        "len": 40,
+        "wid": 7,
+        "hgt": 12.5
+      },
+      "dims_state": "unknown",
+      "dims_raw": "Large, 3.5L, 230g bag only / 277.6g with straps - no linear dimensions published",
+      "dims_note": "UNVERIFIED. Volume and weight only; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "capacity_l": 3.5,
+      "geometry": {
+        "form": "trapezoid_panel",
+        "crossSection": "rounded_rect",
+        "taper": {
+          "nose": 1,
+          "tail": 0.2,
+          "profile": "linear"
+        },
+        "notes": "Largest wedge. Straight top edge, deep blunt front end, long shallow taper rearward to a point. Moulded semi-rigid panels, rib along the top, lighter textured lower panel.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "custom water-resistant 'silent' zip with moulded garages, one-handed operation"
+      },
+      "zips": [
+        {
+          "run": "top_side",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "single straight zip fore-aft high on the drive side, cord pull, garages both ends"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 3,
+          "location": "top",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "attachment",
+          "count": 1,
+          "location": "front_face",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "downtube"
+        }
+      ],
+      "pockets": [
+        {
+          "type": "internal",
+          "count": 1,
+          "location": "internal"
+        }
+      ],
+      "details": {
+        "daisyChains": false,
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "welded",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave",
+        "rigid_structure": "INTERNAL CARBON SPACE FRAME - two lightweight carbon rods run internally along the upper edges and below the zip, linking to the top V-Mounts. They stop the pack sagging between attachment points, keep the zip line straight and prevent the bulge that causes knee rub. The struts are SIZE-SPECIFIC (tuned per bag size) and user-removable. This is what the visible moulded rib along the top of the bag in the photos actually is - model it as a straight rigid spine, not a soft fold. Outside that: semi-rigid moulded panel construction; stiff branded TPU straps with slim 'tailfin' ladderlock clips sitting proud of the tube.",
+        "cable_port": true,
+        "strap_kit": "the Large ships with an extra 18.5cm strap - 3 x 18.5cm + 1 x 29cm, so four attachment points rather than three"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "downtube"
+        ],
+        "contactFaces": [
+          "top_edge",
+          "front_edge"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Universal strap-on. This size alone gets THREE top-tube straps plus the down-tube strap; the Small and Medium get two. Leaves the lower triangle clear for bottles."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Downtube Pack (V-Mount)",
+      "size": "1.7L",
+      "slot": "downtube",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "low",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-1.jpg",
+        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-2.jpg",
+        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-3.jpg",
+        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-4.jpg",
+        "https://www.tailfin.cc/product/frame-bags/downtube-packs/",
+        "https://road.cc/offroad/content/review/racks/tailfin-v-mount-pack-10253",
+        "https://www.tailfin.cc/us/product/frame-bags/downtube-packs/"
+      ],
+      "dims_cm": {
+        "len": 38,
+        "wid": 7.5,
+        "hgt": 6
+      },
+      "dims_state": "unknown",
+      "dims_raw": "1.7L, 210g, 3kg max load - no linear dimensions published; sizing by printable template",
+      "dims_note": "UNVERIFIED. Volume, weight and load only from the maker; dims_cm left at the existing catalogue estimate. The flat-lay photo alongside a folded jacket, a multitool wallet, a Lezyne mini pump and a tube gives a rough scale check - the pack is a little longer than the pump and about three tool-wallets tall - which is consistent with ~38cm, but that is corroboration, not a measurement. FIT CONSTRAINT (not a bag dimension, but it bounds the render): a measured review reports the 1.7L swallows objects up to 88mm diameter, so the pack's internal bore is ~88mm and its external cross-section must exceed that. The dims_cm estimate of 7.5 x 6.0 cm is therefore too SLIM to be right and should be treated as the weakest number in this record. dims_cm is left unchanged per the spec rather than being re-derived. Tailfin also state the 1.7L is the road/gravel size, chosen over the 3L because of crank and down tube width, and that the V-Mounts slide 19mm up and down the pack to clear bottle bosses.",
+      "capacity_l": 1.7,
+      "geometry": {
+        "form": "truncated_cylinder",
+        "crossSection": "d_shape",
+        "notes": "A long slim rolltop sleeve that lies flat along the down tube. Near-constant section down its length, squared-off at the rolled end, softly rounded at the base. The face against the tube is concave where the V-Mount straps cradle it; the outer face is flat with two moulded horizontal lash slots. Much flatter in profile than a cage pack.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "two ways: rolled and clipped at the top, or rolled and pulled down by T-hook straps along the sides for extra compression"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 1,
+          "location": "top",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_v_mount_strap",
+          "wrapsAround": "downtube"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "hook",
+          "material": "webbing"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "daisyChains": true,
+        "logo": {
+          "type": "screen_print",
+          "location": "front_face"
+        },
+        "seams": "welded, fully waterproof",
+        "fabric": "420D Hypalon / ripstop nylon - a heavier fabric than the rest of the range, because this pack rides in the spray off the front wheel",
+        "rigid_structure": "the patented V-MOUNT is the defining hardware: a moulded rubber/TPU part whose two legs splay to cradle a round tube from a single spine, replacing velcro and stopping the pack rolling around the tube. Two of them, user-positionable along the pack so they can dodge bottle bosses and suspension hardware. Draw them - they are the most recognisable part of this product.",
+        "two_horizontal_lash_slots_on_face": true,
+        "strap_kit": "2 x Tailfin V-Mount straps, 2 x 18.5cm cargo straps, 2 x 30cm cargo straps, 3 x M5 blanking plugs"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_downtube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "downtube"
+        ],
+        "contactFaces": [
+          "inboard_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 40,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal - strap-on, no bosses and no rack required, which makes it one of the few Tailfin products that needs none of their hardware. Two V-Mount straps cradle the DOWN TUBE and the pack lies along it inside the main triangle, opening pointing up toward the head tube. The V-Mount stops it rotating around the tube, so it stays put with no roll and no sag. Check front wheel clearance at full lock."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/downtube-packs/"
+      ],
+      "render": {
+        "len_cm": 38,
+        "rolls": 3,
+        "basis": "the roll is at the top of a pack that lies ALONG the down tube, so length is its variable axis. Tailfin publish no length at all, so there is no range to take a minimum from; render.len_cm carries the dims_cm estimate through unchanged. Both flat-lay photos (assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-1.jpg and -2.jpg) show the pack rolled and clipped shut, which is the state the estimate represents."
+      },
+      "proprietary_mount": false
+    },
+    {
+      "line": "Frame Bags",
+      "name": "Downtube Pack (V-Mount)",
+      "size": "3L",
+      "slot": "downtube",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "low",
+      "evidence": [
+        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-1.jpg",
+        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-2.jpg",
+        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-3.jpg",
+        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-4.jpg",
+        "https://www.tailfin.cc/product/frame-bags/downtube-packs/",
+        "https://road.cc/offroad/content/review/racks/tailfin-v-mount-pack-10253",
+        "https://www.tailfin.cc/us/product/frame-bags/downtube-packs/"
+      ],
+      "dims_cm": {
+        "len": 44,
+        "wid": 9,
+        "hgt": 7.6
+      },
+      "dims_state": "unknown",
+      "dims_raw": "3L, 277g, 3kg max load - no linear dimensions published",
+      "dims_note": "UNVERIFIED. Volume, weight and load only; dims_cm left at the existing catalogue estimate. The flat-lay photo shows this size swallowing a 1L Nalgene, a gas canister, a pot, a mini pump and a tube, which is consistent with ~3L but is not a measurement. FIT CONSTRAINT (not a bag dimension, but it bounds the render): a measured review reports the 3L swallows objects up to 120mm diameter and quotes a 75mm width, so its internal bore is ~120mm. The dims_cm estimate of 9.0 x 7.6 cm cannot contain a 120mm object and is therefore too slim; it is the weakest number in this record and is left unchanged per the spec rather than re-derived. Tailfin recommend the 3L for MTB rather than road/gravel, on crank and down tube clearance grounds. V-Mounts slide 19mm along the pack to clear bottle bosses.",
+      "capacity_l": 3,
+      "geometry": {
+        "form": "truncated_cylinder",
+        "crossSection": "d_shape",
+        "notes": "Longer and fuller version of the 1.7L. Slim rolltop sleeve lying along the down tube, near-constant section, squared rolled end, rounded base, concave tube-side face and a flat outer face with two moulded lash slots.",
+        "shoulder": "squared"
+      },
+      "closure": {
+        "type": "rolltop",
+        "location": "top",
+        "rolls": 3,
+        "hardware": "rolled and clipped at the top, or rolled and pulled down by T-hook straps along the sides"
+      },
+      "zips": [],
+      "straps": [
+        {
+          "role": "lid",
+          "count": 1,
+          "location": "top",
+          "hardware": "buckle",
+          "material": "webbing",
+          "wrapsAround": "rolled_top"
+        },
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "girth",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_v_mount_strap",
+          "wrapsAround": "downtube"
+        },
+        {
+          "role": "compression",
+          "count": 2,
+          "location": "side",
+          "hardware": "hook",
+          "material": "webbing"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "daisyChains": true,
+        "logo": {
+          "type": "screen_print",
+          "location": "front_face"
+        },
+        "seams": "welded, fully waterproof",
+        "fabric": "420D Hypalon / ripstop nylon - heavier than the rest of the range for spray resistance",
+        "rigid_structure": "two patented moulded V-Mounts whose splayed legs cradle the round tube from a single spine and stop the pack rolling; user-positionable to clear bottle bosses and suspension",
+        "two_horizontal_lash_slots_on_face": true,
+        "strap_kit": "2 x Tailfin V-Mount straps, 2 x 30cm cargo straps, 3 x M5 blanking plugs"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_downtube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "downtube"
+        ],
+        "contactFaces": [
+          "inboard_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 40,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal strap-on - no bosses, no rack, no Tailfin carrier. Two V-Mount straps cradle the down tube; the pack lies along it inside the main triangle with the opening toward the head tube. No roll, no sag. At 44cm this size will conflict with a down tube bottle cage on a 56cm frame."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/frame-bags/downtube-packs/"
+      ],
+      "render": {
+        "len_cm": 44,
+        "rolls": 3,
+        "basis": "length is the variable axis - the roll is at the top of a pack lying along the down tube. No maker length is published, so render.len_cm carries the dims_cm estimate through unchanged. Photographed rolled and clipped shut in assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-1.jpg and -2.jpg."
+      },
+      "proprietary_mount": false
+    },
+    {
+      "line": "Top Tube",
+      "name": "Top Tube Bag",
+      "size": "0.8L Zip",
+      "slot": "toptube",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/top-tube-top-tube-bag-0-8l-zip-1.jpg",
+        "https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/"
+      ],
+      "dims_cm": {
+        "len": 22.4,
+        "wid": 6.5,
+        "hgt": 10
+      },
+      "dims_state": "fixed",
+      "dims_raw": "224 MM (length) / 100 MM (height) / 65 MM (width) / 48 MM; 0.8L Top Tube Bag (Zip) Road/Gravel. Weight 138g direct mount / 150g strap mount",
+      "dims_note": "Maker figures from Tailfin's Top Tube Bag dimensions sheet. This is a fixed-shape zip bag with no roll, so the unfurled/minimum-height rule does not apply - dims_state is 'fixed'. The width tapers 65mm at the top to 48mm at the base (the fourth figure), so the larger value is recorded and the taper is in geometry. Width was 5.0 in an earlier catalogue and is corrected to 6.5.",
+      "capacity_l": 0.8,
+      "geometry": {
+        "form": "teardrop",
+        "crossSection": "teardrop",
+        "taper": {
+          "nose": 1,
+          "tail": 0.55,
+          "profile": "linear"
+        },
+        "notes": "Tailfin's own word is teardrop, and it reads that way in profile: a tall blunt vertical front face against the stem, a domed top that sweeps down and back, and a low rounded tail. Seen from above it is a narrow lens - 65mm at the top ridge pinching to 48mm at the footbed - which is what keeps it clear of the knees. Nose = the front end at the stem, tail = the rear end. The smallest and slimmest of the three; the only one offered as Zip only.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "waterproof zip with a moulded garage; the 0.8L is Zip-only (no Flip lid option)"
+      },
+      "zips": [
+        {
+          "run": "top_centre",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "single straight zip running fore-aft along the top ridge, pull parked at the front by the stem"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "underside",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "fully welded",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave",
+        "rigid_structure": "3D-welded self-supporting body with a washable moulded footbed that sits astride the top tube. The V-Mount base is a moulded part carrying either two T25 Torx bolts into top-tube bosses (direct mount) or two strap slots.",
+        "cable_port": true,
+        "mount_options": "direct bolt-on via 2 x T25 Torx screws into top tube bosses, OR strap mount using 2 x 18.5cm cargo straps + 1 x 36cm strap. V-Mount takes standard 20mm cargo straps and can go on several frame locations - but not on forks.",
+        "strap_sharing": "same cargo straps as the frame bags"
+      },
+      "mount": {
+        "axes": {
+          "len": "x",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal. Sits astride the TOP OF the top tube immediately behind the stem, front face almost touching it, tapering rearward. Bolts to top tube bosses if the frame has them, otherwise two rubber straps around the tube. Straddles the tube on a moulded footbed so it does not tip. The teardrop shape is specifically so it does not foul the bar when turning."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Top Tube",
+      "name": "Top Tube Bag",
+      "size": "1.1L Zip/Flip",
+      "slot": "toptube",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/top-tube-top-tube-bag-1-1l-zip-flip-1.jpg",
+        "https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/"
+      ],
+      "dims_cm": {
+        "len": 24.9,
+        "wid": 7.5,
+        "hgt": 10.4
+      },
+      "dims_state": "fixed",
+      "dims_raw": "249 MM / 104 MM / 75 MM; 1.1L Top Tube Bag (Flip + Zip) Road/Gravel/MTB. Weight Zip 154-166g / Flip 168-180g",
+      "dims_note": "Maker figures from Tailfin's Top Tube Bag dimensions sheet. Fixed-shape bag, no roll axis, so dims_state is 'fixed'. Width corrected from an earlier 6.0 to the published 7.5.",
+      "capacity_l": 1.1,
+      "geometry": {
+        "form": "teardrop",
+        "crossSection": "teardrop",
+        "taper": {
+          "nose": 1,
+          "tail": 0.55,
+          "profile": "linear"
+        },
+        "notes": "Same teardrop as the 0.8L, one size up and fuller - tall blunt front face at the stem, domed top sweeping down and back, low rounded tail, lens-shaped in plan. This size is offered with either a Zip lid or a Flip lid, which changes the top of the model: the Zip is a plain domed top with a single fore-aft zip, the Flip is a hinged lid that lifts from the rear with a wider sealed rim.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "two variants: waterproof zip with a moulded garage (slimmer, more secure on rough ground), or a Flip lid (faster access, better in heavy rain)"
+      },
+      "zips": [
+        {
+          "run": "top_centre",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "Zip version: single straight zip fore-aft along the top ridge, pull parked at the front. Flip version has no top zip."
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "underside",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "fully welded",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave",
+        "rigid_structure": "3D-welded self-supporting body, washable moulded footbed, moulded V-Mount base",
+        "cable_port": true,
+        "mount_options": "direct bolt-on via 2 x T25 Torx screws, OR strap mount using 2 x 18.5cm + 1 x 36cm cargo straps. Not fork-mountable.",
+        "strap_sharing": "shares cargo straps with the frame bags"
+      },
+      "mount": {
+        "axes": {
+          "len": "x",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal. Straddles the top of the top tube just behind the stem, tapering rearward. Bolts or straps. Sized to take a Plus-size phone, which is why it is the widest of the road-friendly options."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Top Tube",
+      "name": "Top Tube Bag",
+      "size": "1.5L Zip/Flip",
+      "slot": "toptube",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "high",
+      "evidence": [
+        "assets/products/tailfin/top-tube-top-tube-bag-1-5l-zip-flip-1.jpg",
+        "https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/"
+      ],
+      "dims_cm": {
+        "len": 27.2,
+        "wid": 9,
+        "hgt": 11.4
+      },
+      "dims_state": "fixed",
+      "dims_raw": "272 MM / 114 MM / 90 MM; 1.5L Top Tube Bag (Flip + Zip) MTB. Weight Zip 178-190g / Flip 187-199g",
+      "dims_note": "Maker figures from Tailfin's Top Tube Bag dimensions sheet. Fixed-shape bag, dims_state 'fixed'. Width corrected from an earlier 6.5 to the published 9.0 - this is the MTB size and is noticeably fatter than the road sizes.",
+      "capacity_l": 1.5,
+      "geometry": {
+        "form": "teardrop",
+        "crossSection": "teardrop",
+        "taper": {
+          "nose": 1,
+          "tail": 0.55,
+          "profile": "linear"
+        },
+        "notes": "Largest of the three and the MTB-oriented one: same teardrop but visibly fatter at 90mm wide. Tall blunt front face at the stem, domed top sweeping down and back, low rounded tail. Available Zip or Flip - the Flip replaces the top zip with a hinged rear-opening lid.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "waterproof zip with a moulded garage, or a Flip lid variant"
+      },
+      "zips": [
+        {
+          "run": "top_centre",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "Zip version: single straight zip fore-aft along the top ridge. Flip version has no top zip."
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "underside",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "toptube"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "fully welded",
+        "fabric": "210D Hypalon & 210D Diamond RipStop, matte hex weave",
+        "rigid_structure": "3D-welded self-supporting body, washable moulded footbed, moulded V-Mount base",
+        "cable_port": true,
+        "mount_options": "direct bolt-on via 2 x T25 Torx screws, OR strap mount using 2 x 18.5cm + 1 x 36cm cargo straps. Not fork-mountable.",
+        "strap_sharing": "shares cargo straps with the frame bags"
+      },
+      "mount": {
+        "axes": {
+          "len": "x",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal. Straddles the top tube behind the stem. At 90mm wide this is the one most likely to touch a rider's knees on a narrow road frame - Tailfin position it as the MTB size."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Top Tube",
+      "name": "Long Top Tube Bag",
+      "size": "1.6L",
+      "slot": "toptube",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/top-tube-long-top-tube-bag-1-6l-1.jpg",
+        "https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/"
+      ],
+      "dims_cm": {
+        "len": 37,
+        "wid": 5.5,
+        "hgt": 8.5
+      },
+      "dims_state": "fixed",
+      "dims_raw": "370 MM (length); 50 MM / 85 MM (heights). Weight 229g direct mount / 241g strap mount",
+      "dims_note": "Length and both heights are maker figures from Tailfin's Long Top Tube Pack sizing poster. Fixed-shape zip bag, no roll, so dims_state is 'fixed'. Height is tapered 85mm to 50mm - the LARGER value is recorded per the tapered-axis rule and the taper is in geometry. Tailfin publish NO width for this line, so wid 5.5 remains the existing catalogue estimate and is the only unverified number here. Length was 40 in an earlier catalogue and is corrected to 37.",
+      "capacity_l": 1.6,
+      "geometry": {
+        "form": "slab",
+        "crossSection": "teardrop",
+        "taper": {
+          "nose": 1,
+          "tail": 0.59,
+          "profile": "linear"
+        },
+        "notes": "A long low blade lying along the top tube, roughly four times longer than it is tall. The TALL end (85mm) is at the FRONT next to the stem; the body sweeps down in a long straight line to a low pointed tail (50mm) near the seat tube. Narrow in plan so it sits between the knees. A moulded rib runs the full length of each side and the whole shell is 3D-welded and self-supporting - Tailfin state it needs no front stabilising strap.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "waterproof zip with moulded garages; two coloured pulls, one parked at each end"
+      },
+      "zips": [
+        {
+          "run": "top_centre",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "one long two-way zip running the full length along the top ridge, with a pull at each end (teal/blue cord tabs in the photo) so it can be opened from either the stem end or the saddle end"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 4,
+          "location": "underside",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_v_mount_strap",
+          "wrapsAround": "toptube"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "3D welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte with a fine dimpled texture",
+        "rigid_structure": "self-supporting welded shell with a moulded rib down each side; patented V-Mounts on the base. Four of them on this length, evenly spaced.",
+        "logo_style": "the Long Top Tube Bag carries only the Tailfin chevron mark, not the wordmark",
+        "mount_options": "straps or bolt-on, all hardware supplied; no front stabilising strap needed"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal - V-Mount straps or bolts, no bosses strictly needed. Lies along the TOP of the top tube running rearward from just behind the stem. The tall end is forward. Four V-Mount straps means it does not pivot or rock, which is why no stabilising strap is fitted."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Top Tube",
+      "name": "Long Top Tube Bag",
+      "size": "2.2L",
+      "slot": "toptube",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/top-tube-long-top-tube-bag-2-2l-1.jpg",
+        "https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/"
+      ],
+      "dims_cm": {
+        "len": 47,
+        "wid": 5.8,
+        "hgt": 10.5
+      },
+      "dims_state": "fixed",
+      "dims_raw": "470 MM (length); 65 MM / 105 MM (heights). Weight 273g direct mount / 281g strap mount",
+      "dims_note": "Length and heights are maker figures from the Long Top Tube Pack sizing poster. Fixed-shape zip bag. Height tapers 105mm to 65mm - larger value recorded, taper in geometry. Width is not published anywhere, so wid 5.8 is the existing catalogue estimate and is the only unverified number. Length corrected from an earlier 45 to 47.",
+      "capacity_l": 2.2,
+      "geometry": {
+        "form": "slab",
+        "crossSection": "teardrop",
+        "taper": {
+          "nose": 1,
+          "tail": 0.62,
+          "profile": "linear"
+        },
+        "notes": "Long low blade along the top tube. Tall end (105mm) forward at the stem, sweeping down in a straight line to a low pointed tail (65mm) at the seat tube. Narrow in plan, moulded rib down each side, self-supporting welded shell.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "waterproof zip with moulded garages; two pulls, one at each end"
+      },
+      "zips": [
+        {
+          "run": "top_centre",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "one long two-way zip the full length of the top ridge, a pull at each end"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 4,
+          "location": "underside",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_v_mount_strap",
+          "wrapsAround": "toptube"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "3D welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte dimpled texture",
+        "rigid_structure": "self-supporting welded shell with a moulded rib down each side; four patented V-Mounts on the base",
+        "logo_style": "Tailfin chevron mark only, no wordmark",
+        "mount_options": "straps or bolt-on, all hardware supplied; no front stabilising strap needed"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal. Lies along the top of the top tube, tall end forward. At 47cm this covers most of a 56cm frame's top tube - check it clears the seatpost clamp."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Top Tube",
+      "name": "Long Top Tube Bag",
+      "size": "3L",
+      "slot": "toptube",
+      "slot_should_be": null,
+      "verified": true,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/top-tube-long-top-tube-bag-3l-1.jpg",
+        "https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/"
+      ],
+      "dims_cm": {
+        "len": 50,
+        "wid": 6.3,
+        "hgt": 11.5
+      },
+      "dims_state": "fixed",
+      "dims_raw": "500 MM (length); 68 MM / 115 MM (heights). Weight 288g direct mount / 300g strap mount",
+      "dims_note": "Length and heights are maker figures from the Long Top Tube Pack sizing poster. Fixed-shape zip bag. Height tapers 115mm to 68mm - larger value recorded, taper in geometry. Width is not published, so wid 6.3 remains the existing catalogue estimate and is unverified.",
+      "capacity_l": 3,
+      "geometry": {
+        "form": "slab",
+        "crossSection": "teardrop",
+        "taper": {
+          "nose": 1,
+          "tail": 0.59,
+          "profile": "linear"
+        },
+        "notes": "Longest of the three at half a metre. Tall end (115mm) forward at the stem, sweeping down to a low pointed tail (68mm). Narrow in plan, moulded rib down each side, self-supporting welded shell.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "waterproof zip with moulded garages; two pulls, one at each end"
+      },
+      "zips": [
+        {
+          "run": "top_centre",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "one long two-way zip the full length of the top ridge, a pull at each end"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 4,
+          "location": "underside",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_v_mount_strap",
+          "wrapsAround": "toptube"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "3D welded",
+        "fabric": "Hypalon / diamond-ripstop nylon, matte dimpled texture",
+        "rigid_structure": "self-supporting welded shell with a moulded rib down each side; four patented V-Mounts on the base",
+        "logo_style": "Tailfin chevron mark only, no wordmark",
+        "mount_options": "straps or bolt-on, all hardware supplied"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube"
+        ],
+        "contactFaces": [
+          "underside"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal. Lies along the top of the top tube, tall end forward. At 50cm it will run the full top tube of a 56cm frame - it is meant to, but it rules out a Rear Top Tube Bag at the same time."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Top Tube",
+      "name": "Rear Top Tube Bag",
+      "size": "0.9L Road/Gravel",
+      "slot": "toptube",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/top-tube-rear-top-tube-bag-0-9l-road-gravel-1.jpg",
+        "https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/"
+      ],
+      "dims_cm": {
+        "len": 25,
+        "wid": 5,
+        "hgt": 9
+      },
+      "dims_state": "unknown",
+      "dims_raw": "0.9L, 109-118g - no linear dimensions published; the spec sheet is a print-at-home sizing template with no labelled numbers",
+      "dims_note": "UNVERIFIED. Tailfin publish volume and weight only. dims_cm left at the existing catalogue estimate. Tailfin do say this version is NARROWER than the MTB one to reduce thigh contact, and the MTB one is SHORTER in height for dropper clearance - the existing estimates (9cm vs 7cm tall, 5.0 vs 5.5cm wide) happen to encode both of those relationships correctly, which is a sanity check but not a measurement.",
+      "capacity_l": 0.9,
+      "geometry": {
+        "form": "teardrop",
+        "crossSection": "teardrop",
+        "taper": {
+          "nose": 0.5,
+          "tail": 1,
+          "profile": "linear"
+        },
+        "notes": "A small 3D-welded wedge that sits at the BACK of the top tube, so it is the mirror image of the front Top Tube Bag: the tall blunt end is at the REAR against the seatpost (tail = 1.0) and it tapers down and forward to a low nose (nose = 0.5). Narrow in plan - this is the road/gravel version, deliberately slimmer than the MTB one to keep it off the rider's thighs. Self-supporting welded shell, no sag.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "waterproof zip with a moulded garage and Tailfin's patented gutter system; opens from the bottom of the rear face upward so it can be worked while riding"
+      },
+      "zips": [
+        {
+          "run": "top_centre",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "bottom-to-top run: the zip starts low on the rear face by the seatpost and runs up and forward along the top, so the lid folds toward the rider for in-the-saddle access. Zip garage at the top."
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "underside",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_v_mount_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "stability",
+          "count": 1,
+          "location": "nose_front",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "seatpost"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "reflective": "reflective detailing on the rear face - it is the rearmost bag on the frame",
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "3D welded with a patented internal gutter that channels water away from the zip",
+        "fabric": "210D Hypalon & 210D Diamond RipStop",
+        "rigid_structure": "self-supporting welded shell with a protective padded footbed to isolate contents from vibration. Mounted on the patented V-Mount: a moulded elastomer part with two splayed legs from a single spine that cradle the round tube - visible in the photo being stretched over the frame by hand.",
+        "not_boltable": "explicitly NOT designed to be bolted - rubber cargo straps only",
+        "strap_kit": "2 x 18.5cm cargo straps + 1 x 14.5cm strap. Tailfin recommend at least two straps on the top tube; the seatpost strap is optional and for heavier loads."
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "seatpost"
+        ],
+        "contactFaces": [
+          "underside",
+          "rear_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal, strap-only - there is no bolt option and no Tailfin hardware to buy. Sits on TOP of the top tube immediately IN FRONT OF the seatpost, tall end backward, tapering forward. Two V-Mount straps around the top tube plus an optional third around the seatpost. Do not confuse this with a seat pack: it never touches the saddle rails and never overhangs the wheel."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/"
+      ],
+      "proprietary_mount": false
+    },
+    {
+      "line": "Top Tube",
+      "name": "Rear Top Tube Bag",
+      "size": "0.8L MTB",
+      "slot": "toptube",
+      "slot_should_be": null,
+      "verified": false,
+      "confidence": "medium",
+      "evidence": [
+        "assets/products/tailfin/top-tube-rear-top-tube-bag-0-8l-mtb-1.jpg",
+        "https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/"
+      ],
+      "dims_cm": {
+        "len": 25,
+        "wid": 5.5,
+        "hgt": 7
+      },
+      "dims_state": "unknown",
+      "dims_raw": "0.8L, 112-121g - no linear dimensions published; sizing is by print-at-home template with no labelled numbers",
+      "dims_note": "UNVERIFIED. Volume and weight only from the maker. dims_cm left at the existing catalogue estimate. Tailfin describe the MTB version as SHORTER in height than the road/gravel one so it clears a dropper post, and slightly less narrow; the existing 7cm (vs 9cm) height and 5.5cm (vs 5.0cm) width encode that correctly, which is corroboration rather than measurement.",
+      "capacity_l": 0.8,
+      "geometry": {
+        "form": "teardrop",
+        "crossSection": "teardrop",
+        "taper": {
+          "nose": 0.5,
+          "tail": 1,
+          "profile": "linear"
+        },
+        "notes": "Same mirrored wedge as the road/gravel version but noticeably lower in height so a dropper post can slam past it, and cut to a slacker MTB seat-tube angle. Tall blunt end at the REAR against the seatpost, tapering down and forward to a low nose. Self-supporting welded shell.",
+        "shoulder": "rounded"
+      },
+      "closure": {
+        "type": "zip_straight",
+        "location": "top",
+        "hardware": "waterproof zip with a moulded garage and the patented gutter system; bottom-to-top run for access while riding"
+      },
+      "zips": [
+        {
+          "run": "top_centre",
+          "count": 1,
+          "finish": "waterproof_welded",
+          "notes": "bottom-to-top run starting low on the rear face by the seatpost and running up and forward along the top, so the lid folds toward the rider"
+        }
+      ],
+      "straps": [
+        {
+          "role": "attachment",
+          "count": 2,
+          "location": "underside",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_v_mount_strap",
+          "wrapsAround": "toptube"
+        },
+        {
+          "role": "stability",
+          "count": 1,
+          "location": "nose_front",
+          "hardware": "ladderlock",
+          "material": "moulded_tpu_cargo_strap",
+          "wrapsAround": "seatpost"
+        }
+      ],
+      "pockets": [],
+      "details": {
+        "reflective": "reflective detailing on the rear face",
+        "logo": {
+          "type": "screen_print",
+          "location": "side"
+        },
+        "seams": "3D welded with a patented internal gutter channelling water off the zip",
+        "fabric": "210D Hypalon & 210D Diamond RipStop",
+        "rigid_structure": "self-supporting welded shell, protective padded footbed, patented moulded elastomer V-Mount with two splayed legs cradling the tube",
+        "not_boltable": "explicitly not designed to be bolted - rubber cargo straps only",
+        "strap_kit": "2 x 18.5cm cargo straps + 1 x 14.5cm strap; seatpost strap optional"
+      },
+      "mount": {
+        "axes": {
+          "len": "along_toptube",
+          "wid": "z",
+          "hgt": "y"
+        },
+        "attachesTo": [
+          "toptube",
+          "seatpost"
+        ],
+        "contactFaces": [
+          "underside",
+          "rear_face"
+        ],
+        "sag_deg": 0,
+        "clearance": {
+          "tyre_mm": 0,
+          "frame_mm": 0
+        },
+        "requires": [],
+        "notes": "Fully universal, strap-only. Sits on top of the top tube directly in front of the seatpost, tall end backward. The reduced height is specifically to let a dropper post travel past - relevant if the build has one."
+      },
+      "colorways": [
+        {
+          "name": "Black",
+          "hex": "#111214"
+        }
+      ],
+      "images": [
+        "https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/"
+      ],
+      "proprietary_mount": false
+    }
+  ]
+}
