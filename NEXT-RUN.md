@@ -32,10 +32,13 @@ Three kinds of agent were in flight at once:
 | UI / design | 2 | Design research, then implementing `DESIGN-SYSTEM.md` |
 | Infrastructure | 1 | Splitting `src/bags.js` |
 
-**Why it fell over.** Nineteen of those agents were doing image-heavy vision
-work — dozens of product photos each, held in context — while three more were
-each launching a headless Chrome to render the whole catalogue. That is the
-combination to avoid, not the agent count on its own. See §6.
+**Why it fell over.** The machine has **8 GB of RAM**. Nineteen of those agents
+were doing image-heavy vision work — dozens of product photos each, held in
+context — while three more were each launching a headless Chrome that peaks
+around **0.76 GB**. With the user's own browser holding ~2.9 GB, there was never
+3 GB of headroom to spend. It is the mix and the ceiling, not the agent count on
+its own. §6 is the sequencing that keeps inside that budget, and renders are now
+serialised by a lock rather than by good intentions.
 
 ---
 
@@ -225,7 +228,7 @@ working a slot at 34% coverage is mostly guessing:
 
 This is the strongest argument for finishing Track A first.
 
-### Track C — the UI rework (independent of A and B; can run alongside)
+### Track C — the UI rework (phases 5–6; does no rendering)
 
 Follow `DESIGN-SYSTEM.md` §12 exactly. It is strictly ordered:
 
@@ -256,36 +259,97 @@ than running the same prompt five times.
 
 ---
 
-## 6. How to run it on Sunday without killing the machine
+## 6. The run order — do not deviate from this
 
-The failure was the *mix*, not the number.
+### The budget you are working inside
 
-- **Never run image-vision agents and Chrome-driving agents at the same time.**
-  Brand reviewers hold dozens of photos in context; geometry agents each spawn a
-  headless Chrome that renders the full catalogue. Run Track A to completion,
-  then Track B.
-- **Cap each wave at 5–6 agents.** 19 brand reviewers at once is what produced
-  311 MB of logs in fifty minutes.
-- **Track C can run in parallel with A** — it touches `src/ui*` and nothing
-  else, and it does no rendering.
-- **Start the dev server once** (`node tools/serve.mjs`, port 8735) and tell
-  every agent it is already running. Several agents each starting their own is a
-  known way to get port collisions and orphaned Chromes.
-- `bagshot.mjs` is slow: a full-catalogue `--no-shots` pass is roughly **2.5
-  hours** for 702 products. Scope it per slot (`--slot seatpack`), and use
-  `--brand` while iterating.
+This is the whole reason the last run died, so it is worth stating as numbers:
 
-A workable Sunday sequence:
+| | |
+|---|---:|
+| Total RAM on this machine | **8 GB** |
+| macOS at rest | ~2 GB |
+| The user's own Chrome, typically | **~2.9 GB** |
+| **Actually available** | **~3 GB** |
+| One `bagshot` render (headless Chrome, measured peak) | **0.76 GB** |
 
+Three geometry agents rendering at once is 2.3 GB of the 3 GB you have, before
+counting the agents' own context. That is swap, and swap on this box is death.
+
+### The one rule that is now enforced rather than requested
+
+Renders are serialised by a global lock. **Every agent calls
+`tools/bagshot-q.mjs`, never `tools/bagshot.mjs`.** The wrapper takes the lock,
+runs one render, releases; everyone else queues and prints
+`waiting — pid N has been rendering …`. It breaks the lock automatically if a
+holder dies, so a killed agent cannot wedge the queue.
+
+It also holds off when memory is short: below 1.2 GB free it warns, waits up to
+three minutes for pages to come back, then proceeds anyway rather than
+deadlocking. If you see that warning repeatedly, you have too much else open —
+that is the signal to quit Chrome, not to raise the threshold.
+
+`src/bags/BUILDER-BRIEF.md` §3 now says this too, so geometry agents get it from
+their own brief without being told.
+
+### Preflight (2 minutes, before any agent starts)
+
+```bash
+# 1. Quit your own Chrome. This is the single biggest win — it frees ~2.9 GB.
+# 2. One dev server, started once, left running:
+node tools/serve.mjs &
+# 3. No stale lock or orphaned renderers from a previous run:
+rm -rf .bagshot.lock; pkill -f bagshot.mjs; pkill -f "Chrome for Testing"
+# 4. Confirm the headroom you actually have:
+vm_stat | awk '/free|inactive|speculative/ {gsub("\\.","",$NF); s+=$NF} END {printf "%.1f GB reclaimable\n", s*4096/1073741824}'
 ```
-Wave 1   6 brand reviewers (largest first)          } repeat until
-Wave 2   6 brand reviewers                          } 50/50 brands done
-Wave 3   1 render.hgt_cm backfill over the 9 done brands
-Wave 4   ui-foundation  (steps 1-2, alone)          — can overlap waves 1-3
-Wave 5   3 UI agents (detail / catalogue / 3D)      — after wave 4
-Wave 6   6 geometry agents, one per slot family
-Wave 7   critics, one lens each, against wave 6's renders
+
+### Phases — each one finishes before the next begins
+
+**Do these strictly in order.** The gate after each phase is a command, not a
+judgement call: if it does not pass, do not start the next phase.
+
+| # | Phase | Agents at once | Renders? | Gate before moving on |
+|---|---|---:|---|---|
+| 0 | By hand: fix `forkbag.js:24`; sweep the 9 unaudited slots | 0 | yes, serial | `node tools/_rand.mjs` clean |
+| 1 | Brand reviews, batch 1 — the 6 largest unreviewed | **3** | no | 6 new files in `data/models/` |
+| 2 | Brand reviews, batch 2 | **3** | no | 6 more files |
+| 3 | …repeat batches of 3 until all 50 brands are done | **3** | no | 50 files in `data/models/` |
+| 4 | `render.hgt_cm` backfill across the 9 original brands | **1** | no | coverage well above 110/380 |
+| 5 | `ui-foundation` — DESIGN-SYSTEM §12 steps 1–2 | **1, alone** | no | `src/ui/tokens.css` + `sheet.js` exist; app still boots |
+| 6 | UI detail sheet / catalogue sheet / 3D selection | **3** | no | app boots, no page errors |
+| 7 | Geometry, slot family per agent | **3** | **yes** | zero CLASH, zero dropped per slot |
+| 8 | Critics, one lens each, against phase 7's renders | **3** | no (reads PNGs) | — |
+
+Three agents is the cap, not a target. If anything feels sluggish, run two.
+
+### Why this order and not another
+
+- **Phase 1–3 before phase 7.** Geometry agents work *from* the model records.
+  Last time they were launched at 13:18 when barely any existed, and would have
+  been guessing even if the machine had survived.
+- **Phase 5 alone, before phase 6.** `ui-foundation` defines the `openSheet()`
+  contract that all three phase-6 agents build against. Running them together
+  means three agents coding against an API that is still moving.
+- **Phase 7 last among the builders.** It is the only phase that renders, so it
+  gets the machine to itself.
+- **Never overlap a vision phase with a render phase.** Brand reviewers hold
+  dozens of product photos in context; that plus a Chrome is the exact mix that
+  killed the last run.
+
+**The one overlap that is safe:** phase 5 does no rendering and touches only
+`src/ui*`, so it can run alongside phases 1–3 if you want the UI moving in
+parallel. That takes you to 4 concurrent agents. If you would rather be certain,
+just run it in sequence — the whole point of this section.
+
+### If it starts to struggle
+
+```bash
+pkill -f bagshot.mjs; pkill -f "Chrome for Testing"; rm -rf .bagshot.lock
 ```
+
+Nothing is lost. Brand agents write one file each and can be re-run per brand;
+geometry agents own one builder each; the lock is rebuilt on next use.
 
 ---
 
@@ -294,9 +358,12 @@ Wave 7   critics, one lens each, against wave 6's renders
 ```bash
 node tools/serve.mjs                       # dev server, port 8735 — start ONCE
 
-node tools/bagshot.mjs --slot seatpack     # renders + mm clearance for a slot
-node tools/bagshot.mjs --slot seatpack --no-shots     # numbers only, faster
-node tools/bagshot.mjs --brand "Apidura" --name "Saddle Pack" --size 9L
+# ALWAYS the -q wrapper: global lock, one headless Chrome at a time (see §6)
+node tools/bagshot-q.mjs --slot seatpack             # renders + mm clearance
+node tools/bagshot-q.mjs --slot seatpack --no-shots  # numbers only, faster
+node tools/bagshot-q.mjs --brand "Apidura" --name "Saddle Pack" --size 9L
+
+rm -rf .bagshot.lock                       # only if a run was killed mid-render
 
 node tools/validate-dims.mjs               # implausible dimensions
 node tools/audit-slots.mjs                 # slot misclassification

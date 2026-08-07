@@ -68,10 +68,17 @@ forgetting the third.
 Run this constantly — it is your test suite:
 
 ```
-node tools/bagshot.mjs --slot <yourslot>                 # every product in your slot
-node tools/bagshot.mjs --brand "Ortlieb" --slot pannier  # one brand
-node tools/bagshot.mjs --slot seatpack --no-shots        # numbers only, fast
+node tools/bagshot-q.mjs --slot <yourslot>                 # every product in your slot
+node tools/bagshot-q.mjs --brand "Ortlieb" --slot pannier  # one brand
+node tools/bagshot-q.mjs --slot seatpack --no-shots        # numbers only, fast
 ```
+
+**Always `bagshot-q.mjs`, never `bagshot.mjs` directly.** Each render launches a
+headless Chrome that peaks near 0.76 GB on a machine with 8 GB total. Other
+geometry agents are running at the same time; the `-q` wrapper takes a global
+lock so only one render happens at once and the rest queue. Calling `bagshot.mjs`
+directly is how the 7 Aug session put the box into swap and died. If it prints
+`waiting — pid N has been rendering …`, that is correct behaviour: wait.
 
 It renders each bag alone on the bike from four angles into
 `shots/bag/<slug>/`, and reports millimetre clearance to every part of the bike.

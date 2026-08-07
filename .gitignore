@@ -4,3 +4,4 @@ assets/products/
 assets/hdri/
 .DS_Store
 build/
+.bagshot.lock
