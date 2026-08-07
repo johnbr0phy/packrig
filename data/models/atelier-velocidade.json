@@ -1,0 +1,443 @@
+{
+ "brand": "Atelier Velocidade",
+ "slug": "atelier-velocidade",
+ "reviewed_photos": 14,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Technical coated nylon with waterproof zips, polyurethane straps, made in Ariège'. This does NOT match what the maker's own site says for any of the six products reviewed here. Every one of the six product pages (volcano, bivouac, beluga, gypaete, funambule, avalanche) carries an identical 'Traceability / Materials' block: 'SUNBRELLA FABRIC... Main material: acrylic canvas made in France, waterproof and UV resistant, 320 g/m²; Lining: 100% nylon with silicone coating, 90 g/m²'. Sunbrella is a solution-dyed woven ACRYLIC canvas (the marine-upholstery / awning fabric), not a coated nylon - a materially different fabric class from what brands.json states. This is consistent with what the photos show: a flat, tightly-woven, slightly fuzzy-at-the-edge matte canvas texture (visible clearly on the Gypaete close-up and the Avalanche flat-lay) rather than the shinier, smoother face a coated-nylon pack fabric would have. The 90g/m2 nylon+silicone lining is the only nylon component - it is internal, not the visible/rendered face. Recommend brands.json's fabric string be corrected brand-wide; flagging here since it is out of scope for this file to edit brands.json directly.",
+  "method": "All six product pages were fetched with curl (the rendered Shopify page hides useful text behind JS the same way other reviewers found for Swift/Alpkit) rather than WebFetch. Only Avalanche publishes an explicit W x H x D figure; the other five publish capacity only (or, for Volcano and Funambule, no figure at all), so their dims_cm are estimates reconciled against stated/typical capacity and flagged verified:false accordingly, per the spec's 'mark records unverified rather than filling gaps' guidance for this maker."
+ },
+ "products": [
+  {
+   "line": "Volcano",
+   "name": "Volcano",
+   "size": "One Size",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/atelier-velocidade/volcano-volcano-one-size-1.jpg",
+    "assets/products/atelier-velocidade/volcano-volcano-one-size-2.jpg",
+    "https://www.ateliervelocidade.com/en/products/volcano"
+   ],
+
+   "dims_cm": { "len": 38, "wid": 16, "hgt": 14 },
+   "dims_state": "estimated",
+   "dims_raw": "",
+   "dims_note": "No dimensions and no litre figure are published on the maker's page (confirmed by curl, not just a rendering gap) - only 'adjustable volume' and construction notes. Every value here is an estimate for a mid-size adjustable tapered saddle pack, reconciled loosely against the 8L placeholder capacity carried over from the previous pass (box 38x16x14=8512cc=8.5L before the wedge/tail taper, which is in the right range for a soft tapered bag stated around 7-8L). This is NOT maker data - treat as a placeholder pending a real spec, per the spec's guidance to mark thin-data Atelier records unverified rather than fill the gap with false precision.",
+   "capacity_l": 8,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.6, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Squared shoulder at the nose (cream/black panel with the red 'Velocidade' tag), tapering to a rounded rolltop tail. Less aggressively tapered than a typical Apidura-style wedge - reads as a stubbier, rounder shape in both photos, not a sharp blade."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "side-release buckle at the tail roll, drawcord visible inside the roll (yellow cord in both photos)"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" },
+    { "role": "compression", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "nose_front" },
+    "seams": "sewn",
+    "fabric": "Sunbrella acrylic canvas, 320 g/m², NOT coated nylon - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 55, "frame_mm": 20 },
+    "notes": "TASKED FOLLOW-UP: this product was flagged as currently rendering only 8.8mm from the seat tube. No model file existed for this brand before this pass, so that almost certainly came from a generic/fallback seatpack placement rather than product-specific data. Maker copy confirms the standard tapered-wedge saddle-pack mounting this record now describes: 'the attachment under the saddle is reinforced with a double canvas, [as is] the attachment to the saddle tube... with rubber for optimal grip.' mount.axes here follows the same convention used for Apidura's and Alpkit's tapered-wedge seatpacks (len along the bike's fore/aft axis, hgt vertical, wid side-to-side), and clearance.frame_mm is set to an explicit 20mm standoff rather than left at 0/undefined, since the nose sits at the seatpost/saddle-rail junction and should not be touching the seat tube itself. This should be spot-checked by whoever next runs the render harness - it was not possible to verify with bagshot.mjs under this pass's constraints."
+   },
+
+   "colorways": [
+    { "name": "Charbon", "hex": "#3a3a3c" },
+    { "name": "Forêt", "hex": "#38503f" },
+    { "name": "Rouge", "hex": "#a8322e" },
+    { "name": "Bleu", "hex": "#2d4f70" },
+    { "name": "Sable", "hex": "#c2ab86" }
+   ],
+   "images": ["assets/products/atelier-velocidade/volcano-volcano-one-size-1.jpg"]
+  },
+
+  {
+   "line": "Bivouac",
+   "name": "Bivouac",
+   "size": "One Size (7.5L)",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/atelier-velocidade/bivouac-bivouac-one-size-7-5l-1.jpg",
+    "assets/products/atelier-velocidade/bivouac-bivouac-one-size-7-5l-2.jpg",
+    "assets/products/atelier-velocidade/bivouac-bivouac-one-size-7-5l-3.jpg",
+    "https://www.ateliervelocidade.com/en/products/bivouac"
+   ],
+
+   "dims_cm": { "len": 28, "wid": 16, "hgt": 18 },
+   "dims_state": "estimated",
+   "dims_raw": "The BIVOUAC is ideal for day trips. With its 7.5L, this bag allows you to carry everything you need on the go.",
+   "dims_note": "Capacity (7.5L) is published, dimensions are not. Previous pass's dims_note called this a 'Carradice-style saddlebag' shape and guessed a plain boxy box; the flat-lay photos instead show a classic winged French rando/musette silhouette (rounded triangular fabric wings folded in at both ends, flat rectangular front face) - the controlled vocabulary has a dedicated term for exactly this, 'saddlebag_flap', used below instead of 'boxy'. dims_cm is an estimate for a 7.5L rando-style flap bag: len=28 (wing-to-wing, the bag's longest run), wid=16 (front-to-back depth), hgt=18 (vertical). Box 28x16x18=8064cc=8.06L against stated 7.5L, ratio 1.08 - plausible for a boxy flap bag needing little packing headroom.",
+   "capacity_l": 7.5,
+
+   "geometry": {
+    "form": "saddlebag_flap",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "Flat front face with a zippered mesh pocket (visible in all three colorway photos) below a woven 'Velocidade' tag; both ends fold into triangular wings, a shape closer to a traditional French randonneur handlebar/saddle bag than a boxy Carradice clone. Drawcord/bungee visible at the top."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single top zip with cord-lock pull, drawcord/bungee cinch visible above it"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "front", "sizeFrac": 0.45 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "Sunbrella acrylic canvas, 320 g/m², NOT coated nylon - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["underside"],
+    "sag_deg": 3,
+    "clearance": { "tyre_mm": 50, "frame_mm": 0 },
+    "notes": "Catalogued here in its saddle configuration (maker: 'this bag is also ideal for carrying on the saddle with the BAGMAN CARRADICE luggage rack... it is strongly recommended to use a carradice support'), which requires a Carradice Bagman support sold separately and not modelled. The bag ships as standard with a décaleur kit and a stem elastic band for an alternate handlebar mount (with the Bagman Universal rack, also sold separately) and an optional shoulder strap - noted here, not modelled as a second slot."
+   },
+
+   "colorways": [
+    { "name": "Charbon", "hex": "#3a3a3c" },
+    { "name": "Forêt", "hex": "#38503f" },
+    { "name": "Rouge", "hex": "#a8322e" },
+    { "name": "Bleu", "hex": "#2d4f70" },
+    { "name": "Sable", "hex": "#c2ab86" }
+   ],
+   "images": ["assets/products/atelier-velocidade/bivouac-bivouac-one-size-7-5l-1.jpg"]
+  },
+
+  {
+   "line": "Beluga",
+   "name": "Beluga",
+   "size": "One Size (4.5L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/atelier-velocidade/beluga-beluga-one-size-4-5l-1.jpg",
+    "assets/products/atelier-velocidade/beluga-beluga-one-size-4-5l-2.jpg",
+    "assets/products/atelier-velocidade/beluga-beluga-one-size-4-5l-3.jpg",
+    "https://www.ateliervelocidade.com/en/products/beluga"
+   ],
+
+   "dims_cm": { "len": 28, "wid": 12, "hgt": 14 },
+   "dims_state": "estimated",
+   "dims_raw": "With a capacity of 4.5L, the BELUGA is spacious enough to store clothes or food.",
+   "dims_note": "Capacity published, dimensions are not. dims_cm is an estimate for a 4.5L box-shaped aerobar bag: len=28 (the span between the two aero extensions, confirmed as the long axis in the rear flat-lay photo), wid=12 (front-to-back, shallow), hgt=14 (vertical). Box 28x12x14=4704cc=4.7L against stated 4.5L, ratio 1.04 - a tight, near-literal fit consistent with a semi-structured box bag between fixed extensions.",
+   "capacity_l": 4.5,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Boxy, semi-rigid shape built to sit between tri-bar extensions. Rear face (velcro side) carries a bungee X-cross for stashing small items; front/top face has a buckled webbing strap over a zip with the woven Velocidade tag."
+   },
+
+   "closure": {
+    "type": "flap_buckle",
+    "location": "top",
+    "hardware": "single webbing strap with buckle over a zip closure"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 4, "location": "underside", "hardware": "velcro", "wrapsAround": "aerobar_extension" },
+    { "role": "compression", "count": 1, "location": "underside", "hardware": "buckle", "material": "shock_cord" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "Sunbrella acrylic canvas, 320 g/m², NOT coated nylon - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
+    "attachesTo": ["aerobar_extension", "handlebar"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 40, "frame_mm": 0 },
+    "notes": "Maker copy: 'designed to be used with handlebar extensions... comes with 4 velcro straps for attachment to the extensions and 2 polyurethane straps for attachment to your handlebars.' The primary photographed mount (image 2) is between tri-bar extensions on a triathlon bike, which a standard 56cm drop-bar gravel bike does not have; the maker's own plain-handlebar strap option is what makes it fit the universal pool here, but expect a tighter fit on a gravel cockpit than the aero-position photo suggests."
+   },
+
+   "colorways": [
+    { "name": "Charbon", "hex": "#3a3a3c" },
+    { "name": "Forêt", "hex": "#38503f" },
+    { "name": "Rouge", "hex": "#a8322e" },
+    { "name": "Bleu", "hex": "#2d4f70" },
+    { "name": "Sable", "hex": "#c2ab86" }
+   ],
+   "images": ["assets/products/atelier-velocidade/beluga-beluga-one-size-4-5l-2.jpg"]
+  },
+
+  {
+   "line": "Gypaète",
+   "name": "Gypaète (Large)",
+   "size": "L (4.7L)",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/atelier-velocidade/gypa-te-gypa-te-large-l-4-7l-1.jpg",
+    "assets/products/atelier-velocidade/gypa-te-gypa-te-large-l-4-7l-2.jpg",
+    "https://www.ateliervelocidade.com/en/products/gypaete"
+   ],
+
+   "dims_cm": { "len": 44, "wid": 8, "hgt": 15 },
+   "dims_state": "estimated",
+   "dims_raw": "The GYPAÈTE is a 1/3 frame bag with a capacity of 2.7L (size S), 4.2L (size M) or 4.7L (size L).",
+   "dims_note": "Litres are published per size, dimensions are not. This entry is the L. dims_cm is an estimate for a 4.7L third-triangle bag: len=44 (along toptube), hgt=15, wid=8 (thickness off the frame). Box 44x8x15=5280cc=5.28L against stated 4.7L, ratio 1.12, in line with Alpkit's own half-frame bags in this catalogue (Possum ratio ~1.17). Photo evidence for this product is weaker than for the rest of the brand's range: image 1 is a tight angled crop of one end/corner rather than a full side view, and image 2 is an extreme macro of the fabric and logo tag - neither shows the whole bag, so this is a lower-confidence record than the others in this file.",
+   "capacity_l": 4.7,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Half-frame wedge panel, same general family as Alpkit's Possum/Glider. End-cap visible in image 1 shows a black buckle strap at the top corner and a small bungee X-cross tensioner - likely securing a zip flap or corner pocket at that end, but the full front face is not visible in either photo, so this detail is lower-confidence than the rest of the record."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "waterproof zip (maker copy: 'occupy the space of your frame with its waterproof zipper')"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 5, "location": "top", "hardware": "velcro", "wrapsAround": "toptube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "side" },
+    "seams": "sewn",
+    "fabric": "Sunbrella acrylic canvas, 320 g/m², NOT coated nylon - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["toptube"],
+    "contactFaces": ["top_edge", "frame_side"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "5 trimmable self-gripping velcro straps at multiple positions along the bag (maker copy), which the maker markets specifically as adapting around other bags already mounted on the frame."
+   },
+
+   "colorways": [
+    { "name": "Charbon", "hex": "#3a3a3c" },
+    { "name": "Forêt", "hex": "#38503f" },
+    { "name": "Rouge", "hex": "#a8322e" },
+    { "name": "Bleu", "hex": "#2d4f70" },
+    { "name": "Sable", "hex": "#c2ab86" }
+   ],
+   "images": ["assets/products/atelier-velocidade/gypa-te-gypa-te-large-l-4-7l-1.jpg"]
+  },
+
+  {
+   "line": "Avalanche",
+   "name": "Avalanche",
+   "size": "One Size",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/atelier-velocidade/avalanche-avalanche-one-size-1.jpg",
+    "assets/products/atelier-velocidade/avalanche-avalanche-one-size-2.jpg",
+    "https://www.ateliervelocidade.com/en/products/avalanche"
+   ],
+
+   "dims_cm": { "len": 16, "wid": 4.5, "hgt": 12 },
+   "dims_state": "maker",
+   "dims_raw": "Dimensions · Weight · Volume: 'Width x Height x Depth: 16 x 12 x 4.5 cm; Weight: 89g; Capacity: 2 Liters'.",
+   "dims_note": "Confirmed directly on the maker's page (curl), not carried over unverified: len=16 (width, the long axis along/down the seat tube), hgt=12 (vertical, already correctly recorded by the previous pass), wid=4.5 (front-to-back thickness off the tube). Matches the flat-lay photo: a small, visibly thin, rounded-triangular pouch clearly taller-and-longer than it is thick. Box 16x12x4.5=864cc=0.86L against the maker's own stated 2L - the maker's capacity figure looks optimistic for this box, worth flagging but not a reason to alter the maker's own measured dimensions per the spec's 'never edit dims_cm to make the render come out right' rule.",
+   "capacity_l": 2,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "rounded",
+    "notes": "Small, flat, rounded-triangular tool pouch, thin front-to-back. Zip runs along the top edge with a small fabric pull loop at the rear corner."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip, fabric pull loop"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "wrapsAround": "seat_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "Sunbrella acrylic canvas - matches maker's own materials text for this product; see brand_notes.fabric for why brands.json's blanket string is wrong for the whole brand"
+   },
+
+   "mount": {
+    "axes": { "len": "-y", "wid": "z", "hgt": "along_seattube" },
+    "attachesTo": ["seat_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "Velcro plus two polyurethane straps to the seat tube (maker copy: 'attaches to the seat tube with Velcro and two polyurethane straps for the frame'), mounted vertically as shown in the on-bike photo. framebag_half is a poor fit for this slot vocabulary-wise (it is a small seat-tube tool pouch, not a half-frame triangle bag), but the catalogue offers nothing closer - noted rather than silently left as-is."
+   },
+
+   "colorways": [
+    { "name": "Forêt", "hex": "#38503f" },
+    { "name": "Sable", "hex": "#c2ab86" },
+    { "name": "Bleu", "hex": "#2d4f70" },
+    { "name": "Rouge", "hex": "#a8322e" },
+    { "name": "Charbon", "hex": "#3a3a3c" }
+   ],
+   "images": ["assets/products/atelier-velocidade/avalanche-avalanche-one-size-1.jpg"]
+  },
+
+  {
+   "line": "Funambule",
+   "name": "Funambule",
+   "size": "One Size",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/atelier-velocidade/funambule-funambule-one-size-1.jpg",
+    "assets/products/atelier-velocidade/funambule-funambule-one-size-2.jpg",
+    "https://www.ateliervelocidade.com/en/products/funambule"
+   ],
+
+   "dims_cm": { "len": 20, "wid": 6, "hgt": 8 },
+   "dims_state": "estimated",
+   "dims_raw": "",
+   "dims_note": "No dimensions and no litre figure published (confirmed by curl) - described only as holding 'keys, half a baguette, a windbreaker, a phone'. dims_cm is an estimate from the flat-lay photo's proportions (an elongated, low stadium-shaped pouch, roughly 3x longer than it is tall); hgt lowered from the previous pass's 10cm to 8cm to better match how flat/low the pouch reads in the photo. Not maker data. The site files this under frame bags, but it mounts to the stem and top tube (confirmed by the on-bike photo), so it is catalogued here under toptube per the previous pass's reasoning. Sold as 'Tightrope walker' on the English store.",
+   "capacity_l": 1.2,
+
+   "geometry": {
+    "form": "slab",
+    "crossSection": "flat_bottom",
+    "shoulder": "rounded",
+    "notes": "Low, elongated stadium-shaped pouch, rounded at both ends, zip running the full top length with a small pull loop at the rear."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip, fabric pull loop"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "wrapsAround": "stem" },
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "wrapsAround": "toptube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "woven_patch", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "Sunbrella acrylic canvas, 320 g/m², NOT coated nylon - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["stem", "toptube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "notes": "On-bike photo shows it mounted on top of the top tube just behind the stem, not hanging off one side - maker copy: 'attaches to the stem with Velcro and two polyurethane straps for the frame'."
+   },
+
+   "colorways": [
+    { "name": "Charbon", "hex": "#3a3a3c" },
+    { "name": "Forêt", "hex": "#38503f" },
+    { "name": "Rouge", "hex": "#a8322e" },
+    { "name": "Bleu", "hex": "#2d4f70" },
+    { "name": "Sable", "hex": "#c2ab86" }
+   ],
+   "images": ["assets/products/atelier-velocidade/funambule-funambule-one-size-1.jpg"]
+  }
+ ]
+}

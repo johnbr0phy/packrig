@@ -38509,7 +38509,7 @@
    "#38503f",
    "#c2ab86"
   ],
-  "fabric": "Technical coated nylon with waterproof zips, polyurethane straps, made in Ariège",
+  "fabric": "Sunbrella acrylic canvas 320g/m2, nylon-silicone lining",
   "products": [
    {
     "slot": "seatpack",
@@ -38893,7 +38893,8 @@
      "https://cdn.shopify.com/s/files/1/0858/0500/7175/files/velocidade___atelier_septembre_bikepacking___2023___-1176_88f8214e-1221-46a4-9afa-bf49d6b52083.jpg"
     ]
    }
-  ]
+  ],
+  "fabric_note": "Corrected from \"Technical coated nylon with waterproof zips, polyurethane straps, made in Ariège\". All six product pages carry an identical materials block: Sunbrella acrylic canvas 320g/m2, waterproof and UV-resistant, with a 90g/m2 nylon+silicone lining -- the nylon is the internal lining, not the visible face. Photos are consistent with woven acrylic canvas. Verified by curl against the maker pages for all six products."
  },
  {
   "name": "JPaks",
