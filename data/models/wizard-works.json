@@ -1,0 +1,485 @@
+{
+ "brand": "Wizard Works",
+ "slug": "wizard-works",
+ "reviewed_photos": 0,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Cordura / X50 nylon (matte woven, splatter-dye prints)'. The maker's own SPECS tabs (read via a real Chrome session — wizard.works sits behind a Cloudflare JS challenge that 403s curl and WebFetch; the challenge auto-clears in ~7s in an actual browser tab) consistently list '500D Cordura Nylon Outer' in Black/Olive/Tan and '1000D Cordura Polyester Outer' in the Splatter colourway, with a 210D nylon liner. That confirms the Cordura half of the brand string across every product checked so far. No product page mentions 'X50' by name — that may be a liner or reinforcement fabric not called out on the consumer-facing SPECS tab, or a holdover from an older material. Verdict: Cordura is confirmed verbatim per-product; X50 is unconfirmed (neither contradicted nor found) and should be treated as unverified rather than wrong.",
+  "method": "No usable local photos exist in assets/products/wizard-works/ (only two unrelated placeholder images, t2.jpg and test1.jpg, for 27 products) — see HANDOVER.md. Every record below is built from the maker's own product page (DESCRIPTION + SPECS + FEATURES tabs), fetched in a live Chrome tab (mcp__claude-in-chrome__navigate + get_page_text) after the Cloudflare challenge clears. Plain curl and WebFetch both 403. Geometry/hardware fields are therefore page-derived text evidence, not photo-verified, and are marked accordingly in confidence/dims_note. Dimensions quoted in each product's SPECS table are maker-published figures (verified: true); anything inferred beyond the literal page text is flagged low/medium confidence."
+ },
+ "products": [
+
+  {
+   "line": "Presto",
+   "name": "Lil Presto Barrel Bag",
+   "size": "Small (1.8L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/lil-presto-barrel-bag/"
+   ],
+
+   "dims_cm": { "len": 20, "wid": 10.5, "hgt": 10.5 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Small — Volume 1.8L, Size '20cm Wide x 10.5cm Diameter', Weight 140g (excl straps)",
+   "dims_note": "Hard-shell barrel, no roll axis, so the published size is the mounted size — no unfurled/min-height rule needed. Maker gives length ('Wide') and diameter only; wid/hgt both set to the diameter since the cross-section is round. Page-derived, no photo to confirm proportions.",
+   "capacity_l": 1.8,
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Hard-shell construction per maker copy ('the hard-shell design allows for one handed on the bike access and exceptional stability'); two recycled-HDPE-style stiffened panels are typical of this line but not confirmed for this SKU specifically. No photo evidence — shape read from description only, not verified against an image."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "YKK Aquaguard water-resistant zip around a hard-shell lid, one-handed pull"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner — matches brand_notes.fabric",
+    "notes": "Top loops for an optional shoulder strap (sold separately). Includes 2x omni-tape (hook-and-loop) straps and 1x cordlock strap per the Installation section; the cordlock strap is a cinch cord, not modelled as a rigid strap above."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "notes": "Maker copy: 'mounts to either handlebars or saddles (with saddle loops, i.e. Brooks)' — modelled here in its primary handlebar-mount orientation, dual-mount capability not otherwise geometry-relevant. Clearance not established — no photo to measure against."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Presto",
+   "name": "Lil Presto Barrel Bag",
+   "size": "Large (3.4L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/lil-presto-barrel-bag/"
+   ],
+
+   "dims_cm": { "len": 22, "wid": 14, "hgt": 14 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Large — Volume 3.5L (listed on the size selector as 3.4L), Size '22cm Wide x 14cm Diameter', Weight 205g (excl straps)",
+   "dims_note": "Same hard-shell barrel construction as the Small; no roll axis. wid/hgt both set to the diameter.",
+   "capacity_l": 3.5,
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Same construction as the Small size, scaled up. No photo evidence."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "YKK Aquaguard water-resistant zip around a hard-shell lid, one-handed pull"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner",
+    "notes": "Includes 2x omni-tape straps and 1x cordlock strap."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "notes": "Dual handlebar/saddle-loop mount per maker copy, modelled in handlebar orientation. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Voila",
+   "name": "Voila Stem Bag",
+   "size": "Medium (0.9L)",
+   "slot": "stembag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/voila-stem-bag/"
+   ],
+
+   "dims_cm": { "len": 15, "wid": 8, "hgt": 8 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Medium — Volume 0.9L, Size '15cm Tall x 8cm Diameter', Weight 90g",
+   "dims_note": "Upright cylindrical stem bag: maker's 'Tall' figure is the vertical mounted axis (hgt in this record's own-body convention is 'top to bottom' — mapped to len here since a stem bag's longest run is vertical along its own body; wid/hgt both set to the diameter for the round cross-section). No roll axis, fixed hard-liner shape.",
+   "capacity_l": 0.9,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Maker copy: 'Built with high density foam padding... Constructed with a floating liner to facilitate easy crumb removal' — a semi-rigid, upright cylinder that holds its shape open, not a soft roll-top. No photo evidence for this brand; shape read from description only."
+   },
+
+   "closure": {
+    "type": "flap_strap",
+    "location": "top",
+    "hardware": "one-handed opening/closing system, removable lower strap with cordlock"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "front" }
+   ],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon liner",
+    "notes": "'Front pocket and daisy chain offers endless attachment points... great for your long, thin snacks like jerky or carrots' (maker copy). Mini Velo and Brompton stem/bar compatible per maker. Includes 2x omni-tape straps, 1x cordlock strap, and 1x Voila bottom strap."
+   },
+
+   "mount": {
+    "axes": { "len": "-y", "wid": "+x", "hgt": "z" },
+    "attachesTo": ["handlebar", "stem"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "notes": "Mounts beside the stem to the handlebar, opening upward for one-handed access. 'Removable lower strap and included cordlock facilitate a huge range of mounting options no matter your bar or stem' (maker copy). Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Voila",
+   "name": "Voila Stem Bag",
+   "size": "Large (1.65L)",
+   "slot": "stembag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/voila-stem-bag/"
+   ],
+
+   "dims_cm": { "len": 17, "wid": 9.5, "hgt": 9.5 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Large — Volume 1.65L, Size '17cm Tall x 9.5cm Diameter', Weight 100g",
+   "dims_note": "Same upright-cylinder mapping as the Medium: 'Tall' figure mapped to len, diameter to wid/hgt.",
+   "capacity_l": 1.65,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Same semi-rigid floating-liner construction as the Medium, scaled up to fit a 1L Nalgene-style bottle per maker copy. No photo evidence."
+   },
+
+   "closure": {
+    "type": "flap_strap",
+    "location": "top",
+    "hardware": "one-handed opening/closing system, removable lower strap with cordlock"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "front" }
+   ],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon liner",
+    "notes": "Sized to fit a Nalgene 1L bottle or similar per maker copy. Includes 2x omni-tape straps, 1x cordlock strap, and 1x Voila bottom strap."
+   },
+
+   "mount": {
+    "axes": { "len": "-y", "wid": "+x", "hgt": "z" },
+    "attachesTo": ["handlebar", "stem"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "notes": "Same mount pattern as the Medium. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Go-Go",
+   "name": "Go-Go Top Tube Bag",
+   "size": "Small (0.8L)",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/go-go-top-tube-bag/"
+   ],
+
+   "dims_cm": { "len": 21, "wid": 7, "hgt": 8 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Small — Volume 0.8L, Size '21w x 7d x 8h cm', Weight 110g",
+   "dims_note": "Maker publishes a single fixed w/d/h triple (no range) — 'w' maps to len (along the top tube), 'd' to wid, 'h' to hgt directly. Semi-rigid HDPE-stiffened shape, no roll axis so no render block needed.",
+   "capacity_l": 0.8,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Maker copy: 'Two recycled HDPE inserts give Go-Go its super sharp shape and make it a breeze to open and close with one hand' — a stiff wedge-panel sitting flat on the top tube, tapering toward the head tube per the fuel-tank silhouette described. No photo evidence for this brand; shape read from description only."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top_side",
+    "hardware": "single zip opening one-handed"
+   },
+
+   "zips": [
+    { "run": "horseshoe_top" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "webbing", "wrapsAround": "head_tube" },
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner",
+    "notes": "'Extremely stable... thanks to its super grippy hypalon daisy chain and three Velcro One-Wrap straps' — horizontal hypalon daisy chain on the front face doubles as the mount for the optional DrJ0n DeWidget top-cap stabiliser (sold separately, not modelled). Includes 1x One-Wrap strap, 2x omni-tape straps and 1x 'Dog Done' (dogbone) spacer for a snug fit under the stem. Cable port for gadget wires."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Sits flat on the top tube just behind the head tube, front strap wrapping the head tube/steerer area, two straps cinching the tube underneath. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Go-Go",
+   "name": "Go-Go Top Tube Bag",
+   "size": "Medium (1L)",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/go-go-top-tube-bag/"
+   ],
+
+   "dims_cm": { "len": 21, "wid": 7, "hgt": 11 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Medium — Volume 1L, Size '21w x 7d x 11h cm', Weight 125g",
+   "dims_note": "Same footprint as the Small (21x7cm), taller (11cm vs 8cm) for the extra volume.",
+   "capacity_l": 1,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Same HDPE-stiffened wedge-panel construction as the Small, taller. No photo evidence."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top_side",
+    "hardware": "single zip opening one-handed"
+   },
+
+   "zips": [
+    { "run": "horseshoe_top" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "webbing", "wrapsAround": "head_tube" },
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner",
+    "notes": "Same hypalon daisy chain / DeWidget-compatible mount as the Small. Includes 1x One-Wrap strap, 2x omni-tape straps and 1x dogbone spacer."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Same mount pattern as the Small. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Go-Go",
+   "name": "Go-Go Long Top Tube Bag",
+   "size": "Long (1.5L)",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/go-go-long-top-tube-bag/"
+   ],
+
+   "dims_cm": { "len": 31, "wid": 7, "hgt": 11 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Go-Go Long — Volume 1.5L, Size '31w x 7d x 11h cm', Weight 170g",
+   "dims_note": "Maker copy: 'Go-Go Long is 10cm longer... than our standard length Go-Go' (21cm → 31cm), same 7cm depth and 11cm height as the standard Medium.",
+   "capacity_l": 1.5,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Same HDPE-stiffened wedge-panel construction as the standard Go-Go, stretched 10cm longer. Maker copy mentions 'a helpful little divider inside' per a customer review — plausible internal partition on the longer size, not confirmed on the SPECS/FEATURES tabs so not added as a modelled pocket."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top_side",
+    "hardware": "single zip opening one-handed"
+   },
+
+   "zips": [
+    { "run": "horseshoe_top" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "webbing", "wrapsAround": "head_tube" },
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner",
+    "notes": "Same hypalon daisy chain / DeWidget-compatible mount as the standard Go-Go. Includes 1x One-Wrap strap, 2x omni-tape straps and 1x dogbone spacer."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Same mount pattern as the standard Go-Go, longer run along the top tube. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  }
+
+ ]
+}
