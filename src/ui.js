@@ -329,7 +329,14 @@ export function initUI(app) {
     if (homeView.target) app.controls.target.copy(homeView.target);
     app.controls.update();
   };
-  tools.append(rotBtn, el('span', 'tool-divider'), homeBtn);
+  const tunnelBtn = elt('button', 'tool-btn', '💨');
+  tunnelBtn.title = 'Wind tunnel';
+  tunnelBtn.setAttribute('aria-label', 'Open the wind tunnel');
+  tunnelBtn.onclick = () => {
+    tunnelBtn.classList.toggle('on');
+    app.openWindTunnel?.();
+  };
+  tools.append(rotBtn, el('span', 'tool-divider'), homeBtn, el('span', 'tool-divider'), tunnelBtn);
   root.append(tools);
 
   // ---- overlay plumbing ---------------------------------------------------

@@ -102,6 +102,34 @@ just the rack we draw — Swift Sugarloaf, Outer Shell 137 + Rack Bag, Wizard
 Works Alakazam ×2, Rockgeist Meanwhile ×2. Either mark them `fits: "basket"`
 or model a basket on the front rack.
 
+## RECOMMENDED: publish the rider contact points from `bike.js`
+
+`bike.js` computes where a rider's hands and feet go, then throws the numbers
+away, so anything needing them re-states the expressions. `src/aero/rider.js`
+mirrors **six**: saddle setback (14), saddle top offset (30), saddle shell (9),
+crank angle (-12°), crank Z (62), pedal Z offset (52), and hood rise (13).
+
+**It has already drifted once.** `HOOD_RISE` was derived as "forward and slightly
+up from the bar tops" → 20mm. The hood capsule's actual axis is 12–14. Seven
+millimetres put the rider's hands ON TOP of the hoods instead of around them, and
+it **survived a numeric clearance check** — the hand read 1.3mm from the bar,
+which looks like contact. It took a second person looking at a picture to catch
+it. Same failure class as "the pattern behind most visual bugs" above, through a
+new door.
+
+`bike.js` already solved this once for the same reason, in its own words: *"Bag
+builders need to land straps ON the rails, so publish them in frame coords rather
+than making every builder re-derive the saddle transform."* That is `bike.rails`.
+Hands and feet are the same problem with different hardware.
+
+Proposed, alongside `rails`, in frame-space mm: `hoods{left,right:{start,end,r}}`,
+`pedals{crankAngle, crankLength, left/right:{center,normal}}`, `saddle{topY,
+nose, tail}`. ~15 lines in `createBike`, no behaviour change.
+
+Payoff beyond dedup: it makes the cranks **animatable**. Pose them anywhere and
+the feet follow, because the rider reads `crankAngle` instead of hard-coding
+-12°. Today an animated crank would leave the shoes hanging in space.
+
 ## Data pipeline
 
 | Tool | Purpose |

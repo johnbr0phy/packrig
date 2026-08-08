@@ -19,6 +19,20 @@ export class BagSystem {
     this.unfitted = {}; // uiSlot → {brand, product} the resolver could not place
     this._batch = false;
     this._resolving = false;
+    this._listeners = [];
+  }
+
+  /**
+   * Subscribe to kit changes. Fired from resolveCollisions, which is the one
+   * funnel every equip/remove/clear/randomise already passes through — so a
+   * listener cannot miss a change by way of some path that forgot to notify.
+   */
+  onChange(fn) {
+    this._listeners.push(fn);
+    return () => {
+      const i = this._listeners.indexOf(fn);
+      if (i >= 0) this._listeners.splice(i, 1);
+    };
   }
 
   equip(uiSlot, brand, product, colorwayIndex = 0) {
@@ -184,6 +198,8 @@ export class BagSystem {
     if (this._resolving) return;
     this._resolving = true;
     try { this._resolve(); } finally { this._resolving = false; }
+    // after the guard clears, so a listener is free to inspect (or change) the kit
+    for (const fn of this._listeners) fn();
   }
 
   _resolve() {
