@@ -539,3 +539,52 @@ that longer axis points.
 I had guessed Nelson was the risk. It was Camper and SQR Slim. Worth remembering
 that `len >= wid` holding in a file says nothing about whether `mount.axes` is
 right — the two are independent, and only the axes block decides orientation.
+
+---
+
+## 12. What the overnight catalogue run learned
+
+**Run `node tools/apply-models.mjs --dry` BEFORE committing a brand, not after.**
+Three separate silent drops happened tonight because I committed first: VAUDE
+(6 records), Cedaero and EVOC (12 between them), each invisible until the next
+merge. The tool now prints unmatched records by name instead of counting them,
+but the discipline is the actual fix.
+
+**Fetching, when a brand has no local photos.** In escalating order — plain
+`WebFetch`; `curl -A "Mozilla/5.0"`; for Shopify sites, appending `.json` to
+`/products/<handle>` returns the full image-URL array directly, which is by far
+the cleanest route; and for a Cloudflare JS challenge that 403s everything else,
+`mcp__claude-in-chrome` with a 7-12s wait clears it. That last route is the only
+reason Wizard Works is complete rather than abandoned at 7 of 27.
+
+**Product identity drifts between the catalogue and the records.** Reviewers
+tidy `size`, fill in a blank `line`, and add or strip the brand prefix on `name`
+— in both directions. `apply-models.mjs` now joins across five tiers, each used
+only where it identifies exactly one product on each side. Past that a looser
+join stops being a fix and becomes a guess; fix the record instead.
+
+**`render` covers all three axes now** (`len_cm`, `wid_cm`, `hgt_cm`). Two
+reviewers hit the gap independently. Lezyne is the proof it was needed: its site
+still publishes flat-folded panel figures for the XL-Caddy and Bar Caddy, and
+those now keep the honest published number in `dims_cm` while drawing the packed
+estimate from `render.*_cm`.
+
+**The brand `fabric` string is wrong about a third of the time** — Blackburn,
+Swift, Atelier Velocidade, Two Wheel Gear, Thule, Vincita, VAUDE, EVOC and
+Lezyne all failed or partly failed the check. It substring-selects the rendered
+material, so one wrong word renders a whole brand in the wrong stuff. Worth a
+dedicated pass, and worth supporting **per-product fabric**: Alpkit, Green Guru,
+Giant, Thule and Vincita each sell products the single brand string cannot
+describe.
+
+**`len >= wid` says nothing about whether `mount.axes` is right.** They are
+independent. Carradice's Camper and SQR Slim both had a sane-looking dims triple
+while pointing their dominant axis fore-aft — a suitcase behind the saddle.
+
+### Still open after this run
+- **Rigid vs soft** is now recorded for several brands (Thule Paramount, EVOC's
+  BOA packs, all five Cedaero products) and nothing reads it. `deform.js` should.
+- Lezyne **Caddy Sack M** has no visible mounting hardware in any photo and no
+  attachment system in the maker copy, yet sits in the `downtube` slot.
+- VAUDE **Aqua Back Plus** publishes a 31cm depth that the reviewer could not
+  confirm against the studio photo — unusually deep for a pannier.
