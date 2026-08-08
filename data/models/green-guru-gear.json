@@ -1,0 +1,438 @@
+{
+ "brand": "Green Guru Gear",
+ "slug": "green-guru-gear",
+ "reviewed_photos": 10,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Upcycled 420-600D packcloth / inner tube / vinyl tarp'. CONFIRMED across the lineup, but it covers two visually very different materials that show up on different products: (1) the Clutch saddle bag and the Cotton Mouth feedbag's body are unmistakably black upcycled bicycle inner-tube rubber - the tire tread/mold texture is directly visible in every Clutch photo (assets/products/green-guru-gear/clutch-clutch-saddle-bag-0-8l-1.jpg, -2.jpg), a matte black rubber, not a woven fabric; (2) the Hauler, Upshift, Fullshift and Tanker are cut from a grid-quilted, slightly shiny ripstop/vinyl-tarp-look face fabric in randomized bright colors (each unit is a one-off patchwork of salvaged tent vinyl/billboard scrap, matching brands.json's 'aesthetic' text). Both materials are covered by the brand fabric string, so it is accurate, but a single rendered material for the whole brand will not read correctly: the Clutch and Cotton Mouth should render as matte black rubber, the other four as the colorful quilted vinyl/ripstop face.",
+  "method": "Local photos in assets/products/green-guru-gear/ read directly (10 files: 2 each for Hauler, Clutch, Upshift, Fullshift(1), Tanker(1), Cotton Mouth). Maker product pages fetched via curl (Shopify pages return usable server-rendered spec text, no JS scaffolding issue). One local photo (cotton-mouth-cotton-mouth-snack-water-feedbag-2-3l-2.png) is a rear-view trail action shot; a small pack is visible at the rider's lower back but it reads as a hip/lumbar pack worn on the body, not the stem-mounted feedbag itself (which would be up front, out of frame in a rear view) - not used as evidence for the Cotton Mouth's geometry or mount, flagged per-product below."
+ },
+ "products": [
+  {
+   "line": "Hauler",
+   "name": "Hauler Bike Pack Saddle Bag",
+   "size": "16.2L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/green-guru-gear/hauler-hauler-bike-pack-saddle-bag-16-2l-1.png",
+    "assets/products/green-guru-gear/hauler-hauler-bike-pack-saddle-bag-16-2l-2.png",
+    "https://www.greengurugear.com/products/gg-hauler-saddle-bag"
+   ],
+
+   "dims_cm": { "len": 55.9, "wid": 22.9, "hgt": 12.7 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Dimensions: 9 L x 5 H x 22 D in. (228 x 127 x 558 mm); Capacity: 990 cu in / 16.2 L",
+   "dims_note": "Confirmed verbatim via curl of the live product page (unchanged from prior pass). Green Guru's L/H/D labels are across-bike-width / height / fore-aft-depth (confirmed by the Clutch's 3L x 3.5H x 5D matching a small saddle bag exactly), so the 22in D figure is len. Only one figure is published (no min/max range), and 9x5x22in = 990cu in matches the stated 16.2L capacity exactly, i.e. this is already the packed/rated-capacity figure - the new unfurled/min-height rule has nothing to override here.",
+   "capacity_l": 16.2,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.8, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Classic bikepacking saddle bag silhouette: squared shoulder at the saddle-rail nose, body stays fairly full-width back to a roll-top tail (mild taper, not a sharp point). Colors are randomized per unit - the two photographed samples (blue/white/red panels with a tan triangle, and an all-orange quilted sample) share the same cut and hardware but no two Hauler bags are dyed the same; render should not assume a fixed colorway."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "side-release buckle cinching the roll, mid-body"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" },
+    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "patch", "location": "nose_front" },
+    "seams": "sewn, bound edges",
+    "fabric": "grid-quilted vinyl/ripstop-look face over a black base panel - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 3,
+    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "notes": "Nose strapped hard to the saddle rails with a stabilizing wrap to the seatpost; tail hangs clear behind the seatpost, roll-top end away from the bike."
+   },
+
+   "colorways": [
+    { "name": "Randomized upcycled patchwork (no two bags identical)", "hex": "#d95f18" }
+   ],
+   "images": [
+    "assets/products/green-guru-gear/hauler-hauler-bike-pack-saddle-bag-16-2l-1.png",
+    "assets/products/green-guru-gear/hauler-hauler-bike-pack-saddle-bag-16-2l-2.png"
+   ]
+  },
+
+  {
+   "line": "Clutch",
+   "name": "Clutch Saddle Bag",
+   "size": "0.8L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/green-guru-gear/clutch-clutch-saddle-bag-0-8l-1.jpg",
+    "assets/products/green-guru-gear/clutch-clutch-saddle-bag-0-8l-2.jpg",
+    "https://www.greengurugear.com/products/clutch-bicycle-saddle-bag-made-from-recycled-and-upcycled-bike-tubes-in-usa"
+   ],
+
+   "dims_cm": { "len": 12.7, "wid": 7.6, "hgt": 8.9 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Dimensions: 3 L x 3.5 H x 5 D in. (76.2 x 88.9 x 127 mm); Capacity: 52 cu in / 0.8 L",
+   "dims_note": "Confirmed verbatim via curl. Same L=width-across-bike / H=height / D=fore-aft-length convention as the Hauler. Only one figure published; box volume (0.86L) matches the stated 0.8L capacity almost exactly, so this is already the packed figure.",
+   "capacity_l": 0.8,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "d_shape",
+    "taper": { "nose": 1.0, "tail": 0.85, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Small stubby dome/wedge, nearly as deep vertically as it is wide - a chunky pouch, not an elongated bag (confirmed against the 1.43 length:height ratio). Flat back face rides against the underside of the saddle and seatpost."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider, green paracord pull toggle"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "webbing", "wrapsAround": "saddle_rails" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "seatpost" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "patch", "location": "front_face" },
+    "seams": "bound edges",
+    "fabric": "upcycled bicycle inner-tube rubber - tire tread/mold texture is directly visible in both photos, the clearest example of the 'inner tube' component of the brand fabric string anywhere in this catalogue"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "underside"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 70, "frame_mm": 0 },
+    "notes": "Tiny wedge sits tucked high and tight under the saddle nose, does not project far below the rails."
+   },
+
+   "colorways": [
+    { "name": "Randomized upcycled inner-tube black + accent trim", "hex": "#1a1a1a" }
+   ],
+   "images": [
+    "assets/products/green-guru-gear/clutch-clutch-saddle-bag-0-8l-1.jpg",
+    "assets/products/green-guru-gear/clutch-clutch-saddle-bag-0-8l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Upshift",
+   "name": "Upshift Frame Bag",
+   "size": "2.7L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/green-guru-gear/upshift-upshift-frame-bag-2-7l-1.png",
+    "assets/products/green-guru-gear/upshift-upshift-frame-bag-2-7l-2.png",
+    "https://www.greengurugear.com/products/upshift-frame-bag-built-in-usa"
+   ],
+
+   "dims_cm": { "len": 38.1, "wid": 6.35, "hgt": 22.9 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "15\" L x 9\" H x 2.5\" D (381 x 228.6 x 63.5 mm); 2.7L / 168.7 cu in",
+   "dims_note": "Confirmed verbatim via curl (page also gives frame-fit numbers: 15in toptube, 6.5in downtube, 11in toptube-to-seatpost, 3in headtube - a sizing guide, not the bag's own outer dims, so not used here). Photo 1 (flat studio shot) is a clean right triangle whose 15in top edge and 9in drop match the published L/H exactly. Green Guru's own arithmetic confirms it: 15 x 9 x 2.5in = 337.5 cu in, and they publish 168.7 cu in, exactly half the bounding box, consistent with a flat triangular panel bag. No range published, so nothing to override under the new rule.",
+   "capacity_l": 2.7,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Right-triangle half-frame bag: long top edge runs under the top tube, short vertical edge drops at the head-tube/seat-post junction, hypotenuse angles down toward the bottom bracket. On-bike photo (upshift-...-2.png) confirms mount just under the top tube, wedge hanging into the front triangle."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_side",
+    "hardware": "single slider, offset slightly below the top edge, paracord pull tab"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 2, "location": "front_face", "hardware": "velcro", "material": "webbing", "wrapsAround": "down_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "patch", "location": "front_face" },
+    "seams": "bound edges",
+    "fabric": "grid-quilted ripstop/vinyl-tarp-look face (orange sample photographed); Earthtone and Camo colorways also offered - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 10 },
+    "notes": "3 hook-and-loop wraps cinch the top edge to the top tube; 2 more wraps on the diagonal edge cinch to the down tube near the head tube. Right-angle corner sits forward-up at the head-tube junction per the on-bike photo."
+   },
+
+   "colorways": [
+    { "name": "Wild", "hex": "#d95f18" },
+    { "name": "Earthtone", "hex": "#6b6440" },
+    { "name": "Camo", "hex": "#5c6047" }
+   ],
+   "images": [
+    "assets/products/green-guru-gear/upshift-upshift-frame-bag-2-7l-1.png",
+    "assets/products/green-guru-gear/upshift-upshift-frame-bag-2-7l-2.png"
+   ]
+  },
+
+  {
+   "line": "Fullshift",
+   "name": "Fullshift Frame Bag",
+   "size": "Medium (2.8L)",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/green-guru-gear/fullshift-fullshift-frame-bag-medium-2-8l-1.png",
+    "https://www.greengurugear.com/products/fullshift-frame-bags-1"
+   ],
+
+   "dims_cm": { "len": 52.1, "wid": 7.6, "hgt": 31.8 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "600x Medium: 20.5\" TT x 23.4\" DT x 12.5\" SP x 3\" / 2.8L",
+   "dims_note": "curl of the live product page did not return the spec text this time (JS-rendered tab on this page); dims left unchanged from the prior verified pass, which read the size string verbatim. This is a full triangle sized by frame-tube lengths (TT/DT/SP = top tube / down tube / seat post reach), so the bounding box (~2x the fabric volume) is expected. Note the maker's own litres-vs-box ratio is inconsistent with the Upshift: the Upshift publishes exactly half its bounding box as capacity, but applying that same rule here gives ~6.3L against the stated 2.8L - so treat the 2.8L capacity figure, not the dims, as the doubtful number on this product.",
+   "capacity_l": 2.8,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Full main-triangle frame bag, long top edge along the top tube, full vertical drop to the bottom bracket area, squared corners at the head-tube and seat-tube junctions. Only one (front 3/4 studio) photo available - no on-bike shot, so exact strap placement and the reverse-face pocket are inferred rather than directly confirmed; confidence set to medium for that reason."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_side",
+    "hardware": "single slider, paracord pull tab"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 2, "location": "front_face", "hardware": "velcro", "material": "webbing", "wrapsAround": "seat_tube" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "patch", "location": "front_face" },
+    "seams": "bound edges",
+    "fabric": "grid-quilted ripstop/vinyl-tarp-look face (orange sample photographed); Pink/Purple and Earthtone colorways also offered - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "seat_tube"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 10 },
+    "notes": "Fills the front triangle; strap count and the side pocket's visibility are inferred from the same hardware family as the smaller Upshift, not confirmed by an on-bike photo of this specific product."
+   },
+
+   "colorways": [
+    { "name": "Orange", "hex": "#d95f18" },
+    { "name": "Pink/Purple", "hex": "#8e3b6b" },
+    { "name": "Earthtone", "hex": "#6b6440" }
+   ],
+   "images": [
+    "assets/products/green-guru-gear/fullshift-fullshift-frame-bag-medium-2-8l-1.png"
+   ]
+  },
+
+  {
+   "line": "Tanker",
+   "name": "Tanker Top Tube Bag",
+   "size": "One Size",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/green-guru-gear/tanker-tanker-top-tube-bag-one-size-1.png",
+    "https://www.greengurugear.com/products/top-tube-tanker"
+   ],
+
+   "dims_cm": { "len": 22.9, "wid": 7.6, "hgt": 10.2 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "9 L x 4 H x 3 D inches (228.6 x 101.6 x 76.2 mm); no capacity published",
+   "dims_note": "curl of the live product page returned no spec text this time (JS-rendered); dims left unchanged from the prior pass. Green Guru publishes no litre figure for the Tanker; 9x4x3in = 108 cu in = 1.77L, so 1.8L capacity is derived from the maker's own dims, not stated by them.",
+   "capacity_l": 1.8,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_bottom",
+    "taper": { "nose": 0.4, "tail": 1.0, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Side-profile photo shows a wedge that is tall at the rear (saddle-facing) end and slopes low at the front (stem-facing) end to clear the rider's knees while pedaling. Only one photo available, no maker studio/on-bike shots, no visible logo in the crop - confidence set to medium."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider, paracord toggle pull at the rear-top corner"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "seams": "bound edges",
+    "fabric": "grid-quilted ripstop/vinyl-tarp-look face, color-blocked panels visible in the photographed sample - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 0 },
+    "notes": "Straddles the top tube between saddle and stem; only a single rear underside strap is clearly visible in the one available photo - a second front strap is typical for this bag style but not confirmed here."
+   },
+
+   "colorways": [
+    { "name": "Wild", "hex": "#d95f18" },
+    { "name": "Earthtone", "hex": "#6b6440" },
+    { "name": "EcoPak Pink/Purple", "hex": "#8e3b6b" }
+   ],
+   "images": [
+    "assets/products/green-guru-gear/tanker-tanker-top-tube-bag-one-size-1.png"
+   ]
+  },
+
+  {
+   "line": "Cotton Mouth",
+   "name": "Cotton Mouth Snack/Water Feedbag",
+   "size": "2.3L",
+   "slot": "stembag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/green-guru-gear/cotton-mouth-cotton-mouth-snack-water-feedbag-2-3l-1.png",
+    "https://www.greengurugear.com/products/snack-water-bottle-bag"
+   ],
+
+   "dims_cm": { "len": 11.4, "wid": 11.4, "hgt": 17.8 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "4.5 L x 7 H x 4.5 D inches (114.3 x 177 x 114.3 mm); 141 cu in / 2.3 liters",
+   "dims_note": "Confirmed verbatim via curl. Upright square-section feed bag, 4.5in on both horizontal axes, 7in tall; only one figure published, no range.",
+   "capacity_l": 2.3,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "rounded_rect",
+    "shoulder": "rounded",
+    "notes": "Upright quilted-square body with a drawcord-cinched collar at the top, not a true roll-top. Insulated with upcycled sleeping-pad foam per maker copy. The second local photo (cotton-mouth-...-2.png) is a rear-view trail action shot; the pack visible near the rider's lower back reads as a hip/lumbar pack worn on the body, not this stem-mounted feedbag (which mounts up front, out of frame in a rear view) - NOT used as evidence here."
+   },
+
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "single cordlock toggle cinching the collar"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "girth", "hardware": "velcro", "material": "webbing", "wrapsAround": "stem" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "location": "front", "sizeFrac": 0.5 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "patch", "location": "front_face" },
+    "seams": "bound edges",
+    "fabric": "insulated quilted-diamond-stitch face in randomized upcycled colors (green/orange/black sample photographed) over a mesh front pocket - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "along_bar", "hgt": "y" },
+    "attachesTo": ["stem", "headtube"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 0 },
+    "notes": "Upright feedbag, back panel strapped against the stem/head-tube area; exact strap routing (single wrap vs. wrap-plus-cable-loop) not confirmed - only a studio photo available, hence medium confidence."
+   },
+
+   "colorways": [
+    { "name": "Assorted upcycled", "hex": "#d95f18" }
+   ],
+   "images": [
+    "assets/products/green-guru-gear/cotton-mouth-cotton-mouth-snack-water-feedbag-2-3l-1.png"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,433 @@
+{
+ "brand": "SILCA",
+ "slug": "silca",
+ "reviewed_photos": 8,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'CyclePet 600D with kiss coating / RF-welded TPU composite'. CONFIRMED - the Grinta pages (roll-top and handlebar) explicitly spec 'BLACK 100% CYCLEPET 600D with Kiss Coating', and every photo across the range shows the flat, matte-black, seam-taped/welded finish described. All six products are black-only, matching the brand aesthetic text.",
+  "method": "Local photos in assets/products/silca/ read directly (8 files, all products have at least one; Mattone Grande has none). Maker product pages fetched via curl; all six returned server-rendered spec text with exact mm/L/g figures - no JS-scaffolding issue on this Shopify store."
+ },
+ "products": [
+  {
+   "line": "Mattone",
+   "name": "Mattone Seat Pack",
+   "size": "0.5L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/silca/mattone-mattone-seat-pack-0-5l-1.png",
+    "assets/products/silca/mattone-mattone-seat-pack-0-5l-2.jpg",
+    "https://silca.cc/collections/bags/products/mattone-seat-pack"
+   ],
+
+   "dims_cm": { "len": 12.5, "wid": 5, "hgt": 8 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "125mm x 80mm x 50mm; 0.5L; 90g",
+   "dims_note": "Confirmed verbatim via curl (unchanged). 12.5 x 8 x 5cm = exactly 0.5L, matching the stated capacity to the litre - about as strong as dimensional evidence gets. Only one figure published, no range, so nothing to override under the new rule. This is a small rigid-backed shell tensioned under the saddle by a BOA strap, not a tapered soft bikepacking bag.",
+   "capacity_l": 0.5,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "Small rigid-shelled wedge, flat mounting face against the saddle underside/seatpost, rounded outer shell. Molded-look black synthetic leather panel on the mounting face (visible in both photos), matte CyclePet body."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "side",
+    "hardware": "single slider, visible zip pull at the front-left corner in both photos"
+   },
+
+   "zips": [
+    { "run": "side_full", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "boa", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "seams": "RF-welded/sealed",
+    "fabric": "CyclePet 600D with kiss coating over a molded synthetic-leather mounting face - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 80, "frame_mm": 0 },
+    "notes": "BOA dial tensions a webbing strap that clamps the bag directly to the saddle rails from above - a rigid rail-mount system, not a wrap-and-buckle strap. No seatpost contact visible in either photo; the shell rides entirely under the saddle shell itself."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#111111" }
+   ],
+   "images": [
+    "assets/products/silca/mattone-mattone-seat-pack-0-5l-1.png",
+    "assets/products/silca/mattone-mattone-seat-pack-0-5l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Mattone",
+   "name": "Mattone Grande",
+   "size": "0.74L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://silca.cc/collections/bags/products/mattone-grande"
+   ],
+
+   "dims_cm": { "len": 15, "wid": 5.5, "hgt": 9 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Internal dimensions 150mm x 90mm x 55mm; 0.74L; 108g",
+   "dims_note": "Confirmed verbatim via curl. Note the page explicitly labels this 'Internal dimensions' (unlike the standard Mattone's unqualified figure) - the outer shell is therefore slightly larger than 15x9x5.5cm, but no external figure is published, so the internal figure is used as the best available estimate. Box (0.74L) matches the stated capacity exactly. No local photos exist for this product (brands.json's images array is empty for it) - geometry, closure and mount are inferred from the standard Mattone Seat Pack, which shares the same construction family per the product copy ('same reliable no-swing mounting system'); confidence set to medium because nothing here is directly photo-verified for this specific SKU.",
+   "capacity_l": 0.74,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "Scaled-up Mattone Seat Pack (same family, larger capacity for 3 tubes vs. 1); assumed to share the same rigid-shell construction. Not photo-verified for this specific SKU."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "side",
+    "hardware": "single slider (assumed, per Mattone Seat Pack family)"
+   },
+
+   "zips": [
+    { "run": "side_full", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "boa", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "seams": "RF-welded/sealed",
+    "fabric": "CyclePet 600D with kiss coating - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 75, "frame_mm": 0 },
+    "notes": "Same BOA rail-clamp system as the Mattone Seat Pack, assumed not confirmed - no photo of this SKU exists locally."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#111111" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Mattone",
+   "name": "Mattone Ultimate Seat Pack",
+   "size": "0.4L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/silca/mattone-mattone-ultimate-seat-pack-0-4l-1.webp",
+    "assets/products/silca/mattone-mattone-ultimate-seat-pack-0-4l-2.webp",
+    "https://silca.cc/collections/bags/products/mattone-ultimate-seat-pack"
+   ],
+
+   "dims_cm": { "len": 12.5, "wid": 4, "hgt": 9 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "125mm x 40mm x 90mm; 0.4L; 44g (page also lists a stale 90g figure elsewhere on the same page - 44g matches the 'less bulk' positioning and the visibly smaller shell, used as the correct weight)",
+   "dims_note": "Confirmed verbatim via curl. SILCA lists this model L x W x H (40mm is the across-bike thickness, 90mm the height) - different axis order from the standard Mattone's L x H x W - so wid=4, hgt=9 here, not the other way round. Photo (mattone-mattone-ultimate-seat-pack-0-4l-2.webp, front-on) confirms a stubby deep wedge, taller than it is wide, thin across the bike: a teardrop-shaped rigid shell. Box 0.45L against 0.4L rated capacity, a close match. Only one figure published, no range.",
+   "capacity_l": 0.4,
+
+   "geometry": {
+    "form": "teardrop",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "RF-welded TPU composite shell (per maker spec), narrower across the bike than the standard Mattone and taller - a slimmer teardrop profile. Flat back face rides against the saddle rails."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "side",
+    "hardware": "single slider, visible zip pull at the left edge in the front-on photo"
+   },
+
+   "zips": [
+    { "run": "side_full", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "boa", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "seams": "RF-welded",
+    "fabric": "RF-welded TPU composite (per maker spec, distinct from the CyclePet 600D used elsewhere in the line) - matte, seamless finish visible in both photos"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 85, "frame_mm": 0 },
+    "notes": "Same BOA rail-clamp mounting as the rest of the Mattone family; the slimmer profile tucks it further up under the saddle shell."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#111111" }
+   ],
+   "images": [
+    "assets/products/silca/mattone-mattone-ultimate-seat-pack-0-4l-1.webp",
+    "assets/products/silca/mattone-mattone-ultimate-seat-pack-0-4l-2.webp"
+   ]
+  },
+
+  {
+   "line": "Seat Roll",
+   "name": "Seat Roll Asymmetrico",
+   "size": "One Size",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/silca/seat-roll-seat-roll-asymmetrico-one-size-1.png",
+    "assets/products/silca/seat-roll-seat-roll-asymmetrico-one-size-2.webp",
+    "https://silca.cc/collections/bags/products/seat-roll-asymmetrico"
+   ],
+
+   "dims_cm": { "len": 14, "wid": 6, "hgt": 7 },
+   "dims_state": "estimated",
+   "dims_raw": "No dimensions or capacity published on the product page (confirmed via curl - page text has weight (18g/85g referenced in variant JSON) and payload copy only, no L/W/H or litres); holds tubes up to 700x45",
+   "dims_note": "SILCA publishes no dimensions or capacity for the Asymmetrico. dims_cm are an estimate from the photos (a small saddle-mounted dome, visibly smaller than the Mattone Seat Pack's 0.5L shell next to a similar saddle) and its stated payload (a 700x45 tube plus CO2, levers and a multi-tool), not a manufacturer figure. verified:false per spec - do not treat these numbers as reliable.",
+   "capacity_l": 0.5,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "Small soft-shell dome, gray CyclePet body, BOA dial with a red guide cord on the front face and a black plastic rail hook. 'Asymmetrico' name and product copy reference an asymmetric internal shape not obviously visible from the outside in these photos."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "side",
+    "hardware": "small slider next to the BOA dial (visible in the detail photo)"
+   },
+
+   "zips": [
+    { "run": "side_full", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "boa", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "seams": "sewn/bound",
+    "fabric": "CyclePet 600D, gray sample photographed (brand is otherwise all-black in this catalogue - this is the one gray exception seen)"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 90, "frame_mm": 0 },
+    "notes": "BOA dial with a cord-and-hook system clamps the bag to the saddle rails, same family mechanism as the Mattone bags but a softer shell."
+   },
+
+   "colorways": [
+    { "name": "Gray (photographed sample) / Black", "hex": "#111111" }
+   ],
+   "images": [
+    "assets/products/silca/seat-roll-seat-roll-asymmetrico-one-size-1.png",
+    "assets/products/silca/seat-roll-seat-roll-asymmetrico-one-size-2.webp"
+   ]
+  },
+
+  {
+   "line": "Grinta",
+   "name": "Grinta Roll Top Bag",
+   "size": "2-5L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/silca/grinta-grinta-roll-top-bag-2-5l-1.png",
+    "https://silca.cc/collections/bags/products/grinta-roll-top-bag"
+   ],
+
+   "dims_cm": { "len": 30, "wid": 15, "hgt": 15 },
+   "dims_state": "maker_single_figure_packed",
+   "dims_raw": "Dimensions: 30cm x 15cm x 15cm (rolled to top of PE); 2-5 liters; 208g. Round or D-shaped seatposts only, not true aero posts.",
+   "dims_note": "THIS IS THE ONE FLAGGED AS FABRICATED IN A PRIOR PASS - see below. Confirmed verbatim via curl: SILCA publishes exactly one dimension set, 30 x 15 x 15cm, and explicitly qualifies it 'rolled to top of PE' (i.e. already the packed/rolled state, not an unfurled max) - so per the spec's own rule ('where only one figure is published, use it and say so') this is used as-is; there is no separate unfurled figure to prefer over it. len was PREVIOUSLY overwritten to 16.4cm, a number that appears nowhere on the maker page - it was back-computed by an earlier automated pass from an assumed mid-roll volume, which turned the bag into a near-cube (16.4x15x15) and tripped both a too-cubic flag and a near-cube-shape flag. That 16.4cm figure is fabricated and has been discarded; len is restored to the maker's stated 30cm. Photo confirms it: a long tapering wedge roughly twice as long as it is deep, nothing like a cube. Box 6.75L against the mid-range 2.9L capacity used below is ~2.3x, the expected ratio for a wedge whose fabric volume is about half its bounding box.",
+   "capacity_l": 2.9,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.55, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Long tapering wedge, roll-top closure at the tail (opposite the saddle mount), internal frame structure (per maker copy) that lets it expand 2-5L while holding its shape rather than sagging."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "buckle at the tail roll; separate BOA dial + Hypalon strap tensions the body against the saddle rails"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "boa", "material": "hypalon", "wrapsAround": "saddle_rails" },
+    { "role": "stability", "count": 1, "location": "nose_top", "hardware": "hook", "material": "webbing", "wrapsAround": "saddle_rails" },
+    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "screen_print", "location": "tail" },
+    "seams": "RF-welded",
+    "fabric": "CyclePet 600D with kiss coating - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "notes": "Nose clamped to the saddle rails via a BOA-tensioned Hypalon strap plus a secondary hook, per photo; page notes round/D-shaped seatposts only, not compatible with true aero posts (fitment caveat, not modeled as a fit restriction here)."
+   },
+
+   "render": {
+    "hgt_cm": 15,
+    "basis": "maker's only published figure is already qualified 'rolled to top of PE' (i.e. the packed state, not an unfurled max), and matches the compact wedge silhouette in the on-bike photo, so no override of the stated dims is needed here."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#111111" }
+   ],
+   "images": [
+    "assets/products/silca/grinta-grinta-roll-top-bag-2-5l-1.png"
+   ]
+  },
+
+  {
+   "line": "Grinta",
+   "name": "Grinta Handlebar Bag",
+   "size": "One Size",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/silca/grinta-grinta-handlebar-bag-one-size-1.png",
+    "https://silca.cc/collections/bags/products/grinta-handlebar-bag"
+   ],
+
+   "dims_cm": { "len": 23, "wid": 11, "hgt": 11 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Dimensions: 23cm x 11cm x 11cm (approximately 9\" x 4.3\" x 4.3\"); 160g; no capacity published",
+   "dims_note": "Confirmed verbatim via curl. SILCA publishes no litre figure; 23 x 11 x 11cm = 2.78L, so 2.8L capacity is derived from the maker's own dims, not stated by them. Fixed zip-closed shape (round barrel), not roll-top - no range to apply the new rule to.",
+   "capacity_l": 2.8,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Rigid-sided barrel, internal structure keeps its round shape fully loaded or empty (photo shows no sag). Reflective stripe bars near the bottom-front edge."
+   },
+
+   "closure": {
+    "type": "zip_dual_slider",
+    "location": "top_centre",
+    "hardware": "two sliders meeting at center-top, pull tabs visible both ends"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "cam", "material": "webbing", "wrapsAround": "handlebar" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "3-bar reflective stripe, bottom-front edge",
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "RF-welded",
+    "fabric": "CyclePet 600D with kiss coating - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 50, "frame_mm": 0 },
+    "notes": "Two cam-buckle straps clamp the barrel directly to the bar top, no separate harness/cradle visible in the photo. No steerer strap - relies on the two bar straps alone."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#111111" }
+   ],
+   "images": [
+    "assets/products/silca/grinta-grinta-handlebar-bag-one-size-1.png"
+   ]
+  }
+ ]
+}
