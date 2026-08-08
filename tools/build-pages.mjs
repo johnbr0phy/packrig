@@ -67,15 +67,21 @@ console.log(`   ${hotlinked} products hot-link a photo (${restored} URLs restore
 writeFileSync(join(docs, 'data/brands.json'), JSON.stringify(brands));
 
 copyFileSync(join(root, 'src/ui.css'), join(docs, 'ui.css'));
+// The wind tunnel's HUD styles live in their own file. index.html below must
+// link BOTH — the panel renders unstyled if this is copied and not linked, or
+// missing entirely if neither, and nothing in the bundle would complain.
+copyFileSync(join(root, 'src/aero/aero.css'), join(docs, 'aero.css'));
 
 writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
 <title>Packrig — Bikepacking Bag Configurator</title>
 <meta name="description" content="Build a bikepacking rig in 3D from a catalogue of 700+ real bags across 50 makers." />
 <link rel="stylesheet" href="ui.css" />
+<link rel="stylesheet" href="aero.css" />
 <style>html,body{height:100%;margin:0;background:#121212;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
 </head>
 <body>

@@ -83,7 +83,10 @@ for (const b of brands) {
 console.log(`   ${brands.length} brands · ${embedded} thumbnails embedded · ${dropped} without a photo`);
 const catalogJSON = JSON.stringify(brands);
 
-const css = readFileSync(join(root, 'src/ui.css'), 'utf8');
+// Both stylesheets: the wind tunnel's HUD styles live in src/aero/aero.css, and
+// this build inlines rather than links, so a missing file is silent.
+const css = readFileSync(join(root, 'src/ui.css'), 'utf8')
+  + '\n' + readFileSync(join(root, 'src/aero/aero.css'), 'utf8');
 
 const shim = `
 // Serve the two things the app fetches from memory. Same URLs, same shapes, so

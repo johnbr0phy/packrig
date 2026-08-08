@@ -1,0 +1,240 @@
+/* ==== Wind tunnel HUD — right-side glass panel ==============================
+   Mirrors the left "on your bike" panel's rhythm and reuses ui.css's tokens
+   (--ink, --ink-dim, --ink-faint, --accent, --glass-*, --radius, --panel-w).
+   No new colours are introduced. ============================================ */
+
+.aero-panel {
+  position: absolute;
+  top: 92px;
+  right: var(--gutter);
+  width: calc(var(--panel-w) + 24px); /* one instrument wider than the kit list — the waterfall needs the room */
+  max-height: calc(100vh - 220px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---- header -------------------------------------------------------------- */
+.aero-head {
+  padding: 15px 10px 12px 18px;
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  flex: none;
+}
+.aero-title {
+  font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
+  color: rgba(255, 255, 255, 0.62);
+}
+.aero-close {
+  flex: none; width: 30px; height: 30px; border-radius: 9px; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.10); background: rgba(255, 255, 255, 0.04);
+  color: var(--ink-dim); font-size: 13px; line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+.aero-close:hover { background: rgba(255, 255, 255, 0.12); color: var(--ink); }
+
+/* ---- scrollable body ------------------------------------------------------ */
+.aero-body {
+  overflow-y: auto; scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+.aero-body::-webkit-scrollbar { width: 6px; }
+.aero-body::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.16); border-radius: 3px; }
+.aero-body::-webkit-scrollbar-track { background: transparent; }
+
+.aero-sec { padding: 16px 18px; }
+.aero-sec + .aero-sec { border-top: 1px solid rgba(255, 255, 255, 0.09); }
+
+.aero-sec-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-faint); margin-bottom: 10px;
+}
+.aero-sec-row { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+.aero-sec-row .aero-sec-label { margin-bottom: 0; }
+
+/* ---- 1. CdA headline ------------------------------------------------------ */
+.cda-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.cda-primary { display: flex; align-items: baseline; gap: 4px; }
+.cda-value {
+  font-size: 38px; font-weight: 800; letter-spacing: -0.01em; color: #fff;
+  font-variant-numeric: tabular-nums; line-height: 1;
+}
+.cda-unit { font-size: 14px; font-weight: 600; color: var(--ink-dim); }
+.cda-secondary { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex: none; }
+.cda-yaw-value {
+  font-size: 15px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums;
+}
+.cda-yaw-unit { font-size: 11px; font-weight: 600; color: var(--ink-dim); margin-left: 2px; }
+.cda-yaw-tag {
+  font-size: 9.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.cda-explainer { margin-top: 10px; font-size: 11.5px; line-height: 1.5; color: var(--ink-dim); }
+
+/* ---- 2. watts at speed ----------------------------------------------------- */
+.watts-row { display: flex; align-items: baseline; gap: 5px; flex-wrap: wrap; }
+.watts-value { font-size: 28px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; line-height: 1; }
+.watts-unit { font-size: 13px; font-weight: 600; color: var(--ink-dim); }
+.watts-caption { font-size: 12px; color: var(--ink-dim); margin-left: 3px; }
+.watts-speed-echo { font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+
+.aero-slider-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.slider-readout {
+  flex: none; min-width: 56px; text-align: right;
+  font-size: 12px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums;
+}
+
+/* one slider look, shared by speed and yaw */
+.aero-slider {
+  flex: 1; -webkit-appearance: none; appearance: none;
+  height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.14);
+  outline: none; cursor: pointer; margin: 8px 0;
+}
+.aero-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 15px; height: 15px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  cursor: pointer; transition: transform 0.12s;
+}
+.aero-slider::-webkit-slider-thumb:hover { transform: scale(1.12); }
+.aero-slider::-moz-range-thumb {
+  width: 15px; height: 15px; border-radius: 50%; border: none;
+  background: var(--accent); cursor: pointer;
+}
+.aero-slider::-moz-range-track { height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); }
+.aero-slider:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px rgba(232, 168, 72, 0.4); }
+
+/* ---- 3. delta vs. bare bike ------------------------------------------------ */
+.delta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.delta-item { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.delta-value {
+  font-size: 19px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.delta-unit { font-size: 11px; font-weight: 600; color: var(--ink-dim); margin-left: 2px; }
+.delta-label { font-size: 10.5px; color: var(--ink-faint); line-height: 1.3; }
+
+/* ---- 4. waterfall ----------------------------------------------------------
+   The feature's centrepiece — ranked, biggest offender first. Label sits on
+   its own line above a full-width bar (rather than squeezed into a fixed-
+   width column beside it) because the bag's name is the whole point of this
+   chart — it must never lose the fight for space and get truncated. */
+.wf-list { display: flex; flex-direction: column; gap: 10px; }
+.wf-row {
+  padding: 5px 6px; border-radius: 8px; cursor: default;
+  transition: background 0.15s;
+}
+.wf-row:hover, .wf-row.hl { background: rgba(255, 255, 255, 0.07); }
+.wf-top { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+.wf-label-wrap { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.wf-label {
+  font-size: 11.5px; color: var(--ink); font-weight: 600; line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.wf-tag {
+  display: none; flex: none; font-size: 8.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.wf-row.baseline .wf-label { color: var(--ink-dim); font-weight: 500; }
+.wf-row.baseline .wf-tag, .wf-row.sheltered .wf-tag { display: inline; }
+.wf-value {
+  flex: none; font-size: 11px; font-weight: 700; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.wf-row.top .wf-value { color: var(--accent); }
+.wf-track { height: 7px; border-radius: 999px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+.wf-fill {
+  height: 100%; border-radius: 999px; background: rgba(255, 255, 255, 0.36);
+  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.wf-row.top .wf-fill { background: var(--accent); }
+.wf-row.baseline .wf-fill { background: rgba(255, 255, 255, 0.16); }
+
+/* a bag hidden in another part's wake — near-zero is a real reading here,
+   so it earns an explanation rather than sitting as a bare, suspicious "0 W" */
+.wf-row-note {
+  margin-top: 5px; font-size: 10.5px; line-height: 1.4;
+  color: var(--ink-faint); font-style: italic;
+}
+
+/* the frame-bag fairing credit — genuinely good news, so it earns the
+   faintest touch of accent tint (the same --accent-soft the rest of the app
+   already uses for hover states), not a new colour */
+.wf-fairing-note {
+  margin-top: 10px; font-size: 11px; line-height: 1.5; color: var(--ink-dim);
+  padding: 9px 10px; border-radius: 9px;
+  background: var(--accent-soft); border: 1px solid rgba(232, 168, 72, 0.22);
+}
+
+/* ---- 5. grade --------------------------------------------------------------
+   Present with confidence, not as the main event — small badge, no traffic-
+   light colour coding (this app has one accent, used sparingly). */
+.aero-grade { display: flex; align-items: center; gap: 14px; }
+.grade-badge {
+  flex: none; width: 44px; height: 44px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.grade-letter { font-size: 17px; font-weight: 800; color: var(--accent); }
+.grade-copy { min-width: 0; }
+.grade-name { font-size: 13.5px; font-weight: 700; color: #fff; }
+.grade-blurb { font-size: 11px; color: var(--ink-dim); margin-top: 2px; line-height: 1.4; }
+
+/* ---- 6. yaw ----------------------------------------------------------------- */
+.yaw-cda-row { display: flex; align-items: baseline; justify-content: space-between; margin-top: 8px; }
+.yaw-cda-label { font-size: 11px; color: var(--ink-dim); }
+.yaw-cda-value { font-size: 12.5px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.yaw-hint { font-size: 11px; color: var(--ink-faint); line-height: 1.5; margin-top: 10px; }
+
+/* ---- 7. how this is calculated ---------------------------------------------
+   Deliberately present, deliberately quiet — a disclosure, not a disclaimer. */
+.aero-assum summary {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 11.5px; font-weight: 600; color: var(--ink-dim);
+  transition: color 0.15s;
+}
+.aero-assum summary::-webkit-details-marker { display: none; }
+.aero-assum summary::marker { content: ''; }
+.aero-assum summary:hover { color: var(--ink); }
+.assum-chevron { color: var(--ink-faint); font-size: 12px; transition: transform 0.2s; }
+.aero-assum[open] .assum-chevron { transform: rotate(180deg); }
+.assum-disclaimer {
+  margin-top: 12px; font-size: 11px; line-height: 1.55; color: var(--ink-dim);
+  padding: 9px 10px; border-radius: 9px;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.assum-list { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.assum-item { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font-size: 11px; }
+.a-label { color: var(--ink-dim); }
+.a-value { color: var(--ink); font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.a-note { grid-column: 1 / -1; color: var(--ink-faint); font-size: 10.5px; line-height: 1.4; }
+
+/* ---- 8. exit ------------------------------------------------------------- */
+.aero-foot { padding: 14px 18px 18px; flex: none; }
+.aero-exit-btn {
+  width: 100%; height: 38px; border-radius: 10px; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.14); background: rgba(255, 255, 255, 0.06);
+  color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 0.03em;
+  transition: background 0.15s, border-color 0.15s;
+}
+.aero-exit-btn:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.24); }
+
+/* ---- motion --------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .wf-fill { transition: none; }
+  .aero-slider::-webkit-slider-thumb { transition: none; }
+}
+
+/* ---- responsive ------------------------------------------------------------
+   ui.css defines no breakpoints of its own (the left panel is a fixed 320px
+   at rest), so these are scoped entirely to this panel: shrink and tighten
+   before the two panels can touch. */
+@media (max-width: 1180px) {
+  .aero-panel { width: 300px; }
+}
+@media (max-width: 940px) {
+  .aero-panel { width: 262px; top: 84px; max-height: calc(100vh - 200px); }
+  .aero-sec { padding: 13px 14px; }
+  .cda-value { font-size: 32px; }
+  .watts-value { font-size: 24px; }
+  .delta-value { font-size: 16px; }
+}
