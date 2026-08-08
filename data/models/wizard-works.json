@@ -2,6 +2,7 @@
  "brand": "Wizard Works",
  "slug": "wizard-works",
  "reviewed_photos": 0,
+ "reviewed_pages": 15,
  "brand_notes": {
   "fabric": "brands.json's brand-level fabric string is 'Cordura / X50 nylon (matte woven, splatter-dye prints)'. The maker's own SPECS tabs (read via a real Chrome session — wizard.works sits behind a Cloudflare JS challenge that 403s curl and WebFetch; the challenge auto-clears in ~7s in an actual browser tab) consistently list '500D Cordura Nylon Outer' in Black/Olive/Tan and '1000D Cordura Polyester Outer' in the Splatter colourway, with a 210D nylon liner. That confirms the Cordura half of the brand string across every product checked so far. No product page mentions 'X50' by name — that may be a liner or reinforcement fabric not called out on the consumer-facing SPECS tab, or a holdover from an older material. Verdict: Cordura is confirmed verbatim per-product; X50 is unconfirmed (neither contradicted nor found) and should be treated as unverified rather than wrong.",
   "method": "No usable local photos exist in assets/products/wizard-works/ (only two unrelated placeholder images, t2.jpg and test1.jpg, for 27 products) — see HANDOVER.md. Every record below is built from the maker's own product page (DESCRIPTION + SPECS + FEATURES tabs), fetched in a live Chrome tab (mcp__claude-in-chrome__navigate + get_page_text) after the Cloudflare challenge clears. Plain curl and WebFetch both 403. Geometry/hardware fields are therefore page-derived text evidence, not photo-verified, and are marked accordingly in confidence/dims_note. Dimensions quoted in each product's SPECS table are maker-published figures (verified: true); anything inferred beyond the literal page text is flagged low/medium confidence."
@@ -478,6 +479,1347 @@
     { "name": "Splatter", "hex": "#3a3a3c" },
     { "name": "Tan", "hex": "#b08a5e" }
    ],
+   "images": []
+  },
+
+  {
+   "line": "Houdini",
+   "name": "Teeny Houdini Saddle Bag",
+   "size": "One Size (0.5L)",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/teeny-houdini-saddle-bag/"
+   ],
+
+   "dims_cm": { "len": 16, "wid": 9, "hgt": 7 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Volume 0.5L, Size '16 x 9 x 7cm', Weight 75g",
+   "dims_note": "Single fixed triple, no range. Mapped nose-to-tail (16cm) to len, across (9cm) to wid, top-to-bottom (7cm) to hgt, consistent with the under-saddle mount described.",
+   "capacity_l": 0.5,
+
+   "geometry": {
+    "form": "saddlebag_flap",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Maker copy: 'The Flap opening allows for on the bike access... fastened with a slick magnetic buckle.' Sized to fit a gravel/road-plus/MTB tube plus a repair kit and a mini-pump up to 16cm. No photo evidence for this brand — shape read from description only."
+   },
+
+   "closure": {
+    "type": "magnetic",
+    "location": "tail",
+    "hardware": "belt-style flap fastened with a magnetic buckle (click closure), allows on-the-bike access without full removal"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "seatpost" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon liner",
+    "notes": "'Updated for 2025' minimal saddlebag, designed to sit in the wedge under the saddle. Includes 1x omni-tape strap; an upgraded Voile Nano strap is offered as a paid extra. A reviewer noted the closure lacks the orange contrast cord seen on other WW bags."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 2,
+    "notes": "Minimal wedge tucked directly under the saddle, main body strapped/clicked to the rails via the magnetic-buckle belt; optional seatpost strap for stability on rough roads. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Alakazam",
+   "name": "Alakazam Basket Bag",
+   "size": "Wald 137",
+   "slot": "randobag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/alakazam-basket-bag/"
+   ],
+
+   "fits": "basket",
+
+   "dims_cm": { "len": 23, "wid": 36, "hgt": 13 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "SPECS tab: Wald 137 — Volume 9-38L (when fully unrolled), Size '36w x 23d x 13-48h cm'",
+   "dims_note": "Per the dimension rule's own worked example (this exact 36w x 23d x 13-48h triple), w maps to wid (36) and d maps to len (23); hgt takes the MINIMUM of the published 13-48cm roll range. render.hgt_cm mirrors the rule's answer since 13cm is a genuine minimum-volume state (9L), not an absurd result.",
+   "capacity_l": 9,
+
+   "render": {
+    "hgt_cm": 13,
+    "basis": "published minimum of the 13-48cm range; no on-bike photo available to check against, so no turn-down count is asserted"
+   },
+
+   "geometry": {
+    "form": "basket_box",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Sits inside and takes its shape from the Wald 137 basket (padded base per maker copy); expands upward via roll-top when unrolled. No photo evidence for this brand — shape read from description only."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll top with a fast-access flap over the main compartment"
+   },
+
+   "zips": [
+    { "run": "front_panel", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "g_hook", "material": "webbing" },
+    { "role": "compression", "count": 2, "location": "side", "hardware": "buckle", "material": "webbing" },
+    { "role": "shoulder", "count": 1, "location": "top", "hardware": "hook", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front" },
+    { "type": "stretch", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner, seam-taped for a 100% waterproof main compartment",
+    "notes": "Maker copy is explicit that Alakazam 'require[s] a basket for support... They cannot be used on a platform rack' — modelled with fits: basket accordingly, per the project's known Alakazam/basket gap. 2x extender 'pizza straps' allow oversized loads; G-buckle strap does the quick-release basket attachment."
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["basket"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Basket-dependent — the bag has no rigid structure of its own beyond a padded base and relies entirely on the Wald 137 (or Manivelle) basket for support. Not mountable on a bare rack or fork. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Alakazam",
+   "name": "Alakazam Basket Bag",
+   "size": "Manivelle",
+   "slot": "randobag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/alakazam-basket-bag/"
+   ],
+
+   "fits": "basket",
+
+   "dims_cm": { "len": 27, "wid": 39, "hgt": 11 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "SPECS tab: Manivelle — Volume 11-49L (when fully unrolled), Size '39w x 27d x 11-47h cm'",
+   "dims_note": "Same w/d/h mapping as the Wald 137 variant (w to wid, d to len); hgt takes the minimum of the published 11-47cm range.",
+   "capacity_l": 11,
+
+   "render": {
+    "hgt_cm": 11,
+    "basis": "published minimum of the 11-47cm range; no on-bike photo available"
+   },
+
+   "geometry": {
+    "form": "basket_box",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Same construction as the Wald 137 variant, sized to the Manivelle basket. No photo evidence."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll top with a fast-access flap over the main compartment"
+   },
+
+   "zips": [
+    { "run": "front_panel", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "g_hook", "material": "webbing" },
+    { "role": "compression", "count": 2, "location": "side", "hardware": "buckle", "material": "webbing" },
+    { "role": "shoulder", "count": 1, "location": "top", "hardware": "hook", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front" },
+    { "type": "stretch", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner, seam-taped",
+    "notes": "Same basket-dependent construction as the Wald 137 variant."
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["basket"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Basket-dependent, same as the Wald 137 variant. Cannot be used on a platform rack per maker copy. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Badjelly",
+   "name": "Badjelly Bar + Saddle Bag",
+   "size": "Small (10L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/badjelly-bar-saddle-bag/"
+   ],
+
+   "dims_cm": { "len": 29, "wid": 17, "hgt": 24 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Small — Volume 10L, Dimensions '29cm W x 24cm H x 17cm D (37cm wide with full side pockets)', Weight 680g (excl straps)",
+   "dims_note": "Hardshell construction 'holds its shape whether empty or full' per maker copy, so the published W/H/D triple is used directly (no roll range to pick a minimum from): W maps to len (across the bars), D to wid (front-to-back depth), H to hgt. The 37cm 'with full side pockets' figure is the accessory-expanded width, not the main body, so kept out of dims_cm and noted here instead.",
+   "capacity_l": 10,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.85, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Maker copy: 'Tapered shape to provide space for fingers and gear changing on drops' — narrows toward the ends to clear drop-bar levers. Taper ratio is an estimate from that description, not measured from a photo (none available for this brand); treat as approximate."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll top under an expandable long flap, cinched by an under-flap stabilising strap; Aluminium Bar attachment bracket for rigid mounting"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "ladderlock", "material": "rubber", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 2, "location": "side" },
+    { "type": "slip", "count": 2, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner, seam-taped for a waterproof main compartment",
+    "notes": "Formerly sold as 'Mini Shazam' (renamed Badjelly for trademark reasons). Elastic lacing on top for quick-stash items. Includes 2x Voile Nano straps (rubber cam straps), 1x cordlock strap and 6 foam spacers. 'Equally at home on the bars or saddle' — modelled here in its bar-mount orientation, matching its 'barbag' catalogue slot."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "notes": "Aluminium bar-attachment bracket for stability; can alternatively mount to a saddle or the optional Bagman bar rack accessory (not modelled). Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Badjelly",
+   "name": "Badjelly Bar + Saddle Bag",
+   "size": "Medium (15L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/badjelly-bar-saddle-bag/"
+   ],
+
+   "dims_cm": { "len": 31, "wid": 18, "hgt": 29 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Medium — Volume 15L, Dimensions '31cm W x 29cm H x 18cm D (39cm wide with full side pockets)', Weight 815g (excl straps)",
+   "dims_note": "Same W/H/D mapping as the Small.",
+   "capacity_l": 15,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.85, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Same tapered construction as the Small, scaled up. Estimate, not photo-measured."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll top under an expandable long flap, cinched by an under-flap stabilising strap; Aluminium Bar attachment bracket"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "ladderlock", "material": "rubber", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 2, "location": "side" },
+    { "type": "slip", "count": 2, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner, seam-taped",
+    "notes": "Formerly sold as 'Large Shazam'. Includes 2x Voile Nano straps, 1x cordlock strap and 6 foam spacers."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "notes": "Same mount as the Small. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Badjelly",
+   "name": "Badjelly Bar + Saddle Bag",
+   "size": "Large (19L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/badjelly-bar-saddle-bag/"
+   ],
+
+   "dims_cm": { "len": 36, "wid": 20, "hgt": 30 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Large — Volume 19L, Dimensions '36cm W x 30cm H x 20cm D (44cm wide with full side pockets)', Weight 890g (excl straps)",
+   "dims_note": "Same W/H/D mapping as the Small and Medium.",
+   "capacity_l": 19,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.85, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Same tapered construction as the Small/Medium, scaled up. Estimate, not photo-measured."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll top under an expandable long flap, cinched by an under-flap stabilising strap; Aluminium Bar attachment bracket"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "ladderlock", "material": "rubber", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 2, "location": "side" },
+    { "type": "slip", "count": 2, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner, seam-taped",
+    "notes": "Largest of the three Badjelly sizes. Includes 2x Voile Nano straps, 1x cordlock strap and 6 foam spacers."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "notes": "Same mount as the Small/Medium. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Forres",
+   "name": "Forres Full Frame Bag",
+   "size": "Small",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/forres-full-frame-bag/"
+   ],
+
+   "dims_cm": { "len": 45, "wid": 6, "hgt": 29 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Small — Volume 5L, Size '45 x 29 x 6 cm', Weight 310g",
+   "dims_note": "Frame-triangle bag, fixed figures. First figure (45cm) mapped to len (runs along the top tube), constant 6cm mapped to wid (side-to-side thickness against the tubes), second figure (29cm) mapped to hgt (drop toward the down tube/BB).",
+   "capacity_l": 5,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Fills the whole main triangle. Flat panels press against the top/down/seat tubes; no visible taper or shoulder detail available since no photo exists for this brand."
+   },
+
+   "closure": {
+    "type": "zip_two_way",
+    "location": "top",
+    "hardware": "double zipper creating two separate compartments, or unzip and fold down the internal floor to merge into one large space"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" },
+    { "run": "perimeter", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 5, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 2, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner",
+    "notes": "Bladder-compatible with a cable/hydration hose port on the non-drive side. Includes elastic lacing plus 5 optional omni-tape straps. Not seam-taped/waterproof per a customer review despite the 'water-resistant' spec line."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "seat_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Straps inside the main triangle to all three tubes via the omni-tape straps and elastic lacing. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Forres",
+   "name": "Forres Full Frame Bag",
+   "size": "Medium",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/forres-full-frame-bag/"
+   ],
+
+   "dims_cm": { "len": 49, "wid": 6, "hgt": 36 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Medium — Volume 6.5L, Size '49 x 36 x 6 cm', Weight 360g",
+   "dims_note": "Same mapping as the Small.",
+   "capacity_l": 6.5,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Same construction as the Small, scaled up. No photo evidence."
+   },
+
+   "closure": {
+    "type": "zip_two_way",
+    "location": "top",
+    "hardware": "double zipper creating two separate compartments, or fold down the floor for one large space"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" },
+    { "run": "perimeter", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 5, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 2, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner",
+    "notes": "Same features as the Small. A size-M owner reports it 'fits perfectly' with the removable floor 'great for storing different items efficiently'."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "seat_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Same mount as the Small. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Forres",
+   "name": "Forres Full Frame Bag",
+   "size": "Large",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/forres-full-frame-bag/"
+   ],
+
+   "dims_cm": { "len": 52, "wid": 6, "hgt": 39 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Large — Volume 7.8L, Size '52 x 39 x 6 cm', Weight 400g",
+   "dims_note": "Same mapping as the Small/Medium.",
+   "capacity_l": 7.8,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Same construction as the smaller sizes, scaled up. No photo evidence."
+   },
+
+   "closure": {
+    "type": "zip_two_way",
+    "location": "top",
+    "hardware": "double zipper creating two separate compartments, or fold down the floor for one large space"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" },
+    { "run": "perimeter", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 5, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 2, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner",
+    "notes": "Same features as the smaller sizes."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "seat_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Same mount as the smaller sizes. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Forres",
+   "name": "Forres Full Frame Bag",
+   "size": "XL",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/forres-full-frame-bag/"
+   ],
+
+   "dims_cm": { "len": 55, "wid": 6, "hgt": 44 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: XL — Volume 9.5L, Size '55 x 44 x 6 cm', Weight 450g",
+   "dims_note": "Same mapping as the other sizes.",
+   "capacity_l": 9.5,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Same construction as the other sizes, largest of the range. No photo evidence."
+   },
+
+   "closure": {
+    "type": "zip_two_way",
+    "location": "top",
+    "hardware": "double zipper creating two separate compartments, or fold down the floor for one large space"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" },
+    { "run": "perimeter", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 5, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 2, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner",
+    "notes": "Largest Forres size."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "seat_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Same mount as the other sizes. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Osyth",
+   "name": "Osyth Frame Bag",
+   "size": "Small",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/osyth-frame-bag/"
+   ],
+
+   "dims_cm": { "len": 41, "wid": 6, "hgt": 11 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Small — Volume 1.9L, Size '41 x 11 x 6cm', Weight 170g",
+   "dims_note": "Half-frame bag hanging under the top tube. First figure (41cm) mapped to len (along the top tube), constant 6cm mapped to wid (thickness), second figure (11cm) mapped to hgt (drop below the top tube), leaving bottle-cage space clear underneath.",
+   "capacity_l": 1.9,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "Maker copy describes a 'cute dogfish shape' maintained by a recycled-HDPE plastic bottom — a tapered panel, wider at the head-tube end and narrowing toward the seat tube (typical of this bag style), but the exact taper is not stated and no photo exists for this brand, so it is left undescribed beyond the panel form."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top edge; elastic webbing at the top takes strain off the zip when full"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "compression", "count": 1, "location": "front_face", "hardware": "cam", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon liner",
+    "notes": "Doesn't require racks or mounts; leaves the main triangle's bottle bosses accessible (compatible with a Wolf Tooth B-Rad 2 base to relocate a bottle, sold separately). Includes elastic cord, 2x omni-tape straps and 1x camlock strap."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "notes": "Hangs from the underside of the top tube only, leaving the down tube/seat tube bottle mounts clear. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Osyth",
+   "name": "Osyth Frame Bag",
+   "size": "Medium",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/osyth-frame-bag/"
+   ],
+
+   "dims_cm": { "len": 45.5, "wid": 6, "hgt": 12.5 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Medium — Volume 2.5L, Size '45.5 x 12.5 x 6cm', Weight 195g",
+   "dims_note": "Same mapping as the Small.",
+   "capacity_l": 2.5,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "Same 'dogfish shape' HDPE-based construction as the Small, scaled up. No photo evidence."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top edge; elastic webbing at the top takes strain off the zip when full"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "compression", "count": 1, "location": "front_face", "hardware": "cam", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon liner",
+    "notes": "Same features as the Small. Includes elastic cord, 2x omni-tape straps and 1x camlock strap."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "notes": "Same mount as the Small. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Osyth",
+   "name": "Osyth Frame Bag",
+   "size": "Large",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/osyth-frame-bag/"
+   ],
+
+   "dims_cm": { "len": 49, "wid": 6, "hgt": 16 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: Large — Volume 3.5L, Size '49 x 16 x 6cm', Weight 235g",
+   "dims_note": "Same mapping as the smaller sizes.",
+   "capacity_l": 3.5,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "Same construction as the smaller sizes, scaled up. No photo evidence."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top edge; elastic webbing at the top takes strain off the zip when full"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "compression", "count": 1, "location": "front_face", "hardware": "cam", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon liner",
+    "notes": "Same features as the smaller sizes."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "notes": "Same mount as the smaller sizes. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Osyth",
+   "name": "Osyth Frame Bag",
+   "size": "XL",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/osyth-frame-bag/"
+   ],
+
+   "dims_cm": { "len": 51, "wid": 6, "hgt": 20 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "SPECS tab: XL — Volume 4.5L, Size '51 x 20 x 6cm', Weight 255g",
+   "dims_note": "Same mapping as the smaller sizes.",
+   "capacity_l": 4.5,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "Same construction as the smaller sizes, largest of the range. No photo evidence."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip along the top edge; elastic webbing at the top takes strain off the zip when full"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "compression", "count": 1, "location": "front_face", "hardware": "cam", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon liner",
+    "notes": "Largest Osyth size."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "notes": "Same mount as the smaller sizes. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Figwit",
+   "name": "Figwit Cargo Cage Bag",
+   "size": "One Size (4L)",
+   "slot": "forkbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/figwit-cargo-cage-bag/"
+   ],
+
+   "dims_cm": { "len": 27, "wid": 15, "hgt": 15 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "SPECS tab: Outer Dimensions '15D x 27H cm', Volume 4L, Weight 240g, Compatible Strap size 25\" Voile",
+   "dims_note": "Cylindrical fork/cargo-cage bag, single fixed figure (no min-max range published despite the roll-top). Long axis (27cm) mapped to len (matches how this catalogue's other own-barrel bags — Lil Presto, Voila — are recorded, long axis to len regardless of mount orientation); wid/hgt both set to the 15cm diameter.",
+   "capacity_l": 4,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Hardshell cylinder per maker copy ('the hardshell design allows you to access the bag while it's on your bike'); roll-top allows some capacity expansion but no rolled/unrolled range is published. No photo evidence for this brand."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll-top on a hardshell body"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "girth", "hardware": "ladderlock", "material": "rubber" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner, seam-taped for a 100% waterproof main pocket",
+    "notes": "'Multiple strap points aid fit on all cargo cage designs.' 2x 25\" Voile straps (sold separately, required for a rock-solid attachment) shown as the primary attachment in the maker copy. Optional Widefoot CargoMount accessory also offered, not modelled."
+   },
+
+   "mount": {
+    "axes": { "len": "along_forkleg", "wid": "+x", "hgt": "z" },
+    "attachesTo": ["fork_cage", "frame_cage"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Mounts vertically inside a 3-pack/cargo-cage mount via 2 girth (Voile) straps, sold separately. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Figwit",
+   "name": "Figwit Cage Bag",
+   "size": "One Size",
+   "slot": "forkbag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://www.wizard.works/shop/figwit-cage-bag/"
+   ],
+
+   "dims_cm": { "len": 22, "wid": 12, "hgt": 12 },
+   "dims_state": "unverified",
+   "dims_raw": "No SPECS table is published on this product's page at all (unlike the Cargo Cage version) — only a DESCRIPTION-less product form with colour/quantity selectors was found; checked twice in a live browser session.",
+   "dims_note": "This is the plain 'Figwit' (non-Cargo-Cage) SKU — the maker's own page carries no dimensions, volume, or spec table whatsoever. The 22/12cm figures shown here are carried over unchanged from data/brands.json, where a prior pass already flagged them as unsourced ('dims left as stored... no dimensions or volume are published'). NOT independently confirmed by this review — do not treat as maker-verified. Left unchanged per the spec's 'do not invent' rule rather than deleted, since a plausible prior estimate is better than a blank field, but verified stays false.",
+   "capacity_l": 2.5,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Assumed to share the Cargo Cage Bag's cylindrical cage-bag construction at a smaller size, based on the product name and single side-view thumbnail referenced in brands.json, but this review has no photo access and the product page itself gives no description. Thin record — treat geometry as a guess, not a finding."
+   },
+
+   "closure": {
+    "type": "rolltop"
+   },
+
+   "zips": [],
+
+   "straps": [],
+
+   "pockets": [],
+
+   "details": {
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan) or 1000D Cordura polyester outer (Splatter); 210D nylon orange liner — inferred from the Cargo Cage sibling product, not confirmed on this product's own page"
+   },
+
+   "mount": {
+    "axes": { "len": "along_forkleg", "wid": "+x", "hgt": "z" },
+    "attachesTo": ["fork_cage", "frame_cage"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Assumed cargo-cage mount by analogy with the Cargo Cage Bag; not confirmed by this product's own page. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Snagla",
+   "name": "Snagla Hip-Pack + Bar Bag",
+   "size": "One Size (3.5L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.wizard.works/shop/snagla-hip-pack-bar-bag/"
+   ],
+
+   "dims_cm": { "len": 26, "wid": 7.5, "hgt": 22 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "SPECS tab: Volume 3.5L, Size '15-22h x 26w x 7.5d cm', Belt Size to fit up to 55in/140cm, Weight 310g",
+   "dims_note": "Ranged height per the dimension rule: hgt takes the MINIMUM of the published 15-22cm range. w(26) mapped to len (across the bars), d(7.5) mapped to wid.",
+   "capacity_l": 3.5,
+
+   "render": {
+    "hgt_cm": 15,
+    "basis": "published minimum of the 15-22cm range; no on-bike photo available for this brand"
+   },
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Convertible hip-pack/bar-bag: the padded back panel (worn against the body in hip-pack mode) becomes the frame-facing face in bar-bag mode, with the hip-belt wings tucking flat behind it. No photo evidence for this brand — shape read from description only."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll-top with a Fidlock Rope Hook magnetic buckle for one-handed access"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" },
+    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 2, "location": "internal" },
+    { "type": "bottle", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "500D Cordura nylon outer (Black/Olive/Tan); 210D nylon orange liner, seam-taped waterproof",
+    "notes": "Primarily a hip pack (adjustable belt to 140cm, 9mm spacer-mesh back padding); converts to a bar bag only with an optional bar-attachment kit sold separately (offered free at launch). Up to 2 detachable 'Quick Draw' bottle pockets in hip-pack mode. Main wing buckle and Fidlock hook buckle are the two closures on the body."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Bar-mount requires the optional bar-attachment kit (first-party accessory, not included as standard) — 'a bar attachment kit is required to mount the Snagla to your bike.' Modelled in its bar-bag configuration per its catalogue slot; hip-pack mode is off-bike and not geometry-relevant here. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Olive", "hex": "#565a3f" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Leyline",
+   "name": "Brompton X WW Leyline Front Bag",
+   "size": "One Size (25L)",
+   "slot": "randobag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://www.wizard.works/shop/brompton-leyline-front-bag/"
+   ],
+
+   "fits": "brompton",
+
+   "dims_state": "not_established",
+   "dims_raw": "Description only states '25L+ rolltop' waterproof capacity; the SPECS tab's dimension row was not captured before the product page's 'this collaboration has sold out' notice was read, and the collaboration is discontinued/out of production ('hopefully returning in a new form later this year').",
+   "dims_note": "Deliberately left thin: this is the Brompton-specific front-block bag already known to be filtered out of the universal fit pool (per project handover notes), and it is a sold-out, one-off collaboration SKU, not general bikepacking hardware. No dims_cm recorded — do not invent a figure for a discontinued Brompton-only product.",
+
+   "geometry": {
+    "notes": "Not established. No photo evidence and dimension specs not captured before confirming this is out of scope (Brompton block-mount only)."
+   },
+
+   "closure": {
+    "type": "rolltop"
+   },
+
+   "zips": [],
+   "straps": [],
+   "pockets": [],
+
+   "details": {
+    "fabric": "Cordura per brand-level fabric string, not independently confirmed for this SKU",
+    "notes": "'Waterproof seam taped liner' per FEATURES tab. A collaboration piece mounting to the Brompton's proprietary front block, not a standard handlebar/rack mount — matches the project's known Brompton-fit exclusion."
+   },
+
+   "mount": {
+    "notes": "Mounts to the Brompton front carrier block, a proprietary mount not present on a standard drop-bar gravel bike. Excluded from the universal mount pool via fits: brompton, per handover instructions."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Splatter", "hex": "#3a3a3c" },
+    { "name": "Tan", "hex": "#b08a5e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Custom Fit",
+   "name": "Custom Fit Roll-Top Frame Bag",
+   "size": "Custom",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://www.wizard.works/shop/custom-fit-roll-top-frame-bag/"
+   ],
+
+   "dims_state": "bespoke_no_fixed_spec",
+   "dims_raw": "SPECS tab: 'Volume: Varies', 'Size: 5 or 6cm width options', 'Weight: Varies'. Order flow asks the customer for their bike's brand/model/year/size and the inside length of two frame tubes, then a template photo for a digital design process.",
+   "dims_note": "Made-to-measure per customer bike — there is no fixed length/height to record, only the 5cm-or-6cm width choice. Recording a length/height here would mean inventing a number the maker explicitly does not publish, which the spec forbids. dims_cm intentionally omitted rather than guessed; wid could be set to 5 or 6cm but len/hgt have no basis at all without a specific customer order, so the whole triple is left out for consistency.",
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "Full-triangle frame bag, same general family as Forres, cut to the customer's own frame. No fixed shape beyond that — no photo, no generic dimensions."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll-top opening, seam-taped waterproof liner"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "hook", "material": "hypalon", "wrapsAround": "head_tube" },
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing" },
+    { "role": "compression", "count": 2, "location": "side", "hardware": "g_hook", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "customer's choice of outer fabric (Cordura per the standard range); 210D orange nylon liner",
+    "notes": "'All Custom Fit Roll Top Frame Bags Include': elastic-lacing on the top tube, a Hypalon lash tab with removable omni-tape strap on the head tube, replaceable omni-tape fastenings on the down/seat tubes, two webbing straps with metal G-hook closure, and foam padding against all tubes."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "seat_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Bespoke fit to the customer's own frame triangle; geometry above is generic/indicative only, not a real product size. Clearance not established — no photo."
+   },
+
+   "colorways": [],
+   "images": []
+  },
+
+  {
+   "line": "Custom Fit",
+   "name": "Custom Fit Zip Frame Bag",
+   "size": "Custom",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://www.wizard.works/shop/custom-fit-zip-frame-bag/"
+   ],
+
+   "dims_state": "bespoke_no_fixed_spec",
+   "dims_raw": "SPECS tab: 'Volume: Varies', 'Size: 5 or 6cm width options', 'Weight: Varies'. Size selector offers Partial / Full - Single Zip / Full - Double Zip, each made to the customer's own frame measurements.",
+   "dims_note": "Same bespoke situation as the Custom Fit Roll-Top: no fixed length/height published, only a 5cm-or-6cm width choice. dims_cm intentionally omitted rather than guessed.",
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "Same family as Forres (full) or Osyth (partial) depending on the size option chosen, cut to the customer's own frame. No fixed shape beyond that — no photo, no generic dimensions."
+   },
+
+   "closure": {
+    "type": "zip_two_way",
+    "location": "top",
+    "hardware": "chunky #8 RiRi zip(s) on the drive side; double-zip option adds a removable floor between the zips for two compartments"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "hook", "material": "hypalon", "wrapsAround": "head_tube" },
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "customer's choice of outer fabric (Cordura per the standard range); fully lined",
+    "notes": "'All Custom Fit Zip Full Frame Bags Include': hydration/cable port, pump/tent-pole straps inside under the top tube, elastic-lacing on the top and seat tubes, Hypalon lash tabs with removable omni-tape straps on the down/head tubes, foam padding against all tubes. Optional extras: non-drive-side zip pocket, internal mesh pockets, a vertical divider (single-zip only)."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "seat_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Bespoke fit to the customer's own frame triangle, or a partial (under-top-tube-only) fit on the 'Partial' size option. Geometry above is generic/indicative only. Clearance not established — no photo."
+   },
+
+   "colorways": [],
    "images": []
   }
 

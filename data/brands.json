@@ -21646,8 +21646,9 @@
     "size": "One Size (4L)",
     "liters": 4,
     "dims_cm": {
-     "hgt": 27,
-     "dia": 15
+     "len": 27,
+     "wid": 15,
+     "hgt": 15
     },
     "colors": [
      "#161616",
@@ -21702,8 +21703,9 @@
     "size": "One Size",
     "liters": 2.5,
     "dims_cm": {
-     "hgt": 22,
-     "dia": 12
+     "len": 22,
+     "wid": 12,
+     "hgt": 12
     },
     "colors": [
      "#161616",
@@ -21754,8 +21756,8 @@
     "liters": 3.5,
     "dims_cm": {
      "len": 26,
-     "hgt": 17.1,
-     "wid": 7.5
+     "wid": 7.5,
+     "hgt": 22
     },
     "colors": [
      "#161616",
@@ -21805,7 +21807,11 @@
      "https://www.wizard.works/wp-content/uploads/2026/02/snagla_hip_pack_bar_bag_black_gybg.jpg",
      "https://www.wizard.works/wp-content/uploads/2026/02/snagla_hip_pack_bar_bag_tan_gybg1.jpg",
      "https://www.wizard.works/wp-content/uploads/2026/02/snagla_hip_pack_bar_bag_detail_left_wing_gybg.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 15,
+     "basis": "published minimum of the 15-22cm range; no on-bike photo available for this brand"
+    }
    },
    {
     "slot": "randobag",
@@ -31889,7 +31895,8 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "vaude.com: 37 cm (H) x 33 cm (W) x 31 cm (D), volume 51 litres total; 'Delivery includes two panniers for the rear wheel (1 pair), each with a volume of 25.5 liters.' bike-components lists the single pannier as 44 x 33 x 31 cm, 25.5 litres, 1060 g.",
-    "dims_note": "CORRECTED - the LITRES were the error. The stored 51L is VAUDE's PAIR total; the dimensions are for one bag, so the check was comparing a single bag's box against two bags' capacity. Set capacity_l to VAUDE's own stated 25.5L per bag; box 37.9L on 25.5L = 1.49, normal for a roll-top pannier. Dims left at VAUDE's published H/W/D. One caveat I could not resolve: a 31cm 'depth' is very deep for a rear pannier (17-20cm is typical) and looks like a flat or carton measurement - bike-components repeats VAUDE's own data feed so it is not independent corroboration. Their alternative 44cm height is the roll fully extended; 37cm is the rolled-down figure and is the right one for a packed record."
+    "dims_note": "CORRECTED - the LITRES were the error. The stored 51L is VAUDE's PAIR total; the dimensions are for one bag, so the check was comparing a single bag's box against two bags' capacity. Set capacity_l to VAUDE's own stated 25.5L per bag; box 37.9L on 25.5L = 1.49, normal for a roll-top pannier. Dims left at VAUDE's published H/W/D. One caveat I could not resolve: a 31cm 'depth' is very deep for a rear pannier (17-20cm is typical) and looks like a flat or carton measurement - bike-components repeats VAUDE's own data feed so it is not independent corroboration. Their alternative 44cm height is the roll fully extended; 37cm is the rolled-down figure and is the right one for a packed record.",
+    "fits": "rack_only"
    },
    {
     "type": "saddle bag",
