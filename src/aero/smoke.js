@@ -77,6 +77,8 @@ function disposeGeometries(root) {
 
 const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
 const smooth = (x) => { const t = clamp01(x); return t * t * (3 - 2 * t); };
+/** Is this point inside the sanity box? See the guard in writeGeometry(). */
+const sane = (x, y, z) => x > -LIM && x < LIM && y > -LIM && y < LIM && z > -LIM && z < LIM;
 
 /** Support of an axis-aligned box's half-extents along a unit direction. */
 function support(half, d) {
@@ -104,7 +106,17 @@ function rakeSpec(flow, bounds) {
   // Stand off far enough upwind that the machine is clear of the bike but
   // still inside the flow domain, measured against the bike's own footprint
   // rather than a fixed distance — a long bike pushes the rake further out.
-  const standoff = support(half, dir) + 0.95;
+  // Quantised to 0.25m. Both this and halfW below are measured against the
+  // bike's silhouette as seen ALONG and ACROSS the wind, so both drift
+  // continuously as yaw turns — halfW by about 24mm per degree. That made every
+  // tick of the yaw slider a different rig, and since the machine's nozzles and
+  // the streakline spawn points must come from one spec, every tick rebuilt ~120
+  // meshes and re-integrated 7,560 particles: 9-15ms per pointermove instead of
+  // 0.6ms. Rounding up to a physical step means a real rig, of a few discrete
+  // sizes, that simply swings around the bike as the wind angle changes — which
+  // is also what a tunnel rig on a turntable actually does.
+  const STEP = 0.25;
+  const standoff = Math.ceil((support(half, dir) + 0.95) / STEP) * STEP;
   const origin = centre.clone()
     .addScaledVector(dir, -standoff);
   origin.y = ground;
@@ -117,7 +129,7 @@ function rakeSpec(flow, bounds) {
   // the hubs.
   const yLo = 0.1;
   const yHi = (bounds.max.y - ground) + 0.24;
-  const halfW = support(half, side) + 0.34;
+  const halfW = Math.ceil((support(half, side) + 0.34) / STEP) * STEP;
 
   const nozzles = [];   // local-space {x,y,z}
   const stackZ = [];
@@ -575,15 +587,23 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
     const prev = spec;
     spec = rakeSpec(field, (bb && !bb.isEmpty()) ? bb : (field.bikeBounds || field.bounds).clone());
 
-    // A yaw change swings the whole rig around the bike but does not change one
-    // dimension of it, so the machine is re-aimed rather than rebuilt. index.js
-    // calls rebuild() on every tick of the yaw slider; rebuilding ~120 meshes
-    // per pointermove would stutter the drag it is supposed to be driving.
+    // A yaw change swings the whole rig around the bike, so the machine is
+    // re-aimed rather than rebuilt. index.js calls rebuild() on every tick of
+    // the yaw slider, and rebuilding ~120 meshes and re-integrating 7,560
+    // particles per pointermove stutters the drag it is meant to be driving.
+    //
+    // The tolerance is 25mm, NOT exact equality. `rakeW` is derived from the
+    // bike's silhouette measured ACROSS the wind, so it genuinely shifts by a
+    // few millimetres as yaw turns — with a 1e-4 test this never matched, every
+    // slider step took the full rebuild path, and the measured cost was 9-15ms
+    // per step instead of 0.6ms. Only a real change of rig (different kit,
+    // different bike) moves it further than this.
+    const RIG_TOL = 0.025;
     const sameRig = prev && machine
       && prev.nozzles.length === spec.nozzles.length
-      && Math.abs(prev.rakeH - spec.rakeH) < 1e-4
-      && Math.abs(prev.rakeW - spec.rakeW) < 1e-4
-      && Math.abs(prev.yLo - spec.yLo) < 1e-4;
+      && Math.abs(prev.rakeH - spec.rakeH) < RIG_TOL
+      && Math.abs(prev.rakeW - spec.rakeW) < RIG_TOL
+      && Math.abs(prev.yLo - spec.yLo) < RIG_TOL;
     if (!sameRig) {
       if (machine) { group.remove(machine.group); disposeGeometries(machine.group); }
       machine = buildMachine(spec, mats);
@@ -778,7 +798,8 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
         // thread. Collapse such a segment to a point rather than letting it
         // stretch to infinity. A plain isFinite check is not enough — 1e30 is
         // finite and still spans the scene — so bound it to the domain.
-        const sane = (x, y, z) => x > -LIM && x < LIM && y > -LIM && y < LIM && z > -LIM && z < LIM;
+        // (`sane` is module-scope: this is the innermost loop of the frame and
+        // it runs ~15,000 times, which is no place to build a closure.)
         const ok = sane(px[k0], py[k0], pz[k0]) && sane(px[k1], py[k1], pz[k1]);
         if (ok) {
           posBuf[po] = px[k0]; posBuf[po + 1] = py[k0]; posBuf[po + 2] = pz[k0];
