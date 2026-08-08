@@ -1,0 +1,405 @@
+{
+ "brand": "Lezyne",
+ "slug": "lezyne",
+ "reviewed_photos": 12,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level string is 'Cordura/nylon (matte woven) with welded roll-top seams on adventure line'. 'Cordura' specifically is not confirmed anywhere in this pass - no product page uses that word, they all say generic 'durable woven nylon' or 'durable materials'. The visible diamond-grid texture in every studio and on-bike photo (M-Caddy, XL-Caddy, Frame Caddy, Bar Caddy) does look like a genuine ripstop weave (unlike VAUDE's embossed-but-flat coating, reviewed earlier this session), which is at least consistent with a woven nylon claim, just not verifiably Cordura-brand. The 'welded roll-top seams' half is correct but only for the roll-top products (Caddy Sack M, XL-Caddy, Bar Caddy all explicitly say welded seams + roll closure); M-Caddy and Frame Caddy are zip-closed panel bags, not roll-tops, so that clause doesn't apply to them - they should read 'zip closure' instead.",
+  "flat_fold_trap": "Confirmed on two of six products, matching the known issue recorded in HANDOVER.md. XL-Caddy: ride.lezyne.com currently states '330mm x 220mm x 88mm, 424g' - this is the bag laid flat, not a packed/mounted envelope (a 330x220mm rectangle folded to 88mm thick does not describe a seat bag). Lezyne's own launch spec (reproduced by bikepacking.com) gives a packed size of '420 x 170 x 140mm, 7.5L', and the on-bike photo in this pass shows a substantial rounded wedge under the saddle, not a flat slab - consistent with the packed figure, not the flat one. Bar Caddy: same pattern - site states '160.5mm x 250mm x 56.4mm' (a flat panel), while the on-bike photo shows a fat double-ended roll spanning roughly the gap between the brake hoods on a drop bar, clearly not a 56mm-thick flat object. Both products keep the flat-folded figure in dims_cm (it is what the maker currently publishes) with the packed estimate moved to render.*_cm and the conflict spelled out in each record, per this project's rule that dims_cm must stay an honest maker figure even when it is the wrong one to draw. The other four products (M-Caddy, Caddy Sack M, Frame Caddy, Energy Caddy XL) are zip-closed or single-fold designs, not multi-turn rolls, and did not show this problem - their site figures matched packed/mounted proportions in the photos.",
+  "rigid_soft": "M-Caddy and Frame Caddy are semi-rigid: both have a molded rubber/reinforced panel on the bike-facing side and hold a fixed wedge shape, zip-closed. Caddy Sack M, XL-Caddy, and Bar Caddy are soft roll-top/fold pouches with no internal stiffener - genuinely floppy until strapped down. Energy Caddy XL is a small structured zip box, holds its shape."
+ },
+ "products": [
+  {
+   "line": "Caddy",
+   "name": "Lezyne M-Caddy",
+   "size": "0.5L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/files/1-SB-CADDY-V1M04_M-Caddy_v1_R2.jpg",
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/files/MCaddy_Callout_2000x2000_R1-01.jpg",
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/products/1-SB-CADLD-V1M04-MCaddyLoaded.jpg",
+    "https://ride.lezyne.com/products/1-sb-caddy-v1m04"
+   ],
+
+   "dims_cm": { "len": 14, "wid": 11, "hgt": 6.5 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "ride.lezyne.com: '140mm x 110mm x 65mm', weight 75g (bag only) / 175g (loaded kit). No range given.",
+   "dims_note": "Single fixed figures, no maker range - matches the existing catalog entry exactly, re-confirmed this pass. This is a small structured wedge, not a roll-top, so the unfurled/min-height rule has nothing to resolve.",
+   "capacity_l": 0.5,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_bottom",
+    "taper": { "nose": 0.6, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Small wedge, taller/blunter at the tail (a molded semi-rigid rubber-look panel with a reflective stripe) and narrowing toward the nose where the mounting strap sits. Diamond-grid woven nylon body."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "water-resistant zipper with a large pull loop, per maker copy - the zip line is not clearly identifiable in either available photo (obscured by the mounting strap), so this is trusted from the maker's own description rather than independently confirmed"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "velcro", "wrapsAround": "saddle_rails" },
+    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "velcro", "wrapsAround": "seatpost" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.3 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective logo and loop, compatible with Lezyne's Zecto Drive light mount per maker copy",
+    "logo": { "type": "screen_print", "location": "side" },
+    "fabric": "durable woven nylon, visible diamond-ripstop texture - see brand_notes.fabric (not confirmed as Cordura)"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 1,
+    "notes": "Semi-rigid molded tail panel holds shape; velcro-only mount (no buckles) to rails and seatpost. No clearance figure published."
+   },
+
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" }, { "name": "Red", "hex": "#c8102e" } ],
+   "images": ["https://cdn.shopify.com/s/files/1/0043/1246/5494/files/1-SB-CADDY-V1M04_M-Caddy_v1_R2.jpg"]
+  },
+
+  {
+   "line": "Caddy Sack",
+   "name": "Lezyne Caddy Sack M",
+   "size": "0.7L",
+   "slot": "downtube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/products/CS-CADDY-V2M04-Y6-CADDY-SACK-M-BLACK-V1-R0_1800x1800_5f948b5b-70e9-423a-bfeb-1219fb42c8d1.jpg",
+    "https://ride.lezyne.com/products/1-cs-caddy-v2m04"
+   ],
+
+   "dims_cm": { "len": 14.8, "wid": 12, "hgt": 4 },
+   "dims_state": "corrected_axis_remap",
+   "dims_raw": "ride.lezyne.com: '120mm x 147.5mm x 16mm', weight 50g. Retailers separately state 0.7L capacity (not on the maker's own page). Small size on the same page: 115mm x 87mm x 50mm, 30g.",
+   "dims_note": "The maker's 16mm figure is the bag's flat empty thickness (a welded, unstructured pouch), not a packed depth - confirmed again this pass, matching a prior reviewer's correction on this file: remapped 147.5mm to len (14.8cm), 120mm to hgt (12cm), and inferred a packed thickness of ~4cm by filling to the retailer-quoted 0.7L (14.8 x 12 x 4 = 0.71L). My own photo shows a simple flat rectangular pouch with a single fold-over top flap - not a multi-turn roll-top, and no external buckle or strap is visible, so the closure mechanism under the flap (velcro vs. friction) could not be confirmed.",
+   "capacity_l": 0.7,
+
+   "geometry": {
+    "form": "slab",
+    "crossSection": "flat_back",
+    "notes": "Flat, unstructured welded pouch - genuinely floppy, no internal stiffener. No mounting hardware of its own visible in the studio photo; maker copy does not describe a bike-attachment mechanism, consistent with the prior reviewer's note that this is a loose accessory pouch rather than a frame-mounted bag."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "single fold-over flap, not a multi-turn roll; no external buckle visible - closure mechanism under the flap not confirmed"
+   },
+
+   "zips": [],
+
+   "straps": [],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "welded",
+    "fabric": "welded synthetic fabric (TPU/PU-coated look in the photo), not confirmed as Cordura or nylon specifically - maker copy just says 'durable materials'"
+   },
+
+   "mount": {
+    "notes": "No bike-mounting hardware identified on this product; it is a general carry pouch. Kept in the downtube slot per the existing catalog placement but this is unconfirmed - worth a second look."
+   },
+
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" } ],
+   "images": ["https://cdn.shopify.com/s/files/1/0043/1246/5494/products/CS-CADDY-V2M04-Y6-CADDY-SACK-M-BLACK-V1-R0_1800x1800_5f948b5b-70e9-423a-bfeb-1219fb42c8d1.jpg"]
+  },
+
+  {
+   "line": "Caddy",
+   "name": "Lezyne XL-Caddy",
+   "size": "7.5L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/files/1-SB-CADDY-V2XL04_XL-Caddy_v1_R2_b860cb47-2c2f-4932-9c24-d7d19e46dd1c.jpg",
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/products/RX7_7936-26_sm.jpg",
+    "https://ride.lezyne.com/products/1-sb-caddy-v2xl04"
+   ],
+
+   "dims_cm": { "len": 33, "wid": 22, "hgt": 8.8 },
+   "dims_state": "maker_flat_folded",
+   "dims_raw": "ride.lezyne.com currently states '330mm x 220mm x 88mm', 424g. Lezyne's own launch spec, reproduced by bikepacking.com, gives a different packed figure: '420 x 170 x 140mm, 7.5 Liters'. Retailers (BIKE24, Modern Bike) independently confirm 7.5L capacity.",
+   "dims_note": "FLAT-FOLD TRAP - see brand_notes.flat_fold_trap. dims_cm holds the site's own current 330/220/88mm figure honestly, but that is the bag laid flat, not its mounted envelope - a 33x22cm rectangle 8.8cm thick does not describe a seat bag, and the on-bike photo in this pass shows a substantially rounder, bulkier wedge than that. The packed shape actually drawn should use render.*_cm below, sourced from Lezyne's own launch-spec table rather than the current product page.",
+   "capacity_l": 7.5,
+
+   "render": {
+    "len_cm": 42,
+    "wid_cm": 17,
+    "hgt_cm": 14,
+    "conflict": "Maker's current site page gives a flat-folded 330x220x88mm; Lezyne's own launch-spec table (via bikepacking.com) gives a packed 420x170x140mm at the same 7.5L rating, and the on-bike photo shows a rounded wedge consistent with the packed figure, not a flat slab. Used the packed figure for render.",
+    "basis": "Lezyne launch-spec table (bikepacking.com) plus the on-bike studio/lifestyle photo, which shows a tapered wedge under the saddle comparable in length to the saddle itself plus overhang."
+   },
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Elongated wedge, squared nose at the saddle clamp, external draw-cord bungee laced across the top for extra gear, reflective side stripes. Diamond-grid woven nylon body, visible in both photos."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "hardware": "side-release buckle at the tail roll"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "velcro", "wrapsAround": "saddle_rails" },
+    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": "reflective side stripes",
+    "lightMount": "light mount point per maker copy, not independently located in the photos",
+    "logo": { "type": "screen_print", "location": "side" },
+    "seams": "welded",
+    "fabric": "durable woven nylon, visible diamond-ripstop texture - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 3,
+    "notes": "Soft rolltop body, no rigid dock - straps hold the nose to the rails/seatpost, tail can sag under full load. No clearance figure published."
+   },
+
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" } ],
+   "images": ["https://cdn.shopify.com/s/files/1/0043/1246/5494/files/1-SB-CADDY-V2XL04_XL-Caddy_v1_R2_b860cb47-2c2f-4932-9c24-d7d19e46dd1c.jpg"]
+  },
+
+  {
+   "line": "Caddy",
+   "name": "Lezyne Frame Caddy",
+   "size": "2.5L",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/products/Product-or-framecaddy-zoom1_7bb3c30a-4682-404c-b55f-0a8a90e3892b.jpg",
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/products/Frame_Caddy_2019-04-17_Lezyne_-427.jpg",
+    "https://ride.lezyne.com/products/1-cs-frame-v104"
+   ],
+
+   "dims_cm": { "len": 45, "wid": 7.5, "hgt": 14 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "ride.lezyne.com: '2.5 liter' capacity, '450mm, 140mm, 75mm', weight 267g. No range given.",
+   "dims_note": "Single fixed figures, matches the existing catalog entry exactly, re-confirmed this pass. This is a zip-closed panel bag, not a roll-top, so no flat-fold risk (see brand_notes.flat_fold_trap) - mapped Width(450, fore-aft under the top tube) to len, Depth(75) to wid, Height(140) to hgt, consistent with the photographed half-moon panel.",
+   "capacity_l": 2.5,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "d_shape",
+    "notes": "Semi-rigid half-moon panel, flat frame-facing side, domed outward face. A metal D-ring lash point sits at the nose tip. Confirmed mounted and unsagging in the on-bike lifestyle photo."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "front",
+    "hardware": "protected/covered zipper per maker copy, matched-color pull visible along the lower edge in the studio photo"
+   },
+
+   "zips": [
+    { "run": "front_panel", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "velcro", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 2, "location": "front", "hardware": "velcro", "material": "velcro" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective logo",
+    "logo": { "type": "screen_print", "location": "front_panel" },
+    "fabric": "durable woven nylon, visible diamond-ripstop texture - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "down_tube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "notes": "Semi-rigid panel, holds shape once the 5 velcro straps are cinched; confirmed flush and unsagging on-bike. No clearance figure published."
+   },
+
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" } ],
+   "images": ["https://cdn.shopify.com/s/files/1/0043/1246/5494/products/Product-or-framecaddy-zoom1_7bb3c30a-4682-404c-b55f-0a8a90e3892b.jpg"]
+  },
+
+  {
+   "line": "Caddy",
+   "name": "Lezyne Bar Caddy",
+   "size": "7L",
+   "slot": "barroll",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/files/1-SB-BCADDY-V104_BarCaddy_v1_R4.jpg",
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/products/Bar_caddy_BigBags-3034_FrontBags-8bit_R1_small_a03cf5ee-abbf-49e6-a847-ba6d40ce652f.jpg",
+    "https://ride.lezyne.com/products/1-sb-bcaddy-v104"
+   ],
+
+   "dims_cm": { "len": 16.05, "wid": 25, "hgt": 5.64 },
+   "dims_state": "maker_flat_folded",
+   "dims_raw": "ride.lezyne.com currently states '160.5mm x 250mm x 56.4mm', 247g, capacity not stated on this page. Lezyne's launch spec (bikepacking.com) states '7 Liters'; retailers (Walmart, Boulder Nordic, Stash Cycles) independently confirm 7L.",
+   "dims_note": "FLAT-FOLD TRAP - see brand_notes.flat_fold_trap. dims_cm holds the site's own current figure honestly (a 56.4mm-thick flat panel), but the on-bike lifestyle photo in this pass clearly shows a fat, double-ended roll spanning roughly the gap between the brake hoods on a drop bar - not a flat 5.6cm-thick object. The packed shape actually drawn should use render.*_cm below.",
+   "capacity_l": 7,
+
+   "render": {
+    "len_cm": 34,
+    "wid_cm": 16.1,
+    "hgt_cm": 16.1,
+    "conflict": "Maker's current site page gives a flat-folded 160.5x250x56.4mm; the on-bike photo shows a round double-ended roll instead. Measured off that photo: roughly 34cm across (bar-to-bar span) with a diameter close to its own flat-panel width once rolled, ~16cm.",
+    "basis": "On-bike lifestyle photo (Bar_caddy_BigBags-3034), medium confidence since it is a photo estimate, not a maker figure."
+   },
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Straight fabric tube, rolls closed at both ends (clear fold visible at each end in the studio photo). External bungee cord criss-crosses the top face over a small zippered accessory pouch; reflective side stripes."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "both_ends",
+    "hardware": "side-release buckle at each end, per maker copy 'double sided roll-type enclosures'"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "velcro", "wrapsAround": "handlebar" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "top" }
+   ],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": "reflective side stripes",
+    "lightMount": "light mount per maker copy, not independently located in the photos",
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "fabric": "durable woven nylon, visible diamond-ripstop texture - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["rear_panel"],
+    "sag_deg": 0,
+    "notes": "Velcro-only mount, no rigid dock; the on-bike photo shows it sitting snug against the stem/hoods with no visible sag. No clearance figure published."
+   },
+
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" } ],
+   "images": ["https://cdn.shopify.com/s/files/1/0043/1246/5494/files/1-SB-BCADDY-V104_BarCaddy_v1_R4.jpg"]
+  },
+
+  {
+   "line": "Energy Caddy",
+   "name": "Lezyne Energy Caddy XL",
+   "size": "0.8L",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/files/1-EC-XLCADDY-V104_EnergyCaddyXL_v1_R2.jpg",
+    "https://cdn.shopify.com/s/files/1/0043/1246/5494/products/Energy_Caddy_xlBigBags-3007_Toptube-8bit_R1_small_3756a4ed-d412-4cc0-86d0-8dd015600416.jpg",
+    "https://ride.lezyne.com/products/1-ec-xlcaddy-v104"
+   ],
+
+   "dims_cm": { "len": 22, "wid": 6.6, "hgt": 12 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "ride.lezyne.com: capacity 0.8L, weight 92g, dimensions '220mm x 65.6mm x 120.3mm'. No range given.",
+   "dims_note": "Single fixed figures to the millimetre, matches the existing catalog entry exactly, re-confirmed this pass. This is a structured zippered organiser, not a roll-top, so no flat-fold risk - the site's own figures are the real packed shape, confirmed by the on-bike photo.",
+   "capacity_l": 0.8,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.75, "profile": "linear" },
+    "notes": "Small structured box, taller/blunter at the nose (head-tube end) than the tail, exposed matched-color zip running along the top ridge (no storm flap, unlike EVOC's equivalent reviewed earlier this session)."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "matched-color zip along the top ridge"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "velcro", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective features per maker copy",
+    "logo": { "type": "screen_print", "location": "front" },
+    "fabric": "durable woven nylon, visible diamond-ripstop texture - see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Rigid structured box, confirmed flush against the top tube in the on-bike photo. No clearance figure published."
+   },
+
+   "colorways": [ { "name": "Black", "hex": "#1a1a1a" } ],
+   "images": ["https://cdn.shopify.com/s/files/1/0043/1246/5494/files/1-EC-XLCADDY-V104_EnergyCaddyXL_v1_R2.jpg"]
+  }
+ ]
+}

@@ -1135,7 +1135,8 @@
     "render": {
      "hgt_cm": 18,
      "rolls": 3,
-     "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 20L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-20l-2.jpg against its known 30.5 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note)."
+     "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 20L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-20l-2.jpg against its known 30.5 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
+     "conflict": "10cm is the published minimum of Apidura's 10-40cm range, but renders a 20L rack pack as a slab. 18cm measured off the on-bike photo against the known published width; the reviewer recommended this figure in `basis` and it is now applied rather than left as prose."
     },
     "fits": "rack_only"
    },
@@ -1188,7 +1189,8 @@
     "render": {
      "hgt_cm": 18,
      "rolls": 3,
-     "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 30L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-30l-1.jpg against its known 41 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note)."
+     "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 30L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-30l-1.jpg against its known 41 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
+     "conflict": "10cm is the published minimum of Apidura's 10-40cm range, but renders a 30L rack pack as a slab. 18cm measured off the on-bike photo against the known published width; the reviewer recommended this figure in `basis` and it is now applied rather than left as prose."
     },
     "fits": "rack_only"
    },
@@ -4359,6 +4361,7 @@
      "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9933-detail-2.jpg"
     ],
     "render": {
+     "len_cm": 39.9,
      "hgt_cm": 16,
      "rolls": 3,
      "basis": "This bag rolls at both ENDS, so its height is simply the tube diameter and is fixed - hgt_cm equals the published 16 cm and needs no reduction. The variable axis is len. Measured on handlebar-pack-handlebar-pack-9l-1.jpg: drum body 670 px against a 255 px diameter = 2.63, i.e. about 42 cm, so at 39.9 cm the published length is already effectively the ridden length on this size. len_cm therefore equals dims_cm.len."
@@ -4436,6 +4439,7 @@
      "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9925-avatar.jpg"
     ],
     "render": {
+     "len_cm": 48,
      "hgt_cm": 20.1,
      "rolls": 3,
      "basis": "Height is the fixed tube diameter, so hgt_cm equals the published 20.1 cm. The problem on this size is LENGTH: the published 57.9 cm is the fully unrolled tube and drawing it would overhang the hoods of any drop bar. Measured on handlebar-pack-handlebar-pack-15l-1.jpg, drum body 680 px against a 270 px diameter = 2.5, i.e. about 50 cm end to end with the ends already rolled in. A 44 cm drop bar leaves roughly 46-50 cm of usable span between the hoods. Drawn at 48 cm. NOTE: the render schema only defines hgt_cm, so len_cm is an added key - flagged to the lead."
@@ -4664,6 +4668,7 @@
      "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-detail-2.jpg"
     ],
     "render": {
+     "len_cm": 39.9,
      "hgt_cm": 16,
      "rolls": 3,
      "basis": "Height is the fixed tube diameter. Same envelope as the standard 9 L and the published length is already the ridden length at this size, so len_cm equals dims_cm.len."
@@ -4740,6 +4745,7 @@
      "https://cdn.shopify.com/s/files/1/0686/4021/1122/files/productimage-f9927-avatar.jpg"
     ],
     "render": {
+     "len_cm": 46,
      "hgt_cm": 20.1,
      "rolls": 3,
      "basis": "Height is the fixed tube diameter, so hgt_cm equals the published 20.1 cm. Length reduced for the same reason as the standard 15 L; the Flex starts 4.8 cm shorter unrolled (53.1 vs 57.9) so its drawn length is set 2 cm shorter at 46 cm. Photo handlebar-pack-handlebar-pack-flex-15l-1.jpg shows both ends rolled and clipped. len_cm is an added key."
@@ -11031,6 +11037,7 @@
      "https://restrap.com/cdn/shop/files/Restrap-Downtube-Bag-Size-Guide.png"
     ],
     "render": {
+     "len_cm": 24,
      "hgt_cm": 8,
      "rolls": 3,
      "basis": "SCHEMA NOTE: on this bag the roll axis is the LENGTH, not the height, so hgt_cm alone cannot fix the render. dims_cm.len is now the published 340mm UNFURLED figure per the dimension rule, but assets/products/restrap/adventure-downtube-bag-1-2l-1.jpg shows it mounted rolled down to Restrap's other published figure, 240mm - drawing 34cm under the down tube would be the absurd case the render block exists to prevent. len_cm 24 is therefore supplied as an extension to the block; hgt_cm 8 is the fixed 80mm section."
@@ -12242,7 +12249,12 @@
      "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
      "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
      "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 29,
+     "rolls": 2,
+     "basis": "maker publishes a width RANGE of 290-445mm, so render.len_cm is the MINIMUM (290mm) exactly as the spec does for a height range. dims_cm.len is the 445mm unfurled max and must not be drawn on a drop bar: on top of the min/max range, WaveLock pulls each end in a further <=35mm to clear the hoods. Confirmed rolled short in assets/products/tailfin/bar-system-bar-bag-system-drop-bar-small-9-1l-1.jpg."
+    }
    },
    {
     "slot": "barroll",
@@ -12296,7 +12308,12 @@
      "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
      "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
      "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 33.5,
+     "rolls": 2,
+     "basis": "maker range 335-460mm; render.len_cm is the minimum 335mm. dims_cm.len is the 460mm unfurled max. WaveLock draws each end in a further <=35mm on drop bars. See assets/products/tailfin/bar-system-bar-bag-system-drop-bar-large-12-5l-1.jpg."
+    }
    },
    {
     "slot": "barroll",
@@ -12350,7 +12367,12 @@
      "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
      "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
      "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 42,
+     "rolls": 3,
+     "basis": "maker range 420-650mm; render.len_cm is the minimum 420mm. dims_cm.len is the 650mm unfurled max. Flat-bar ends buckle rather than WaveLock, so there is no extra inward fold. See assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-small-14-9l-1.jpg."
+    }
    },
    {
     "slot": "barroll",
@@ -12404,7 +12426,12 @@
      "https://media.tailfin.cc/app/uploads/2026/07/24172140/tailfin-woman-cyclist-pointing-on-road.jpg",
      "https://media.tailfin.cc/app/uploads/2025/03/24104455/fairbrother-licked-and-loaded-06.jpg",
      "https://media.tailfin.cc/app/uploads/2023/10/27102340/MEGAMENU-COMPLETE-PRODUCT-GUIDES.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 48,
+     "rolls": 3,
+     "basis": "maker range 480-720mm; render.len_cm is the minimum 480mm. dims_cm.len is the 720mm unfurled max, which is the widest bag in the catalogue and unusable on a drop bar. See assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-large-18-9l-1.jpg."
+    }
    },
    {
     "slot": "barroll",
@@ -12458,7 +12485,12 @@
      "https://media.tailfin.cc/app/uploads/2025/06/26162042/TailfinBarCage-03608_250624.jpg",
      "https://media.tailfin.cc/app/uploads/2025/06/26162032/TailfinBarCage-03460_250623.jpg",
      "https://media.tailfin.cc/app/uploads/2025/06/26162026/TailfinBarCage-03449_250623.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 36,
+     "rolls": 3,
+     "basis": "maker range 360-540mm; render.len_cm is the minimum 360mm. dims_cm.len is the 540mm unfurled max. Rolled short in assets/products/tailfin/bar-system-bar-cage-bag-small-8l-4.jpg."
+    }
    },
    {
     "slot": "barroll",
@@ -12512,7 +12544,12 @@
      "https://media.tailfin.cc/app/uploads/2025/06/26162042/TailfinBarCage-03608_250624.jpg",
      "https://media.tailfin.cc/app/uploads/2025/06/26162032/TailfinBarCage-03460_250623.jpg",
      "https://media.tailfin.cc/app/uploads/2025/06/26162026/TailfinBarCage-03449_250623.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 37,
+     "rolls": 3,
+     "basis": "maker range 370-540mm; render.len_cm is the minimum 370mm. dims_cm.len is the 540mm unfurled max."
+    }
    },
    {
     "slot": "barroll",
@@ -12566,7 +12603,12 @@
      "https://media.tailfin.cc/app/uploads/2025/06/26162042/TailfinBarCage-03608_250624.jpg",
      "https://media.tailfin.cc/app/uploads/2025/06/26162032/TailfinBarCage-03460_250623.jpg",
      "https://media.tailfin.cc/app/uploads/2025/06/26162026/TailfinBarCage-03449_250623.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 38,
+     "rolls": 3,
+     "basis": "maker range 380-560mm; render.len_cm is the minimum 380mm. dims_cm.len is the 560mm unfurled max."
+    }
    },
    {
     "slot": "framebag_half",
@@ -13078,7 +13120,12 @@
      "https://media.tailfin.cc/app/uploads/2022/05/27104252/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-3-of-4.jpg",
      "https://media.tailfin.cc/app/uploads/2022/05/27104250/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-4-of-4.jpg",
      "https://media.tailfin.cc/app/uploads/2022/05/27104248/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-3-of-14.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 38,
+     "rolls": 3,
+     "basis": "the roll is at the top of a pack that lies ALONG the down tube, so length is its variable axis. Tailfin publish no length at all, so there is no range to take a minimum from; render.len_cm carries the dims_cm estimate through unchanged. Both flat-lay photos (assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-1.jpg and -2.jpg) show the pack rolled and clipped shut, which is the state the estimate represents."
+    }
    },
    {
     "slot": "downtube",
@@ -13122,7 +13169,12 @@
      "https://media.tailfin.cc/app/uploads/2022/05/27104252/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-3-of-4.jpg",
      "https://media.tailfin.cc/app/uploads/2022/05/27104250/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-1-of-14-4-of-4.jpg",
      "https://media.tailfin.cc/app/uploads/2022/05/27104248/V-MOUNT-PACK_PRESS-PACK_LIFESTYLE-3-of-14.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 44,
+     "rolls": 3,
+     "basis": "length is the variable axis - the roll is at the top of a pack lying along the down tube. No maker length is published, so render.len_cm carries the dims_cm estimate through unchanged. Photographed rolled and clipped shut in assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-1.jpg and -2.jpg."
+    }
    },
    {
     "slot": "toptube",
@@ -16183,6 +16235,7 @@
      "https://cdn.shopify.com/s/files/1/0982/8365/1456/files/cc0ac29e206de5505fb4d2cb02346f54a6ce4404_BSB03PLA00401_BSB03PLA00401_Brooks_England_3_seat_bag_mud_green_scape_bike_bags_top.jpg"
     ],
     "render": {
+     "len_cm": 40,
      "hgt_cm": 18,
      "rolls": 3,
      "basis": "SCHEMA NOTE: on this product the variable axis is the LENGTH, not the height - the roll runs nose-to-tail, so len_cm carries the render correction and hgt_cm simply restates the fixed published 180 mm. Brooks publishes the roll travel as a 400-600 mm range, so the drawn length takes the 400 mm MINIMUM. Photo scape-seat-bag-8l-3.jpg (top view) shows the tail turned down about three times, consistent with the short end of that range. Drawing the 60 cm unfurled figure would put the tail into the rear tyre."
@@ -16232,6 +16285,7 @@
      "https://cdn.shopify.com/s/files/1/0982/8365/1456/files/53b1b1cf128f514f2cb6eed73fbfe0f21ad63f9b_BSB02PLA00401_BSB02PLA00401_Brooks_England_4_saddle_roll_bag_mud_green_scape_bike_bags_3_4_back.jpg"
     ],
     "render": {
+     "len_cm": 26,
      "hgt_cm": 10,
      "rolls": 1,
      "basis": "SCHEMA NOTE: the variable axis here is the LENGTH, not the height - len_cm carries the render correction and hgt_cm restates the fixed published 100 mm cross-section. Brooks publishes only the 320 mm UNFURLED length and no range, so the packed length is measured from photographs of the packed article: scape-saddle-roll-bag-1l-1.jpg (right side) and -3.jpg (left side). The bag lies diagonally in frame, so I took the principal axis of the mud-green body by PCA on the colour mask. Both views agree - long axis to maximum belly thickness is 2.74 and 2.64, call it 2.6. Against Brooks' 100 mm belly that gives a packed length of about 26 cm, and a tapered crescent 26 cm long on a 10 cm belly comes out at roughly 1 L, matching the rating. These are studio shots, not on-bike shots - Brooks published no on-bike image of this bag in the set that was downloaded."
@@ -16354,6 +16408,7 @@
      "https://cdn.shopify.com/s/files/1/0982/8365/1456/files/e2ec84f4d34e3266c17f1380a8f82582b2d0c4c3_BHB03PLA00000_BHB05PLA00000_Brooks_England_3_handlebar_roll_black_scape_bike_bags_3_4.jpg"
     ],
     "render": {
+     "len_cm": 35,
      "hgt_cm": 16,
      "rolls": 3,
      "basis": "SCHEMA NOTE: the variable axis is the LENGTH (the roll runs along the bar), so len_cm carries the render correction and hgt_cm restates the fixed published 160 mm. Brooks publishes the roll travel as a 350-400 mm range, so the drawn length takes the 350 mm MINIMUM - which also matters for fitment, since 40 cm fouls the levers on a narrow drop bar and 35 cm does not. Photo scape-handlebar-roll-9-11l-1.jpg shows both end bundles turned down about three times."
@@ -17584,7 +17639,8 @@
     "liters": 3.2,
     "dims_cm": {
      "len": 21.6,
-     "dia": 14
+     "wid": 14,
+     "hgt": 14
     },
     "colors": [
      "#1b1b1b",
@@ -17806,9 +17862,9 @@
     "size": "4L",
     "liters": 4,
     "dims_cm": {
-     "len": 12.7,
-     "hgt": 24.1,
-     "wid": 7.6
+     "len": 24.1,
+     "wid": 12.7,
+     "hgt": 7.6
     },
     "colors": [
      "#1b1b1b",
@@ -17827,9 +17883,9 @@
     "size": "1.75L",
     "liters": 1.75,
     "dims_cm": {
-     "len": 12.7,
-     "hgt": 24.1,
-     "wid": 7.6
+     "len": 24.1,
+     "wid": 12.7,
+     "hgt": 7.6
     },
     "colors": [
      "#1b1b1b",
@@ -17846,9 +17902,9 @@
     "size": "1L",
     "liters": 1,
     "dims_cm": {
-     "hgt": 19.1,
-     "dia": 10.2,
-     "len": 10.2
+     "len": 19.1,
+     "wid": 10.2,
+     "hgt": 10.2
     },
     "colors": [
      "#1b1b1b",
@@ -18043,7 +18099,8 @@
        "accent": "#1c1c1c"
       }
      ]
-    }
+    },
+    "fits": "basket"
    },
    {
     "slot": "toptube",
@@ -18922,6 +18979,7 @@
      "https://cdn.shopify.com/s/files/1/1384/6395/files/20231103_RoadRunnerBags_VirginaCreeperTrail_SRW_22.jpg?v=1709649628"
     ],
     "render": {
+     "len_cm": 25.4,
      "hgt_cm": 11.4,
      "rolls": 3,
      "basis": "10in is the maker's own published MINIMUM of the 10-20in roll range and is the fully-rolled, ridden length - not a photo estimate, a direct maker figure. Matches the short, tightly-buckled tail visible in sleeper-4.jpg and the on-bike porch photo. hgt_cm is unchanged from dims_cm since only one Depth figure (4.5in) was published."
@@ -18995,6 +19053,7 @@
     "est": false,
     "src": "https://roadrunnerbags.us/products/buoy-bag",
     "render": {
+     "len_cm": 33,
      "hgt_cm": 15.2,
      "basis": "13in rolled height is stated directly by the maker as the rolled figure - a maker-published ridden-state length, not a photo estimate."
     }
@@ -19019,6 +19078,7 @@
     "est": false,
     "src": "https://roadrunnerbags.us/products/micro-buoy-bag",
     "render": {
+     "len_cm": 27.9,
      "hgt_cm": 8.9,
      "basis": "11in rolled length is stated directly by the maker as the rolled figure."
     }
@@ -19212,8 +19272,8 @@
     "liters": 16,
     "dims_cm": {
      "len": 55.9,
-     "hgt": 19.1,
-     "wid": 21.6
+     "wid": 24.1,
+     "hgt": 19.1
     },
     "colors": [
      "#1c1c1c",
@@ -19397,7 +19457,8 @@
     },
     "dims_verified": "maker",
     "dims_state": "unknown",
-    "dims_note": "dimensions appear only in a spec graphic, not the page text; dims_cm left as input."
+    "dims_note": "dimensions appear only in a spec graphic, not the page text; dims_cm left as input.",
+    "fits": "basket"
    },
    {
     "slot": "trunk",
@@ -19501,7 +19562,8 @@
        "accent": "#1c1c1c"
       }
      ]
-    }
+    },
+    "fits": "basket"
    },
    {
     "slot": "barbag",
@@ -19602,7 +19664,11 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "SPECS drawing: 8\" (width across bars) x 5\" (height) x 4\" (depth), plus a 3.5\" drawcord extension. VOLUME: 2.6L - 4.9L. WEIGHT: 9.5 oz.",
-    "dims_note": "CORRECTED capacity only; dims confirmed. Outer Shell keeps its specs in an image, so I pulled the SPECS graphic off their CDN and read it: 8 x 5 x 4in with a 3.5in drawcord collar above. The stored dims are exactly that (20.3 x 12.7 x 10.2 = 2.63L), i.e. the closed bag, and Outer Shell's own 2.6L end of the range matches to two significant figures. The 4.9L is the same bag with the 3.5in collar drawn up (height 8.5in). Set capacity_l to the stated 2.6L so the record is self-consistent with the packed dims; the range stays in the size string."
+    "dims_note": "CORRECTED capacity only; dims confirmed. Outer Shell keeps its specs in an image, so I pulled the SPECS graphic off their CDN and read it: 8 x 5 x 4in with a 3.5in drawcord collar above. The stored dims are exactly that (20.3 x 12.7 x 10.2 = 2.63L), i.e. the closed bag, and Outer Shell's own 2.6L end of the range matches to two significant figures. The 4.9L is the same bag with the 3.5in collar drawn up (height 8.5in). Set capacity_l to the stated 2.6L so the record is self-consistent with the packed dims; the range stays in the size string.",
+    "render": {
+     "hgt_cm": 12.7,
+     "basis": "closed/packed state per the maker's own 5in base-height figure; the 3.5in drawcord collar shown open in the second photo is the 4.9L expanded state and would draw an unrealistically tall closed bag if used."
+    }
    },
    {
     "slot": "barbag",
@@ -19791,7 +19857,11 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "8\" long, 10\" wide, 8.5\" tall, with a 6\" expandable drawcord section; 10.6L to 18.5L depending on the position of the top flap; 1 lb 15 oz",
-    "dims_note": "CORRECTED (depth). The stored wid of 14cm had no source. Outer Shell's published figures are 10in wide across the bars, 8.5in tall and 8in long front-to-back, so the fore/aft depth is 20.3cm, not 14. With that fix the box is 25.4 x 21.6 x 20.3 = 11.1L against the rated 10.6L base volume - a 1.05 fill, which is exactly right for an internally-framed bag with a 3D aluminium structure sewn into the panels. The 18.5L is the same bag with the 6in drawcord section let out."
+    "dims_note": "CORRECTED (depth). The stored wid of 14cm had no source. Outer Shell's published figures are 10in wide across the bars, 8.5in tall and 8in long front-to-back, so the fore/aft depth is 20.3cm, not 14. With that fix the box is 25.4 x 21.6 x 20.3 = 11.1L against the rated 10.6L base volume - a 1.05 fill, which is exactly right for an internally-framed bag with a 3D aluminium structure sewn into the panels. The 18.5L is the same bag with the 6in drawcord section let out.",
+    "render": {
+     "hgt_cm": 21.6,
+     "basis": "base/closed height per the maker's own 8.5in figure; the 6in black drawcord collar shown in the second photo is the 18.5L expanded state."
+    }
    },
    {
     "slot": "barroll",
@@ -19934,7 +20004,11 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "3.5\" x 3.5\" x 6\" with a 2.5\" expandable drawcord section; 1.2L to 1.7L capacity; fits a 1L bottle",
-    "dims_note": "CORRECTED capacity only; dims confirmed. 8.9 x 8.9 x 15.2 = 1.20L, which is Outer Shell's stated 1.2L to the decimal, and letting the 2.5in drawcord collar out takes the height to 8.5in = 1.71L, which is their stated 1.7L to the decimal. So the stored dims are the closed bag and the stored 1.7L was the extended figure. Set capacity_l to the stated 1.2L to match the packed dims; the range stays in the size string."
+    "dims_note": "CORRECTED capacity only; dims confirmed. 8.9 x 8.9 x 15.2 = 1.20L, which is Outer Shell's stated 1.2L to the decimal, and letting the 2.5in drawcord collar out takes the height to 8.5in = 1.71L, which is their stated 1.7L to the decimal. So the stored dims are the closed bag and the stored 1.7L was the extended figure. Set capacity_l to the stated 1.2L to match the packed dims; the range stays in the size string.",
+    "render": {
+     "hgt_cm": 15.2,
+     "basis": "closed/base height per the maker's own 6in figure; the 2.5in drawcord collar shown open in the photo is the 1.7L expanded state."
+    }
    },
    {
     "slot": "toptube",
@@ -20240,7 +20314,8 @@
     "liters": 1.8,
     "dims_cm": {
      "len": 20,
-     "dia": 10.5
+     "wid": 10.5,
+     "hgt": 10.5
     },
     "colors": [
      "#161616",
@@ -20309,7 +20384,8 @@
     "liters": 3.4,
     "dims_cm": {
      "len": 22,
-     "dia": 14
+     "wid": 14,
+     "hgt": 14
     },
     "colors": [
      "#161616",
@@ -20377,8 +20453,9 @@
     "size": "Medium",
     "liters": 0.9,
     "dims_cm": {
-     "hgt": 15,
-     "dia": 8
+     "len": 15,
+     "wid": 8,
+     "hgt": 8
     },
     "colors": [
      "#161616",
@@ -20432,8 +20509,9 @@
     "size": "Large",
     "liters": 1.65,
     "dims_cm": {
-     "hgt": 17,
-     "dia": 9.5
+     "len": 17,
+     "wid": 9.5,
+     "hgt": 9.5
     },
     "colors": [
      "#161616",
@@ -20652,8 +20730,8 @@
     "liters": 0.5,
     "dims_cm": {
      "len": 16,
-     "hgt": 9,
-     "wid": 7
+     "wid": 9,
+     "hgt": 7
     },
     "colors": [
      "#161616",
@@ -20705,9 +20783,9 @@
     "size": "Wald 137",
     "liters": 38,
     "dims_cm": {
-     "len": 36,
-     "hgt": 23.5,
-     "wid": 23
+     "len": 23,
+     "wid": 36,
+     "hgt": 13
     },
     "colors": [
      "#161616",
@@ -20774,7 +20852,12 @@
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-137-olive.jpg",
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-manivelle-olive.jpg",
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-137-black.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 13,
+     "basis": "published minimum of the 13-48cm range; no on-bike photo available to check against, so no turn-down count is asserted"
+    },
+    "fits": "basket"
    },
    {
     "slot": "randobag",
@@ -20783,9 +20866,9 @@
     "size": "Manivelle",
     "liters": 49,
     "dims_cm": {
-     "len": 39,
-     "hgt": 21.8,
-     "wid": 27
+     "len": 27,
+     "wid": 39,
+     "hgt": 11
     },
     "colors": [
      "#161616",
@@ -20852,7 +20935,12 @@
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-137-olive.jpg",
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-manivelle-olive.jpg",
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-137-black.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 11,
+     "basis": "published minimum of the 11-47cm range; no on-bike photo available"
+    },
+    "fits": "basket"
    },
    {
     "slot": "barbag",
@@ -21558,8 +21646,9 @@
     "size": "One Size (4L)",
     "liters": 4,
     "dims_cm": {
-     "hgt": 27,
-     "dia": 15
+     "len": 27,
+     "wid": 15,
+     "hgt": 15
     },
     "colors": [
      "#161616",
@@ -21614,8 +21703,9 @@
     "size": "One Size",
     "liters": 2.5,
     "dims_cm": {
-     "hgt": 22,
-     "dia": 12
+     "len": 22,
+     "wid": 12,
+     "hgt": 12
     },
     "colors": [
      "#161616",
@@ -21666,8 +21756,8 @@
     "liters": 3.5,
     "dims_cm": {
      "len": 26,
-     "hgt": 17.1,
-     "wid": 7.5
+     "wid": 7.5,
+     "hgt": 22
     },
     "colors": [
      "#161616",
@@ -21717,7 +21807,11 @@
      "https://www.wizard.works/wp-content/uploads/2026/02/snagla_hip_pack_bar_bag_black_gybg.jpg",
      "https://www.wizard.works/wp-content/uploads/2026/02/snagla_hip_pack_bar_bag_tan_gybg1.jpg",
      "https://www.wizard.works/wp-content/uploads/2026/02/snagla_hip_pack_bar_bag_detail_left_wing_gybg.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 15,
+     "basis": "published minimum of the 15-22cm range; no on-bike photo available for this brand"
+    }
    },
    {
     "slot": "randobag",
@@ -30234,7 +30328,12 @@
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2025/03/MGCLUSTER_2_WP_DETAIL_3.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2025/03/MGCLUSTER_2_WP_SIDE.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2023/04/Miss-Grape-classico-nero-nobg.png"
-    ]
+    ],
+    "render": {
+     "len_cm": 29,
+     "rolls": 1,
+     "basis": "on-bike photos cluster-cluster-2-waterproof-2l-2.jpg and -4.jpg show a short, compact roll only barely longer than the saddle nose overhang - close to the published 28cm minimum rather than the 35cm unfurled maximum. Schema gap: this bag's variable axis is length, not height, so len_cm is used as the drawn-size key (same convention as ortlieb.json's Seat-Pack render blocks)."
+    }
    },
    {
     "slot": "seatpack",
@@ -30293,7 +30392,12 @@
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/12/MGCLUSTER_7_WP_DETAIL_3.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/12/MGCLUSTER_7_WP_DETAIL_5.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/12/MGCLUSTER_7_WP_SIDE.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 34,
+     "rolls": 2,
+     "basis": "on-bike photos cluster-cluster-7-waterproof-7l-1.jpg and -2.jpg show the mounted bag extending roughly 1.3x the visible saddle length behind the nose - well short of the 44cm max-volume figure. Schema gap: variable axis is length; len_cm used as the drawn-size key per the Ortlieb Seat-Pack precedent."
+    }
    },
    {
     "slot": "seatpack",
@@ -30353,7 +30457,12 @@
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/MGCLUSTER_13_WP_DETAIL_2.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/MGCLUSTER_13_WP_DETAIL_3.jpeg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/Cluster-ingombro.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 38,
+     "rolls": 2,
+     "basis": "studio photo cluster-cluster-13-waterproof-13l-1.jpeg shows two visible roll turns at the tail; no on-bike side elevation available for this size, so this is a proportional estimate off the same body shown at 49cm max, not a fresh measurement. Schema gap: variable axis is length."
+    }
    },
    {
     "slot": "seatpack",
@@ -30412,7 +30521,12 @@
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/MGCLUSTER_20_WP_DETAIL_2.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/MGCLUSTER_20_WP_SIDE_2.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/Cluster-ingombro.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 46,
+     "rolls": 2,
+     "basis": "on-bike photo cluster-cluster-20-waterproof-20-18-6l-2.jpg shows a fully-mounted bag noticeably shorter than 62cm relative to the wheel/frame in frame; proportional estimate, no precise pixel calibration. Schema gap: variable axis is length."
+    }
    },
    {
     "slot": "barroll",
@@ -30467,7 +30581,12 @@
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/04/MGTENDRIL_4_10_WP_DETAIL_8.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/04/MGTENDRIL_4_10_WP_SIDE.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/04/MGTENDRIL_4_10_WP_FRONT.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 32,
+     "rolls": 2,
+     "basis": "on-bike photo tendril-tendril-4-10-waterproof-4-10l-4.jpg shows the bag spanning roughly the centre third of a standard drop bar (~40-42cm), well short of the 55cm unfurled figure. Schema gap: variable axis is length, using len_cm as the drawn-size key."
+    }
    },
    {
     "slot": "barroll",
@@ -30522,7 +30641,12 @@
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/06/MGTENDRIL_10_7_WP_DETAIL_14.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/06/MGTENDRIL_10_7_WP_DETAIL_15.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/Tendril-10.7-ingombro.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 46,
+     "rolls": 2,
+     "basis": "on-bike photo tendril-tendril-10-7-waterproof-10-17l-1.jpg (flat mtb-style bar) shows the bag spanning most of the space between the brake levers, roughly 45-48cm on a ~760mm bar. Schema gap: variable axis is length."
+    }
    },
    {
     "slot": "framebag_half",
@@ -31305,7 +31429,12 @@
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2021/05/MGTRUNK_6_WP_DETAIL_1.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2021/05/MGTRUNK_6_WP_DETAIL_7.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2021/05/MGTRUNK_6_WP_SIDE.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 30,
+     "rolls": 2,
+     "basis": "no on-bike/on-fork photo is available locally to measure a rolled-down length against; this is a modest reduction from the 36cm max-fill figure based on the single-end rolltop closure visible in trunk-trunk-6-waterproof-6l-2.jpg, not a precise measurement. Flagged as an estimate."
+    }
    },
    {
     "slot": "barroll",
@@ -31361,7 +31490,12 @@
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2023/05/MGTRUNK_AEROBAR_DETAIL_4-1.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2023/05/MGTRUNK_AEROBAR_DETAIL_5.jpg",
      "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2023/05/MGTRUNK_AEROBAR_DETAIL_8.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 24,
+     "rolls": 2,
+     "basis": "on-bike photo trunk-trunk-6-aero-bar-waterproof-6l-1.jpg shows the bag mounted between aerobar extensions, spanning roughly the extension width (~20-25cm) - much shorter than the 36cm max-fill figure."
+    }
    }
   ]
  },
@@ -31384,7 +31518,7 @@
     "liters": 20,
     "dims_cm": {
      "len": 28,
-     "wid": 38,
+     "wid": 46.5,
      "hgt": 24
     },
     "colors": [
@@ -31397,7 +31531,12 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Closed width: 38 cm (15\"); Open width: 46.5 cm (18.3\"); Height of main compartment: 9\" (24 cm); Depth excluding front pocket: 28 cm; Depth including front pocket: 13.5\" (43.3 cm); 20L (1220.5 cu. in.) plus a 2L front pocket",
-    "dims_note": "TRANSPOSED AXES. The record had no source and read len 38 / wid 28. Arkel's published figures are 'closed width 38 cm' and 'depth excluding front pocket 28 cm', and for a seat pack len is the fore-aft dimension, so those two were the wrong way round: len = 28 (depth), wid = 38 (across-bike width). hgt 24 was already Arkel's 'height of main compartment' and is unchanged. The elongation rule still fails at 1.36 and that is a genuine shape, not an error - the Rollpacker is Arkel's unusually wide box-shaped rear bag carried on its own rigid rack, not a tapered saddle tube. 28 x 24 x 38 = 25.5L against a rated 20L (ratio 1.28). ROLL RANGE: Arkel give 'closed width 38 cm / open width 46.5 cm'; wid uses the CLOSED end per the closed-end rule, so this record is already compliant - do not swap it to 46.5. (The other Arkel range, depth 28cm excluding vs 43.3cm including the front pocket, is a with/without-pocket figure rather than a roll, and 28cm is the one that matches the 20L main-compartment rating; the front pocket is rated separately at 2L.)"
+    "dims_note": "TRANSPOSED AXES. The record had no source and read len 38 / wid 28. Arkel's published figures are 'closed width 38 cm' and 'depth excluding front pocket 28 cm', and for a seat pack len is the fore-aft dimension, so those two were the wrong way round: len = 28 (depth), wid = 38 (across-bike width). hgt 24 was already Arkel's 'height of main compartment' and is unchanged. The elongation rule still fails at 1.36 and that is a genuine shape, not an error - the Rollpacker is Arkel's unusually wide box-shaped rear bag carried on its own rigid rack, not a tapered saddle tube. 28 x 24 x 38 = 25.5L against a rated 20L (ratio 1.28). ROLL RANGE: Arkel give 'closed width 38 cm / open width 46.5 cm'; wid uses the CLOSED end per the closed-end rule, so this record is already compliant - do not swap it to 46.5. (The other Arkel range, depth 28cm excluding vs 43.3cm including the front pocket, is a with/without-pocket figure rather than a roll, and 28cm is the one that matches the 20L main-compartment rating; the front pocket is rated separately at 2L.)",
+    "render": {
+     "wid_cm": 38,
+     "basis": "Arkel's own published 'closed width' spec, corroborated by the on-bike photo showing the roll folded and buckled.",
+     "conflict": "46.5 cm is the honest unfurled/open mouth width per the new dims rule, but that is not the ridden state - Arkel's own 'closed width' figure is 38 cm, and the on-bike photo (Arkel_BikeBags_Rollpacker_OCEAN_BLUE_REAR) shows the roll folded down and FidLock-buckled shut, matching the narrower closed figure, not the open one."
+    }
    },
    {
     "type": "handlebar bag",
@@ -31405,7 +31544,7 @@
     "liters": 9,
     "dims_cm": {
      "len": 27,
-     "wid": 18,
+     "wid": 23,
      "hgt": 23
     },
     "colors": [
@@ -31422,8 +31561,8 @@
     "liters": 45,
     "dims_cm": {
      "len": 31,
-     "wid": 28,
-     "hgt": 45
+     "wid": 17,
+     "hgt": 40
     },
     "colors": [
      "#4A4A4A",
@@ -31431,7 +31570,12 @@
     ],
     "est": false,
     "slot": "pannier",
-    "src": "https://arkel.ca/products/orca-panniers"
+    "src": "https://arkel.ca/products/orca-panniers",
+    "render": {
+     "hgt_cm": 40,
+     "basis": "40cm is Arkel's own published minimum of the 40-60cm roll-height range; no on-bike photo showed a clearly shorter rolled state, so the rule's minimum is used directly with no override."
+    },
+    "fits": "rack_only"
    },
    {
     "type": "panniers",
@@ -31451,7 +31595,8 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Arkel spec: 'Volume: 54 L (3300 cu. in.)'; listing title 'GT-54 Classic Touring Panniers (Pair)'; scope of delivery one left and one right pannier",
-    "dims_note": "PAIR/SINGLE MISMATCH, not a dimension error. The 54L is Arkel's PAIR total - the listing ships a left and a right bag and Arkel names the model after the combined volume, exactly as it does with the Dolphin (24L each, 48L per pair). The stored dims are per-bag, so the checker was comparing one bag's box against two bags' capacity. Per bag the reconciliation is fine: 33.7 x 36.2 x 20 = 24.4L against 27L (ratio 0.90), the remainder taken up by the expanding outer pockets and the drawstring collar. Dims unchanged; litres corrected to the per-bag figure."
+    "dims_note": "PAIR/SINGLE MISMATCH, not a dimension error. The 54L is Arkel's PAIR total - the listing ships a left and a right bag and Arkel names the model after the combined volume, exactly as it does with the Dolphin (24L each, 48L per pair). The stored dims are per-bag, so the checker was comparing one bag's box against two bags' capacity. Per bag the reconciliation is fine: 33.7 x 36.2 x 20 = 24.4L against 27L (ratio 0.90), the remainder taken up by the expanding outer pockets and the drawstring collar. Dims unchanged; litres corrected to the per-bag figure.",
+    "fits": "rack_only"
    },
    {
     "type": "panniers",
@@ -31460,7 +31605,7 @@
     "dims_cm": {
      "len": 33,
      "wid": 15,
-     "hgt": 48
+     "hgt": 38
     },
     "colors": [
      "#1A1A1A",
@@ -31471,7 +31616,13 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Arkel spec: 'Total Volume (per bag): 24L'; sold as a single pannier ($179.99) or as a pair ($339.99)",
-    "dims_note": "PAIR/SINGLE MISMATCH, same defect as the GT-54. The product is named 'Dolphin 24L' and Arkel states 24L PER BAG, but the record carried 48 - the pair total - while the dims were for one bag. Arkel's page confirms both a single and a pair purchase option. The dims are right and need no change: 33 x 48 x 15 = 23.8L against 24L per bag, a 0.99 reconciliation. On the closed-end rule: Arkel publish NO height range for the Dolphin, only the single 24L per-bag rating, and the stored 48cm is the one height that reproduces it, so there is no range to take the closed end of and the rule does not bite here. If a range does surface later this is the record to revisit, since a rolled-down Dolphin is certainly shorter than 48cm."
+    "dims_note": "PAIR/SINGLE MISMATCH, same defect as the GT-54. The product is named 'Dolphin 24L' and Arkel states 24L PER BAG, but the record carried 48 - the pair total - while the dims were for one bag. Arkel's page confirms both a single and a pair purchase option. The dims are right and need no change: 33 x 48 x 15 = 23.8L against 24L per bag, a 0.99 reconciliation. On the closed-end rule: Arkel publish NO height range for the Dolphin, only the single 24L per-bag rating, and the stored 48cm is the one height that reproduces it, so there is no range to take the closed end of and the rule does not bite here. If a range does surface later this is the record to revisit, since a rolled-down Dolphin is certainly shorter than 48cm.",
+    "render": {
+     "hgt_cm": 38,
+     "rolls": 2,
+     "basis": "38cm is the side-elevation figure with the roll-top shown closed/rolled in the infographic itself, distinct from the 48cm fully-unfurled front-elevation figure - used directly, no override needed."
+    },
+    "fits": "rack_only"
    },
    {
     "type": "trunk/tote bag",
@@ -31489,7 +31640,8 @@
     ],
     "est": false,
     "slot": "trunk",
-    "src": "https://arkel.ca/products/tailrider-trunk-bag"
+    "src": "https://arkel.ca/products/tailrider-trunk-bag",
+    "fits": "rack_only"
    }
   ]
  },
@@ -31761,7 +31913,8 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "vaude.com: 37 cm (H) x 33 cm (W) x 31 cm (D), volume 51 litres total; 'Delivery includes two panniers for the rear wheel (1 pair), each with a volume of 25.5 liters.' bike-components lists the single pannier as 44 x 33 x 31 cm, 25.5 litres, 1060 g.",
-    "dims_note": "CORRECTED - the LITRES were the error. The stored 51L is VAUDE's PAIR total; the dimensions are for one bag, so the check was comparing a single bag's box against two bags' capacity. Set capacity_l to VAUDE's own stated 25.5L per bag; box 37.9L on 25.5L = 1.49, normal for a roll-top pannier. Dims left at VAUDE's published H/W/D. One caveat I could not resolve: a 31cm 'depth' is very deep for a rear pannier (17-20cm is typical) and looks like a flat or carton measurement - bike-components repeats VAUDE's own data feed so it is not independent corroboration. Their alternative 44cm height is the roll fully extended; 37cm is the rolled-down figure and is the right one for a packed record."
+    "dims_note": "CORRECTED - the LITRES were the error. The stored 51L is VAUDE's PAIR total; the dimensions are for one bag, so the check was comparing a single bag's box against two bags' capacity. Set capacity_l to VAUDE's own stated 25.5L per bag; box 37.9L on 25.5L = 1.49, normal for a roll-top pannier. Dims left at VAUDE's published H/W/D. One caveat I could not resolve: a 31cm 'depth' is very deep for a rear pannier (17-20cm is typical) and looks like a flat or carton measurement - bike-components repeats VAUDE's own data feed so it is not independent corroboration. Their alternative 44cm height is the roll fully extended; 37cm is the rolled-down figure and is the right one for a packed record.",
+    "fits": "rack_only"
    },
    {
     "type": "saddle bag",
@@ -32104,8 +32257,8 @@
     "liters": 0.7,
     "dims_cm": {
      "len": 14.8,
-     "wid": 4,
-     "hgt": 12
+     "wid": 12,
+     "hgt": 4
     },
     "colors": [
      "#1a1a1a"
@@ -32122,9 +32275,9 @@
     "name": "Lezyne XL-Caddy",
     "liters": 7.5,
     "dims_cm": {
-     "len": 42,
-     "wid": 17,
-     "hgt": 14
+     "len": 33,
+     "wid": 22,
+     "hgt": 8.8
     },
     "colors": [
      "#1a1a1a",
@@ -32135,7 +32288,14 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Lezyne launch spec (bikepacking.com): 'XL Caddy - Size 420 x 170 x 140 mm, Capacity 7.5 Liters'. Lezyne product page currently lists 330mm x 220mm x 88mm, 424g. Retailers (BIKE24, Modern Bike): 'XL-Caddy Saddle Bag - 7.5L'.",
-    "dims_note": "CORRECTED - both flags resolved, and this one also proves how to read Lezyne's spec fields. Lezyne's site figure 330 x 220 x 88 is the FLAT-FOLDED bag; its own launch spec, reproduced by bikepacking.com, gives the packed size 420 x 170 x 140 with 7.5L, and two retailers independently list 7.5L. Mapped as a seat pack: len 42 fore/aft, wid 17 across, hgt 14. Box 10.0L on 7.5L rated = 1.33 fill, elongation 2.47. The stored 1.3L is not this bag's volume - it is the Lezyne Stuff Caddy's rating (80 x 60 x 115mm, 1.3L) in the same launch table, another copied attribute."
+    "dims_note": "CORRECTED - both flags resolved, and this one also proves how to read Lezyne's spec fields. Lezyne's site figure 330 x 220 x 88 is the FLAT-FOLDED bag; its own launch spec, reproduced by bikepacking.com, gives the packed size 420 x 170 x 140 with 7.5L, and two retailers independently list 7.5L. Mapped as a seat pack: len 42 fore/aft, wid 17 across, hgt 14. Box 10.0L on 7.5L rated = 1.33 fill, elongation 2.47. The stored 1.3L is not this bag's volume - it is the Lezyne Stuff Caddy's rating (80 x 60 x 115mm, 1.3L) in the same launch table, another copied attribute.",
+    "render": {
+     "len_cm": 42,
+     "wid_cm": 17,
+     "hgt_cm": 14,
+     "basis": "Lezyne launch-spec table (bikepacking.com) plus the on-bike studio/lifestyle photo, which shows a tapered wedge under the saddle comparable in length to the saddle itself plus overhang.",
+     "conflict": "Maker's current site page gives a flat-folded 330x220x88mm; Lezyne's own launch-spec table (via bikepacking.com) gives a packed 420x170x140mm at the same 7.5L rating, and the on-bike photo shows a rounded wedge consistent with the packed figure, not a flat slab. Used the packed figure for render."
+    }
    },
    {
     "type": "full frame bag",
@@ -32158,9 +32318,9 @@
     "name": "Lezyne Bar Caddy",
     "liters": 7,
     "dims_cm": {
-     "len": 34,
-     "wid": 16.1,
-     "hgt": 16.1
+     "len": 16.05,
+     "wid": 25,
+     "hgt": 5.64
     },
     "colors": [
      "#1a1a1a"
@@ -32170,7 +32330,14 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Lezyne product page: 247g, Dimensions 160.5mm x 250mm x 56.4mm, capacity not stated. Lezyne launch spec via bikepacking.com: 'Bar Caddy - Capacity 7 Liters'. Retailers (Walmart, Boulder Nordic, Stash Cycles) list '7L'.",
-    "dims_note": "CORRECTED. Lezyne's 160.5 x 250 x 56.4 is the flat-folded panel, established by the XL-Caddy above where the same site field gives a flat figure and Lezyne's launch sheet gives a different packed one. Rated capacity is 7L, not the stored 4L. Lezyne's own on-bike photo (ride.lezyne.com .../Bar_caddy_BigBags-3034...jpg) shows a fat double-ended roll barrel spanning roughly the gap between the brake hoods on a drop bar, about 34cm across with a diameter close to its 16cm flat height. Set 34 x 16.1 x 16.1 = 8.8L box on 7L = 1.26 fill, elongation 2.11. Length and depth are read off that photo, so medium confidence."
+    "dims_note": "CORRECTED. Lezyne's 160.5 x 250 x 56.4 is the flat-folded panel, established by the XL-Caddy above where the same site field gives a flat figure and Lezyne's launch sheet gives a different packed one. Rated capacity is 7L, not the stored 4L. Lezyne's own on-bike photo (ride.lezyne.com .../Bar_caddy_BigBags-3034...jpg) shows a fat double-ended roll barrel spanning roughly the gap between the brake hoods on a drop bar, about 34cm across with a diameter close to its 16cm flat height. Set 34 x 16.1 x 16.1 = 8.8L box on 7L = 1.26 fill, elongation 2.11. Length and depth are read off that photo, so medium confidence.",
+    "render": {
+     "len_cm": 34,
+     "wid_cm": 16.1,
+     "hgt_cm": 16.1,
+     "basis": "On-bike lifestyle photo (Bar_caddy_BigBags-3034), medium confidence since it is a photo estimate, not a maker figure.",
+     "conflict": "Maker's current site page gives a flat-folded 160.5x250x56.4mm; the on-bike photo shows a round double-ended roll instead. Measured off that photo: roughly 34cm across (bar-to-bar span) with a diameter close to its own flat-panel width once rolled, ~16cm."
+    }
    },
    {
     "type": "top tube bag",
@@ -32663,7 +32830,7 @@
     "name": "Cedaero Switchback Seat Pack",
     "liters": 1,
     "dims_cm": {
-     "len": 23,
+     "len": 22.9,
      "wid": 11.4,
      "hgt": 8.9
     },
@@ -32714,8 +32881,8 @@
     "liters": 1,
     "dims_cm": {
      "len": 22.9,
-     "wid": 5.7,
-     "hgt": 10.8
+     "wid": 10.8,
+     "hgt": 5.7
     },
     "colors": [
      "#c9a227",
@@ -33184,8 +33351,8 @@
     "liters": 3,
     "dims_cm": {
      "len": 14.5,
-     "hgt": 18,
-     "wid": 14.5
+     "wid": 14.5,
+     "hgt": 36
     },
     "dims_state": "unrolled",
     "dims_note": "Page quotes 36 x 14.5 x 14.5 cm (H x W x D), but 36cm tall at 14.5cm diameter is 7.5L against a stated 3L, so 36cm is the fully-unrolled height. Packed height derived from volume: 3000 cm3 / (pi * 7.25^2) = 18cm.",
@@ -33234,7 +33401,13 @@
      "https://alpkit.com/cdn/shop/products/betonga-black.jpg",
      "https://alpkit.com/cdn/shop/products/betonga-grey.jpg",
      "https://alpkit.com/cdn/shop/products/betonga-brown.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 23,
+     "rolls": 2,
+     "basis": "Proportion measured against the bag's own 14.5cm width in betonga-betonga-fork-cage-bag-3l-3.jpg (tan colorway, full bag visible top to bottom against the fork leg).",
+     "conflict": "36cm is the maker's own labelled 'packed size' figure, but a 36cm-tall x 14.5cm-diameter cylinder is 5.95L against the stated 3L capacity (ratio 1.98, high even for a roll-top with slack) and, more importantly, does not match the on-bike photos: height-to-width proportions measured against the bag's own stated 14.5cm width in betonga-betonga-fork-cage-bag-3l-3.jpg give a height of roughly 22-23cm, not 36cm. Drawn at 23cm per the photo rather than the maker's figure or a volume back-calculation (which the spec explicitly warns against)."
+    }
    }
   ]
  },
@@ -33298,7 +33471,8 @@
     "images_remote": [
      "https://www.thule.com/-/p/TCWPxNRGRIMcxSJahD3S1AKRN2vNXTo8IttsheNGtgA/rs:fit/h:991/cb:1.4/w:991/plain/approved/std.lang.all/43/98/1384398.png",
      "https://www.thule.com/-/p/hpnKc0gfCn8_p63avWs8zLbvWypKvrsgqWSEC4WKH90/rs:fit/h:991/cb:1.4/w:991/plain/approved/std.lang.all/43/99/1384399.png"
-    ]
+    ],
+    "fits": "rack_only"
    },
    {
     "slot": "pannier",
@@ -33345,7 +33519,8 @@
     ],
     "images_remote": [
      "https://www.thule.com/-/p/Muy16PEXFJn6yOdfBtW8i96t8Kx2hsrCIWAccUkhDR0/rs:fit/h:1200/cb:2.1/w:1800/plain/approved/std.lang.all/43/84/1384384.png"
-    ]
+    ],
+    "fits": "rack_only"
    },
    {
     "slot": "pannier",
@@ -33397,7 +33572,8 @@
     ],
     "images_remote": [
      "https://www.thule.com/-/p/G6HIZSwDAfDYEOBX9Z_ncujIUOvGeHAV7zudaGRGUKQ/rs:fit/h:991/cb:1.4/w:991/plain/approved/std.lang.all/43/74/1384374.png"
-    ]
+    ],
+    "fits": "rack_only"
    },
    {
     "slot": "barbag",
@@ -33406,9 +33582,9 @@
     "size": "2L",
     "liters": 2,
     "dims_cm": {
-     "len": 12.4,
-     "hgt": 19.1,
-     "wid": 26.4
+     "len": 26.4,
+     "wid": 12.4,
+     "hgt": 19.1
     },
     "dims_state": "packed",
     "dims_raw": "10.4 x 4.9 x 7.5 in; 2 litres",
@@ -33516,7 +33692,8 @@
     "images_remote": [
      "https://www.thule.com/-/p/2WhzUFjFNue4hSPd10JPD4i7jfqXzej3Lmma-ufjGeE/rs:fit/h:1200/cb:1.6/w:1800/plain/approved/std.lang.all/42/86/1424286.png",
      "https://www.thule.com/-/p/Ih8o2Mm_VXpn-DysCN5oSSdMCZHDUEv2Iiu0SnYs8vU/rs:fit/h:991/cb:2.4/w:991/plain/approved/std.lang.all/42/89/1424289.png"
-    ]
+    ],
+    "fits": "rack_only"
    }
   ]
  },
@@ -33540,9 +33717,9 @@
     "size": "18L",
     "liters": 18,
     "dims_cm": {
-     "len": 19,
-     "hgt": 22,
-     "wid": 36
+     "len": 44,
+     "wid": 22,
+     "hgt": 19
     },
     "dims_state": "packed",
     "dims_raw": "22x19x36(44)cms / 8.7\"x7.5\"x14.2(17.3\")",
@@ -33596,9 +33773,9 @@
     "size": "9L",
     "liters": 9,
     "dims_cm": {
-     "len": 15,
-     "hgt": 18,
-     "wid": 29
+     "len": 29,
+     "wid": 18,
+     "hgt": 15
     },
     "dims_state": "packed",
     "dims_raw": "18x15x29 cm (7.1\"x6\"x11.4\")",
@@ -33652,9 +33829,9 @@
     "size": "24L",
     "liters": 24,
     "dims_cm": {
-     "len": 22,
-     "hgt": 26,
-     "wid": 36
+     "len": 36,
+     "wid": 22,
+     "hgt": 26
     },
     "dims_state": "packed",
     "dims_raw": "36 x 26 x 22 cm (W x H x D)",
@@ -33708,9 +33885,9 @@
     "size": "16L",
     "liters": 16,
     "dims_cm": {
-     "len": 15,
-     "hgt": 36,
-     "wid": 29
+     "len": 29,
+     "wid": 15,
+     "hgt": 36
     },
     "dims_state": "packed",
     "dims_raw": "Dimensions (WxHxD): 29x36x15cms 11.4”x 14.2”x 5.9”; Capacity: 16L",
@@ -33793,7 +33970,8 @@
     ],
     "images_remote": [
      "https://carradice.co.uk/cdn/shop/files/SuperCCarradice-010-_1.jpg?v=1699181940"
-    ]
+    ],
+    "fits": "rack_only"
    }
   ]
  },
@@ -33817,8 +33995,8 @@
     "liters": 12,
     "dims_cm": {
      "len": 50,
-     "hgt": 20,
-     "wid": 19
+     "wid": 18,
+     "hgt": 16
     },
     "dims_state": "unknown",
     "dims_raw": "",
@@ -33905,9 +34083,9 @@
     "size": "4L",
     "liters": 4,
     "dims_cm": {
-     "len": 45,
-     "hgt": 14,
-     "wid": 7
+     "len": 50.5,
+     "wid": 13,
+     "hgt": 11
     },
     "dims_state": "unknown",
     "dims_raw": "",
@@ -33993,8 +34171,8 @@
     "liters": 15,
     "dims_cm": {
      "len": 30,
-     "hgt": 35,
-     "wid": 15
+     "wid": 15,
+     "hgt": 32
     },
     "dims_state": "unknown",
     "dims_raw": "15L per pannier, 260g per unit",
@@ -34025,7 +34203,13 @@
     ],
     "images_remote": [
      "https://www.altura.co.uk/cdn/shop/files/PRODUCTIMG_ALBVORULP_41737_6171a314-f22c-4383-9b81-afa28bc1cfc7.webp"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 32,
+     "rolls": 2,
+     "basis": "studio photo already shows the bag rolled shut with about two turns at the top; no unrolled figure is published to apply the minimum-of-range rule to, so the photographed rolled state is used directly."
+    },
+    "fits": "rack_only"
    }
   ]
  },
@@ -34081,7 +34265,13 @@
     ],
     "images_remote": [
      "https://banjobrothers.com/cdn/shop/products/waterproof_pannier_banjo_brothers_sku_01110_main_image.webp"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 35.6,
+     "rolls": 1,
+     "basis": "no unrolled figure is published to apply the minimum-of-range rule to; the photo already shows the bag rolled shut with a single fold, so the photographed/published figure is used directly as the drawn height."
+    },
+    "fits": "rack_only"
    },
    {
     "slot": "seatpack",
@@ -34136,9 +34326,9 @@
     "size": "Small (2L)",
     "liters": 2,
     "dims_cm": {
-     "len": 11.4,
-     "hgt": 11.4,
-     "wid": 20.3
+     "len": 20.3,
+     "wid": 11.4,
+     "hgt": 11.4
     },
     "dims_state": "packed",
     "dims_raw": "120 cubic inches / 2.0 liters; 8\" L x 4.5\" W x 4.5\" H",
@@ -34261,7 +34451,8 @@
     ],
     "images_remote": [
      "https://banjobrothers.com/cdn/shop/products/01035_banjobros_racktopbag_A.jpg"
-    ]
+    ],
+    "fits": "rack_only"
    }
   ]
  },
@@ -35016,7 +35207,12 @@
     "images_remote": [
      "https://twowheelgear.com/cdn/shop/products/bags-dayliner-handlebar-trunk-box-bag-25.jpg",
      "https://twowheelgear.com/cdn/shop/files/TwoWheelGear-DaylinerBoxBag-GraphiteGrey-back-open_1.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 19.1,
+     "rolls": 2,
+     "basis": "Photo 1 (on-rack) shows the bag closed with a rounded, gently domed top consistent with one or two roll turns rather than a flat lid; used as the basis for a 2-turn estimate since no turn count is published."
+    }
    },
    {
     "slot": "framebag_half",
@@ -35075,8 +35271,8 @@
     "liters": 1,
     "dims_cm": {
      "len": 22.9,
-     "hgt": 8.6,
-     "wid": 5.1
+     "wid": 5.1,
+     "hgt": 11
     },
     "dims_state": "packed",
     "dims_raw": "9\" Wide x 9.5\" High x 2\" Deep; 1 Liter",
@@ -35243,7 +35439,8 @@
     },
     "images": [
      "https://twowheelgear.com/cdn/shop/files/Two_Wheel_Gear_-_Pannier_Backpack_PLUS_2.1_-_3_Color_Options.webp"
-    ]
+    ],
+    "fits": "rack_only"
    },
    {
     "slot": "pannier",
@@ -35299,7 +35496,8 @@
     ],
     "images_remote": [
      "https://twowheelgear.com/cdn/shop/products/BACKPACK-LITE-22-BLK-Main-Backpack-Square_2048xcomp.jpg"
-    ]
+    ],
+    "fits": "rack_only"
    },
    {
     "slot": "pannier",
@@ -35348,7 +35546,8 @@
     "images_remote": [
      "https://twowheelgear.com/cdn/shop/files/PANNIER-BACKPACK-INV-GREY-1-WEB.jpg",
      "https://twowheelgear.com/cdn/shop/files/PANNIER-BACKPACK-INV-GREY-11-WEB.jpg"
-    ]
+    ],
+    "fits": "rack_only"
    }
   ]
  },
@@ -35586,7 +35785,11 @@
     "images_remote": [
      "https://silca.cc/cdn/shop/files/Large_seat_bag_side_knockout_0953-small_1800x1800.png?v=1709829417"
     ],
-    "dims_verified": "maker"
+    "dims_verified": "maker",
+    "render": {
+     "hgt_cm": 15,
+     "basis": "maker's only published figure is already qualified 'rolled to top of PE' (i.e. the packed state, not an unfurled max), and matches the compact wedge silhouette in the on-bike photo, so no override of the stated dims is needed here."
+    }
    },
    {
     "slot": "barbag",
@@ -35651,8 +35854,8 @@
     "liters": 9,
     "dims_cm": {
      "len": 56,
-     "hgt": 18,
-     "wid": 18
+     "wid": 18,
+     "hgt": 30
     },
     "dims_state": "unrolled",
     "dims_raw": "9L (304oz); 56x30x18cm (22x11.8x7 inches); 491g",
@@ -35688,7 +35891,12 @@
     "images_remote": [
      "https://images2.giant-bicycles.com/b_white%2Cc_fill%2Cg_auto%2Ch_400%2Cq_90%2Cw_600/xbrxe5t1wxatnfbij5r5/SCOUT-SADDLE-BAG@BLACK@9L@430000158@ACTION-SHOOT@1.jpg",
      "https://images2.giant-bicycles.com/b_white%2Cc_fill%2Cg_auto%2Ch_400%2Cq_90%2Cw_600/uxaq46o0jdtrianh3z65/SCOUT-SADDLE-BAG@BLACK@9L@430000158@ACTION-SHOOT@2.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 17,
+     "rolls": 2,
+     "basis": "Estimated from assets/products/giant/scout-scout-saddle-bag-9l-2.jpg, where the packed (rolled, olive-panel) height above the black shell reads close to the bag's own 18cm width. Cross-checked against volume: 56 x 18 x 17 x 0.5 (wedge taper) = 8.6L, close to the stated 9L."
+    }
    },
    {
     "slot": "barbag",
@@ -35971,9 +36179,9 @@
     "size": "One Size (4.5-7L)",
     "liters": 7,
     "dims_cm": {
-     "len": 33.5,
-     "hgt": 16.5,
-     "wid": 11.4
+     "len": 40.6,
+     "wid": 16.5,
+     "hgt": 16.5
     },
     "dims_state": "packed",
     "dims_raw": "WEIGHT: 13.9oz/396g, true measured VOLUME: 4.5-7L, depending how far you roll it down, true measured DIMENSIONS: 6.5\"W x 12-16\"L x 6.5\"H",
@@ -36038,9 +36246,9 @@
     "size": "One Size (6-10L)",
     "liters": 10,
     "dims_cm": {
-     "len": 39.4,
-     "hgt": 17.8,
-     "wid": 15.2
+     "len": 48.3,
+     "wid": 19.1,
+     "hgt": 17.8
     },
     "dims_state": "packed",
     "dims_raw": "WEIGHT: 15.5oz/440g, true measured VOLUME: 6-10L, depending on how far you roll it down, true measured DIMENSIONS: 7.5\"W x 14-19\"L x 7\"H",
@@ -36105,9 +36313,9 @@
     "size": "One Size (10.5L max)",
     "liters": 10.5,
     "dims_cm": {
-     "len": 53.8,
-     "hgt": 14,
-     "wid": 14
+     "len": 61,
+     "wid": 14,
+     "hgt": 14
     },
     "dims_state": "unrolled",
     "dims_raw": "VOLUME: 7-9L for the main bag, 1.5L pocket (10.5L max total) DIMENSIONS: 20-24\"W x 5.5\" diameter",
@@ -36177,9 +36385,9 @@
     "size": "One Size (12.5L max)",
     "liters": 12.5,
     "dims_cm": {
-     "len": 40.6,
-     "hgt": 17.8,
-     "wid": 17.8
+     "len": 58.4,
+     "wid": 17.8,
+     "hgt": 17.8
     },
     "dims_state": "packed",
     "dims_raw": "VOLUME: 8-11L for the main bag depending on how far you roll it down, 1.5L for the pocket (12.5L max total), true measured DIMENSIONS: 16-23\"W x 7\" diameter",
@@ -36517,7 +36725,12 @@
      "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/3df8f27e-d7bc-400f-a66f-49e34893169d/Sierra+13+Desert+Campfire.jpg",
      "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/29e8e5c8-a751-4338-b7ac-e1dfa47b7dbe/Sierra+14+Mountain+Sunrise.jpg",
      "https://images.squarespace-cdn.com/content/v1/6203e425af1afd24410acf4b/522a6af6-aa94-43ea-bada-045287806e5e/Sierra+15+Alpine+Tundra.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 30.5,
+     "rolls": 2,
+     "basis": "On-bike and studio photos show a shallow double fold-over roll at the top secured by twin spring cord-locks plus a single horizontal compression strap — a boxy pannier, not a deep drybag roll, so only a modest height reduction from the 17in unfurled maximum is plausible. 30.5cm (the rule's minimum) reads correctly against the bag's other dimensions in the photos."
+    }
    }
   ]
  },
@@ -36540,8 +36753,8 @@
     "liters": 19,
     "dims_cm": {
      "len": 36.8,
-     "hgt": 22.9,
-     "wid": 22.9
+     "wid": 22.9,
+     "hgt": 23
     },
     "dims_state": "unknown",
     "dims_raw": "main body 14.5\" wide / total width (body and pockets) 20\" / depth 9\" / rackless recommended clearance between bottom of bars and top of tires 10.5\"",
@@ -36808,7 +37021,12 @@
      "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0927_ec48af54-db22-453d-afb6-38a61f83b45e.jpg",
      "https://cdn.shopify.com/s/files/1/0052/8826/3768/files/DSCF0935.jpg"
     ],
-    "dims_verified": "maker"
+    "dims_verified": "maker",
+    "render": {
+     "hgt_cm": 17.8,
+     "rolls": 2,
+     "basis": "Photos 1 and 2 show the roll-top partially extended above the buckled straps, consistent with the published 7in figure being a packed-down (not maximally rolled) state; turn count estimated at 2 from the visible fold in photo 2."
+    }
    },
    {
     "slot": "barbag",
@@ -36818,8 +37036,8 @@
     "liters": 3.7,
     "dims_cm": {
      "len": 25.4,
-     "hgt": 9.4,
-     "wid": 16.5
+     "wid": 16.5,
+     "hgt": 18
     },
     "dims_state": "unknown",
     "dims_raw": "10\" at the bottom, 8.5\" at the top, and 6.5\" deep. this 3.7L hard bodied top opening reverse randoesque bag sack. 296g - 336g. made in Vermont USA",
@@ -37654,7 +37872,12 @@
      "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p33_i40_w3375.png",
      "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p33_i41_w3375.png",
      "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p33_i42_w3375.png"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 19.1,
+     "rolls": 1,
+     "basis": "main-body height as photographed with the drawcord neck cinched down flush, matching giant-silo-3 which shows the neck barely proud of the shell rim"
+    }
    },
    {
     "slot": "toptube",
@@ -37913,7 +38136,13 @@
      "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p51_i10_w1800.png",
      "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p51_i11_w1800.png",
      "https://www.nukesunrise.com/uploads/1/3/5/0/13506903/s630366871522261307_p51_i1_w1800.png"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 19,
+     "rolls": 2,
+     "basis": "on-bike photo wing-tank-wing-tank-one-size-3-5l-3.png, proportion against the 12.5cm diameter",
+     "conflict": "28cm is the maker's only published figure and it is an unrolled maximum, not a minimum - drawing it verbatim would show the bag fully extended and untouched. wing-tank-3 is an on-bike photo of the bag compressed under two Voile straps on a King-style cage; measured against its own known 12.5cm diameter in that photo, the rolled/strapped height reads at roughly 1.5x the diameter, about 19cm."
+    }
    },
    {
     "slot": "pannier",
@@ -38104,9 +38333,9 @@
     "size": "7.5L",
     "liters": 7.5,
     "dims_cm": {
-     "len": 26,
-     "hgt": 19,
-     "wid": 17
+     "len": 24.1,
+     "wid": 17,
+     "hgt": 18.3
     },
     "dims_state": "unknown",
     "dims_raw": "Capacity: 7.5 liters. Fabric: Black X-Pac RX36 with side pockets made from UltraStretch or CORDURA 560dtex (no side pockets), liner X-Pac VX21 white. Mounting: Velcro and FIDLOCK SNAP buckle to Diamond Rack",
@@ -38162,9 +38391,9 @@
     "size": "Tall (11L)",
     "liters": 11,
     "dims_cm": {
-     "len": 25.5,
-     "hgt": 22.9,
-     "wid": 17
+     "len": 29,
+     "wid": 17,
+     "hgt": 22
     },
     "dims_state": "unrolled",
     "dims_raw": "Capacity: 11 liters. Dimensions: 240 - 290 x 170 x 220 - 250 mm (W x D x H). Weight: 790 g",
@@ -38205,7 +38434,11 @@
     ],
     "images_remote": [
      "https://images.squarespace-cdn.com/content/v1/568e8eb8c647ad13aee47c8f/1723725711948-K1KPFTR6CRDPDHW3I14O/Gramm+Tourpacking+Diamond+Bag_-22.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 22,
+     "basis": "The 220-250mm height range is the origami lid collapsed vs fully raised, not a roll count. 22.0cm (the collapsed/minimum reading) matches the lid's flattened profile seen in ref-diamond-onbike.jpg and the local studio photo; no 'rolls' field applies since this isn't a roll-down closure."
+    }
    },
    {
     "slot": "barbag",
@@ -38215,8 +38448,8 @@
     "liters": 12,
     "dims_cm": {
      "len": 30,
-     "hgt": 20,
-     "wid": 21.5
+     "wid": 21.5,
+     "hgt": 18.6
     },
     "dims_state": "unknown",
     "dims_raw": "Capacity: 12 liters. Main fabric: X-Pac RX36 Black + ECOPAK EPX200 Silver Bullet liner. [Grill Rack] Platform size: 300 x 215 mm (W x L)",
@@ -38308,9 +38541,9 @@
     "size": "Mini (2-3L)",
     "liters": 3,
     "dims_cm": {
-     "len": 34.2,
-     "hgt": 13,
-     "wid": 16
+     "len": 44,
+     "wid": 16,
+     "hgt": 13
     },
     "dims_state": "unrolled",
     "dims_raw": "Measures closed: about 300 x 160 x 130 mm (L x W x H). Measures open: 440 x 160 x 130 mm (L x W x H)",
@@ -38518,9 +38751,9 @@
     "size": "One Size",
     "liters": 8,
     "dims_cm": {
-     "len": 40,
-     "hgt": 16,
-     "wid": 16
+     "len": 38,
+     "wid": 16,
+     "hgt": 14
     },
     "dims_state": "unknown",
     "dims_raw": "",
@@ -38580,9 +38813,9 @@
     "size": "One Size (7.5L)",
     "liters": 7.5,
     "dims_cm": {
-     "len": 30,
-     "hgt": 18,
-     "wid": 14
+     "len": 28,
+     "wid": 16,
+     "hgt": 18
     },
     "dims_state": "unknown",
     "dims_raw": "The BIVOUAC is ideal for day trips. With its 7.5L, this bag allows you to carry everything you need on the go.",
@@ -38713,9 +38946,9 @@
     "size": "L (4.7L)",
     "liters": 4.7,
     "dims_cm": {
-     "len": 45,
-     "hgt": 15,
-     "wid": 7
+     "len": 44,
+     "wid": 8,
+     "hgt": 15
     },
     "dims_state": "unknown",
     "dims_raw": "The GYPAÈTE is a 1/3 frame bag with a capacity of 2.7L (size S), 4.2L (size M) or 4.7L (size L).",
@@ -38839,8 +39072,8 @@
     "liters": 1.2,
     "dims_cm": {
      "len": 20,
-     "hgt": 10,
-     "wid": 6
+     "wid": 6,
+     "hgt": 8
     },
     "dims_state": "unknown",
     "dims_raw": "",
@@ -39082,9 +39315,9 @@
     "size": "One Size",
     "liters": 8,
     "dims_cm": {
-     "len": 38,
-     "hgt": 16,
-     "wid": 15
+     "len": 40,
+     "wid": 15,
+     "hgt": 13
     },
     "dims_state": "unknown",
     "dims_raw": "",
@@ -39145,7 +39378,12 @@
      "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1698323433344-ISOCQVX6V3TT8VQAZ8YP/dropperv2_side+view.png",
      "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/1698323439369-4UA6RAE5ILGWD3XRBFHQ/DropperPak+v2_side.png",
      "https://images.squarespace-cdn.com/content/v1/5326f5c1e4b028bc910d9588/0e4fd188-a24c-405c-8ed2-48431d50acff/1000004528.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 13,
+     "rolls": 2,
+     "basis": "No height figure is published at all (not even a range). Estimated from the on-bike blue-colorway photo (dropperpak-dropperpak-v-2-one-size-3.jpg), which shows the roll-top liner turned down twice against a nose width of roughly 15cm - the packed height reads noticeably shorter than the nose is wide."
+    }
    },
    {
     "slot": "stembag",
@@ -39155,8 +39393,8 @@
     "liters": 1.7,
     "dims_cm": {
      "len": 10,
-     "hgt": 17,
-     "wid": 10
+     "wid": 10,
+     "hgt": 15
     },
     "dims_state": "unknown",
     "dims_raw": "",
@@ -39616,8 +39854,8 @@
     "liters": 5,
     "dims_cm": {
      "len": 27.9,
-     "hgt": 17.4,
-     "wid": 7.6
+     "wid": 14,
+     "hgt": 17.4
     },
     "dims_state": "packed",
     "dims_raw": "11 inches wide by 5.5 inches deep (3 Liter). 5 inch roll-top closure for a max capacity of 10 inches of depth (5 Liter). WEIGHT: 7 oz, 7.5 oz with straps",
@@ -39677,7 +39915,12 @@
      "https://cdn.shopify.com/s/files/1/0339/0333/products/DSC0812.jpg",
      "https://cdn.shopify.com/s/files/1/0339/0333/products/DSC0781.jpg"
     ],
-    "dims_verified": "maker"
+    "dims_verified": "maker",
+    "render": {
+     "hgt_cm": 17.4,
+     "rolls": 2,
+     "basis": "No minimum/packed height figure is published, only the 10in max-fill depth for the 5L expanded state. Estimated from the on-bike Jones-bar photo (image 1) and the studio front-on photos (images 3, 4), which show the bag rolled down roughly twice against the known fixed 11in/27.9cm bar-spanning width - consistent with the 3L rolled capacity used for capacity_l."
+    }
    }
   ]
  },
@@ -39700,8 +39943,8 @@
     "liters": 19,
     "dims_cm": {
      "len": 42,
-     "hgt": 26.8,
-     "wid": 22
+     "wid": 22,
+     "hgt": 22
     },
     "dims_state": "unrolled",
     "dims_raw": "Capacity: 19L. Dimensions: length 22cm/8.5\" (when the roll top is stretched: 38cm/15\"), width 42cm/16.5\" (including side pockets), depth 22cm/8.5\". Material: Cordura Nylon Fabric",
@@ -39751,7 +39994,12 @@
      "https://bluelug.com/en/contents/fairweather/images/handlebarbagadv/10.jpg",
      "https://bluelug.com/en/contents/fairweather/images/handlebarbagadv/11.jpg"
     ],
-    "dims_verified": "maker"
+    "dims_verified": "maker",
+    "render": {
+     "hgt_cm": 22,
+     "rolls": 2,
+     "basis": "Equal to dims_cm.hgt (the published minimum already matches the on-bike photo and the 19L capacity almost exactly, so no override from the rule's answer is needed). Roll count estimated at 2 from the gathered/rolled fabric texture visible in assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-3.jpg."
+    }
    },
    {
     "slot": "seatpack",
@@ -39760,9 +40008,9 @@
     "size": "One Size (3-6L)",
     "liters": 6,
     "dims_cm": {
-     "len": 28,
-     "hgt": 16,
-     "wid": 14
+     "len": 48,
+     "wid": 14,
+     "hgt": 16
     },
     "dims_state": "packed",
     "dims_raw": "Capacity: 3-6 liters. Dimensions: L 28cm-48cm x W 14cm x H 16cm. Weight: 320g (AVG.)",
@@ -39814,9 +40062,9 @@
     "size": "One Size (1.7L)",
     "liters": 1.7,
     "dims_cm": {
-     "len": 34.5,
-     "hgt": 14,
-     "wid": 14
+     "len": 66,
+     "wid": 14,
+     "hgt": 14
     },
     "dims_state": "unrolled",
     "dims_raw": "Capacity: 1.7L. Size: diameter 14cm, bag circumference 43cm, width 21cm (when side rolls are closed) - 66cm (when both side rolls are expanded). Weight: 170g (AVG.)",
@@ -39859,7 +40107,12 @@
     "images_remote": [
      "https://bluelug.com/en/contents/fairweather/images/roadbarbag/1.jpg",
      "https://bluelug.com/en/contents/fairweather/images/roadbarbag/10.jpg"
-    ]
+    ],
+    "render": {
+     "len_cm": 21,
+     "basis": "closed/rolled state as photographed on the bike",
+     "conflict": "Maker publishes 21-66cm across the bar (side rolls, closed to fully expanded). 66cm computes to 10.2L against a 1.7L rating (6x); 21cm gives 1.9x and matches the on-bike photo. dims_cm keeps the 66cm unfurled figure per the rule; this is what gets drawn."
+    }
    },
    {
     "slot": "stembag",

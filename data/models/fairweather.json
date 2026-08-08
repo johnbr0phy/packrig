@@ -1,0 +1,587 @@
+{
+ "brand": "Fairweather",
+ "slug": "fairweather",
+ "reviewed_photos": 10,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Cordura nylon / grid ripstop / Dyneema hybrid / waxed canvas, made in Japan'. The waxed-canvas/leather-trim portion (correctly flagged by the brief as Blue Lug's signature look on the Brompton range) does NOT appear on any of the five products reviewed here - Handlebar Bag ADV, Seat Bag, Road Bar Bag, Stem Bag+, and Frame Bag ADV all show a technical black or olive/teal grid-ripstop face (fine white grid-stitch pattern clearly visible in the Handlebar Bag ADV close-ups and the Frame Bag ADV), with a quilted diamond-stitch face on the Road Bar Bag - no woven cotton texture, no wax sheen, no leather anywhere in any of the ten photos. So the string is not WRONG for this subset, but it is incomplete as a description of these five products specifically: they are all 'Cordura nylon / grid ripstop', none is 'Dyneema hybrid' or 'waxed canvas'. Flagging per the brief's steer that Fairweather's non-Brompton bags run technical synthetic fabrics, which these five confirm.",
+  "method": "Dimensions taken from bluelug.com/en/contents/fairweather/*.php product pages via curl, which return full readable spec text (no JS gate, unlike Giant's Shopify pages)."
+ },
+ "products": [
+  {
+   "line": "Handlebar Bag",
+   "name": "Handlebar Bag ADV",
+   "size": "One Size (19L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-1.jpg",
+    "assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-2.jpg",
+    "assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-3.jpg",
+    "https://bluelug.com/en/contents/fairweather/handlebar-bag-adv.php"
+   ],
+   "dims_cm": {
+    "len": 42,
+    "wid": 22,
+    "hgt": 22
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Dimensions: length 22cm/8.5\" (when the roll top is stretched: 38cm/15\"), width 42cm/16.5\" (including side pockets), depth 22cm/8.5\". Capacity: 19L. Material: Cordura Nylon Fabric.",
+   "dims_note": "Bluelug's own axis labels do not map straight onto ours. Their 'width' (42cm, across the bars including side pockets) is the bag's longest horizontal run, so it is our len. Their 'depth' (22cm, front-to-back) is our wid. Their 'length' (22cm, stretching to 38cm) is by elimination the only variable axis, and physically it is the vertical roll-top axis (top-to-bottom) - it is not a third horizontal dimension, since width and depth already account for both horizontal axes. Per the dimension rule, hgt takes the minimum of that range: 22cm. This also passes the volume check cleanly: 42 x 22 x 22 = 20.3L against the rated 19L (1.07x), a near-exact match, which is strong confirmation that 22cm (not the 38cm stretched figure) is the bag's normal drawn state.",
+   "capacity_l": 19,
+   "render": {
+    "hgt_cm": 22,
+    "rolls": 2,
+    "basis": "Equal to dims_cm.hgt (the published minimum already matches the on-bike photo and the 19L capacity almost exactly, so no override from the rule's answer is needed). Roll count estimated at 2 from the gathered/rolled fabric texture visible in assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-3.jpg."
+   },
+   "geometry": {
+    "form": "box",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Structured, squared-off rando/porteur-style box sitting on a front rack, per assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-1.jpg - not a drybag roll, confirming the brand catalogue's existing reslot to barbag. Open-top lidded side pockets on both flanks, a MOLLE-style webbed front panel, and a gathered/rolled fabric top secured by criss-cross straps."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 2,
+    "hardware": "rolled fabric top cinched by criss-cross compression straps through top loops; separate zippered rear pocket (contrast red zip pull) for in-reach items"
+   },
+   "zips": [
+    {
+     "run": "pocket",
+     "finish": "contrast"
+    }
+   ],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "velcro",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "headtube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 2,
+     "location": "side"
+    },
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "rear"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
+    "seams": "sewn, grid-ripstop face",
+    "fabric": "Cordura Nylon per the maker page; visible fine white grid-stitch ripstop pattern in every close-up, not a plain Cordura weave - matches the 'grid ripstop' half of brands.json's fabric string better than the 'Cordura nylon' half alone. Removable waterproof rip-nylon liner inside (maker copy), not independently visible."
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "headtube",
+     "front_rack"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 60,
+     "frame_mm": 0
+    },
+    "notes": "Photo 1 shows it mounted on a front rack with matching front panniers slung below; maker copy states a rack or bag supporter is required if the bag would otherwise interfere with the tyre (18-25cm clearance needed with a rack, 25cm+ without)."
+   },
+   "colorways": [
+    {
+     "name": "Cordura / Light Gray",
+     "hex": "#b7b8b2"
+    },
+    {
+     "name": "Rip Black",
+     "hex": "#232326"
+    }
+   ],
+   "images": [
+    "assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-1.jpg",
+    "assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-2.jpg",
+    "assets/products/fairweather/handlebar-bag-handlebar-bag-adv-one-size-19l-3.jpg"
+   ]
+  },
+  {
+   "line": "Seat Bag",
+   "name": "Seat Bag",
+   "size": "One Size (3-6L)",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/fairweather/seat-bag-seat-bag-one-size-3-6l-1.jpg",
+    "assets/products/fairweather/seat-bag-seat-bag-one-size-3-6l-2.jpg",
+    "https://bluelug.com/en/contents/fairweather/seat-bag.php"
+   ],
+   "dims_cm": {
+    "len": 48,
+    "wid": 14,
+    "hgt": 16
+   },
+   "dims_state": "unfurled",
+   "dims_raw": "Capacity: 3-6 liters. Dimensions: L 28cm-48cm x W 14cm x H 16cm. Weight: 320g (AVG.)",
+   "dims_note": "CHANGED FROM AN EARLIER PASS. A previous reviewer estimated a blended 'packed' length of ~34cm (28 + 0.3x the range); the current rule instead takes the full unfurled/max figure directly, matching the spec's own worked seatpack example (MIN 36/MAX 42 -> len:42). len is therefore 48cm, the unrolled nose-to-tail extent; W and H are single fixed figures, no range, used as published. Volume check: 48 x 14 x 16 x 0.5 (wedge taper) = 5.4L, close to the 6L top of the stated 3-6L range - a good fit that supports using the unfurled figure rather than a compressed intermediate estimate.",
+   "capacity_l": 6,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1.0,
+     "tail": 0.4,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Classic grey/olive wedge seatpack, squared shoulder at the saddle, rolling tail with buckle. Small reflective/light-mount tab visible at the tail in photo 2."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "side-release buckle at the tail roll"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "tail_wrap",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "small tab, tail underside",
+    "lightMount": "clip visible at the tail underside in photo 2",
+    "logo": {
+     "type": "woven_patch",
+     "location": "side"
+    },
+    "fabric": "grid ripstop, matte olive/grey face visible in both photos, consistent with brands.json's 'grid ripstop' - no cotton-canvas texture or leather trim anywhere on this product"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 2,
+    "clearance": {
+     "tyre_mm": 55,
+     "frame_mm": 0
+    },
+    "notes": "Standard nose-clamped seatpack, confirmed in both on-bike photos."
+   },
+   "colorways": [
+    {
+     "name": "Cordura / Light Gray",
+     "hex": "#b7b8b2"
+    },
+    {
+     "name": "Rip Black",
+     "hex": "#232326"
+    },
+    {
+     "name": "Olive",
+     "hex": "#6e7350"
+    }
+   ],
+   "images": [
+    "assets/products/fairweather/seat-bag-seat-bag-one-size-3-6l-1.jpg",
+    "assets/products/fairweather/seat-bag-seat-bag-one-size-3-6l-2.jpg"
+   ]
+  },
+  {
+   "line": "Road Bar Bag",
+   "name": "Road Bar Bag",
+   "size": "One Size (1.7L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/fairweather/road-bar-bag-road-bar-bag-one-size-1-7l-1.jpg",
+    "assets/products/fairweather/road-bar-bag-road-bar-bag-one-size-1-7l-2.jpg",
+    "https://bluelug.com/en/contents/fairweather/road-bar-bag.php"
+   ],
+   "dims_cm": {
+    "len": 66,
+    "wid": 14,
+    "hgt": 14
+   },
+   "dims_state": "closed_state_departs_from_rule",
+   "dims_raw": "Capacity: 1.7L. Size: diameter 14cm, bag circumference 43cm, width 21cm (when side rolls are closed) - 66cm (when both side rolls are expanded). Weight: 170g (AVG.)",
+   "dims_note": "len 66 is the maker unfurled max, kept honest in dims_cm; render.len_cm draws it closed at 21.",
+   "capacity_l": 1.7,
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Small drum/barrel bag with a quilted diamond-stitch face (5mm urethane interlining per the maker copy), doubles as a shoulder bag off the bike (photo 2 shows a removable strap and an internal zip pouch)."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "both_ends",
+    "rolls": 1,
+    "hardware": "roll-and-clip at each end ('side rolls'), independently adjustable"
+   },
+   "zips": [
+    {
+     "run": "pocket",
+     "finish": "matched"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "velcro",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "top",
+     "hardware": "hook",
+     "material": "webbing"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "internal"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "end_cap"
+    },
+    "fabric": "Diamond-quilted synthetic face visible in both photos, consistent with a Cordura/grid-ripstop quilt rather than waxed canvas - no cotton or leather texture visible"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 70,
+     "frame_mm": 0
+    },
+    "notes": "Small drum mounted directly under the bars via velcro straps, no harness, per photo 1. A 5mm urethane interlining is stated to protect the frame/bar from scratches."
+   },
+   "colorways": [
+    {
+     "name": "Cordura / Light Gray",
+     "hex": "#b7b8b2"
+    },
+    {
+     "name": "Cordura / Flash Orange",
+     "hex": "#c8752a"
+    },
+    {
+     "name": "Rip Black",
+     "hex": "#232326"
+    }
+   ],
+   "images": [
+    "assets/products/fairweather/road-bar-bag-road-bar-bag-one-size-1-7l-1.jpg",
+    "assets/products/fairweather/road-bar-bag-road-bar-bag-one-size-1-7l-2.jpg"
+   ],
+   "render": {
+    "len_cm": 21,
+    "published_min_cm": 21,
+    "conflict": "Maker publishes 21-66cm across the bar (side rolls, closed to fully expanded). 66cm computes to 10.2L against a 1.7L rating (6x); 21cm gives 1.9x and matches the on-bike photo. dims_cm keeps the 66cm unfurled figure per the rule; this is what gets drawn.",
+    "basis": "closed/rolled state as photographed on the bike"
+   }
+  },
+  {
+   "line": "Stem Bag",
+   "name": "Stem Bag+",
+   "size": "Plus (1.9L)",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/fairweather/stem-bag-stem-bag-plus-1-9l-1.jpg",
+    "assets/products/fairweather/stem-bag-stem-bag-plus-1-9l-2.jpg",
+    "https://bluelug.com/en/contents/fairweather/stem-bag-plus.php"
+   ],
+   "dims_cm": {
+    "len": 11,
+    "wid": 11,
+    "hgt": 16
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Capacity: 1.9 liters. Dimensions: L 16cm x W 11cm x D 11cm. Weight: 90g (AVG.)",
+   "dims_note": "Fixed cinch pouch, no range. The maker's 'L 16cm' is the vertical height of the standing pouch (confirmed by the tall, narrow silhouette in both photos, sized to fit a 32oz/1L Nalgene), so it maps to hgt; the 11x11 square base gives len and wid. Box 1.94L against 1.9L stated - almost exact.",
+   "capacity_l": 1.9,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Tall drawcord cinch pouch, foam-sided (4mm urethane per maker copy) to hold its shape open one-handed."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "one-handed drawcord cinch"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "velcro",
+     "wrapsAround": "stem"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "velcro",
+     "material": "velcro",
+     "wrapsAround": "handlebar"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "stretch",
+     "count": 2,
+     "location": "side"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "front"
+    },
+    "fabric": "Cordura nylon face, mesh drain bottom per maker copy (visible mesh base in photo 1) - consistent with brands.json's 'Cordura nylon' portion of the fabric string"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "stem",
+     "handlebar"
+    ],
+    "contactFaces": [
+     "underside",
+     "side"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
+    "notes": "Mounts to the stem/head-tube area between the bars, confirmed by photo 1 (rider drawing the cinch cord with the bag strapped just behind the stem faceplate)."
+   },
+   "colorways": [
+    {
+     "name": "Cordura / Flash Orange",
+     "hex": "#c8752a"
+    },
+    {
+     "name": "Cordura / Flash Yellow",
+     "hex": "#e8c62a"
+    },
+    {
+     "name": "Cordura / Light Gray",
+     "hex": "#b7b8b2"
+    }
+   ],
+   "images": [
+    "assets/products/fairweather/stem-bag-stem-bag-plus-1-9l-1.jpg",
+    "assets/products/fairweather/stem-bag-stem-bag-plus-1-9l-2.jpg"
+   ]
+  },
+  {
+   "line": "Frame Bag",
+   "name": "Frame Bag ADV (Medium)",
+   "size": "Medium (4L)",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/fairweather/frame-bag-frame-bag-adv-medium-medium-4l-1.jpg",
+    "assets/products/fairweather/frame-bag-frame-bag-adv-medium-medium-4l-2.jpg",
+    "https://bluelug.com/en/contents/fairweather/frame-bag-adv.php"
+   ],
+   "dims_cm": {
+    "len": 34,
+    "wid": 6,
+    "hgt": 33
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Size small - Capacity: 3.6 liters, Dimension: L 33cm x H 27.5cm x W 6cm. Size medium - Capacity: 4L, Dimension: L 34cm x H 33cm x W 6cm. Weight: 141g (AVG.)",
+   "dims_note": "Fixed zip bag, no range. Both photos (teal/orange on a green MTB, tan on a cream gravel bike) show a near-equilateral TRIANGLE filling the whole front triangle down to the bottle boss, top edge and vertical drop measuring the same within a few percent - matching 34cm x 33cm almost exactly as published. This is a full-height front-triangle bag, not a slim under-top-tube sliver, so its 1.03 length:height ratio is a correct read of the shape, not a transposition. Volume check on a triangular basis: 34 x 33 x 6 / 2 = 3.4L against 4L stated - close, with the bulge/gusset making up the difference.",
+   "capacity_l": 4,
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "Near-equilateral triangle hanging in the front triangle from the top tube down to the bottom bracket area; a bottle cage remains usable underneath in both on-bike photos."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider along the top/front edge, contrast zip pull with a small loop tab"
+   },
+   "zips": [
+    {
+     "run": "front_panel",
+     "finish": "contrast"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seat_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
+    "fabric": "Diamond-quilted grid ripstop visible in both photos (diagonal quilt-stitch pattern on the tan and teal/orange panels alike) - matches brands.json's 'grid ripstop' description; no cotton canvas or leather trim on this product"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "seat_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
+    "notes": "Multiple strap loops (per maker copy) so one size spans several frame sizes; both photos confirm a full front-triangle mount with the bottle cage still clear below."
+   },
+   "colorways": [
+    {
+     "name": "Grid Rip / Olive / Beige",
+     "hex": "#6e7350"
+    },
+    {
+     "name": "Grid Rip / Light Gray / Green",
+     "hex": "#b7b8b2"
+    }
+   ],
+   "images": [
+    "assets/products/fairweather/frame-bag-frame-bag-adv-medium-medium-4l-1.jpg",
+    "assets/products/fairweather/frame-bag-frame-bag-adv-medium-medium-4l-2.jpg"
+   ]
+  }
+ ]
+}

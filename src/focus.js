@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { device, fitDistance } from './mobile.js';
 
 /**
  * Pointer focus for equipped bags: hover gives a light "half select" lift,
@@ -7,6 +8,19 @@ import * as THREE from 'three';
  * Bag meshes share materials within a bag but never across bags (a fresh
  * `main`/`accent` pair is built per equip), so tinting a bag's materials is
  * safe and cannot bleed into its neighbours.
+ *
+ * ---- On a touch screen --------------------------------------------------
+ *
+ * There is no hover, so the half-select stage does not exist: a tap selects
+ * outright and a second tap on the same bag deselects. The hover listeners are
+ * not attached at all rather than attached and ignored — a coarse pointer
+ * still emits `pointermove`, so leaving them on would run a raycast against
+ * every equipped bag on every frame of a drag, for a tint nobody can see.
+ * `canvas.style.cursor` is likewise never written, because there is no cursor.
+ *
+ * The panel keeps its half of the two-way highlight either way: `setHovered`
+ * works on touch, since the panel asking for a highlight is deliberate in a way
+ * that a stray pointer crossing the canvas is not.
  */
 
 const HOVER = 0x14161a;   // barely-there lift, reads as "you could pick this"
@@ -88,7 +102,13 @@ export function initFocus(app, { camera, controls, renderer }) {
     // frame the bag: pull the camera to a distance that fits its longest side
     const span = box.getSize(tmp).length();
     const dir = camera.position.clone().sub(controls.target).normalize();
-    const dist = THREE.MathUtils.clamp(span * 2.1, controls.minDistance, controls.maxDistance);
+    // span * 2.1 was fitted to a landscape viewport. three's fov is VERTICAL,
+    // so a portrait phone has a far narrower field across than down, and that
+    // distance frames a seat pack with both ends outside the frame. Take
+    // whichever is further back; on any landscape aspect the fit is the smaller
+    // of the two and this is exactly the old number.
+    const want = Math.max(span * 2.1, fitDistance(camera, box, 1.15));
+    const dist = THREE.MathUtils.clamp(want, controls.minDistance, controls.maxDistance);
     glide = {
       t: 0,
       fromT: controls.target.clone(), toT: centre,
@@ -101,10 +121,15 @@ export function initFocus(app, { camera, controls, renderer }) {
     const box = new THREE.Box3().setFromObject(app.bike.group);
     const centre = box.getCenter(new THREE.Vector3());
     const dir = camera.position.clone().sub(controls.target).normalize();
+    // Same trap as focusOn: the flat 3.1 frames the whole bike on a landscape
+    // aspect and cuts it in half on a portrait one, so deselecting a bag on a
+    // phone used to glide back to a crop. max() leaves every landscape aspect
+    // on the original 3.1.
+    const dist = Math.max(3.1, fitDistance(camera, box));
     glide = {
       t: 0,
       fromT: controls.target.clone(), toT: centre,
-      fromP: camera.position.clone(), toP: centre.clone().addScaledVector(dir, 3.1),
+      fromP: camera.position.clone(), toP: centre.clone().addScaledVector(dir, dist),
     };
   }
 
@@ -121,32 +146,84 @@ export function initFocus(app, { camera, controls, renderer }) {
 
   // ---- input --------------------------------------------------------------
   // Distinguish a click from an orbit drag, or every camera move would select.
-  let downAt = null;
-  canvas.addEventListener('pointerdown', (e) => { downAt = { x: e.clientX, y: e.clientY }; });
+  //
+  // The threshold was tuned for a mouse, where 5px is generous. A finger is not
+  // that precise: a deliberate tap routinely travels 8-10px, so 5px classifies
+  // real taps as orbits and the bag never selects. Platform touch slop is 8dp
+  // on Android and about 10pt on iOS; 12 sits just above both, and is still far
+  // below the travel of anyone actually orbiting.
+  //
+  // Taken from the EVENT rather than from `device`, because the two disagree on
+  // exactly the hardware that needs them to: a touchscreen laptop has a fine
+  // primary pointer and a finger, and it should get 5px for the mouse and 12px
+  // for the finger rather than one compromise for both.
+  const slopFor = (type) => (type === 'mouse' ? 5 : 12);
 
-  canvas.addEventListener('pointermove', (e) => {
-    if (downAt) return;                          // mid-drag: don't fight the orbit
-    const slot = pick(e);
-    if (slot === hovered) return;
-    hovered = slot;
-    canvas.style.cursor = slot ? 'pointer' : '';
-    repaint();
-    app.ui?.setHovered?.(slot);
+  // Travel is accumulated as the MAXIMUM distance from the press point, not the
+  // start-to-end distance. An orbit that swings around and comes back near
+  // where it started measures as zero movement end-to-end, and would select a
+  // bag after spinning the whole bike round — much easier to do with a finger
+  // than with a mouse.
+  let downAt = null;
+
+  canvas.addEventListener('pointerdown', (e) => {
+    // A second concurrent pointer means a pinch-zoom, not a tap. Abandon the
+    // gesture rather than letting whichever finger lifts last count as a pick.
+    if (downAt) { downAt = { id: -1, x: 0, y: 0, travel: Infinity }; return; }
+    downAt = { id: e.pointerId, x: e.clientX, y: e.clientY, travel: 0 };
   });
 
+  if (device.hover) {
+    canvas.addEventListener('pointermove', (e) => {
+      if (downAt) {
+        downAt.travel = Math.max(downAt.travel, Math.hypot(e.clientX - downAt.x, e.clientY - downAt.y));
+        return;                                  // mid-drag: don't fight the orbit
+      }
+      const slot = pick(e);
+      if (slot === hovered) return;
+      hovered = slot;
+      canvas.style.cursor = slot ? 'pointer' : '';
+      repaint();
+      app.ui?.setHovered?.(slot);
+    });
+
+    canvas.addEventListener('pointerleave', () => {
+      if (hovered) { hovered = null; repaint(); canvas.style.cursor = ''; }
+    });
+  } else {
+    // Coarse pointer: no hover stage and no cursor, but the drag distance still
+    // has to be tracked or every orbit ends in a selection.
+    canvas.addEventListener('pointermove', (e) => {
+      if (!downAt) return;
+      downAt.travel = Math.max(downAt.travel, Math.hypot(e.clientX - downAt.x, e.clientY - downAt.y));
+    });
+  }
+
+  // The browser can take a gesture away mid-flight (a system edge swipe, a
+  // scroll handoff). Without this the stale press point survives and the NEXT
+  // pointerup — belonging to a completely different gesture — is judged
+  // against it.
+  const abandon = () => { downAt = null; };
+  canvas.addEventListener('pointercancel', abandon);
+
   canvas.addEventListener('pointerup', (e) => {
-    const moved = downAt && Math.hypot(e.clientX - downAt.x, e.clientY - downAt.y) > 5;
+    const press = downAt;
     downAt = null;
-    if (moved) return;                           // that was an orbit, not a pick
+    if (!press || press.id !== e.pointerId) return;
+    const travel = Math.max(press.travel, Math.hypot(e.clientX - press.x, e.clientY - press.y));
+    if (travel > slopFor(e.pointerType)) return; // that was an orbit, not a pick
     const slot = pick(e);
+    // Tap-to-toggle: the same bag twice deselects, which on touch is the only
+    // way back out of a focus, there being no hover-off and no empty-space
+    // affordance the user can be sure of hitting.
     selected = slot && slot !== selected ? slot : null;
+    // A tint the panel set can never be dismissed by a pointer leaving the
+    // card, because on touch nothing reliably leaves. Clearing it whenever the
+    // canvas is tapped keeps it self-healing instead of stuck.
+    if (!device.hover) hovered = null;
     repaint();
     if (selected) focusOn(selected); else clearFocus();
     app.ui?.setSelected?.(selected);
-  });
-
-  canvas.addEventListener('pointerleave', () => {
-    if (hovered) { hovered = null; repaint(); canvas.style.cursor = ''; }
   });
 
   return {

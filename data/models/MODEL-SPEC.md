@@ -54,6 +54,20 @@ So every roll-top or otherwise variable-height product also carries:
   not a fabrication — but it must be traceable to an image you looked at.
 - If the height is fixed (a zipped, non-rolling bag), omit `render` entirely.
 
+#### `render` is not only about height
+
+Any axis can be the variable one, and the same rule applies to each:
+`render.len_cm`, `render.wid_cm`, `render.hgt_cm`. A bar bag whose side-rolls
+open along the bar (Fairweather's Road Bar Bag publishes 21-66cm across) and a
+seat pack that rolls along its length both have exactly the height problem on a
+different axis.
+
+**`dims_cm` always stays the honest published figure.** Before these fields
+existed, reviewers meeting a ranged length axis had to overwrite `dims_cm` to
+stop the bag being drawn six times too big, which destroyed the record they were
+supposed to be keeping. Put the published figure in `dims_cm`, the drawn figure
+in `render.<axis>_cm`, and the reasoning in `dims_note`.
+
 #### When the minimum-of-range rule gives an absurd result
 
 Sometimes it does. Apidura publish 10–40cm for the Expedition Front Rack Pack;

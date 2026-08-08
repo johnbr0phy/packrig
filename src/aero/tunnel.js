@@ -299,7 +299,37 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
     const vFov = THREE.MathUtils.degToRad(camera.fov);
     const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
     const CAM_MARGIN = 1.45; // comfortable headroom, not a tight crop — see report
-    const distForHeight = (size.y / 2) / Math.tan(vFov / 2);
+
+    // On phone the HUD is a bottom sheet, not a side panel, so it eats
+    // vertical rather than horizontal room — and unlike the desktop side
+    // panel (cleared by main.js's -165px horizontal offset), nothing was
+    // compensating for it here. Fitting the bike's height against the FULL
+    // vFov meant only the "comfortable headroom" margin stood between the
+    // rider's head and the top of frame; landscape's 55vh sheet eats over
+    // half the viewport, blowing straight through that margin (see report —
+    // portrait got lucky because 55vh of a *tall* viewport still leaves
+    // plenty above, landscape did not).
+    //
+    // Measured, not guessed: aero.css's phone breakpoint isn't re-derived
+    // here as a width/height media query (that's a second source of truth
+    // waiting to drift from the CSS) — instead this reads the sheet's own
+    // live rect. A bottom sheet is distinguished from the desktop/tablet
+    // side panel purely by width: the sheet spans nearly the full viewport
+    // (gutter aside), the side panel never does.
+    const sheetEl = document.querySelector('.aero-panel');
+    const sheetRect = sheetEl?.getBoundingClientRect();
+    const hasSheet = !!sheetRect && sheetRect.width > window.innerWidth * 0.7;
+    // fraction of the viewport height still visible above the sheet
+    const visibleFrac = hasSheet
+      ? clamp01(Math.max(60, sheetRect.top) / window.innerHeight)
+      : 1;
+    // only the HEIGHT fit is affected — the sheet doesn't touch the sides
+    const heightVFov = hasSheet ? 2 * Math.atan(Math.tan(vFov / 2) * visibleFrac) : vFov;
+    // shifts the render so a bike centred in `heightVFov` lands centred in
+    // the visible band (0..sheetRect.top) instead of the full canvas
+    const viewOffsetY = hasSheet ? window.innerHeight * (1 - visibleFrac) * 0.5 : 0;
+
+    const distForHeight = (size.y / 2) / Math.tan(heightVFov / 2);
     const distForWidth = (size.x / 2) / Math.tan(hFov / 2);
     const camDist = Math.max(distForHeight, distForWidth) * CAM_MARGIN;
 
@@ -373,7 +403,18 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
     scene.add(setGroup);
     setFade = snapshotFade(collectMaterials(setGroup));
 
-    return { camPos, camTgt };
+    // Lift the render into the visible band above the sheet. Desktop/tablet
+    // (hasSheet false) leaves camera.view completely untouched — main.js owns
+    // that property there, keeps updating it live on resize while the tunnel
+    // is open, and a save/restore on this side would fight those live
+    // updates with a stale snapshot (see report on why tunnel.js gave up its
+    // own save/clear/restore of the desktop -165px offset).
+    if (hasSheet) {
+      camera.setViewOffset(window.innerWidth, window.innerHeight, 0, viewOffsetY, window.innerWidth, window.innerHeight);
+      camera.updateProjectionMatrix();
+    }
+
+    return { camPos, camTgt, appliedViewOffset: hasSheet };
   }
 
   const tunnel = {
@@ -426,6 +467,18 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
         // undefined until the caller passes `passes: { gtao, bloom }` — no-ops otherwise
         gtaoRadius: gtao ? gtao.gtaoMaterial.uniforms.radius.value : null,
         bloomStrength: bloom ? bloom.strength : null,
+        // Snapshotted before frameBike() can touch it, not assumed null —
+        // main.js owns this property and clears it on phone, but a rotation
+        // crossing its own desktop/tablet media query can leave it set to
+        // anything at the moment enter() happens to run. Only actually used
+        // in _finishExit() if frameBike() went on to overwrite it (see
+        // `appliedViewOffset` below) — on desktop this is captured and then
+        // never touched again, by design.
+        viewOffset: (camera.view && camera.view.enabled)
+          ? { fullWidth: camera.view.fullWidth, fullHeight: camera.view.fullHeight,
+              offsetX: camera.view.offsetX, offsetY: camera.view.offsetY,
+              width: camera.view.width, height: camera.view.height }
+          : null,
       };
       const activeWorld = envs.worlds[envs.current];
       const oldWorldRoots = [envs.ground, envs.rocks, envs.vignette, envs.shoreDisc, activeWorld?.group].filter(Boolean);
@@ -433,9 +486,12 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
       this._hardSwapped = false;
 
       // re-fit every time: whatever's mounted now (or not) is what has to fit
-      const { camPos, camTgt } = frameBike();
+      // (frameBike() may itself call camera.setViewOffset when a phone sheet
+      // is obstructing the view — see its own comment)
+      const { camPos, camTgt, appliedViewOffset } = frameBike();
       this._tunnelCamPos = camPos;
       this._tunnelCamTgt = camTgt;
+      this._viewOffsetTouched = appliedViewOffset;
 
       setGroup.visible = true;
       key.visible = true;
@@ -526,6 +582,18 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
 
       if (gtao) gtao.updateGtaoMaterial({ radius: this._saved.gtaoRadius });
       if (bloom) bloom.strength = this._saved.bloomStrength;
+
+      // undo frameBike()'s phone-sheet setViewOffset, if it ran — restore
+      // exactly what was there before (main.js's own offset, or nothing),
+      // not just clear, so a session that entered on phone and somehow
+      // exits after crossing into desktop layout still comes back correct
+      if (this._saved.viewOffset) {
+        const v = this._saved.viewOffset;
+        camera.setViewOffset(v.fullWidth, v.fullHeight, v.offsetX, v.offsetY, v.width, v.height);
+      } else {
+        camera.clearViewOffset();
+      }
+      camera.updateProjectionMatrix();
 
       rider?.setOpacity(0);
       smoke?.setEnabled(false);

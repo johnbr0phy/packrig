@@ -1,0 +1,347 @@
+{
+ "brand": "Altura",
+ "slug": "altura",
+ "reviewed_photos": 7,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'TPU-coated nylon ripstop (welded seams)'. Confirmed VERBATIM on all five Vortex product pages via WebFetch/curl: each lists 'Nylon ripstop fabric with TPU coating' and 'waterproof, welded seam construction'. The matte, fine ripstop grid visible in every studio photo (seatpack, half-frame pack, top tube pack, pannier, handlebar bag) is consistent with a TPU-film-coated ripstop face rather than a laminate like X-Pac — no diagonal X-Ply grid or glossy dry-bag sheen anywhere. Fabric string is correct for the whole line, no exceptions found.",
+  "method": "altura.co.uk is Shopify; WebFetch returned rendered page text (capacity + fabric copy) directly, no curl fallback needed for prose. Dimensions are a different story: only the Half Frame Pack has ANY published length, and even that is not on the page itself — it appears solely inside a French customer review quoting the spec sheet ('la sacoche ne fait pas 50,5cm comme indiqué dans les caractéristiques, mais 46,5cm'), confirmed present via curl on the raw HTML. curl found no dimensions table, metafield, or spec block on any of the five pages. All other dims across all five products are photo-proportion estimates cross-checked against stated litres, not maker figures, and are marked verified:false accordingly."
+ },
+ "products": [
+  {
+   "line": "Vortex",
+   "name": "Vortex Waterproof 12L Cycling Seat Pack",
+   "size": "12L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/altura/vortex-vortex-waterproof-12l-cycling-seat-pack-12l-1.jpg",
+    "assets/products/altura/vortex-vortex-waterproof-12l-cycling-seat-pack-12l-2.jpg",
+    "assets/products/altura/vortex-vortex-waterproof-12l-cycling-seat-pack-12l-3.jpg",
+    "https://www.altura.co.uk/products/altura-vortex-12l-waterproof-seatpack"
+   ],
+
+   "dims_cm": { "len": 50, "wid": 18, "hgt": 16 },
+   "dims_state": "estimated_no_maker_figure",
+   "dims_raw": "No dimensions published on the product page or anywhere found via curl; only capacity (12L) is given.",
+   "dims_note": "No maker figure exists to apply the unfurled/min-height rule to. Estimated from the studio profile photo (image 1): the bag reads roughly 3:1 nose-to-tail vs. height, with a fairly full body (not a sharp wedge — the black nose panel is nearly as tall as the grey tail). Cross-checked against 12L: 50x18x16cm box = 14.4L, needing only a mild ~0.83 taper factor, consistent with the photo's full-bodied profile. Not a manufacturer figure.",
+   "capacity_l": 12,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.75, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Two-tone: black nose panel with a squared shoulder at the saddle, grey tail panel rolling to a blunt (not pointed) end. Mild taper compared to e.g. Apidura — reads as a fuller, boxier wedge in the studio photos."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "side-release buckle at the tail roll; full-length bungee lacing panel down the top centreline (image 3) for external lashing, not part of the closure itself"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "hook-and-loop", "wrapsAround": "saddle_rails" },
+    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "printed strip on the nose panel (both sides)",
+    "logo": { "type": "screen_print", "location": "side_nose" },
+    "seams": "welded",
+    "fabric": "TPU-coated nylon ripstop, welded seams - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 3,
+    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "notes": "No on-bike photo available (studio shots only), so strap routing is read off the product photography rather than confirmed in use. Nose velcro patch and buckle strap suggest a standard rail+seatpost mount; unconfirmed against an actual bike."
+   },
+
+   "colorways": [ { "name": "Grey", "hex": "#6e7378" } ],
+   "images": ["assets/products/altura/vortex-vortex-waterproof-12l-cycling-seat-pack-12l-1.jpg"]
+  },
+
+  {
+   "line": "Vortex",
+   "name": "Vortex Waterproof 11L Cycling Handlebar Bag",
+   "size": "11L",
+   "slot": "barroll",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://www.altura.co.uk/cdn/shop/files/ALBV3FR11_57547.jpg?crop=center&height=1200&v=1770825681&width=1200 (fetched directly, local copy was a dead link in brands.json)",
+    "https://www.altura.co.uk/products/altura-vortex-11l-waterproof-handlebar-bag"
+   ],
+
+   "dims_cm": { "len": 42, "wid": 19, "hgt": 19 },
+   "dims_state": "estimated_no_maker_figure",
+   "dims_raw": "No dimensions published; only capacity (11L) given.",
+   "dims_note": "No maker figure. Estimated as a round-ended cylinder from the fetched product photo, where the bag's across-the-bars length reads about 2.2x its diameter. 42 x 19 x 19cm as a cylinder (pi*9.5^2*42) = 11.9L, close to the stated 11L. Not a manufacturer figure. NOTE: the `images` array in brands.json for this product points at a dead CDN URL (404); the working image is the `?crop=center&height=1200&...` variant found via a fresh curl of the live product page — flagging in case the catalogue needs its image URL refreshed.",
+   "capacity_l": 11,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "d_shape",
+    "shoulder": "none",
+    "notes": "Round sewn end caps (one carries a purge valve) with a flat grey front face bonded on for the zip pocket, so the cross-section is a circle flattened on the front rather than a true round tube. Two-tone: grey top/front, black lower/end panels."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 2,
+    "hardware": "two side-release buckles, one at each end of the roll"
+   },
+
+   "zips": [
+    { "run": "front_panel", "count": 1, "finish": "matched", "notes": "flapped zip pocket on the front face" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "printed strip on the front pocket flap",
+    "valve": "purge valve, right end cap",
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "welded",
+    "fabric": "TPU-coated nylon ripstop, welded seams - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 40, "frame_mm": 0 },
+    "notes": "Two webbing straps over the bar top, standard front-roll orientation; body hangs below and in front of the bars, front pocket facing forward. No on-bike photo to confirm sag or fork-crown clearance."
+   },
+
+   "colorways": [ { "name": "Grey", "hex": "#6e7378" } ],
+   "images": ["https://www.altura.co.uk/cdn/shop/files/ALBV3FR11_57547.jpg"]
+  },
+
+  {
+   "line": "Vortex",
+   "name": "Vortex Waterproof 4L Cycling Half Frame Pack",
+   "size": "4L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/altura/vortex-vortex-waterproof-4l-cycling-half-frame-pack-4l-1.jpg",
+    "https://www.altura.co.uk/products/altura-vortex-4l-waterproof-half-frame-pack"
+   ],
+
+   "dims_cm": { "len": 50.5, "wid": 13, "hgt": 11 },
+   "dims_state": "customer_reported_spec",
+   "dims_raw": "Not present on the live rendered page text or in raw curl HTML as a spec block. A French customer review (visible in curl'd HTML) quotes the maker's own spec sheet: 'la sacoche ne fait pas 50,5 cm comme indiqué dans les caractéristiques, mais 46,5 cm' ('the bag isn't 50.5cm as stated in the specs, but 46.5cm') — i.e. Altura's own listed length is 50.5cm; this reviewer measured their unit at 46.5cm.",
+   "dims_note": "len (50.5cm) is the maker's own published figure, secondhand via a customer quoting it — treated as maker-sourced but not independently verified, hence confidence medium not high, and a second reviewer measured 8% short of it. wid/hgt have no published figure; estimated from the photo's roughly 4.5:1 length:height silhouette and the 3-bolt-mount taper, cross-checked against 4L (50.5 x 13 x 11cm box = 7.2L, needing a ~0.55 taper typical of a half-frame wedge).",
+   "capacity_l": 4,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_bottom",
+    "taper": { "nose": 1.0, "tail": 0.5, "profile": "linear" },
+    "shoulder": "none",
+    "notes": "Right-triangle wedge following the top tube/head tube junction, wide at the head end, tapering to a narrow point at the seat tube. Three top-mounted hook-and-loop straps to the top tube, single loop strap at the narrow tail."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider, waterproof zip along the top edge"
+   },
+
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "hook-and-loop", "wrapsAround": "toptube" },
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "hook-and-loop", "wrapsAround": "headtube_or_downtube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "screen_print", "location": "side_face" },
+    "seams": "welded",
+    "fabric": "TPU-coated nylon ripstop, welded seams - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["toptube", "headtube"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 0 },
+    "notes": "Sits inside the main triangle against the top tube, wide end forward at the head tube, narrow end trailing to the seat tube. A customer review notes it runs 3-4cm short of filling an M-frame's triangle."
+   },
+
+   "colorways": [ { "name": "Grey", "hex": "#6e7378" } ],
+   "images": ["assets/products/altura/vortex-vortex-waterproof-4l-cycling-half-frame-pack-4l-1.jpg"]
+  },
+
+  {
+   "line": "Vortex",
+   "name": "Vortex Bolt-On Waterproof Cycling Top Tube Pack",
+   "size": "1L",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/altura/vortex-vortex-bolt-on-waterproof-cycling-top-tube-pack-1l-1.jpg",
+    "https://www.altura.co.uk/products/altura-vortex-1l-waterproof-bolt-on-top-tube-pack"
+   ],
+
+   "dims_cm": { "len": 20, "wid": 6, "hgt": 9 },
+   "dims_state": "estimated_no_maker_figure",
+   "dims_raw": "No dimensions published; only capacity (~1L) given.",
+   "dims_note": "No maker figure. Estimated from the photo's stubby wedge silhouette (short, tall relative to its length compared to the half frame pack) cross-checked against 1L: 20x6x9cm box = 1.08L, barely tapered, matching the photo's fairly full/boxy profile rather than a sharp wedge. Not a manufacturer figure.",
+   "capacity_l": 1,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_bottom",
+    "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
+    "shoulder": "none",
+    "notes": "Small triangular gas-tank-style pack, wide/tall at the seat-tube end, tapering to a narrow point forward. Single zip along the top ridge."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider with pull tab, waterproof zip along the ridge"
+   },
+
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "underside", "hardware": "velcro", "material": "hook-and-loop", "wrapsAround": "toptube" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "screen_print", "location": "side_face" },
+    "seams": "welded",
+    "fabric": "TPU-coated nylon ripstop, welded seams - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["toptube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 0 },
+    "notes": "Bolt-on/velcro straddle mount straight onto the top tube behind the stem, tall end to the rear (seat tube side), narrow point forward. Name says 'Bolt-On' but the photographed straps are hook-and-loop, not bolted hardware — no bolt mounts visible in the photo."
+   },
+
+   "colorways": [ { "name": "Grey", "hex": "#6e7378" } ],
+   "images": ["assets/products/altura/vortex-vortex-bolt-on-waterproof-cycling-top-tube-pack-1l-1.jpg"]
+  },
+
+  {
+   "line": "Vortex",
+   "name": "Ultralite Vortex Waterproof Cycling Pannier",
+   "size": "15L (single)",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/altura/vortex-ultralite-vortex-waterproof-cycling-pannier-15l-singl-1.webp",
+    "https://www.altura.co.uk/products/altura-ultralite-vortex-waterproof-cycling-pannier"
+   ],
+
+   "dims_cm": { "len": 30, "wid": 15, "hgt": 32 },
+   "dims_state": "estimated_no_maker_figure",
+   "dims_raw": "No dimensions published; only 15L (per pannier), 260g given. Sold and priced singly.",
+   "dims_note": "No maker figure. Photo shows the bag already rolled shut (about 2 turns) with a fairly square-ish front face and moderate height — taller than wide, roughly 1.9:1 hgt:wid. Estimated 30 x 15 x 32cm box = 14.4L against the stated 15L (minimal taper, boxy shape, matching the photo). hgt (32) is deliberately the as-photographed ROLLED figure per the render rule, since no unrolled/flat spec exists to apply the rule to.",
+   "capacity_l": 15,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "Simple boxy roll-top pannier, flat rear hook-mounting face, roll closes at the top with a single centred cam buckle."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 2,
+    "hardware": "single cam buckle at the top roll"
+   },
+
+   "zips": [],
+
+   "straps": [],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "tonal_print", "location": "front_lower" },
+    "seams": "welded",
+    "fabric": "TPU-coated nylon ripstop, welded seams - matches brands.json; see brand_notes.fabric"
+   },
+
+   "render": {
+    "hgt_cm": 32,
+    "rolls": 2,
+    "basis": "studio photo already shows the bag rolled shut with about two turns at the top; no unrolled figure is published to apply the minimum-of-range rule to, so the photographed rolled state is used directly."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["rear_face"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 0 },
+    "notes": "Rack-hook pannier, no rail or strap mounting visible; requires a rear rack, does not attach to the frame directly."
+   },
+   "fits": "rack_only",
+
+   "colorways": [ { "name": "Grey", "hex": "#6e7378" } ],
+   "images": ["assets/products/altura/vortex-ultralite-vortex-waterproof-cycling-pannier-15l-singl-1.webp"]
+  }
+ ]
+}
