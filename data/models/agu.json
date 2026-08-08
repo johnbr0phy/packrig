@@ -1,0 +1,440 @@
+{
+ "brand": "AGU",
+ "slug": "agu",
+ "reviewed_photos": 14,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Recycled polyester Greensphere (matte woven) with TPU-welded seams on Extreme waterproof line'. This holds for 5 of 6 products reviewed: Top-Tube Frame Bag Venture EXTREME Waterproof ('100% Waterproof recycled polyester', glossy dimpled TPU-laminate texture in every photo, magnetic seal - the Extreme/TPU-welded case the string describes); Tube Frame Bag Venture S 3L ('Green Sphere material: Recycled Polyester', DWR, YKK zip, 'Waterproof: No' - correctly the NON-extreme matte case); Handlebar Bag Venture 17L ('100% recycled polyester' Green Sphere with Hypalon reinforcement); AGU Essential Pannier ('100% recycled 600D polyester with PU coating', 'Hexagon ribstop with PU coating', Green Sphere); AGU Urban Essentials DWR Pannier ('Green Sphere material: recycled water-repellent Polyester'). The ONE exception found: the only live 'Seat-Pack Venture' page reachable (colourway 'Steel Blue Canvas') lists 'Materials/Fabric: 100% Organic Cotton' with a taped waterproof Dryliner lining - COTTON, not recycled polyester Greensphere at all. The product name itself flags this ('Seat-Pack Venture Steel Blue CANVAS Steel Blue') - AGU appears to run a cotton-canvas sub-variant of the Venture Seat-Pack alongside a standard polyester one, and the canvas variant is the only one whose spec page I could reach; other colourways of the same model (Black, Army Green etc.) may well be the standard Greensphere polyester the brand string describes. Flagged rather than assumed either way.",
+  "method": "agu.com is a Magento storefront; curl with a desktop UA returns full server-rendered HTML including a 'Product properties' table with a raw 'Product Dimensions' field (no unit or axis labels) for products that have one - two of six products (Tube Frame Bag Venture S/3L, and the general 'seatpack-venture' URL passed by the brief) return HTTP 404/no dimensions at all; for the frame bag, no dimensions are published anywhere on agu.com for the S/3L variant specifically, only Item Numbers and a volume picker. Two products (Top-Tube Frame Bag Venture Extreme Waterproof, Handlebar Bag Venture) needed the /eu/ or full-slug URL rather than the /en/ or /eu/<short-slug> URL the brief gave, which 404'd; found the working slugs via web search. The KlickFix pannier and Urban DWR pannier are not sold on agu.com in a form I could reach directly and were read from a third-party retailer (tradeinn.com) and agu.com respectively; product photos for all six came from agu.com's Magento media/catalog/product CDN paths, found the same way as the dimensions."
+ },
+ "products": [
+  {
+   "line": "Venture",
+   "name": "AGU Venture Seat-Pack",
+   "size": "10L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://agu.com/en/seat-pack-venture-41503000-033",
+    "https://agu.com/media/catalog/product/4/1/41503000_033_main_01_1.jpg",
+    "https://agu.com/media/catalog/product/4/1/41503000_033_detail_01_1.jpg"
+   ],
+
+   "dims_cm": { "len": 50, "wid": 10, "hgt": 15 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "AGU product-properties table, 'Product Dimensions': '10 x 15 x 50' (no unit given, no axis labels; cm and W x H x L assumed, consistent with the existing catalogue record). Volume Bag (liter): 10. Maximum load bicycle bag: 6.0kg. Product weight: 512g.",
+   "dims_note": "Single figure, not a range - the new unfurled/min-height rule has nothing to choose between here. AGU does not label which number is which axis; kept the existing catalogue mapping (wid=10, hgt=15, len=50) since it reads as W x H x L and the product photo confirms a long, narrow, tapered-wedge seatpack shape consistent with a 50cm nose-to-tail run on a 10cm width. Box 50x10x15 = 7.5L against 10L rated (ratio 0.75), plausible for a tapered wedge that doesn't fill its own bounding box.",
+   "capacity_l": 10,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.5, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Classic Apidura-style tapered saddle wedge: wide, flat-topped shoulder clamped at the saddle rails, narrowing to a rolled, buckled tail. Criss-crossed reflective bungee lacing across the top of the nose section for stashing small items on top."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "single side-release buckle plus a drawcord/toggle at the tail roll"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "ladderlock", "material": "webbing", "wrapsAround": "saddle_rails" },
+    { "role": "compression", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "top", "sizeFrac": 0.3, "note": "criss-crossed reflective bungee lacing, per maker copy 'Smart elastic bands provide an extra temporary storage on top of the pack'" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "3M reflective details on the bungee lacing and strap ends",
+    "logo": { "type": "screen_print", "location": "side_front" },
+    "seams": "taped waterproof lining ('Dryliner Technology: water-repellent outer layer with a taped waterproof lining')",
+    "fabric": "100% Organic Cotton (this Steel Blue Canvas colourway) - does NOT match brands.json's Greensphere-polyester brand string; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 3,
+    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "notes": "Strap-mounted, not a rigid hanger - the two nose straps clamp the rails and a lower strap braces the post. clearance is a visual estimate, not measured."
+   },
+
+   "colorways": [
+    { "name": "Steel Blue", "hex": "#3a5a6b" },
+    { "name": "Black", "hex": "#1c1c1c" },
+    { "name": "Army Green", "hex": "#4b5320" },
+    { "name": "Reflective Mist", "hex": "#a8adb3" },
+    { "name": "Vintage", "hex": "#a8896a" },
+    { "name": "Pistachio", "hex": "#9caf88" },
+    { "name": "Ground Coffee", "hex": "#4a3728" }
+   ],
+   "images": ["https://agu.com/media/catalog/product/4/1/41503000_033_main_01_1.jpg"]
+  },
+
+  {
+   "line": "Venture",
+   "name": "AGU Top-Tube Frame Bag Venture Extreme Waterproof",
+   "size": null,
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://agu.com/eu/top-tube-frame-bag-venture-extreme-waterproof-black-41503401-000",
+    "https://agu.com/media/catalog/product/4/1/41503401_000_main_01_6.jpg",
+    "https://agu.com/media/catalog/product/4/1/41503401_000_sphere_01_3.jpg"
+   ],
+
+   "dims_cm": { "len": 21, "wid": 11, "hgt": 6 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "AGU product page: '21 x 11 x 6 centimeters', 0.7 liters, 125 grams. Item number 41503401-000.",
+   "dims_note": "SLOT CHECK (audit-slots flagged this name as implying framebag_full/framebag_half): confirmed toptube is CORRECT by the on-bike photo (41503401_000_sphere_01_3.jpg) - it is a small flap-top pouch sitting entirely on the top tube just behind the head tube, nowhere near frame-triangle size; 'Top-Tube Frame Bag' is just AGU's own naming pattern for products that attach to the top tube of the frame, not a claim that it fills the triangle. slot_should_be left null. Single published figures, no range, so the unfurled/min-height rule has nothing to pick between. Ratio 11/6=1.83 (against a 2.0 elongation threshold some earlier passes used, since removed per HANDOVER.md), consistent with the broad, low, flat-topped wedge visible in every photo - wid=11 (across the top tube) and hgt=6 (shallow) is deliberately NOT swapped to the more typical narrow-and-tall arrangement.",
+   "capacity_l": 0.7,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.85, "tail": 1.0, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Small, low, broad wedge with a diagonal flap lid (glossy TPU-laminate 'carbon-look' texture in every photo) tapering slightly toward the front tip where the drawcord pull sits."
+   },
+
+   "closure": {
+    "type": "magnetic",
+    "location": "top",
+    "hardware": "one-handed magnetic snap under the flap, plus a drawcord/toggle pull at the front tip"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "hook_and_loop", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 2, "location": "internal", "sizeFrac": 0.3 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "3M reflective print",
+    "logo": { "type": "molded_badge", "location": "side_front" },
+    "seams": "welded (glossy TPU-laminate face visible in every photo, consistent with a welded waterproof construction)",
+    "fabric": "100% waterproof recycled polyester (TPU-laminate face) - matches brands.json's Extreme/TPU-welded clause; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 0 },
+    "notes": "Two velcro straps around the top tube just behind the head tube, confirmed in the on-bike photo; AGU's generic copy also mentions stem/seatpost mounting but the photographed product sits on the top tube only."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1c" }
+   ],
+   "images": ["https://agu.com/media/catalog/product/4/1/41503401_000_main_01_6.jpg"]
+  },
+
+  {
+   "line": "Venture",
+   "name": "AGU Tube Frame Bag Venture (S, 3L)",
+   "size": "S / 3L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://agu.com/en/tube-frame-bag-venture-black-4150360"
+   ],
+
+   "dims_cm": { "len": 44, "wid": 6, "hgt": 10 },
+   "dims_state": "unknown",
+   "dims_raw": "No dimensions are published anywhere on the maker page for this product - only a volume picker (3L / 4L / 5.5L, item numbers 415036 / 415038 / 415040) and no size chart entry (the page's 'Sizechart' tab is the generic clothing size chart, not bag dimensions). No third-party listing with the S/3L dimensions was found either.",
+   "dims_note": "UNVERIFIED - dims_cm left UNCHANGED from the existing catalogue record per the spec's 'do not invent' rule; there is no maker or retailer source for these three numbers for the 3L size specifically, only for the product's shape (below), which comes from a photo of the 5.5L (L) variant, the size actually pictured on the page. Geometry/hardware description below is evidence-backed even though the exact numbers are not; do not treat this record's dims as more solid than the flag indicates.",
+   "capacity_l": 3,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.55, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Photographed on the L/5.5L variant (415040), same family shape expected at S: a long, low, wedge-shaped frame-triangle sliver, wide at one end and tapering to a near point at the other, with a single long diagonal YKK zip running most of its length and a small pull loop at the narrow end."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_side",
+    "hardware": "single water-resistant YKK zipper running most of the panel's length"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "hook_and_loop", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "3M reflective elements per maker copy",
+    "logo": { "type": "molded_badge", "location": "side_front" },
+    "seams": "sewn, YKK zip",
+    "fabric": "Green Sphere recycled polyester, DWR-coated, not waterproof-rated - matches brands.json's non-Extreme Greensphere clause; see brand_notes.fabric",
+    "note": "modular velcro strap system - maker copy: 'the straps can be secured in the desired locations'; a hydration-tube port is built into the main compartment"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "down_tube", "seat_tube"],
+    "contactFaces": ["top_edge"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 0 },
+    "notes": "Four velcro loop tabs along the top edge (3 visible along the top, 1 at the lower front corner in the photo) lace it into the front triangle; exact tube contacts at the 3L size are inferred from the family shape, not measured."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1c" },
+    { "name": "Steel Blue", "hex": "#3a5a6b" },
+    { "name": "Army Green", "hex": "#4b5320" }
+   ],
+   "images": ["https://agu.com/media/catalog/product/4/1/415040_image_main.jpg"]
+  },
+
+  {
+   "line": "Venture",
+   "name": "AGU Handlebar Bag Venture 17L",
+   "size": "17L",
+   "slot": "barroll",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://agu.com/en/handlebar-bag-venture-415032",
+    "https://agu.com/media/catalog/product/4/1/415032_main_01_6.jpg",
+    "https://agu.com/media/catalog/product/4/1/415032_model_11_1.jpg"
+   ],
+
+   "dims_cm": { "len": 65, "wid": 15, "hgt": 15 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "AGU product page: '65 x 15 x 15 cm', 17 liters, 420g.",
+   "dims_note": "Single figure, no range published, and the on-bike photo (415032_model_11_1.jpg) shows a clean cylindrical roll with both ends tightly buckled - reads as the as-mounted packed size already, not an unfurled flat panel, so used directly as len (across the bars) / wid=hgt (diameter). Box (cylinder) pi*(7.5)^2*65 = 11.5L against 17L rated (ratio 0.68), a bit loose but plausible for a soft-sided roll that isn't a perfect cylinder end to end.",
+   "capacity_l": 17,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Straight barrel roll, buckled at both ends, mounted between the drops. Hexagon-textured reinforcement panel on the body."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "both_ends",
+    "hardware": "side-release buckle at each end of the roll"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "headset", "note": "'spacers guarantee enough space between the bag and the headset with cables' per maker copy - a lower strap/spacer bracing down toward the head tube, visible in the on-bike photo" },
+    { "role": "compression", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "3M reflection; the 'Reflective Mist' colourway has a full reflective overall print",
+    "logo": { "type": "molded_badge", "location": "side_front" },
+    "seams": "welded (roll-top, DWR-coated)",
+    "fabric": "100% recycled polyester Green Sphere with Hypalon reinforcement at strategic wear points - matches brands.json fabric string; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 120, "frame_mm": 0 },
+    "notes": "Spacer/strap system holds the bag proud of the headset and cables per maker copy. clearance is a rough estimate, not measured."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1c" },
+    { "name": "Reflective Mist", "hex": "#a8adb3" },
+    { "name": "Army Green", "hex": "#4b5320" },
+    { "name": "Vintage", "hex": "#a8896a" },
+    { "name": "Pistachio", "hex": "#9caf88" },
+    { "name": "Steel Blue", "hex": "#3a5a6b" },
+    { "name": "Ground Coffee", "hex": "#4a3728" }
+   ],
+   "images": ["https://agu.com/media/catalog/product/4/1/415032_main_01_6.jpg"]
+  },
+
+  {
+   "line": "Essential",
+   "name": "AGU Essential Pannier Rack Bag",
+   "size": "12L",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.tradeinn.com/bikeinn/en/agu-essential-klickfix-12l-panniers/138066081/p",
+    "https://www.tradeinn.com/f/13806/138066081_2/agu-essential-klickfix-12l-panniers.webp",
+    "https://www.tradeinn.com/f/13806/138066081_4/agu-essential-klickfix-12l-panniers.webp"
+   ],
+
+   "dims_cm": { "len": 28, "wid": 16, "hgt": 34 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Retailer spec (tradeinn.com, reproducing the AGU listing): '34 x 28 x 16 cm', 12 litres, 430g, max load 10kg. Mounts 'by means of KLICKfix Vario Top hooks (o 8-16mm)'.",
+   "dims_note": "Inherits the SLOT + AXIS fix already on record for this product (was catalogued as slot 'trunk' with len34/wid28/hgt16 transposed; corrected to slot 'pannier' with len28/hgt34/wid16). Independently confirmed by the on-bike photo (essential-4.webp): a portrait-format flap-top bag, clearly TALLER than it is long/wide, hanging beside the rear wheel from two KLICKfix hooks on the back panel - exactly a pannier silhouette, not a rack-top trunk box. Single figure, not a range. Capacity: the title and single on-bike photo both show ONE bag, no pair-volume language found, so 12L is treated as the single-bag rating (unlike the Arkel GT-54/Dolphin/Orca cases in this same pass, which WERE pair-volume mismatches).",
+   "capacity_l": 12,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.9, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Flap-top pannier, drawstring collar under an outer flap, single vertical webbing strap with a side-release buckle down the front face. A vertically-textured hexagon-ribstop panel low on the front-right may be a stretch/mesh side pocket, but this is not clearly resolvable from the available 3/4-angle photo - kept thin rather than guessed."
+   },
+
+   "closure": {
+    "type": "flap_buckle",
+    "location": "top",
+    "hardware": "drawstring collar under an outer flap secured by a single front webbing strap and side-release buckle"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing" },
+    { "role": "shoulder", "count": 1, "location": "side", "hardware": "hook", "material": "webbing", "note": "detachable shoulder strap per maker copy" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "side", "sizeFrac": 0.15, "note": "inferred from a textured panel on the front-right in the on-bike photo, not confidently resolved - low confidence" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "3M reflection per maker copy",
+    "logo": { "type": "screen_print", "location": "top_front" },
+    "seams": "PU-coated, not welded",
+    "fabric": "100% recycled 600D polyester with PU coating, Hexagon ribstop with PU coating - matches brands.json's base Greensphere clause (not the Extreme/TPU-welded clause, which does not apply to this product); see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["rear_rack_top_rail"],
+    "contactFaces": ["back_panel"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 25, "frame_mm": 15 },
+    "notes": "KLICKfix Vario Top hooks, o8-16mm rack tube range. clearance figures are estimates, not measured off a photo with a scale reference."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1c" }
+   ],
+   "images": ["https://www.tradeinn.com/f/13806/138066081_4/agu-essential-klickfix-12l-panniers.webp"],
+   "fits": "rack_only"
+  },
+
+  {
+   "line": "Urban",
+   "name": "AGU Urban Essentials DWR Pannier 17L",
+   "size": "17L",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://agu.com/eu/dwr-single-bike-bag-urban-black-41497604-000",
+    "https://agu.com/media/catalog/product/4/1/41497604_000_main_01_4.jpg",
+    "https://agu.com/media/catalog/product/4/1/41497604_000_model_11_1.jpg"
+   ],
+
+   "dims_cm": { "len": 30, "wid": 15, "hgt": 39 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "AGU product page: '30 x 39 x 15 centimetres' (W x H x D read, matching the existing catalogue mapping), 17 litres, 646g, max load 7kg. Product name itself is 'DWR SINGLE Bike Bag Urban' - explicitly a single (not pair) rating.",
+   "dims_note": "Single figure, no range. Axis mapping confirmed by the on-bike photo: a tall portrait-format flap-top bag, clearly taller than it is wide, matching hgt(39) > len(30) > wid(15). Box 30x15x39 = 17.6L against 17L rated (ratio 1.03), a tight, clean reconciliation supporting this reading.",
+   "capacity_l": 17,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Squared-off flap-top pannier that converts to a backpack/tote (removable/coverable shoulder straps). Domed flap lid with a top carry handle, single vertical front buckle strap, small reflective loop tab on the side."
+   },
+
+   "closure": {
+    "type": "flap_buckle",
+    "location": "top",
+    "hardware": "drawstring closure under the flap, secured by a front buckle strap"
+   },
+
+   "zips": [
+    { "run": "pocket", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing" },
+    { "role": "shoulder", "count": 2, "location": "side", "hardware": "hook", "material": "webbing", "note": "removable, can be covered to convert the bag to backpack carry per maker copy" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.15 },
+    { "type": "zip", "count": 1, "location": "internal", "sizeFrac": 0.2 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "3M reflection",
+    "logo": { "type": "screen_print", "location": "top_front" },
+    "seams": "DWR-coated, sewn",
+    "fabric": "Green Sphere recycled water-repellent polyester with DWR coating - matches brands.json fabric string; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["rear_rack_top_rail"],
+    "contactFaces": ["back_panel"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 25, "frame_mm": 15 },
+    "notes": "KLICKfix Vario E-hooks, o6-16mm rack tube range. clearance figures are estimates, not measured off a photo with a scale reference."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1c" },
+    { "name": "Navy", "hex": "#2b4c6f" }
+   ],
+   "images": ["https://agu.com/media/catalog/product/4/1/41497604_000_main_01_4.jpg"],
+   "fits": "rack_only"
+  }
+ ]
+}

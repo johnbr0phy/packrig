@@ -13571,7 +13571,8 @@
     "liters": 11,
     "dims_cm": {
      "len": 48,
-     "dia": 17
+     "wid": 17,
+     "hgt": 17
     },
     "colors": [
      "#3d3d3d"
@@ -30042,7 +30043,7 @@
     "name": "Goldback 12.5W",
     "liters": 27,
     "dims_cm": {
-     "len": 43,
+     "len": 45.7,
      "wid": 20.3,
      "hgt": 26.7
     },
@@ -30128,14 +30129,18 @@
     ],
     "est": false,
     "slot": "pannier",
-    "src": "https://www.bagsxbird.com/product-page/side-bustle-pannier"
+    "src": "https://www.bagsxbird.com/product-page/side-bustle-pannier",
+    "render": {
+     "hgt_cm": 30.5,
+     "basis": "published minimum (rolled) of the 12-20in range — explicitly the maker's own 'rolled height' figure, the sane default mounted state for a rack pannier"
+    }
    },
    {
     "type": "saddle bag (small)",
     "name": "Piccolo 11W",
     "liters": 18,
     "dims_cm": {
-     "len": 38,
+     "len": 40.6,
      "wid": 19,
      "hgt": 24
     },
@@ -32378,8 +32383,8 @@
     "liters": 0.5,
     "dims_cm": {
      "len": 14,
-     "wid": 7,
-     "hgt": 6.5
+     "wid": 6.5,
+     "hgt": 7
     },
     "colors": [
      "#141414"
@@ -32394,8 +32399,8 @@
     "liters": 17,
     "dims_cm": {
      "len": 62,
-     "wid": 24,
-     "hgt": 20
+     "wid": 20,
+     "hgt": 24
     },
     "colors": [
      "#141414",
@@ -32403,7 +32408,12 @@
     ],
     "est": false,
     "slot": "seatpack",
-    "src": "https://www.zefal.com/en/saddle-bags/456-z-adventure-r17.html"
+    "src": "https://www.zefal.com/en/saddle-bags/456-z-adventure-r17.html",
+    "render": {
+     "len_cm": 40,
+     "basis": "on-bike photo (Z Adventure R17_Situation(1).jpg) proportional comparison against the visible saddle and dropper/seatpost, corroborated by volume reconciliation.",
+     "conflict": "62cm is Zefal's own published dimension and is kept in dims_cm per the unfurled rule, but the on-bike photo shows the mounted bag proportionally much shorter than 62cm against the visible saddle/seatpost, and a 40cm estimate reconciles far better against the 17L rating (1.13x vs 1.75x box ratio). 40cm is a photo-proportion estimate, not a second maker figure - medium/low confidence."
+    }
    },
    {
     "type": "half frame bag",
@@ -32435,15 +32445,17 @@
     ],
     "est": false,
     "slot": "pannier",
-    "src": "https://www.zefal.com/en/bags-for-racks/730-z-traveler-s20.html"
+    "src": "https://www.zefal.com/en/bags-for-racks/730-z-traveler-s20.html",
+    "fits": "rack_only"
    },
    {
     "type": "fork cage bag",
     "name": "Zefal Z Adventure Dry Bag 6L",
     "liters": 6,
     "dims_cm": {
-     "len": 36.5,
-     "dia": 15
+     "len": 15,
+     "wid": 15,
+     "hgt": 36.5
     },
     "colors": [
      "#d0021b",
@@ -32451,7 +32463,8 @@
     ],
     "est": false,
     "slot": "forkbag",
-    "src": "https://www.zefal.com/en/front-bags/718-z-adventure-dry-bag-6l.html"
+    "src": "https://www.zefal.com/en/front-bags/718-z-adventure-dry-bag-6l.html",
+    "fits": "bosses_required"
    },
    {
     "type": "tote/trunk bag",
@@ -32470,7 +32483,8 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Zefal: 320 mm x 180 mm x 220 mm, capacity 20 L / 1220 c.i., 710 g, polyester 840D, universal Velcro mounting. Product title: 'Z TRAVELER 60 - Bike rear bag with modular volume'.",
-    "dims_note": "FALSE POSITIVE on the dims - the LITRES describe a different configuration. Zefal's own dimensions are 32 x 18 x 22cm (12.7L) and their own capacity is 20L, and Zefal themselves title the product 'bike rear bag with MODULAR volume': the 20L is reached with the fold-out side sections deployed, while 32 x 18 x 22 is the trunk-bag shape with everything stowed. That stowed shape is the correct packed, as-mounted figure for a trunk slot, so dims are unchanged. The rated 20L is retained as Zefal's maximum. Zefal's own page 403s to automated fetches; figures come from the Zefal spec reproduced by BIKE24 and Modern Bike and match the manufacturer listing."
+    "dims_note": "FALSE POSITIVE on the dims - the LITRES describe a different configuration. Zefal's own dimensions are 32 x 18 x 22cm (12.7L) and their own capacity is 20L, and Zefal themselves title the product 'bike rear bag with MODULAR volume': the 20L is reached with the fold-out side sections deployed, while 32 x 18 x 22 is the trunk-bag shape with everything stowed. That stowed shape is the correct packed, as-mounted figure for a trunk slot, so dims are unchanged. The rated 20L is retained as Zefal's maximum. Zefal's own page 403s to automated fetches; figures come from the Zefal spec reproduced by BIKE24 and Modern Bike and match the manufacturer listing.",
+    "fits": "rack_only"
    }
   ]
  },
@@ -32573,7 +32587,8 @@
     "est": false,
     "slot": "pannier",
     "src": "https://www.tradeinn.com/bikeinn/en/agu-essential-klickfix-12l-panniers/138066081/p",
-    "dims_note": "CHANGE trunk -> pannier. The product image at tradeinn.com/f/13806/138066081/agu-essential-klickfix-12l-panniers.jpg shows a tall portrait-format flap-top bag with a single vertical buckle strap and a side mesh pocket - a one-sided rack pannier, not a rack-top box. The listing specifies mounting 'by means of KLICKfix Vario Top hooks (o 8-16mm)', which are the hook-over-the-rack-rail pannier fittings; AGU's actual rack-top bag is a different product ('Trunkbag Bag Performance KLICKfix UniKlip II') using a UniKlip rack-plate adapter. Every retailer files it under panniers. SIDE NOTE for the dims pass: source dims are 34 x 28 x 16 cm on a bag that is taller than it is long, so the catalogue's len 34 / wid 28 / hgt 16 looks like len and hgt are transposed for a pannier orientation (should read roughly len 28, hgt 34, wid 16). len/hgt transposed for a pannier: the photo shows it clearly taller than long. Was 34x16, now 28 long x 34 tall x 16 deep."
+    "dims_note": "CHANGE trunk -> pannier. The product image at tradeinn.com/f/13806/138066081/agu-essential-klickfix-12l-panniers.jpg shows a tall portrait-format flap-top bag with a single vertical buckle strap and a side mesh pocket - a one-sided rack pannier, not a rack-top box. The listing specifies mounting 'by means of KLICKfix Vario Top hooks (o 8-16mm)', which are the hook-over-the-rack-rail pannier fittings; AGU's actual rack-top bag is a different product ('Trunkbag Bag Performance KLICKfix UniKlip II') using a UniKlip rack-plate adapter. Every retailer files it under panniers. SIDE NOTE for the dims pass: source dims are 34 x 28 x 16 cm on a bag that is taller than it is long, so the catalogue's len 34 / wid 28 / hgt 16 looks like len and hgt are transposed for a pannier orientation (should read roughly len 28, hgt 34, wid 16). len/hgt transposed for a pannier: the photo shows it clearly taller than long. Was 34x16, now 28 long x 34 tall x 16 deep.",
+    "fits": "rack_only"
    },
    {
     "type": "panniers",
@@ -32589,7 +32604,8 @@
     ],
     "est": false,
     "slot": "pannier",
-    "src": "https://agu.com/eu/dwr-single-bike-bag-urban-black-41497604-000"
+    "src": "https://agu.com/eu/dwr-single-bike-bag-urban-black-41497604-000",
+    "fits": "rack_only"
    }
   ]
  },
@@ -32944,9 +32960,9 @@
     "name": "Rapha Explore Handlebar Pack 10L",
     "liters": 10,
     "dims_cm": {
-     "len": 25,
-     "wid": 13,
-     "hgt": 8
+     "len": 30,
+     "wid": 18,
+     "hgt": 18
     },
     "colors": [
      "#4a5560",
@@ -33025,7 +33041,8 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Rapha: 'W 21cm x H 16.5cm'. On capacity, verbatim: 'the Essentials bag is a slim design and therefore Rapha is not able to provide a litre capacity, however the bag is a good size to hold a smartphone, wallet and keys with a little room to spare for a snack on the road.'",
-    "dims_note": "THE LITRES ARE FABRICATED, NOT THE DIMS - the flag is pointing at the wrong field. 21 x 16.5 is Rapha's own published W x H, so len and hgt are sound; the 5cm depth is an estimate (Rapha publish none) but is right for a slim zip pouch. The 0.3L is the invented number: Rapha explicitly decline to state a litre capacity for this bag, and 0.3L is what Rapha quote for their SMALL SADDLE BAG, a different product. I have not substituted a capacity because none exists to substitute - the honest value is unknown, and the 5.78x volume ratio disappears the moment the bogus 0.3L does. Separately, this is not a bike-mounted bag: it carries on an adjustable reflective cord shoulder strap with a small stabiliser hook, so the saddlebag slot is wrong, but I have not proposed a replacement because there is no shoulder/musette slot in the vocabulary - flagging it for a catalogue-membership decision instead."
+    "dims_note": "THE LITRES ARE FABRICATED, NOT THE DIMS - the flag is pointing at the wrong field. 21 x 16.5 is Rapha's own published W x H, so len and hgt are sound; the 5cm depth is an estimate (Rapha publish none) but is right for a slim zip pouch. The 0.3L is the invented number: Rapha explicitly decline to state a litre capacity for this bag, and 0.3L is what Rapha quote for their SMALL SADDLE BAG, a different product. I have not substituted a capacity because none exists to substitute - the honest value is unknown, and the 5.78x volume ratio disappears the moment the bogus 0.3L does. Separately, this is not a bike-mounted bag: it carries on an adjustable reflective cord shoulder strap with a small stabiliser hook, so the saddlebag slot is wrong, but I have not proposed a replacement because there is no shoulder/musette slot in the vocabulary - flagging it for a catalogue-membership decision instead.",
+    "fits": "none"
    }
   ]
  },

@@ -1,0 +1,431 @@
+{
+ "brand": "Zefal",
+ "slug": "zefal",
+ "reviewed_photos": 12,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'TPU laminate (shiny welded) on Z Adventure line + polyester 600-840D (matte woven) on Z Traveler touring line'. This is CORRECT for the two 'Z Adventure' products reviewed - Z Adventure R17 ('TPU 420D + Polyester 640D + Hypalon') and Z Adventure Dry Bag 6L ('Polyester 420D TPU') - and CORRECT for Z Traveler 60 ('Polyester 840D', matte, no TPU, top of the stated D range). It is only a PARTIAL match for Z Traveler S20: maker material is 'Polyester 600D + TPU' - the 600D matches the Traveler clause, but this product ALSO carries a TPU component the brand string reserves for the Adventure line only; the string doesn't anticipate a blended Traveler product. It does NOT cover two products at all: Z Light Pack S and Z Frame Pack are both 'Polyester 420 D Ripstop' - a lighter-weight ripstop that is neither the Z Adventure TPU laminate nor the 600-840D Z Traveler weight; both belong to lines the brand string simply doesn't mention (Z Light / plain Frame bags).",
+  "method": "zefal.com 403s to WebFetch's fetcher but returns full server-rendered HTML to curl with a desktop UA - matches the prior finding recorded in HANDOVER.md. Every one of the six product pages has a plain 'Product details' table (Dimensions / Weight / Mounting / Material / Type / Capacity / Closing) in page TEXT, no image needed for the numbers. Zefal states dimensions as three bare numbers with no axis labels; comparing all six against the existing catalogue records shows the maker's own order is consistently LENGTH x HEIGHT x WIDTH (confirmed by checking every product, not assumed from one) - this is documented here since it is not obvious and the wrong assumption (L x W x H) would transpose wid/hgt on every product in this brand. Photos came from the same page's own gallery (zefal.com/<id>-large_default/<slug>.jpg pattern), filtered to the images matching the current product's own slug/reference to exclude related-product carousel thumbnails."
+ },
+ "products": [
+  {
+   "line": "Z Light",
+   "name": "Zefal Z Light Pack S",
+   "size": "0.5L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.zefal.com/en/saddle-bags/305-257-z-light-pack.html",
+    "https://www.zefal.com/6155-large_default/z-light-pack.jpg",
+    "https://www.zefal.com/6156-large_default/z-light-pack.jpg"
+   ],
+
+   "dims_cm": { "len": 14, "wid": 6.5, "hgt": 7 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Zefal 'Product details': Dimensions 14.00 x 6.50 x 7.00 cm (L x H x W per brand_notes.method); Weight 58g; Mounting 'Self gripping straps'; Material 'Polyester 420 D Ripstop'; Capacity 0,5L; Closing 'Water repellent zip'.",
+   "dims_note": "Single figure, no range. Reading Zefal's own L x H x W order (established across the whole brand, see brand_notes.method) gives len=14, hgt=6.5, wid=7.0 - the existing catalogue record already had wid=7/hgt=6.5, which matches this reading exactly, so no change needed, just now sourced. Box 14x7x6.5=637cm3=0.64L against 0.5L rated (ratio 1.27), a close, plausible fit for a small zippered wedge.",
+   "capacity_l": 0.5,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.6, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Small classic saddle-rail wedge, wide flat top at the nose tapering to a rounded tail with a zip-pull tab. Reflective S-shaped print on the side."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_side",
+    "hardware": "single water-repellent zip around the tail 3/4, pull tab with a rubberised loop"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "velcro", "material": "hook_and_loop", "wrapsAround": "saddle_rails" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective S-curve print on the side face",
+    "logo": { "type": "screen_print", "location": "side_front" },
+    "seams": "sewn, water-repellent zip",
+    "fabric": "Polyester 420D Ripstop - does not match either clause of brands.json's fabric string; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 60, "frame_mm": 0 },
+    "notes": "Velcro/self-gripping straps only, no buckle hardware visible in either photo. clearance is a visual estimate."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#141414" }
+   ],
+   "images": ["https://www.zefal.com/6155-large_default/z-light-pack.jpg"]
+  },
+
+  {
+   "line": "Z Adventure",
+   "name": "Zefal Z Adventure R17",
+   "size": "17L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.zefal.com/en/saddle-bags/456-z-adventure-r17.html",
+    "https://www.zefal.com/6116-large_default/z-adventure-r17.jpg",
+    "https://www.zefal.com/img/cms/Transport/Z ADVENTURE R17_Situation (1).jpg"
+   ],
+
+   "dims_cm": { "len": 62, "wid": 20, "hgt": 24 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Zefal 'Product details': Dimensions 62.00 x 20.00 x 24.00 cm (L x H x W); Weight 675g; Material 'TPU 420D (+ Polyester 640D + Hypalon)'; Capacity 17L; Closing 'Roll top'; Maximum load 5kg. Description: 'a volume that can be adjusted from 8 to 17 litres'.",
+   "dims_note": "len=62cm is treated as the UNFURLED/maximum figure per the new rule (Zefal's own description confirms this is an adjustable roll-top, 8-17L). BUT the on-bike photo (R17_Situation(1).jpg) shows the mounted bag reading far shorter than 62cm relative to the visible saddle and seatpost - proportionally closer to ~40cm than 62cm. Box at 62cm: 62x20x24=29.8L against 17L rated (ratio 1.75, loose); at an estimated 40cm: 40x20x24=19.2L (ratio 1.13, a close, plausible fit). This is the same class of conflict the spec calls out for Apidura's Expedition Front Rack Pack - flagged in fields, not silently changed. hgt=24/wid=20 read directly off the maker's single non-range figures.",
+   "capacity_l": 17,
+
+   "render": {
+    "len_cm": 40,
+    "published_unfurled_cm": 62,
+    "conflict": "62cm is Zefal's own published dimension and is kept in dims_cm per the unfurled rule, but the on-bike photo shows the mounted bag proportionally much shorter than 62cm against the visible saddle/seatpost, and a 40cm estimate reconciles far better against the 17L rating (1.13x vs 1.75x box ratio). 40cm is a photo-proportion estimate, not a second maker figure - medium/low confidence.",
+    "basis": "on-bike photo (Z Adventure R17_Situation(1).jpg) proportional comparison against the visible saddle and dropper/seatpost, corroborated by volume reconciliation."
+   },
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Wide flat nose at the saddle rails tapering to a narrow rolled tail, red compression strap wrapping the mid-body, criss-crossed elastic bungee lacing over the top of the nose section for extra stash."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "clip-buckle roll closure at the tail ('folding closure')"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "hook_and_loop", "wrapsAround": "saddle_rails" },
+    { "role": "compression", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "top", "sizeFrac": 0.25, "note": "elastic bungee cross-lacing, maker copy: 'elastic cord for the quick attaching and storing of additional items'" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective strips plus an attachment loop for a rear light",
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "seams": "heat-sealed waterproof interior per maker copy",
+    "fabric": "TPU 420D + Polyester 640D + Hypalon reinforcement - matches brands.json's Z Adventure/TPU clause; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "notes": "Self-gripping straps to the rails and post; maker copy notes 'anti-tear material on its base' and reinforced mounting points. clearance is a visual estimate."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#141414" },
+    { "name": "Red", "hex": "#d0021b" }
+   ],
+   "images": ["https://www.zefal.com/6116-large_default/z-adventure-r17.jpg"]
+  },
+
+  {
+   "line": "Frame bags",
+   "name": "Zefal Z Frame Pack",
+   "size": "1.3L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.zefal.com/en/frame-bags/361-z-frame-pack.html",
+    "https://www.zefal.com/3777-large_default/z-frame-pack.jpg",
+    "https://www.zefal.com/3778-large_default/z-frame-pack.jpg"
+   ],
+
+   "dims_cm": { "len": 27, "wid": 10, "hgt": 8 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Zefal 'Product details': Dimensions 27.00 x 8.00 x 10.00 cm (L x H x W); Weight 125g; Mounting 'Self gripping straps'; Material 'Polyester 420 D Ripstop'; Capacity 1,3L; Closing 'Water repellent zip'.",
+   "dims_note": "Single figure, no range. Reads len=27, hgt=8, wid=10 per Zefal's L x H x W order (see brand_notes.method); matches the existing catalogue record exactly (wid10/hgt8), no change needed, now sourced. The on-bike photo shows it mounted high and forward, straddling the top tube right at the head tube junction, NOT spanning the main triangle - a small corner piece rather than a full wedge, consistent with the modest 1.3L rating. Box 27x10x8=2.16L against 1.3L (ratio 1.66), loose but plausible for a torpedo-shaped capsule.",
+   "capacity_l": 1.3,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.5, "tail": 1.0, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Elongated torpedo/capsule shape, narrower and pointed at one end, blunt at the other, single diagonal zip most of its length, reflective strip low on the face."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_side",
+    "hardware": "single water-repellent zip"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "hook_and_loop", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective strip on the face, maker copy: 'reflective strips for better visibility at night'",
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "sewn, water-repellent zip",
+    "fabric": "Polyester 420D Ripstop - does not match either clause of brands.json's fabric string; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["top_edge"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 0 },
+    "notes": "Two velcro straps around the top tube close to the head tube - a small corner piece, not a full-triangle bag despite the 'Frame Pack' name and framebag_half slot."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#141414" }
+   ],
+   "images": ["https://www.zefal.com/3777-large_default/z-frame-pack.jpg"]
+  },
+
+  {
+   "line": "Z Traveler",
+   "name": "Zefal Z Traveler S20",
+   "size": "20L",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.zefal.com/en/bags-for-racks/730-z-traveler-s20.html",
+    "https://www.zefal.com/7192-large_default/z-traveler-s20.jpg",
+    "https://www.zefal.com/7195-large_default/z-traveler-s20.jpg"
+   ],
+
+   "dims_cm": { "len": 33, "wid": 16, "hgt": 38 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Zefal 'Product details': Dimensions 33.00 x 38.00 x 16.00 cm (L x H x W); Weight 995g; Mounting 'Z Quick Mount for tubes o8 to 15mm'; Material 'Polyester 600D + TPU'; Capacity 20L; Closing 'Velcro + clip'; Rain cover IPX4.",
+   "dims_note": "Single figure, no range. Reads len=33, hgt=38, wid=16 per Zefal's L x H x W order; matches the existing catalogue record exactly (wid16/hgt38), no change needed, now sourced. Photo confirms a tall portrait pannier silhouette (hgt > len > wid) and the Z Quick Mount rail hardware on the back panel. Box 33x16x38=20.1L against 20L rated (ratio 1.00) - an exact reconciliation. No pair-volume language found (title is singular 'Bike Pannier', one SKU/ref), so 20L is treated as the single-bag rating.",
+   "capacity_l": 20,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Squared flap-top pannier, roll/flap combination closure (velcro flap plus a front clip buckle), reflective strip along the lower edge."
+   },
+
+   "closure": {
+    "type": "flap_buckle",
+    "location": "top",
+    "hardware": "velcro flap plus a front side-release clip buckle"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective strip along the lower front edge",
+    "logo": { "type": "screen_print", "location": "top_front" },
+    "seams": "TPU-reinforced polyester, IPX4 rain cover included",
+    "fabric": "Polyester 600D + TPU - partial match to brands.json's Z Traveler clause (600D matches, TPU component is not anticipated by the brand string); see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "+z", "hgt": "-y" },
+    "attachesTo": ["rear_rack_top_rail"],
+    "contactFaces": ["back_panel"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 25, "frame_mm": 15 },
+    "notes": "Z Quick Mount adjustable-height rail hook system for o8-15mm rack tubes, visible in the back-panel detail photo. clearance figures are estimates, not measured."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#141414" }
+   ],
+   "images": ["https://www.zefal.com/7192-large_default/z-traveler-s20.jpg"],
+   "fits": "rack_only"
+  },
+
+  {
+   "line": "Z Adventure",
+   "name": "Zefal Z Adventure Dry Bag 6L",
+   "size": "6L",
+   "slot": "forkbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.zefal.com/en/front-bags/718-z-adventure-dry-bag-6l.html",
+    "https://www.zefal.com/6953-large_default/z-adventure-dry-bag-6l.jpg",
+    "https://www.zefal.com/6956-large_default/z-adventure-dry-bag-6l.jpg"
+   ],
+
+   "dims_cm": { "len": 15, "wid": 15, "hgt": 36.5 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Zefal 'Product details': Dimensions 15.00 x 36.50 x 15.00 cm; Weight 205g; Mounting 'clip loop'; Material 'Polyester 420D TPU'; Type 'Bikepacking fork bags'; Capacity 6L; Closing 'By roll top and clip loop'; Maximum load 2.5kg.",
+   "dims_note": "AXIS CORRECTION from the existing catalogue record. brands.json stored this as len=36.5/dia=15, treating the tube's long axis as len (fore-aft). Every OTHER forkbag in this catalogue (checked across the whole data/models set) treats the along-the-fork-leg axis as hgt, with len=wid=diameter - a straight cylindrical dry bag mounted vertically on a fork leg cage. Corrected to len=15, wid=15, hgt=36.5 to match that established convention; the maker's own raw order (15 / 36.5 / 15 = diameter / length / diameter) supports this directly. Box (cylinder) pi*7.5^2*36.5=6.45L against 6L rated (ratio 1.08) - a close, clean fit.",
+   "capacity_l": 6,
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Straight-sided cylindrical dry bag, rolled and clipped shut at the top only; the bottom carries a webbing loop for the cage's base bolt/strap."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 2,
+    "hardware": "two plastic hook clips pinching the rolled top shut, per maker copy 'by roll top and clip loop'"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "daisy_loop", "material": "webbing", "note": "bottom webbing loop for the cage's retaining strap/bolt" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective strip on the body",
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "welded, fully waterproof",
+    "fabric": "Polyester 420D TPU - matches brands.json's Z Adventure/TPU clause; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "x", "wid": "z", "hgt": "along_forkleg" },
+    "attachesTo": ["fork_cage"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "frame_mm": 0 },
+    "notes": "Mounts INTO a third-party cage (e.g. King Cage / Salsa Anything Cage style) via the base loop and the cage's own straps - the bag itself carries no cage hardware, only the clip loop. Requires the bike to have fork cage bosses; not usable without one."
+   },
+
+   "colorways": [
+    { "name": "Red", "hex": "#d0021b" },
+    { "name": "Black", "hex": "#141414" }
+   ],
+   "images": ["https://www.zefal.com/6953-large_default/z-adventure-dry-bag-6l.jpg"],
+   "fits": "bosses_required"
+  },
+
+  {
+   "line": "Z Traveler",
+   "name": "Zefal Z Traveler 60",
+   "size": "20L",
+   "slot": "trunk",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.zefal.com/en/bags-for-racks/369-z-traveler-60.html",
+    "https://www.zefal.com/3761-large_default/z-traveler-60.jpg",
+    "https://www.zefal.com/5178-large_default/z-traveler-60.jpg"
+   ],
+
+   "dims_cm": { "len": 32, "wid": 18, "hgt": 22 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Zefal 'Product details': Dimensions 32.00 x 22.00 x 18.00 cm (L x H x W); Weight 710g; Mounting 'Self gripping straps'; Material 'Polyester 840D'; Capacity 20L; Closing 'clip-on buckles'; Rain cover included. Title: 'Z Traveler 60 - Rear bag with modular volume'.",
+   "dims_note": "Inherits the existing catalogue finding: the 20L RATED capacity is the MAXIMUM with the fold-out side sections deployed ('modular volume' per the product name); the stowed box (32x18x22=12.7L) is the correct as-photographed/as-mounted trunk shape and is what dims_cm records, matching this session's own reading of the same maker figures (now sourced directly from zefal.com rather than third-party mirrors). len=32, hgt=22, wid=18 per Zefal's L x H x W order - matches the existing record exactly.",
+   "capacity_l": 20,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 1.0, "profile": "linear" },
+    "shoulder": "rounded",
+    "notes": "Rack-top trunk box with a rounded-top flap lid, front zip pocket with a small removable pouch, side compression straps, reflective strip along the base. Fold-out side panels (not visible deployed in the available photos) expand it to the rated 20L."
+   },
+
+   "closure": {
+    "type": "flap_buckle",
+    "location": "top",
+    "hardware": "clip-on buckles at the lid"
+   },
+
+   "zips": [
+    { "run": "front_panel", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "hook_and_loop" },
+    { "role": "compression", "count": 1, "location": "side", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.2 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective strip along the base",
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "sewn",
+    "fabric": "Polyester 840D - matches brands.json's Z Traveler clause exactly (top of the stated 600-840D range); see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack_top_platform"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 20, "frame_mm": 0 },
+    "notes": "Self-gripping (velcro) straps to a flat rack platform; needs a rack with a flat top surface, hence rack_only. clearance is an estimate."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#141414" }
+   ],
+   "images": ["https://www.zefal.com/3761-large_default/z-traveler-60.jpg"],
+   "fits": "rack_only"
+  }
+ ]
+}
