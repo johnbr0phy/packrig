@@ -689,3 +689,28 @@ tube both), so those are per-product.
 `pannier.js` was the suggested starting point and it measures 62/62 clean, so
 its work is fidelity — silhouette, hardware, the stiffened back panels the
 `structure` field now exposes — not fitment.
+
+### The batch to run when the machine is free
+
+Track B was held on 8 Aug, deliberately: another session had three agents on the
+mobile pass and the box was 5.75 GB into swap on 8 GB. Geometry agents both read
+photos and drive a headless Chrome, which is the exact mix §6 says never to
+overlap. Nothing is lost by waiting — all of the above is committed and live.
+
+The sweep changes the grouping §5 proposes. Run these three first, in this
+order of importance rather than the old slot-family pairing:
+
+| Agent | Files | Why |
+|---|---|---|
+| `geo-downtube` | `downtube.js` | 0/12. One placement bug. Alone, because it is the only builder where every product fails. |
+| `geo-framefull` | `framefull.js` | 42/77, 35 of them a −0.2 to −0.8mm seatpost graze. Look for one over-generous clamp before touching any product. |
+| `geo-framehalf` | `framehalf.js` | 93/103, a real −8.3 to −20.3mm spread. Per-product. |
+
+Then the clean-but-unreviewed ten, which are fidelity work and can go in any
+order: `pannier.js` (62), `barbag.js` (74), `barroll.js` (56), `toptube.js`
+(100), `trunk.js` (17, 15 clean), `randobag.js` (11, 10 clean), `saddlebag.js`
+(44), `forkbag.js` (29).
+
+Give each agent `BUILDER-BRIEF.md` — its §1 now tells them to read `geomOf(p)`
+and `stiffnessOf(p)` rather than inventing taper constants, which is the whole
+reason the wiring went in first.
