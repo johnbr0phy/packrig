@@ -77,6 +77,8 @@
 .rig-act:focus-visible{outline:2px solid var(--accent,#ff7a45);outline-offset:2px}
 .rig-act.is-primary{background:rgba(255,122,69,.18);border-color:rgba(255,122,69,.55);color:#fff}
 .rig-act.is-bad{color:#ff8f7f}
+.rig-act.is-live{background:rgba(79,203,139,.16);border-color:rgba(79,203,139,.5);color:#bff0d6}
+.rig-fineprint{font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.45);margin:0}
 .rig-act.is-bad[data-armed='1']{background:rgba(255,92,77,.22);border-color:#ff5c4d;color:#fff}
 
 /* ---- notices ------------------------------------------------------------- */

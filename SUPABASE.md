@@ -55,6 +55,37 @@ create policy "delete own rigs" on public.rigs for delete using (auth.uid() = us
 -- by the insert policy anyway; this means it never has to.
 alter table public.rigs alter column user_id set default auth.uid();
 
+-- ---- the public gallery -------------------------------------------------
+-- Publishing is a flag on your own rig, plus a display name you choose. The
+-- account email is deliberately not part of this: it is the one thing an
+-- account holder never opted to make public.
+alter table public.rigs add column if not exists published    boolean not null default false;
+alter table public.rigs add column if not exists published_at timestamptz;
+alter table public.rigs add column if not exists author       text;
+
+create index if not exists rigs_published_idx
+  on public.rigs (published_at desc) where published;
+
+-- A second SELECT policy. Postgres ORs permissive policies together, so this
+-- adds "anyone may read published rigs" WITHOUT widening access to private
+-- ones — those are still owner-only via the policy above.
+drop policy if exists "read published rigs" on public.rigs;
+create policy "read published rigs" on public.rigs for select using (published);
+
+-- The gallery reads this VIEW, never the table, so a query cannot accidentally
+-- return user_id next to somebody's bike.
+--
+-- `security_invoker = true` is doing real work here: without it a view runs
+-- with its OWNER's rights and BYPASSES row-level security entirely, which
+-- would publish every private rig in the table. Do not remove it.
+create or replace view public.public_rigs
+  with (security_invoker = true) as
+  select id, name, author, rig, published_at
+  from public.rigs
+  where published;
+
+grant select on public.public_rigs to anon, authenticated;
+
 -- Keep updated_at honest even if a client forgets to send it.
 create or replace function public.touch_updated_at() returns trigger
   language plpgsql as $$
@@ -113,6 +144,24 @@ limited to a handful an hour, which is fine for you and not for real users — i
 this ever goes wider, set a proper SMTP sender under
 **Authentication → Emails**. You can switch confirmation off entirely under
 **Authentication → Providers → Email** while testing.
+
+### The gallery is public, and that has consequences
+
+Two free-text fields become visible to strangers: the rig's name and the
+display name of whoever published it. They are capped at 60 and 40 characters
+and are always rendered with `textContent`, so nothing anyone types can inject
+markup — but nothing stops someone publishing a rude name.
+
+There is no reporting or moderation queue, deliberately: building one before a
+single rig has been published would be inventing a problem. What you have
+instead is the dashboard. To take anything down:
+
+```sql
+update public.rigs set published = false where id = '…';
+```
+
+If the gallery ever gets real traffic, the things to add first are a report
+button and a rate limit on publishing — say, five per account per day.
 
 ### Password reset needs a redirect URL
 

@@ -35,14 +35,19 @@ const writeLocal = (rows) => {
 export function createRigStore(app, auth) {
   const cfg = backend();
 
-  async function rest(path, { method = 'GET', body, headers = {} } = {}) {
-    const token = await auth.token();
-    if (!token) throw new Error('Not signed in');
+  /**
+   * @param anon  true for calls that must work signed out. The gallery is
+   *   public by definition, so it authenticates with the anon key alone and
+   *   the row-level security policy decides what comes back.
+   */
+  async function rest(path, { method = 'GET', body, headers = {}, anon = false } = {}) {
+    const token = anon ? null : await auth.token();
+    if (!anon && !token) throw new Error('Not signed in');
     const res = await fetch(`${cfg.url}/rest/v1${path}`, {
       method,
       headers: {
         apikey: cfg.key,
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token || cfg.key}`,
         'Content-Type': 'application/json',
         Prefer: method === 'POST' ? 'return=representation' : 'return=representation',
         ...headers,
@@ -68,7 +73,7 @@ export function createRigStore(app, auth) {
           .sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''))
           .map((r) => ({ ...r, local: true }));
       }
-      const rows = await rest('/rigs?select=id,name,rig,updated_at&order=updated_at.desc');
+      const rows = await rest('/rigs?select=id,name,rig,updated_at,published,author&order=updated_at.desc');
       return (rows || []).map((r) => ({ ...r, local: false }));
     },
 
@@ -148,6 +153,48 @@ export function createRigStore(app, auth) {
       }
       writeLocal(rows);
       return { pushed };
+    },
+
+    // ---- the gallery -----------------------------------------------------
+
+    /** True when a gallery is possible at all — it needs shared storage. */
+    get galleryEnabled() { return !!cfg; },
+
+    /**
+     * Put a rig in the public gallery, or take it back out.
+     *
+     * `author` is a display name the publisher types, NOT their email. An email
+     * address is the one thing an account has that its owner did not choose to
+     * make public, and a gallery that leaks it is a gallery nobody should use.
+     * It is never selected by the gallery query and never leaves this device.
+     */
+    async setPublished(id, published, author) {
+      if (!remote()) throw new Error('Publishing needs an account — sign in first');
+      const body = {
+        published: !!published,
+        published_at: published ? new Date().toISOString() : null,
+      };
+      if (published) body.author = String(author || '').trim().slice(0, 40) || 'Anonymous';
+      const [row] = await rest(`/rigs?id=eq.${encodeURIComponent(id)}`, { method: 'PATCH', body });
+      return row;
+    },
+
+    /**
+     * Everything anyone has published, newest first. Works signed out — that is
+     * the whole point of a gallery.
+     *
+     * Reads the `public_rigs` VIEW, not the table: the view exposes only the
+     * columns a stranger should see, so a query can never accidentally return
+     * `user_id` alongside somebody's bike.
+     */
+    async gallery({ limit = 60, before = null } = {}) {
+      if (!cfg) return [];
+      const q = new URLSearchParams();
+      q.set('select', 'id,name,author,rig,published_at');
+      q.set('order', 'published_at.desc');
+      q.set('limit', String(limit));
+      if (before) q.set('published_at', `lt.${before}`);
+      return (await rest(`/public_rigs?${q}`, { anon: true })) || [];
     },
 
     /** Only meaningful signed out — signed in, the account is the count. */

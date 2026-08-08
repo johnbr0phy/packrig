@@ -12,7 +12,7 @@
  * this stays true.
  */
 
-import { applyRig, rigLitres, rigURL } from './rig.js';
+import { applyRig, rigLitres, rigURL, encodeRig } from './rig.js';
 
 const el = (t, c, txt) => {
   const n = document.createElement(t);
@@ -110,6 +110,14 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
   async function renderList(pk) {
     head(pk, 'My rigs', auth.signedIn ? 'On your account' : 'Saved in this browser');
     pk.append(accountBar());
+    if (store.galleryEnabled) {
+      const g = el('div', 'rig-account');
+      g.append(el('span', 'rig-acct-txt', 'See what other people are riding'));
+      const open = el('button', 'rig-link', 'Browse the gallery');
+      open.onclick = () => { mode = 'gallery'; notice = null; render(); };
+      g.append(open);
+      pk.append(g);
+    }
     const n = noticeEl(); if (n) pk.append(n);
 
     const save = el('div', 'rig-saverow');
@@ -179,11 +187,32 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
       share.onclick = () => guard(async () => {
         // A frozen snapshot: the link carries the rig, so your later edits
         // never change what someone else already opened.
-        const url = `${location.origin}${location.pathname}?r=${
-          (await import('./rig.js')).encodeRig(row.rig)}`;
+        const url = `${location.origin}${location.pathname}?r=${encodeRig(row.rig)}`;
         const ok = await copy(url);
         say(ok ? 'ok' : 'bad', ok ? 'Link copied' : 'Could not copy — select the URL bar instead');
       });
+
+      // Publishing needs shared storage and an account: a gallery is by
+      // definition something other people can read.
+      let pubBtn = null;
+      if (store.galleryEnabled && auth.signedIn && !row.local) {
+        const pub = el('button', 'rig-act' + (row.published ? ' is-live' : ''),
+          row.published ? 'Published' : 'Publish');
+        pub.title = row.published
+          ? `In the gallery as “${row.author || 'Anonymous'}” — click to take it down`
+          : 'Add this bike to the public gallery';
+        pub.onclick = () => {
+          if (row.published) {
+            guard(async () => {
+              await store.setPublished(row.id, false);
+              say('ok', `“${row.name || 'Untitled rig'}” is no longer in the gallery`);
+            });
+            return;
+          }
+          askAuthor(row);
+        };
+        pubBtn = pub;
+      }
 
       const del = el('button', 'rig-act is-bad', 'Delete');
       del.onclick = () => guard(async () => {
@@ -197,7 +226,107 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
         say('ok', 'Deleted');
       });
 
-      acts.append(load, overwrite, share, del);
+      acts.append(load, overwrite, share, ...(pubBtn ? [pubBtn] : []), del);
+      card.append(acts);
+      body.append(card);
+    }
+  }
+
+  /**
+   * Publishing asks for a display name once and remembers it. It is NOT the
+   * account email — an email is the one thing an account holder never chose to
+   * make public, and it never appears in the gallery or leaves this device.
+   */
+  function askAuthor(row) {
+    const pk = overlay?.firstElementChild;
+    if (!pk) return;
+    pk.replaceChildren();
+    head(pk, 'Publish to the gallery', `“${row.name || 'Untitled rig'}” will be visible to anyone.`);
+    const form = el('form', 'rig-form');
+    const who = el('input', 'rig-input');
+    who.type = 'text'; who.maxLength = 40; who.placeholder = 'Anonymous';
+    who.value = lastAuthor();
+    form.append(labelled('Shown as', who));
+    form.append(el('p', 'rig-fineprint',
+      'Your email is never shown. The bike, its name and this display name are public; '
+      + 'you can take it down again at any time.'));
+    const go = el('button', 'rig-save-btn is-wide', 'Publish');
+    go.type = 'submit';
+    form.append(go);
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      const author = who.value.trim().slice(0, 40) || 'Anonymous';
+      rememberAuthor(author);
+      mode = 'list';
+      guard(async () => {
+        await store.setPublished(row.id, true, author);
+        say('ok', `“${row.name || 'Untitled rig'}” is in the gallery`);
+      });
+    };
+    pk.append(form);
+    const alt = el('div', 'rig-alt');
+    const back = el('button', 'rig-link', 'Cancel');
+    back.onclick = () => { mode = 'list'; render(); };
+    alt.append(back);
+    pk.append(alt);
+    setTimeout(() => who.focus(), 0);
+  }
+
+  const AUTHOR_KEY = 'packrig_author';
+  const lastAuthor = () => { try { return localStorage.getItem(AUTHOR_KEY) || ''; } catch { return ''; } };
+  const rememberAuthor = (v) => { try { localStorage.setItem(AUTHOR_KEY, v); } catch { /* private mode */ } };
+
+  // ---- gallery -------------------------------------------------------------
+  async function renderGallery(pk) {
+    head(pk, 'Bike gallery', 'Rigs people have published. Load any one and make it yours.');
+    const n = noticeEl(); if (n) pk.append(n);
+
+    const back = el('div', 'rig-account');
+    back.append(el('span', 'rig-acct-txt', 'Anyone can browse this'));
+    const mine = el('button', 'rig-link', 'My rigs');
+    mine.onclick = () => { mode = 'list'; notice = null; render(); };
+    back.append(mine);
+    pk.append(back);
+
+    const body = el('div', 'rig-list');
+    pk.append(body);
+
+    let rows = [];
+    try { rows = await store.gallery(); }
+    catch (err) { body.append(el('p', 'rig-empty', err?.message || 'Could not load the gallery')); return; }
+
+    if (!rows.length) {
+      body.append(el('p', 'rig-empty', 'Nothing published yet. Save a bike, then hit Publish — yours would be the first.'));
+      return;
+    }
+
+    for (const row of rows) {
+      const card = el('div', 'rig-card');
+      const main = el('div', 'rig-main');
+      main.append(el('div', 'rig-title', row.name || 'Untitled rig'));
+      const bags = row.rig?.bags?.length || 0;
+      const l = rigLitres(row.rig, app.catalog);
+      main.append(el('div', 'rig-meta',
+        `by ${row.author || 'Anonymous'} · ${bags} bag${bags === 1 ? '' : 's'} · ${l.toFixed(1)} L · ${when(row.published_at)}`));
+      card.append(main);
+
+      const acts = el('div', 'rig-acts');
+      const load = el('button', 'rig-act is-primary', 'Try this bike');
+      load.onclick = () => guard(async () => {
+        const { fitted, missing } = applyRig(app, row.rig);
+        app.ui?.sync();
+        onLoaded?.();
+        close();
+        if (missing.length) {
+          console.warn('[packrig] gallery rig references bags no longer in the catalogue:', missing);
+        }
+      });
+      const share = el('button', 'rig-act', 'Copy link');
+      share.onclick = () => guard(async () => {
+        const ok = await copy(`${location.origin}${location.pathname}?r=${encodeRig(row.rig)}`);
+        say(ok ? 'ok' : 'bad', ok ? 'Link copied' : 'Could not copy');
+      });
+      acts.append(load, share);
       card.append(acts);
       body.append(card);
     }
@@ -309,16 +438,21 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
     const pk = overlay.firstElementChild;
     pk.replaceChildren();
     pk.classList.toggle('is-busy', busy);
-    if (mode === 'list') renderList(pk); else renderAuth(pk);
+    if (mode === 'list') renderList(pk);
+    else if (mode === 'gallery') renderGallery(pk);
+    else renderAuth(pk);
   }
 
   return {
     open(startMode = 'list') {
-      mode = auth.enabled ? startMode : 'list';
+      mode = (startMode === 'gallery' && store.galleryEnabled) ? 'gallery'
+        : auth.enabled ? startMode : 'list';
       notice = null;
       const pk = shell();
       pk.classList.toggle('is-busy', busy);
-      if (mode === 'list') renderList(pk); else renderAuth(pk);
+      if (mode === 'list') renderList(pk);
+      else if (mode === 'gallery') renderGallery(pk);
+      else renderAuth(pk);
     },
     close,
     /** Copy a link to the bike as it stands, without saving anything. */
