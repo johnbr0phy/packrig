@@ -118,10 +118,13 @@ the resolver is placing everything — these are fidelity problems, not fitment:
 
 | Slot | Products | Dropped | Clashing products | Under 15 mm to a tyre |
 |---|---:|---:|---:|---:|
-| seatpack | 79 | 0 | 13 | 9 |
+| seatpack | 79 | 0 | **0** (was 13) | **0** (was 9) |
 | saddlebag | 44 | 0 | 0 | 1 |
-| stembag | 38 | 0 | 3 | 0 |
+| stembag | 38 | 0 | **0** (was 3) | 0 |
 | forkbag | 29 | 0 | 0 | 0 |
+
+**seatpack and stembag are now done** — see §10. saddlebag, forkbag and the nine
+unaudited slots are not.
 
 (Counted as distinct *products*. An earlier version of this table counted
 clearance *entries*, which double-counts a bag that fouls both the seat tube and
@@ -391,17 +394,48 @@ rm -rf .bagshot.lock                       # only if a run was killed mid-render
 
 node tools/validate-dims.mjs               # implausible dimensions
 node tools/audit-slots.mjs                 # slot misclassification
-node tools/audit-fit.mjs                   # what the resolver drops
+node tools/audit-fit.mjs                   # what the resolver drops (slow: ~10 min)
+node tools/audit-exclusions.mjs            # no two excluded slots mounted at once
 node tools/_rand.mjs                       # 25x "Surprise me", reports page errors
 
+node tools/apply-models.mjs --dry          # models/ -> brands.json, preview
+node tools/apply-models.mjs                # ...then apply; re-run the clearance audits after
 node tools/apply-verified.mjs && node tools/export-csv.mjs   # after a data pass
-
-node tools/build-pages.mjs                 # -> docs/, then commit+push for Pages
-node tools/build-artifact.mjs              # -> build/packrig.html (self-contained)
 ```
 
-Live site: <https://johnbr0phy.github.io/packrig/> — served from `main` `/docs`,
-rebuilt by pushing.
+---
+
+## 9. Shipping — pushing source is NOT shipping
+
+The live site serves `docs/`, which is a **build artefact**, not the source. A
+`git push` of `src/` changes nothing that anyone can see. This was missed for
+ten consecutive commits — the whole model merge, the `fits` fix, both geometry
+passes and the slot-exclusion fix all sat in the repo while the live site served
+a build from hours earlier. It is easy to miss precisely because pushing feels
+like the finish line.
+
+```bash
+node tools/build-pages.mjs                 # regenerate docs/
+git add docs/ && git commit && git push    # this is what deploys
+node tools/build-artifact.mjs              # separate: build/packrig.html, for the Artifact
+```
+
+**Verify by hash, not by the API.** GitHub's Pages build record lags — it
+reported the previous commit as "latest built" while the new files were already
+being served. The hashes are the ground truth:
+
+```bash
+diff <(curl -s https://johnbr0phy.github.io/packrig/packrig.js | shasum -a 256) \
+     <(shasum -a 256 < docs/packrig.js) && echo "bundle is live"
+```
+
+And a hash only proves bytes moved. For anything behavioural, load the live URL
+cache-busted and assert on it — `window.__SLOTS`, the equipped set after a
+`randomKit`, the product count — the way `tools/audit-exclusions.mjs` does
+locally.
+
+Live site: <https://johnbr0phy.github.io/packrig/> — `main` `/docs`.
+Artifact: same app bundled to a single self-contained file, updated separately.
 
 ---
 
@@ -421,3 +455,59 @@ From `HANDOVER.md`, still true:
 - Calibrate any new validator threshold against published figures first — the
   old thresholds produced more false failures than the data did (21 of 33 in one
   chunk, 30 of 37 in another).
+
+---
+
+## 10. Done since this document was written
+
+Recorded so the next run does not redo it.
+
+**Catalogue — 22 of 50 brands, 521 of 702 products.** Added Miss Grape, Road
+Runner, Blackburn, Swift, Outer Shell, Venture, Gramm, Nuke Sunrise, Andrew The
+Maker, Alpkit, JPaks, Randi Jo and Atelier Velocidade, all by Sonnet reviewers
+against local photos. Not all `verified: true` — the small-maker tail genuinely
+does not publish dimensions, and those records say so rather than guessing.
+
+**`tools/apply-models.mjs`** — the missing link. Nothing in `src/` read
+`data/models/`, so 113 corrected dimensions and 110 `render.hgt_cm` values had
+never reached the app. `catalog.js` now draws from `render.hgt_cm` where present.
+
+**Three brand `fabric` strings were wrong** (Blackburn, Swift, Atelier) out of
+nine checked. That field substring-selects the rendered material, so one wrong
+word renders a whole brand in the wrong stuff. Worth checking for every brand.
+
+**`fits` filtering** hid 37 products where it should have hidden 7 — `rack_only`
+is a pannier, and the bike has a rack. `catalog.js` now tests an explicit
+`CANNOT_FIT` set.
+
+**`bagshot.mjs` now honours `noCollide`**, matching `resolve.js`. It had been
+measuring cargo-cage arms and rack hooks as if they were bag body, which
+invented 29 fork-bag tyre violations that did not exist.
+
+**stembag** took no bike reference at all and hung off its anchor with no lateral
+offset. Now derives the offset from `frameEdgeR[2]`. 30/38 → 38/38 clean.
+
+**seatpack** silhouette: the code held a constant radius across 55-65% of the
+bag — the fat tube. Now a continuous taper, shallow at the post and deepest at
+the raised tail (**that direction matters and I had it backwards once**; a
+`geometry` block in `data/models/apidura.json` describes it nose-to-tail
+reversed, so do not trust those blocks blindly). Needed three new placement
+clamps: post lean across the nose face, the tilt swinging the nose forward, and
+a frame floor at `framePoly[1]`. 13 clashing → 0, 9 tyre → 0.
+
+**seatpack/trunk exclusion** — `trunk` declared `excludes: []`, so a rack trunk
+could sit inside a seat pack. `tools/audit-exclusions.mjs` now guards every pair
+in the table and refuses to pass vacuously.
+
+**`tools/bagshot-q.mjs`** serialises renders behind a lock so concurrent
+geometry agents cannot put an 8 GB machine into swap.
+
+### Still open
+- The seat pack renders ~49 cm against a 42 cm spec — mostly collars and webbing
+  reaching to the post, but over the brief's tolerance.
+- The trunk builder draws bags that overhang the rack at both ends.
+- `geometry.taper` / `form` in the model records is richer than anything the
+  builders read. Wiring it through would replace several `vr.range()` guesses
+  with measured values — the brief's "variation driven by the data" requirement.
+- 16 brands have no photos **and** no image URLs; they need a sourcing pass
+  before review is possible at all.
