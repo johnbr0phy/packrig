@@ -35,9 +35,16 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   //
   // Floored at 0.18: below that `taperAndFlatten` pinches the tail to a knife
   // edge the roll closure then has nothing to sit on.
+  //
+  // `taperAndFlatten` only ever narrows toward the TAIL, so a record that puts
+  // the narrow end at the nose (4 of the 67 tapered seat packs do — reviewers
+  // disagree about which end is the nose) gets a constant section rather than a
+  // taper drawn the wrong way round. That is an approximation and it is the
+  // safe one; drawing it inverted would be a new bug.
   const geom = geomOf(p);
-  const tailWid = geom.taperRatio !== null
+  const tailWid = geom.taperNarrowEnd === 'tail'
     ? Math.min(Math.max(geom.taperRatio, 0.18), 1)
+    : geom.taperNarrowEnd ? 1
     : vr.range(0.30, 0.40);
   const profileR = (t) => {
     if (shape === 'cylindrical') {

@@ -80,11 +80,49 @@ export function geomOf(p) {
     shoulder: g.shoulder || null,
     profile: t?.profile || null,
     /**
-     * Tail extent as a fraction of the nose along the tapering axis, or null.
-     * Ratio, never absolute: it survives a dimension correction underneath it.
+     * The NARROW end as a fraction of the wide end, always in (0, 1]. Ratio,
+     * never absolute, so it survives a dimension correction underneath it.
      * 1 means no taper — a barrel — which is a real answer, not a missing one.
+     *
+     * Read it with `taperNarrowEnd`: reviewers do not agree on which end of a
+     * bag is its "nose". Seat pack records overwhelmingly write nose 1.0 →
+     * tail 0.33, but 13 of the 24 saddlebags and 4 seat packs write it the
+     * other way round — Ortlieb's Saddle-Bag is nose 0.45 → tail 1.0, meaning
+     * the end under the saddle nose is the pinched one. An earlier version of
+     * this helper returned `min(tail / nose, 1)`, which silently reported
+     * "no taper" for every one of those.
      */
-    taperRatio: nose !== null && tail !== null ? Math.min(tail / nose, 1) : null,
+    taperRatio: nose !== null && tail !== null ? Math.min(nose, tail) / Math.max(nose, tail) : null,
+    /** Which end `taperRatio` describes: 'tail' | 'nose' | 'none' | null. */
+    taperNarrowEnd: nose === null || tail === null ? null
+      : tail < nose ? 'tail' : tail > nose ? 'nose' : 'none',
+  };
+}
+
+/**
+ * Which world direction each catalogue axis points, from the record's
+ * `mount.axes`. `null` where unrecorded — 697 of 702 products have it.
+ *
+ * BUILDER-BRIEF Rule 2: `p.mm.len`/`wid`/`hgt` do not mean the same world axis
+ * in every slot, and three separate builders have shipped a 90-degree
+ * transposition by assuming they do. The block that settles it per product is
+ * this one, and until 8 Aug no builder could see it.
+ *
+ * `alongTube` is true for the `along_*` values, which name a tube rather than a
+ * direction; the builder has to resolve those against the bike itself.
+ */
+export function axesOf(p) {
+  const a = (p && p.axes) || {};
+  const one = (v) => (typeof v === 'string' && v ? v : null);
+  return {
+    len: one(a.len),
+    wid: one(a.wid),
+    hgt: one(a.hgt),
+    /** true when this axis runs fore-aft in the frame plane (±x). */
+    isForeAft: (k) => /^[-+]?x$/.test(String(a[k] ?? '')),
+    /** true when this axis runs across the bike (±z). */
+    isAcross: (k) => /^[-+]?z$/.test(String(a[k] ?? '')),
+    alongTube: (k) => /^along_/.test(String(a[k] ?? '')),
   };
 }
 
