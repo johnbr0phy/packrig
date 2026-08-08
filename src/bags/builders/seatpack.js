@@ -42,23 +42,25 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
       const r = t < 0.3 ? noseR + (tailR - noseR) * (t / 0.3) ** 0.6 : tailR * (1 - 0.55 * ((t - 0.3) / 0.7) ** 1.6);
       return Math.max(r, 2);
     }
-    // The comment above states the shape correctly; the code used to contradict
-    // it. It ran a small nose up to `tailR` by `belly` and then held that radius
-    // flat all the way to `shoulder` — a constant section across 55-65% of the
-    // bag, which is exactly why these read as a fat tube rather than a wedge
-    // (BUILDER-BRIEF §4, HANDOVER item 3).
+    // Depth runs the opposite way to width. The nose has to fit the gap between
+    // saddle and seatpost, so it is SHALLOW where it clamps the post and swells
+    // rearward to its full depth at the raised tail, which is the highest point
+    // of the bag. Width does the reverse (see `tailWid`): widest at the nose,
+    // bladed at the tail. That combination — flat-and-wide at the post, tall-and
+    // -narrow at the back — is the fin these packs actually cut.
     //
-    // A rail-and-post pack is DEEPEST right behind the saddle, where the rails
-    // and the compression cradle hold it, and falls away to a blade at the tail.
-    // So: a squared shoulder at t=0 with only a slight round-over, then a
-    // continuous taper, then the tail closes.
-    const bladeR = tailR * vr.range(0.30, 0.42);
-    if (t < 0.07) return tailR * (0.90 + 0.10 * (t / 0.07));
+    // What it must NOT be is what this drew before: a small nose reaching full
+    // radius by `belly` and then HOLDING it flat to `shoulder`, a constant
+    // section across 55-65% of the length. That is the fat tube BUILDER-BRIEF §4
+    // and HANDOVER item 3 both complain about. The fix is a continuous taper,
+    // not a reversed one.
+    const noseTip = tailR * vr.range(0.28, 0.40);
+    if (t < 0.05) return noseTip * (0.72 + 0.28 * (t / 0.05));
     if (t < shoulder) {
-      const k = (t - 0.07) / (shoulder - 0.07);
-      return tailR + (bladeR - tailR) * k ** vr.range(0.95, 1.15);
+      const k = (t - 0.05) / (shoulder - 0.05);
+      return noseTip + (tailR - noseTip) * k ** vr.range(0.88, 1.06);
     }
-    return bladeR * Math.sqrt(Math.max(0.0, 1 - ((t - shoulder) / (1 - shoulder)) ** 2));
+    return tailR * Math.sqrt(Math.max(0.0, 1 - ((t - shoulder) / (1 - shoulder)) ** 2));
   };
   // A roll closure is not a taper to a point: the body stops where the mouth is
   // and the folds take over. Running the lathe all the way to t=1 buried every
@@ -230,7 +232,12 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   const postXHere = postXAt(anchorPos.y);
   const runToAxle = Math.max(0, Math.min(len, postXHere - ctx.points.rearAxle.x));
   const droopAtAxle = runToAxle * Math.tan(tilt);
-  const tyreFloor = ctx.points.rearAxle.y + tyreOuter + 18 + profileR(belly)
+  // Measure the bag's depth AT the station above the axle, not at `belly`. The
+  // pack now swells rearward, so the deepest part of it is the part hanging over
+  // the wheel — sampling at the belly under-reads it by tens of millimetres.
+  const tAxle = Math.min(Math.max(runToAxle / len, 0), 1);
+  const depthOverTyre = Math.max(profileR(tAxle), profileR(belly));
+  const tyreFloor = ctx.points.rearAxle.y + tyreOuter + 18 + depthOverTyre
     + droopAtAxle - anchorPos.y;
   // Third floor, needed only since the nose became full-depth: a tapered nose
   // could never reach the frame, but a squared one hangs `noseDrop` below the
