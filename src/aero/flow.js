@@ -500,21 +500,45 @@ export function buildFlowField(bike, bags, opts = {}) {
     }
   }
 
-  function buildCSR(count, visit) {
-    const counts = new Int32Array(nCells);
-    for (let i = 0; i < count; i++) visit(i, (c) => { counts[c]++; });
-    const start = new Int32Array(nCells + 1);
+  // Scratch for buildCSR, reused across rebuilds. setYaw() re-grids on every
+  // tick of the panel's yaw slider, and at CELL = 0.18 that is ~100k cells;
+  // allocating four fresh Int32Arrays of that size per drag event cost ~7ms a
+  // step and handed the GC a large object on every pointermove.
+  let csrCounts = new Int32Array(0);
+  let csrCursor = new Int32Array(0);
+  const csrOut = [
+    { start: new Int32Array(0), items: new Int32Array(0), cap: 0 },
+    { start: new Int32Array(0), items: new Int32Array(0), cap: 0 },
+  ];
+
+  function buildCSR(slot, count, visit) {
+    if (csrCounts.length < nCells) {
+      csrCounts = new Int32Array(nCells);
+      csrCursor = new Int32Array(nCells);
+    } else {
+      csrCounts.fill(0, 0, nCells);
+    }
+    for (let i = 0; i < count; i++) visit(i, (c) => { csrCounts[c]++; });
+
+    const out = csrOut[slot];
+    if (out.start.length < nCells + 1) out.start = new Int32Array(nCells + 1);
+    const start = out.start;
     let total = 0;
-    for (let c = 0; c < nCells; c++) { start[c] = total; total += counts[c]; }
+    for (let c = 0; c < nCells; c++) { start[c] = total; total += csrCounts[c]; }
     start[nCells] = total;
-    const items = new Int32Array(total);
-    const cursor = start.slice(0, nCells);
-    for (let i = 0; i < count; i++) visit(i, (c) => { items[cursor[c]++] = i; });
-    return { start, items };
+    if (out.cap < total) {
+      // grow with slack so a yaw sweep does not reallocate at every step
+      out.items = new Int32Array(Math.ceil(total * 1.5) + 64);
+      out.cap = out.items.length;
+    }
+    const items = out.items;
+    csrCursor.set(start.subarray(0, nCells));
+    for (let i = 0; i < count; i++) visit(i, (c) => { items[csrCursor[c]++] = i; });
+    return out;
   }
 
   function rebuildGrids() {
-    const chunks = buildCSR(chunkCount, (i, fn) => {
+    const chunks = buildCSR(0, chunkCount, (i, fn) => {
       const o = i * C_STRIDE;
       const r = Math.min(cData[o + 8] * REACH + REACH_PAD, REACH_MAX);
       forCells(
@@ -525,7 +549,7 @@ export function buildFlowField(bike, bags, opts = {}) {
     });
     cStart = chunks.start; cItems = chunks.items;
 
-    const hulls = buildCSR(hullCount, (i, fn) => {
+    const hulls = buildCSR(1, hullCount, (i, fn) => {
       const o = i * H_STRIDE;
       const rb = hData[o + 7], wl = hData[o + 9], sup = hData[o + 8];
       // the wake cone, as its bounding box: from the body out to the tip,
