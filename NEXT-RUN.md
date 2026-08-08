@@ -564,6 +564,26 @@ I had guessed Nelson was the risk. It was Camper and SQR Slim. Worth remembering
 that `len >= wid` holding in a file says nothing about whether `mount.axes` is
 right — the two are independent, and only the axes block decides orientation.
 
+> **REOPENED and settled again, 8 Aug.** This section was half right and the
+> half it got wrong sat undetected because **nothing read `mount.axes`**, so no
+> conclusion it reached could show up on screen either way.
+>
+> It established the family convention — Carradice publish W × H × D with W
+> across the bike — and then exempted the Nelson and Barley from it, calling
+> them "genuinely deep fore-aft" and leaving their largest figure on `-x`. The
+> moment `saddlebag.js` started reading the block, the Nelson rendered as a
+> 44 cm-deep suitcase behind the saddle.
+>
+> Both evidence photos settle it: a Carradice side **pocket** faces the camera
+> when the camera is beside the bike, and that can only happen if the pockets
+> sit at the two ends of an axis running **across** the bike. Nelson and Barley
+> are now `len: z`, matching the Camper and the SQR Slim. The whole line is
+> consistent, which is what the convention implied all along.
+>
+> The lesson is not about Carradice. **A conclusion about data that no code
+> reads cannot be wrong yet** — it has nothing to be wrong against. Expect more
+> of these as the remaining builders start reading the blocks they were given.
+
 ---
 
 ## 12. What the overnight catalogue run learned
@@ -699,6 +719,30 @@ tube both), so those are per-product.
 `pannier.js` was the suggested starting point and it measures 62/62 clean, so
 its work is fidelity — silhouette, hardware, the stiffened back panels the
 `structure` field now exposes — not fitment.
+
+### saddlebag.js — reviewed 8 Aug, off the back of one bug report
+
+"The Shrew is a seatpost bag, not a saddle bag." It was rendering as a flat slab
+across the bike. Two faults, both slot-wide:
+
+- **`mount.axes` was never merged.** 697 records carry it, Rule 2 calls it the
+  block that decides orientation, and `apply-models.mjs` was dropping it, so
+  every builder hard-codes one mapping for its whole slot. 25 of the 44
+  saddlebags say `len` runs fore-aft; the builder said it runs across. Merged
+  now, along with `closure.type`.
+- **One shape for two families.** `buildSaddlebag` drew a rounded box with a
+  flap for everything, and 24 of the 44 are `tapered_wedge`/`teardrop` rolltops
+  — small seat packs. They now build as a lathe, deep under the saddle and
+  tapering to a rolled tail, plan-narrowed by the measured taper.
+
+Also fixed a bug in this morning's `geomOf`: `taperRatio` returned
+`min(tail / nose, 1)`, which reports "no taper" for the 13 saddlebags and 4 seat
+packs whose records put the narrow end at the nose. It returns narrow/wide now,
+with `taperNarrowEnd` naming the end.
+
+**The remaining eleven builders should each expect the same two questions:** is
+your slot really one shape, and are you reading `axesOf(p)` or assuming? Both
+answers are in the records already.
 
 ### The batch to run when the machine is free
 
