@@ -1,0 +1,160 @@
+/* ===========================================================================
+   The workbench — flow A. Lives inside the sheet shell (sheet.css), so this
+   file only styles what goes in the body.
+
+   Two columns: a permanent mount rail, and the bags for whichever mount is
+   selected. The rail is the navigation AND the progress indicator, which is
+   why it is worth 168px of a 720px sheet.
+   =========================================================================== */
+
+.wb{display:flex;gap:var(--s-4);align-items:flex-start;min-height:100%}
+
+/* ---- rail ---------------------------------------------------------------- */
+.wb-rail{
+  flex:0 0 168px;
+  display:flex;flex-direction:column;gap:2px;
+  position:sticky;top:0;
+  max-height:calc(100vh - 190px);overflow-y:auto;
+  padding-right:var(--s-1);
+}
+.wb-rail-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  padding:0 var(--s-2) var(--s-2);
+}
+.wb-rail-head .t-label{color:var(--ink-3)}
+.wb-count{
+  font:var(--t-data-s);font-variant-numeric:tabular-nums;color:var(--ink-2);
+}
+.wb-zone{
+  font:var(--t-label);letter-spacing:var(--tr-label);text-transform:uppercase;
+  color:var(--ink-4);padding:var(--s-3) var(--s-2) var(--s-1);
+}
+.wb-zone:first-of-type{padding-top:var(--s-1)}
+
+.wb-slot{
+  display:flex;flex-direction:column;gap:1px;
+  text-align:left;width:100%;
+  padding:var(--s-2);border:1px solid transparent;border-radius:var(--r-control);
+  background:transparent;color:var(--ink-2);cursor:pointer;
+  transition:background var(--d-micro) var(--ease-out),border-color var(--d-micro) var(--ease-out);
+}
+.wb-slot:hover{background:var(--fill-1)}
+.wb-slot:focus-visible{outline:2px solid var(--accent-ring);outline-offset:1px}
+.wb-slot-name{font:var(--t-title3);letter-spacing:var(--tr-title3);color:var(--ink-1)}
+.wb-slot-sub{
+  font:var(--t-micro);letter-spacing:var(--tr-micro);color:var(--ink-3);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+
+/* Fitted reads as a state, not as a disabled thing — you can still click it to
+   swap. A tick plus a left edge, so it survives a scene bright enough to wash
+   out a colour difference. */
+.wb-slot.is-fitted{border-color:transparent;background:var(--fill-1)}
+.wb-slot.is-fitted .wb-slot-name{color:var(--ink-1)}
+.wb-slot.is-fitted .wb-slot-name::before{content:'✓ ';color:var(--ok)}
+.wb-slot.is-fitted .wb-slot-sub{color:var(--ink-2)}
+
+/* Current is the one Ember thing in the rail. §3.4: one accent, two jobs. */
+.wb-slot.is-current{background:var(--accent-soft);border-color:var(--accent-ring)}
+.wb-slot.is-current .wb-slot-name{color:var(--ink-1)}
+.wb-slot.is-current .wb-slot-sub{color:var(--ink-2)}
+
+.wb-slot.is-none{opacity:.45;cursor:default}
+
+/* Blocked is not disabled. Swapping a bar roll for a bar bag is a real thing to
+   want; it just must never be where auto-advance sends you. */
+.wb-slot.is-blocked .wb-slot-name{color:var(--ink-3)}
+.wb-slot.is-blocked .wb-slot-sub{color:var(--warn)}
+.wb-slot.is-none:hover{background:transparent}
+
+/* ---- main --------------------------------------------------------------- */
+.wb-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:var(--s-3)}
+.wb-head{display:flex;align-items:flex-start;gap:var(--s-3)}
+.wb-head h3{margin:0;color:var(--ink-1)}
+.wb-sub{font:var(--t-caption);color:var(--ink-3);margin:2px 0 0}
+.wb-warn{font:var(--t-micro);letter-spacing:var(--tr-micro);color:var(--warn);margin:4px 0 0}
+.wb-remove{
+  margin-left:auto;flex:0 0 auto;
+  font:var(--t-micro);letter-spacing:var(--tr-micro);
+  background:var(--fill-1);border:1px solid var(--hairline);color:var(--bad);
+  border-radius:var(--r-control);padding:var(--s-2) var(--s-3);cursor:pointer;
+}
+.wb-remove:hover{background:var(--fill-2)}
+.wb-remove:focus-visible{outline:2px solid var(--accent-ring);outline-offset:2px}
+
+.wb-search{
+  width:100%;height:38px;padding:0 var(--s-3);
+  border:1px solid var(--hairline);border-radius:var(--r-control);
+  background:var(--fill-1);color:var(--ink-1);
+  font:var(--t-body);letter-spacing:var(--tr-body);
+}
+.wb-search::placeholder{color:var(--ink-3)}
+.wb-search:focus{outline:2px solid var(--accent-ring);outline-offset:1px}
+
+.wb-grid{
+  display:grid;gap:var(--s-3);
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  /* 103 cards is a real number in this catalogue; keep the ones off-screen
+     off the layout budget too. */
+  content-visibility:auto;
+}
+.wb-card{
+  display:flex;flex-direction:column;gap:2px;text-align:left;
+  padding:var(--s-2);border:1px solid var(--hairline);border-radius:var(--r-card);
+  background:var(--fill-1);color:var(--ink-2);cursor:pointer;
+  transition:border-color var(--d-micro) var(--ease-out),background var(--d-micro) var(--ease-out),
+             transform var(--d-press) var(--ease-out);
+  contain-intrinsic-size:150px 196px;
+}
+.wb-card:hover{background:var(--fill-2);border-color:var(--ink-4)}
+.wb-card:active{transform:scale(.985)}
+.wb-card:focus-visible{outline:2px solid var(--accent-ring);outline-offset:2px}
+.wb-card.is-on{border-color:var(--accent-ring);background:var(--accent-soft)}
+
+/* §8.1: 3:2, and `contain` not `cover` — a square crop slices the ends off a
+   seat pack or a bar roll, which are the two commonest shapes here. */
+.wb-plate{
+  aspect-ratio:3/2;width:100%;border-radius:var(--r-chip);overflow:hidden;
+  background:var(--plate);box-shadow:var(--plate-edge);
+  display:grid;place-items:center;margin-bottom:var(--s-1);
+}
+.wb-plate img{width:100%;height:100%;object-fit:contain;display:block}
+/* ~200 of 702 products have no photograph. A hole is not acceptable; this is
+   the placeholder until §8.3's generated silhouette plate exists. */
+.wb-plate.is-blank{background:var(--fill-2);box-shadow:none}
+.wb-plate.is-blank::after{content:'';width:34%;height:44%;border-radius:4px;border:1.5px dashed var(--ink-4)}
+
+.wb-brand{
+  font:var(--t-label);letter-spacing:var(--tr-label);text-transform:uppercase;color:var(--ink-3);
+}
+.wb-name{font:var(--t-title3);letter-spacing:var(--tr-title3);color:var(--ink-1);line-height:1.25}
+.wb-meta{display:flex;gap:var(--s-2);align-items:baseline;margin-top:2px}
+.wb-meta .num{font:var(--t-data-s);font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.wb-size{font:var(--t-micro);letter-spacing:var(--tr-micro);color:var(--ink-3)}
+.wb-empty{font:var(--t-body);color:var(--ink-3);padding:var(--s-5) 0}
+
+.wb-done{padding:var(--s-8) var(--s-4);text-align:center}
+.wb-done p{margin:0 0 var(--s-2);color:var(--ink-2)}
+.wb-done .t-title2{color:var(--ink-1)}
+
+/* The rig panel is entirely represented by the rail while the workbench is
+   open — two lists of the same sixteen mounts, side by side, is clutter. */
+#ui-root.wb-open .panel{opacity:0;pointer-events:none}
+
+@media (max-width:900px),(pointer:coarse){
+  .wb{flex-direction:column;gap:var(--s-3)}
+  .wb-rail{
+    flex:0 0 auto;width:100%;position:static;max-height:none;
+    flex-direction:row;overflow-x:auto;gap:var(--s-2);padding-bottom:var(--s-2);
+  }
+  /* On a phone the rail becomes a horizontal run of chips: the zone headings
+     and the fitted-bag sub-lines do not survive the turn, so drop them rather
+     than shipping a row of clipped text. */
+  .wb-rail-head,.wb-zone,.wb-slot-sub{display:none}
+  .wb-slot{
+    flex:0 0 auto;width:auto;padding:var(--s-2) var(--s-3);
+    border:1px solid var(--hairline);border-radius:var(--r-pill);
+  }
+  .wb-grid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+  #ui-root.wb-open .panel{display:none}
+}
