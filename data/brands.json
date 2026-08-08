@@ -20314,7 +20314,8 @@
     "liters": 1.8,
     "dims_cm": {
      "len": 20,
-     "dia": 10.5
+     "wid": 10.5,
+     "hgt": 10.5
     },
     "colors": [
      "#161616",
@@ -20383,7 +20384,8 @@
     "liters": 3.4,
     "dims_cm": {
      "len": 22,
-     "dia": 14
+     "wid": 14,
+     "hgt": 14
     },
     "colors": [
      "#161616",
@@ -20451,8 +20453,9 @@
     "size": "Medium",
     "liters": 0.9,
     "dims_cm": {
-     "hgt": 15,
-     "dia": 8
+     "len": 15,
+     "wid": 8,
+     "hgt": 8
     },
     "colors": [
      "#161616",
@@ -20506,8 +20509,9 @@
     "size": "Large",
     "liters": 1.65,
     "dims_cm": {
-     "hgt": 17,
-     "dia": 9.5
+     "len": 17,
+     "wid": 9.5,
+     "hgt": 9.5
     },
     "colors": [
      "#161616",
@@ -20726,8 +20730,8 @@
     "liters": 0.5,
     "dims_cm": {
      "len": 16,
-     "hgt": 9,
-     "wid": 7
+     "wid": 9,
+     "hgt": 7
     },
     "colors": [
      "#161616",
@@ -20779,9 +20783,9 @@
     "size": "Wald 137",
     "liters": 38,
     "dims_cm": {
-     "len": 36,
-     "hgt": 23.5,
-     "wid": 23
+     "len": 23,
+     "wid": 36,
+     "hgt": 13
     },
     "colors": [
      "#161616",
@@ -20848,7 +20852,12 @@
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-137-olive.jpg",
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-manivelle-olive.jpg",
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-137-black.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 13,
+     "basis": "published minimum of the 13-48cm range; no on-bike photo available to check against, so no turn-down count is asserted"
+    },
+    "fits": "basket"
    },
    {
     "slot": "randobag",
@@ -20857,9 +20866,9 @@
     "size": "Manivelle",
     "liters": 49,
     "dims_cm": {
-     "len": 39,
-     "hgt": 21.8,
-     "wid": 27
+     "len": 27,
+     "wid": 39,
+     "hgt": 11
     },
     "colors": [
      "#161616",
@@ -20926,7 +20935,12 @@
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-137-olive.jpg",
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-manivelle-olive.jpg",
      "https://www.wizard.works/wp-content/uploads/2021/01/alakazam-2025-137-black.jpg"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 11,
+     "basis": "published minimum of the 11-47cm range; no on-bike photo available"
+    },
+    "fits": "basket"
    },
    {
     "slot": "barbag",
@@ -33418,7 +33432,8 @@
     "images_remote": [
      "https://www.thule.com/-/p/TCWPxNRGRIMcxSJahD3S1AKRN2vNXTo8IttsheNGtgA/rs:fit/h:991/cb:1.4/w:991/plain/approved/std.lang.all/43/98/1384398.png",
      "https://www.thule.com/-/p/hpnKc0gfCn8_p63avWs8zLbvWypKvrsgqWSEC4WKH90/rs:fit/h:991/cb:1.4/w:991/plain/approved/std.lang.all/43/99/1384399.png"
-    ]
+    ],
+    "fits": "rack_only"
    },
    {
     "slot": "pannier",
@@ -33465,7 +33480,8 @@
     ],
     "images_remote": [
      "https://www.thule.com/-/p/Muy16PEXFJn6yOdfBtW8i96t8Kx2hsrCIWAccUkhDR0/rs:fit/h:1200/cb:2.1/w:1800/plain/approved/std.lang.all/43/84/1384384.png"
-    ]
+    ],
+    "fits": "rack_only"
    },
    {
     "slot": "pannier",
@@ -33517,7 +33533,8 @@
     ],
     "images_remote": [
      "https://www.thule.com/-/p/G6HIZSwDAfDYEOBX9Z_ncujIUOvGeHAV7zudaGRGUKQ/rs:fit/h:991/cb:1.4/w:991/plain/approved/std.lang.all/43/74/1384374.png"
-    ]
+    ],
+    "fits": "rack_only"
    },
    {
     "slot": "barbag",
@@ -33526,9 +33543,9 @@
     "size": "2L",
     "liters": 2,
     "dims_cm": {
-     "len": 12.4,
-     "hgt": 19.1,
-     "wid": 26.4
+     "len": 26.4,
+     "wid": 12.4,
+     "hgt": 19.1
     },
     "dims_state": "packed",
     "dims_raw": "10.4 x 4.9 x 7.5 in; 2 litres",
@@ -33636,7 +33653,8 @@
     "images_remote": [
      "https://www.thule.com/-/p/2WhzUFjFNue4hSPd10JPD4i7jfqXzej3Lmma-ufjGeE/rs:fit/h:1200/cb:1.6/w:1800/plain/approved/std.lang.all/42/86/1424286.png",
      "https://www.thule.com/-/p/Ih8o2Mm_VXpn-DysCN5oSSdMCZHDUEv2Iiu0SnYs8vU/rs:fit/h:991/cb:2.4/w:991/plain/approved/std.lang.all/42/89/1424289.png"
-    ]
+    ],
+    "fits": "rack_only"
    }
   ]
  },
@@ -33660,9 +33678,9 @@
     "size": "18L",
     "liters": 18,
     "dims_cm": {
-     "len": 19,
-     "hgt": 22,
-     "wid": 36
+     "len": 44,
+     "wid": 22,
+     "hgt": 19
     },
     "dims_state": "packed",
     "dims_raw": "22x19x36(44)cms / 8.7\"x7.5\"x14.2(17.3\")",
@@ -33716,9 +33734,9 @@
     "size": "9L",
     "liters": 9,
     "dims_cm": {
-     "len": 15,
-     "hgt": 18,
-     "wid": 29
+     "len": 29,
+     "wid": 18,
+     "hgt": 15
     },
     "dims_state": "packed",
     "dims_raw": "18x15x29 cm (7.1\"x6\"x11.4\")",
@@ -33913,7 +33931,8 @@
     ],
     "images_remote": [
      "https://carradice.co.uk/cdn/shop/files/SuperCCarradice-010-_1.jpg?v=1699181940"
-    ]
+    ],
+    "fits": "rack_only"
    }
   ]
  },
@@ -33937,8 +33956,8 @@
     "liters": 12,
     "dims_cm": {
      "len": 50,
-     "hgt": 20,
-     "wid": 19
+     "wid": 18,
+     "hgt": 16
     },
     "dims_state": "unknown",
     "dims_raw": "",
@@ -34025,9 +34044,9 @@
     "size": "4L",
     "liters": 4,
     "dims_cm": {
-     "len": 45,
-     "hgt": 14,
-     "wid": 7
+     "len": 50.5,
+     "wid": 13,
+     "hgt": 11
     },
     "dims_state": "unknown",
     "dims_raw": "",
@@ -34113,8 +34132,8 @@
     "liters": 15,
     "dims_cm": {
      "len": 30,
-     "hgt": 35,
-     "wid": 15
+     "wid": 15,
+     "hgt": 32
     },
     "dims_state": "unknown",
     "dims_raw": "15L per pannier, 260g per unit",
@@ -34145,7 +34164,13 @@
     ],
     "images_remote": [
      "https://www.altura.co.uk/cdn/shop/files/PRODUCTIMG_ALBVORULP_41737_6171a314-f22c-4383-9b81-afa28bc1cfc7.webp"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 32,
+     "rolls": 2,
+     "basis": "studio photo already shows the bag rolled shut with about two turns at the top; no unrolled figure is published to apply the minimum-of-range rule to, so the photographed rolled state is used directly."
+    },
+    "fits": "rack_only"
    }
   ]
  },
@@ -34201,7 +34226,13 @@
     ],
     "images_remote": [
      "https://banjobrothers.com/cdn/shop/products/waterproof_pannier_banjo_brothers_sku_01110_main_image.webp"
-    ]
+    ],
+    "render": {
+     "hgt_cm": 35.6,
+     "rolls": 1,
+     "basis": "no unrolled figure is published to apply the minimum-of-range rule to; the photo already shows the bag rolled shut with a single fold, so the photographed/published figure is used directly as the drawn height."
+    },
+    "fits": "rack_only"
    },
    {
     "slot": "seatpack",
@@ -34256,9 +34287,9 @@
     "size": "Small (2L)",
     "liters": 2,
     "dims_cm": {
-     "len": 11.4,
-     "hgt": 11.4,
-     "wid": 20.3
+     "len": 20.3,
+     "wid": 11.4,
+     "hgt": 11.4
     },
     "dims_state": "packed",
     "dims_raw": "120 cubic inches / 2.0 liters; 8\" L x 4.5\" W x 4.5\" H",
@@ -34381,7 +34412,8 @@
     ],
     "images_remote": [
      "https://banjobrothers.com/cdn/shop/products/01035_banjobros_racktopbag_A.jpg"
-    ]
+    ],
+    "fits": "rack_only"
    }
   ]
  },
