@@ -155,6 +155,16 @@ function swatchStyle(product, brand) {
   return cols[0] || '#5b6068';
 }
 
+/**
+ * Viewport shape, asked rather than sniffed. `compact` must stay in step with
+ * the media query of the same name in ui.css — it is what decides whether the
+ * appearance controls live in the bar or behind the Appearance sheet.
+ */
+const mql = (q) => (window.matchMedia ? window.matchMedia(q) : { matches: false, addEventListener() {} });
+const COMPACT = mql('(max-width: 900px), (pointer: coarse)');
+const PHONE = mql('(max-width: 560px)');
+const TOUCH = mql('(pointer: coarse)');
+
 export function initUI(app) {
   const root = document.getElementById('ui-root');
   root.innerHTML = '';
@@ -176,8 +186,32 @@ export function initUI(app) {
   const panel = el('div', 'panel glass');
   const head = el('header', 'panel-head');
   const countEl = elt('span', 'panel-count', '(0)');
-  head.append(elt('span', 'panel-title', 'On your bike'), countEl);
+  // On a phone the panel is a bottom sheet, and its header doubles as the
+  // handle: tap to peek at the bike, tap again to get the list back. The
+  // chevron, the running total and the "+" are inert on desktop — CSS only
+  // gives them a box below 560px.
+  const chevron = elt('button', 'sheet-chevron', '▾');
+  chevron.title = 'Collapse the kit list';
+  chevron.setAttribute('aria-label', 'Collapse the kit list');
+  const peekTotal = elt('span', 'peek-total', '');
+  const sheetAdd = elt('button', 'sheet-add', '+');
+  sheetAdd.title = 'Pick a mount point';
+  sheetAdd.setAttribute('aria-label', 'Add a bag');
+  sheetAdd.onclick = (e) => { e.stopPropagation(); openMountPicker(); };
+  head.append(chevron, elt('span', 'panel-title', 'On your bike'), countEl, peekTotal, sheetAdd);
   const listEl = el('div', 'bag-list');
+
+  let collapsed = false;
+  function setSheetCollapsed(next) {
+    collapsed = !!next;
+    panel.classList.toggle('collapsed', collapsed);
+    chevron.setAttribute('aria-expanded', String(!collapsed));
+    chevron.title = collapsed ? 'Show the kit list' : 'Collapse the kit list';
+  }
+  setSheetCollapsed(false);
+  head.onclick = () => { if (PHONE.matches) setSheetCollapsed(!collapsed); };
+  // back to a plain panel if the sheet layout stops applying
+  PHONE.addEventListener?.('change', (e) => { if (!e.matches) setSheetCollapsed(false); });
 
   const foot = el('div', 'panel-foot');
   const summary = el('div', 'kit-summary');
@@ -270,6 +304,9 @@ export function initUI(app) {
     chip.dataset.env = name;
     chip.title = `${name[0].toUpperCase() + name.slice(1)} environment`;
     chip.setAttribute('aria-label', `Environment: ${name}`);
+    // a title attribute is a hover affordance, so the name ships as text too;
+    // it only gets a box inside the appearance sheet, where there is room
+    chip.append(elt('span', 'env-label', name));
     chip.onclick = () => app.setEnv(name);
     envs.append(chip);
   }
@@ -280,11 +317,18 @@ export function initUI(app) {
   // One bar, one rhythm: build actions left, appearance right. "Surprise me"
   // drops to a quiet icon button — it was the loudest thing on screen for the
   // least consequential action.
-  dock.append(
-    btnRand, btnClear,
-    el('span', 'divider'),
+  //
+  // The three appearance groups are wrapped so a narrow viewport can lift them
+  // out of the bar in one move. The wrapper is `display: contents` on desktop,
+  // so the dock lays out exactly as it did before it existed.
+  const appearance = el('div', 'appearance');
+  appearance.append(
     paintGroup, el('span', 'divider'), bidonGroup, el('span', 'divider'), envGroup
   );
+  const btnAppearance = elt('button', 'btn quiet appearance-btn', 'Appearance');
+  btnAppearance.title = 'Frame, bidons and scene';
+  btnAppearance.onclick = () => openAppearance();
+  dock.append(btnRand, btnClear, btnAppearance, el('span', 'divider'), appearance);
   const bottom = el('div', 'bottom-bar glass');
   bottom.append(dock);
   root.append(bottom);
@@ -305,7 +349,11 @@ export function initUI(app) {
     canvas.removeEventListener('wheel', killHint);
   }
   if (!seen) {
-    hint = el('div', 'hint', 'Drag to orbit · scroll to zoom · add a bag from the panel');
+    // "scroll to zoom" means nothing to a thumb, and the panel it points at is
+    // a sheet sitting right under the message
+    hint = elt('div', 'hint', TOUCH.matches
+      ? 'Drag to orbit · pinch to zoom'
+      : 'Drag to orbit · scroll to zoom · add a bag from the panel');
     root.append(hint);
     setTimeout(killHint, 5000);
     canvas.addEventListener('pointerdown', killHint, { passive: true });
@@ -348,6 +396,9 @@ export function initUI(app) {
     overlay.remove();
     overlay = null;
     document.removeEventListener('keydown', onKey);
+    // the appearance controls are borrowed, not copied — put them back before
+    // the overlay that holds them is dropped on the floor
+    if (appearance.parentElement !== dock) dock.append(appearance);
   }
 
   function openOverlay(extraCls) {
@@ -402,6 +453,21 @@ export function initUI(app) {
     btn.onclick = () => { app.bags.remove(uiSlot); closeOverlay(); sync(); };
     return btn;
   }
+
+  /**
+   * Frame, bidon and scene colours, lifted out of the bar on a narrow screen.
+   * The controls themselves are moved, not rebuilt, so every listener and the
+   * `.on` state sync() paints survive the trip in both directions.
+   */
+  function openAppearance() {
+    const pk = openOverlay('appearance-sheet');
+    pk.append(pickerHead({ title: 'Appearance', sub: 'Frame · bidons · scene' }));
+    pk.append(appearance);
+  }
+  // a window that grows past the sheet breakpoint gets its bar controls back
+  COMPACT.addEventListener?.('change', (e) => {
+    if (!e.matches && appearance.parentElement !== dock) closeOverlay();
+  });
 
   /**
    * People arrive with one of two things in mind: a place on the bike they want
@@ -896,6 +962,8 @@ export function initUI(app) {
     paintSelection();
     // bring it into view when the list is long enough to scroll
     if (selectedSlot) {
+      // picking a bag off the bike while the sheet is peeking should show it
+      if (collapsed) setSheetCollapsed(false);
       listEl.querySelector(`.bag-card[data-slot="${CSS.escape(selectedSlot)}"]`)
         ?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
@@ -913,6 +981,7 @@ export function initUI(app) {
     const liters = Object.values(app.bags.equipped)
       .reduce((sum, e) => sum + (Number(e.product?.liters) || 0), 0);
     totalEl.textContent = `${liters.toFixed(1)} L`;
+    peekTotal.textContent = n > 0 ? totalEl.textContent : '';
     foot.classList.toggle('has-kit', n > 0);
     updateFade();
     envs.querySelectorAll('.env-chip').forEach((c) => c.classList.toggle('on', c.dataset.env === app.state.env));
@@ -921,5 +990,7 @@ export function initUI(app) {
   }
 
   sync();
-  return { sync, setSelected, setHovered, paintSelection };
+  // setSheetCollapsed is the hook for "only one sheet open at a time": the
+  // wind tunnel calls it rather than reaching into this panel itself.
+  return { sync, setSelected, setHovered, paintSelection, setSheetCollapsed, closeOverlay };
 }

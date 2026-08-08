@@ -111,6 +111,42 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   head.append(closeBtn);
   root.append(head);
 
+  // ---- mobile peek summary --------------------------------------------
+  // Phone bottom sheet opens collapsed to just this row — the two things
+  // that matter at a glance: the kit's watts cost and the single biggest
+  // offender you could actually leave at home. Everything else (the full
+  // CdA readout, waterfall, yaw slider, assumptions) is a tap away. This
+  // module doesn't know the viewport width — aero.css hides the whole bar
+  // outside the phone/coarse-pointer breakpoint, so it's built unconditionally.
+  const peekBar = el('div', 'aero-peek');
+  peekBar.setAttribute('role', 'button');
+  peekBar.tabIndex = 0;
+  peekBar.setAttribute('aria-label', 'Expand wind tunnel details');
+  peekBar.setAttribute('aria-expanded', 'false');
+  const peekHandle = el('div', 'peek-handle');
+  const peekRow = el('div', 'peek-row');
+  const peekCostValue = elt('span', 'peek-cost-value', '0');
+  const peekCostLabel = elt('span', 'peek-cost-label', 'more power, same speed');
+  const peekCost = el('div', 'peek-cost');
+  peekCost.append(peekCostValue, elt('span', 'peek-cost-unit', 'W'), peekCostLabel);
+  const peekOffenderName = elt('span', 'peek-offender-name', '');
+  const peekOffenderWatts = elt('span', 'peek-offender-watts', '');
+  const peekOffender = el('div', 'peek-offender');
+  peekOffender.append(peekOffenderName, peekOffenderWatts);
+  const peekChevron = elt('span', 'peek-chevron', '⌄');
+  peekRow.append(peekCost, peekOffender, peekChevron);
+  peekBar.append(peekHandle, peekRow);
+  root.append(peekBar);
+
+  function setExpanded(v) {
+    root.classList.toggle('expanded', v);
+    peekBar.setAttribute('aria-expanded', String(v));
+  }
+  peekBar.onclick = () => setExpanded(!root.classList.contains('expanded'));
+  peekBar.onkeydown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpanded(!root.classList.contains('expanded')); }
+  };
+
   const body = el('div', 'aero-body');
   root.append(body);
 
@@ -269,8 +305,21 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     const maxW = ranked.length ? ranked[0].watts : 1;
     // the "biggest offender" callout should point at something removable —
     // the frame is often the single largest bar, but you can't leave it home
-    const topKey = ranked.find((p) => !RESERVED.has(p.key))?.key;
+    const topPart = ranked.find((p) => !RESERVED.has(p.key));
+    const topKey = topPart?.key;
     const seen = new Set();
+
+    // Mirrors the same callout into the phone peek row (see aero.css) — an
+    // empty kit has no removable part at all, which is a real state (nothing
+    // fitted yet), not a bug, so it reads as an empty dash rather than a
+    // stale or misleading name.
+    if (topPart) {
+      peekOffenderName.textContent = topPart.label;
+      tweenText(peekOffenderWatts, topPart.watts, (v) => `${Math.round(v)} W`);
+    } else {
+      peekOffenderName.textContent = 'Nothing fitted';
+      peekOffenderWatts.textContent = '';
+    }
 
     ranked.forEach((p) => {
       seen.add(p.key);
@@ -402,6 +451,8 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     wattsSpeedEcho.textContent = String(Math.round(ride.speedKph));
 
     tweenText(dW.value, comparison.addedW, signedFmt(dW, 0));
+    tweenText(peekCostValue, comparison.addedW,
+      signedFmt({ labelEl: peekCostLabel, posLabel: 'more power, same speed', negLabel: 'less power, same speed' }, 0));
     tweenText(dKph.value, comparison.kphLost, signedFmt(dKph, 1));
     tweenText(dMin.value, comparison.minutesPer100km, signedFmt(dMin, 1));
 
@@ -441,8 +492,20 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     wfRows.clear();
     closeBtn.onclick = null;
     exitBtn.onclick = null;
+    peekBar.onclick = null;
+    peekBar.onkeydown = null;
     root.remove();
   }
 
-  return { el: root, update, setHighlight, dispose };
+  // Not in CONTRACT.md's Panel shape — added for the mobile bottom-sheet:
+  // forces the phone sheet back to its collapsed peek row (kit cost + biggest
+  // offender only). A no-op on desktop, where `.expanded` has no CSS effect.
+  // Exposed so the lead can reset this panel to its quiet state from outside
+  // (e.g. re-collapsing on re-entry) without reaching into this module's
+  // internals — see report for why nothing here calls it itself.
+  function collapse() {
+    setExpanded(false);
+  }
+
+  return { el: root, update, setHighlight, collapse, dispose };
 }

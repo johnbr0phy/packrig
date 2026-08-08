@@ -12,13 +12,18 @@ import { BagSystem, SLOTS } from './bags.js';
 import { loadCatalog } from './catalog.js';
 import { initUI } from './ui.js';
 import { initFocus } from './focus.js';
+import { applyRendererProfile, applyViewOffset, fitToBox, measureProfile } from './mobile.js';
 
 const params = new URLSearchParams(location.search);
 const SHOT_MODE = params.has('shot');
 
 const canvas = document.getElementById('scene');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: SHOT_MODE });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+// Decide the device profile BEFORE the post chain is built: `post` says which
+// passes to construct at all, and a GTAOPass that is merely disabled still
+// allocates its render targets — memory a phone has better uses for. On a
+// desktop pointer this returns today's exact settings.
+const profile = applyRendererProfile(renderer);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -31,15 +36,25 @@ const camera = new THREE.PerspectiveCamera(27, window.innerWidth / window.innerH
 
 // ---- Post pipeline: GTAO ambient occlusion, subtle bloom, SMAA ----------
 const composer = new EffectComposer(renderer);
-composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+composer.setPixelRatio(profile.pixelRatio);
 composer.addPass(new RenderPass(scene, camera));
-const gtao = new GTAOPass(scene, camera, window.innerWidth, window.innerHeight);
-gtao.updateGtaoMaterial({ radius: 0.2, distanceExponent: 1.5, thickness: 0.6, scale: 1.1, samples: 12 });
-composer.addPass(gtao);
-const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.11, 0.4, 1.08);
-composer.addPass(bloom);
+// GTAO is the first thing to go on a phone: it is the most expensive pass and
+// its contribution is subtlest at phone size. SMAA is the last, because
+// aliasing on 32 spokes is very visible. Measured cost at 393x852 on an M1:
+// all three at DPR 2 = 13.3ms; bloom+SMAA at DPR 1.5 = 4.5ms.
+let gtao = null;
+if (profile.post.gtao) {
+  gtao = new GTAOPass(scene, camera, window.innerWidth, window.innerHeight);
+  gtao.updateGtaoMaterial({ radius: 0.2, distanceExponent: 1.5, thickness: 0.6, scale: 1.1, samples: 12 });
+  composer.addPass(gtao);
+}
+let bloom = null;
+if (profile.post.bloom) {
+  bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.11, 0.4, 1.08);
+  composer.addPass(bloom);
+}
 composer.addPass(new OutputPass());
-composer.addPass(new SMAAPass(window.innerWidth, window.innerHeight));
+if (profile.post.smaa) composer.addPass(new SMAAPass(window.innerWidth, window.innerHeight));
 
 // ---- Bike --------------------------------------------------------------
 const bike = createBike({ paint: params.get('paint') || 'Slate' });
@@ -163,30 +178,64 @@ app.openWindTunnel = async () => {
     const { initAero } = await import('./aero/index.js');
     app.aero = initAero(app, {
       scene, camera, renderer, controls, composer,
-      passes: { gtao, bloom },
+      passes: { gtao, bloom },   // either may be null on a phone; tunnel.js no-ops
+      measure: measureProfile(),
     });
     app.bags.onChange(() => app.aero.onKitChange());
   }
   app.aero.toggle();
+  // One sheet at a time. On a phone both panels are bottom sheets anchored to
+  // the same edge, so the kit list has to get out of the way entirely rather
+  // than merely collapse — collapsed, its peek header still overlaps the HUD
+  // and still steals a hit-test region. ui.css hides it on this class.
+  document.body.classList.toggle('aero-open', app.aero.active);
   app.ui?.sync();
 };
+
+/**
+ * The view offset shifts the bike right of the DESKTOP kit panel. On a phone
+ * both panels are bottom sheets, there is nothing to the left to clear, and a
+ * fixed 165px is over a third of a 393px viewport — it shoved the bike off the
+ * right edge and left the render cropped to a rear wheel.
+ *
+ * This is the single owner of the offset. It is re-evaluated on resize and on
+ * the media query itself changing, so a device rotation cannot leave a stale
+ * offset behind. The query mirrors COMPACT in ui.js — keep them in step.
+ */
+const DESKTOP_LAYOUT = window.matchMedia('(min-width: 901px) and (pointer: fine)');
+
+/**
+ * Camera framing is owned by src/mobile.js. It knows the sheet lift, and it
+ * raises `controls.maxDistance` alongside the fit — the default ceiling of 9 is
+ * BELOW the portrait fit distance, so without that the clamp silently re-crops
+ * the bike and the fix looks like it did not work.
+ */
+const _fitBox = new THREE.Box3();
+function frameBike() {
+  if (SHOT_MODE) return;
+  applyViewOffset(camera);
+  _fitBox.setFromObject(bike.group);
+  if (!_fitBox.isEmpty()) fitToBox(camera, controls, _fitBox);
+}
 
 if (!SHOT_MODE) {
   app.ui = initUI(app);
   // hover half-selects a bag; clicking commits it and centres the zoom on it
   app.focus = initFocus(app, { camera, controls, renderer });
-  // centre the bike in the viewport area to the right of the mounts panel
-  camera.setViewOffset(window.innerWidth, window.innerHeight, -165, 0, window.innerWidth, window.innerHeight);
+  frameBike();
 } else {
   document.getElementById('ui-root').style.display = 'none';
 }
 
+DESKTOP_LAYOUT.addEventListener('change', () => {
+  frameBike();
+});
+
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
-  if (!SHOT_MODE) camera.setViewOffset(window.innerWidth, window.innerHeight, -165, 0, window.innerWidth, window.innerHeight);
-  camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
   composer.setSize(window.innerWidth, window.innerHeight);
+  frameBike();
 });
 
 let frames = 0;

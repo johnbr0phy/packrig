@@ -12,7 +12,7 @@ import { createRider } from './rider.js';
 import { createTunnel } from './tunnel.js';
 import { createAeroPanel } from './panel.js';
 
-export function initAero(app, { scene, camera, renderer, controls, composer, passes }) {
+export function initAero(app, { scene, camera, renderer, controls, composer, passes, measure }) {
   const { bike, bags } = app;
 
   const meter = createAeroMeter({ renderer, scene, bike, bags });
@@ -64,7 +64,12 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
     return !!key && !RESERVED_PARTS.has(key);
   }
 
-  const YAWS = [0, 5, 10, 15, 20];
+  // The device profile decides these: a phone can afford a smaller buffer.
+  // NOTE a shortened yaw sweep would change `cdaWeighted`, which the HUD
+  // presents as measured — so the profile keeps all five angles and only drops
+  // resolution, which does not move the number.
+  const YAWS = measure?.yaws || [0, 5, 10, 15, 20];
+  const RESOLUTION = measure?.resolution || 512;
 
   // The engine measures the bags-off rig itself, in the same passes, with the
   // racks and bottles in whatever state the current kit leaves them. Hiding the
@@ -102,7 +107,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
     // ~20ms hitch into five ~4ms slices. Under load the synchronous path was
     // measured as high as 90ms, which is a visible stall on every kit change.
     const seq = ++measureSeq;
-    const res = await meter.measureAsync({ yaws: YAWS });
+    const res = await meter.measureAsync({ yaws: YAWS, resolution: RESOLUTION });
     if (seq !== measureSeq) return; // a newer measurement started; drop this one
     // Total is baseline + bags by construction, which is what compare() has
     // always assumed and which the engine now asserts on every run.
