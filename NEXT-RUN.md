@@ -515,28 +515,27 @@ geometry agents cannot put an 8 GB machine into swap.
 
 ---
 
-## 11. HOLD — verify Carradice axes before the next `apply-models` run
+## 11. RESOLVED — Carradice axes
 
-`data/models/carradice.json` is committed as a record but its `dims_cm` has **not
-been merged into `brands.json`**, and it should not be until someone settles this
-by looking at a photo.
+Was a hold; settled 8 Aug and merged.
 
-The reviewer found and corrected two genuine transpositions (Nelson Longflap,
-Barley) against the maker's own "Dimensions (WxHxD)" labels. But the resulting
-file is internally inconsistent: **Nelson maps its longest axis (44cm) to `-x`,
-fore-aft, while Camper Longflap — the same product family — maps its longest
-(36cm) to `z`, across the bike.** Both cannot be right.
+The reviewer went back to the maker's own studio photos plus an independent
+BikeRadar review of the Camper ("fairly deep (23cm)", matching Carradice's own
+D=22 and not its W=36), which established that Carradice's "W x H x D" means
+**W across the bike, D fore-aft**, consistently across the line.
 
-This matters more than most data questions because it is the exact class of bug
-`HANDOVER.md` records for `buildSaddlebag`: *"`len` is fore-aft → suitcase
-projecting backward; should be wide across the bike."* A traditional Carradice
-saddlebag is wide across the bike and shallow fore-aft. If the 44cm goes to `-x`,
-the Nelson becomes a suitcase again.
+The contradiction was a real bug, and in its own work rather than in the data. It
+had been treating `len` as "always the fore-aft axis". MODEL-SPEC defines `len`
+as *the bag's longest horizontal run along its own body* — whichever of W/D is
+numerically larger — with `mount.axes` separately recording which world direction
+that longer axis points.
 
-`wid > len` is **not** a bug in itself — only 10 of 684 products have it, and for
-saddlebags, fork bags and bar bags it is usually correct. `mount.axes` is what
-decides, not the ordering of `dims_cm`.
+- **Nelson** (len 44 → `-x`) and **Barley** (29 → `-x`) are genuinely deep
+  fore-aft; both were already right.
+- **Camper** (36) and **SQR Slim** (29) are genuinely wide across the bike, and
+  both were mapping their dominant axis to `-x` — a suitcase sticking out behind
+  the saddle, the exact `buildSaddlebag` bug. Corrected to `z`.
 
-To settle it: open `assets/products/carradice/originals-nelson-longflap-saddlebag-18l-1.jpg`
-and the Camper equivalent, decide which face is across-bike, and make all five
-Carradice records agree. Then re-run `node tools/apply-models.mjs --dry`.
+I had guessed Nelson was the risk. It was Camper and SQR Slim. Worth remembering
+that `len >= wid` holding in a file says nothing about whether `mount.axes` is
+right — the two are independent, and only the axes block decides orientation.

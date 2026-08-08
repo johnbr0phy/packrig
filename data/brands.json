@@ -31518,7 +31518,7 @@
     "liters": 20,
     "dims_cm": {
      "len": 28,
-     "wid": 38,
+     "wid": 46.5,
      "hgt": 24
     },
     "colors": [
@@ -31531,7 +31531,12 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Closed width: 38 cm (15\"); Open width: 46.5 cm (18.3\"); Height of main compartment: 9\" (24 cm); Depth excluding front pocket: 28 cm; Depth including front pocket: 13.5\" (43.3 cm); 20L (1220.5 cu. in.) plus a 2L front pocket",
-    "dims_note": "TRANSPOSED AXES. The record had no source and read len 38 / wid 28. Arkel's published figures are 'closed width 38 cm' and 'depth excluding front pocket 28 cm', and for a seat pack len is the fore-aft dimension, so those two were the wrong way round: len = 28 (depth), wid = 38 (across-bike width). hgt 24 was already Arkel's 'height of main compartment' and is unchanged. The elongation rule still fails at 1.36 and that is a genuine shape, not an error - the Rollpacker is Arkel's unusually wide box-shaped rear bag carried on its own rigid rack, not a tapered saddle tube. 28 x 24 x 38 = 25.5L against a rated 20L (ratio 1.28). ROLL RANGE: Arkel give 'closed width 38 cm / open width 46.5 cm'; wid uses the CLOSED end per the closed-end rule, so this record is already compliant - do not swap it to 46.5. (The other Arkel range, depth 28cm excluding vs 43.3cm including the front pocket, is a with/without-pocket figure rather than a roll, and 28cm is the one that matches the 20L main-compartment rating; the front pocket is rated separately at 2L.)"
+    "dims_note": "TRANSPOSED AXES. The record had no source and read len 38 / wid 28. Arkel's published figures are 'closed width 38 cm' and 'depth excluding front pocket 28 cm', and for a seat pack len is the fore-aft dimension, so those two were the wrong way round: len = 28 (depth), wid = 38 (across-bike width). hgt 24 was already Arkel's 'height of main compartment' and is unchanged. The elongation rule still fails at 1.36 and that is a genuine shape, not an error - the Rollpacker is Arkel's unusually wide box-shaped rear bag carried on its own rigid rack, not a tapered saddle tube. 28 x 24 x 38 = 25.5L against a rated 20L (ratio 1.28). ROLL RANGE: Arkel give 'closed width 38 cm / open width 46.5 cm'; wid uses the CLOSED end per the closed-end rule, so this record is already compliant - do not swap it to 46.5. (The other Arkel range, depth 28cm excluding vs 43.3cm including the front pocket, is a with/without-pocket figure rather than a roll, and 28cm is the one that matches the 20L main-compartment rating; the front pocket is rated separately at 2L.)",
+    "render": {
+     "wid_cm": 38,
+     "basis": "Arkel's own published 'closed width' spec, corroborated by the on-bike photo showing the roll folded and buckled.",
+     "conflict": "46.5 cm is the honest unfurled/open mouth width per the new dims rule, but that is not the ridden state - Arkel's own 'closed width' figure is 38 cm, and the on-bike photo (Arkel_BikeBags_Rollpacker_OCEAN_BLUE_REAR) shows the roll folded down and FidLock-buckled shut, matching the narrower closed figure, not the open one."
+    }
    },
    {
     "type": "handlebar bag",
@@ -31539,7 +31544,7 @@
     "liters": 9,
     "dims_cm": {
      "len": 27,
-     "wid": 18,
+     "wid": 23,
      "hgt": 23
     },
     "colors": [
@@ -31556,8 +31561,8 @@
     "liters": 45,
     "dims_cm": {
      "len": 31,
-     "wid": 28,
-     "hgt": 45
+     "wid": 17,
+     "hgt": 40
     },
     "colors": [
      "#4A4A4A",
@@ -31565,7 +31570,12 @@
     ],
     "est": false,
     "slot": "pannier",
-    "src": "https://arkel.ca/products/orca-panniers"
+    "src": "https://arkel.ca/products/orca-panniers",
+    "render": {
+     "hgt_cm": 40,
+     "basis": "40cm is Arkel's own published minimum of the 40-60cm roll-height range; no on-bike photo showed a clearly shorter rolled state, so the rule's minimum is used directly with no override."
+    },
+    "fits": "rack_only"
    },
    {
     "type": "panniers",
@@ -31585,7 +31595,8 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Arkel spec: 'Volume: 54 L (3300 cu. in.)'; listing title 'GT-54 Classic Touring Panniers (Pair)'; scope of delivery one left and one right pannier",
-    "dims_note": "PAIR/SINGLE MISMATCH, not a dimension error. The 54L is Arkel's PAIR total - the listing ships a left and a right bag and Arkel names the model after the combined volume, exactly as it does with the Dolphin (24L each, 48L per pair). The stored dims are per-bag, so the checker was comparing one bag's box against two bags' capacity. Per bag the reconciliation is fine: 33.7 x 36.2 x 20 = 24.4L against 27L (ratio 0.90), the remainder taken up by the expanding outer pockets and the drawstring collar. Dims unchanged; litres corrected to the per-bag figure."
+    "dims_note": "PAIR/SINGLE MISMATCH, not a dimension error. The 54L is Arkel's PAIR total - the listing ships a left and a right bag and Arkel names the model after the combined volume, exactly as it does with the Dolphin (24L each, 48L per pair). The stored dims are per-bag, so the checker was comparing one bag's box against two bags' capacity. Per bag the reconciliation is fine: 33.7 x 36.2 x 20 = 24.4L against 27L (ratio 0.90), the remainder taken up by the expanding outer pockets and the drawstring collar. Dims unchanged; litres corrected to the per-bag figure.",
+    "fits": "rack_only"
    },
    {
     "type": "panniers",
@@ -31594,7 +31605,7 @@
     "dims_cm": {
      "len": 33,
      "wid": 15,
-     "hgt": 48
+     "hgt": 38
     },
     "colors": [
      "#1A1A1A",
@@ -31605,7 +31616,13 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Arkel spec: 'Total Volume (per bag): 24L'; sold as a single pannier ($179.99) or as a pair ($339.99)",
-    "dims_note": "PAIR/SINGLE MISMATCH, same defect as the GT-54. The product is named 'Dolphin 24L' and Arkel states 24L PER BAG, but the record carried 48 - the pair total - while the dims were for one bag. Arkel's page confirms both a single and a pair purchase option. The dims are right and need no change: 33 x 48 x 15 = 23.8L against 24L per bag, a 0.99 reconciliation. On the closed-end rule: Arkel publish NO height range for the Dolphin, only the single 24L per-bag rating, and the stored 48cm is the one height that reproduces it, so there is no range to take the closed end of and the rule does not bite here. If a range does surface later this is the record to revisit, since a rolled-down Dolphin is certainly shorter than 48cm."
+    "dims_note": "PAIR/SINGLE MISMATCH, same defect as the GT-54. The product is named 'Dolphin 24L' and Arkel states 24L PER BAG, but the record carried 48 - the pair total - while the dims were for one bag. Arkel's page confirms both a single and a pair purchase option. The dims are right and need no change: 33 x 48 x 15 = 23.8L against 24L per bag, a 0.99 reconciliation. On the closed-end rule: Arkel publish NO height range for the Dolphin, only the single 24L per-bag rating, and the stored 48cm is the one height that reproduces it, so there is no range to take the closed end of and the rule does not bite here. If a range does surface later this is the record to revisit, since a rolled-down Dolphin is certainly shorter than 48cm.",
+    "render": {
+     "hgt_cm": 38,
+     "rolls": 2,
+     "basis": "38cm is the side-elevation figure with the roll-top shown closed/rolled in the infographic itself, distinct from the 48cm fully-unfurled front-elevation figure - used directly, no override needed."
+    },
+    "fits": "rack_only"
    },
    {
     "type": "trunk/tote bag",
@@ -31623,7 +31640,8 @@
     ],
     "est": false,
     "slot": "trunk",
-    "src": "https://arkel.ca/products/tailrider-trunk-bag"
+    "src": "https://arkel.ca/products/tailrider-trunk-bag",
+    "fits": "rack_only"
    }
   ]
  },
@@ -33797,9 +33815,9 @@
     "size": "24L",
     "liters": 24,
     "dims_cm": {
-     "len": 22,
-     "hgt": 26,
-     "wid": 36
+     "len": 36,
+     "wid": 22,
+     "hgt": 26
     },
     "dims_state": "packed",
     "dims_raw": "36 x 26 x 22 cm (W x H x D)",
@@ -33853,9 +33871,9 @@
     "size": "16L",
     "liters": 16,
     "dims_cm": {
-     "len": 15,
-     "hgt": 36,
-     "wid": 29
+     "len": 29,
+     "wid": 15,
+     "hgt": 36
     },
     "dims_state": "packed",
     "dims_raw": "Dimensions (WxHxD): 29x36x15cms 11.4”x 14.2”x 5.9”; Capacity: 16L",
