@@ -4,8 +4,11 @@
 
 /** Mount slots. Each maps to a bike anchor and knows what it conflicts with. */
 export const SLOTS = {
-  seatpack:      { anchor: 'seatpack',  label: 'Seat pack',        excludes: ['saddlebag'] },
-  saddlebag:     { anchor: 'seatpack',  label: 'Saddle bag',       excludes: ['seatpack'] },
+  // A seat pack hangs off the rails and extends back OVER the rack deck, which
+  // is exactly where a trunk bag sits — the two occupy the same volume and no
+  // one runs both. `trunk` carries the mirror of this.
+  seatpack:      { anchor: 'seatpack',  label: 'Seat pack',        excludes: ['saddlebag', 'trunk'] },
+  saddlebag:     { anchor: 'seatpack',  label: 'Saddle bag',       excludes: ['seatpack', 'trunk'] },
   barroll:       { anchor: 'barroll',   label: 'Handlebar roll',   excludes: ['barbag', 'randobag'] },
   barbag:        { anchor: 'barroll',   label: 'Handlebar bag',    excludes: ['barroll', 'randobag'] },
   randobag:      { anchor: 'basket',    label: 'Rando / basket',   excludes: ['barroll', 'barbag'], needs: 'frontRack' },
@@ -20,7 +23,7 @@ export const SLOTS = {
   downtube:      { anchor: 'downtube',  label: 'Downtube bag',     excludes: [] },
   pannierL:      { anchor: 'pannierL',  label: 'Pannier (L)',      excludes: [], products: 'pannier', needs: 'rearRack' },
   pannierR:      { anchor: 'pannierR',  label: 'Pannier (R)',      excludes: [], products: 'pannier', needs: 'rearRack' },
-  trunk:         { anchor: 'rackTop',   label: 'Rack trunk bag',   excludes: [], needs: 'rearRack' },
+  trunk:         { anchor: 'rackTop',   label: 'Rack trunk bag',   excludes: ['seatpack', 'saddlebag'], needs: 'rearRack' },
 };
 
 export function productSlotFor(uiSlot) {

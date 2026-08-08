@@ -106,6 +106,7 @@ const app = {
 };
 window.app = app;
 window.__THREE = THREE;   // headless audits need it to measure bounds
+window.__SLOTS = SLOTS;   // tools/audit-exclusions.mjs reads the exclusion table
 
 // ---- Boot --------------------------------------------------------------
 let readyResolve;

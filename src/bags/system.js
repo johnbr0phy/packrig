@@ -364,7 +364,14 @@ export class BagSystem {
     try {
       for (const step of plan) {
         if (rnd() > step.roll) continue;
-        const uiSlot = pick(step.slots);
+        let uiSlot = pick(step.slots);
+        // The exclusion table would let a trunk bag evict the seat pack chosen
+        // in the first step — correct, but it silently throws away a bag the
+        // plan already committed to and leaves the rack area empty-looking.
+        // Rear carrying is either/or, so take the panniers instead.
+        if (uiSlot === 'trunk' && (this.equipped.seatpack || this.equipped.saddlebag)) {
+          uiSlot = 'pannierPair';
+        }
         if (uiSlot === 'pannierPair') {
           const opts = productsForSlot(this.catalog, 'pannier');
           if (opts.length) {
