@@ -218,6 +218,11 @@
 }
 .aero-exit-btn:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.24); }
 
+/* ---- mobile peek summary ---------------------------------------------------
+   Built unconditionally by panel.js; hidden here by default so desktop never
+   sees it. Only the phone breakpoint below turns it back on. */
+.aero-peek { display: none; }
+
 /* ---- motion --------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   .wf-fill { transition: none; }
@@ -237,4 +242,104 @@
   .cda-value { font-size: 32px; }
   .watts-value { font-size: 24px; }
   .delta-value { font-size: 16px; }
+}
+
+/* ---- phone: bottom sheet ----------------------------------------------------
+   MOBILE.md's contract: full width minus a 12px gutter, rounded top corners
+   only, max-height 55vh, internally scrollable, sitting above the bottom bar.
+   The bike keeps the upper half of the screen — this is the one mode where
+   watching the smoke matters more than reading the numbers, so it opens
+   collapsed to a two-line peek (kit cost + biggest offender) rather than the
+   full CdA-led desktop layout. --bar-h/--bar-bottom are ui.css's own tokens,
+   read live so this tracks whatever ui-mobile sets them to on phone, not a
+   value re-guessed here.
+   Width alone doesn't catch a landscape phone (852x393 is "tablet" width per
+   MOBILE.md's table but is unambiguously a phone) — the short + coarse
+   clause exists specifically for that case. */
+@media (max-width: 560px), ((pointer: coarse) and (max-height: 480px)) {
+  .aero-panel {
+    top: auto;
+    /* max() with env(safe-area-inset-*), matching ui.css's own phone idiom
+       for the kit sheet — a notch or rounded corner eats into the 12px
+       gutter otherwise */
+    left: max(var(--gutter, 12px), env(safe-area-inset-left));
+    right: max(var(--gutter, 12px), env(safe-area-inset-right));
+    bottom: calc(var(--bar-h, 56px) + max(var(--bar-bottom, 28px), env(safe-area-inset-bottom)) + 10px);
+    width: auto;
+    max-height: 55vh;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  /* ---- peek/expand ------------------------------------------------------
+     Collapsed (peek) is the entry state: header + this bar only, nothing
+     else. Expanding reveals the full .aero-body (everything from CdA down
+     through assumptions) up to the 55vh cap, scrollable. */
+  .aero-peek {
+    display: flex; flex-direction: column; gap: 9px;
+    padding: 8px 16px 14px; min-height: 44px; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .peek-handle {
+    align-self: center; width: 36px; height: 4px; border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22); flex: none;
+  }
+  .peek-row { display: flex; align-items: center; gap: 10px; }
+  .peek-cost { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 5px; flex: none; }
+  .peek-cost-value {
+    font-size: 22px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; line-height: 1;
+  }
+  .peek-cost-unit { font-size: 12px; font-weight: 600; color: var(--ink-dim); }
+  .peek-cost-label { flex-basis: 100%; font-size: 10px; color: var(--ink-faint); line-height: 1.3; }
+  .peek-offender {
+    flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-end;
+    gap: 2px; text-align: right; padding-left: 8px; border-left: 1px solid rgba(255, 255, 255, 0.09);
+  }
+  .peek-offender-name {
+    font-size: 11.5px; font-weight: 600; color: var(--ink);
+    max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .peek-offender-watts { font-size: 13px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .peek-chevron { flex: none; color: var(--ink-faint); font-size: 13px; transition: transform 0.2s; }
+  .aero-panel.expanded .peek-chevron { transform: rotate(180deg); }
+
+  /* everything below the peek row is the "below the fold" material — the
+     full CdA readout, waterfall, yaw slider and assumptions block */
+  .aero-body { display: none; }
+  .aero-panel.expanded .aero-body { display: block; }
+  .aero-foot { display: none; }
+  .aero-panel.expanded .aero-foot { display: block; }
+
+  /* Pin header/peek/footer to their content size and let only .aero-body
+     absorb the shrink. Without this, expanding on a short viewport (55vh of
+     393px landscape is ~216px, nowhere near enough for every section) makes
+     the flex column shrink EVERY child including this one — .aero-peek has
+     no scroll affordance of its own, so its wrapped two-line label just
+     overflowed down into the CdA section sitting right underneath it. Only
+     .aero-body gets `overflow-y: auto` (see the base rule above), so it's
+     the only child that can safely give up space. */
+  .aero-head, .aero-peek, .aero-foot { flex: none; }
+  .aero-panel.expanded .aero-body { flex: 1 1 auto; min-height: 0; }
+}
+
+/* ---- touch: 44px minimum slider targets --------------------------------
+   `(pointer: coarse)` on its own (not gated to phone width) per MOBILE.md —
+   a tablet in landscape is still a thumb, not a cursor. The visible dot
+   stays the same size as desktop's; only the invisible hit area grows, via
+   a radial-gradient fill rather than box-shadow so the drop-shadow below
+   traces the dot's own alpha instead of casting a shadow across the whole
+   44px circle. */
+@media (pointer: coarse) {
+  .aero-slider { height: 8px; margin: 20px 0; touch-action: none; }
+  .aero-slider::-webkit-slider-thumb {
+    width: 44px; height: 44px;
+    background: radial-gradient(circle, var(--accent) 0 7px, transparent 7px);
+    box-shadow: none;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
+  }
+  .aero-slider::-moz-range-thumb {
+    width: 44px; height: 44px; border: none;
+    background: radial-gradient(circle, var(--accent) 0 7px, transparent 7px);
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
+  }
+  .aero-slider-row { margin-top: 16px; }
 }
