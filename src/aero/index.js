@@ -20,8 +20,11 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
   rider.setOpacity(0);
   bike.frameGroup.add(rider.group);
 
-  let flow = buildFlowField(bike, bags, { yawDeg: 0 });
-  const smoke = createSmoke({ flow, bounds: flow.bounds });
+  let flow = buildFlowField(bike, bags, { yawDeg: 0, rider: rider.group });
+  // bikeBounds, not the padded 5m flow domain: the rake is sized and placed off
+  // the BIKE's extent, and handing it the domain would build a machine the size
+  // of the room.
+  const smoke = createSmoke({ flow, bounds: flow.bikeBounds });
   scene.add(smoke.group);
   smoke.setEnabled(false);
 
@@ -121,7 +124,12 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
   }
 
   function rebuildFlow() {
-    flow = buildFlowField(bike, bags, { yawDeg });
+    // Pass the rider EXPLICITLY. setOpacity(0) leaves group.visible false, and
+    // enter() builds the field before the fade has started — so an implicit
+    // visibility-based pickup would leave the single biggest blocker on the
+    // bike out of the flow until the next kit or yaw change. buildFlowField
+    // counts an explicitly-passed rider regardless of visibility, for this.
+    flow = buildFlowField(bike, bags, { yawDeg, rider: rider.group });
     smoke.rebuild(flow);
   }
 
