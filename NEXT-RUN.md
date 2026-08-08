@@ -5,11 +5,15 @@ What the interrupted agent run was doing, what actually landed, and what is left
 Written 2026-08-07. Companion to `HANDOVER.md` (which is still accurate on
 traps and data-pipeline detail — read both).
 
-> **STATUS, 8 Aug — the catalogue track is DONE.** All 50 brands are reviewed
-> and 700 of 702 products are merged and live. Sections 1-4 below describe the
-> state on the night of the crash and are kept as the record of what happened;
-> **for what is actually true now, read §10 and §12.** The two unmerged products
-> are Bags by Bird's duplicate "Better Half Framebag" entries, §12.
+> **STATUS, 8 Aug (later) — the catalogue track is DONE and now WIRED.** All 50
+> brands are reviewed and **702 of 702** products merge cleanly; the last two
+> were Bags by Bird's duplicate "Better Half Framebag" entries and they are
+> fixed. Sections 1-4 below describe the state on the night of the crash and are
+> kept as the record of what happened; **for what is actually true now, read
+> §10, §12 and §13.**
+>
+> §13 is the new part: the records' `geometry` and rigidity now reach the
+> builders, and **every slot has been swept**. Start there — it has the numbers.
 >
 > Still untouched: the **UI rework** (§5 Track C — `DESIGN-SYSTEM.md` is written
 > and none of it is implemented) and **11 of 13 geometry builders** (§5 Track B —
@@ -592,9 +596,96 @@ independent. Carradice's Camper and SQR Slim both had a sane-looking dims triple
 while pointing their dominant axis fore-aft — a suitcase behind the saddle.
 
 ### Still open after this run
-- **Rigid vs soft** is now recorded for several brands (Thule Paramount, EVOC's
-  BOA packs, all five Cedaero products) and nothing reads it. `deform.js` should.
+- ~~**Rigid vs soft** is now recorded for several brands and nothing reads it.~~
+  Done — §13.
 - Lezyne **Caddy Sack M** has no visible mounting hardware in any photo and no
   attachment system in the maker copy, yet sits in the `downtube` slot.
 - VAUDE **Aqua Back Plus** publishes a 31cm depth that the reviewer could not
   confirm against the studio photo — unusually deep for a pannier.
+
+---
+
+## 13. The records reach the builders, and every slot is swept
+
+### The wiring (done)
+
+`tools/apply-models.mjs` used to carry only `dims_cm`, `render` and `fits`. It
+now also merges the machine-readable half of each `geometry` block — **699
+products, 386 of them with a taper** — validated against MODEL-SPEC's
+vocabulary, and a `structure` class. `geometry.notes` is deliberately not
+carried: prose for a human, ~180 KB on the wire, and it is the field the Apidura
+seat pack record has backwards.
+
+Read it in a builder through `identity.js`:
+
+```js
+const geom  = geomOf(p);        // form, crossSection, shoulder, profile, taperRatio
+const stiff = stiffnessOf(p);   // 'soft' | 'semi' | 'rigid'
+soft(geo, main, { amp, freq, seed, stiffness: stiff });
+```
+
+`soft()` honours it: `semi` takes 40% of the noise and bulge, `rigid` skips the
+displacement pass entirely. All 13 builders pass it. `seatpack.js` reads
+`taper.tail` instead of `vr.range(0.30, 0.42)`.
+
+**Rigidity had no field in the spec**, so 131 records wrote it as prose across
+six different keys. `tools/lib/stiffness.mjs` classifies it — 11 rigid, 82 semi
+— and `--stiffness` prints the sentence behind every call. It is not a grep for
+`/rigid/`: the commonest thing these records say is that the *hardware* is rigid
+and the *bag* is not, and a grep gets Thule's limp Shield pannier exactly
+backwards. `details.structure_class` is now in MODEL-SPEC as the field a
+reviewer should write; where it exists the prose matching is skipped.
+
+Two traps found doing it, both worth carrying:
+
+- **A `bulge` that positions the bag is not a bulge.** `toptube.js` hollowed its
+  underside through the `bulge` callback so the tube nested into it. `rigid`
+  skips that pass — five structured top tube bags would have sat *on* the tube.
+  It is carved into the geometry now. Check any other builder before you make it
+  conditional on stiffness.
+- **The user-facing summary of the records was looser than the records.** EVOC's
+  two BOA packs are described as rigid, but the record itself says "the fabric
+  body itself is a soft rolltop tube" and only the BOA bracket is hard. They
+  classify `soft`, which is what the record actually says. Same for Cedaero:
+  two of the five are rigid, one semi, and the two custom frame packs say
+  nothing at all.
+
+### The sweep — all 13 slots, `--no-shots`, post-merge
+
+This is phase 0 of §6, and it is done. **Three builders have real defects and
+the other ten are clean.** Numbers, not estimates:
+
+| Slot | Clean | Products | Worst |
+|---|---:|---:|---|
+| **downtube** | **0** | **12** | **down tube −24.8mm, front tyre −22.0mm** |
+| **framebag_full** | **42** | **77** | seatpost −0.8mm (35 products, all −0.2 to −0.8) |
+| **framebag_half** | **93** | **103** | down tube −20.3mm |
+| trunk | 15 | 17 | — |
+| randobag | 10 | 11 | front tyre −1.8mm |
+| toptube | 100 | 100 | clean |
+| barbag | 74 | 74 | clean |
+| barroll | 56 | 56 | clean |
+| pannier | 62 | 62 | clean |
+| seatpack | 78 | 78 | clean |
+| saddlebag | 44 | 44 | clean |
+| forkbag | 29 | 29 | clean |
+| stembag | 38 | 38 | clean |
+| toptube_rear | 1 | 1 | clean |
+
+**Start Track B with `downtube.js`.** Every one of its 12 products is buried
+23–25 mm into the down tube and most also cut into the front tyre. That is
+`HANDOVER.md`'s long-standing "downtube bag hits the front wheel", and the
+uniformity of the depth says it is one placement bug, not twelve.
+
+**`framebag_full` next, but read the numbers first.** 35 products all graze the
+seatpost between −0.2 and −0.8 mm. Per this project's own lesson — a constant
+reading across many products is a signature of the *measurement*, not the thing
+measured — that is one clamp being half a millimetre generous, not 35 bags.
+It is cheap to fix and it clears 45% of the slot.
+
+`framebag_half`'s 10 are a genuine spread (−8.3 to −20.3 mm, seat tube and down
+tube both), so those are per-product.
+
+`pannier.js` was the suggested starting point and it measures 62/62 clean, so
+its work is fidelity — silhouette, hardware, the stiffened back panels the
+`structure` field now exposes — not fitment.
