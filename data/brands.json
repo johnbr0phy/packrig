@@ -32749,7 +32749,7 @@
     "liters": 2.5,
     "dims_cm": {
      "len": 35,
-     "wid": 8,
+     "wid": 12.7,
      "hgt": 12
     },
     "colors": [
@@ -32781,9 +32781,10 @@
     "name": "Buckhorn Custom Rattler Stem Bag",
     "liters": 1.2,
     "dims_cm": {
-     "len": 18,
-     "wid": 10,
-     "hgt": 10
+     "len": 9,
+     "wid": 9,
+     "hgt": 18,
+     "dia": 9
     },
     "colors": [
      "#c0392b",
@@ -32798,8 +32799,8 @@
     "name": "Buckhorn Waxed Canvas Panniers",
     "liters": 11,
     "dims_cm": {
-     "len": 30,
-     "wid": 10,
+     "len": 29.8,
+     "wid": 10.2,
      "hgt": 30.5
     },
     "colors": [
@@ -32811,15 +32812,18 @@
     "dims_verified": "maker",
     "dims_state": "unrolled",
     "dims_raw": "11-3/4\" Wide x 12\"-17\" Tall x 4\" Deep; 9L-13L each; sold in pairs ($300.00 for both bags)",
-    "dims_note": "TWO FIXES: a pair/single mismatch on the litres, and the roll range. Buckhorn publish 11-3/4 x 12-17 x 4 inches = 29.8 x 30.5-43.2 x 10.2cm. The stored hgt of 38cm sat mid-way up the 12-17\" roll range, which is the superseded blend; under the closed-end rule hgt is the 12\" figure, 30.5cm, and the bag is drawn rolled down. len 30 and wid 10 are the single-valued maker figures and are unchanged. Separately the 20L in the record is the PAIR figure - Buckhorn state '9L-13L each' - so capacity_l is corrected to 11L, the midpoint of the maker's per-bag rating. NOTE THE DELIBERATE CONSEQUENCE: the drawn box is now 29.8 x 30.5 x 10.2 = 9.3L against an 11L rating, a 0.85 ratio, so this record will re-trip the volume-too-small check. That is the closed-end rule working as intended, not a defect - Buckhorn pair '12\"-17\" Tall' with '9L-13L each', so the 12\" end IS the 9L end, and the rated 11L is only reached part-way up the roll. I kept capacity_l at the rated midpoint rather than dropping it to 9L because capacity_l answers what the bag holds, while dims_cm now answers how it is drawn; if you would rather the two endpoints stay paired, 9L is the maker-published partner to 30.5cm."
+    "dims_note": "TWO FIXES: a pair/single mismatch on the litres, and the roll range. Buckhorn publish 11-3/4 x 12-17 x 4 inches = 29.8 x 30.5-43.2 x 10.2cm. The stored hgt of 38cm sat mid-way up the 12-17\" roll range, which is the superseded blend; under the closed-end rule hgt is the 12\" figure, 30.5cm, and the bag is drawn rolled down. len 30 and wid 10 are the single-valued maker figures and are unchanged. Separately the 20L in the record is the PAIR figure - Buckhorn state '9L-13L each' - so capacity_l is corrected to 11L, the midpoint of the maker's per-bag rating. NOTE THE DELIBERATE CONSEQUENCE: the drawn box is now 29.8 x 30.5 x 10.2 = 9.3L against an 11L rating, a 0.85 ratio, so this record will re-trip the volume-too-small check. That is the closed-end rule working as intended, not a defect - Buckhorn pair '12\"-17\" Tall' with '9L-13L each', so the 12\" end IS the 9L end, and the rated 11L is only reached part-way up the roll. I kept capacity_l at the rated midpoint rather than dropping it to 9L because capacity_l answers what the bag holds, while dims_cm now answers how it is drawn; if you would rather the two endpoints stay paired, 9L is the maker-published partner to 30.5cm.",
+    "fits": "rack_only"
    },
    {
     "type": "seat pack",
     "name": "Barrel XL",
     "liters": 2.8,
     "dims_cm": {
-     "len": 30,
-     "dia": 15
+     "len": 24,
+     "wid": 12,
+     "hgt": 12,
+     "dia": 12
     },
     "colors": [
      "#3f3f3f",
@@ -32843,7 +32847,8 @@
      "#3f3f3f"
     ],
     "est": true,
-    "slot": "trunk"
+    "slot": "trunk",
+    "fits": "none"
    }
   ]
  },
