@@ -425,6 +425,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
     _saved: null,
     _oldWorldFade: null,
     _hardSwapped: false,
+    _viewOffsetTouched: false, // did frameBike() apply its own phone-sheet setViewOffset this session?
 
     // `active` is the caller-facing on/off state, not "is a crossfade playing" —
     // it must flip the moment enter()/exit() is called so the mode is instantly
@@ -583,23 +584,28 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
       if (gtao) gtao.updateGtaoMaterial({ radius: this._saved.gtaoRadius });
       if (bloom) bloom.strength = this._saved.bloomStrength;
 
-      // undo frameBike()'s phone-sheet setViewOffset, if it ran — restore
-      // exactly what was there before (main.js's own offset, or nothing),
-      // not just clear, so a session that entered on phone and somehow
-      // exits after crossing into desktop layout still comes back correct
-      if (this._saved.viewOffset) {
-        const v = this._saved.viewOffset;
-        camera.setViewOffset(v.fullWidth, v.fullHeight, v.offsetX, v.offsetY, v.width, v.height);
-      } else {
-        camera.clearViewOffset();
+      // undo frameBike()'s phone-sheet setViewOffset, but ONLY if it actually
+      // ran — on desktop/tablet camera.view was never touched (see frameBike
+      // and _beginFresh comments), so it's left alone here too, still live
+      // under main.js's own resize handling for the whole time the tunnel
+      // was open. Restoring unconditionally would stomp a legitimate resize
+      // that happened mid-tunnel with a stale entry-time snapshot.
+      if (this._viewOffsetTouched) {
+        if (this._saved.viewOffset) {
+          const v = this._saved.viewOffset;
+          camera.setViewOffset(v.fullWidth, v.fullHeight, v.offsetX, v.offsetY, v.width, v.height);
+        } else {
+          camera.clearViewOffset();
+        }
+        camera.updateProjectionMatrix();
       }
-      camera.updateProjectionMatrix();
 
       rider?.setOpacity(0);
       smoke?.setEnabled(false);
 
       this._saved = null;
       this._oldWorldFade = null;
+      this._viewOffsetTouched = false;
     },
   };
 

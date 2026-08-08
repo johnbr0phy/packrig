@@ -1,0 +1,398 @@
+{
+ "brand": "Rogue Panda Designs",
+ "slug": "rogue-panda-designs",
+ "reviewed_photos": 0,
+ "brand_notes": {
+  "fabric": "brands.json's brand string is 'X-Pac / Ecopak (visible ripstop grid, dye-sublimation prints)'. Both confirmed VERBATIM on the maker's own pages: the Gila Dry Bag is built from 'Ecopak or Xpac' with 'water-resistant seam-taped construction'; the Alamo Top Tube Bag and Salsa Cutthroat Frame Bag are both specced as 'Ecopak Ultra 200X' / 'Ultra 200X Black Magic' (Ecopak's branded denier-weight naming). One exception found: the Bismarck Bottle Bucket is described by a third-party review (bikepacking.com) as 'two layers of Cordura, a padded insert, and a durable Hypalon bottom pan' — Cordura, not X-Pac/Ecopak, and not confirmed on Rogue Panda's own product page (which does not state a fabric at all for this SKU). Flagged as an exception, not asserted as the brand default.",
+  "method": "No local photos exist for this brand (assets/products/ has no rogue-panda-designs folder). roguepanda.com is Shopify and completely open to WebFetch — no Cloudflare/bot-blocking encountered, unlike Wizard Works. A real, repeated finding: Rogue Panda publish detailed VOLUME and WEIGHT tables for every stock size of their frame bags and seat bag, but literally NO linear dimensions (length/width/height) anywhere on the product pages, the dedicated 'Frame Bag Guides' blog series, or their knowledge base — confirmed by direct page fetch, not assumed. The one general construction fact they do publish repeatedly (product knowledge base AND the custom-frame-bags page, independently) is that their frame bags run '2.75 inches wide at the edges, but will expand to 4-5 inches wide in the middle' — a genuine brand-wide gusset-taper spec, used below to correct two records where the previous pass had used the narrower edge figure instead of the wider (and, per the dimension rule, correct) middle figure."
+ },
+ "products": [
+
+  {
+   "line": "Gila",
+   "name": "Gila Dry Bag",
+   "size": "Large, Flat Bar",
+   "slot": "forkbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://roguepanda.com/products/gila-dry-bag"
+   ],
+
+   "dims_cm": { "len": 55.9, "wid": 21.6, "hgt": 21.6 },
+   "dims_state": "maker_stuffed",
+   "dims_raw": "Product page spec table, Flat Bar / Large: '8.5\" diameter, 22\" stuffed length, 33\" flat length'; Volume 18 liters (Flat Bar, Large).",
+   "dims_note": "Dual-rolltop dry-bag tube, same construction class as Alpkit's Airlok Dual elsewhere in this catalogue: the maker publishes BOTH a 'flat length' (33in — the sewn tube laid out flat before either end is rolled, a fabrication-pattern measurement per this project's established Airlok Dual precedent) and a 'stuffed length' (22in — the packed, in-use length with both rolltops closed). Used 'stuffed length' directly for len, per that same precedent, NOT the 'flat length'. 22in = 55.88cm, corrected from the previously-stored 53cm (which matched neither published figure exactly and is untraceable). Diameter 8.5in = 21.59cm, essentially unchanged from the previously-stored 21.5.",
+   "capacity_l": 18,
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Straight fabric tube, dual independent rolltops (one at each end) for the flat-bar harness version. HDPE stiffeners in the rolltops aid one-handed closure. No photo for this brand — shape read from description only, though 'straight dry-bag tube' is a very low-risk inference for this product class."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "both_ends",
+    "hardware": "dual rolltop (flat-bar version) with HDPE stiffeners; the drop-bar version instead uses a single-side rolltop with compression-style buckles clipping across the bag"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "Ecopak or X-Pac (Ultra 400X weight referenced in the weight table) — matches brand_notes.fabric",
+    "notes": "Contrast webbing on the flat-bar version. Designed for handlebar mounting via a separate harness system (e.g. Rogue Panda's own harness or a third-party cradle), not modelled here — the dry bag itself carries only compression/girth straps."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar_harness"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "notes": "Sits in a separate handlebar harness (not included/modelled), which does the actual bar clamping; the dry bag itself is a passive tube inside it. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Rust", "hex": "#c1440e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Alamo",
+   "name": "Alamo Top Tube Bag",
+   "size": "Gordito Grande (1.75L)",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://roguepanda.com/products/alamo-top-tube-bag"
+   ],
+
+   "dims_cm": { "len": 27.9, "wid": 8.9, "hgt": 10.2 },
+   "dims_state": "maker_tapered",
+   "dims_raw": "Product page: Gordo size is '3.5 inches wide and 4 inches tall in the front, and 9 inches long. It tapers to 2.5 inches wide and 2.5 inches tall at the rear.' Gordito Grande 'same dimensions as the Gordo but 11 inches long instead of 9 inches.' Capacity 1.75L.",
+   "dims_note": "Front (larger) end used per the tapered-axis rule: 11in length = 27.94cm (len, matches previously-stored 27.9 exactly), 3.5in front width = 8.89cm (wid, matches 8.9 exactly), 4in front height = 10.16cm (hgt, matches previously-stored 10.2 closely). All three independently maker-confirmed, no correction needed — this record was already right.",
+   "capacity_l": 1.75,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.625, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Front (nose, toward the saddle) is the full 3.5in/4in width/height; tapers to 2.5in/2.5in at the rear (toward the head tube) — taper ratio 2.5/4 = 0.625 on height, 2.5/3.5 = 0.71 on width; recorded as a single linear taper using the height ratio as the dominant figure."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "full-length molded-tooth zipper, one-handed access"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing", "wrapsAround": "head_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "Ecopak Ultra 200X (in-stock colourway 'Black Magic') — matches brand_notes.fabric",
+    "notes": "HDPE side panels for structure. Cable port for charging electronics. 'Combined strap-bolt attachment system' using TPU straps and spacers — two 9in straps and one 15in strap included per bag."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Sits on the top tube just behind the head tube, wide nose toward the saddle. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Teal", "hex": "#2e8b8b" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Salsa Cutthroat Stock",
+   "name": "Salsa Cutthroat Stock Frame Bag",
+   "size": "58cm",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://roguepanda.com/products/stock-salsa-cutthroat-frame-bag",
+    "https://roguepanda.com/blogs/frame-bag-guides/salsa-cutthroat-frame-bags"
+   ],
+
+   "dims_cm": { "len": 55, "wid": 12.7, "hgt": 36 },
+   "dims_state": "reconstructed_low_confidence",
+   "dims_raw": "Product page: 58cm size = 12 liters, 13.4oz/380g (no linear dimensions). Separate 'Salsa Cutthroat Frame Bag Guide' blog page: table of Full Frame Bag volumes by size — 52cm 5L, 54cm 7L, 56cm 10L, 58cm 14L, 60cm 18L — CONFLICTS with the product page's 58cm=12L. Rogue Panda's own knowledge base/custom-bag copy (repeated on two separate pages): frame bags run 'about 2.75 inches wide at the edges, but will expand to 4-5 inches wide in the middle.'",
+   "dims_note": "Rogue Panda publish NO linear dimensions for any stock frame bag anywhere I could find (product page, size guide blog, or knowledge base) — confirmed directly, not assumed. len (55cm) and hgt (36cm) are UNCHANGED from the prior pass's reconstruction, calibrated against this catalogue's own peer 12L full-frame bags (Rockgeist Gravel 52Hz Large 56x36x6.5, WOHO XTouring Full Frame Dry L 50x36x8) — kept as a reasonable low-confidence estimate, not independently re-derived here. wid CORRECTED from 7cm to 12.7cm: the prior pass used the 2.75in EDGE figure (6.985cm≈7), but per this project's tapered-axis rule the LARGER value belongs in dims_cm — the maker's own 4-5in MIDDLE figure — so wid is now the max of that range (5in=12.7cm), with the taper down to 7cm at the tube-contact edges recorded in geometry.taper. Volume check: 55x12.7x36=25,146cc=25.1L vs published 12L is a 2.1x fill ratio — high but still under the ~2.2x ceiling this catalogue treats as plausible for a soft full-frame bag. The 12L-vs-14L conflict between Rogue Panda's own two pages is unresolved; kept 12L since that is the specific product-page/SKU figure this catalogue entry represents.",
+   "capacity_l": 12,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "taper": { "nose": 0.55, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Gusseted frame bag: ~2.75in (7cm) thick at the top-tube/down-tube contact edges, expanding to 4-5in (10-12.7cm) in the middle for capacity — a genuine maker-published brand-wide construction fact (see brand_notes), applied here since it directly explains why a flat 7cm width under-fills the published 12L volume. Designed for current-generation V2/V3 Salsa Cutthroat frames specifically."
+   },
+
+   "closure": {
+    "type": "zip_two_way",
+    "location": "top",
+    "hardware": "#10 YKK molded-tooth zippers (non-waterproof); second zipper creates a 'Double Decker' internal divider on all sizes except 52cm"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" },
+    { "run": "perimeter", "finish": "matched" }
+   ],
+
+   "straps": [],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "Ecopak Ultra 200X — matches brand_notes.fabric",
+    "notes": "Bolt-on / direct-mount attachment using custom thumb screws into the Cutthroat's own frame bosses (not a strap-on generic bag) — closest available closure category (zip_two_way) captures the double-zip 'Double Decker' compartment, but the mount itself is bolt-on, see mount.notes. Sizes 54-60cm fit a 3-liter Apidura hydration bladder in the lower compartment. Left-side slip pocket for phone/wallet."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Bolt-on direct-mount into the Cutthroat's own frame bosses via custom thumb screws — NOT a universal strap-on bag, specific to this frame's bolt pattern. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Tan", "hex": "#e0a458" },
+    { "name": "Magenta", "hex": "#8b3a62" },
+    { "name": "Black", "hex": "#1a1a1a" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Ripsey",
+   "name": "Ripsey Seat Bag V2",
+   "size": "8L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://roguepanda.com/products/ripsey-seat-bag"
+   ],
+
+   "dims_cm": { "len": 35, "wid": 15, "hgt": 15 },
+   "dims_state": "unverified",
+   "dims_raw": "Product page publishes volume ('8 Liters'), weight ('16oz with Ultra 200X dry bag'), load rating ('6lbs/3kg recommended maximum'), and mounting clearances ('3 inches minimum tire clearance at half capacity'), but NO length/width/height figures anywhere on the page — checked directly (curl, full page text), not assumed from a summary.",
+   "dims_note": "No maker linear dims found. dims_cm carried over unchanged from brands.json ('est': false, implying a prior maker source I could not independently verify). Box check: 35x15x15=7875cc=7.875L against a published 8L is a 0.98x ratio — unusually tight even for a packed dry-bag shape (this project's own guidance expects roughly 1.0-2.5x), which is itself a mild reason for caution rather than confidence. verified is false and confidence low specifically on the dims triple.",
+   "capacity_l": 8,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Clamp-mounted dry-bag seat pack (not a simple strap-on holster) — see mount for the clamp system. No photo for this brand; shape read from description only."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "tail",
+    "hardware": "waterproof dry-bag zipper (maker copy: 'burliest zippers in the world'), not a rolltop"
+   },
+
+   "zips": [
+    { "run": "rear_panel", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "Ecopak Ultra 200X standard (in-stock: 'Ultra 400X Black Magic'); 'dozens of fabrics' available custom — matches brand_notes.fabric",
+    "notes": "Patent-pending two-point mechanical clamp mount, NOT webbing straps: a rotating/sliding-shim saddle clamp (half-pipe ABS shims, standard clamp 40-64mm rail distance, wide clamp 64-88mm rail distance) plus a separate 31.6mm aluminum seatpost clamp with snap-in shims (fits 25-26mm dropper stanchions and 27.2mm rigid posts), CNC-machined buckles by Austere Manufacturing. Optional replaceable skid plate available. 6lb/3kg maximum recommended load."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 1,
+    "clearance": { "tyre_mm": 76 },
+    "notes": "Mechanical clamp system (see details), not webbing straps — nose is rigidly clamped rather than cinched. Maker states 3in (76mm) minimum tire clearance at half capacity."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Rust", "hex": "#c1440e" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Bismarck",
+   "name": "Bismarck Bottle Bucket",
+   "size": "One Size",
+   "slot": "stembag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://roguepanda.com/products/bismarck-bottle-bucket",
+    "https://bikepacking.com/gear/rogue-panda-bismarck-bottle-bucket-review/"
+   ],
+
+   "dims_cm": { "len": 18, "wid": 8, "hgt": 8 },
+   "dims_state": "unverified",
+   "dims_raw": "Maker's own page publishes no dimensions or volume figure at all — sizing is described only as 'any bike bottle will work... any bottle you can fit in a bottle cage will work,' i.e. it is sized to fit a generic bottle+cage, not a fixed internal volume.",
+   "dims_note": "Inherently a bottle-cage-shaped open-top holster with no fixed capacity by design — there is no maker figure to verify against. dims_cm carried over unchanged from brands.json, which already flagged this as 'est': true. Plausible against a typical 24oz bottle (the maker's own reference bottle, a 24oz Breakaway, is roughly 7cm diameter x 20cm tall) but this is a sanity check, not a citation.",
+   "capacity_l": 1,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Open-top cylinder built around a bottle cage per maker copy ('built up on a bottle cage to allow quick, one-handed operation'). No photo for this brand; shape read from description only."
+   },
+
+   "closure": {
+    "type": "velcro",
+    "location": "top"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing", "wrapsAround": "fork_crown" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 3, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "Two layers of Cordura with a padded insert and a Hypalon bottom pan, per a third-party review — NOT confirmed as X-Pac/Ecopak, an exception to brand_notes.fabric",
+    "notes": "'Ultra-Secure Attachments' via fork-crown tensioning is the stated stability mechanism — explicitly 'no stem strap needed.' Three mesh pockets with tight elastic for bars/gels/drink mixes. Open top (no drawstring or flap), the bottle cage itself is the retention mechanism."
+   },
+
+   "mount": {
+    "axes": { "len": "-y", "wid": "+x", "hgt": "z" },
+    "attachesTo": ["handlebar", "fork_crown"],
+    "contactFaces": ["underside", "front_face"],
+    "sag_deg": 0,
+    "notes": "Two short TPU straps to the handlebar plus one longer strap tensioned down to the fork crown — an unusual three-point mount (most stem bags mount only to the bar/stem/headset). Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Tan", "hex": "#e0a458" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Custom",
+   "name": "Custom Half Frame Bag",
+   "size": "Custom",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://roguepanda.com/pages/custom-frame-bags"
+   ],
+
+   "dims_cm": { "len": 40, "wid": 12.7, "hgt": 12 },
+   "dims_state": "bespoke_no_fixed_spec",
+   "dims_raw": "Custom Frame Bags page: 'We have over 1000 frames on file - and if we don't have your bike saved, we can make you a bag with just a photo.' Standard bags run '2.75 inches wide at the edges, but will expand to 4-5 inches wide in the middle'; different widths available 'for an additional charge.' Options explicitly include 'Wedge or Partial frame bag' as distinct configurations from a Full frame bag.",
+   "dims_note": "Made-to-measure per customer bike, like Rogue Panda's stock frame bags but with no size chart at all — there is no fixed length/height to cite. len (40cm) and hgt (12cm) are UNCHANGED placeholder figures carried from brands.json representing a generic mid-size half-frame bag (not a real SKU), kept only because this catalogue slot needs a representative geometry. wid CORRECTED from 7cm to 12.7cm using the same brand-wide gusset-taper logic applied to the Salsa Cutthroat record in this file (max of the published 4-5in middle-width range), with the 7cm edge figure moved into geometry.taper where it belongs. Do not treat len/hgt as a real product measurement — they are an unsourced generic placeholder, flagged accordingly.",
+   "capacity_l": 4,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": { "nose": 0.55, "tail": 1.0, "profile": "linear" },
+    "shoulder": "none",
+    "notes": "Same gusseted construction as Rogue Panda's stock frame bags (2.75in edges expanding to 4-5in middle) — see brand_notes and the Salsa Cutthroat record in this file for the same correction applied consistently."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "'burliest zippers in the world' per maker copy — burly zip, no velcro alternative offered"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "Over 50 standard fabrics offered (X-Pac/Ecopak per brand_notes), plus custom prints",
+    "notes": "Internal loops in the top-tube seam for strapping tent poles/pumps to the top of the bag. Light-coloured interior panels (for finding items inside). One hydration/cable port near the head tube included as standard on all Rogue Panda frame bags."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "notes": "Bespoke fit to the customer's own frame triangle; geometry above is generic/indicative only, not a real product size. Clearance not established — no photo."
+   },
+
+   "colorways": [],
+   "images": []
+  }
+
+ ]
+}

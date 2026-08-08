@@ -1,0 +1,420 @@
+{
+ "brand": "Bags by Bird",
+ "slug": "bags-by-bird",
+ "reviewed_photos": 0,
+ "brand_notes": {
+  "fabric": "brands.json's brand string is 'Waxed canvas / X-Pac combination (matte, earthy tones)'. Both halves confirmed VERBATIM as real fabric options across this brand's own site: every product's colour/fabric dropdown lists X-Pac face weights by name (Black X50, Coyote Brown X50, Ranger Green X50, Khaki X50, Graphite X50, Slate VX42, Marigold X50, Purple X84 — all genuine X-Pac laminate codes) AND separate 'Waxed Canvas' options (e.g. 'Martexin Org. Wax Canvas', 'Deep Forest Green Waxed Canvas', 'Bush Brown Waxed Canvas' on the Goldback and Piccolo pages). A third fabric also appears repeatedly and is NOT in the brand string: 'Ecopak' (400-600 denier), used for the Tail Grab and named on the Goldback/Piccolo sizing PDFs ('built from Ecopak 400-600 denier'). The Side Bustle Pannier separately uses Ultra800/Ballistic nylon/1000D Cordura for its abrasion panels. Treat Ecopak, Cordura and Ballistic nylon as confirmed-but-uncaptured-by-the-brand-string additions, not contradictions.",
+  "method": "No local photos exist for this brand (assets/products/ has no bags-by-bird folder). bagsxbird.com is a Wix site with no bot-blocking (curl 200s immediately), but nearly all page text lives inside a large embedded JSON blob (a Wix warmup-data script), not in visible HTML text — WebFetch's summarizer reported 'the page appears truncated, no specs found' on every product tried, so curl + a Python regex pull of the `\"description\":\"<...\"` JSON field was used throughout, which recovers the full, verbatim product-description HTML. Four of six products (Goldback, Better Half x2, Piccolo) link a maker-published PDF sizing infographic; these were fetched directly and read as images — genuine visual/diagrammatic evidence, not text-only.",
+  "found_error": "The catalogue's TWO 'Better Half Framebag' records (framebag_full 5.5L and framebag_half 4.5L) shared byte-identical dims_cm (40.6/7/27.9) and an identical dims_note, even though their own dims_note text says it was derived by matching to the 'Small Long' variant's 4.5L capacity specifically. Re-reading the maker's own sizing-guide PDF and re-solving the trapezoid geometry for the LARGE-LONG cell (which is what the 5.5L / framebag_full record's own src URL names) shows a materially different hgt (~31.9cm, not 27.9cm) — a like-for-like duplication bug, not a correct match. Corrected below; see that product's dims_note for the full geometry work."
+ },
+ "products": [
+
+  {
+   "line": "Goldback",
+   "name": "Goldback 12.5W",
+   "size": "12.5W",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.bagsxbird.com/product-page/goldback-12-5wide",
+    "https://www.bagsxbird.com/_files/ugd/7df365_860f5a483411408bb4564813a5fe703c.pdf"
+   ],
+
+   "dims_cm": { "len": 45.7, "wid": 20.3, "hgt": 26.7 },
+   "dims_state": "unfurled_max_width",
+   "dims_raw": "Maker sizing-guide PDF, 'GOLDBACK 12.5W' column: Main compartment 12.5\"W x 8\"D x 10.5\"H; Overall width (with side pockets empty-full) 16-18\"; Volume 27L. Product-page text: 'This particular Goldback is the 12.5W, meaning the main compartment of the bag is 12.5'' wide... can pack away 27 liters of capacity between it's main compartment and two side pockets.'",
+   "dims_note": "Two different 'width' figures are published for this bag: the MAIN COMPARTMENT width (12.5in = 31.75cm, the bag's own name) and the OVERALL width WITH SIDE POCKETS (a 16-18in range, empty to full). len is mapped to the overall/loaded footprint (the true across-the-bars extent as mounted, matching the dimension rule's 'unfurled = full plan extent' principle) at its MAX (18in = 45.7cm), not the narrower main-compartment figure and not the previously-stored 43cm (which fell inside the range but at neither its stated min nor max, and whose derivation is untraceable). wid = 8in main-compartment depth (20.32cm, matches the previously-stored 20.3 exactly). hgt = 10.5in main-compartment height (26.67cm, matches the previously-stored 26.7 exactly, and this variant has no Tall/height range — the PDF's height column is a single fixed figure per size, not a range, so no render override is needed).",
+   "capacity_l": 27,
+
+   "geometry": {
+    "form": "saddlebag_flap",
+    "crossSection": "rounded_rect",
+    "shoulder": "none",
+    "notes": "Classic transverse British-saddlebag silhouette: a wooden support dowel running across the top of the bag under two Voile straps gives it its traditional rounded shape ('The way Goldbacks are installed is using two 15\" Voile straps that wrap around a wooden support dowel running across the top of the bag, giving its traditional shape'). No photo for this brand; silhouette read from description only, not observed."
+   },
+
+   "closure": {
+    "type": "flap_strap",
+    "location": "top",
+    "hardware": "generously sized short-flap main lid with D-rings for lashing a jacket or an off-bike shoulder strap; held down over the dowel-shaped body, not a separate zip or buckle"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "cam", "material": "rubber", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "head_tube" },
+    { "role": "daisy", "count": 1, "location": "top", "hardware": "daisy_loop" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "X-Pac (various weights, e.g. X50/VX42/X84) or Waxed Canvas depending on colour option — see brand_notes.fabric",
+    "notes": "Mounts to handlebars or saddle (saddle loops needed), works with or without rack support, fits between drop bars, compatible with flat and most alt-bars. Underside has a highly abrasion-resistant hypalon panel with strap points for racks, or (rack-less) places to strap to the head tube and mount a lower dowel preventing the bottom from folding around the head tube. Two dowel-sleeve variants exist: external (stock, closed off from inside — best for handlebar mounting) and internal (four 3/4in holes for straps to pass through the dowel — best for saddle-loop mounting). Made to order (BXB, Tucson AZ)."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar", "saddle_rails"],
+    "contactFaces": ["top", "underside"],
+    "sag_deg": 0,
+    "notes": "Dual-mount (handlebar or saddle loops) per maker copy; modelled here in its bar-mount orientation matching its catalogue slot, though the catalogue lists it under seatpack — this record does not reslot it, just documents both uses. Clearance not established numerically — no photo, though the maker's own rack-less clearance figures for the sibling Piccolo model (9-9.5in tire-to-clamp) suggest a similar order of magnitude here."
+   },
+
+   "colorways": [
+    { "name": "Sand", "hex": "#c9b8a3" },
+    { "name": "Slate Blue", "hex": "#6a93a8" },
+    { "name": "Black", "hex": "#1a1a1a" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Tail Grab",
+   "name": "Tail Grab Handlebar Bag",
+   "size": "6in tall (4.3L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.bagsxbird.com/product-page/tail-grab"
+   ],
+
+   "dims_cm": { "len": 20.3, "wid": 14, "hgt": 15.2 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "Product page Features/Specs: 'Dimensions: 6\" tall: 8\" wide, 5.5\" deep, 6\" tall. 8\" tall: 8\" wide, 5.5\" deep, 8\" tall. Capacity: 6\" tall: 4.3 liters, 8\" tall: 5.7 liters.'",
+   "dims_note": "Two sizes differ only in height (6in vs 8in); catalogue's 4.3L entry is the 6in-tall size. 8in wide = 20.32cm (matches len 20.3 exactly), 5.5in deep = 13.97cm (matches wid 14), 6in tall = 15.24cm (matches hgt 15.2 exactly). Every figure independently confirmed against the maker's own literal dimension list, no range/rule interpretation needed.",
+   "capacity_l": 4.3,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Rando-style opening that faces the rider ('a rando-style opening (opens toward rider), making access quick and comfortable'). Has a rigid body liner (semi-structural, holds its shape). No photo for this brand — shape read from description only."
+   },
+
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "shock (stretchy) cord with a cordlock, captured on the stem — usually around the stem bolts on the back, or via a large zip-tie head or Voile Nano strap wrapped around the stem column if the stem lacks rear bolts"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "ladderlock", "material": "rubber", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "cam", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "front" },
+    { "type": "slip", "count": 1, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "X-Pac or Ecopak (\"either Xpac or Ecopak unless noted on fabric options\") — Ecopak is not in the brand-level fabric string, see brand_notes.fabric",
+    "notes": "The closed lid stops at the handlebar so the stem area stays free for a computer mount, but handlebar-mounted lights/computers may need relocating since the lid can interfere. Stock front pocket is Ultrastretch mesh. Optional (not stock, +$15) two additional side pockets and (+$8) D-rings for a shoulder strap — not modelled since they are paid upgrades, not the base product. Comes with 2x 9in Voile Nano straps, a lower 3/4in cam strap, and 2 sets of foam spacers. Tire clearance requirement (6in size): 7.5in from the bottom of the handlebar clamp to the tire."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["underside", "front_face"],
+    "sag_deg": 0,
+    "notes": "Straps directly to the handlebar via 2 Voile Nano straps plus a lower cam strap to the stem/steerer. Clearance: maker states 7.5in (19cm) minimum from handlebar clamp to tyre is required for this size."
+   },
+
+   "colorways": [
+    { "name": "Sand", "hex": "#c9b8a3" },
+    { "name": "Olive", "hex": "#5c5a3f" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Better Half",
+   "name": "Better Half Framebag",
+   "size": "Large - Long",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.bagsxbird.com/product-page/better-half-large-long",
+    "https://www.bagsxbird.com/_files/ugd/7df365_38e98d3327f847d68ca379c169a5d3fc.pdf"
+   ],
+
+   "dims_cm": { "len": 40.6, "wid": 7, "hgt": 31.9 },
+   "dims_state": "corrected_from_pdf_geometry",
+   "dims_raw": "Maker sizing-guide PDF, LARGE-LONG cell (a right-trapezoid frame-triangle outline, not a rectangle): top/top-tube edge 16in, head-tube edge 4in, down-tube-side diagonal edge 14in, rear/seat-tube-side diagonal edge 13.5in. Product page: 'Capacity (approx) ... Large Long: 5.5L' — confirms this src ('better-half-large-long') is the Large-Long cell, matching this record's 5.5L.",
+   "dims_note": "CORRECTED. Previously this record (framebag_full, 5.5L, src better-half-large-long) carried the exact same dims_cm (40.6/7/27.9) as the OTHER Better Half record (framebag_half, 4.5L, src better-half-framebag-1) — but those two records are different sizes from the maker's own 4-cell size chart (Small-Short/Small-Long/Large-Short/Large-Long) and should not share a height. Re-solved the Large-Long trapezoid by placing the top-tube edge on the x-axis (A=(0,0), B=(16,0)), dropping the 4in head-tube edge to C=(0,-4), then finding the apex D satisfying |CD|=14 and |BD|=13.5: D≈(11.07,-12.56), i.e. the apex sits 12.56in = 31.9cm below the top edge. That is the bag's real hgt for THIS size — about 4cm taller than the Small-Long's 11.0in = 27.9cm, which is what the record had been showing. len (16in top-tube edge = 40.64cm) is unchanged and correct. wid: closing the same polygon gives a profile area of 122.6 sq in; 5.5L / 122.6 sq in = 2.74in = 6.95cm ≈ 7cm, matching the existing wid and confirming a consistent ~7cm body thickness across all Better Half sizes (not a coincidental duplicate).",
+   "capacity_l": 5.5,
+
+   "render": {
+    "hgt_cm": 31.9,
+    "basis": "solved from the maker's own trapezoid sizing-diagram edge lengths for this specific size cell (Large-Long), not from the range-minimum rule — this bag has no roll axis, hgt is a fixed geometric consequence of the four published edge lengths"
+   },
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.25, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Wedge-style partial frame bag: wide flat top along the top tube, narrowing to a point (apex) low in the front triangle — 'a wedge style bag preserves a top tube hand position'. Taper ratio approximated from the solved apex position (apex sits ~4/16 of the way along the top edge from the head-tube corner, i.e. a sharp asymmetric taper), not from a photo. Designed only for 0-10 degree top-tube-slope road/gravel frames, 58-63cm range, NOT for modern mountain bikes."
+   },
+
+   "closure": {
+    "type": "flap_strap",
+    "location": "top",
+    "hardware": "flip-top openings closed via elastic shock cord latched to metal gaiter hooks; Fidlock magnetic buckle upgrade available (limited qty)"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 6, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "X-Pac (various weights incl. X50, VX42, X84) — see brand_notes.fabric",
+    "notes": "Two separate flip-top compartments: one large on the drive side, one slim (phone/wallet) on the non-drive side — not modelled as accessory pockets since they are the bag's main storage, not add-ons. Molle webbing attachment points around the perimeter for flexible frame strapping. 6 double-sided velcro straps (long enough for larger carbon frames); shock-cord lacing available on request instead. Internal padding around the frame-contact perimeter. Water bladder hose / charge cable porthole."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Velcro-strapped inside the front triangle; explicitly NOT compatible with down-tube shifters or a frame pump under the top tube. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Marigold", "hex": "#d9a441" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Better Half",
+   "name": "Better Half Framebag",
+   "size": "Small - Long",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.bagsxbird.com/product-page/better-half-framebag-1",
+    "https://www.bagsxbird.com/_files/ugd/7df365_38e98d3327f847d68ca379c169a5d3fc.pdf"
+   ],
+
+   "dims_cm": { "len": 40.6, "wid": 7, "hgt": 27.9 },
+   "dims_state": "corrected_from_pdf_geometry",
+   "dims_raw": "Maker sizing-guide PDF, SMALL-LONG cell (right-trapezoid): top/top-tube edge 16in, head-tube edge 2.5in, down-tube-side diagonal 14in, rear/seat-tube-side diagonal 12in. Product page: 'Capacity (approx) Small Short: 2L, Small Long: 4.5L' — matches this record's 4.5L.",
+   "dims_note": "This record's existing dims_cm (40.6/7/27.9) is CORRECT for the Small-Long cell and is kept as-is; re-solved the same way as the Large-Long sibling (see that record's dims_note for the full method and why the two records must NOT share a height): apex-closing on top edge 16in, head-tube edge 2.5in, down-tube diagonal 14in, rear diagonal 12in gives an apex depth of 11.0in = 27.9cm, exactly matching the stored value. wid check: profile area ≈101.9 sq in, 4.5L/101.9 sq in = 2.69in = 6.83cm ≈ 7cm, also matching.",
+   "capacity_l": 4.5,
+
+   "render": {
+    "hgt_cm": 27.9,
+    "basis": "solved from the maker's own trapezoid sizing-diagram edge lengths for this specific size cell (Small-Long) — fixed geometric consequence of the four published edge lengths, not a roll-range minimum"
+   },
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.16, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Same wedge-style construction as the Large-Long, sized for smaller frames (46-58cm, 0-2.5in exposed head tube). Taper is sharper than the Large (2.5in head-tube edge vs 4in) since the frame triangle is more acute on smaller bikes."
+   },
+
+   "closure": {
+    "type": "flap_strap",
+    "location": "top",
+    "hardware": "flip-top openings closed via elastic shock cord latched to metal gaiter hooks; Fidlock magnetic buckle upgrade available (limited qty)"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 6, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "X-Pac (various weights incl. X50, VX42, X84) — see brand_notes.fabric",
+    "notes": "Same two-compartment, Molle-webbing, internal-padding construction as the Large-Long. Designed only for 0-10 degree top-tube-slope road/gravel frames, 46-58cm range."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Same mount as the Large-Long. On smaller frames with no exposed head tube, the maker notes the bag mounts a few inches further back for a proper fit. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Slate Blue", "hex": "#6a93a8" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Side Bustle",
+   "name": "Side Bustle Pannier",
+   "size": "11L",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.bagsxbird.com/product-page/side-bustle-pannier"
+   ],
+
+   "dims_cm": { "len": 25.4, "wid": 14, "hgt": 30.5 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Product page Specs: 'Dimensions: 10\" wide x 5.5\" deep x 12\" rolled height - 20\" unrolled height. Weight Approx: 11 oz per pannier... Capacity: 11L.'",
+   "dims_note": "Textbook case for the dimension rule: 10in wide = 25.4cm (len, matches exactly), 5.5in deep = 13.97cm (wid, matches 14), and hgt takes the MINIMUM of the published 12-20in roll range = 12in = 30.48cm (matches the previously-stored 30.5 exactly). Box check: 25.4 x 14 x 30.5 = 10,850cc = 10.85L against a published 11L capacity — a 0.99x ratio, an unusually tight (and thus highly plausible) match for a roll-top. All three figures independently maker-confirmed; no correction needed.",
+   "capacity_l": 11,
+
+   "render": {
+    "hgt_cm": 30.5,
+    "basis": "published minimum (rolled) of the 12-20in range — explicitly the maker's own 'rolled height' figure, the sane default mounted state for a rack pannier"
+   },
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "'The tapered shape is to allow extra clearance when maneuvering obstacles.' Fabric on the bottom and back (against the rack) is highly abrasion-resistant; front/sides are the colour-choice fabric. No photo for this brand; taper direction/degree not quantified by the maker, so shown qualitatively only."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll-top with expandable capacity (12in rolled to 20in fully unrolled)"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "ladderlock", "material": "rubber", "wrapsAround": "rear_rack" },
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "ladderlock", "material": "rubber", "wrapsAround": "rear_rack" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "Ultra800 (black) for back/bottom panels with the Ultragrid colourway, OR ballistic nylon / 1000D Cordura for back/bottom panels with other colours; not seam-taped so 'weatherproof' rather than fully waterproof per the maker's own disclaimer — see brand_notes.fabric",
+    "notes": "Originally designed for a 600+ mile Arizona gravel race (Ride Across Arizona). Attachment area is a hypalon panel reinforced with webbing, backed by an internal batten to keep shape against the rack; a removable plastic sheet on the back panel adds further stiffness. Priced and sold per single pannier."
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Voile Nano strap attachment at top and bottom against a rack. Clearance not established numerically — no photo."
+   },
+
+   "colorways": [
+    { "name": "Sand", "hex": "#c9b8a3" },
+    { "name": "Olive", "hex": "#5c5a3f" },
+    { "name": "Black", "hex": "#1a1a1a" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Piccolo",
+   "name": "Piccolo 11W",
+   "size": "11W",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.bagsxbird.com/product-page/piccolo-11w",
+    "https://www.bagsxbird.com/_files/ugd/7df365_fa9252d9eb4a4fb099a023bdf9d4d00d.pdf"
+   ],
+
+   "dims_cm": { "len": 40.6, "wid": 19, "hgt": 24 },
+   "dims_state": "unfurled_max_width",
+   "dims_raw": "Maker sizing-guide PDF, 'PICCOLO 11W' column: Main compartment 11\"W x 7.5\"D x 9.5\"H; Overall width (with side pockets empty-full) 14-16\"; Volume 18L (matches this record's capacity exactly).",
+   "dims_note": "Same 'two widths' situation as the Goldback (see that record and brand_notes): main-compartment width (11in=27.9cm) is distinct from overall footprint width with side pockets (14-16in range). len corrected to the MAX of the overall-width range (16in=40.64cm), matching the dimension rule's unfurled/full-extent principle, replacing the previously-stored 38cm (which sat inside the range but at neither endpoint). wid = 7.5in main-compartment depth (19.05cm, matches previously-stored 19). hgt = 9.5in main-compartment height (24.13cm, matches previously-stored 24) — fixed figure, no range, no render needed.",
+   "capacity_l": 18,
+
+   "geometry": {
+    "form": "saddlebag_flap",
+    "crossSection": "rounded_rect",
+    "shoulder": "none",
+    "notes": "'A smaller sibling to the Goldback' and BXB's other 'Short Flap' transverse design — described in the same product family as the dowel-shaped Goldback, but this page's own text does not re-describe the dowel/lid hardware in as much detail. Shape inferred by family resemblance to the Goldback (also reviewed in this file), not independently re-confirmed for this SKU. No photo for this brand."
+   },
+
+   "closure": {
+    "type": "flap_strap",
+    "location": "top",
+    "hardware": "short-flap lid, amply sized 'for tightening down an overflowing bag' per maker copy — exact hardware (shock cord vs buckle) not re-stated on this specific product page, inferred consistent with the Goldback's dowel+strap system by product-family resemblance only"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "ladderlock", "material": "rubber", "wrapsAround": "handlebar" },
+    { "role": "stability", "count": 1, "location": "underside", "hardware": "cam", "material": "webbing", "wrapsAround": "head_tube" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "X-Pac (various weights) or Waxed Canvas depending on colour option — see brand_notes.fabric",
+    "notes": "Removable dowel at the base of the bag prevents it folding over the head tube (front) or keeps it away from the rider's thighs (rear, saddle mount). Meant to be run rack-less but works with small rack platforms / 'pec deck' minimal rack setups. Stock: two full-length side pockets that lay flat or expand up to 2in. Optional (+$15, not stock) front stretch-mesh pocket, 4.5in deep. Comes with 2x Voile Nano 9in straps, 6 foam spacer blocks (1/2in, die-cut), and a 3/4in cam-buckle strap for the lower head tube/seatpost attachment. Not claimed fully waterproof, described as weather-resistant."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar", "saddle_rails"],
+    "contactFaces": ["top", "underside"],
+    "sag_deg": 0,
+    "notes": "Dual handlebar/saddle mount, matching its catalogue slot of saddlebag. Rack-less clearance per maker: front (handlebar clamp to tyre, with foam spacers) 9.5in; rear (saddle loops to tyre) 9in."
+   },
+
+   "colorways": [
+    { "name": "Sand", "hex": "#c9b8a3" },
+    { "name": "Marigold", "hex": "#d9a441" }
+   ],
+   "images": []
+  }
+
+ ]
+}
