@@ -13586,9 +13586,9 @@
     "name": "EXP Series Cholla Half-Frame Bag",
     "liters": 2.1,
     "dims_cm": {
-     "len": 47.9,
+     "len": 48,
      "wid": 6,
-     "hgt": 9
+     "hgt": 8.9
     },
     "colors": [
      "#3d3d3d"
@@ -13638,7 +13638,7 @@
     "dims_cm": {
      "len": 28.7,
      "wid": 6,
-     "hgt": 18
+     "hgt": 19.8
     },
     "colors": [
      "#3d3d3d",
@@ -13646,7 +13646,11 @@
     ],
     "est": false,
     "slot": "framebag_full",
-    "src": "https://www.salsacycles.com/products/exp-r-series-campion-frame-bag"
+    "src": "https://www.salsacycles.com/products/exp-r-series-campion-frame-bag",
+    "render": {
+     "hgt_cm": 19.8,
+     "basis": "maker-published 'Down Tube Length' figure (7.8in), treated as the bag's vertical drop for this full-frame product — see dims_note for why this reading differs from the identically-worded Trillium page"
+    }
    }
   ]
  },

@@ -1,0 +1,405 @@
+{
+ "brand": "Salsa (EXP Series)",
+ "slug": "salsa-exp-series",
+ "reviewed_photos": 0,
+ "brand_notes": {
+  "fabric": "brands.json's brand string is 'Cordura (matte woven)'. Confirmed VERBATIM on three of six products: Cholla Half-Frame Bag ('bluesign-approved 1000D Cordura nylon body'), EXP-R Trillium Top Tube Bag and EXP-R Campion Frame Bag (both: 'Body made of 1000D bluesign-approved Cordura nylon'). A press writeup (bikepacking.com, quoted via search) describes the Saguaro Seat Bag's holster as '1000D Cordura nylon' too, though Salsa's own product page does not repeat the material name. The Agave Pannier's own page (via reseller campfirecycling.com) calls its fabric 'Waterproof coated 400D nylon' without using the word Cordura — could still be a Cordura-branded 400D but is not asserted as such by the source I read, so left unconfirmed rather than assumed. Nuance worth flagging: every welded/roll-top drybag LINER in this line (Saguaro's inner drybag, Cholla's lining) uses a lighter, non-Cordura nylon (210D/400D nylon) distinct from the 1000D Cordura body/holster fabric — consistent with the brand string describing the outer shell, not the waterproof liners.",
+  "method": "No local photos exist for this brand (assets/products/ has no salsa/salsa-exp-series folder). salsacycles.com is a plain Shopify site with no bot-blocking: curl with a browser UA returns full 200 OK HTML, no Cloudflare/JS-challenge hurdle at all (unlike Wizard Works). WebFetch's AI summarizer, however, MISSED the numeric size-chart data buried in a collapsed 'Size Chart' accordion on the Cholla page and returned 'no specs found' for Saguaro — curl-and-grep on the raw HTML found it instead, so curl was used for every product here, consistent with the brief's warning that spec tabs can be client-side-rendered or otherwise invisible to the summarizing fetcher. A genuine, surprising finding: Salsa's own product pages for the Trillium Top Tube Bag and the Campion Frame Bag carry byte-for-byte IDENTICAL description and spec paragraphs ('Top Tube Length 11.3\" / Down Tube Length 7.8\", Capacity: 1.67L') despite being different bag types (a small top-tube pouch vs. a full-frame bag) - flagged per-product below rather than silently trusted for both."
+ },
+ "products": [
+
+  {
+   "line": "EXP Series",
+   "name": "Saguaro Seat Bag",
+   "size": "Large (14L)",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://www.salsacycles.com/products/exp-series-saguaro-seat-bag",
+    "https://bikepacking.com/news/new-2024-salsa-exp-bikepacking-bags/"
+   ],
+
+   "dims_cm": { "len": 48, "wid": 20, "hgt": 18 },
+   "dims_state": "unverified",
+   "dims_raw": "Salsa's own product page publishes NO linear dimensions at all for either size — only capacity ('Medium (9 liters) or Large (14 liters) dry bag'), a raw product weight of 454g for the Medium variant (from the page's own Shopify variant JSON), and feature copy. The bikepacking.com launch article and a web search of retailer listings (REI, Jenson USA, Tree Fort Bikes, Bike Mart) also turned up no length/width/height figures, only capacity and price.",
+   "dims_note": "Checked directly against the maker's page (curl, full HTML) plus a press article and a round of retailer search results — none publish a dims triple for this bag. The len/wid/hgt figures shown here are carried over UNCHANGED from data/brands.json, which records them with 'est': false (implying maker-sourced), but I could not locate that source myself after a real search. Left unchanged per the 'do not invent' rule rather than replaced with a guess, but verified is false and confidence is low specifically on the dims triple — do not treat as confirmed.",
+   "capacity_l": 14,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Holster-and-drybag system: a fixed Cordura 'holster' cradle straps to the saddle rails/seatpost, and a separate cylindrical roll-top drybag drops into it and is held by compression — described by Salsa as a 'modular dry bag holster design'. No photo for this brand, so the exact holster silhouette (wedge vs. more open cradle) is inferred from the general seatpack category, not observed."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "hardware": "welded roll-top drybag with an air purge valve ('lets air out, but not in, so you can compress the bag to pack more'); drybag is removable from the holster for off-bike loading"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 4, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "Holster: 1000D Cordura nylon (per bikepacking.com launch coverage, not repeated on Salsa's own page). Drybag: 210D nylon, welded/waterproof (per the same source).",
+    "notes": "'Connects to your saddle rails at four points for supreme stability' and is explicitly dropper-post compatible. The dry bag alone is also sold separately, confirming the two-piece holster+drybag construction."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 2,
+    "notes": "Four-point saddle-rail mount, holster stays on the bike while the drybag is removed for loading. Clearance not established — no photo, no maker figure."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#3d3d3d" },
+    { "name": "Black (dark)", "hex": "#101010" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Old Man Mountain",
+   "name": "Old Man Mountain Manzanita Cradle with Bag",
+   "size": "11L (Side Load, flat bar)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://www.salsacycles.com/products/old-man-mountain-manzanita-cradle-and-bag"
+   ],
+
+   "dims_cm": { "len": 48, "wid": 17, "hgt": 17 },
+   "dims_state": "unverified",
+   "dims_raw": "Salsa's page: 'Fits Every Bike — 9L Top Load bag for drop bars and 11L Side Load bag for flat bars'; 'Product Details: 3.6kg / 8lb capacity, 9 liter top load or 11 liter side load bag options, 6 M5 accessory mounting points, Fits 31.8 and 35mm handlebars'. No length/diameter figures published for either bag option.",
+   "dims_note": "Maker confirms capacity (11L side-load) and that this is a rack-and-bag SYSTEM (an Old Man Mountain cradle designed with Salsa, not a simple strap-on roll), but publishes no linear dimensions. dims_cm carried over unchanged from brands.json (len 48 / dia 17, here split across wid/hgt since the record schema has no dia field) — not independently confirmed; treat as an unverified placeholder, not a finding.",
+   "capacity_l": 11,
+
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Side-load configuration for flat/drop bars. No photo for this brand; cylindrical drybag form is inferred from 'welded, waterproof bags' copy and the general rando/porteur-rack bag category, not observed."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "welded waterproof roll-top bag sitting in a rigid cradle"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "Not stated on this product's own page beyond 'welded, waterproof bags' — fabric name unconfirmed for this SKU specifically.",
+    "notes": "This is a rack-like cradle (dual-bolt handlebar clamp, 6x M5 accessory mounting points, angle-adjustable for tyre clearance on small frames) that a separate drybag clips/straps into — not a simple strap-to-bar roll. Fits 31.8mm and 35mm handlebar clamps, a universal fitment. 'Additional Manzanita bags can be purchased separately' confirms the cradle and bag are sold as distinct, compatible parts."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "notes": "Dual-bolt cradle clamp directly to the handlebar (not a strap-only mount), angle-adjustable for tyre clearance. Clearance not established numerically — no photo, no maker figure."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#3d3d3d" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "EXP Series",
+   "name": "Cholla Half-Frame Bag",
+   "size": "Size 5",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.salsacycles.com/products/exp-series-cholla-half-frame-bag"
+   ],
+
+   "dims_cm": { "len": 48, "wid": 6, "hgt": 8.9 },
+   "dims_state": "maker_size_chart",
+   "dims_raw": "Collapsed 'Size Chart > Bag Dimensions' table (6 sizes): Top Length 14.5\"/15.7\"/16.8\"/18.4\"/18.9\"/20.5\"; Bottom Length 8.9\"/10.7\"/11.9\"/13.3\"/14.1\"/14.9\"; Rear Length 1.5\"/2.1\"/2.8\"/3.5\"/3.5\"/3.7\"; Volume 1L/1.3L/1.7L/2L/2.1L/2.9L for Sizes 1-6 respectively.",
+   "dims_note": "brands.json's single Cholla record (2.1L, len 47.9cm) matches Size 5 exactly (Top Length 18.9in = 48.01cm, Volume 2.1L) — this size chart is genuine maker evidence, found via curl where WebFetch's summary reported no specs at all. Top Length mapped to len (fore-aft along the top tube); Rear Length (3.5in = 8.89cm) mapped to hgt (drop toward the down tube). 'Bottom Length' (14.1in = 35.81cm) is a third trapezoid edge not represented in this record's len/wid/hgt triple — the bag's plan shape is closer to a right-trapezoid than a rectangle, see geometry.taper. wid (6cm, side-to-side thickness against the frame) is NOT in this chart at all — Salsa never publishes bag thickness; 6cm is carried over from brands.json as the industry-standard half-frame-bag width (matches Wizard Works' Osyth/Forres constant 6cm elsewhere in this catalogue) but is not maker-confirmed for this specific product.",
+   "capacity_l": 2.1,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.75, "profile": "linear" },
+    "shoulder": "none",
+    "notes": "Right-trapezoid panel: Top Length (48cm) along the top tube is longer than Bottom Length (35.8cm), closing at a short Rear Length (8.9cm) drop — taper ratio approximated from those two published edge lengths (35.8/48 = 0.75), not from a photo (none available for this brand)."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "durable molded-tooth zip, drive-side access"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "hook", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "front" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "bluesign-approved 1000D Cordura nylon body; bluesign-approved 400D nylon lining — matches brand_notes.fabric",
+    "notes": "'Direct-mount compatible with Salsa Cutthroat 2, Tributary C and Tributary AL (using included thumb screws); compatible with all Salsa and non-Salsa bikes with included One-Wrap straps.' Drive-side zip access, non-drive-side slash pocket. Fitment designed to leave room for two bottle cages. Modelled here without the direct-mount thumb-screw hardware (generic strap-mount case, matches the universal-fit intent of this catalogue)."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "notes": "Hangs from the top tube via a hook-and-loop strap (or direct-mount thumb screws on compatible Salsa frames, not modelled), leaving bottle bosses clear underneath. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#3d3d3d" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "EXP-R Series",
+   "name": "Trillium Top Tube Bag",
+   "size": "1.67L",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.salsacycles.com/products/exp-r-series-trillium-top-tube-bag"
+   ],
+
+   "dims_cm": { "len": 28.7, "wid": 6, "hgt": 10 },
+   "dims_state": "maker_partial",
+   "dims_raw": "Salsa page: 'Top Tube Length 11.3\" / Down Tube Length 7.8\" / Capacity: 1.67L'. IMPORTANT: this exact sentence, word for word, also appears on the Campion Frame Bag's page (see brand_notes) — it reads like a shared/copy-pasted spec line across the EXP-R Series pair rather than two independently measured products.",
+   "dims_note": "len (28.7cm) is maker-confirmed (11.3in Top Tube Length, matches brands.json exactly) and used with confidence. 'Down Tube Length' 7.8in = 19.8cm is almost certainly NOT this bag's own height — a top-tube pouch standing 19.8cm tall would be implausible for a 1.67L bag and doesn't match the on-bike category — more likely it describes a lower stabiliser strap's reach toward the head tube, OR is simply the duplicated Campion figure (see brand_notes). hgt is therefore left at brands.json's existing 10cm estimate rather than the misleading 19.8cm literal figure; wid (6cm) is likewise not given by the maker and carried over as a generic assumption.",
+   "capacity_l": 1.67,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Streamlined top-tube pouch, 'universal front triangle fit'. No photo for this brand; shape read from description only."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_side",
+    "hardware": "molded-tooth zip under a protective rain flap, one-hand operable, drive-side access"
+   },
+
+   "zips": [
+    { "run": "top_side", "finish": "storm_flap" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "1000D bluesign-approved Cordura nylon body — matches brand_notes.fabric",
+    "notes": "Non-drive-side slash pocket in addition to the four-way stretch mesh external pocket. Mounts with 3 TPU-coated webbing straps (included). Sold in two sizes per the product copy ('available in two sizes') though only one SKU/capacity is listed in this catalogue."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Sits on the top tube just behind the head tube, 3 webbing straps cinching underneath. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#3d3d3d" },
+    { "name": "Black (dark)", "hex": "#101010" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "EXP-R Series",
+   "name": "Campion Frame Bag",
+   "size": "1.67L",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.salsacycles.com/products/exp-r-series-campion-frame-bag"
+   ],
+
+   "dims_cm": { "len": 28.7, "wid": 6, "hgt": 19.8 },
+   "dims_state": "maker_partial",
+   "dims_raw": "Salsa page: 'Top Tube Length 11.3\" / Down Tube Length 7.8\" / Capacity: 1.67L'. This exact sentence is byte-for-byte identical to the Trillium Top Tube Bag's page (see brand_notes) — treat both figures as genuinely published, but be aware they may be a shared boilerplate line rather than SKU-specific.",
+   "dims_note": "For a FULL frame bag (unlike the Trillium top-tube pouch), 'Down Tube Length' plausibly IS the bag's real drop toward the down tube — 7.8in = 19.8cm is physically consistent with a small front-triangle frame bag and reasonably close to brands.json's existing 18cm estimate. len (28.7cm, Top Tube Length) is maker-confirmed and matches brands.json exactly. hgt corrected from the catalogue's 18cm estimate to the maker's literal 19.8cm figure; wid (6cm) is not published and carried over as a generic frame-bag-thickness assumption.",
+   "capacity_l": 1.67,
+
+   "render": {
+    "hgt_cm": 19.8,
+    "basis": "maker-published 'Down Tube Length' figure (7.8in), treated as the bag's vertical drop for this full-frame product — see dims_note for why this reading differs from the identically-worded Trillium page"
+   },
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "'Universal front triangle fit' full-frame bag, small (1.67L) relative to other frame bags in this catalogue, consistent with a gravel-race-oriented low-profile design. No photo for this brand."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "molded-tooth zip under a protective rain flap, one-hand operable, drive-side access"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "storm_flap" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "1000D bluesign-approved Cordura nylon body — matches brand_notes.fabric",
+    "notes": "Non-drive-side slash pocket plus a four-way stretch mesh external pocket. Mounts with 3 TPU-coated webbing straps (included). Marketed for gravel racers ('line up for your next gravel event')."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Straps inside the front triangle, drops from the top tube toward the down tube. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#3d3d3d" },
+    { "name": "Black (dark)", "hex": "#101010" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "EXP Series",
+   "name": "Agave Pannier",
+   "size": "12.5L",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "https://www.campfirecycling.com/product/salsa-exp-series-agave-pannier.html"
+   ],
+
+   "dims_cm": { "len": 34, "wid": 18, "hgt": 28 },
+   "dims_state": "unverified",
+   "dims_raw": "Reseller page (campfirecycling.com, Salsa's own salsacycles.com does not currently list this product): 'The inside opens up to 12.5 liters of waterproof storage space.' Specs block: 'Carry Location: Front or Rear; Number of Compartments: 1; Access Style: Roll Top; Individual or Pair?: Individual; Primary Material: Coated 400D Nylon.' No length/width/height figures published anywhere on this page.",
+   "dims_note": "Capacity (12.5L) and construction are maker-sourced (via a reseller carrying the maker's own copy); linear dims are not published anywhere I could find. brands.json's len 34 / wid 18 / hgt 28 gives a 17.1L box against the published 12.5L (1.37x fill ratio) — plausible for a roll-top pannier per this project's own volume-reconciliation guidance, so left unchanged, but this is a plausibility check, not a citation. verified is false on the dims specifically.",
+   "capacity_l": 12.5,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Single-compartment roll-top pannier. No photo for this brand; shape is generic pannier-box, not observed."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "welded, waterproof roll-top construction"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "g_hook", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 1, "location": "front" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "side patches",
+    "fabric": "Coated 400D nylon, welded waterproof construction — not explicitly branded 'Cordura' on this product's own page, unlike the rest of the EXP line; left unconfirmed rather than assumed, see brand_notes.fabric",
+    "notes": "Rixen and Kaul rack-attachment hardware with included adjustable shims. Sold individually (per-bag price and 'Individual or Pair?: Individual' spec), mountable front or rear. Off-bike carrying via a top handle."
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["rear_rack", "front_rack"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Rixen & Kaul quick-release rack hooks, adjustable via included shims for a range of rack tube diameters. Clearance not established — no photo, no maker figure."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#3d3d3d" },
+    { "name": "Black (dark)", "hex": "#101010" }
+   ],
+   "images": []
+  }
+
+ ]
+}
