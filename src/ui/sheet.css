@@ -1,0 +1,227 @@
+/* ===========================================================================
+   The sheet shell — DESIGN-SYSTEM.md §6.2, §6.1 rail state, §6.4 dock.
+   Step 2 of §12. Loaded AFTER ui.css so it wins during the migration.
+
+   Everything here hangs off one class on #ui-root: `.sheet-open`. That is
+   deliberate — §5 requires the sheet, the rail collapse and the dock move to
+   happen on one tick and one curve, and the cheapest way to guarantee that is
+   for all three to be transitions on a single class change.
+   =========================================================================== */
+
+/* ---- the shell ----------------------------------------------------------- */
+.sheet {
+  position: fixed;
+  top: var(--gutter);
+  right: var(--gutter);
+  bottom: var(--gutter);
+  width: var(--sheet-detail-w);
+  border-radius: var(--r-panel);
+  display: flex;
+  flex-direction: column;
+  overflow: visible;              /* the scrim well must not be clipped */
+  pointer-events: auto;
+  z-index: 40;
+
+  /* Enters from the edge it belongs to (§5, §1.6): nothing fades in from
+     nowhere. Width is transitioned too, so `detail` -> `catalog` is a resize
+     rather than a close and a reopen. */
+  opacity: 0;
+  transform: translateX(24px);
+  transition:
+    opacity var(--d-sheet-out) var(--ease-in),
+    transform var(--d-sheet-out) var(--ease-in),
+    width var(--d-sheet) var(--ease-out);
+}
+
+.sheet.open {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity var(--d-sheet) var(--ease-out),
+    transform var(--d-sheet) var(--ease-out),
+    width var(--d-sheet) var(--ease-out);
+}
+
+.sheet[data-kind='catalog'] { width: var(--sheet-catalog-w); }
+
+/* ---- head ---------------------------------------------------------------- */
+.sheet-head {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-5) var(--s-5) var(--s-3);
+  border-bottom: 1px solid var(--hairline);
+  flex: 0 0 auto;
+}
+
+.sheet-title {
+  margin: 0;
+  flex: 1 1 auto;
+  color: var(--ink-1);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* §9.3: 44px hit-target floor. The visible box is 36px; the padding makes up
+   the difference without changing the optical size. */
+.sheet-close {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: var(--r-control);
+  background: var(--fill-1);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background var(--d-micro) var(--ease-out),
+              color var(--d-micro) var(--ease-out),
+              transform var(--d-press) var(--ease-out);
+}
+.sheet-close:hover { background: var(--fill-2); color: var(--ink-1); }
+.sheet-close:active { transform: scale(0.975); }
+.sheet-close:focus-visible { outline: 2px solid var(--accent-ring); outline-offset: 2px; }
+
+/* ---- body ---------------------------------------------------------------- */
+.sheet-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: var(--s-5);
+  color: var(--ink-2);
+  font: var(--t-body);
+  /* §6.1's fade-bottom, generalised: content should look like it continues
+     rather than being guillotined by the panel edge. */
+  mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 32px), transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 32px), transparent 100%);
+}
+
+/* ---- 2. the rig panel collapses to a rail (§6.1 "Rail state") ------------ */
+/* Same tick, same curve as the sheet. The panel keeps its own glass; only its
+   width and the opacity of its contents change, so nothing is re-created and
+   the browser can transition rather than relayout from scratch. */
+#ui-root .panel {
+  transition: width var(--d-sheet) var(--ease-out);
+}
+
+#ui-root.sheet-open .panel {
+  width: var(--rail-w);
+  min-width: var(--rail-w);
+  overflow: hidden;
+}
+
+/* §6.1's rail shows 40x40 thumbnails and a `+`, and NOTHING else.
+   Enumerating the text elements to hide was not enough: the empty state
+   ("Nothing mounted yet. Add a bag to start building your rig.") reflowed into
+   a 56px column and rendered as a stack of clipped words, which reads as a
+   rendering bug rather than as a state. So the rail hides everything by
+   default and re-shows the two things it is for. */
+#ui-root.sheet-open .panel-head,
+#ui-root.sheet-open .empty-state,
+#ui-root.sheet-open .card-sub,
+#ui-root.sheet-open .card-main,
+#ui-root.sheet-open .card-act,
+#ui-root.sheet-open .bag-act,
+#ui-root.sheet-open .panel-count {
+  display: none;
+}
+
+#ui-root.sheet-open .bag-list { padding: var(--s-2) 0; overflow: hidden auto; }
+
+/* Card becomes its own thumbnail: square, centred, no chrome. */
+#ui-root.sheet-open .card {
+  display: block;
+  width: 40px;
+  height: 40px;
+  min-height: 0;
+  margin: 0 auto var(--s-2);
+  padding: 0;
+  border-radius: var(--r-control);
+  overflow: hidden;
+}
+#ui-root.sheet-open .card-thumb {
+  width: 40px; height: 40px; margin: 0; border-radius: var(--r-control);
+}
+#ui-root.sheet-open .card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* The + survives, as a square button rather than a labelled row. */
+#ui-root.sheet-open .panel-foot { padding: var(--s-2); }
+#ui-root.sheet-open .add-bag {
+  width: 40px; height: 40px; min-width: 0; padding: 0;
+  margin: 0 auto; display: grid; place-items: center;
+  border-radius: var(--r-control);
+  font-size: 0;                       /* kills the label without a selector */
+  overflow: hidden;
+}
+#ui-root.sheet-open .add-bag .plus { font-size: 20px; line-height: 1; }
+
+/* ---- 3. the dock repositions (§6.4) -------------------------------------- */
+/* The dock lives INSIDE .bottom-bar, which is the element actually anchored to
+   the viewport (left: gutter + panel-w, right: gutter). Two lessons from the
+   smoke test, both worth keeping:
+     - translating .dock AND .bottom-bar applied the shift twice, because one
+       is nested in the other. The dock ended 179px off the left edge.
+     - a transform is the wrong tool anyway. .bottom-bar is anchored to both
+       edges, so moving its anchors makes it RESIZE to the free area rather
+       than slide out of one side of it. */
+#ui-root .bottom-bar {
+  transition: left var(--d-sheet) var(--ease-out),
+              right var(--d-sheet) var(--ease-out);
+}
+#ui-root.sheet-open .bottom-bar {
+  left: calc(var(--gutter) + var(--rail-w));
+  right: calc(var(--sheet-w) + var(--gutter) * 2);
+}
+
+/* The view tools sit top-right, exactly where the sheet arrives. */
+#ui-root .viewtools {
+  transition: transform var(--d-sheet) var(--ease-out);
+}
+#ui-root.sheet-open .viewtools {
+  transform: translateX(calc((var(--sheet-w) + var(--gutter)) * -1));
+}
+
+/* ui.css sets its own family on .panel/.dock children; the design system owns
+   type now, and sheet.css loads last. */
+#ui-root, .sheet, .picker { font-family: var(--font); }
+
+/* ---- compact: a bottom sheet, not a side sheet --------------------------- */
+/* §6.2 chose a right side sheet for the desktop reasons it gives — the bike's
+   silhouette is wide and short, so horizontal space is what is spare. None of
+   that holds on a phone, where MOBILE.md already established bottom sheets and
+   mobile.js already lifts the camera to clear them. Matching that is why
+   reframe.js refuses to run below this breakpoint. Keep this query in step
+   with COMPACT in ui.js and DESKTOP_LAYOUT in main.js. */
+@media (max-width: 900px), (pointer: coarse) {
+  .sheet {
+    top: auto;
+    left: var(--s-2);
+    right: var(--s-2);
+    bottom: var(--s-2);
+    width: auto;
+    max-height: min(72vh, 620px);
+    transform: translateY(24px);
+  }
+  .sheet.open { transform: translateY(0); }
+  .sheet[data-kind='catalog'] { width: auto; }
+
+  /* The rail is a desktop idea. On a phone the panel is already a bottom
+     sheet, and two stacked bottom sheets is exactly the "one surface at a
+     time" violation §1.4 forbids — so the panel hides outright instead. */
+  #ui-root.sheet-open .panel {
+    width: auto;
+    min-width: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #ui-root.sheet-open .bottom-bar { left: var(--s-2); right: var(--s-2); }
+  #ui-root.sheet-open .viewtools { transform: none; }
+}
+
+/* §9.4 — with reduced motion the durations are already 0ms from tokens.css,
+   so the sheet still ARRIVES from its edge, it just arrives immediately. No
+   separate code path, which is what stops the two drifting apart. */

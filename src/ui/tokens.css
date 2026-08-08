@@ -1,0 +1,239 @@
+/* ===========================================================================
+   Packrig design tokens — DESIGN-SYSTEM.md §2, §3, §4, §5, §11.
+   Step 1 of §12. Nothing else in the system works without this file.
+
+   This is the ONLY place a raw colour, duration, radius or type size is
+   allowed to be written down. If you find yourself typing `rgba(255,255,255,`
+   or `16px` in a component, the token is missing — add it here.
+
+   Loaded before ui.css, so ui.css can consume the tokens and can also still
+   override during the migration. Both stylesheets coexist deliberately:
+   §12 is ordered, and the components move onto these tokens in steps 2-6.
+   =========================================================================== */
+
+/* §2 — Inter Variable, self-hosted, one file, no runtime network request.
+   Subset to Latin + the punctuation this app actually uses (368 glyphs),
+   with the optical-size axis pinned at 14 and the weight axis kept whole.
+
+   Pinning `opsz` is a deliberate departure worth stating: keeping both axes
+   costs 58.4 KB against §2's 48 KB budget, pinning costs 37.2 KB. The ramp in
+   §2.1 already hand-tunes tracking at every size (−0.022em at 34px through
+   +0.13em at 10.5px), which is most of what the optical axis would have done
+   automatically — so the axis was largely redundant with the spec, and the
+   budget was not. tnum, zero, cv05 and ss03 all survive the subset, which is
+   the part §2 calls decisive. */
+@font-face {
+  font-family: 'Inter';
+  src: url('../../assets/fonts/InterVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---- ink §3.1 -------------------------------------------------------- */
+  /* Always white at an alpha. There is no light-mode ink; that is what lets
+     one system survive five wildly different HDRIs. --ink-4 is NEVER text. */
+  --ink-1: rgba(255, 255, 255, 0.96);
+  --ink-2: rgba(255, 255, 255, 0.70);
+  --ink-3: rgba(255, 255, 255, 0.48);
+  --ink-4: rgba(255, 255, 255, 0.28);
+  --ink-on-accent: #24120A;
+
+  /* ---- accent + semantic §3.4 ------------------------------------------ */
+  /* One accent, two jobs: primary action fill, and the selection ring. */
+  --accent: #FF7A45;
+  --accent-hi: #FF8F62;
+  --accent-lo: #E9622F;
+  --accent-soft: rgba(255, 122, 69, 0.14);
+  --accent-ring: rgba(255, 122, 69, 0.85);
+  --ok: #4FCB8B;
+  --warn: #F2B23C;
+  --bad: #FF5C4D;
+
+  /* An Ember ring always carries a black outer ring, so it separates from a
+     warm scene ground as well as a cold one. */
+  --ring-selected:
+    0 0 0 1.5px var(--accent-ring),
+    0 0 0 3.5px rgba(0, 0, 0, 0.55),
+    0 0 14px rgba(255, 122, 69, 0.30);
+
+  /* ---- glass ladder §3.2 ----------------------------------------------- */
+  /* Elevation reads as more blur and a lighter border; the base tint stays
+     dark so ink polarity never flips. Alpha never goes past 0.66 — past that
+     it stops being glass and becomes a grey rectangle. */
+  --e1-bg: rgba(16, 18, 21, 0.52);
+  --e1-blur: blur(16px) saturate(140%);
+  --e1-brd: rgba(255, 255, 255, 0.10);
+  --e1-shd: 0 2px 8px rgba(0, 0, 0, 0.28);
+
+  --e2-bg: rgba(16, 18, 21, 0.60);
+  --e2-blur: blur(28px) saturate(150%);
+  --e2-brd: rgba(255, 255, 255, 0.13);
+  --e2-shd: 0 6px 24px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  --e3-bg: rgba(14, 16, 19, 0.66);
+  --e3-blur: blur(40px) saturate(160%);
+  --e3-brd: rgba(255, 255, 255, 0.16);
+  --e3-shd: 0 16px 56px rgba(0, 0, 0, 0.46), inset 0 1px 0 rgba(255, 255, 255, 0.09);
+
+  --e4-bg: rgba(22, 25, 29, 0.86);
+  --e4-blur: blur(24px) saturate(150%);
+  --e4-brd: rgba(255, 255, 255, 0.18);
+  --e4-shd: 0 20px 48px rgba(0, 0, 0, 0.55);
+
+  /* ---- fills + hairline ------------------------------------------------ */
+  --fill-1: rgba(255, 255, 255, 0.05);
+  --fill-2: rgba(255, 255, 255, 0.09);
+  --fill-3: rgba(255, 255, 255, 0.15);
+  --hairline: rgba(255, 255, 255, 0.09);
+
+  /* ---- the scrim well §3.3 --------------------------------------------- */
+  /* ONE number, on :root, written by src/ui/scrim.js and by nothing else.
+     1.30 is the mountain-dawn value — a sane middle if the readback never
+     runs (no WebGL2, reduced-motion bail-out, a thrown frame). */
+  --scrim-k: 1.30;
+
+  /* ---- product-photo plate §3.5 ---------------------------------------- */
+  --plate: #FFFFFF;
+  --plate-edge: inset 0 0 0 1px rgba(0, 0, 0, 0.10);
+  --plate-veil: linear-gradient(180deg, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.055) 100%);
+
+  /* ---- spacing §4.1, 4px base ------------------------------------------ */
+  --s-1: 4px;  --s-2: 8px;   --s-3: 12px;  --s-4: 16px;  --s-5: 20px;
+  --s-6: 24px; --s-7: 32px;  --s-8: 40px;  --s-9: 56px;  --s-10: 72px;
+
+  /* ---- radius §4.2, concentric ----------------------------------------- */
+  /* Replaces the single global --radius:16px, which is why the old UI reads
+     soft rather than crisp: a 480px sheet and a 22px button cannot share one. */
+  --r-panel: 20px;
+  --r-dock: 28px;
+  --r-card: 14px;
+  --r-control: 10px;
+  --r-chip: 8px;
+  --r-swatch: 6px;
+  --r-pill: 999px;
+
+  /* ---- layout ---------------------------------------------------------- */
+  --gutter: var(--s-6);
+  --rig-w: 280px;
+  --rail-w: 56px;
+  --sheet-detail-w: clamp(420px, 34vw, 560px);
+  --sheet-catalog-w: clamp(560px, 50vw, 760px);
+  /* JS writes this to the active sheet's width, or 0px when none is open.
+     Everything that has to move out of the sheet's way reads it. */
+  --sheet-w: 0px;
+
+  /* ---- motion §5 -------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1.00, 0.36, 1.00);
+  --ease-in: cubic-bezier(0.64, 0.00, 0.78, 0.00);
+  --ease-inout: cubic-bezier(0.65, 0.00, 0.35, 1.00);
+  --ease-camera: cubic-bezier(0.32, 0.00, 0.16, 1.00);
+  --ease-pop: cubic-bezier(0.34, 1.28, 0.64, 1.00);
+  --d-micro: 120ms;
+  --d-press: 90ms;
+  --d-control: 180ms;
+  --d-sheet: 320ms;
+  --d-sheet-out: 240ms;
+  --d-camera: 700ms;
+  --d-scene: 600ms;
+
+  /* ---- type §2, §2.1 ---------------------------------------------------- */
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-num: var(--font);
+
+  /* Each role is size / weight / tracking / line-height. Tracking is negative
+     above 18px and positive only in Label. Never letter-space body text. */
+  --t-display:  600 34px/1.08 var(--font);   --tr-display: -0.022em;
+  --t-title1:   600 26px/1.14 var(--font);   --tr-title1:  -0.018em;
+  --t-title2:   600 19px/1.22 var(--font);   --tr-title2:  -0.012em;
+  --t-title3:   600 15px/1.30 var(--font);   --tr-title3:  -0.006em;
+  --t-body:     400 14px/1.55 var(--font);   --tr-body:     0;
+  --t-body-s:   550 14px/1.45 var(--font);   --tr-body-s:   0;
+  --t-caption:  400 12.5px/1.45 var(--font); --tr-caption:  0;
+  --t-micro:    500 11px/1.35 var(--font);   --tr-micro:    0.01em;
+  --t-label:    650 10.5px/1 var(--font);    --tr-label:    0.13em;
+  --t-data:     550 15px/1.2 var(--font);    --tr-data:    -0.004em;
+  --t-data-s:   550 12.5px/1.2 var(--font);  --tr-data-s:   0;
+}
+
+/* The face is only ever FETCHED if something asks for it. Declaring --font and
+   leaving ui.css's own stack on `body` means a perfectly good @font-face that
+   the browser never requests — which is what the first smoke test found:
+   document.fonts reported zero loaded Inter faces while the page looked
+   almost right in the system fallback. Set it here, and in sheet.css (which
+   loads last) so ui.css cannot win the cascade during the migration. */
+body {
+  font-family: var(--font);
+  /* §2: cv05 (l with a tail) and ss03 (curved r) are Inter's UI-legibility set. */
+  font-feature-settings: 'cv05' 1, 'ss03' 1;
+}
+
+/* §9.4 — reduced motion. Durations collapse; nothing is left half-animated,
+   and the camera reframe still HAPPENS, it just happens instantly. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --d-micro: 0ms; --d-press: 0ms; --d-control: 0ms;
+    --d-sheet: 0ms; --d-sheet-out: 0ms; --d-camera: 0ms; --d-scene: 0ms;
+  }
+}
+
+/* ---- type utility classes ------------------------------------------------
+   Font shorthand + its tracking always travel together, so binding them in
+   one class is what stops a component setting a size and forgetting the
+   tracking — the commonest way a type ramp rots. */
+.t-display { font: var(--t-display);  letter-spacing: var(--tr-display); }
+.t-title1  { font: var(--t-title1);   letter-spacing: var(--tr-title1); }
+.t-title2  { font: var(--t-title2);   letter-spacing: var(--tr-title2); }
+.t-title3  { font: var(--t-title3);   letter-spacing: var(--tr-title3); }
+.t-body    { font: var(--t-body);     letter-spacing: var(--tr-body); }
+.t-body-s  { font: var(--t-body-s);   letter-spacing: var(--tr-body-s); }
+.t-caption { font: var(--t-caption);  letter-spacing: var(--tr-caption); }
+.t-micro   { font: var(--t-micro);    letter-spacing: var(--tr-micro); }
+.t-label   { font: var(--t-label);    letter-spacing: var(--tr-label); text-transform: uppercase; }
+.t-data    { font: var(--t-data);     letter-spacing: var(--tr-data);   font-variant-numeric: tabular-nums slashed-zero; }
+.t-data-s  { font: var(--t-data-s);   letter-spacing: var(--tr-data-s); font-variant-numeric: tabular-nums slashed-zero; }
+
+/* §5 — every litre, millimetre and gram is set in tabular figures. */
+.num, .capacity, .dim, td.num { font-variant-numeric: tabular-nums slashed-zero; }
+
+/* ---- the scrim well §3.3 -------------------------------------------------
+   A non-interactive child BEHIND its parent's own background, holding a
+   blurred copy of the parent's own shape. It darkens the SCENE behind the
+   panel rather than the panel itself, which is the only way one glass
+   survives both a night sky and a noon desert.
+
+   Deliberately a blurred copy of the shape, not a radial gradient: a radial
+   gradient sized to a tall narrow element (the rail, the dock) paints a
+   visible dark OVAL that does not follow the panel. That is exactly the
+   grey-smudge failure of the .top-scrim this replaces.
+
+   Requires the parent to be positioned and to establish a stacking context
+   with its own background painted above z-index -1. */
+.scrim-well {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, calc(0.30 * var(--scrim-k)));
+  filter: blur(26px);
+  transform: scale(1.03);
+}
+
+/* Text that floats on the canvas with no panel behind it — the wordmark, 3D
+   labels — uses the same mechanism at 0.6 strength and a wider radius. */
+.scrim-well.free {
+  background: rgba(0, 0, 0, calc(0.30 * var(--scrim-k) * 0.6));
+  filter: blur(40px);
+  transform: scale(1.14);
+}
+
+/* ---- surfaces ------------------------------------------------------------
+   Applying an elevation is one class. A surface that carries a scrim well
+   must not clip it, so `overflow: hidden` belongs on an inner element. */
+.e1, .e2, .e3, .e4 { position: relative; isolation: isolate; }
+.e1 { background: var(--e1-bg); backdrop-filter: var(--e1-blur); -webkit-backdrop-filter: var(--e1-blur); border: 1px solid var(--e1-brd); box-shadow: var(--e1-shd); }
+.e2 { background: var(--e2-bg); backdrop-filter: var(--e2-blur); -webkit-backdrop-filter: var(--e2-blur); border: 1px solid var(--e2-brd); box-shadow: var(--e2-shd); }
+.e3 { background: var(--e3-bg); backdrop-filter: var(--e3-blur); -webkit-backdrop-filter: var(--e3-blur); border: 1px solid var(--e3-brd); box-shadow: var(--e3-shd); }
+.e4 { background: var(--e4-bg); backdrop-filter: var(--e4-blur); -webkit-backdrop-filter: var(--e4-blur); border: 1px solid var(--e4-brd); box-shadow: var(--e4-shd); }

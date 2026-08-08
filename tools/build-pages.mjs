@@ -66,6 +66,22 @@ for (const b of brands) {
 console.log(`   ${hotlinked} products hot-link a photo (${restored} URLs restored from images_remote) · ${noPhoto} without`);
 writeFileSync(join(docs, 'data/brands.json'), JSON.stringify(brands));
 
+// DESIGN-SYSTEM.md §12 step 1. tokens.css sits at src/ui/tokens.css in the
+// repo and at docs/tokens.css in the deploy, so its @font-face URL — which is
+// resolved relative to the STYLESHEET, not the page — has to be rewritten for
+// the shallower path. Getting this wrong fails silently: the page renders in
+// the system fallback and looks nearly right.
+mkdirSync(join(docs, 'assets/fonts'), { recursive: true });
+copyFileSync(join(root, 'assets/fonts/InterVariable.woff2'), join(docs, 'assets/fonts/InterVariable.woff2'));
+copyFileSync(join(root, 'assets/fonts/Inter-LICENSE.txt'), join(docs, 'assets/fonts/Inter-LICENSE.txt'));
+{
+  const tokens = readFileSync(join(root, 'src/ui/tokens.css'), 'utf8');
+  const rewritten = tokens.replace('../../assets/fonts/', './assets/fonts/');
+  if (rewritten === tokens) throw new Error('tokens.css: expected @font-face url ../../assets/fonts/ to rewrite');
+  writeFileSync(join(docs, 'tokens.css'), rewritten);
+}
+copyFileSync(join(root, 'src/ui/sheet.css'), join(docs, 'sheet.css'));
+
 copyFileSync(join(root, 'src/ui.css'), join(docs, 'ui.css'));
 // The wind tunnel's HUD styles live in their own file. index.html below must
 // link BOTH — the panel renders unstyled if this is copied and not linked, or
@@ -80,7 +96,10 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <link rel="icon" href="data:," />
 <title>Packrig — Bikepacking Bag Configurator</title>
 <meta name="description" content="Build a bikepacking rig in 3D from a catalogue of 700+ real bags across 50 makers." />
+<link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="tokens.css" />
 <link rel="stylesheet" href="ui.css" />
+<link rel="stylesheet" href="sheet.css" />
 <link rel="stylesheet" href="aero.css" />
 <style>html,body{height:100%;margin:0;background:#121212;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
 </head>
