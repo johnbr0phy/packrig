@@ -4,13 +4,15 @@ import * as THREE from 'three';
 import { v3, deg } from '../../lib.js';
 import { addPockets, bungeeArc, daisyChain, drawcordEnd, flapArc, orientArc, reflectiveArc, valveDisc, zipperRun } from '../features.js';
 import { rollTop, seamCurve, strapAssembly, taperAndFlatten, widAt, wrapStrap } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
 export function buildSeatpack(p, brand, main, accent, ctx) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   // trust the catalogue: caps here are sanity guards, not size levellers
   const len = Math.min(p.mm.len, 720);
   const tailR = Math.min(p.mm.hgt, 260) / 2;
@@ -23,9 +25,20 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   const shoulder = vr.range(0.78, 0.86);    // where the tail starts closing
   // Plan-view narrowing toward the tail. Apidura quote 15cm → 5cm nose to tail
   // on the Expedition, i.e. a third; 0.34-0.46 was far too weak to read as a
-  // blade from the side or above (HANDOVER item 3). The Apidura reviewer
-  // measured this family at nose 1.0 -> tail 0.33 linear; this brackets that.
-  const tailWid = vr.range(0.30, 0.40);
+  // blade from the side or above (HANDOVER item 3).
+  //
+  // This is now MEASURED, not guessed. `geometry.taper` in the model records
+  // is a nose→tail ratio read off the product photos: Apidura's Expedition is
+  // 0.33, Alpkit's Koala 0.55, Altura's Vortex 0.75 — a real spread that a
+  // single `vr.range()` flattened into one shape for every maker. Where a
+  // record has no taper, fall back to the old bracket so the bag still varies.
+  //
+  // Floored at 0.18: below that `taperAndFlatten` pinches the tail to a knife
+  // edge the roll closure then has nothing to sit on.
+  const geom = geomOf(p);
+  const tailWid = geom.taperRatio !== null
+    ? Math.min(Math.max(geom.taperRatio, 0.18), 1)
+    : vr.range(0.30, 0.40);
   const profileR = (t) => {
     if (shape === 'cylindrical') {
       return t < 0.06 ? tailR * Math.sqrt(t / 0.06) * 0.96 + 2
@@ -79,6 +92,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   const lift = bodyAmp + 1.5; // trim must clear the stuffing, or the shell pokes through
   const lathe = soft(taperAndFlatten(new THREE.LatheGeometry(pts, 44), { len, shoulder, tailWid }), main, {
     amp: bodyAmp, freq: vr.range(0.02, 0.03), seed: vr.seed % 997,
+    stiffness: stiff,
     aoDir: new THREE.Vector3(-1, 0, 0), aoK: 0.8, aoSpan: 0.5,
   });
   lathe.rotation.z = Math.PI / 2; // axis −X: tail behind saddle

@@ -3,18 +3,21 @@
 import * as THREE from 'three';
 import { v3 } from '../../lib.js';
 import { strapAssembly } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
 export function buildDowntube(p, brand, main, accent, ctx) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   const r = Math.min(Math.max(p.mm.hgt, p.mm.wid), 150) / 2;
   const len = Math.min(p.mm.len, 380);
   const ang = Math.atan2(ctx.points.headBottom.y, ctx.points.headBottom.x);
   const body = soft(new THREE.CapsuleGeometry(r, len - 2 * r, 8, 24), main, {
     amp: vr.range(1.7, 2.4), freq: vr.range(0.04, 0.05), seed: vr.seed % 911,
+    stiffness: stiff,
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.82, aoSpan: 0.5,
   });
   body.rotation.z = ang - Math.PI / 2;

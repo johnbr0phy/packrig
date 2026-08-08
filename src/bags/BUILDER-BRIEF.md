@@ -25,6 +25,46 @@ Your job: make the bags this builder draws **look like the real products**, and
 If the model records for your slot are thin or missing, say so in your report
 rather than inventing details.
 
+### The records now reach your builder — read them from `p`, not from disk
+
+As of 8 Aug `tools/apply-models.mjs` merges the machine-readable half of every
+`geometry` block into `data/brands.json`, so it arrives on the product object.
+Two helpers in `identity.js` normalise it, and both are safe to call on a
+product whose record says nothing:
+
+```js
+import { featuresOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
+
+const geom = geomOf(p);
+//  { form, crossSection, shoulder, profile, taperRatio }
+//  every field is null where the record is silent; taperRatio is the measured
+//  tail-to-nose fraction along the tapering axis (Apidura Expedition 0.33,
+//  Alpkit Koala 0.55, Altura Vortex 0.75)
+
+const stiff = stiffnessOf(p);   // 'soft' | 'semi' | 'rigid'
+soft(geo, main, { amp, freq, seed, stiffness: stiff, ... });
+```
+
+699 of 702 products carry a form and a cross-section; 386 carry a taper; 93 are
+classified `semi` or `rigid`. `soft()` already honours `stiffness`: `semi`
+takes 40% of the noise and bulge, `rigid` skips the displacement pass entirely
+so a moulded shell keeps its creases. Every builder passes it today — do not
+remove that.
+
+**Two things to get right when you use this.**
+
+1. **Replace your `vr.range()` guesses with the measured value, and keep the
+   `vr.range()` as the fallback where the record is silent.** That is what
+   `seatpack.js` now does for `tailWid`. The point of §4 is variation driven by
+   the data; a builder that ignores `geomOf(p)` and invents its own taper
+   constant is the thing this brief exists to stop.
+2. **A `bulge` that positions the bag is not a bulge.** `toptube.js` used to
+   hollow its underside through the `bulge` callback so the top tube nested
+   into it. That channel is placement, and a rigid bag skips the whole deform
+   pass — five structured top tube bags would have sat on the tube instead of
+   over it. Carve anything structural into the geometry itself; keep `bulge`
+   for padding.
+
 ---
 
 ## 2. The two rules that have caused nearly every bug in this project
@@ -129,7 +169,8 @@ The current models are smooth blobs with a logo. The gap is almost entirely
   A frame bag is a flat panel that fills the triangle, not a pillow.
 - **Structure** — some bags are genuinely rigid (Topeak's moulded shells,
   Tailfin's carbon, Ortlieb's stiffened back plate). They should not deform like
-  a soft sack. `deform.js` controls this.
+  a soft sack. `deform.js` controls this, and `stiffnessOf(p)` tells you which
+  bags they are — see §1.
 
 Use the per-product `features`/`geometry`/`straps`/`pockets` blocks so that two
 bags in the same slot never look alike. Variation must be driven by the data and

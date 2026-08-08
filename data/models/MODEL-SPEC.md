@@ -97,7 +97,10 @@ Never edit `dims_cm` to make the render come out right. The two fields exist so
 that honest data and correct drawing do not have to fight each other.
 
 **Tapered axes:** put the LARGER value in `dims_cm` and describe the taper in
-the `geometry.taper` block, which is what actually shapes the mesh.
+the `geometry.taper` block, which is what actually shapes the mesh — literally,
+since 8 Aug: `nose` and `tail` are read as a ratio and drive the builder's taper
+directly, replacing a `vr.range()` guess. Both must be in `(0, 1]` with `tail`
+no larger than `nose`, or `apply-models.mjs` drops the block and says so.
 
 **Pair vs single:** pannier and fork-bag volumes are often quoted for the pair.
 `capacity_l` is always the SINGLE bag. Keep the page's phrasing in `dims_raw`.
@@ -219,6 +222,20 @@ guesses. An empty `zips: []` means "I looked and there are none"; a missing
 
 Stick to these. A builder can only render what it recognises. If nothing fits,
 use the closest term and explain in `geometry.notes`.
+
+**`details.structure_class`** — `soft` · `semi` · `rigid`. **Write this.** It is
+the one field the builders read directly to decide whether a bag deforms, and
+until 8 Aug it did not exist, so 131 records described rigidity only in prose,
+spread across `details.stiffener`, `details.rigid_structure`, `geometry.notes`
+and `mount.notes`. `tools/lib/stiffness.mjs` now bootstraps a value out of that
+prose, and where you set `structure_class` it uses yours verbatim instead.
+
+Judge the **bag body**, not the mounting hardware. This is the distinction the
+classifier most often has to make and the one reviewers most often blur: Thule's
+Shield pannier bolts to a rigid moulded rail and is itself a limp welded
+tarpaulin sack — `soft`. Use `semi` for a bag that holds a shape but still gives
+(foam-backed panels, an HDPE frame sheet, a welded self-supporting shell), and
+`rigid` only for a body that does not deform at all.
 
 **`geometry.form`** — `tapered_wedge` · `horseshoe` · `cylinder` ·
 `truncated_cylinder` · `box` · `rounded_box` · `halfmoon` · `teardrop` ·

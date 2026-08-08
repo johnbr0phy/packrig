@@ -5,7 +5,7 @@ import { v3, deg } from '../../lib.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { addPockets, bungeeArc, drawcordEnd, harnessCradle, orientArc, reflectiveArc } from '../features.js';
 import { rollTop, seamRing, strapAssembly } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 import { barMount } from '../mount.js';
 
@@ -13,6 +13,8 @@ export function buildBarroll(p, brand, main, accent, ctx) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   const r = Math.min(p.mm.dia, 260) / 2;
   const mount = barMount(ctx, r);
   const len = Math.min(p.mm.len, mount.maxHalfLen * 2);
@@ -38,6 +40,7 @@ export function buildBarroll(p, brand, main, accent, ctx) {
   const lift = bodyAmp + 1.5;
   const body = soft(new THREE.LatheGeometry(prof, 40), main, {
     amp: bodyAmp, freq: vr.range(0.022, 0.032), seed: vr.seed % 991,
+    stiffness: stiff,
     aoDir: new THREE.Vector3(0, 0, 1), aoK: 0.8, aoSpan: 0.5,
   });
   body.rotation.x = Math.PI / 2; // axis along Z

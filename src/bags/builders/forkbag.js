@@ -4,13 +4,15 @@ import * as THREE from 'three';
 import { v3, deg } from '../../lib.js';
 import { addPockets, orientArc, reflectiveArc } from '../features.js';
 import { rollTop, seamRing, strapAssembly } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
 export function buildForkbag(p, brand, main, accent, ctx, side) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   // A fork bag stands UP the blade, so its long axis is whichever catalogue
   // dimension is largest — not `len`. Andrew The Maker's Many Things Sack is
   // 8.9 x 25.4 x 16.5cm, where `len` is the 3.5in depth; taking len as the
@@ -24,6 +26,7 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   grp.position.z = side * Math.max(r + 64 - anchorZ, 8);
   const body = soft(new THREE.CapsuleGeometry(r, Math.max(len - 2 * r, 8), 10, 28), main, {
     amp: vr.range(2.5, 3.5), freq: vr.range(0.028, 0.038), seed: vr.seed % 919,
+    stiffness: stiff,
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.81, aoSpan: 0.5,
   });
   grp.add(body);

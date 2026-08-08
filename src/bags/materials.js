@@ -4,7 +4,7 @@
 
 import * as THREE from 'three';
 import { labelTexture, fabricTexture } from '../lib.js';
-import { shadeAO, stuffed } from './deform.js';
+import { deformScale, shadeAO, stuffed } from './deform.js';
 
 // ---- fabric materials ----------------------------------------------------
 export const texCache = {};
@@ -73,10 +73,27 @@ export function seamMat(mat) {
   return m;
 }
 
-/** Stuffed + occluded fabric panel in one call. */
+/**
+ * Stuffed + occluded fabric panel in one call.
+ *
+ * `stiffness` — `soft` (default, and the behaviour every existing caller got
+ * before this argument existed) | `semi` | `rigid`. It comes from the product's
+ * `structure` field via `stiffnessOf(p)`; pass it and a moulded Topeak shell or
+ * a Tailfin carbon-framed frame bag stops pillowing like a Cordura sack.
+ *
+ * A rigid product skips the displacement pass altogether rather than running it
+ * with a zero amplitude — see DEFORM_SCALE in deform.js for why those differ.
+ * Baked occlusion still applies: a hard shell is still shaded underneath.
+ */
 export function soft(geo, mat, opts = {}) {
-  const { amp = 3, freq = 0.03, seed = 1, flatAxis = null, bulge = null, aoDir = null, aoK = 0.82, aoSpan = 0.45 } = opts;
-  stuffed(geo, { amp, freq, seed, flatAxis, bulge });
+  const { amp = 3, freq = 0.03, seed = 1, flatAxis = null, bulge = null, aoDir = null, aoK = 0.82, aoSpan = 0.45, stiffness = 'soft' } = opts;
+  const k = deformScale(stiffness);
+  if (k > 0) {
+    // Scale the bulge with the noise: a semi-rigid panel domes less between its
+    // seams for the same reason it takes less noise — there is a plate behind it.
+    const b = bulge && k !== 1 ? (...a) => bulge(...a) * k : bulge;
+    stuffed(geo, { amp: amp * k, freq, seed, flatAxis, bulge: b });
+  }
   if (aoDir) {
     shadeAO(geo, { dir: aoDir, k: aoK, span: aoSpan });
     return new THREE.Mesh(geo, vcMat(mat));

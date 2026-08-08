@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { deg } from '../../lib.js';
 import { addPockets, bungeeArc, reflectiveArc } from '../features.js';
 import { seamRing, strapAssembly } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
 // Axis mapping for this slot: the bag is a vertical cylinder hanging from the
@@ -16,6 +16,8 @@ export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   const r = Math.min(p.mm.dia, 130) / 2;
   const h = Math.min(p.mm.hgt, 240);
 
@@ -37,6 +39,7 @@ export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   const taper = vr.range(0.82, 0.95);
   const body = soft(new THREE.CylinderGeometry(r, r * taper, h, 30, 8), main, {
     amp: vr.range(1.7, 2.5), freq: vr.range(0.04, 0.052), seed: vr.seed % 929,
+    stiffness: stiff,
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.5,
   });
   body.position.y = -h / 2;

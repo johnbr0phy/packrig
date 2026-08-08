@@ -5,7 +5,7 @@ import { v3 } from '../../lib.js';
 import { shapeBulge } from '../deform.js';
 import { addPockets, daisyChain, reflectiveStrip, zipperRun } from '../features.js';
 import { TUBE_R, frameStraps, rollTop, seamStrip } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 import { clipHalfPlane, crossSpan, framePanelPoly, subdivideXY } from '../panels.js';
 
@@ -13,6 +13,8 @@ export function buildFrameFull(p, brand, main, accent, ctx) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   const full = framePanelPoly(ctx);
   // Fit the catalogue panel INSIDE the triangle instead of always filling it.
   // Ignoring p.mm.len/hgt drew a 300x180mm Backcountry 2.5L at the same size as
@@ -50,6 +52,7 @@ export function buildFrameFull(p, brand, main, accent, ctx) {
   // tessellate the flat faces so the panels can actually bulge
   const body = soft(subdivideXY(geo, 34), main, {
     amp: vr.range(2.6, 3.8), freq: vr.range(0.017, 0.024), seed: vr.seed % 967, flatAxis: 'z',
+    stiffness: stiff,
     bulge: shapeBulge(local, bulgeAmt, seams),
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.78, aoSpan: 0.5,
   });

@@ -7,7 +7,7 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { boxBulge } from '../deform.js';
 import { addPockets, bungeeArc, bungeeLattice, daisyChain, drawcordEnd, flapLid, orientArc, reflectiveArc, reflectiveStrip, zipperRun } from '../features.js';
 import { rollTop, seamRing, seamStrip, strapAssembly, webbingRun } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 import { barMount } from '../mount.js';
 
@@ -15,6 +15,8 @@ export function buildBarbag(p, brand, main, accent, ctx) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   const wm = webbing();
   const hwm = hardware();
   const hasDia = p.dims_cm && p.dims_cm.dia;
@@ -27,6 +29,7 @@ export function buildBarbag(p, brand, main, accent, ctx) {
     const lift = bodyAmp + 1.5;
     const body = soft(new THREE.CapsuleGeometry(r * 0.98, Math.max(len - 2 * r, 6), 10, 30), main, {
       amp: bodyAmp, freq: vr.range(0.024, 0.034), seed: vr.seed % 983,
+      stiffness: stiff,
       bulge: feats.shape === 'barrel' ? boxBulge(r, len / 2, r, r * 0.1) : null,
       aoDir: new THREE.Vector3(0, 0, 1), aoK: 0.81, aoSpan: 0.5,
     });
@@ -84,6 +87,7 @@ export function buildBarbag(p, brand, main, accent, ctx) {
   const w = Math.min(p.mm.len, 400), h = Math.min(p.mm.hgt, 300), d = Math.min(p.mm.wid, 260);
   const body = soft(new RoundedBoxGeometry(d, h, w, 7, Math.min(20, d * 0.3)), main, {
     amp: vr.range(2.2, 3.2), freq: vr.range(0.026, 0.034), seed: vr.seed % 977,
+    stiffness: stiff,
     bulge: boxBulge(d / 2, h / 2, w / 2, Math.min(d, h, w) * vr.range(0.08, 0.13)),
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.45,
   });

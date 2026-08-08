@@ -6,7 +6,7 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { boxBulge } from '../deform.js';
 import { addPockets, bungeeLattice, daisyChain, drawcordEnd, flapLid, reflectiveStrip, zipperRun } from '../features.js';
 import { seamStrip } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
 export function buildPannier(p, brand, main, accent, ctx, side) {
@@ -14,6 +14,8 @@ export function buildPannier(p, brand, main, accent, ctx, side) {
   // panniers hang tall and narrow: biggest listed dimension is the drop
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   const dims = [p.mm.len, p.mm.wid, p.mm.hgt].sort((a, b) => b - a);
   const h = Math.min(dims[0], 520), w = Math.min(dims[1], 440), d = Math.min(dims[2], 260);
   // The stuffing pushes the face out by `bulgeAmt`; trim placed on the
@@ -23,6 +25,7 @@ export function buildPannier(p, brand, main, accent, ctx, side) {
   const faceZ = d / 2 + bulgeAmt;
   const body = soft(new RoundedBoxGeometry(w, h, d, 8, Math.min(24, d * 0.28)), main, {
     amp: vr.range(2.6, 3.8), freq: vr.range(0.02, 0.028), seed: vr.seed % 947,
+    stiffness: stiff,
     bulge: boxBulge(w / 2, h / 2, d / 2, bulgeAmt),
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.42,
   });

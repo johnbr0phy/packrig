@@ -6,7 +6,7 @@ import { v3, tubeBetween } from '../../lib.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { boxBulge } from '../deform.js';
 import { seamStrip } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
 /**
@@ -27,6 +27,8 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   const len = Math.min(p.mm.len, 460), h = Math.min(p.mm.hgt, 220), w = Math.min(p.mm.wid, 170);
   const P = ctx.points;
   const anchor = ctx.anchors[anchorName].position;
@@ -69,18 +71,32 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
     }
     pos.needsUpdate = true;
     g.computeVertexNormals();
+    // Hollow the underside so the top tube nests into it instead of the bag
+    // hovering on the tube's crown.
+    //
+    // This is carved into the geometry, NOT passed as a `bulge` to soft(),
+    // which is where it used to live. The channel is placement, not padding:
+    // without it the bag sits EMBED (10mm) deep in the tube, which the
+    // clearance audit reads as penetration. A `bulge` is part of the
+    // soft-goods pass, and that pass is now skipped entirely for products the
+    // model records call rigid — Topeak's faceted DryShell, VAUDE's Trailtop,
+    // EVOC's and Lezyne's structured boxes, Cedaero's Tank Top, all of them
+    // top tube bags. Those five would have lost their channel and sat on the
+    // tube. Rigid means "does not pillow", never "does not fit the bike".
+    const nor = g.attributes.normal;
+    for (let i = 0; i < pos.count; i++) {
+      if (nor.getY(i) > -0.6) continue;
+      const s = chanR * chanR - pos.getZ(i) ** 2;
+      if (s > 0) pos.setY(i, pos.getY(i) + Math.max(tubeY + Math.sqrt(s), 0));
+    }
+    pos.needsUpdate = true;
+    g.computeVertexNormals();
     return g;
   })();
   const body = soft(shapedBox, main, {
     amp: vr.range(1.7, 2.5), freq: vr.range(0.034, 0.046), seed: vr.seed % 937,
-    bulge: (x, y, z, nx, ny, nz) => {
-      if (ny < -0.6) {
-        // hollow the underside so the tube nests into it instead of hovering
-        const s = chanR * chanR - z * z;
-        return s > 0 ? -Math.max(tubeY + Math.sqrt(s), 0) : 0;
-      }
-      return bulge(x, y, z, nx, ny, nz);
-    },
+    stiffness: stiff,
+    bulge,
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.45,
   });
   body.position.set(-len / 2 + 10, h / 2, 0);

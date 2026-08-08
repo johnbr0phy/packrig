@@ -5,7 +5,7 @@ import { v3 } from '../../lib.js';
 import { shapeBulge } from '../deform.js';
 import { addPockets, reflectiveStrip, zipperRun } from '../features.js';
 import { TUBE_R, frameStraps, seamStrip } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 import { crossSpan, framePanelPoly, subdivideXY } from '../panels.js';
 
@@ -16,6 +16,8 @@ export function buildFrameHalf(p, brand, main, accent, ctx) {
   const a = panel[1].clone(), b = panel[2].clone(); // seat-side → head-side along TT
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   const h = Math.min(p.mm.hgt, 300);
   // Honour the catalogue length. Spanning 4%→96% of the top tube regardless of
   // p.mm.len made a 205mm Racing pack the same object as a 490mm Expedition.
@@ -52,6 +54,7 @@ export function buildFrameHalf(p, brand, main, accent, ctx) {
   const bulgeAmt = Math.min(depth * vr.range(0.2, 0.28), 18);
   grp.add(soft(subdivideXY(geo, 30), main, {
     amp: vr.range(2.4, 3.6), freq: vr.range(0.018, 0.026), seed: vr.seed % 953, flatAxis: 'z',
+    stiffness: stiff,
     bulge: shapeBulge(local, bulgeAmt, seams, 48),
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.78, aoSpan: 0.5,
   }));

@@ -5,13 +5,15 @@ import { v3, deg } from '../../lib.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { boxBulge } from '../deform.js';
 import { seamStrip, strapAssembly, wrapStrap } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
 export function buildSaddlebag(p, brand, main, accent, ctx) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   // A classic saddlebag (Carradice Barley, Restrap Adventure) is WIDE ACROSS the
   // bike and shallow fore-aft, with its flap and buckles facing rearward. The
   // catalogue's `len` is that across-bike width, not the depth — mapping it to
@@ -21,6 +23,7 @@ export function buildSaddlebag(p, brand, main, accent, ctx) {
   const deep = Math.min(p.mm.wid, 220);            // fore-aft (X)
   const body = soft(new RoundedBoxGeometry(deep, h, across, 8, Math.min(18, deep * 0.28)), main, {
     amp: vr.range(1.6, 2.3), freq: vr.range(0.042, 0.054), seed: vr.seed % 907,
+    stiffness: stiff,
     bulge: boxBulge(deep / 2, h / 2, across / 2, Math.min(deep, h, across) * vr.range(0.09, 0.13)),
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.5,
   });
