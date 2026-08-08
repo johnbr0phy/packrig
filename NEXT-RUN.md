@@ -511,3 +511,32 @@ geometry agents cannot put an 8 GB machine into swap.
   with measured values — the brief's "variation driven by the data" requirement.
 - 16 brands have no photos **and** no image URLs; they need a sourcing pass
   before review is possible at all.
+
+
+---
+
+## 11. HOLD — verify Carradice axes before the next `apply-models` run
+
+`data/models/carradice.json` is committed as a record but its `dims_cm` has **not
+been merged into `brands.json`**, and it should not be until someone settles this
+by looking at a photo.
+
+The reviewer found and corrected two genuine transpositions (Nelson Longflap,
+Barley) against the maker's own "Dimensions (WxHxD)" labels. But the resulting
+file is internally inconsistent: **Nelson maps its longest axis (44cm) to `-x`,
+fore-aft, while Camper Longflap — the same product family — maps its longest
+(36cm) to `z`, across the bike.** Both cannot be right.
+
+This matters more than most data questions because it is the exact class of bug
+`HANDOVER.md` records for `buildSaddlebag`: *"`len` is fore-aft → suitcase
+projecting backward; should be wide across the bike."* A traditional Carradice
+saddlebag is wide across the bike and shallow fore-aft. If the 44cm goes to `-x`,
+the Nelson becomes a suitcase again.
+
+`wid > len` is **not** a bug in itself — only 10 of 684 products have it, and for
+saddlebags, fork bags and bar bags it is usually correct. `mount.axes` is what
+decides, not the ordering of `dims_cm`.
+
+To settle it: open `assets/products/carradice/originals-nelson-longflap-saddlebag-18l-1.jpg`
+and the Camper equivalent, decide which face is across-bike, and make all five
+Carradice records agree. Then re-run `node tools/apply-models.mjs --dry`.
