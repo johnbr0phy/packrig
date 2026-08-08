@@ -12,6 +12,9 @@ import { BagSystem, SLOTS } from './bags.js';
 import { loadCatalog } from './catalog.js';
 import { initUI } from './ui.js';
 import { initFocus } from './focus.js';
+import { createAuth } from './auth.js';
+import { createRigStore } from './rigstore.js';
+import { rigFromParams, applyRig } from './rig.js';
 import { applyRendererProfile, applyViewOffset, fitToBox, measureProfile } from './mobile.js';
 import { initScrim } from './ui/scrim.js';
 import { initSurfaces } from './ui/surfaces.js';
@@ -139,18 +142,26 @@ app.bags = new BagSystem(bike, catalog);
 await envs.set(app.state.env); // HDRI must be lit before first frame
 applyCam(params.get('cam') || 'hero');
 
-// kit from URL: kit=rand | kit=seatpack:0:1,barroll:2:0 | kit=full
+// Accounts and saved rigs. Both work with no backend configured: rigs go to
+// this browser, and `auth.enabled` is false so nothing offers to sign in.
+app.auth = createAuth();
+app.rigs = createRigStore(app, app.auth);
+if (app.auth.enabled) app.auth.hydrate();
+
+// A shared rig arrives in the URL. `?r=` is the durable form — it names the
+// maker and model of every bag, so it still resolves the same bike after the
+// catalogue is re-sorted. `?kit=` is the old positional form and is still read,
+// because it is the only one in anyone's history.
+const shared = rigFromParams(params, catalog);
 const kitParam = params.get('kit');
-if (kitParam === 'rand') {
+if (shared) {
+  const { missing } = applyRig(app, shared, { clear: false });
+  if (missing.length) console.warn('[packrig] shared link references bags no longer in the catalogue:', missing);
+} else if (kitParam === 'rand') {
   const seed = parseInt(params.get('seed') || '42', 10);
   app.bags.randomKit(seed);
 } else if (kitParam === 'full') {
   app.bags.fullKit();
-} else if (kitParam) {
-  for (const part of kitParam.split(',')) {
-    const [slot, bi, pi] = part.split(':');
-    app.bags.equip(slot, catalog[+bi], catalog[+bi]?.products[+pi]);
-  }
 }
 
 // ?focus=<slot>: close-up camera on that bag for product-vs-spec review shots

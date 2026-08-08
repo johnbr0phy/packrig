@@ -1,4 +1,6 @@
 import { SLOTS, productSlotFor, colorwayFor } from './bags.js';
+import { initRigsUI } from './rigsui.js';
+import { rigURL } from './rig.js';
 import { productsForSlot } from './catalog.js';
 import { PAINTS } from './bike.js';
 import { ENV_NAMES } from './environments.js';
@@ -169,6 +171,17 @@ export function initUI(app) {
   const root = document.getElementById('ui-root');
   root.innerHTML = '';
 
+  // Saved rigs + accounts. Created here so it can borrow #ui-root and sync().
+  let rigsUI = null;
+  queueMicrotask(() => {
+    rigsUI = initRigsUI(app, {
+      auth: app.auth, store: app.rigs, host: root,
+      onLoaded: () => sync(),
+    });
+    app.openRigs = (m) => rigsUI.open(m);
+    app.__rigURL = () => kitURL();   // headless tests assert on the real link
+  });
+
   // remember the opening camera framing so "reset view" has somewhere to go
   const homeView = {
     pos: app.camera?.position?.clone?.() || null,
@@ -225,7 +238,11 @@ export function initUI(app) {
   shareBtn.append(elt('span', 'ic', '⧉'), shareLabel);
   shareBtn.title = 'Copy a link to this build';
   shareBtn.onclick = () => shareKit(shareBtn, shareLabel);
-  foot.append(summary, addBtn, shareBtn);
+  const rigsBtn = el('button', 'rigs-btn');
+  rigsBtn.append(elt('span', 'ic', '☰'), elt('span', 'lbl', 'My rigs'));
+  rigsBtn.title = 'Save this build, or load one you saved before';
+  rigsBtn.onclick = () => rigsUI?.open();
+  foot.append(summary, addBtn, shareBtn, rigsBtn);
   panel.append(head, listEl, foot);
   root.append(panel);
   listEl.addEventListener('scroll', updateFade);
@@ -775,11 +792,14 @@ export function initUI(app) {
   }
 
   // ---- kit summary --------------------------------------------------------
+  /**
+   * The shareable link. Was `slot:brandIndex:productIndex` — array POSITIONS in
+   * brands.json, which silently repoint at different bags the first time a
+   * product is inserted or the catalogue is re-sorted. `rigURL` names the maker
+   * and model instead, so a link keeps meaning the same bike. See src/rig.js.
+   */
   function kitURL() {
-    const kit = Object.entries(app.bags.equipped)
-      .map(([slot, { brand, product }]) => `${slot}:${brand.index}:${product.index}`)
-      .join(',');
-    return `${location.origin}${location.pathname}?kit=${kit}&env=${app.state.env}&paint=${app.state.paint}`;
+    return rigURL(app);
   }
 
   async function copyText(text) {

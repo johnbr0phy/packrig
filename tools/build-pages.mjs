@@ -83,6 +83,7 @@ copyFileSync(join(root, 'assets/fonts/Inter-LICENSE.txt'), join(docs, 'assets/fo
 copyFileSync(join(root, 'src/ui/sheet.css'), join(docs, 'sheet.css'));
 
 copyFileSync(join(root, 'src/ui.css'), join(docs, 'ui.css'));
+copyFileSync(join(root, 'src/rigs.css'), join(docs, 'rigs.css'));
 // The wind tunnel's HUD styles live in their own file. index.html below must
 // link BOTH — the panel renders unstyled if this is copied and not linked, or
 // missing entirely if neither, and nothing in the bundle would complain.
@@ -99,6 +100,7 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="tokens.css" />
 <link rel="stylesheet" href="ui.css" />
+<link rel="stylesheet" href="rigs.css" />
 <link rel="stylesheet" href="sheet.css" />
 <link rel="stylesheet" href="aero.css" />
 <style>html,body{height:100%;margin:0;background:#121212;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
