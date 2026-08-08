@@ -5,6 +5,16 @@ What the interrupted agent run was doing, what actually landed, and what is left
 Written 2026-08-07. Companion to `HANDOVER.md` (which is still accurate on
 traps and data-pipeline detail — read both).
 
+> **STATUS, 8 Aug — the catalogue track is DONE.** All 50 brands are reviewed
+> and 700 of 702 products are merged and live. Sections 1-4 below describe the
+> state on the night of the crash and are kept as the record of what happened;
+> **for what is actually true now, read §10 and §12.** The two unmerged products
+> are Bags by Bird's duplicate "Better Half Framebag" entries, §12.
+>
+> Still untouched: the **UI rework** (§5 Track C — `DESIGN-SYSTEM.md` is written
+> and none of it is implemented) and **11 of 13 geometry builders** (§5 Track B —
+> only seatpack and stembag have been done).
+
 ---
 
 ## 1. What was running when the machine died
