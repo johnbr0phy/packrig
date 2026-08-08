@@ -47,12 +47,19 @@ export async function loadCatalog() {
       // roll is turned down three times and it stands ~23cm. Where a reviewer
       // has established the drawn height it lands in `render.hgt_cm`, and that
       // is what the geometry gets. See data/models/MODEL-SPEC.md.
+      // Any axis can be the variable one. `render.hgt_cm` covered roll-tops that
+      // roll vertically, but a bar bag whose side-rolls open along the bar, or a
+      // seat pack that rolls along its length, has the same problem on a
+      // different axis — and with nowhere to put the drawn figure, reviewers were
+      // overwriting dims_cm and losing the published record. All three now.
+      const drawLen = p.render?.len_cm ?? d.len;
+      const drawWid = p.render?.wid_cm ?? d.wid;
       const drawHgt = p.render?.hgt_cm ?? d.hgt;
       p.mm = {
-        len: (d.len || 25) * 10,
-        wid: (d.wid || d.dia || 12) * 10,
+        len: (drawLen || 25) * 10,
+        wid: (drawWid || d.dia || 12) * 10,
         hgt: (drawHgt || d.dia || 12) * 10,
-        dia: (d.dia || Math.min(d.wid || 14, drawHgt || 14)) * 10,
+        dia: (d.dia || Math.min(drawWid || 14, drawHgt || 14)) * 10,
       };
     });
   });
