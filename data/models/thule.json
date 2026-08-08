@@ -1,0 +1,361 @@
+{
+ "brand": "Thule",
+ "slug": "thule",
+ "reviewed_photos": 7,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'PU-coated nylon / polyester (welded)'. CONFIRMED for the Shield line (13L/22L/25L): the maker's spec sheet lists 'Nylon' with 'Waterproof IPX4' rating, and all four Shield photos show a glossy, semi-translucent-at-the-seams tarpaulin finish with no visible stitching - consistent with a PU- or TPU-coated nylon that is heat-welded rather than sewn, matching the brand string closely even though the maker's own spec table doesn't spell out 'PU-coated' or 'welded' in so many words. NOT CONFIRMED for the other two products: the Chasm Handlebar Bag 2L's own page lists 'Material: 420D nylon with phthalate-free laminate' - a laminated (not PU-coated) nylon, and the photo shows a flatter, more matte face than the Shield bags with visible stitched seams, not welded ones - a related but distinct construction. The Paramount Hybrid Pannier 26L's page lists simply 'Material: Polyester' with no coating or seam-construction claim at all; its photos show a technical ripstop-look structured-pack fabric with YKK zip closures, nothing like the glossy welded tarpaulin of the Shield line - this product does not match the brand string's 'PU-coated ... welded' half at all, only the bare 'polyester' word. So the blanket fabric string is accurate for 3 of 5 products (the Shield line) and should not be applied to the Chasm or Paramount.",
+  "method": "All five Thule product pages returned full 'Technical specifications' tables via plain curl - no JS rendering was needed. Every dims_cm figure (inches on the maker page, converted to cm in brands.json) was re-derived from the raw inches and matched brands.json to within rounding on every product; none disagreed. None of the five products publish a dimension RANGE anywhere on the page - each of L/W/H is a single fixed figure - so the unfurled/min-height rule and the render block have nothing to apply to for any Thule product.",
+  "rack_dependency": "Four of the five products (all three Shield panniers and the Paramount Hybrid Pannier) are rack-mount panniers with rigid mounting hardware and cannot attach to a bare 56cm drop-bar gravel bike, which has no rear rack in this catalogue's base build - all four are marked fits: 'rack_only'. Only the Chasm Handlebar Bag mounts directly to the bar and needs no rack.",
+  "rigid_vs_soft": "Thule is a hard-goods brand as expected, but the rigidity is concentrated in the MOUNTING HARDWARE, not the bag bodies, for 3 of the 5 products. Shield 13L/22L/25L: the bag body itself is a soft, pliable welded-tarpaulin roll-top (deformable, like an Ortlieb pannier) - only the top rail/hook-clip bracket bonded to the back panel is rigid and must not deform. Chasm 2L: soft fabric bag throughout, with only a possible light stiffener at the base. Paramount 26L: genuinely semi-rigid/structured through the whole body - it holds a crisp box silhouette unsupported in both product photos (does not sag or collapse like the Shield bags would off the bike), consistent with an internal frame/foam-backed hybrid-pannier-to-backpack shell; this one should NOT be run through the soft-bag deform pass at all, or only minimally."
+ },
+ "products": [
+  {
+   "line": "Shield",
+   "name": "Thule Shield Pannier 13L",
+   "size": "13L (pair)",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/thule/shield-thule-shield-pannier-13l-13l-pair-1.png",
+    "assets/products/thule/shield-thule-shield-pannier-13l-13l-pair-2.png",
+    "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-shield-pannier-13l-_-3205401"
+   ],
+
+   "dims_cm": { "len": 31, "wid": 18, "hgt": 31 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "12.2 x 7.09 x 12.2 in (L x W x H); 13 litres per bag, 26 litres total for the pair. (Re-fetched via curl, confirmed verbatim; 12.2x7.09x12.2in = 31.0x18.0x31.0cm.)",
+   "dims_note": "No range published. capacity_l uses the per-bag figure (13L); the page's 26L total is for the pair and is not used here. Box volume 31x18x31=17.3L exceeds 13L because the roll-top is measured extended and the bag tapers slightly toward the base - normal for a soft roll-top pannier.",
+   "capacity_l": 13,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Soft welded-tarpaulin roll-top pannier body - deformable, should go through the geometry layer's soft-bag pass like a normal drybag-style pannier. Only the mounting hardware described below is rigid."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "single side-release buckle on the left edge, cinching the rolled top down to the rigid mount rail"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "reflectivePanel": "large panel, lower front face, labelled 'SHIELD S'",
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "welded, no visible stitching in either photo",
+    "fabric": "Nylon, Waterproof IPX4 per maker spec; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["top", "back_panel"],
+    "notes": "The second photo shows the actual hardware: a rigid black plastic rail bonded across the top-back of the bag with two spring-loaded hook clips that snap onto a pannier rack rail, plus a rotating knob-adjustable stabilizer foot lower down that presses against the rack leg. This rail/clip assembly is RIGID and must not be run through the soft-bag deform pass, even though the bag body it's bonded to is soft. Requires a rear pannier rack, which the base gravel-bike build in this catalogue does not include - see fits."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Yellow", "hex": "#d9c33a" }
+   ],
+   "images": [
+    "assets/products/thule/shield-thule-shield-pannier-13l-13l-pair-1.png",
+    "assets/products/thule/shield-thule-shield-pannier-13l-13l-pair-2.png"
+   ]
+  },
+
+  {
+   "line": "Shield",
+   "name": "Thule Shield Pannier 22L",
+   "size": "22L (single)",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/thule/shield-thule-shield-pannier-22l-22l-single-1.png",
+    "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-shield-pannier-22l-_-3205406"
+   ],
+
+   "dims_cm": { "len": 35, "wid": 21, "hgt": 40 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "13.78 x 8.27 x 15.75 in (L x W x H); 22 litres per bag. (Re-fetched via curl, confirmed verbatim; 13.78x8.27x15.75in = 35.0x21.0x40.0cm.)",
+   "dims_note": "No range published. Sold as a single bag, unlike the 13L/25L two-packs (confirmed: no 'bagsPerListing' pairing language on this page).",
+   "capacity_l": 22,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Taller, single-bag version of the Shield line, designed to stand upright off the bike (flat-bottomed, with a removable shoulder strap for carry). Soft welded-tarpaulin body, deformable, same construction family as the 13L/25L."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "side-release buckle, same family as the 13L/25L"
+   },
+
+   "zips": [
+    { "run": "front_panel", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "shoulder", "count": 1, "location": "side", "hardware": "hook", "material": "webbing" },
+    { "role": "daisy", "count": 2, "location": "front_face", "hardware": "daisy_loop", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front" }
+   ],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": true,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "welded",
+    "fabric": "Nylon, Waterproof IPX4 per maker spec; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["top", "back_panel"],
+    "notes": "Same rigid top-rail/hook-clip mounting family as the 13L (visible only partially in this photo, confirmed in detail on the 13L's second image). Requires a rear pannier rack - see fits."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" }
+   ],
+   "images": ["assets/products/thule/shield-thule-shield-pannier-22l-22l-single-1.png"]
+  },
+
+  {
+   "line": "Shield",
+   "name": "Thule Shield Pannier 25L",
+   "size": "25L (pair)",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/thule/shield-thule-shield-pannier-25l-25l-pair-1.png",
+    "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-shield-pannier-25l-_-3205288"
+   ],
+
+   "dims_cm": { "len": 37, "wid": 20, "hgt": 40 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "14.6 x 7.9 x 15.8 in (L x W x H); 25L per bag, 50L total for the pair. (Re-fetched via curl, confirmed verbatim; 14.6x7.9x15.8in = 37.1x20.1x40.1cm.)",
+   "dims_note": "No range published. capacity_l uses the per-bag figure (25L), matching the note already on this product; 50L on the page is the pair total.",
+   "capacity_l": 25,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Taller sibling of the 13L pair, same welded-tarpaulin roll-top construction and rigid top-rail mount hardware."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "side-release buckle, same family as the 13L/22L"
+   },
+
+   "zips": [
+    { "run": "front_panel", "finish": "waterproof_welded" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "welded",
+    "fabric": "Nylon, Waterproof IPX4 per maker spec; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["top", "back_panel"],
+    "notes": "Same rigid top-rail/hook-clip mounting family as the 13L. Requires a rear pannier rack - see fits."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Yellow", "hex": "#d9c33a" }
+   ],
+   "images": ["assets/products/thule/shield-thule-shield-pannier-25l-25l-pair-1.png"]
+  },
+
+  {
+   "line": "Chasm",
+   "name": "Thule Chasm Handlebar Bag 2L",
+   "size": "2L",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/thule/chasm-thule-chasm-handlebar-bag-2l-2l-1.png",
+    "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-chasm-handlebar-bag-2l-_-3205473"
+   ],
+
+   "dims_cm": { "len": 26.4, "wid": 12.4, "hgt": 19.1 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "10.4 x 4.9 x 7.5 in; 2 litres. (Re-fetched via curl, confirmed verbatim; 10.4x4.9x7.5in = 26.4x12.4x19.1cm.)",
+   "dims_note": "No range published. Mapped so the 26.4cm long axis runs across the bars (len), 12.4cm is fore/aft depth (wid), 19.1cm is height (hgt) - consistent with the boxy proportions in the photo.",
+   "capacity_l": 2,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Soft rounded-box bag, appears to hold a flat base off the bike (possibly a light internal stiffener) but the body itself is not structured like the Paramount. A slight roll-fold is visible at the top-front edge before the closure buckle."
+   },
+
+   "closure": {
+    "type": "flap_buckle",
+    "location": "top",
+    "hardware": "single buckle over a short top roll/fold"
+   },
+
+   "zips": [
+    { "run": "front_panel", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.35 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "sewn, not welded - see brand_notes.fabric",
+    "fabric": "420D nylon with phthalate-free laminate per maker spec - NOT the same construction as the Shield line's PU-coated welded tarpaulin; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["underside"],
+    "notes": "A dark ridged strip is visible along the very top edge of the bag in the photo, plausibly a quick-mount rail bar in the same family as the Shield panniers' hardware, but this photo does not show the clip mechanism in the same close-up detail the Shield 13L's second photo does - marked medium confidence rather than asserted as confirmed."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Mid Blue", "hex": "#2f5d8c" },
+    { "name": "Dusted Orange", "hex": "#c9682f" }
+   ],
+   "images": ["assets/products/thule/chasm-thule-chasm-handlebar-bag-2l-2l-1.png"]
+  },
+
+  {
+   "line": "Paramount",
+   "name": "Thule Paramount Hybrid Pannier 26L",
+   "size": "26L",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/thule/paramount-thule-paramount-hybrid-pannier-26l-26l-1.png",
+    "assets/products/thule/paramount-thule-paramount-hybrid-pannier-26l-26l-2.png",
+    "https://www.thule.com/en-us/bike-packs-bags-and-racks/accessories/thule-paramount-hybrid-pannier-26l-_-3205093"
+   ],
+
+   "dims_cm": { "len": 31.5, "wid": 27.9, "hgt": 51.6 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "12.4 x 11.0 x 20.3 in; 26 litres (single bag). (Re-fetched via curl, confirmed verbatim; 12.4x11.0x20.3in = 31.5x27.9x51.6cm.)",
+   "dims_note": "No range published. Single-bag capacity, not a pair - confirmed, no pairing language on the page. The 31.5x27.9x51.6cm envelope is ~45L as a box against a stated 26L because these are outer dimensions of a tapered pannier-to-backpack shell including the flip-out harness panel, not a packing-efficiency issue.",
+   "capacity_l": 26,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "SEMI-RIGID / structured shell - holds a crisp box silhouette unsupported in both product photos (does not sag or collapse the way the soft Shield bags would off the bike), consistent with an internal frame or foam-backed panel. This is a genuine hybrid: pannier body with a flip-out backpack harness stored behind a zip flap on the back panel (visible in the second photo, with an orange rotating-tab mechanism illustrating the flip). Do NOT run this product through the soft-bag deform pass, or only minimally - see brand_notes.rigid_vs_soft."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "large top-loading zip, inferred from the visible zip pull near the top of the front panel; the maker's page does not show a full close-up of the zip run, so the exact path (horseshoe vs straight) is not fully confirmed",
+    "note": "confidence medium on closure type specifically, for the reason above"
+   },
+
+   "zips": [
+    { "run": "front_panel", "finish": "waterproof_welded" },
+    { "run": "side_full", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "shoulder", "count": 1, "location": "top", "hardware": "hook", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front" },
+    { "type": "zip", "count": 1, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "seams": "PU-coated, PFAS-free YKK zippers per maker copy ('durable, PU-coated YKK zippers and weather-resistant materials') - the PU coating here is on the zippers/hardware, not necessarily the body fabric",
+    "fabric": "Polyester per maker spec, no coating or seam-construction claim on the page for the body itself - does not match the brand string's 'PU-coated ... welded' language; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["back_panel"],
+    "notes": "Second photo shows a rigid black mounting plate with two hook clips and a locking latch on the back panel, near the base of the stowed harness - a different, simpler flip-clip design than the Shield line's top rail, but likewise rigid hardware bonded to the structured shell. Requires a rear pannier rack - see fits."
+   },
+
+   "colorways": [
+    { "name": "Nutria Brown", "hex": "#6b5b4a" },
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Soft Green", "hex": "#6f7a5c" }
+   ],
+   "images": [
+    "assets/products/thule/paramount-thule-paramount-hybrid-pannier-26l-26l-1.png",
+    "assets/products/thule/paramount-thule-paramount-hybrid-pannier-26l-26l-2.png"
+   ]
+  }
+ ]
+}

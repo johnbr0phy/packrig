@@ -1,0 +1,413 @@
+{
+ "brand": "Vincita",
+ "slug": "vincita",
+ "reviewed_photos": 7,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Water-resistant Cordura / tarpaulin'. CONFIRMED for the whole Strada line: the maker's own spec sheet for the Handlebar Bag, Saddle Bag, and Frame Bag all read 'water-resistant Cordura Fabric' (the Handlebar Bag additionally lists 'Tarpaulin (Waterproof Fabric)' for its roll-ends, matching the '/ tarpaulin' half of the string exactly), and every Strada product photo shows a small woven 'CORDURA FABRIC' hang-tag stitched to the bag - visible on the handlebar bag, frame bag, and both top-tube-bag photos. PARTIAL EXCEPTION: the Strada Top Tube Bag's own page splits the claim by colourway - 'Water-resistant cordura fabric (Green) / recycled polyester fabric (Black)' - so the Charcoal Grey colourway actually photographed (both product images) is recycled polyester, not Cordura, even though the blanket brand string and the Cordura hang-tag visible in the studio photo would suggest otherwise; flagged in that product's own details.fabric. UNCONFIRMED for the Everywhere line: neither the Everywhere Saddle Bag L nor the Everywhere Handlebar Bag product page states a fabric at all (checked past 'Description'/'Features' - no material line), and neither photo shows a Cordura hang-tag the way every Strada photo does. The fabric reads as a smooth, non-woven-looking coated nylon in both photos, plausibly the 'tarpaulin' side of the brand string, but this is not verified against maker copy - see each product's confidence.",
+  "method": "All six Vincita product pages are Shopify and returned full spec text via plain curl (no JS rendering needed, matching the pattern other reviewers found for other Shopify brands). Every dims_cm figure was re-fetched and cross-checked verbatim against the live page; none disagreed with brands.json. None of the six products publish a size RANGE anywhere on the page - each dimension is a single fixed figure - so the new unfurled/min-height rule has nothing to pick between for any Vincita product, and no render block is needed for any of them (mirrors the Alpkit Koala precedent in alpkit.json, which reached the same conclusion for the same reason)."
+ },
+ "products": [
+  {
+   "line": "Strada",
+   "name": "Strada Bikepacking Handlebar Bag",
+   "size": "8.9L",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/vincita/strada-strada-bikepacking-handlebar-bag-8-9l-1.jpg",
+    "https://vincita.cc/products/b012bp-strada-bikepacking-handlebar-bag"
+   ],
+
+   "dims_cm": { "len": 43, "wid": 19, "hgt": 14 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Dimension: Width (Folded) 43 cm; Depth 19 cm; Height 14 cm; Volume 8.9 L; Weight 1.1 kg. (Re-fetched via curl, confirmed verbatim.)",
+   "dims_note": "Maker publishes only the FOLDED width (43cm) - no unfurled/extended figure exists anywhere on the page. The maker's own copy explains why: 'The length of the panel is adjustable... Additional items like a Sleeping pad or a small tent can also fit nicely' - the black front panel folds flat against the bag when empty and extends forward to lash bulky gear when in use, so 'Width (Folded)' is the compact, no-extra-gear state. No published range exists to reconcile against, so per the spec's single-figure fallback, 43/19/14 is used as-is: 43cm (across the bars) -> len, 19cm (depth) -> wid, 14cm -> hgt. Box volume 43x19x14=11.4L vs 8.9L rated is consistent with the rounded barrel ends visible in the photo (the fabric core is a tube, not a full rectangular prism), not a sign of a wrong axis.",
+   "capacity_l": 8.9,
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "squared",
+    "notes": "A roll-both-ends fabric drybag core (camo tarpaulin, visible protruding and buckled at both ends in the photo) carried inside/against a separate black Cordura harness panel on the front face. The harness panel is NOT a simple pocket - maker copy says its length is adjustable to lash a sleeping pad or small tent against the front of the roll. Three quick-release buckles run across the harness panel with webbing loops threaded through them; 'VINCITA' is screen-printed centre. This is a harness+drybag system (comparable to Apidura/Restrap style handlebar harnesses), not a single sewn compartment."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "both_ends",
+    "hardware": "side-release buckle at each end of the camo drybag core; the black front harness panel is separately secured by 3 quick-release buckles across horizontal webbing"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" },
+    { "role": "compression", "count": 3, "location": "front_face", "hardware": "buckle", "material": "webbing", "wrapsAround": "harness_panel" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "fabric": "Tarpaulin (waterproof fabric) drybag core / water-resistant Cordura harness panel - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["top"],
+    "notes": "Maker states it 'is fixed securely with Klickfix quick release and straps' and is 'suitable for use with drop bars' - so mounting combines a Klickfix-compatible quick-release bracket with wrap straps, not straps alone. No on-bike photo was available for this product (studio shot only), so the exact strap routing and bracket placement are inferred from the maker's text rather than observed directly; confidence is medium for that reason."
+   },
+
+   "colorways": [
+    { "name": "Charcoal Grey / camo inner", "hex": "#3c3f43" },
+    { "name": "Forest Green / black inner", "hex": "#3d4a3a" }
+   ],
+   "images": ["assets/products/vincita/strada-strada-bikepacking-handlebar-bag-8-9l-1.jpg"]
+  },
+
+  {
+   "line": "Strada",
+   "name": "Strada Bikepacking Saddle Bag",
+   "size": "9L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/vincita/strada-strada-bikepacking-saddle-bag-9l-1.jpg",
+    "https://vincita.cc/products/b038bp-strada-bikepacking-saddle-bag"
+   ],
+
+   "dims_cm": { "len": 35, "wid": 24, "hgt": 12.5 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Width 24 cm, Depth 35 cm, Height 12.5 cm; 9 l.; 400 g. (Re-fetched via curl, confirmed verbatim.)",
+   "dims_note": "No range published - single fixed figures. Depth (35cm, the fore/aft run under the saddle) -> len; Width (24cm, across the bike) -> wid; Height (12.5cm) -> hgt. The on-bike photo's side profile reads about 2.9:1 (len:hgt), matching 35:12.5, confirming this is a wide, shallow mini-duffel strapped under the saddle rather than a tapered bikepacking seat pack - the 24cm width is genuinely broad, not a transposition error. Box volume 35x24x12.5=10.5L against 9L rated is a normal packing-efficiency gap for a soft bag.",
+   "capacity_l": 9,
+
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Wide, shallow, minimally-tapered duffel shape (not the narrow tapered wedge typical of most seatpacks) - the on-bike photo shows a nearly constant cross-section from saddle to tail, only rounding off slightly at the back corner."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single zip pull, top-centre; the on-bike photo shows it opened by unzipping directly, not by unrolling"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "side", "sizeFrac": 0.25 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "fabric": "water-resistant Cordura fabric, EVA foam internal structure - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["top"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 50, "frame_mm": 0 },
+    "notes": "Maker copy: 'Simple and secure design using only strap' - two webbing straps cinch the bag directly to the saddle rails from above; the photo shows no separate seatpost strap, so the bag is rail-hung rather than nose-clamped like a tapered seatpack. The zip runs along the top-centre for quick access without undoing the straps ('Additional Zipper for quick access')."
+   },
+
+   "colorways": [
+    { "name": "Charcoal Grey", "hex": "#3c3f43" },
+    { "name": "Forest Green", "hex": "#3d4a3a" }
+   ],
+   "images": ["assets/products/vincita/strada-strada-bikepacking-saddle-bag-9l-1.jpg"]
+  },
+
+  {
+   "line": "Strada",
+   "name": "Strada Bikepacking Frame Bag",
+   "size": "2.6L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/vincita/strada-strada-bikepacking-frame-bag-2-6l-1.jpg",
+    "https://vincita.cc/products/b025bp-strada-bikepacking-frame-bag"
+   ],
+
+   "dims_cm": { "len": 35, "wid": 6, "hgt": 25 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Width 35 cm, Depth 6 cm, Height 25 cm; 2.6 liters; 0.3 kg. (Re-fetched via curl, confirmed verbatim.)",
+   "dims_note": "No range published. The studio photo measures a 1.41:1 length-to-height ratio, matching 35:25 (1.40:1) almost exactly, confirming the maker's figures describe the bag as photographed: a right-triangle half-frame bag that is tall for its length, not a long slim top-tube-hugging wedge. Half the 35x6x25 box (5.25L) is 2.6L, matching the rating to one decimal - both the shape and the volume check out.",
+   "capacity_l": 2.6,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.15, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Right-triangle wedge, flat face against the frame tubes, PE board reinforced for shape retention. Diagonal L-shaped zip runs the long hypotenuse edge from the head-tube corner down to the bottom-bracket corner."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "front_panel",
+    "hardware": "single L-shaped zip pull along the hypotenuse; maker calls it an 'L-Shaped zipper for more convenient use'"
+   },
+
+   "zips": [
+    { "run": "perimeter", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" },
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "downtube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "fabric": "water-resistant Cordura Fabric, PE board reinforced - matches brands.json; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "along_seattube" },
+    "attachesTo": ["toptube", "downtube"],
+    "contactFaces": ["flat_back"],
+    "notes": "Half-frame triangle bag, flat side against the frame tubes, secured with hook-and-loop wrap straps top and bottom (visible as black webbing loops in the studio photo). No on-bike photo was available for this product, so exact strap count/spacing is estimated from the studio shot's visible loop hardware."
+   },
+
+   "colorways": [
+    { "name": "Charcoal Grey", "hex": "#3c3f43" },
+    { "name": "Forest Green", "hex": "#3d4a3a" }
+   ],
+   "images": ["assets/products/vincita/strada-strada-bikepacking-frame-bag-2-6l-1.jpg"]
+  },
+
+  {
+   "line": "Strada",
+   "name": "Strada Bikepacking Top Tube Bag",
+   "size": "0.8L",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/vincita/strada-strada-bikepacking-top-tube-bag-0-8l-1.jpg",
+    "assets/products/vincita/strada-strada-bikepacking-top-tube-bag-0-8l-2.jpg",
+    "https://vincita.cc/products/b026bp-strada-bikepacking-top-tube-bag"
+   ],
+
+   "dims_cm": { "len": 16, "wid": 6, "hgt": 9 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Width 16 cm, Depth 6 cm, Height 9 cm; 0.8 liters; 0.2 kg. (Re-fetched via curl, confirmed verbatim.)",
+   "dims_note": "No range published. Box volume 16x6x9=0.86L against 0.8L rated is a near-exact match, which only happens if all three axes are right. The on-bike photo shows a small squat flap-top pouch immediately behind the stem, not a long slim gas-tank bag - consistent with a 16cm length that is short relative to its 9cm height.",
+   "capacity_l": 0.8,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Small squat flap-top box, mounted at the front of the top tube immediately behind the stem/head tube rather than mid-tube. The on-bike photo (colourway 1) and the studio photo (colourway 2, darker) show the same shape."
+   },
+
+   "closure": {
+    "type": "flap_buckle",
+    "location": "top",
+    "hardware": "single strap/buckle over a fold-down flap, visible in both photos"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "front_face" },
+    "fabric": "Colourway-dependent per the maker's own copy: 'Water-resistant cordura fabric (Green) / recycled polyester fabric (Black)'. The Charcoal Grey colourway photographed here (both images) falls under the 'Black' family the page describes as recycled polyester, NOT Cordura - despite the small 'CORDURA FABRIC' hang-tag visible in the on-bike photo (colourway 1), which likely reflects a shared trim tag across the range rather than the actual shell fabric of this specific colourway. See brand_notes.fabric."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["toptube"],
+    "contactFaces": ["underside"],
+    "notes": "Two webbing straps wrap the top tube just behind the head tube/stem. Maker copy: 'simple to install and will fit other bikes.'"
+   },
+
+   "colorways": [
+    { "name": "Charcoal Grey", "hex": "#3c3f43" },
+    { "name": "Forest Green", "hex": "#3d4a3a" }
+   ],
+   "images": [
+    "assets/products/vincita/strada-strada-bikepacking-top-tube-bag-0-8l-1.jpg",
+    "assets/products/vincita/strada-strada-bikepacking-top-tube-bag-0-8l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Everywhere",
+   "name": "Everywhere Saddle Bag L",
+   "size": "L (10L)",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/vincita/everywhere-everywhere-saddle-bag-l-l-10l-1.jpg",
+    "https://vincita.cc/products/everywhere-saddle-bag-l"
+   ],
+
+   "dims_cm": { "len": 42, "wid": 19, "hgt": 13 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Width 19 cm, Height 42 cm, Depth 13 cm; 10 liters; 0.65 kg. (Re-fetched via curl, confirmed verbatim.)",
+   "dims_note": "No range published - one fixed figure per axis. The 42cm figure is labelled 'Height' on the maker's page but is plainly the long fore/aft axis of the pack (19x42x13=10.4L, matching the stated 10L), so it is mapped to len; the maker's on-site labels do not match the bag's own mounted orientation.",
+   "capacity_l": 10,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.6, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Wedge shape, wider/boxier at the saddle end, narrowing to a rounded blunt tail - similar family to the Strada Saddle Bag but longer and more tapered."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "hardware": "roll-top per maker copy ('Roll-top closure for secure storage'); a mid-body compression buckle is visible in the photo",
+    "note": "maker also advertises an 'included inner bag for quick and easy access' as a secondary loading method"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "lightMount": "rear light strap, per maker copy",
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "fabric": "Not stated on the product page (checked description and feature list, no material line given). The photo shows a smooth, non-woven-looking coated fabric with no visible Cordura hang-tag, unlike every Strada product. Plausibly the 'tarpaulin' half of brands.json's brand string, but unconfirmed - see brand_notes.fabric."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 3,
+    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "notes": "Maker copy: 'Easily attach the bag to saddle rails and seatposts using hook & loop straps' - velcro, not buckle, unlike the Strada line. Also advertised as compatible with 'two additional bottle cages' via a stabilizer accessory (not modelled here, separate accessory)."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Brown", "hex": "#6b5a44" },
+    { "name": "Blue", "hex": "#2b3a55" },
+    { "name": "Green", "hex": "#3d4a3a" }
+   ],
+   "images": ["assets/products/vincita/everywhere-everywhere-saddle-bag-l-l-10l-1.jpg"]
+  },
+
+  {
+   "line": "Everywhere",
+   "name": "Everywhere Handlebar Bag",
+   "size": "5L",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/vincita/everywhere-everywhere-handlebar-bag-5l-1.jpg",
+    "https://vincita.cc/products/everywhere-handlebar-bag"
+   ],
+
+   "dims_cm": { "len": 26, "wid": 16, "hgt": 16 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Width 26 cm, Height 16 cm, Depth 16 cm; 5 liters; 0.4 kg. (Re-fetched via curl, confirmed verbatim.)",
+   "dims_note": "No range published. Depth and Height are both 16cm (square cross-section), consistent with the drum/barrel shape in the photo; 26cm across the bars is the long axis. Box volume 26x16x16=6.7L against 5L rated is a normal soft-bag packing gap.",
+   "capacity_l": 5,
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Drum-shaped body with rounded ends, square in cross-section (16x16). Reflective white stripe runs across the lower front face. A webbing carry-handle loop is stitched to the right end in the photo."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top_centre",
+    "hardware": "zip with a drawcord pull-tab; the photo shows the zip curving down both the left and right edges of the top face toward the back, consistent with a horseshoe run that lets the whole top flip open",
+    "note": "brands.json lists this product's closure as 'flap' - the photo evidence points to a zip-opening top instead; flagging as a likely catalogue discrepancy rather than silently overriding it."
+   },
+
+   "zips": [
+    { "run": "horseshoe_top", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.3 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "screen_print", "location": "top" },
+    "fabric": "Not stated on the product page (checked description and feature list, no material line given). No Cordura hang-tag visible in the photo, unlike every Strada product - see brand_notes.fabric."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar"],
+    "contactFaces": ["underside"],
+    "notes": "Maker copy: 'equipped with a foam spacer kit suitable for all types of bikes' to hold it clear of cables/brake hoses, plus a 'built-in hanging hook' for off-bike use and a 'side handle for added versatility.' No on-bike photo available (studio shot only), so exact strap/bracket routing is inferred from the maker's text; confidence is medium for that reason."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Brown", "hex": "#6b5a44" },
+    { "name": "Blue", "hex": "#2b3a55" },
+    { "name": "Green", "hex": "#3d4a3a" }
+   ],
+   "images": ["assets/products/vincita/everywhere-everywhere-handlebar-bag-5l-1.jpg"]
+  }
+ ]
+}
