@@ -30176,8 +30176,9 @@
     "name": "Gila Dry Bag (Large, Flat Bar)",
     "liters": 18,
     "dims_cm": {
-     "len": 53,
-     "dia": 21.5
+     "len": 55.9,
+     "wid": 21.6,
+     "hgt": 21.6
     },
     "colors": [
      "#1a1a1a",
@@ -30210,7 +30211,7 @@
     "liters": 12,
     "dims_cm": {
      "len": 55,
-     "wid": 7,
+     "wid": 12.7,
      "hgt": 36
     },
     "colors": [
@@ -30248,7 +30249,8 @@
     "liters": 1,
     "dims_cm": {
      "len": 18,
-     "dia": 8
+     "wid": 8,
+     "hgt": 8
     },
     "colors": [
      "#1a1a1a",
@@ -30263,7 +30265,7 @@
     "liters": 4,
     "dims_cm": {
      "len": 40,
-     "wid": 7,
+     "wid": 12.7,
      "hgt": 12
     },
     "colors": [
@@ -31673,7 +31675,8 @@
     "liters": 15,
     "dims_cm": {
      "len": 44,
-     "dia": 20
+     "wid": 20,
+     "hgt": 20
     },
     "colors": [
      "#1C1F1A",
@@ -31727,7 +31730,7 @@
     "dims_cm": {
      "len": 32,
      "wid": 13,
-     "hgt": 35
+     "hgt": 28
     },
     "colors": [
      "#1C1F1A",
@@ -31737,7 +31740,13 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Bikerumor (from WOHO): \"Size: 28cm to 49cm tall (depending on roll top), 32cm wide, and 13cm deep. Volume: 36 liters a pair (roll top fully open), 20 liters a pair (rolled three times). Weight: 350g (single), 700g (pair)\". BIKEPACKING.com launch: \"49cm (full)-35 (rolled 3 times) tall x 32cm wide x 13cm deep\"",
-    "dims_note": "CORRECTED -- the stored 40 x 24 x 14 matched no published axis on this bag and looks back-computed. Two independent press sources working from WOHO's own release agree: 32 cm wide (fore-aft on the rack), 13 cm deep (across the bike), and 28-49 cm tall depending on how far the roll-top is closed, with 35 cm being rolled three times. Recorded as the packed, as-mounted state: len 32, hgt 35, wid 13. On the volume-too-small flag the answer is THE LITRES ARE THE MAXIMUM-ROLL FIGURE: 36 L a pair fully open = 18 L per bag is the catalogue's number and is correct per bag, but it belongs to the 49 cm fully-open height (32 x 49 x 13 = 20.4 L, ratio 1.13). Rolled three times the bag is 14.6 L. capacity_l left at 18 per bag. One outlier noted and rejected: thecyclelist.co lists 8.25 x 5 x 19.25 in (21 x 12.7 x 48.9 cm), agreeing on the 13 cm depth and the 49 cm height but giving 21 cm where both press sources say 32 cm; a 21 cm-wide 18 L pannier is not credible. WOHO's own product URL for this model 404s, so this is press-sourced, not maker-page-sourced."
+    "dims_note": "CORRECTED -- the stored 40 x 24 x 14 matched no published axis on this bag and looks back-computed. Two independent press sources working from WOHO's own release agree: 32 cm wide (fore-aft on the rack), 13 cm deep (across the bike), and 28-49 cm tall depending on how far the roll-top is closed, with 35 cm being rolled three times. Recorded as the packed, as-mounted state: len 32, hgt 35, wid 13. On the volume-too-small flag the answer is THE LITRES ARE THE MAXIMUM-ROLL FIGURE: 36 L a pair fully open = 18 L per bag is the catalogue's number and is correct per bag, but it belongs to the 49 cm fully-open height (32 x 49 x 13 = 20.4 L, ratio 1.13). Rolled three times the bag is 14.6 L. capacity_l left at 18 per bag. One outlier noted and rejected: thecyclelist.co lists 8.25 x 5 x 19.25 in (21 x 12.7 x 48.9 cm), agreeing on the 13 cm depth and the 49 cm height but giving 21 cm where both press sources say 32 cm; a 21 cm-wide 18 L pannier is not credible. WOHO's own product URL for this model 404s, so this is press-sourced, not maker-page-sourced.",
+    "render": {
+     "hgt_cm": 35,
+     "rolls": 3,
+     "basis": "matches both press sources' explicit 'rolled three times' figure for the standard loaded/riding state",
+     "conflict": "28cm (rolled seven times, the literal published minimum) gives a 32x13x28=11,648cc=11.65L box against this bag's 18L capacity — physically undersized, cannot hold its own stated capacity, so cannot be what should be drawn. 35cm (rolled three times) is the specific state both independent press sources single out as the standard partially-loaded riding configuration, giving 32x13x35=14,560cc=14.56L, a plausible partial-load state under the 18L max-open capacity."
+    }
    },
    {
     "type": "top tube bag",
@@ -31761,7 +31770,8 @@
     "liters": 15,
     "dims_cm": {
      "len": 44,
-     "dia": 20
+     "wid": 20,
+     "hgt": 20
     },
     "colors": [
      "#1C1F1A",
@@ -32187,15 +32197,16 @@
     "name": "Urban Ex Pannier 2.0",
     "liters": 21,
     "dims_cm": {
-     "len": 58.4,
-     "wid": 30.5,
-     "hgt": 15.2
+     "len": 30.5,
+     "wid": 15.2,
+     "hgt": 45.7
     },
     "colors": [
      "#101010"
     ],
     "est": false,
-    "slot": "pannier"
+    "slot": "pannier",
+    "fits": "rack_only"
    },
    {
     "type": "panniers",
@@ -32213,15 +32224,18 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Chrome spec (via Altitude Sports and Bikeinn, H x W x D): \"15.5\"x11.5\"(Top)-10.75\"(Base)x5\"\", Volume \"15-20L\", weight 1.1 kg",
-    "dims_note": "CORRECTED -- MISASSIGNED AXES, the defect the brief warns about. Chrome publishes the Holman as H x W x D = 15.5 x 11.5 (top, tapering to 10.75 at the base) x 5 inches. The catalogue had put the HEIGHT (15.5 in = 39.4 cm) into len and the DEPTH (5 in = 12.7 cm) into hgt, which renders a pannier lying on its side. Correct mapping for a bag hanging off a rack: hgt 39.4 (vertical), len 29.2 (fore-aft, the 11.5 in top edge), wid 12.7 (across the bike). That also resolves the volume-too-small flag for free, and the answer is THE LITRES ARE THE MAXIMUM-ROLL FIGURE: Chrome's own spec is a RANGE, '15-20L', and the box is 29.2 x 39.4 x 12.7 = 14.6 L -- within 3% of the 15 L rolled-down end of Chrome's own range. capacity_l left at the marketed 20 L, which is the roll-open end. Note the fore-aft edge tapers 29.2 cm at the top to 27.3 cm at the base; the larger figure is recorded."
+    "dims_note": "CORRECTED -- MISASSIGNED AXES, the defect the brief warns about. Chrome publishes the Holman as H x W x D = 15.5 x 11.5 (top, tapering to 10.75 at the base) x 5 inches. The catalogue had put the HEIGHT (15.5 in = 39.4 cm) into len and the DEPTH (5 in = 12.7 cm) into hgt, which renders a pannier lying on its side. Correct mapping for a bag hanging off a rack: hgt 39.4 (vertical), len 29.2 (fore-aft, the 11.5 in top edge), wid 12.7 (across the bike). That also resolves the volume-too-small flag for free, and the answer is THE LITRES ARE THE MAXIMUM-ROLL FIGURE: Chrome's own spec is a RANGE, '15-20L', and the box is 29.2 x 39.4 x 12.7 = 14.6 L -- within 3% of the 15 L rolled-down end of Chrome's own range. capacity_l left at the marketed 20 L, which is the roll-open end. Note the fore-aft edge tapers 29.2 cm at the top to 27.3 cm at the base; the larger figure is recorded.",
+    "fits": "rack_only"
    },
    {
     "type": "saddle bag",
     "name": "Doubletrack Saddle Roll",
     "liters": 1,
     "dims_cm": {
-     "len": 15.5,
-     "dia": 7.9
+     "len": 15.9,
+     "wid": 8.9,
+     "hgt": 8.9,
+     "dia": 8.9
     },
     "colors": [
      "#101010"

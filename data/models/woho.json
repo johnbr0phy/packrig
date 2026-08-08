@@ -1,0 +1,406 @@
+{
+ "brand": "WOHO",
+ "slug": "woho",
+ "reviewed_photos": 0,
+ "brand_notes": {
+  "fabric": "brands.json's brand string is 'X-Pac (visible X ripstop grid) combined with Cordura reinforcement panels'. This does NOT match what WOHO's own product pages say for any of the five products I could reach directly: every single one (Handlebar Harness dry bag, Saddle Bag Dry, Full Frame Bag Dry, Top Tube Bag, and the fork/handlebar Dry Bag itself) specs the SAME fabric, word-for-word across pages: '210D Nylon, reinforced with a tear-resistant weave' with a 'laminated, ultra-thick TPU waterproof layer' (15,000mm H2O hydrostatic rating) and a 'C6 DWR finish' — a laminated dry-bag nylon construction, not X-Pac and not Cordura. The harness PANEL (not the roll-top bag itself) is '1000D Ballistic Nylon', which is closer to a Cordura-family fabric but is explicitly called Ballistic Nylon, not Cordura, on the maker's own page. Given this is consistent across five independently-fetched pages, this is a genuine brand-string mismatch, not an unconfirmed gap — flag prominently, do not use the brand string's fabric name in any per-product 'fabric' field below.",
+  "method": "No local photos exist for this brand (assets/products/ has no woho folder). wohobike.com is a plain Shopify site, fully open to WebFetch, no bot-blocking. Two products (Saddle Bag Dry L, and by extension the same construction likely applies to the Full Frame Bag) publish their real dimensions only as a LABELLED DIAGRAM IMAGE (a 'Size Chart' the text-only fetcher can't read) rather than prose — found the Saddle Bag's chart image URL by curl-and-grep on the raw HTML (`SDB-Size...jpg`) and read it directly as an image; this is genuine visual/diagrammatic maker evidence, equivalent in kind to a photo. The XTouring UL Pannier Dry's own product URL (https://www.wohobike.com/products/xtouring-ultralight-pannier-dry-bag, and a second guessed slug) both returned real HTTP 404s on direct fetch AND on curl, confirmed independently — this specific SKU appears to have been delisted from WOHO's current storefront; a WebSearch summary claimed to quote a live page at a third URL but a direct fetch of that same URL also 404'd, so that summary is NOT trusted as a live-page citation here and is flagged as search-engine-cached, not maker-page-verified, even though its numbers agree with the two press sources already on file."
+ },
+ "products": [
+
+  {
+   "line": "XTouring",
+   "name": "XTouring Handlebar Harness + Dry Bag 15L",
+   "size": "15L",
+   "slot": "barroll",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.wohobike.com/products/xtouring-handlebar-harness-black-camo-dry-bag-15l-bundle-1"
+   ],
+
+   "dims_cm": { "len": 44, "wid": 20, "hgt": 20 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "Product page, Dry Bag 15L: 'Dimensions: 20 x 20 x 44 cm / 7.9\" x 7.9\" x 17.3\"'. Separately, the harness panel itself: '(L x W x H) 28.5 x 26 x 0.4cm'.",
+   "dims_note": "Exact match to the previously-stored len 44 / dia 20 — the maker's own '20 x 20 x 44cm' triple maps directly: 44cm long axis (mounted across the bars) to len, 20cm square-ish cross-section to wid/hgt (round cross-section, dia represented as wid=hgt). Fixed figures, no roll-height range published for this bag (unlike the UL Pannier), so no render override needed. The 28.5x26x0.4cm harness-panel figure is a separate flat accessory, not the dry bag's own body — not used for dims_cm.",
+   "capacity_l": 15,
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Straight roll-top dry-bag tube sitting in a separate quick-attach harness. No photo for this brand — shape read from description only, though 'straight dry-bag tube' is a low-risk inference for this product class."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "secure roll-top closure, 100% welded construction, air-release valve"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": "3M Scotchlite coating",
+    "fabric": "210D nylon with a laminated ultra-thick TPU waterproof layer (15,000mm H2O), C6 DWR finish — NOT X-Pac/Cordura, see brand_notes.fabric. Harness panel is separately 1000D Ballistic Nylon.",
+    "notes": "Harness: quick-attach mechanism secured by two heavy-duty WOHO straps, four high-density foam spacers (help hand room on drop bars), Nifco/Duraflex military-grade plastic buckles and metal adjusters. Maker-published handlebar-to-front-tire clearance: 22cm for the 7L bag, 27cm for this 15L bag. Front daisy chain on the dry bag."
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebar_harness"],
+    "contactFaces": ["top", "front_face"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 270 },
+    "notes": "Sits in the separate WOHO harness, which does the actual bar clamping via two straps and foam spacers; the dry bag is the passive roll inside it. Maker-published minimum handlebar-to-tyre clearance: 27cm for this size."
+   },
+
+   "colorways": [
+    { "name": "Iron Grey (Honeycomb)", "hex": "#5A5A5A" },
+    { "name": "Black", "hex": "#1C1F1A" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "XTouring",
+   "name": "XTouring Saddle Bag Dry",
+   "size": "L (18L)",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.wohobike.com/products/xtouring-saddle-bag-dry-l-cyber-camo-black",
+    "https://cdn.shopify.com/s/files/1/0098/7407/9791/files/SDB-Size_1024x1024.jpg"
+   ],
+
+   "dims_cm": { "len": 53, "wid": 20, "hgt": 20 },
+   "dims_state": "maker_diagram",
+   "dims_raw": "Product page text gives capacity (18L) and construction but no numeric dims (the real numbers live only in a linked 'Size Chart' diagram image, invisible to a text-only fetch — found and read directly). Diagram, labelled points for Size L: D (overall bottom length) 53cm, B (rear/tail height) 20cm, A (front/nose height) 17cm, E (rear diagonal edge) 28cm, F (front diagonal edge) 7.5cm, G (safe tyre clearance) 25cm.",
+   "dims_note": "len (53cm, dimension D) and hgt (20cm, dimension B, the taller rear/tail measurement) both match the previously-stored values exactly and are now genuinely maker-diagram-confirmed rather than merely 'est: false' on faith. wid (20cm) is NOT given anywhere on this diagram — it is a side-view schematic showing only length and height axes, no width-across measurement at all — so wid is carried over unconfirmed (kept equal to hgt as a plausible squarish-cross-section assumption, common for wedge seat packs, but this specific number has no citation).",
+   "capacity_l": 18,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.85, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Wedge tapering from a 17cm nose height (dimension A, at the saddle) to a 20cm tail height (dimension B) per the maker's own diagram — narrower at the saddle, taller toward the tail, an unusual taper direction for a seat pack (most taper the other way) but directly read off the labelled diagram, not assumed."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "hardware": "roll-top closure to adjust volume and compress contents; Duraflex buckles, Nifco/Durflex military-grade plastic and metal buckles"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "3M Scotchlite coating",
+    "fabric": "210D nylon with a laminated ultra-thick TPU waterproof layer (15,000mm H2O), C6 DWR finish — NOT X-Pac/Cordura, see brand_notes.fabric",
+    "notes": "'Saddle Rail Locking System combined with a 3-point attachment' — a locking clamp-style rail mount rather than plain webbing loops. Colourway: 'Cyber-Camo Diamond Black', a custom-engineered geometric camo pattern."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 2,
+    "clearance": { "tyre_mm": 250 },
+    "notes": "3-point saddle-rail locking system, not simple straps. Maker-published safe tyre clearance (diagram dimension G): 25cm for size L."
+   },
+
+   "colorways": [
+    { "name": "Cyber-Camo Diamond Black", "hex": "#1C1F1A" },
+    { "name": "Iron Grey", "hex": "#5A5A5A" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "XTouring",
+   "name": "XTouring Full Frame Bag Dry",
+   "size": "L (12L)",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.wohobike.com/products/xtouring-full-frame-bag-dry"
+   ],
+
+   "dims_cm": { "len": 50, "wid": 8, "hgt": 36 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "Product page, Size L: 'Capacity: 12 Liter / Weight: 244g / 8.6oz / Size: (L x W x H): 50 x 36 x 8 cm / 19.7\" x 14\" x 3.15\"'. Suggested for top-tube inner length >47cm.",
+   "dims_note": "Confirmed unchanged from a prior pass's re-fetch: WOHO labels the axes L x W x H but their 'W' (36cm) is actually the vertical drop toward the down tube and their 'H' (8cm) is the across-bike thickness — so this record's own len/hgt/wid mapping (len=50 top-tube run, wid=8 thickness, hgt=36 drop) is already correct despite the label mismatch. Box check: 50x8x36=14,400cc=14.4L against 12L published is a 1.20x ratio, sane for a full-triangle frame bag. No correction needed.",
+   "capacity_l": 12,
+
+   "geometry": {
+    "form": "triangle_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Fills the front triangle; adjustable fit across frame types via the roll-top-adjacent closure design. No photo for this brand."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "flexible roll-top closure design for an adjustable fit across frame types; tough weather-resistant metal 9-hook system plus Nifco/Durflex military-grade plastic and metal buckles"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "hook", "material": "metal", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "side" },
+    { "type": "slip", "count": 1, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "3M Scotchlite coating",
+    "fabric": "210D nylon with a laminated ultra-thick TPU waterproof layer (15,000mm H2O), C6 DWR finish — NOT X-Pac/Cordura, see brand_notes.fabric",
+    "notes": "One large external side pocket, one internal pocket. The metal 9-hook system is an unusual attachment mechanism for a frame bag (most in this catalogue use velcro/webbing) — modelled as a single hook-type attachment representative of the system, not all 9 points individually."
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "head_tube"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Roll-top-adjustable fit, metal 9-hook system inside the frame triangle. Suggested for a top-tube inner length over 47cm. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1C1F1A" },
+    { "name": "Iron Grey", "hex": "#5A5A5A" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "XTouring",
+   "name": "XTouring UL Pannier Dry",
+   "size": "18L",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://bikerumor.com/woho-bike-adventure-launches-ultra-light-pannier/",
+    "https://bikepacking.com/news/woho-xtouring-panniers-release/"
+   ],
+
+   "dims_cm": { "len": 32, "wid": 13, "hgt": 28 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Bikerumor (from WOHO): 'Size: 28cm to 49cm tall (depending on roll top), 32cm wide, and 13cm deep. Volume: 36 liters a pair (roll top fully open), 20 liters a pair (rolled three times).' Bikepacking.com launch coverage independently agrees: '49cm (full)-35 (rolled 3 times) tall x 32cm wide x 13cm deep.' A WebSearch summary (not independently confirmed by direct fetch — see brand_notes.method) added a third data point, 28cm 'rolled seven times', consistent with the same range.",
+   "dims_note": "This is the KNOWN TRAP flagged in this project's handover notes: an earlier automated pass had back-computed 40x24x14 from volume alone, which matched no published axis and was caught only by a photo. The current catalogue figure (32/13/35) already reflects that earlier fix and is correctly press-sourced (WOHO's own product URL for this SKU 404s — confirmed independently by this review, not just inherited). This review adds one further structural correction: per the dimension rule, dims_cm.hgt should be the literal MINIMUM of the published height range (28cm, most-rolled state), not 35cm (the rolled-three-times reference point) — 35cm was doing double duty as both the honest dims_cm figure and the sane drawn figure, which the render block exists specifically to separate. See render below for the drawn (35cm) figure and why 28cm alone would be absurd to draw.",
+   "capacity_l": 18,
+
+   "render": {
+    "hgt_cm": 35,
+    "published_min_cm": 28,
+    "conflict": "28cm (rolled seven times, the literal published minimum) gives a 32x13x28=11,648cc=11.65L box against this bag's 18L capacity — physically undersized, cannot hold its own stated capacity, so cannot be what should be drawn. 35cm (rolled three times) is the specific state both independent press sources single out as the standard partially-loaded riding configuration, giving 32x13x35=14,560cc=14.56L, a plausible partial-load state under the 18L max-open capacity.",
+    "rolls": 3,
+    "basis": "matches both press sources' explicit 'rolled three times' figure for the standard loaded/riding state"
+   },
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "flat_back",
+    "shoulder": "none",
+    "notes": "'Holds shape when partially loaded for clean bike aesthetics' per maker copy (via cycletouring.shop reseller, echoing WOHO's own language) — implies internal stiffening, not a floppy dry-bag. No photo for this brand."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "roll-top closure adjusts capacity to load; front side pocket for quick-access items"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "rear_rack" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "front" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "fabric": "Constructed by HF (high-frequency) welding for waterproofing, per reseller-echoed maker copy — consistent with the 210D TPU-laminated nylon used across the rest of this line (see brand_notes.fabric), not independently re-confirmed for this specific SKU since the maker's own page is unreachable",
+    "notes": "'Super-solid attachment system with 3 big hook-and-loop nylon straps that prevent the pannier bags from jumping off the bike on-road or off-road' (reseller-echoed maker copy, not independently fetched from wohobike.com — see brand_notes.method). Quick-attach rack mounting, compatible with front and rear racks."
+   },
+
+   "mount": {
+    "axes": { "len": "+x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["rear_rack", "front_rack"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Quick-attach hook-and-loop rack mounting per maker copy. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Iron Grey (Honeycomb)", "hex": "#5A5A5A" },
+    { "name": "Black", "hex": "#1C1F1A" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "XTouring",
+   "name": "XTouring Top Tube Bag",
+   "size": "0.85L",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.wohobike.com/products/xtouring-top-tube-bag"
+   ],
+
+   "dims_cm": { "len": 20, "wid": 6.5, "hgt": 9 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "Product page: 'Dimensions: 20 x 6.5 x 9 cm / 8\" x 2.6\" x 3.5\" (L x W x H)'. Capacity: 0.85 Liter.",
+   "dims_note": "Exact match to the previously-stored dims — L maps directly to len, W to wid, H to hgt. No range, no correction needed.",
+   "capacity_l": 0.85,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_bottom",
+    "shoulder": "squared",
+    "notes": "Low-profile top-tube bag, 'described as essential component for any lightweight bikepacking system' per maker copy. No photo for this brand."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "zipper with rubberized Duraflex nylon zipper pulls for gloved operation"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "rubber", "wrapsAround": "top_tube" },
+    { "role": "stability", "count": 1, "location": "front_face", "hardware": "daisy_loop", "material": "rubber", "wrapsAround": "head_tube" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "fabric": "210D nylon (Honeycomb Iron Grey weave) with a laminated ultra-thick TPU waterproof layer (15,000mm H2O), C6 DWR finish — NOT X-Pac/Cordura, see brand_notes.fabric",
+    "notes": "'Elastic cord fixation at the headset' for stability, in addition to the two rubberized underside straps. Honeycomb Iron Grey colourway formulated to minimize dirt visibility."
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "notes": "Dual rubberized straps to the top tube plus an elastic cord to the headset. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Iron Grey (Honeycomb)", "hex": "#5A5A5A" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "XTouring",
+   "name": "XTouring Dry Bag 15L",
+   "size": "15L",
+   "slot": "forkbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.wohobike.com/products/xtouring-handlebar-harness-black-camo-dry-bag-15l-bundle-1"
+   ],
+
+   "dims_cm": { "len": 44, "wid": 20, "hgt": 20 },
+   "dims_state": "maker_fixed",
+   "dims_raw": "Same product page/component as the Handlebar Harness bundle above — the standalone dry bag: 'Dimensions: 20 x 20 x 44 cm / 7.9\" x 7.9\" x 17.3\"', capacity 15L.",
+   "dims_note": "This catalogue entry is the same physical dry bag as the barroll product above (identical src URL), used here for a fork/cage mount instead of the bar harness. Dims unchanged and maker-confirmed identically.",
+   "capacity_l": 15,
+
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Same straight roll-top dry-bag tube as the handlebar-harness product, mounted vertically in a fork cage instead of horizontally in a bar harness. No photo for this brand."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "secure roll-top closure, 100% welded construction, air-release valve"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "girth", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": true,
+    "reflective": "3M Scotchlite coating",
+    "fabric": "210D nylon with a laminated ultra-thick TPU waterproof layer (15,000mm H2O), C6 DWR finish — NOT X-Pac/Cordura, see brand_notes.fabric",
+    "notes": "Same dry bag as the handlebar-harness bundle, here strapped directly into a fork/cargo cage rather than a bar harness — no separate cage hardware is described on this product's own page (the cage itself is third-party, not modelled)."
+   },
+
+   "mount": {
+    "axes": { "len": "along_forkleg", "wid": "+x", "hgt": "z" },
+    "attachesTo": ["fork_cage"],
+    "contactFaces": ["side"],
+    "sag_deg": 0,
+    "notes": "Straps into a fork/cargo cage via 2 girth straps; the cage itself is a separate, unmodelled third-party or WOHO accessory. Clearance not established — no photo."
+   },
+
+   "colorways": [
+    { "name": "Iron Grey (Honeycomb)", "hex": "#5A5A5A" },
+    { "name": "Black", "hex": "#1C1F1A" }
+   ],
+   "images": []
+  }
+
+ ]
+}
