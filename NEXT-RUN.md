@@ -434,6 +434,16 @@ git add docs/ && git commit && git push    # this is what deploys
 node tools/build-artifact.mjs              # separate: build/packrig.html, for the Artifact
 ```
 
+**`main`'s `docs/` is not necessarily a build of `main`'s `src/`.** Learned the
+expensive way on 8 Aug. Building from a clean worktree pinned to `origin/main`
+looks like the careful thing to do when the shared checkout has an unmerged
+feature branch in it — but the shipped `docs/aero.css` was already byte-
+identical to the *wind-tunnel* tree's `src/aero/aero.css`, because that work had
+been deployed from here on purpose. Rebuilding from `origin/main` deleted 105
+lines of `aero.css` and 306 of `ui.css` from the live site. **Before you rebuild,
+diff the current `docs/` against a build of the tree you are about to build
+from**, and if they differ, find out which source produced what is live.
+
 **Verify by hash, not by the API.** GitHub's Pages build record lags — it
 reported the previous commit as "latest built" while the new files were already
 being served. The hashes are the ground truth:
