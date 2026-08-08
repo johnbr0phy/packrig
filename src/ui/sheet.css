@@ -9,6 +9,18 @@
    =========================================================================== */
 
 /* ---- the shell ----------------------------------------------------------- */
+/* `hidden` is NOT enough on its own. The UA sheet's `[hidden] { display: none }`
+   loses to ANY display declaration in an author stylesheet, and .sheet sets
+   `display: flex` — so `sheet.hidden = true` left a full-height, 544px-wide
+   element sitting over the right third of the viewport at opacity 0, with
+   pointer-events still auto, eating every click that landed on it. That is
+   what killed the wind tunnel button: it lives top-right, and
+   elementFromPoint at its centre returned `sheet-head`.
+   Both rules below, deliberately: the first is the actual fix, the second
+   means a future `display` change cannot resurrect the bug. */
+.sheet[hidden] { display: none; }
+.sheet:not(.open) { pointer-events: none; }
+
 .sheet {
   position: fixed;
   top: var(--gutter);
