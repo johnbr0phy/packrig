@@ -10,7 +10,11 @@ const SHORT = {
   'Outer Shell Adventure': 'Outer Shell',
   'Brooks England': 'Brooks',
   'Chrome Industries': 'Chrome',
-  'Specialized x Fjällräven': 'Spec/Fjällräven',
+  // Was 'Specialized x Fjällräven' → 'Spec/Fjällräven'. Renamed to Fjällräven
+  // on 8 Aug: all six products are Fjällräven's own Hoja line, sold on
+  // fjallraven.com, and the reviewer found no Specialized text, logo or S-mark
+  // in any of the ~16 product photos or in the copy on any of the six pages.
+  'Fjällräven': 'Fjällräven',
   'Straight Cut Design': 'Straight Cut',
   'Rogue Panda Designs': 'Rogue Panda',
   'Buckhorn Bags': 'Buckhorn',

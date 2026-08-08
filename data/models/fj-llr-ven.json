@@ -1,0 +1,575 @@
+{
+ "brand": "Fjällräven",
+ "slug": "fj-llr-ven",
+ "reviewed_photos": 16,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Vinylon F canvas (waxed-canvas look) with recycled nylon waterproof lining'. Checked all six products against Fjällräven's own Material & Care accordion text and this is accurate for FOUR of six but wrong for two: (1) Hoja Top Tube Bag, Hoja Frame Bag S, Hoja Frame Bag L, Hoja Snack Bag - all four state 'Material: Vinylon F: 100% vinylal / Lining: 100% polyamide (recycled) with 10,000mm PU laminate' verbatim, and all four read as a flat matte canvas-like face in photos, consistent with Vinylon F's waxed-canvas look - the brand string is confirmed exactly for these four. (2) Hoja Handlebar Rolltop and Hoja Seatbag Drybag 16L - BOTH are pure technical dry-bags, and both state 'Material: 100% polyamide 210D Ripstop (recycled), 10,000mm PU laminate' - no Vinylon, no canvas at all. These two should be rendered as a technical ripstop dry-bag finish, not a waxed-canvas one. Net: this is a two-fabric collection (canvas-look Vinylon panel bags vs. technical ripstop rolltop drybags), and the brand string only describes the panel-bag half.",
+  "collab_note": "I could not find any Specialized co-branding anywhere on the six product pages read (no 'Specialized' text, logo, or S-shaped mark in the product copy, descriptions, or the ~16 photos viewed) - every page is straightforwardly Fjällräven's own 'Hoja' biking sub-line, sold on fjallraven.com under Fjällräven's own name and manufacturer address. This may be correct (Fjällräven may be the sole visible brand on the actual retail product even if Specialized co-developed it, or the collab may be a different/older range), but it's worth a second look at whether 'Specialized x Fjällräven' is the right brand identity for this catalogue entry - I have not changed brands.json per the brief's rules, just flagging the mismatch between the assigned brand name and what the linked product pages actually show.",
+  "method": "fjallraven.com sits behind a Cloudflare challenge that 403'd both a plain curl (desktop User-Agent) and WebFetch on every product URL. Per the brief, mcp__claude-in-chrome cleared it immediately - all six pages loaded normally once driven through the real browser. Each PDP uses collapsed accordions ('Product Features', 'Material And Care', 'Technical Details') that must be clicked open before get_page_text captures their content; clicking by element ref was unreliable (silently no-opped on roughly half the attempts), so I fell back to scrolling the accordion into a fixed on-screen position and clicking by pixel coordinate, which worked consistently. All six pages' Technical Details blocks give clean Height/Width/Depth/Volume figures directly from the maker - no third-party retailer sourcing was needed for this brand, unlike the 'Hoja Handlebar Rolltop' figures a previous reviewer had to reconstruct from six retailers because the live PDP wasn't accessible to them at the time."
+ },
+ "products": [
+  {
+   "line": "Hoja",
+   "name": "Hoja Top Tube Bag",
+   "size": null,
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-top-tube-bag/ (read live via browser, Cloudflare-gated to curl/WebFetch)"
+   ],
+   "dims_cm": {
+    "len": 26,
+    "wid": 6,
+    "hgt": 10
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Maker Technical Details: Height 10cm, Width 26cm, Depth 6cm, Volume 0.8L, Weight 150g. Single fixed figures, no range.",
+   "dims_note": "Matches existing catalogue dims exactly. Maker's 'Height' (the vertical stand-off from the tube) maps to hgt, 'Width' (the long fore-aft run) maps to len, 'Depth' maps to wid.",
+   "capacity_l": 0.8,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Compact streamlined box that 'holds its shape well' per maker copy - not explicitly plastic-stiffened like the frame bags, but reads firm/structured in photos rather than floppy. Small circular Fjällräven fox-logo patch on the side. Grommeted cable-routing port on the front face."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_centre",
+    "hardware": "large zip for easy access per maker copy"
+   },
+   "zips": [
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.6
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "patch",
+     "location": "side_front"
+    },
+    "seams": "water resistant per maker copy, not stated as fully waterproof/welded",
+    "fabric": "Vinylon F 100% vinylal with 10,000mm PU-laminated recycled polyamide lining - see brand_notes.fabric"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
+    "notes": "CONFIRMED DUAL MOUNT: maker copy states it 'attaches either forwards or to the back of the top tube of your bike' via 'Velcro loops or screws' - same dual-position flexibility as Chrome's Holman Top Tube Bag. Drawn at the front/stem position by convention."
+   },
+   "colorways": [
+    {
+     "name": "Black (550)",
+     "hex": "#1a1a1a"
+    },
+    {
+     "name": "Royal Blue (540)",
+     "hex": "#3b5875"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Hoja",
+   "name": "Hoja Handlebar Rolltop",
+   "size": null,
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-handlebar-rolltop/ (read live via browser)"
+   ],
+   "dims_cm": {
+    "len": 21,
+    "wid": 22,
+    "hgt": 23
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Maker Technical Details: Height 23cm, Width 21cm, Depth 22cm, Volume 13L, Weight 395g.",
+   "dims_note": "Re-confirmed DIRECTLY from the maker's live Technical Details block (previous reviewer only had third-party retailer figures to cross-check because the live page wasn't reachable to them at the time - same numbers, now with a first-party source). Genuinely a near-cube; no dropped digit or axis swap.",
+   "capacity_l": 13,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "none",
+    "notes": "Near-cube rolltop dry bag. Reflective Fjällräven fox logo and S-Hypalon (synthetic leather-look) reinforcement patches on the front face, usable as extra lash points per maker copy."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "buckle roll closure, visible in on-bike photos"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "body"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "daisy_loop",
+     "material": "hypalon",
+     "wrapsAround": null
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": true,
+    "reflective": "logo and front details",
+    "logo": {
+     "type": "reflective_patch",
+     "location": "front_face"
+    },
+    "seams": "not explicitly stated as welded, but rated fully waterproof",
+    "fabric": "100% polyamide 210D Ripstop (recycled) with 10,000mm PU laminate - NOT Vinylon, see brand_notes.fabric"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_bar",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar_rack"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
+    "notes": "REQUIRES A SEPARATE ACCESSORY: maker copy is explicit - 'designed to be used with our handlebar rack (note that a rack is required for the bag to function as a bike bag)'. The rack/cradle is a different SKU, not included with this bag, same pattern as Rapha's harness-mounted Seat Pack and Handlebar Pack in this catalogue. Detachable webbing strap doubles as an off-bike shoulder strap. Treat as a rigid-cradle mount, not a strap-to-bar roll - do not sag."
+   },
+   "colorways": [
+    {
+     "name": "Black (550)",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Hoja",
+   "name": "Hoja Frame Bag S",
+   "size": "S",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-frame-bag-s/ (read live via browser)"
+   ],
+   "dims_cm": {
+    "len": 40,
+    "wid": 6,
+    "hgt": 10
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Maker Technical Details: Height 10cm, Width 40cm, Depth 6cm, Volume 2.3L, Weight 244g.",
+   "dims_note": "Matches existing catalogue dims exactly, same Height->hgt / Width->len / Depth->wid mapping as the Top Tube Bag.",
+   "capacity_l": 2.3,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "SEMI-RIGID, not a floppy soft bag: maker copy explicitly states 'Plastic plates in the top and bottom keep its shape while foam sides stop it bulging outwards.' This should render as a firm, flat-sided panel that holds a consistent profile rather than sagging or ballooning, unlike a typical soft framebag. Cable-routing grommet at the front."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_centre",
+    "hardware": "large zippered opening per maker copy"
+   },
+   "zips": [
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 4,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.5
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "patch",
+     "location": "side_front"
+    },
+    "seams": "water resistant per maker copy",
+    "fabric": "Vinylon F 100% vinylal with 10,000mm PU-laminated recycled polyamide lining - see brand_notes.fabric"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
+    "notes": "Multiple velcro loops (visible in product photos wrapping both the top tube and down tube edges) hold this semi-rigid panel snug against the frame triangle with minimal sway."
+   },
+   "colorways": [
+    {
+     "name": "Black (550)",
+     "hex": "#1a1a1a"
+    },
+    {
+     "name": "Clay (221)",
+     "hex": "#b08a5c"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Hoja",
+   "name": "Hoja Frame Bag L",
+   "size": "L",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-frame-bag-l/ (read live via browser)"
+   ],
+   "dims_cm": {
+    "len": 53,
+    "wid": 6,
+    "hgt": 14
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Maker Technical Details: Height 14cm, Width 53cm, Depth 6cm, Volume 5L, Weight 376g.",
+   "dims_note": "Matches existing catalogue dims exactly, same Height->hgt / Width->len / Depth->wid mapping.",
+   "capacity_l": 5,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Same semi-rigid construction as Frame Bag S - maker copy: 'Plastic plates in the top and bottom keep its shape while foam sides stop it bulging outwards.' Product photo shows a low, elongated wedge with a slightly domed top profile, rounded off ends, six-plus velcro loop tabs visible along the top edge and both end edges."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_centre",
+    "hardware": "large zippered opening per maker copy"
+   },
+   "zips": [
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 6,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "internal",
+     "sizeFrac": 0.5
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "patch",
+     "location": "side_front"
+    },
+    "seams": "water resistant per maker copy",
+    "fabric": "Vinylon F 100% vinylal with 10,000mm PU-laminated recycled polyamide lining - see brand_notes.fabric"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
+    "notes": "Full frame-triangle bag, multiple velcro loops along the top tube and both diagonal tubes; semi-rigid, minimal sag/sway per maker copy."
+   },
+   "colorways": [
+    {
+     "name": "Black (550)",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Hoja",
+   "name": "Hoja Seatbag Harness + Hoja Seatbag Drybag 16L",
+   "size": "16L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-seatbag-drybag-16l/ (read live via browser)"
+   ],
+   "dims_cm": {
+    "len": 50,
+    "wid": 21,
+    "hgt": 28
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Maker Technical Details (Hoja Seatbag Drybag 16L): Height 50cm, Width 21cm, Depth 28cm, Volume 16L, Weight 132g.",
+   "dims_note": "TWO PRODUCTS, NOT ONE: the catalogue name bundles 'Hoja Seatbag Harness' (a separate £90 SKU - the rigid aluminium-and-webbing cradle) with 'Hoja Seatbag Drybag 16L' (a separate £55 SKU - the actual removable dry bag). Fjällräven sells them independently, same pattern as Rapha's Seat Pack in this catalogue. Dims recorded here are for the drybag alone, which is what fills the modelled volume. Maker's 'Height' (the long axis when the drybag stands upright, off the harness) maps to len once slung horizontally under the saddle - same convention used for Alpkit's Airlok Dual and Chrome's Doubletrack Saddle Roll elsewhere in this project; 'Width'/'Depth' map directly to wid/hgt. Matches the existing catalogue figures exactly.",
+   "capacity_l": 16,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.5,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Harness-mounted drybag: a separate rigid cradle (the Hoja Seatbag Harness) clamps to the saddle rails and seatpost, and this drybag drops into and buckles onto it, wider/flatter at the nose against the harness plate and tapering toward a rounded rolltop tail - visible in the on-bike product photos."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "hardware": "roll-top closure with an air-release valve to aid compression, per maker copy"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seatpost"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "patch",
+     "location": "side_rear"
+    },
+    "seams": "waterproof, roll-top sealed per maker copy",
+    "fabric": "100% polyamide 210D Ripstop (recycled) with 10,000mm PU laminate - NOT Vinylon, see brand_notes.fabric; matches the Handlebar Rolltop's technical drybag fabric rather than the canvas-look panel bags"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
+    "notes": "Rigid-cradle mount via the separate Hoja Seatbag Harness (not included in this SKU) - treat like Rapha's aluminium-harness Seat Pack elsewhere in this catalogue: minimal sag, held taut by the harness rather than free-hanging fabric."
+   },
+   "colorways": [
+    {
+     "name": "Black (550)",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Hoja",
+   "name": "Hoja Snack Bag",
+   "size": null,
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-snack-bag/ (read live via browser)"
+   ],
+   "dims_cm": {
+    "len": 10,
+    "wid": 10,
+    "hgt": 15,
+    "dia": 9
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Maker Technical Details: Height 15cm, Width 10cm, Depth 10cm, Diameter 9cm, Volume 0.8L, Weight 95g.",
+   "dims_note": "Matches existing catalogue dims exactly.",
+   "capacity_l": 0.8,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Straight-sided fabric cylinder with a drawcord neck. Circular Fjällräven fox-logo patch on the front, separate front mesh pocket for wrappers/small items."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top_centre",
+    "hardware": "one-hand cinch lock on the drawcord, per maker copy"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "nose_top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "handlebar"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.4
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "patch",
+     "location": "front"
+    },
+    "seams": "water resistant per maker copy",
+    "fabric": "Vinylon F 100% vinylal with 10,000mm PU-laminated recycled polyamide lining - see brand_notes.fabric"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
+    "sag_deg": 2,
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
+    "notes": "All three velcro loops wrap the bar itself next to the stem (on-bike photo shows no separate fork/head-tube stabiliser strap, unlike most stem bags in this catalogue) - a bar-only mount, so expect slightly more sway than a two-point stem bag."
+   },
+   "colorways": [
+    {
+     "name": "Black (550)",
+     "hex": "#1a1a1a"
+    },
+    {
+     "name": "Royal Blue (540)",
+     "hex": "#3b5875"
+    }
+   ],
+   "images": []
+  }
+ ]
+}
