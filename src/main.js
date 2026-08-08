@@ -153,6 +153,24 @@ if (focusSlot) {
   }
 }
 
+// ---- Wind tunnel -------------------------------------------------------
+// Loaded on demand: the tunnel pulls in a measurement pass, a particle system
+// and a rider model, none of which should cost anything on a first paint that
+// most visits never spend.
+app.aero = null;
+app.openWindTunnel = async () => {
+  if (!app.aero) {
+    const { initAero } = await import('./aero/index.js');
+    app.aero = initAero(app, {
+      scene, camera, renderer, controls, composer,
+      passes: { gtao, bloom },
+    });
+    app.bags.onChange(() => app.aero.onKitChange());
+  }
+  app.aero.toggle();
+  app.ui?.sync();
+};
+
 if (!SHOT_MODE) {
   app.ui = initUI(app);
   // hover half-selects a bag; clicking commits it and centres the zoom on it
@@ -177,6 +195,7 @@ renderer.setAnimationLoop((t) => {
   const dt = prevT ? Math.min((t - prevT) * 0.001, 0.05) : 0;
   prevT = t;
   app.focus?.tick(dt);
+  app.aero?.tick(dt);
   controls.update();
   envs.tick(t * 0.001);
   composer.render();
