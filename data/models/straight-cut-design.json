@@ -1,0 +1,521 @@
+{
+ "brand": "Straight Cut Design",
+ "slug": "straight-cut-design",
+ "reviewed_photos": 7,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'X-Pac (visible X ripstop grid) / Cordura (matte woven), customer-selectable panel colors'. Confirmed across all five products: Dha Frame Bag ('durable water-resistant Cordura and waterproof X-Pac fabrics'), Top Tube Bag ('Cordura or X-Pac'), Bagel Bar Bag ('water-resistant Olive Cordura' exterior, 'VX21 Federal Yellow' liner), Dropper Saddlebag ('1000D Cordura and waterproof X-Pac' edges), Sidekick ('X-Pac VX21' exterior and liner). Photos back this up: the Dha's red panel and the Top Tube Bag's grey top panel both show a faint diagonal diamond grid consistent with X-Pac's laid-in X-ply, while the black panels on the same two bags are flat matte Cordura with no grid - exactly the two-fabric mixed construction the brand string describes. 'Customer-selectable panel colors' is also correct - every product is sold as 'Custom ___' with a colour/fabric picker. No discrepancy found for this brand.",
+  "method": "straightcutdesign.com redirects www<->non-www and is Shopify; plain curl (no -A needed, though used anyway) returned full server-rendered HTML with all copy and image URLs for every product page - no client-side tab issue. No local photos in assets/products/straight-cut-design/ (folder doesn't exist) - all evidence here is remote, pulled via curl against the live product pages."
+ },
+ "products": [
+  {
+   "line": "Custom",
+   "name": "Custom Dha Frame Bag",
+   "size": "4L",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.straightcutdesign.com/cdn/shop/files/BrightRed-Dha_1400x.jpg",
+    "https://straightcutdesign.com/products/custom-dha-frame-bag"
+   ],
+   "dims_cm": {
+    "len": 40,
+    "wid": 6,
+    "hgt": 15.5
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "400mm (L) x 155mm (H) x 60mm (W); 4 litres; 175g (VX21 fabric)",
+   "dims_note": "Single fixed figure on the maker's page, matches brands.json exactly - no range, no swap needed. (A separate dimension diagram found on-site, 'Aon_Frame_Bag_Dimensions', gives 310mm/2L figures for a different, smaller SKU - not used here, this is specifically the Dha's own published spec.)",
+   "capacity_l": 4,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1.0,
+     "tail": 0.2,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Full frame-triangle bag, tall squared nose at the head tube tapering in a straight line down to a narrow point at the seat tube/BB junction. Flat back rides against both tubes. Small grommet visible near the low point of the wedge, consistent with the maker's stated 'drainage hole on lower edge'."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "YKK water-repellent zip with a custom puller reinforced with a strip of repurposed inner-tube rubber (visible as the blue rubbery tab near the zip start)"
+   },
+   "zips": [
+    {
+     "run": "top_side",
+     "finish": "waterproof_welded"
+    }
+   ],
+   "straps": [
+    {
+     "role": "daisy",
+     "count": 5,
+     "location": "top",
+     "hardware": "daisy_loop",
+     "material": "webbing",
+     "notes": "lace-up loop tabs along the top edge - maker copy: 'lace-up system compatible with additional top tube bags'"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "underside",
+     "hardware": "cam",
+     "material": "webbing",
+     "wrapsAround": "down_tube",
+     "notes": "two cam-buckle compression straps at the low front corner, reinforced with repurposed inner-tube rubber per maker copy"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "side",
+     "notes": "maker copy: non-drive-side slim access pocket for phone/essentials - the reviewed photo shows only the drive side, so this pocket itself is not directly visible"
+    }
+   ],
+   "details": {
+    "daisyChains": true,
+    "reflective": false,
+    "logo": {
+     "type": "custom_puller",
+     "location": "top"
+    },
+    "seams": "sewn, handmade in Edinburgh",
+    "fabric": "Cordura (drive-side lower/yellow panel, matte, no visible grid) / X-Pac (red upper panel, faint diagonal grid visible) - matches brand string. See brand_notes.fabric",
+    "hydrationPort": "cable/hydration port along the top edge, per maker copy"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "along_downtube"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "notes": "Frame-mount only. Maker copy mentions a 'leg clearance design' - the lower-front corner in the photo reads slightly chamfered, consistent with pedalling clearance, though the effect is subtle at this angle."
+   },
+   "colorways": [
+    {
+     "name": "photographed (Bright Red / Federal Yellow)",
+     "hex": "#c0392b"
+    },
+    {
+     "name": "Lilac",
+     "hex": "#8a7355"
+    },
+    {
+     "name": "Cadmium Green",
+     "hex": "#4a5d3a"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Custom",
+   "name": "Custom Top Tube Bag (Large)",
+   "size": "Large",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.straightcutdesign.com/cdn/shop/files/Lblk-gryhthr_1400x.jpg",
+    "https://straightcutdesign.com/products/custom-top-tube-bag"
+   ],
+   "dims_cm": {
+    "len": 27,
+    "wid": 10,
+    "hgt": 8
+   },
+   "dims_state": "maker_tapered_max",
+   "dims_raw": "Large: 270 x 100 x 80-50mm (tapered); 1.5L; 125g",
+   "dims_note": "This is a TAPER, not a roll/range - the bag is a fixed-height wedge that is 80mm tall at the nose and 50mm at the tail, not an adjustable bag with a min/max height. Per the taper rule, the LARGER value (80mm=8cm) goes in dims_cm/hgt and the taper itself is recorded in geometry.taper (nose 1.0, tail 0.625) - matches brands.json's existing hgt:8 unchanged. Width (100mm=10cm) is constant along the bag's length per the page, not tapered.",
+   "capacity_l": 1.5,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1.0,
+     "tail": 0.625,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Tall squared nose (head-tube end) tapering to a lower rear, clearly visible in the photo. Closed-cell foam at the side and frame contact points per maker copy - semi-rigid, holds its wedge shape, should not be deformed like a floppy pouch."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "YKK Aquaguard water-repellent zip, one-handed operation per maker copy"
+   },
+   "zips": [
+    {
+     "run": "top_side",
+     "finish": "waterproof_welded"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube",
+     "notes": "maker copy: 'supplied with compression velcro straps'; exact count not stated, 2 assumed as typical for this bag size"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "head_tube",
+     "notes": "alternative steerer-mount option (vertical webbing rail) per maker copy - not shown in this photo, offered instead of/alongside the top-tube straps"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "side"
+    },
+    "seams": "sewn, made in Scotland",
+    "fabric": "Cordura (black side/base panels, matte) / X-Pac (grey top panel, faint diagonal grid visible) - matches brand string. See brand_notes.fabric",
+    "cablePort": "cable port for charging devices or lights, per maker copy",
+    "internalDivider": "internal velcro divider, Large size only, per maker copy (not visible from outside)"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "notes": "Also compatible with the maker's own 'DeWidget: Straight Bar' out-front mount accessory per site copy - separate SKU, not modelled."
+   },
+   "colorways": [
+    {
+     "name": "photographed (Light Black / Grey Heather)",
+     "hex": "#3a3a3a"
+    },
+    {
+     "name": "Coyote Brown",
+     "hex": "#8a7355"
+    },
+    {
+     "name": "Black Heather / Purple",
+     "hex": "#4a3a5a"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Bagel",
+   "name": "Bagel Bar Bag",
+   "size": "Medium",
+   "slot": "barroll",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.straightcutdesign.com/cdn/shop/files/MediumBagel-1000dBlack_e93e5742-98ec-49fc-a228-4e6b779f3781_1400x.jpg",
+    "https://straightcutdesign.com/products/bagel-bar-bag-black"
+   ],
+   "dims_cm": {
+    "len": 20,
+    "wid": 12,
+    "hgt": 12,
+    "dia": 12
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Medium (Split): 200 x 120mm(diameter); Capacity 2.2L; Weight 178g",
+   "dims_note": "Already correct in the source catalogue (a prior pass caught and fixed an earlier hgt/wid transposition against this same 120mm-diameter spec) - re-confirmed here directly against the maker's page text, unchanged. Cylinder 20cm long x 12cm diameter = 2.26L against the stated 2.2L, a close match confirming the round cross-section.",
+   "capacity_l": 2.2,
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "none",
+    "notes": "Clean cylindrical barrel, flat rounded ends, internal solid HDPE shim per maker copy for shape retention - holds its round cross-section, should not be deformed like a soft dry-bag."
+   },
+   "closure": {
+    "type": "zip_dual_slider",
+    "location": "top",
+    "hardware": "single water-repellent YKK Aquaguard zip with two pull sliders, visible side by side near the top of the barrel"
+   },
+   "zips": [
+    {
+     "run": "top_centre",
+     "finish": "waterproof_welded"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "ladderlock",
+     "material": "webbing",
+     "wrapsAround": "handlebar",
+     "notes": "two Voile Nano straps with multiple slots, per maker copy - 'bike-to-bike customization'"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 2,
+     "location": "side",
+     "notes": "maker copy: 'side pockets for storage' - not clearly resolvable at the ends in this single photo angle"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "side"
+    },
+    "seams": "sewn, made in Scotland, bar-tacked at all attachment points",
+    "fabric": "water-resistant Olive Cordura exterior / VX21 Federal Yellow X-Pac liner (this specific listing's colourway is 1000D Black) - matches brand string. See brand_notes.fabric",
+    "lightMount": "horizontal front webbing rail, light-mount compatible per maker copy",
+    "computerMount": "zip access designed to clear an out-front computer mount, per maker copy"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "notes": "Straps directly to the bar via two Voile Nano straps, no separate harness or cage."
+   },
+   "colorways": [
+    {
+     "name": "1000D Black (photographed)",
+     "hex": "#141414"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#5a5a3a"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Custom",
+   "name": "Custom Dropper Seatpost Saddlebag",
+   "size": "4.5L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "https://www.straightcutdesign.com/cdn/shop/files/Black_Context.jpg",
+    "https://www.straightcutdesign.com/cdn/shop/files/Ls21_Context.jpg",
+    "https://straightcutdesign.com/products/custom-dropper-seatpost-saddlebag"
+   ],
+   "dims_cm": {
+    "len": 33,
+    "wid": 15,
+    "hgt": 12
+   },
+   "dims_state": "maker_partial",
+   "dims_raw": "Length: 330mm; Height: 120mm; Capacity: 4.5L; Weight: 265g excl. Wolftooth Valais collar",
+   "dims_note": "Maker publishes length and height only - no width figure anywhere on the page. len (33) and hgt (12) are maker-confirmed and carried through unchanged. wid (15, inherited from brands.json) is NOT maker-published; it is an inherited estimate, not something I verified. Volume check (33x15x12=5.94L vs stated 4.5L, ratio 1.32) is within the normal soft-bag 1.0-2.5x range so it isn't obviously wrong, but it remains unconfirmed - flagging rather than silently trusting it.",
+   "capacity_l": 4.5,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Only distant, full-bike lifestyle photos were available for this product (no close studio shot) - visible as a compact, low-profile wedge tucked tight and high under the saddle on a full-suspension dropper-post bike, consistent with the maker's minimum-clearance requirement below. Exact panel/taper detail isn't resolvable at this photo distance, so geometry confidence here is medium, not high."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "cam buckle compression strap; maker copy specifies a minimum of three rolls for a secure seal"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "cam",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "cam",
+     "material": "webbing",
+     "wrapsAround": "seatpost"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "side"
+    },
+    "seams": "sewn, bar-tacked at all attachment points",
+    "fabric": "1000D Cordura and waterproof X-Pac edges / customer-selected side panels and liner - matches brand string. See brand_notes.fabric",
+    "internalShim": "HDPE plastic shim maintains a fixed position below the saddle, per maker copy"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "seatpost",
+     "saddle_rails"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 2,
+    "notes": "3-point attachment (saddle-rail strap + seatpost strap, both cam-buckle) plus an HDPE shim that holds it in a fixed position - designed specifically to clear a dropper post's full travel. Maker states a MINIMUM 150mm tyre-to-seatpost clearance requirement and explicit incompatibility with electronic dropper posts (RockShox Reverb AXS, Magura Vyron eLECT) - flag as a fitment constraint, not a universal seatpack. Wolftooth Valais collar compatible as an accessory, not modelled. Max recommended load 5kg."
+   },
+   "colorways": [
+    {
+     "name": "photographed Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "photographed Ls21 heather grey",
+     "hex": "#8a8a8a"
+    },
+    {
+     "name": "Green",
+     "hex": "#4a5d3a"
+    },
+    {
+     "name": "White",
+     "hex": "#e8e8e8"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Sidekick",
+   "name": "Custom Sidekick",
+   "size": "1.2L",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://www.straightcutdesign.com/cdn/shop/files/C_042dfb39-3378-4749-a9f2-ca6a0805ee85_1400x.jpg",
+    "https://straightcutdesign.com/products/sidekick-coral"
+   ],
+   "dims_cm": {
+    "len": 15,
+    "wid": 9,
+    "hgt": 9
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "150 x 90 x 90mm; 1.2 litres; 112g",
+   "dims_note": "Single fixed figure, matches brands.json exactly. Bag stands upright when mounted, so the 15cm figure (the tallest number, maker's own first-listed dimension) is the vertical axis; the 9x9cm pair is the roughly-square horizontal cross-section, confirmed by the photo's near-square footprint at the base. [name aligned to the catalogue entry \"Straight Cut Custom Sidekick\" so the record joins]",
+   "capacity_l": 1.2,
+   "geometry": {
+    "form": "bucket",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Upright drawcord bucket bag, colour-blocked black upper (drawcord collar) over a coral lower body, squared-off shoulder at the colour-block seam. Roughly square footprint, not round."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "black drawcord with cord-lock toggle; maker copy: 'one-handed open/close system'"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "girth",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "stem"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "notes": "maker copy: low-profile stabilizing strap at the base, positioned to avoid buckle contact with the fork crown"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "front"
+    },
+    "seams": "sewn, made in Scotland, bar-tacked at all attachment points",
+    "fabric": "X-Pac VX21 Coral exterior / X-Pac VX21 Federal Yellow liner - matches brand string. See brand_notes.fabric",
+    "drainage": "drainage hole for all-weather use, per maker copy",
+    "attachmentRail": "360-degree webbing attachment rail per maker copy, allows mounting to either side of the stem"
+   },
+   "mount": {
+    "axes": {
+     "len": "y",
+     "wid": "+x",
+     "hgt": "z"
+    },
+    "attachesTo": [
+     "stem"
+    ],
+    "contactFaces": [
+     "girth"
+    ],
+    "notes": "Mounts to either side of the stem via the 360-degree webbing rail plus a low-profile base strap kept clear of the fork crown. 'Triple attachment design' per maker copy."
+   },
+   "colorways": [
+    {
+     "name": "Coral (photographed)",
+     "hex": "#e05a3a"
+    }
+   ],
+   "images": []
+  }
+ ]
+}

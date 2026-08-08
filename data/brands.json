@@ -32257,8 +32257,8 @@
     "liters": 0.7,
     "dims_cm": {
      "len": 14.8,
-     "wid": 4,
-     "hgt": 12
+     "wid": 12,
+     "hgt": 4
     },
     "colors": [
      "#1a1a1a"
@@ -32275,9 +32275,9 @@
     "name": "Lezyne XL-Caddy",
     "liters": 7.5,
     "dims_cm": {
-     "len": 42,
-     "wid": 17,
-     "hgt": 14
+     "len": 33,
+     "wid": 22,
+     "hgt": 8.8
     },
     "colors": [
      "#1a1a1a",
@@ -32288,7 +32288,14 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Lezyne launch spec (bikepacking.com): 'XL Caddy - Size 420 x 170 x 140 mm, Capacity 7.5 Liters'. Lezyne product page currently lists 330mm x 220mm x 88mm, 424g. Retailers (BIKE24, Modern Bike): 'XL-Caddy Saddle Bag - 7.5L'.",
-    "dims_note": "CORRECTED - both flags resolved, and this one also proves how to read Lezyne's spec fields. Lezyne's site figure 330 x 220 x 88 is the FLAT-FOLDED bag; its own launch spec, reproduced by bikepacking.com, gives the packed size 420 x 170 x 140 with 7.5L, and two retailers independently list 7.5L. Mapped as a seat pack: len 42 fore/aft, wid 17 across, hgt 14. Box 10.0L on 7.5L rated = 1.33 fill, elongation 2.47. The stored 1.3L is not this bag's volume - it is the Lezyne Stuff Caddy's rating (80 x 60 x 115mm, 1.3L) in the same launch table, another copied attribute."
+    "dims_note": "CORRECTED - both flags resolved, and this one also proves how to read Lezyne's spec fields. Lezyne's site figure 330 x 220 x 88 is the FLAT-FOLDED bag; its own launch spec, reproduced by bikepacking.com, gives the packed size 420 x 170 x 140 with 7.5L, and two retailers independently list 7.5L. Mapped as a seat pack: len 42 fore/aft, wid 17 across, hgt 14. Box 10.0L on 7.5L rated = 1.33 fill, elongation 2.47. The stored 1.3L is not this bag's volume - it is the Lezyne Stuff Caddy's rating (80 x 60 x 115mm, 1.3L) in the same launch table, another copied attribute.",
+    "render": {
+     "len_cm": 42,
+     "wid_cm": 17,
+     "hgt_cm": 14,
+     "basis": "Lezyne launch-spec table (bikepacking.com) plus the on-bike studio/lifestyle photo, which shows a tapered wedge under the saddle comparable in length to the saddle itself plus overhang.",
+     "conflict": "Maker's current site page gives a flat-folded 330x220x88mm; Lezyne's own launch-spec table (via bikepacking.com) gives a packed 420x170x140mm at the same 7.5L rating, and the on-bike photo shows a rounded wedge consistent with the packed figure, not a flat slab. Used the packed figure for render."
+    }
    },
    {
     "type": "full frame bag",
@@ -32311,9 +32318,9 @@
     "name": "Lezyne Bar Caddy",
     "liters": 7,
     "dims_cm": {
-     "len": 34,
-     "wid": 16.1,
-     "hgt": 16.1
+     "len": 16.05,
+     "wid": 25,
+     "hgt": 5.64
     },
     "colors": [
      "#1a1a1a"
@@ -32323,7 +32330,14 @@
     "dims_verified": "maker",
     "dims_state": "packed",
     "dims_raw": "Lezyne product page: 247g, Dimensions 160.5mm x 250mm x 56.4mm, capacity not stated. Lezyne launch spec via bikepacking.com: 'Bar Caddy - Capacity 7 Liters'. Retailers (Walmart, Boulder Nordic, Stash Cycles) list '7L'.",
-    "dims_note": "CORRECTED. Lezyne's 160.5 x 250 x 56.4 is the flat-folded panel, established by the XL-Caddy above where the same site field gives a flat figure and Lezyne's launch sheet gives a different packed one. Rated capacity is 7L, not the stored 4L. Lezyne's own on-bike photo (ride.lezyne.com .../Bar_caddy_BigBags-3034...jpg) shows a fat double-ended roll barrel spanning roughly the gap between the brake hoods on a drop bar, about 34cm across with a diameter close to its 16cm flat height. Set 34 x 16.1 x 16.1 = 8.8L box on 7L = 1.26 fill, elongation 2.11. Length and depth are read off that photo, so medium confidence."
+    "dims_note": "CORRECTED. Lezyne's 160.5 x 250 x 56.4 is the flat-folded panel, established by the XL-Caddy above where the same site field gives a flat figure and Lezyne's launch sheet gives a different packed one. Rated capacity is 7L, not the stored 4L. Lezyne's own on-bike photo (ride.lezyne.com .../Bar_caddy_BigBags-3034...jpg) shows a fat double-ended roll barrel spanning roughly the gap between the brake hoods on a drop bar, about 34cm across with a diameter close to its 16cm flat height. Set 34 x 16.1 x 16.1 = 8.8L box on 7L = 1.26 fill, elongation 2.11. Length and depth are read off that photo, so medium confidence.",
+    "render": {
+     "len_cm": 34,
+     "wid_cm": 16.1,
+     "hgt_cm": 16.1,
+     "basis": "On-bike lifestyle photo (Bar_caddy_BigBags-3034), medium confidence since it is a photo estimate, not a maker figure.",
+     "conflict": "Maker's current site page gives a flat-folded 160.5x250x56.4mm; the on-bike photo shows a round double-ended roll instead. Measured off that photo: roughly 34cm across (bar-to-bar span) with a diameter close to its own flat-panel width once rolled, ~16cm."
+    }
    },
    {
     "type": "top tube bag",
@@ -32816,7 +32830,7 @@
     "name": "Cedaero Switchback Seat Pack",
     "liters": 1,
     "dims_cm": {
-     "len": 23,
+     "len": 22.9,
      "wid": 11.4,
      "hgt": 8.9
     },
@@ -32867,8 +32881,8 @@
     "liters": 1,
     "dims_cm": {
      "len": 22.9,
-     "wid": 5.7,
-     "hgt": 10.8
+     "wid": 10.8,
+     "hgt": 5.7
     },
     "colors": [
      "#c9a227",
