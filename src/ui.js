@@ -1,5 +1,4 @@
 import { SLOTS, productSlotFor, colorwayFor } from './bags.js';
-import { initWorkbench } from './ui/workbench.js';
 import { productsForSlot } from './catalog.js';
 import { PAINTS } from './bike.js';
 import { ENV_NAMES } from './environments.js';
@@ -170,19 +169,6 @@ export function initUI(app) {
   const root = document.getElementById('ui-root');
   root.innerHTML = '';
 
-  // Flow A — the workbench. Every route that used to open the mount picker now
-  // opens this instead: one sheet you build the whole rig inside, rather than
-  // a four-step funnel that closes on you after every single bag.
-  // app.sheets is created after initUI, so resolve it lazily.
-  let wb = null;
-  const workbench = (startSlot) => {
-    if (!app.sheets) return;
-    if (!wb) wb = initWorkbench(app, { SLOTS, productSlotFor, ZONES });
-    closeOverlay();
-    wb.open(startSlot);
-  };
-  app.openWorkbench = workbench;
-
   // remember the opening camera framing so "reset view" has somewhere to go
   const homeView = {
     pos: app.camera?.position?.clone?.() || null,
@@ -211,7 +197,7 @@ export function initUI(app) {
   const sheetAdd = elt('button', 'sheet-add', '+');
   sheetAdd.title = 'Pick a mount point';
   sheetAdd.setAttribute('aria-label', 'Add a bag');
-  sheetAdd.onclick = (e) => { e.stopPropagation(); workbench(); };
+  sheetAdd.onclick = (e) => { e.stopPropagation(); openMountPicker(); };
   head.append(chevron, elt('span', 'panel-title', 'On your bike'), countEl, peekTotal, sheetAdd);
   const listEl = el('div', 'bag-list');
 
@@ -233,7 +219,7 @@ export function initUI(app) {
   summary.append(elt('span', 'kit-label', 'Total capacity'), totalEl);
   const addBtn = el('button', 'add-bag', '<span class="plus">+</span> Add a bag');
   addBtn.title = 'Pick a mount point';
-  addBtn.onclick = () => workbench();
+  addBtn.onclick = () => openMountPicker();
   const shareBtn = el('button', 'share-kit');
   const shareLabel = elt('span', 'lbl', 'Share kit');
   shareBtn.append(elt('span', 'ic', '⧉'), shareLabel);
@@ -496,7 +482,7 @@ export function initUI(app) {
       b.onclick = () => {
         if (key === active) return;
         browseMode = key;
-        key === 'type' ? workbench() : openBrandIndex();
+        key === 'type' ? openMountPicker() : openBrandIndex();
       };
       seg.append(b);
     }
@@ -857,13 +843,13 @@ export function initUI(app) {
     const acts = el('div', 'bag-acts');
     const swap = elt('button', 'bag-act', '⇄');
     swap.title = 'Pick a different bag';
-    swap.onclick = (e) => { e.stopPropagation(); workbench(key); };
+    swap.onclick = (e) => { e.stopPropagation(); openBrandPicker(key); };
     const rm = elt('button', 'bag-act rm', '✕');
     rm.title = 'Remove';
     rm.onclick = (e) => { e.stopPropagation(); app.bags.remove(key); sync(); };
     acts.append(swap, rm);
     card.append(sw, txt, acts);
-    card.onclick = () => workbench(key);
+    card.onclick = () => openBrandPicker(key);
     return card;
   }
 
@@ -919,7 +905,7 @@ export function initUI(app) {
       if (buy) acts.append(buy);
       const swap = elt('button', 'bag-act', '⇄');
       swap.title = `Swap the ${SLOTS[key].label.toLowerCase()}`;
-      swap.onclick = (e) => { e.stopPropagation(); workbench(key); };
+      swap.onclick = (e) => { e.stopPropagation(); openBrandPicker(key); };
       const rm = elt('button', 'bag-act rm', '✕');
       rm.title = `Remove from ${SLOTS[key].label}`;
       rm.onclick = (e) => { e.stopPropagation(); app.bags.remove(key); sync(); };
@@ -929,7 +915,7 @@ export function initUI(app) {
       // the link runs both ways: hovering a card lifts the bag in the scene
       card.onmouseenter = () => app.focus?.setHovered?.(key);
       card.onmouseleave = () => app.focus?.setHovered?.(null);
-      card.onclick = () => workbench(key);
+      card.onclick = () => openBrandPicker(key);
 
       // Colourways, straight from the maker's own page. Belongs INSIDE the card
       // it recolours — as a sibling it reads as detached from any one bag.
