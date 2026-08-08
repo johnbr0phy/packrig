@@ -1,0 +1,585 @@
+{
+ "brand": "Two Wheel Gear",
+ "slug": "two-wheel-gear",
+ "reviewed_photos": 11,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Recycled 600D poly ripstop with TPU coating'. This is only fully correct for 3 of the 8 products. Alpha Handlebar Bag, Pannier Backpack Convertible 2.1 PLUS, and Pannier Backpack Convertible 2.0 LITE are specced VERBATIM by the maker as 'Recycled 600D Poly (Diamond) Ripstop fabric with TPU waterproof coating', and Alpha's own photo (assets/products/two-wheel-gear/alpha-alpha-handlebar-bag-6l-1.jpg) shows a visible diagonal diamond-ripstop grid confirming it. The other 5 products - Dayliner, Mamquam Frame Bag, Commute Top Tube Bag, Commute Seat Pack, and Inverter Pannier Backpack - are specced by the maker as plain 'TPU Waterproof Backed 600D Polyester' (Inverter's own page drops even the 'Backed' and just says 'Recycled 600D Polyester fabric with TPU waterproof coating'). None of those 5 pages use the word 'ripstop'. The photos back this up: Dayliner, Mamquam, and both Commute bags all show a smooth heathered/melange weave with no diamond grid, visibly different from Alpha's texture. Recommend reserving a diamond-ripstop texture for Alpha (and the two Pannier Backpack Convertibles, per their own copy) and rendering the other 5 with a plain smooth 600D poly finish.",
+  "method": "Dimensions and material copy cross-checked against twowheelgear.com product pages via WebFetch (all 8 pages rendered cleanly, no client-side tab issue). Photos: all 11 local files in assets/products/two-wheel-gear/ were opened and reviewed; a curl attempt to fetch the one CDN image for Pannier Backpack Convertible 2.1 PLUS (no local file exists) returned an HTML redirect page, not image bytes, so that product has no photographic evidence at all - flagged on its record."
+ },
+ "products": [
+  {
+   "line": "Alpha",
+   "name": "Alpha Handlebar Bag",
+   "size": "6L",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/two-wheel-gear/alpha-alpha-handlebar-bag-6l-1.jpg",
+    "https://twowheelgear.com/products/alpha-handlebar-bag"
+   ],
+
+   "dims_cm": { "len": 27.9, "wid": 15.2, "hgt": 19.1 },
+   "dims_state": "rolled_min_height",
+   "dims_raw": "11\" Wide x 7.5\" High Rolled / 12.5\" High Unrolled x 6\" Deep; 6 litres",
+   "dims_note": "Width (11in, across the bars) and depth (6in, fore-aft) are fixed figures with no range, so they map straight across to len/wid. Height is published as a genuine range (7.5in rolled to 12.5in unrolled); per the new rule this field takes the MINIMUM, i.e. the 7.5in ROLLED figure (19.1cm), not the 12.5in unrolled maximum.",
+   "capacity_l": 6,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Boxy panel construction, flat front face, visible diagonal diamond-ripstop weave across the whole body in the photo. Converts to a 6L messenger bag per maker copy, so likely has a squared-off rider-facing back panel not visible in the only (front-on) photo."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "rear",
+    "hardware": "roll-top main compartment (maker copy); location assumed rider-facing since not visible in the front-on photo. Separate zipped 'secured valuables' pocket, visible as a red zip pull at top-right of the front face."
+   },
+
+   "zips": [
+    { "run": "front_panel", "count": 1, "finish": "matched", "pull": "black zip, red pull tab, top-right of the front face - the 'secured valuables pocket', not the main roll-top compartment" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "strap", "material": "webbing", "wrapsAround": "handlebar", "notes": "maker copy: 'secure attachment to standard handlebars with stem stabilizer'; 2 additional 'Tactical Straps' included for upgraded mounting, not distinguishable in the single photo" },
+    { "role": "shoulder", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing", "notes": "padded messenger strap for carry off the bike; not visible in the mounted photo" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.3, "notes": "'secured valuables pocket' - red zip pull visible in photo" },
+    { "type": "mesh", "count": 1, "location": "internal", "sizeFrac": 0.4, "notes": "internal mesh zip pocket within the roll-top compartment, per maker copy - not visible from outside" },
+    { "type": "slip", "count": 1, "location": "internal", "notes": "padded tech pocket / phone tray with cable and battery pockets, per maker copy" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective loop for blinky light, per maker copy",
+    "logo": { "type": "woven_label", "location": "front_lower" },
+    "seams": "sewn",
+    "fabric": "Recycled 600D Poly Diamond Ripstop fabric with TPU waterproof coating - matches brand string; diamond grid clearly visible in the photo (see brand_notes.fabric)"
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebars", "stem"],
+    "contactFaces": ["rear_face"],
+    "notes": "Stem stabilizer line plus strap-on mounting; boxy body sits centred on the bars in the photo, level with the stem, no visible cable interference."
+   },
+
+   "colorways": [{ "name": "Black", "hex": "#1c1c1e" }],
+   "images": ["assets/products/two-wheel-gear/alpha-alpha-handlebar-bag-6l-1.jpg"]
+  },
+
+  {
+   "line": "Dayliner",
+   "name": "Dayliner Handlebar & Trunk Box Bag",
+   "size": "20L",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/two-wheel-gear/dayliner-dayliner-handlebar-trunk-box-bag-20l-1.jpg",
+    "assets/products/two-wheel-gear/dayliner-dayliner-handlebar-trunk-box-bag-20l-2.jpg",
+    "https://twowheelgear.com/products/dayliner-box-bag"
+   ],
+
+   "dims_cm": { "len": 36.8, "wid": 22.9, "hgt": 19.1 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "14.5\" Wide x 7.5\" High x 9\" Deep; 20 Liters",
+   "dims_note": "No range published for any axis - single fixed figures, so the new min/unfurled rule has nothing to pick between. Box works out to 16.1L against a rated 20L; maker's own product page markets this as a rolltop, so the balance likely comes from the roll extending above the quoted 7.5in figure when packed fuller than photographed.",
+   "capacity_l": 20,
+
+   "render": {
+    "hgt_cm": 19.1,
+    "rolls": 2,
+    "basis": "Photo 1 (on-rack) shows the bag closed with a rounded, gently domed top consistent with one or two roll turns rather than a flat lid; used as the basis for a 2-turn estimate since no turn count is published."
+   },
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "rounded",
+    "notes": "Structured lower box with a rolled, domed top. IMPORTANT: the only local photos show it mounted to a REAR RACK (photo 1), not to handlebars, despite being filed under slot 'barbag'. The maker does sell it as multi-mount (bars, rack, or basket) so barbag is a defensible primary slot, but there is no bar-mounted photo in this set to confirm bar-mount geometry - treat the mount block below as inferred from the Alpha bag's pattern, not directly observed."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "side-release buckle(s) at the roll, visible over the top of the bag in photo 1"
+   },
+
+   "zips": [
+    { "run": "rear_panel", "count": 1, "finish": "matched", "notes": "'exterior quick access pocket' per maker copy; not visible in either photo (both show front/open views), low confidence on exact placement" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "top", "hardware": "strap", "material": "webbing", "wrapsAround": "rack_rail", "notes": "black webbing strap looped over the rack top in photo 1" },
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "rack_tube", "notes": "buckled strap down to the rack tubing, visible lower-left in photo 1" },
+    { "role": "shoulder", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing", "notes": "removable shoulder strap, shown detached and splayed out in photo 2 (flat/open studio shot)" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "rear", "sizeFrac": 0.4 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "woven_label", "location": "front_lower" },
+    "seams": "sewn",
+    "fabric": "TPU Waterproof Backed 600D Polyester - maker's own page does NOT say 'ripstop'; photo 1 shows a smooth heathered grey-brown melange weave, no diamond grid visible, distinctly different from Alpha's photographed texture (see brand_notes.fabric)"
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebars", "rear_rack", "basket"],
+    "contactFaces": ["rear_face", "underside"],
+    "notes": "Multi-mount bag (bars, rack, or basket per maker copy); axes given here follow the bar-mount convention used for Alpha, but our only photographic evidence (photo 1) actually shows it rack-mounted as a single side-loading box beside the rear wheel, cinched with a webbing strap over the rack top and a buckle strap down to the rack tube. If rendered rack-mounted, len (36.8cm) should run fore-aft along the rack deck instead of across the bars."
+   },
+
+   "colorways": [{ "name": "Graphite Grey", "hex": "#4c5155" }],
+   "images": [
+    "assets/products/two-wheel-gear/dayliner-dayliner-handlebar-trunk-box-bag-20l-1.jpg",
+    "assets/products/two-wheel-gear/dayliner-dayliner-handlebar-trunk-box-bag-20l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Mamquam",
+   "name": "Mamquam Frame Bag L/XL",
+   "size": "L/XL (6L)",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/two-wheel-gear/mamquam-mamquam-frame-bag-l-xl-l-xl-6l-1.jpg",
+    "assets/products/two-wheel-gear/mamquam-mamquam-frame-bag-l-xl-l-xl-6l-2.jpg",
+    "https://twowheelgear.com/products/frame-bag-large"
+   ],
+
+   "dims_cm": { "len": 50.8, "wid": 5.7, "hgt": 24.1 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "20\" Wide x 9.5\" High x 2.25\" Deep; 6 Liters",
+   "dims_note": "Single fixed figures, no range published, confirmed verbatim on the maker page via WebFetch. Photo 1 (on-bike, side-on studio shot) shows the bag running about 2.3x as long as it is tall along the top tube, consistent with 50.8/24.1 = 2.11 within measurement error - a long, low sliver as expected for a half frame bag, not the too-cubic false positive an earlier pass flagged.",
+   "capacity_l": 6,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Photo 2 (frame-facing panel, studio shot) shows a flat trapezoid: a straight top edge with 3 buckle straps for the top tube, tapering to a narrow point at the rear/seat-tube end, with a black stretch-mesh lower section covering roughly the bottom half."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "side",
+    "hardware": "side zip, drive-side panel (per maker copy 'closure' listing a side pocket zip); exact run not confirmed since photo 1 is a distant side-on shot and photo 2 shows the opposite (frame-facing) panel"
+   },
+
+   "zips": [
+    { "run": "side_full", "count": 1, "finish": "matched", "notes": "low confidence on exact run - inferred from maker's 'side zip pocket' copy, not clearly resolved in either photo" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "top_tube", "notes": "3 buckled straps along the top straight edge, clearly visible in photo 2" },
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "daisy_loop", "material": "webbing", "wrapsAround": "down_tube", "notes": "small webbing loop tabs along the lower/tail edge, visible in photo 2; maker copy calls these 'removable loops for adjustable frame attachment'" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "side", "sizeFrac": 0.5, "notes": "stretch mesh lower panel on the frame-facing side, matches maker's 'water bottle access' copy" },
+    { "type": "zip", "count": 1, "location": "side", "sizeFrac": 0.3 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "woven_label", "location": "front_lower" },
+    "seams": "sewn",
+    "fabric": "TPU Waterproof Backed 600D Polyester - maker's own page does NOT say 'ripstop'; photo 1 shows a smooth charcoal-grey weave with no diamond grid (see brand_notes.fabric)"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "x", "hgt": "y" },
+    "attachesTo": ["top_tube", "down_tube"],
+    "contactFaces": ["top_strap_face"],
+    "notes": "Half frame bag occupying the upper portion of the front triangle, tapering toward the seat tube. Maker states it fits 56-63cm frames; on a 56cm gravel bike this is the minimum size in its range, so expect a snug top-tube run with little slack."
+   },
+
+   "colorways": [{ "name": "Graphite Grey", "hex": "#4c5155" }],
+   "images": [
+    "assets/products/two-wheel-gear/mamquam-mamquam-frame-bag-l-xl-l-xl-6l-1.jpg",
+    "assets/products/two-wheel-gear/mamquam-mamquam-frame-bag-l-xl-l-xl-6l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Commute",
+   "name": "Commute Top Tube Bag",
+   "size": "1L",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/two-wheel-gear/commute-commute-top-tube-bag-1l-1.jpg",
+    "assets/products/two-wheel-gear/commute-commute-top-tube-bag-1l-2.jpg",
+    "https://twowheelgear.com/products/commute-top-tube-bag"
+   ],
+
+   "dims_cm": { "len": 22.9, "wid": 5.1, "hgt": 11 },
+   "dims_state": "estimated_photo",
+   "dims_raw": "9\" Wide x 9.5\" High x 2\" Deep; 1 Liter",
+   "dims_note": "Width (9in fore-aft along the top tube) and depth (2in) are fixed and used directly. The published 9.5in 'High' figure is a flat-panel trap - it is the panel laid flat including the wrap-around velcro strap wings, which would box out to 2.8L against a stated 1L, so it is NOT used. A previous pass back-computed height from volume (1000cm3 / (22.9 x 5.1) = 8.6cm); the spec explicitly forbids that method, so this record instead estimates height visually from photo 1 (closed, on-bike side view): the mounted body reads roughly half as tall as it is long, giving ~11cm. This is a genuine estimate, not a measurement - verified is false and confidence is low.",
+
+   "geometry": {
+    "form": "halfmoon",
+    "crossSection": "flat_bottom",
+    "shoulder": "rounded",
+    "notes": "Domed top, flat bottom seat against the top tube, slight forward taper visible in photo 1."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "black zip with red pull tab, drive-side end, visible in photo 1"
+   },
+
+   "zips": [
+    { "run": "top_side", "count": 1, "finish": "matched", "pull": "black zip, red pull tab" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube", "notes": "two velcro loops cinched around the top tube, visible in photo 1" },
+    { "role": "stability", "count": 1, "location": "front_face", "hardware": "velcro", "material": "webbing", "wrapsAround": "head_tube", "notes": "velcro strap at the nose, near the head tube/stem, visible in photo 1" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "internal", "sizeFrac": 0.4, "notes": "visible in photo 2 (open shot): orange-lined interior with a mesh loop pocket" },
+    { "type": "slip", "count": 2, "location": "internal", "notes": "elastic tool loops inside, visible in photo 2" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "grey reflective strip along the lower front edge, visible in photo 1",
+    "logo": { "type": "woven_label", "location": "front_lower" },
+    "seams": "sewn",
+    "fabric": "TPU Waterproof Backed 600D Polyester - no 'ripstop' on the maker page; photo 1 shows a heathered charcoal-brown melange weave, no diamond grid (see brand_notes.fabric)"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "x", "hgt": "y" },
+    "attachesTo": ["top_tube", "head_tube"],
+    "contactFaces": ["underside"],
+    "notes": "Sits directly on the top tube just behind the head tube, per photo 1."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Graphite Grey", "hex": "#4c5155" },
+    { "name": "Tofino Blue", "hex": "#2f5b7a" }
+   ],
+   "images": [
+    "assets/products/two-wheel-gear/commute-commute-top-tube-bag-1l-1.jpg",
+    "assets/products/two-wheel-gear/commute-commute-top-tube-bag-1l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Commute",
+   "name": "Commute Seat Pack",
+   "size": "1.5L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/two-wheel-gear/commute-commute-seat-pack-1-5l-1.jpg",
+    "assets/products/two-wheel-gear/commute-commute-seat-pack-1-5l-2.jpg",
+    "https://twowheelgear.com/products/commute-seat-pack"
+   ],
+
+   "dims_cm": { "len": 27.9, "wid": 11.4, "hgt": 12.7 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "11\" Wide x 5\" High x 4.5\" Deep; 1.5 Liters",
+   "dims_note": "No range published for any axis - single fixed figures, confirmed verbatim via WebFetch. 11in maps to the fore/aft run under the saddle (len), 4.5in to across-bike width (wid), 5in to vertical height (hgt).",
+   "capacity_l": 1.5,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.6, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Flat wide nose at the saddle narrowing to a rounded tail cap, visible in photo 1; a red zip pull sits right at the tail tip."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "tail",
+    "hardware": "wraparound zip opens the tail cap like a clamshell, visible open in photo 2 with an orange-lined interior"
+   },
+
+   "zips": [
+    { "run": "horseshoe_top", "count": 1, "finish": "matched", "pull": "black zip, drive-side pull, visible in photo 2" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails", "notes": "single black webbing strap with a side-release buckle cinching the nose to the rails, visible in photo 1" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 4, "location": "internal", "sizeFrac": 0.15, "notes": "four small mesh pockets with an integrated key clip, per maker copy" },
+    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.1, "notes": "exterior transit-pass/card slip pocket" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "reflective strip along the lower edge, visible in photo 1",
+    "logo": { "type": "woven_label", "location": "side_rear" },
+    "seams": "sewn",
+    "fabric": "TPU Waterproof Backed 600D Polyester - no 'ripstop' on the maker page; photo shows the same heathered melange weave as the Top Tube Bag (see brand_notes.fabric)"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails"],
+    "contactFaces": ["nose_top"],
+    "sag_deg": 2,
+    "notes": "Nose strapped to the saddle rails; tail rises clear of the tyre in photo 1."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1c1c1e" },
+    { "name": "Graphite Grey", "hex": "#4c5155" },
+    { "name": "Tofino Blue", "hex": "#2f5b7a" }
+   ],
+   "images": [
+    "assets/products/two-wheel-gear/commute-commute-seat-pack-1-5l-1.jpg",
+    "assets/products/two-wheel-gear/commute-commute-seat-pack-1-5l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Pannier Backpack Convertible",
+   "name": "Pannier Backpack Convertible 2.1 PLUS",
+   "size": "30L",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "low",
+   "evidence": [
+    "https://twowheelgear.com/products/pannier-backpack-convertible-plus"
+   ],
+
+   "dims_cm": { "len": 35.6, "wid": 20.3, "hgt": 48.3 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "14\" Wide x 19\" High x 8\" Deep; 30 Liters; 3.2 lbs / 1.45 kg",
+   "dims_note": "Single bag, not a pair. No range published; figures confirmed verbatim via WebFetch. 14in maps to fore/aft along the rack (len), 8in to across-bike width (wid), 19in to height (hgt). Box works out to 34.9L against a rated 30L (1.16x), plausible for a soft-sided pack.",
+   "capacity_l": 30,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "notes": "NO PHOTOGRAPHIC EVIDENCE for this product. The only local file directory listing for this brand has no image for the 2.1 PLUS, and the one remote CDN URL in the catalogue (a .webp) returned an HTML redirect page when fetched, not image bytes. Geometry here is inferred from maker copy and by analogy with the photographed 2.0 LITE sibling (same product line, structured backpack/pannier hybrid), NOT independently confirmed. Treat with low confidence."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "buckles for backpack straps; zippers referenced throughout maker copy but exact run/count not specified"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "g_hook", "material": "plastic", "wrapsAround": "rack_rail", "notes": "Rixen & Kaul KLICKfix Modul Rail with dual locking hooks, per maker copy; fits 6-16mm rack tubing" },
+    { "role": "shoulder", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "notes": "padded backpack straps with sternum strap, stow for pannier mode per maker copy" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.5, "notes": "padded 17in laptop sleeve" },
+    { "type": "slip", "count": 1, "location": "front", "sizeFrac": 0.15, "notes": "quick-access pocket for phone/sunglasses" },
+    { "type": "bottle", "count": 2, "location": "side", "sizeFrac": 0.15, "notes": "expandable bottle pockets with U-lock/umbrella straps" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "woven_label", "location": "front_lower" },
+    "fabric": "Recycled 600D Poly Ripstop fabric with TPU waterproof coating - matches brand string verbatim on the maker's own page, but unconfirmed visually (no photo available)"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["underside"],
+    "notes": "REQUIRES a rear rack compatible with the Rixen & Kaul KLICKfix Modul Rail (6-16mm tubing). Cannot be mounted rackless."
+   },
+
+   "fits": "rack_only",
+   "colorways": [
+    { "name": "Black Ripstop Recycled", "hex": "#1c1c1e" },
+    { "name": "Graphite Grey Recycled", "hex": "#4c5155" },
+    { "name": "Olive Tangerine Recycled", "hex": "#d4763a" }
+   ],
+   "images": []
+  },
+
+  {
+   "line": "Pannier Backpack Convertible",
+   "name": "Pannier Backpack Convertible 2.0 LITE",
+   "size": "22L",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/two-wheel-gear/pannier-backpack-convertible-pannier-backpack-convertible-2--1.jpg",
+    "https://twowheelgear.com/products/pannier-backpack-convertible-lite"
+   ],
+
+   "dims_cm": { "len": 31.8, "wid": 15.2, "hgt": 43.2 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "12.5\" Wide x 17\" High x 6\" Deep; 22 Liters; 2.8 lbs / 1.27 kg",
+   "dims_note": "Single bag. No range published. Box works out to 20.9L against a rated 22L - close, so these are treated as true mounted dimensions.",
+   "capacity_l": 22,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "The only local photo is BACKPACK MODE, not pannier mode: a structured squared-off backpack with padded straps, front pockets, and an umbrella-icon waterproof badge. No on-rack photo exists to confirm the pannier-mode rail/hook geometry."
+   },
+
+   "closure": {
+    "type": "zip_dual_slider",
+    "location": "top",
+    "hardware": "twin zips with red pull tabs at the top opening, clearly visible in the photo. Maker copy separately describes a 'top flap with zip-away mounting system' for the rack rail cover, which is a different sub-component not visible in this backpack-mode photo."
+   },
+
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "matched", "pull": "twin red pull tabs, main top opening" },
+    { "run": "front_panel", "count": 1, "finish": "matched", "notes": "lower front flap pocket, black zip" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "g_hook", "material": "plastic", "wrapsAround": "rack_rail", "notes": "Rixen & Kaul KLICKfix Kompakt Rail, red latch, per maker copy; not visible in the backpack-mode photo" },
+    { "role": "shoulder", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "notes": "padded backpack straps, deployed in the photo; stow in the rear pocket for pannier mode per maker copy" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.3, "notes": "lower front zip pocket, visible in photo" },
+    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.5, "notes": "15in laptop sleeve" },
+    { "type": "bottle", "count": 2, "location": "side", "sizeFrac": 0.15 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": true,
+    "logo": { "type": "woven_label", "location": "front_lower" },
+    "seams": "sewn",
+    "fabric": "Recycled 600D Poly Ripstop fabric with TPU waterproof coating - matches brand string verbatim on the maker's own page; photo (black colorway) shows a fine woven texture consistent with a ripstop weave, though the diamond grid is less obvious than on Alpha due to the dark colour and photo angle"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["underside"],
+    "notes": "REQUIRES a rear rack compatible with the Rixen & Kaul KLICKfix Kompakt Rail (6-16mm tubing). Cannot be mounted rackless. Includes a high-visibility rain cover per maker copy (not photographed on this product; a similar cover is shown on the Inverter's photo 2)."
+   },
+
+   "fits": "rack_only",
+   "colorways": [
+    { "name": "Black Ripstop Recycled", "hex": "#1c1c1e" },
+    { "name": "Olive Tangerine Recycled", "hex": "#d4763a" }
+   ],
+   "images": ["assets/products/two-wheel-gear/pannier-backpack-convertible-pannier-backpack-convertible-2--1.jpg"]
+  },
+
+  {
+   "line": "Inverter",
+   "name": "Inverter Pannier Backpack Convertible",
+   "size": "24L",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/two-wheel-gear/inverter-inverter-pannier-backpack-convertible-24l-1.jpg",
+    "assets/products/two-wheel-gear/inverter-inverter-pannier-backpack-convertible-24l-2.jpg",
+    "https://twowheelgear.com/products/inverter-pannier-backpack"
+   ],
+
+   "dims_cm": { "len": 33, "wid": 17.8, "hgt": 48.3 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "13\" Wide x 19\" High x 7\" Deep; 24 Liters; 3.9 lbs / 1.77 kg",
+   "dims_note": "Single bag. No range published, confirmed verbatim via WebFetch. The 7in depth is 'with straps stowed' per maker copy - the rear panel unzips and inverts to hide the harness for pannier mode, so depth would read larger in backpack mode with straps deployed (as photographed).",
+   "capacity_l": 24,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Photo 1 (backpack mode) shows a structured squared-off backpack, black with red zip pulls, an umbrella-icon waterproof badge, and a mesh side panel. Photo 2 does NOT show the bag's own fabric or hardware at all - it shows a bright hi-vis yellow RAIN COVER fitted over the bag on a rear rack; do not use it as evidence for geometry or materials, only that this bag is used single-side on a rear rack. Maker's 'rear panel unzips and inverts to hide the harness' pannier-mode mechanism (the bag's namesake feature) is not visible in either photo, since photo 1 shows the harness deployed, not inverted."
+   },
+
+   "closure": {
+    "type": "zip_dual_slider",
+    "location": "top",
+    "hardware": "twin zips with red pull tabs, visible in photo 1"
+   },
+
+   "zips": [
+    { "run": "top_centre", "count": 1, "finish": "matched", "pull": "twin red pull tabs" },
+    { "run": "front_panel", "count": 2, "finish": "matched", "notes": "2 exterior zip pockets with soft lining, per maker copy" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "g_hook", "material": "plastic", "wrapsAround": "rack_rail", "notes": "Rixen & Kaul KLICKfix Kompakt Rail, red centre spring lock for pannier mode, per maker copy; not visible in either photo" },
+    { "role": "shoulder", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "notes": "padded airmesh backpack straps with sternum strap, deployed in photo 1" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 2, "location": "front", "sizeFrac": 0.25, "notes": "soft-lined exterior zip pockets" },
+    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.5, "notes": "17in laptop pocket plus a secondary internal sleeve with pen slips" },
+    { "type": "mesh", "count": 1, "location": "internal", "sizeFrac": 0.2, "notes": "zippered mesh pocket with key clip" },
+    { "type": "bottle", "count": 2, "location": "side", "sizeFrac": 0.15 }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "integrated fluorescent rain cover with reflective details and light loops, per maker copy (photographed separately in photo 2)",
+    "logo": { "type": "woven_label", "location": "front_lower" },
+    "seams": "sewn",
+    "fabric": "Recycled 600D Polyester fabric with TPU waterproof coating - maker's own page drops 'ripstop' entirely here (unlike Alpha or the two Pannier Backpack Convertibles); photo 1 shows a smooth, fine-ribbed weave with no diamond grid, consistent with plain 600D polyester rather than a ripstop weave (see brand_notes.fabric)"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["rear_rack"],
+    "contactFaces": ["underside"],
+    "notes": "REQUIRES a rear rack compatible with the Rixen & Kaul KLICKfix Kompakt Rail (6-16mm tubing). Photo 2 confirms real-world use as a single-side rear-rack pannier (rain cover fitted, mounted beside the rear wheel). Cannot be mounted rackless."
+   },
+
+   "fits": "rack_only",
+   "colorways": [{ "name": "Grey", "hex": "#4c5155" }],
+   "images": [
+    "assets/products/two-wheel-gear/inverter-inverter-pannier-backpack-convertible-24l-1.jpg",
+    "assets/products/two-wheel-gear/inverter-inverter-pannier-backpack-convertible-24l-2.jpg"
+   ]
+  }
+ ]
+}

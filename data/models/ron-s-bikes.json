@@ -1,0 +1,334 @@
+{
+ "brand": "Ron's Bikes",
+ "slug": "ron-s-bikes",
+ "reviewed_photos": 10,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Waxed cotton canvas / cotton-faced X11 laminate / occasional X-Pac RX30'. This matches all four maker pages exactly - Large and Small both offer waxed canvas and cotton-faced X11, with RX30 X-Pac called out on Small as an 'occasional' option, and Clap Trap's own colour list is waxed canvas plus two X11 colourways with no X-Pac. Photos confirm the two fabrics read very differently: the waxed-canvas colorways (large-1 olive, large-2 tan, small-1 olive, clap-trap-2 brown, clap-trap-3 olive) all show visible wax patina, mottled tonal variation, and a matte, slightly stiff drape; the technical colorways (small-2 lavender, small-3/mini-1/mini-2 'Black Tulip' floral print) show a smooth, flat, non-canvas laminate finish consistent with X11/X-Pac. Verdict: brand string is accurate for all four products.",
+  "method": "Dimensions and material copy cross-checked against ronsbikes.com product pages via WebFetch. All 10 local photos in assets/products/ron-s-bikes/ were opened and reviewed. None of the four product pages publish a height figure or (for Large/Small) a litre figure - flagged per product below rather than guessed."
+ },
+ "products": [
+  {
+   "line": "Fabio's Chest",
+   "name": "Fabio's Chest LARGE",
+   "size": "Large",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-large-large-1.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-large-large-2.jpg",
+    "https://ronsbikes.com/products/large-fabios-chest"
+   ],
+
+   "dims_cm": { "len": 36.8, "wid": 22.9, "hgt": 23 },
+   "dims_state": "estimated_photo",
+   "dims_raw": "main body 14.5\" wide / total width (body and pockets) 20\" / depth 9\" / rackless recommended clearance between bottom of bars and top of tires 10.5\"",
+   "dims_note": "len (14.5in main body width, across the bars) and wid (9in depth) are the maker's own published figures - confirmed unchanged via WebFetch, no range given. NO HEIGHT AND NO LITRE FIGURE IS PUBLISHED AT ALL. hgt here is a visual estimate off the on-bike/studio photos (not back-computed from volume, since there is no volume to back-compute from): the barrel's front-on silhouette in photo 1 and the 3/4 on-bike view in photo 2 both read as roughly circular/oval end-on, i.e. depth and height look similar for this horseshoe-roll form, so hgt is set equal to the published 9in depth as the best available estimate. This is a genuine guess, not a measurement - verified is false and confidence is low. Total width including the loaded side pockets is 20in (50.8cm) if the wider footprint matters for clearance checks.",
+
+   "geometry": {
+    "form": "horseshoe",
+    "crossSection": "oval",
+    "shoulder": "none",
+    "notes": "Rolled horseshoe/barrel body with a flat front face carrying a triangular embroidered flower patch, bulging external side pockets each end. Photo 1 (olive waxed canvas, off-bike) and photo 2 (tan waxed canvas, on-bike 3/4 view) both show this same silhouette."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "2 side-release buckles on webbing straps running front-to-back over the top of the roll, clearly visible in both photos"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "compression", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "girth", "notes": "2 straps over the top of the roll, cinching front to back, visible in both photos" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 2, "location": "side", "sizeFrac": 0.3, "notes": "gathered/bellows-style side pockets, one with its own small buckle flap visible in photo 2 (tan, on-bike); maker's 20in 'total width' figure is with these pockets loaded" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "embroidered_patch", "location": "front_centre", "notes": "triangular patch, red flower motif on a cream ground in the olive/tan colorways" },
+    "seams": "sewn",
+    "fabric": "Waxed canvas (photographed colorway) - matches brand string; see brand_notes.fabric. Also offered in cotton-faced X11 laminate."
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebars"],
+    "contactFaces": ["rear_face"],
+    "clearance": { "tyre_mm": 267 },
+    "notes": "Rackless bar mount is primary; maker also lists compatible front/rear racks (Shovel Research Rod Steward, Nitto M1, Mica rear support, Velo Orange Constructeur) with rear use needing a dowel and Voile straps - not modelled here. clearance.tyre_mm (267mm/10.5in) is the maker's own RECOMMENDED MINIMUM bar-to-tyre clearance for rackless use, not a measured on-bike value."
+   },
+
+   "colorways": [
+    { "name": "Charcoal Waxed", "hex": "#3a3a38" },
+    { "name": "Burgundy Waxed", "hex": "#6e2733" },
+    { "name": "Olive Waxed", "hex": "#5d5f43" },
+    { "name": "Tan Waxed", "hex": "#b99b6e" },
+    { "name": "Goldilocks Waxed", "hex": "#c8a15c" },
+    { "name": "Olive X11", "hex": "#58604a" },
+    { "name": "Lavender X-Pac", "hex": "#9b91bd" },
+    { "name": "Goldenrod X-Pac", "hex": "#c9932c" },
+    { "name": "Tan X11", "hex": "#b49a72" },
+    { "name": "Black X11", "hex": "#1c1c1e" }
+   ],
+   "images": [
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-large-large-1.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-large-large-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Fabio's Chest",
+   "name": "Fabio's Chest SMALL",
+   "size": "Small",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-small-small-1.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-small-small-2.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-small-small-3.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-small-small-4.jpg",
+    "https://ronsbikes.com/products/small-fabios-chest-coming-in-march"
+   ],
+
+   "dims_cm": { "len": 26.7, "wid": 22.9, "hgt": 22.9 },
+   "dims_state": "estimated_photo",
+   "dims_raw": "main body 10.5\" wide / total width (body and pockets) 16\" / depth 9\" / rackless recommended clearance between bottom of bars and top of tires 10.5\"",
+   "dims_note": "len (10.5in main body width) and wid (9in depth, same as the Large) are the maker's own published figures, confirmed via WebFetch - no height and no litre figure published, same gap as the Large. hgt here is the same visual estimate approach as the Large (depth used as a stand-in for height on this round-ish horseshoe form, based on the on-bike photo silhouette), NOT back-computed from any volume figure since none exists. Genuine guess - verified false, confidence low.",
+
+   "geometry": {
+    "form": "horseshoe",
+    "crossSection": "oval",
+    "shoulder": "none",
+    "notes": "Same horseshoe/barrel silhouette as the Large, scaled down: rolled body, flat front face with the triangular flower patch, bulging side pockets. Visible across all 4 photos (olive waxed in photo 1, lavender X-Pac in photo 2, 'Black Tulip' print laminate in photo 3, tan waxed on-bike in photo 4)."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "2 buckled straps over the top of the roll, visible in all 4 photos"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "compression", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "girth" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 2, "location": "side", "sizeFrac": 0.3, "notes": "gathered side pockets; maker's 16in 'total width' figure is with these loaded" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "embroidered_patch", "location": "front_centre" },
+    "seams": "sewn",
+    "fabric": "Photographed in both fabric families: waxed canvas (photo 1, matte with visible tonal wax patina) and X11/X-Pac technical laminate (photos 2 and 3, smooth flat finish, including a 'Black Tulip' floral print) - matches brand string; see brand_notes.fabric"
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebars"],
+    "contactFaces": ["rear_face"],
+    "clearance": { "tyre_mm": 267 },
+    "notes": "Rackless bar mount; maker also lists the same compatible rack systems as the Large. clearance.tyre_mm is the maker's recommended minimum, not a measured value."
+   },
+
+   "colorways": [
+    { "name": "Olive X11", "hex": "#58604a" },
+    { "name": "Black Tulips RX30", "hex": "#262429" },
+    { "name": "Goldenrod X-Pac", "hex": "#c9932c" },
+    { "name": "Lavender X-Pac", "hex": "#9b91bd" },
+    { "name": "Charcoal Waxed", "hex": "#3a3a38" },
+    { "name": "Tan Waxed Canvas", "hex": "#b99b6e" },
+    { "name": "Olive Waxed Canvas", "hex": "#5d5f43" },
+    { "name": "Burgundy Waxed Canvas", "hex": "#6e2733" },
+    { "name": "Tan X11", "hex": "#b49a72" },
+    { "name": "Black X11", "hex": "#1c1c1e" },
+    { "name": "Goldilocks Waxed Canvas", "hex": "#c8a15c" }
+   ],
+   "images": [
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-small-small-1.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-small-small-2.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-small-small-3.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-small-small-4.jpg"
+   ]
+  },
+
+  {
+   "line": "Fabio's Chest",
+   "name": "Fabio's Chest MINI",
+   "size": "Mini (11L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-mini-mini-11l-1.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-mini-mini-11l-2.jpg",
+    "https://ronsbikes.com/products/fabios-chest-xs-coming-this-friday"
+   ],
+
+   "dims_cm": { "len": 30.5, "wid": 15.2, "hgt": 17.8 },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Body is 10\" wide, 12\" with side pockets full. 7\" in height and 6\" wide from the side. 11 liters of roll top hard bodied carrying capacity.",
+   "dims_note": "len uses 12in (30.5cm), the AS-MOUNTED width with the side pockets loaded, per the new unfurled rule - not the bare 10in body width. Photos 1 and 2 (both the 'Black Tulip' print, off-bike and on-a-rock studio shots) show the loaded side pockets as a substantial part of the silhouette, not trim, supporting the fuller figure. wid uses the 6in 'from the side' figure (15.2cm). hgt uses the published 7in (17.8cm) - the maker gives only one height figure with no range, so there is nothing to take a minimum of; this is the packed/rolled figure as photographed. The 11L capacity is stated directly by the maker and includes the extended roll, so it will not reconcile neatly against this box (30.5 x 15.2 x 17.8 = 8.25L) - that gap is the roll-top's expansion, not a dimension error.",
+   "capacity_l": 11,
+
+   "render": {
+    "hgt_cm": 17.8,
+    "rolls": 2,
+    "basis": "Photos 1 and 2 show the roll-top partially extended above the buckled straps, consistent with the published 7in figure being a packed-down (not maximally rolled) state; turn count estimated at 2 from the visible fold in photo 2."
+   },
+
+   "geometry": {
+    "form": "horseshoe",
+    "crossSection": "oval",
+    "shoulder": "none",
+    "notes": "Same horseshoe/barrel form as the Large and Small, in the same 'Black Tulip' floral print laminate in both photos - a smaller, more rounded body with prominent bulging side pockets."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "2 black plastic side-release buckles on straps over the top of the roll, plus a Fidlock shock-cord closure for 'basket mode' per maker copy (not distinguishable from the standard buckles in the photos)"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "compression", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "girth", "notes": "split back buckles and adjustable flap per maker copy, visible as 2 straps over the roll in both photos" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 2, "location": "side", "sizeFrac": 0.35, "notes": "loaded, bulging side pockets, clearly the dominant part of the silhouette in both photos" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "embroidered_patch", "location": "front_centre", "notes": "same triangular flower patch, in a grey colourway against the dark print" },
+    "seams": "sewn",
+    "fabric": "Photographed in the 'Black Tulip' print, an X11/X-Pac technical laminate - matches brand string (also offered in waxed canvas and plain X11/X-Pac colours per the colorway list)"
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebars"],
+    "contactFaces": ["rear_face"],
+    "notes": "Rackless bar mount; maker states it fits drop bars down to 42cm wide. Also has a 'basket mode' (roll-top folded in, no clips needed) for use in a front basket, but this is an alternate mode, not a requirement - the primary mount is bar-strapped, same as the Large/Small."
+   },
+
+   "colorways": [
+    { "name": "Tan X11", "hex": "#b49a72" },
+    { "name": "Olive X11", "hex": "#58604a" },
+    { "name": "Lavender X-Pac", "hex": "#9b91bd" },
+    { "name": "Goldenrod X-Pac", "hex": "#c9932c" },
+    { "name": "Charcoal Waxed", "hex": "#3a3a38" },
+    { "name": "Tan Waxed", "hex": "#b99b6e" },
+    { "name": "Burgundy Waxed", "hex": "#6e2733" },
+    { "name": "Black Tulip X-Pac", "hex": "#262429" },
+    { "name": "Olive Waxed", "hex": "#5d5f43" }
+   ],
+   "images": [
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-mini-mini-11l-1.jpg",
+    "assets/products/ron-s-bikes/fabio-s-chest-fabio-s-chest-mini-mini-11l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Fabio's",
+   "name": "Fabio's Clap Trap",
+   "size": "One Size (3.7L)",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": false,
+   "confidence": "low",
+   "evidence": [
+    "assets/products/ron-s-bikes/fabio-s-fabio-s-clap-trap-one-size-3-7l-1.jpg",
+    "assets/products/ron-s-bikes/fabio-s-fabio-s-clap-trap-one-size-3-7l-2.jpg",
+    "assets/products/ron-s-bikes/fabio-s-fabio-s-clap-trap-one-size-3-7l-3.jpg",
+    "assets/products/ron-s-bikes/fabio-s-fabio-s-clap-trap-one-size-3-7l-4.jpg",
+    "https://ronsbikes.com/products/the-clap-trap"
+   ],
+
+   "dims_cm": { "len": 25.4, "wid": 16.5, "hgt": 18 },
+   "dims_state": "estimated_photo",
+   "dims_raw": "10\" at the bottom, 8.5\" at the top, and 6.5\" deep. this 3.7L hard bodied top opening reverse randoesque bag sack. 296g - 336g. made in Vermont USA",
+   "dims_note": "Tapered trapezoid, quoted by bottom width (10in, the LARGER figure, used for len per the taper rule) and top width (8.5in). wid uses the 6.5in depth. NO HEIGHT IS PUBLISHED. A prior pass back-computed height from the stated 3.7L volume (about 9.4cm) - the spec explicitly forbids fabricating dimensions this way, so that figure is discarded. Instead hgt here is a visual estimate read off photo 2 (on-bike, brown waxed canvas): the mounted body reads roughly 70% as tall as its 10in bottom width, giving ~18cm. This is a genuine estimate, not a measurement or a volume back-calculation - verified is false and confidence is low.",
+   "capacity_l": 3.7,
+
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "d_shape",
+    "taper": { "nose": 1.0, "tail": 0.85, "profile": "linear" },
+    "shoulder": "none",
+    "notes": "Rounded-drum trapezoid: wider at the bottom (10in) than the top (8.5in), 6.5in deep. All 4 photos show the same rounded-front silhouette with a drawcord-gathered bottom edge and side pockets bulging at the base. Maker copy notes the front flap is taller than the rear 'to prevent contents from shifting', so a single height figure is an approximation of an asymmetric front/rear profile either way."
+   },
+
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "elastic drawcord that loops over the stem or tucks into a rear loop, per maker copy; visible gathered at the top in all 4 photos"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "handlebar", "notes": "two 9in Voile nano straps per maker copy, not clearly resolved in the photos (all are close-up product shots, not wide enough to show the strap run)" },
+    { "role": "stability", "count": 1, "location": "front_face", "hardware": "hook", "material": "plastic", "wrapsAround": "head_tube", "notes": "head-tube dongle per maker copy" }
+   ],
+
+   "pockets": [
+    { "type": "stretch", "count": 2, "location": "side", "sizeFrac": 0.2, "notes": "gathered elastic side pockets at the base, visible in photos 1, 3, and 4; maker notes these are NOT waterproof" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "embroidered_patch", "location": "front_centre" },
+    "seams": "sewn",
+    "fabric": "Waxed canvas (photographed in yellow/gold 'Goldilocks', brown/tan, olive, and black colorways across the 4 photos) - matches brand string; also offered in Grey Blue and Black X11"
+   },
+
+   "mount": {
+    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
+    "attachesTo": ["handlebars", "head_tube"],
+    "contactFaces": ["rear_face"],
+    "notes": "One-handed drawcord opening per maker copy; mounts via straps to the bars plus a head-tube dongle for stability, visible in photo 2 (on-bike)."
+   },
+
+   "colorways": [
+    { "name": "Black Waxed", "hex": "#1c1c1e" },
+    { "name": "Olive Waxed", "hex": "#5d5f43" },
+    { "name": "Tan Waxed", "hex": "#b99b6e" },
+    { "name": "Goldilocks Waxed", "hex": "#c8a15c" },
+    { "name": "Bone Waxed", "hex": "#ded6c4" },
+    { "name": "Navy Blue Waxed", "hex": "#26344c" },
+    { "name": "Burgundy Waxed", "hex": "#6e2733" },
+    { "name": "Grey Blue X11", "hex": "#6b7a8a" },
+    { "name": "Black X11", "hex": "#1c1c1e" },
+    { "name": "Pink Waxed", "hex": "#d98fa0" }
+   ],
+   "images": [
+    "assets/products/ron-s-bikes/fabio-s-fabio-s-clap-trap-one-size-3-7l-1.jpg",
+    "assets/products/ron-s-bikes/fabio-s-fabio-s-clap-trap-one-size-3-7l-2.jpg",
+    "assets/products/ron-s-bikes/fabio-s-fabio-s-clap-trap-one-size-3-7l-3.jpg",
+    "assets/products/ron-s-bikes/fabio-s-fabio-s-clap-trap-one-size-3-7l-4.jpg"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,441 @@
+{
+ "brand": "Giant",
+ "slug": "giant",
+ "reviewed_photos": 11,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is 'Ripstop nylon over 1200D nylon / H2Tex 3-layer laminate'. PARTIALLY CONFIRMED. The Scout-line bags (Saddle Bag, Burrito Bar Bag, Top Tube Bag) all show a visible diagonal ripstop grid in the studio close-ups (clearest on the Burrito Bar Bag, assets/products/giant/scout-scout-burrito-bar-bag-2-3l-1.jpg and -2.jpg), consistent with 'ripstop nylon' over a stiffer backing - the H2Pro Frame Bag reads as a smoother, harder-faced weave with no visible ripstop grid, plausibly the '1200D nylon' half of the string on a bag built for abrasion resistance against the frame rather than for weight. The Transporter Pannier and Transit Trunk Bag, by contrast, show a completely smooth, non-ripstop woven face in both colorways (assets/products/giant/transporter-transporter-mik-pannier-bag-30l-30l-single-1.jpg, transit-transit-mik-trunk-bag-11l-11l-1.jpg) with no visible grid at all - consistent with a laminated waterproof face (the H2Tex portion) rather than the ripstop portion, but I could not independently confirm the 'H2Tex' name against a maker spec page (Giant's Shopify-style pages did not return a readable dimensions/materials block via curl). Net: the string is a reasonable composite of what is actually two different fabric treatments used across the range (ripstop on the Scout softgoods, a smooth waterproof laminate on the rack-mounted MIK bags) rather than one fabric on every product, but nothing photographed contradicts it outright.",
+  "method": "Giant's Shopify product pages return heavy JS scaffolding via curl and WebFetch alike; no dimensions/materials table could be extracted verbatim, so dims_raw below is taken from the copy already present in data/brands.json (itself sourced from the maker pages) and cross-checked against the 11 local photos and volume math, not re-fetched independently."
+ },
+ "products": [
+  {
+   "line": "Scout",
+   "name": "Scout Saddle Bag",
+   "size": "9L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/giant/scout-scout-saddle-bag-9l-2.jpg",
+    "https://www.giant-bicycles.com/int/scout-saddle-bag-2024"
+   ],
+
+   "dims_cm": { "len": 56, "wid": 18, "hgt": 30 },
+   "dims_state": "single_figure_unfurled_height",
+   "dims_raw": "9L (304oz); 56x30x18cm (22x11.8x7 inches); 491g",
+   "dims_note": "Giant publishes three bare numbers with no axis labels and no range. Following the same reasoning Ortlieb uses for its own Seat-Pack line (length, then flattened/unrolled height, then width): 56cm is the nose-to-tail length of the panel (used directly, no range given), 18cm is the fixed width at the saddle mouth, and 30cm is the panel's UNROLLED height before the rolltop is turned down - not the mounted height. As a box, 56x30x18 = 30.2L against a stated 9L (3.4x), far outside the plausible 1.0-2.5x band the spec gives for soft bags, which is the tell that 30cm is not the packed figure. Because only the unrolled figure is published (no explicit packed minimum), dims_cm.hgt is left at the honest 30cm per the maker, and the DRAWN height is set separately in render.hgt_cm, estimated off the on-bike photo.",
+   "capacity_l": 9,
+
+   "render": {
+    "hgt_cm": 17,
+    "rolls": 2,
+    "basis": "Estimated from assets/products/giant/scout-scout-saddle-bag-9l-2.jpg, where the packed (rolled, olive-panel) height above the black shell reads close to the bag's own 18cm width. Cross-checked against volume: 56 x 18 x 17 x 0.5 (wedge taper) = 8.6L, close to the stated 9L."
+   },
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 1.0, "tail": 0.5, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Two-tone construction: black main shell/underside, olive-green rolltop panel at the tail, clearly visible in the photo. Squared shoulder at the saddle end, narrowing toward a rolled, buckled tail."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 2,
+    "hardware": "side-release buckle at the tail roll; a hose/valve pass-through is visible in the photo (rider fitting a pump connector through the closure)"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" },
+    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "webbing", "wrapsAround": "seatpost" },
+    { "role": "compression", "count": 2, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "small reflective tab, side (per catalogue features.reflective=true; exact placement not resolvable at this photo resolution)",
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "fabric": "Ripstop nylon over 1200D nylon / H2Tex 3-layer laminate - see brand_notes.fabric; this product's visible face reads as the ripstop half of the string"
+   },
+
+   "mount": {
+    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["saddle_rails", "seatpost"],
+    "contactFaces": ["nose_top", "nose_front"],
+    "sag_deg": 3,
+    "clearance": { "tyre_mm": 50, "frame_mm": 0 },
+    "notes": "Standard nose-clamped seatpack; nose attachment straps are not visible in the single available photo (obscured by the tree trunk prop), so their exact geometry is inferred from typical Scout-line construction, not directly observed - confidence is medium for that reason."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Green", "hex": "#3f5c3a" }
+   ],
+   "images": ["assets/products/giant/scout-scout-saddle-bag-9l-2.jpg"]
+  },
+
+  {
+   "line": "Scout",
+   "name": "Scout Burrito Bar Bag",
+   "size": "2.3L",
+   "slot": "barbag",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/giant/scout-scout-burrito-bar-bag-2-3l-1.jpg",
+    "assets/products/giant/scout-scout-burrito-bar-bag-2-3l-2.jpg",
+    "https://www.giant-bicycles.com/us/scout-burrito-bar-bag-2024"
+   ],
+
+   "dims_cm": { "len": 20, "wid": 12, "hgt": 12 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "2.3L (77.8oz); 20x12x12 cm (7.8x4.7x4.7 inches); 188g",
+   "dims_note": "No range published; single figures used directly. 20cm runs across the bars, 12cm square section (round-ish in the photo, not a sharp box). Box volume 2.88L against 2.3L stated (1.25x), plausible for a rounded barrel cross-section.",
+   "capacity_l": 2.3,
+
+   "geometry": {
+    "form": "truncated_cylinder",
+    "crossSection": "oval",
+    "shoulder": "none",
+    "notes": "Reads as a small harness-mounted bar roll, not a sharp-edged box: rounded body with dark end caps, diagonal ripstop grid visible on the fabric face, and a diamond-pattern lashing/compression strap crossing the body in an X. Two hard plastic clips sit at the top-rear for mounting to a bar harness/cradle; a separate strap trails off the front-lower corner, consistent with a stabiliser strap running down to the head tube or fork crown."
+   },
+
+   "closure": {
+    "type": "drawcord",
+    "location": "end",
+    "hardware": "drawcord cinch at the open end (features.cord=true in the catalogue), plus the diagonal X-strap across the body which reads as a secondary compression wrap"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "hook", "material": "webbing" },
+    { "role": "compression", "count": 2, "location": "girth", "hardware": "daisy_loop", "material": "webbing" }
+   ],
+
+   "pockets": [
+    { "type": "mesh", "count": 1, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side_rear" },
+    "fabric": "Ripstop nylon over 1200D nylon / H2Tex 3-layer laminate - see brand_notes.fabric; diagonal ripstop grid is clearly visible on this product, both colorways"
+   },
+
+   "mount": {
+    "axes": { "len": "z", "wid": "x", "hgt": "y" },
+    "attachesTo": ["handlebar", "headtube"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 40, "frame_mm": 0 },
+    "notes": "Small roll mounted across the bars via a two-point harness clip at the top; the trailing lower strap is read as a stabiliser to the head tube/fork crown, standard for this style of bar roll."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Green", "hex": "#3f5c3a" }
+   ],
+   "images": [
+    "assets/products/giant/scout-scout-burrito-bar-bag-2-3l-1.jpg",
+    "assets/products/giant/scout-scout-burrito-bar-bag-2-3l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Scout",
+   "name": "Scout Top Tube Bag",
+   "size": "1L",
+   "slot": "toptube",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/giant/scout-scout-top-tube-bag-1l-1.jpg",
+    "assets/products/giant/scout-scout-top-tube-bag-1l-2.jpg",
+    "https://www.giant-bicycles.com/int/scout-top-tube-bag-2024"
+   ],
+
+   "dims_cm": { "len": 22, "wid": 6.5, "hgt": 10 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "1L (33.8oz); 22x10x6.5cm (8.6x3.9x2.5 inches); 159g",
+   "dims_note": "Fixed zip bag, no range published. 22cm along the top tube, 6.5cm across, 10cm tall at the head-tube end. Box 1.43L against 1L stated, plausible for a boxy zip pouch with a tapered nose.",
+   "capacity_l": 1,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "taper": { "nose": 0.6, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Wedge-ish box, taller at the seat-tube end and tapering down toward the stem, per both photos. Semi-rigid front face keeps its shape when unzipped and holding a phone upright."
+   },
+
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single slider, storm-flap-free"
+   },
+
+   "zips": [
+    { "run": "top_centre", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+   ],
+
+   "pockets": [
+    { "type": "zip", "count": 1, "location": "side" },
+    { "type": "mesh", "count": 1, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side" },
+    "seams": "bar-tacked at strap attachment points",
+    "fabric": "Ripstop nylon over 1200D nylon / H2Tex 3-layer laminate - see brand_notes.fabric; matte, textured face with a visible fine ripstop grid in both photos"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
+    "attachesTo": ["top_tube"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "notes": "Velcro loop straps around the top tube, confirmed in both photos (a hand is shown threading/tightening the front strap)."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" },
+    { "name": "Green", "hex": "#3f5c3a" }
+   ],
+   "images": [
+    "assets/products/giant/scout-scout-top-tube-bag-1l-1.jpg",
+    "assets/products/giant/scout-scout-top-tube-bag-1l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "H2Pro",
+   "name": "H2Pro Frame Bag",
+   "size": "4L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/giant/h2pro-h2pro-frame-bag-4l-1.jpg",
+    "assets/products/giant/h2pro-h2pro-frame-bag-4l-2.jpg",
+    "https://www.giant-bicycles.com/int/h2pro-frame-bag-2021"
+   ],
+
+   "dims_cm": { "len": 46.5, "wid": 6, "hgt": 13 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "3L: 43.5 x 6 x 11.5cm | 4L: 46.5 x 6 x 13cm | XL 4.5L: 50 x 6 x 14cm",
+   "dims_note": "Mid (4L) size taken as the catalogued SKU. Giant orders the figures length x thickness x height, so 6cm is the across-bike thickness, not a range - fixed zip bag, no rolling. Box 3.6L against 4L stated, plausible for a wedge with a squared-off tail.",
+   "capacity_l": 4,
+
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "flat_back",
+    "taper": { "nose": 0.35, "tail": 1.0, "profile": "linear" },
+    "shoulder": "squared",
+    "notes": "Full-length half-frame wedge: squared, tall at the seat-tube end, tapering down to a narrow point at the head-tube end where the down tube and top tube converge. Flat back panel rides against the frame tubes."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "single slider following the top and front taper edge, per both photos"
+   },
+
+   "zips": [
+    { "run": "horseshoe_top", "finish": "matched" }
+   ],
+
+   "straps": [
+    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
+    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "down_tube" }
+   ],
+
+   "pockets": [],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": { "type": "screen_print", "location": "side" },
+    "fabric": "Ripstop nylon over 1200D nylon / H2Tex 3-layer laminate - see brand_notes.fabric; this product reads as the smoother, harder-faced 1200D nylon half of the string rather than a visible ripstop grid"
+   },
+
+   "mount": {
+    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["top_tube", "down_tube", "seat_tube"],
+    "contactFaces": ["top", "underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "notes": "Full main-triangle half frame bag: three velcro straps along the top tube visible in both photos, plus a loop at the lower-left corner for a down-tube or seat-tube anchor point."
+   },
+
+   "colorways": [
+    { "name": "Black", "hex": "#1a1a1a" }
+   ],
+   "images": [
+    "assets/products/giant/h2pro-h2pro-frame-bag-4l-1.jpg",
+    "assets/products/giant/h2pro-h2pro-frame-bag-4l-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Transporter",
+   "name": "Transporter MIK Pannier Bag 30L",
+   "size": "30L (single)",
+   "slot": "pannier",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/giant/transporter-transporter-mik-pannier-bag-30l-30l-single-1.jpg",
+    "assets/products/giant/transporter-transporter-mik-pannier-bag-30l-30l-single-2.jpg",
+    "https://www.giant-bicycles.com/int/transporter-mik-pannier-bag-30l"
+   ],
+
+   "dims_cm": { "len": 30, "wid": 17, "hgt": 40 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "Giant: \"Size: 30*17*40cm\", \"Weight: 1400g\", \"Volume: 30L\"; multiple Giant dealers print \"Volume: 30L (15L per side)\"",
+   "dims_note": "AXIS CHECK REQUESTED BY HANDOVER.md - CONFIRMED, not misread here. Both local photos show a double pannier draped over a rack by a shared saddle panel, and each half is unmistakably PORTRAIT: measurably about 1.4-1.5x taller than it is long. Giant's bare '30*17*40cm' has no axis labels; mapping 40 to hgt (vertical), 30 to len (fore-aft along the rack), 17 to wid (standoff from the wheel) matches the photo ratio (40/30 = 1.33 against ~1.45 measured off the image, the gap explained by the rolltop standing proud above the shell) and is a standard commuter-pannier envelope (cf. Ortlieb Back-Roller 32 x 42 x 17). Reading 40cm as fore-aft depth instead, as HANDOVER.md flags an earlier pass having done, would produce a bag deeper than it is tall - contradicted directly by both photos. CAPACITY: '30L' is the PAIR; Giant's own dealers print '30L (15L per side)', and 1400g is a two-bag weight, consistent with the double-pannier construction visible in the photos. capacity_l below is set to 15 (single side).",
+   "capacity_l": 15,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "Tall, narrow single-hook pannier, flat inner face against the rack/wheel, rounded rolltop-style lid. Reflective strip mid-body in both colorways."
+   },
+
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "buckled roll-down lid; a fixed carry handle bridges both bag tops at the shared saddle panel"
+   },
+
+   "zips": [],
+
+   "straps": [
+    { "role": "attachment", "count": 2, "location": "top", "hardware": "hook", "material": "webbing", "wrapsAround": "rack_rail" }
+   ],
+
+   "pockets": [
+    { "type": "slip", "count": 1, "location": "internal" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "horizontal reflective strip, mid-body",
+    "logo": { "type": "screen_print", "location": "front_lower" },
+    "fabric": "Ripstop nylon over 1200D nylon / H2Tex 3-layer laminate - see brand_notes.fabric; face is smooth with no visible ripstop grid in either colorway, consistent with the laminate half of the string rather than the ripstop half"
+   },
+
+   "mount": {
+    "axes": { "len": "x", "wid": "z", "hgt": "-y" },
+    "attachesTo": ["mik_rack_plate"],
+    "contactFaces": ["top"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": 30, "frame_mm": 0 },
+    "notes": "MIK ('Mounting Is Key') top-plate rack system - a proprietary hook-on rail, not a rail-clamp or strap mount. Hangs vertically from the rack top, flat face toward the wheel. Explicit axes per HANDOVER.md request: hgt (40cm) is vertical -y (hangs down from the rack), len (30cm) is fore-aft along the rack (x), wid (17cm) is the standoff from the wheel (z)."
+   },
+
+   "colorways": [
+    { "name": "Blue", "hex": "#2f4a6b" },
+    { "name": "Gray", "hex": "#6e7276" }
+   ],
+   "images": [
+    "assets/products/giant/transporter-transporter-mik-pannier-bag-30l-30l-single-1.jpg",
+    "assets/products/giant/transporter-transporter-mik-pannier-bag-30l-30l-single-2.jpg"
+   ]
+  },
+
+  {
+   "line": "Transit",
+   "name": "Transit MIK Trunk Bag 11L",
+   "size": "11L",
+   "slot": "trunk",
+   "slot_should_be": null,
+
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/giant/transit-transit-mik-trunk-bag-11l-11l-1.jpg",
+    "assets/products/giant/transit-transit-mik-trunk-bag-11l-11l-2.jpg",
+    "https://www.giant-bicycles.com/int/transit-mik-trunk-bag-11l"
+   ],
+
+   "dims_cm": { "len": 36, "wid": 22, "hgt": 16 },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "11 liters; 36 x 22 x 16 cm; 699g",
+   "dims_note": "Fixed rack-top trunk box, no range. 36cm along the rack, 22cm across, 16cm tall. Box 12.7L against 11L stated, plausible for a boxy zip trunk with bellows side pockets eating into the envelope.",
+   "capacity_l": 11,
+
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Rack-top trunk bag with a moulded top carry handle, bellows zip pockets on both long sides (visible in both colorways), and a rounded top ridge."
+   },
+
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "single slider around the lid perimeter, plus a MIK key lock at the base securing it to the rack plate"
+   },
+
+   "zips": [
+    { "run": "perimeter", "finish": "matched" }
+   ],
+
+   "straps": [],
+
+   "pockets": [
+    { "type": "zip", "count": 2, "location": "side" }
+   ],
+
+   "details": {
+    "daisyChains": false,
+    "reflective": "horizontal reflective strip, side pockets",
+    "logo": { "type": "screen_print", "location": "front_lower" },
+    "fabric": "Ripstop nylon over 1200D nylon / H2Tex 3-layer laminate - see brand_notes.fabric; smooth heathered face with no visible ripstop grid, same laminate read as the Transporter Pannier"
+   },
+
+   "mount": {
+    "axes": { "len": "x", "wid": "z", "hgt": "y" },
+    "attachesTo": ["mik_rack_plate"],
+    "contactFaces": ["underside"],
+    "sag_deg": 0,
+    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "notes": "Locks flat onto a MIK rack-top plate with a key; sits centred over the rack, does not hang down beside the wheel like the Transporter pannier."
+   },
+
+   "colorways": [
+    { "name": "Blue", "hex": "#2f4a6b" },
+    { "name": "Grey", "hex": "#6e7276" }
+   ],
+   "images": [
+    "assets/products/giant/transit-transit-mik-trunk-bag-11l-11l-1.jpg",
+    "assets/products/giant/transit-transit-mik-trunk-bag-11l-11l-2.jpg"
+   ]
+  }
+ ]
+}
