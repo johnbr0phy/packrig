@@ -72,8 +72,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.33,
+      "nose": 0.33,
+      "tail": 1,
       "profile": "linear"
      }
     },
@@ -147,8 +147,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.33,
+      "nose": 0.33,
+      "tail": 1,
       "profile": "linear"
      }
     },
@@ -222,8 +222,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.33,
+      "nose": 0.33,
+      "tail": 1,
       "profile": "linear"
      }
     },
@@ -501,9 +501,9 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.55,
-      "tail": 0.15,
-      "profile": "concave"
+      "nose": 0.21,
+      "tail": 0.83,
+      "profile": "linear"
      }
     },
     "structure": "semi",
@@ -568,9 +568,9 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.55,
-      "tail": 0.15,
-      "profile": "concave"
+      "nose": 0.24,
+      "tail": 0.83,
+      "profile": "linear"
      }
     },
     "structure": "semi",
@@ -635,9 +635,9 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.55,
-      "tail": 0.15,
-      "profile": "concave"
+      "nose": 0.29,
+      "tail": 0.85,
+      "profile": "linear"
      }
     },
     "structure": "semi",
@@ -702,9 +702,9 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.55,
-      "tail": 0.15,
-      "profile": "concave"
+      "nose": 0.42,
+      "tail": 0.83,
+      "profile": "linear"
      }
     },
     "structure": "semi",
@@ -1224,7 +1224,8 @@
      "len": "x",
      "wid": "z",
      "hgt": "y"
-    }
+    },
+    "structure": "semi"
    },
    {
     "slot": "downtube",
@@ -1270,9 +1271,10 @@
      "https://medias.apidura.com/sHRQ6jzh/2026/04/apidura-expedition-downtube-pack-1.5l-on-bike-1.jpg"
     ],
     "render": {
+     "len_cm": 21,
      "hgt_cm": 6.5,
      "rolls": 3,
-     "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/expedition-downtube-pack-1-5l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 21 cm against the MAX 27 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~21 cm and leave hgt alone."
+     "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/expedition-downtube-pack-1-5l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 21 cm against the MAX 27 cm recorded in dims_cm.len, so the rolled-down render shortens that axis to 21 cm and leaves hgt alone. len_cm added 2026-08-10 - this basis had asked for it since the record was written and nothing carried it, so the pack was drawn at its unfurled 27 cm and could not fit between the chainring and the front tyre."
     },
     "geometry": {
      "form": "truncated_cylinder",
@@ -1545,7 +1547,7 @@
     "render": {
      "hgt_cm": 18,
      "rolls": 3,
-     "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 20L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-20l-2.jpg against its known 30.5 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
+     "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 20L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-20l-2.jpg against its known 30.5 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is 0.55 (corrected 10 Aug from 'about a third'; the published MIN 10 cm IS that collar, because it is the height with the roll taken all the way down, and 10 / 18 = 0.55). A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
      "conflict": "10cm is the published minimum of Apidura's 10-40cm range, but renders a 20L rack pack as a slab. 18cm measured off the on-bike photo against the known published width; the reviewer recommended this figure in `basis` and it is now applied rather than left as prose."
     },
     "fits": "rack_only",
@@ -1618,7 +1620,7 @@
     "render": {
      "hgt_cm": 18,
      "rolls": 3,
-     "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 30L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-30l-1.jpg against its known 41 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
+     "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 30L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-30l-1.jpg against its known 41 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is 0.55 (corrected 10 Aug from 'about a third'; the published MIN 10 cm IS that collar, because it is the height with the roll taken all the way down, and 10 / 18 = 0.55). A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
      "conflict": "10cm is the published minimum of Apidura's 10-40cm range, but renders a 30L rack pack as a slab. 18cm measured off the on-bike photo against the known published width; the reviewer recommended this figure in `basis` and it is now applied rather than left as prose."
     },
     "fits": "rack_only",
@@ -1686,13 +1688,14 @@
      "https://medias.apidura.com/sHRQ6jzh/2024/02/apidura-expedition-e-bike-charger-pack-product-on-bike-1.jpg"
     ],
     "render": {
+     "len_cm": 20.5,
      "hgt_cm": 7,
      "rolls": 3,
-     "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/expedition-e-bike-charger-pack-1-6l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 20.5 cm against the MAX 30 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~20.5 cm and leave hgt alone."
+     "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/expedition-e-bike-charger-pack-1-6l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 20.5 cm against the MAX 30 cm recorded in dims_cm.len, so the rolled-down render shortens that axis to 20.5 cm and leaves hgt alone. len_cm added 2026-08-10 - this basis had asked for it since the record was written, and nothing carried it, so the pack was drawn 30 cm long and speared the front wheel."
     },
     "geometry": {
-     "form": "truncated_cylinder",
-     "crossSection": "d_shape",
+     "form": "rounded_box",
+     "crossSection": "rounded_rect",
      "shoulder": "rounded",
      "taper": {
       "nose": 1,
@@ -1768,8 +1771,8 @@
      "crossSection": "oval",
      "shoulder": "rounded",
      "taper": {
-      "nose": 1,
-      "tail": 0.2,
+      "nose": 0.35,
+      "tail": 1,
       "profile": "convex"
      }
     },
@@ -1841,8 +1844,8 @@
      "crossSection": "oval",
      "shoulder": "rounded",
      "taper": {
-      "nose": 1,
-      "tail": 0.2,
+      "nose": 0.35,
+      "tail": 1,
       "profile": "convex"
      }
     },
@@ -1914,8 +1917,8 @@
      "crossSection": "oval",
      "shoulder": "rounded",
      "taper": {
-      "nose": 1,
-      "tail": 0.2,
+      "nose": 0.35,
+      "tail": 1,
       "profile": "convex"
      }
     },
@@ -2125,8 +2128,8 @@
      "crossSection": "flat_back",
      "shoulder": "rounded",
      "taper": {
-      "nose": 0.6,
-      "tail": 0.3,
+      "nose": 0.33,
+      "tail": 0.57,
       "profile": "convex"
      }
     },
@@ -2191,8 +2194,8 @@
      "crossSection": "flat_back",
      "shoulder": "rounded",
      "taper": {
-      "nose": 0.6,
-      "tail": 0.3,
+      "nose": 0.31,
+      "tail": 0.58,
       "profile": "convex"
      }
     },
@@ -2509,7 +2512,7 @@
      "shoulder": "rounded",
      "taper": {
       "nose": 1,
-      "tail": 0.45,
+      "tail": 0.7,
       "profile": "linear"
      }
     },
@@ -2644,7 +2647,8 @@
      "len": "z",
      "wid": "x",
      "hgt": "y"
-    }
+    },
+    "structure": "semi"
    },
    {
     "slot": "stembag",
@@ -2706,7 +2710,8 @@
      "len": "z",
      "wid": "x",
      "hgt": "y"
-    }
+    },
+    "structure": "semi"
    },
    {
     "slot": "stembag",
@@ -2769,7 +2774,8 @@
      "len": "z",
      "wid": "x",
      "hgt": "y"
-    }
+    },
+    "structure": "semi"
    },
    {
     "slot": "downtube",
@@ -2813,9 +2819,10 @@
      "https://medias.apidura.com/sHRQ6jzh/2022/04/apidura-backcountry-downtube-pack-1.8l-on-bike-1.jpg"
     ],
     "render": {
+     "len_cm": 16,
      "hgt_cm": 9,
      "rolls": 3,
-     "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/backcountry-downtube-pack-1-8l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 16 cm against the MAX 24 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~16 cm and leave hgt alone."
+     "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/backcountry-downtube-pack-1-8l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 16 cm against the MAX 24 cm recorded in dims_cm.len, so the rolled-down render shortens that axis to 16 cm and leaves hgt alone. len_cm added 2026-08-10; the basis had asked for it since the record was written and nothing carried it."
     },
     "geometry": {
      "form": "truncated_cylinder",
@@ -2889,12 +2896,12 @@
      "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/racing-saddle-pack-3l-1.jpg. The roll shortens the length axis, not the height: the maker's MIN is 19 cm against the MAX 24 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~19 cm and leave hgt alone."
     },
     "geometry": {
-     "form": "tapered_wedge",
+     "form": "teardrop",
      "crossSection": "oval",
      "shoulder": "rounded",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.4,
+      "tail": 1,
       "profile": "convex"
      }
     },
@@ -2960,12 +2967,12 @@
      "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/racing-saddle-pack-5l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 23 cm against the MAX 33 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~23 cm and leave hgt alone."
     },
     "geometry": {
-     "form": "tapered_wedge",
+     "form": "teardrop",
      "crossSection": "oval",
      "shoulder": "rounded",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.37,
+      "tail": 1,
       "profile": "convex"
      }
     },
@@ -3031,12 +3038,12 @@
      "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/racing-saddle-pack-7l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 29.5 cm against the MAX 39.5 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~29.5 cm and leave hgt alone."
     },
     "geometry": {
-     "form": "tapered_wedge",
+     "form": "teardrop",
      "crossSection": "oval",
      "shoulder": "rounded",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.36,
+      "tail": 1,
       "profile": "convex"
      }
     },
@@ -3129,8 +3136,7 @@
     "dims_cm": {
      "len": 26,
      "wid": 11,
-     "hgt": 9.5,
-     "dia": 11
+     "hgt": 9.5
     },
     "colors": [
      "#b0b4b7",
@@ -3177,9 +3183,9 @@
      "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/racing-aerobar-pack-2-5l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 22 cm against the MAX 26 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~22 cm and leave hgt alone."
     },
     "geometry": {
-     "form": "barrel",
-     "crossSection": "oval",
-     "shoulder": "rounded",
+     "form": "rounded_box",
+     "crossSection": "flat_bottom",
+     "shoulder": "squared",
      "taper": {
       "nose": 0.8,
       "tail": 1,
@@ -3248,8 +3254,8 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.5,
-      "tail": 0.35,
+      "nose": 0.26,
+      "tail": 0.52,
       "profile": "convex"
      }
     },
@@ -3314,8 +3320,8 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.5,
-      "tail": 0.35,
+      "nose": 0.36,
+      "tail": 0.5,
       "profile": "convex"
      }
     },
@@ -3380,8 +3386,8 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.5,
-      "tail": 0.35,
+      "nose": 0.36,
+      "tail": 0.5,
       "profile": "convex"
      }
     },
@@ -3685,8 +3691,8 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.2,
+      "nose": 0.17,
+      "tail": 0.5,
       "profile": "linear"
      }
     },
@@ -3697,7 +3703,8 @@
      "len": "along_toptube",
      "wid": "z",
      "hgt": "y"
-    }
+    },
+    "structure": "rigid"
    },
    {
     "slot": "framebag_half",
@@ -3750,8 +3757,8 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.2,
+      "nose": 0.33,
+      "tail": 0.53,
       "profile": "linear"
      }
     },
@@ -3762,7 +3769,8 @@
      "len": "along_toptube",
      "wid": "z",
      "hgt": "y"
-    }
+    },
+    "structure": "rigid"
    },
    {
     "slot": "toptube",
@@ -3811,7 +3819,7 @@
      "shoulder": "squared",
      "taper": {
       "nose": 1,
-      "tail": 0.5,
+      "tail": 1,
       "profile": "linear"
      }
     },
@@ -3873,7 +3881,7 @@
      "shoulder": "squared",
      "taper": {
       "nose": 1,
-      "tail": 0.5,
+      "tail": 1,
       "profile": "linear"
      }
     },
@@ -3933,7 +3941,7 @@
      "shoulder": "squared",
      "taper": {
       "nose": 1,
-      "tail": 0.5,
+      "tail": 1,
       "profile": "linear"
      }
     },
@@ -4138,12 +4146,12 @@
      "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/canyon-collab-saddle-pack-5l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 23 cm against the MAX 33 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~23 cm and leave hgt alone."
     },
     "geometry": {
-     "form": "tapered_wedge",
+     "form": "teardrop",
      "crossSection": "oval",
      "shoulder": "rounded",
      "taper": {
-      "nose": 1,
-      "tail": 0.28,
+      "nose": 0.37,
+      "tail": 1,
       "profile": "convex"
      }
     },
@@ -4209,8 +4217,8 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.5,
-      "tail": 0.35,
+      "nose": 0.36,
+      "tail": 0.5,
       "profile": "convex"
      }
     },
@@ -4273,9 +4281,9 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.55,
-      "tail": 0.45,
-      "profile": "linear"
+      "nose": 0.45,
+      "tail": 0.55,
+      "profile": "convex"
      }
     },
     "closure": {
@@ -4478,12 +4486,12 @@
      "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/maap-collab-saddle-pack-7l-1.jpg. The roll shortens the length axis, not the height: the maker's MIN is 29.5 cm against the MAX 39.5 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~29.5 cm and leave hgt alone."
     },
     "geometry": {
-     "form": "tapered_wedge",
+     "form": "teardrop",
      "crossSection": "oval",
      "shoulder": "rounded",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.36,
+      "tail": 1,
       "profile": "convex"
      }
     },
@@ -4553,8 +4561,8 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.5,
-      "tail": 0.35,
+      "nose": 0.26,
+      "tail": 0.52,
       "profile": "convex"
      }
     },
@@ -4622,8 +4630,8 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.5,
-      "tail": 0.35,
+      "nose": 0.36,
+      "tail": 0.5,
       "profile": "convex"
      }
     },
@@ -4688,8 +4696,8 @@
      "crossSection": "flat_back",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.5,
-      "tail": 0.35,
+      "nose": 0.33,
+      "tail": 0.5,
       "profile": "convex"
      }
     },

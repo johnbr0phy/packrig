@@ -26,18 +26,18 @@
    },
    "dims_state": "unfurled_min_height",
    "dims_raw": "MIN 36 cm / MAX 42 cm length; 16 cm height; Tapered Width: 15 - 5 cm (5.9 - 1.9 in); 13 cm diagonal",
-   "dims_note": "len is the MAX (unfurled) length per the dimension rule; the MIN figure is the fully rolled-down state. Height is a single published figure, not a range, so it is used as-is. wid is the wide (saddle) end of the 15 -> 5 cm taper; the taper itself is carried in geometry.taper. Maker page confirms \"Tapered Width: 15 - 5 cm\" and a design that \"narrows from front to rear\".",
+   "dims_note": "len is the MAX (unfurled) length per the dimension rule; the MIN figure is the fully rolled-down state. Height is a single published figure, not a range, so it is used as-is. wid is the wide end of the 15 -> 5 cm taper, which is the ROLLED TAIL, not the saddle end; the taper itself is carried in geometry.taper. Maker page confirms \"Tapered Width: 15 - 5 cm\" and a design that \"narrows from front to rear\".",
    "capacity_l": 9,
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
     "taper": {
-     "nose": 1,
-     "tail": 0.33,
+     "nose": 0.33,
+     "tail": 1,
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Hard-edged wedge. The nose is a stiffened, near-flat vertical face that presses on the seatpost and carries the logo; the body is deepest and widest there and blades down to a narrow rolled tail. A separate flat Hypalon tongue drops below the body at the nose to spread load onto the seatpost - render it as a thin plate, not as bag volume."
+    "notes": "Hard-edged wedge, NARROW at the seatpost and full at the tail. dimensions-1.png measures 5 cm across the seatpost plate against 15 cm across the body and 16 cm deep at the blunt rolled tail, and the dashed outline that extends the MIN 36 / MAX 42 cm length sits at the WIDE end, so the wide end is the roll. on-bike-2.jpg confirms it: the shallow plated end clamps the post and the pack swells rearward to a big blunt roll behind the saddle. (This note previously said the opposite - deepest and widest at the nose, blading to a narrow tail - and the taper was recorded nose 1 / tail 0.33 to match. Both were wrong; tools/apply-models.mjs already carried a warning about this record.) A separate flat Hypalon tongue drops below the body at the nose to spread load onto the seatpost - render it as a thin plate, not as bag volume, and put the logo on it."
    },
    "closure": {
     "type": "rolltop",
@@ -152,18 +152,18 @@
    },
    "dims_state": "unfurled_min_height",
    "dims_raw": "MIN 38 cm / MAX 48 cm length; 17 cm height; Tapered Width: 15 - 5 cm; 15 cm diagonal",
-   "dims_note": "len is the MAX (unfurled) length per the dimension rule; the MIN figure is the fully rolled-down state. Height is a single published figure, not a range, so it is used as-is. wid is the wide (saddle) end of the 15 -> 5 cm taper; the taper itself is carried in geometry.taper. Maker page confirms \"Tapered Width: 15 - 5 cm\" and a design that \"narrows from front to rear\".",
+   "dims_note": "len is the MAX (unfurled) length per the dimension rule; the MIN figure is the fully rolled-down state. Height is a single published figure, not a range, so it is used as-is. wid is the wide end of the 15 -> 5 cm taper, which is the ROLLED TAIL, not the saddle end; the taper itself is carried in geometry.taper. Maker page confirms \"Tapered Width: 15 - 5 cm\" and a design that \"narrows from front to rear\".",
    "capacity_l": 13,
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
     "taper": {
-     "nose": 1,
-     "tail": 0.33,
+     "nose": 0.33,
+     "tail": 1,
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Hard-edged wedge. The nose is a stiffened, near-flat vertical face that presses on the seatpost and carries the logo; the body is deepest and widest there and blades down to a narrow rolled tail. A separate flat Hypalon tongue drops below the body at the nose to spread load onto the seatpost - render it as a thin plate, not as bag volume."
+    "notes": "Hard-edged wedge, NARROW at the seatpost and full at the tail. dimensions-1.png measures 5 cm across the seatpost plate against 15 cm across the body and 16 cm deep at the blunt rolled tail, and the dashed outline that extends the MIN 36 / MAX 42 cm length sits at the WIDE end, so the wide end is the roll. on-bike-2.jpg confirms it: the shallow plated end clamps the post and the pack swells rearward to a big blunt roll behind the saddle. (This note previously said the opposite - deepest and widest at the nose, blading to a narrow tail - and the taper was recorded nose 1 / tail 0.33 to match. Both were wrong; tools/apply-models.mjs already carried a warning about this record.) A separate flat Hypalon tongue drops below the body at the nose to spread load onto the seatpost - render it as a thin plate, not as bag volume, and put the logo on it."
    },
    "closure": {
     "type": "rolltop",
@@ -279,18 +279,18 @@
    },
    "dims_state": "unfurled_min_height",
    "dims_raw": "MIN 38 cm / MAX 54 cm length; 18 cm height; Tapered Width: 15 - 5 cm; 15 cm diagonal",
-   "dims_note": "len is the MAX (unfurled) length per the dimension rule; the MIN figure is the fully rolled-down state. Height is a single published figure, not a range, so it is used as-is. wid is the wide (saddle) end of the 15 -> 5 cm taper; the taper itself is carried in geometry.taper. Maker page confirms \"Tapered Width: 15 - 5 cm\" and a design that \"narrows from front to rear\".",
+   "dims_note": "len is the MAX (unfurled) length per the dimension rule; the MIN figure is the fully rolled-down state. Height is a single published figure, not a range, so it is used as-is. wid is the wide end of the 15 -> 5 cm taper, which is the ROLLED TAIL, not the saddle end; the taper itself is carried in geometry.taper. Maker page confirms \"Tapered Width: 15 - 5 cm\" and a design that \"narrows from front to rear\".",
    "capacity_l": 16,
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
     "taper": {
-     "nose": 1,
-     "tail": 0.33,
+     "nose": 0.33,
+     "tail": 1,
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Hard-edged wedge. The nose is a stiffened, near-flat vertical face that presses on the seatpost and carries the logo; the body is deepest and widest there and blades down to a narrow rolled tail. A separate flat Hypalon tongue drops below the body at the nose to spread load onto the seatpost - render it as a thin plate, not as bag volume."
+    "notes": "Hard-edged wedge, NARROW at the seatpost and full at the tail. dimensions-1.png measures 5 cm across the seatpost plate against 15 cm across the body and 16 cm deep at the blunt rolled tail, and the dashed outline that extends the MIN 36 / MAX 42 cm length sits at the WIDE end, so the wide end is the roll. on-bike-2.jpg confirms it: the shallow plated end clamps the post and the pack swells rearward to a big blunt roll behind the saddle. (This note previously said the opposite - deepest and widest at the nose, blading to a narrow tail - and the taper was recorded nose 1 / tail 0.33 to match. Both were wrong; tools/apply-models.mjs already carried a warning about this record.) A separate flat Hypalon tongue drops below the body at the nose to spread load onto the seatpost - render it as a thin plate, not as bag volume, and put the logo on it."
    },
    "closure": {
     "type": "rolltop",
@@ -487,10 +487,10 @@
      "rear"
     ],
     "clearance": {
-     "bar_mm": 45,
+     "bar_mm": 30,
      "tyre_mm": 0
     },
-    "notes": "Does NOT touch the bar. Two rigid BarSpace modules clamp the bar and hold the pack 4.5 - 6.9 cm forward of it and 3 cm below the bar top - a builder must model that standoff gap or the cable routing and hand space read wrong. A preload strap cinches the steerer and a stability cord runs round bar and stem. The 9L is specced for bars 42 cm and narrower, the 14L for 44 cm and wider."
+    "notes": "Does NOT touch the bar. Two rigid BarSpace modules clamp the bar and hold the pack off it. CORRECTION (read directly off the plan view on assets/products/apidura/full/expedition-handlebar-pack/dimensions-1.png): the 3 cm is the FORE-AFT standoff, from the front of the bar tube to the pack's rear face. The MIN 4.5 / MAX 6.9 cm is the adjustable SPACING BETWEEN THE TWO MODULES, measured between their inner and outer edges respectively, so they can straddle stems of different widths - it is not a clearance from the bar, which is how this note previously read. No vertical drop is published; the on-bike photographs put the pack's top edge about a centimetre under the bar tube, with the whole 15/17 cm of height below it. A preload strap cinches the steerer and a stability cord runs round bar and stem. The 9L is specced for bars 42 cm and narrower, the 14L for 44 cm and wider."
    },
    "colorways": [
     {
@@ -606,10 +606,10 @@
      "rear"
     ],
     "clearance": {
-     "bar_mm": 45,
+     "bar_mm": 30,
      "tyre_mm": 0
     },
-    "notes": "Does NOT touch the bar. Two rigid BarSpace modules clamp the bar and hold the pack 4.5 - 6.9 cm forward of it and 3 cm below the bar top - a builder must model that standoff gap or the cable routing and hand space read wrong. A preload strap cinches the steerer and a stability cord runs round bar and stem. The 9L is specced for bars 42 cm and narrower, the 14L for 44 cm and wider."
+    "notes": "Does NOT touch the bar. Two rigid BarSpace modules clamp the bar and hold the pack off it. CORRECTION (read directly off the plan view on assets/products/apidura/full/expedition-handlebar-pack/dimensions-1.png): the 3 cm is the FORE-AFT standoff, from the front of the bar tube to the pack's rear face. The MIN 4.5 / MAX 6.9 cm is the adjustable SPACING BETWEEN THE TWO MODULES, measured between their inner and outer edges respectively, so they can straddle stems of different widths - it is not a clearance from the bar, which is how this note previously read. No vertical drop is published; the on-bike photographs put the pack's top edge about a centimetre under the bar tube, with the whole 15/17 cm of height below it. A preload strap cinches the steerer and a stability cord runs round bar and stem. The 9L is specced for bars 42 cm and narrower, the 14L for 44 cm and wider."
    },
    "colorways": [
     {
@@ -770,12 +770,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.55,
-     "tail": 0.15,
-     "profile": "concave"
+     "nose": 0.21,
+     "tail": 0.83,
+     "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "NOT a simple wedge. Straight top edge on the top tube; the bottom edge is a shallow concave sweep so the panel is deepest between mid-length and the head-tube end, with small vertical end faces at both ends (the published \"rear height\" of 2.5 - 7.5 cm is that rear end face). The head-tube end is a distinctly squared, thicker box; the seat-tube end blades away to almost nothing. A notch is cut out of the bottom-front to clear downtube bottle bosses."
+    "notes": "Rounded triangle, NOT a wedge and NOT deepest at the head tube. Straight top edge on the top tube; small vertical end faces at BOTH ends; the bottom runs shallowly deeper from the seat-tube end, reaches its deepest belly at the published \"bottom length\" (26 of 38.5 cm, 30 of 43, 31 of 46, 36 of 49 - 68 to 74% of the length) and then blades straight up ALONG THE DOWN TUBE to a small head-tube tip. dimensions-4.png for the 5.7 L reads 15 cm at the seat-tube end, 18 cm at the belly and 7.5 cm at the head-tube face. The seat-tube end is the DEEP one; the head-tube end is the tip. A notch is cut out of the bottom-front to clear downtube bottle bosses. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -893,12 +893,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.55,
-     "tail": 0.15,
-     "profile": "concave"
+     "nose": 0.24,
+     "tail": 0.83,
+     "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "NOT a simple wedge. Straight top edge on the top tube; the bottom edge is a shallow concave sweep so the panel is deepest between mid-length and the head-tube end, with small vertical end faces at both ends (the published \"rear height\" of 2.5 - 7.5 cm is that rear end face). The head-tube end is a distinctly squared, thicker box; the seat-tube end blades away to almost nothing. A notch is cut out of the bottom-front to clear downtube bottle bosses."
+    "notes": "Rounded triangle, NOT a wedge and NOT deepest at the head tube. Straight top edge on the top tube; small vertical end faces at BOTH ends; the bottom runs shallowly deeper from the seat-tube end, reaches its deepest belly at the published \"bottom length\" (26 of 38.5 cm, 30 of 43, 31 of 46, 36 of 49 - 68 to 74% of the length) and then blades straight up ALONG THE DOWN TUBE to a small head-tube tip. dimensions-4.png for the 5.7 L reads 15 cm at the seat-tube end, 18 cm at the belly and 7.5 cm at the head-tube face. The seat-tube end is the DEEP one; the head-tube end is the tip. A notch is cut out of the bottom-front to clear downtube bottle bosses. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -1016,12 +1016,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.55,
-     "tail": 0.15,
-     "profile": "concave"
+     "nose": 0.29,
+     "tail": 0.85,
+     "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "NOT a simple wedge. Straight top edge on the top tube; the bottom edge is a shallow concave sweep so the panel is deepest between mid-length and the head-tube end, with small vertical end faces at both ends (the published \"rear height\" of 2.5 - 7.5 cm is that rear end face). The head-tube end is a distinctly squared, thicker box; the seat-tube end blades away to almost nothing. A notch is cut out of the bottom-front to clear downtube bottle bosses."
+    "notes": "Rounded triangle, NOT a wedge and NOT deepest at the head tube. Straight top edge on the top tube; small vertical end faces at BOTH ends; the bottom runs shallowly deeper from the seat-tube end, reaches its deepest belly at the published \"bottom length\" (26 of 38.5 cm, 30 of 43, 31 of 46, 36 of 49 - 68 to 74% of the length) and then blades straight up ALONG THE DOWN TUBE to a small head-tube tip. dimensions-4.png for the 5.7 L reads 15 cm at the seat-tube end, 18 cm at the belly and 7.5 cm at the head-tube face. The seat-tube end is the DEEP one; the head-tube end is the tip. A notch is cut out of the bottom-front to clear downtube bottle bosses. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -1139,12 +1139,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.55,
-     "tail": 0.15,
-     "profile": "concave"
+     "nose": 0.42,
+     "tail": 0.83,
+     "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "NOT a simple wedge. Straight top edge on the top tube; the bottom edge is a shallow concave sweep so the panel is deepest between mid-length and the head-tube end, with small vertical end faces at both ends (the published \"rear height\" of 2.5 - 7.5 cm is that rear end face). The head-tube end is a distinctly squared, thicker box; the seat-tube end blades away to almost nothing. A notch is cut out of the bottom-front to clear downtube bottle bosses."
+    "notes": "Rounded triangle, NOT a wedge and NOT deepest at the head tube. Straight top edge on the top tube; small vertical end faces at BOTH ends; the bottom runs shallowly deeper from the seat-tube end, reaches its deepest belly at the published \"bottom length\" (26 of 38.5 cm, 30 of 43, 31 of 46, 36 of 49 - 68 to 74% of the length) and then blades straight up ALONG THE DOWN TUBE to a small head-tube tip. dimensions-4.png for the 5.7 L reads 15 cm at the seat-tube end, 18 cm at the belly and 7.5 cm at the head-tube face. The seat-tube end is the DEEP one; the head-tube end is the tip. A notch is cut out of the bottom-front to clear downtube bottle bosses. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -2101,7 +2101,7 @@
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Upright flat-sided pouch, noticeably wider across the bike than it is deep. The outboard lower corner is cut away on the diagonal for knee clearance. A black flap lid folds over the top third."
+    "notes": "Upright flat-sided pouch, noticeably wider across the bike (10 cm) than it is deep (7 cm). Per the maker's three-view drawing (assets/products/apidura/full/expedition-stem-pack/dimensions-1.png): the front elevation is a plain parallel-sided rectangle, the side elevation is 7 cm deep and CONSTANT from the mouth down to about 80% of the height, at which point the lower REAR corner is cut clean off on the diagonal at roughly 30 degrees from vertical - the taper tail of 0.75 below describes that chamfer, not a gradual narrowing. The rear panel is flat and carries two webbing daisy loops; a black flap lid folds over the top with a Fidlock disc at the centre of the front face and a yellow shockcord running down to it in a V."
    },
    "closure": {
     "type": "flap_buckle",
@@ -2135,7 +2135,9 @@
      "location": "front"
     },
     "seams": "welded",
-    "fabric": "laminated waterproof ripstop, matte charcoal-black, RF-welded seams, Hypalon reinforcement patches, yellow EXPEDITION tag and yellow accent stitching"
+    "fabric": "laminated waterproof ripstop, matte charcoal-black, RF-welded seams, Hypalon reinforcement patches, yellow EXPEDITION tag and yellow accent stitching",
+    "structure_class": "semi",
+    "structure_note": "Declared, not inferred. These are welded TPU-laminate cases, not sacks: in the maker's own studio shots (studio-2, studio-9) the pouch stands upright unsupported with square vertical corners and the chamfer holding a crease, and the Stem Pack drawing is a hard-edged case. Running them through the full soft-bag deform pass is what rounded four different bags into the same black barrel. semi keeps 40% of the noise and bulge, which is right for a laminate that still gives."
    },
    "mount": {
     "axes": {
@@ -2154,7 +2156,7 @@
      "bar_mm": 0,
      "tyre_mm": 60
     },
-    "notes": "MIS-SLOTTED. Despite the name this is NOT a feed pouch standing beside the stem. The on-bike photo shows it hanging vertically in FRONT of the head tube, slung from two webbing loops over the bar centre with a lower strap down to the head tube. Modelling it as an upright cylinder next to the stem would be wrong; slot_should_be barbag. The three-point system does also allow a horizontal mounting, but the vertical bar-front position is how Apidura shows it."
+    "notes": "MIS-SLOTTED. Despite the name this is NOT a feed pouch standing beside the stem. The on-bike photo shows it hanging vertically in FRONT of the head tube, slung from two webbing loops over the bar centre with a lower strap down to the head tube. Modelling it as an upright cylinder next to the stem would be wrong; slot_should_be barbag. The three-point system does also allow a horizontal mounting, but the vertical bar-front position is how Apidura shows it. As drawn in the stembag slot the bag hangs beside the stem with its front face on the back of the bar tops, the two webbing loops over the bar and the buckled strap down to the head tube; that is the same three-point system, just the vertical-beside-the-stem case rather than the in-front-of-the-head-tube one."
    },
    "colorways": [
     {
@@ -2245,7 +2247,7 @@
      "frame_mm": 0,
      "tyre_mm": 30
     },
-    "notes": "Mounts UNDER the downtube low down, roll end pointing up toward the head tube and the closed, chamfered end sitting just clear of the chainring and crank arm. A single wide velcro strap on a Hypalon chevron panel is all that holds it; the moulded channel in the back panel is what keeps it from rotating."
+    "notes": "Mounts UNDER the downtube low down, roll end pointing up toward the head tube and the closed, chamfered end sitting just clear of the chainring and crank arm. A single wide velcro strap on a Hypalon chevron panel is all that holds it; the moulded channel in the back panel is what keeps it from rotating. The 30mm tyre figure is the maker's own recommendation; on the reference frame (604mm down tube, 45mm tyre on 622) the gap between the chainring tip circle and the tyre is only ~220mm, so the builder settles for 20mm and reports it. AXIS CORRECTION 2026-08-10: mount.axes.hgt said \"y\". It is not y. This pack hangs perpendicular to the down tube, which on the reference frame lies at ~43 degrees, so its height axis is a diagonal in world space exactly as its length axis is - and tools/eval-auto.mjs scores each spec axis against the world bbox axis named here. A correctly drawn 1.5L (measured 66.4mm deep along its own perpendicular against a published 65) was scored 161% too tall on that basis alone, and no geometry can satisfy it: a 210mm bag on a 43-degree tube stands ~170mm in world y however it is drawn. Now \"perp_downtube\", by analogy with the \"along_downtube\" this record already carried. NOTE: perp_downtube is not yet in the AXES vocabulary in tools/apply-models.mjs, so the merge currently drops the key and reports it - which yields the right result (an axis that is a diagonal is not scored) but should be added."
    },
    "colorways": [
     {
@@ -2254,9 +2256,10 @@
     }
    ],
    "render": {
+    "len_cm": 21,
     "hgt_cm": 6.5,
     "rolls": 3,
-    "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/expedition-downtube-pack-1-5l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 21 cm against the MAX 27 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~21 cm and leave hgt alone."
+    "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/expedition-downtube-pack-1-5l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 21 cm against the MAX 27 cm recorded in dims_cm.len, so the rolled-down render shortens that axis to 21 cm and leaves hgt alone. len_cm added 2026-08-10 - this basis had asked for it since the record was written and nothing carried it, so the pack was drawn at its unfurled 27 cm and could not fit between the chainring and the front tyre."
    }
   },
   {
@@ -2283,15 +2286,15 @@
    "dims_note": "The roll axis here is the LENGTH, not the height, so the rule takes the MAX (unfurled) figure for len. Height and width are single published figures.",
    "capacity_l": 1.6,
    "geometry": {
-    "form": "truncated_cylinder",
-    "crossSection": "d_shape",
+    "form": "rounded_box",
+    "crossSection": "rounded_rect",
     "taper": {
      "nose": 1,
      "tail": 0.85,
      "profile": "linear"
     },
     "shoulder": "rounded",
-    "notes": "Flat-backed tube: the face against the downtube is flat with a moulded V-channel pressed into it, the outer face is rounded. The bottom-bracket end is cut away asymmetrically on the diagonal to clear the chainring - that angled cut is the defining silhouette feature and must not be modelled as a square end."
+    "notes": "CORRECTED 2026-08-10 against studio-1.jpg and on-bike-1.jpg: this is NOT the black rounded tube the Expedition Downtube Pack is, and the previous record (copied verbatim from it) had both the form and the cross-section wrong. It is a flat-sided rectangular slab - crisp vertical edges front and back, flat flanks, a flat top - in mid-grey hex-weave, with black Hypalon panels welded on: a starburst/chevron panel across each flank and a black roll at the head-tube end. The face against the downtube is still flat with a moulded channel, and the bottom-bracket end is still cut away asymmetrically on the diagonal to clear the chainring."
    },
    "closure": {
     "type": "rolltop",
@@ -2319,7 +2322,7 @@
      "location": "side"
     },
     "seams": "welded",
-    "fabric": "laminated waterproof ripstop, matte charcoal-black, RF-welded seams, Hypalon reinforcement patches, yellow EXPEDITION tag and yellow accent stitching; wide black Hypalon chevron backing panel with silicone print against the tube"
+    "fabric": "CORRECTED 2026-08-10: mid-grey hex-weave laminate (NOT charcoal-black), RF-welded seams, with black Hypalon welded over it - a starburst/chevron panel across each flank and a black roll section at the head-tube end. The black-on-black description here was inherited from the Expedition Downtube Pack record and does not describe this product."
    },
    "mount": {
     "axes": {
@@ -2337,18 +2340,20 @@
      "frame_mm": 0,
      "tyre_mm": 30
     },
-    "notes": "Mounts UNDER the downtube low down, roll end pointing up toward the head tube and the closed, chamfered end sitting just clear of the chainring and crank arm. A single wide velcro strap on a Hypalon chevron panel is all that holds it; the moulded channel in the back panel is what keeps it from rotating."
+    "notes": "Mounts UNDER the downtube low down, roll end pointing up toward the head tube and the closed, chamfered end sitting just clear of the chainring and crank arm. A single wide velcro strap on a Hypalon chevron panel is all that holds it; the moulded channel in the back panel is what keeps it from rotating. The 30mm tyre figure is the maker's own recommendation and is NOT achievable on the reference frame - see the Expedition Downtube Pack record. AXIS CORRECTION 2026-08-10: mount.axes.hgt said \"y\". It is not y. This pack hangs perpendicular to the down tube, which on the reference frame lies at ~43 degrees, so its height axis is a diagonal in world space exactly as its length axis is - and tools/eval-auto.mjs scores each spec axis against the world bbox axis named here. A correctly drawn 1.5L (measured 66.4mm deep along its own perpendicular against a published 65) was scored 161% too tall on that basis alone, and no geometry can satisfy it: a 210mm bag on a 43-degree tube stands ~170mm in world y however it is drawn. Now \"perp_downtube\", by analogy with the \"along_downtube\" this record already carried. NOTE: perp_downtube is not yet in the AXES vocabulary in tools/apply-models.mjs, so the merge currently drops the key and reports it - which yields the right result (an axis that is a diagonal is not scored) but should be added."
    },
    "colorways": [
     {
-     "name": "Black",
-     "hex": "#1c1c1e"
+     "name": "Grey",
+     "hex": "#6f7377",
+     "accentHex": "#17181a"
     }
    ],
    "render": {
+    "len_cm": 20.5,
     "hgt_cm": 7,
     "rolls": 3,
-    "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/expedition-e-bike-charger-pack-1-6l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 20.5 cm against the MAX 30 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~20.5 cm and leave hgt alone."
+    "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/expedition-e-bike-charger-pack-1-6l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 20.5 cm against the MAX 30 cm recorded in dims_cm.len, so the rolled-down render shortens that axis to 20.5 cm and leaves hgt alone. len_cm added 2026-08-10 - this basis had asked for it since the record was written, and nothing carried it, so the pack was drawn 30 cm long and speared the front wheel."
    }
   },
   {
@@ -2432,7 +2437,7 @@
      "tyre_mm": 25,
      "frame_mm": 0
     },
-    "notes": "REQUIRES a three-pack cargo cage on the fork leg - the trimmable Hypalon-backed velcro straps wrap the cage, not the fork. The bag hangs outboard of the fork blade with its long axis along the leg and the roll at the top, and the base must sit above the dropout. On a bike with no cage bosses this cannot be mounted."
+    "notes": "REQUIRES a three-pack cargo cage on the fork leg - the trimmable Hypalon-backed velcro straps wrap the cage, not the fork. The bag hangs outboard of the fork blade with its long axis along the leg and the roll at the top, and the base must sit above the dropout. On a bike with no cage bosses this cannot be mounted. AXIS NOTE 2026-08-10, left as \"x\" deliberately: len is the bag's own fore-aft depth, and the bag leans with the fork blade, so it is NOT the world x axis and the size gate cannot read it as one. On the reference frame the blade chord (dropout at frontAxle to a crown 20mm down the steerer from headBottom) is 26.5 degrees off vertical, so a 190mm-tall pack with an 85mm fore-aft depth spans 85*cos26.5 + 190*sin26.5 = 161mm of world x however well it is drawn - the length term dominates. The run of 2026-08-10T18-50-14 scored 45% and 32% too long on that basis alone, with the pack leaning only 18 degrees, and standing it correctly parallel to the blade makes the projection larger, not smaller. Only wid is a true world axis here (z, across the bike); it measures 2%. This is the same defect tools/eval-auto.mjs TUBE_AXIS has on perp_downtube and it is a measurement fault, not a record fault - fix it by measuring the bag's bbox in its own frame (see the fork bag builder header), not by renaming the axis."
    },
    "colorways": [
     {
@@ -2526,7 +2531,7 @@
      "tyre_mm": 25,
      "frame_mm": 0
     },
-    "notes": "REQUIRES a three-pack cargo cage on the fork leg - the trimmable Hypalon-backed velcro straps wrap the cage, not the fork. The bag hangs outboard of the fork blade with its long axis along the leg and the roll at the top, and the base must sit above the dropout. On a bike with no cage bosses this cannot be mounted."
+    "notes": "REQUIRES a three-pack cargo cage on the fork leg - the trimmable Hypalon-backed velcro straps wrap the cage, not the fork. The bag hangs outboard of the fork blade with its long axis along the leg and the roll at the top, and the base must sit above the dropout. On a bike with no cage bosses this cannot be mounted. AXIS NOTE 2026-08-10, left as \"x\" deliberately: len is the bag's own fore-aft depth, and the bag leans with the fork blade, so it is NOT the world x axis and the size gate cannot read it as one. On the reference frame the blade chord (dropout at frontAxle to a crown 20mm down the steerer from headBottom) is 26.5 degrees off vertical, so a 190mm-tall pack with an 85mm fore-aft depth spans 85*cos26.5 + 190*sin26.5 = 161mm of world x however well it is drawn - the length term dominates. The run of 2026-08-10T18-50-14 scored 45% and 32% too long on that basis alone, with the pack leaning only 18 degrees, and standing it correctly parallel to the blade makes the projection larger, not smaller. Only wid is a true world axis here (z, across the bike); it measures 2%. This is the same defect tools/eval-auto.mjs TUBE_AXIS has on perp_downtube and it is a measurement fault, not a record fault - fix it by measuring the bag's bbox in its own frame (see the fork bag builder header), not by renaming the axis."
    },
    "colorways": [
     {
@@ -2674,7 +2679,7 @@
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Two distinct storeys: a rigid squared lower collar about a third of the packed height, built round an HDPE thermoplastic frame and holding its shape absolutely, and a soft roll-top upper that collapses onto it. The front face of the collar is the graphic face - white bee logo centred, two big yellow chevron blocks, two reflective slots, two side-release buckles."
+    "notes": "Two distinct storeys: a rigid squared lower collar built round an HDPE thermoplastic frame and holding its shape absolutely, and a soft roll-top upper that collapses onto it. CORRECTION 10 Aug: this note and render.basis both put the collar at 'about a third' of the packed height. Measured off on-bike-5.jpg against the known 41 cm width it is 0.55 - and 0.55 is also what the published dimensions say, because MIN 10 cm is the height with the roll taken all the way down, i.e. the collar and nothing else, against a packed height of 18 cm. The collar walls SPLAY: dimensions-1/-3 draw the rim overhanging the base by a few percent all the way round, and the soft upper rises from inside that rim. The roll lies ACROSS the bike and is rolled toward the REAR - the two fold spirals show at the far left and right of the straight-on front view in on-bike-5. Over it, hinged behind the roll, is a webbing-edged MESH panel that folds forward over the roll and clips down onto the front collar (feature-4 shows tent poles stuffed under it); it is narrower than the roll, so the spirals stay visible outboard of its edges. The front face of the collar is the graphic face - white bee logo centred, two big yellow chevron blocks, two reflective slots, two side-release buckles."
    },
    "closure": {
     "type": "rolltop",
@@ -2693,11 +2698,12 @@
    "straps": [
     {
      "role": "attachment",
-     "count": 3,
+     "count": 2,
      "location": "underside",
      "hardware": "buckle",
      "material": "webbing",
-     "wrapsAround": "front_rack"
+     "wrapsAround": "front_rack",
+     "note": "CORRECTION 10 Aug: was 3. dimensions-1 and dimensions-3 are front elevations of this bag and draw exactly TWO webbing runs dropping off the bottom edge, each with a side-release buckle on the front face, and the spacing they dimension (7.5 cm on the 20L, 12 cm on the 30L) is between those two. on-bike-5.jpg shows the same two straps continuing down past the collar to the rack. The side hardware the old count was probably folding in is the G-hook pair that closes the ROLL, which is the 'compression / top / g_hook' entry below, not a rack attachment."
     },
     {
      "role": "compression",
@@ -2768,7 +2774,7 @@
      "tyre_mm": 0,
      "bar_mm": 60
     },
-    "notes": "RACK ONLY. Three webbing straps pass under a front rack platform and buckle on the sides; the silicone-gripped base sits flat on the rails. There is no bar mount at all, so on a 56 cm drop-bar gravel bike with no front rack this cannot be fitted. Base strap spacing is 7.5 cm, which is what a rack platform has to match."
+    "notes": "RACK ONLY. TWO webbing straps pass under a front rack platform and buckle on the FRONT face (corrected 10 Aug from 'three ... on the sides' — see the note on straps[0]); the silicone-gripped base sits flat on the rails. There is no bar mount at all, so on a 56 cm drop-bar gravel bike with no front rack this cannot be fitted. Base strap spacing is 7.5 cm, which is what a rack platform has to match."
    },
    "colorways": [
     {
@@ -2779,7 +2785,7 @@
    "render": {
     "hgt_cm": 18,
     "rolls": 3,
-    "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 20L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-20l-2.jpg against its known 30.5 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
+    "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 20L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-20l-2.jpg against its known 30.5 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is 0.55 (corrected 10 Aug from 'about a third'; the published MIN 10 cm IS that collar, because it is the height with the roll taken all the way down, and 10 / 18 = 0.55). A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
     "published_min_cm": 10,
     "conflict": "10cm is the published minimum of Apidura's 10-40cm range, but renders a 20L rack pack as a slab. 18cm measured off the on-bike photo against the known published width; the reviewer recommended this figure in `basis` and it is now applied rather than left as prose."
    }
@@ -2816,7 +2822,7 @@
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Two distinct storeys: a rigid squared lower collar about a third of the packed height, built round an HDPE thermoplastic frame and holding its shape absolutely, and a soft roll-top upper that collapses onto it. The front face of the collar is the graphic face - white bee logo centred, two big yellow chevron blocks, two reflective slots, two side-release buckles."
+    "notes": "Two distinct storeys: a rigid squared lower collar built round an HDPE thermoplastic frame and holding its shape absolutely, and a soft roll-top upper that collapses onto it. CORRECTION 10 Aug: this note and render.basis both put the collar at 'about a third' of the packed height. Measured off on-bike-5.jpg against the known 41 cm width it is 0.55 - and 0.55 is also what the published dimensions say, because MIN 10 cm is the height with the roll taken all the way down, i.e. the collar and nothing else, against a packed height of 18 cm. The collar walls SPLAY: dimensions-1/-3 draw the rim overhanging the base by a few percent all the way round, and the soft upper rises from inside that rim. The roll lies ACROSS the bike and is rolled toward the REAR - the two fold spirals show at the far left and right of the straight-on front view in on-bike-5. Over it, hinged behind the roll, is a webbing-edged MESH panel that folds forward over the roll and clips down onto the front collar (feature-4 shows tent poles stuffed under it); it is narrower than the roll, so the spirals stay visible outboard of its edges. The front face of the collar is the graphic face - white bee logo centred, two big yellow chevron blocks, two reflective slots, two side-release buckles."
    },
    "closure": {
     "type": "rolltop",
@@ -2835,11 +2841,12 @@
    "straps": [
     {
      "role": "attachment",
-     "count": 3,
+     "count": 2,
      "location": "underside",
      "hardware": "buckle",
      "material": "webbing",
-     "wrapsAround": "front_rack"
+     "wrapsAround": "front_rack",
+     "note": "CORRECTION 10 Aug: was 3. dimensions-1 and dimensions-3 are front elevations of this bag and draw exactly TWO webbing runs dropping off the bottom edge, each with a side-release buckle on the front face, and the spacing they dimension (7.5 cm on the 20L, 12 cm on the 30L) is between those two. on-bike-5.jpg shows the same two straps continuing down past the collar to the rack. The side hardware the old count was probably folding in is the G-hook pair that closes the ROLL, which is the 'compression / top / g_hook' entry below, not a rack attachment."
     },
     {
      "role": "compression",
@@ -2910,7 +2917,7 @@
      "tyre_mm": 0,
      "bar_mm": 60
     },
-    "notes": "RACK ONLY. Three webbing straps pass under a front rack platform and buckle on the sides; the silicone-gripped base sits flat on the rails. There is no bar mount at all, so on a 56 cm drop-bar gravel bike with no front rack this cannot be fitted. Base strap spacing is 12 cm, which is what a rack platform has to match."
+    "notes": "RACK ONLY. TWO webbing straps pass under a front rack platform and buckle on the FRONT face (corrected 10 Aug from 'three ... on the sides' — see the note on straps[0]); the silicone-gripped base sits flat on the rails. There is no bar mount at all, so on a 56 cm drop-bar gravel bike with no front rack this cannot be fitted. Base strap spacing is 12 cm, which is what a rack platform has to match."
    },
    "colorways": [
     {
@@ -2921,7 +2928,7 @@
    "render": {
     "hgt_cm": 18,
     "rolls": 3,
-    "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 30L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-30l-1.jpg against its known 41 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is about a third. A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
+    "basis": "Minimum of the reported 10 - 40 cm range, as the rule requires. FLAGGING A CONFLICT: 10 cm is not a plausible drawn height for a 30L rack pack and will render as a pizza box. Measuring the mounted bag in assets/products/apidura/expedition-front-rack-pack-30l-1.jpg against its known 41 cm width puts the packed height at roughly 15 - 20 cm, of which the rigid lower collar is 0.55 (corrected 10 Aug from 'about a third'; the published MIN 10 cm IS that collar, because it is the height with the roll taken all the way down, and 10 / 18 = 0.55). A builder wanting the bag to look loaded should use ~18 cm. I have left hgt_cm at the rule-mandated minimum rather than deviate silently; note also that the 10/40 pair itself is unverified (see dims_note).",
     "published_min_cm": 10,
     "conflict": "10cm is the published minimum of Apidura's 10-40cm range, but renders a 30L rack pack as a slab. 18cm measured off the on-bike photo against the known published width; the reviewer recommended this figure in `basis` and it is now applied rather than left as prose."
    }
@@ -2951,12 +2958,12 @@
     "form": "tapered_wedge",
     "crossSection": "oval",
     "taper": {
-     "nose": 1,
-     "tail": 0.2,
+     "nose": 0.35,
+     "tail": 1,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "Softer and rounder than the Expedition equivalent - the body swells convexly behind the saddle rather than running as a flat-sided wedge, and the shoulders are rounded. The nose sits inside a large moulded black harness plate that wraps the underside and both cheeks; that plate is the structural part and should be modelled as a separate shell, with the grey laminated bag body sitting in it."
+    "notes": "Softer and rounder than the Expedition equivalent, and NARROW at the seatpost: dimensions-5.png measures 6 cm at the harness against 16 cm at the blunt rolled tail. The body swells convexly rearward rather than running as a flat-sided wedge, and the shoulders are rounded. The nose sits inside a large moulded black harness plate that wraps the underside and both cheeks; that plate is the structural part and should be modelled as a separate shell, with the grey laminated bag body sitting in it. (Recorded nose 1 / tail 0.2 until 10 Aug 2026, i.e. back to front.)"
    },
    "closure": {
     "type": "rolltop",
@@ -3064,12 +3071,12 @@
     "form": "tapered_wedge",
     "crossSection": "oval",
     "taper": {
-     "nose": 1,
-     "tail": 0.2,
+     "nose": 0.35,
+     "tail": 1,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "Softer and rounder than the Expedition equivalent - the body swells convexly behind the saddle rather than running as a flat-sided wedge, and the shoulders are rounded. The nose sits inside a large moulded black harness plate that wraps the underside and both cheeks; that plate is the structural part and should be modelled as a separate shell, with the grey laminated bag body sitting in it."
+    "notes": "Softer and rounder than the Expedition equivalent, and NARROW at the seatpost: dimensions-5.png measures 6 cm at the harness against 16 cm at the blunt rolled tail. The body swells convexly rearward rather than running as a flat-sided wedge, and the shoulders are rounded. The nose sits inside a large moulded black harness plate that wraps the underside and both cheeks; that plate is the structural part and should be modelled as a separate shell, with the grey laminated bag body sitting in it. (Recorded nose 1 / tail 0.2 until 10 Aug 2026, i.e. back to front.)"
    },
    "closure": {
     "type": "rolltop",
@@ -3177,12 +3184,12 @@
     "form": "tapered_wedge",
     "crossSection": "oval",
     "taper": {
-     "nose": 1,
-     "tail": 0.2,
+     "nose": 0.35,
+     "tail": 1,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "Softer and rounder than the Expedition equivalent - the body swells convexly behind the saddle rather than running as a flat-sided wedge, and the shoulders are rounded. The nose sits inside a large moulded black harness plate that wraps the underside and both cheeks; that plate is the structural part and should be modelled as a separate shell, with the grey laminated bag body sitting in it."
+    "notes": "Softer and rounder than the Expedition equivalent, and NARROW at the seatpost: dimensions-5.png measures 6 cm at the harness against 16 cm at the blunt rolled tail. The body swells convexly rearward rather than running as a flat-sided wedge, and the shoulders are rounded. The nose sits inside a large moulded black harness plate that wraps the underside and both cheeks; that plate is the structural part and should be modelled as a separate shell, with the grey laminated bag body sitting in it. (Recorded nose 1 / tail 0.2 until 10 Aug 2026, i.e. back to front.)"
    },
    "closure": {
     "type": "rolltop",
@@ -3358,7 +3365,9 @@
    "colorways": [
     {
      "name": "Black",
-     "hex": "#1c1c1e"
+     "hex": "#45474a",
+     "accentHex": "#1a1b1d",
+     "note": "Apidura sell one colourway and call it Black, but the pack is two-tone and the split is the line's signature: `hex` is the mid-grey laminated BODY panel and `accentHex` the black structured centre wrap / harness panels. Sampled off assets/products/apidura/full/backcountry-handlebar-pack/studio-5.jpg (body ~#454545, wrap ~#222222 under studio light) and stepped down to albedo. The single #1c1c1e that was here is what makes the render a uniform black sausage."
     }
    ],
    "render": {
@@ -3462,7 +3471,9 @@
    "colorways": [
     {
      "name": "Black",
-     "hex": "#1c1c1e"
+     "hex": "#45474a",
+     "accentHex": "#1a1b1d",
+     "note": "Apidura sell one colourway and call it Black, but the pack is two-tone and the split is the line's signature: `hex` is the mid-grey laminated BODY panel and `accentHex` the black structured centre wrap / harness panels. Sampled off assets/products/apidura/full/backcountry-handlebar-pack/studio-5.jpg (body ~#454545, wrap ~#222222 under studio light) and stepped down to albedo. The single #1c1c1e that was here is what makes the render a uniform black sausage."
     }
    ],
    "render": {
@@ -3497,12 +3508,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.6,
-     "tail": 0.3,
+     "nose": 0.33,
+     "tail": 0.57,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "Kite profile: small vertical end faces at both ends with the deepest point around mid-length, sitting under the top tube. The head-tube end is a blunt rounded box; the seat-tube end blades to a rounded point. Softer-cornered than the Expedition version."
+    "notes": "Downward-pointing kite: small end faces at both ends, deepest belly between 40% and 60% of the length, and a straight lower-front edge that lies along the DOWN TUBE. dimensions-1.png reads 6 cm at the seat-tube end, 10.5 cm at the belly and 3.5 cm at the head-tube tip (1 L); 7.5 / 13 / 4 cm (2 L). Softer-cornered than the Expedition version. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -3607,12 +3618,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.6,
-     "tail": 0.3,
+     "nose": 0.31,
+     "tail": 0.58,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "Kite profile: small vertical end faces at both ends with the deepest point around mid-length, sitting under the top tube. The head-tube end is a blunt rounded box; the seat-tube end blades to a rounded point. Softer-cornered than the Expedition version."
+    "notes": "Downward-pointing kite: small end faces at both ends, deepest belly between 40% and 60% of the length, and a straight lower-front edge that lies along the DOWN TUBE. dimensions-1.png reads 6 cm at the seat-tube end, 10.5 cm at the belly and 3.5 cm at the head-tube tip (1 L); 7.5 / 13 / 4 cm (2 L). Softer-cornered than the Expedition version. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -4210,7 +4221,7 @@
     "hgt": 10
    },
    "dims_state": "fixed",
-   "dims_raw": "37 cm long; 7 cm and 10 cm end heights; Width: 4.5 cm (1.8 in)",
+   "dims_raw": "37 cm long; 10 cm at the stem end and 7 cm at the rear end; Width: 4.5 cm (1.8 in)",
    "dims_note": "Fixed figures. hgt is the deeper of the two end heights. TAPER DIRECTION CORRECTED: the maker diagram labels the 10 cm end \"rear\", but both the studio and on-bike photos show the DEEP end butted against the steerer and the shallow end tapering away rearwards. Modelled deep-forward. Magnitudes unchanged.",
    "capacity_l": 1.8,
    "geometry": {
@@ -4218,11 +4229,11 @@
     "crossSection": "rounded_rect",
     "taper": {
      "nose": 1,
-     "tail": 0.45,
+     "tail": 0.7,
      "profile": "linear"
     },
     "shoulder": "rounded",
-    "notes": "Long, low blade. Deepest at the stem end and tapering steadily to a shallow rounded tip 37 cm back, so the rider's thighs never touch it. Two-tone black/grey panels."
+    "notes": "Long, low blade with a FLAT top over the front half. Deepest at the stem end; the top runs dead flat back to about half the length, then a shallow chamfer over the rear-upper corner drops it to a rear end that still stands 7 cm against the 10 cm nose - the two figures Apidura dimension on the drawing (dimensions-1.png), i.e. tail 0.7, not the 0.45 this record carried. A column scan of that elevation puts the top of the rear end face at 0.60 of full height and the flat top starting 0.51 of the length back from the tail. Two-tone black/grey panels."
    },
    "closure": {
     "type": "zip_two_way",
@@ -4307,7 +4318,7 @@
    "name": "Rear Top Tube Pack",
    "size": "1L",
    "slot": "toptube",
-   "slot_should_be": null,
+   "slot_should_be": "toptube_rear",
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -4402,7 +4413,7 @@
     "clearance": {
      "frame_mm": 0
     },
-    "notes": "Mounts at the REAR of the top tube in the seat-tube corner, standing upright against the seatpost with two velcro straps round the post and one round the tube. It occupies exactly the space a seat pack nose wants, so it conflicts with a large saddle pack."
+    "notes": "Mounts at the REAR of the top tube in the seat-tube corner, standing upright against the seatpost with two velcro straps round the post and one round the tube. It occupies exactly the space a seat pack nose wants, so it conflicts with a large saddle pack. NOTE: src/bags/slots.js already has a `toptube_rear` slot with its own anchor (bike.js `toptubeRear`, at the seat-tube end) and its own builder, but this product is filed under `toptube` in data/brands.json, so it renders behind the stem and mirrored. apply-models.mjs only REPORTS slot_should_be, so brands.json needs the slot changed by hand."
    },
    "colorways": [
     {
@@ -4432,7 +4443,7 @@
    },
    "dims_state": "fixed",
    "dims_raw": "9 cm wide x 16 cm tall x 6 cm deep; Diameter: 9 cm",
-   "dims_note": "AXES REWRITTEN. The stored record duplicated the 16 cm height into len, a house shorthand for upright pouches. Under this spec len is the longest HORIZONTAL run, which is the 9 cm across-bike width; wid is the 6 cm fore-aft depth; hgt is the 16 cm height. Magnitudes all come from the maker page - nothing invented, only reassigned. mount.axes states which is which so this cannot be transposed again.",
+   "dims_note": "AXES REWRITTEN. The stored record duplicated the 16 cm height into len, a house shorthand for upright pouches. Under this spec len is the longest HORIZONTAL run, which is the 9 cm across-bike width; wid is the 6 cm fore-aft depth; hgt is the 16 cm height. Magnitudes all come from the maker page - nothing invented, only reassigned. mount.axes states which is which so this cannot be transposed again. READ THE DRAWING BEFORE TOUCHING THESE AGAIN: the maker's spec table publishes only a DIAMETER per size (0.8L 9 cm, 1.2L 10 cm, Plus 9 cm) and the elevation dimensions the mouth and the base of the same fore-aft axis. len/wid here stay as published, but wid is the BASE depth below the chamfer, not a uniform fore-aft depth - buildStembag reads it that way.",
    "capacity_l": 0.8,
    "geometry": {
     "form": "bucket",
@@ -4443,7 +4454,7 @@
      "profile": "linear"
     },
     "shoulder": "rounded",
-    "notes": "Upright pouch, flat on the inboard face and rounded outboard, and notably shallower fore-aft than it is wide. The lower outboard corner is chamfered off on the diagonal so the rider's knee clears it. A pale grey drawcord collar sits proud of the black-and-grey body."
+    "notes": "Upright pouch, flat on the inboard face and rounded outboard. CORRECTED against the maker's own side elevation (assets/products/apidura/full/backcountry-food-pouch/dimensions-1.png, -2, -3): the two plan figures are NOT two axes. They are the mouth and the base of one tapering bucket, both dimensioned in the same fore-aft view - 9 cm across the top and 6 cm across the bottom on the 0.8L, 10 and 7 on both 1.2L - which is exactly why the taper below reads tail 0.7 (6/9, 7/10). The plan section at the mouth is the published diameter, on both axes. The lower REAR corner is chamfered clean off on the diagonal at roughly 30 degrees from vertical; the front face stays a straight vertical plane, because the front is the face the bar and the fork strap hold. Earlier text called the chamfer outboard, which no photograph supports. A pale grey gathered drawcord collar, about a fifth of the height, sits proud of the black-and-grey body."
    },
    "closure": {
     "type": "drawcord",
@@ -4477,7 +4488,9 @@
      "location": "front"
     },
     "seams": "welded",
-    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic"
+    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic",
+    "structure_class": "semi",
+    "structure_note": "Declared, not inferred. These are welded TPU-laminate cases, not sacks: in the maker's own studio shots (studio-2, studio-9) the pouch stands upright unsupported with square vertical corners and the chamfer holding a crease, and the Stem Pack drawing is a hard-edged case. Running them through the full soft-bag deform pass is what rounded four different bags into the same black barrel. semi keeps 40% of the noise and bulge, which is right for a laminate that still gives."
    },
    "mount": {
     "axes": {
@@ -4491,14 +4504,14 @@
      "fork"
     ],
     "contactFaces": [
-     "rear",
+     "front",
      "side"
     ],
     "clearance": {
      "bar_mm": 0,
      "tyre_mm": 60
     },
-    "notes": "Stands upright beside the stem, held by two velcro straps at the top (one to the bar, one to the stem or steerer) and a lower nylon strap with a quick-release buckle down to the fork crown. The lower strap is what stops it from swinging into the wheel; without it the pouch pivots."
+    "notes": "Stands upright beside the stem, held by two velcro straps at the top (one to the bar, one to the stem or steerer) and a lower nylon strap with a quick-release buckle down to the fork crown. The lower strap is what stops it from swinging into the wheel; without it the pouch pivots. ORIENTATION CORRECTED: the handlebar sits just FORWARD of the bag's top, not behind it. In the side elevation the bar circle is on the same side as the straight vertical face, and the chamfer is on the opposite side; on-bike-1 and on-bike-5 show the same thing, with the fork strap running forward and down to the steerer and the cut-away corner trailing rearward toward the knee. contactFaces was rear+side and is now front+side."
    },
    "colorways": [
     {
@@ -4531,7 +4544,7 @@
    },
    "dims_state": "fixed",
    "dims_raw": "10 cm wide x 19 cm tall x 7 cm deep; Diameter: 10 cm",
-   "dims_note": "AXES REWRITTEN. The stored record duplicated the 19 cm height into len, a house shorthand for upright pouches. Under this spec len is the longest HORIZONTAL run, which is the 10 cm across-bike width; wid is the 7 cm fore-aft depth; hgt is the 19 cm height. Magnitudes all come from the maker page - nothing invented, only reassigned. mount.axes states which is which so this cannot be transposed again.",
+   "dims_note": "AXES REWRITTEN. The stored record duplicated the 19 cm height into len, a house shorthand for upright pouches. Under this spec len is the longest HORIZONTAL run, which is the 10 cm across-bike width; wid is the 7 cm fore-aft depth; hgt is the 19 cm height. Magnitudes all come from the maker page - nothing invented, only reassigned. mount.axes states which is which so this cannot be transposed again. READ THE DRAWING BEFORE TOUCHING THESE AGAIN: the maker's spec table publishes only a DIAMETER per size (0.8L 9 cm, 1.2L 10 cm, Plus 9 cm) and the elevation dimensions the mouth and the base of the same fore-aft axis. len/wid here stay as published, but wid is the BASE depth below the chamfer, not a uniform fore-aft depth - buildStembag reads it that way.",
    "capacity_l": 1.2,
    "geometry": {
     "form": "bucket",
@@ -4542,7 +4555,7 @@
      "profile": "linear"
     },
     "shoulder": "rounded",
-    "notes": "Upright pouch, flat on the inboard face and rounded outboard, and notably shallower fore-aft than it is wide. The lower outboard corner is chamfered off on the diagonal so the rider's knee clears it. A pale grey drawcord collar sits proud of the black-and-grey body."
+    "notes": "Upright pouch, flat on the inboard face and rounded outboard. CORRECTED against the maker's own side elevation (assets/products/apidura/full/backcountry-food-pouch/dimensions-1.png, -2, -3): the two plan figures are NOT two axes. They are the mouth and the base of one tapering bucket, both dimensioned in the same fore-aft view - 9 cm across the top and 6 cm across the bottom on the 0.8L, 10 and 7 on both 1.2L - which is exactly why the taper below reads tail 0.7 (6/9, 7/10). The plan section at the mouth is the published diameter, on both axes. The lower REAR corner is chamfered clean off on the diagonal at roughly 30 degrees from vertical; the front face stays a straight vertical plane, because the front is the face the bar and the fork strap hold. Earlier text called the chamfer outboard, which no photograph supports. A pale grey gathered drawcord collar, about a fifth of the height, sits proud of the black-and-grey body."
    },
    "closure": {
     "type": "drawcord",
@@ -4576,7 +4589,9 @@
      "location": "front"
     },
     "seams": "welded",
-    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic"
+    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic",
+    "structure_class": "semi",
+    "structure_note": "Declared, not inferred. These are welded TPU-laminate cases, not sacks: in the maker's own studio shots (studio-2, studio-9) the pouch stands upright unsupported with square vertical corners and the chamfer holding a crease, and the Stem Pack drawing is a hard-edged case. Running them through the full soft-bag deform pass is what rounded four different bags into the same black barrel. semi keeps 40% of the noise and bulge, which is right for a laminate that still gives."
    },
    "mount": {
     "axes": {
@@ -4590,14 +4605,14 @@
      "fork"
     ],
     "contactFaces": [
-     "rear",
+     "front",
      "side"
     ],
     "clearance": {
      "bar_mm": 0,
      "tyre_mm": 60
     },
-    "notes": "Stands upright beside the stem, held by two velcro straps at the top (one to the bar, one to the stem or steerer) and a lower nylon strap with a quick-release buckle down to the fork crown. The lower strap is what stops it from swinging into the wheel; without it the pouch pivots."
+    "notes": "Stands upright beside the stem, held by two velcro straps at the top (one to the bar, one to the stem or steerer) and a lower nylon strap with a quick-release buckle down to the fork crown. The lower strap is what stops it from swinging into the wheel; without it the pouch pivots. ORIENTATION CORRECTED: the handlebar sits just FORWARD of the bag's top, not behind it. In the side elevation the bar circle is on the same side as the straight vertical face, and the chamfer is on the opposite side; on-bike-1 and on-bike-5 show the same thing, with the fork strap running forward and down to the steerer and the cut-away corner trailing rearward toward the knee. contactFaces was rear+side and is now front+side."
    },
    "colorways": [
     {
@@ -4630,7 +4645,7 @@
    },
    "dims_state": "fixed",
    "dims_raw": "10 cm wide x 19 cm tall x 7 cm deep; Diameter: 10 cm",
-   "dims_note": "AXES REWRITTEN. The stored record duplicated the 19 cm height into len, a house shorthand for upright pouches. Under this spec len is the longest HORIZONTAL run, which is the 10 cm across-bike width; wid is the 7 cm fore-aft depth; hgt is the 19 cm height. Magnitudes all come from the maker page - nothing invented, only reassigned. mount.axes states which is which so this cannot be transposed again.",
+   "dims_note": "AXES REWRITTEN. The stored record duplicated the 19 cm height into len, a house shorthand for upright pouches. Under this spec len is the longest HORIZONTAL run, which is the 10 cm across-bike width; wid is the 7 cm fore-aft depth; hgt is the 19 cm height. Magnitudes all come from the maker page - nothing invented, only reassigned. mount.axes states which is which so this cannot be transposed again. READ THE DRAWING BEFORE TOUCHING THESE AGAIN: the maker's spec table publishes only a DIAMETER per size (0.8L 9 cm, 1.2L 10 cm, Plus 9 cm) and the elevation dimensions the mouth and the base of the same fore-aft axis. len/wid here stay as published, but wid is the BASE depth below the chamfer, not a uniform fore-aft depth - buildStembag reads it that way.",
    "capacity_l": 1.2,
    "geometry": {
     "form": "bucket",
@@ -4641,7 +4656,7 @@
      "profile": "linear"
     },
     "shoulder": "rounded",
-    "notes": "Upright pouch, flat on the inboard face and rounded outboard, and notably shallower fore-aft than it is wide. The lower outboard corner is chamfered off on the diagonal so the rider's knee clears it. A pale grey drawcord collar sits proud of the black-and-grey body."
+    "notes": "Upright pouch, flat on the inboard face and rounded outboard. CORRECTED against the maker's own side elevation (assets/products/apidura/full/backcountry-food-pouch/dimensions-1.png, -2, -3): the two plan figures are NOT two axes. They are the mouth and the base of one tapering bucket, both dimensioned in the same fore-aft view - 9 cm across the top and 6 cm across the bottom on the 0.8L, 10 and 7 on both 1.2L - which is exactly why the taper below reads tail 0.7 (6/9, 7/10). The plan section at the mouth is the published diameter, on both axes. The lower REAR corner is chamfered clean off on the diagonal at roughly 30 degrees from vertical; the front face stays a straight vertical plane, because the front is the face the bar and the fork strap hold. Earlier text called the chamfer outboard, which no photograph supports. A pale grey gathered drawcord collar, about a fifth of the height, sits proud of the black-and-grey body."
    },
    "closure": {
     "type": "drawcord",
@@ -4682,7 +4697,9 @@
      "location": "front"
     },
     "seams": "welded",
-    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic"
+    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic",
+    "structure_class": "semi",
+    "structure_note": "Declared, not inferred. These are welded TPU-laminate cases, not sacks: in the maker's own studio shots (studio-2, studio-9) the pouch stands upright unsupported with square vertical corners and the chamfer holding a crease, and the Stem Pack drawing is a hard-edged case. Running them through the full soft-bag deform pass is what rounded four different bags into the same black barrel. semi keeps 40% of the noise and bulge, which is right for a laminate that still gives."
    },
    "mount": {
     "axes": {
@@ -4696,14 +4713,14 @@
      "fork"
     ],
     "contactFaces": [
-     "rear",
+     "front",
      "side"
     ],
     "clearance": {
      "bar_mm": 0,
      "tyre_mm": 60
     },
-    "notes": "Stands upright beside the stem, held by two velcro straps at the top (one to the bar, one to the stem or steerer) and a lower nylon strap with a quick-release buckle down to the fork crown. The lower strap is what stops it from swinging into the wheel; without it the pouch pivots."
+    "notes": "Stands upright beside the stem, held by two velcro straps at the top (one to the bar, one to the stem or steerer) and a lower nylon strap with a quick-release buckle down to the fork crown. The lower strap is what stops it from swinging into the wheel; without it the pouch pivots. ORIENTATION CORRECTED: the handlebar sits just FORWARD of the bag's top, not behind it. In the side elevation the bar circle is on the same side as the straight vertical face, and the chamfer is on the opposite side; on-bike-1 and on-bike-5 show the same thing, with the fork strap running forward and down to the steerer and the cut-away corner trailing rearward toward the knee. contactFaces was rear+side and is now front+side."
    },
    "colorways": [
     {
@@ -4793,18 +4810,20 @@
      "frame_mm": 0,
      "tyre_mm": 30
     },
-    "notes": "Single wide velcro strap sized for a 12 - 20 cm tube circumference, so it fits fat suspension-bike downtubes as well as skinny ones. Hangs below the downtube just above the bottom bracket, roll pointing up toward the head tube."
+    "notes": "Single wide velcro strap sized for a 12 - 20 cm tube circumference, so it fits fat suspension-bike downtubes as well as skinny ones. Hangs below the downtube just above the bottom bracket, roll pointing up toward the head tube. AXIS CORRECTION 2026-08-10: mount.axes.hgt said \"y\". It is not y. This pack hangs perpendicular to the down tube, which on the reference frame lies at ~43 degrees, so its height axis is a diagonal in world space exactly as its length axis is - and tools/eval-auto.mjs scores each spec axis against the world bbox axis named here. A correctly drawn 1.5L (measured 66.4mm deep along its own perpendicular against a published 65) was scored 161% too tall on that basis alone, and no geometry can satisfy it: a 210mm bag on a 43-degree tube stands ~170mm in world y however it is drawn. Now \"perp_downtube\", by analogy with the \"along_downtube\" this record already carried. NOTE: perp_downtube is not yet in the AXES vocabulary in tools/apply-models.mjs, so the merge currently drops the key and reports it - which yields the right result (an axis that is a diagonal is not scored) but should be added."
    },
    "colorways": [
     {
-     "name": "Black",
-     "hex": "#1c1c1e"
+     "name": "Black / Grey",
+     "hex": "#1c1c1e",
+     "accentHex": "#8a8d92"
     }
    ],
    "render": {
+    "len_cm": 16,
     "hgt_cm": 9,
     "rolls": 3,
-    "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/backcountry-downtube-pack-1-8l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 16 cm against the MAX 24 cm recorded in dims_cm.len, so a rolled-down render should shorten that axis to ~16 cm and leave hgt alone."
+    "basis": "Height is a single published figure and is already the packed height, confirmed against assets/products/apidura/backcountry-downtube-pack-1-8l-2.jpg. The roll shortens the length axis, not the height: the maker's MIN is 16 cm against the MAX 24 cm recorded in dims_cm.len, so the rolled-down render shortens that axis to 16 cm and leaves hgt alone. len_cm added 2026-08-10; the basis had asked for it since the record was written and nothing carried it."
    }
   },
   {
@@ -4829,15 +4848,15 @@
    "dims_note": "len takes the MAX (unfurled) length; height and width are single figures. The published tail figure is the width of the rolled tip and lives in geometry.taper.",
    "capacity_l": 3,
    "geometry": {
-    "form": "tapered_wedge",
+    "form": "teardrop",
     "crossSection": "oval",
     "taper": {
-     "nose": 1,
-     "tail": 0.25,
+     "nose": 0.4,
+     "tail": 1,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "The lightest, smoothest silhouette in the range - a clean teardrop with no external pockets and no daisy chain. The nose ends in a large flat pentagonal seatpost plate that stands out past the bag body; that plate is the whole anti-sway system and should be rendered as a separate stiff panel."
+    "notes": "The lightest, smoothest silhouette in the range - a clean teardrop with no external pockets and no daisy chain, hence form: teardrop. NARROW at the seatpost and full at the rolled tail: dimensions-1.png measures 14.5 cm deep at the blunt rolled end falling forward into the plate. The nose ends in a large flat pentagonal seatpost plate that stands out past the bag body and carries the logo (studio-2.jpg); that plate is the whole anti-sway system and should be rendered as a separate stiff panel. (Recorded nose 1 / tail 0.25 until 10 Aug 2026, i.e. back to front.)"
    },
    "closure": {
     "type": "rolltop",
@@ -4946,15 +4965,15 @@
    "dims_note": "len takes the MAX (unfurled) length; height and width are single figures. The published tail figure is the width of the rolled tip and lives in geometry.taper.",
    "capacity_l": 5,
    "geometry": {
-    "form": "tapered_wedge",
+    "form": "teardrop",
     "crossSection": "oval",
     "taper": {
-     "nose": 1,
-     "tail": 0.25,
+     "nose": 0.37,
+     "tail": 1,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "The lightest, smoothest silhouette in the range - a clean teardrop with no external pockets and no daisy chain. The nose ends in a large flat pentagonal seatpost plate that stands out past the bag body; that plate is the whole anti-sway system and should be rendered as a separate stiff panel."
+    "notes": "The lightest, smoothest silhouette in the range - a clean teardrop with no external pockets and no daisy chain, hence form: teardrop. NARROW at the seatpost and full at the rolled tail: dimensions-1.png measures 14.5 cm deep at the blunt rolled end falling forward into the plate. The nose ends in a large flat pentagonal seatpost plate that stands out past the bag body and carries the logo (studio-2.jpg); that plate is the whole anti-sway system and should be rendered as a separate stiff panel. (Recorded nose 1 / tail 0.25 until 10 Aug 2026, i.e. back to front.)"
    },
    "closure": {
     "type": "rolltop",
@@ -5063,15 +5082,15 @@
    "dims_note": "len takes the MAX (unfurled) length; height and width are single figures. The published tail figure is the width of the rolled tip and lives in geometry.taper.",
    "capacity_l": 7,
    "geometry": {
-    "form": "tapered_wedge",
+    "form": "teardrop",
     "crossSection": "oval",
     "taper": {
-     "nose": 1,
-     "tail": 0.25,
+     "nose": 0.36,
+     "tail": 1,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "The lightest, smoothest silhouette in the range - a clean teardrop with no external pockets and no daisy chain. The nose ends in a large flat pentagonal seatpost plate that stands out past the bag body; that plate is the whole anti-sway system and should be rendered as a separate stiff panel."
+    "notes": "The lightest, smoothest silhouette in the range - a clean teardrop with no external pockets and no daisy chain, hence form: teardrop. NARROW at the seatpost and full at the rolled tail: dimensions-1.png measures 14.5 cm deep at the blunt rolled end falling forward into the plate. The nose ends in a large flat pentagonal seatpost plate that stands out past the bag body and carries the logo (studio-2.jpg); that plate is the whole anti-sway system and should be rendered as a separate stiff panel. (Recorded nose 1 / tail 0.25 until 10 Aug 2026, i.e. back to front.)"
    },
    "closure": {
     "type": "rolltop",
@@ -5279,36 +5298,35 @@
    "dims_cm": {
     "len": 26,
     "wid": 11,
-    "hgt": 9.5,
-    "dia": 11
+    "hgt": 9.5
    },
    "dims_state": "unfurled_min_height",
    "dims_raw": "9.5 cm tall; MIN 22 cm / MAX 26 cm long; Width: 11 cm (4.3 in)",
-   "dims_note": "The roll axis runs fore-aft, so len takes the MAX 26 cm (unfurled). Height and width are single figures.",
+   "dims_note": "The roll axis runs fore-aft, so len takes the MAX 26 cm (unfurled). Height and width are single figures. CORRECTION 10 Aug: dia 11 removed. It only ever repeated wid, and it is not a round bag - studio-3.jpg and dimensions-1.png both show a flat-bottomed squared soft box with straight sides. The dia made every renderer treat this as a barrel; src/bags/builders/barbag.js branches on exactly that field.",
    "capacity_l": 2.5,
    "geometry": {
-    "form": "barrel",
-    "crossSection": "oval",
+    "form": "rounded_box",
+    "crossSection": "flat_bottom",
     "taper": {
      "nose": 0.8,
      "tail": 1,
      "profile": "linear"
     },
-    "shoulder": "rounded",
-    "notes": "Squat oval barrel lying fore-aft between the aerobar extensions. Wider than it is tall. The rider-facing end is the rolled opening and carries a large printed sunburst target; the forward end is a closed, slightly tapered cap."
+    "shoulder": "squared",
+    "notes": "CORRECTED 10 Aug against assets/products/apidura/full/racing-aerobar-pack/studio-3.jpg, on-bike-1.jpg and dimensions-1.png. Not a barrel: a squared soft box lying fore-aft, flat bottom, flat top, straight sides, wider than it is tall, with the corners softly radiused. The FORWARD end is the rolled opening and carries the large yellow-and-silver sunburst - it is the end facing the camera in the head-on on-bike-1.jpg, and the same end the roll gathers at in studio-3.jpg. The rider-facing end is the closed, squared one. The previous record had both the form (oval barrel) and the roll end (rider-facing) wrong."
    },
    "closure": {
     "type": "rolltop",
     "location": "end_cap",
     "rolls": 3,
-    "hardware": "roll-down at the rider-facing end with a quick-release buckle"
+    "hardware": "roll-down at the FORWARD end with a quick-release buckle on the side compression strap"
    },
    "zips": [],
    "straps": [
     {
      "role": "attachment",
      "count": 4,
-     "location": "underside",
+     "location": "top",
      "hardware": "velcro",
      "material": "hypalon",
      "wrapsAround": "aerobar_extensions"
@@ -5324,7 +5342,7 @@
    "pockets": [],
    "details": {
     "cord": "shockcord stability loop running down each side to the bar",
-    "reflective": "large yellow-and-silver sunburst printed on the opening end - it faces the rider, so it reads as the visual focus of the bag",
+    "reflective": "large yellow-and-silver sunburst printed on the opening end - that end faces FORWARD (on-bike-1.jpg is a head-on shot and the sunburst is what looks back at the camera), which is what makes it a be-seen graphic rather than decoration",
     "lightMount": true,
     "logo": {
      "type": "screen_print",
@@ -5343,12 +5361,12 @@
      "aerobar_extensions"
     ],
     "contactFaces": [
-     "underside"
+     "top"
     ],
     "clearance": {
      "bar_mm": 0
     },
-    "notes": "REQUIRES clip-on aerobar extensions. The four velcro straps run across the top of the bag and wrap the two extensions, so it sits cradled BETWEEN them with the opening toward the rider. On a bare drop bar there is nothing at the right spacing for it to grip; it is left in the universal pool because it can be lashed to the bar tops in a pinch, but that is not how Apidura fits it."
+    "notes": "REQUIRES clip-on aerobar extensions. The four velcro straps run across the TOP of the bag and wrap the two extensions (studio-3.jpg shows all four cuffs on the top face, studio-1.jpg an extension threaded through them), so the bag HANGS BENEATH the pair with the rolled opening forward. contactFaces/straps.location said `underside`, which contradicted this note; corrected 10 Aug. On a bare drop bar there is nothing at the right spacing for it to grip; it is left in the universal pool because it can be lashed to the bar tops in a pinch, but that is not how Apidura fits it."
    },
    "colorways": [
     {
@@ -5391,12 +5409,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.5,
-     "tail": 0.35,
+     "nose": 0.26,
+     "tail": 0.52,
      "profile": "convex"
     },
     "shoulder": "squared",
-    "notes": "Kite/lens profile confirmed on the on-bike photos: straight top edge on the top tube, small vertical end faces at both ends, deepest between mid-length and the head tube, and a bottom edge that sweeps up to a rounded point at the seat-tube end. The head-tube end is a squared, noticeably thicker box carrying a reflective patch."
+    "notes": "Downward-pointing kite - the most triangular bags in the range. Straight top edge on the top tube, small vertical end faces at both ends, deepest belly between 40% and 75% of the length, and a straight lower-front edge lying along the DOWN TUBE which carries the down-tube straps. dimensions-1.png (1 L) reads 7 cm at the seat-tube end, 13.5 cm at the belly at 40% of the length and 3.5 cm at the head-tube tip; dimensions-2.png (4 L) reads 7 / 14 at 71% / 5 cm. Both end faces are squared and the head-tube one carries a reflective patch. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -5501,12 +5519,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.5,
-     "tail": 0.35,
+     "nose": 0.36,
+     "tail": 0.5,
      "profile": "convex"
     },
     "shoulder": "squared",
-    "notes": "Kite/lens profile confirmed on the on-bike photos: straight top edge on the top tube, small vertical end faces at both ends, deepest between mid-length and the head tube, and a bottom edge that sweeps up to a rounded point at the seat-tube end. The head-tube end is a squared, noticeably thicker box carrying a reflective patch."
+    "notes": "Downward-pointing kite - the most triangular bags in the range. Straight top edge on the top tube, small vertical end faces at both ends, deepest belly between 40% and 75% of the length, and a straight lower-front edge lying along the DOWN TUBE which carries the down-tube straps. dimensions-1.png (1 L) reads 7 cm at the seat-tube end, 13.5 cm at the belly at 40% of the length and 3.5 cm at the head-tube tip; dimensions-2.png (4 L) reads 7 / 14 at 71% / 5 cm. Both end faces are squared and the head-tube one carries a reflective patch. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -5611,12 +5629,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.5,
-     "tail": 0.35,
+     "nose": 0.36,
+     "tail": 0.5,
      "profile": "convex"
     },
     "shoulder": "squared",
-    "notes": "Kite/lens profile confirmed on the on-bike photos: straight top edge on the top tube, small vertical end faces at both ends, deepest between mid-length and the head tube, and a bottom edge that sweeps up to a rounded point at the seat-tube end. The head-tube end is a squared, noticeably thicker box carrying a reflective patch."
+    "notes": "Downward-pointing kite - the most triangular bags in the range. Straight top edge on the top tube, small vertical end faces at both ends, deepest belly between 40% and 75% of the length, and a straight lower-front edge lying along the DOWN TUBE which carries the down-tube straps. dimensions-1.png (1 L) reads 7 cm at the seat-tube end, 13.5 cm at the belly at 40% of the length and 3.5 cm at the head-tube tip; dimensions-2.png (4 L) reads 7 / 14 at 71% / 5 cm. Both end faces are squared and the head-tube one carries a reflective patch. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -6111,12 +6129,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 1,
-     "tail": 0.2,
+     "nose": 0.17,
+     "tail": 0.5,
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Sharp-faceted aero fairing, not a soft bag. Deepest at the head-tube end and blading away to a point at the rear - the OPPOSITE taper to the Racing and Backcountry frame packs. Hard creased panels, a grid-textured semi-translucent window on the drive side, and a hex-print panel. The internal HDPE frame means it holds this shape whether full or empty."
+    "notes": "Sharply faceted aero fairing, not a soft bag: hard creased panels, a grid-textured semi-translucent window on the drive side, and a hex-print panel, over an internal HDPE frame that holds the shape full or empty. The SHAPE is the same family as the Racing frame pack, not its opposite: dimensions-2.png (Large) shows a slanted seat-tube end face about 10 cm deep, the belly at 16.5 cm just past mid-length, and a 6.5 cm head-tube face, with the lower-front edge laid straight along the DOWN TUBE and a strap onto it. An earlier pass recorded this as \"deepest at the head-tube end and blading away to a point at the rear - the OPPOSITE taper\", which the drawing contradicts. Held forward by three thin ELASTIC bands round the head tube. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -6169,7 +6187,8 @@
      "location": "side"
     },
     "seams": "bonded",
-    "fabric": "matte black with a grid-textured semi-translucent side window and hex-print panel, sharply faceted rigid shell over an internal HDPE frame"
+    "fabric": "matte black with a grid-textured semi-translucent side window and hex-print panel, sharply faceted rigid shell over an internal HDPE frame",
+    "structure_class": "rigid"
    },
    "mount": {
     "axes": {
@@ -6223,12 +6242,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 1,
-     "tail": 0.2,
+     "nose": 0.33,
+     "tail": 0.53,
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Sharp-faceted aero fairing, not a soft bag. Deepest at the head-tube end and blading away to a point at the rear - the OPPOSITE taper to the Racing and Backcountry frame packs. Hard creased panels, a grid-textured semi-translucent window on the drive side, and a hex-print panel. The internal HDPE frame means it holds this shape whether full or empty."
+    "notes": "Sharply faceted aero fairing, not a soft bag: hard creased panels, a grid-textured semi-translucent window on the drive side, and a hex-print panel, over an internal HDPE frame that holds the shape full or empty. The SHAPE is the same family as the Racing frame pack, not its opposite: dimensions-2.png (Large) shows a slanted seat-tube end face about 10 cm deep, the belly at 16.5 cm just past mid-length, and a 6.5 cm head-tube face, with the lower-front edge laid straight along the DOWN TUBE and a strap onto it. An earlier pass recorded this as \"deepest at the head-tube end and blading away to a point at the rear - the OPPOSITE taper\", which the drawing contradicts. Held forward by three thin ELASTIC bands round the head tube. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -6281,7 +6300,8 @@
      "location": "side"
     },
     "seams": "bonded",
-    "fabric": "matte black with a grid-textured semi-translucent side window and hex-print panel, sharply faceted rigid shell over an internal HDPE frame"
+    "fabric": "matte black with a grid-textured semi-translucent side window and hex-print panel, sharply faceted rigid shell over an internal HDPE frame",
+    "structure_class": "rigid"
    },
    "mount": {
     "axes": {
@@ -6329,7 +6349,7 @@
     "hgt": 6
    },
    "dims_state": "fixed",
-   "dims_raw": "22 cm long; 6 cm front and 3 cm rear heights; 5 cm wide",
+   "dims_raw": "22 cm long; constant 6 cm deep; 5 cm wide; rear end face raked ~52 degrees",
    "dims_note": "Fixed diagram figures. hgt is the deeper (front) end; the 3 cm rear figure is carried in geometry.taper.",
    "capacity_l": 0.4,
    "geometry": {
@@ -6337,11 +6357,11 @@
     "crossSection": "teardrop",
     "taper": {
      "nose": 1,
-     "tail": 0.5,
+     "tail": 1,
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Very low faceted prism sitting ON TOP of the top tube: two flat side faces angle up to a narrow ridge along the centre, and the whole thing shears away to a thin blade at the rear. At the rear the two side faces continue past the body as splayed triangular fins (the transfer panel) that wrap the tube - a distinctive swallowtail that no other Apidura pack has. The bee logo is debossed into one fin."
+    "notes": "Constant-depth faceted parallelogram sitting ON TOP of the top tube: two flat side faces angle up to a narrow ridge along the centre, and the module holds its full 6 cm from the stem end all the way back. Its ONLY taper is a single ~52-degree rake across the rear end face - measured on dimensions-1.png as 215 px of run against 273 px of rise, where the 22 cm arrow spans 990 px, so the rake eats 0.20 of the length. The '3 cm' on that drawing is a HORIZONTAL dimension (its arrowheads point left and right) giving the fore-aft depth of the end section past the dashed line; it is not a rear height, and reading it as one is what produced the old taper.tail of 0.5. At the rear the two side faces continue past the body as splayed triangular fins (the transfer panel) that wrap the tube - a distinctive swallowtail that no other Apidura pack has. The bee logo is debossed into one fin."
    },
    "closure": {
     "type": "magnetic",
@@ -6414,7 +6434,7 @@
     "hgt": 6
    },
    "dims_state": "fixed",
-   "dims_raw": "22 cm long; 6 cm front and 3 cm rear heights; 5 cm wide; bolt spacing 6.4 cm, 5 cm fore-aft adjustment",
+   "dims_raw": "22 cm long; constant 6 cm deep; 5 cm wide; rear end face raked ~52 degrees; bolt spacing 6.4 cm, 5 cm fore-aft adjustment",
    "dims_note": "Fixed diagram figures. hgt is the deeper (front) end; the 3 cm rear figure is carried in geometry.taper.",
    "capacity_l": 0.4,
    "geometry": {
@@ -6422,11 +6442,11 @@
     "crossSection": "teardrop",
     "taper": {
      "nose": 1,
-     "tail": 0.5,
+     "tail": 1,
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Very low faceted prism sitting ON TOP of the top tube: two flat side faces angle up to a narrow ridge along the centre, and the whole thing shears away to a thin blade at the rear. At the rear the two side faces continue past the body as splayed triangular fins (the transfer panel) that wrap the tube - a distinctive swallowtail that no other Apidura pack has. The bee logo is debossed into one fin."
+    "notes": "Constant-depth faceted parallelogram sitting ON TOP of the top tube: two flat side faces angle up to a narrow ridge along the centre, and the module holds its full 6 cm from the stem end all the way back. Its ONLY taper is a single ~52-degree rake across the rear end face - measured on dimensions-1.png as 215 px of run against 273 px of rise, where the 22 cm arrow spans 990 px, so the rake eats 0.20 of the length. The '3 cm' on that drawing is a HORIZONTAL dimension (its arrowheads point left and right) giving the fore-aft depth of the end section past the dashed line; it is not a rear height, and reading it as one is what produced the old taper.tail of 0.5. At the rear the two side faces continue past the body as splayed triangular fins (the transfer panel) that wrap the tube - a distinctive swallowtail that no other Apidura pack has. The bee logo is debossed into one fin."
    },
    "closure": {
     "type": "magnetic",
@@ -6491,7 +6511,7 @@
     "hgt": 6
    },
    "dims_state": "fixed",
-   "dims_raw": "34 cm long; 6 cm front and 3 cm rear heights; 5 cm wide; bolt spacing 6.4 cm, 5 cm fore-aft adjustment",
+   "dims_raw": "34 cm long; constant 6 cm deep; 5 cm wide; rear end face raked ~52 degrees; bolt spacing 6.4 cm, 5 cm fore-aft adjustment",
    "dims_note": "Fixed diagram figures. hgt is the deeper (front) end; the 3 cm rear figure is carried in geometry.taper.",
    "capacity_l": 0.8,
    "geometry": {
@@ -6499,11 +6519,11 @@
     "crossSection": "teardrop",
     "taper": {
      "nose": 1,
-     "tail": 0.5,
+     "tail": 1,
      "profile": "linear"
     },
     "shoulder": "squared",
-    "notes": "Very low faceted prism sitting ON TOP of the top tube: two flat side faces angle up to a narrow ridge along the centre, and the whole thing shears away to a thin blade at the rear. At the rear the two side faces continue past the body as splayed triangular fins (the transfer panel) that wrap the tube - a distinctive swallowtail that no other Apidura pack has. The bee logo is debossed into one fin."
+    "notes": "Constant-depth faceted parallelogram sitting ON TOP of the top tube: two flat side faces angle up to a narrow ridge along the centre, and the module holds its full 6 cm from the stem end all the way back. Its ONLY taper is a single ~52-degree rake across the rear end face - measured on dimensions-1.png as 215 px of run against 273 px of rise, where the 22 cm arrow spans 990 px, so the rake eats 0.20 of the length. The '3 cm' on that drawing is a HORIZONTAL dimension (its arrowheads point left and right) giving the fore-aft depth of the end section past the dashed line; it is not a rear height, and reading it as one is what produced the old taper.tail of 0.5. At the rear the two side faces continue past the body as splayed triangular fins (the transfer panel) that wrap the tube - a distinctive swallowtail that no other Apidura pack has. The bee logo is debossed into one fin."
    },
    "closure": {
     "type": "zip_straight",
@@ -6801,15 +6821,15 @@
    "dims_note": "Same body as the Racing Saddle Pack 5 L in Canyon livery and it shares that diagram. len takes the MAX (unfurled) length; height and width are single figures.",
    "capacity_l": 5,
    "geometry": {
-    "form": "tapered_wedge",
+    "form": "teardrop",
     "crossSection": "oval",
     "taper": {
-     "nose": 1,
-     "tail": 0.28,
+     "nose": 0.37,
+     "tail": 1,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "Racing-line teardrop with a large flat pentagonal seatpost plate at the nose. Photographed on a dropper/flip-head post; the plate stands proud of the bag body."
+    "notes": "Racing-line teardrop, NARROW at the seatpost and full at the rolled tail - dimensions-1.png is 15 cm deep at the roll tapering forward to the 4 cm plate. Large flat pentagonal seatpost plate at the nose, photographed on a dropper/flip-head post; the plate stands proud of the bag body and carries the APIDURA x CANYON mark. (Recorded nose 1 / tail 0.28 until 10 Aug 2026, i.e. back to front.)"
    },
    "closure": {
     "type": "rolltop",
@@ -6919,12 +6939,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.5,
-     "tail": 0.35,
+     "nose": 0.36,
+     "tail": 0.5,
      "profile": "convex"
     },
     "shoulder": "squared",
-    "notes": "Kite/lens profile confirmed on the on-bike photos: straight top edge on the top tube, small vertical end faces at both ends, deepest between mid-length and the head tube, and a bottom edge that sweeps up to a rounded point at the seat-tube end. The head-tube end is a squared, noticeably thicker box carrying a reflective patch."
+    "notes": "Downward-pointing kite - the most triangular bags in the range. Straight top edge on the top tube, small vertical end faces at both ends, deepest belly between 40% and 75% of the length, and a straight lower-front edge lying along the DOWN TUBE which carries the down-tube straps. dimensions-1.png (1 L) reads 7 cm at the seat-tube end, 13.5 cm at the belly at 40% of the length and 3.5 cm at the head-tube tip; dimensions-2.png (4 L) reads 7 / 14 at 71% / 5 cm. Both end faces are squared and the head-tube one carries a reflective patch. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -7032,12 +7052,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.55,
-     "tail": 0.45,
-     "profile": "linear"
+     "nose": 0.45,
+     "tail": 0.55,
+     "profile": "convex"
     },
     "shoulder": "squared",
-    "notes": "The one studio image shows a harder, more architectural bag than the 2.4 L - sharp creased facets, a long straight top ridge and a large angled shoulder panel, closer to a moulded shell than a soft frame bag. Confidence is medium on the closure and strap count because only one photo exists locally and it shows a single side."
+    "notes": "Same soft Apidura kite as the 2.4 L, one size up: dimensions-3.png reads 8 cm at the seat-tube end face, a 14.5 cm belly at about 70% of the length and a 6.5 cm head-tube face, with the lower-front edge running down along the DOWN TUBE to two buckled straps. An earlier pass, working from a single studio photo, called this \"a harder, more architectural bag - sharp creased facets, closer to a moulded shell\" with a linear taper; the maker drawing shows the ordinary soft kite and that description is withdrawn. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -7304,11 +7324,12 @@
    "colorways": [
     {
      "name": "MAAP Alt_Road loam green",
-     "hex": "#6f7358"
+     "hex": "#454a3b",
+     "note": "Was #6f7358, which renders as a pale sage. The fabric is a DARK olive: assets/products/apidura/full/maap-x-apidura-handlebar-pack-9l-v2/studio-1.jpg samples #43443f-#454641 across the lit front panel, i.e. roughly twice the value of the Backcountry black beside it, not four times."
     },
     {
      "name": "Graphite accents",
-     "hex": "#4a4b48"
+     "hex": "#2c2e2a"
     }
    ],
    "render": {
@@ -7339,15 +7360,15 @@
    "dims_note": "Same body and diagram as the Racing Saddle Pack 7 L. len takes the MAX (unfurled) length; height and width are single figures.",
    "capacity_l": 7,
    "geometry": {
-    "form": "tapered_wedge",
+    "form": "teardrop",
     "crossSection": "oval",
     "taper": {
-     "nose": 1,
-     "tail": 0.25,
+     "nose": 0.36,
+     "tail": 1,
      "profile": "convex"
     },
     "shoulder": "rounded",
-    "notes": "Racing-line teardrop in loam green, with the same large flat pentagonal seatpost plate at the nose carrying the MAAP and APIDURA marks."
+    "notes": "Racing-line teardrop in loam green, NARROW at the seatpost and full at the rolled tail, with the same large flat pentagonal seatpost plate at the nose carrying the MAAP and APIDURA marks. No bungee lattice and no daisy chain on this pack. (Recorded nose 1 / tail 0.25 until 10 Aug 2026, i.e. back to front.)"
    },
    "closure": {
     "type": "rolltop",
@@ -7456,12 +7477,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.5,
-     "tail": 0.35,
+     "nose": 0.26,
+     "tail": 0.52,
      "profile": "convex"
     },
     "shoulder": "squared",
-    "notes": "Kite/lens profile confirmed on the on-bike photos: straight top edge on the top tube, small vertical end faces at both ends, deepest between mid-length and the head tube, and a bottom edge that sweeps up to a rounded point at the seat-tube end. The head-tube end is a squared, noticeably thicker box carrying a reflective patch."
+    "notes": "Downward-pointing kite - the most triangular bags in the range. Straight top edge on the top tube, small vertical end faces at both ends, deepest belly between 40% and 75% of the length, and a straight lower-front edge lying along the DOWN TUBE which carries the down-tube straps. dimensions-1.png (1 L) reads 7 cm at the seat-tube end, 13.5 cm at the belly at 40% of the length and 3.5 cm at the head-tube tip; dimensions-2.png (4 L) reads 7 / 14 at 71% / 5 cm. Both end faces are squared and the head-tube one carries a reflective patch. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -7570,12 +7591,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.5,
-     "tail": 0.35,
+     "nose": 0.36,
+     "tail": 0.5,
      "profile": "convex"
     },
     "shoulder": "squared",
-    "notes": "Kite/lens profile confirmed on the on-bike photos: straight top edge on the top tube, small vertical end faces at both ends, deepest between mid-length and the head tube, and a bottom edge that sweeps up to a rounded point at the seat-tube end. The head-tube end is a squared, noticeably thicker box carrying a reflective patch. The maker lists an external mesh pocket; it is not visible on the drive side in the one local studio image, so assume it is on the non-drive side."
+    "notes": "Downward-pointing kite - the most triangular bags in the range. Straight top edge on the top tube, small vertical end faces at both ends, deepest belly between 40% and 75% of the length, and a straight lower-front edge lying along the DOWN TUBE which carries the down-tube straps. dimensions-1.png (1 L) reads 7 cm at the seat-tube end, 13.5 cm at the belly at 40% of the length and 3.5 cm at the head-tube tip; dimensions-2.png (4 L) reads 7 / 14 at 71% / 5 cm. Both end faces are squared and the head-tube one carries a reflective patch. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",
@@ -7690,12 +7711,12 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 0.5,
-     "tail": 0.35,
+     "nose": 0.33,
+     "tail": 0.5,
      "profile": "convex"
     },
     "shoulder": "squared",
-    "notes": "Kite/lens profile confirmed on the on-bike photos: straight top edge on the top tube, small vertical end faces at both ends, deepest between mid-length and the head tube, and a bottom edge that sweeps up to a rounded point at the seat-tube end. The head-tube end is a squared, noticeably thicker box carrying a reflective patch."
+    "notes": "Downward-pointing kite - the most triangular bags in the range. Straight top edge on the top tube, small vertical end faces at both ends, deepest belly between 40% and 75% of the length, and a straight lower-front edge lying along the DOWN TUBE which carries the down-tube straps. dimensions-1.png (1 L) reads 7 cm at the seat-tube end, 13.5 cm at the belly at 40% of the length and 3.5 cm at the head-tube tip; dimensions-2.png (4 L) reads 7 / 14 at 71% / 5 cm. Both end faces are squared and the head-tube one carries a reflective patch. Taper convention for this slot: nose = the HEAD-TUBE end face divided by hgt, tail = the SEAT-TUBE end face divided by hgt. Apidura's own spec line calls the seat-tube end \"front\" and the head-tube end \"rear\", which is the reverse of the bike, and an earlier pass copied those labels straight into nose/tail - so every bag in this slot was drawn back to front. Corrected 10 Aug against the maker dimension drawings."
    },
    "closure": {
     "type": "zip_straight",

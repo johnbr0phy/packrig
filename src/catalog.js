@@ -32,9 +32,21 @@ const FABRIC_KEY = (s = '') => {
   return 'cordura';
 };
 
+const slugify = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 export async function loadCatalog() {
   const res = await fetch('./data/brands.json');
   const brands = await res.json();
+  // Silhouettes measured off the maker's own photographs by tools/silhouette.mjs.
+  // Optional: a product with no measured profile falls back to the builder's
+  // parametric curve, so this file can be built up a slot at a time.
+  const profiles = await fetch('./data/profiles.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+  // Outlines measured off the maker's own DIMENSIONED ENGINEERING DRAWING by
+  // tools/diagram-outline.mjs, and preferred over the photo-traced ones above
+  // wherever both exist. A photograph is a lit object at an unknown angle in
+  // perspective; the drawing is orthographic, unlit and dimensioned, and it
+  // also yields the plan-view width profile, which photographs almost never do.
+  const diagrams = await fetch('./data/diagram-profiles.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
   brands.forEach((b, bi) => {
     b.index = bi;
     b.short = SHORT[b.name] || b.name;
@@ -65,6 +77,12 @@ export async function loadCatalog() {
         hgt: (drawHgt || d.dia || 12) * 10,
         dia: (d.dia || Math.min(drawWid || 14, drawHgt || 14)) * 10,
       };
+      // Measured shape, published scale. The profile is peak-normalised, so it
+      // says nothing about size — the builder still takes every dimension from
+      // the catalogue and uses this only for the curve between them.
+      const key = slugify([b.name, p.line, p.name, p.size].filter(Boolean).join(' '));
+      const prof = diagrams[key] || profiles[key];
+      if (prof?.profile?.length) p.profile = prof;
     });
   });
   return brands;

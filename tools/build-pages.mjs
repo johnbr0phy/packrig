@@ -15,7 +15,7 @@
  *
  *   node tools/build-pages.mjs
  */
-import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -65,6 +65,21 @@ for (const b of brands) {
 }
 console.log(`   ${hotlinked} products hot-link a photo (${restored} URLs restored from images_remote) · ${noPhoto} without`);
 writeFileSync(join(docs, 'data/brands.json'), JSON.stringify(brands));
+
+// The measured silhouettes. src/catalog.js fetches BOTH of these and falls back
+// to the builders' parametric curves when a fetch 404s — silently, because a
+// missing profile is a legitimate state for the 201 products that have none.
+// So shipping without them does not break the build or log anything: it just
+// quietly serves the old guessed shapes, and every bag that was fixed by
+// measuring the maker's engineering drawing reverts on the live site only.
+// `diagram-profiles.json` is the one that matters most — it is what took the
+// seat packs from back-to-front to correct.
+for (const f of ['profiles.json', 'diagram-profiles.json']) {
+  const src = join(root, 'data', f);
+  if (!existsSync(src)) { console.log(`   (no data/${f} — skipping)`); continue; }
+  writeFileSync(join(docs, 'data', f), JSON.stringify(JSON.parse(readFileSync(src, 'utf8'))));
+  console.log(`   data/${f}: ${(readFileSync(join(docs, 'data', f)).length / 1024).toFixed(0)}KB`);
+}
 
 // DESIGN-SYSTEM.md §12 step 1. tokens.css sits at src/ui/tokens.css in the
 // repo and at docs/tokens.css in the deploy, so its @font-face URL — which is

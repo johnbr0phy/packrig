@@ -1,23 +1,179 @@
-// Top tube bag builders (mm-local). buildToptubeRear is buildToptube placed
-// under the tube at the seat end, so both live here.
+// Top tube bag builders (mm-local). buildToptubeRear is buildToptube mirrored
+// and placed at the seat-tube end of the tube, so both live here.
+//
+// AXIS MAPPING — every record in this slot agrees (`mount.axes` reads
+// len: along_toptube, wid: z, hgt: y on all 14 Apidura packs), and the makers'
+// side elevations in assets/products/<brand>/full/*/dimensions-*.png confirm it:
+//   p.mm.len -> group +x, along the top tube, +x pointing FORWARD to the stem
+//   p.mm.hgt -> group +y, up from the tube crown; y = 0 is the bag's base
+//   p.mm.wid -> group +z, across the bike
+// The geometry's -x end is therefore the REAR of the bag and its +x end the
+// stem end. Everything positional is derived from ctx.points / ctx.anchors; the
+// only literals are millimetre offsets off those (EMBED, the 38mm stem setback).
 
 import * as THREE from 'three';
-import { v3, tubeBetween } from '../../lib.js';
+import { v3, tubeAlong, tubeBetween } from '../../lib.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { boxBulge } from '../deform.js';
+import { boxBulge, deformScale } from '../deform.js';
 import { seamStrip } from '../hardware.js';
-import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
+import { axesOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
+const DEG = Math.PI / 180;
+
 /**
- * Rear top-tube sack: same construction, but it hangs UNDER the tube at the
- * seat end rather than sitting on top of it by the stem.
+ * The falloff `boxBulge` applies across each face — deform.js:139, copied
+ * (it is not exported) so this builder can predict where the finished surface
+ * ends up and hang its trim ON it instead of at the pre-bulge core.
+ */
+const fall = (t) => Math.max(0, 1 - Math.min(Math.abs(t), 1) ** 2.2) ** 0.6;
+
+/**
+ * Repaint the body's per-vertex shade so a panel split reads as a colour
+ * change ON the shell.
+ *
+ * shadeAO() writes a greyscale multiplier into the geometry's `color`
+ * attribute and soft() returns the mesh with a vertexColors material, so this
+ * attribute is the one place a two-tone panel, a lid or a seam can live
+ * WITHOUT a second mesh. That matters here: the v2 review's two standing
+ * complaints about this slot were "the same featureless soft black pillow" and
+ * "zero-thickness hardware ... paper stuck to the bag", and a flat accent slab
+ * floating 1mm off the side — which is what this builder used to draw — is
+ * both at once.
+ *
+ * `at` is called with the BODY-LOCAL vertex position and normal and returns a
+ * multiplier: >1 lightens (a grey panel over a black shell), <1 darkens (the
+ * stitch line at its edge), 1 leaves the vertex alone.
+ */
+function tint(geo, at) {
+  const col = geo.attributes.color;
+  const pos = geo.attributes.position;
+  const nor = geo.attributes.normal;
+  if (!col || !nor) return;
+  for (let i = 0; i < col.count; i++) {
+    const k = at(pos.getX(i), pos.getY(i), pos.getZ(i), nor.getX(i), nor.getY(i), nor.getZ(i));
+    if (k === 1) continue;
+    col.setXYZ(i, col.getX(i) * k, col.getY(i) * k, col.getZ(i) * k);
+  }
+  col.needsUpdate = true;
+}
+
+/**
+ * The top line of a top tube pack, measured off the makers' own dimensioned
+ * side elevations rather than guessed.
+ *
+ * Every one of these bags used to be drawn as a single curve tapering over its
+ * whole length to a knife edge at the rear. Not one drawing shows that. Column
+ * scans of Apidura's elevations (tools were throwaway; the numbers are below,
+ * as fractions of length from the REAR and of full height) show the same three
+ * pieces every time:
+ *
+ *   a rear END FACE raked steeply back up from the base, then a straight
+ *   CHAMFER over the rear-upper corner, then a DEAD FLAT top over the front.
+ *
+ *   drawing (dimensions-*.png)          rake ends at   flat top starts at
+ *   expedition 0.6L   23.5 x 7          x .043  h .65        x .34
+ *   expedition 1L     23.5 x 10         x .120  h .60        x .42
+ *   expedition bolt-on 1L 23 x 10       x .085  h .53        x .39
+ *   backcountry 1L    23 x 10           x .050  h .50        x .46
+ *   racing 1L         23.5 x 10         x .130  h .65        x .39
+ *   canyon collab 1L  23.5 x 10         x .130  h .65        x .38
+ *   backcountry long 1.8L 37 x 10       x .032  h .60        x .51
+ *   racing long 2L    44 x 10           x .090  h .55        x .61
+ *
+ * The rake measures 58-74 degrees off horizontal (62 used here). The chamfer
+ * is the piece that splits by `form`: 29-31 degrees on the six short
+ * `trapezoid_panel` packs, 13 degrees on the two long `tapered_wedge` blades —
+ * which is why the long ones reach full height so much further forward. A
+ * `slab` (Apidura's Aero modules) has no chamfer at all: its elevation is a
+ * constant-depth parallelogram whose rear end is a single ~52-degree rake
+ * (measured 215px of run against 273px of rise on aero-top-tube-module
+ * dimensions-1.png, where 22cm = 990px).
+ *
+ * `tail` is the record's `geometry.taper.tail` — the height the rear end still
+ * stands at, where the rake meets the chamfer. It is a ratio, so it survives a
+ * dimension correction underneath it.
+ *
+ * Returns { at(t), tip, tJ, tF } with t = 0 at the geometry's rear end and 1 at
+ * its stem end.
+ */
+function topProfile({ len, h, tail, form }) {
+  // The extreme rear corner is a rounded cap, not the top of the rake: the
+  // drawings bottom out at 0.10-0.28 of full height there. A slab's rear
+  // corner is a sharp parallelogram edge, so it runs down almost to the base.
+  const tip = form === 'slab' ? 0.06 : Math.min(0.18, tail * 0.4);
+  const rakeDeg = form === 'slab' ? 52 : 62;
+  const chamDeg = form === 'tapered_wedge' ? 13 : 30;
+  let rakeRun = ((tail - tip) * h) / Math.tan(rakeDeg * DEG);
+  let chamRun = ((1 - tail) * h) / Math.tan(chamDeg * DEG);
+  // A short bag with a deep taper wants more run than it has length. Scale both
+  // pieces together rather than clipping one, so the rake:chamfer proportion —
+  // the thing that distinguishes a wedge from a trapezoid panel — survives, and
+  // the bag simply becomes a full-length wedge with no flat top.
+  const span = Math.max(rakeRun + chamRun, 1e-6);
+  if (span > len * 0.92) {
+    const k = (len * 0.92) / span;
+    rakeRun *= k;
+    chamRun *= k;
+  }
+  const tJ = Math.max(rakeRun / len, 1e-4);             // top of the rear end face
+  const tF = Math.max((rakeRun + chamRun) / len, tJ);   // where the flat top begins
+  return {
+    tip,
+    tJ,
+    tF,
+    at(t) {
+      if (t <= 0) return tip;
+      if (t < tJ) return tip + (tail - tip) * (t / tJ);
+      if (t < tF) return tail + (1 - tail) * ((t - tJ) / (tF - tJ));
+      return 1;
+    },
+  };
+}
+
+/**
+ * How the bag actually attaches, read from the catalogue's own prose.
+ *
+ * Four Apidura SKUs bolt through a base plate into the frame's threaded
+ * mounts and carry no top-tube straps at all — their records say so twice
+ * (`straps: []` or steerer-only, and `mount.attachesTo: top_tube_bosses`) —
+ * but neither block is merged into data/brands.json, so the only signal that
+ * reaches a builder is `features.attachment`. All 14 Apidura packs in this slot
+ * carry it and it parses cleanly; 84 of the 100 products in the slot do not,
+ * and those keep the two-straps-plus-steerer default the builder always used.
+ */
+function mountPlanOf(p) {
+  const txt = String(p?.features?.attachment || '');
+  const DEFAULT = { bolted: false, tubeStraps: 2, steerer: true, post: 0, boltSpan: 64 };
+  if (!txt) return DEFAULT;
+  const WORD = { one: 1, two: 2, three: 3, four: 4 };
+  const count = (s, dflt) => {
+    const m = /\b(\d+|one|two|three|four)\b/i.exec(s || '');
+    if (!m) return dflt;
+    const w = m[1].toLowerCase();
+    return Math.max(0, Math.min(4, WORD[w] ?? parseInt(w, 10)));
+  };
+  const clauses = txt.split('+');
+  const bolted = /\bbolt/i.test(clauses[0]);
+  const postClause = clauses.find((c) => /seatpost/i.test(c));
+  // "bolt spacing 6.4 cm" is on every bolt-on record's dims_raw and is
+  // dimensioned on the drawings (apidura-x-canyon dimensions-1, second view).
+  const span = /bolt spacing\s*([\d.]+)\s*cm/i.exec(String(p?.dims_raw || ''));
+  return {
+    bolted,
+    tubeStraps: bolted ? 0 : count(clauses[0], 2),
+    steerer: /steerer/i.test(txt),
+    post: postClause ? count(postClause, 1) : 0,
+    boltSpan: span ? Math.max(30, Math.min(120, parseFloat(span[1]) * 10)) : 64,
+  };
+}
+
+/**
+ * Rear top-tube sack: the same construction mirrored, standing in the
+ * seat-tube corner instead of behind the stem.
  */
 export function buildToptubeRear(p, brand, main, accent, ctx, side) {
-  const grp = buildToptube(p, brand, main, accent, ctx, side, 'toptubeRear');
-  const h = Math.min(p.mm.hgt, 220);
-  grp.position.y -= h + 26;   // below the tube, not perched on it
-  return grp;
+  return buildToptube(p, brand, main, accent, ctx, side, 'toptubeRear');
 }
 
 // NOTE: the builder call signature is (product, brand, main, accent, ctx, side) —
@@ -26,47 +182,172 @@ export function buildToptubeRear(p, brand, main, accent, ctx, side) {
 export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'toptube') {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
-  const feats = featuresOf(p);
+  const geom = geomOf(p);
+  const axes = axesOf(p);
+  const plan = mountPlanOf(p);
   // soft | semi | rigid, from the model records — see stiffnessOf().
   const stiff = stiffnessOf(p);
   const len = Math.min(p.mm.len, 460), h = Math.min(p.mm.hgt, 220), w = Math.min(p.mm.wid, 170);
+  // A rear top-tube pack is the same bag turned round: it butts the seat tube
+  // with its TALL end and slopes away forward. Apidura's Backcountry Rear pack
+  // record says exactly that ("the rear edge is vertical and hugs the
+  // seatpost, the front edge slopes forward-down onto the top tube").
+  //
+  // It is decided by the RECORD, not only by which slot routed the call.
+  // data/brands.json files that pack under `slot: "toptube"`, so it arrives
+  // here through buildToptube and used to be drawn behind the stem, mirrored —
+  // the fault the owner rejected in v2. Its own model record has said
+  // `slot_should_be: "toptube_rear"` all along and apply-models.mjs only
+  // REPORTS that field, by design ("reslotting ... is a decision, not a
+  // merge"). Straps to the SEATPOST are the thing that actually distinguishes
+  // this bag, they are already parsed out of the record's own prose by
+  // mountPlanOf, and across all 101 products in this slot exactly one carries
+  // them — so keying on it moves that pack and nothing else.
+  const rear = anchorName === 'toptubeRear' || plan.post > 0;
   const P = ctx.points;
+  // The bag is parented to the anchor its UI SLOT names (system.js:52), so the
+  // anchor stays whatever we were handed — everything positional below is a
+  // world coordinate with the anchor subtracted back off at the end, which is
+  // what lets a pack filed under `toptube` still be placed at the seat-tube end.
   const anchor = ctx.anchors[anchorName].position;
   const hd = v3(P.hd.x, P.hd.y, 0);
-  const ttSeat = P.seatTop.clone().addScaledVector(v3(P.sd.x, P.sd.y, 0), -12);
+  const sd = v3(P.sd.x, P.sd.y, 0);
+  const ttSeat = P.seatTop.clone().addScaledVector(sd, -12);
   const ttHead = P.headTop.clone().addScaledVector(hd, 30);
   const ang = Math.atan2(ttHead.y - ttSeat.y, ttHead.x - ttSeat.x);
   const slope = (ttHead.y - ttSeat.y) / (ttHead.x - ttSeat.x);
-  const ttR = Math.min(Math.max(anchor.y - ttHead.y, 10), 26); // anchor sits on the tube crown
+  // Both top-tube anchors are built as <tube end> + (dx, ttR, 0) — bike.js:906
+  // for the stem end, :909 for the seat-tube end — so the tube radius reads
+  // back as the anchor's height above the tube end it was built from. Measuring
+  // against ttHead unconditionally is why buildToptubeRear got 10mm instead of
+  // 16 and sat its bag down inside the tube.
+  const ttEnd = Math.abs(anchor.x - ttHead.x) <= Math.abs(anchor.x - ttSeat.x) ? ttHead : ttSeat;
+  const ttR = Math.min(Math.max(anchor.y - ttEnd.y, 10), 26); // anchor sits on the tube crown
   const EMBED = 10;
+  // The measured rear-end height, from the record, with the old guess kept only
+  // where the record is silent. BUILDER-BRIEF §1: use the measured value.
+  const tail = Math.min(Math.max(geom.taperRatio ?? vr.range(0.5, 0.65), 0.15), 1);
+  const prof = topProfile({ len, h, tail, form: geom.form });
+  const hFactor = (t) => prof.at(t);
+
+  // ---- PILLOW BUDGET ----------------------------------------------------
+  //
+  // THE SIZE BUG, and it is one line of arithmetic repeated on two axes.
+  //
+  // A maker publishes the size of the FINISHED bag, measured across the widest
+  // point of the stuffed panel. This builder was cutting the core box at
+  // exactly the published figure and THEN running soft() over it — and soft()
+  // adds the pillow bulge (`min(len,h,w) * 0.09`, which in this slot is always
+  // 0.09*wid because width is always the smallest of the three) plus the noise
+  // amplitude OUTSIDE that figure, on every face. So every pack came out one
+  // whole pillow too big in each direction. Measured on run
+  // 2026-08-10T16-05-02-v2-fixes: bbox z was 54.0mm against a published 45 and
+  // 60.6mm against a published 50 — +20% to +23% on all 14 packs, +4.5 to
+  // +5.0mm per side, which is exactly `0.09*wid + noise`.
+  //
+  // The core is now cut UNDER the published size by that budget, so the pillow
+  // crests ON it. Nothing is scaled: length is untouched (it measured +1 to
+  // +3%, already inside tolerance, and the rake at the rear end cancels most
+  // of the tilt) and the profile, taper and plan curves are all unchanged.
+  const noiseAmp = vr.range(1.7, 2.5);
+  const noiseFreq = vr.range(0.034, 0.046);
+  const puffAmt = Math.min(len, h, w) * 0.09;
+  // soft() scales the bulge AND the noise by deformScale(stiffness) and skips
+  // the pass entirely at `rigid` — so a moulded shell (Topeak's DryShell,
+  // VAUDE's Trailtop, the other structured boxes in this slot) budgets nothing
+  // and keeps its full published section. The noise is signed fbm and only
+  // rarely peaks, so it is budgeted at half amplitude; the bulge is budgeted in
+  // full because it is a one-sided push that peaks at the centre of every face.
+  const K = deformScale(stiff);
+  const puff = (puffAmt + noiseAmp * 0.5) * K;
+  const wCore = Math.max(w - 2 * puff, w * 0.55);
+  // Height is budgeted at the CROWN only. The downward half of the pillow goes
+  // into EMBED — the 10mm the base already sits inside the tube crown — so
+  // taking it all off the top keeps the base flat on the tube instead of
+  // lifting the bag off it, which is the failure the v2 seat packs shipped.
+  const hCore = Math.max(h - puff, h * 0.55);
   // With the base plane parallel to the tube, the tube centreline stays at a
   // constant height in bag space — so the underside can be a fixed channel.
   const tubeY = EMBED - ttR;
-  const chanR = Math.min(ttR + 2, w / 2 - 3);
-  const corner = Math.min(w * 0.22, h * 0.3, 12); // keep the base broad and flat
-  const bulge = boxBulge(len / 2, h / 2, w / 2, Math.min(len, h, w) * 0.09);
-  // Tailfin's own copy: "specially sculpted 3D welded shapes eliminate knee
-  // rub". These bags are full height at the seat-tube end and taper to a slim
-  // nose at the stem, narrowing in plan too. A constant-section box reads as a
-  // pencil case strapped on top.
-  const NOSE_H = 0.46, NOSE_W = 0.62;        // fraction of full size at the nose
-  // t = 0 at the geometry's -x end, 1 at its +x end. The nose (slim end) is the
-  // -x end, which is the one that points forward once the group is placed.
-  const hFactor = (t) => 1 + (NOSE_H - 1) * (1 - t) ** 1.35;
-  const wFactor = (t) => 1 + (NOSE_W - 1) * (1 - t) ** 1.35;
-  /** Body height at a group-local x, so trim can follow the taper. */
-  const hAtLocal = (x) => {
-    const t = Math.min(Math.max((x - (-len / 2 + 10)) / len + 0.5, 0), 1);
-    return h * hFactor(t);
-  };
+  // The trough the tube nests into. Its radius is set by the TUBE, not by the
+  // bag's width — the channel surface sits exactly `chanR` from the tube axis,
+  // so any chanR below ttR is penetration by construction. Tying it to the
+  // half-width (as `w/2 - 3` did) meant the pillow budget above, which narrows
+  // the core, would have dug every pack 2.5mm deeper into the tube: measured
+  // -8.4mm against the -5.9mm of the v2 run, past the audit's 8mm contact
+  // allowance. Where the trough is wider than the bag the clamp to 0 below
+  // simply flattens it out at the edges. Capped so it cannot swallow a shallow
+  // bag whole.
+  const chanR = Math.min(ttR + 2, Math.max(-tubeY + hCore * 0.42, 4));
+  const corner = Math.min(wCore * 0.22, hCore * 0.3, 12); // keep the base broad and flat
+  const bulge = boxBulge(len / 2, hCore / 2, wCore / 2, puffAmt);
+  // Plan view. The drawings dimension these as a constant width ("Width: 4.5
+  // cm" on the whole Backcountry/Racing line, "Tapered Width: 5 - 4 cm" across
+  // the SECTION on the Expedition) — the old builder pinched the whole length
+  // to 0.62 and made every pack read as a pencil. Only the rear cap converges,
+  // over the same run as the end-face rake.
+  const PLAN_TIP = 0.66;
+  const wFactor = (t) => PLAN_TIP + (1 - PLAN_TIP) * Math.min(1, Math.max(t / prof.tJ, 0));
+  // Which end the taper narrows at. Apidura's convention in this slot — and the
+  // majority one — is nose = stem end, tail = rear end, so `tail` above is the
+  // rear. Nine products in the slot write it the other way round (Tailfin's two
+  // Rear Top Tube Bags, Rockgeist's saddle-side medic pack, Restrap Race Short,
+  // Green Guru Tanker …, all nose < tail = 1), and geomOf exposes which it is.
+  // The old builder ignored it and pinned the narrow end at -x, so every one of
+  // those nine was drawn back to front — the bug geomOf's own doc warns about.
+  const flip = geom.taperNarrowEnd === 'nose';
+  // true when the DEEP end faces forward instead of rearward
+  const mirrored = rear !== flip;
+  /** t along the body: 0 at the rear end, 1 at the stem end. */
+  const tAt = (t) => (mirrored ? 1 - t : t);
+  /** Fraction along the geometry at a group-local x. 0 = its rear end. */
+  const uAt = (x) => Math.min(Math.max((x - 10) / len + 1, 0), 1);
+  /** Where the pillow has pushed a face out, at a group-local x. deform.js:145. */
+  const puffAt = (x, other = 0) => puffAmt * K * fall((x - 10 + len / 2) / (len / 2)) * fall(other);
+  /**
+   * Height of the FINISHED crown at a group-local x — core profile plus the
+   * pillow that sits on top of it. Trim hung at the old `h * hFactor(t)` was
+   * buried by the bulge, which is why the v2 review found no zip line on any
+   * of the 14: the zip rode 3mm under a surface the pillow had lifted ~4mm.
+   */
+  const hAtLocal = (x) => hCore * hFactor(tAt(uAt(x))) + puffAt(x);
+  /**
+   * Half-width of the finished side face at a group-local x and height y —
+   * the plan taper plus the pillow. Side trim used to sit at a flat `w/2+1.6`,
+   * which floats it clear of a rear cap the plan curve pinches to 0.66.
+   */
+  const zAtLocal = (x, y) => (wCore / 2) * wFactor(tAt(uAt(x)))
+    + puffAt(x, (y - hCore / 2) / (hCore / 2));
   const shapedBox = (() => {
-    const g = new RoundedBoxGeometry(len, h, w, 8, corner);
+    // A SUBDIVIDED box, rounded by hand, not RoundedBoxGeometry.
+    //
+    // This is why every pack in this slot came out as one straight wedge no
+    // matter what profile the builder asked for. RoundedBoxGeometry subdivides
+    // only its corner fillets: at the segment count we used, its 235mm-long top
+    // face held exactly TWO vertex columns, 211mm apart. Scaling y per vertex
+    // across a single quad can only ever produce a straight ramp between the
+    // ends, so a flat top with a chamfer behind it was not expressible — the
+    // taper was linear by construction. 44 length segments put a column every
+    // ~5mm, and 8 across the width give the underside channel below something
+    // to bite on (it also had two, one per bottom corner).
+    const g = new THREE.BoxGeometry(len, hCore, wCore, 44, 8, 8);
     const pos = g.attributes.position;
+    // Round the edges by projection: clamp into the inner box, then push back
+    // out by the corner radius. Vertices on a flat face are already at radius
+    // and do not move, so this keeps the panel flat and only fillets the edges.
+    const ex = Math.max(len / 2 - corner, 0), ey = Math.max(hCore / 2 - corner, 0), ez = Math.max(wCore / 2 - corner, 0);
     for (let i = 0; i < pos.count; i++) {
-      const t = Math.min(Math.max(pos.getX(i) / len + 0.5, 0), 1);
+      const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
+      const cx = Math.min(Math.max(x, -ex), ex), cy = Math.min(Math.max(y, -ey), ey), cz = Math.min(Math.max(z, -ez), ez);
+      const dx = x - cx, dy = y - cy, dz = z - cz;
+      const d = Math.hypot(dx, dy, dz);
+      if (d > 1e-6) pos.setXYZ(i, cx + (dx / d) * corner, cy + (dy / d) * corner, cz + (dz / d) * corner);
+    }
+    for (let i = 0; i < pos.count; i++) {
+      const t = tAt(Math.min(Math.max(pos.getX(i) / len + 0.5, 0), 1));
       // scale about the BASE, not the centre — scaling about the centre lifts
       // the underside as it lowers the crown, floating the bag off the tube
-      pos.setY(i, -h / 2 + (pos.getY(i) + h / 2) * hFactor(t));
+      pos.setY(i, -hCore / 2 + (pos.getY(i) + hCore / 2) * hFactor(t));
       pos.setZ(i, pos.getZ(i) * wFactor(t));
     }
     pos.needsUpdate = true;
@@ -83,40 +364,227 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
     // EVOC's and Lezyne's structured boxes, Cedaero's Tank Top, all of them
     // top tube bags. Those five would have lost their channel and sat on the
     // tube. Rigid means "does not pillow", never "does not fit the bike".
-    const nor = g.attributes.normal;
+    // Every vertex that lies inside the trough is lifted ONTO it, whichever way
+    // its normal happens to point. The old test (`normal.y < -0.6`) relieved the
+    // flat bottom face and nothing else, so the two end-cap fillets were left on
+    // the bag's base plane — which sits EMBED below the tube crown, making them
+    // the deepest points of the whole bag: 8.2mm inside the top tube against the
+    // 8mm the clearance audit allows for a contact face, at both ends, on every
+    // pack in the slot. A trough is where the tube goes; it does not stop at the
+    // last vertex whose normal points straight down.
     for (let i = 0; i < pos.count; i++) {
-      if (nor.getY(i) > -0.6) continue;
       const s = chanR * chanR - pos.getZ(i) ** 2;
-      if (s > 0) pos.setY(i, pos.getY(i) + Math.max(tubeY + Math.sqrt(s), 0));
+      if (s <= 0) continue;
+      const floorY = -hCore / 2 + Math.max(tubeY + Math.sqrt(s), 0);
+      if (pos.getY(i) < floorY) pos.setY(i, floorY);
     }
     pos.needsUpdate = true;
     g.computeVertexNormals();
     return g;
   })();
   const body = soft(shapedBox, main, {
-    amp: vr.range(1.7, 2.5), freq: vr.range(0.034, 0.046), seed: vr.seed % 937,
+    amp: noiseAmp, freq: noiseFreq, seed: vr.seed % 937,
     stiffness: stiff,
     bulge,
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.45,
   });
-  body.position.set(-len / 2 + 10, h / 2, 0);
+  // The core is hCore tall and its base is the bag's base, so the body sits at
+  // hCore/2, not h/2 — parking it at h/2 would lift the whole bag `puff` clear
+  // of the tube it is strapped to.
+  body.position.set(-len / 2 + 10, hCore / 2, 0);
   grp.add(body);
-  // the zip must ride the tapered crown, or it juts out past the thin end
-  const zip = tubeBetween(
-    v3(-len + 24, hAtLocal(-len + 24) - 3, 0),
-    v3(-2, hAtLocal(-2) - 3, 0), 2, 2, hardware(), 8);
-  grp.add(zip);
-  // side panel seams
-  for (const s of [1, -1]) {
-    const sm = seamStrip(main, len * 0.92, 2.4, 2.2);
-    sm.position.set(-len / 2 + 10, h * 0.34, s * (w / 2 + 1.6));
-    grp.add(sm);
-  }
   const wm = webbing();
   const hwm = hardware();
-  // velcro wraps that close around the tube; their upper arc hides inside the bag
-  for (const t of [0.14, 0.5, 0.86]) {
-    const px = 10 - len * t;
+  // ---- closure ----------------------------------------------------------
+  // `magnetic` is exactly the fold-over-lid family: Apidura's Racing packs,
+  // the Racing bolt-on, the Canyon collab and the Aero modules. Their records
+  // spell it out — "magnetic flip-top lid ... There is NO zip on this pack" —
+  // and we were drawing a zip along the crown of every one of them.
+  const magnetic = p?.closure?.type === 'magnetic';
+  // +1.2 sits the trim ON the finished surface. It used to be -3 against a
+  // pre-pillow crown, i.e. ~4mm INSIDE the bag — which is why the v2 critics
+  // reported "no zip line" on all fourteen: it was there, and buried.
+  const crownAt = (t) => { const x = 10 - len * (1 - t); return v3(x, hAtLocal(x) + 1.2, 0); };
+  /** A welt: a raised binding in the shell colour, lifted so it catches light. */
+  const weltMat = main.clone();
+  weltMat.color.multiplyScalar(1.9);
+  const welt = (points, r) => {
+    const m = tubeAlong(points, r, weltMat, { segments: Math.max(24, points.length * 8), radialSegments: 6 });
+    m.userData.noCollide = true;
+    return m;
+  };
+  // The fold-over lid line, shared by the seam that draws it and the tint that
+  // shades the panel it bounds, so the two can never disagree. Read off
+  // racing-top-tube-pack dimensions-2 and apidura-x-canyon dimensions-1: one
+  // line leaves the rear-upper corner, runs forward and DOWN to about 0.62 of
+  // the length at a fifth of the height, then sweeps back up to the stem-end
+  // corner. `t` is the fraction along the geometry, `y` a fraction of h.
+  const lidLine = mirrored
+    ? [[0.06, 0.86], [0.38, 0.22], [0.72, 0.58], [0.9, tail]]
+    : [[0.1, tail], [0.28, 0.58], [0.62, 0.22], [0.94, 0.86]];
+  /** The lid boundary height (absolute, group mm) at a fraction u along the geometry. */
+  const lidYAt = (u) => {
+    if (u <= lidLine[0][0]) return h * lidLine[0][1];
+    for (let i = 0; i < lidLine.length - 1; i++) {
+      const [t0, y0] = lidLine[i], [t1, y1] = lidLine[i + 1];
+      if (u <= t1) return h * (y0 + (y1 - y0) * ((u - t0) / (t1 - t0)));
+    }
+    return h * lidLine[lidLine.length - 1][1];
+  };
+  if (magnetic && geom.form === 'slab') {
+    // The Aero modules close with "a fast-entry magnetic slit along the top
+    // ridge", and their records carry `zips: []`. A slit is a seam, not a zip.
+    grp.add(welt([0.08, 0.34, 0.66, 0.96].map(crownAt), 1.4));
+  } else if (magnetic) {
+    const sx = (t) => 10 - len * (1 - t);
+    const pts = lidLine.map(([t, y]) => v3(sx(t), h * y, 0));
+    for (const s of [1, -1]) {
+      grp.add(welt(pts.map((q) => v3(q.x, q.y, s * (zAtLocal(q.x, q.y) + 1.1))), 2));
+    }
+    // The magnet patch, a moulded diamond proud of the lid on
+    // racing-top-tube-pack studio-2 — given real thickness and seated into the
+    // shell rather than drawn as a sheet (v3 brief, "zero-thickness hardware").
+    const magnet = new THREE.Mesh(new RoundedBoxGeometry(Math.min(38, len * 0.2), 3.4, Math.min(26, w * 0.6), 2, 1.4), hwm);
+    const mx = 10 - len * (mirrored ? 0.82 : 0.18);
+    magnet.position.set(mx, hAtLocal(mx) - 0.6, 0);
+    magnet.userData.noCollide = true;
+    grp.add(magnet);
+  } else {
+    // the zip rides the crown in two runs — one up the chamfer, one along the
+    // flat top — because a single straight chord between the ends sinks into
+    // the body wherever the profile is not straight.
+    const stations = [0.06, 0.3, 0.6, 0.96].map(crownAt);
+    for (let i = 0; i < stations.length - 1; i++) {
+      grp.add(tubeBetween(stations[i], stations[i + 1], 2, 2, hwm, 8));
+    }
+    // The slider and its pull tab. Apidura hang a cord through a moulded
+    // hexagonal grab tab off the side of the zip — every one of these records
+    // describes it in `zips[].pull` and it is the detail that reads first in
+    // their own photographs.
+    const px = 10 - len * (mirrored ? 0.9 : 0.1);
+    const slider = new THREE.Mesh(new RoundedBoxGeometry(13, 4, 6, 2, 1.6), hwm);
+    slider.position.set(px, hAtLocal(px) + 1.2, 0);
+    const tabZ = zAtLocal(px, hAtLocal(px) - 8);
+    const grab = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.2, 2.2, 6), hwm);
+    grab.rotation.x = Math.PI / 2;
+    grab.position.set(px, hAtLocal(px) - 8, tabZ + 1.4);
+    for (const o of [slider, grab]) { o.userData.noCollide = true; grp.add(o); }
+  }
+  // ---- panels -----------------------------------------------------------
+  // Side panel seam, riding the finished surface (zAtLocal) rather than a flat
+  // w/2+1.6 that floats clear of a rear cap the plan curve pinches to 0.66.
+  {
+    const sx0 = -len / 2 + 10;
+    for (const s of [1, -1]) {
+      const sm = seamStrip(main, len * 0.9, 2.4, 2.2);
+      sm.position.set(sx0, h * 0.34, s * (zAtLocal(sx0, h * 0.34) + 1.1));
+      grp.add(sm);
+    }
+  }
+  // ---- two-tone ---------------------------------------------------------
+  //
+  // Apidura's Backcountry line is the only two-tone family in this slot: a
+  // mid-grey side panel inside black end caps, a black base band and a black
+  // harness wedge that sweeps up at the stem end (backcountry-top-tube-pack
+  // studio-1, and the record's own note "black end caps and a grey side
+  // panel"). Every other pack here is plain black.
+  //
+  // It is keyed off the LINE because nothing else survives the trip to the
+  // browser: apply-models.mjs carries only form/crossSection/taper/shoulder out
+  // of `geometry` and drops `notes` on purpose, and all 14 Apidura colourways
+  // in data/brands.json carry a single `hex`, so `accent` always arrives equal
+  // to `main` and the old `!accent.color.equals(main.color)` test never once
+  // fired. See the report for the data field this wants instead.
+  const twoTone = /backcountry/i.test(String(p?.line || ''));
+  const foldLid = magnetic && geom.form !== 'slab';
+  if (twoTone || foldLid) {
+    // How far to lift the shell colour for the second panel. Derived from the
+    // material rather than hard-coded, so it tracks the colourway: a black
+    // shell needs a big multiplier to reach mid-grey, a sand one needs almost
+    // none. Vertex colours multiply the base colour in linear space.
+    const c = main.color;
+    const lum = Math.max(0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b, 1e-4);
+    const lift = Math.min(Math.max(0.085 / lum, 1.35), 6.5);   // toward a mid-grey panel
+    const SEAM = 0.5;                                          // the stitch line at its edge
+    tint(shapedBox, (x, y, z, nx, ny, nz) => {
+      const u = Math.min(Math.max(x / len + 0.5, 0), 1);
+      const yG = y + hCore / 2;
+      if (twoTone) {
+        if (Math.abs(nz) < 0.55) return 1;                     // side faces only
+        const s = tAt(u);
+        const local = Math.max(hCore * hFactor(s), 1);
+        const v = yG / local;
+        // distance inside the grey panel, in units of the local height:
+        //   a base band and a top band, a black rear cap, and the harness
+        //   wedge that climbs from mid-height toward the stem end.
+        const d = Math.min(v - 0.17, 0.87 - v, (s - 0.15) * 0.9,
+          v - (0.20 + 0.45 * Math.max(0, s - 0.55) / 0.45));
+        return d > SEAM * 0.06 ? lift : d > -SEAM * 0.06 ? SEAM : 1;
+      }
+      // The fold-over lid: one big panel over the top and upper side. Shading
+      // it a touch lighter than the body is what makes it read as a separate
+      // piece of fabric in profile, which is what these packs actually are.
+      if (ny < -0.55) return 1;                                // never the underside
+      const d = (yG - lidYAt(u)) / Math.max(h, 1);
+      return d > 0.02 ? 1 + (lift - 1) * 0.16 : d > -0.02 ? SEAM + 0.2 : 1;
+    });
+  }
+  // ---- Aero swallowtail --------------------------------------------------
+  // "At the rear the two side faces continue past the body as splayed
+  // triangular fins (the transfer panel) that wrap the tube — a distinctive
+  // swallowtail that no other Apidura pack has." Without it the three Aero
+  // modules are a plain black slab and read as another Racing pack. The fins
+  // are `noCollide` for the same reason the strap wraps are: they are meant to
+  // reach past the bag and grip the tube.
+  if (geom.form === 'slab') {
+    const finLen = Math.min(len * 0.22, 52);
+    const finX = 10 - len + (mirrored ? len - finLen / 2 : finLen / 2);
+    const finH = Math.max(hCore * (mirrored ? hFactor(0) : hFactor(0)), 14);
+    for (const s of [1, -1]) {
+      // a real plate, 2.4mm thick, splayed out and down to sit on the tube —
+      // same fabric as the shell (studio-1/2/3 show one continuous panel), so
+      // what has to read is the shape, not a colour change
+      const fin = new THREE.Mesh(new RoundedBoxGeometry(finLen, finH + ttR, 2.4, 2, 1), main);
+      fin.position.set(finX, (finH + ttR) / 2 - ttR * 0.7, s * (wCore / 2 - 1));
+      fin.rotation.x = s * -14 * DEG;
+      fin.userData.noCollide = true;
+      grp.add(fin);
+    }
+  }
+  // ---- attachment -------------------------------------------------------
+  if (plan.bolted) {
+    // A bolt-on SKU has no straps under it at all. What is visible instead is a
+    // hard base rail: on apidura-x-canyon dimensions-1 the second view is that
+    // plate, 6.5 cm wide against a 4.5 cm body, with two holes 6.4 cm apart. It
+    // is wider than the bag on purpose, so the rail shows as a flange down each
+    // side where the strap wraps used to be — which is the only thing that
+    // tells this SKU from the strapped one at a glance.
+    const bolt = new THREE.Group();
+    const plate = new THREE.Mesh(
+      new RoundedBoxGeometry(len * 0.66, 5, Math.min(65, w + 20), 2, 2), hwm);
+    plate.position.set(10 - len * 0.5, tubeY + chanR - 1, 0);
+    bolt.add(plate);
+    for (const s of [1, -1]) {
+      // the bolts themselves run down the centreline into the frame's threaded
+      // mounts, so they are mostly behind the tube — they are here for the
+      // three-quarter view, not the silhouette
+      const head = new THREE.Mesh(new THREE.CylinderGeometry(4.6, 4.6, 9, 12), hwm);
+      head.position.set(10 - len * 0.5 + (s * plan.boltSpan) / 2, tubeY + chanR - 5, 0);
+      bolt.add(head);
+    }
+    // mounting hardware is meant to touch the tube, exactly as the strap wraps
+    // below are — the clearance audit would otherwise read the bolt heads
+    // seating in the frame's threaded mounts as penetration
+    bolt.traverse((o) => { o.userData.noCollide = true; });
+    grp.add(bolt);
+  }
+  // Velcro/cam wraps under the tube, as many as the record's prose names: two
+  // on the short packs, three on the two long blades, one on the rear pack.
+  const wrapAt = plan.tubeStraps === 1 ? [0.5]
+    : plan.tubeStraps === 2 ? [0.2, 0.74]
+      : Array.from({ length: plan.tubeStraps }, (_, i) => 0.16 + (0.66 * i) / (plan.tubeStraps - 1));
+  for (const t of wrapAt) {
+    const px = 10 - len * (rear ? 1 - t : t);
     const wrap = new THREE.Group();
     const band = new THREE.Mesh(new THREE.TorusGeometry(ttR + 3, 1.9, 6, 28), wm);
     band.scale.z = 6;
@@ -129,32 +597,59 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
     wrap.traverse((o) => { o.userData.noCollide = true; });
     grp.add(wrap);
   }
-  // front anchor strap around the head tube — repositioned after collision
-  // resolution so it keeps reaching the tube if the bag gets nudged back
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(28, 2.1, 6, 28), wm);
-  ring.scale.z = 4;
-  ring.userData.noCollide = true;
-  grp.add(ring);
-  const tongue = new THREE.Mesh(new THREE.BoxGeometry(1, 4.5, 22).translate(0.5, 0, 0), wm);
-  tongue.userData.noCollide = true;
-  grp.add(tongue);
-  const target = P.headTop.clone().addScaledVector(hd, 34);
-  grp.userData.reseat = (toLocal, toLocalDir) => {
-    const lp = toLocal(target);
-    ring.position.copy(lp);
-    ring.quaternion.setFromUnitVectors(v3(0, 0, 1), toLocalDir(hd).normalize());
-    const from = v3(6, h * 0.12, 0);
-    const d = lp.clone().sub(from);
-    tongue.position.copy(from);
-    tongue.rotation.z = Math.atan2(d.y, d.x);
-    tongue.scale.x = Math.max(d.length() - 4, 2);
-  };
-  patch(grp, brand, -len / 2, h * 0.55, w / 2 + 1.6, Math.min(70, len * 0.6), 0);
-  patch(grp, brand, -len / 2, h * 0.55, -(w / 2 + 1.6), Math.min(70, len * 0.6), Math.PI);
+  // Anchor strap round the steerer (front packs) or round the seatpost (the
+  // rear pack, whose record says two of them). Repositioned after collision
+  // resolution so it keeps reaching the tube if the bag gets nudged back.
+  // Aero modules and the Canyon collab name neither, and now get neither.
+  const anchorTube = plan.post ? sd : hd;
+  const target = plan.post
+    ? P.seatTop.clone().addScaledVector(sd, 34)
+    : P.headTop.clone().addScaledVector(hd, 34);
+  const rings = [];
+  for (let i = 0; i < (plan.post || (plan.steerer ? 1 : 0)); i++) {
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(28, 2.1, 6, 28), wm);
+    ring.scale.z = 4;
+    ring.userData.noCollide = true;
+    const tongue = new THREE.Mesh(new THREE.BoxGeometry(1, 4.5, 22).translate(0.5, 0, 0), wm);
+    tongue.userData.noCollide = true;
+    grp.add(ring, tongue);
+    rings.push({ ring, tongue, off: (i - ((plan.post || 1) - 1) / 2) * 26 });
+  }
+  if (rings.length) {
+    grp.userData.reseat = (toLocal, toLocalDir) => {
+      const dir = toLocalDir(anchorTube).normalize();
+      for (const r of rings) {
+        const lp = toLocal(target).addScaledVector(dir, r.off);
+        r.ring.position.copy(lp);
+        r.ring.quaternion.setFromUnitVectors(v3(0, 0, 1), dir);
+        const from = v3(rear ? 10 - len : 6, h * 0.12, 0);
+        const d = lp.clone().sub(from);
+        r.tongue.position.copy(from);
+        r.tongue.rotation.z = Math.atan2(d.y, d.x);
+        r.tongue.scale.x = Math.max(d.length() - 4, 2);
+      }
+    };
+  }
+  // The brand mark rides the side panel and has to stay under the profile: at
+  // 0.65 of the length back it used to sit at a flat h*0.55, which is off the
+  // top of a long blade whose crown is only half that far up back there.
+  const px = 10 - len * (mirrored ? 0.35 : 0.65);
+  const py = Math.max(Math.min(h * 0.55, hAtLocal(px) - 14), h * 0.2);
+  const pz = zAtLocal(px, py) + 1.2;   // on the finished side face, not at w/2
+  patch(grp, brand, px, py, pz, Math.min(70, len * 0.6), 0);
+  patch(grp, brand, px, py, -pz, Math.min(70, len * 0.6), Math.PI);
   grp.rotation.z = ang;
-  const originX = P.headTop.x - 38;
+  // Front packs butt the steerer 38mm behind headTop; a rear pack butts the
+  // seat tube with its rear face, so its +x (front) end lands a body-length
+  // ahead of it. The rear anchor exists but buildToptubeRear was still deriving
+  // its x from headTop, which put the Rear TT Sack up by the stem.
+  const originX = rear ? ttSeat.x + 20 + len - 10 : P.headTop.x - 38;
   const crownY = ttHead.y + (originX - ttHead.x) * slope + ttR;
-  grp.position.set(originX - anchor.x, crownY - EMBED - anchor.y, 0);
+  // `hgt: -y` in the record means the bag hangs UNDER the tube (Andrew The
+  // Maker's Rear TT Sack); `y`, which is what Apidura's Rear pack says, means
+  // it stands on the crown like every other pack in the slot.
+  const below = axes.hgt === '-y' ? h + 26 : 0;
+  grp.position.set(originX - anchor.x, crownY - EMBED - anchor.y - below, 0);
   grp.userData.bodyLen = len;
   return shadowify(grp);
 }

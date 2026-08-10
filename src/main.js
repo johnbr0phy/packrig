@@ -22,6 +22,10 @@ import { initSheets } from './ui/sheet.js';
 
 const params = new URLSearchParams(location.search);
 const SHOT_MODE = params.has('shot');
+// `?review=1` embeds the scene in the eval harness: no app chrome, but live
+// orbit controls and a postMessage API for swapping the bag and hiding the
+// bicycle. See src/review.js.
+const REVIEW_MODE = params.has('review');
 
 const canvas = document.getElementById('scene');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: SHOT_MODE });
@@ -177,7 +181,24 @@ if (focusSlot) {
     const pull = focusSlot.startsWith('framebag') ? 2.1 : 1;
     const wp = new THREE.Vector3();
     a.getWorldPosition(wp);
-    camera.position.set(wp.x + 0.45 * pull, wp.y + 0.18 * pull, wp.z + 0.85 * pull);
+    // This block runs AFTER applyCam() and used to overwrite camera.position
+    // unconditionally, which silently discarded `?cam=` entirely. Because
+    // bagshot always passes `focus=<slot>`, every "angle" it rendered was the
+    // same three-quarter shot: side, tq, rear and front differed by ~5% of
+    // pixels, i.e. only by the bag changing shape. Three rounds of critics
+    // believed they were judging four views of each bag and were judging one.
+    //
+    // So honour `cam` here by orbiting the focus position around the anchor.
+    // The radius and height are the old vector's, so `tq` is bit-for-bit what
+    // this always produced and the other three are genuinely new viewpoints.
+    const R = Math.hypot(0.45, 0.85);          // 0.962, the original stand-off
+    const AZ = { side: 0, tq: Math.atan2(0.45, 0.85), front: Math.PI / 2, rear: -Math.PI / 2 };
+    const th = AZ[params.get('cam')] ?? AZ.tq;
+    camera.position.set(
+      wp.x + Math.sin(th) * R * pull,
+      wp.y + 0.18 * pull,
+      wp.z + Math.cos(th) * R * pull,
+    );
     controls.target.copy(wp);
     controls.update();
   } else {
@@ -229,7 +250,7 @@ const DESKTOP_LAYOUT = window.matchMedia('(min-width: 901px) and (pointer: fine)
  */
 const _fitBox = new THREE.Box3();
 function frameBike() {
-  if (SHOT_MODE) return;
+  if (SHOT_MODE || REVIEW_MODE) return;   // review mode owns its own framing
   applyViewOffset(camera);
   _fitBox.setFromObject(bike.group);
   if (!_fitBox.isEmpty()) fitToBox(camera, controls, _fitBox);
@@ -240,7 +261,11 @@ function frameBike() {
   app.surfaces?.sync();
 }
 
-if (!SHOT_MODE) {
+if (REVIEW_MODE) {
+  document.getElementById('ui-root').style.display = 'none';
+  const { initReview } = await import('./review.js');
+  app.review = initReview(app, { SLOTS, applyCam });
+} else if (!SHOT_MODE) {
   app.ui = initUI(app);
   // DESIGN-SYSTEM §12 steps 1-2, after initUI because both attach to surfaces
   // that initUI creates. Order matters: the wells must exist before scrim.js
