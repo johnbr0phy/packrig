@@ -150,6 +150,21 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   const body = el('div', 'aero-body');
   root.append(body);
 
+  // ---- 0. the grade, up top ----------------------------------------------
+  // This is the headline: every other figure here moves when you change speed,
+  // and the letter does not — `grade()` normalises to a reference speed, so it
+  // describes the RIG. That makes it the one line worth reading first.
+  const gradeSec = el('section', 'aero-sec aero-grade');
+  const gradeBadge = el('div', 'grade-badge');
+  const gradeLetter = elt('span', 'grade-letter', '—');
+  gradeBadge.append(gradeLetter);
+  const gradeCopy = el('div', 'grade-copy');
+  const gradeName = elt('div', 'grade-name', '');
+  const gradeBlurb = elt('div', 'grade-blurb', '');
+  gradeCopy.append(gradeName, gradeBlurb);
+  gradeSec.append(gradeBadge, gradeCopy);
+  body.append(gradeSec);
+
   // ---- 1. CdA headline -------------------------------------------------
   const cdaSec = el('section', 'aero-sec aero-cda');
   const cdaRow = el('div', 'cda-row');
@@ -361,17 +376,6 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     }
   }
 
-  // ---- 5. grade -------------------------------------------------------
-  const gradeSec = el('section', 'aero-sec aero-grade');
-  const gradeBadge = el('div', 'grade-badge');
-  const gradeLetter = elt('span', 'grade-letter', '—');
-  gradeBadge.append(gradeLetter);
-  const gradeCopy = el('div', 'grade-copy');
-  const gradeName = elt('div', 'grade-name', '');
-  const gradeBlurb = elt('div', 'grade-blurb', '');
-  gradeCopy.append(gradeName, gradeBlurb);
-  gradeSec.append(gradeBadge, gradeCopy);
-  body.append(gradeSec);
 
   // ---- 6. yaw -----------------------------------------------------------
   const yawSec = el('section', 'aero-sec aero-yaw');
