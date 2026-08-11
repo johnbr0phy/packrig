@@ -161,6 +161,30 @@ export function createRigStore(app, auth) {
       });
     },
 
+    /**
+     * Write a rig we already hold, rather than whatever is on the bike.
+     *
+     * `save()` captures the live bike, which is right for saving and wrong for
+     * putting one back: undoing a delete has to restore the rig that was
+     * deleted, not the one you happen to be looking at.
+     */
+    async saveRig(name, rig) {
+      const now = new Date().toISOString();
+      if (!remote()) {
+        const rows = readLocal();
+        const r = { id: uid(), name, rig, updated_at: now };
+        rows.push(r);
+        if (!writeLocal(rows)) throw new Error('This browser will not let the app store anything — private mode?');
+        return { ...r, local: true };
+      }
+      return guarded('restore that rig', async () => {
+        const ref = await addDoc(rigs(), {
+          uid: me(), name, rig, updated_at: now, created_at: serverTimestamp(), published: false,
+        });
+        return { id: ref.id, name, rig, updated_at: now, local: false };
+      });
+    },
+
     async update(id, { name } = {}) {
       const rig = captureRig(app, { name });
       const now = new Date().toISOString();

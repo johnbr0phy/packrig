@@ -591,6 +591,11 @@
      totals had taken theirs — which on a 390px screen was nothing, so a rig
      with six bags in it rendered as "BAGS ON BIKE (6)" over empty space. */
   #ui-root .panel { overflow-y: auto; overscroll-behavior: contain; }
+  /* `.rignav` had no flex basis, so in a scrolling flex column it shrank to
+     nothing and its bar drew on top of the section beneath it — "Untitled rig"
+     printed straight through "BAGS ON BIKE". Everything in this column is
+     content-sized; the panel scrolls, not the children. */
+  #ui-root .rignav,
   #ui-root .nav-sec,
   #ui-root .panel-foot { flex: 0 0 auto; min-height: 0; }
   #ui-root .bag-list { overflow: visible; max-height: none; }
@@ -963,3 +968,18 @@ html, body, #ui-root { touch-action: manipulation; }
   .rn-row { min-height: 64px; }
   .rn-stack img { width: 38px; height: 38px; }
 }
+
+/* The row and its delete control. The control stays out of the way until the
+   row is hovered or focused — but it is always in the DOM and always reachable
+   by keyboard, because "hidden until hover" is not a control on a touch screen.
+   On touch it is simply always visible. */
+.rn-item { position: relative; display: flex; align-items: center; }
+.rn-item .rn-row { flex: 1 1 auto; min-width: 0; padding-right: 34px; }
+.rn-del {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  width: 28px; height: 28px; display: grid; place-items: center;
+  border: none; border-radius: 6px; background: none; cursor: pointer;
+  opacity: 0; transition: opacity .12s;
+}
+.rn-item:hover .rn-del, .rn-del:focus-visible { opacity: 1; }
+@media (pointer: coarse) { .rn-del { opacity: 1; width: 34px; height: 34px; } }

@@ -1,0 +1,31 @@
+/** Deleting a saved rig, and undoing it. */
+import puppeteer from 'puppeteer-core';
+const [,,URL,W='1440',H='900'] = process.argv;
+const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--hide-scrollbars','--enable-unsafe-swiftshader']});
+const p=await b.newPage();
+const errs=[]; p.on('pageerror',e=>errs.push('PAGEERROR '+e.message));
+await p.setViewport({width:+W,height:+H});
+await p.goto(URL,{waitUntil:'domcontentloaded',timeout:60000});
+await p.waitForFunction('window.__READY_DONE === true',{timeout:60000}).catch(()=>{});
+const w=(ms=800)=>new Promise(r=>setTimeout(r,ms)); await w(1200);
+const fail=[]; const ok=(c,m)=>{console.log((c?'  ok   ':'  FAIL ')+m); if(!c)fail.push(m)};
+const click=async s=>{const r=await p.evaluate(x=>{const n=document.querySelector(x);if(!n)return false;n.click();return true},s);await w(900);return r};
+const rows=()=>p.evaluate(()=>document.querySelectorAll('.rn-row').length);
+
+await p.evaluate(()=>localStorage.removeItem('packrig_rigs'));
+await click('.home-btn.is-primary');
+await click('.btn.quiet'); await click('.save-btn');
+await click('.rn-back');
+ok(await rows()===1, 'one saved rig to work with');
+ok(await p.evaluate(()=>!!document.querySelector('.rn-del')), 'each row has a delete control');
+await click('.rn-del');
+ok(await rows()===0, 'deleting removes it from the list');
+ok(await p.evaluate(()=>/Deleted/.test(document.querySelector('.toast')?.textContent||'')), 'a toast says what went');
+ok(await p.evaluate(()=>/Undo/.test(document.querySelector('.toast-act')?.textContent||'')), 'and offers Undo, not a confirm dialogue');
+await click('.toast-act');
+ok(await rows()===1, 'Undo puts the rig back');
+ok(await p.evaluate(()=>{try{return JSON.parse(localStorage.getItem('packrig_rigs')||'[]').length===1}catch{return false}}), 'and it is really back in storage');
+ok(errs.length===0, `no app console errors ${errs.slice(0,2).join(' | ')}`);
+await b.close();
+console.log(fail.length?`\nFAILED ${fail.length}`:'\nALL PASS');
+process.exit(fail.length?1:0);

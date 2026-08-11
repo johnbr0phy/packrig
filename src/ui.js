@@ -309,6 +309,7 @@ export function initUI(app) {
     onNew: () => { app.clearAll?.(); savedSnapshot = null; sync(); },
     onRename: (id, name) => { if (id) app.rigs?.rename?.(id, name).catch(() => {}); },
     onLevel: (lvl) => { panel.setAttribute('data-level', lvl); paintSave(); },
+    notify: (t, u, a) => notify(t, u, a),
   });
 
   // Bags first, bike second. The rig is what you came to build; frame colour is

@@ -120,6 +120,8 @@ copyFileSync(join(root, 'src/rigs.css'), join(docs, 'rigs.css'));
 // link BOTH — the panel renders unstyled if this is copied and not linked, or
 // missing entirely if neither, and nothing in the bundle would complain.
 copyFileSync(join(root, 'src/aero/aero.css'), join(docs, 'aero.css'));
+// Last in the cascade, so it re-skins everything the others set.
+copyFileSync(join(root, 'src/ui/theme.css'), join(docs, 'theme.css'));
 
 writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <html lang="en">
@@ -135,6 +137,7 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <link rel="stylesheet" href="rigs.css" />
 <link rel="stylesheet" href="sheet.css" />
 <link rel="stylesheet" href="aero.css" />
+<link rel="stylesheet" href="theme.css" />
 <style>html,body{height:100%;margin:0;background:#121212;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
 </head>
 <body>

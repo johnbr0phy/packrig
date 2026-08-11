@@ -61,7 +61,7 @@ function when(iso) {
   return d.toLocaleDateString();
 }
 
-export function initRigNav(app, { onOpen, onNew, onRename, onLevel } = {}) {
+export function initRigNav(app, { onOpen, onNew, onRename, onLevel, notify } = {}) {
   const root = el('div', 'rignav');
 
   // ---- the bar that says which level you are on ----------------------------
@@ -200,7 +200,35 @@ export function initRigNav(app, { onOpen, onNew, onRename, onLevel } = {}) {
 
     card.append(stack, txt);
     card.onclick = () => open(r);
-    return card;
+
+    /*
+     * Delete. There was no way to remove a rig at all, so a stray save — a
+     * mistyped name, a bike you were only trying out — stayed in the list for
+     * good. It offers an undo rather than a confirm: one tap to remove, one tap
+     * to change your mind, and no dialogue in between asking whether you meant
+     * the thing you just pressed.
+     */
+    const del = el('button', 'rn-del');
+    del.type = 'button';
+    del.title = `Delete “${r.name || 'Untitled rig'}”`;
+    del.setAttribute('aria-label', del.title);
+    del.innerHTML = '<svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true">'
+      + '<path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.6" '
+      + 'stroke-linecap="round"/></svg>';
+    del.onclick = async (e) => {
+      e.stopPropagation();
+      const undo = { name: r.name, rig: r.rig };
+      try { await app.rigs?.remove?.(r.id); } catch (err) { notify?.(err?.message || 'Could not delete that rig'); return; }
+      if (current?.id === r.id) current = null;
+      await showList();
+      notify?.(`Deleted “${undo.name || 'Untitled rig'}”`, null, {
+        label: 'Undo',
+        run: async () => { await app.rigs?.saveRig?.(undo.name, undo.rig); showList(); },
+      });
+    };
+    const wrap = el('div', 'rn-item');
+    wrap.append(card, del);
+    return wrap;
   }
 
   /** The first photograph of a saved bag, matched back through the catalogue. */
