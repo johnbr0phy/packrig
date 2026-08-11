@@ -284,7 +284,23 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   // of what "floats among the spokes" was — while the top stopped 100mm short
   // of the crown. A cargo cage pack runs from about mid-blade up to just under
   // the crown, which is what a base at the anchor gives on both products.
-  const baseY = 0;
+  // WHERE ON THE LEG. Measured, because "base at the anchor" put the bag's TOP
+  // level with the crown and the owner hit it with his hands:
+  //   front axle  y =  76      fork crown y = 417      leg length = 341
+  //   forkL/forkR y = 224      (148 above the axle, 43% up the leg)
+  //   1.5L pack height (`along`) 190  ->  base 224, top 414, 3mm under the crown
+  //
+  // A cargo cage bolts to three-pack bosses low on the blade and the pack runs
+  // UP from there, finishing well short of the crown so the rider's hands and
+  // the bar ends stay clear. So: base at a fifth of the leg above the axle, and
+  // if the pack is tall enough to still reach the crown, drop it until its top
+  // sits at 88% of the leg — never below a fifth, which would foul the dropout
+  // and the hub flanges.
+  const legLen = Math.max(crown.y - ctx.points.frontAxle.y, 1);
+  const baseLo = ctx.points.frontAxle.y + legLen * 0.20;
+  const topMax = ctx.points.frontAxle.y + legLen * 0.88;
+  const baseWorldY = Math.min(baseLo, Math.max(topMax - along, baseLo * 0.9));
+  const baseY = baseWorldY - anchor.y;
 
   const wm = webbing();
   const hwm = hardware();

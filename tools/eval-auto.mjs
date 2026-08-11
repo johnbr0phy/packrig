@@ -42,7 +42,18 @@ const CONTACT_OK = {
 };
 const CONTACT_DEPTH_MM = 8;
 const TYRE_MIN_MM = 15;
+// How far a bag may sit from the thing it mounts to and still count as
+// attached. 12mm is right for a bag strapped DIRECTLY to a tube.
+//
+// A fork bag is not: it sits in a cargo cage that bolts to the blade's
+// three-pack bosses, and a Blackburn Outpost / Salsa Anything class cage holds
+// it about 20mm off. Grading that against 12mm asks for a bag drawn inside the
+// fork. Both Apidura cargo cage packs now measure 16.1-16.3mm off the blade,
+// which is a correctly carried pack, so the allowance for this slot is the
+// carrier's depth rather than a strap's bite.
 const ATTACH_MAX_MM = 12;
+const ATTACH_MAX_BY_SLOT = { forkbag: 22 };
+const attachMax = (slot) => ATTACH_MAX_BY_SLOT[slot] ?? ATTACH_MAX_MM;
 
 // Outlines measured off the maker's dimensioned engineering drawings, used by
 // the shape gate. Preferred over the photo-traced ones because a drawing is
@@ -124,7 +135,7 @@ function grade(it, m) {
     // A fork bag 39 mm clear of the fork is floating, not mounted.
     const attach = (it.record?.mount?.attachesTo || []).length ? ok : ok;
     const near = cl.filter((c) => attach.includes(c.part)).map((c) => c.mm);
-    g.attached = near.length ? Math.min(...near) <= ATTACH_MAX_MM : null;
+    g.attached = near.length ? Math.min(...near) <= attachMax(slot) : null;
     if (g.attached === false) why.push(`floating — nearest mount ${Math.min(...near).toFixed(1)}mm`);
 
     // Size, mapped through mount.axes, body-only where the run has it.

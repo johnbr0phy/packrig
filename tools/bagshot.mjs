@@ -148,7 +148,15 @@ function measureInPage(uiSlot) {
     ['headTop', P.headTop], ['headBottom', P.headBottom],
     ['saddle', P.saddlePos], ['bar', P.barCenter],
   ];
-  const nameFor = (a, b) => {
+  // A part may name ITSELF via userData.part, and that always wins. The
+  // landmark guess below cannot name anything whose bounding-box centre is more
+  // than 130mm from a frame landmark, which is every curved tube: the fork
+  // blade's centre is ~190mm from the front axle, so it reported as "unnamed
+  // part" and no CONTACT_OK rule could ever apply to it. Meanwhile a wheel spoke
+  // WAS being named 'fork leg', so the fork bag gate was grading the distance to
+  // a spoke. See src/bike.js where the blades set userData.part.
+  const nameFor = (a, b, self = null) => {
+    if (self) return self;
     const near = (v) => {
       let best = null, bd = 1e9;
       for (const [n, m] of marks) {
@@ -220,7 +228,7 @@ function measureInPage(uiSlot) {
       const b = new THREE.Vector3(0, -par.height / 2, 0).applyMatrix4(M);
       const r = Math.max(par.radiusTop, par.radiusBottom) * k;
       if (r > 60) return;                            // rims / big discs, not tubes
-      colliders.push({ kind: 'seg', name: nameFor(a, b), a: a.toArray(), b: b.toArray(), r });
+      colliders.push({ kind: 'seg', name: nameFor(a, b, o.userData?.part), a: a.toArray(), b: b.toArray(), r });
       return;
     }
     // Anything else — curved fork blades (TubeGeometry), the saddle, the bars —
@@ -240,7 +248,7 @@ function measureInPage(uiSlot) {
       v.fromBufferAttribute(pos, i).applyMatrix4(M);
       cloud.push(v.x, v.y, v.z);
     }
-    colliders.push({ kind: 'cloud', name: nameFor(c, c), pts: cloud });
+    colliders.push({ kind: 'cloud', name: nameFor(c, c, o.userData?.part), pts: cloud });
   });
 
   // Bag surface points, in frame-local mm, decimated so this stays fast.

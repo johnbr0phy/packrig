@@ -226,8 +226,10 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   const sd = v3(P.sd.x, P.sd.y, 0);
   const ttSeat = P.seatTop.clone().addScaledVector(sd, -12);
   const ttHead = P.headTop.clone().addScaledVector(hd, 30);
+  // The top tube's TRUE angle: bike.js:108-110 draws the tube mesh between
+  // exactly these two points, so this is the frame's own line, not a guess at
+  // it. It measures 7.15 degrees nose-up on the stock geometry.
   const ang = Math.atan2(ttHead.y - ttSeat.y, ttHead.x - ttSeat.x);
-  const slope = (ttHead.y - ttSeat.y) / (ttHead.x - ttSeat.x);
   // Both top-tube anchors are built as <tube end> + (dx, ttR, 0) — bike.js:906
   // for the stem end, :909 for the seat-tube end — so the tube radius reads
   // back as the anchor's height above the tube end it was built from. Measuring
@@ -741,12 +743,89 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   // ahead of it. The rear anchor exists but buildToptubeRear was still deriving
   // its x from headTop, which put the Rear TT Sack up by the stem.
   const originX = rear ? ttSeat.x + 20 + len - 10 : P.headTop.x - 38;
-  const crownY = ttHead.y + (originX - ttHead.x) * slope + ttR;
-  // `hgt: -y` in the record means the bag hangs UNDER the tube (Andrew The
-  // Maker's Rear TT Sack); `y`, which is what Apidura's Rear pack says, means
-  // it stands on the crown like every other pack in the slot.
-  const below = axes.hgt === '-y' ? h + 26 : 0;
-  grp.position.set(originX - anchor.x, crownY - EMBED - anchor.y - below, 0);
+  // `hgt: -y` in the record means the bag hangs UNDER the tube (Blackburn's two
+  // Outpost/Local packs, Swift's Moxie, Andrew The Maker's, Nuke Sunrise's two
+  // Titans — six in the slot); `y`, which is what Apidura's Rear pack says,
+  // means it stands on the crown like the other 95.
+  const below = axes.hgt === '-y';
+
+  // ---- STAND THE PACK ON THE TUBE ---------------------------------------
+  //
+  // ONE SPACE: frame-local millimetres, the space `ctx.points` lives in and the
+  // space `grp.position` is expressed in (the anchor is a plain Object3D under
+  // the frame group, unrotated and unscaled). `ttSeat`→`ttHead` is not a
+  // reconstruction of the top tube — it is the very pair of points bike.js:108
+  // builds the tube mesh from, so `ang` below is the tube's true angle and this
+  // line is its true axis.
+  //
+  // What was wrong: the previous version took the assembled group's bounding
+  // box in a WORLD-PARALLEL frame and stood its lowest point EMBED under the
+  // anchor. The tube climbs toward the stem, so on a pack rotated to match it
+  // the lowest point in world y is the rear-bottom CORNER, sitting about
+  // `len * sin(ang)` below the group origin — 53mm on the 440mm Racing Long
+  // against 20mm on a 170mm module. Lifting the group by that amount lifts the
+  // whole base clear of a tube that has itself dropped by the same amount, so
+  // the daylight under the pack grew with its length: measured 16.5mm on the
+  // Racing 0.5L against 45.3mm on the Racing Long 2L.
+  //
+  // The distance that matters is PERPENDICULAR to the tube, and in the group's
+  // own frame that is simply local y — the group is rotated by exactly `ang`,
+  // so projecting a rotated local point onto the tube's normal returns its
+  // local y unchanged. Hence one measurement (lowest local y over the pack) and
+  // one line of trigonometry, and every pack in the slot lands the same
+  // perpendicular distance off the tube whatever its length or where along the
+  // tube it sits.
+  let loY = Infinity, hiY = -Infinity;
+  {
+    const v = new THREE.Vector3();
+    grp.updateMatrixWorld(true);
+    const inv = new THREE.Matrix4().copy(grp.matrixWorld).invert();
+    grp.traverse((o) => {
+      if (!o.isMesh || !o.geometry?.attributes?.position) return;
+      // straps, bolt heads, fins and applied trim are meant to reach past the
+      // shell onto the tube; the pack stands on its BODY, as the audit measures
+      if (o.userData?.noCollide) return;
+      const M = new THREE.Matrix4().multiplyMatrices(inv, o.matrixWorld);
+      const pos = o.geometry.attributes.position;
+      const step = Math.max(1, Math.floor(pos.count / 400));
+      for (let i = 0; i < pos.count; i += step) {
+        const y = v.fromBufferAttribute(pos, i).applyMatrix4(M).y;
+        if (y < loY) loY = y;
+        if (y > hiY) hiY = y;
+      }
+    });
+    // Measuring rather than trusting `h` is deliberate: this slot's body, lid,
+    // chamfer and bolt plate have each changed shape across several rounds, and
+    // any constant derived from the published height goes stale the next time
+    // one of them moves. The fallback is the nominal base/crown pair.
+    if (!Number.isFinite(loY)) { loY = 0; hiY = h; }
+  }
+  // Perpendicular distance from the tube AXIS that the pack's contact face is
+  // to end up at.
+  //
+  // Standing on the crown, that face is the base PLANE, and EMBED sinks it
+  // 10mm below the crown so no daylight shows under the pack — which costs
+  // nothing in clearance, because the trough carved above it is what actually
+  // meets the tube (it is `chanR` = ttR + 2 from the axis, so the shell rides
+  // 2mm clear and the audit measures -0.6 to -4mm of soft-goods contact).
+  //
+  // A pack that HANGS has no trough: its contact face is the flat top of the
+  // body, and whatever it is set below the tube's underside is penetration,
+  // one for one. Reusing EMBED there buried all six of them 10mm inside the
+  // tube — past the 8mm the audit allows — so a hanging pack beds in by the
+  // fabric's give and no more, which is nothing at all on a moulded shell.
+  const bed = 3 * deformScale(stiff);
+  const wantN = below ? -(ttR - bed) - hiY : (ttR - EMBED) - loY;
+  // Solve (anchor + grp.position − ttEnd) · n = wantN for grp.position.y, with
+  // n = (−sin ang, cos ang) the tube's own normal and grp.position.x already
+  // fixed by originX. `ttEnd` is the end of the tube this anchor was built
+  // from, so it is a point ON the axis whichever end of the bike we are at.
+  grp.position.set(
+    originX - anchor.x,
+    (wantN + Math.sin(ang) * (originX - ttEnd.x)) / Math.cos(ang) - (anchor.y - ttEnd.y),
+    0,
+  );
+
   grp.userData.bodyLen = len;
   return shadowify(grp);
 }
