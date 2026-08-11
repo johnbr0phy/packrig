@@ -48,6 +48,39 @@ const writeLocal = (rows) => {
   catch { return false; }
 };
 
+/**
+ * Firestore throws with a stable `code` and a message written for whoever set
+ * the project up, not for whoever is saving a bike — the missing-index one is a
+ * console URL three lines long, and it landed in the panel. So the code becomes
+ * a sentence and the original goes to the console for whoever is debugging.
+ *
+ * Same discipline as the `HUMAN` map in `auth.js`, for the same reason.
+ */
+const HUMAN = {
+  'permission-denied': 'That is not yours to change. Try signing out and back in.',
+  'unauthenticated': 'You are signed out. Sign in and try again.',
+  'unavailable': 'No connection to the rig store. Check your network and try again.',
+  'deadline-exceeded': 'The rig store took too long to answer. Try again.',
+  'resource-exhausted': 'The rig store is over quota. Try again later.',
+  // A composite index that nobody created. There is nothing the person looking
+  // at the screen can do about it, so they get a plain sentence and the setup
+  // detail — with its create-it link — goes to the console.
+  'failed-precondition': 'The rig store is not finished being set up. The details are in the browser console.',
+};
+
+/**
+ * Run a remote call, and never let a raw backend error reach the interface.
+ * `what` completes the fallback sentence: `Could not ${what}`.
+ */
+async function guarded(what, fn) {
+  try {
+    return await fn();
+  } catch (e) {
+    console.warn(`[packrig] could not ${what}:`, e?.code || '', e?.message || e);
+    throw new Error(HUMAN[e?.code] || `Could not ${what}. The details are in the browser console.`);
+  }
+}
+
 export function createRigStore(app, auth) {
   const cfg = backend();
   let db = null;
@@ -95,8 +128,18 @@ export function createRigStore(app, auth) {
           .sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''))
           .map((r) => ({ ...r, local: true }));
       }
-      const snap = await getDocs(query(rigs(), where('uid', '==', me()), orderBy('updated_at', 'desc')));
-      return snap.docs.map(row);
+      // Filter in Firestore, sort here. `where` + `orderBy` on different fields
+      // is a composite query, and Firestore refuses it until somebody creates
+      // the index by hand — so your own rigs would be an error message on a
+      // fresh project. One person's saved builds are a handful of documents,
+      // so sorting them in the browser costs nothing and removes a setup step.
+      // The gallery below genuinely needs its index; this does not.
+      return guarded('load your rigs', async () => {
+        const snap = await getDocs(query(rigs(), where('uid', '==', me())));
+        return snap.docs
+          .map(row)
+          .sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''));
+      });
     },
 
     /** Save the bike as it stands. */
@@ -110,10 +153,12 @@ export function createRigStore(app, auth) {
         if (!writeLocal(rows)) throw new Error('This browser will not let the app store anything — private mode?');
         return { ...r, local: true };
       }
-      const ref = await addDoc(rigs(), {
-        uid: me(), name, rig, updated_at: now, created_at: serverTimestamp(), published: false,
+      return guarded('save that rig', async () => {
+        const ref = await addDoc(rigs(), {
+          uid: me(), name, rig, updated_at: now, created_at: serverTimestamp(), published: false,
+        });
+        return { id: ref.id, name, rig, updated_at: now, local: false };
       });
-      return { id: ref.id, name, rig, updated_at: now, local: false };
     },
 
     async update(id, { name } = {}) {
@@ -127,12 +172,13 @@ export function createRigStore(app, auth) {
         writeLocal(rows);
         return { ...rows[i], local: true };
       }
-      const ref = doc(db, 'rigs', id);
-      const patch = { rig, updated_at: now };
-      if (name != null) patch.name = name;
-      await updateDoc(ref, patch);
-      const after = await getDoc(ref);
-      return row(after);
+      return guarded('update that rig', async () => {
+        const ref = doc(db, 'rigs', id);
+        const patch = { rig, updated_at: now };
+        if (name != null) patch.name = name;
+        await updateDoc(ref, patch);
+        return row(await getDoc(ref));
+      });
     },
 
     async rename(id, name) {
@@ -144,9 +190,11 @@ export function createRigStore(app, auth) {
         writeLocal(rows);
         return { ...rows[i], local: true };
       }
-      const ref = doc(db, 'rigs', id);
-      await updateDoc(ref, { name, updated_at: new Date().toISOString() });
-      return row(await getDoc(ref));
+      return guarded('rename that rig', async () => {
+        const ref = doc(db, 'rigs', id);
+        await updateDoc(ref, { name, updated_at: new Date().toISOString() });
+        return row(await getDoc(ref));
+      });
     },
 
     async remove(id) {
@@ -154,7 +202,7 @@ export function createRigStore(app, auth) {
         writeLocal(readLocal().filter((r) => r.id !== id));
         return;
       }
-      await deleteDoc(doc(db, 'rigs', id));
+      await guarded('delete that rig', () => deleteDoc(doc(db, 'rigs', id)));
     },
 
     /**
@@ -199,9 +247,11 @@ export function createRigStore(app, auth) {
         published_at: published ? new Date().toISOString() : null,
       };
       if (published) patch.author = String(author || '').trim().slice(0, 40) || 'Anonymous';
-      const ref = doc(db, 'rigs', id);
-      await updateDoc(ref, patch);
-      return row(await getDoc(ref));
+      return guarded(published ? 'publish that rig' : 'unpublish that rig', async () => {
+        const ref = doc(db, 'rigs', id);
+        await updateDoc(ref, patch);
+        return row(await getDoc(ref));
+      });
     },
 
     /**
