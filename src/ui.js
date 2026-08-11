@@ -3,6 +3,7 @@ import { initRigsUI } from './rigsui.js';
 import { captureRig, rigURL } from './rig.js';
 import { productsForSlot } from './catalog.js';
 import { PAINTS } from './bike.js';
+import { setSheetLift } from './mobile.js';
 import {
   buyLink, displayName, lineOf, litersOf, modelTitle, sizeEchoesName, sizeIsVolume,
   sizeOf, srcOf, stripLine, swatchStyle,
@@ -146,9 +147,32 @@ export function initUI(app) {
     panel.classList.toggle('collapsed', collapsed);
     chevron.setAttribute('aria-expanded', String(!collapsed));
     chevron.title = collapsed ? 'Show the kit list' : 'Collapse the kit list';
+    head.setAttribute('aria-expanded', String(!collapsed));
+    head.setAttribute('aria-label', collapsed ? 'Show your rig' : 'Hide your rig and see the bike');
+    /*
+     * Retune the phone camera to the sheet that is actually there.
+     *
+     * mobile.js lifts the bike by 0.22 of the viewport so an OPEN sheet does not
+     * bury it, and says in as many words that the number should be driven by
+     * `setSheetLift()` once the app tracks open/collapsed. It now does — and
+     * without this, closing the sheet to look at the bike left the bike pinned
+     * to the top third with an empty half-screen of ground beneath it, which is
+     * the opposite of what closing it was for.
+     */
+    if (PHONE.matches) {
+      setSheetLift(collapsed ? 0.05 : 0.22);
+      app.sheets?.resync?.();
+    }
   }
   setSheetCollapsed(false);
   head.onclick = () => { if (PHONE.matches) setSheetCollapsed(!collapsed); };
+  head.setAttribute('role', 'button');
+  head.setAttribute('tabindex', '0');
+  head.onkeydown = (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    e.preventDefault();
+    if (PHONE.matches) setSheetCollapsed(!collapsed);
+  };
   // back to a plain panel if the sheet layout stops applying
   PHONE.addEventListener?.('change', (e) => { if (!e.matches) setSheetCollapsed(false); });
 

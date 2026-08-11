@@ -843,3 +843,38 @@
   #ui-root .sheet-chevron { display: none; }
   #ui-root .peek-total { margin-left: auto; }
 }
+
+/* ==========================================================================
+   Two phone bugs reported from a real device.
+   ========================================================================== */
+
+@media (max-width: 560px) {
+  /* THE SHEET WOULD NOT CLOSE. Tapping the header has always toggled
+     `.collapsed`, and it was still firing — but `.panel.collapsed { max-height:
+     var(--peek-h) }` lives in ui.css at class specificity, and the one-column
+     rework set `#ui-root .panel { max-height: 62dvh }` with an id in front of
+     it. The class could never win, so the state changed and the sheet did not
+     move. Same weight, so it can. */
+  #ui-root .panel.collapsed { max-height: var(--peek-h); overflow: hidden; }
+  #ui-root .panel.collapsed .panel-head { background: none; }
+  :root { --peek-h: 58px; }
+
+  /* The header is the control, so it should read as one: a hairline under it
+     while collapsed, and the running total pulled in beside the handle. */
+  #ui-root .panel.collapsed .peek-total { font-size: 13px; color: rgba(255,255,255,.9); }
+}
+
+/* DOUBLE-TAP WAS ZOOMING THE PAGE AND LEAVING IT THERE. Once the browser has
+   zoomed a fixed-position layout there is no scroll that brings the top bar
+   back — you are stuck looking at the middle of the app until you pinch out,
+   which is not obvious and not discoverable.
+   `manipulation` keeps pinch and drops the double-tap gesture, which nothing
+   here wanted: every double-tappable thing in this UI is a button. */
+html, body, #ui-root { touch-action: manipulation; }
+/* MOBILE.md rule 6: the canvas owns its gestures. Anything the browser handles
+   here — double-tap zoom, pan, rubber-band — is a gesture stolen from the
+   camera. */
+#scene { touch-action: none; }
+/* Buttons and sheets: taps only, never a browser zoom. */
+.topbar button, .panel button, .sheet button, .home button, .gal button,
+.card, .bag-card, .mount-btn, .cat-chip, .cat-opt { touch-action: manipulation; }
