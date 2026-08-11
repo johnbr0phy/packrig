@@ -23,10 +23,15 @@ p.on('console', (m) => { if (m.type() !== 'error') return; const t = m.text();
 p.on('pageerror', (e) => errs.push('PAGEERROR ' + e.message));
 
 await p.setViewport({ width: W, height: H, deviceScaleFactor: 1, isMobile: MOBILE, hasTouch: MOBILE });
-await p.goto(URL, { waitUntil: 'networkidle0', timeout: 60000 });
+await p.goto(URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
 await p.waitForFunction('window.__READY_DONE === true', { timeout: 30000 }).catch(() => {});
 await new Promise((r) => setTimeout(r, 800));
 
+// The root menu is the landing level now; every one of these suites tests the
+// builder, so step through it the way a person would rather than reaching past
+// it with element.click().
+await p.evaluate(()=>document.querySelector('.home-btn.is-primary')?.click());
+await new Promise(r=>setTimeout(r,700));
 const fail = [];
 const ok = (cond, msg) => { console.log((cond ? '  ok   ' : '  FAIL ') + msg); if (!cond) fail.push(msg); };
 

@@ -6,9 +6,14 @@ const p=await b.newPage();
 const errs=[]; p.on('pageerror',e=>errs.push('PAGEERROR '+e.message));
 p.on('console',m=>{if(m.type()==='error'&&!/ERR_BLOCKED_BY_RESPONSE|net::ERR_/.test(m.text()))errs.push(m.text())});
 await p.setViewport({width:+W,height:+H,isMobile:MOB==='mobile',hasTouch:MOB==='mobile'});
-await p.goto(URL,{waitUntil:'networkidle0',timeout:60000});
+await p.goto(URL,{waitUntil:'domcontentloaded',timeout:60000});
 await p.waitForFunction('window.__READY_DONE === true',{timeout:30000}).catch(()=>{});
 const w=(ms=600)=>new Promise(r=>setTimeout(r,ms)); await w(900);
+// The root menu is the landing level now; every one of these suites tests the
+// builder, so step through it the way a person would rather than reaching past
+// it with element.click().
+await p.evaluate(()=>document.querySelector('.home-btn.is-primary')?.click());
+await new Promise(r=>setTimeout(r,700));
 const fail=[]; const ok=(c,m)=>{console.log((c?'  ok   ':'  FAIL ')+m); if(!c)fail.push(m)};
 const save=()=>p.evaluate(()=>{const b=document.querySelector('.save-btn');return{hidden:b.hidden,text:b.textContent.trim(),done:b.classList.contains('is-done')}});
 

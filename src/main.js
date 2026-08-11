@@ -159,12 +159,18 @@ if (app.auth.enabled) app.auth.hydrate();
 const shared = rigFromParams(params, catalog);
 const kitParam = params.get('kit');
 if (shared) {
+  // Somebody has been handed a specific bike to look at. Dropping them on the
+  // root menu instead would make them find it again, so ui.js reads this and
+  // skips the menu when it is set.
+  app.__cameWithRig = true;
   const { missing } = applyRig(app, shared, { clear: false });
   if (missing.length) console.warn('[packrig] shared link references bags no longer in the catalogue:', missing);
 } else if (kitParam === 'rand') {
+  app.__cameWithRig = true;      // the screenshot harness drives these
   const seed = parseInt(params.get('seed') || '42', 10);
   app.bags.randomKit(seed);
 } else if (kitParam === 'full') {
+  app.__cameWithRig = true;
   app.bags.fullKit();
 }
 

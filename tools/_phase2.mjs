@@ -10,9 +10,14 @@ const errs=[]; const imgBlocks=[];
 p.on('console',m=>{if(m.type()!=='error')return; const t=m.text();
   if(/ERR_BLOCKED_BY_RESPONSE|net::ERR_/.test(t)) imgBlocks.push(t); else errs.push(t)}); p.on('pageerror',e=>errs.push('PAGEERROR '+e.message));
 await p.setViewport({width:+W,height:+H,deviceScaleFactor:1,isMobile:MOB==='mobile',hasTouch:MOB==='mobile'});
-await p.goto(URL,{waitUntil:'networkidle0',timeout:60000});
+await p.goto(URL,{waitUntil:'domcontentloaded',timeout:60000});
 await p.waitForFunction('window.__READY_DONE === true',{timeout:30000}).catch(()=>{});
 await new Promise(r=>setTimeout(r,900));
+// The root menu is the landing level now; every one of these suites tests the
+// builder, so step through it the way a person would rather than reaching past
+// it with element.click().
+await p.evaluate(()=>document.querySelector('.home-btn.is-primary')?.click());
+await new Promise(r=>setTimeout(r,700));
 const fail=[]; const ok=(c,m)=>{console.log((c?'  ok   ':'  FAIL ')+m); if(!c)fail.push(m)};
 const wait=(ms=500)=>new Promise(r=>setTimeout(r,ms));
 

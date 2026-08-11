@@ -8,6 +8,8 @@ import {
   stripLine, swatchStyle,
 } from './ui/product.js';
 import { initBagSheet } from './ui/bagsheet.js';
+import { initHome } from './ui/home.js';
+import { initGallery } from './ui/gallery.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -78,6 +80,21 @@ export function initUI(app) {
     pos: app.camera?.position?.clone?.() || null,
     target: app.controls?.target?.clone?.() || null,
   };
+
+  // The two levels above the builder. Created after a microtask for the same
+  // reason `rigsUI` is: they read `app.rigs`, which main.js attaches around us.
+  queueMicrotask(() => {
+    app.gallery = initGallery(app, {
+      onAdopt: () => { /* the rig is already on the bike — just stay in the builder */ },
+    });
+    app.home = initHome(app, {
+      onCreate: () => { app.clearAll?.(); sync(); },
+      onGallery: () => app.gallery?.open(),
+    });
+    // The root level is where you arrive, unless a shared link means you have
+    // already been handed a specific rig to look at.
+    if (!app.__cameWithRig) app.home.open();
+  });
 
   // ---- the top bar --------------------------------------------------------
   /*
@@ -368,6 +385,20 @@ export function initUI(app) {
   paintAccount();
   app.auth?.onChange?.(paintAccount);
   topRight.append(acctBtn);
+
+  /*
+   * One level up. The builder is not the root of the app any more — `home.js`
+   * is — so there has to be a way back to it that is not the browser's back
+   * button. It sits next to the wordmark because that is where "up" lives in
+   * every other application anyone has used.
+   */
+  const menuBtn = el('button', 'home-up');
+  menuBtn.type = 'button';
+  menuBtn.title = 'Back to the start';
+  menuBtn.setAttribute('aria-label', 'Back to the start');
+  menuBtn.textContent = 'Menu';
+  menuBtn.onclick = () => { app.gallery?.close?.(); app.home?.open?.(); };
+  mark.after(menuBtn);
 
   topbar.append(topRight);
   root.append(topbar);
