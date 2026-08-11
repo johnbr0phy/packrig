@@ -743,11 +743,28 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   // ahead of it. The rear anchor exists but buildToptubeRear was still deriving
   // its x from headTop, which put the Rear TT Sack up by the stem.
   const originX = rear ? ttSeat.x + 20 + len - 10 : P.headTop.x - 38;
-  // `hgt: -y` in the record means the bag hangs UNDER the tube (Blackburn's two
-  // Outpost/Local packs, Swift's Moxie, Andrew The Maker's, Nuke Sunrise's two
-  // Titans — six in the slot); `y`, which is what Apidura's Rear pack says,
-  // means it stands on the crown like the other 95.
-  const below = axes.hgt === '-y';
+  /*
+   * WHICH SIDE OF THE TUBE, and why it is no longer read off `axes.hgt`.
+   *
+   * This used to say `below = axes.hgt === '-y'`, which put six packs — the two
+   * Blackburns, Swift's Moxie, Andrew The Maker's, and both Nuke Sunrise
+   * Titans — hanging under the top tube. Measured, they sat 109-140mm below the
+   * crown line while the other 95 sat within +-14mm of it, which on screen is a
+   * bag floating in the middle of the frame triangle. Reported as exactly that.
+   *
+   * `axes.hgt` describes WHICH WAY THE MAKER'S DRAWING MEASURED HEIGHT. `-y`
+   * means their height dimension runs downward on the elevation they published.
+   * It says nothing about which side of the tube the bag straps to, and reading
+   * it as if it did is the same class of mistake as the 95 records that were
+   * measuring the wrong axis entirely. All six of these are classic gas-tank
+   * packs that sit ON the tube.
+   *
+   * So: a top tube bag stands on the crown unless the record says otherwise IN
+   * WORDS. A genuine under-tube product needs `features.attachment` to say so,
+   * which is a claim someone has to make deliberately rather than a side effect
+   * of how a drawing was dimensioned.
+   */
+  const below = /under|beneath|below/i.test(String(p?.features?.attachment || ''));
 
   // ---- STAND THE PACK ON THE TUBE ---------------------------------------
   //
