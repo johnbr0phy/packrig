@@ -559,3 +559,94 @@
   .gal-adopt { width: 100%; }
   .home-card { padding: 28px 22px 22px; }
 }
+
+/* ==========================================================================
+   PHONE — the one-column rework, on a 390px screen.
+
+   The desktop rework landed with the phone rules still describing the layout it
+   replaced: a panel whose only child was a bag list, a bottom bar that no
+   longer exists, and swatch rows sized for a dock. On a real iPhone that came
+   out as FRAME and BIDONS printed through "BAGS ON BIKE", six 56px circles
+   running off the right edge, and Save rig hanging off the top bar. The
+   assertions missed all of it because every one of those overlaps is INSIDE a
+   panel, and the panel's own rect was fine.
+   ========================================================================== */
+
+/* Also a phone on its side: 852x393 is wider than the phone breakpoint but has
+   less room top to bottom than any of them, and the old rules left the swatch
+   rows unwrapped in a 298px panel and the bag list 10px tall. */
+@media (max-width: 560px), ((pointer: coarse) and (max-height: 520px)) {
+  /* The bottom bar is gone, so the sheet sits on the safe area, not 64px above
+     a bar that is not there any more. */
+  #ui-root .panel {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    max-height: 62dvh;
+    display: flex; flex-direction: column;
+  }
+  #ui-root .panel-head { flex: 0 0 auto; }
+
+  /* ONE scroll region: the panel itself, with the handle stuck to the top of
+     it. Giving the bag list its own scroller inside a fixed-height panel meant
+     the list was whatever height was left after Bike, the actions and the
+     totals had taken theirs — which on a 390px screen was nothing, so a rig
+     with six bags in it rendered as "BAGS ON BIKE (6)" over empty space. */
+  #ui-root .panel { overflow-y: auto; overscroll-behavior: contain; }
+  #ui-root .nav-sec,
+  #ui-root .panel-foot { flex: 0 0 auto; min-height: 0; }
+  #ui-root .bag-list { overflow: visible; max-height: none; }
+  #ui-root .panel-head {
+    position: sticky; top: 0; z-index: 2; min-height: 40px; padding: 4px 8px;
+    background: linear-gradient(rgba(20,22,26,.96), rgba(20,22,26,.82));
+  }
+
+  /* Label above swatches, not beside them: a 46px label plus six circles does
+     not fit 366px, and `flex` with no wrap simply ran them off the edge. */
+  #ui-root .appearance { gap: 14px; padding: 0 14px 12px; }
+  #ui-root .paint-group,
+  #ui-root .bottle-group { flex-direction: column; align-items: stretch; gap: 7px; }
+  #ui-root .group-label,
+  #ui-root .bottle-group .lbl { width: auto; }
+  #ui-root .paints,
+  #ui-root .bidons { flex-wrap: wrap; gap: 10px; }
+  /* Six 44px swatches and five 10px gaps come to 314px, which fits inside 366.
+     So they are simply 44px — the real target, not a 34px mark with an
+     invisible pad around it. (That pad also widened the button's scroll box,
+     which is a small lie the overflow audit was right to object to.) */
+  #ui-root .paint,
+  #ui-root .bidon { width: 44px; height: 44px; }
+
+  #ui-root .nav-sec-head { padding: 12px 14px 6px; }
+  #ui-root .nav-sec-title { padding: 12px 14px 6px; }
+  #ui-root .nav-sec-head .nav-sec-title { padding: 0; }
+  #ui-root .nav-actions { padding: 4px 10px 12px; gap: 8px; }
+  #ui-root .nav-actions > * { min-height: 46px; }
+
+  /* THE TOP BAR AT 390px. Wordmark, Menu, three tools, Save rig and an email
+     do not fit, and the overflow was hidden rather than wrapped — Save rig, the
+     one control REDESIGN.md §6 says must always be visible, was the part that
+     fell off. So the wordmark goes (the Menu button is the way up, and the tab
+     says what the site is), and the account collapses to its status dot. */
+  #ui-root .topbar { gap: 8px; padding: 0 10px; }
+  #ui-root .topbar .wordmark { display: none; }
+  #ui-root .home-up { margin-left: 0; margin-right: auto; }
+  #ui-root .top-right { gap: 6px; flex: 0 1 auto; min-width: 0; }
+  #ui-root .viewtools { padding: 1px; }
+  #ui-root .tool-btn { width: 36px; height: 36px; font-size: 17px; }
+  #ui-root .acct-btn { padding: 0 10px; }
+  #ui-root .acct-btn .acct-label { display: none; }
+  #ui-root .save-btn { padding: 0 13px; font-size: 12.5px; }
+}
+
+/* Landscape phone: the panel stays a side column (a bottom sheet at 393px tall
+   would leave no bike), so it needs its own height budget rather than the
+   phone's 62dvh, and the list needs a floor or the sections above it eat the
+   whole panel. */
+@media (pointer: coarse) and (max-height: 520px) and (min-width: 561px) {
+  #ui-root .panel {
+    top: calc(var(--topbar-h) + 8px); bottom: 8px;
+    max-height: none; width: min(320px, 42vw);
+  }
+  #ui-root .bag-list { min-height: 120px; }
+  #ui-root .paint, #ui-root .bidon { width: 34px; height: 34px; }
+  #ui-root .nav-actions { flex-direction: column; }
+}

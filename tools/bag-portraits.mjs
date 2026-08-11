@@ -1,17 +1,6 @@
 /**
  * A portrait for every bag that has no photograph.
  *
- * ==> UNFINISHED. The framing is wrong and the output is not wired into the
- * app. Every portrait comes out as the same wide shot of the whole bicycle.
- * What is known: the camera IS being moved and it STAYS moved — reading
- * `app.camera.position` back after the fact returns exactly what was set, at a
- * distance computed correctly from the bag's bounding sphere and the field of
- * view (0.87m for a 0.16m-radius bag). The rendered frame does not reflect it,
- * which means the canvas is not drawn with `app.camera` as this tool assumes:
- * either there is a second camera in the render path, or something in the loop
- * applies a view offset per frame. That is the next thing to look at, and it is
- * one question, not a redesign. Ruled out already: OrbitControls' min/max
- * distance clamp, damping, auto-rotate, and the sheet's view offset.
  *
  * 201 of 702 products ship no image — small makers, discontinued models, and a
  * long tail nobody has photographed. Everywhere the app shows a bag it has had
@@ -42,7 +31,15 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-const BASE = process.env.PACKRIG_URL || 'http://localhost:8099/index.html';
+/*
+ * `?shot=1` is not optional. It sets `preserveDrawingBuffer` on the renderer,
+ * and without it a screenshot of the WebGL canvas returns whatever frame the
+ * compositor happened to keep — which is why every portrait came out framed on
+ * the whole bicycle no matter where the camera actually was. The camera was
+ * correct at capture time; the pixels were stale. MOBILE.md has this trap
+ * written down, and it has now cost two sessions.
+ */
+const BASE = process.env.PACKRIG_URL || 'http://localhost:8099/index.html?shot=1';
 const OUT = join(root, 'assets/portraits');
 
 const argv = process.argv.slice(2);
