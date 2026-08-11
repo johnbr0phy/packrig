@@ -46,14 +46,17 @@ import { fabricMaterial, hardware, patch, shadowify, soft, webbing } from '../ma
 // headset is tubeBetween(headTop, steererTop, 14, 14).
 const BAR_R = 12;
 
-// Apidura's shockcord pull is bright yellow on every Backcountry and Expedition
-// bag, and it is the loudest single detail on the product — the human review
-// asked for "a coloured (yellow) catch at the front to lift it". It lives in the
-// records under `closure.hardware`, which is free prose that
-// tools/apply-models.mjs does not carry into brands.json, so there is no data
-// channel for it today. See the report: `closure.hardware` (or a colour field on
-// it) needs merging, and then this table goes away.
-const CORD_HIGHLIGHT = { Apidura: 0xf2d21c };
+// A coloured shockcord pull is the loudest single detail on most bags in this
+// slot, and the colour comes from the BRAND RECORD, not from a lookup table.
+// This used to be `const CORD_HIGHLIGHT = { Apidura: 0xf2d21c }` — one maker's
+// yellow hard-coded into a file that draws 38 bags for 20-odd brands.
+//
+// `brand.palette[3]` is the accent slot in all 48 brand records (Apidura
+// #e2572b, Ortlieb #c1121f, Restrap #f4661b, Tailfin #d0021b); indices 0-2 are
+// the dark, mid and panel tones. Where a record is shorter than four entries
+// there is no accent and cordMat()'s neutral cord stands.
+const brandAccent = (brand) => (Array.isArray(brand?.palette) && brand.palette.length > 3
+  ? brand.palette[3] : null);
 
 // How far INSIDE the published box the fabric section is drawn. soft() displaces
 // the shell outward along its normals by `amp` (1.2–1.8 mm here) and the welded
@@ -211,9 +214,15 @@ export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   const chamHeight = Math.min((mouthHX - baseHX) * 2 * 1.73, bh * 0.55);
   const tCham = Math.max(1 - chamHeight / bh, 0.35);
   const kx = (t) => (t >= tCham ? 1 : kBase + (1 - kBase) * (t / tCham));
-  // The front elevation of both drawings is a parallel-sided rectangle, so only
-  // a third of the fore-aft loss shows up across the bike.
-  const kz = (t) => 1 - (1 - kx(t)) * 0.35;
+  // The front elevation of both drawings is a PARALLEL-SIDED RECTANGLE: the
+  // chamfer is one diagonal cut across the lower rear corner and it takes
+  // nothing off the across-bike width. v4 said that in this comment and then
+  // passed a third of the fore-aft loss through anyway, which pinched the base
+  // on both axes at once — and a section that shrinks on every axis toward one
+  // end is a cone, however square its corners are. That is the "round-bellied
+  // revolve": the taper, not the cross-section. Only the small amount the side
+  // panels actually draw in as they wrap the base seam is kept.
+  const kz = (t) => 1 - (1 - kx(t)) * 0.1;
 
   const loft = loftBody({
     len: bh, rings: 30, shape: section,
@@ -237,24 +246,39 @@ export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   }
 
   // Two-tone. Every one of these records describes a dark harness and trim over
-  // a lighter body panel — Apidura's is "black laminated upper/harness panels
-  // over a mid-grey laminated body panel" — but a colourway that carries one hex
-  // resolves main and accent to the same colour, which is why four different
-  // bags rendered as one uniform black blob. Where that happens, lift the BODY
-  // toward the brand's own mid tone (`brand.palette[2]`, which for Apidura is
-  // the #8a8d90 their brand note calls "subtle grey panels") and leave the
-  // harness at the colourway's hex. Where the catalogue does give two colours,
-  // main/accent are used as authored and nothing is derived.
+  // a lighter body panel, and where the catalogue authors two colours in the
+  // colourway (`hex` + `accentHex`, resolved by identity.js colorwayFor) they
+  // are used as authored and nothing here is derived.
+  //
+  // THE BODY IS NEVER RECOLOURED. v4 lifted it 0.62 of the way from the
+  // colourway's #1c1c1e to the brand's mid grey to manufacture a two-tone the
+  // catalogue had not given — the same class of fault as the top tube pack's
+  // line-name branch, and it had a second cost: at that albedo (~#5f6266) the
+  // `tpu` laminate in materials.js reads as polished metal, which is the
+  // "mirror-polished chrome" report. The black top tube packs in the same run
+  // and on the same material do not, because a near-black albedo hides a
+  // specular lobe it cannot brighten. Keeping the body at the colourway's own
+  // colour is both the honest reading of the data and most of that fix.
   const oneTone = main.color.getHex() === accent.color.getHex();
-  const tone = (k, target) => fabricMaterial(brand.fabricKey,
-    main.color.clone().lerp(new THREE.Color(target), k));
-  const midHex = brand?.palette?.[2] ?? 0x8a8d90;
-  const bodyMat = oneTone ? tone(0.62, midHex) : main;
-  const trimMat = oneTone ? main : accent;
-  // "A PALE GREY gathered drawcord collar" — at 0.8 of the way to #d2d5d7 over a
-  // #1c1c1e body the collar came out a mid grey that read as shadow on the black
-  // shell rather than as a different piece of cloth.
-  const collarMat = tone(0.88, 0xd2d5d7);
+  const tone = (k, target, from = main.color) => fabricMaterial(brand.fabricKey,
+    from.clone().lerp(new THREE.Color(target), k));
+  // The brand's mid panel tone, index 2 in every brand record. Neutral grey
+  // where a record is shorter than three entries.
+  const midHex = brand?.palette?.[2] ?? 0x8f9295;
+  const bodyMat = main;
+  // The harness band is what the body reads AGAINST. With two authored colours
+  // it is the accent; with one it is the same cloth darkened, which is what a
+  // black Hypalon harness on a black shell actually looks like — a shading
+  // difference, not an invented colour, and it cannot brighten the shell.
+  const trimMat = oneTone ? tone(0.26, 0x000000) : accent;
+  // "A PALE GREY gathered drawcord collar", the loudest feature on the product.
+  // It is a genuinely different piece of cloth, so it does get its own colour —
+  // the SECOND tone, taken to the brand's mid panel grey where the colourway
+  // names only one hex, and lifted a little off the accent where it names two.
+  // Deliberately stopped at the brand's mid tone rather than driven on toward
+  // white: the run before this took it to ~#bcbfc1 and it came back described
+  // as chrome.
+  const collarMat = oneTone ? tone(1, midHex) : tone(0.32, 0xd6d9db, accent.color);
 
   const body = soft(loft.geo, bodyMat, {
     amp: vr.range(1.2, 1.8), freq: vr.range(0.04, 0.052), seed: vr.seed % 929,
@@ -272,19 +296,22 @@ export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   for (const line of loft.seams) {
     const sp = line.filter((_, i) => i % 3 === 0).map((q) => {
       const n = v3(q.x - (chamfered ? mouthHX - mouthHX * kx(q.y / bh) : 0), 0, q.z);
-      if (n.lengthSq() > 1e-6) n.normalize().multiplyScalar(1.1);
+      if (n.lengthSq() > 1e-6) n.normalize().multiplyScalar(1.6);
       return v3(q.x + n.x, q.y - bh, (side < 0 ? -q.z : q.z) + (side < 0 ? -n.z : n.z));
     });
-    if (sp.length > 2) grp.add(seamCurve(bodyMat, sp, 0.85));
+    // 1.3mm of piping, up from 0.85. A welded corner on a laminated case is a
+    // visible bead; at 0.85mm on a 100mm-wide bag it was a scratch, and the
+    // corner lines are the only thing separating a sewn case from a barrel.
+    if (sp.length > 2) grp.add(seamCurve(bodyMat, sp, 1.3));
   }
 
   const wm = webbing();
   const hwm = hardware();
   const out = side;                                  // +1 outboard is +z, −1 is −z
   const outZ = (f = 1) => out * halfZ * f;
-  const cordHex = CORD_HIGHLIGHT[brand?.name] ?? null;
+  const cordHex = brandAccent(brand);
   const cordHi = cordHex != null
-    ? new THREE.MeshStandardMaterial({ color: cordHex, roughness: 0.45 })
+    ? new THREE.MeshStandardMaterial({ color: new THREE.Color(cordHex), roughness: 0.45 })
     : cordMat();
 
   // ---- the harness band ----------------------------------------------------
@@ -313,9 +340,14 @@ export function buildStembag(p, brand, main, accent, ctx, side = 1) {
     // product. Height from the record's own note: "cinched right down it loses
     // roughly the 4 cm pale-grey collar" on a 16 cm bag.
     const collar = loftBody({
-      len: collarH, rings: 9, shape: section, capEnd: false,
+      len: collarH, rings: 14, shape: section, capEnd: false,
       sectionAt: (t) => {
-        const k = 1 - 0.2 * t ** 1.4;               // gathers in as the cord pulls
+        // Gathers in as the cord pulls. 0.2 barely closed at all, so the collar
+        // read as a straight extension of the bag in a lighter shade rather
+        // than as a mouth cinched shut; a drawn cord takes a third out of the
+        // section by the time it reaches the lip. More rings so the pleats the
+        // noise pass below puts on it have somewhere to sit.
+        const k = 1 - 0.33 * t ** 1.4;
         return { a: mouthHX * k, b: halfZ * k, cu: 0 };
       },
     });
@@ -474,31 +506,46 @@ export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   const pocketText = typeof p?.features?.pockets === 'string' ? p.features.pockets : '';
   const wrapper = /mesh/i.test(pocketText) && /external|wrapper/i.test(pocketText);
   if (wrapper) {
-    const top = 0.46;                      // drawn on Apidura's dimensions-3.png
+    const top = 0.46;                      // the wrapper's height, off the drawings
+    // 5.5mm proud, up from 3.5. The Plus is the standard bag plus this sleeve,
+    // so the sleeve IS the difference between the two products, and at 3.5mm of
+    // near-black mesh over a near-black shell there was no difference to see:
+    // the two rendered as the same bag. What separates them has to be visible in
+    // silhouette, which means the sleeve has to stand off the shell far enough
+    // to break the outline. It costs ~4mm on each plan axis, on a bag currently
+    // measuring +2% across and +3% fore-aft.
+    const PROUD = 5.5;
     const sleeve = loftBody({
       len: bh * top, rings: 8, shape: section, capStart: false, capEnd: false,
       sectionAt: (t) => {
         const bt = t * top;
-        return { a: mouthHX * kx(bt) + 3.5, b: halfZ * kz(bt) + 3.5, cu: chamfered ? mouthHX - mouthHX * kx(bt) : 0 };
+        return { a: mouthHX * kx(bt) + PROUD, b: halfZ * kz(bt) + PROUD, cu: chamfered ? mouthHX - mouthHX * kx(bt) : 0 };
       },
     });
     const mesh = new THREE.Mesh(sleeve.geo, meshPanelMat());
     mesh.position.y = -bh;
     grp.add(mesh);
-    const hem = seamRing(trimMat, mouthHX * kx(top) + 4, 2.2);
-    hem.scale.set(1, (halfZ * kz(top) + 4) / (mouthHX * kx(top) + 4), 1);
+    // The bound elastic top edge, the line that says "this is a pocket mouth"
+    // rather than "this panel is a slightly different black".
+    const hem = seamRing(collarMat, mouthHX * kx(top) + PROUD, 3);
+    hem.scale.set(1, (halfZ * kz(top) + PROUD) / (mouthHX * kx(top) + PROUD), 1);
     hem.rotation.x = Math.PI / 2;
     hem.position.set(mouthHX - mouthHX * kx(top), -bh * (1 - top), 0);
     grp.add(hem);
-    // The record says "external mesh POCKETS", plural, and the reason the Plus
-    // still read as the standard 1.2L is that one unbroken sleeve of the same
-    // dark mesh over a dark body has no line in it. Bound vertical dividers off
-    // the sleeve's own corner seams split it into the separate pockets the
-    // product is named for. seamCurve is noCollide, so this costs no size.
+    // The record says "external mesh POCKETS", plural, and one unbroken sleeve
+    // of dark mesh over a dark body has no line in it. Bound vertical dividers
+    // off the sleeve's own corner seams split it into the separate pockets the
+    // product is named for — pushed OUT along their own radial direction, as
+    // the body seams above are, or the piping sits inside the mesh surface it
+    // is meant to divide and is invisible for the second round running.
+    // seamCurve is noCollide, so this costs no size.
     for (const line of sleeve.seams) {
-      const sp = line.filter((_, i) => i % 2 === 0)
-        .map((q) => v3(q.x, q.y - bh, side < 0 ? -q.z : q.z));
-      if (sp.length > 2) grp.add(seamCurve(trimMat, sp, 1.3));
+      const sp = line.filter((_, i) => i % 2 === 0).map((q) => {
+        const n = v3(q.x - (chamfered ? mouthHX - mouthHX * kx((q.y / bh) * top) : 0), 0, q.z);
+        if (n.lengthSq() > 1e-6) n.normalize().multiplyScalar(1.5);
+        return v3(q.x + n.x, q.y - bh, (side < 0 ? -q.z : q.z) + (side < 0 ? -n.z : n.z));
+      });
+      if (sp.length > 2) grp.add(seamCurve(trimMat, sp, 1.6));
     }
   }
 

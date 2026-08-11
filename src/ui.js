@@ -21,9 +21,14 @@ const elt = (tag, cls, text) => {
 };
 
 /** Mount points grouped by the zone of the bike they live on. */
+// This list is hand-written, so a slot added to SLOTS does not appear here on
+// its own and its products become unreachable — present in the catalogue, drawn
+// correctly by their builder, and impossible to select. `barpocket` and
+// `toptube_rear` were both in that state: the mount existed, the products were
+// assigned, and nothing showed up.
 const ZONES = [
-  { label: 'Cockpit', slots: ['barroll', 'barbag', 'randobag', 'stemL', 'stemR', 'toptube'] },
-  { label: 'Frame', slots: ['framebag_full', 'framebag_half', 'downtube'] },
+  { label: 'Cockpit', slots: ['barroll', 'barbag', 'barpocket', 'randobag', 'stemL', 'stemR', 'toptube'] },
+  { label: 'Frame', slots: ['framebag_full', 'framebag_half', 'toptube_rear', 'downtube'] },
   { label: 'Saddle', slots: ['seatpack', 'saddlebag'] },
   { label: 'Fork', slots: ['forkL', 'forkR'] },
   { label: 'Rear', slots: ['pannierL', 'pannierR', 'trunk'] },

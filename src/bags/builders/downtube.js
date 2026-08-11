@@ -1,10 +1,11 @@
 // Downtube bag builder — mm-local, parented to the `downtube` anchor.
 //
 // AXIS MAPPING (BUILDER-BRIEF Rule 2). Checked against `mount.axes` in
-// data/models/apidura.json ("len: along_downtube, wid: z, hgt: perp_downtube")
-// and against Apidura's own drawing,
-// assets/products/apidura/full/expedition-downtube-pack/dimensions-1.png,
-// which carries exactly the two views this slot needs:
+// data/models/apidura.json ("len: along_downtube, wid: z, hgt: y") and against
+// Apidura's own drawing,
+// assets/products/apidura/full/expedition-downtube-pack/dimensions-1.svg,
+// which carries exactly the two views this slot needs and whose path
+// coordinates can be read exactly (14.10 svg units per cm):
 //
 //   p.mm.len -> ALONG the down tube. t = 0 is the bottom-bracket end (the
 //               closed, chamfered one), t = 1 the head-tube end (the roll).
@@ -13,8 +14,9 @@
 //   p.mm.hgt -> the down tube's outward perpendicular — how far the bag hangs
 //               off the tube. 6.5 cm on the drawing's side view. This is a
 //               DIAGONAL in world space (the reference frame's down tube lies
-//               at 46.35 degrees), which is why `mount.axes.hgt` had to stop
-//               claiming world `y` — see the note under "the bag's own numbers".
+//               at 46.35 degrees), so the record's `hgt: "y"` is wrong and
+//               MODEL-SPEC has no `perp_downtube` to replace it with — see the
+//               note under "the bag's own numbers" and the round-5 report.
 //   p.mm.wid -> across the bike, world z. 8 cm on the drawing's top view.
 //
 // Everything is built in one frame, `rig`, whose axes ARE those three:
@@ -46,7 +48,7 @@ const clamp01 = (t) => (t < 0 ? 0 : t > 1 ? 1 : t);
  *
  *   apidura-expedition-e-bike-charger-pack-1-6l
  *     ... 0.798, 0.048, 0.044, 0.040, 0.809 ...   (stations 8-12)
- *   apidura-backcountry-downtube-pack-1-8l
+ *   apidura-sleeved-downtube-pack-1-8l
  *     0.621, 0.754, 0.000, 0.000, 0.663 ...       (stations 2-3)
  *     ... 0.835, 0.000, 0.000, 0.000, 0.339 ...   (stations 24-26)
  *
@@ -158,40 +160,39 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   const perp0 = foot.dot(perp);
 
   // ---- the bag's own numbers ---------------------------------------------
-  // NOTE ON THE SIZE GATE — settled, with the arithmetic, because three rounds
-  // have now been spent hunting for a height bug in this file that is not here.
+  // WHERE THE "+147% TOO TALL" COMES FROM, with every intermediate value, since
+  // four rounds have now been spent hunting for a height bug in this file.
   //
-  // tools/eval-auto.mjs measures each spec axis against the axis of the WORLD
-  // bounding box that `mount.axes` names, and `TUBE_AXIS` (eval-auto.mjs:83)
-  // resolves this record's `perp_downtube` onto world y, disclosing that it
-  // "slightly overstates the measured extent on the steepest tubes". On this
-  // tube it does not slightly overstate it; the term it adds is the bag's whole
-  // LENGTH, and the length is three times the height.
+  // The chain from the published figure to the geometry is four steps and no
+  // step scales anything:
+  //   data/models/apidura.json  render.hgt_cm = 6.5
+  //   catalog.js:74             p.mm.hgt = 6.5 * 10 = 65
+  //   here                      aH = min(65, 150) / 2 = 32.5
+  //   loftBody sectionAt        a = aH * kA(t), and kA is 1 at the tail
+  // so the lofted body is 65.0mm across its own perpendicular. Measured on the
+  // built geometry (three.js, no renderer, straight out of loftBody + the
+  // channel and rake passes below) the rig-local perp extent of the three
+  // products is 65.0 / 70.0 / 90.0mm against published 65 / 70 / 90. Exact.
   //
-  // framePoly gives a down tube of (420.9, 441.2), i.e. 46.35
-  // degrees, so a bag of length L lying along it with depth D on its own
-  // perpendicular occupies L*sin46.35 + D*cos46.35 = 0.724L + 0.690D in world
-  // y. Run 2026-08-10T18-50-14 reported, for the three products:
+  // What tools/eval-auto.mjs grades is not that. `axisOf` sends this record's
+  // `hgt: "y"` — and its `perp_downtube` too, via TUBE_AXIS at eval-auto.mjs:83
+  // — onto the y axis of the WORLD bounding box, and this bag lies on a tube at
+  // 46.35 degrees (framePoly gives a down tube vector of (420.9, 441.2)). A bag
+  // of length L on that tube with depth D on its own perpendicular occupies
+  //     bbox y = L*sin(46.35) + D*cos(46.35) = 0.724L + 0.690D
+  //     bbox x = L*cos(46.35) + D*sin(46.35) = 0.690L + 0.724D
+  // The measured 186.6mm of bbox y on the 1.5L is 0.724*208 + 0.690*65 = 195
+  // less what the end cuts take off the corners — it is the LENGTH, read onto
+  // the height axis. No geometry satisfies the +25% gate on that axis: a 210mm
+  // bag on this tube stands 152mm in world y with no depth at all, already 134%
+  // over the published 65. The same mirror image inflates `along_downtube -> x`
+  // with the depth.
   //
-  //   1.5L   L 210  D 64.0   predicted 180.0   measured bbox_body y 180.2
-  //   1.6L   L 205  D 69.0   predicted 179.4   measured             177.5
-  //   1.8L   L 160  D 88.6   predicted 159.3   measured             160.9
-  //
-  // Every one inside 2mm, which is soft()'s own noise amplitude. The bodies are
-  // drawn at their published depth to better than a millimetre; the 177 / 154 /
-  // 79 percent "too tall" is the projection and nothing else, and no geometry
-  // can satisfy it — a 210mm bag on a 46-degree tube stands 152mm in world y if
-  // it has no depth at all, which is already 134% over the published 65.
-  // `along_downtube -> x` has the same fault mirrored: bbox x = 0.690L + 0.724D,
-  // so the length reads the DEPTH into itself.
-  //
-  // The fix is a measurement, not a geometry change and not a record rename.
-  // tools/bagshot.mjs already has `pts` and `bagRoot.matrixWorld`; one extra box
-  // built in the bag root's own frame gives a `bbox_mount_mm` in which
+  // The fix is a measurement, not a geometry change and not a record rename:
+  // tools/bagshot.mjs already has `pts` and `bagRoot.matrixWorld`, so one extra
+  // box built in the bag root's own frame gives a `bbox_mount_mm` in which the
   // along_/perp_ axes are exact for every slot in the catalogue, and axisOf()
-  // can read tube-relative names off that instead of projecting. Until then the
-  // drawn dimensions here are unchanged and remain straight off dims_cm/render:
-  // the depth is right, the gate is measuring the diagonal.
+  // can read tube-relative names off that instead of projecting.
   const aH = Math.min(p.mm.hgt, 150) / 2;             // half-depth, on `perp`
   const bH = Math.min(p.mm.wid, 150) / 2;             // half-width, across the bike
   const len = Math.min(p.mm.len, 380);
@@ -199,66 +200,76 @@ export function buildDowntube(p, brand, main, accent, ctx) {
 
   // The chainring-clearance cut. The record calls it "the defining silhouette
   // feature and must not be modelled as a square end", and it has TWO halves.
+  // Both are now taken off the maker's own vector drawing rather than argued
+  // from chainring geometry — assets/products/apidura/full/
+  // expedition-downtube-pack/dimensions-1.svg, which is orthographic, carries
+  // both views, and whose path coordinates can be read exactly. Its scale is
+  // fixed by three independent dimension arrows that agree to 0.4%: 14.10 svg
+  // units per cm.
   //
-  // The one that makes it a silhouette is a RAKE in the side elevation: the
-  // whole bottom-bracket end face is a diagonal, the corner against the tube
-  // cut back furthest and the outer corner barely at all. That is the only
-  // direction the cut can run. The ring is a disc about the bottom bracket, so
-  // the distance a point on the tail may sit from the BB along the tube is
-  //     s(w) = sqrt(R^2 - (w + perp0)^2) - along0,
-  // which SHRINKS as the point moves out on the perpendicular — the tube-side
-  // corner is the one the ring reaches first, so the tube-side corner is the
-  // one that has to go. A bevel taken off the outer corner (v2) or a 14%-deep
-  // shave over 22% of the length (v3) both leave the binding corner square,
-  // which is why the tail has run into the cranks for three rounds running and
-  // why the resolver had to keep pushing the whole pack back up the tube.
+  // Rounds 2-4 all cut the TUBE-side corner back furthest, reasoning that the
+  // chainring is a disc about the BB and so reaches the tube-side corner first.
+  // The drawing says the opposite, and the drawing is the product. In its side
+  // elevation (path 39, and the strap tab at path 47 fixes the tube side as the
+  // TOP of that view) the closed end is a prow, not a plane:
   //
-  // The second half is the drawing's TOP view: the 8cm plan is full width down
-  // the whole non-drive side and swept in on the drive side from ~68% of the
-  // width at the BB end out to full width at about 42% of the length. That is
-  // the rest of what "asymmetric" means — a symmetric taper cannot clear a
-  // chainring that is only on one side of the bike.
+  //   tube-side face begins at   x 19.63  ->  10.4mm back from the extreme
+  //   extreme point at           y 236.80 ->  27.0 units = 29% of the depth
+  //                                           down from the tube face
+  //   outer face begins at       x 41.46  ->  25.9mm back from the extreme
+  //
+  // 10.4 and 25.9mm on a 65mm-deep bag are 0.16 and 0.40 of the depth. Held as
+  // fractions of THIS bag's own depth, so a 9cm-deep Backcountry gets a
+  // proportionally longer prow and no Apidura millimetre reaches another brand.
   const chamfered = /asymmetric|chainring|crank|diagonal|angled/i.test(feats.shape || '')
     || (geom.taperNarrowEnd === 'tail' && (geom.taperRatio ?? 1) < 1);
-  const PLAN_KEEP = 0.68, PLAN_T = 0.42;
-  // Run of the rake along the tube. Sized off the DEPTH — a diagonal across a
-  // deeper bag is a longer diagonal — and capped at a fifth of the length so it
-  // stays a cut corner on the short packs instead of eating the Backcountry's
-  // 16cm body a third of the way up.
-  const RAKE = chamfered ? Math.min(2 * aH * 0.62, len * 0.22) : 0;
+  const PROW_APEX = 0.29, PROW_TUBE = 0.16, PROW_OUTER = 0.40;
   // x is the section coordinate: -aH is the flat back against the tube, +aH the
-  // outer face. Linear, because the cut is a plane.
-  const rakeAt = (x) => (RAKE > 0 ? RAKE * (1 - clamp01((x + aH) / (2 * aH))) : 0);
-  const planAt = (t) => (chamfered ? Math.min(1, PLAN_KEEP + (1 - PLAN_KEEP) * (t / PLAN_T)) : 1);
-
-  // Both ends of the drawing are close to full depth with a generous corner
-  // round, not a taper into a point: on dimensions-1.png the BB end face still
-  // stands ~86% of the 6.5cm depth. v2 used 0.65 with a square-root ease, which
-  // pulled both ends in hard and is half of why the bag read as a lozenge.
-  //
-  // Only the NOSE gets it where there is a rake. The rake clamps six or seven
-  // rings onto one plane, and those rings keep the section they were lofted
-  // with — so easing the tail as well built the cut face out of the pinched
-  // 66%-depth sections and the diagonal came out as a funnel instead of a flat
-  // cut through a full-depth bag. The cut IS the tail treatment.
-  const END_KEEP = 0.78;
-  const endEase = (t) => {
-    const e = RAKE > 0 ? 1 - t : Math.min(t, 1 - t);
-    return END_KEEP + (1 - END_KEEP) * Math.min(1, e / 0.10) ** 0.6;
+  // outer face. Two straight runs meeting at the apex, because the drawing is
+  // two straight runs meeting at a corner radius.
+  const rakeAt = (x) => {
+    if (!chamfered) return 0;
+    const u = clamp01((x + aH) / (2 * aH));
+    return u < PROW_APEX
+      ? PROW_TUBE * 2 * aH * (1 - u / PROW_APEX)
+      : PROW_OUTER * 2 * aH * (u - PROW_APEX) / (1 - PROW_APEX);
   };
+  const rakeMax = chamfered ? PROW_OUTER * 2 * aH : 0;
 
+  // The second half is the drawing's TOP view (paths 22 and 29): the plan is
+  // full width the whole way down the NON-drive side, and swept in on the drive
+  // side. That one-sidedness is what "asymmetric" means — a symmetric taper
+  // cannot clear a chainring that is only on one side of the bike.
+  //
+  // How deep the sweep goes is a per-product number and now comes from the
+  // record instead of a constant in this file, which was applying one Apidura
+  // measurement to all twelve down tube packs in the catalogue. `taper.tail` is
+  // the plan WIDTH at the BB end as a fraction of the full width; the whole
+  // reduction comes off one side, so the drive-side half-width there is
+  // 2*ratio - 1. On the 1.5L the drawing gives 55.68 of 112.5 units across the
+  // tip, i.e. taper.tail 0.60 -> a drive-side half-width of 0.20.
+  const planKeep = chamfered ? Math.max(0, 2 * (geom.taperRatio ?? 0.85) - 1) : 1;
+  // …reaching full width at 123.9 units from the tip, which against the 21cm
+  // rolled length is 42% of the way along.
+  const PLAN_T = 0.42;
+  const planAt = (t) => Math.min(1, planKeep + (1 - planKeep) * (t / PLAN_T));
+
+  // Depth: CONSTANT end to end. The drawing's side elevation is two parallel
+  // straight lines from the prow to the roll — the 6.5cm holds the whole way —
+  // and rounds 2-4 all put the record's `taper` on this axis instead, which
+  // pinched the body to 85% at the BB end and drew all three products 2.4 to
+  // 3.4mm under their published depth. With it gone the measured rig-local perp
+  // extent is 65.0 / 70.0 / 90.0mm on the three, exact against 6.5 / 7 / 9cm.
+  //
+  // Only the NOSE gets an ease, and only over the last tenth: the prow clamps
+  // five or six rings onto one surface and those rings keep the section they
+  // were lofted with, so easing the tail as well builds the cut face out of
+  // pinched sections and the prow comes out as a funnel. The cut IS the tail
+  // treatment.
   const meas = usableProfile(p);
-  const taper = geom.taperRatio ?? vr.range(0.86, 0.94);
-  const narrowAtBB = geom.taperNarrowEnd !== 'nose';   // every record here says tail
-  const taperAt = (t) => 1 + (taper - 1) * (narrowAtBB ? 1 - t : t);
-
-  // Depth carries the record's nose->tail taper; width does NOT taper, because
-  // the drawing's plan view runs dead straight down the non-drive side and does
-  // all of its narrowing with the one-sided cut below. Tapering `b` as well
-  // narrowed both sides and turned the cut into a nub. Neither carries the
-  // chamfer any more: a section scale shrinks the bag ABOUT ITS OWN CENTRE and
-  // can only ever round the tail off, where the cut is a flat raked face.
-  const kA = meas ? (t) => meas(t) : (t) => endEase(t) * taperAt(t);
+  const END_KEEP = 0.78;
+  const endEase = (t) => END_KEEP + (1 - END_KEEP) * Math.min(1, (1 - t) / 0.10) ** 0.6;
+  const kA = meas ? (t) => meas(t) : (t) => endEase(t);
   const kB = meas ? (t) => meas(t) : (t) => endEase(t);
 
   const loft = loftBody({
@@ -327,14 +338,19 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // RING_TEETH is a local const inside buildBike and cannot be imported — see
   // the report; this is the same expression, not a number off a screenshot.
   const ringR = 12.7 / (2 * Math.sin(Math.PI / 40)) + 6;
-  // Solved against the RAKED tail, not against a square one. `clearAt` is how
-  // far up the tube a point sitting `w` off the centreline has to start, and it
-  // falls away as w grows; `rakeAt` is how far up the tube that point already
-  // sits inside the bag. The binding station is wherever the two are closest,
-  // which for a 62%-of-depth rake is out in the middle of the face rather than
-  // at either corner — so walk the section instead of testing one corner. This
-  // is the whole point of drawing the cut: the pack ends up ~30mm further down
-  // toward the bottom bracket, which is where every product photo has it.
+  // Solved against the PROW, not against a square end. `clearAt` is how far up
+  // the tube a point sitting `w` off the centreline has to start, and it falls
+  // away as w grows; `rakeAt` is how far up the tube that point already sits
+  // inside the bag. The binding station is wherever the two are closest, so
+  // walk the section instead of testing one corner — with the prow apex 29% of
+  // the way down the face, neither corner is it.
+  //
+  // This is a 2D solve against the ring's tip circle at every z, which is
+  // conservative for exactly the reason the plan cut exists: the ring lives at
+  // one z on the drive side and the tail's drive-side flank has been swept away
+  // from it. Where it and the tyre bound cannot both be met the tyre wins
+  // below, and the pack ends up a little inside the tip circle in projection
+  // while still clear of it in space.
   const clearAt = (w) => Math.sqrt(Math.max((ringR + 8) ** 2 - (w + perp0) ** 2, 0)) - along0;
   let sRing = -Infinity;
   for (let i = 0; i <= 12; i++) {
@@ -389,19 +405,34 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // data/brands.json still carries a stale one-entry "Black" colourway for each
   // and tools/apply-models.mjs does not merge `colorways` at all — see report.
   // The moment that lands, this mapping puts the right colour on each panel.
-  const backcountry = /backcountry/i.test(p.line || '');
+  // Does this bag have a Hypalon SLEEVE wrapping its lower body, with the roll
+  // section above it in the other colour? That is a construction fact about the
+  // product, so it comes from the record (`geometry.sleeve`), not from a match
+  // on an Apidura line name.
+  //
+  // It used to read `/sleeved/i.test(p.line)`. This builder draws 12
+  // products across the catalogue, so a test on one maker's line name silently
+  // handed Apidura's construction to any other brand that happened to use the
+  // word, and withheld it from every brand that builds the same way. The same
+  // mistake put Apidura strap stubs on an Ortlieb handlebar pack.
+  const sleeved = !!(p.geometry && p.geometry.sleeve);
   const twoTone = !!accent && !accent.color.equals(main.color);
-  const shell = backcountry && twoTone ? accent : main;
+  const shell = sleeved && twoTone ? accent : main;
   const hyp = shell.clone();
-  hyp.roughness = Math.max(0.3, (shell.roughness ?? 0.9) - 0.45);
-  if (twoTone) hyp.color.copy(backcountry ? main.color : accent.color);
+  // Hypalon is a shade glossier than the ripstop it is welded to, not a
+  // different class of surface. A 0.45 drop put it at roughness 0.45 under the
+  // lake environment, which blew the chevron arms and the strap backing out to
+  // a near-white specular on a bag that is black-on-black in studio-2.jpg —
+  // "a row of scratches" was the round-2 note and this is what replaced it.
+  hyp.roughness = Math.max(0.45, (shell.roughness ?? 0.9) - 0.25);
+  if (twoTone) hyp.color.copy(sleeved ? main.color : accent.color);
   else {
     // Monochrome colourway: Hypalon still has to read as a different material
     // or the welded panels vanish, which is what "a uniform black lozenge"
     // means. Shift it clear of the shell in whichever direction there is room.
     const hsl = { h: 0, s: 0, l: 0 };
     shell.color.getHSL(hsl);
-    hyp.color.copy(shell.color).lerp(new THREE.Color(hsl.l < 0.35 ? 0xffffff : 0x000000), 0.22);
+    hyp.color.copy(shell.color).lerp(new THREE.Color(hsl.l < 0.35 ? 0xffffff : 0x000000), 0.12);
   }
 
   const body = soft(loft.geo, shell, {
@@ -424,7 +455,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // open shell rather than as a stripe painted on the body, so it reads as a
   // second layer with an edge.
   const SLEEVE_T = 0.66;
-  if (backcountry) {
+  if (sleeved) {
     // The sleeve stands 1mm proud on the flanks and 2mm on the outer face, and
     // its tube-side edge is tucked 4mm INSIDE the shell's back panel. Wrapping
     // it right round instead put two surfaces on the same plane against the
@@ -443,9 +474,9 @@ export function buildDowntube(p, brand, main, accent, ctx) {
       const x = pos.getX(i);
       let y = pos.getY(i);
       const z = pos.getZ(i);
-      // The sleeve wraps the lower two thirds, so it wraps the raked end: cut
-      // it on the same plane, 1.5mm short of the shell's, or it hangs over the
-      // cut as a flap of Hypalon in front of the chainring.
+      // The sleeve wraps the lower two thirds, so it wraps the cut end: put it
+      // on the same prow, 1.5mm short of the shell's, or it hangs over the cut
+      // as a flap of Hypalon in front of the chainring.
       const needR = rakeAt(x - 4.0) + 1.5;
       if (y < needR) { y = needR; pos.setY(i, y); }
       // The same V-channel the shell has. Without it the sleeve's back panel
@@ -484,7 +515,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   const strapW = Math.max(24, Math.min(44, bH * 0.84));
   // A little under half way along, from the drawing: the band crosses the body
   // well tailward of the roll so the roll can still be turned down over it.
-  const tStrap = backcountry ? 0.36 : 0.45;
+  const tStrap = sleeved ? 0.36 : 0.45;
   const { pts: unit } = sectionUnit(xs, { detail: 5 });
   const secAt = (t) => unit.map(([u, v]) => [u * (aH * kA(t)) - aH * (1 - kA(t)), v * (bH * kB(t))]);
   const secPts = secAt(tStrap);
@@ -492,7 +523,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // the Backcountry that is the sleeve, which stands 1mm proud on the flanks
   // and 2mm on the outer face; without this the strap panel, the band and the
   // logo were all buried inside it or co-planar with it.
-  const over = backcountry ? 2.2 : 0;
+  const over = sleeved ? 2.2 : 0;
 
   // The Hypalon backing panel the velcro is stitched to, around the bag's girth
   // only, then the band itself around bag AND tube together.
@@ -527,11 +558,11 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // Not on the Backcountry: there the chevron is a WINDOW cut in the sleeve,
   // not a panel welded on top of it, and Hypalon-coloured arms lying on a
   // Hypalon sleeve are both invisible and co-planar with it.
-  if (!backcountry) {
+  if (!sleeved) {
     const yS = tStrap * len;
-    // …and the rearward arm has to stop above the raked end, or it hangs off
-    // the cut face into the space the cut was made to clear.
-    const armY = Math.min(len * 0.26, len * (1 - tStrap) * 0.7, (yS - RAKE) * 0.9);
+    // …and the rearward arm has to stop above the cut end, or it hangs off the
+    // prow into the space the cut was made to clear.
+    const armY = Math.min(len * 0.26, len * (1 - tStrap) * 0.7, (yS - rakeMax) * 0.9);
     const armT = Math.max(9, len * 0.055);              // the band's own width
     const xA = -aH * 0.30;                              // apex, up toward the tube
     const xE = aH * 0.92;                               // out at the outer face
@@ -558,7 +589,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
     const rN = Math.max(aH * kN, 4);
     const rolls = p.closure.rolls || 3;
     const foldH = Math.max(rN * 0.3, 5);
-    const roll = rollTop(backcountry ? shell : hyp, hwm, {
+    const roll = rollTop(sleeved ? shell : hyp, hwm, {
       r: rN, depth: rN * 0.9, rings: rolls,
       widthScale: (bH * kB(1)) / rN, back: false,
     });
@@ -580,9 +611,9 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // Logo on the flank, reading ALONG the bag as it does on the real one — the
   // patch plane is laid out long-axis-on-x, so it needs the quarter turn.
   // Kept clear of the chevron, down at the BB end where studio-2.jpg has it —
-  // but ABOVE the rake. A fixed 0.42 * len patch at t = 0.15 started 30mm below
+  // but ABOVE the cut. A fixed 0.42 * len patch at t = 0.15 started 30mm below
   // the cut on every one of these three and hung in the air off the tail.
-  const yA = RAKE + len * 0.04, yB = tStrap * len - len * 0.05;
+  const yA = rakeMax + len * 0.04, yB = tStrap * len - len * 0.05;
   const logoLen = Math.max(Math.min(len * 0.30, (yB - yA) * 0.9), len * 0.12);
   const tLogo = clamp01((yA + yB) / 2 / len);
   const tag = patch(bag, brand, aH * 0.1, tLogo * len, bH * kB(tLogo) + 1.4 + over, logoLen, 0);

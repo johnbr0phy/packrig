@@ -16,6 +16,7 @@ import { v3, tubeAlong, tubeBetween } from '../../lib.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { boxBulge, deformScale } from '../deform.js';
 import { seamStrip } from '../hardware.js';
+import { reflectiveMat } from '../features.js';
 import { axesOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
@@ -185,6 +186,17 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   const geom = geomOf(p);
   const axes = axesOf(p);
   const plan = mountPlanOf(p);
+  // brands.json's own per-product feature flags. They are the finest-grained
+  // thing that reaches this builder — they vary WITHIN a maker's range, not
+  // across it — and nothing in this slot read them: 12 of the 14 Apidura packs
+  // carry `reflective`, 11 carry `cablePort`, exactly the three Aero modules
+  // carry `transferPanel`, and the Canyon collab carries none of the three.
+  const ft = (p && p.features) || {};
+  // The brand's own accent colour, from the brand record's `palette` — index 3
+  // is the accent slot in every one of the 48 brand records (Apidura #e2572b,
+  // Ortlieb #c1121f, Restrap #f4661b, Tailfin #d0021b). Where a brand record is
+  // shorter than four entries there is no accent and the hardware colour stands.
+  const hiHex = Array.isArray(brand?.palette) && brand.palette.length > 3 ? brand.palette[3] : null;
   // soft | semi | rigid, from the model records — see stiffnessOf().
   const stiff = stiffnessOf(p);
   const len = Math.min(p.mm.len, 460), h = Math.min(p.mm.hgt, 220), w = Math.min(p.mm.wid, 170);
@@ -279,7 +291,15 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   // simply flattens it out at the edges. Capped so it cannot swallow a shallow
   // bag whole.
   const chanR = Math.min(ttR + 2, Math.max(-tubeY + hCore * 0.42, 4));
-  const corner = Math.min(wCore * 0.22, hCore * 0.3, 12); // keep the base broad and flat
+  // Corner radius from the record's own `geometry.shoulder`, which
+  // apply-models.mjs has been merging since 8 Aug and this builder ignored: it
+  // reads `squared` on the Expedition, Aero and Canyon packs and `rounded` on
+  // every Backcountry and Racing one. A flat 0.22 of the width drew all four
+  // ranges as the same softly rounded box, which is the first reason fourteen
+  // different packs read as one. Still clamped against the height so the base
+  // stays broad and flat on the tube.
+  const SHOULDER_K = { squared: 0.10, chamfered: 0.13, none: 0.16, rounded: 0.26, pointed: 0.30 };
+  const corner = Math.min(wCore * (SHOULDER_K[geom.shoulder] ?? 0.22), hCore * 0.3, 12);
   const bulge = boxBulge(len / 2, hCore / 2, wCore / 2, puffAmt);
   // Plan view. The drawings dimension these as a constant width ("Width: 4.5
   // cm" on the whole Backcountry/Racing line, "Tapered Width: 5 - 4 cm" across
@@ -395,6 +415,12 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   grp.add(body);
   const wm = webbing();
   const hwm = hardware();
+  // Cord pulls, tags and zip grabs take the brand's accent where the brand
+  // record names one. This replaces nothing in this file but is the same
+  // channel stembag.js now uses in place of its `{ Apidura: 0xf2d21c }` table.
+  const hiMat = hiHex != null
+    ? new THREE.MeshStandardMaterial({ color: new THREE.Color(hiHex), roughness: 0.5 })
+    : hwm;
   // ---- closure ----------------------------------------------------------
   // `magnetic` is exactly the fold-over-lid family: Apidura's Racing packs,
   // the Racing bolt-on, the Canyon collab and the Aero modules. Their records
@@ -457,18 +483,26 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
     for (let i = 0; i < stations.length - 1; i++) {
       grp.add(tubeBetween(stations[i], stations[i + 1], 2, 2, hwm, 8));
     }
-    // The slider and its pull tab. Apidura hang a cord through a moulded
-    // hexagonal grab tab off the side of the zip — every one of these records
-    // describes it in `zips[].pull` and it is the detail that reads first in
-    // their own photographs.
-    const px = 10 - len * (mirrored ? 0.9 : 0.1);
-    const slider = new THREE.Mesh(new RoundedBoxGeometry(13, 4, 6, 2, 1.6), hwm);
-    slider.position.set(px, hAtLocal(px) + 1.2, 0);
-    const tabZ = zAtLocal(px, hAtLocal(px) - 8);
-    const grab = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.2, 2.2, 6), hwm);
-    grab.rotation.x = Math.PI / 2;
-    grab.position.set(px, hAtLocal(px) - 8, tabZ + 1.4);
-    for (const o of [slider, grab]) { o.userData.noCollide = true; grp.add(o); }
+    // The slider and its pull tab: a cord through a moulded hexagonal grab tab
+    // off the side of the zip, in the brand's accent where it has one. It is
+    // the detail that reads first in these makers' own photographs.
+    //
+    // `zip_two_way` means TWO sliders, one parked at each end, and it is
+    // carried per product in the controlled `closure.type` apply-models merges.
+    // Exactly the two long blades in this range have it (Backcountry Long 1.8L,
+    // Racing Long 2L); drawing every pack with one slider at the stem end is
+    // part of why the whole slot read as fourteen copies of one bag.
+    const ends = p?.closure?.type === 'zip_two_way' ? [0.08, 0.92] : [mirrored ? 0.9 : 0.1];
+    for (const f of ends) {
+      const sx = 10 - len * f;
+      const slider = new THREE.Mesh(new RoundedBoxGeometry(13, 4, 6, 2, 1.6), hwm);
+      slider.position.set(sx, hAtLocal(sx) + 1.2, 0);
+      const tabZ = zAtLocal(sx, hAtLocal(sx) - 8);
+      const grab = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.2, 2.2, 6), hiMat);
+      grab.rotation.x = Math.PI / 2;
+      grab.position.set(sx, hAtLocal(sx) - 8, tabZ + 1.4);
+      for (const o of [slider, grab]) { o.userData.noCollide = true; grp.add(o); }
+    }
   }
   // ---- panels -----------------------------------------------------------
   // Side panel seam, riding the finished surface (zAtLocal) rather than a flat
@@ -483,43 +517,62 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   }
   // ---- two-tone ---------------------------------------------------------
   //
-  // Apidura's Backcountry line is the only two-tone family in this slot: a
-  // mid-grey side panel inside black end caps, a black base band and a black
-  // harness wedge that sweeps up at the stem end (backcountry-top-tube-pack
-  // studio-1, and the record's own note "black end caps and a grey side
-  // panel"). Every other pack here is plain black.
+  // A two-tone shell is a property of the COLOURWAY, and it is read off the
+  // colourway. This test used to be `/backcountry/i.test(p.line)` — a string
+  // match on one maker's range name, in a file that draws 100 top tube packs
+  // for 30-odd brands — and it leaked exactly as you would expect: anything
+  // with "Backcountry" in its line came out wearing Apidura's grey side panel.
   //
-  // It is keyed off the LINE because nothing else survives the trip to the
-  // browser: apply-models.mjs carries only form/crossSection/taper/shoulder out
-  // of `geometry` and drops `notes` on purpose, and all 14 Apidura colourways
-  // in data/brands.json carry a single `hex`, so `accent` always arrives equal
-  // to `main` and the old `!accent.color.equals(main.color)` test never once
-  // fired. See the report for the data field this wants instead.
-  const twoTone = /backcountry/i.test(String(p?.line || ''));
+  // The channel already exists end to end. A colourway may carry `accentHex`
+  // beside its `hex`; identity.js colorwayFor() resolves the pair, system.js
+  // builds a material from each, and this builder is handed both. Where a
+  // colourway names one colour `accent` arrives equal to `main` and the pack is
+  // plain, which is the right answer for the 84 products in this slot that are.
+  //
+  // Apidura's records now carry the accent (data/models/apidura.json,
+  // `colorways[].accentHex`). It does NOT reach the browser yet: apply-models
+  // merges dims/render/geometry/closure/axes/structure and not `colorways`.
+  // See the report — that is a four-line addition and it is the whole fix.
+  const twoTone = !accent.color.equals(main.color);
   const foldLid = magnetic && geom.form !== 'slab';
   if (twoTone || foldLid) {
-    // How far to lift the shell colour for the second panel. Derived from the
-    // material rather than hard-coded, so it tracks the colourway: a black
-    // shell needs a big multiplier to reach mid-grey, a sand one needs almost
-    // none. Vertex colours multiply the base colour in linear space.
-    const c = main.color;
-    const lum = Math.max(0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b, 1e-4);
-    const lift = Math.min(Math.max(0.085 / lum, 1.35), 6.5);   // toward a mid-grey panel
+    // How far to lift the shell colour for the second panel. Vertex colours
+    // multiply the base colour in linear space, so the multiplier that turns
+    // `main` into `accent` is just the ratio of their luminances — derived from
+    // the two materials, so a grey-on-black pack and a black-on-sand one both
+    // land on the colour the catalogue actually authored. With no accent (the
+    // fold-over lid case below) fall back to the old derivation toward mid-grey.
+    const lumOf = (c) => Math.max(0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b, 1e-4);
+    const lum = lumOf(main.color);
+    // The multiplier that carries `main` onto `accent`. Signed either way: it
+    // darkens where the accent is the darker of the pair and lightens where it
+    // is not, so a black-harness-over-grey-body colourway and a grey-panel-in-
+    // black-caps one are the same code path.
+    const trim = Math.min(Math.max(lumOf(accent.color) / lum, 0.2), 8);
+    const lift = Math.min(Math.max(0.085 / lum, 1.35), 6.5);   // fold-over lid only
     const SEAM = 0.5;                                          // the stitch line at its edge
     tint(shapedBox, (x, y, z, nx, ny, nz) => {
       const u = Math.min(Math.max(x / len + 0.5, 0), 1);
       const yG = y + hCore / 2;
       if (twoTone) {
-        if (Math.abs(nz) < 0.55) return 1;                     // side faces only
+        // Which way round the two colours go is the catalogue's decision, and
+        // data/models/apidura.json states it: "`hex` is the mid-grey laminated
+        // BODY panel and `accentHex` the black structured centre wrap / harness
+        // panels". So `main` paints the body panel and `accent` everything
+        // structural — the end caps, the base band, the top band, the crown and
+        // the harness wedge that climbs toward the stem end. The panel is the
+        // EXCEPTION carved out of the trim, not the other way round; drawing it
+        // the other way round painted the caps grey and the body black.
         const s = tAt(u);
         const local = Math.max(hCore * hFactor(s), 1);
         const v = yG / local;
-        // distance inside the grey panel, in units of the local height:
-        //   a base band and a top band, a black rear cap, and the harness
-        //   wedge that climbs from mid-height toward the stem end.
-        const d = Math.min(v - 0.17, 0.87 - v, (s - 0.15) * 0.9,
-          v - (0.20 + 0.45 * Math.max(0, s - 0.55) / 0.45));
-        return d > SEAM * 0.06 ? lift : d > -SEAM * 0.06 ? SEAM : 1;
+        // distance INSIDE the body panel, in units of the local height. The
+        // crown, the underside and both ends are never in it, whatever the
+        // bands say — hence the side-face test folded in as a hard reject.
+        const d = Math.abs(nz) < 0.55 ? -1
+          : Math.min(v - 0.17, 0.87 - v, (s - 0.15) * 0.9,
+            v - (0.20 + 0.45 * Math.max(0, s - 0.55) / 0.45));
+        return d > SEAM * 0.06 ? 1 : d > -SEAM * 0.06 ? SEAM * Math.min(1, trim) : trim;
       }
       // The fold-over lid: one big panel over the top and upper side. Shading
       // it a touch lighter than the body is what makes it read as a separate
@@ -536,7 +589,12 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   // modules are a plain black slab and read as another Racing pack. The fins
   // are `noCollide` for the same reason the strap wraps are: they are meant to
   // reach past the bag and grip the tube.
-  if (geom.form === 'slab') {
+  //
+  // Keyed on the record's own `features.transferPanel` rather than on the form
+  // term: the panel is a named feature of the product, all three Aero modules
+  // carry it and nothing else in the slot does. `slab` stays as the fallback so
+  // a record that describes the silhouette but not the feature still gets fins.
+  if (ft.transferPanel || geom.form === 'slab') {
     const finLen = Math.min(len * 0.22, 52);
     const finX = 10 - len + (mirrored ? len - finLen / 2 : finLen / 2);
     const finH = Math.max(hCore * (mirrored ? hFactor(0) : hFactor(0)), 14);
@@ -630,14 +688,53 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
       }
     };
   }
+  // ---- applied details ---------------------------------------------------
+  // Both read straight off brands.json's per-product `features`, so they vary
+  // inside a maker's range rather than across it — which is the whole answer to
+  // "all fourteen render as the same body". Both are noCollide for the same
+  // reason patch() is: a printed tag and a grommet are surface, not section,
+  // and the size gate measures the body box over everything not so marked.
+  if (ft.reflective) {
+    // A size / reflective tag low on the rear-side chamfer, in the brand's own
+    // accent where it has one. On the FINISHED side face (zAtLocal), not at a
+    // flat w/2 that floats clear of a rear cap the plan curve pinches to 0.66.
+    const tx = 10 - len * (mirrored ? 0.76 : 0.24);
+    const ty = Math.max(Math.min(h * 0.26, hAtLocal(tx) - 8), h * 0.12);
+    for (const s of [1, -1]) {
+      const tag = new THREE.Mesh(
+        new THREE.BoxGeometry(Math.min(30, len * 0.14), Math.min(7, h * 0.11), 1.2),
+        hiHex != null ? hiMat : reflectiveMat());
+      tag.position.set(tx, ty, s * (zAtLocal(tx, ty) + 0.8));
+      tag.userData.noCollide = true;
+      grp.add(tag);
+    }
+  }
+  if (ft.cablePort) {
+    // The grommeted cable port, at the stem end and low on the side face.
+    const cx = 10 - len * (mirrored ? 0.88 : 0.12);
+    const cy = Math.max(Math.min(h * 0.22, hAtLocal(cx) - 6), h * 0.1);
+    for (const s of [1, -1]) {
+      const port = new THREE.Mesh(new THREE.TorusGeometry(4.2, 1.3, 5, 16), hwm);
+      port.position.set(cx, cy, s * (zAtLocal(cx, cy) + 0.6));
+      port.userData.noCollide = true;
+      grp.add(port);
+    }
+  }
   // The brand mark rides the side panel and has to stay under the profile: at
   // 0.65 of the length back it used to sit at a flat h*0.55, which is off the
   // top of a long blade whose crown is only half that far up back there.
+  //
+  // Sized as a screen PRINT, not a plaque. patch() draws a translucent card at
+  // 0.82 x 0.31 of the width it is given, and at `min(70, len*0.6)` that card
+  // was 57mm long and 22mm tall on a 70mm-tall pack — the "identical grey
+  // APIDURA rectangle no real pack has". The same call at a third of the size
+  // reads as what these makers actually print on the panel.
   const px = 10 - len * (mirrored ? 0.35 : 0.65);
   const py = Math.max(Math.min(h * 0.55, hAtLocal(px) - 14), h * 0.2);
   const pz = zAtLocal(px, py) + 1.2;   // on the finished side face, not at w/2
-  patch(grp, brand, px, py, pz, Math.min(70, len * 0.6), 0);
-  patch(grp, brand, px, py, -pz, Math.min(70, len * 0.6), Math.PI);
+  const pw = Math.min(46, len * 0.26, h * 0.62);
+  patch(grp, brand, px, py, pz, pw, 0);
+  patch(grp, brand, px, py, -pz, pw, Math.PI);
   grp.rotation.z = ang;
   // Front packs butt the steerer 38mm behind headTop; a rear pack butts the
   // seat tube with its rear face, so its +x (front) end lands a body-length

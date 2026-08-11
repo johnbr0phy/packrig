@@ -25,17 +25,21 @@
 //           every collar, loop and standoff derived from it stands that far off
 //           the thing it is supposed to grip.
 //         * 26 mm of standoff on top of that put the pack 26–29 mm from the bar
-//           with nothing in between. The PLAN view on dimensions-1.png puts the
-//           pack's rear edge level with the bar line, and the module reaches
-//           3 cm forward of the bar onto it.
-//       So the rear face goes REAR_TUCK forward of the bar CENTRE and the pack
-//       hangs under and forward of the bar tops. That is not impaling: the bar
-//       occupies |y| < BAR_TUBE_R about its own centre and the pack's top face
-//       is BARSPACE_RISE below the tube's underside, so no part of the bar is
-//       ever inside the body.
-//   y   the body's TOP goes at the bar's underside less the mount's own
-//       thickness; the centre follows from the pack's own half-height. Every
-//       term is named: BAR_TUBE_R + the mount rise + halfH.
+//           with nothing in between.
+//       Round 4 then went the other way and tucked the rear face 4 mm forward of
+//       the bar CENTRE — i.e. 8 mm BEHIND the tube's front face. Nothing on the
+//       bar tops is inside the pack at that tuck, which is what round 4 checked;
+//       but a drop bar is not a straight tube. At |z| ≈ 220 it hooks down and
+//       forward, and the pack then swallowed the DROP END PLUGS and the brake
+//       HOSE where it leaves the bar. Both are what the v4 gate reported as
+//       "clash: fork crown" — see the note on `tuck` in the body.
+//       So the rear face now goes forward of the TUBE'S FRONT FACE by the
+//       mount's own reach: two thicknesses of webbing for a strapped pack, the
+//       bracket's depth for a module-mounted one. Nothing on the bar, at any z,
+//       can then be inside the body.
+//   y   the body's TOP goes at the bar's underside less the mount's own rise;
+//       the centre follows from the pack's own half-height. Every term is
+//       named: BAR_TUBE_R + the mount rise + halfH.
 //   z   centred on the stem. Only the full-diameter CENTRE has to fit between
 //       the hoods — see `len` below.
 //
@@ -59,41 +63,92 @@
 import * as THREE from 'three';
 import { v3, deg, tubeAlong } from '../../lib.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { addPockets, bungeeArc, cordMat, drawcordEnd, harnessCradle, orientArc, reflectiveArc, zipperRun } from '../features.js';
+import { addPockets, bungeeArc, cordMat, drawcordEnd, harnessCradle, orientArc, reflectiveArc, reflectiveMat, zipperRun } from '../features.js';
 import { rollTop, strapAssembly } from '../hardware.js';
 import { featuresOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
 import { loftBody, measuredProfile, sectionFor } from '../loft.js';
 import { hardware, patch, seamMat, shadowify, soft, webbing } from '../materials.js';
 import { barMount } from '../mount.js';
 
-// Product facts, off the maker's drawings and spec text — not positions on the
-// bike, so they belong here rather than being derived from `bike`.
-const BARSPACE_SPACING = 57;   // dimensions-1.png: the two BarSpace modules are
-                               // adjustable MIN 4.5 – MAX 6.9 cm apart to
-                               // straddle the stem. 5.7 cm is mid-range.
-const BARSPACE_RISE = 12;      // gap the module holds between bar and pack top,
-                               // scaled off on-bike-1.jpg (~1 cm under the bar).
-const STRAP_SPACING = 130;     // Backcountry + MAAP dims_raw: "13 cm strap spacing".
-const STRAP_RISE = 6;          // strapped packs sit on the bar with only the
-                               // webbing between, so almost nothing.
+// ---------------------------------------------------------------------------
+// GENERIC CONSTANTS — and the rule about them
+//
+// This slot draws 56 products from 30 makers. Round 4 put four numbers measured
+// off Apidura products in this block and handed them to every one of them: a
+// 130 mm strap spacing from the Backcountry's spec text, a 0.55 centre-panel
+// fraction from one studio photograph of that same pack, a 220 mm zip from the
+// MAAP's, and a 57 mm module spacing from Apidura's BarSpace drawing. An
+// Ortlieb has none of those dimensions, so an Ortlieb wearing them is not an
+// Ortlieb.
+//
+// Everything below is now one of two things and NOTHING else:
+//   * a PROPORTION of the product's own published dimensions, so each product
+//     gets its own millimetres (Apidura's Backcountry still lands on its
+//     published 13 cm spacing, because 0.30 x its own 43 cm length IS 13 cm —
+//     that is where the fraction was calibrated, not a number it is handed);
+//   * a property of a HARDWARE CLASS every maker of that class shares — how
+//     thick a piece of webbing is, how far a rigid bar module stands off.
+//
+// Anything genuinely per-product — the Expedition's published 3 cm bar standoff,
+// the MAAP's 22 cm zip, the Backcountry's own 13 cm — belongs in
+// data/models/apidura.json and is written there. It cannot be READ from there
+// yet: tools/apply-models.mjs carries only dims_cm / render / fits / geometry /
+// closure / axes / structure into data/brands.json, and the app loads nothing
+// else. See the report at the end of this round for the three fields that
+// channel needs.
+// ---------------------------------------------------------------------------
+
+// -- hardware classes -------------------------------------------------------
 // The radius the handlebar TOPS are actually drawn at: src/bike.js:688 builds
 // them with `tubeAlong([...], 11.9, M.aluDark)` and lib.js:36 takes that as a
 // radius. mount.js's `barR: 16` is a different, larger number and everything
 // sized off it — collars, bungee loops, standoffs — floats 4 mm clear of the
 // tube it is meant to be clamped to.
 const BAR_TUBE_R = 11.9;
-const REAR_TUCK = 4;           // rear face, forward of the bar CENTRE. The top
-                               // view on dimensions-1.png puts the pack's rear
-                               // edge on the bar line; 4 mm leaves the back of
-                               // the tube proud of the pack, as in on-bike-1.jpg.
-const GATHER = 0.13;           // fraction of the length at each end that is the
-                               // rolled-flat mouth, not body.
-const WRAP_FRAC = 0.55;        // Backcountry black centre panel, studio-5.jpg.
-const NOTCH_HALF = 0.10;       // bottom-centre head-tube notch: the drawing's
-const NOTCH_DEPTH = 0.19;      // notch is ~20% of the width and ~19% of the height.
-const MAAP_ZIP_MM = 220;       // MAAP dims_raw: "22 cm front pocket".
+// A rigid bar module — Apidura's BarSpace, Ortlieb's Bar-Lock, Tailfin's
+// carrier — is a bracket that clamps the tube and holds the pack off it in BOTH
+// axes. These are the class defaults for that hardware, not one maker's figures:
+// a bracket deep enough to clear a hand on the bar tops and a shim under it.
+// Where a maker publishes its own (Apidura publish 3 cm fore-aft) that number
+// lives in the record and should override this once the record can be read.
+const BRACKET_REACH = 30;      // pack's rear face, forward of the TUBE's front
+const BRACKET_RISE = 12;       // pack's top face, below the TUBE's underside
+// Webbing straight round the bar: the pack sits on the tube with two thicknesses
+// of strap between, and nothing else.
+const WEBBING_TH = 4;
+const STRAP_RISE = 6;
+// -- proportions of the pack's own length ----------------------------------
+const BRACKET_SPAN = 0.11;     // between a rigid module PAIR: they sit close in
+                               // on the structured centre, straddling the stem
+const STRAP_SPAN = 0.30;       // between the two attachment straps: they go out
+                               // onto the bar tops either side of the stem
+const STRAP_SPAN_MIN = 56;     // …but never closer than a stem faceplate is
+                               // wide. src/bike.js draws that 40 mm across and
+                               // does not publish it; see the report.
+const WRAP_MARGIN = 0.25;      // how far past the straps the structured centre
+                               // panel that CARRIES them runs, total, as a
+                               // fraction of the length
+const ZIP_SPAN = 0.42;         // a full-width front-pocket zip, ditto
+const GATHER_PER_ROLL = 0.045; // length given up to the rolled-flat mouth at
+                               // each end, PER ROLL. `closure.rolls` is a
+                               // record field that does reach the builder, so
+                               // a 2-roll pack keeps more barrel than a 4-roll
+                               // one instead of all of them sharing one number.
+const NOTCH_HALF = 0.10;       // steerer relief in the bottom centre: ~20% of
+const NOTCH_DEPTH = 0.19;      // the length, ~19% of the height. Bracket mounts
+                               // only — see `hardMount` below.
 
-const YELLOW = () => new THREE.MeshStandardMaterial({ color: 0xe8c520, roughness: 0.55 });
+/**
+ * Is this pack held off the bar by a rigid module, or strapped straight to it?
+ *
+ * Matched on the names makers give the BRACKET. Round 4 tested `/barspace/i`,
+ * which is one company's trade name; this is the class. Ortlieb's Handlebar-Pack
+ * Flex says "Bar-Lock connector" and is a bracket mount — it was being drawn
+ * strapped. Ortlieb's standard Handlebar-Pack says "two hook-and-loop straps
+ * with spacers", which names a packer INSIDE a strap and stays strapped, which
+ * is why `spacer` is deliberately not in this list.
+ */
+const RIGID_MOUNT = /\b(bar[-\s]?space|bar[-\s]?lock|bracket|rigid mount|tool[-\s]?free mount|mounting block|quick[-\s]?release mount)\b/i;
 
 /**
  * Is this trace the outline of a BAG, or of the drawing it was scraped from?
@@ -205,6 +260,13 @@ export function buildBarroll(p, brand, main, accent, ctx) {
   const D = Math.min(p.mm.wid || p.mm.dia, cap) / 2 - sleeveTh;
   const r = (H + D) / 2;                       // nominal radius, for round trim
   const mount = barMount(ctx, D);              // for maxHalfLen only — see the header
+  // How much of each end is rolled-flat mouth rather than barrel. `closure.rolls`
+  // is one of the few record fields tools/apply-models.mjs actually carries, and
+  // it is the thing that decides this: a mouth rolled four times eats twice the
+  // length of one rolled twice. Round 4 gave all 56 packs the same 0.13, which
+  // was the Apidura drawing's.
+  const rolls = Math.min(Math.max(Number(p.closure?.rolls) || 3, 1), 5);
+  const GATHER = Math.min(GATHER_PER_ROLL * rolls, 0.22);
   // Length. v2 clipped this to `mount.maxHalfLen * 2` = barWidth − 52 = 388 mm,
   // which is where all of the −25% came from: every Expedition and the
   // Backcountry 11 L publish 54 cm and were drawn at 38.8.
@@ -220,15 +282,13 @@ export function buildBarroll(p, brand, main, accent, ctx) {
   // 'bars' from the barroll slot's obstacles, hoods and drops included.
   const len = Math.min(p.mm.len, (mount.maxHalfLen * 2) / (1 - 2 * GATHER));
 
-  // Which of the two mounting systems this pack uses. brands.json records it in
-  // `features.attachment`, and the model record's mount.notes says the same
-  // thing in prose: the Expedition rides on rigid BarSpace modules that hold it
-  // off the bar; the Backcountry and MAAP are strapped straight to it ("no
-  // rigid spacer module, unlike the Expedition"). Matched on the module's brand
-  // name, deliberately: Ortlieb's attachment string is "two hook-and-loop straps
-  // with spacers", which is a strapped mount with packers in it, not a bracket.
-  const hardMount = /barspace/i.test(String(p.features?.attachment || ''));
-  const hang = hardMount ? BARSPACE_RISE : STRAP_RISE;
+  // Which of the two mounting systems this pack uses — see RIGID_MOUNT above.
+  const attachment = String(p.features?.attachment || '');
+  const hardMount = RIGID_MOUNT.test(attachment);
+  const hang = hardMount ? BRACKET_RISE : STRAP_RISE;
+  // How far forward of the bar TUBE'S FRONT the pack's rear face stands. This is
+  // the mount's own depth and nothing else.
+  const reach = hardMount ? BRACKET_REACH : WEBBING_TH;
   const closure = feats.closure || 'rolltop';
 
   // The free-text `features.pockets` is the only place the MAAP's front pocket
@@ -343,21 +403,29 @@ export function buildBarroll(p, brand, main, accent, ctx) {
   // at each end of the panel is half of the "stack of ring-seamed barrels" the
   // round-3 critic saw. The lip is kept rather than closed to zero so the two
   // surfaces do not land coincident and z-fight along the rim.
+  // How much of the length the panel covers. It is the panel the attachment
+  // straps are SEWN TO, so it spans them with a margin either side — which is
+  // why it scales with the pack instead of being one photograph's 0.55.
+  const wrapFrac = Math.min(STRAP_SPAN + WRAP_MARGIN, 1 - 2 * GATHER);
   const wrapAt = (t) => {
     if (!twoTone) return 0;
-    const e = (WRAP_FRAC / 2 - Math.abs(t - 0.5)) / (WRAP_FRAC * 0.125);
+    // Feathered over a QUARTER of the panel at each end, not an eighth. At an
+    // eighth a 5 mm sleeve still put a visible step round the barrel where it
+    // started and stopped, which is half of the round-3 critic's "stack of
+    // ring-seamed barrels"; the other half was the ring seam, already gone.
+    const e = (wrapFrac / 2 - Math.abs(t - 0.5)) / (wrapFrac * 0.25);
     if (e <= 0) return 0;
     const s = Math.min(1, e);
     return 1 + (lift - 1) * (s * s * (3 - 2 * s));
   };
   let wrapHalf = 0;
   if (twoTone) {
-    wrapHalf = (len * WRAP_FRAC) / 2;
+    wrapHalf = (len * wrapFrac) / 2;
     const wrapLen = wrapHalf * 2;
     const sleeve = loftBody({
       len: wrapLen, rings: 24, shape: xs,
       sectionAt: (u) => {
-        const t = 0.5 + (u - 0.5) * WRAP_FRAC;
+        const t = 0.5 + (u - 0.5) * wrapFrac;
         const n = notchAt(t);
         const w = wrapAt(t);
         return { a: Math.max(hAt(t) - n / 2 + w, 1), b: Math.max(dAt(t) + w, 1), cu: n / 2 };
@@ -396,13 +464,29 @@ export function buildBarroll(p, brand, main, accent, ctx) {
     Math.cos(a) * (skinD(t) + out), Math.sin(a) * (skinH(t) + out), (t - 0.5) * len);
 
   // ---- where the body sits, and therefore where the bar is ----------------
-  // The pack hangs below the bar AND under it: the top of the body goes at the
-  // bar's underside less whatever the mount puts between the two, and the rear
-  // face goes REAR_TUCK forward of the bar centre so the tube passes over the
-  // pack's top-rear instead of standing 26 mm behind it in clear air. See the
-  // header for why neither number comes from barMount() any more.
+  // The pack hangs below the bar and forward of it: the top of the body goes at
+  // the bar's underside less whatever the mount puts between the two, and the
+  // rear face goes the mount's own `reach` forward of the TUBE'S FRONT FACE.
+  //
+  // Forward of the FRONT of the tube, not of its centre. This is the round-4
+  // clash. Round 4 tucked the rear face 4 mm forward of the bar CENTRE, so the
+  // front half of the tube was inside the pack's footprint. On the bar TOPS
+  // nothing came of that — the pack's top face sits below the tube. But a drop
+  // bar is only a straight tube for its first 200 mm: at |z| ≈ half the bar
+  // width it hooks down and forward through the ramps to the drops, and the
+  // brake hoses leave it just forward of the stem. A 54 cm pack reaches |z| =
+  // 270, past the hooks, and at that tuck it enclosed the DROP END PLUGS
+  // (sphere, |z| ≈ 221, 117 mm below the bar) and the front brake HOSE. Those
+  // are the two "clash: fork crown 1.8 / 2.3 mm" reports on the v4 run — the
+  // grader names a collider after the nearest frame landmark and both of those
+  // parts are nearer the fork crown than they are to the bar centre, so the
+  // label is misleading, but the interpenetration was real.
+  //
+  // With the rear face forward of the tube's front, no part of the bar — tops,
+  // ramps, hooks, plugs or hoses, at any z — is inside the body, and the pack
+  // still touches the drops' forward sweep, which is what keeps `attached`.
   const anchorPos = ctx.anchors.barroll.position;
-  let tuck = REAR_TUCK;
+  let tuck = BAR_TUBE_R + reach;
   let centreY = ctx.points.barCenter.y - (BAR_TUBE_R + hang + H);
   // …but never into the front tyre. BUILDER-BRIEF §3 forbids tyre contact
   // outright and this slot holds packs up to 21 cm tall: hung at full height
@@ -428,16 +512,12 @@ export function buildBarroll(p, brand, main, accent, ctx) {
     const lowest = centreY - drop - bodyAmp;     // soft() can bulge outward
     if (lowest < tyreTop + TYRE_CLEAR) {
       const want = centreY + (tyreTop + TYRE_CLEAR - lowest);
-      // How high it may go depends on where its back panel is. Tucked under the
-      // bar the body's top may not pass the tube's underside — one millimetre
-      // more and the tube's front half is inside the back panel, which is the v1
-      // impaling this round exists to avoid re-creating. A pack that needs more
-      // lift than that buys it the way a rider does: by standing the pack off
-      // the bar first, so the tube is wholly behind the back panel and the body
-      // is free to come up to bar-centre height.
-      const ceiling = ctx.points.barCenter.y - BAR_TUBE_R - H;
-      if (want > ceiling) tuck = BAR_TUBE_R + 2;
-      centreY = Math.min(want, tuck > REAR_TUCK ? ctx.points.barCenter.y : ceiling);
+      // The rear face is already clear of the tube (tuck >= BAR_TUBE_R), so the
+      // body may ride all the way up to bar-centre height without the tube ever
+      // entering it — which is what a rider does when a deep pack fouls the
+      // wheel. Above bar centre the pack would be standing ON the bar rather
+      // than hanging from it, so that is the ceiling.
+      centreY = Math.min(want, ctx.points.barCenter.y);
     }
   }
   const packX = ctx.points.barCenter.x + tuck + D - anchorPos.x;
@@ -488,7 +568,14 @@ export function buildBarroll(p, brand, main, accent, ctx) {
   // bar is however far above the body centre the tyre let it end up.
   const barX = -(D + tuck);
   const barY = ctx.points.barCenter.y - centreY;
-  const spacing = Math.min(hardMount ? BARSPACE_SPACING : STRAP_SPACING, len * 0.84);
+  // Mount spacing: a proportion of THIS pack's length, floored so the pair still
+  // straddles the stem and capped so it stays on the barrel rather than out on
+  // the rolled mouths. Apidura's Backcountry publishes "13 cm strap spacing" on
+  // a 43 cm pack and lands on 129 mm here from its own length; a 30 cm Restrap
+  // gets 90 mm rather than being handed Apidura's 130.
+  const spacing = Math.min(
+    Math.max(len * (hardMount ? BRACKET_SPAN : STRAP_SPAN), STRAP_SPAN_MIN),
+    len * (1 - 2 * GATHER) * 0.9);
 
   /**
    * Where a mount meets the fabric at station t.
@@ -561,13 +648,18 @@ export function buildBarroll(p, brand, main, accent, ctx) {
       pad.rotation.z = f.rot;
       grp.add(pad);
 
-      // The yellow bungee loop over the bar between the modules — the one spot
-      // of colour on an otherwise black pack, and visible on on-bike-1.jpg.
-      const loop = new THREE.Mesh(new THREE.TorusGeometry(BAR_TUBE_R + 2.4, 2.4, 6, 22), YELLOW());
-      loop.position.set(barX, barY, z - s * 15);
-      loop.scale.z = 1.6;
-      loop.userData.noCollide = true;
-      grp.add(loop);
+      // The stability cord looped over the bar between the modules — only where
+      // the product's own attachment text says it has one. Round 4 drew this on
+      // every bracket-mounted pack and drew it in Apidura's signature yellow,
+      // hard-coded; it is the product's own accent now, and a Bar-Lock Ortlieb
+      // (no cord in its attachment string) gets none at all.
+      if (/cord|bungee|shock ?cord/i.test(attachment)) {
+        const loop = new THREE.Mesh(new THREE.TorusGeometry(BAR_TUBE_R + 2.4, 2.4, 6, 22), accent);
+        loop.position.set(barX, barY, z - s * 15);
+        loop.scale.z = 1.6;
+        loop.userData.noCollide = true;
+        grp.add(loop);
+      }
     }
   } else {
     // Strapped straight to the bar at 13 cm spacing. One piece of webbing per
@@ -715,21 +807,28 @@ export function buildBarroll(p, brand, main, accent, ctx) {
     lock.rotation.z = Math.PI / 2;
     lock.userData.noCollide = true;
     grp.add(lock);
-    // Two yellow chevron blocks low on the front face (studio-5.jpg).
-    for (const s of [1, -1]) {
-      const t = 0.5 + (s * wrapHalf * 0.45) / len;
-      const a = deg(-34);
-      const ch = new THREE.Group();
-      ch.position.copy(front(t, a, 1.6));
-      ch.rotation.z = a;              // local +x now points out of the fabric
-      for (const w of [1, -1]) {
-        const bar = new THREE.Mesh(new THREE.BoxGeometry(2, 6, 24), YELLOW());
-        bar.position.set(0, 0, w * 9);
-        bar.rotation.x = w * deg(34);
-        ch.add(bar);
+    // Two chevron blocks low on the front face, where the product records one.
+    // They are REFLECTIVE — the record files them under `details.reflective` —
+    // so they are drawn in the shared reflective material rather than in the
+    // 0xe8c520 that round 4 hard-coded, which was Apidura's accent applied to
+    // every pack that happened to carry an abrasion panel.
+    if (feats.reflective) {
+      const rm = reflectiveMat();
+      for (const s of [1, -1]) {
+        const t = 0.5 + (s * wrapHalf * 0.45) / len;
+        const a = deg(-34);
+        const ch = new THREE.Group();
+        ch.position.copy(front(t, a, 1.6));
+        ch.rotation.z = a;              // local +x now points out of the fabric
+        for (const w of [1, -1]) {
+          const bar = new THREE.Mesh(new THREE.BoxGeometry(2, 6, 24), rm);
+          bar.position.set(0, 0, w * 9);
+          bar.rotation.x = w * deg(34);
+          ch.add(bar);
+        }
+        ch.traverse((o) => { o.userData.noCollide = true; });
+        grp.add(ch);
       }
-      ch.traverse((o) => { o.userData.noCollide = true; });
-      grp.add(ch);
     }
   }
 
@@ -739,7 +838,10 @@ export function buildBarroll(p, brand, main, accent, ctx) {
     // no zip at all, which is precisely backwards: the record says "a flat
     // structured panel carries a full-width horizontal zipped pocket INSTEAD OF
     // the Backcountry bungee net".
-    const half = Math.min(MAAP_ZIP_MM, len * 0.72) / 2;
+    // The zip runs a fixed fraction of the pack's OWN length. Round 4 clamped it
+    // to a literal 220 mm — Apidura's published "22 cm front pocket" — which any
+    // other maker's pack with a front pocket would have inherited whole.
+    const half = (len * ZIP_SPAN) / 2;
     const panel = new THREE.Group();
     // the structured panel itself: a shell swept at the body's own radius, so
     // its corners sit on the fabric instead of hanging in the air

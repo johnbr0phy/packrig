@@ -378,7 +378,7 @@
     }
    },
    {
-    "slot": "barbag",
+    "slot": "barpocket",
     "line": "Expedition",
     "name": "Front Accessory Pack",
     "size": "3.5L",
@@ -1279,10 +1279,10 @@
     "geometry": {
      "form": "truncated_cylinder",
      "crossSection": "d_shape",
-     "shoulder": "rounded",
+     "shoulder": "chamfered",
      "taper": {
       "nose": 1,
-      "tail": 0.85,
+      "tail": 0.6,
       "profile": "linear"
      }
     },
@@ -1293,7 +1293,7 @@
     "axes": {
      "len": "along_downtube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_downtube"
     }
    },
    {
@@ -1696,7 +1696,7 @@
     "geometry": {
      "form": "rounded_box",
      "crossSection": "rounded_rect",
-     "shoulder": "rounded",
+     "shoulder": "chamfered",
      "taper": {
       "nose": 1,
       "tail": 0.85,
@@ -1710,7 +1710,7 @@
     "axes": {
      "len": "along_downtube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_downtube"
     }
    },
    {
@@ -2526,7 +2526,7 @@
     }
    },
    {
-    "slot": "toptube",
+    "slot": "toptube_rear",
     "line": "Backcountry",
     "name": "Rear Top Tube Pack",
     "size": "1L",
@@ -2827,7 +2827,8 @@
     "geometry": {
      "form": "truncated_cylinder",
      "crossSection": "d_shape",
-     "shoulder": "rounded",
+     "shoulder": "chamfered",
+     "sleeve": true,
      "taper": {
       "nose": 1,
       "tail": 0.9,
@@ -2841,7 +2842,7 @@
     "axes": {
      "len": "along_downtube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_downtube"
     }
    },
    {
@@ -9415,7 +9416,7 @@
     }
    },
    {
-    "slot": "barbag",
+    "slot": "barpocket",
     "line": "Scrambler",
     "name": "Scrambler Pocket",
     "size": "3.5L",
@@ -9878,7 +9879,7 @@
     }
    },
    {
-    "slot": "toptube",
+    "slot": "toptube_rear",
     "line": "Jerrycan",
     "name": "Jerrycan",
     "size": "Regular",
@@ -9926,7 +9927,7 @@
     }
    },
    {
-    "slot": "toptube",
+    "slot": "toptube_rear",
     "line": "Jerrycan",
     "name": "Jerrycan",
     "size": "Bent",
@@ -14287,7 +14288,7 @@
     }
    },
    {
-    "slot": "toptube",
+    "slot": "toptube_rear",
     "line": "Adventure",
     "name": "Rear Top Tube Bag",
     "size": "0.8L",
@@ -17850,7 +17851,7 @@
     }
    },
    {
-    "slot": "toptube",
+    "slot": "toptube_rear",
     "line": "Top Tube",
     "name": "Rear Top Tube Bag",
     "size": "0.9L Road/Gravel",
@@ -17913,7 +17914,7 @@
     }
    },
    {
-    "slot": "toptube",
+    "slot": "toptube_rear",
     "line": "Top Tube",
     "name": "Rear Top Tube Bag",
     "size": "0.8L MTB",
@@ -28861,7 +28862,7 @@
   "fabric": "Cordura / X-Pac (matte woven, VX21/VX42 reinforced)",
   "products": [
    {
-    "slot": "toptube",
+    "slot": "toptube_rear",
     "line": "Snack Pack",
     "name": "Snack Pack",
     "size": "Small",
@@ -28955,7 +28956,7 @@
     }
    },
    {
-    "slot": "toptube",
+    "slot": "toptube_rear",
     "line": "Snack Pack",
     "name": "Snack Pack",
     "size": "Small Angle",
@@ -34345,7 +34346,7 @@
     }
    },
    {
-    "slot": "barbag",
+    "slot": "barpocket",
     "line": "Horton",
     "name": "Horton Front Pouch",
     "size": "One Size",
@@ -37636,7 +37637,7 @@
     }
    },
    {
-    "slot": "toptube",
+    "slot": "toptube_rear",
     "line": "Custom Framebag",
     "name": "Custom Medic Top-Tube Bag (saddle side)",
     "size": "Custom",

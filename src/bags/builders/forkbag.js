@@ -20,55 +20,61 @@
 // bag's inboard face has to stand off the bike centreline to clear the tyre and
 // CAGE_DEPTH, the thickness of the carrier the bag sits in.
 //
-// THE STACK, INBOARD TO OUTBOARD. Round 3 reported "the pack straddles the fork
-// blade — the blade passes clean through the body and out the bottom — while
-// its three encircling bands curl shut on empty air and the cage cradle and its
-// bracket float unbolted among the spokes", and all three halves of that were
-// one ordering fault plus one sign error:
+// THE STACK, INBOARD TO OUTBOARD, and where it now stands. Round 3 reported
+// "the pack straddles the fork blade — the blade passes clean through the body
+// and out the bottom — while its three encircling bands curl shut on empty air
+// and the cage cradle and its bracket float unbolted among the spokes". That
+// was one ordering fault plus one sign error and both are fixed; the arithmetic
+// below is the check, re-run against this file as it stands:
 //
 //   blade  ->  backing plate  ->  cradle + rungs  ->  fabric  ->  strap closes
 //
-// The plate was drawn at `-(halfAcross + 17)` from the bag's own axis, which on
-// both products lands 13mm INBOARD of the anchor and so inside the blade, while
-// the fabric's inboard face was pinned at 64mm off the centreline by the tyre
-// rule alone — 8mm off the blade surface with the entire carrier notionally in
-// between. Bag and cage were both drawn where the blade is. Everything now
-// hangs off the anchor plane instead, which is the face a three-pack mount
-// bolts to, and the carrier occupies the gap it is supposed to occupy.
+// src/bike.js:147 builds each blade from a crown at z ±30 to a dropout at
+// z ±48 with a 12mm tube radius, so at the anchor's own height — 43.4% of the
+// way up the 380.8mm chord — the blade centreline is at z 40.2 and its OUTER
+// SURFACE at z 52.2. The anchors are at z ±62, i.e. 9.8mm proud of that
+// surface, and everything here hangs off the anchor plane. The fabric's inboard
+// face lands at z 83.5 on both products, 31.3mm outboard of the blade. The bag
+// is outboard of the blade; the blade does not enter it; the carrier occupies
+// the gap, which is what a Blackburn Outpost / Salsa Anything class cage is.
 //
-// The sign error is `grp.rotation.z`. Up the fork leg is up and BACK: the crown
-// is at x 441 on the reference frame and the dropout at x 611. Leaning by
-// -(90 - headAngle) tipped the top forward instead, which swung the base 60mm
-// rearward into the wheel — the bracket "among the spokes" — and stood the pack
-// at 36 degrees to the leg it is bolted to. src/bags/resolve.js has had the
-// direction right the whole time: the fork slots' escape vector is
-// [0.31, -0.95, 0], i.e. DOWN the leg is down and forward.
+// The sign error was `grp.rotation.z`. Up the fork leg is up and BACK: the
+// crown is at x 440.9 on the reference frame and the dropout at x 610.8.
+// Leaning by -(90 - headAngle) tipped the top forward instead, which swung the
+// base 60mm rearward into the wheel — the bracket "among the spokes". The chord
+// is 26.49 degrees off vertical and `lean` below is now +that.
 //
-// THE `attached` GATE CANNOT PASS FOR THIS SLOT, and no placement fixes that.
-// CONTACT_OK.forkbag is ['fork leg', 'fork crown'], and on this bike:
+// THE `attached` GATE CANNOT PASS FOR THIS SLOT, and no placement fixes it —
+// the placement it asks for is inside the fork. CONTACT_OK.forkbag is
+// ['fork leg', 'fork crown'], and on this bike:
 //
 //  - The blade is `tubeAlong([...], 12, ...)` — a TubeGeometry, so bagshot
 //    makes it a point cloud and names it by its bounding-box centre, which at
 //    (526, 246) is 190mm from frontAxle and 211mm from headBottom. Both are
 //    outside nameFor's 130mm radius, so the fork blade is called
-//    "unnamed part" and is not in any CONTACT_OK list. It is the 7.8mm and
-//    9.2mm rows in the 2026-08-10T18-50-14 report — the two packs were already
-//    the right distance off the blade and were still graded "floating".
+//    "unnamed part" and is in no CONTACT_OK list. It is the 28.3mm and 28.8mm
+//    rows of the 2026-08-10T19-53-02 report: the thing the pack is actually
+//    mounted to is measured, named nothing, and ignored.
 //  - What IS named 'fork leg' is a front-wheel SPOKE: spokes are 280mm
 //    CylinderGeometry, so they become segment colliders, and the two or three
 //    whose rim ends land within 130mm of headBottom key as
-//    'frontAxle-headBottom'. That is the 33.7mm / 32.3mm the gate reported.
-//    Reaching 12mm of it means putting the bag in the wheel, which is what the
-//    round-3 critic then saw.
-//  - 'fork crown' is a 74mm-wide box, so it spans z ±37, while any bag that
-//    clears a 45mm tyre has its fabric at z >= 64. 27mm is the floor and the
-//    real figure here is ~46mm.
+//    'frontAxle-headBottom'. That is the 64.7mm / 67.5mm the gate reported.
+//    Reaching 12mm of it means putting the bag in the wheel.
+//  - 'fork crown' is a 74mm-wide box (bike.js:155), so it spans z ±37. The
+//    fabric's inboard face is at z 83.5, hence the 46.8mm / 44.6mm reported.
+//    Passing at 12mm needs the fabric at z <= 49 — 3mm INSIDE the blade's outer
+//    surface. There is no drawing of this product that satisfies it.
 //
-// So the gate needs a tool change, not a builder change — see the report. The
-// two candidates are naming the blade (`o.userData.part` set in src/bike.js and
-// preferred by bagshot's nameFor) and measuring `attached` against the bag's
-// noCollide ATTACHMENT hardware, which is the cage below and is deliberately
-// excluded from `pts` today. Nothing in this file is allowed to chase it.
+// WHAT WOULD FIX IT, precisely: one line in src/bike.js, `o.userData.part =
+// 'fork leg'` on the two blade meshes at line 153. tools/bagshot.mjs's nameFor
+// already prefers `userData.part` over the centroid guess, so the blade would
+// key as 'fork leg', it is already in CONTACT_OK.forkbag, and the 28.3mm the
+// tool measures today would be the number graded. 12mm is still tighter than a
+// cage-mounted pack sits, so ATTACH_MAX_MM would want to be the cage depth
+// (20mm) for slots whose `mount.attachesTo` names a carrier rather than a tube.
+// Nothing in this file is allowed to chase either. There IS a cage object here
+// — it is built below — but it is `noCollide`, so bagshot excludes it from
+// `pts` and neither `attached` nor `bbox_body_mm` can see it.
 
 import * as THREE from 'three';
 import { v3, deg } from '../../lib.js';
@@ -138,6 +144,16 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   // soft | semi | rigid, from the model records — see stiffnessOf().
   const stiff = stiffnessOf(p);
 
+  // SIZE GATE, `len` — the same measurement fault the down tube slot has, and
+  // the record already says so in mount.notes. `len` on both cargo cage packs
+  // is the bag's own FORE-AFT depth, and the pack leans 26.49 degrees with the
+  // blade, so tools/eval-auto.mjs reads world x = fore*cos(26.49) +
+  // along*sin(26.49). On the 1.5L that is 85*0.895 + 190*0.446 = 160.8mm
+  // against a published 85 however the bag is drawn, and the SECOND term alone
+  // is 84.7 — a pack with no fore-aft depth at all already fills the entire
+  // published figure. The measured 137.5mm is that box less the section's
+  // corner radii. To land inside +25% the 1.5L would have to be drawn 24mm deep
+  // instead of 85. The fix is `bbox_mount_mm` in tools/bagshot.mjs, not here.
   const dim = forkAxes(p);
   const along = Math.min(dim.along || 300, 400);
   const across = Math.min(dim.across || 120, 150);
@@ -420,8 +436,13 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   // strapAssembly builds its ring in xy and rotation.x = 90° sends its y to z,
   // so `r` is the ACROSS-bike half-span and `ellipse` scales the fore-aft one.
   const bandHalf = Math.max((rimIn + rimOut) / 2, 8);
+  // Heights off assets/products/apidura/full/expedition-cargo-cage-pack/
+  // on-bike-1.jpg, where the bag's base and the underside of its roll are both
+  // square to the camera: the two velcro bands sit at 26% and 48% of the body
+  // above the base. 0.20 / 0.42 put them a strap's width too low, hanging off
+  // the bottom rung rather than spanning the pair.
   for (let i = 0; i < nStraps; i++) {
-    const f = nStraps === 1 ? 0.3 : 0.2 + 0.22 * i;
+    const f = nStraps === 1 ? 0.34 : 0.26 + 0.22 * i;
     const st = strapAssembly(wm, hwm, {
       r: bandHalf - 1, width: 22, ellipse: (halfFore + 5) / bandHalf,
       angle: side > 0 ? Math.PI / 2 : -Math.PI / 2, tail: false,

@@ -14,6 +14,19 @@ export const SLOTS = {
   randobag:      { anchor: 'basket',    label: 'Rando / basket',   excludes: ['barroll', 'barbag'], needs: 'frontRack' },
   framebag_full: { anchor: 'framebag',  label: 'Full frame bag',   excludes: ['framebag_half'], hidesBottles: true },
   framebag_half: { anchor: 'framebag',  label: 'Half frame bag',   excludes: ['framebag_full'] },
+  // A front pocket does NOT mount to the bike. It clips onto the FRONT FACE of
+  // whatever handlebar bag is already fitted — Revelate's Scrambler Pocket
+  // buckles to the roll's own straps, Apidura's Front Accessory Pack to the
+  // Expedition Handlebar Pack. Every other slot in this file names a bike
+  // anchor; this one names a HOST SLOT, and BagSystem parents it to that bag's
+  // mesh instead. Without it the pocket gets strapped to the handlebar as if it
+  // were a bar bag, which is how it has been drawn until now: floating in front
+  // of the bars, attached to nothing, with an invented mounting story.
+  //
+  // `anchor` is still declared as a fallback so nothing that indexes
+  // bike.anchors by slot throws; it is not used while a host is present.
+  barpocket:     { anchor: 'barroll',   label: 'Front pocket',     excludes: [], products: 'barpocket',
+                   mountsTo: ['barroll', 'barbag'] },
   toptube:       { anchor: 'toptube',   label: 'Top tube bag',     excludes: [] },
   toptube_rear:  { anchor: 'toptubeRear', label: 'Rear top tube bag', excludes: [], products: 'toptube_rear' },
   stemL:         { anchor: 'stemL',     label: 'Stem bag (L)',     excludes: [], products: 'stembag' },

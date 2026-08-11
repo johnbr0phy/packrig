@@ -77,11 +77,19 @@ const SIZE_HI = 0.25, SIZE_LO = -0.10;
  * measured extent on the steepest tubes. That is a much smaller error than not
  * measuring, and it is disclosed here rather than hidden.
  */
+// Tube-relative names are measured on the BAG'S OWN axes, from
+// `bbox_mount_mm` (along / perp / across), not projected onto the bike's.
+// Projecting was actively misleading: a down tube pack lies on a tube raked at
+// 46 degrees, so the world-y extent is 0.724*length + 0.690*depth, and reading
+// that as the bag's height reported "+147% too tall" for FIVE rounds on bags
+// whose depth is in fact within 6% of published. Worse, the length axis was
+// not read at all, so the genuine fault — those bags are 22-33% too SHORT —
+// stayed invisible the whole time.
 const TUBE_AXIS = {
-  along_toptube: 'x', along_downtube: 'x', along_chainstay: 'x',
-  along_seattube: 'y', along_forkleg: 'y', along_headtube: 'y',
-  perp_downtube: 'y', perp_toptube: 'y', perp_seattube: 'x', perp_forkleg: 'x',
-  across: 'z', lateral: 'z',
+  along_toptube: 'along', along_downtube: 'along', along_chainstay: 'along',
+  along_seattube: 'along', along_forkleg: 'along', along_headtube: 'along',
+  perp_downtube: 'perp', perp_toptube: 'perp', perp_seattube: 'perp', perp_forkleg: 'perp',
+  across: 'across', lateral: 'across',
 };
 function axisOf(axes, k) {
   const raw = String((axes || {})[k] || '');
@@ -120,7 +128,10 @@ function grade(it, m) {
     if (g.attached === false) why.push(`floating — nearest mount ${Math.min(...near).toFixed(1)}mm`);
 
     // Size, mapped through mount.axes, body-only where the run has it.
+    // World-axis box for x/y/z labels; the bag's own axes for tube-relative
+    // ones. A record may mix the two, so both are available per axis below.
     const bb = m.bbox_body_mm || m.bbox_mm;
+    const mb = m.bbox_mount_mm || null;
     const rd = it.record?.render || {};
     const d = it.dims_cm || {};
     const spec = { len: rd.len_cm ?? d.len, wid: rd.wid_cm ?? d.wid, hgt: rd.hgt_cm ?? d.hgt };
@@ -128,7 +139,13 @@ function grade(it, m) {
     for (const k of ['len', 'wid', 'hgt']) {
       const a = axisOf(it.record?.mount?.axes, k);
       if (!a || !spec[k]) { g.err[k] = null; continue; }          // diagonal or no spec
-      const e = (bb[a] / 10 - spec[k]) / spec[k];
+      const own = ['along', 'perp', 'across'].includes(a);
+      // A run rendered before bbox_mount_mm existed cannot answer a
+      // tube-relative axis. Score it null rather than silently falling back to
+      // the world box, which is the projection that caused the problem.
+      if (own && !mb) { g.err[k] = null; continue; }
+      const measured = own ? mb[a] : bb[a];
+      const e = (measured / 10 - spec[k]) / spec[k];
       g.err[k] = +e.toFixed(3);
       sized++;
       if (e > SIZE_HI || e < SIZE_LO) failed.push(`${k} ${(e * 100).toFixed(0)}%`);

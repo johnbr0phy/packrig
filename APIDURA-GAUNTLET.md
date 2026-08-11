@@ -202,6 +202,53 @@ changes are big enough to see. Small fixes accumulate inside a round.
 
 ---
 
+## 4b. The order of work, revised 10 Aug
+
+John spotted that other brands had started inheriting Apidura's features — an
+Ortlieb handlebar pack wearing Apidura Backcountry strap stubs and a bungee
+lattice. He is right, and the decision is: **finish Apidura first anyway.**
+
+The reasoning, which is worth writing down because it is not obvious:
+
+**Apidura is the best-equipped brand in the catalogue and that is why it is
+first.** They publish a dimensioned two-view engineering drawing for nearly
+every product. Almost nobody else does. So the method that is working here —
+measure the outline off the drawing, refuse when it disagrees with the
+published numbers — **does not transfer as-is.** For the other 49 brands the
+ground truth will be photographs plus spec text, which is weaker evidence, and
+`tools/silhouette.mjs` (photo-traced, and forced to refuse most images) is the
+tool that will have to carry it. Expect lower ceilings and more human
+adjudication there.
+
+That is an argument for finishing Apidura, not for stopping: this is where the
+evidence is strongest, so this is where the builders, the rubric and the judge
+get calibrated. Whatever survives here is what goes loose on the rest.
+
+**But one rule changes immediately, because the leak is real:**
+
+> **A number measured off an Apidura drawing goes in the RECORD, never in the
+> builder.** 702 records already carry `geometry`, `straps` and `closure`.
+> A strap spacing belongs in `p.straps[].spacing`, not in a module constant
+> like `STRAP_SPACING = 130` that silently applies to all 56 handlebar rolls.
+> Branching on an Apidura LINE NAME (`/backcountry/i`) inside a shared builder
+> is the same bug wearing a different hat.
+
+This costs a fixer almost nothing and prevents the damage compounding while we
+finish. Cleaning up what has already leaked is scheduled below, not now.
+
+### The order
+
+1. **Now — Apidura to 4+.** Keep looping. Every new constant goes in a record.
+2. **Then — the cross-brand hold-out.** A frozen stratified sample of the other
+   49 brands, per §1.3. It has never been built, which is exactly why the leak
+   went unnoticed. It is the go/no-go on widening.
+3. **Then — undo the leak**, using the hold-out to measure it rather than
+   guessing at it.
+4. **Then — the other 49 brands**, with a method rebuilt around photographs and
+   spec text rather than drawings.
+
+---
+
 ## 5. When we stop
 
 We stop when any of these is true:

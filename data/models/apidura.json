@@ -490,7 +490,18 @@
      "bar_mm": 30,
      "tyre_mm": 0
     },
-    "notes": "Does NOT touch the bar. Two rigid BarSpace modules clamp the bar and hold the pack off it. CORRECTION (read directly off the plan view on assets/products/apidura/full/expedition-handlebar-pack/dimensions-1.png): the 3 cm is the FORE-AFT standoff, from the front of the bar tube to the pack's rear face. The MIN 4.5 / MAX 6.9 cm is the adjustable SPACING BETWEEN THE TWO MODULES, measured between their inner and outer edges respectively, so they can straddle stems of different widths - it is not a clearance from the bar, which is how this note previously read. No vertical drop is published; the on-bike photographs put the pack's top edge about a centimetre under the bar tube, with the whole 15/17 cm of height below it. A preload strap cinches the steerer and a stability cord runs round bar and stem. The 9L is specced for bars 42 cm and narrower, the 14L for 44 cm and wider."
+    "notes": "Does NOT touch the bar. Two rigid BarSpace modules clamp the bar and hold the pack off it. CORRECTION (read directly off the plan view on assets/products/apidura/full/expedition-handlebar-pack/dimensions-1.png): the 3 cm is the FORE-AFT standoff, from the front of the bar tube to the pack's rear face. The MIN 4.5 / MAX 6.9 cm is the adjustable SPACING BETWEEN THE TWO MODULES, measured between their inner and outer edges respectively, so they can straddle stems of different widths - it is not a clearance from the bar, which is how this note previously read. No vertical drop is published; the on-bike photographs put the pack's top edge about a centimetre under the bar tube, with the whole 15/17 cm of height below it. A preload strap cinches the steerer and a stability cord runs round bar and stem. The 9L is specced for bars 42 cm and narrower, the 14L for 44 cm and wider.",
+    "module": {
+     "type": "BarSpace",
+     "reach_mm": 30,
+     "spacing_mm": {
+      "min": 45,
+      "max": 69,
+      "nominal": 57
+     },
+     "rise_mm": 10,
+     "basis": "reach_mm is the same 3 cm already in mount.clearance.bar_mm - fore-aft, from the front of the bar TUBE to the pack's rear face, off the plan view on dimensions-1.png. spacing_mm is the adjustable distance between the two modules (published MIN 4.5 / MAX 6.9 cm) so they can straddle a stem. rise_mm is the vertical gap the module holds between the bar tube and the pack's top face, scaled off on-bike-1.jpg; it is not published. Round 4 held all three in the builder as BARSPACE_SPACING / BARSPACE_RISE and gave them to every pack whose attachment string matched /barspace/i; the builder now uses generic bracket-class defaults and detects a bracket by the class of hardware, not the trade name."
+    }
    },
    "colorways": [
     {
@@ -609,7 +620,18 @@
      "bar_mm": 30,
      "tyre_mm": 0
     },
-    "notes": "Does NOT touch the bar. Two rigid BarSpace modules clamp the bar and hold the pack off it. CORRECTION (read directly off the plan view on assets/products/apidura/full/expedition-handlebar-pack/dimensions-1.png): the 3 cm is the FORE-AFT standoff, from the front of the bar tube to the pack's rear face. The MIN 4.5 / MAX 6.9 cm is the adjustable SPACING BETWEEN THE TWO MODULES, measured between their inner and outer edges respectively, so they can straddle stems of different widths - it is not a clearance from the bar, which is how this note previously read. No vertical drop is published; the on-bike photographs put the pack's top edge about a centimetre under the bar tube, with the whole 15/17 cm of height below it. A preload strap cinches the steerer and a stability cord runs round bar and stem. The 9L is specced for bars 42 cm and narrower, the 14L for 44 cm and wider."
+    "notes": "Does NOT touch the bar. Two rigid BarSpace modules clamp the bar and hold the pack off it. CORRECTION (read directly off the plan view on assets/products/apidura/full/expedition-handlebar-pack/dimensions-1.png): the 3 cm is the FORE-AFT standoff, from the front of the bar tube to the pack's rear face. The MIN 4.5 / MAX 6.9 cm is the adjustable SPACING BETWEEN THE TWO MODULES, measured between their inner and outer edges respectively, so they can straddle stems of different widths - it is not a clearance from the bar, which is how this note previously read. No vertical drop is published; the on-bike photographs put the pack's top edge about a centimetre under the bar tube, with the whole 15/17 cm of height below it. A preload strap cinches the steerer and a stability cord runs round bar and stem. The 9L is specced for bars 42 cm and narrower, the 14L for 44 cm and wider.",
+    "module": {
+     "type": "BarSpace",
+     "reach_mm": 30,
+     "spacing_mm": {
+      "min": 45,
+      "max": 69,
+      "nominal": 57
+     },
+     "rise_mm": 10,
+     "basis": "reach_mm is the same 3 cm already in mount.clearance.bar_mm - fore-aft, from the front of the bar TUBE to the pack's rear face, off the plan view on dimensions-1.png. spacing_mm is the adjustable distance between the two modules (published MIN 4.5 / MAX 6.9 cm) so they can straddle a stem. rise_mm is the vertical gap the module holds between the bar tube and the pack's top face, scaled off on-bike-1.jpg; it is not published. Round 4 held all three in the builder as BARSPACE_SPACING / BARSPACE_RISE and gave them to every pack whose attachment string matched /barspace/i; the builder now uses generic bracket-class defaults and detects a bracket by the class of hardware, not the trade name."
+    }
    },
    "colorways": [
     {
@@ -2197,11 +2219,11 @@
     "crossSection": "d_shape",
     "taper": {
      "nose": 1,
-     "tail": 0.85,
+     "tail": 0.6,
      "profile": "linear"
     },
-    "shoulder": "rounded",
-    "notes": "Flat-backed tube: the face against the downtube is flat with a moulded V-channel pressed into it, the outer face is rounded. The bottom-bracket end is cut away asymmetrically on the diagonal to clear the chainring - that angled cut is the defining silhouette feature and must not be modelled as a square end."
+    "shoulder": "chamfered",
+    "notes": "Flat-backed tube: the face against the downtube is flat with a moulded V-channel pressed into it, the outer face is rounded. The bottom-bracket end is cut away asymmetrically on the diagonal to clear the chainring - that angled cut is the defining silhouette feature and must not be modelled as a square end. TAPER MEASURED 2026-08-10 off assets/products/apidura/full/expedition-downtube-pack/dimensions-1.svg, which is orthographic and whose scale is fixed by three dimension arrows agreeing to 0.4% at 14.10 svg units/cm. The taper is a PLAN-view figure and is one-sided: the top view (paths 22 and 29) is full 8 cm width the whole way down the non-drive side, and swept in on the drive side only, so the end face spans 55.68 of the full 112.5 units = 0.60 of the width, reaching full width 123.9 units (42% of the 21 cm rolled length) from the tip. The previous 0.85 was a guess and was additionally being applied to the DEPTH by src/bags/builders/downtube.js, which drew all three products 2.4-3.4 mm under their published thickness; the same drawing's side elevation is two parallel straight lines, i.e. the depth does not taper at all. `shoulder` corrected rounded -> chamfered: the bottom-bracket end of the side elevation is a prow, its tube-side face 10.4 mm back from the extreme, its apex 29% of the depth down from the tube face, its outer face 25.9 mm back. NOTE: there is no channel in tools/apply-models.mjs for a chamfer depth, so those three prow figures live in the builder as fractions of the bag's own depth (0.16 / 0.29 / 0.40) rather than in this record - see the round-5 report."
    },
    "closure": {
     "type": "rolltop",
@@ -2235,7 +2257,7 @@
     "axes": {
      "len": "along_downtube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_downtube"
     },
     "attachesTo": [
      "downtube"
@@ -2293,8 +2315,8 @@
      "tail": 0.85,
      "profile": "linear"
     },
-    "shoulder": "rounded",
-    "notes": "CORRECTED 2026-08-10 against studio-1.jpg and on-bike-1.jpg: this is NOT the black rounded tube the Expedition Downtube Pack is, and the previous record (copied verbatim from it) had both the form and the cross-section wrong. It is a flat-sided rectangular slab - crisp vertical edges front and back, flat flanks, a flat top - in mid-grey hex-weave, with black Hypalon panels welded on: a starburst/chevron panel across each flank and a black roll at the head-tube end. The face against the downtube is still flat with a moulded channel, and the bottom-bracket end is still cut away asymmetrically on the diagonal to clear the chainring."
+    "shoulder": "chamfered",
+    "notes": "CORRECTED 2026-08-10 against studio-1.jpg and on-bike-1.jpg: this is NOT the black rounded tube the Expedition Downtube Pack is, and the previous record (copied verbatim from it) had both the form and the cross-section wrong. It is a flat-sided rectangular slab - crisp vertical edges front and back, flat flanks, a flat top - in mid-grey hex-weave, with black Hypalon panels welded on: a starburst/chevron panel across each flank and a black roll at the head-tube end. The face against the downtube is still flat with a moulded channel, and the bottom-bracket end is still cut away asymmetrically on the diagonal to clear the chainring. TAPER SEMANTICS 2026-08-10: src/bags/builders/downtube.js now reads geometry.taper as the PLAN-view width at the bottom-bracket end as a fraction of the full width, one-sided on the drive side, because that is the axis the maker's drawing actually tapers - the Expedition Downtube Pack's dimensions-1.svg side elevation is two parallel straight lines, so the DEPTH does not taper. The figure here is inherited and UNMEASURED: this product's dimensions-1 is not a clean orthographic two-view drawing and no plan view could be read off it. `shoulder` set to chamfered to match this record's own note about the diagonal cut at the bottom-bracket end."
    },
    "closure": {
     "type": "rolltop",
@@ -2328,7 +2350,7 @@
     "axes": {
      "len": "along_downtube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_downtube"
     },
     "attachesTo": [
      "downtube"
@@ -3318,7 +3340,9 @@
      "location": "top",
      "hardware": "cam",
      "material": "hypalon",
-     "wrapsAround": "handlebar"
+     "wrapsAround": "handlebar",
+     "spacing_mm": 130,
+     "spacing_basis": "Published in dims_raw as \"13 cm strap spacing\". This is the number src/bags/builders/barroll.js round 4 hard-coded as STRAP_SPACING and applied to all 56 packs in the slot; the builder now derives spacing as 0.30 of each pack's own length, which reproduces this product's 13 cm from its own 43 cm without handing it to anyone else. Read this field instead once tools/apply-models.mjs carries straps[]."
     },
     {
      "role": "stability",
@@ -3340,7 +3364,11 @@
      "location": "front"
     },
     "seams": "welded",
-    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic"
+    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic",
+    "abrasionPanel": {
+     "coverage": 0.55,
+     "basis": "Fraction of the pack length covered by the darker structured centre sleeve, measured off assets/products/apidura/full/backcountry-handlebar-pack/studio-5.jpg. Round 4 held this as WRAP_FRAC in the builder and applied it to any product flagged features.abrasionPanels; the builder now spans the panel over the attachment straps it carries plus a margin, which lands on the same 0.55 here."
+    }
    },
    "mount": {
     "axes": {
@@ -3424,7 +3452,9 @@
      "location": "top",
      "hardware": "cam",
      "material": "hypalon",
-     "wrapsAround": "handlebar"
+     "wrapsAround": "handlebar",
+     "spacing_mm": 130,
+     "spacing_basis": "Published in dims_raw as \"13 cm strap spacing\". This is the number src/bags/builders/barroll.js round 4 hard-coded as STRAP_SPACING and applied to all 56 packs in the slot; the builder now derives spacing as 0.30 of each pack's own length, which reproduces this product's 13 cm from its own 43 cm without handing it to anyone else. Read this field instead once tools/apply-models.mjs carries straps[]."
     },
     {
      "role": "stability",
@@ -3446,7 +3476,11 @@
      "location": "front"
     },
     "seams": "welded",
-    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic"
+    "fabric": "two-tone: black laminated upper/harness panels over a mid-grey laminated body panel, welded seams, yellow triple-chevron graphic",
+    "abrasionPanel": {
+     "coverage": 0.55,
+     "basis": "Fraction of the pack length covered by the darker structured centre sleeve, measured off assets/products/apidura/full/backcountry-handlebar-pack/studio-5.jpg. Round 4 held this as WRAP_FRAC in the builder and applied it to any product flagged features.abrasionPanels; the builder now spans the panel over the attachment straps it carries plus a margin, which lands on the same 0.55 here."
+    }
    },
    "mount": {
     "axes": {
@@ -4198,7 +4232,9 @@
    "colorways": [
     {
      "name": "Black",
-     "hex": "#1c1c1e"
+     "hex": "#45474a",
+     "accentHex": "#1a1b1d",
+     "note": "Apidura sell one colourway and call it Black, but every Backcountry product is two-tone and this record's own details.fabric says so: \"black laminated upper/harness panels over a mid-grey laminated body panel\". Same split, same sampled pair, as the Backcountry Handlebar Pack records above: hex is the mid-grey laminated BODY panel, accentHex the black structured harness / end-cap panels. The single #1c1c1e that was here is what makes the render a uniform black blob - the builders resolve one hex to main === accent and draw no panel at all."
     }
    ]
   },
@@ -4309,7 +4345,9 @@
    "colorways": [
     {
      "name": "Black",
-     "hex": "#1c1c1e"
+     "hex": "#45474a",
+     "accentHex": "#1a1b1d",
+     "note": "Apidura sell one colourway and call it Black, but every Backcountry product is two-tone and this record's own details.fabric says so: \"black laminated upper/harness panels over a mid-grey laminated body panel\". Same split, same sampled pair, as the Backcountry Handlebar Pack records above: hex is the mid-grey laminated BODY panel, accentHex the black structured harness / end-cap panels. The single #1c1c1e that was here is what makes the render a uniform black blob - the builders resolve one hex to main === accent and draw no panel at all."
     }
    ]
   },
@@ -4418,7 +4456,9 @@
    "colorways": [
     {
      "name": "Black",
-     "hex": "#1c1c1e"
+     "hex": "#45474a",
+     "accentHex": "#1a1b1d",
+     "note": "Apidura sell one colourway and call it Black, but every Backcountry product is two-tone and this record's own details.fabric says so: \"black laminated upper/harness panels over a mid-grey laminated body panel\". Same split, same sampled pair, as the Backcountry Handlebar Pack records above: hex is the mid-grey laminated BODY panel, accentHex the black structured harness / end-cap panels. The single #1c1c1e that was here is what makes the render a uniform black blob - the builders resolve one hex to main === accent and draw no panel at all."
     }
    ]
   },
@@ -4516,7 +4556,9 @@
    "colorways": [
     {
      "name": "Black",
-     "hex": "#1c1c1e"
+     "hex": "#45474a",
+     "accentHex": "#1a1b1d",
+     "note": "Apidura sell one colourway and call it Black, but every Backcountry product is two-tone and this record's own details.fabric says so: \"black laminated upper/harness panels over a mid-grey laminated body panel\". Same split, same sampled pair, as the Backcountry Handlebar Pack records above: hex is the mid-grey laminated BODY panel, accentHex the black structured harness / end-cap panels. The single #1c1c1e that was here is what makes the render a uniform black blob - the builders resolve one hex to main === accent and draw no panel at all."
     }
    ],
    "render": {
@@ -4617,7 +4659,9 @@
    "colorways": [
     {
      "name": "Black",
-     "hex": "#1c1c1e"
+     "hex": "#45474a",
+     "accentHex": "#1a1b1d",
+     "note": "Apidura sell one colourway and call it Black, but every Backcountry product is two-tone and this record's own details.fabric says so: \"black laminated upper/harness panels over a mid-grey laminated body panel\". Same split, same sampled pair, as the Backcountry Handlebar Pack records above: hex is the mid-grey laminated BODY panel, accentHex the black structured harness / end-cap panels. The single #1c1c1e that was here is what makes the render a uniform black blob - the builders resolve one hex to main === accent and draw no panel at all."
     }
    ],
    "render": {
@@ -4725,7 +4769,9 @@
    "colorways": [
     {
      "name": "Black",
-     "hex": "#1c1c1e"
+     "hex": "#45474a",
+     "accentHex": "#1a1b1d",
+     "note": "Apidura sell one colourway and call it Black, but every Backcountry product is two-tone and this record's own details.fabric says so: \"black laminated upper/harness panels over a mid-grey laminated body panel\". Same split, same sampled pair, as the Backcountry Handlebar Pack records above: hex is the mid-grey laminated BODY panel, accentHex the black structured harness / end-cap panels. The single #1c1c1e that was here is what makes the render a uniform black blob - the builders resolve one hex to main === accent and draw no panel at all."
     }
    ],
    "render": {
@@ -4764,8 +4810,9 @@
      "tail": 0.9,
      "profile": "linear"
     },
-    "shoulder": "rounded",
-    "notes": "Fat little tube, flat-backed against the downtube and rounded outboard. Two-tone: a black Hypalon sleeve wraps the lower two thirds with a cut-out chevron window showing the grey body, and the roll section above it is grey. The base is cut on the diagonal to clear the crank."
+    "shoulder": "chamfered",
+    "notes": "Fat little tube, flat-backed against the downtube and rounded outboard. Two-tone: a black Hypalon sleeve wraps the lower two thirds with a cut-out chevron window showing the grey body, and the roll section above it is grey. The base is cut on the diagonal to clear the crank. TAPER SEMANTICS 2026-08-10: src/bags/builders/downtube.js now reads geometry.taper as the PLAN-view width at the bottom-bracket end as a fraction of the full width, one-sided on the drive side, because that is the axis the maker's drawing actually tapers - the Expedition Downtube Pack's dimensions-1.svg side elevation is two parallel straight lines, so the DEPTH does not taper. The figure here is inherited and UNMEASURED: this product's dimensions-1.svg is a single three-quarter view with no orthographic plan, so no width ratio could be read off it.",
+    "sleeve": true
    },
    "closure": {
     "type": "rolltop",
@@ -4798,7 +4845,7 @@
     "axes": {
      "len": "along_downtube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_downtube"
     },
     "attachesTo": [
      "downtube"
@@ -7270,7 +7317,9 @@
      "location": "top",
      "hardware": "cam",
      "material": "webbing",
-     "wrapsAround": "handlebar"
+     "wrapsAround": "handlebar",
+     "spacing_mm": 130,
+     "spacing_basis": "Published in dims_raw as \"13 cm strap spacing\". This is the number src/bags/builders/barroll.js round 4 hard-coded as STRAP_SPACING and applied to all 56 packs in the slot; the builder now derives spacing as 0.30 of each pack's own length, which reproduces this product's 13 cm from its own 43 cm without handing it to anyone else. Read this field instead once tools/apply-models.mjs carries straps[]."
     },
     {
      "role": "stability",
@@ -7286,7 +7335,9 @@
      "type": "zip",
      "count": 1,
      "location": "front",
-     "sizeFrac": 0.5
+     "sizeFrac": 0.5,
+     "width_cm": 22,
+     "width_basis": "Published in dims_raw as \"22 cm front pocket\"; it is the length of the welded zip across the structured front panel. Round 4 held this as MAAP_ZIP_MM in the builder, where every product with the words \"front pocket\" in features.pockets would have inherited it; the builder now runs the zip at 0.42 of the pack's own length."
     }
    ],
    "details": {

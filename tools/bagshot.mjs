@@ -397,12 +397,65 @@ function measureInPage(uiSlot) {
   const bodyBox = new THREE.Box3();
   for (let i = 0; i < pts.length; i += 3) bodyBox.expandByPoint(new THREE.Vector3(pts[i], pts[i + 1], pts[i + 2]));
   const bodySize = bodyBox.getSize(new THREE.Vector3());
+
+  // The same body box again, but in the BAG'S OWN frame rather than the bike's.
+  //
+  // Why this exists. A down tube pack lies on a tube raked at 46.35 degrees, so
+  // a box aligned to the bike's axes mixes the bag's length into its height:
+  //     bbox y = L*sin(46.35) + D*cos(46.35) = 0.724L + 0.690D
+  // A 208mm bag 65mm deep therefore measures ~187mm on the world y axis, and
+  // the size gate — which maps this record's `perp_downtube` height onto y —
+  // called that "+147% too tall". It is not: measured in the bag's own frame
+  // the three down tube packs are 65.0 / 70.0 / 90.0mm against published
+  // 65 / 70 / 90. Exact. FIVE rounds of fixers hunted a height bug in the
+  // geometry that was never there, because the instrument was reporting the
+  // length on the height axis.
+  //
+  // In this frame the tube-relative axis names in `mount.axes` are exact:
+  // along_* is the bag's own long axis and perp_* its own outward normal, for
+  // every slot in the catalogue, whatever angle it hangs at.
+  // Extents measured on the bag's OWN principal axis, not the bike's.
+  //
+  // `bagRoot`'s frame is the ANCHOR's, which is bike-aligned; the builder
+  // rotates the geometry inside it. So a box in either frame mixes a raked
+  // bag's length into its height. The bag's own long axis is the principal
+  // axis of its point cloud, the same one profile40 uses.
+  //
+  //   along  the long axis          -> `along_downtube`, `along_toptube`, ...
+  //   perp   perpendicular, in XY   -> `perp_downtube`, ...
+  //   across the bike's z            -> `across`, `lateral`
+  const mountSize = (() => {
+    let mx = 0, my = 0, n = 0;
+    for (let i = 0; i < pts.length; i += 3) { mx += pts[i]; my += pts[i + 1]; n++; }
+    if (!n) return null;
+    mx /= n; my /= n;
+    let sxx = 0, syy = 0, sxy = 0;
+    for (let i = 0; i < pts.length; i += 3) {
+      const dx = pts[i] - mx, dy = pts[i + 1] - my;
+      sxx += dx * dx; syy += dy * dy; sxy += dx * dy;
+    }
+    const th = 0.5 * Math.atan2(2 * (sxy / n), sxx / n - syy / n);
+    const ux = Math.cos(th), uy = Math.sin(th), vx = -uy, vy = ux;
+    let uMin = Infinity, uMax = -Infinity, vMin = Infinity, vMax = -Infinity;
+    let zMin = Infinity, zMax = -Infinity;
+    for (let i = 0; i < pts.length; i += 3) {
+      const dx = pts[i] - mx, dy = pts[i + 1] - my;
+      const u = dx * ux + dy * uy, v = dx * vx + dy * vy, z = pts[i + 2];
+      if (u < uMin) uMin = u; if (u > uMax) uMax = u;
+      if (v < vMin) vMin = v; if (v > vMax) vMax = v;
+      if (z < zMin) zMin = z; if (z > zMax) zMax = z;
+    }
+    return { along: uMax - uMin, perp: vMax - vMin, across: zMax - zMin };
+  })();
   const groundY = P.rearAxle.y - (P.tireR + g.tireWidth / 2);
   return {
     dropped: false,
     samples: pts.length / 3,
     bbox_mm: { x: +size.x.toFixed(1), y: +size.y.toFixed(1), z: +size.z.toFixed(1) },
     bbox_body_mm: { x: +bodySize.x.toFixed(1), y: +bodySize.y.toFixed(1), z: +bodySize.z.toFixed(1) },
+    bbox_mount_mm: mountSize
+      ? { along: +mountSize.along.toFixed(1), perp: +mountSize.perp.toFixed(1), across: +mountSize.across.toFixed(1) }
+      : null,
     profile40,
     frame_min: box.min.toArray().map((n) => +n.toFixed(1)),
     frame_max: box.max.toArray().map((n) => +n.toFixed(1)),

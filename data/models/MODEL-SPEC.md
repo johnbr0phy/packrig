@@ -268,7 +268,18 @@ tarpaulin sack — `soft`. Use `semi` for a bag that holds a shape but still giv
 `+x` = toward the FRONT wheel, `-x` = toward the REAR wheel, `+y` = up,
 `-y` = down, `+z` / `-z` = out to the drive / non-drive side.
 Use `along_downtube`, `along_toptube`, `along_seattube`, `along_forkleg`,
-`along_bar` where the axis follows a tube rather than a world direction.
+`along_bar` where the axis follows a tube rather than a world direction, and
+`perp_downtube`, `perp_toptube`, `perp_seattube`, `perp_forkleg` for the axis
+that stands OFF that tube — how far the bag hangs away from it.
+
+The `perp_` names matter more than they look. A bag on a raked tube has no axis
+on a world direction at all: the down tube sits at about 46 degrees, so a pack
+strapped under it has its length and its depth both split across world x and y.
+Writing `hgt: "y"` for such a bag, which is what these records did for want of
+anything better, tells the size gate to measure `0.724 x length + 0.690 x depth`
+and call the answer the height. That reported the Apidura down tube packs as
+"+147% too tall" for five rounds of fixes, on bags whose depth is within 6% of
+published, while hiding the real fault: they are 22-33% too SHORT.
 
 ---
 

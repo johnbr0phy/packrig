@@ -32,6 +32,34 @@ import { barMount } from '../mount.js';
 const clamp01 = (t) => Math.min(Math.max(t, 0), 1);
 
 /**
+ * Fabric twin of `mat` at a different value.
+ *
+ * The lid, the flap and the hem take `accent`, and for a product whose record
+ * carries ONE colourway `accent` is the same object as `main` — which is true of
+ * every fold-over pack in this slot. The flap was therefore being drawn, 3.5mm
+ * proud of the belly, in exactly the body's colour, and read as part of the box:
+ * that is the round-4 critique's "the same parallel-sided box with NO FLAP" on
+ * all three Apidura musettes. The flap is there; it was invisible.
+ *
+ * x5 is in LINEAR space, where THREE keeps colour, and lifts a #1c1c1e body to
+ * about #454547 on screen — the value difference a laminated flap lying on a
+ * matte body actually shows. Same trick, same reason, as barroll.js `tonedMat`.
+ */
+function tonedMat(mat, k) {
+  const m = mat.clone();
+  m.color = mat.color.clone().multiplyScalar(k);
+  return m;
+}
+
+/**
+ * The panel colour for a lid or flap: the product's accent where it HAS one,
+ * and a toned twin of the body where its record only ever names one colour.
+ */
+function panelMat(main, accent) {
+  return accent.color.getHex() === main.color.getHex() ? tonedMat(main, 4.2) : accent;
+}
+
+/**
  * The radius the handlebar TOPS are actually drawn at.
  *
  * src/bike.js:688 builds them with `tubeAlong([...], 11.9, M.aluDark)` and
@@ -78,15 +106,32 @@ function closureOf(p, feats) {
  * `taperRatio`, so a product with a different taper keeps this shape rather
  * than inheriting one drawing's absolute numbers.
  *
- * Measured off assets/products/apidura/full/racing-handlebar-pack/
- * dimensions-1.png at 40.8 px/cm (the 15cm body spans 602px): the widest
- * section is 896px at v=0.25 and the base 797px, i.e. the bag is barely
- * narrowed for the top half and closes over the bottom third. `(1-v)**1.5`
- * follows that within half a percent — 0.947 of full width at mid-height
- * against the drawing's 0.954 — and, unlike a table with a pinch in it, it
- * leaves the rim at exactly the published width.
+ * This is the SHAPE of the curve only. How much narrowing there is comes from
+ * the product's own `geometry.taper`, so two bags with different records get
+ * different bags; what they share is that a soft-sided bucket does most of its
+ * closing low down rather than leaning in evenly from the rim, which is a
+ * property of the form and not of any one maker.
+ *
+ * The exponent was calibrated against a drawing that happened to be Apidura's
+ * (racing-handlebar-pack/dimensions-1.png at 40.8 px/cm: the widest section is
+ * 896px at v=0.25 and the base 797px). `(1-v)**1.5` follows it within half a
+ * percent — 0.947 of full width at mid-height against the drawing's 0.954 —
+ * and, unlike a table with a pinch in it, it leaves the rim at exactly the
+ * published width.
  */
 const waistK = (v) => (1 - clamp01(v)) ** 1.5;
+
+/**
+ * How much of the height, at the bottom, is the rounded FLOOR rather than the
+ * side wall.
+ *
+ * Only applied where the record measured a narrowing base. A bucket does not
+ * stand on a square-cut slab — every fold-over record in this slot says "both
+ * lower corners are chamfered inwards" — and the critique's "shorter rounded
+ * base" is this. A record that measures parallel sides (taper 1.0, e.g. the
+ * Expedition Front Accessory Pack) keeps its square bottom.
+ */
+const BASE_ROUND = 0.17;
 
 /** Where the belly sits at height fraction `v` (0 base, 1 rim), in bag-local x. */
 const frontX = (v, d, baseFrac) => -d / 2 + d * (1 - (1 - baseFrac) * 0.5 * waistK(v));
@@ -125,11 +170,19 @@ function taperBody(geo, { h, d, baseFrac, foreAft }) {
     }
     const v = clamp01(pos.getY(i) / h + 0.5);
     const k = waistK(v);
-    pos.setZ(i, pos.getZ(i) * (1 - (1 - baseFrac) * k));
+    // …and the floor itself rolls under. A quarter-ellipse over the bottom
+    // BASE_ROUND of the height, on both plan axes, so the bag closes onto a
+    // rounded base instead of meeting the floor at a corner. The vertices are
+    // there to move: RoundedBoxGeometry's bottom corner arcs occupy roughly this
+    // band, which is why the effect lands even though its flat faces have no
+    // interior vertices (see frontSheet).
+    const u = v < BASE_ROUND ? (BASE_ROUND - v) / BASE_ROUND : 0;
+    const floor = u > 0 ? Math.sqrt(Math.max(0, 1 - u * u)) : 1;
+    pos.setZ(i, pos.getZ(i) * (1 - (1 - baseFrac) * k) * floor);
     // crossSection `flat_back`: the back panel stays flat against the bar and
     // the cables, so the depth closes on the belly side only, and by half as
     // much as the width.
-    pos.setX(i, -d / 2 + (pos.getX(i) + d / 2) * (1 - (1 - baseFrac) * 0.5 * k));
+    pos.setX(i, -d / 2 + (pos.getX(i) + d / 2) * (1 - (1 - baseFrac) * 0.5 * k) * floor);
   }
   pos.needsUpdate = true;
   return geo;
@@ -231,19 +284,21 @@ function musetteFlap(grp, mat, hwm, { w, h, d, baseFrac, bulge, lightMount }) {
     grp.add(mesh);
   };
   if (lightMount) {
-    // two 3.2cm horizontal light-mount loops on the flap's centreline, 20% and
-    // 30% of the body height below the rim — the two dashes centred on the flap
-    // in racing-handlebar-pack/on-bike-2.jpg, which is the view that fixes
-    // their height against the fold rather than against the flat pattern
+    // Two horizontal light-mount loops on the flap's centreline, at 20% and 30%
+    // of the body height below the rim — the two dashes centred on the flap in
+    // racing-handlebar-pack/on-bike-2.jpg, which is the view that fixes their
+    // height against the fold rather than against the flat pattern. Sized off
+    // the flap they sit on (a third of its leading edge) rather than off the one
+    // pack the heights were read from.
     for (const f of [0.2, 0.3]) {
-      onFace(new THREE.Mesh(new RoundedBoxGeometry(3, 8, 32, 2, 1), hwm), h / 2 - h * f, 1);
+      onFace(new THREE.Mesh(new RoundedBoxGeometry(3, 8, w * hem * 0.36, 2, 1), hwm), h / 2 - h * f, 1);
     }
   } else {
-    // no light mount: the City pack carries one wide central tab at the flap's
-    // leading edge, 7.5cm of its 20cm width (city-handlebar-pack/
-    // dimensions-1.png, x 580-890 at 41.5 px/cm; it is the woven label in
-    // city-handlebar-pack/on-bike-1.jpg)
-    onFace(new THREE.Mesh(new RoundedBoxGeometry(3, 16, Math.min(w * 0.37, 90), 2, 1.5), seamMat(mat)),
+    // No light mount: a pull tab centred on the leading edge, which is what a
+    // fold-over closes with when there is nothing else on the flap. A THIRD of
+    // the leading edge, not the literal 7.5 cm read off city-handlebar-pack/
+    // dimensions-1.png — every other maker's fold-over was inheriting that.
+    onFace(new THREE.Mesh(new RoundedBoxGeometry(3, 16, w * hem * 0.34, 2, 1.5), seamMat(mat)),
       h / 2 - drop + 12, 1);
   }
 }
@@ -300,6 +355,9 @@ export function buildBarbag(p, brand, main, accent, ctx) {
   // soft | semi | rigid, from the model records — see stiffnessOf().
   const stiff = stiffnessOf(p);
   const closure = closureOf(p, feats);
+  // Lids and flaps: the product's accent where its record names two colours, a
+  // toned twin of the body where it names one. See panelMat.
+  const panel = panelMat(main, accent);
   const wm = webbing();
   const hwm = hardware();
   const hasDia = p.dims_cm && p.dims_cm.dia;
@@ -442,17 +500,17 @@ export function buildBarbag(p, brand, main, accent, ctx) {
   }
   grp.add(body);
   if (closure === 'musette') {
-    musetteFlap(grp, accent, hwm, { w, h, d, baseFrac, bulge, lightMount: !!p.features?.lightMount });
+    musetteFlap(grp, panel, hwm, { w, h, d, baseFrac, bulge, lightMount: !!p.features?.lightMount });
   } else if (closure === 'flap') {
     // params are NOT pre-swapped: the rotation below already maps the lid's
     // local X (width) across the bike and its Z (depth) fore-aft. Swapping here
     // too made the lid a shelf as deep as the bag is wide.
-    const fl = flapLid(accent, wm, hwm, { w: w * 0.99, d: d * 0.99, drop: h * 0.42 });
+    const fl = flapLid(panel, wm, hwm, { w: w * 0.99, d: d * 0.99, drop: h * 0.42 });
     fl.rotation.y = Math.PI / 2;
     fl.position.y = h / 2 + 2;
     grp.add(fl);
   } else if (closure === 'zip') {
-    const lid = new THREE.Mesh(new RoundedBoxGeometry(d * 0.94, 18, w * 1.02, 4, 9), accent);
+    const lid = new THREE.Mesh(new RoundedBoxGeometry(d * 0.94, 18, w * 1.02, 4, 9), panel);
     lid.position.y = h / 2 - 4;
     grp.add(lid);
     grp.add(zipperRun(v3(d / 2 + 1, h / 2 - 12, -w * 0.44), v3(d / 2 + 1, h / 2 - 12, w * 0.44), hwm, { accentMat: accent }));
@@ -474,7 +532,7 @@ export function buildBarbag(p, brand, main, accent, ctx) {
     }
     grp.add(cap);
   } else {
-    const lid = new THREE.Mesh(new RoundedBoxGeometry(d * 0.94, 18, w * 1.02, 4, 9), accent);
+    const lid = new THREE.Mesh(new RoundedBoxGeometry(d * 0.94, 18, w * 1.02, 4, 9), panel);
     lid.position.y = h / 2 - 4;
     grp.add(lid);
   }
@@ -562,11 +620,44 @@ export function buildBarbag(p, brand, main, accent, ctx) {
   const sag = Math.max(0, -body.geometry.boundingBox.min.y - h / 2);
   const bottomY = Math.max(wheelTop + 24 + sag, bc.y - h + 14);
   const org = v3(rearFace + d / 2, bottomY + h / 2, 0);
-  // the bar, in bag-local mm — everything that wraps it is placed off this
-  barStraps(grp, wm, hwm, {
-    w, h, d, barR: BAR_TUBE_R,
-    barLocal: v3(bc.x - org.x, bc.y - org.y, 0),
-  });
+  // ---- what this bag hangs from ------------------------------------------
+  // A `barpocket` does not mount to the bike at all: it clips to the FRONT FACE
+  // of whatever handlebar bag is fitted (Apidura's Expedition Front Accessory
+  // Pack to the Expedition Handlebar Pack, Revelate's Scrambler Pocket to the
+  // roll's own straps). src/bags/slots.js declares that with `mountsTo` and
+  // src/bags/system.js parents the mesh to the host bag and positions it there,
+  // so everything below that reaches for `barCenter` is not just useless here,
+  // it is the "floating — nearest mount 25.9mm" of the v4 gate: two webbing
+  // loops drawn round a handlebar that is nowhere near this bag's local frame.
+  //
+  // What a pocket carries instead is on its BACK panel: hooks or buckles that
+  // catch the host's straps or its Anchor Rails. Drawn against the back face,
+  // which is the face that meets the host.
+  const clipsToBag = p.slot === 'barpocket';
+  if (clipsToBag) {
+    for (const s of [-1, 1]) {
+      const z = s * w * 0.3;
+      const clip = new THREE.Group();
+      // the webbing tail running up the back panel to the hook
+      const tail = new THREE.Mesh(new THREE.BoxGeometry(3, h * 0.42, 18), wm);
+      tail.position.set(-d / 2 - 1, h * 0.18, z);
+      clip.add(tail);
+      // the hook itself, standing off the back panel to catch the host's strap
+      const hook = new THREE.Mesh(new THREE.TorusGeometry(9, 2.6, 6, 16, Math.PI * 1.35), hwm);
+      hook.position.set(-d / 2 - 6, h * 0.4, z);
+      hook.rotation.y = Math.PI / 2;
+      hook.rotation.z = -Math.PI / 2;
+      clip.add(hook);
+      clip.traverse((o) => { o.userData.noCollide = true; });
+      grp.add(clip);
+    }
+  } else {
+    // the bar, in bag-local mm — everything that wraps it is placed off this
+    barStraps(grp, wm, hwm, {
+      w, h, d, barR: BAR_TUBE_R,
+      barLocal: v3(bc.x - org.x, bc.y - org.y, 0),
+    });
+  }
   // The lower anti-sway strap. All three Apidura musette records carry
   // { role:'stability', count:1, wrapsAround:'head_tube' }, and without it the
   // bag reads as hanging off two straps with nothing stopping it swinging.
@@ -579,7 +670,7 @@ export function buildBarbag(p, brand, main, accent, ctx) {
   // this builder can read that tells the two apart — a roll-top bar pack is as
   // likely to hang in a harness or off a decaleur.
   const headR = (ctx.frameEdgeR?.[2] ?? 24);
-  const antiSway = !foreAft && (closure === 'musette' || closure === 'flap');
+  const antiSway = !foreAft && !clipsToBag && (closure === 'musette' || closure === 'flap');
   const corner = v3(org.x - d / 2, org.y - h / 2, 0);
   const rel = v3(corner.x - P.headTop.x, corner.y - P.headTop.y, 0);
   // Nearest point on the head-tube axis, but kept in the band just under the
