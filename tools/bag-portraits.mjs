@@ -73,7 +73,13 @@ const browser = await puppeteer.launch({
   args: ['--hide-scrollbars', '--enable-unsafe-swiftshader'],
 });
 const page = await browser.newPage();
-await page.setViewport({ width: 900, height: 600, deviceScaleFactor: 2 });
+/*
+ * Deliberately deviceScaleFactor 1. At 2 the portraits came out 1200x800 and
+ * ~78KB each; 201 of those is 15MB, on a deploy that is currently 4.4MB in
+ * total. These are shown at 432x288 at the very largest — the bag sheet hero —
+ * and at 48px in the rig panel, so a 600x400 render is already generous.
+ */
+await page.setViewport({ width: 900, height: 600, deviceScaleFactor: 1 });
 await page.goto(BASE, { waitUntil: 'domcontentloaded', timeout: 90000 });
 await page.waitForFunction('window.__READY_DONE === true', { timeout: 90000 });
 await new Promise((r) => setTimeout(r, 800));
@@ -157,7 +163,7 @@ for (const j of todo) {
   if (!ok || typeof ok === 'string') { console.log(`  skip  ${key}: ${ok}`); failed++; continue; }
   await new Promise((r) => setTimeout(r, 260));
   await page.screenshot({
-    path: join(OUT, `${key}.jpg`), type: 'jpeg', quality: 72,
+    path: join(OUT, `${key}.jpg`), type: 'jpeg', quality: 70,
     clip: { x: 150, y: 60, width: 600, height: 400 },
   });
   manifest[key] = `assets/portraits/${key}.jpg`;

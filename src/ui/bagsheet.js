@@ -89,6 +89,10 @@ export function initBagSheet(app, { openCatalogue, sync, notify } = {}) {
       // the mesh here, which is a bigger job and is not done yet.
       img.onerror = () => { hero.classList.add('is-blank'); img.remove(); };
       hero.append(img);
+      // Say so when the picture is our render rather than the maker's
+      // photograph. The whole spec table is built on being straight about where
+      // a number came from; the image deserves the same.
+      if (product.rendered) hero.append(el('span', 'bs-hero-tag', 'Rendered from measurements'));
     } else {
       hero.classList.add('is-blank');
     }

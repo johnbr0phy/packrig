@@ -50,12 +50,24 @@ const wentToBrands = await p.evaluate(()=>{
 });
 ok(wentToBrands, 'picked a mount point');
 await w(700);
-await step('brand list', 120);
-const opened = await p.evaluate(()=>{const n=document.querySelector('.sheet-body .brand-row'); if(!n)return false; n.click(); return true;});
-ok(opened, 'opened a brand');
-await w(700);
-await step('brand detail', 200);
-ok(await p.evaluate(()=>{const c=document.querySelector('.sheet-title')?.textContent?.trim(); const cur=document.querySelector('.crumb.cur')?.textContent?.trim(); return !cur || cur!==c;}), 'the sheet title is not repeated in the breadcrumb');
+await step('catalogue grid', 150);
+// The brand tree is gone: a mount now opens the faceted grid directly, and
+// brand is a filter chip in it (REDESIGN.md §9).
+ok(await p.evaluate(()=>!!document.querySelector('.cat-facets')), 'the mount opens the faceted catalogue');
+ok(await p.evaluate(()=>/\d+ bags? · \d+ brands?/.test(document.querySelector('.cat-count')?.textContent||'')), 'it states how many bags and brands');
+const before = await p.evaluate(()=>document.querySelectorAll('.sheet-body .card').length);
+await p.evaluate(()=>[...document.querySelectorAll('.cat-chip')].find(n=>/^Brand/.test(n.textContent))?.click());
+await w(400);
+ok(await p.evaluate(()=>!!document.querySelector('.cat-pop .cat-opt-n')), 'the brand facet lists options with live counts');
+await p.evaluate(()=>document.querySelector('.cat-pop .cat-opt')?.click());
+await w(600);
+const after = await p.evaluate(()=>document.querySelectorAll('.sheet-body .card').length);
+ok(after>0 && after<=before, `picking a brand narrows the grid (${before} -> ${after})`);
+ok(await p.evaluate(()=>!!document.querySelector('.cat-clear')), 'Clear all appears once a facet is on');
+await step('filtered grid', 170);
+await p.evaluate(()=>document.querySelector('.cat-clear')?.click());
+await w(600);
+ok(await p.evaluate(()=>document.querySelectorAll('.sheet-body .card').length)>0, 'Clear all restores the full grid');
 ok(errs.length===0, `no app console errors ${errs.slice(0,2).join(' | ')}`);
 await p.screenshot({path:SHOT});
 await b.close();

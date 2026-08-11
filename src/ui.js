@@ -10,6 +10,7 @@ import {
 import { initBagSheet } from './ui/bagsheet.js';
 import { initHome } from './ui/home.js';
 import { initGallery } from './ui/gallery.js';
+import { initCatalogue } from './ui/catalogue.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -436,7 +437,7 @@ export function initUI(app) {
   }
 
   const bagSheet = initBagSheet(app, {
-    openCatalogue: (uiSlot) => openBrandPicker(uiSlot),
+    openCatalogue: (uiSlot) => catalogue.open(uiSlot),
     sync: () => sync(),
     notify,
   });
@@ -641,7 +642,7 @@ export function initUI(app) {
             : 'No products';
         b.append(elt('span', 'mb-sub', sub));
         if (!options.length) b.disabled = true;
-        else b.onclick = () => openBrandPicker(key);
+        else b.onclick = () => catalogue.open(key);
         grid.append(b);
       }
       sec.append(grid);
@@ -692,6 +693,73 @@ export function initUI(app) {
       : items.flatMap((i) => i.product.colors || []);
     return [...new Set(cols)].slice(0, 4);
   }
+
+  /**
+   * One card for one product, for the faceted catalogue (§9). The brand-tree
+   * cards group a model's sizes together, which only makes sense inside a brand
+   * page; here every row is a product, because the facets — not the tree — are
+   * what narrowed the list.
+   */
+  function catCard(entry, uiSlot, unfit) {
+    const cur = app.bags.equipped[uiSlot];
+    const { brand, product } = entry;
+    const c = el('div', 'card' + (cur?.product === product ? ' on' : '') + (unfit ? ' is-unfit' : ''));
+    const shot = product.images?.[0];
+    if (shot) {
+      const wrap = el('div', 'card-thumb');
+      const img = document.createElement('img');
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.alt = '';
+      img.referrerPolicy = 'no-referrer';
+      img.src = shot;
+      img.onerror = () => wrap.remove();
+      wrap.append(img);
+      c.append(wrap);
+    }
+    c.append(elt('div', 'brand', brand.short || brand.name));
+    c.append(elt('div', 'name', modelTitle(product, brand)));
+    const meta = el('div', 'meta');
+    meta.append(elt('span', 'liters', litersOf(product)));
+    const cols = (product.features?.colorways || []).length || (product.colors || []).length;
+    if (cols > 1) {
+      const chips = el('div', 'chips');
+      for (const col of (product.colors || []).slice(0, 4)) {
+        const chip = el('span', 'chip');
+        chip.style.background = col;
+        chips.append(chip);
+      }
+      meta.append(chips);
+    }
+    c.append(meta);
+    if (unfit) c.append(elt('div', 'card-unfit', unfit));
+    c.onclick = () => {
+      app.bags.equip(uiSlot, brand, product);
+      closeOverlay();
+      sync();
+    };
+    return c;
+  }
+
+  /**
+   * Why this product will not go on this bike, or null. Only the honest cases:
+   * a pocket with nothing to clip to, and a bag longer than the slot's room.
+   * Anything less certain than that belongs on the card as data, not as a
+   * filter that quietly removes a bag somebody was looking for.
+   */
+  function fitReason(uiSlot, entry) {
+    const def = SLOTS[uiSlot];
+    if (def?.mountsTo && !def.mountsTo.some((s) => app.bags.equipped[s])) {
+      return `Needs a ${def.mountsTo.map((s) => (SLOTS[s]?.label || s).toLowerCase()).join(' or ')} first`;
+    }
+    return null;
+  }
+
+  const catalogue = initCatalogue(app, {
+    openSheet: (opts) => app.openSheet?.(opts),
+    cardFor: catCard,
+    fitReason,
+  });
 
   /** Step 2 — which brand? */
   function openBrandPicker(uiSlot) {
@@ -919,7 +987,7 @@ export function initUI(app) {
       });
     };
     card.append(sw, txt, rm);
-    card.onclick = () => openBrandPicker(key);
+    card.onclick = () => catalogue.open(key);
     return card;
   }
 

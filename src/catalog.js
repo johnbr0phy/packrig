@@ -47,6 +47,23 @@ export async function loadCatalog() {
   // perspective; the drawing is orthographic, unlit and dimensioned, and it
   // also yields the plan-view width profile, which photographs almost never do.
   const diagrams = await fetch('./data/diagram-profiles.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+  /*
+   * A render of every bag that ships no photograph.
+   *
+   * 201 of 702 products have no image at all — small makers, discontinued
+   * models, and a long tail nobody photographed — and everywhere the app showed
+   * a bag it had to show a coloured plate instead. tools/bag-portraits.mjs
+   * renders each of them from its own measured record, in the app's own
+   * lighting, and this folds the result into `images` so every call site that
+   * already reads a photograph picks it up without knowing the difference.
+   *
+   * It goes in LAST and never overwrites: a real photograph of the real product
+   * always beats a render of our model of it.
+   */
+  const portraits = await fetch('./data/portraits.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+  const portraitKey = (brandName, p) => [brandName, p.line, p.name, p.size]
+    .filter(Boolean).join('-').toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 90);
   brands.forEach((b, bi) => {
     b.index = bi;
     b.short = SHORT[b.name] || b.name;
@@ -55,6 +72,12 @@ export async function loadCatalog() {
       p.index = pi;
       p.brandIndex = bi;
       if (!p.slot) p.slot = 'seatpack';
+      if (!p.images?.length) {
+        const shot = portraits[portraitKey(b.short, p)] || portraits[portraitKey(b.name, p)];
+        // `rendered` so the UI can be honest about what it is showing when it
+        // matters — a spec sheet should not imply a photograph exists.
+        if (shot) { p.images = [shot]; p.rendered = true; }
+      }
       // ensure sane dims in mm
       const d = p.dims_cm || {};
       // `dims_cm` is the honest published record and is what the spec table

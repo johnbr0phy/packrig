@@ -15,7 +15,7 @@
  *
  *   node tools/build-pages.mjs
  */
-import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, existsSync, cpSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -74,7 +74,7 @@ writeFileSync(join(docs, 'data/brands.json'), JSON.stringify(brands));
 // measuring the maker's engineering drawing reverts on the live site only.
 // `diagram-profiles.json` is the one that matters most — it is what took the
 // seat packs from back-to-front to correct.
-for (const f of ['profiles.json', 'diagram-profiles.json']) {
+for (const f of ['profiles.json', 'diagram-profiles.json', 'portraits.json']) {
   const src = join(root, 'data', f);
   if (!existsSync(src)) { console.log(`   (no data/${f} — skipping)`); continue; }
   writeFileSync(join(docs, 'data', f), JSON.stringify(JSON.parse(readFileSync(src, 'utf8'))));
@@ -86,6 +86,23 @@ for (const f of ['profiles.json', 'diagram-profiles.json']) {
 // resolved relative to the STYLESHEET, not the page — has to be rewritten for
 // the shallower path. Getting this wrong fails silently: the page renders in
 // the system fallback and looks nearly right.
+// The rendered portraits for the 201 products that ship no photograph. Without
+// them the deployed catalogue falls back to coloured plates while the dev build
+// shows pictures, which is the sort of difference nobody notices until a
+// screenshot of the live site turns up looking worse than the local one.
+{
+  const src = join(root, 'assets/portraits');
+  if (existsSync(src)) {
+    cpSync(src, join(docs, 'assets/portraits'), { recursive: true });
+    const n = readdirSync(join(docs, 'assets/portraits')).length;
+    const kb = readdirSync(join(docs, 'assets/portraits'))
+      .reduce((t, f) => t + statSync(join(docs, 'assets/portraits', f)).size, 0) / 1024;
+    console.log(`   portraits: ${n} files, ${kb.toFixed(0)}KB`);
+  } else {
+    console.log('   (no assets/portraits — run tools/bag-portraits.mjs)');
+  }
+}
+
 mkdirSync(join(docs, 'assets/fonts'), { recursive: true });
 copyFileSync(join(root, 'assets/fonts/InterVariable.woff2'), join(docs, 'assets/fonts/InterVariable.woff2'));
 copyFileSync(join(root, 'assets/fonts/Inter-LICENSE.txt'), join(docs, 'assets/fonts/Inter-LICENSE.txt'));
