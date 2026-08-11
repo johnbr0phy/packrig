@@ -115,10 +115,11 @@ export function initBagSheet(app, { openCatalogue, sync, notify } = {}) {
     // share link and reload. Only the control was missing.
     const ways = featuresOf(product).colorways || [];
     const active = cur.colorwayIndex || 0;
+    const cwName = ways[active]?.name || cw.name || '';
     const cwWrap = el('div', 'bs-block');
     const cwHead = el('div', 'bs-label-row');
     cwHead.append(el('span', 'bs-label', 'Colourway'));
-    cwHead.append(el('span', 'bs-label-v', ways[active]?.name || cw.name || ''));
+    cwHead.append(el('span', 'bs-label-v', cwName));
     cwWrap.append(cwHead);
     if (ways.length > 1) {
       const row = el('div', 'bs-ways');
@@ -138,9 +139,11 @@ export function initBagSheet(app, { openCatalogue, sync, notify } = {}) {
       });
       cwWrap.append(row);
     }
-    // A single-colourway product keeps the row and loses the picker. A row that
-    // vanishes on some bags and not others reads as a bug (§5.2).
-    pk.append(cwWrap);
+    // A single-colourway product keeps the row and loses the picker — a row that
+    // vanishes on some bags and not others reads as a bug (§5.2). But a record
+    // with no colourways AND no resolved name has nothing to put in it, and a
+    // heading over blank space is worse than no heading.
+    if (ways.length > 1 || cwName) pk.append(cwWrap);
 
     // ---- specifications ----------------------------------------------------
     const f = featuresOf(product);

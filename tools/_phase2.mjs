@@ -16,8 +16,16 @@ await new Promise(r=>setTimeout(r,900));
 const fail=[]; const ok=(c,m)=>{console.log((c?'  ok   ':'  FAIL ')+m); if(!c)fail.push(m)};
 const wait=(ms=500)=>new Promise(r=>setTimeout(r,ms));
 
+// the save CTA must be absent on an empty bike
+ok(await p.evaluate(()=>{const b=document.querySelector('.save-btn');return !!b && b.hidden}), 'Save rig is hidden with an empty bike');
+
 // load a full rig so there are bags to open
 await p.evaluate(()=>document.querySelector('.btn.quiet')?.click()); await wait(900);
+ok(await p.evaluate(()=>{const b=document.querySelector('.save-btn');return !!b && !b.hidden && /Save rig/.test(b.textContent)}), 'Save rig appears as soon as bags land on the bike');
+ok(await p.evaluate(()=>!document.querySelector('.bottom-bar') && !document.querySelector('.dock')), 'the bottom bar is gone');
+ok(await p.evaluate(()=>{const t=document.querySelector('.topbar'); return !!t && !!t.querySelector('.viewtools') && !!t.querySelector('.acct-btn')}), 'top bar carries the camera tools and the account');
+ok(await p.evaluate(()=>!document.querySelector('.env-chip')), 'the scene picker is gone');
+ok(await p.evaluate(()=>{const pa=document.querySelector('.panel'); return !!pa?.querySelector('.paints') && !!pa.querySelector('.bidons') && !!pa.querySelector('.add-bag')}), 'left column holds frame, bidons and Add a bag');
 const bags = await p.evaluate(()=>document.querySelectorAll('.bag-card:not(.unfit)').length);
 ok(bags>0, `Surprise me loaded a rig (${bags} bags)`);
 
@@ -70,6 +78,8 @@ await p.evaluate(()=>[...document.querySelectorAll('.bs-btn')].find(n=>n.textCon
 await wait(700);
 ok(await p.evaluate(()=>!!document.querySelector('.sheet:not([hidden]) .picker')), 'Replace it opens the catalogue in the same shell');
 ok(await p.evaluate(()=>document.querySelectorAll('.sheet:not([hidden])').length)===1, 'still exactly one sheet');
+
+ok(await p.evaluate(()=>{const s=document.querySelector('.sheet:not([hidden])'); if(!s)return true; return s.getBoundingClientRect().left < window.innerWidth/2}), 'the sheet opens on the left');
 
 const layout = await p.evaluate(()=>{
   const d=document.documentElement;

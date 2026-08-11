@@ -21,10 +21,16 @@
 .sheet[hidden] { display: none; }
 .sheet:not(.open) { pointer-events: none; }
 
+/* LEFT-ANCHORED. This was a right-hand side sheet, which put chrome on both
+   flanks of the bike at once — rail on the left, sheet on the right — and made
+   the whole interface feel like it was closing in. Everything lives in one
+   column now: the rig list at rest, and whatever you drill into replaces it in
+   place. One column of chrome, one free area, one direction for the camera to
+   move. */
 .sheet {
   position: fixed;
-  top: var(--gutter);
-  right: var(--gutter);
+  top: var(--topbar-h, 64px);
+  left: var(--gutter);
   bottom: var(--gutter);
   width: var(--sheet-detail-w);
   border-radius: var(--r-panel);
@@ -38,7 +44,7 @@
      nowhere. Width is transitioned too, so `detail` -> `catalog` is a resize
      rather than a close and a reopen. */
   opacity: 0;
-  transform: translateX(24px);
+  transform: translateX(-24px);
   transition:
     opacity var(--d-sheet-out) var(--ease-in),
     transform var(--d-sheet-out) var(--ease-in),
@@ -120,42 +126,16 @@
   transition: width var(--d-sheet) var(--ease-out);
 }
 
+/* No rail. The sheet occupies the same column, so the panel steps aside
+   entirely rather than collapsing to a 56px strip of thumbnails beside it.
+   `visibility` rather than `display` so its width transition still runs and
+   reframe.js can measure it settling. */
 #ui-root.sheet-open .panel {
-  width: var(--rail-w);
-  min-width: var(--rail-w);
-  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--d-sheet-out) var(--ease-in), visibility 0s linear var(--d-sheet-out);
 }
-
-/* §6.1's rail shows 40x40 thumbnails and a `+`, and NOTHING else.
-   EVERY selector here is scoped to `.panel`. It did not used to be, and
-   `.card` / `.card-thumb` / `.card-sub` are the CATALOGUE's classes, not the
-   rig panel's — so the moment the catalogue moved inside the sheet (phase 1),
-   these rules squashed every product card in it to a 40x40 square with its
-   name clipped to "Water 11L…". The rig panel's own rows are `.bag-*`. */
-#ui-root.sheet-open .panel .panel-head,
-#ui-root.sheet-open .panel .empty-state,
-#ui-root.sheet-open .panel .bag-act,
-#ui-root.sheet-open .panel .panel-count,
-#ui-root.sheet-open .panel .bag-txt,
-#ui-root.sheet-open .panel .ways,
-#ui-root.sheet-open .panel .unfit-rm,
-#ui-root.sheet-open .panel .kit-summary,
-#ui-root.sheet-open .panel .share-kit,
-/* The footer buttons keep their icons in the rail and drop their words. */
-#ui-root.sheet-open .panel .add-bag .plus + *,
-#ui-root.sheet-open .panel .rigs-btn .lbl {
-  display: none;
-}
-
-/* Icon-only, and still over the 44px floor. */
-#ui-root.sheet-open .panel .panel-foot { padding: 0 var(--s-2) var(--s-2); }
-#ui-root.sheet-open .panel .add-bag,
-#ui-root.sheet-open .panel .rigs-btn {
-  width: 40px; min-width: 40px; height: 44px; padding: 0;
-  justify-content: center; gap: 0;
-}
-
-#ui-root.sheet-open .panel .bag-list { padding: var(--s-2) 0; overflow: hidden auto; }
 
 /* The + survives, as a square button rather than a labelled row. */
 #ui-root.sheet-open .panel-foot { padding: var(--s-2); }
@@ -177,22 +157,9 @@
      - a transform is the wrong tool anyway. .bottom-bar is anchored to both
        edges, so moving its anchors makes it RESIZE to the free area rather
        than slide out of one side of it. */
-#ui-root .bottom-bar {
-  transition: left var(--d-sheet) var(--ease-out),
-              right var(--d-sheet) var(--ease-out);
-}
-#ui-root.sheet-open .bottom-bar {
-  left: calc(var(--gutter) + var(--rail-w));
-  right: calc(var(--sheet-w) + var(--gutter) * 2);
-}
-
-/* The view tools sit top-right, exactly where the sheet arrives. */
-#ui-root .viewtools {
-  transition: transform var(--d-sheet) var(--ease-out);
-}
-#ui-root.sheet-open .viewtools {
-  transform: translateX(calc((var(--sheet-w) + var(--gutter)) * -1));
-}
+/* The bottom bar and the top-right tool cluster are both gone — everything
+   they held lives in the top bar now, which spans the viewport and therefore
+   does not move when a sheet opens. Nothing left to reposition. */
 
 /* ui.css sets its own family on .panel/.dock children; the design system owns
    type now, and sheet.css loads last. */

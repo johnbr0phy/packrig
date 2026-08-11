@@ -1,9 +1,8 @@
 import { SLOTS, productSlotFor, colorwayFor } from './bags.js';
 import { initRigsUI } from './rigsui.js';
-import { rigURL } from './rig.js';
+import { captureRig, rigURL } from './rig.js';
 import { productsForSlot } from './catalog.js';
 import { PAINTS } from './bike.js';
-import { ENV_NAMES } from './environments.js';
 import {
   buyLink, displayName, lineOf, litersOf, modelTitle, sizeIsVolume, sizeOf, srcOf,
   stripLine, swatchStyle,
@@ -38,15 +37,6 @@ const ZONES = [
   { label: 'Fork', slots: ['forkL', 'forkR'] },
   { label: 'Rear', slots: ['pannierL', 'pannierR', 'trunk'] },
 ];
-
-/** Mini sky→ground gradients standing in for a render of each environment. */
-const ENV_THUMB = {
-  mountain: ['#6b7c92', '#8a94a0'],
-  lake: ['#7fb4c9', '#37697d'],
-  forest: ['#a8c4a0', '#3a5040'],
-  desert: ['#e8b184', '#c09a6e'],
-  night: ['#0a1020', '#3b3f46'],
-};
 
 const PAINT_LABEL = {
   Slate: 'Slate Grey',
@@ -89,14 +79,22 @@ export function initUI(app) {
     target: app.controls?.target?.clone?.() || null,
   };
 
-  // ---- wordmark ----------------------------------------------------------
-  // soft scrim keeps the wordmark legible over pale skies (lake, desert)
-  root.append(el('div', 'top-scrim'));
+  // ---- the top bar --------------------------------------------------------
+  /*
+   * One bar across the top holds everything that is not the rig: the wordmark,
+   * the actions that used to be a floating bottom dock, the camera tools that
+   * used to float top-right, and who you are signed in as.
+   *
+   * Three separate pieces of floating chrome plus a left panel plus a right
+   * sheet meant the bike was boxed in on all four sides. A bar that spans the
+   * viewport also never has to move when a sheet opens, which deletes the two
+   * repositioning rules that were the fiddliest part of the shell.
+   */
+  const topbar = el('div', 'topbar glass');
   const mark = el('div', 'wordmark');
-  // §14.3: a tracked-caps subtitle under a tracked-caps wordmark, saying nothing
-  // the screen does not. Deleted.
   mark.append(el('h1', null, 'PACKRIG'));
-  root.append(mark);
+  topbar.append(mark);
+  const topRight = el('div', 'top-right');
 
   // ---- left panel: what is on the bike -----------------------------------
   const panel = el('div', 'panel glass');
@@ -114,7 +112,11 @@ export function initUI(app) {
   sheetAdd.title = 'Pick a mount point';
   sheetAdd.setAttribute('aria-label', 'Add a bag');
   sheetAdd.onclick = (e) => { e.stopPropagation(); openMountPicker(); };
-  head.append(chevron, elt('span', 'panel-title', 'On your bike'), countEl, peekTotal, sheetAdd);
+  // No title here: "Bike" and "Bags on bike" are the section headings below,
+  // and a third heading above them saying the same thing is the duplication
+  // §1.1 is about. The header survives for the phone, where it is the sheet's
+  // drag handle and running total.
+  head.append(chevron, peekTotal, sheetAdd);
   const listEl = el('div', 'bag-list');
 
   let collapsed = false;
@@ -141,17 +143,14 @@ export function initUI(app) {
   shareBtn.append(elt('span', 'ic', '⧉'), shareLabel);
   shareBtn.title = 'Copy a link to this build';
   shareBtn.onclick = () => shareKit(shareBtn, shareLabel);
-  const rigsBtn = el('button', 'rigs-btn');
-  rigsBtn.append(elt('span', 'ic', '☰'), elt('span', 'lbl', 'My rigs'));
-  rigsBtn.title = 'Save this build, or load one you saved before';
-  rigsBtn.onclick = () => rigsUI?.open();
-  foot.append(summary, addBtn, shareBtn, rigsBtn);
-  panel.append(head, listEl, foot);
+  // The panel's own "My rigs" button is gone: the top bar carries the account,
+  // and two buttons opening the same panel from opposite corners is exactly the
+  // duplication §1.1 is about.
+  foot.append(summary, shareBtn);
   root.append(panel);
   listEl.addEventListener('scroll', updateFade);
 
-  // ---- bottom dock: actions + frame colour -------------------------------
-  const dock = el('div', 'dock');
+  // ---- build actions: randomise, clear ------------------------------------
   const btnRand = el('button', 'btn quiet', '<span class="bolt">⚡</span> Surprise me');
   btnRand.onclick = () => app.randomize();
   // clearing the whole bike is destructive, so it asks once before it fires
@@ -213,45 +212,40 @@ export function initUI(app) {
   }
   bidonGroup.append(bidons);
 
-  // ---- environment picker -------------------------------------------------
-  // Five labelled photo cards ate 40% of the bar for a setting touched once.
-  // A compact swatch row says the same thing in a fifth of the space.
-  const envs = el('div', 'envs compact');
-  for (const name of ENV_NAMES) {
-    const chip = el('button', 'env-chip');
-    const [sky, ground] = ENV_THUMB[name] || ['#8a8f96', '#3a3e44'];
-    chip.style.background = `linear-gradient(160deg, ${sky}, ${ground})`;
-    chip.dataset.env = name;
-    chip.title = `${name[0].toUpperCase() + name.slice(1)} environment`;
-    chip.setAttribute('aria-label', `Environment: ${name}`);
-    // a title attribute is a hover affordance, so the name ships as text too;
-    // it only gets a box inside the appearance sheet, where there is room
-    chip.append(elt('span', 'env-label', name));
-    chip.onclick = () => app.setEnv(name);
-    envs.append(chip);
-  }
-  const envGroup = el('div', 'paint-group');
-  envGroup.append(elt('span', 'group-label', 'Scene'));
-  envGroup.append(envs);
+  // The environment picker is gone for now. Five scenes were a setting people
+  // touched once, sitting permanently in the chrome. `app.setEnv` and every
+  // HDRI stay exactly as they were — this removes the control, not the feature,
+  // so bringing it back later is a few lines and no data work.
 
-  // One bar, one rhythm: build actions left, appearance right. "Surprise me"
-  // drops to a quiet icon button — it was the loudest thing on screen for the
-  // least consequential action.
-  //
-  // The three appearance groups are wrapped so a narrow viewport can lift them
-  // out of the bar in one move. The wrapper is `display: contents` on desktop,
-  // so the dock lays out exactly as it did before it existed.
+  /*
+   * The "Bike" section of the left column: what the frame and the bottles look
+   * like. These were swatch groups floating in a bottom bar, one shelf away
+   * from the bags they sit next to on the actual bicycle. Everything you are
+   * building now reads down one column — bike, then bags.
+   */
+  const bikeSec = el('section', 'nav-sec');
+  bikeSec.append(elt('h2', 'nav-sec-title', 'Bike'));
   const appearance = el('div', 'appearance');
-  appearance.append(
-    paintGroup, el('span', 'divider'), bidonGroup, el('span', 'divider'), envGroup
-  );
-  const btnAppearance = elt('button', 'btn quiet appearance-btn', 'Appearance');
-  btnAppearance.title = 'Frame, bidons and scene';
-  btnAppearance.onclick = () => openAppearance();
-  dock.append(btnRand, btnClear, btnAppearance, el('span', 'divider'), appearance);
-  const bottom = el('div', 'bottom-bar glass');
-  bottom.append(dock);
-  root.append(bottom);
+  appearance.append(paintGroup, bidonGroup);
+  bikeSec.append(appearance);
+
+
+  /*
+   * The "Bags" section, and the column assembled.
+   *
+   * Reading order is the order you build in: choose how the bike looks, see
+   * what is on it, add to it. `Surprise me` sits with `Add a bag` because they
+   * are the same decision taken two ways — one deliberate, one not.
+   */
+  const bagsSec = el('section', 'nav-sec');
+  const bagsHead = el('div', 'nav-sec-head');
+  bagsHead.append(elt('h2', 'nav-sec-title', 'Bags on bike'), countEl, btnClear);
+  bagsSec.append(bagsHead, listEl);
+  const bagActions = el('div', 'nav-actions');
+  bagActions.append(addBtn, btnRand);
+  bagsSec.append(bagActions);
+
+  panel.append(head, bikeSec, bagsSec, foot);
 
   // the hint retires for good once the user has driven the camera, or after 5s
   const HINT_KEY = 'packrig.hintSeen';
@@ -305,7 +299,78 @@ export function initUI(app) {
     app.openWindTunnel?.();
   };
   tools.append(rotBtn, el('span', 'tool-divider'), homeBtn, el('span', 'tool-divider'), tunnelBtn);
-  root.append(tools);
+  topRight.append(tools);
+
+  /*
+   * Who you are, in the bar rather than behind a menu.
+   *
+   * Signed out it is the way in; signed in it is your email and the way to your
+   * rigs. Either way it is one button, because "Sign in" and "My rigs" are the
+   * same destination — `rigsUI` decides which screen to open from the auth
+   * state it already tracks.
+   */
+  /*
+   * Save rig — REDESIGN.md §6, goal 2.
+   *
+   * It appears the moment there is something worth saving and disappears when
+   * there is not, so the answer to "can I keep this?" is always on screen
+   * rather than behind a menu. Saving does not ask for an account first: the
+   * store has a full local branch and `migrateLocal()` pushes local rigs up on
+   * the first sign-in, so a signed-out save is a real save.
+   */
+  let savedSnapshot = null;          // the rig as it was when last saved
+  const snapshot = () => {
+    try { return JSON.stringify(captureRig(app, { name: '' })); } catch { return null; }
+  };
+  const saveBtn = el('button', 'save-btn');
+  const saveLabel = elt('span', 'save-label', 'Save rig');
+  saveBtn.append(saveLabel);
+  saveBtn.onclick = () => {
+    if (saveBtn.classList.contains('is-done')) { app.openRigs?.(); return; }
+    const n = (app.rigs?.localCount?.() || 0) + 1;
+    const name = `My rig ${n}`;
+    Promise.resolve(app.rigs?.save(name))
+      .then(() => {
+        savedSnapshot = snapshot();
+        paintSave();
+        notify(`Saved “${name}”`, null, { label: 'Rename', run: () => app.openRigs?.() });
+      })
+      .catch((e) => notify(e?.message || 'Could not save that rig'));
+  };
+  /**
+   * Three states, and the third is the one that matters: once saved, the button
+   * goes quiet rather than vanishing, and comes back the instant the bike
+   * differs from what was stored.
+   */
+  function paintSave() {
+    const bags = Object.keys(app.bags?.equipped || {}).length;
+    const dirty = !savedSnapshot || savedSnapshot !== snapshot();
+    saveBtn.hidden = bags === 0;
+    saveBtn.classList.toggle('is-done', !dirty);
+    saveLabel.textContent = dirty ? 'Save rig' : 'Saved ✓';
+    saveBtn.title = dirty ? 'Save this build' : 'Saved — open My rigs to rename it';
+  }
+  topRight.append(saveBtn);
+
+  const acctBtn = el('button', 'acct-btn');
+  const acctLabel = elt('span', 'acct-label', 'My rigs');
+  acctBtn.append(el('span', 'acct-dot'), acctLabel);
+  acctBtn.onclick = () => app.openRigs?.();
+  function paintAccount() {
+    const on = !!app.auth?.signedIn;
+    acctBtn.classList.toggle('is-in', on);
+    // The email is the identity; "My rigs" is what you came for. Signed out,
+    // neither is true yet, so the button says the thing you can actually do.
+    acctLabel.textContent = on ? (app.auth.email || 'My rigs')
+      : app.auth?.enabled ? 'Sign in' : 'My rigs';
+    acctBtn.title = on ? 'Your saved rigs' : 'Save this build, or load one you saved before';
+  }
+  paintAccount();
+  app.auth?.onChange?.(paintAccount);
+  topRight.append(acctBtn);
+
+  topbar.append(topRight);
+  root.append(topbar);
 
   /**
    * One line, bottom-centre, with an action. Built for undo (REDESIGN.md §5.1):
@@ -317,12 +382,15 @@ export function initUI(app) {
   const toastEl = el('div', 'toast');
   toastEl.hidden = true;
   root.append(toastEl);
-  function notify(text, undo) {
+  function notify(text, undo, action) {
     clearTimeout(toastTimer);
     toastEl.replaceChildren(elt('span', 'toast-txt', text));
-    if (undo) {
-      const b = elt('button', 'toast-act', 'Undo');
-      b.onclick = () => { hideToast(); undo(); };
+    // `undo` is the common case and keeps its shorthand; `action` is for the
+    // toasts that offer something other than putting a thing back.
+    const act = undo ? { label: 'Undo', run: undo } : action;
+    if (act) {
+      const b = elt('button', 'toast-act', act.label);
+      b.onclick = () => { hideToast(); act.run(); };
       toastEl.append(b);
     }
     toastEl.hidden = false;
@@ -374,13 +442,7 @@ export function initUI(app) {
       kind: KIND_FOR[extraCls] || 'catalog',
       title: '',
       render: (body) => body.append(pk),
-      // The appearance controls are borrowed from the dock, not copied — put
-      // them back before the body holding them is emptied, or the frame and
-      // bidon swatches vanish from the bar for the rest of the session.
-      onClose: () => {
-        handle = null;
-        if (appearance.parentElement !== dock) dock.append(appearance);
-      },
+      onClose: () => { handle = null; },
     });
     return pk;
   }
@@ -432,15 +494,9 @@ export function initUI(app) {
    * The controls themselves are moved, not rebuilt, so every listener and the
    * `.on` state sync() paints survive the trip in both directions.
    */
-  function openAppearance() {
-    const pk = openOverlay('appearance-sheet');
-    pk.append(pickerHead({ title: 'Appearance', sub: '' }));
-    pk.append(appearance);
-  }
-  // a window that grows past the sheet breakpoint gets its bar controls back
-  COMPACT.addEventListener?.('change', (e) => {
-    if (!e.matches && appearance.parentElement !== dock) closeOverlay();
-  });
+  // `openAppearance()` and the breakpoint listener that put the swatches back
+  // in the bar are both gone. The controls live in the left column at every
+  // width, so there is nothing to lift out and nothing to put back.
 
   /**
    * People arrive with one of two things in mind: a place on the bike they want
@@ -894,26 +950,10 @@ export function initUI(app) {
       // Replace, remove and buy live in there now, not as 22px hover buttons.
       card.onclick = () => { setSelected(key); app.focus?.setSelected?.(key); };
 
-      // Colourways, straight from the maker's own page. Belongs INSIDE the card
-      // it recolours — as a sibling it reads as detached from any one bag.
-      const ways = cur.product?.features?.colorways || [];
-      if (ways.length > 1) {
-        const row = el('div', 'ways');
-        ways.forEach((w, i) => {
-          const b = el('button', 'way' + (i === cur.colorwayIndex ? ' on' : ''));
-          const cw = colorwayFor(cur.brand, cur.product, i);
-          b.style.background = '#' + Number(cw.main).toString(16).padStart(6, '0');
-          b.title = w.name || cw.name || `Colourway ${i + 1}`;
-          b.setAttribute('aria-label', b.title);
-          b.onclick = (e) => {
-            e.stopPropagation();
-            app.bags.setColorway(key, i);
-            sync();
-          };
-          row.append(b);
-        });
-        card.append(row);
-      }
+      // The in-card colourway strip is gone: the bag sheet owns colour now
+      // (§5.2), with the swatch name spelled out beside it. Two pickers for one
+      // property, one of them unlabelled, is how you get the row of anonymous
+      // white dots this used to render.
       listEl.append(card);
     }
     for (const key of unfit) listEl.append(renderUnfitted(key, app.bags.unfitted[key]));
@@ -964,9 +1004,11 @@ export function initUI(app) {
     peekTotal.textContent = n > 0 ? totalEl.textContent : '';
     foot.classList.toggle('has-kit', n > 0);
     updateFade();
-    envs.querySelectorAll('.env-chip').forEach((c) => c.classList.toggle('on', c.dataset.env === app.state.env));
     paints.querySelectorAll('.paint').forEach((c) => c.classList.toggle('on', c.dataset.paint === app.state.paint));
     rotBtn.classList.toggle('on', !!app.controls?.autoRotate);
+    // Every change to the bike runs through here, which is exactly when the
+    // save CTA needs to reconsider whether there is anything unsaved.
+    paintSave();
   }
 
   sync();

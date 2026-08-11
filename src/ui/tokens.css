@@ -118,6 +118,9 @@
   --gutter: var(--s-6);
   --rig-w: 280px;
   --rail-w: 56px;
+  /* The top bar's height. The panel, the sheet and the wind tunnel HUD all
+     hang off it, so it is a token rather than four copies of 64px. */
+  --topbar-h: 64px;
   --sheet-detail-w: clamp(420px, 34vw, 560px);
   --sheet-catalog-w: clamp(560px, 50vw, 760px);
   /* JS writes this to the active sheet's width, or 0px when none is open.

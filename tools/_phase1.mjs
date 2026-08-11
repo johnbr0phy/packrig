@@ -57,7 +57,7 @@ ok(st.closeBtns === 1, `exactly one close button (saw ${st.closeBtns})`);
 ok(st.title.length > 0, `sheet header carries the title ("${st.title}")`);
 
 // 3. My rigs replaces it in place rather than stacking
-ok(await click('.rigs-btn, [title*="Save this build"]'), 'clicked "My rigs"');
+ok(await click('.acct-btn'), 'clicked the account button in the top bar');
 st = await sheetState();
 ok(st.sheets === 1, `still exactly one sheet after opening a second surface (saw ${st.sheets})`);
 ok(st.veils === 0, 'still no veil');

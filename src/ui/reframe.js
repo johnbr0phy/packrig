@@ -81,15 +81,25 @@ export function initReframe(app, { applyBase } = {}) {
     return t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2;
   };
 
-  /** Measure the chrome that is actually on screen right now. */
+  /**
+   * Measure the chrome that is actually on screen right now.
+   *
+   * All of it is on the LEFT. The panel and the sheet occupy the same column —
+   * the sheet replaces the panel rather than appearing opposite it — so the
+   * measurement is the right edge of whichever one is showing. This used to
+   * read the panel as left chrome and the sheet as right chrome, and with both
+   * now on the same side that arithmetic cancelled out and the bike stayed
+   * centred underneath the sheet.
+   */
   function chrome() {
-    const leftEl = document.querySelector('.panel');
+    const shown = (n) => n && n.offsetParent !== null && getComputedStyle(n).visibility !== 'hidden';
+    const panelEl = document.querySelector('.panel');
     const sheetEl = document.querySelector('.sheet.open');
-    const left = leftEl && leftEl.offsetParent !== null
-      ? Math.max(0, leftEl.getBoundingClientRect().right) + GUTTER : 0;
-    const right = sheetEl
-      ? Math.max(0, vw() - sheetEl.getBoundingClientRect().left) + GUTTER : 0;
-    return { left, right, freeW: Math.max(120, vw() - left - right) };
+    let left = 0;
+    for (const n of [panelEl, sheetEl]) {
+      if (shown(n)) left = Math.max(left, n.getBoundingClientRect().right + GUTTER);
+    }
+    return { left, right: 0, freeW: Math.max(120, vw() - left) };
   }
 
   /**

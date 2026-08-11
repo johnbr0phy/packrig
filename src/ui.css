@@ -37,25 +37,77 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
 
 /* ---- wordmark ----------------------------------------------------------- */
 #ui-root > .top-scrim { pointer-events: none; }
-.top-scrim {
-  position: absolute; top: 0; left: 0; width: 400px; height: 190px;
-  background: radial-gradient(105% 92% at 0% 0%, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0) 72%);
+/* ---- top bar ------------------------------------------------------------ */
+/* Spans the viewport, so it never has to move when a sheet opens — which is
+   what the old floating bottom bar and top-right tool cluster both had to do. */
+.topbar {
+  position: absolute; top: 0; left: 0; right: 0; height: var(--topbar-h);
+  display: flex; align-items: center; gap: 14px;
+  padding: 0 var(--gutter); border-radius: 0;
+  border-left: 0; border-right: 0; border-top: 0;
+  pointer-events: auto;
 }
-.wordmark {
-  position: absolute; top: 26px; left: var(--gutter); user-select: none;
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45), 0 0 40px rgba(0, 0, 0, 0.25);
+.wordmark { user-select: none; margin-right: auto; }
+/* §14.4: 0.34em tracking at weight 800 is the loudest dated signal in a UI. */
+.wordmark h1 { font-size: 17px; letter-spacing: 0.10em; font-weight: 700; color: #fff; }
+.top-right { display: flex; align-items: center; gap: 10px; }
+
+/* Save rig — present exactly when there is something unsaved (REDESIGN §6). */
+.save-btn {
+  height: 36px; padding: 0 16px; border-radius: 999px; border: none; cursor: pointer;
+  background: var(--accent); color: #1a1207;
+  font: inherit; font-size: 13px; font-weight: 700; white-space: nowrap;
+  transition: filter .15s, background .2s, color .2s;
 }
-.wordmark h1 { font-size: 21px; letter-spacing: 0.34em; font-weight: 800; color: #fff; }
-.wordmark p {
-  font-size: 10px; letter-spacing: 0.18em; color: rgba(255, 255, 255, 0.55);
-  margin-top: 4px; text-transform: uppercase; font-weight: 600;
+.save-btn[hidden] { display: none; }
+.save-btn:hover { filter: brightness(1.06); }
+/* Saved and unchanged: still there, no longer shouting. */
+.save-btn.is-done {
+  background: rgba(255, 255, 255, 0.09); color: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
+
+.acct-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 36px; padding: 0 14px; border-radius: 999px; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.86); font: inherit; font-size: 13px; font-weight: 600;
+  max-width: 260px; white-space: nowrap;
+}
+.acct-btn:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.acct-label { overflow: hidden; text-overflow: ellipsis; }
+/* Signed out the dot is hollow, signed in it is lit. One glyph, two states,
+   no words spent saying which. */
+.acct-dot {
+  width: 7px; height: 7px; border-radius: 50%; flex: none;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.45);
+}
+.acct-btn.is-in .acct-dot { background: #6fd39b; box-shadow: none; }
 
 /* ---- left panel --------------------------------------------------------- */
 .panel {
-  position: absolute; top: 92px; left: var(--gutter); width: var(--panel-w);
-  max-height: calc(100vh - 220px);
+  position: absolute; top: calc(var(--topbar-h) + 12px); left: var(--gutter);
+  width: var(--panel-w); max-height: calc(100vh - var(--topbar-h) - 36px);
   display: flex; flex-direction: column; overflow: hidden;
+}
+
+/* ---- sections of the left column ---------------------------------------- */
+.nav-sec { display: flex; flex-direction: column; min-height: 0; }
+.nav-sec + .nav-sec { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.nav-sec-head { display: flex; align-items: center; gap: 8px; padding: 14px 16px 8px; }
+.nav-sec-title {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5); margin: 0; padding: 14px 16px 8px;
+}
+.nav-sec-head .nav-sec-title { padding: 0; margin-right: auto; }
+.nav-sec-head .panel-count { padding: 0; }
+.nav-actions { display: flex; gap: 8px; padding: 4px 12px 14px; }
+.nav-actions > * { flex: 1; }
+.appearance { display: flex; flex-direction: column; gap: 12px; padding: 0 16px 14px; }
+.paint-group, .bottle-group { display: flex; align-items: center; gap: 10px; }
+.group-label, .bottle-group .lbl {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42); width: 46px; flex: none;
 }
 .panel-head {
   padding: 15px 16px 9px; display: flex; align-items: baseline; gap: 7px;
@@ -166,13 +218,9 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
 .add-bag:hover { background: rgba(255, 255, 255, 0.16); border-color: rgba(255, 255, 255, 0.3); }
 
 /* ---- one bottom dock: actions left, environments right ------------------ */
-.bottom-bar {
-  position: absolute; bottom: var(--bar-bottom);
-  left: calc(var(--gutter) + var(--panel-w)); right: var(--gutter);
-  height: var(--bar-h); padding: 0 8px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.dock { display: flex; align-items: center; gap: 8px; }
+/* `.bottom-bar` and `.dock` are gone — REDESIGN.md: the bike was boxed in on
+   four sides by a left panel, a right sheet, a bottom bar and a top-right tool
+   cluster. Two surfaces now: this top bar, and the left column. */
 .envs { display: flex; align-items: center; gap: 3px; }
 
 .btn {
@@ -193,7 +241,7 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
 
 .divider { width: 1px; height: 28px; background: rgba(255, 255, 255, 0.10); flex: none; }
 /* label sits inline with its swatches, matching every other group in the bar */
-.paint-group { display: flex; flex-direction: row; align-items: center; gap: 0; }
+
 .group-label {
   font-size: 9.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4); line-height: 1;
@@ -237,10 +285,9 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
 .env-chip.on .env-thumb { border-color: #fff; }
 
 /* ---- top-right camera tools --------------------------------------------- */
-.viewtools {
-  position: absolute; top: 26px; right: var(--gutter);
-  display: flex; align-items: center; padding: 3px; gap: 3px;
-}
+/* In the bar now, not floating over the top-right corner of the scene. */
+.viewtools { display: flex; align-items: center; padding: 2px; gap: 2px;
+  border-radius: 999px; background: rgba(255, 255, 255, 0.06); }
 .tool-btn {
   width: 40px; height: 40px; border: none; border-radius: 12px; cursor: pointer;
   background: transparent; color: rgba(255, 255, 255, 0.85);
@@ -481,7 +528,7 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
 .way.on { border-color: #fff; box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.45); }
 
 /* ---- bidon colour ------------------------------------------------------- */
-.bottle-group { display: flex; align-items: center; gap: 9px; }
+
 .bottle-group .lbl {
   font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--ink-faint); font-weight: 700;
@@ -499,7 +546,7 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
    Was three unrelated concerns in one strip, with the loudest visual weight
    (a filled amber pill) on the least consequential action. Now: one rhythm,
    build actions left, appearance right, nothing shouting. */
-.bottom-bar { padding: 9px 14px; }
+
 .dock { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 
 .btn.quiet {
@@ -517,7 +564,7 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
   font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--ink-faint); font-weight: 700; margin-right: 9px;
 }
-.paint-group { display: flex; align-items: center; }
+
 
 /* environment as swatches, not labelled photo cards */
 .envs.compact { display: flex; gap: 6px; }
@@ -628,11 +675,11 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
    Horizontal scrolling was the alternative and loses on discoverability: an
    off-screen control with no affordance is a control nobody finds, and a
    sideways swipe fights the sheet and the canvas for the same gesture. */
-.appearance { display: contents; }   /* in the bar it is not a box at all */
-.appearance-btn { display: none; }
+
+
 
 @media (max-width: 900px), (pointer: coarse) {
-  .dock > .appearance { display: none; }
+
   .dock > .divider { display: none; }
   .appearance-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
   .dock { flex-wrap: nowrap; }
@@ -831,15 +878,7 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
 /* ---- the appearance sheet ------------------------------------------------
    One stacked, labelled row per setting. The environment swatches get their
    names back here: five gradients with no hover tooltip are five guesses. */
-.appearance-sheet .appearance {
-  display: flex; flex-direction: column; align-items: stretch;
-  gap: 20px; padding: 2px 18px 22px;
-}
-.appearance-sheet .divider { display: none; }
-.appearance-sheet .paint-group,
-.appearance-sheet .bottle-group { flex-direction: column; align-items: stretch; gap: 11px; }
-.appearance-sheet .group-label,
-.appearance-sheet .bottle-group .lbl { margin: 0; }
+/* `.appearance-sheet` is gone: the swatches live in the left column now. */
 .appearance-sheet .paints,
 .appearance-sheet .bidons,
 .appearance-sheet .envs.compact { flex-wrap: wrap; gap: 12px; }
