@@ -249,6 +249,53 @@ finish. Cleaning up what has already leaked is scheduled below, not now.
 
 ---
 
+### v5–v9 — the rounds where the instruments were the bug
+
+Five versions in which almost every "fix" turned out to be a correction to the
+measuring apparatus, not to a bag. Worth recording because the pattern repeated
+four times and cost more than any geometry problem in the project.
+
+| Version | What it actually was |
+|---|---|
+| v5 | brand leak: Apidura constants hardcoded into builders that draw all 702 products |
+| v6 | `bbox_mount_mm` — measure a raked bag on its OWN axes, not the bike's |
+| v7 | `perp_*` added to the axis vocabulary, which had no way to say "standing off a tube" |
+| v8 | the seat pack body tear, visible only because the rear camera now works |
+| v9 | the frozen set was freezing the RECORDS too, so no record fix ever reached the gate |
+
+**The down tube packs took six rounds and were never broken.** They lie on a
+tube raked at 46 degrees. A world-aligned bounding box reads
+`0.724 × length + 0.690 × depth` on the vertical, so the gate called them
+"+147% too tall" and six successive fixers went looking for a height bug in
+geometry that was within 6% of published all along. The genuine fault — 22-33%
+too SHORT — sat on an axis nothing was measuring. Fixing the measurement, the
+vocabulary and the stale record together took them from **0/3 to 3/3 on size**,
+with errors of −1% / +3% / +10%. No geometry was changed.
+
+**Four instrument faults, all the same shape: evidence that appears present and
+is silently never used.**
+
+1. The four camera angles were one camera (`?focus=` overwrote `?cam=`), so
+   three rounds of critics judged one view believing they had four.
+2. `axisOf()` accepted only x/y/z, so the tube-relative labels 42 of 70 records
+   use were never size-checked. The `—` in the length column meant "never
+   measured", not "no error".
+3. MODEL-SPEC had no `perp_*` axis, so records had to write `hgt: "y"` for a bag
+   hanging off a raked tube.
+4. `eval-render` wrote the frozen set's items verbatim, so every run since
+   9 August graded against the records as they stood on 9 August. Every layer-A
+   fix was invisible. **A frozen set should hold the question still, not the
+   answer.**
+
+To which add three from the same family found while shipping: SVG diagrams no
+vision model can open, profile files the deploy did not copy, and a record key
+dropped by a validation whitelist.
+
+**The rule this earns:** when a slot survives several rounds, suspect the
+instrument before the fifth attempt at the thing.
+
+---
+
 ## 5. When we stop
 
 We stop when any of these is true:

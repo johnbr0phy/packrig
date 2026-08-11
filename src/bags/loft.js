@@ -33,9 +33,14 @@ const TAU = Math.PI * 2;
  * seam lines. flat-sided shapes have four; round ones have none.
  */
 export function sectionUnit(shape, { detail = 5 } = {}) {
+  // Angles are measured with u as the cosine axis and v as the sine axis, so
+  // a = 0 points at +u and a = π/2 at +v. The samples are strictly INTERIOR to
+  // [a0, a1]: each corner's two endpoints already exist as the last point of
+  // the run before it and the first point of the run after, and repeating them
+  // would seed the loft with coincident vertices.
   const arc = (cu, cv, ru, rv, a0, a1, n, out) => {
     for (let i = 0; i < n; i++) {
-      const a = a0 + (a1 - a0) * (i / (n - 1));
+      const a = a0 + (a1 - a0) * ((i + 1) / (n + 1));
       out.push([cu + Math.cos(a) * ru, cv + Math.sin(a) * rv]);
     }
   };
@@ -53,13 +58,15 @@ export function sectionUnit(shape, { detail = 5 } = {}) {
   const pts = [], corners = [];
   const push = (fn) => { const before = pts.length; fn(pts); return before; };
 
-  // r[0..3] = corner radii at (+u+v), (−u+v), (−u−v), (+u−v)
-  // s[0..3] = how straight each run is; 1 = fully flat
+  // r[0..3] = corner radii at (+u+v), (+u−v), (−u−v), (−u+v) — i.e. the first
+  // pair is the +u end of the section and the second pair the −u end, which is
+  // what makes `d_shape` and `flat_bottom` come out round on top and flat
+  // underneath.
   let r, flatTop = true, flatBottom = true;
   switch (shape) {
     case 'round':
     case 'oval':        r = [1, 1, 1, 1]; break;
-    case 'teardrop':    r = [0.95, 0.95, 0.34, 0.34]; break;   // fat at −u, drawn to a nose at +u
+    case 'teardrop':    r = [0.95, 0.95, 0.34, 0.34]; break;   // fat at +u, drawn to a nose at −u
     case 'd_shape':     r = [0.9, 0.9, 0.22, 0.22]; flatBottom = true; break;
     case 'flat_bottom': r = [0.42, 0.42, 0.16, 0.16]; break;
     case 'flat_back':   r = [0.34, 0.34, 0.14, 0.14]; break;
@@ -69,26 +76,33 @@ export function sectionUnit(shape, { detail = 5 } = {}) {
   const round = shape === 'round' || shape === 'oval';
 
   if (round) {
-    // A plain ellipse still needs the same ring count as everything else.
-    for (let i = 0; i < 4 * (N + L - 1); i++) {
-      const a = (i / (4 * (N + L - 1))) * TAU;
+    // A plain ellipse still needs the same ring count as everything else: the
+    // flat shapes come to four runs of L plus four corners of N.
+    for (let i = 0; i < 4 * (N + L); i++) {
+      const a = (i / (4 * (N + L))) * TAU;
       pts.push([Math.cos(a), Math.sin(a)]);
     }
     return { pts, corners: [] };
   }
 
+  // Each run ends exactly where the corner after it begins, and each corner
+  // ends exactly where the next run begins, so the ring is one simple closed
+  // polygon. Get an angle range backwards, or centre a corner on the wrong
+  // quadrant, and the ring crosses itself — which the loft then sweeps into a
+  // facet slicing straight through the bag.
+  const H = Math.PI / 2;
   // top run (+u), from −v side to +v side
   line(1, -(1 - r[1]), 1, 1 - r[0], L, pts);
-  corners.push(push((o) => arc(1 - r[0], 1 - r[0], r[0], r[0], Math.PI / 2, 0, N, o)) + (N >> 1));
-  // +v side, top to bottom
+  corners.push(push((o) => arc(1 - r[0], 1 - r[0], r[0], r[0], 0, H, N, o)) + (N >> 1));
+  // +v side, +u end to −u end
   line(1 - r[0], 1, -(1 - r[3]), 1, L, pts);
-  corners.push(push((o) => arc(-(1 - r[3]), 1 - r[3], r[3], r[3], 0, -Math.PI / 2, N, o)) + (N >> 1));
-  // bottom run (−u)
+  corners.push(push((o) => arc(-(1 - r[3]), 1 - r[3], r[3], r[3], H, 2 * H, N, o)) + (N >> 1));
+  // bottom run (−u), from +v side to −v side
   line(-1, 1 - r[3], -1, -(1 - r[2]), L, pts);
-  corners.push(push((o) => arc(-(1 - r[2]), -(1 - r[2]), r[2], r[2], -Math.PI / 2, -Math.PI, N, o)) + (N >> 1));
-  // −v side, bottom to top
+  corners.push(push((o) => arc(-(1 - r[2]), -(1 - r[2]), r[2], r[2], 2 * H, 3 * H, N, o)) + (N >> 1));
+  // −v side, −u end back to +u end
   line(-(1 - r[2]), -1, 1 - r[1], -1, L, pts);
-  corners.push(push((o) => arc(1 - r[1], -(1 - r[1]), r[1], r[1], Math.PI, Math.PI / 2, N, o)) + (N >> 1));
+  corners.push(push((o) => arc(1 - r[1], -(1 - r[1]), r[1], r[1], 3 * H, 4 * H, N, o)) + (N >> 1));
 
   void flatTop; void flatBottom;
   return { pts, corners };

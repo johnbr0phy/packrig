@@ -86,7 +86,35 @@ writeFileSync(join(runDir, 'meta.json'), JSON.stringify(meta, null, 1));
 // what changed in the DATA as well as what changed in the picture — which is
 // the difference between "the prompt improved the prose" and "the prompt
 // improved the model". (EVAL-PLAN.md §7 phase 4C, step 4)
-writeFileSync(join(runDir, 'items.json'), JSON.stringify(set.items, null, 1));
+// The CASE LIST is frozen — same 70 products every run, forever, which is the
+// whole point of a set. The RECORD attached to each case is not: it is a
+// snapshot, and it must be taken now, not when the set was frozen.
+//
+// This wrote `set.items` verbatim, so every run since 9 August carried the
+// records as they stood on 9 August. Every record correction made since was
+// therefore invisible to eval-auto: the 19 layer-A fixes from round 1, and the
+// down tube axis correction that took `hgt` from a world axis to
+// `perp_downtube`. The gate went on grading a bag against a two-day-old
+// description of it and reporting "+132% too tall" for a fix already on disk.
+// A frozen set is supposed to hold the QUESTION still, not the answer.
+const slug = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
+const modelCache = new Map();
+const recordFor = (brandName, item) => {
+  const f = join(root, 'data/models', slug(brandName) + '.json');
+  if (!modelCache.has(f)) {
+    modelCache.set(f, existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')).products || [] : []);
+  }
+  const k = (x) => [x.line, x.name, x.size].map((v) => String(v ?? '').trim()).join(' ');
+  const want = k({ line: item.line, name: item.name, size: item.size });
+  return modelCache.get(f).find((p) => k(p) === want) || null;
+};
+const items = set.items.map((it) => {
+  const fresh = recordFor(it.brand, it);
+  return fresh ? { ...it, record: fresh, record_refreshed: true } : it;
+});
+const refreshed = items.filter((i) => i.record_refreshed).length;
+console.log(`[eval-render] records refreshed from data/models for ${refreshed}/${items.length} items`);
+writeFileSync(join(runDir, 'items.json'), JSON.stringify(items, null, 1));
 
 const slugFile = join(runDir, 'slugs.txt');
 writeFileSync(slugFile, set.items.map((i) => i.slug).join('\n'));

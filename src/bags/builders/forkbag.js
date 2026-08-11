@@ -33,10 +33,15 @@
 // z ±48 with a 12mm tube radius, so at the anchor's own height — 43.4% of the
 // way up the 380.8mm chord — the blade centreline is at z 40.2 and its OUTER
 // SURFACE at z 52.2. The anchors are at z ±62, i.e. 9.8mm proud of that
-// surface, and everything here hangs off the anchor plane. The fabric's inboard
-// face lands at z 83.5 on both products, 31.3mm outboard of the blade. The bag
-// is outboard of the blade; the blade does not enter it; the carrier occupies
-// the gap, which is what a Blackburn Outpost / Salsa Anything class cage is.
+// surface. Everything here used to hang off the ANCHOR plane as though that
+// were the bolting face, which put the fabric's inboard face at z 83.5 — 31.3mm
+// off a blade a cage holds a bag 20mm off — and left the backing plate, and so
+// the inboard end of every strap, stopping 9.8mm short of the leg. The stack
+// now hangs off `bladeFaceZ`, the blade's own surface interpolated along the
+// chord, so the fabric lands at z 72.2 and the plate lands ON the blade.
+// Measured: 18.5mm and 18.3mm of blade clearance, against 28.1 / 27.8 before.
+// The bag is outboard of the blade; the blade does not enter it; the carrier
+// occupies the gap, which is what a Blackburn Outpost / Salsa Anything cage is.
 //
 // The sign error was `grp.rotation.z`. Up the fork leg is up and BACK: the
 // crown is at x 440.9 on the reference frame and the dropout at x 610.8.
@@ -60,21 +65,34 @@
 //    whose rim ends land within 130mm of headBottom key as
 //    'frontAxle-headBottom'. That is the 64.7mm / 67.5mm the gate reported.
 //    Reaching 12mm of it means putting the bag in the wheel.
-//  - 'fork crown' is a 74mm-wide box (bike.js:155), so it spans z ±37. The
-//    fabric's inboard face is at z 83.5, hence the 46.8mm / 44.6mm reported.
-//    Passing at 12mm needs the fabric at z <= 49 — 3mm INSIDE the blade's outer
-//    surface. There is no drawing of this product that satisfies it.
+//  - 'fork crown' is a 74mm-wide box (bike.js:155), so it spans z ±37. With the
+//    fabric now at z 72.2 that is 37.7mm / 35.0mm (was 46.8 / 44.6). Passing at
+//    12mm needs the fabric at z <= 49 — 3mm INSIDE the blade's outer surface.
+//    No drawing of this product satisfies it, and moving it there would trade
+//    `attached` for `no_clash`.
 //
-// WHAT WOULD FIX IT, precisely: one line in src/bike.js, `o.userData.part =
-// 'fork leg'` on the two blade meshes at line 153. tools/bagshot.mjs's nameFor
-// already prefers `userData.part` over the centroid guess, so the blade would
-// key as 'fork leg', it is already in CONTACT_OK.forkbag, and the 28.3mm the
-// tool measures today would be the number graded. 12mm is still tighter than a
-// cage-mounted pack sits, so ATTACH_MAX_MM would want to be the cage depth
-// (20mm) for slots whose `mount.attachesTo` names a carrier rather than a tube.
-// Nothing in this file is allowed to chase either. There IS a cage object here
-// — it is built below — but it is `noCollide`, so bagshot excludes it from
-// `pts` and neither `attached` nor `bbox_body_mm` can see it.
+// WHAT WOULD FIX IT — TWO changes, not one, and neither is in this file.
+// An earlier revision of this header claimed a single line in src/bike.js would
+// do it, on the grounds that bagshot's nameFor "already prefers
+// `userData.part`". It does not: as of this writing `userData.part` appears
+// nowhere in tools/bagshot.mjs, and nameFor keys purely off the centroid. Both
+// halves are needed:
+//   1. tools/bagshot.mjs nameFor(): consult `o.userData.part` before the
+//      centroid guess. Today a curved blade's TubeGeometry can never be named,
+//      because naming is a landmark lookup and the blade's bbox centre is not
+//      near a landmark.
+//   2. src/bike.js:153: set `o.userData.part = 'fork leg'` on the two blade
+//      meshes, so there is something for (1) to read.
+// With both, the blade keys as 'fork leg' — already in CONTACT_OK.forkbag — and
+// the 18.5mm this file now achieves is the number graded. 12mm is still tighter
+// than a cage-mounted pack sits, so ATTACH_MAX_MM would want to be the cage
+// depth (20mm) for slots whose `mount.attachesTo` names a carrier rather than a
+// tube. Nothing in this file is allowed to chase any of it. There IS a cage
+// object here — it is built below — but it is `noCollide`, so bagshot excludes
+// it from `pts` and neither `attached` nor `bbox_body_mm` can see it. There is
+// no cage FIXTURE on the bike: src/bike.js has bottle cages on the seat and
+// down tubes only, and BagSystem.updateFixtures() toggles nothing but
+// rearRack/frontRack. See the note above buildForkbag for what to build.
 
 import * as THREE from 'three';
 import { v3, deg } from '../../lib.js';
@@ -99,6 +117,15 @@ const CAGE_DEPTH = 20;
 // …and the bag's inboard face still has to clear a 45mm tyre.
 const TYRE_HALF = 64;
 
+// The fork blade's own half-width and tube radius, from src/bike.js:147-152 —
+// each blade sweeps from a crown at z ±30 to a dropout at z ±48 on a 12mm
+// radius. The bag is positioned against the blade's outer SURFACE, so these
+// have to be known here; see the note at the standoff calculation for why the
+// anchor's z is not a substitute for them.
+const BLADE_Z_CROWN = 30;
+const BLADE_Z_DROPOUT = 48;
+const BLADE_R = 12;
+
 /**
  * Resolve which catalogue dim runs along the leg, across the bike and fore-aft.
  *
@@ -121,7 +148,12 @@ function forkAxes(p) {
   const along = upish[0] ?? bySize[0] ?? 'hgt';
   const rest = KEYS.filter((k) => k !== along);
   let across = rest.find((k) => ax.isAcross(k)) ?? null;
-  let fore = rest.find((k) => k !== across && ax.isForeAft(k)) ?? null;
+  // `perp_forkleg` means the bag's own fore-aft depth, perpendicular to the leg
+  // — which is precisely `fore` here. axesOf().isForeAft only matches a literal
+  // ±x, so without this the perp records fall through to the by-size fallback
+  // and get the right answer by luck rather than by reading what they say.
+  const isPerp = (k) => /^perp_/.test(String(ax[k] ?? ''));
+  let fore = rest.find((k) => k !== across && (ax.isForeAft(k) || isPerp(k))) ?? null;
   // Two records write the same axis twice (`wid: "+x", hgt: "+x"`); resolve the
   // leftovers by size so the wider one still ends up across the bike.
   if (!across) across = rest.find((k) => k !== fore && bySize.includes(k)) ?? rest[0];
@@ -136,6 +168,29 @@ function forkAxes(p) {
   return out;
 }
 
+/**
+ * THERE IS NO CARGO CAGE FIXTURE ON THE BIKE, and there is no way to ask for
+ * one. Checked 2026-08-11: src/bike.js builds bottle cages on the seat tube and
+ * down tube only (`bottleMounts` has keys 'st' and 'dt'), there is no three-pack
+ * boss on either blade, and BagSystem.updateFixtures() toggles nothing but
+ * `rearRack` and `frontRack`. So every fork bag in the catalogue draws its own
+ * carrier, here, and that carrier is `noCollide` — which means no gate can see
+ * it, and two bags in adjacent slots would each draw their own.
+ *
+ * WHAT SHOULD EXIST INSTEAD, following the pattern already in the codebase:
+ *   - src/bike.js: build `forkCageL` / `forkCageR` beside the bottle cages and
+ *     return them on the bike object, hidden by default, the way `frontRack`
+ *     already is. Give the blade meshes `userData.part = 'fork leg'` while there
+ *     (see the header) so the thing the pack bolts to can be named.
+ *   - src/bags/system.js updateFixtures(): `this.bike.forkCageL.visible =
+ *     has('forkL')`, and the same for R — one line each, exactly the shape of
+ *     the existing rearRack/frontRack lines.
+ *   - this file: delete the `cage` group below and read the cage's mounting
+ *     face and depth off the fixture instead of off the BLADE_Z / CAGE_DEPTH
+ *     constants above.
+ * Until then the cage below stays, because a cargo cage pack drawn with no cage
+ * is a bag strapped to thin air — the round-2 critic's complaint.
+ */
 export function buildForkbag(p, brand, main, accent, ctx, side) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
@@ -144,16 +199,23 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   // soft | semi | rigid, from the model records — see stiffnessOf().
   const stiff = stiffnessOf(p);
 
-  // SIZE GATE, `len` — the same measurement fault the down tube slot has, and
-  // the record already says so in mount.notes. `len` on both cargo cage packs
-  // is the bag's own FORE-AFT depth, and the pack leans 26.49 degrees with the
-  // blade, so tools/eval-auto.mjs reads world x = fore*cos(26.49) +
-  // along*sin(26.49). On the 1.5L that is 85*0.895 + 190*0.446 = 160.8mm
-  // against a published 85 however the bag is drawn, and the SECOND term alone
-  // is 84.7 — a pack with no fore-aft depth at all already fills the entire
-  // published figure. The measured 137.5mm is that box less the section's
-  // corner radii. To land inside +25% the 1.5L would have to be drawn 24mm deep
-  // instead of 85. The fix is `bbox_mount_mm` in tools/bagshot.mjs, not here.
+  // SIZE GATE, `len` — RESOLVED 2026-08-11, and it was never a geometry fault.
+  // `len` on both cargo cage packs is the bag's own FORE-AFT depth, but the
+  // records labelled it world "x". The pack leans 26.49 degrees with the blade,
+  // so a world-x box reads fore*cos(26.49) + along*sin(26.49): on the 1.5L the
+  // SECOND term alone is 84.7mm against a published 85, so a pack with no
+  // fore-aft depth at all already filled the whole published figure, and the
+  // slot scored +62% / +43% for five rounds. Drawn correctly it cannot pass;
+  // drawn to pass it would have to be 24mm deep instead of 85.
+  //
+  // The fix was the instrument, and the instrument had already been fixed:
+  // tools/bagshot.mjs now reports `bbox_mount_mm` in the BAG's own frame and
+  // tools/eval-auto.mjs maps `perp_forkleg` onto its `perp` axis. Both records
+  // were relabelled `len: "perp_forkleg"`, which is what the dimension always
+  // meant. Measured on it: 1.5L 85.3mm on a published 85, 3.5L 120.8mm on 120 —
+  // 0.4% and 0.7%. Nothing about the geometry below changed to achieve that.
+  // If a fork bag ever genuinely measures too deep, `perp` is now the number to
+  // look at; do not chase the world-x figure, which is a projection.
   const dim = forkAxes(p);
   const along = Math.min(dim.along || 300, 400);
   const across = Math.min(dim.across || 120, 150);
@@ -161,20 +223,7 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   const halfAcross = Math.max(across / 2 - SKIN, 8);
   const halfFore = Math.max(fore / 2 - SKIN, 8);
 
-  // ---- where the carrier bolts, and therefore where the bag is -------------
-  // The anchor plane is the outside face of the fork blade: the plate goes
-  // there, the bag goes CAGE_DEPTH outboard of it, and the tyre rule is a floor
-  // under that rather than the thing that decides it. Measured from the
-  // PUBLISHED half-width, not the inset section above — letting the skin inset
-  // move the bag inboard would eat a millimetre and a half of the gap for
-  // nothing.
-  const anchor = ctx.anchors[side > 0 ? 'forkR' : 'forkL'].position;
-  const anchorZ = Math.abs(anchor.z) || 62;
-  const faceZ = Math.max(anchorZ + CAGE_DEPTH, TYRE_HALF);   // fabric's inboard face, off the centreline
-  const standoff = faceZ + across / 2 - anchorZ;             // anchor plane -> bag axis
-  grp.position.z = side * standoff;
-
-  // ---- and where along the blade -----------------------------------------
+  // ---- where along the blade ----------------------------------------------
   // The anchor is 47mm forward of the blade at its own height: `forkL/forkR`
   // are at frontAxle.x - 28, and the blade on the reference frame is at x 537
   // there. A pack hung straight off the anchor therefore stood a bag's width
@@ -187,12 +236,48 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   // better than 3mm. Take the lean from that chord and slide the group onto it
   // at the anchor's height, and the bag then runs ALONG the leg for its whole
   // length instead of merely starting near it.
+  const anchor = ctx.anchors[side > 0 ? 'forkR' : 'forkL'].position;
+  const anchorZ = Math.abs(anchor.z) || 62;
   const crown = v3(ctx.points.headBottom.x + ctx.points.hd.x * 20,
     ctx.points.headBottom.y + ctx.points.hd.y * 20, 0);
   const legUp = v3(crown.x - ctx.points.frontAxle.x, crown.y - ctx.points.frontAxle.y, 0);
   const lean = Math.atan2(-legUp.x, legUp.y);                // +z rotation sending local +y up the leg
-  const u = (anchor.y - ctx.points.frontAxle.y) / (legUp.y || 1);
+  // 0 at the dropout, 1 at the crown. Also the parameter the blade's own
+  // half-width is interpolated on, below.
+  const u = Math.min(Math.max((anchor.y - ctx.points.frontAxle.y) / (legUp.y || 1), 0), 1);
   grp.position.x = ctx.points.frontAxle.x + legUp.x * u - anchor.x;
+
+  // ---- where the carrier bolts, and therefore where the bag is -------------
+  // ONE plane governs everything outboard of here: the blade's OUTER SURFACE,
+  // which is the face a three-pack cage bolts to. The anchor is NOT that plane.
+  // `forkL/forkR` sit at z ±62 (src/bike.js:918) while the blade at the same
+  // height is a good deal narrower, so the old `anchorZ + CAGE_DEPTH` stacked
+  // the anchor's own ~10mm of overhang on top of the cage depth and stood the
+  // bag 30mm off a blade a cage holds it 20mm off. That surplus is exactly the
+  // slab of daylight between bag and fork that reads as a bracket floating in
+  // mid-air, and — because the backing plate was placed on the anchor plane
+  // too — it is why the straps closed 10mm short of the thing they wrap.
+  //
+  // src/bike.js:147-152 sweeps each blade from a crown at z ±30 to a dropout at
+  // z ±48 on a 12mm tube radius. Those three are the only bike.js literals here
+  // and they sit beside the chord reconstruction above, which already depends
+  // on that same block.
+  const bladeAxisZ = BLADE_Z_DROPOUT + (BLADE_Z_CROWN - BLADE_Z_DROPOUT) * u;
+  const bladeFaceZ = bladeAxisZ + BLADE_R;                   // outer surface, off the centreline
+  // Fabric's inboard face: a cage depth outboard of the blade, with the tyre
+  // rule as a floor under that rather than the thing that decides it. Measured
+  // from the PUBLISHED half-width, not the inset section above — letting the
+  // skin inset move the bag inboard would eat a millimetre and a half of the
+  // gap for nothing.
+  const faceZ = Math.max(bladeFaceZ + CAGE_DEPTH, TYRE_HALF);
+  const standoff = faceZ + across / 2 - anchorZ;             // anchor plane -> bag axis
+  grp.position.z = side * standoff;
+  // The bolting face expressed in the GROUP's own frame, where local z 0 is the
+  // bag's axis at |z| = anchorZ + standoff. Every cage part, and the inboard
+  // end of every strap, is placed off `bladeGap` — not off `standoff`, which is
+  // the anchor plane and lands short of the blade.
+  const bladeGap = anchorZ + standoff - bladeFaceZ;          // bag axis -> blade surface
+  const bladeLocalZ = -side * bladeGap;
 
   // The bag STANDS ON the mount, it is not centred on it. Centring put the base
   // 53mm above the front axle — down among the hub flanges, which is the rest
@@ -355,23 +440,23 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   const cage = new THREE.Group();
   cage.userData.noCollide = true;
   const cageZ = -side * (halfAcross + 4);       // rungs just clear of the fabric
-  // The backing plate sits ON the anchor plane, which is the blade's own
-  // mounting face — NOT at a fixed offset from the bag's axis, which is how it
-  // ended up inside the blade on both products.
-  const plateZ = -side * standoff;
+  // The backing plate sits ON THE BLADE'S OUTER SURFACE — the face the three
+  // bosses are actually tapped into. It used to sit on the anchor plane, which
+  // is ~10mm proud of that surface, so the plate and everything hung off it
+  // stopped in mid-air short of the leg.
+  const plateZ = bladeLocalZ;
   // The cage stops below the roll — dimensions-1 and on-bike-3 both show the
   // folded lip standing clear above the top rung — and its cradle sits at or
   // just under the bag's base, which is the whole point of a cradle.
   const cageTop = baseY + bodyLen * 0.76;
   const cageBot = baseY + 4;
-  // Backing plate, its inboard face flush on the anchor plane…
+  // Backing plate, its inboard face flush on the blade…
   const plate = new THREE.Mesh(new THREE.BoxGeometry(26, (cageTop - cageBot) * 1.06, 5), cageMat);
   plate.position.set(0, (cageTop + cageBot) / 2, plateZ + side * 2.5);
   cage.add(plate);
   // …and the three bolts of a three-pack mount running INBOARD out of it into
-  // the blade. The anchor plane stands a little proud of the blade surface over
-  // part of the leg's length, so they are long enough to cross that and land in
-  // the tube rather than stopping in the air short of it.
+  // the blade. They start at the plate's inboard face and run a bolt's depth
+  // into the tube rather than stopping in the air short of it.
   for (const f of [0, 0.5, 1]) {
     const boss = new THREE.Mesh(new THREE.CylinderGeometry(4.5, 4.5, 16, 10), cageMat);
     boss.rotation.x = Math.PI / 2;
@@ -388,8 +473,12 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
     rail.position.set(sx * railX, (cageTop + cageBot) / 2, cageZ);
     cage.add(rail);
     for (const yc of [cageBot, cageTop]) {
+      // Reaches from the centreline out to just past its rail — `railX + 13`
+      // overhung the rail by 6.5mm fore and aft on both products, which is a
+      // sixth of the bag's own depth stuck out into the silhouette and most of
+      // why the pack still photographs chunkier than the 2.1:1 it measures.
       const arm = new THREE.Mesh(
-        new THREE.BoxGeometry(railX + 13, 6, Math.abs(plateZ - cageZ) + 6), cageMat);
+        new THREE.BoxGeometry(railX + 4, 6, Math.abs(plateZ - cageZ) + 6), cageMat);
       arm.position.set(sx * railX / 2, yc, (cageZ + plateZ) / 2);
       cage.add(arm);
     }
@@ -399,20 +488,36 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   // A closed rim round the whole footprint, which is what the bottom of an
   // Anything-Cage-class carrier is.
   //
-  // It has to reach all the way BACK to the plate, not merely girth the fabric:
+  // It has to reach all the way BACK to the blade, not merely girth the fabric:
   // a rim of the bag's own footprint centred on the bag's own axis is a hoop
-  // hanging in space 20mm outboard of anything holding it up, which is what
-  // "floats unbolted" describes. Span it from just outboard of the plate to
-  // just outboard of the fabric instead, so it visibly bridges the two.
-  const rimIn = standoff - 4;                   // bag axis -> just outboard of the plate face
+  // hanging in space outboard of anything holding it up, which is what "floats
+  // unbolted" describes. Span it from the blade face to just outboard of the
+  // fabric instead, so it visibly bridges the two.
+  const rimIn = bladeGap - 4;                   // bag axis -> just outboard of the plate face
   const rimOut = halfAcross + 5;                // bag axis -> just outboard of the fabric
   const rimHalf = (rimIn + rimOut) / 2;
   const rimR = Math.max(halfFore, rimHalf, 10);
+  // Set at the height where the bag's base ease has run out rather than 2mm
+  // BELOW the base: a rim slung under the bag, scaled to the bag's full section
+  // while the base itself is eased in to 0.84 of it, is an empty ring with
+  // daylight all round the fabric it is supposed to be cradling. Take the
+  // footprint from sectionAt at the rim's own height so it hugs what is there.
+  const cradleT = 0.03;
+  const cradleY = baseY + bodyLen * cradleT;
+  const cradleFore = sectionAt(cradleT).b + 4;
   const cradle = new THREE.Mesh(new THREE.TorusGeometry(rimR, 3.2, 6, 26), cageMat);
   cradle.rotation.x = Math.PI / 2;
-  cradle.scale.set((halfFore + 5) / rimR, rimHalf / rimR, 1);
-  cradle.position.set(0, baseY - 2, side * (rimOut - rimIn) / 2);
+  cradle.scale.set(cradleFore / rimR, rimHalf / rimR, 1);
+  cradle.position.set(0, cradleY, side * (rimOut - rimIn) / 2);
   cage.add(cradle);
+  // Two bars across the rim, so the base beds into a tray rather than sitting
+  // over a hole. A Blackburn Outpost / Salsa Anything base is a formed loop
+  // with exactly this much floor under the bag.
+  for (const xf of [-0.5, 0.5]) {
+    const bar = new THREE.Mesh(new THREE.BoxGeometry(7, 3.4, rimIn + rimOut), cageMat);
+    bar.position.set(xf * cradleFore, cradleY, side * (rimOut - rimIn) / 2);
+    cage.add(bar);
+  }
   grp.add(cage);
 
   // ---- cage straps ------------------------------------------------------
@@ -423,9 +528,11 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   // "Its three encircling bands curl shut on empty air": a ring of the bag's
   // own radius, centred on the bag's own axis, closes round the fabric and
   // nothing else — the thing it is supposed to be strapping the bag TO was
-  // 20mm further inboard. The band is now an off-centre ellipse spanning from
-  // the plate to the outboard face, so the loop encloses bag AND carrier and
-  // the buckle still lands on the outboard face where the photos have it.
+  // further inboard. The band is an off-centre ellipse spanning `rimIn` to
+  // `rimOut`, and since rimIn is now measured from the BLADE rather than from
+  // the anchor plane, the loop closes on the leg itself: it encloses fabric,
+  // carrier and blade, which is what a trimmable velcro cage strap does. The
+  // buckle still lands on the outboard face where the photos have it.
   //
   // noCollide, and with `tail` off. The free strap tails were the whole of this
   // slot's across-bike size fault: three of them reached 66mm off the bag's

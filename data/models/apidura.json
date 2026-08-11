@@ -2444,7 +2444,7 @@
    },
    "mount": {
     "axes": {
-     "len": "x",
+     "len": "perp_forkleg",
      "wid": "z",
      "hgt": "along_forkleg"
     },
@@ -2459,7 +2459,7 @@
      "tyre_mm": 25,
      "frame_mm": 0
     },
-    "notes": "REQUIRES a three-pack cargo cage on the fork leg - the trimmable Hypalon-backed velcro straps wrap the cage, not the fork. The bag hangs outboard of the fork blade with its long axis along the leg and the roll at the top, and the base must sit above the dropout. On a bike with no cage bosses this cannot be mounted. AXIS NOTE 2026-08-10, left as \"x\" deliberately: len is the bag's own fore-aft depth, and the bag leans with the fork blade, so it is NOT the world x axis and the size gate cannot read it as one. On the reference frame the blade chord (dropout at frontAxle to a crown 20mm down the steerer from headBottom) is 26.5 degrees off vertical, so a 190mm-tall pack with an 85mm fore-aft depth spans 85*cos26.5 + 190*sin26.5 = 161mm of world x however well it is drawn - the length term dominates. The run of 2026-08-10T18-50-14 scored 45% and 32% too long on that basis alone, with the pack leaning only 18 degrees, and standing it correctly parallel to the blade makes the projection larger, not smaller. Only wid is a true world axis here (z, across the bike); it measures 2%. This is the same defect tools/eval-auto.mjs TUBE_AXIS has on perp_downtube and it is a measurement fault, not a record fault - fix it by measuring the bag's bbox in its own frame (see the fork bag builder header), not by renaming the axis."
+    "notes": "REQUIRES a three-pack cargo cage on the fork leg - the trimmable Hypalon-backed velcro straps wrap the cage, not the fork. The bag hangs outboard of the fork blade with its long axis along the leg and the roll at the top, and the base must sit above the dropout. On a bike with no cage bosses this cannot be mounted. AXIS NOTE, RESOLVED 2026-08-11: len is the bag's own fore-aft depth, measured perpendicular to the fork leg. It was written \"x\" under a long note explaining that the size gate could not read it, because the bag leans 26.5 degrees with the blade and a world-x box therefore mixes the length in: 0.895*depth + 0.446*height. That scored +62% and +43% on packs whose depth is in fact correct to within 1%. It is now fixable rather than merely documented - tools/bagshot.mjs measures bbox_mount_mm in the BAG's own frame (along / perp / across), and tools/eval-auto.mjs maps perp_forkleg onto its perp axis. Changed to \"perp_forkleg\", which is what the dimension always meant. Measured on it the 1.5L is 85.3mm on a published 85 and the 3.5L 120.8mm on a published 120. wid stays \"z\": across the bike is a true world axis here, because the bag's lean is a rotation about z and so leaves z alone."
    },
    "colorways": [
     {
@@ -2538,7 +2538,7 @@
    },
    "mount": {
     "axes": {
-     "len": "x",
+     "len": "perp_forkleg",
      "wid": "z",
      "hgt": "along_forkleg"
     },
@@ -2553,7 +2553,7 @@
      "tyre_mm": 25,
      "frame_mm": 0
     },
-    "notes": "REQUIRES a three-pack cargo cage on the fork leg - the trimmable Hypalon-backed velcro straps wrap the cage, not the fork. The bag hangs outboard of the fork blade with its long axis along the leg and the roll at the top, and the base must sit above the dropout. On a bike with no cage bosses this cannot be mounted. AXIS NOTE 2026-08-10, left as \"x\" deliberately: len is the bag's own fore-aft depth, and the bag leans with the fork blade, so it is NOT the world x axis and the size gate cannot read it as one. On the reference frame the blade chord (dropout at frontAxle to a crown 20mm down the steerer from headBottom) is 26.5 degrees off vertical, so a 190mm-tall pack with an 85mm fore-aft depth spans 85*cos26.5 + 190*sin26.5 = 161mm of world x however well it is drawn - the length term dominates. The run of 2026-08-10T18-50-14 scored 45% and 32% too long on that basis alone, with the pack leaning only 18 degrees, and standing it correctly parallel to the blade makes the projection larger, not smaller. Only wid is a true world axis here (z, across the bike); it measures 2%. This is the same defect tools/eval-auto.mjs TUBE_AXIS has on perp_downtube and it is a measurement fault, not a record fault - fix it by measuring the bag's bbox in its own frame (see the fork bag builder header), not by renaming the axis."
+    "notes": "REQUIRES a three-pack cargo cage on the fork leg - the trimmable Hypalon-backed velcro straps wrap the cage, not the fork. The bag hangs outboard of the fork blade with its long axis along the leg and the roll at the top, and the base must sit above the dropout. On a bike with no cage bosses this cannot be mounted. AXIS NOTE, RESOLVED 2026-08-11: len is the bag's own fore-aft depth, measured perpendicular to the fork leg. It was written \"x\" under a long note explaining that the size gate could not read it, because the bag leans 26.5 degrees with the blade and a world-x box therefore mixes the length in: 0.895*depth + 0.446*height. That scored +62% and +43% on packs whose depth is in fact correct to within 1%. It is now fixable rather than merely documented - tools/bagshot.mjs measures bbox_mount_mm in the BAG's own frame (along / perp / across), and tools/eval-auto.mjs maps perp_forkleg onto its perp axis. Changed to \"perp_forkleg\", which is what the dimension always meant. Measured on it the 1.5L is 85.3mm on a published 85 and the 3.5L 120.8mm on a published 120. wid stays \"z\": across the bike is a true world axis here, because the bag's lean is a rotation about z and so leaves z alone."
    },
    "colorways": [
     {

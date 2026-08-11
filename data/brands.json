@@ -1360,7 +1360,7 @@
      "rolls": 3
     },
     "axes": {
-     "len": "x",
+     "len": "perp_forkleg",
      "wid": "z",
      "hgt": "along_forkleg"
     }
@@ -1427,7 +1427,7 @@
      "rolls": 3
     },
     "axes": {
-     "len": "x",
+     "len": "perp_forkleg",
      "wid": "z",
      "hgt": "along_forkleg"
     }
@@ -48454,7 +48454,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "-y"
+     "hgt": "y"
     }
    }
   ]
