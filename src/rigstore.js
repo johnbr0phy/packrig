@@ -1,19 +1,35 @@
 /**
- * Saved rigs — several per person, on this device and, once signed in, on the
- * account.
+ * Saved rigs: on this device when signed out, in Firestore when signed in.
  *
- * TWO BACKENDS, ONE INTERFACE. Signed out, rigs go to localStorage and the app
- * is fully usable. Signed in, they go to Supabase and follow you between
- * devices. The caller never branches on which; that is the whole point of
- * this file, and it is why signing in does not have to be a wall in front of
- * the product.
+ * THE LOCAL PATH IS NOT A FALLBACK, it is the default. Packrig with no backend
+ * configured saves rigs to localStorage and shares them as self-contained
+ * links, and that is a complete product. Everything Firestore adds is: your
+ * rigs follow you to another device, and they survive clearing your browser.
+ * So every method below has two arms, and the local one is never worse than it
+ * was before accounts existed.
  *
- * WHAT HAPPENS TO LOCAL RIGS WHEN YOU SIGN IN. They are uploaded, once, and
- * kept locally as well. Deleting them on sign-in would mean an account on a
- * shared computer quietly eating the rigs of whoever used it before, and
- * uploading them repeatedly would multiply them on every visit — so each local
- * rig carries a `pushed` marker and is only ever sent once.
+ * SHAPE, one document per rig in the `rigs` collection:
+ *   uid           the owner. Every rule in FIREBASE.md keys off this.
+ *   name          what the person called it
+ *   rig           the whole captured rig, as one nested object
+ *   updated_at    ISO string, so local and remote rows sort together
+ *   published     bool, and `author` + `published_at` once it is
+ *
+ * WHY A FLAT COLLECTION rather than `users/{uid}/rigs`: the gallery has to read
+ * across everybody, and a collection-group query would need its own index and
+ * its own rule anyway. One collection with a `uid` field keeps the rules
+ * readable, which matters more than the nesting — see FIREBASE.md, where the
+ * whole policy is nine lines.
+ *
+ * The exported surface is unchanged from the Supabase store this replaces, so
+ * `rigsui.js` did not have to move.
  */
+
+import {
+  addDoc, collection, deleteDoc, doc, getDoc, getDocs, getFirestore,
+  limit as fsLimit, orderBy, query, serverTimestamp, updateDoc, where,
+} from 'firebase/firestore';
+import { getApp } from 'firebase/app';
 
 import { captureRig } from './rig.js';
 import { backend } from './config.js';
@@ -29,41 +45,47 @@ const readLocal = () => {
 };
 const writeLocal = (rows) => {
   try { localStorage.setItem(LOCAL_KEY, JSON.stringify(rows)); return true; }
-  catch { return false; }   // private mode, or quota
+  catch { return false; }
 };
 
 export function createRigStore(app, auth) {
   const cfg = backend();
-
-  /**
-   * @param anon  true for calls that must work signed out. The gallery is
-   *   public by definition, so it authenticates with the anon key alone and
-   *   the row-level security policy decides what comes back.
-   */
-  async function rest(path, { method = 'GET', body, headers = {}, anon = false } = {}) {
-    const token = anon ? null : await auth.token();
-    if (!anon && !token) throw new Error('Not signed in');
-    const res = await fetch(`${cfg.url}/rest/v1${path}`, {
-      method,
-      headers: {
-        apikey: cfg.key,
-        Authorization: `Bearer ${token || cfg.key}`,
-        'Content-Type': 'application/json',
-        Prefer: method === 'POST' ? 'return=representation' : 'return=representation',
-        ...headers,
-      },
-      body: body ? JSON.stringify(body) : undefined,
-    });
-    const text = await res.text();
-    const data = text ? JSON.parse(text) : null;
-    if (!res.ok) throw new Error(data?.message || data?.hint || `Request failed (${res.status})`);
-    return data;
+  let db = null;
+  if (cfg) {
+    try { db = getFirestore(getApp()); }
+    catch (e) { console.warn('[packrig] rig sync disabled:', e.message); }
   }
 
-  const remote = () => auth.enabled && auth.signedIn;
+  const remote = () => !!db && auth.enabled && auth.signedIn;
+  const rigs = () => collection(db, 'rigs');
+  const me = () => auth.user?.id;
+
+  /** A Firestore snapshot in the shape the UI already expects. */
+  const row = (d) => {
+    const v = d.data();
+    return {
+      id: d.id,
+      name: v.name,
+      rig: v.rig,
+      updated_at: v.updated_at || '',
+      published: !!v.published,
+      author: v.author || '',
+      published_at: v.published_at || null,
+      local: false,
+    };
+  };
 
   const api = {
     get remote() { return remote(); },
+
+    /**
+     * Whether a gallery is possible at all. rigsui.js hides every publish and
+     * browse control when this is false, so on a local-only build the app never
+     * offers something it cannot do. Absent, it reads as `undefined` and the
+     * gallery quietly disappears with no error — which is how a feature gets
+     * built, shipped and never seen.
+     */
+    get galleryEnabled() { return !!db; },
 
     /** Newest first. Shape: { id, name, rig, updated_at, local } */
     async list() {
@@ -73,8 +95,8 @@ export function createRigStore(app, auth) {
           .sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''))
           .map((r) => ({ ...r, local: true }));
       }
-      const rows = await rest('/rigs?select=id,name,rig,updated_at,published,author&order=updated_at.desc');
-      return (rows || []).map((r) => ({ ...r, local: false }));
+      const snap = await getDocs(query(rigs(), where('uid', '==', me()), orderBy('updated_at', 'desc')));
+      return snap.docs.map(row);
     },
 
     /** Save the bike as it stands. */
@@ -83,16 +105,17 @@ export function createRigStore(app, auth) {
       const now = new Date().toISOString();
       if (!remote()) {
         const rows = readLocal();
-        const row = { id: uid(), name, rig, updated_at: now };
-        rows.push(row);
+        const r = { id: uid(), name, rig, updated_at: now };
+        rows.push(r);
         if (!writeLocal(rows)) throw new Error('This browser will not let the app store anything — private mode?');
-        return { ...row, local: true };
+        return { ...r, local: true };
       }
-      const [row] = await rest('/rigs', { method: 'POST', body: { name, rig } });
-      return { ...row, local: false };
+      const ref = await addDoc(rigs(), {
+        uid: me(), name, rig, updated_at: now, created_at: serverTimestamp(), published: false,
+      });
+      return { id: ref.id, name, rig, updated_at: now, local: false };
     },
 
-    /** Overwrite an existing rig with the current bike. */
     async update(id, { name } = {}) {
       const rig = captureRig(app, { name });
       const now = new Date().toISOString();
@@ -104,10 +127,12 @@ export function createRigStore(app, auth) {
         writeLocal(rows);
         return { ...rows[i], local: true };
       }
-      const [row] = await rest(`/rigs?id=eq.${encodeURIComponent(id)}`, {
-        method: 'PATCH', body: { name, rig, updated_at: now },
-      });
-      return { ...row, local: false };
+      const ref = doc(db, 'rigs', id);
+      const patch = { rig, updated_at: now };
+      if (name != null) patch.name = name;
+      await updateDoc(ref, patch);
+      const after = await getDoc(ref);
+      return row(after);
     },
 
     async rename(id, name) {
@@ -119,10 +144,9 @@ export function createRigStore(app, auth) {
         writeLocal(rows);
         return { ...rows[i], local: true };
       }
-      const [row] = await rest(`/rigs?id=eq.${encodeURIComponent(id)}`, {
-        method: 'PATCH', body: { name, updated_at: new Date().toISOString() },
-      });
-      return row;
+      const ref = doc(db, 'rigs', id);
+      await updateDoc(ref, { name, updated_at: new Date().toISOString() });
+      return row(await getDoc(ref));
     },
 
     async remove(id) {
@@ -130,7 +154,7 @@ export function createRigStore(app, auth) {
         writeLocal(readLocal().filter((r) => r.id !== id));
         return;
       }
-      await rest(`/rigs?id=eq.${encodeURIComponent(id)}`, { method: 'DELETE' });
+      await deleteDoc(doc(db, 'rigs', id));
     },
 
     /**
@@ -146,7 +170,14 @@ export function createRigStore(app, auth) {
       let pushed = 0;
       for (const r of todo) {
         try {
-          await rest('/rigs', { method: 'POST', body: { name: r.name || 'Untitled', rig: r.rig } });
+          await addDoc(rigs(), {
+            uid: me(),
+            name: r.name || 'Untitled',
+            rig: r.rig,
+            updated_at: r.updated_at || new Date().toISOString(),
+            created_at: serverTimestamp(),
+            published: false,
+          });
           r.pushed = true;
           pushed++;
         } catch { /* leave it unpushed; it will try again next sign-in */ }
@@ -155,46 +186,51 @@ export function createRigStore(app, auth) {
       return { pushed };
     },
 
-    // ---- the gallery -----------------------------------------------------
-
-    /** True when a gallery is possible at all — it needs shared storage. */
-    get galleryEnabled() { return !!cfg; },
-
     /**
-     * Put a rig in the public gallery, or take it back out.
+     * Publish to the gallery, or take it back down.
      *
-     * `author` is a display name the publisher types, NOT their email. An email
-     * address is the one thing an account has that its owner did not choose to
-     * make public, and a gallery that leaks it is a gallery nobody should use.
-     * It is never selected by the gallery query and never leaves this device.
+     * A local rig cannot be published: it exists only in this browser, so there
+     * is nothing for anyone else to read.
      */
     async setPublished(id, published, author) {
       if (!remote()) throw new Error('Publishing needs an account — sign in first');
-      const body = {
+      const patch = {
         published: !!published,
         published_at: published ? new Date().toISOString() : null,
       };
-      if (published) body.author = String(author || '').trim().slice(0, 40) || 'Anonymous';
-      const [row] = await rest(`/rigs?id=eq.${encodeURIComponent(id)}`, { method: 'PATCH', body });
-      return row;
+      if (published) patch.author = String(author || '').trim().slice(0, 40) || 'Anonymous';
+      const ref = doc(db, 'rigs', id);
+      await updateDoc(ref, patch);
+      return row(await getDoc(ref));
     },
 
     /**
      * Everything anyone has published, newest first. Works signed out — that is
      * the whole point of a gallery.
      *
-     * Reads the `public_rigs` VIEW, not the table: the view exposes only the
-     * columns a stranger should see, so a query can never accidentally return
-     * `user_id` alongside somebody's bike.
+     * The rules in FIREBASE.md allow reading a document only when
+     * `published == true`, so a stranger's query can never return a private
+     * rig. The `uid` field rides along in the document; it is a Firebase user
+     * id, which is opaque and not an email address, and the gallery UI does not
+     * display it.
      */
-    async gallery({ limit = 60, before = null } = {}) {
-      if (!cfg) return [];
-      const q = new URLSearchParams();
-      q.set('select', 'id,name,author,rig,published_at');
-      q.set('order', 'published_at.desc');
-      q.set('limit', String(limit));
-      if (before) q.set('published_at', `lt.${before}`);
-      return (await rest(`/public_rigs?${q}`, { anon: true })) || [];
+    async gallery({ limit = 60 } = {}) {
+      if (!db) return [];
+      try {
+        const snap = await getDocs(query(
+          rigs(),
+          where('published', '==', true),
+          orderBy('published_at', 'desc'),
+          fsLimit(limit),
+        ));
+        return snap.docs.map(row);
+      } catch (e) {
+        // A missing composite index is the one failure here that is a setup
+        // problem rather than a bug, and Firebase puts a create-it link in the
+        // message. Surfacing it beats an empty gallery with no explanation.
+        console.warn('[packrig] gallery query failed:', e.message);
+        return [];
+      }
     },
 
     /** Only meaningful signed out — signed in, the account is the count. */

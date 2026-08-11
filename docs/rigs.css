@@ -100,6 +100,36 @@
   border-top:1px solid rgba(255,255,255,.07);padding-top:13px;margin-top:2px;
 }
 
+
+/* ---- Google sign-in ------------------------------------------------------ */
+/* A rule between the two ways in, so neither reads as the "real" one and the
+   other as a fallback. The line is drawn either side of the word rather than
+   behind it, so the label needs no opaque background over the glass panel. */
+.rig-or{
+  display:flex;align-items:center;gap:12px;
+  padding:2px 16px;margin:-2px 0 10px;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.38);
+}
+.rig-or::before,.rig-or::after{
+  content:"";flex:1;height:1px;background:rgba(255,255,255,.11);
+}
+
+/* Secondary to the primary action, not competing with it: Google's own brand
+   guidance is a white or dark button, and the app's gold is already spoken for
+   by "Sign in". */
+.rig-save-btn.is-google{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:rgba(255,255,255,.96);color:#1f1f1f;
+  border:1px solid rgba(0,0,0,.12);
+  margin:0 16px 4px;width:calc(100% - 32px);
+}
+.rig-save-btn.is-google:hover{background:#fff}
+.rig-save-btn.is-google svg{flex:none;display:block}
+@media (prefers-color-scheme:dark){
+  .rig-save-btn.is-google{background:#fff}
+}
+
 @media (max-width:560px){
   .rig-saverow{flex-direction:column}
   .rig-save-btn{width:100%}
