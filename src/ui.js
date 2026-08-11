@@ -4,8 +4,8 @@ import { captureRig, rigURL } from './rig.js';
 import { productsForSlot } from './catalog.js';
 import { PAINTS } from './bike.js';
 import {
-  buyLink, displayName, lineOf, litersOf, modelTitle, sizeIsVolume, sizeOf, srcOf,
-  stripLine, swatchStyle,
+  buyLink, displayName, lineOf, litersOf, modelTitle, sizeEchoesName, sizeIsVolume,
+  sizeOf, srcOf, stripLine, swatchStyle,
 } from './ui/product.js';
 import { initBagSheet } from './ui/bagsheet.js';
 import { initHome } from './ui/home.js';
@@ -134,7 +134,10 @@ export function initUI(app) {
   // and a third heading above them saying the same thing is the duplication
   // §1.1 is about. The header survives for the phone, where it is the sheet's
   // drag handle and running total.
-  head.append(chevron, peekTotal, sheetAdd);
+  // The chevron duplicates the grab handle and the "+" duplicates the Add a bag
+  // button six rows below it. Both go; the header carries the peek total, which
+  // is the one thing you cannot see when the sheet is collapsed.
+  head.append(chevron, peekTotal);
   const listEl = el('div', 'bag-list');
 
   let collapsed = false;
@@ -263,7 +266,10 @@ export function initUI(app) {
   bagActions.append(addBtn, btnRand);
   bagsSec.append(bagActions);
 
-  panel.append(head, bikeSec, bagsSec, foot);
+  // Bags first, bike second. The rig is what you came to build; frame colour is
+  // a detail, and it was sitting above the content with equal billing — on a
+  // phone it was the entire first screen of the panel.
+  panel.append(head, bagsSec, bikeSec, foot);
 
   // the hint retires for good once the user has driven the camera, or after 5s
   const HINT_KEY = 'packrig.hintSeen';
@@ -287,7 +293,10 @@ export function initUI(app) {
       ? 'Drag to orbit · pinch to zoom'
       : 'Drag to orbit · scroll to zoom');
     root.append(hint);
-    setTimeout(killHint, 5000);
+    // §14.5: first session only, gone on the first drag. It was sitting over
+    // the middle of the product for five seconds of every visit — the one place
+    // nothing should ever cover.
+    setTimeout(killHint, 3200);
     canvas.addEventListener('pointerdown', killHint, { passive: true });
     canvas.addEventListener('wheel', killHint, { passive: true });
   }
@@ -1034,7 +1043,9 @@ export function initUI(app) {
       const modelEl = elt('div', 'bag-model', modelTitle(cur.product, cur.brand));
       // the size only earns its place when it isn't just the volume again
       const size = sizeOf(cur.product);
-      if (size && !sizeIsVolume(cur.product)) modelEl.append(elt('span', 'bag-size', ` · ${size}`));
+      if (size && !sizeIsVolume(cur.product) && !sizeEchoesName(cur.product, cur.brand)) {
+        modelEl.append(elt('span', 'bag-size', ` · ${size}`));
+      }
       nameRow.append(modelEl, elt('div', 'bag-liters', litersOf(cur.product)));
       txt.append(line, nameRow);
 

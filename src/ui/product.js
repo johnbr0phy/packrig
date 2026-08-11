@@ -75,6 +75,20 @@ export function sizeOf(product) {
   return base;
 }
 
+/**
+ * True when the size adds nothing the NAME has already said. "Standard SnakPak
+ * 9.5\"" followed by "· Standard (9.5 inch)" is the same words twice, which is
+ * how a bag row ends up on three lines saying one thing.
+ */
+export function sizeEchoesName(product, brand) {
+  const size = sizeOf(product);
+  if (!size) return true;
+  const words = (t) => (String(t).toLowerCase().match(/[\p{L}\p{N}]+/gu) || []).filter((w) => w.length >= 3);
+  const said = new Set(words(modelTitle(product, brand)));
+  const own = words(size);
+  return own.length > 0 && own.every((w) => said.has(w));
+}
+
 /** True when the size says nothing the volume column isn't already saying. */
 export function sizeIsVolume(product) {
   const l = Number(product?.liters);
@@ -93,11 +107,26 @@ export function stripLine(name, line) {
 export function modelTitle(product, brand) {
   const line = lineOf(product);
   const base = stripLine(displayName(product, brand), line);
-  // Some records carry the same string as both line and name ("Micro-Bag"),
-  // which rendered as "Micro-Bag Micro-Bag" the moment a heading showed the
-  // full title rather than the card's truncated one.
-  if (!line || base.toLowerCase() === line.toLowerCase()) return base || line;
-  return `${line} ${base}`;
+  if (!line) return base;
+  if (base.toLowerCase() === line.toLowerCase()) return base;
+  /*
+   * The line and the name overlap in more ways than a shared prefix. Makers
+   * repeat their own line inside the product name — sensible on their site,
+   * nonsense once the two are concatenated:
+   *
+   *   "52Hz Gravel" + "52Hz Waterproof Framebag"  -> said it twice
+   *   "Loader"      + "BackLoader"                -> said it twice
+   *   "Bar System"  + "Bar Bag System - MTB Flat" -> said it twice
+   *
+   * The rule that handles all of them: if the name already carries a
+   * significant word of the line — as a whole word or inside one — the name is
+   * doing the work on its own, so use it alone. The line only survives when it
+   * adds something the name does not say.
+   */
+  const words = (t) => (String(t).toLowerCase().match(/[\p{L}\p{N}]+/gu) || []).filter((w) => w.length >= 3);
+  const nameWords = words(base);
+  const echoed = words(line).some((lw) => nameWords.some((nw) => nw === lw || nw.includes(lw) || lw.includes(nw)));
+  return echoed ? base : `${line} ${base}`;
 }
 
 /** Official product page — only http(s), since the href comes from data. */
