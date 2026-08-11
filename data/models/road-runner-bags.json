@@ -24,7 +24,11 @@
     "assets/products/road-runner-bags/jammer-7.jpg",
     "https://roadrunnerbags.us/products/the-jammer-bag"
    ],
-   "dims_cm": { "len": 25.4, "wid": 12.7, "hgt": 15.2 },
+   "dims_cm": {
+    "len": 25.4,
+    "wid": 12.7,
+    "hgt": 15.2
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Height: 6\"-14\", Width: 10\", Depth: 5\"; Max Waterproof Volume 11L, Min Waterproof Volume 5L",
    "dims_note": "len = published Width 10in (the bar-parallel run, and the longer of the two fixed horizontal figures); wid = published Depth 5in; hgt = MIN of the 6-14in height range per the new rule (was 21.3cm in brands.json via an old 30%-roll formula off the 14in max - replaced).",
@@ -42,36 +46,100 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "front_face", "hardware": "buckle", "material": "1in mil-spec nylon webbing (C.W.S. - Closure Webbing System)", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "headtube" },
-    { "role": "daisy", "count": 1, "location": "top", "hardware": "daisy_loop", "material": "550 paracord" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "1in mil-spec nylon webbing (C.W.S. - Closure Webbing System)",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "top",
+     "hardware": "daisy_loop",
+     "material": "550 paracord"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": "reflective panel, per catalog feature note",
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn, bar-tacked at strap anchors",
     "fabric": "1000D Cordura exterior, 200D seam-taped nylon liner"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar", "headtube"],
-    "contactFaces": ["top", "rear_face"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "top",
+     "rear_face"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": 229, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 229,
+     "frame_mm": 0
+    },
     "notes": "Maker specifies 9in (229mm) clearance required from the center of the stem faceplate to the top of the front tyre - use as the minimum tyre_mm gate for this bag, not a measured on-bike figure."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1f1f1f" },
-    { "name": "Burgundy Cordura", "hex": "#6b2233" },
-    { "name": "Grey Cordura", "hex": "#6e7276" },
-    { "name": "Navy Cordura", "hex": "#23334f" },
-    { "name": "Olive Cordura", "hex": "#5c5f3d" },
-    { "name": "Rust Cordura", "hex": "#a24d24" },
-    { "name": "Coyote Cordura", "hex": "#b3936a" },
-    { "name": "Hybrid (Teal/Pink/Purple)", "main": "#2e8b8b", "accent": "#e6007e" },
-    { "name": "Turmeric", "hex": "#d19a17" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1f1f1f"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#6b2233"
+    },
+    {
+     "name": "Grey Cordura",
+     "hex": "#6e7276"
+    },
+    {
+     "name": "Navy Cordura",
+     "hex": "#23334f"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#5c5f3d"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#a24d24"
+    },
+    {
+     "name": "Coyote Cordura",
+     "hex": "#b3936a"
+    },
+    {
+     "name": "Hybrid (Teal/Pink/Purple)",
+     "main": "#2e8b8b",
+     "accent": "#e6007e"
+    },
+    {
+     "name": "Turmeric",
+     "hex": "#d19a17"
+    }
    ],
    "render": {
     "hgt_cm": 15.2,
@@ -91,7 +159,11 @@
     "assets/products/road-runner-bags/middle-earth-jammer-3.jpg",
     "https://roadrunnerbags.us/products/middle-earth-jammer-handlebar-bag"
    ],
-   "dims_cm": { "len": 30.5, "wid": 15.2, "hgt": 20.3 },
+   "dims_cm": {
+    "len": 30.5,
+    "wid": 15.2,
+    "hgt": 20.3
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Height: 8\"-19\", Width: 12\", Depth: 6\"; Max waterproof capacity 19L, Min waterproof capacity 10L; Max load 25 lb",
    "dims_note": "len = Width 12in (bar-parallel); wid = Depth 6in; hgt = MIN of the 8-19in range = 8in = 20.3cm. brands.json already had 20.3 here (it read the maker's own '8in closed' phrasing rather than computing from the range), so this is unchanged from the prior pass and matches the new rule by coincidence.",
@@ -109,38 +181,116 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "front_face", "hardware": "buckle", "material": "1in mil-spec nylon webbing with D-rings (C.W.S.)", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "headtube" },
-    { "role": "daisy", "count": 1, "location": "top", "hardware": "daisy_loop", "material": "550 paracord" },
-    { "role": "lid", "count": 1, "location": "front_face", "hardware": "velcro", "material": "webbing flap over the two front pockets" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "1in mil-spec nylon webbing with D-rings (C.W.S.)",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "top",
+     "hardware": "daisy_loop",
+     "material": "550 paracord"
+    },
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "webbing flap over the two front pockets"
+    }
    ],
    "pockets": [
-    { "type": "slip", "location": "front", "sizeFrac": 0.35 },
-    { "type": "slip", "location": "front", "sizeFrac": 0.35 }
+    {
+     "type": "slip",
+     "location": "front",
+     "sizeFrac": 0.35
+    },
+    {
+     "type": "slip",
+     "location": "front",
+     "sizeFrac": 0.35
+    }
    ],
    "details": {
     "daisyChains": true,
     "reflective": "front pocket bank described by the maker as 'super reflective'",
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn, bar-tacked at strap anchors",
     "fabric": "1000D Cordura exterior, 200D seam-taped nylon liner"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar", "headtube"],
-    "contactFaces": ["top", "rear_face"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "top",
+     "rear_face"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": 229, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 229,
+     "frame_mm": 0
+    },
     "notes": "No published clearance figure specific to this size; carried over the 9in Jammer figure as the best available estimate given the similar mounting geometry."
    },
    "colorways": [
-    { "name": "Black Cordura", "main": "#1b1b1b", "accent": "#555555" },
-    { "name": "Burgundy Cordura", "main": "#5e2129", "accent": "#1b1b1b" },
-    { "name": "Grey Cordura", "main": "#8a8a8a", "accent": "#1b1b1b" },
-    { "name": "Navy Cordura", "main": "#22314f", "accent": "#1b1b1b" },
-    { "name": "Olive Cordura", "main": "#5a5b3d", "accent": "#1b1b1b" },
-    { "name": "Rust Cordura", "main": "#a34a2a", "accent": "#1b1b1b" },
-    { "name": "Coyote Cordura", "main": "#b08d57", "accent": "#1b1b1b" }
+    {
+     "name": "Black Cordura",
+     "main": "#1b1b1b",
+     "accent": "#555555"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "main": "#5e2129",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Grey Cordura",
+     "main": "#8a8a8a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Navy Cordura",
+     "main": "#22314f",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Olive Cordura",
+     "main": "#5a5b3d",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Rust Cordura",
+     "main": "#a34a2a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Coyote Cordura",
+     "main": "#b08d57",
+     "accent": "#1b1b1b"
+    }
    ],
    "render": {
     "hgt_cm": 20.3,
@@ -160,7 +310,11 @@
     "assets/products/road-runner-bags/jumbo-jammer-4.jpg",
     "https://roadrunnerbags.us/products/jumbo-jammer-bag"
    ],
-   "dims_cm": { "len": 35.6, "wid": 15.2, "hgt": 20.3 },
+   "dims_cm": {
+    "len": 35.6,
+    "wid": 15.2,
+    "hgt": 20.3
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Height: 8\"-19\", Width: 14\", Depth: 6\"; Max waterproof capacity 26L, Min waterproof capacity 11L; clearance 10-12in top of bars to top of tyre",
    "dims_note": "len = Width 14in (bar-parallel); wid = Depth 6in; hgt = MIN of the 8-19in range = 8in = 20.3cm, same reasoning and same value as the Middle Earth Jammer above.",
@@ -178,39 +332,120 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "front_face", "hardware": "buckle", "material": "1in mil-spec nylon webbing with D-rings (C.W.S.)", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "headtube" },
-    { "role": "compression", "count": 1, "location": "top", "hardware": "buckle", "material": "included cargo strap" },
-    { "role": "daisy", "count": 1, "location": "top", "hardware": "daisy_loop", "material": "550 paracord" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "1in mil-spec nylon webbing with D-rings (C.W.S.)",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "included cargo strap"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "top",
+     "hardware": "daisy_loop",
+     "material": "550 paracord"
+    }
    ],
    "pockets": [
-    { "type": "slip", "location": "front", "sizeFrac": 0.35 },
-    { "type": "zip", "location": "front", "sizeFrac": 0.15 }
+    {
+     "type": "slip",
+     "location": "front",
+     "sizeFrac": 0.35
+    },
+    {
+     "type": "zip",
+     "location": "front",
+     "sizeFrac": 0.15
+    }
    ],
    "details": {
     "daisyChains": true,
     "reflective": "front pocket bank, per catalog",
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn, bar-tacked at strap anchors",
     "fabric": "1000D Cordura exterior, seam-taped interior"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar", "headtube"],
-    "contactFaces": ["top", "rear_face"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "top",
+     "rear_face"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": 254, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 254,
+     "frame_mm": 0
+    },
     "notes": "Maker requires 10-12in (254-305mm) from bar top to tyre top for this size - noticeably more than the smaller Jammers; used the MIN (254mm) as the clearance gate."
    },
    "colorways": [
-    { "name": "Black Cordura", "main": "#1b1b1b", "accent": "#555555" },
-    { "name": "Burgundy Cordura", "main": "#5e2129", "accent": "#1b1b1b" },
-    { "name": "Grey Cordura", "main": "#8a8a8a", "accent": "#1b1b1b" },
-    { "name": "Navy Cordura", "main": "#22314f", "accent": "#1b1b1b" },
-    { "name": "Olive Cordura", "main": "#5a5b3d", "accent": "#1b1b1b" },
-    { "name": "Rust Cordura", "main": "#a34a2a", "accent": "#1b1b1b" },
-    { "name": "Coyote Cordura", "main": "#b08d57", "accent": "#1b1b1b" },
-    { "name": "Pink Cordura", "hex": "#e78bb0" }
+    {
+     "name": "Black Cordura",
+     "main": "#1b1b1b",
+     "accent": "#555555"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "main": "#5e2129",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Grey Cordura",
+     "main": "#8a8a8a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Navy Cordura",
+     "main": "#22314f",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Olive Cordura",
+     "main": "#5a5b3d",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Rust Cordura",
+     "main": "#a34a2a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Coyote Cordura",
+     "main": "#b08d57",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Pink Cordura",
+     "hex": "#e78bb0"
+    }
    ],
    "render": {
     "hgt_cm": 20.3,
@@ -229,7 +464,11 @@
     "assets/products/road-runner-bags/burrito-3.jpg",
     "https://roadrunnerbags.us/products/burrito-handlebar-bag"
    ],
-   "dims_cm": { "len": 20.3, "wid": 8.9, "hgt": 8.9 },
+   "dims_cm": {
+    "len": 20.3,
+    "wid": 8.9,
+    "hgt": 8.9
+   },
    "dims_state": "single_published",
    "dims_raw": "Width: 8in, Diameter: 3.5in; Volume 1.3L; Weight 4oz",
    "dims_note": "Single fixed triple, no range (zip closure, not a roll). len = Width 8in (bar-parallel); wid = hgt = Diameter 3.5in, a true cylinder so both cross-axes take the same value.",
@@ -239,38 +478,108 @@
     "crossSection": "round",
     "notes": "Small plain zip cylinder, no pockets, no cord lacing - the simplest bag in the Burrito line. burrito-3.jpg confirms a plain body with a single long top zip and one velcro loop strap."
    },
-   "closure": { "type": "zip_straight", "location": "top", "hardware": "YKK water-resistant zip tape, single slider" },
-   "zips": [ { "run": "side_full", "finish": "waterproof_welded" } ],
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "YKK water-resistant zip tape, single slider"
+   },
+   "zips": [
+    {
+     "run": "side_full",
+     "finish": "waterproof_welded"
+    }
+   ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "1.75in double-sided velcro", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "headtube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "1.75in double-sided velcro",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "headtube"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior, 400D grey nylon liner"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar", "headtube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 1,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Three velcro mounting points (two straps at the bar ends plus a headtube strap) - no published tyre clearance figure for this small size."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1f1f1f" },
-    { "name": "Burgundy Cordura", "hex": "#6b2233" },
-    { "name": "Coyote Cordura", "hex": "#b3936a" },
-    { "name": "Grey Cordura", "hex": "#6e7276" },
-    { "name": "Navy Cordura", "hex": "#23334f" },
-    { "name": "Olive Cordura", "hex": "#5c5f3d" },
-    { "name": "Rust Cordura", "hex": "#a24d24" },
-    { "name": "Pink Cordura", "hex": "#e78bb0" },
-    { "name": "The Jaystone (Teal/Orange)", "main": "#2e7f85", "accent": "#e07a2f" },
-    { "name": "The Clint (Turmeric/Pink)", "main": "#d69a2d", "accent": "#e78bb0" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1f1f1f"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#6b2233"
+    },
+    {
+     "name": "Coyote Cordura",
+     "hex": "#b3936a"
+    },
+    {
+     "name": "Grey Cordura",
+     "hex": "#6e7276"
+    },
+    {
+     "name": "Navy Cordura",
+     "hex": "#23334f"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#5c5f3d"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#a24d24"
+    },
+    {
+     "name": "Pink Cordura",
+     "hex": "#e78bb0"
+    },
+    {
+     "name": "The Jaystone (Teal/Orange)",
+     "main": "#2e7f85",
+     "accent": "#e07a2f"
+    },
+    {
+     "name": "The Clint (Turmeric/Pink)",
+     "main": "#d69a2d",
+     "accent": "#e78bb0"
+    }
    ]
   },
   {
@@ -286,7 +595,11 @@
     "assets/products/road-runner-bags/burrito-supreme-4.jpg",
     "https://roadrunnerbags.us/products/burrito-supreme-handle-bar-bag"
    ],
-   "dims_cm": { "len": 20.3, "wid": 12.7, "hgt": 12.7 },
+   "dims_cm": {
+    "len": 20.3,
+    "wid": 12.7,
+    "hgt": 12.7
+   },
    "dims_state": "single_published",
    "dims_raw": "Width: 8in, Diameter: 5in; Volume 2.6L; Weight 6oz",
    "dims_note": "Single fixed triple, no range. len = Width 8in; wid = hgt = Diameter 5in.",
@@ -296,38 +609,109 @@
     "crossSection": "round",
     "notes": "Removable HDPE stiffener keeps the cylinder round when not full. burrito-supreme-4.jpg (unpacked) shows a MOLLE-style ladder of webbing loops running the length of the front face and grey daisy-loop tabs at both end caps."
    },
-   "closure": { "type": "zip_straight", "location": "top", "hardware": "YKK water-resistant zip tape, single slider" },
-   "zips": [ { "run": "side_full", "finish": "waterproof_welded" } ],
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "YKK water-resistant zip tape, single slider"
+   },
+   "zips": [
+    {
+     "run": "side_full",
+     "finish": "waterproof_welded"
+    }
+   ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "removable handlebar straps", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "double-sided velcro", "wrapsAround": "headtube" },
-    { "role": "daisy", "count": 2, "location": "end_cap", "hardware": "daisy_loop", "material": "550 paracord" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "removable handlebar straps",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "double-sided velcro",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "daisy",
+     "count": 2,
+     "location": "end_cap",
+     "hardware": "daisy_loop",
+     "material": "550 paracord"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": true,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior, 400D grey nylon liner, front MOLLE webbing ladder"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar", "headtube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 1,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Same three-point mount as the small Burrito; removable straps mean it can also be lashed elsewhere (saddle, rack) but the modeled fitment is bars."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1f1f1f" },
-    { "name": "Burgundy Cordura", "hex": "#6b2233" },
-    { "name": "Coyote Cordura", "hex": "#b3936a" },
-    { "name": "Grey Cordura", "hex": "#6e7276" },
-    { "name": "Navy Cordura", "hex": "#23334f" },
-    { "name": "Olive Cordura", "hex": "#5c5f3d" },
-    { "name": "Rust Cordura", "hex": "#a24d24" },
-    { "name": "The Jaystone (Teal/Orange)", "hex": "#1f7d80" },
-    { "name": "The Clint (Turmeric/Pink)", "hex": "#d19a17" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1f1f1f"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#6b2233"
+    },
+    {
+     "name": "Coyote Cordura",
+     "hex": "#b3936a"
+    },
+    {
+     "name": "Grey Cordura",
+     "hex": "#6e7276"
+    },
+    {
+     "name": "Navy Cordura",
+     "hex": "#23334f"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#5c5f3d"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#a24d24"
+    },
+    {
+     "name": "The Jaystone (Teal/Orange)",
+     "hex": "#1f7d80"
+    },
+    {
+     "name": "The Clint (Turmeric/Pink)",
+     "hex": "#d19a17"
+    }
    ]
   },
   {
@@ -342,7 +726,11 @@
     "assets/products/road-runner-bags/california-burrito-2.jpg",
     "https://roadrunnerbags.us/products/california-burrito-handlebar-bag"
    ],
-   "dims_cm": { "len": 26.0, "wid": 12.7, "hgt": 12.7 },
+   "dims_cm": {
+    "len": 26,
+    "wid": 12.7,
+    "hgt": 12.7
+   },
    "dims_state": "single_published",
    "dims_raw": "Width: 10.25in, Diameter: 5in; Volume 3.3L; Weight 8oz",
    "dims_note": "Single fixed triple, no range. len = Width 10.25in; wid = hgt = Diameter 5in. Only one clean product photo was available locally (california-burrito-2.jpg, a blue on-bike shot at the stem) - it confirms the cylinder shape and single top zip but not the two side pockets, which are taken from the maker's own page text.",
@@ -352,43 +740,125 @@
     "crossSection": "round",
     "notes": "Removable HDPE stiffener. Cylinder mounted just ahead of the stem, single long zip along the top."
    },
-   "closure": { "type": "zip_straight", "location": "top", "hardware": "YKK water-resistant zip tape with 1in cam buckles" },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "YKK water-resistant zip tape with 1in cam buckles"
+   },
    "zips": [
-    { "run": "side_full", "finish": "waterproof_welded" },
-    { "run": "pocket", "finish": "matched" },
-    { "run": "pocket", "finish": "matched" }
+    {
+     "run": "side_full",
+     "finish": "waterproof_welded"
+    },
+    {
+     "run": "pocket",
+     "finish": "matched"
+    },
+    {
+     "run": "pocket",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "cam", "material": "1in YKK cam buckle strap", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "double-sided velcro", "wrapsAround": "headtube" },
-    { "role": "daisy", "count": 1, "location": "top", "hardware": "daisy_loop", "material": "550 paracord" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "cam",
+     "material": "1in YKK cam buckle strap",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "double-sided velcro",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "top",
+     "hardware": "daisy_loop",
+     "material": "550 paracord"
+    }
    ],
    "pockets": [
-    { "type": "zip", "location": "side" },
-    { "type": "zip", "location": "side" }
+    {
+     "type": "zip",
+     "location": "side"
+    },
+    {
+     "type": "zip",
+     "location": "side"
+    }
    ],
    "details": {
     "daisyChains": true,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar", "headtube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 1,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Maker page also mentions an optional rear/saddle installation using saddle loops, but the primary and modeled mount is the bars."
    },
    "colorways": [
-    { "name": "Black Cordura", "main": "#1b1b1b", "accent": "#555555" },
-    { "name": "Burgundy Cordura", "main": "#5e2129", "accent": "#1b1b1b" },
-    { "name": "Coyote Cordura", "main": "#b08d57", "accent": "#1b1b1b" },
-    { "name": "Grey Cordura", "main": "#8a8a8a", "accent": "#1b1b1b" },
-    { "name": "Navy Cordura", "main": "#22314f", "accent": "#1b1b1b" },
-    { "name": "Olive Cordura", "main": "#5a5b3d", "accent": "#1b1b1b" },
-    { "name": "Rust Cordura", "main": "#a34a2a", "accent": "#1b1b1b" }
+    {
+     "name": "Black Cordura",
+     "main": "#1b1b1b",
+     "accent": "#555555"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "main": "#5e2129",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Coyote Cordura",
+     "main": "#b08d57",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Grey Cordura",
+     "main": "#8a8a8a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Navy Cordura",
+     "main": "#22314f",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Olive Cordura",
+     "main": "#5a5b3d",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Rust Cordura",
+     "main": "#a34a2a",
+     "accent": "#1b1b1b"
+    }
    ]
   },
   {
@@ -404,7 +874,11 @@
     "assets/products/road-runner-bags/west-coast-burrito-3.jpg",
     "https://roadrunnerbags.us/products/west-coast-burrito-handlebar-bag"
    ],
-   "dims_cm": { "len": 27.9, "wid": 15.2, "hgt": 15.2 },
+   "dims_cm": {
+    "len": 27.9,
+    "wid": 15.2,
+    "hgt": 15.2
+   },
    "dims_state": "single_published",
    "dims_raw": "Width: 11in, Diameter: 6in; Volume 5L; Weight 14oz",
    "dims_note": "Single fixed triple, no range. len = Width 11in; wid = hgt = Diameter 6in.",
@@ -414,43 +888,125 @@
     "crossSection": "round",
     "notes": "Largest Burrito. west-coast-burrito-3.jpg is a straight-on end view showing a black bungee cord laced in a triple-X pattern across the front face over a black webbing girth strap - this is the elastic front web the maker describes for stuffing a jacket, distinct from the MOLLE ladder on the Supreme."
    },
-   "closure": { "type": "zip_straight", "location": "top", "hardware": "YKK water-resistant zip tape with 1in cam buckles" },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "YKK water-resistant zip tape with 1in cam buckles"
+   },
    "zips": [
-    { "run": "side_full", "finish": "waterproof_welded" },
-    { "run": "pocket", "finish": "matched" },
-    { "run": "pocket", "finish": "matched" }
+    {
+     "run": "side_full",
+     "finish": "waterproof_welded"
+    },
+    {
+     "run": "pocket",
+     "finish": "matched"
+    },
+    {
+     "run": "pocket",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "cam", "material": "1in YKK cam buckle strap", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "velcro", "material": "double-sided velcro", "wrapsAround": "headtube" },
-    { "role": "compression", "count": 1, "location": "front_face", "hardware": "cam", "material": "black bungee cord laced through 4 webbing loops in an X pattern" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "cam",
+     "material": "1in YKK cam buckle strap",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "double-sided velcro",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "black bungee cord laced through 4 webbing loops in an X pattern"
+    }
    ],
    "pockets": [
-    { "type": "zip", "location": "side" },
-    { "type": "zip", "location": "side" }
+    {
+     "type": "zip",
+     "location": "side"
+    },
+    {
+     "type": "zip",
+     "location": "side"
+    }
    ],
    "details": {
     "daisyChains": false,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior, 400D grey nylon liner, removable HDPE stiffener"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar", "headtube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 1,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Three mounting points: two bar-end top straps plus the headtube strap as the anti-sway third point."
    },
    "colorways": [
-    { "name": "Black Cordura", "main": "#1b1b1b", "accent": "#555555" },
-    { "name": "Burgundy Cordura", "main": "#5e2129", "accent": "#1b1b1b" },
-    { "name": "Grey Cordura", "main": "#8a8a8a", "accent": "#1b1b1b" },
-    { "name": "Navy Cordura", "main": "#22314f", "accent": "#1b1b1b" },
-    { "name": "Olive Cordura", "main": "#5a5b3d", "accent": "#1b1b1b" },
-    { "name": "Rust Cordura", "main": "#a34a2a", "accent": "#1b1b1b" },
-    { "name": "Coyote Cordura", "main": "#b08d57", "accent": "#1b1b1b" }
+    {
+     "name": "Black Cordura",
+     "main": "#1b1b1b",
+     "accent": "#555555"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "main": "#5e2129",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Grey Cordura",
+     "main": "#8a8a8a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Navy Cordura",
+     "main": "#22314f",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Olive Cordura",
+     "main": "#5a5b3d",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Rust Cordura",
+     "main": "#a34a2a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Coyote Cordura",
+     "main": "#b08d57",
+     "accent": "#1b1b1b"
+    }
    ]
   },
   {
@@ -466,7 +1022,11 @@
     "assets/products/road-runner-bags/auto-pilot-2.jpg",
     "https://roadrunnerbags.us/products/auto-pilot"
    ],
-   "dims_cm": { "len": 9.5, "wid": 9.5, "hgt": 17.8 },
+   "dims_cm": {
+    "len": 9.5,
+    "wid": 9.5,
+    "hgt": 17.8
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Height: 8.5in-7in (published as an inverted range, treated as 7-8.5in), Width: 3.75in, Depth: 3.75in; Volume 1.75L",
    "dims_note": "len = wid = Width/Depth 3.75in (square cross-section). hgt = MIN of the 7-8.5in range = 7in = 17.8cm - corrected from brands.json's 21.6cm, which had used the 8.5in max.",
@@ -476,35 +1036,90 @@
     "crossSection": "rounded_rect",
     "notes": "Squared gusseted pouch standing upright on the stem. auto-pilot-1.jpg shows a two-tone body (coyote-tan lower/black upper liner) with the black upper folded down twice and clipped by a side-release buckle - a genuine rolltop, not a plain drawcord bag."
    },
-   "closure": { "type": "rolltop", "location": "top", "hardware": "side-release buckle" },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "side-release buckle"
+   },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "permanently-attached vertical stem strap" },
-    { "role": "attachment", "count": 1, "location": "side", "hardware": "velcro", "material": "removable vertical handlebar strap", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "top", "hardware": "velcro", "material": "horizontal headtube strap", "wrapsAround": "headtube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "permanently-attached vertical stem strap"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "velcro",
+     "material": "removable vertical handlebar strap",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "horizontal headtube strap",
+     "wrapsAround": "headtube"
+    }
    ],
    "pockets": [
-    { "type": "stretch", "location": "front" }
+    {
+     "type": "stretch",
+     "location": "front"
+    }
    ],
    "details": {
     "daisyChains": false,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura"
    },
    "mount": {
-    "axes": { "len": "+x", "wid": "+z", "hgt": "+y" },
-    "attachesTo": ["stem", "handlebar", "headtube"],
-    "contactFaces": ["side"],
+    "axes": {
+     "len": "+x",
+     "wid": "+z",
+     "hgt": "+y"
+    },
+    "attachesTo": [
+     "stem",
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "side"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Three-point system (fixed stem strap + removable bar strap + headtube strap) is specifically sold as eliminating sway/sag, so sag_deg is set to 0."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1b1b1b" },
-    { "name": "Burgundy Cordura", "hex": "#5d2531" },
-    { "name": "Olive Cordura", "hex": "#4f5240" },
-    { "name": "Rust Cordura", "hex": "#9c4a26" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1b1b1b"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#5d2531"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#4f5240"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#9c4a26"
+    }
    ],
    "render": {
     "hgt_cm": 17.8,
@@ -524,7 +1139,11 @@
     "assets/products/road-runner-bags/co-pilot-2.jpg",
     "https://roadrunnerbags.us/products/co-pilot-bar-bag"
    ],
-   "dims_cm": { "len": 7.6, "wid": 7.6, "hgt": 15.2 },
+   "dims_cm": {
+    "len": 7.6,
+    "wid": 7.6,
+    "hgt": 15.2
+   },
    "dims_state": "single_published",
    "dims_raw": "Height: 6in, Width: 3in, Depth: 3in; Volume 0.88L; Weight 2oz",
    "dims_note": "Single fixed triple, no range. len = wid = Width/Depth 3in; hgt = 6in.",
@@ -534,33 +1153,85 @@
     "crossSection": "rounded_rect",
     "notes": "Smallest of the three stem bags. co-pilot-1.jpg (green) and co-pilot-2.jpg (red, mounted) both show a drawcord collar, not a rolltop - a black cord-lock cinches the black top fabric shut."
    },
-   "closure": { "type": "drawcord", "location": "top", "hardware": "cord-lock, one-handed 'tug up to close' per the maker" },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "cord-lock, one-handed 'tug up to close' per the maker"
+   },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "permanently-attached vertical stem strap" },
-    { "role": "attachment", "count": 1, "location": "side", "hardware": "velcro", "material": "removable vertical handlebar strap, mountable either side of the stem", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "top", "hardware": "velcro", "material": "horizontal headtube strap", "wrapsAround": "headtube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "permanently-attached vertical stem strap"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "velcro",
+     "material": "removable vertical handlebar strap, mountable either side of the stem",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "horizontal headtube strap",
+     "wrapsAround": "headtube"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura / 400D nylon exterior, 400D black nylon liner"
    },
    "mount": {
-    "axes": { "len": "+x", "wid": "+z", "hgt": "+y" },
-    "attachesTo": ["stem", "handlebar", "headtube"],
-    "contactFaces": ["side"],
+    "axes": {
+     "len": "+x",
+     "wid": "+z",
+     "hgt": "+y"
+    },
+    "attachesTo": [
+     "stem",
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "side"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Same three-point no-sway system as Auto-Pilot, smaller size."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1b1b1b" },
-    { "name": "Burgundy Cordura", "hex": "#5d2531" },
-    { "name": "Olive Cordura", "hex": "#4f5240" },
-    { "name": "Rust Cordura", "hex": "#9c4a26" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1b1b1b"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#5d2531"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#4f5240"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#9c4a26"
+    }
    ]
   },
   {
@@ -576,7 +1247,11 @@
     "assets/products/road-runner-bags/point-n-shooter-l-2.jpg",
     "https://roadrunnerbags.us/products/point-n-shooter-l"
    ],
-   "dims_cm": { "len": 8.9, "wid": 8.9, "hgt": 19.1 },
+   "dims_cm": {
+    "len": 8.9,
+    "wid": 8.9,
+    "hgt": 19.1
+   },
    "dims_state": "single_published",
    "dims_raw": "Width: 3.5in, Depth: 3.5in, Height: 7.5in; Volume 1.75L; Weight 4oz",
    "dims_note": "Single fixed triple, no range. len = wid = Width/Depth 3.5in; hgt = 7.5in.",
@@ -586,31 +1261,77 @@
     "crossSection": "rounded_rect",
     "notes": "Sold as a padded camera pouch that mounts like a stem bag - point-n-shooter-l-1.jpg shows 1/4in closed-cell foam padding inside and a cord-cinch collar (not a buckle rolltop) holding a mirrorless camera; point-n-shooter-l-2.jpg shows the same bag loaded and worn on a long cross-body strap for off-bike carry."
    },
-   "closure": { "type": "drawcord", "location": "top", "hardware": "cord-lock collar" },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "cord-lock collar"
+   },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "1.75in double-sided velcro handlebar strap", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "top", "hardware": "velcro", "material": "headtube strap", "wrapsAround": "headtube" },
-    { "role": "shoulder", "count": 1, "location": "side", "hardware": "g_hook", "material": "removable shoulder strap for off-bike carry" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "1.75in double-sided velcro handlebar strap",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "headtube strap",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "side",
+     "hardware": "g_hook",
+     "material": "removable shoulder strap for off-bike carry"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior, ultralight 200D nylon interior with 1/4in closed-cell foam padding on all sides"
    },
    "mount": {
-    "axes": { "len": "+x", "wid": "+z", "hgt": "+y" },
-    "attachesTo": ["stem", "handlebar", "headtube"],
-    "contactFaces": ["side"],
+    "axes": {
+     "len": "+x",
+     "wid": "+z",
+     "hgt": "+y"
+    },
+    "attachesTo": [
+     "stem",
+     "handlebar",
+     "headtube"
+    ],
+    "contactFaces": [
+     "side"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Three-point 'zero sway or sag' mount per the maker, same family as Auto-Pilot/Co-Pilot."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1b1b1b" },
-    { "name": "Olive Cordura", "hex": "#4f5240" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1b1b1b"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#4f5240"
+    }
    ]
   },
   {
@@ -627,7 +1348,11 @@
     "assets/products/road-runner-bags/bluff-3.jpg",
     "https://roadrunnerbags.us/products/bluff-top-tube-bag"
    ],
-   "dims_cm": { "len": 24.1, "wid": 8.9, "hgt": 11.4 },
+   "dims_cm": {
+    "len": 24.1,
+    "wid": 8.9,
+    "hgt": 11.4
+   },
    "dims_state": "single_published",
    "dims_raw": "Length: 9.5in, Width: 3.5in, Height: 4.5in; Volume 1.5L; Weight 6oz",
    "dims_note": "Single fixed triple, no range - matches brands.json exactly.",
@@ -637,36 +1362,94 @@
     "crossSection": "rounded_rect",
     "notes": "Sits astride the top tube behind the stem. A slight downward taper toward the headtube end is visible in bluff-1.jpg but is mild enough that a flat slab (rather than a wedge taper block) is the better fit."
    },
-   "closure": { "type": "zip_straight", "location": "top", "hardware": "oversized YKK water-resistant zip tape" },
-   "zips": [ { "run": "top_centre", "finish": "waterproof_welded" } ],
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "oversized YKK water-resistant zip tape"
+   },
+   "zips": [
+    {
+     "run": "top_centre",
+     "finish": "waterproof_welded"
+    }
+   ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "cam", "material": "YKK cam-lock buckle top tube straps, excess webbing tucks into elastic loops" },
-    { "role": "stability", "count": 1, "location": "front_face", "hardware": "velcro", "material": "double-sided velcro headtube strap", "wrapsAround": "headtube" },
-    { "role": "daisy", "count": 1, "location": "side", "hardware": "daisy_loop", "material": "daisy chain webbing with multiple velcro lash points" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "cam",
+     "material": "YKK cam-lock buckle top tube straps, excess webbing tucks into elastic loops"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "double-sided velcro headtube strap",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "side",
+     "hardware": "daisy_loop",
+     "material": "daisy chain webbing with multiple velcro lash points"
+    }
    ],
    "pockets": [
-    { "type": "zip", "location": "side" }
+    {
+     "type": "zip",
+     "location": "side"
+    }
    ],
    "details": {
     "daisyChains": true,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior, ultralight 200D nylon interior with closed-cell foam padding",
     "interior": "divider pocket for phone/keys"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "+y" },
-    "attachesTo": ["toptube", "headtube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "+z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "toptube",
+     "headtube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Two top-tube straps carry the load; the headtube strap is the maker-recommended third mount point to stop rocking."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1b1b1b" },
-    { "name": "Burgundy Cordura", "hex": "#5d2531" },
-    { "name": "Olive Cordura", "hex": "#4f5240" },
-    { "name": "Rust Cordura", "hex": "#9c4a26" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1b1b1b"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#5d2531"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#4f5240"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#9c4a26"
+    }
    ]
   },
   {
@@ -682,7 +1465,11 @@
     "assets/products/road-runner-bags/wedge-half-2.jpg",
     "https://roadrunnerbags.us/products/wedge"
    ],
-   "dims_cm": { "len": 39.4, "wid": 7.6, "hgt": 15.2 },
+   "dims_cm": {
+    "len": 39.4,
+    "wid": 7.6,
+    "hgt": 15.2
+   },
    "dims_state": "single_published",
    "dims_raw": "Top Tube Attachment: 15.5in; Down Tube Attachment: 9.5in (drive side) / 10in (non-drive side); Tallest Point: 6in; Width: 3in; Volume 2.5L",
    "dims_note": "Not a simple box - the maker specs this by mounting-point run length rather than a bounding box. len = Top Tube Attachment 15.5in (the longest edge); hgt = Tallest Point 6in; wid = Width 3in. Matches brands.json exactly; no range published so nothing to correct.",
@@ -690,42 +1477,119 @@
    "geometry": {
     "form": "triangle_panel",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.15, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.15,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Classic main-triangle wedge, full-depth at the seat-tube/top-tube corner (nose) tapering to a thin point at the head tube (tail). wedge-half-1.jpg shows a plain black body with a grey-webbing-topped panel along the top edge and a single diagonal-run zip; wedge-half-2.jpg (orange) shows the same construction with the flap open, an olive liner inside and a welded reflective-adjacent edge tape."
    },
-   "closure": { "type": "zip_straight", "location": "top_side", "hardware": "YKK water-resistant zip tape, single slider near the nose" },
-   "zips": [ { "run": "top_side", "finish": "waterproof_welded" } ],
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_side",
+    "hardware": "YKK water-resistant zip tape, single slider near the nose"
+   },
+   "zips": [
+    {
+     "run": "top_side",
+     "finish": "waterproof_welded"
+    }
+   ],
    "straps": [
-    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "extra-long hook-and-loop straps", "wrapsAround": "toptube" },
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "hook-and-loop straps, drive-side/non-drive-side lengths differ slightly", "wrapsAround": "downtube" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "extra-long hook-and-loop straps",
+     "wrapsAround": "toptube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hook-and-loop straps, drive-side/non-drive-side lengths differ slightly",
+     "wrapsAround": "downtube"
+    }
    ],
    "pockets": [
-    { "type": "slip", "location": "side" },
-    { "type": "slip", "location": "side" }
+    {
+     "type": "slip",
+     "location": "side"
+    },
+    {
+     "type": "slip",
+     "location": "side"
+    }
    ],
    "details": {
     "daisyChains": false,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "along_seattube" },
-    "attachesTo": ["toptube", "downtube"],
-    "contactFaces": ["top", "underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "+z",
+     "hgt": "along_seattube"
+    },
+    "attachesTo": [
+     "toptube",
+     "downtube"
+    ],
+    "contactFaces": [
+     "top",
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Rigid main-triangle mount, three top-tube straps plus two down-tube straps of slightly different length for drive/non-drive side clearance around the crank and cables."
    },
    "colorways": [
-    { "name": "Black Cordura", "main": "#1b1b1b", "accent": "#555555" },
-    { "name": "Burgundy Cordura", "main": "#5e2129", "accent": "#1b1b1b" },
-    { "name": "Grey Cordura", "main": "#8a8a8a", "accent": "#1b1b1b" },
-    { "name": "Navy Cordura", "main": "#22314f", "accent": "#1b1b1b" },
-    { "name": "Olive Cordura", "main": "#5a5b3d", "accent": "#1b1b1b" },
-    { "name": "Rust Cordura", "main": "#a34a2a", "accent": "#1b1b1b" },
-    { "name": "Coyote Cordura", "main": "#b08d57", "accent": "#1b1b1b" }
+    {
+     "name": "Black Cordura",
+     "main": "#1b1b1b",
+     "accent": "#555555"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "main": "#5e2129",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Grey Cordura",
+     "main": "#8a8a8a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Navy Cordura",
+     "main": "#22314f",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Olive Cordura",
+     "main": "#5a5b3d",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Rust Cordura",
+     "main": "#a34a2a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Coyote Cordura",
+     "main": "#b08d57",
+     "accent": "#1b1b1b"
+    }
    ]
   },
   {
@@ -741,7 +1605,11 @@
     "assets/products/road-runner-bags/wedge-mtb-full-2.jpg",
     "https://roadrunnerbags.us/products/wedge-mountain-bike-full-frame-bag"
    ],
-   "dims_cm": { "len": 40.6, "wid": 7.6, "hgt": 25.4 },
+   "dims_cm": {
+    "len": 40.6,
+    "wid": 7.6,
+    "hgt": 25.4
+   },
    "dims_state": "single_published",
    "dims_raw": "Top Tube Attachment: 16in; Down Tube Attachment: 17.5in; Parallel to Seat Tube: 10in; Width: 3in; Volume 4L",
    "dims_note": "len = Top Tube Attachment 16in; hgt = Parallel to Seat Tube 10in (the full-height rear edge, taller than the half bag since this fills the whole main triangle); wid = Width 3in. Matches brands.json exactly; no range published.",
@@ -749,45 +1617,129 @@
    "geometry": {
     "form": "triangle_panel",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.1, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.1,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Fills the full main triangle, so it is both longer and taller than the Half Frame Bag rather than just longer. wedge-mtb-full-1.jpg shows the top strap running the full top-tube length with a strain-relief loop where the shift/brake housing crosses; wedge-mtb-full-2.jpg shows the seat-tube-end zip pull and a red USA flag hang tag."
    },
-   "closure": { "type": "zip_straight", "location": "top_side", "hardware": "YKK water-resistant zip tape, single slider near the seat tube" },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top_side",
+    "hardware": "YKK water-resistant zip tape, single slider near the seat tube"
+   },
    "zips": [
-    { "run": "top_side", "finish": "waterproof_welded" },
-    { "run": "pocket", "finish": "matched" }
+    {
+     "run": "top_side",
+     "finish": "waterproof_welded"
+    },
+    {
+     "run": "pocket",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "extra-long hook-and-loop straps", "wrapsAround": "toptube" },
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "hook-and-loop straps", "wrapsAround": "downtube" },
-    { "role": "attachment", "count": 1, "location": "tail_wrap", "hardware": "velcro", "material": "hook-and-loop strap", "wrapsAround": "seattube" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "extra-long hook-and-loop straps",
+     "wrapsAround": "toptube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hook-and-loop straps",
+     "wrapsAround": "downtube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "velcro",
+     "material": "hook-and-loop strap",
+     "wrapsAround": "seattube"
+    }
    ],
    "pockets": [
-    { "type": "zip", "location": "side" }
+    {
+     "type": "zip",
+     "location": "side"
+    }
    ],
    "details": {
     "daisyChains": false,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior, rubber top-tube protector strip mentioned in customer reviews"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "along_seattube" },
-    "attachesTo": ["toptube", "downtube", "seattube"],
-    "contactFaces": ["top", "underside", "tail_wrap"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "+z",
+     "hgt": "along_seattube"
+    },
+    "attachesTo": [
+     "toptube",
+     "downtube",
+     "seattube"
+    ],
+    "contactFaces": [
+     "top",
+     "underside",
+     "tail_wrap"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Three-strap-group mount (top tube, down tube, seat tube) - the extra seat-tube strap is what lets this size fill the full triangle without sagging at the back."
    },
    "colorways": [
-    { "name": "Black Cordura", "main": "#1b1b1b", "accent": "#555555" },
-    { "name": "Burgundy Cordura", "main": "#5e2129", "accent": "#1b1b1b" },
-    { "name": "Grey Cordura", "main": "#8a8a8a", "accent": "#1b1b1b" },
-    { "name": "Navy Cordura", "main": "#22314f", "accent": "#1b1b1b" },
-    { "name": "Olive Cordura", "main": "#5a5b3d", "accent": "#1b1b1b" },
-    { "name": "Rust Cordura", "main": "#a34a2a", "accent": "#1b1b1b" },
-    { "name": "Coyote Cordura", "main": "#b08d57", "accent": "#1b1b1b" }
+    {
+     "name": "Black Cordura",
+     "main": "#1b1b1b",
+     "accent": "#555555"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "main": "#5e2129",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Grey Cordura",
+     "main": "#8a8a8a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Navy Cordura",
+     "main": "#22314f",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Olive Cordura",
+     "main": "#5a5b3d",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Rust Cordura",
+     "main": "#a34a2a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Coyote Cordura",
+     "main": "#b08d57",
+     "accent": "#1b1b1b"
+    }
    ]
   },
   {
@@ -805,7 +1757,11 @@
     "assets/products/road-runner-bags/sleeper-sleeper-bikepacking-saddle-bag-6l-1.jpg",
     "https://roadrunnerbags.us/products/bikepacking-saddle-bag"
    ],
-   "dims_cm": { "len": 50.8, "wid": 17.8, "hgt": 11.4 },
+   "dims_cm": {
+    "len": 50.8,
+    "wid": 17.8,
+    "hgt": 11.4
+   },
    "dims_state": "unfurled_max_length",
    "dims_raw": "Height: 10in-20in (this is the maker's length-before/after-rolling figure despite the 'Height' label), Width: 7in, Depth: 4.5in; Max volume 8.5L, Min volume 2L (compressed)",
    "dims_note": "The maker labels the variable roll axis 'Height' but it is this bag's fore-aft LENGTH (it rolls at the tail like an Ortlieb Seat-Pack, not a barbag). len = UNFURLED max = 20in = 50.8cm, per the new rule (was 33.0cm in brands.json, computed with an old 30%-roll-down formula off the same range - replaced). wid = Width 7in; hgt = Depth 4.5in, a single published figure so kept as-is.",
@@ -813,7 +1769,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.25, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.25,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "sleeper-1.jpg (open, olive) shows a squared saddle-end mouth with a dark underside skid panel; sleeper-4.jpg and the on-bike shot both show the tail rolled down tight and buckled forward, a short blunt wedge rather than a long torpedo."
    },
@@ -824,33 +1784,89 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "buckle", "material": "webbing threaded through the saddle rails" },
-    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "velcro seatpost strap", "wrapsAround": "seatpost" },
-    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "main compression cinch strap" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "webbing threaded through the saddle rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "velcro seatpost strap",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "buckle",
+     "material": "main compression cinch strap"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
-    "logo": { "type": "sewn_label", "location": "nose_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "nose_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior with a floating internal liner"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "+z", "hgt": "-y" },
-    "attachesTo": ["saddle_rails", "seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "+z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 3,
-    "clearance": { "tyre_mm": 40, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 40,
+     "frame_mm": 0
+    },
     "notes": "Nose clamped to the rails and pulled onto the seatpost by velcro, same general mount pattern as the Ortlieb/Apidura seatpacks in this catalog. tyre_mm is an estimate, not a published figure."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1f1f1f" },
-    { "name": "Burgundy Cordura", "hex": "#6b2233" },
-    { "name": "Grey Cordura", "hex": "#6e7276" },
-    { "name": "Navy Cordura", "hex": "#23334f" },
-    { "name": "Olive Cordura", "hex": "#5c5f3d" },
-    { "name": "Rust Cordura", "hex": "#a24d24" },
-    { "name": "Coyote Cordura", "hex": "#b3936a" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1f1f1f"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#6b2233"
+    },
+    {
+     "name": "Grey Cordura",
+     "hex": "#6e7276"
+    },
+    {
+     "name": "Navy Cordura",
+     "hex": "#23334f"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#5c5f3d"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#a24d24"
+    },
+    {
+     "name": "Coyote Cordura",
+     "hex": "#b3936a"
+    }
    ],
    "render": {
     "hgt_cm": 11.4,
@@ -873,7 +1889,11 @@
     "assets/products/road-runner-bags/drafter-3.jpg",
     "https://roadrunnerbags.us/products/drafter-saddle-bag"
    ],
-   "dims_cm": { "len": 6.4, "wid": 7.6, "hgt": 14.0 },
+   "dims_cm": {
+    "len": 6.4,
+    "wid": 7.6,
+    "hgt": 14
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Height: 5.5in-7in, Width: 3in, Depth: 2.5in; Volume 0.75L",
    "dims_note": "CORRECTED. len = Depth 2.5in; wid = Width 3in; hgt = MIN of the published 5.5-7in range = 5.5in = 14.0cm. brands.json/the prior model pass had hgt = 17.8cm, which is 7in - the MAXIMUM of the range, not the minimum. See brand_notes.drafterFinding for the full reasoning; this is the fix for the reported 5.1mm seat-tube collision.",
@@ -883,35 +1903,72 @@
     "crossSection": "rounded_rect",
     "notes": "Small flap-front wedge hanging directly off the saddle rails, nose immediately behind the saddle. drafter-1.jpg (orange, studio, VeloOrange saddle) and drafter-3.jpg (orange, on-bike under a Brooks) both show a single front buckle strap, a reflective band across the top edge, and NO strap or contact point anywhere near the seatpost - it hangs free."
    },
-   "closure": { "type": "rolltop", "location": "top", "hardware": "single front buckle, rolls toward the back of the saddle per the maker" },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "single front buckle, rolls toward the back of the saddle per the maker"
+   },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "3/4in webbing looped through the saddle rails and under the front strap", "wrapsAround": "saddle_rails" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "3/4in webbing looped through the saddle rails and under the front strap",
+     "wrapsAround": "saddle_rails"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": "3M reflective band across the top/nose edge",
-    "logo": { "type": "sewn_label", "location": "nose_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "nose_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior, 400D grey nylon liner"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "+z", "hgt": "-y" },
-    "attachesTo": ["saddle_rails"],
-    "contactFaces": ["nose_top"],
+    "axes": {
+     "len": "-x",
+     "wid": "+z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "saddle_rails"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
     "sag_deg": 5,
-    "clearance": { "tyre_mm": 30, "frame_mm": 8 },
+    "clearance": {
+     "tyre_mm": 30,
+     "frame_mm": 8
+    },
     "notes": "Rail-only mount, confirmed by the maker's own installation text ('loop the webbing through the rails... rolls toward the back of the saddle') and by both photos - there is no seatpost strap on this bag, unlike the Sleeper. frame_mm is a small positive estimate (not measured) flagging that this bag sits close behind the seat tube/seatpost and must not be treated as seatpost-clamped like a standard seatpack. If a rendering still shows interior collision after the height fix, check that attachesTo is being read as saddle_rails only and not defaulting to a seatpost-clamped mount."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1b1b1b" },
-    { "name": "Burgundy Cordura", "hex": "#5d2531" },
-    { "name": "Olive Cordura", "hex": "#4f5240" },
-    { "name": "Rust Cordura", "hex": "#9c4a26" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1b1b1b"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#5d2531"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#4f5240"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#9c4a26"
+    }
    ],
    "render": {
-    "hgt_cm": 14.0,
+    "hgt_cm": 14,
     "basis": "5.5in minimum of the published 5.5-7in range. This is the value that must be drawn to keep clear of the seat tube - the previous record used the 7in maximum (17.8cm), a 3.8cm overshoot far larger than the reported 5.1mm collision, so this alone should resolve it or leave only a small residual to check against the mount axes."
    }
   },
@@ -928,7 +1985,11 @@
     "assets/products/road-runner-bags/tool-saddle-roll-2.jpg",
     "https://roadrunnerbags.us/products/tool-saddle-roll"
    ],
-   "dims_cm": { "len": 30.5, "wid": 12.1, "hgt": 14.0 },
+   "dims_cm": {
+    "len": 30.5,
+    "wid": 12.1,
+    "hgt": 14
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Closed Height: 5.5in, Open Height: 9in, Inner tube pocket: 4.75in, Width: 12in; Weight 3oz",
    "dims_note": "Not a rolltop bag but a flat tri-fold panel that snaps into a cylinder - the open/closed distinction is a fold, not a roll, but behaves the same way for rendering purposes. len = published Width 12in (the panel's long edge, which becomes the roll's axis, running side to side under the saddle rails); hgt = Closed Height 5.5in = 14.0cm (already the minimum/closed figure, no range to pick from); wid = Inner tube pocket 4.75in, used as the rolled diameter/front-to-back depth since no separate depth figure is published. No local on-bike photo of this product mounted was found, so the side-to-side orientation is inferred from typical saddle-rail tool-roll practice, not directly observed - confidence medium.",
@@ -938,37 +1999,80 @@
     "crossSection": "round",
     "notes": "tool-saddle-roll-1.jpg shows the flat, unrolled panel: two internal fabric pockets holding a multi-tool and two folded tubes, with nickel DOT snap studs top and center for closing it into a tube. Closest vocabulary closure term used is hook_and_loop_flap, but the actual hardware is two metal snap studs, not velcro or a buckle - noted here since nothing in the controlled list matches exactly."
    },
-   "closure": { "type": "hook_and_loop_flap", "location": "top", "hardware": "2x DOT stainless steel snap studs (not velcro - closest vocabulary term used)" },
+   "closure": {
+    "type": "hook_and_loop_flap",
+    "location": "top",
+    "hardware": "2x DOT stainless steel snap studs (not velcro - closest vocabulary term used)"
+   },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "velcro loop tab visible in tool-saddle-roll-1.jpg", "wrapsAround": "saddle_rails" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "velcro loop tab visible in tool-saddle-roll-1.jpg",
+     "wrapsAround": "saddle_rails"
+    }
    ],
    "pockets": [
-    { "type": "slip", "location": "internal" },
-    { "type": "slip", "location": "internal" }
+    {
+     "type": "slip",
+     "location": "internal"
+    },
+    {
+     "type": "slip",
+     "location": "internal"
+    }
    ],
    "details": {
     "daisyChains": false,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn",
     "fabric": "1000D Cordura exterior"
    },
    "mount": {
-    "axes": { "len": "+z", "wid": "-x", "hgt": "-y" },
-    "attachesTo": ["saddle_rails"],
-    "contactFaces": ["nose_top"],
+    "axes": {
+     "len": "+z",
+     "wid": "-x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "saddle_rails"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
     "sag_deg": 5,
-    "clearance": { "tyre_mm": 30, "frame_mm": 8 },
+    "clearance": {
+     "tyre_mm": 30,
+     "frame_mm": 8
+    },
     "notes": "No published or photographed strap/attachment hardware beyond a single velcro loop tab - the maker's own page admits it doesn't document the mounting hardware in detail. Typically carried alongside a seatpack or the Drafter rather than alone; medium confidence on orientation only."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1b1b1b" },
-    { "name": "Burgundy Cordura", "hex": "#5d2531" },
-    { "name": "Olive Cordura", "hex": "#4f5240" },
-    { "name": "Rust Cordura", "hex": "#9c4a26" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1b1b1b"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#5d2531"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#4f5240"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#9c4a26"
+    }
    ],
    "render": {
-    "hgt_cm": 14.0,
+    "hgt_cm": 14,
     "basis": "5.5in closed height is stated directly by the maker as the closed figure - no photo estimation needed."
    }
   },
@@ -986,7 +2090,11 @@
     "assets/products/road-runner-bags/buoy-3.jpg",
     "https://roadrunnerbags.us/products/buoy-bag"
    ],
-   "dims_cm": { "len": 50.8, "wid": 15.2, "hgt": 15.2 },
+   "dims_cm": {
+    "len": 50.8,
+    "wid": 15.2,
+    "hgt": 15.2
+   },
    "dims_state": "unfurled_max_length",
    "dims_raw": "Unrolled Height: 20in, Rolled Height: 13in, Diameter: 6in; Volume 7.75L; Weight 4.5oz",
    "dims_note": "CORRECTED. The maker calls the variable axis 'Height' but on a fork-mounted dry bag it is the bag's LENGTH along the fork leg. len = UNFURLED/unrolled max = 20in = 50.8cm (brands.json had used the 13in ROLLED figure, 33.0cm, for len - the wrong end of the range under the new rule). wid = hgt = Diameter 6in.",
@@ -996,37 +2104,80 @@
     "crossSection": "round",
     "notes": "Plain rolltop dry-bag cylinder, no internal stiffener. buoy-1.jpg is a side-by-side of both Buoy sizes; buoy-2.jpg is a close detail of the rolled collar with a side-release buckle and a paracord loop; buoy-3.jpg shows both mounted low on a fork, straps only, no cage visible in-frame."
    },
-   "closure": { "type": "rolltop", "location": "top", "hardware": "YKK quick-release side-release buckle" },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "YKK quick-release side-release buckle"
+   },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "side", "hardware": "velcro", "material": "Voile-style straps (sold separately from the bag)", "wrapsAround": "fork_leg" },
-    { "role": "daisy", "count": 1, "location": "top", "hardware": "daisy_loop", "material": "paracord loop" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "side",
+     "hardware": "velcro",
+     "material": "Voile-style straps (sold separately from the bag)",
+     "wrapsAround": "fork_leg"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "top",
+     "hardware": "daisy_loop",
+     "material": "paracord loop"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": true,
     "reflective": "3M reflective tab",
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn, seam-taped interior",
     "fabric": "1000D Cordura exterior, seam-taped ultralight 200D nylon interior"
    },
    "mount": {
-    "axes": { "len": "along_forkleg", "wid": "+x", "hgt": "+x" },
-    "attachesTo": ["fork_leg"],
-    "contactFaces": ["side"],
+    "axes": {
+     "len": "along_forkleg",
+     "wid": "+x",
+     "hgt": "+x"
+    },
+    "attachesTo": [
+     "fork_leg"
+    ],
+    "contactFaces": [
+     "side"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 20, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 20,
+     "frame_mm": 0
+    },
     "notes": "Universal dry bag, functions like a set of micro panniers per the maker; mounting straps are not included with the bag itself."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1b1b1b" },
-    { "name": "Burgundy Cordura", "hex": "#5d2531" },
-    { "name": "Olive Cordura", "hex": "#4f5240" },
-    { "name": "Rust Cordura", "hex": "#9c4a26" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1b1b1b"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#5d2531"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#4f5240"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#9c4a26"
+    }
    ],
    "render": {
     "hgt_cm": 15.2,
-    "len_cm": 33.0,
+    "len_cm": 33,
     "basis": "13in rolled height is stated directly by the maker as the rolled figure - a maker-published ridden-state length, not a photo estimate."
    }
   },
@@ -1044,7 +2195,11 @@
     "assets/products/road-runner-bags/micro-buoy-3.jpg",
     "https://roadrunnerbags.us/products/micro-buoy-bag"
    ],
-   "dims_cm": { "len": 33.0, "wid": 8.9, "hgt": 8.9 },
+   "dims_cm": {
+    "len": 33,
+    "wid": 8.9,
+    "hgt": 8.9
+   },
    "dims_state": "unfurled_max_length",
    "dims_raw": "Rolled: 11in x 3.5in, Max Unrolled: 13in x 3.5in; min volume 3.78L, water-resistant 4.12L, fully unrolled 4.5L",
    "dims_note": "CORRECTED. Same issue as the full Buoy: brands.json had len = 27.9cm (the 11in ROLLED figure). len = UNFURLED max = 13in = 33.0cm per the new rule. wid = hgt = Diameter 3.5in.",
@@ -1054,32 +2209,75 @@
     "crossSection": "round",
     "notes": "Same rolltop cylinder construction as the full Buoy, scaled down. micro-buoy-1.jpg (olive, mounted low on a fork alongside the full Buoy) and micro-buoy-2.jpg (olive, mounted on a fork leg above a green stem/bar-roll combo) both confirm the plain body with a top X-bungee-lace pattern and a single mid-body strap."
    },
-   "closure": { "type": "rolltop", "location": "top", "hardware": "YKK quick-release side-release buckle" },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "hardware": "YKK quick-release side-release buckle"
+   },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "side", "hardware": "velcro", "material": "Voile-style straps (sold separately)", "wrapsAround": "fork_leg" },
-    { "role": "daisy", "count": 1, "location": "top", "hardware": "daisy_loop", "material": "paracord loop" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "side",
+     "hardware": "velcro",
+     "material": "Voile-style straps (sold separately)",
+     "wrapsAround": "fork_leg"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "top",
+     "hardware": "daisy_loop",
+     "material": "paracord loop"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": true,
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "seams": "sewn, seam-taped interior",
     "fabric": "1000D Cordura exterior"
    },
    "mount": {
-    "axes": { "len": "along_forkleg", "wid": "+x", "hgt": "+x" },
-    "attachesTo": ["fork_leg"],
-    "contactFaces": ["side"],
+    "axes": {
+     "len": "along_forkleg",
+     "wid": "+x",
+     "hgt": "+x"
+    },
+    "attachesTo": [
+     "fork_leg"
+    ],
+    "contactFaces": [
+     "side"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 20, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 20,
+     "frame_mm": 0
+    },
     "notes": "Also compatible with bottle cages, downtube cages, or under-saddle mounting per the maker - fork leg is the modeled default."
    },
    "colorways": [
-    { "name": "Black Cordura", "hex": "#1b1b1b" },
-    { "name": "Burgundy Cordura", "hex": "#5d2531" },
-    { "name": "Olive Cordura", "hex": "#4f5240" },
-    { "name": "Rust Cordura", "hex": "#9c4a26" }
+    {
+     "name": "Black Cordura",
+     "hex": "#1b1b1b"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "hex": "#5d2531"
+    },
+    {
+     "name": "Olive Cordura",
+     "hex": "#4f5240"
+    },
+    {
+     "name": "Rust Cordura",
+     "hex": "#9c4a26"
+    }
    ],
    "render": {
     "hgt_cm": 8.9,
@@ -1102,7 +2300,11 @@
     "assets/products/road-runner-bags/anywhere-pannier-5.jpg",
     "https://roadrunnerbags.us/products/bikepacking-pannier"
    ],
-   "dims_cm": { "len": 23.5, "wid": 15.2, "hgt": 35.6 },
+   "dims_cm": {
+    "len": 23.5,
+    "wid": 15.2,
+    "hgt": 35.6
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Rolled: 14in x 9.25in x 6in; Max Unrolled: 19in x 9.25in x 6in; min volume 12.75L, water-resistant 17.25L, fully unrolled 22L; single weight 1lb 14oz",
    "dims_note": "Only the first figure (14-19in) varies with the roll; the maker's 9.25in and 6in figures are fixed. len = fixed 9.25in (the longer of the two fixed horizontal figures, running along the rack); wid = fixed 6in (thickness against the wheel); hgt = MIN of the 14-19in roll range = 14in = 35.6cm. This already matches brands.json exactly - no correction needed here, unlike the Buoys and Drafter.",
@@ -1119,41 +2321,122 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "hook", "material": "coral-accented quick-release hook clips for the rack top tube" },
-    { "role": "stability", "count": 3, "location": "underside", "hardware": "velcro", "material": "6in Nano-Voile straps threaded through for security", "wrapsAround": "rack" },
-    { "role": "compression", "count": 1, "location": "front_face", "hardware": "buckle", "material": "coral-accented side-release buckle" },
-    { "role": "lid", "count": 1, "location": "lid", "hardware": "velcro", "material": "front bib flap over the MOLLE-webbed lower panel" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "hook",
+     "material": "coral-accented quick-release hook clips for the rack top tube"
+    },
+    {
+     "role": "stability",
+     "count": 3,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "6in Nano-Voile straps threaded through for security",
+     "wrapsAround": "rack"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "coral-accented side-release buckle"
+    },
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "lid",
+     "hardware": "velcro",
+     "material": "front bib flap over the MOLLE-webbed lower panel"
+    }
    ],
    "pockets": [
-    { "type": "stretch", "location": "front" },
-    { "type": "slip", "location": "front" }
+    {
+     "type": "stretch",
+     "location": "front"
+    },
+    {
+     "type": "slip",
+     "location": "front"
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": "reflective strip across the bib flap",
-    "logo": { "type": "sewn_label", "location": "front_panel" },
+    "logo": {
+     "type": "sewn_label",
+     "location": "front_panel"
+    },
     "stiffener": "internal stiffener at the rack mounting points for stability",
     "seams": "sewn",
     "fabric": "1000D Cordura exterior, seam-taped 420 denier ripstop nylon interior"
    },
    "mount": {
-    "axes": { "len": "+z", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["rack"],
-    "contactFaces": ["rear_panel"],
+    "axes": {
+     "len": "+z",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rack"
+    ],
+    "contactFaces": [
+     "rear_panel"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 15, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 15,
+     "frame_mm": 0
+    },
     "notes": "Two quick-release hook clips at the top plus three threaded Nano-Voile straps - not a rigid QL-style rail like Ortlieb's system, closer to a simplified two-point hook. Requires a rear rack; sold singly or as a pair (pair figure in the catalog is a weight/price bundle, not a doubled capacity_l - capacity_l here is already the single bag)."
    },
    "colorways": [
-    { "name": "Black Cordura", "main": "#1b1b1b", "accent": "#555555" },
-    { "name": "Burgundy Cordura", "main": "#5e2129", "accent": "#1b1b1b" },
-    { "name": "Grey Cordura", "main": "#8a8a8a", "accent": "#1b1b1b" },
-    { "name": "Navy Cordura", "main": "#22314f", "accent": "#1b1b1b" },
-    { "name": "Olive Cordura", "main": "#5a5b3d", "accent": "#1b1b1b" },
-    { "name": "Rust Cordura", "main": "#a34a2a", "accent": "#1b1b1b" },
-    { "name": "Coyote Cordura", "main": "#b08d57", "accent": "#1b1b1b" },
-    { "name": "The Clint (Turmeric/Pink)", "main": "#d69a2d", "accent": "#e78bb0" },
-    { "name": "The Jaystone (Teal/Orange)", "main": "#2e7f85", "accent": "#e07a2f" }
+    {
+     "name": "Black Cordura",
+     "main": "#1b1b1b",
+     "accent": "#555555"
+    },
+    {
+     "name": "Burgundy Cordura",
+     "main": "#5e2129",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Grey Cordura",
+     "main": "#8a8a8a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Navy Cordura",
+     "main": "#22314f",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Olive Cordura",
+     "main": "#5a5b3d",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Rust Cordura",
+     "main": "#a34a2a",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "Coyote Cordura",
+     "main": "#b08d57",
+     "accent": "#1b1b1b"
+    },
+    {
+     "name": "The Clint (Turmeric/Pink)",
+     "main": "#d69a2d",
+     "accent": "#e78bb0"
+    },
+    {
+     "name": "The Jaystone (Teal/Orange)",
+     "main": "#2e7f85",
+     "accent": "#e07a2f"
+    }
    ],
    "render": {
     "hgt_cm": 35.6,

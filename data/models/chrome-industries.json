@@ -13,7 +13,6 @@
    "size": null,
    "slot": "barbag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -22,70 +21,107 @@
     "https://cdn.shopify.com/s/files/1/0567/0767/8268/files/homanhandlebarbagonhandlebars.jpg?v=1768008382",
     "https://www.chromeindustries.com/products/holman-handlebar-bag"
    ],
-
-   "dims_cm": { "len": 20.3, "wid": 10.2, "hgt": 12.7 },
+   "dims_cm": {
+    "len": 20.3,
+    "wid": 10.2,
+    "hgt": 12.7
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Maker spec image and Sizing accordion: 'Height: 5\" | Width: 8\" | Depth: 4\"', Volume 3 Liters. Single fixed figures, no range.",
    "dims_note": "Existing catalogue dims confirmed exactly by the maker's own dimensioned product-spec image (5in H -> hgt 12.7cm, 8in W -> len 20.3cm, 4in D -> wid 10.2cm). No correction needed.",
    "capacity_l": 3,
-
    "geometry": {
     "form": "rounded_box",
     "crossSection": "rounded_rect",
     "shoulder": "squared",
     "notes": "Boxy rectangular bag with softly rounded top corners and a flat front face. Chrome griffin/lion badge patch centred on the front flap. Reflective front panel on the Black XRF colorway per maker copy."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top_side",
     "hardware": "single zip with a black paracord pull and carabiner-style clip, running along the top-front seam under the flap; maker copy: 'One-handed, zippered main compartment for access while riding'"
    },
-
    "zips": [
-    { "run": "top_side", "finish": "matched" }
+    {
+     "run": "top_side",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "handlebar" },
-    { "role": "daisy", "count": 1, "location": "side", "hardware": "daisy_loop", "material": "webbing", "wrapsAround": null }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "side",
+     "hardware": "daisy_loop",
+     "material": "webbing",
+     "wrapsAround": null
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "front", "sizeFrac": 0.6 }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.6
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "front panel on Black XRF colorway",
-    "logo": { "type": "patch", "location": "front_face" },
+    "logo": {
+     "type": "patch",
+     "location": "front_face"
+    },
     "seams": "not stated as welded - conventional zip/panel construction",
     "fabric": "recycled X fabric (Chrome's own branded laminate) - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_bar", "wid": "x", "hgt": "y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": null, "frame_mm": null },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
     "notes": "Sits centred on the bar tops on two adjustable webbing loop straps; maker copy: 'Modular and replaceable attachment straps for a secure fit on any bike'."
    },
-
    "colorways": [
-    { "name": "Black", "hex": "#101010" },
-    { "name": "Black XRF (reflective)", "hex": "#101010" }
+    {
+     "name": "Black",
+     "hex": "#101010"
+    },
+    {
+     "name": "Black XRF (reflective)",
+     "hex": "#101010"
+    }
    ],
-   "images": ["https://cdn.shopify.com/s/files/1/0567/0767/8268/files/HOLMAN_HANDLBAR_BAG_BLACK_3Q_1.jpg?v=1768008382"]
+   "images": [
+    "https://cdn.shopify.com/s/files/1/0567/0767/8268/files/HOLMAN_HANDLBAR_BAG_BLACK_3Q_1.jpg?v=1768008382"
+   ]
   },
-
   {
    "line": "Holman",
    "name": "Holman Top Tube Bag",
    "size": null,
    "slot": "toptube",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -94,205 +130,311 @@
     "https://cdn.shopify.com/s/files/1/0567/0767/8268/files/5_BG-357-BK_1.jpg?v=1768007358",
     "https://www.chromeindustries.com/products/holman-top-tube-bag"
    ],
-
-   "dims_cm": { "len": 22.2, "wid": 4.5, "hgt": 10.2 },
+   "dims_cm": {
+    "len": 22.2,
+    "wid": 4.5,
+    "hgt": 10.2
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Maker Sizing accordion: 'Height: 4\" | Width: 7.25\" top - 8.75 bottom | Depth: 1.75\"', Volume 1 Liter.",
    "dims_note": "Existing catalogue dims confirmed: 4in H -> hgt 10.2cm, Depth 1.75in -> wid 4.5cm both match exactly. Width is a taper (7.25in narrow end to 8.75in wide end) mapped to len; per the tapered-axes rule the LARGER value (8.75in = 22.2cm) is recorded in dims_cm, matching the existing figure, with the taper itself in geometry.taper below.",
    "capacity_l": 1,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 0.83, "tail": 1.0, "profile": "linear" },
+    "taper": {
+     "nose": 0.83,
+     "tail": 1,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "CONFIRMED DUAL MOUNT POSITION: Chrome's own product photography shows this bag mounted in TWO different places on the same bike - one shot immediately behind the stem/head tube (narrow taper end forward), another shot immediately in front of the seatpost/seat tube. Both are genuine maker photos of the same SKU, not a catalogue error - Chrome markets it as mountable at either end of the top tube. Slot kept as 'toptube' (front/stem position, the more common convention) since the catalogue vocabulary has no separate front/rear top-tube distinction."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top_centre",
     "hardware": "zip with paracord pull and clip; maker copy: 'Zippered cargo pocket with internal organization'"
    },
-
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.8 }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.8
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "front panel on Black XRF colorway",
-    "logo": { "type": "patch", "location": "front_face" },
+    "logo": {
+     "type": "patch",
+     "location": "front_face"
+    },
     "seams": "not stated as welded - conventional zip/panel construction",
     "fabric": "recycled X fabric (Chrome's own branded laminate) - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
     "notes": "Two velcro loop straps cinch it to the top tube; maker copy: 'Modular, replaceable attachment straps for a secure fit on any bike'. Photographed at both the stem end and the seatpost end (see geometry.notes) - drawn here at the stem end."
    },
-
    "colorways": [
-    { "name": "Black", "hex": "#101010" },
-    { "name": "Black XRF (reflective)", "hex": "#101010" }
+    {
+     "name": "Black",
+     "hex": "#101010"
+    },
+    {
+     "name": "Black XRF (reflective)",
+     "hex": "#101010"
+    }
    ],
-   "images": ["https://cdn.shopify.com/s/files/1/0567/0767/8268/files/1-BG-357-BXRF_1.jpg?v=1768007358"]
+   "images": [
+    "https://cdn.shopify.com/s/files/1/0567/0767/8268/files/1-BG-357-BXRF_1.jpg?v=1768007358"
+   ]
   },
-
   {
    "line": "Holman",
    "name": "Holman Pannier",
    "size": null,
    "slot": "pannier",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
     "https://web.archive.org/web/20260105001930/https://chromeindustries.com/cdn/shop/files/HOLMAN_PANNIER_BLACK_3Q_1_1.jpg (Wayback Machine snapshot, Jan 2026)",
     "https://web.archive.org/web/20260105001930/https://chromeindustries.com/products/holman-pannier"
    ],
-
-   "dims_cm": { "len": 29.2, "wid": 12.7, "hgt": 39.4 },
+   "dims_cm": {
+    "len": 29.2,
+    "wid": 12.7,
+    "hgt": 39.4
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Maker Sizing accordion (via Wayback snapshot): 'Height: 15.5\" | Width: 11.5\" top - 10.75\" base | Depth: 5\"', Volume 15-20 Liters, Strap length 31-59in.",
    "dims_note": "UNCHANGED from the catalogue's existing (already-corrected) figures, now independently re-confirmed against the maker's own spec text rather than the third-party retailer listings the catalogue previously cited. Height (the vertical hang axis) maps to hgt (15.5in=39.4cm), Width (fore-aft along the rack, tapering 11.5in top to 10.75in base) maps to len using the larger/top value per the tapered-axes rule (29.2cm), Depth maps to wid (5in=12.7cm). This is a fixed-size messenger-flap bag, not a rolltop, so there is no unfurled/min-height ambiguity to apply.",
    "capacity_l": 20,
-
    "geometry": {
     "form": "rounded_box",
     "crossSection": "flat_back",
     "shoulder": "squared",
     "notes": "Vertical rectangular messenger-bag-style pannier, taller than wide - NOT a rolltop dry bag like its Urban Ex sibling. Flap top with two side-release buckles, front zip pocket, fabric top carry handle, and a long adjustable/removable shoulder strap for off-bike carry."
    },
-
    "closure": {
     "type": "flap_buckle",
     "location": "top",
     "hardware": "two side-release buckles on webbing straps over a messenger-style flap"
    },
-
    "zips": [
-    { "run": "front_panel", "finish": "matched" }
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "lid", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing" },
-    { "role": "shoulder", "count": 1, "location": "side", "hardware": "buckle", "material": "webbing", "wrapsAround": "body" }
+    {
+     "role": "lid",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "side",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "body"
+    }
    ],
-
    "pockets": [
-    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.3 },
-    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.9 }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.3
+    },
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.9
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "patch", "location": "front_face" },
+    "logo": {
+     "type": "patch",
+     "location": "front_face"
+    },
     "seams": "described only as 'weather resistant', not welded/waterproof like the Urban Ex 2.0 - see brand_notes.fabric",
     "fabric": "600D recycled polyester with 150D recycled polyester liner - see brand_notes.fabric"
    },
-
    "fits": "rack_only",
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["rear_rack"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": null },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
     "notes": "Hangs from a rear rack via 'universal mounting hardware' (hook/rail clips on the rear face, not visible in the studio photo available) - requires a rack, so flagged fits:rack_only rather than left in the universal pool. Soft-bodied bag, hangs vertically, no internal rigid frame visible."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#101010" } ],
-   "images": ["https://web.archive.org/web/20260105001930/https://chromeindustries.com/cdn/shop/files/HOLMAN_PANNIER_BLACK_3Q_1_1.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#101010"
+    }
+   ],
+   "images": [
+    "https://web.archive.org/web/20260105001930/https://chromeindustries.com/cdn/shop/files/HOLMAN_PANNIER_BLACK_3Q_1_1.jpg"
+   ]
   },
-
   {
    "line": "Urban Ex",
    "name": "Urban Ex Pannier 2.0",
    "size": null,
    "slot": "pannier",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
     "https://web.archive.org/web/20231004070023/http://chromeindustries.com/cdn/shop/products/7_BG-315-BK.jpg (Wayback Machine snapshot, Oct 2023)",
     "https://web.archive.org/web/20231004070023/https://chromeindustries.com/products/waterproof-urban-ex-2-0-pannier"
    ],
-
-   "dims_cm": { "len": 30.5, "wid": 15.2, "hgt": 45.7 },
+   "dims_cm": {
+    "len": 30.5,
+    "wid": 15.2,
+    "hgt": 45.7
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Maker Sizing accordion (via Wayback snapshot): 'Height: 18-23\" | Width: 12\" | Depth: 6\"', Volume/Capacity 17-21L.",
    "dims_note": "AXIS-SWAP CORRECTION - the same defect the brief warns about, and the same one already caught and fixed on this pannier's Holman sibling but missed here. The existing catalogue had len:58.4 (mapping the maker's 23in maximum HEIGHT into the length axis) and hgt:15.2 (mapping the 6in DEPTH into height) - that draws the pannier lying on its side, on a random axis, with its actual vertical extent reduced to a slab 15cm tall. Correct mapping, consistent with the Holman Pannier correction: Height (18-23in, the vertical hang axis - and here it is a genuine RANGE, since this is a rolltop) maps to hgt using the new MINIMUM-of-range rule = 18in = 45.7cm; Width (12in, fore-aft along the rack) maps to len = 30.5cm; Depth (6in, thickness against the rack) maps to wid = 15.2cm. Volume check: 30.5 x 15.2 x 45.7 = 21.2L box against the 17-21L rating - a clean 1.0x match at the rolled-down minimum, which is exactly what the minimum-height rule is supposed to produce, so no render override is needed here.",
    "capacity_l": 20,
-
    "geometry": {
     "form": "rounded_box",
     "crossSection": "flat_back",
     "shoulder": "squared",
     "notes": "True rolltop dry-bag pannier, taller than wide, hangs from a rack via a hook/clip visible at the top rear. Three horizontal compression straps across the front face, a diagonal reflective accent stripe down one side, small Chrome box-logo tag low on the front."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "top",
     "hardware": "side-release buckle at the roll; maker copy: '100% welded waterproof lightweight single pannier'"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "compression", "count": 3, "location": "front_face", "hardware": "buckle", "material": "webbing" },
-    { "role": "attachment", "count": 1, "location": "top", "hardware": "hook", "material": null, "wrapsAround": "rack_rail" }
+    {
+     "role": "compression",
+     "count": 3,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "top",
+     "hardware": "hook",
+     "material": null,
+     "wrapsAround": "rack_rail"
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.5 }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.5
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "diagonal accent stripe on one side panel",
-    "logo": { "type": "patch", "location": "front_lower" },
+    "logo": {
+     "type": "patch",
+     "location": "front_lower"
+    },
     "seams": "welded (maker copy: '100% welded waterproof lightweight single pannier')",
     "fabric": "600D Polyester with PU coating on surface and TPU backing, 70D Polyester lining - see brand_notes.fabric; the one product in this brand's catalogue that actually matches brands.json's 'TPU laminate (shiny welded)' description"
    },
-
    "fits": "rack_only",
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["rear_rack"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": null },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
     "notes": "Adjustable locking hook hardware clips onto rack tubing 6-12mm diameter per maker copy. Requires a rack - flagged fits:rack_only. Soft dry-bag body, hangs from the top hook."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#101010" } ],
-   "images": ["https://web.archive.org/web/20231004070023/http://chromeindustries.com/cdn/shop/products/7_BG-315-BK.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#101010"
+    }
+   ],
+   "images": [
+    "https://web.archive.org/web/20231004070023/http://chromeindustries.com/cdn/shop/products/7_BG-315-BK.jpg"
+   ]
   },
-
   {
    "line": null,
    "name": "Doubletrack Saddle Roll",
    "size": null,
    "slot": "saddlebag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -300,56 +442,92 @@
     "https://web.archive.org/web/20250317204435/https://chromeindustries.com/cdn/shop/files/cxmonbike_1.jpg",
     "https://web.archive.org/web/20250317204435/https://chromeindustries.com/products/doubletrack-saddle-roll"
    ],
-
-   "dims_cm": { "len": 15.9, "wid": 8.9, "hgt": 8.9, "dia": 8.9 },
+   "dims_cm": {
+    "len": 15.9,
+    "wid": 8.9,
+    "hgt": 8.9,
+    "dia": 8.9
+   },
    "dims_state": "packed_rolled",
    "dims_raw": "Maker Sizing accordion (via Wayback snapshot): 'Height: 6.25\" | Width: 3.5\" rolled - 10\" unrolled', Weight 0.26lbs.",
    "dims_note": "Refined from the existing catalogue estimate (len 15.5, dia 7.9) using the maker's own figures. This is a flat panel that rolls into a tube and buckles shut, similar in construction logic to Alpkit's Airlok Dual: the maker's 'Height' (6.25in=15.9cm) is the FIXED long axis of the roll (mapped to len) and does not vary; the 'Width' figure is a rolled-vs-unrolled pair where '10in unrolled' is the flat fabric pattern width before rolling (not a usable dimension - would draw a bag longer than the roll itself) and '3.5in rolled' (8.9cm) is the actual packed diameter, used directly for wid/hgt/dia since the cross-section is round. Volume check: a 15.9 x 8.9cm-diameter cylinder is 0.99L, matching the 1L rating almost exactly - strong confirmation this is the right reading.",
    "capacity_l": 1,
-
    "geometry": {
     "form": "cylinder",
     "crossSection": "round",
     "shoulder": "none",
     "notes": "Small squat fabric roll, buckled shut lengthwise (not a rolltop with a sealed end - it is a flat tool-roll panel that wraps into a tube). Red-and-white CHROME buckle badge visible on the strap in the on-bike photo. Sits snug against the underside of the saddle and top of the seatpost clamp."
    },
-
    "closure": {
     "type": "flap_strap",
     "location": "girth",
     "hardware": "locking buckle closure that cinches the rolled panel shut; maker copy: 'Locking buckle closure keeps a tight roll under your saddle'"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" },
-    { "role": "stability", "count": 1, "location": "top", "hardware": "d_ring", "material": "reflective webbing", "wrapsAround": null }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "top",
+     "hardware": "d_ring",
+     "material": "reflective webbing",
+     "wrapsAround": null
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 3, "location": "internal", "sizeFrac": 0.3 }
+    {
+     "type": "slip",
+     "count": 3,
+     "location": "internal",
+     "sizeFrac": 0.3
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "quick-grab strap with d-ring",
-    "logo": { "type": "patch", "location": "side_front" },
+    "logo": {
+     "type": "patch",
+     "location": "side_front"
+    },
     "seams": "not stated as welded",
     "fabric": "Bluesign approved 1050D nylon with 500D tarp liner - see brand_notes.fabric; the 'tarp liner' is the closest match in this brand's catalogue to brands.json's 'truck-tarp material' claim"
    },
-
    "mount": {
-    "axes": { "len": "z", "wid": "-x", "hgt": "y" },
-    "attachesTo": ["saddle_rails"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "z",
+     "wid": "-x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
     "notes": "Small rigid-feeling roll cinched tight directly under the saddle by a single buckled strap; maker copy says it can also 'stash it in your bag' as an alternative to mounting, but the on-bike photo shows it saddle-mounted."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#101010" } ],
-   "images": ["https://web.archive.org/web/20250317204435/https://chromeindustries.com/cdn/shop/files/doubletrack-saddleroll-pdp-desktop.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#101010"
+    }
+   ],
+   "images": [
+    "https://web.archive.org/web/20250317204435/https://chromeindustries.com/cdn/shop/files/doubletrack-saddleroll-pdp-desktop.jpg"
+   ]
   }
  ]
 }

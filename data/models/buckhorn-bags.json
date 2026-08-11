@@ -13,137 +13,198 @@
    "size": null,
    "slot": "framebag_half",
    "slot_should_be": null,
-
    "verified": false,
    "confidence": "low",
    "evidence": [
     "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1623948016765-N6IX7YU51YCKM4YDDNZ4/BuckhornBags-17.jpg",
     "https://www.buckhornbags.com/shop/p/halfie-framebag"
    ],
-
-   "dims_cm": { "len": 35, "wid": 12.7, "hgt": 12 },
+   "dims_cm": {
+    "len": 35,
+    "wid": 12.7,
+    "hgt": 12
+   },
    "dims_state": "estimated_no_maker_spec",
    "dims_raw": "No 'Product Specs' block exists on this product's page at all (confirmed by reading the raw item JSON, not just the rendered page) - the only maker text is an 'Additional Info' note: 'The effective width of our frame bags is about 3.5 inches near the edges, expanding to 4-5\" width in the middle... The actual measured width is 2.5 inches right along the edge.'",
    "dims_note": "wid CORRECTED using the maker's own words even though no formal spec table exists: previous catalogue wid was 8cm, but Buckhorn's own copy describes the bag standing 4-5in (10.2-12.7cm) proud of the frame at its middle, tapering to 2.5in (6.35cm) at the front/rear edges - per the tapered-axes rule the LARGER figure (5in=12.7cm) belongs in dims_cm, with the taper recorded in geometry.taper. len and hgt have no maker text at all and are carried forward from the prior estimate, unverified - the on-bike photo is consistent with a bag occupying roughly the rear two-thirds of the main triangle (leaving the down tube clear for bottles), which is loosely consistent with a ~35cm length, but this is a visual impression, not a measurement.",
    "capacity_l": 2.5,
-
    "geometry": {
     "form": "trapezoid_panel",
     "crossSection": "d_shape",
-    "taper": { "nose": 0.5, "tail": 1.0, "profile": "linear" },
+    "taper": {
+     "nose": 0.5,
+     "tail": 1,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "On-bike photo (rust/orange colorway) shows it mounted toward the REAR of the main triangle - against the seat tube and rear of the down tube, near the bottom bracket - not spanning the full triangle, leaving the front of the down tube and seat tube clear for bottle cages (two bottles visible below it in the photo). Woven 'Buckhorn' label on the side, zip with a cord pull along the top."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top_centre",
     "hardware": "zip with a cord pull, visible in the on-bike photo"
    },
-
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" }
+    {
+     "role": "attachment",
+     "count": 4,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "side_front" },
+    "logo": {
+     "type": "woven_label",
+     "location": "side_front"
+    },
     "seams": "no maker statement found",
     "fabric": "not stated by the maker for this product - see brand_notes.fabric; photo (rust/orange colorway) is consistent with the brand's waxed canvas option but this is not confirmed in writing"
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube", "seat_tube"],
-    "contactFaces": ["top", "underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
     "notes": "Velcro-looped to the rear portion of the frame triangle; positioned to leave the front of the triangle free for bottle cages, per the on-bike photo."
    },
-
-   "colorways": [ { "name": "Rust/Orange", "hex": "#c05a2e" } ],
-   "images": ["https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1623948016765-N6IX7YU51YCKM4YDDNZ4/BuckhornBags-17.jpg"]
+   "colorways": [
+    {
+     "name": "Rust/Orange",
+     "hex": "#c05a2e"
+    }
+   ],
+   "images": [
+    "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1623948016765-N6IX7YU51YCKM4YDDNZ4/BuckhornBags-17.jpg"
+   ]
   },
-
   {
    "line": null,
    "name": "Buckhorn 8in Top Tube Bag",
    "size": "8in",
    "slot": "toptube",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1690481630950-RPKQCFY08I92NTIAP0BQ/DSC02476.jpeg",
     "https://www.buckhornbags.com/shop/p/8-top-tube-bags"
    ],
-
-   "dims_cm": { "len": 20.3, "wid": 7.6, "hgt": 9.5 },
+   "dims_cm": {
+    "len": 20.3,
+    "wid": 7.6,
+    "hgt": 9.5
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Maker Product Specs: 'Dimensions: 8\" Long, 3\"- 2\" (tapered) wide, 3-3/4\" Tall'. Max Volume ~1.1L. Weight ~5.6oz (164g).",
    "dims_note": "Matches existing catalogue dims exactly. Maker's 8in length -> len (20.3cm); the 3in-to-2in taper -> wid, LARGER value recorded (3in=7.6cm) per the tapered-axes rule, taper described below; 3.75in height -> hgt (9.5cm). No range on length/height, so no min-of-range question here.",
    "capacity_l": 1.1,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.67, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.67,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Studio photo (rust waxed canvas) shows a low, tapered wedge - wider/lower at the front, narrowing and standing slightly taller toward the rear. Black zip with cord pull along the top seam, small woven 'Buckhorn' tag on the side. Semi-rigid: 'Closed-cell foam body panel' per maker copy holds the wedge shape."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top_centre",
     "hardware": "US-made water-resistant No. 5 zipper with a cord pull"
    },
-
    "zips": [
-    { "run": "top_centre", "finish": "waterproof_welded" }
+    {
+     "run": "top_centre",
+     "finish": "waterproof_welded"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "side_front" },
+    "logo": {
+     "type": "woven_label",
+     "location": "side_front"
+    },
     "seams": "water-resistant zip per maker copy; not stated as fully welded/waterproof",
     "fabric": "US-Made No. 10 Waxed Canvas OR X-Pac body fabric (customer choice), Challenge RBC400 ripstop liner, closed-cell foam body panel - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
     "notes": "Available in a velcro OR bolt-on mounting configuration per maker copy (bolt-on ships with stainless bolts and nylon washers 'to keep things nice and stiff', slotted 3in from the bag's front edge for fit adjustment). Drawn here with the velcro option, the catalogue default."
    },
-
-   "colorways": [ { "name": "Rust", "hex": "#b5451b" }, { "name": "Olive", "hex": "#6b6a1f" } ],
-   "images": ["https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1690481630950-RPKQCFY08I92NTIAP0BQ/DSC02476.jpeg"]
+   "colorways": [
+    {
+     "name": "Rust",
+     "hex": "#b5451b"
+    },
+    {
+     "name": "Olive",
+     "hex": "#6b6a1f"
+    }
+   ],
+   "images": [
+    "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1690481630950-RPKQCFY08I92NTIAP0BQ/DSC02476.jpeg"
+   ]
   },
-
   {
    "line": null,
    "name": "Buckhorn Custom Rattler Stem Bag",
    "size": null,
    "slot": "stembag",
    "slot_should_be": null,
-
    "verified": false,
    "confidence": "low",
    "evidence": [
@@ -151,130 +212,200 @@
     "https://www.buckhornbags.com/shop/p/custom-rattler",
     "https://www.buckhornbags.com/shop/p/stem-bag"
    ],
-
-   "dims_cm": { "len": 9, "wid": 9, "hgt": 18, "dia": 9 },
+   "dims_cm": {
+    "len": 9,
+    "wid": 9,
+    "hgt": 18,
+    "dia": 9
+   },
    "dims_state": "estimated_no_maker_spec",
    "dims_raw": "Maker Product Specs give only 'Weight: about 3.3 oz (94 grams)' and 'Max Volume: about 1.2 L or 9 Clif bars' - no length/width/height/diameter published on either the Custom Rattler or the fixed-color Stem Bag variant.",
    "dims_note": "No maker figures exist to correct against. Estimated from the product photo's proportions (roughly 2:1 height-to-diameter, tapering slightly toward the drawcord neck) and cross-checked against the stated 1.2L max volume: an 18cm-tall x 9cm-diameter cylinder is ~1.15L, close to the rated 1.2L at full pack. This is a photo+volume estimate, not a maker figure - flagged low confidence per the spec's honest-gap guidance.",
    "capacity_l": 1.2,
-
    "geometry": {
     "form": "cylinder",
     "crossSection": "round",
-    "taper": { "nose": 0.85, "tail": 1.0, "profile": "linear" },
+    "taper": {
+     "nose": 0.85,
+     "tail": 1,
+     "profile": "linear"
+    },
     "shoulder": "none",
     "notes": "Color-blocked patchwork panels (photographed in a grey/mustard/rust combination), black drawcord neck, black webbing girth strap around the middle, woven 'Buckhorn' tag. Slight taper narrower at the drawcord neck than at the base."
    },
-
    "closure": {
     "type": "drawcord",
     "location": "top_centre",
     "hardware": "2.2oz nylon cinch top with a DWR coating, drawcord closure"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "one-wrap webbing", "wrapsAround": "handlebar" },
-    { "role": "compression", "count": 1, "location": "girth", "hardware": "velcro", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "velcro",
+     "material": "one-wrap webbing",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "velcro",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [
-    { "type": "stretch", "count": 1, "location": "front", "sizeFrac": 0.3 }
+    {
+     "type": "stretch",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.3
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "front" },
+    "logo": {
+     "type": "woven_label",
+     "location": "front"
+    },
     "seams": "no maker statement found",
     "fabric": "X-Pac or Waxed Canvas body fabric (customer choice), 430D nylon packcloth liner with DWR, Tweave Durastretch front pocket, closed-cell foam body panel - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "z", "wid": "x", "hgt": "y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["nose_top"],
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": null, "frame_mm": null },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
     "notes": "One-wrap velcro attaches to the bar; a second lower girth strap cinches around the body rather than to a fork/head-tube stabiliser point, based on what is visible in the product photo (a studio shot, not on-bike, so the exact mount is inferred)."
    },
-
    "colorways": [
-    { "name": "Turquoise & Red", "hex": "#1abc9c" },
-    { "name": "Marigold & Coyote", "hex": "#c68e17" },
-    { "name": "Black & Slate", "hex": "#3f3f3f" }
+    {
+     "name": "Turquoise & Red",
+     "hex": "#1abc9c"
+    },
+    {
+     "name": "Marigold & Coyote",
+     "hex": "#c68e17"
+    },
+    {
+     "name": "Black & Slate",
+     "hex": "#3f3f3f"
+    }
    ],
-   "images": ["https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1690481203023-44IFLLLTAV2PUMKKMFX8/DSC02480.jpeg"]
+   "images": [
+    "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1690481203023-44IFLLLTAV2PUMKKMFX8/DSC02480.jpeg"
+   ]
   },
-
   {
    "line": null,
    "name": "Buckhorn Waxed Canvas Panniers",
    "size": null,
    "slot": "pannier",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/6c2ee1f0-02b1-4a87-a0a5-bef539371652/1T3A0113.jpg",
     "https://www.buckhornbags.com/shop/p/waxed-canvas-panniers"
    ],
-
-   "dims_cm": { "len": 29.8, "wid": 10.2, "hgt": 30.5 },
+   "dims_cm": {
+    "len": 29.8,
+    "wid": 10.2,
+    "hgt": 30.5
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Maker Product Specs: 'Dimensions: 11-3/4in Wide x 12in-17in Tall x 4in Deep'; 'Volume: 9L-13L each'; 'Weight: 28oz per pair'.",
    "dims_note": "Re-confirms and carries forward the prior reviewer's correction (independently re-derived from the maker's own current spec page rather than a retailer listing). Height is a genuine range (12-17in) on a rolltop pannier, so per the new rule hgt = MINIMUM = 12in = 30.5cm. Width (11.75in, fore-aft along the rack) -> len = 29.8cm. Depth (4in, thickness against the rack) -> wid = 10.2cm. capacity_l kept at the prior 11L midpoint of the maker's '9L-13L each' single-bag rating (the 28oz weight is explicitly for the PAIR, already correctly excluded from capacity_l).",
    "capacity_l": 11,
-
    "geometry": {
     "form": "rounded_box",
     "crossSection": "flat_back",
     "shoulder": "squared",
     "notes": "True rolltop pannier (navy colorway photographed), buckle closure at the rolled top, taller than wide, rounded bottom corners. Cactus-and-flower 'Buckhorn Bags' patch on the front of one bag in the pair photo; the rack-facing rear panel of the other shows a black Hypalon attachment patch."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "top",
     "hardware": "side-release buckle at the roll"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "compression", "count": 1, "location": "side", "hardware": "buckle", "material": "webbing" },
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "hook", "material": "hypalon", "wrapsAround": "rack_rail" }
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "side",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "hook",
+     "material": "hypalon",
+     "wrapsAround": "rack_rail"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "patch", "location": "front_face" },
+    "logo": {
+     "type": "patch",
+     "location": "front_face"
+    },
     "seams": "not explicitly stated as welded",
     "fabric": "#10 Waxed Canvas exterior with a White VX21 RS (X-Pac) ripstop liner, closed-cell foam back panel, Hypalon attach points - see brand_notes.fabric"
    },
-
    "fits": "rack_only",
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["rear_rack"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": null },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
     "notes": "Hangs from a rear rack via Hypalon hook attach points on the rack-facing panel. Requires a rack - flagged fits:rack_only."
    },
-
    "colorways": [
-    { "name": "Navy", "hex": "#3f3f3f" },
-    { "name": "Rust/Olive", "hex": "#8a7355" }
+    {
+     "name": "Navy",
+     "hex": "#3f3f3f"
+    },
+    {
+     "name": "Rust/Olive",
+     "hex": "#8a7355"
+    }
    ],
-   "images": ["https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/6c2ee1f0-02b1-4a87-a0a5-bef539371652/1T3A0113.jpg"]
+   "images": [
+    "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/6c2ee1f0-02b1-4a87-a0a5-bef539371652/1T3A0113.jpg"
+   ]
   },
-
   {
    "line": "Barrel",
    "name": "Barrel XL",
@@ -282,94 +413,121 @@
    "slot": "seatpack",
    "slot_should_be": "barbag",
    "slot_should_be_reason": "The catalogue has this slotted as a seatpack, but the maker's own product page describes it unambiguously as a handlebar bag: 'It's the same handlebar bag, just oversized. 2.8 liters of dry storage on your handlebars... Comes with handlebar straps.' There is no mention of seat, saddle, or rails anywhere on the page. This should be reslotted, not rendered under the saddle.",
-
    "verified": false,
    "confidence": "low",
    "evidence": [
     "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/88b2a883-9199-4c64-822a-8e9ba4d0737d/046A5822.jpeg",
     "https://www.buckhornbags.com/shop/p/barrell-xl"
    ],
-
-   "dims_cm": { "len": 24, "wid": 12, "hgt": 12, "dia": 12 },
+   "dims_cm": {
+    "len": 24,
+    "wid": 12,
+    "hgt": 12,
+    "dia": 12
+   },
    "dims_state": "estimated_no_maker_spec",
    "dims_raw": "Maker copy states only '2.8 liters of dry storage' - no length/width/height/diameter published anywhere on the page.",
    "dims_note": "No maker figures exist. Estimated as a barrel lying across the bars (same orientation family as Chrome's Doubletrack Saddle Roll and Alpkit's Airlok Dual elsewhere in this project): a 24cm-long x 12cm-diameter cylinder is ~2.7L, close to the rated 2.8L. This is a volume-consistency check on a photo-based guess, not a maker figure - low confidence.",
    "capacity_l": 2.8,
-
    "geometry": {
     "form": "barrel",
     "crossSection": "round",
     "shoulder": "none",
     "notes": "Straight-sided fabric cylinder, mustard/gold colorway with a visible diamond ripstop grid (X-Pac) running its length, black webbing accent stripe and a zip with cord pull along the top. Small loop tab on one side, woven 'Buckhorn' label near the zip pull. NOT a rolltop - closes with a zip, unlike most other barrel-style bags in this catalogue."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top_side",
     "hardware": "zip with a cord pull running the length of the barrel"
    },
-
    "zips": [
-    { "run": "side_full", "finish": "matched" }
+    {
+     "run": "side_full",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "girth", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "top_side" },
+    "logo": {
+     "type": "woven_label",
+     "location": "top_side"
+    },
     "seams": "'Water proof (outside of submerging it) and water resistant' per maker copy",
     "fabric": "durable ripstop fabric (X-Pac look, visible diamond grid) - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_bar", "wid": "x", "hgt": "y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": null, "frame_mm": null },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
     "notes": "Maker copy: 'Comes with handlebar straps' - separate included straps, not sewn-in loops, per the product description. MOUNT LOCATION SHOULD BE THE HANDLEBAR, NOT THE SADDLE - see slot_should_be above."
    },
-
-   "colorways": [ { "name": "Mustard/Gold", "hex": "#c68e17" } ],
-   "images": ["https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/88b2a883-9199-4c64-822a-8e9ba4d0737d/046A5822.jpeg"]
+   "colorways": [
+    {
+     "name": "Mustard/Gold",
+     "hex": "#c68e17"
+    }
+   ],
+   "images": [
+    "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/88b2a883-9199-4c64-822a-8e9ba4d0737d/046A5822.jpeg"
+   ]
   },
-
   {
    "line": null,
    "name": "Buckhorn Daily Tote Bag",
    "size": null,
    "slot": "trunk",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/947c1f87-f048-4345-a132-a3e68f391d13/IMG_8745.jpeg",
     "https://www.buckhornbags.com/shop/p/daily-tote-bag"
    ],
-
    "dims_cm": null,
    "dims_state": "not_applicable_not_bike_mounted",
    "dims_raw": "No dimensions, capacity, or bike-related copy exists anywhere on this product's page. Maker's only description: 'Totes, ever-useful, simple, and stylish. We've been using these puppies for quite a while now and seem to always find a use for them.'",
    "dims_note": "THIS IS NOT A BIKE-MOUNTED BAG. The product photo shows a plain two-handled canvas tote with no straps, no velcro, no hooks, no rack hardware, and no bike-related language anywhere in the maker's copy - it carries by hand or over the shoulder like any everyday tote. Same situation as Rapha's Essentials Bag elsewhere in this catalogue: leaving dims_cm and geometry thin/absent is the correct honest output rather than inventing a mounted-bag description for something that was never designed to mount to a bike.",
-
    "geometry": {
     "notes": "Two-tone construction: natural/cream canvas body with a tan/khaki contrast base panel, two black webbing carry handles, small woven brand tag on one side. No X-Pac diamond grid visible - may not use the brand's usual technical liner fabric."
    },
-
    "fits": "none",
    "mount": {
     "notes": "No bike attachment of any kind - carried by hand or over the shoulder via the two fixed webbing handles."
    },
-
-   "colorways": [ { "name": "Natural / Tan", "hex": "#e8dfc8" } ],
-   "images": ["https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/947c1f87-f048-4345-a132-a3e68f391d13/IMG_8745.jpeg"]
+   "colorways": [
+    {
+     "name": "Natural / Tan",
+     "hex": "#e8dfc8"
+    }
+   ],
+   "images": [
+    "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/947c1f87-f048-4345-a132-a3e68f391d13/IMG_8745.jpeg"
+   ]
   }
  ]
 }

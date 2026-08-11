@@ -14,7 +14,6 @@
    "size": "25.5L (single bag; sold as a 51L pair)",
    "slot": "pannier",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -24,69 +23,114 @@
     "https://www.vaude.com/media/catalog/product/4/5/45849_010_d_3_6__458490100000_d99986ed.jpg",
     "https://www.vaude.com/int/en/45849-aqua-back-plus-bike-bags-recycled-main-material.html"
    ],
-
-   "dims_cm": { "len": 33, "wid": 31, "hgt": 37 },
+   "dims_cm": {
+    "len": 33,
+    "wid": 31,
+    "hgt": 37
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "vaude.com Technical details: 'Height: 37cm, Width: 33cm, Depth: 31cm', volume 51L for the pair (25.5L single). A third-party retailer (bike-components) lists a single bag as 44 x 33 x 31cm - likely the roll fully extended rather than the maker's own packed figure, per an earlier reviewer's note on this file.",
    "dims_note": "Page-derived, not a photo measurement. No explicit min/max range is published on vaude.com itself (just one H/W/D triple), so the new unfurled/min-height rule has nothing to pick between - used the maker's own figures as-is, len=Width(33, fore-aft footprint along the rack), wid=Depth(31, thickness off the rack), hgt=Height(37, vertical drop). The retailer's alternate 44cm is not vaude.com's own figure so it is not substituted in; flagged here rather than silently dropped. 31cm of thickness is unusually deep for a rear pannier and I cannot independently confirm it from the photos (a 3/4 studio shot doesn't give a clean thickness read) - carried forward as an open question, not resolved.",
    "capacity_l": 25.5,
-
    "geometry": {
     "form": "rounded_box",
     "crossSection": "flat_back",
     "shoulder": "squared",
     "notes": "Semi-rigid moulded backplate (visible in the reverse-side photo: ribbed black plastic panel with the QMR hook rail at top and a spring-loaded orange-tipped lower peg) with a soft welded-fabric rolltop body above it. Front face has a smaller welded pocket with its own flap, held down by two of its own side-release buckles, layered over the main rolltop flap. Photographed in black (010) only; brands.json also lists a blue and a yellow colorway that were not verifiable from this pass."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "top",
     "rolls": 1,
     "hardware": "single roll folded down onto the front pocket panel, held by two side-release buckles"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "hook", "material": "plastic", "wrapsAround": "rack_rail" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "hook", "material": "plastic" },
-    { "role": "lid", "count": 2, "location": "front_face", "hardware": "buckle", "material": "webbing" },
-    { "role": "shoulder", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "hook",
+     "material": "plastic",
+     "wrapsAround": "rack_rail"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "hook",
+     "material": "plastic"
+    },
+    {
+     "role": "lid",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "front", "sizeFrac": 0.35 },
-    { "type": "zip", "count": 1, "location": "internal" }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.35
+    },
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "internal"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective logo",
-    "logo": { "type": "screen_print", "location": "front_face" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_face"
+    },
     "seams": "high frequency welded",
     "fabric": "PU-coated 1000D recycled polyester (embossed face) / secondary 840D recycled polyamide, TPU+PU coated - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["rack"],
-    "contactFaces": ["rear_panel"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "rack"
+    ],
+    "contactFaces": [
+     "rear_panel"
+    ],
     "sag_deg": 0,
     "notes": "QMR 2.0 hook system: two lockable top hooks click onto an 8-16mm rack rail, a lower spring peg pins the bottom against the stays. Rigid backplate holds shape against the rack, no sag. Rack-dependent - cannot mount without a rear rack."
    },
-
    "fits": "rack_only",
-   "colorways": [ { "name": "Black", "hex": "#1c1c1e" } ],
-   "images": ["https://www.vaude.com/media/catalog/product/4/5/45849_010_6__458490100000_236d8ae9.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
+   ],
+   "images": [
+    "https://www.vaude.com/media/catalog/product/4/5/45849_010_6__458490100000_236d8ae9.jpg"
+   ]
   },
-
   {
    "line": "Trailsaddle",
    "name": "VAUDE Trailsaddle Compact L",
    "size": "10.5L",
    "slot": "seatpack",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -94,67 +138,104 @@
     "https://www.vaude.com/media/catalog/product/4/8/48370_010_b_6__483700100000_538b2c29.jpg",
     "https://www.vaude.com/int/en/48370-trailsaddle-compact-l-10-5-liter-bicycle-saddle-bag.html"
    ],
-
-   "dims_cm": { "len": 56, "wid": 24, "hgt": 20 },
+   "dims_cm": {
+    "len": 56,
+    "wid": 24,
+    "hgt": 20
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "vaude.com Technical details: 'Height: 20cm, Width: 56cm, Depth: 24cm', volume 10.5L. No range given.",
    "dims_note": "Single fixed figures, no maker range - the unfurled/min-height rule has nothing to resolve here. VAUDE's own axis labels are for the bag off the bike; mapped by what the photo shows: 'Width' (56) is clearly the nose-to-tail run so it maps to len, 'Depth' (24) is across at the nose so it maps to wid, 'Height' (20) is the top-to-bottom taper so it maps to hgt.",
    "capacity_l": 10.5,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Elongated wedge tapering from a squared nose at the saddle clamp down to a narrow, near-pointed tail. Black main body, olive-green accent panel and buckle in the photographed colorway; brands.json lists a black-only alternate not separately confirmed."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "nose",
     "rolls": 2,
     "hardware": "side-release buckle; roll opening is at the nose end near the saddle clamp, not the tail"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "g_hook", "material": "plastic", "wrapsAround": "saddle_rails" },
-    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "velcro", "wrapsAround": "seatpost" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "hook", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "g_hook",
+     "material": "plastic",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "velcro",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "hook",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective elements",
     "valve": "purge valve on the underside (maker copy: 'user-friendly valve for stable deflation')",
     "lightMount": "rear light attachment point (maker copy: 'safety light attachment')",
-    "logo": { "type": "screen_print", "location": "side" },
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
     "fabric": "PU-coated 400D recycled polyamide, kiss-coated/TPU-coated - see brand_notes.fabric",
     "notes_unschematized": "Elastic bungee cord across the top of the nose for lashing extra gear - visible in the photo, not modeled in the straps[] vocabulary."
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_rails", "seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 2,
     "notes": "Rixen & Kaul Contour Saddle Adapter clips into the saddle rails (R-Klickfix dock), a velcro strap ties the nose to the seatpost, and a separate hook-buckle strap adds a third stabilizing point on the underside. Tail is narrow and unsupported so it can sag slightly under load; no clearance figure published."
    },
-
-   "colorways": [ { "name": "Black / Olive", "hex": "#1a1a1a" } ],
-   "images": ["https://www.vaude.com/media/catalog/product/4/8/48370_010_6__483700100000_6cb85c82.jpg"]
+   "colorways": [
+    {
+     "name": "Black / Olive",
+     "hex": "#1a1a1a"
+    }
+   ],
+   "images": [
+    "https://www.vaude.com/media/catalog/product/4/8/48370_010_6__483700100000_6cb85c82.jpg"
+   ]
   },
-
   {
    "line": "Trailfront",
    "name": "VAUDE Trailfront Cage",
    "size": "10L",
    "slot": "barroll",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -162,62 +243,83 @@
     "https://www.vaude.com/media/catalog/product/4/8/48363_010_b_6__483630100000_16a8da30.jpg",
     "https://www.vaude.com/int/en/48363-trailfront-cage-10-liter-bicycle-handlebar-bag.html"
    ],
-
-   "dims_cm": { "len": 54, "wid": 20, "hgt": 20 },
+   "dims_cm": {
+    "len": 54,
+    "wid": 20,
+    "hgt": 20
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "vaude.com Technical details: 'Height: 20cm, Width: 54cm, Depth: 20cm', volume 10L. No range given.",
    "dims_note": "Single fixed figures, no maker range. Two-part product: a cage that clamps permanently to the bar/stem, and a removable waterproof rolltop drybag that clips into it. VAUDE's 'Width' (54) is the drybag's long axis end-to-end, mapped to len; Height and Depth (20/20) are its round cross-section, mapped to hgt/wid. Consistent with the previous reviewer's note that this is correctly a barroll, not a barbag (already reslotted before this pass; left as-is).",
    "capacity_l": 10,
-
    "geometry": {
     "form": "cage_pack",
     "crossSection": "round",
     "shoulder": "none",
     "notes": "Rigid cage backplate (foam-padded, EVA spacer) stays clamped to the bar; a cylindrical rolltop drybag docks onto it via two upper quick-release buckle studs and a lower strap-and-buckle stud. Only the drybag was photographed on the product's own studio shot; the cage backplate is visible in the second (reverse) photo."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "tail",
     "rolls": 1,
     "hardware": "side-release buckle at the outer (away-from-bike) end"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "plastic", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "plastic",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective elements",
     "fabric": "PU-coated 400D recycled polyamide, kiss-coated/TPU-coated - see brand_notes.fabric",
     "notes_unschematized": "Small fabric carry loop at the base of the drybag, visible in the studio photo; not a mounting strap."
    },
-
    "mount": {
-    "axes": { "len": "along_bar", "wid": "x", "hgt": "y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["rear_panel"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "rear_panel"
+    ],
     "sag_deg": 0,
     "notes": "Cage is a fixed clamp (velcro-strapped to the bar per maker copy), holding the drybag rigid with no sway once docked. Certified for gravel, road, and MTB drop or flat bars. No tyre/frame clearance figure published."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#1c1c1e" } ],
-   "images": ["https://www.vaude.com/media/catalog/product/4/8/48363_010_6__483630100000_6e55635c.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
+   ],
+   "images": [
+    "https://www.vaude.com/media/catalog/product/4/8/48363_010_6__483630100000_6e55635c.jpg"
+   ]
   },
-
   {
    "line": "Trailframe",
    "name": "VAUDE Trailframe L",
    "size": "5L",
    "slot": "framebag_half",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -225,64 +327,95 @@
     "https://www.vaude.com/media/catalog/product/4/8/48368_010_b_6__483680100000_f90c1151.jpg",
     "https://www.vaude.com/int/en/48368-trailframe-l-5-liter-bicycle-frame-bag.html"
    ],
-
-   "dims_cm": { "len": 50, "wid": 6, "hgt": 14 },
+   "dims_cm": {
+    "len": 50,
+    "wid": 6,
+    "hgt": 14
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "vaude.com Technical details: 'Height: 14cm, Width: 50cm, Depth: 6cm', volume 5L, fits frames with 9-17cm top-tube circumference. No range given.",
    "dims_note": "Single fixed figures. 'Width' (50) is the fore-aft run under the top tube, mapped to len; 'Depth' (6) is the thickness against the tube, mapped to wid; 'Height' (14) is top-to-bottom, mapped to hgt. Consistent with the photo, which shows a long, shallow slab.",
    "capacity_l": 5,
-
    "geometry": {
     "form": "trapezoid_panel",
     "crossSection": "d_shape",
     "notes": "Long, shallow panel bag, roughly rectangular with slightly angled front/rear ends, flat on the frame-facing side (visible in the reverse photo: smooth panel, no pocket, just the three velcro loops) and gently domed on the outward face which carries the zip and logo."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "front",
     "hardware": "single zip pull along the lower edge of the outward face"
    },
-
    "zips": [
-    { "run": "front_panel", "finish": "waterproof_welded" }
+    {
+     "run": "front_panel",
+     "finish": "waterproof_welded"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "velcro", "wrapsAround": "top_tube" },
-    { "role": "attachment", "count": 1, "location": "front", "hardware": "velcro", "material": "velcro" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "velcro",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front",
+     "hardware": "velcro",
+     "material": "velcro"
+    }
    ],
-
    "pockets": [
-    { "type": "zip", "count": 1, "location": "internal" }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "internal"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective elements",
-    "logo": { "type": "screen_print", "location": "front_panel" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_panel"
+    },
     "fabric": "PU-coated 400D recycled polyamide face / 150D recycled polyester PU-coated lining - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Three velcro loops cinch around the top tube plus a fourth loop at the front point; semi-rigid panel holds its own shape rather than sagging. Also has two bottom slots for combining with the smaller Trailframe M (per maker copy) - not modeled here."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#1c1c1e" } ],
-   "images": ["https://www.vaude.com/media/catalog/product/4/8/48368_010_6__483680100000_b031da86.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
+   ],
+   "images": [
+    "https://www.vaude.com/media/catalog/product/4/8/48368_010_6__483680100000_b031da86.jpg"
+   ]
   },
-
   {
    "line": "Trailtop",
    "name": "VAUDE Trailtop Tube",
    "size": "1L",
    "slot": "toptube",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -290,62 +423,84 @@
     "https://www.vaude.com/media/catalog/product/4/8/48365_010_b_6__483650100000_d1c54d7c.jpg",
     "https://www.vaude.com/int/en/48365-trailtop-tube-1-liter-screw-on-top-tube-bag.html"
    ],
-
-   "dims_cm": { "len": 24, "wid": 6, "hgt": 10 },
+   "dims_cm": {
+    "len": 24,
+    "wid": 6,
+    "hgt": 10
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "vaude.com Technical details: 'Height: 10cm, Width: 24cm, Depth: 6cm', volume 1L, weight 130g. No range given.",
    "dims_note": "Single fixed figures. 'Width' (24) is fore-aft along the top tube, mapped to len; 'Depth' (6) is side-to-side thickness, mapped to wid; 'Height' (10) is top-to-bottom, mapped to hgt.",
    "capacity_l": 1,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.8, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.8,
+     "profile": "linear"
+    },
     "notes": "Small structured box, slightly higher/wider at the front (head-tube end, where the FIDLOCK flap and logo sit) than the rear. Holds its shape - not a soft floppy pouch."
    },
-
    "closure": {
     "type": "magnetic",
     "location": "front",
     "hardware": "FIDLOCK magnetic buckle on the top flap"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "velcro", "wrapsAround": "top_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "velcro",
+     "wrapsAround": "top_tube"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective elements",
-    "logo": { "type": "screen_print", "location": "front" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front"
+    },
     "seams": "high frequency welded",
     "fabric": "PU-coated 400D recycled polyamide face / 150D recycled polyester PU-coated lining - see brand_notes.fabric",
     "notes_unschematized": "Also mountable by two screws directly into a frame's bosses (screws included) as an alternative to the velcro straps, per maker copy - not modeled as a separate mount option."
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Fits frames with 9-17cm top-tube circumference via velcro, or screws to frame bosses where present. Rigid structured box, no sag."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#1c1c1e" } ],
-   "images": ["https://www.vaude.com/media/catalog/product/4/8/48365_010_6__483650100000_efc312ef.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
+   ],
+   "images": [
+    "https://www.vaude.com/media/catalog/product/4/8/48365_010_6__483650100000_efc312ef.jpg"
+   ]
   },
-
   {
    "line": "Trailfork",
    "name": "VAUDE Trailfork",
    "size": "4L",
    "slot": "forkbag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -353,52 +508,74 @@
     "https://www.vaude.com/media/catalog/product/4/8/48366_010_b_6__483660100000_d10e6f87.jpg",
     "https://www.vaude.com/int/en/48366-trailfork-4-liter-bicycle-fork-bag.html"
    ],
-
-   "dims_cm": { "len": 33, "wid": 18, "hgt": 11 },
+   "dims_cm": {
+    "len": 33,
+    "wid": 18,
+    "hgt": 11
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "vaude.com Technical details: 'Height: 33cm, Width: 18cm, Depth: 11cm', volume 4L. No range given.",
    "dims_note": "Single fixed figures. Mapped Height (33, the long body axis that runs along the fork leg when mounted) to len, Width (18) to wid, Depth (11) to hgt - the cross-section is not round (18 vs 11) because the KLICKfix mount plate flattens one face against the fork leg, consistent with the photo showing a flattened, not perfectly cylindrical, dry bag.",
    "capacity_l": 4,
-
    "geometry": {
     "form": "cylinder",
     "crossSection": "d_shape",
     "notes": "Fabric rolltop dry bag, flattened on the mount-plate side (visible in the reverse photo: the red-and-black KLICKfix Duo Coupling plate is screwed to a flat panel let into the bag's side, not a separate cage) and rounded elsewhere."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "top",
     "rolls": 1,
     "hardware": "single roll, side-release buckle"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "side", "hardware": "g_hook", "material": "plastic" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "daisy_loop", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "g_hook",
+     "material": "plastic"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "daisy_loop",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective logo",
     "fabric": "PU-coated 400D recycled polyamide, kiss-coated/TPU-coated - see brand_notes.fabric",
     "notes_unschematized": "Red accent loop at the base in the reverse photo may be for a supplied stabilizer strap; not independently confirmed."
    },
-
    "mount": {
-    "axes": { "len": "along_forkleg", "wid": "z", "hgt": "x" },
-    "attachesTo": ["fork_leg"],
-    "contactFaces": ["side"],
+    "axes": {
+     "len": "along_forkleg",
+     "wid": "z",
+     "hgt": "x"
+    },
+    "attachesTo": [
+     "fork_leg"
+    ],
+    "contactFaces": [
+     "side"
+    ],
     "sag_deg": 0,
     "notes": "KLICKfix Duo Adapter screws into a fork leg with at least 2 mounting eyelets/bosses; the bag's Duo Coupling plate clicks onto it with one motion. Rigid dock, no sag once mounted. Will not fit a fork without at least 2 threaded eyelets - not modeled as a fits restriction here since a bikepacking-spec gravel fork is assumed to have them."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#1c1c1e" } ],
-   "images": ["https://www.vaude.com/media/catalog/product/4/8/48366_010_6__483660100000_9eb3348f.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
+   ],
+   "images": [
+    "https://www.vaude.com/media/catalog/product/4/8/48366_010_6__483660100000_9eb3348f.jpg"
+   ]
   }
  ]
 }

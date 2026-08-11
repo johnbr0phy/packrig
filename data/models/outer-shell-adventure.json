@@ -23,7 +23,11 @@
     "assets/products/outer-shell-adventure/specs-seatpack-2.png",
     "https://www.outershell.com/products/seatpack"
    ],
-   "dims_cm": { "len": 50.8, "wid": 21.6, "hgt": 15.2 },
+   "dims_cm": {
+    "len": 50.8,
+    "wid": 21.6,
+    "hgt": 15.2
+   },
    "dims_state": "unfurled_len_fixed_hgt",
    "dims_raw": "Maker spec photo (specs-seatpack-1.png): length 16.5\"-20\" (range), height 6\" (single figure, not a range), plus a 1.5\" tab label near the compression buckle that is a strap-loop width, not the bag's own width. On-bike photo (specs-seatpack-2.png) shows 6.5\" saddle-to-tire clearance and 2\" of exposed seatpost required.",
    "dims_note": "len is the UNFURLED max of the range (20in=50.8cm) per the dimension rule. hgt is NOT a range in this product - the maker gives one figure only (6in=15.2cm) because the bag has a rigid arch-shaped internal frame (per brands.json feature note) that holds height constant; what the roll-top actually adjusts is reach/length at the tail, not height. So the usual 'roll shortens height' logic does not apply here and no render override is needed (height is effectively fixed - see render note below). wid (across the body) is not shown in either local photo; carried forward unverified from the prior catalogue figure of 21.6cm - flagged rather than guessed. Volume check with wid unverified: 50.8x21.6x15.2=16681cc=16.7L vs stated 10.5L, ratio 1.59 - a normal wedge ratio, so the carried-forward width is at least plausible.",
@@ -31,7 +35,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.5, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.5,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Squared nose clamped at the saddle rails/seatpost, tapering to a rounded tail that rolls closed. Internal arch frame keeps the cross-section from collapsing, so unlike most seatpacks this one does not visibly sag or narrow much between full and light packing."
    },
@@ -43,30 +51,75 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "cam", "material": "webbing", "wrapsAround": "saddle_rails" },
-    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing", "wrapsAround": "seatpost" },
-    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "cam",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": true,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "tail_underside" },
+    "logo": {
+     "type": "woven_label",
+     "location": "tail_underside"
+    },
     "seams": "sewn, black webbing binding at the tail edge",
     "fabric": "1000D Cordura PU or EPLX600 ECOPAK; photographed sample is a dark black/olive MultiCam-style camo print, not flat black, though brands.json lists it under the 'Black' colourway"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_rails", "seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": 165, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 165,
+     "frame_mm": 0
+    },
     "notes": "Maker-stated fit requirement: minimum 2in exposed seatpost and 6.5in saddle-to-tire clearance (165mm) for this size; clearance_tyre_mm reflects that maker figure rather than a generic default."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Olive", "hex": "#5a5f3e" },
-    { "name": "Autumn", "hex": "#a8532a" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Olive",
+     "hex": "#5a5f3e"
+    },
+    {
+     "name": "Autumn",
+     "hex": "#a8532a"
+    }
    ]
   },
   {
@@ -83,7 +136,11 @@
     "assets/products/outer-shell-adventure/specs-seatpack-5.png",
     "https://www.outershell.com/products/seatpack"
    ],
-   "dims_cm": { "len": 55.9, "wid": 24.1, "hgt": 19.1 },
+   "dims_cm": {
+    "len": 55.9,
+    "wid": 24.1,
+    "hgt": 19.1
+   },
    "dims_state": "unfurled_len_fixed_hgt",
    "dims_raw": "Maker spec photo (specs-seatpack-3.png): length 17.5\"-22\" (range), height 7.5\" (single figure). A separate front/rear taper photo (specs-seatpack-4.png) shows the body 9.5\" wide at the saddle end tapering to 2\" at the tail tip. On-bike photo (specs-seatpack-5.png): 8\" saddle-to-tire clearance, 4.5\" exposed seatpost required.",
    "dims_note": "CORRECTED wid. len is the UNFURLED max (22in=55.9cm). hgt is a single fixed figure (7.5in=19.1cm), same fixed-height-via-internal-frame situation as the 10.5L - see that record's note; roll adjusts tail reach, not height. wid was previously carried at a flat 21.6cm (identical to the 10.5L, clearly just copied across sizes with no real source). The taper photo actually shows this size's width directly: 9.5in at the nose tapering to 2in at the tail. Per the tapered-axis rule the LARGER (nose) value goes in dims_cm: 9.5in=24.1cm. Taper described in geometry.taper. Volume check: 55.9x24.1x19.1=25730cc=25.7L vs stated 16L, ratio 1.61 - a normal wedge ratio for a hard taper down to a 2in tail.",
@@ -91,7 +148,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.21, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.21,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Same family as the 10.5L: squared nose at the saddle, hard linear taper to a narrow rolled tail. Taper ratio (2in tail vs 9.5in nose) measured directly off specs-seatpack-4.png, sharper than assumed for the 10.5L."
    },
@@ -103,30 +164,75 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "cam", "material": "webbing", "wrapsAround": "saddle_rails" },
-    { "role": "stability", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing", "wrapsAround": "seatpost" },
-    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "cam",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": true,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "tail_underside" },
+    "logo": {
+     "type": "woven_label",
+     "location": "tail_underside"
+    },
     "seams": "sewn, black webbing binding at the tail edge",
     "fabric": "photographed sample is a solid slate-grey fabric (not the camo print used on the 10.5L sample), black webbing trim throughout"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_rails", "seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": 203, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 203,
+     "frame_mm": 0
+    },
     "notes": "Maker-stated fit requirement: minimum 4.5in exposed seatpost and 8in saddle-to-tire clearance (203mm) for this size."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Olive", "hex": "#5a5f3e" },
-    { "name": "Autumn", "hex": "#a8532a" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Olive",
+     "hex": "#5a5f3e"
+    },
+    {
+     "name": "Autumn",
+     "hex": "#a8532a"
+    }
    ]
   },
   {
@@ -142,7 +248,11 @@
     "assets/products/outer-shell-adventure/specs-rolltop-saddlebag-2.webp",
     "https://www.outershell.com/products/rolltop-saddlebag"
    ],
-   "dims_cm": { "len": 27.9, "wid": 10.2, "hgt": 7.6 },
+   "dims_cm": {
+    "len": 27.9,
+    "wid": 10.2,
+    "hgt": 7.6
+   },
    "dims_state": "unfurled_single_figure",
    "dims_raw": "Maker spec photo: 11in height (single figure, no range given), 3in x 4in base.",
    "dims_note": "The maker's assembly diagram (specs-rolltop-saddlebag-2.webp: 'Roll! Clip! ... Attach seatpost strap!') shows this mounts the SAME way as the full Seatpack - nose clipped to the saddle rails via a 3-prong strap, tail rolls closed and points backward, seatpost strap for stability. So the 11in figure is the bag's own LENGTH (nose-to-tail, the roll axis) not its height, matching the original catalogue assignment: len=11in=27.9cm, wid/hgt=4in/3in=10.2/7.6cm (fixed cross-section, no taper visible). Only one length figure is published (no min/max range), so it is used as-is per the single-figure rule. Volume check: 27.9x10.2x7.6=2163cc=2.16L against the stated MAX capacity of 2.1L, ratio 1.03 - an almost exact match, confirming 11in is the near-max-volume unfurled state rather than an arbitrary figure.",
@@ -161,27 +271,60 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "daisy_loop", "material": "webbing", "wrapsAround": "saddle_rails" },
-    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "daisy_loop",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": "small reflective strip on the tail-side seam (visible in specs-rolltop-saddlebag.png)",
-    "logo": { "type": "woven_label", "location": "underside" },
+    "logo": {
+     "type": "woven_label",
+     "location": "underside"
+    },
     "fabric": "photographed sample is a solid burnt-orange body with a contrasting tan/khaki roll-top collar and black webbing/buckle - one of the more clearly two-tone products in the catalogue"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_rails"],
-    "contactFaces": ["nose_top"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
     "sag_deg": 3,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Small under-saddle stash pouch, no maker-stated clearance figure found (unlike the two Seatpacks); no clearance evidence beyond the general small-bag assumption."
    },
    "colorways": [
-    { "name": "Autumn", "hex": "#a8532a" },
-    { "name": "Black", "hex": "#1c1c1c" }
+    {
+     "name": "Autumn",
+     "hex": "#a8532a"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    }
    ]
   },
   {
@@ -196,7 +339,11 @@
     "assets/products/outer-shell-adventure/specs-mini-saddlebag.png",
     "https://www.outershell.com/products/mini-saddlebag"
    ],
-   "dims_cm": { "len": 12.7, "wid": 5.1, "hgt": 5.1 },
+   "dims_cm": {
+    "len": 12.7,
+    "wid": 5.1,
+    "hgt": 5.1
+   },
    "dims_state": "single_figure",
    "dims_raw": "Maker spec photo: 5in x 2in x 2in, single figure set (no range).",
    "dims_note": "Matches the prior catalogue figures exactly (5in=12.7cm len, 2in=5.1cm wid/hgt); confirmed by photo, no change.",
@@ -214,27 +361,60 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "hook", "material": "webbing", "wrapsAround": "saddle_rails" },
-    { "role": "compression", "count": 1, "location": "girth", "hardware": "velcro", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "hook",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "velcro",
+     "material": "webbing"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "side" },
+    "logo": {
+     "type": "woven_label",
+     "location": "side"
+    },
     "fabric": "photographed sample is heather-grey canvas-textured nylon with a black wrap strap printed with a small white circular pattern"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_rails"],
-    "contactFaces": ["nose_top"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
     "sag_deg": 3,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Smallest product in the catalogue, single rail-clip hook plus a wrap strap; no maker clearance figure published."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Olive", "hex": "#5a5f3e" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Olive",
+     "hex": "#5a5f3e"
+    }
    ]
   },
   {
@@ -250,7 +430,11 @@
     "assets/products/outer-shell-adventure/specs-137-basket-bag.png",
     "https://www.outershell.com/products/137-basket-bag"
    ],
-   "dims_cm": { "len": 33, "wid": 20.3, "hgt": 20.3 },
+   "dims_cm": {
+    "len": 33,
+    "wid": 20.3,
+    "hgt": 20.3
+   },
    "dims_state": "single_figure",
    "dims_raw": "Maker spec photo: 13in x 8in x 8in, single figure set (no range).",
    "dims_note": "Matches the prior catalogue figures exactly (13in=33cm len, 8in=20.3cm both hgt and wid). Named for and shaped to sit inside a Wald 137 wire basket - maker's own note lists 'attachment loops across bottom for small racks (Wald 1372, Pelago, Velo Orange)' but the product name and clamshell-in-a-frame construction match a basket liner, not a bag that free-stands on a bare rack deck.",
@@ -267,36 +451,92 @@
     "hardware": "two side-release buckle straps at the front holding the flap down, plus an elastic bungee cord with hooks crossing the clear vinyl lid window"
    },
    "zips": [
-    { "run": "front_panel", "finish": "matched" },
-    { "run": "rear_panel", "finish": "matched" },
-    { "run": "side_full", "finish": "matched" }
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    },
+    {
+     "run": "rear_panel",
+     "finish": "matched"
+    },
+    {
+     "run": "side_full",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "lid", "count": 1, "location": "top", "hardware": "velcro", "material": "shock_cord" },
-    { "role": "compression", "count": 2, "location": "side", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "shock_cord"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "side",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [
-    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.6 },
-    { "type": "zip", "count": 1, "location": "rear", "sizeFrac": 0.6 },
-    { "type": "zip", "count": 1, "location": "side", "sizeFrac": 0.3 }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.6
+    },
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "rear",
+     "sizeFrac": 0.6
+    },
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.3
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "front_face" },
+    "logo": {
+     "type": "woven_label",
+     "location": "front_face"
+    },
     "fabric": "photographed sample is a deep purple 1000D-weight fabric with black webbing binding and a clear PVC lid window"
    },
    "mount": {
-    "axes": { "len": "+x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["front_basket"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "+x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "front_basket"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Requires a Wald 137-style front basket - bottom attachment loops secure it into the basket, it is not designed to strap directly to a bare rack deck. Flagged fits:'basket' rather than left in the universal rack pool."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Olive", "hex": "#5a5f3e" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Olive",
+     "hex": "#5a5f3e"
+    }
    ]
   },
   {
@@ -312,7 +552,11 @@
     "assets/products/outer-shell-adventure/specs-rack-bag.png",
     "https://www.outershell.com/products/rack-bag-1"
    ],
-   "dims_cm": { "len": 36.8, "wid": 25.4, "hgt": 20.3 },
+   "dims_cm": {
+    "len": 36.8,
+    "wid": 25.4,
+    "hgt": 20.3
+   },
    "dims_state": "single_figure",
    "dims_raw": "Maker spec photo: 14.5in x 10in x 8in, single figure set (no range).",
    "dims_note": "Matches the prior catalogue figures exactly (14.5in=36.8cm len, 10in=25.4cm wid, 8in=20.3cm hgt). Same clamshell-box construction as the 137 Basket Bag, just larger.",
@@ -329,35 +573,88 @@
     "hardware": "side-release buckle strap at the front, elastic bungee cord and hooks across the clear vinyl lid window"
    },
    "zips": [
-    { "run": "front_panel", "finish": "matched" },
-    { "run": "top_side", "finish": "matched" }
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    },
+    {
+     "run": "top_side",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "lid", "count": 1, "location": "top", "hardware": "velcro", "material": "shock_cord" },
-    { "role": "compression", "count": 2, "location": "side", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "shock_cord"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "side",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [
-    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.5 },
-    { "type": "zip", "count": 1, "location": "lid", "sizeFrac": 0.4 },
-    { "type": "slip", "count": 2, "location": "side", "sizeFrac": 0.3 }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.5
+    },
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "lid",
+     "sizeFrac": 0.4
+    },
+    {
+     "type": "slip",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.3
+    }
    ],
    "details": {
     "daisyChains": true,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "front_face" },
+    "logo": {
+     "type": "woven_label",
+     "location": "front_face"
+    },
     "fabric": "photographed sample is a dark black/olive MultiCam-style camo print with black webbing binding and a clear PVC lid window"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["front_basket_or_platform_rack"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "front_basket_or_platform_rack"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Flagged basket-dependent per HANDOVER.md's tracking list rather than independently re-derived - see brand_notes.basketDependent. Its own product copy names small platform racks (Wald 1372, Pelago, Velo Orange) rather than a wire basket explicitly, so this determination carries some ambiguity; confidence set to medium for that reason even though the dimension photo itself is high-confidence."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Autumn", "hex": "#a8532a" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Autumn",
+     "hex": "#a8532a"
+    }
    ]
   },
   {
@@ -372,7 +669,11 @@
     "assets/products/outer-shell-adventure/specs-drawcord-handlebar-bag.png",
     "https://www.outershell.com/products/handlebar-bag"
    ],
-   "dims_cm": { "len": 20.3, "wid": 10.2, "hgt": 12.7 },
+   "dims_cm": {
+    "len": 20.3,
+    "wid": 10.2,
+    "hgt": 12.7
+   },
    "dims_state": "packed_min_of_range",
    "dims_raw": "Maker spec photo: 8in (width across bars) x 5in (height) x 4in (depth), plus a 3.5in drawcord extension. Volume 2.6L-4.9L.",
    "dims_note": "Closed/packed dims confirmed by photo, matching the prior catalogue figures exactly. hgt=12.7cm (5in) is the MINIMUM of the effective height range - the 3.5in drawcord collar extends it to 8.5in=21.6cm for the 4.9L expanded state, which is not drawn.",
@@ -394,35 +695,87 @@
     "hardware": "internal drawcord with a cord-lock, external clear vinyl lid flap secured by two side-release buckles"
    },
    "zips": [
-    { "run": "pocket", "finish": "matched" }
+    {
+     "run": "pocket",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [
-    { "type": "stretch", "count": 2, "location": "side", "sizeFrac": 0.4 },
-    { "type": "slip", "count": 1, "location": "front", "sizeFrac": 0.5 },
-    { "type": "zip", "count": 1, "location": "internal", "sizeFrac": 0.3 }
+    {
+     "type": "stretch",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.4
+    },
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.5
+    },
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.3
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": false,
     "valve": false,
-    "logo": { "type": "woven_label", "location": "front_face" },
+    "logo": {
+     "type": "woven_label",
+     "location": "front_face"
+    },
     "fabric": "photographed sample is slate-grey with a clear PVC lid window and black webbing/buckles throughout; D-rings at the front corners for an optional shoulder strap"
    },
    "mount": {
-    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
-    "attachesTo": ["handlebar", "stem"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "z",
+     "wid": "+x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "stem"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Straps directly around the bars with cam buckles; lid flap hooks around the stem for stability."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Olive", "hex": "#5a5f3e" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Olive",
+     "hex": "#5a5f3e"
+    }
    ]
   },
   {
@@ -439,7 +792,11 @@
     "assets/products/outer-shell-adventure/specs-mini-bar-bag-3.png",
     "https://www.outershell.com/products/mini-bar-bag"
    ],
-   "dims_cm": { "len": 24.1, "wid": 7.6, "hgt": 12.1 },
+   "dims_cm": {
+    "len": 24.1,
+    "wid": 7.6,
+    "hgt": 12.1
+   },
    "dims_state": "single_figure",
    "dims_raw": "Maker spec photo: 9.5in top width tapering to 7in at the base, 3in depth, 4.75in height. No volume range given (fixed 1L, zip closure, no expansion collar).",
    "dims_note": "len is the LARGER (top/nose) figure of a visible taper per the tapered-axis rule: 9.5in=24.1cm at the top narrowing to 7in=17.8cm at the base, matching the prior catalogue len value exactly. wid=3in=7.6cm and hgt=4.75in=12.1cm both match the prior catalogue figures. Zip closure, no roll/drawcord collar visible, so no render override needed.",
@@ -447,7 +804,11 @@
    "geometry": {
     "form": "trapezoid_panel",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.74, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.74,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Slightly trapezoidal box, wider at the top zip line than at the base; assembly photos (specs-mini-bar-bag-2/3.png) show it mounting under-bar via a webbing loop plus a cord-and-toggle wrap around the stem/steerer."
    },
@@ -457,30 +818,69 @@
     "hardware": "single slider, black zip tape"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "daisy_loop", "material": "cord", "wrapsAround": "stem" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "daisy_loop",
+     "material": "cord",
+     "wrapsAround": "stem"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "fabric": "photographed sample is coyote-tan ballistic-textured nylon with a black zip and a small woven 'OS' logo patch"
    },
    "mount": {
-    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
-    "attachesTo": ["handlebar", "stem"],
-    "contactFaces": ["top", "underside"],
+    "axes": {
+     "len": "z",
+     "wid": "+x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "stem"
+    ],
+    "contactFaces": [
+     "top",
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Assembly photos show two mounting variants (stem over/under 50mm) using a hook-and-loop top strap plus a cord wrapped around the stem or steerer tube for stability - smallest of the three bar bags."
    },
    "colorways": [
-    { "name": "Olive", "hex": "#5a5f3e" },
-    { "name": "Black", "hex": "#2e2e2e" }
+    {
+     "name": "Olive",
+     "hex": "#5a5f3e"
+    },
+    {
+     "name": "Black",
+     "hex": "#2e2e2e"
+    }
    ]
   },
   {
@@ -496,7 +896,11 @@
     "assets/products/outer-shell-adventure/specs-mega-bar-bag-2.png",
     "https://www.outershell.com/products/mega-bar-bag"
    ],
-   "dims_cm": { "len": 25.4, "wid": 20.3, "hgt": 21.6 },
+   "dims_cm": {
+    "len": 25.4,
+    "wid": 20.3,
+    "hgt": 21.6
+   },
    "dims_state": "packed_min_of_range",
    "dims_raw": "Maker spec photo: 10in wide (across bars), 8in front-to-back (shown split as a 5.5in main box + 2.5in front pocket bulge), 8.5in tall, plus a 6in expandable drawcord collar; 10.6L-18.5L depending on lid position.",
    "dims_note": "Closed/base dims confirmed by photo, matching the prior catalogue figures exactly (10in=25.4cm len, 8in=20.3cm wid, 8.5in=21.6cm hgt). hgt is the base/closed MINIMUM - the 6in drawcord collar (specs-mega-bar-bag-2.png) extends it to reach 18.5L, not drawn.",
@@ -518,34 +922,85 @@
     "hardware": "single slider on the main lid flap, plus an internal black drawcord collar with a cord-lock for the expanded state"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" },
-    { "role": "compression", "count": 2, "location": "side", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "side",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [
-    { "type": "zip", "count": 1, "location": "lid", "sizeFrac": 0.4 },
-    { "type": "stretch", "count": 2, "location": "side", "sizeFrac": 0.4 },
-    { "type": "slip", "count": 1, "location": "front", "sizeFrac": 0.5 }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "lid",
+     "sizeFrac": 0.4
+    },
+    {
+     "type": "stretch",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.4
+    },
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.5
+    }
    ],
    "details": {
     "daisyChains": true,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "front_face" },
+    "logo": {
+     "type": "woven_label",
+     "location": "front_face"
+    },
     "fabric": "clearly two-tone: coyote-tan main body with a CONTRASTING BLACK internal drawcord collar (visible bunched down inside the open lid, specs-mega-bar-bag-2.png) - one of the strongest examples of the brand's two-tone identity in this catalogue"
    },
    "mount": {
-    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "z",
+     "wid": "+x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Largest of the three bar bags; straps directly to the bars, framed internally so it holds its box shape rather than sagging."
    },
    "colorways": [
-    { "name": "Black", "hex": "#2e2e2e" },
-    { "name": "Autumn", "hex": "#b05c2c" }
+    {
+     "name": "Black",
+     "hex": "#2e2e2e"
+    },
+    {
+     "name": "Autumn",
+     "hex": "#b05c2c"
+    }
    ]
   },
   {
@@ -560,7 +1015,11 @@
     "assets/products/outer-shell-adventure/specs-handlebar-harness.png",
     "https://www.outershell.com/products/stuff-sack-harness"
    ],
-   "dims_cm": { "len": 24.1, "wid": 21.6, "hgt": 10.2 },
+   "dims_cm": {
+    "len": 24.1,
+    "wid": 21.6,
+    "hgt": 10.2
+   },
    "dims_state": "single_figure",
    "dims_raw": "Maker spec photo: 9.5in x 8.5in rigid plate, 4in front cradle depth. Weight 10.8oz.",
    "dims_note": "Matches the prior catalogue figures exactly (9.5in=24.1cm len, 8.5in=21.6cm wid, 4in=10.2cm hgt-equivalent). Not a bag - a rigid mounting harness/cradle for a separately-carried dry bag (see the two Oval Dry Bag records), so liters=0 and there is nothing to close.",
@@ -573,27 +1032,64 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "dry_bag" },
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "ladderlock", "material": "webbing", "wrapsAround": "handlebar" },
-    { "role": "compression", "count": 1, "location": "front_face", "hardware": "daisy_loop", "material": "shock_cord" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "dry_bag"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "ladderlock",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "daisy_loop",
+     "material": "shock_cord"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "printed", "location": "front_face" },
+    "logo": {
+     "type": "printed",
+     "location": "front_face"
+    },
     "fabric": "rigid black composite plate, black webbing and buckles throughout"
    },
    "mount": {
-    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "z",
+     "wid": "+x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Mounts flush under/behind the bars via two long strap tails; the payload (a separate roll-top dry bag) sits cradled on top, clamped by the two padded straps."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    }
    ]
   },
   {
@@ -608,7 +1104,11 @@
     "https://www.outershell.com/products/oval-dry-bag",
     "fetched live product photos (not in local asset folder): outershell.com/cdn/shop/files/1_5a31a59c...webp, 4-2.webp, 5-2.webp, 6-2.webp, 7-2.webp"
    ],
-   "dims_cm": { "len": 25.4, "wid": 17.8, "hgt": 10.2 },
+   "dims_cm": {
+    "len": 25.4,
+    "wid": 17.8,
+    "hgt": 10.2
+   },
    "dims_state": "packed_maker_text",
    "dims_raw": "Maker page text: 4in x 7in base, 10in height. Requires 5in from center of handlebars to top of tire.",
    "dims_note": "No local photo exists for this product; the maker's live product photos were fetched instead and turn out to be a 'SealLine' branded dry bag, not Outer Shell's own house label - see brand_notes.oualDryBagOrigin. Kept the prior catalogue's dims_cm unchanged: mounted horizontally in the harness, the bag's own 10in height becomes the len axis (25.4cm, spanning across the bars) and the 4in x 7in base becomes the cross-section (10.2cm x 17.8cm). This mapping was validated by a prior pass (volume 4.6L vs stated 5L, ratio 1.43, plausible for a deliberately short/oval bag) and is unchanged here; the fetched SealLine photos support the roll-top-with-buckle closure and general cylindrical form but were not used to re-derive numbers.",
@@ -635,16 +1135,33 @@
     "fabric": "opaque version: transparent 12oz polyurethane film; black version: 300D 18oz polyurethane-coated polyester; fully welded seams"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "y" },
-    "attachesTo": ["handlebar_harness"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar_harness"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 127, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 127,
+     "frame_mm": 0
+    },
     "notes": "Not self-mounting - requires the separate Handlebar Harness. Maker states 5in (127mm) clearance needed from bar centre to top of tyre for this size. len maps to the harness's cross-bar axis because the bag lies on its side in the cradle rather than standing upright."
    },
    "colorways": [
-    { "name": "See-Through", "hex": "#d9d9d9" },
-    { "name": "Black", "hex": "#1c1c1c" }
+    {
+     "name": "See-Through",
+     "hex": "#d9d9d9"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    }
    ]
   },
   {
@@ -659,7 +1176,11 @@
     "https://www.outershell.com/products/oval-dry-bag",
     "fetched live product photos (not in local asset folder): outershell.com/cdn/shop/files/1_5a31a59c...webp, 4-2.webp, 5-2.webp, 6-2.webp, 7-2.webp"
    ],
-   "dims_cm": { "len": 36.8, "wid": 21.6, "hgt": 12.7 },
+   "dims_cm": {
+    "len": 36.8,
+    "wid": 21.6,
+    "hgt": 12.7
+   },
    "dims_state": "packed_maker_text",
    "dims_raw": "Maker page text: 5in x 8.5in base, 14.5in height. Requires 6in from center of handlebars to top of tire.",
    "dims_note": "Same no-local-photo situation and same OEM 'SealLine' finding as the 5L - see brand_notes.oualDryBagOrigin. dims_cm unchanged from the prior catalogue: 14.5in height becomes len=36.8cm across the bars, 5in x 8.5in base becomes the cross-section 12.7cm x 21.6cm. Volume check: 36.8x21.6x12.7=10096cc=10.1L vs stated 10L, ratio 1.01 - confirms the mapping.",
@@ -686,16 +1207,33 @@
     "fabric": "opaque version: transparent 12oz polyurethane film; black version: 300D 18oz polyurethane-coated polyester; fully welded seams"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "y" },
-    "attachesTo": ["handlebar_harness"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar_harness"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 152, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 152,
+     "frame_mm": 0
+    },
     "notes": "Not self-mounting - requires the separate Handlebar Harness. Maker states 6in (152mm) clearance needed from bar centre to top of tyre for this size."
    },
    "colorways": [
-    { "name": "See-Through", "hex": "#d9d9d9" },
-    { "name": "Black", "hex": "#1c1c1c" }
+    {
+     "name": "See-Through",
+     "hex": "#d9d9d9"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    }
    ]
   },
   {
@@ -710,7 +1248,11 @@
     "assets/products/outer-shell-adventure/specs-stem-caddy.png",
     "https://www.outershell.com/products/stem-caddy"
    ],
-   "dims_cm": { "len": 8.9, "wid": 8.9, "hgt": 15.2 },
+   "dims_cm": {
+    "len": 8.9,
+    "wid": 8.9,
+    "hgt": 15.2
+   },
    "dims_state": "packed_min_of_range",
    "dims_raw": "Maker spec photo: 3.5in x 3.5in x 6in base, plus a 2.5in expandable drawcord collar. Volume 1.2L-1.7L, fits a 1L bottle.",
    "dims_note": "Closed/base dims confirmed by photo, matching the prior catalogue figures exactly. hgt=15.2cm (6in) is the closed MINIMUM; the 2.5in drawcord collar extends it to 8.5in=21.6cm for the 1.7L expanded state, not drawn.",
@@ -733,26 +1275,54 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "stem" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "stem"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_label", "location": "front_face" },
+    "logo": {
+     "type": "woven_label",
+     "location": "front_face"
+    },
     "fabric": "clearly two-tone: maroon/oxblood body with a CONTRASTING BLACK drawcord collar, same family treatment as the Mega Bar Bag"
    },
    "mount": {
-    "axes": { "len": "+x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["stem", "headtube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "+x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "stem",
+     "headtube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Straps to the stem/steerer area between the bars and the head tube, upright, roll/drawcord opening at top."
    },
    "colorways": [
-    { "name": "Autumn", "hex": "#6a2733" },
-    { "name": "Black", "hex": "#1c1c1c" }
+    {
+     "name": "Autumn",
+     "hex": "#6a2733"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    }
    ]
   },
   {
@@ -767,7 +1337,11 @@
     "assets/products/outer-shell-adventure/specs-top-tube-bag.png",
     "https://www.outershell.com/products/top-tube-bag"
    ],
-   "dims_cm": { "len": 21.1, "wid": 6.4, "hgt": 10.2 },
+   "dims_cm": {
+    "len": 21.1,
+    "wid": 6.4,
+    "hgt": 10.2
+   },
    "dims_state": "single_figure",
    "dims_raw": "Maker spec photo: 8.3in diagonal length, 4in height, 2.5in wide at the rear tapering to 1.6in at the front tip.",
    "dims_note": "Matches the prior catalogue figures exactly (8.3in=21.1cm len, 4in=10.2cm hgt, 2.5in=6.4cm wid as the LARGER/rear value of a visible taper). Front tip narrows to 1.6in=4.1cm, not previously recorded - added to geometry.taper.",
@@ -775,7 +1349,11 @@
    "geometry": {
     "form": "trapezoid_panel",
     "crossSection": "d_shape",
-    "taper": { "nose": 0.64, "tail": 1.0, "profile": "linear" },
+    "taper": {
+     "nose": 0.64,
+     "tail": 1,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "Elongated wedge, narrow (1.6in) toward the front/head-tube end, widening to 2.5in at the rear where a drawcord/cordlock closes an expansion gusset."
    },
@@ -785,31 +1363,66 @@
     "hardware": "single slider, black zip tape; small drawcord and cordlock toggle at the rear for a secondary cinch"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube"
+    }
    ],
    "pockets": [
-    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.3 }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.3
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "side" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "side"
+    },
     "fabric": "photographed sample is dark charcoal-grey with a black zip and a rear cord-lock toggle"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Straddles the top tube, narrow front tip toward the head tube/stem, wider rear toward the seat tube."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Olive", "hex": "#5c5b44" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Olive",
+     "hex": "#5c5b44"
+    }
    ]
   },
   {
@@ -824,7 +1437,11 @@
     "assets/products/outer-shell-adventure/specs-half-framebag-1.png",
     "https://www.outershell.com/products/half-framebag"
    ],
-   "dims_cm": { "len": 43.2, "wid": 5.7, "hgt": 10.8 },
+   "dims_cm": {
+    "len": 43.2,
+    "wid": 5.7,
+    "hgt": 10.8
+   },
    "dims_state": "single_figure",
    "dims_raw": "Maker spec photo 'SMALL HALF FRAME BAG': top rail 17in, main body height 4.25in (dashed centre measurement), front strap-tab height 2in, a further diagonal tail-taper run of 5.5in.",
    "dims_note": "len (17in=43.2cm, top rail) and hgt (4.25in=10.8cm, main body height at the zip line) both confirmed by photo and match the prior catalogue exactly. wid (depth off the frame) is NOT visible in this side-elevation photo and is carried forward unverified from the prior 5.7cm estimate - flagged rather than guessed. Considered reading the 5.5in diagonal figure as width/depth instead, but rejected: it stays roughly constant (5.5/6/5.75in) across all three sizes despite length varying 17-20in, and if taken as a 14cm depth the volume ratio blows out to 3.4x capacity (implausible for a slim frame bag - see MODEL-SPEC's 1.0-2.5x guideline), whereas reading it as the rear taper run (a dimension that plausibly stays similar across sizes sharing the same tail geometry) is physically consistent. Kept as a taper detail, not wid. Volume check with wid unverified: 43.2x5.7x10.8=2660cc=2.66L vs stated 1.9L, ratio 1.4 - normal.",
@@ -832,7 +1449,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.19, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.19,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Front (head-tube) end taller at 4.25in body height (2in strap-tab loops rise above that), tapering over a 5.5in run to a narrow 2in tail near the seat tube."
    },
@@ -842,32 +1463,76 @@
     "hardware": "single slider, matched zip tape, full top-rail length"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "down_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "down_tube"
+    }
    ],
    "pockets": [
-    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.4 }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.4
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "fabric": "photographed sample is diamond-ripstop-textured dark grey nylon, black webbing strap loops and zip tape"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "-y" },
-    "attachesTo": ["top_tube", "down_tube"],
-    "contactFaces": ["top", "front_face"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "+z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Half-frame wedge strapped flush to one side of the main triangle, tall face at the head-tube end tapering to a point near the seat tube - same mounting convention as other brands' half-frame bags in this catalogue."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Olive", "hex": "#5c5b44" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Olive",
+     "hex": "#5c5b44"
+    }
    ]
   },
   {
@@ -882,7 +1547,11 @@
     "assets/products/outer-shell-adventure/specs-half-framebag-2.png",
     "https://www.outershell.com/products/half-framebag"
    ],
-   "dims_cm": { "len": 47, "wid": 5.7, "hgt": 13.3 },
+   "dims_cm": {
+    "len": 47,
+    "wid": 5.7,
+    "hgt": 13.3
+   },
    "dims_state": "single_figure",
    "dims_raw": "Maker spec photo 'MEDIUM HALF FRAME BAG': top rail 18.5in, main body height 5.25in (dashed centre), front strap-tab height 4.5in, rear tail height 2in, diagonal tail-taper run 6in.",
    "dims_note": "len (18.5in=47cm) and hgt (5.25in=13.3cm) both confirmed by photo, matching the prior catalogue exactly. wid carried forward unverified from the 5.7cm estimate - same reasoning as the Small (see that record's note); the 6in diagonal here reads as the tail-taper run, not depth.",
@@ -890,7 +1559,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.15, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.15,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Front strap-tab loops rise to 4.5in, true body height 5.25in at the zip line, tapering over a 6in run to a 2in tail."
    },
@@ -900,32 +1573,76 @@
     "hardware": "single slider, matched zip tape, full top-rail length"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "down_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "down_tube"
+    }
    ],
    "pockets": [
-    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.4 }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.4
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "fabric": "photographed sample is diamond-ripstop-textured dark grey nylon, black webbing strap loops and zip tape"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "-y" },
-    "attachesTo": ["top_tube", "down_tube"],
-    "contactFaces": ["top", "front_face"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "+z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Same mounting convention as the Small, scaled up."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Olive", "hex": "#5c5b44" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Olive",
+     "hex": "#5c5b44"
+    }
    ]
   },
   {
@@ -940,7 +1657,11 @@
     "assets/products/outer-shell-adventure/specs-half-framebag-3.png",
     "https://www.outershell.com/products/half-framebag"
    ],
-   "dims_cm": { "len": 50.8, "wid": 5.7, "hgt": 14.6 },
+   "dims_cm": {
+    "len": 50.8,
+    "wid": 5.7,
+    "hgt": 14.6
+   },
    "dims_state": "single_figure",
    "dims_raw": "Maker spec photo 'LARGE HALF FRAME BAG': top rail 20in, main body height 5.75in (dashed centre), front strap-tab height 4.5in, rear tail height 2in, diagonal tail-taper run 5.75in.",
    "dims_note": "len (20in=50.8cm) and hgt (5.75in=14.6cm) both confirmed by photo, matching the prior catalogue exactly. wid carried forward unverified from the 5.7cm estimate - same reasoning as the Small and Medium. Volume check: 50.8x5.7x14.6=4226cc=4.23L vs stated 3.5L, ratio 1.21 - normal, and supports leaving wid at 5.7cm rather than substituting the 5.75in diagonal figure (which would blow the ratio out past the 1.0-2.5x guideline).",
@@ -948,7 +1669,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.14, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.14,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Same taper convention as the Small/Medium: front strap-tab loops to 4.5in, true body height 5.75in at the zip line, tapering over a ~5.75in run to a 2in tail."
    },
@@ -958,32 +1683,76 @@
     "hardware": "single slider, matched zip tape, full top-rail length"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "down_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "down_tube"
+    }
    ],
    "pockets": [
-    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.4 }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.4
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "fabric": "photographed sample is diamond-ripstop-textured dark grey nylon, black webbing strap loops and zip tape"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "+z", "hgt": "-y" },
-    "attachesTo": ["top_tube", "down_tube"],
-    "contactFaces": ["top", "front_face"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "+z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Same mounting convention as the Small/Medium, largest of the three."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1c" },
-    { "name": "Olive", "hex": "#5c5b44" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Olive",
+     "hex": "#5c5b44"
+    }
    ]
   }
  ]

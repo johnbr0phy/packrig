@@ -25,7 +25,11 @@
     "assets/products/venture-handmade/bravo-bravo-seat-bag-one-size-4-5-7l-4.jpg",
     "https://www.venturehandmade.com/gear/p/bravo-seat-bag"
    ],
-   "dims_cm": { "len": 40.6, "wid": 16.5, "hgt": 16.5 },
+   "dims_cm": {
+    "len": 40.6,
+    "wid": 16.5,
+    "hgt": 16.5
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "true measured DIMENSIONS: 6.5\"W x 12-16\"L x 6.5\"H; true measured VOLUME: 4.5-7L depending how far you roll it down",
    "dims_note": "Per the new MODEL-SPEC rule len takes the UNFURLED figure: 16in = 40.6cm (previously this catalogue used an interpolated packed estimate of 33.5cm). Width and height are both fixed at 6.5in = 16.5cm (no range published), consistent with the rounded tube seen in every photo, so no render block is needed — only length varies with roll count.",
@@ -33,7 +37,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.55, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.55,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Rounded tube, squared flat face at the saddle/seatpost end, moderate (not extreme) taper toward the rolled tail — the tail keeps meaningful diameter right up to the roll, unlike a sharply pointed wedge."
    },
@@ -45,32 +53,76 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" },
-    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": "none observed in local photos",
     "valve": false,
-    "logo": { "type": "printed_patch", "location": "nose_side" },
+    "logo": {
+     "type": "printed_patch",
+     "location": "nose_side"
+    },
     "seams": "taped/welded (X-Pac laminate)",
     "fabric": "X-Pac laminate, diamond ripstop quilt pattern, matte"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_rails", "seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 3,
-    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 55,
+     "frame_mm": 0
+    },
     "notes": "Nose clamps to the saddle rails/seatpost via a black velcro-covered cradle (Venture's 'RailWing V2' anti-sway hardware, not separately modelled as fabric); tail droops slightly and rolls to seal. clearance is an estimate based on typical bags of this size, not measured."
    },
    "colorways": [
-    { "name": "Stealth Mode", "hex": "#1c1c1e" },
-    { "name": "Desert Campfire", "hex": "#9e3418" },
-    { "name": "Mountain Sunrise", "hex": "#e0a020" },
-    { "name": "Alpine Tundra", "hex": "#1e4635" },
-    { "name": "Space Cowboy", "hex": "#4a2a6b" }
+    {
+     "name": "Stealth Mode",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Desert Campfire",
+     "hex": "#9e3418"
+    },
+    {
+     "name": "Mountain Sunrise",
+     "hex": "#e0a020"
+    },
+    {
+     "name": "Alpine Tundra",
+     "hex": "#1e4635"
+    },
+    {
+     "name": "Space Cowboy",
+     "hex": "#4a2a6b"
+    }
    ]
   },
   {
@@ -88,7 +140,11 @@
     "assets/products/venture-handmade/charlie-charlie-seat-bag-one-size-6-10l-4.jpg",
     "https://www.venturehandmade.com/gear/p/charlie-seat-bag"
    ],
-   "dims_cm": { "len": 48.3, "wid": 19.1, "hgt": 17.8 },
+   "dims_cm": {
+    "len": 48.3,
+    "wid": 19.1,
+    "hgt": 17.8
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "true measured DIMENSIONS: 7.5\"W x 14-19\"L x 7\"H; true measured VOLUME: 6-10L depending on how far you roll it down",
    "dims_note": "len takes the UNFURLED figure: 19in = 48.3cm (previous catalogue used an interpolated packed estimate of 39.4cm). Width 7.5in=19.1cm and height 7in=17.8cm are both fixed (no range), so no render block is needed. Same silhouette as the Bravo, one size up.",
@@ -96,7 +152,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.55, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.55,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Identical construction to the Bravo Seat Bag, larger. Rounded tube, squared saddle-end face, moderate tail taper."
    },
@@ -108,32 +168,76 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" },
-    { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": "none observed in local photos",
     "valve": false,
-    "logo": { "type": "printed_patch", "location": "nose_side" },
+    "logo": {
+     "type": "printed_patch",
+     "location": "nose_side"
+    },
     "seams": "taped/welded (X-Pac laminate)",
     "fabric": "X-Pac laminate, diamond ripstop quilt pattern, matte"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_rails", "seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 3,
-    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 55,
+     "frame_mm": 0
+    },
     "notes": "Same mount system as the Bravo, sized up. clearance is an estimate, not measured."
    },
    "colorways": [
-    { "name": "Stealth Mode", "hex": "#1c1c1e" },
-    { "name": "Desert Campfire", "hex": "#9e3418" },
-    { "name": "Mountain Sunrise", "hex": "#e0a020" },
-    { "name": "Alpine Tundra", "hex": "#1e4635" },
-    { "name": "Space Cowboy", "hex": "#4a2a6b" }
+    {
+     "name": "Stealth Mode",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Desert Campfire",
+     "hex": "#9e3418"
+    },
+    {
+     "name": "Mountain Sunrise",
+     "hex": "#e0a020"
+    },
+    {
+     "name": "Alpine Tundra",
+     "hex": "#1e4635"
+    },
+    {
+     "name": "Space Cowboy",
+     "hex": "#4a2a6b"
+    }
    ]
   },
   {
@@ -151,7 +255,11 @@
     "assets/products/venture-handmade/delta-delta-handlebar-bag-one-size-10-5l-max-4.jpg",
     "https://www.venturehandmade.com/gear/p/delta-handlebar-bag"
    ],
-   "dims_cm": { "len": 61.0, "wid": 14.0, "hgt": 14.0 },
+   "dims_cm": {
+    "len": 61,
+    "wid": 14,
+    "hgt": 14
+   },
    "dims_state": "unfurled",
    "dims_raw": "VOLUME: 7-9L main bag + 1.5L pocket (10.5L max total); DIMENSIONS: 20-24\"W x 5.5\" diameter",
    "dims_note": "'W' here is the roll axis running along the handlebar, encoded as len per the axis convention (its own longest horizontal run). Per the new rule len takes the UNFURLED figure: 24in = 61.0cm. hgt/wid both take the fixed 5.5in=14.0cm diameter; diameter is not a range, so no render block is needed.",
@@ -159,7 +267,11 @@
    "geometry": {
     "form": "barrel",
     "crossSection": "round",
-    "taper": { "nose": 0.85, "tail": 0.85, "profile": "linear" },
+    "taper": {
+     "nose": 0.85,
+     "tail": 0.85,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "Classic horizontal drybag roll: fullest in the middle, pinched slightly at both ends where the roll-strap buckles cinch. A separate diagonal-flap accessory pocket is mounted centred on the front face."
    },
@@ -170,38 +282,96 @@
     "hardware": "roll-top drybag closure with a webbing loop closure; two end straps with buckles compress and hold the roll"
    },
    "zips": [
-    { "run": "front_panel", "finish": "matched" }
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "end_cap", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "handlebar" },
-    { "role": "compression", "count": 2, "location": "end_cap", "hardware": "buckle", "material": "webbing" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "cam", "material": "webbing", "wrapsAround": "head_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "end_cap",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "end_cap",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "cam",
+     "material": "webbing",
+     "wrapsAround": "head_tube"
+    }
    ],
    "pockets": [
-    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.25 }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.25
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": "none observed in local photos",
     "valve": false,
-    "logo": { "type": "printed_patch", "location": "front_face" },
+    "logo": {
+     "type": "printed_patch",
+     "location": "front_face"
+    },
     "seams": "taped/welded (X-Pac laminate)",
     "fabric": "X-Pac laminate, diamond ripstop quilt pattern, matte"
    },
    "mount": {
-    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
-    "attachesTo": ["handlebar", "head_tube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "z",
+     "wid": "+x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 40, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 40,
+     "frame_mm": 0
+    },
     "notes": "Two velcro strap loops at each end thread onto the bar; a separate stabiliser strap with a cam buckle runs down to a replaceable plate at the head tube (per maker copy), visible in the on-bike detail photo as a strap routed near the fork crown. tyre_mm is an estimate for steering-lock clearance to the front wheel, not measured."
    },
    "colorways": [
-    { "name": "Stealth Mode", "hex": "#1c1c1e" },
-    { "name": "Desert Campfire", "hex": "#9e3418" },
-    { "name": "Mountain Sunrise", "hex": "#e0a020" },
-    { "name": "Alpine Tundra", "hex": "#1e4635" },
-    { "name": "Space Cowboy", "hex": "#4a2a6b" }
+    {
+     "name": "Stealth Mode",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Desert Campfire",
+     "hex": "#9e3418"
+    },
+    {
+     "name": "Mountain Sunrise",
+     "hex": "#e0a020"
+    },
+    {
+     "name": "Alpine Tundra",
+     "hex": "#1e4635"
+    },
+    {
+     "name": "Space Cowboy",
+     "hex": "#4a2a6b"
+    }
    ]
   },
   {
@@ -219,7 +389,11 @@
     "assets/products/venture-handmade/kilo-kilo-handlebar-bag-one-size-12-5l-max-4.jpg",
     "https://www.venturehandmade.com/gear/p/kilo-handlebar-bag"
    ],
-   "dims_cm": { "len": 58.4, "wid": 17.8, "hgt": 17.8 },
+   "dims_cm": {
+    "len": 58.4,
+    "wid": 17.8,
+    "hgt": 17.8
+   },
    "dims_state": "unfurled",
    "dims_raw": "VOLUME: 8-11L main bag + 1.5L pocket (12.5L max total); true measured DIMENSIONS: 16-23\"W x 7\" diameter",
    "dims_note": "Same reading convention as the Delta: len takes the UNFURLED figure, 23in = 58.4cm. hgt/wid both take the fixed 7in=17.8cm diameter; no range, no render block needed. Same construction as the Delta, one size up, with a 4th top strap visible (larger bag, more attachment points).",
@@ -227,7 +401,11 @@
    "geometry": {
     "form": "barrel",
     "crossSection": "round",
-    "taper": { "nose": 0.85, "tail": 0.85, "profile": "linear" },
+    "taper": {
+     "nose": 0.85,
+     "tail": 0.85,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "Identical construction to the Delta, larger diameter and roll length. Diagonal-flap accessory pocket centred on the front face."
    },
@@ -238,37 +416,87 @@
     "hardware": "roll-top drybag closure; two end straps with buckles compress and hold the roll"
    },
    "zips": [
-    { "run": "front_panel", "finish": "matched" }
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "end_cap", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "handlebar" },
-    { "role": "compression", "count": 2, "location": "end_cap", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "end_cap",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "end_cap",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [
-    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.25 }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.25
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": "none observed in local photos",
     "valve": false,
-    "logo": { "type": "printed_patch", "location": "front_face" },
+    "logo": {
+     "type": "printed_patch",
+     "location": "front_face"
+    },
     "seams": "taped/welded (X-Pac laminate)",
     "fabric": "X-Pac laminate, diamond ripstop quilt pattern, matte"
    },
    "mount": {
-    "axes": { "len": "z", "wid": "+x", "hgt": "y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "z",
+     "wid": "+x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 35, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 35,
+     "frame_mm": 0
+    },
     "notes": "Larger diameter than the Delta so slightly less steering-lock clearance is assumed; estimate, not measured. No head-tube stabiliser strap is called out for Kilo in the maker copy (unlike Delta), consistent with photos showing only the bar-mount straps."
    },
    "colorways": [
-    { "name": "Stealth Mode", "hex": "#1c1c1e" },
-    { "name": "Desert Campfire", "hex": "#9e3418" },
-    { "name": "Mountain Sunrise", "hex": "#e0a020" },
-    { "name": "Alpine Tundra", "hex": "#1e4635" },
-    { "name": "Space Cowboy", "hex": "#4a2a6b" }
+    {
+     "name": "Stealth Mode",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Desert Campfire",
+     "hex": "#9e3418"
+    },
+    {
+     "name": "Mountain Sunrise",
+     "hex": "#e0a020"
+    },
+    {
+     "name": "Alpine Tundra",
+     "hex": "#1e4635"
+    },
+    {
+     "name": "Space Cowboy",
+     "hex": "#4a2a6b"
+    }
    ]
   },
   {
@@ -286,7 +514,11 @@
     "assets/products/venture-handmade/cache-cache-tank-bag-one-size-1l-4.jpg",
     "https://www.venturehandmade.com/gear/p/cache-tank-bag"
    ],
-   "dims_cm": { "len": 25.4, "wid": 8.9, "hgt": 12.7 },
+   "dims_cm": {
+    "len": 25.4,
+    "wid": 8.9,
+    "hgt": 12.7
+   },
    "dims_state": "packed",
    "dims_raw": "WEIGHT: 6.5oz/187g; VOLUME: 1L, true measured; DIMENSIONS: 3.5\"W x 10\"L x 5\"H",
    "dims_note": "Fixed padded box, no roll or expansion, printed figures convert directly: 10in len, 5in hgt, 3.5in wid. No range published, so this is unchanged by the dimension-rule update.",
@@ -304,33 +536,74 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    }
    ],
    "pockets": [
-    { "type": "mesh", "count": 1, "location": "top", "sizeFrac": 0.5 }
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "top",
+     "sizeFrac": 0.5
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": "none observed in local photos",
     "valve": false,
-    "logo": { "type": "printed_patch", "location": "front_face" },
+    "logo": {
+     "type": "printed_patch",
+     "location": "front_face"
+    },
     "seams": "taped/welded (X-Pac laminate)",
     "fabric": "X-Pac laminate, diamond ripstop quilt pattern, matte"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Top-tube velcro straps only, no stem/headset attachment per maker copy — sits fully supported on the tube, does not need tyre clearance."
    },
    "colorways": [
-    { "name": "Stealth Mode", "hex": "#1c1c1e" },
-    { "name": "Desert Campfire", "hex": "#9e3418" },
-    { "name": "Mountain Sunrise", "hex": "#e0a020" },
-    { "name": "Alpine Tundra", "hex": "#1e4635" },
-    { "name": "Space Cowboy", "hex": "#4a2a6b" }
+    {
+     "name": "Stealth Mode",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Desert Campfire",
+     "hex": "#9e3418"
+    },
+    {
+     "name": "Mountain Sunrise",
+     "hex": "#e0a020"
+    },
+    {
+     "name": "Alpine Tundra",
+     "hex": "#1e4635"
+    },
+    {
+     "name": "Space Cowboy",
+     "hex": "#4a2a6b"
+    }
    ]
   },
   {
@@ -345,7 +618,11 @@
     "assets/products/venture-handmade/edc-edc-mini-frame-bag-large-large-1-4l-1.jpg (fabric colour-swatch card only, NOT a photo of the product)",
     "https://www.venturehandmade.com/gear/p/edc-mini-frame-bag"
    ],
-   "dims_cm": { "len": 25.4, "hgt": 19.1, "wid": 6.4 },
+   "dims_cm": {
+    "len": 25.4,
+    "hgt": 19.1,
+    "wid": 6.4
+   },
    "dims_state": "maker_text",
    "dims_raw": "VOLUME: Large, 1.4L, true measured. DIMENSIONS: Large, 2.5\"W, 10\" top, 9.5\" bottom, 2\" front, 7.5\" back",
    "dims_note": "No real product photo exists in the local set (the only local image is a fabric swatch card), so this entire record rests on the maker's text description alone. Venture quote four edge lengths rather than a box; read as a wedge the numbers are coherent (10in top, 9.5in bottom, 2in front, 7.5in back at 2.5in wide is about 1.9L of envelope against 1.4L rated, a normal margin for a wedge). Bounding box taken as len=10in=25.4cm (longest edge), hgt=7.5in=19.1cm (rear/tall edge), wid=2.5in=6.4cm (the one real width figure). Unchanged from the prior catalogue pass since no range/roll applies here — this is a fixed zip-closed wedge, not a rolltop.",
@@ -353,7 +630,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.1, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.1,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Steeply raked wedge per the maker's four-edge description: tall at the seat-tube end, tapering to almost nothing at the head-tube end — fills the rear corner of the front triangle rather than running its full length. Not photo-verified; geometry is inferred from the maker's edge-length text only."
    },
@@ -363,35 +644,82 @@
     "hardware": "not photo-verified; carried from catalogue text ('closure: zip')"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" },
-    { "role": "attachment", "count": 1, "location": "tail_wrap", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "seat_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "seat_tube"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
     "valve": false,
-    "logo": { "type": "printed_patch", "location": "front_face" },
+    "logo": {
+     "type": "printed_patch",
+     "location": "front_face"
+    },
     "seams": "taped/welded (X-Pac laminate, per brand construction)",
     "fabric": "X-Pac laminate (assumed from brand consistency; the only local image is a fabric swatch card showing the full colour range, not applied to this specific bag)"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["top_tube", "seat_tube"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Per maker copy: 'top tube and seat tube straps, front triangle apex'. Mounts in the rear corner of the front triangle near the seat tube/top tube junction, not spanning the full frame. Not photo-verified."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1e" },
-    { "name": "Slate Gray", "hex": "#4a5057" },
-    { "name": "Coyote Brown", "hex": "#7f6a4f" },
-    { "name": "Evergreen", "hex": "#1e4635" },
-    { "name": "Cayenne", "hex": "#9e3418" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Slate Gray",
+     "hex": "#4a5057"
+    },
+    {
+     "name": "Coyote Brown",
+     "hex": "#7f6a4f"
+    },
+    {
+     "name": "Evergreen",
+     "hex": "#1e4635"
+    },
+    {
+     "name": "Cayenne",
+     "hex": "#9e3418"
+    }
    ]
   },
   {
@@ -409,7 +737,11 @@
     "assets/products/venture-handmade/alpha-alpha-custom-frame-bag-made-to-measure-2-16l-4.jpg",
     "https://www.venturehandmade.com/gear/p/custom-frame-bag"
    ],
-   "dims_cm": { "len": 55, "hgt": 30, "wid": 6.4 },
+   "dims_cm": {
+    "len": 55,
+    "hgt": 30,
+    "wid": 6.4
+   },
    "dims_state": "unknown",
    "dims_raw": "VOLUME: Varies, generally 2-16L. DIMENSIONS: 'I make most bags 2.5in wide at the spine, which translates to 3-5in wide in the middle, depending on the frame size.'",
    "dims_note": "Made to measure — no fixed size exists, so per the 'do not invent' rule len and hgt are carried as an unverified mid-range placeholder only (representative of an average full-triangle bag on the stated 2-16L range), NOT maker data. wid=6.4cm (2.5in) is the one real published number, the spine width. Photos confirm a full-triangle wedge shape consistent with a placeholder of this rough proportion, but do not establish exact len/hgt for any specific frame size.",
@@ -417,7 +749,11 @@
    "geometry": {
     "form": "triangle_panel",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.1, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.1,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Full front-triangle bag, flat mounting face against the top tube/down tube. Tall squared face at the head-tube end carrying a full-length diagonal zip; tapers to a near-point at the seat-tube/BB end."
    },
@@ -427,38 +763,95 @@
     "hardware": "single slider zip running the full diagonal top edge, nose to tail; contrast-colour zip tape observed in several colourways"
    },
    "zips": [
-    { "run": "top_side", "finish": "contrast" }
+    {
+     "run": "top_side",
+     "finish": "contrast"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" },
-    { "role": "daisy", "count": 1, "location": "tail_wrap", "hardware": "daisy_loop", "material": "shock cord", "wrapsAround": "seat_tube" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "daisy_loop",
+     "material": "shock cord",
+     "wrapsAround": "seat_tube"
+    }
    ],
    "pockets": [
-    { "type": "zip", "count": 1, "location": "side", "sizeFrac": 0.3 }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.3
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": "reflective shock-cord lacing observed at the tail end (contradicts brands.json features.cord=false — see brand_notes.featureMismatch)",
     "valve": false,
-    "logo": { "type": "printed_patch", "location": "nose_side" },
+    "logo": {
+     "type": "printed_patch",
+     "location": "nose_side"
+    },
     "seams": "taped/welded (X-Pac laminate)",
     "fabric": "X-Pac laminate, diamond ripstop quilt pattern, matte"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["top_tube", "down_tube", "seat_tube"],
-    "contactFaces": ["top", "front_face"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Flush-mounted full-triangle bag; nose squared off at the head tube, tapering to a criss-cross bungee-laced point near the seat tube/BB that likely allows some fit adjustment for different frame sizes. Custom/made-to-measure, so exact fit varies by order."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1e" },
-    { "name": "Evergreen", "hex": "#1e4635" },
-    { "name": "Marigold", "hex": "#e0a020" },
-    { "name": "Southwest Turquoise", "hex": "#2fa39b" },
-    { "name": "Deep Purple", "hex": "#4a2a6b" },
-    { "name": "Blaze Orange", "hex": "#e2571e" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Evergreen",
+     "hex": "#1e4635"
+    },
+    {
+     "name": "Marigold",
+     "hex": "#e0a020"
+    },
+    {
+     "name": "Southwest Turquoise",
+     "hex": "#2fa39b"
+    },
+    {
+     "name": "Deep Purple",
+     "hex": "#4a2a6b"
+    },
+    {
+     "name": "Blaze Orange",
+     "hex": "#e2571e"
+    }
    ]
   },
   {
@@ -476,7 +869,11 @@
     "assets/products/venture-handmade/sierra-sierra-sl-pannier-one-size-10l-each-20l-pair-4.jpg",
     "https://www.venturehandmade.com/gear/p/sierra-sl-panniers"
    ],
-   "dims_cm": { "len": 25.4, "wid": 12.7, "hgt": 30.5 },
+   "dims_cm": {
+    "len": 25.4,
+    "wid": 12.7,
+    "hgt": 30.5
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "DIMENSIONS: 10\"W x 5\"D x 12-17\"H (each side). VOLUME: 20L for the pair (10L single). Weight 1lb 13oz/820g pair.",
    "dims_note": "PAIR VOLUME TRAP avoided: liters holds the single-bag 10L, not the 20L pair figure. Here the maker publishes the variable roll axis as HEIGHT (12-17in), not length, so per the new rule hgt takes the MINIMUM: 12in=30.5cm (previously an interpolated 34.3cm estimate). len=10in=25.4cm and wid=5in=12.7cm are both fixed footprint figures, unchanged. Volume check: 25.4x12.7x30.5=9840cc=9.8L against 10L stated single-bag capacity — a tight, box-like ratio consistent with a boxy pannier rather than a tapered wedge.",
@@ -500,32 +897,74 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "rack_rail" },
-    { "role": "compression", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "rack_rail"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": "none observed in local photos",
     "valve": false,
-    "logo": { "type": "printed_patch", "location": "front_face" },
+    "logo": {
+     "type": "printed_patch",
+     "location": "front_face"
+    },
     "seams": "taped/welded (X-Pac laminate)",
     "fabric": "X-Pac laminate body with a heather HDPE skid-plate panel on the lower front face, matte"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["rear_rack"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 30, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 30,
+     "frame_mm": 0
+    },
     "notes": "Attaches to the rack rail via a strap-and-buckle system, not hooks, per maker copy ('strap-and-buckle to rack rails, no hooks'), visible in the on-bike photo as a black strap wrapping the top rail. Sold and shipped as a pair. tyre_mm clearance from the rear wheel is an estimate, not measured."
    },
    "colorways": [
-    { "name": "Stealth Mode", "hex": "#1c1c1e" },
-    { "name": "Desert Campfire", "hex": "#9e3418" },
-    { "name": "Mountain Sunrise", "hex": "#e0a020" },
-    { "name": "Alpine Tundra", "hex": "#1e4635" },
-    { "name": "Space Cowboy", "hex": "#4a2a6b" }
+    {
+     "name": "Stealth Mode",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Desert Campfire",
+     "hex": "#9e3418"
+    },
+    {
+     "name": "Mountain Sunrise",
+     "hex": "#e0a020"
+    },
+    {
+     "name": "Alpine Tundra",
+     "hex": "#1e4635"
+    },
+    {
+     "name": "Space Cowboy",
+     "hex": "#4a2a6b"
+    }
    ]
   }
  ]

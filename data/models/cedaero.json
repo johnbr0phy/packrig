@@ -1,350 +1,518 @@
 {
-  "brand": "Cedaero",
-  "slug": "cedaero",
-  "reviewed_photos": 10,
-  "brand_notes": {
-    "fabric": "brands.json's brand-level fabric string is '1000D Cordura (matte woven) / RX30 X-Pac (visible X ripstop grid), waxed canvas option'. Every product page (Switchback Seat Pack, Tank Top Pack, Fork Lift Pack, Custom Half/Full Frame Pack) offers the exterior as a customer choice of FOUR fabrics, not the three implied by the brand string: 1000D Cordura nylon, RX30 X-pac, X-11 X-pac, and 15oz waxed canvas. The brand string's three options are all correct, it's just missing X-11 X-pac (a same-weight-as-Cordura X-Pac variant) as a fourth option - not a wrong claim, an incomplete one. The 'visible X ripstop grid' claim is confirmed in photos: the Switchback Seat Pack (coral and blue) and both frame packs (periwinkle half-frame, teal full-frame) all show a clear diagonal diamond-stitch grid on the exterior face, consistent with X-Pac's laid-in X-ply. 'Matte woven' Cordura is also plausible on panels without the grid (e.g. the tan/teal Tank Top Pack colourways look like plain woven face fabric, no diagonal grid), though colourway alone doesn't prove fabric choice since it's customer-selectable per panel. Waxed canvas option confirmed on every page. Verdict: fabric string is correct as far as it goes, undercounts the options by one.",
-    "method": "cedaero.com is Shopify. WebFetch rendered all five product pages fine (spec text, no client-side tab issue). None of the five products has a local photo in assets/products/cedaero/ (folder doesn't exist) - all photo evidence here is remote, pulled via curl -A 'Mozilla/5.0' against the live product pages and /collections/all (to find the two custom frame-pack pages, whose real slugs - customframepack / customhalfframepack - differ from anything in brands.json, which listed no src for them at all)."
-  },
-  "products": [
-    {
-      "line": "Switchback",
-      "name": "Switchback Seat Pack",
-      "size": "1L",
-      "slot": "saddlebag",
-      "slot_should_be": null,
-
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "https://cedaero.com/cdn/shop/files/IMG_8926.jpg (Switchback Seat Pack, coral)",
-        "https://cedaero.com/cdn/shop/files/IMG_8931.jpg (Switchback Seat Pack, blue)",
-        "https://cedaero.com/products/switchback-seat-pack"
-      ],
-
-      "dims_cm": { "len": 22.9, "wid": 11.4, "hgt": 8.9 },
-      "dims_state": "maker_single_figure",
-      "dims_raw": "9\" x 4.5\" x 3.5\"; 1 litre capacity",
-      "dims_note": "Single fixed figure on the maker's page, converted from inches; matches brands.json's existing dims exactly (23/11.4/8.9 vs the precise 22.9/11.4/8.9) - no range published, no swap needed.",
-      "capacity_l": 1,
-
-      "geometry": {
-        "form": "tapered_wedge",
-        "crossSection": "rounded_rect",
-        "taper": { "nose": 1.0, "tail": 0.5, "profile": "curved" },
-        "shoulder": "rounded",
-        "notes": "Bulbous, rounded nose narrowing to a pinched tail where the compression buckle sits - softer, rounder silhouette than the squared wedges typical of this category. Built around an 'inverted catenary arch pretensioned HDPE batten' plus foam stiffeners per the maker's own copy: this holds a fixed arched shape under the saddle rather than sagging, so it should render close to rigid, not deformed like a floppy pouch."
-      },
-
-      "closure": {
-        "type": "zip_straight",
-        "location": "side",
-        "hardware": "single black coil zip along the upper side face, CEDAERO-branded pull"
-      },
-
-      "zips": [
-        { "run": "side_full", "finish": "matched" }
-      ],
-
-      "straps": [
-        { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "seatpost", "notes": "maker's '6in Voile Nano strap', side-release buckle for quick installation/removal" }
-      ],
-
-      "pockets": [],
-
-      "details": {
-        "daisyChains": false,
-        "reflective": false,
-        "logo": { "type": "woven_patch", "location": "side_front" },
-        "seams": "sewn, made in the USA (Two Harbors, MN)",
-        "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric. The coral and blue photos both show a faint diagonal diamond grid, consistent with an X-Pac exterior on those two swatches specifically."
-      },
-
-      "mount": {
-        "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-        "attachesTo": ["seatpost"],
-        "contactFaces": ["nose_top"],
-        "sag_deg": 1,
-        "notes": "Single Voile strap clamps the nose to the seatpost just under the saddle rails; the pretensioned HDPE batten keeps the body from crushing or sagging even when packed. Maker also lists Wolf Tooth Valais dropper-post collar compatibility (25/26mm) as an accessory - not modelled, separate SKU."
-      },
-
-      "colorways": [
-        { "name": "Squid Ink", "hex": "#1c1c1c" },
-        { "name": "Cornflower (photographed)", "hex": "#5878b0" },
-        { "name": "Bee Balm (photographed, coral)", "hex": "#e8a07a" }
-      ],
-      "images": []
+ "brand": "Cedaero",
+ "slug": "cedaero",
+ "reviewed_photos": 10,
+ "brand_notes": {
+  "fabric": "brands.json's brand-level fabric string is '1000D Cordura (matte woven) / RX30 X-Pac (visible X ripstop grid), waxed canvas option'. Every product page (Switchback Seat Pack, Tank Top Pack, Fork Lift Pack, Custom Half/Full Frame Pack) offers the exterior as a customer choice of FOUR fabrics, not the three implied by the brand string: 1000D Cordura nylon, RX30 X-pac, X-11 X-pac, and 15oz waxed canvas. The brand string's three options are all correct, it's just missing X-11 X-pac (a same-weight-as-Cordura X-Pac variant) as a fourth option - not a wrong claim, an incomplete one. The 'visible X ripstop grid' claim is confirmed in photos: the Switchback Seat Pack (coral and blue) and both frame packs (periwinkle half-frame, teal full-frame) all show a clear diagonal diamond-stitch grid on the exterior face, consistent with X-Pac's laid-in X-ply. 'Matte woven' Cordura is also plausible on panels without the grid (e.g. the tan/teal Tank Top Pack colourways look like plain woven face fabric, no diagonal grid), though colourway alone doesn't prove fabric choice since it's customer-selectable per panel. Waxed canvas option confirmed on every page. Verdict: fabric string is correct as far as it goes, undercounts the options by one.",
+  "method": "cedaero.com is Shopify. WebFetch rendered all five product pages fine (spec text, no client-side tab issue). None of the five products has a local photo in assets/products/cedaero/ (folder doesn't exist) - all photo evidence here is remote, pulled via curl -A 'Mozilla/5.0' against the live product pages and /collections/all (to find the two custom frame-pack pages, whose real slugs - customframepack / customhalfframepack - differ from anything in brands.json, which listed no src for them at all)."
+ },
+ "products": [
+  {
+   "line": "Switchback",
+   "name": "Switchback Seat Pack",
+   "size": "1L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://cedaero.com/cdn/shop/files/IMG_8926.jpg (Switchback Seat Pack, coral)",
+    "https://cedaero.com/cdn/shop/files/IMG_8931.jpg (Switchback Seat Pack, blue)",
+    "https://cedaero.com/products/switchback-seat-pack"
+   ],
+   "dims_cm": {
+    "len": 22.9,
+    "wid": 11.4,
+    "hgt": 8.9
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "9\" x 4.5\" x 3.5\"; 1 litre capacity",
+   "dims_note": "Single fixed figure on the maker's page, converted from inches; matches brands.json's existing dims exactly (23/11.4/8.9 vs the precise 22.9/11.4/8.9) - no range published, no swap needed.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.5,
+     "profile": "curved"
     },
-
+    "shoulder": "rounded",
+    "notes": "Bulbous, rounded nose narrowing to a pinched tail where the compression buckle sits - softer, rounder silhouette than the squared wedges typical of this category. Built around an 'inverted catenary arch pretensioned HDPE batten' plus foam stiffeners per the maker's own copy: this holds a fixed arched shape under the saddle rather than sagging, so it should render close to rigid, not deformed like a floppy pouch."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "side",
+    "hardware": "single black coil zip along the upper side face, CEDAERO-branded pull"
+   },
+   "zips": [
     {
-      "line": "Custom Frame Pack",
-      "name": "Custom Half Frame Pack",
-      "size": "custom (est. ~2.5L)",
-      "slot": "framebag_half",
-      "slot_should_be": null,
-
-      "verified": false,
-      "confidence": "medium",
-      "evidence": [
-        "https://cedaero.com/cdn/shop/files/IMG_7823.jpg",
-        "https://cedaero.com/cdn/shop/files/DSC05729_23fcb49d-42a7-45d5-aeda-68619ca5b7d4.jpg",
-        "https://cedaero.com/products/customhalfframepack"
-      ],
-
-      "dims_cm": { "len": 35, "wid": 8, "hgt": 14 },
-      "dims_state": "estimated_illustrative",
-      "dims_raw": "No dimensions published anywhere on the product page. This is made-to-measure: the customer submits a photo of their own frame (with a ruler for scale, per the maker's photo-guide graphic) and the pack is cut to fit.",
-      "dims_note": "MADE TO MEASURE - there is no fixed size to record; every unit is a different shape/size depending on the customer's frame. dims_cm carries forward the placeholder figures already present in brands.json (marked 'est':true there), unchanged, purely so the renderer has something to draw - these are NOT maker-published and should not be read as verified. Capacity is a rough placeholder for the same reason.",
-      "capacity_l": 2.5,
-
-      "geometry": {
-        "form": "trapezoid_panel",
-        "crossSection": "flat_back",
-        "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
-        "shoulder": "squared",
-        "notes": "Photo-confirmed (unlike the dims): sits high in the front triangle, filling only the upper wedge between top tube and down tube and stopping well short of the bottom bracket, leaving the lower frame triangle open for bottle cages - this is what makes it a HALF frame bag rather than a full one. Single flat panel per side, mounts flush against both tubes. Genuinely custom-shaped per frame, so the exact taper ratio above is illustrative of the general silhouette seen in photos, not a fixed spec."
-      },
-
-      "closure": {
-        "type": "zip_straight",
-        "location": "top",
-        "hardware": "single #9 Ideal coil zip running the length of the top edge, cordlock pull at the front"
-      },
-
-      "zips": [
-        { "run": "top_side", "finish": "matched" }
-      ],
-
-      "straps": [
-        { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube", "notes": "row of hook-and-loop loops threading the top tube, visible in both photos" },
-        { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "down_tube" }
-      ],
-
-      "pockets": [
-        { "type": "mesh", "count": 1, "location": "internal" }
-      ],
-
-      "details": {
-        "daisyChains": false,
-        "reflective": false,
-        "lightMount": false,
-        "logo": { "type": "woven_patch", "location": "front_lower" },
-        "seams": "sewn, made in the USA",
-        "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric. The periwinkle photo shows a visible diagonal X-Pac grid."
-      },
-
-      "mount": {
-        "axes": { "len": "along_toptube", "wid": "z", "hgt": "along_downtube" },
-        "attachesTo": ["top_tube", "down_tube"],
-        "contactFaces": ["underside"],
-        "notes": "Frame-mount only (no rack/basket dependency). Also offered with an alternative velcro or lace-up mounting system per the maker's copy - not distinguished in these photos, which both show the loop-and-strap version."
-      },
-
-      "colorways": [ { "name": "customer color-blocked, any panel", "hex": "#2f6f6f" } ],
-      "images": []
-    },
-
-    {
-      "line": "Custom Frame Pack",
-      "name": "Custom Full Frame Pack",
-      "size": "custom (est. ~4L)",
-      "slot": "framebag_full",
-      "slot_should_be": null,
-
-      "verified": false,
-      "confidence": "medium",
-      "evidence": [
-        "https://cedaero.com/cdn/shop/files/CEDAERO_BIKEPACK24-41.jpg",
-        "https://cedaero.com/cdn/shop/files/DSC04368.jpg",
-        "https://cedaero.com/products/customframepack"
-      ],
-
-      "dims_cm": { "len": 48, "wid": 9, "hgt": 18 },
-      "dims_state": "estimated_illustrative",
-      "dims_raw": "No dimensions published anywhere on the product page. Made-to-measure: customer submits a photo of their own frame for a custom-cut fit.",
-      "dims_note": "MADE TO MEASURE - no fixed size exists to record. dims_cm carries forward the placeholder already present in brands.json (marked 'est':true there), unchanged - not maker-published, not verified, kept only so the renderer has something to draw. Volume check against the placeholder box (48x9x18=7.8L) vs the stored 4L capacity gives a 1.9x ratio, within the normal 1.0-2.5x range for a soft bag, so the placeholder is at least not absurd, but it is still a guess inherited from an earlier pass, not something I established.",
-      "capacity_l": 4,
-
-      "geometry": {
-        "form": "trapezoid_panel",
-        "crossSection": "flat_back",
-        "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
-        "shoulder": "squared",
-        "notes": "Photo-confirmed: fills the entire front triangle from head tube down to the bottom bracket, with the lower-front corner chamfered off for crank/bottle-cage clearance (clearly visible in the teal-on-magenta photo). Single zip along the full top edge. Genuinely custom-shaped per frame; taper ratio above is illustrative of the general silhouette, not a fixed spec."
-      },
-
-      "closure": {
-        "type": "zip_straight",
-        "location": "top",
-        "hardware": "single #9 Ideal coil zip the full length of the top edge, cordlock pull at the front; optional second drive-side zip available per maker copy (not shown in either photo)"
-      },
-
-      "zips": [
-        { "run": "top_side", "finish": "matched" }
-      ],
-
-      "straps": [
-        { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
-        { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "down_tube", "notes": "webbing loop with buckle near the bottom bracket, visible threaded round the down tube in the purple-bike photo" }
-      ],
-
-      "pockets": [
-        { "type": "mesh", "count": 1, "location": "internal" },
-        { "type": "slip", "count": 1, "location": "top", "notes": "external open-top stash slot near the head tube end, visible holding a food packet in the purple-bike photo" }
-      ],
-
-      "details": {
-        "daisyChains": false,
-        "reflective": false,
-        "lightMount": false,
-        "logo": { "type": "woven_patch", "location": "front_lower" },
-        "seams": "sewn, made in the USA",
-        "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric. Both photographed units show a visible diagonal X-Pac grid with contrast piping between color-blocked panels (a Cedaero signature - each panel can be a different color/fabric)."
-      },
-
-      "mount": {
-        "axes": { "len": "along_toptube", "wid": "z", "hgt": "along_downtube" },
-        "attachesTo": ["top_tube", "down_tube", "seat_tube"],
-        "contactFaces": ["underside"],
-        "notes": "Frame-mount only. Fills the whole triangle, so a customer running a full frame pack loses down-tube bottle cage space unless the pack's own clearance chamfer (visible in photos) is cut for it."
-      },
-
-      "colorways": [ { "name": "customer color-blocked, any panel", "hex": "#8c3b2e" } ],
-      "images": []
-    },
-
-    {
-      "line": "Tank Top",
-      "name": "Tank Top Pack",
-      "size": "1L",
-      "slot": "toptube",
-      "slot_should_be": null,
-
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "https://cedaero.com/cdn/shop/files/IMG_8757_01.jpg (teal)",
-        "https://cedaero.com/cdn/shop/files/IMG_8760_01.jpg (tan)",
-        "https://cedaero.com/products/tank-top-bag"
-      ],
-
-      "dims_cm": { "len": 22.9, "wid": 10.8, "hgt": 5.7 },
-      "dims_state": "maker_single_figure",
-      "dims_raw": "9\" x 4.25\" x 2.25\"; maker's own page labels this L x W x H",
-      "dims_note": "CORRECTED from brands.json, which stored wid:5.7 / hgt:10.8 - the reverse of the maker's own W/H labels (W=4.25in=10.8cm, H=2.25in=5.7cm). This is a low, wide gas-tank pack, not a tall narrow one; the swap is confirmed by the page text, not just inferred from the photo (the two axes look fairly close in the photos, which is likely how the transposition slipped through originally).",
-      "capacity_l": 1,
-
-      "geometry": {
-        "form": "tapered_wedge",
-        "crossSection": "rounded_rect",
-        "taper": { "nose": 1.0, "tail": 0.85, "profile": "curved" },
-        "shoulder": "rounded",
-        "notes": "Low, rounded gas-tank shape, domed top, foam stiffeners in all panels per maker copy ('to prevent flopping') - holds its shape, should render close to rigid rather than a soft pouch."
-      },
-
-      "closure": {
-        "type": "zip_straight",
-        "location": "top",
-        "hardware": "single #9 Ideal zip, Nanosphere-coated, cordlock pull at the nose end"
-      },
-
-      "zips": [
-        { "run": "top_centre", "finish": "matched" }
-      ],
-
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" },
-        { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing", "wrapsAround": "head_tube", "notes": "maker copy: 'adjustable One Wrap velcro stem strap' - a loop tab is visible at the nose end in both photos but the strap itself isn't shown extended" }
-      ],
-
-      "pockets": [
-        { "type": "slip", "count": 1, "location": "internal" }
-      ],
-
-      "details": {
-        "daisyChains": false,
-        "reflective": false,
-        "logo": { "type": "woven_patch", "location": "front" },
-        "seams": "sewn, made in the USA",
-        "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric. Both photographed swatches (teal, tan) show a plain matte weave with no visible diagonal grid, consistent with a Cordura choice on those two units specifically."
-      },
-
-      "mount": {
-        "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-        "attachesTo": ["top_tube", "head_tube"],
-        "contactFaces": ["underside"],
-        "notes": "Sits directly behind the head tube, held down by two straps round the top tube plus a stem-area strap forward to stop it sliding."
-      },
-
-      "colorways": [
-        { "name": "photographed teal", "hex": "#8fd0c8" },
-        { "name": "photographed tan", "hex": "#c9985e" }
-      ],
-      "images": []
-    },
-
-    {
-      "line": "Fork Lift",
-      "name": "Fork Lift Pack",
-      "size": "3.3L",
-      "slot": "forkbag",
-      "slot_should_be": null,
-
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "https://cedaero.com/cdn/shop/files/fork_lift_rx30-1.jpg",
-        "https://cedaero.com/cdn/shop/files/Bikepack24-57.jpg (on-bike, product-page image)",
-        "https://cedaero.com/products/fopoon-fork-pack"
-      ],
-
-      "dims_cm": { "len": 30.5, "wid": 11.4, "hgt": 8.9 },
-      "dims_state": "maker_single_figure",
-      "dims_raw": "12\" x 4.5\" x 3.5\"; 3.3 litre capacity",
-      "dims_note": "Single fixed figure, matches brands.json exactly, no swap. As mounted the bag is VERTICAL along the fork leg, so 'len' (30.5cm, the maker's 12in figure) is the vertical run, not a horizontal length - see mount.axes. wid (11.4) and hgt (8.9) being unequal (rather than a matched diameter pair) is consistent with the photographed D-shaped cross-section: flat on the face that presses against the fork leg, rounded on the outward face.",
-      "capacity_l": 3.3,
-
-      "geometry": {
-        "form": "holster",
-        "crossSection": "d_shape",
-        "taper": { "nose": 0.85, "tail": 1.0, "profile": "curved" },
-        "shoulder": "rounded",
-        "notes": "Vertical fork-leg holster: rounded, slightly narrower closed nose at the top, widening toward the base where the straps sit. Flat back face rides against the fork leg (the d_shape side), rounded face outward. Semi-rigid - holds a clean cylindrical silhouette in both photos, doesn't collapse."
-      },
-
-      "closure": {
-        "type": "zip_straight",
-        "location": "front_panel",
-        "hardware": "single #9 Ideal coil zip with Nanosphere DWR coating running the full vertical length of the front face, cordlock pull at the base"
-      },
-
-      "zips": [
-        { "run": "front_panel", "finish": "matched" }
-      ],
-
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "girth", "hardware": "buckle", "material": "webbing", "wrapsAround": "fork_leg", "notes": "one strap near the top, one near the base, both cinch directly round the fork leg over a Hypalon attachment sleeve - no cargo cage visible or required in the on-bike photo" }
-      ],
-
-      "pockets": [],
-
-      "details": {
-        "daisyChains": false,
-        "reflective": false,
-        "logo": { "type": "woven_patch", "location": "front_lower" },
-        "seams": "sewn, made in the USA",
-        "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric"
-      },
-
-      "mount": {
-        "axes": { "len": "y", "wid": "+x", "hgt": "along_forkleg" },
-        "attachesTo": ["fork_leg"],
-        "contactFaces": ["along_forkleg"],
-        "notes": "Straps directly to the fork leg via a Hypalon sleeve, no cage needed. On-bike photo shows it loaded top-open with a fuel canister and bottle poking out - the zip runs the full length so it can stay part-open under a tall load."
-      },
-
-      "colorways": [ { "name": "RX30 (photographed)", "hex": "#6a7f8a" } ],
-      "images": []
+     "run": "side_full",
+     "finish": "matched"
     }
-  ]
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "seatpost",
+     "notes": "maker's '6in Voile Nano strap', side-release buckle for quick installation/removal"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "side_front"
+    },
+    "seams": "sewn, made in the USA (Two Harbors, MN)",
+    "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric. The coral and blue photos both show a faint diagonal diamond grid, consistent with an X-Pac exterior on those two swatches specifically."
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
+    "sag_deg": 1,
+    "notes": "Single Voile strap clamps the nose to the seatpost just under the saddle rails; the pretensioned HDPE batten keeps the body from crushing or sagging even when packed. Maker also lists Wolf Tooth Valais dropper-post collar compatibility (25/26mm) as an accessory - not modelled, separate SKU."
+   },
+   "colorways": [
+    {
+     "name": "Squid Ink",
+     "hex": "#1c1c1c"
+    },
+    {
+     "name": "Cornflower (photographed)",
+     "hex": "#5878b0"
+    },
+    {
+     "name": "Bee Balm (photographed, coral)",
+     "hex": "#e8a07a"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Custom Frame Pack",
+   "name": "Custom Half Frame Pack",
+   "size": "custom (est. ~2.5L)",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "https://cedaero.com/cdn/shop/files/IMG_7823.jpg",
+    "https://cedaero.com/cdn/shop/files/DSC05729_23fcb49d-42a7-45d5-aeda-68619ca5b7d4.jpg",
+    "https://cedaero.com/products/customhalfframepack"
+   ],
+   "dims_cm": {
+    "len": 35,
+    "wid": 8,
+    "hgt": 14
+   },
+   "dims_state": "estimated_illustrative",
+   "dims_raw": "No dimensions published anywhere on the product page. This is made-to-measure: the customer submits a photo of their own frame (with a ruler for scale, per the maker's photo-guide graphic) and the pack is cut to fit.",
+   "dims_note": "MADE TO MEASURE - there is no fixed size to record; every unit is a different shape/size depending on the customer's frame. dims_cm carries forward the placeholder figures already present in brands.json (marked 'est':true there), unchanged, purely so the renderer has something to draw - these are NOT maker-published and should not be read as verified. Capacity is a rough placeholder for the same reason.",
+   "capacity_l": 2.5,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.4,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Photo-confirmed (unlike the dims): sits high in the front triangle, filling only the upper wedge between top tube and down tube and stopping well short of the bottom bracket, leaving the lower frame triangle open for bottle cages - this is what makes it a HALF frame bag rather than a full one. Single flat panel per side, mounts flush against both tubes. Genuinely custom-shaped per frame, so the exact taper ratio above is illustrative of the general silhouette seen in photos, not a fixed spec."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single #9 Ideal coil zip running the length of the top edge, cordlock pull at the front"
+   },
+   "zips": [
+    {
+     "run": "top_side",
+     "finish": "matched"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 4,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube",
+     "notes": "row of hook-and-loop loops threading the top tube, visible in both photos"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "down_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "internal"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "lightMount": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_lower"
+    },
+    "seams": "sewn, made in the USA",
+    "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric. The periwinkle photo shows a visible diagonal X-Pac grid."
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "along_downtube"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "notes": "Frame-mount only (no rack/basket dependency). Also offered with an alternative velcro or lace-up mounting system per the maker's copy - not distinguished in these photos, which both show the loop-and-strap version."
+   },
+   "colorways": [
+    {
+     "name": "customer color-blocked, any panel",
+     "hex": "#2f6f6f"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Custom Frame Pack",
+   "name": "Custom Full Frame Pack",
+   "size": "custom (est. ~4L)",
+   "slot": "framebag_full",
+   "slot_should_be": null,
+   "verified": false,
+   "confidence": "medium",
+   "evidence": [
+    "https://cedaero.com/cdn/shop/files/CEDAERO_BIKEPACK24-41.jpg",
+    "https://cedaero.com/cdn/shop/files/DSC04368.jpg",
+    "https://cedaero.com/products/customframepack"
+   ],
+   "dims_cm": {
+    "len": 48,
+    "wid": 9,
+    "hgt": 18
+   },
+   "dims_state": "estimated_illustrative",
+   "dims_raw": "No dimensions published anywhere on the product page. Made-to-measure: customer submits a photo of their own frame for a custom-cut fit.",
+   "dims_note": "MADE TO MEASURE - no fixed size exists to record. dims_cm carries forward the placeholder already present in brands.json (marked 'est':true there), unchanged - not maker-published, not verified, kept only so the renderer has something to draw. Volume check against the placeholder box (48x9x18=7.8L) vs the stored 4L capacity gives a 1.9x ratio, within the normal 1.0-2.5x range for a soft bag, so the placeholder is at least not absurd, but it is still a guess inherited from an earlier pass, not something I established.",
+   "capacity_l": 4,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Photo-confirmed: fills the entire front triangle from head tube down to the bottom bracket, with the lower-front corner chamfered off for crank/bottle-cage clearance (clearly visible in the teal-on-magenta photo). Single zip along the full top edge. Genuinely custom-shaped per frame; taper ratio above is illustrative of the general silhouette, not a fixed spec."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single #9 Ideal coil zip the full length of the top edge, cordlock pull at the front; optional second drive-side zip available per maker copy (not shown in either photo)"
+   },
+   "zips": [
+    {
+     "run": "top_side",
+     "finish": "matched"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 4,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "down_tube",
+     "notes": "webbing loop with buckle near the bottom bracket, visible threaded round the down tube in the purple-bike photo"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "internal"
+    },
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "top",
+     "notes": "external open-top stash slot near the head tube end, visible holding a food packet in the purple-bike photo"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "lightMount": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_lower"
+    },
+    "seams": "sewn, made in the USA",
+    "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric. Both photographed units show a visible diagonal X-Pac grid with contrast piping between color-blocked panels (a Cedaero signature - each panel can be a different color/fabric)."
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "along_downtube"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "notes": "Frame-mount only. Fills the whole triangle, so a customer running a full frame pack loses down-tube bottle cage space unless the pack's own clearance chamfer (visible in photos) is cut for it."
+   },
+   "colorways": [
+    {
+     "name": "customer color-blocked, any panel",
+     "hex": "#8c3b2e"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Tank Top",
+   "name": "Tank Top Pack",
+   "size": "1L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://cedaero.com/cdn/shop/files/IMG_8757_01.jpg (teal)",
+    "https://cedaero.com/cdn/shop/files/IMG_8760_01.jpg (tan)",
+    "https://cedaero.com/products/tank-top-bag"
+   ],
+   "dims_cm": {
+    "len": 22.9,
+    "wid": 10.8,
+    "hgt": 5.7
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "9\" x 4.25\" x 2.25\"; maker's own page labels this L x W x H",
+   "dims_note": "CORRECTED from brands.json, which stored wid:5.7 / hgt:10.8 - the reverse of the maker's own W/H labels (W=4.25in=10.8cm, H=2.25in=5.7cm). This is a low, wide gas-tank pack, not a tall narrow one; the swap is confirmed by the page text, not just inferred from the photo (the two axes look fairly close in the photos, which is likely how the transposition slipped through originally).",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.85,
+     "profile": "curved"
+    },
+    "shoulder": "rounded",
+    "notes": "Low, rounded gas-tank shape, domed top, foam stiffeners in all panels per maker copy ('to prevent flopping') - holds its shape, should render close to rigid rather than a soft pouch."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top",
+    "hardware": "single #9 Ideal zip, Nanosphere-coated, cordlock pull at the nose end"
+   },
+   "zips": [
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "head_tube",
+     "notes": "maker copy: 'adjustable One Wrap velcro stem strap' - a loop tab is visible at the nose end in both photos but the strap itself isn't shown extended"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "front"
+    },
+    "seams": "sewn, made in the USA",
+    "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric. Both photographed swatches (teal, tan) show a plain matte weave with no visible diagonal grid, consistent with a Cordura choice on those two units specifically."
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "notes": "Sits directly behind the head tube, held down by two straps round the top tube plus a stem-area strap forward to stop it sliding."
+   },
+   "colorways": [
+    {
+     "name": "photographed teal",
+     "hex": "#8fd0c8"
+    },
+    {
+     "name": "photographed tan",
+     "hex": "#c9985e"
+    }
+   ],
+   "images": []
+  },
+  {
+   "line": "Fork Lift",
+   "name": "Fork Lift Pack",
+   "size": "3.3L",
+   "slot": "forkbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "https://cedaero.com/cdn/shop/files/fork_lift_rx30-1.jpg",
+    "https://cedaero.com/cdn/shop/files/Bikepack24-57.jpg (on-bike, product-page image)",
+    "https://cedaero.com/products/fopoon-fork-pack"
+   ],
+   "dims_cm": {
+    "len": 30.5,
+    "wid": 11.4,
+    "hgt": 8.9
+   },
+   "dims_state": "maker_single_figure",
+   "dims_raw": "12\" x 4.5\" x 3.5\"; 3.3 litre capacity",
+   "dims_note": "Single fixed figure, matches brands.json exactly, no swap. As mounted the bag is VERTICAL along the fork leg, so 'len' (30.5cm, the maker's 12in figure) is the vertical run, not a horizontal length - see mount.axes. wid (11.4) and hgt (8.9) being unequal (rather than a matched diameter pair) is consistent with the photographed D-shaped cross-section: flat on the face that presses against the fork leg, rounded on the outward face.",
+   "capacity_l": 3.3,
+   "geometry": {
+    "form": "holster",
+    "crossSection": "d_shape",
+    "taper": {
+     "nose": 0.85,
+     "tail": 1,
+     "profile": "curved"
+    },
+    "shoulder": "rounded",
+    "notes": "Vertical fork-leg holster: rounded, slightly narrower closed nose at the top, widening toward the base where the straps sit. Flat back face rides against the fork leg (the d_shape side), rounded face outward. Semi-rigid - holds a clean cylindrical silhouette in both photos, doesn't collapse."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "front_panel",
+    "hardware": "single #9 Ideal coil zip with Nanosphere DWR coating running the full vertical length of the front face, cordlock pull at the base"
+   },
+   "zips": [
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "fork_leg",
+     "notes": "one strap near the top, one near the base, both cinch directly round the fork leg over a Hypalon attachment sleeve - no cargo cage visible or required in the on-bike photo"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": false,
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_lower"
+    },
+    "seams": "sewn, made in the USA",
+    "fabric": "customer-selectable: 1000D Cordura / RX30 X-pac / X-11 X-pac / 15oz waxed canvas - see brand_notes.fabric"
+   },
+   "mount": {
+    "axes": {
+     "len": "y",
+     "wid": "+x",
+     "hgt": "along_forkleg"
+    },
+    "attachesTo": [
+     "fork_leg"
+    ],
+    "contactFaces": [
+     "along_forkleg"
+    ],
+    "notes": "Straps directly to the fork leg via a Hypalon sleeve, no cage needed. On-bike photo shows it loaded top-open with a fuel canister and bottle poking out - the zip runs the full length so it can stay part-open under a tall load."
+   },
+   "colorways": [
+    {
+     "name": "RX30 (photographed)",
+     "hex": "#6a7f8a"
+    }
+   ],
+   "images": []
+  }
+ ]
 }

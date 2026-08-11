@@ -13,7 +13,6 @@
    "size": "4L",
    "slot": "framebag_full",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -21,69 +20,120 @@
     "https://media.rapha.cc/image/upload/v1718718604/mannequin/BFG01XX_VLA_Explore-Frame-Pack-Large_H124_mannequin_34.jpg",
     "https://www.rapha.cc/us/en/product/explore-frame-pack-4l---large/BFG01XXVLA"
    ],
-
-   "dims_cm": { "len": 51.2, "wid": 5.5, "hgt": 14.5 },
+   "dims_cm": {
+    "len": 51.2,
+    "wid": 5.5,
+    "hgt": 14.5
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Maker size guide (Large): Length 512mm, Height 145mm, Width 55mm ('Dimensions: top length - 512 mm, height - 145 mm, width - 55 mm'). No range given; single fixed figures for this size.",
    "dims_note": "Matches the existing catalogue dims_cm exactly - no correction needed. Maker's 'top length' maps to len (the top-tube-hugging edge), 'height' maps to hgt (vertical extent of the frame triangle at the tallest, head-tube end), 'width' maps to wid (how far the bag stands proud of the frame). No unfurled/rolled ambiguity here - this is a fixed-panel zip bag, not a rolltop, so the new dimension rule does not apply.",
    "capacity_l": 4,
-
    "geometry": {
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.6, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.6,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Full frame-triangle bag, flat inner face against the frame, taller/deeper at the head-tube (nose) end and tapering down toward the seat tube (tail), following the frame triangle. Two-tone: charcoal/navy ('Vulcan') body with a black top strip and black end caps. Rapha 'ZXZ' zig-zag logo screen-printed on the nose-side panel, small script 'Rapha' wordmark near the tail."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "side_full",
     "hardware": "single zip pull with reflective cord loop, positioned low on the tail-side panel; maker copy states the main compartment is 'accessible from both sides'"
    },
-
    "zips": [
-    { "run": "side_full", "finish": "waterproof_welded" }
+    {
+     "run": "side_full",
+     "finish": "waterproof_welded"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "top_tube" },
-    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "buckle", "material": "webbing", "wrapsAround": "head_tube_area" },
-    { "role": "attachment", "count": 1, "location": "tail_wrap", "hardware": "buckle", "material": "webbing", "wrapsAround": "seat_tube" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "head_tube_area"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "seat_tube"
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.9 }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.9
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "zip-pull cord only",
-    "logo": { "type": "screen_print", "location": "side_front" },
+    "logo": {
+     "type": "screen_print",
+     "location": "side_front"
+    },
     "seams": "highly water-resistant construction per maker copy; not explicitly stated as welded (contrast with the harness drybags, see brand_notes)",
     "fabric": "100% Nylon Main Body and Lining with PU and TPU coating - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube", "head_tube_area", "seat_tube"],
-    "contactFaces": ["top", "nose_front", "tail_wrap"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "head_tube_area",
+     "seat_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "nose_front",
+     "tail_wrap"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
     "notes": "Rigid-ish flat-panel frame bag; sits inside the main triangle against the top tube and both diagonal tubes, held taut by the three top velcro loops plus the two end buckle straps, so it should not sag."
    },
-
-   "colorways": [ { "name": "Vulcan / Asphalt", "hex": "#2e3036" } ],
-   "images": ["https://media.rapha.cc/image/upload/v1718718602/mannequin/BFG01XX_VLA_Explore-Frame-Pack-Large_H124_mannequin_30.jpg"]
+   "colorways": [
+    {
+     "name": "Vulcan / Asphalt",
+     "hex": "#2e3036"
+    }
+   ],
+   "images": [
+    "https://media.rapha.cc/image/upload/v1718718602/mannequin/BFG01XX_VLA_Explore-Frame-Pack-Large_H124_mannequin_30.jpg"
+   ]
   },
-
   {
    "line": "Explore",
    "name": "Rapha Explore Seat Pack 10L",
    "size": "10L",
    "slot": "seatpack",
    "slot_should_be": null,
-
    "verified": false,
    "confidence": "low",
    "evidence": [
@@ -91,65 +141,105 @@
     "https://media.rapha.cc/image/upload/v1720522774/mannequin/BFH01XX_VLA_Explore-Seat-Pack_H124_mannequin_35.jpg",
     "https://www.rapha.cc/us/en/product/explore-seat-pack/BFH01XXVLA (found via www.rapha.cc/us/en/shop/luggage search index; product is discontinued/clearance and carries no separate dimensions block)"
    ],
-
-   "dims_cm": { "len": 45, "wid": 16, "hgt": 18 },
+   "dims_cm": {
+    "len": 45,
+    "wid": 16,
+    "hgt": 18
+   },
    "dims_state": "estimated_no_maker_spec",
    "dims_raw": "Rapha publishes NO length/width/height for this product anywhere in the PDP's embedded JSON - only '10L' capacity and the schema.org price/description block. This is a page-derived gap, not a fabrication: I read the full product JSON (description, careAndMaterials, sizeGuide keys) and there is no sizeGuide entry for this SKU, unlike the Frame Pack/Top Tube Bag/Stem Bag which all have one.",
    "dims_note": "UNCHANGED from the prior estimate, left as-is because I have nothing more authoritative to replace it with - no maker figures exist to correct against. 45 x 16 x 18 = 12.96L box against a 10L rating (1.3x) is within the normal 1.0-2.5x range for a soft tapered pack, so the estimate is at least self-consistent, but it is still a guess and should be treated as low-confidence. Photos confirm the SHAPE (wide flat nose tapering to a narrower rounded tail) is right for this len:wid:hgt ratio, which is the most I can verify without a number to check against.",
    "capacity_l": 10,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.45, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.45,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Unusual among saddle packs: the ROLL is at the NOSE, not the tail. This is a two-part system - a rigid aluminium harness/cradle clamped to the saddle rails and seatpost, into which a separate drybag is dropped and clipped. In the on-bike photo the rolled, buckled closure sits under the saddle nose against the harness's triangular grey mounting plate; the tail is a fully sewn, rounded dead end that just extends rearward. Matte dark navy body, grey triangular harness panel at the nose visible through/around the fabric, embroidered 'Rapha' wordmark on the flank."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "nose",
     "hardware": "side-release buckle at the nose roll, cinched down against the harness plate - opposite end from most competitors' tail-roll saddle packs"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "velcro", "material": "webbing on a TPU backing plate", "wrapsAround": "seatpost" },
-    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "saddle_rails" },
-    { "role": "compression", "count": 2, "location": "side", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "webbing on a TPU backing plate",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "side",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "embroidered", "location": "side_front" },
+    "logo": {
+     "type": "embroidered",
+     "location": "side_front"
+    },
     "seams": "welded (maker copy: 'hard wearing 210D nylon with welded seams for superior durability and complete waterproofness')",
     "fabric": "210D nylon, welded seams - see brand_notes.fabric; this is the harness-drybag construction, not the PU/TPU-coated panel fabric used on the Frame Pack/Top Tube Bag/Stem Bag"
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_rails", "seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
     "notes": "Rigid, not soft-sag: maker copy is explicit that the 'custom-made aluminium stabilising frame and harness ... prevents side-to-side sway', and the fit note requires 'minimum 15cm clearance from the frame'. Treat like a rigid-cradle mount (closer to Restrap's Bar Bag Holster behavior than to a free-hanging drybag) - the fabric body should not be drawn sagging."
    },
-
-   "colorways": [ { "name": "Vulcan / Asphalt", "hex": "#2e3036" } ],
-   "images": ["https://media.rapha.cc/image/upload/v1720522759/mannequin/BFH01XX_VLA_Explore-Seat-Pack_H124_mannequin_31.jpg"]
+   "colorways": [
+    {
+     "name": "Vulcan / Asphalt",
+     "hex": "#2e3036"
+    }
+   ],
+   "images": [
+    "https://media.rapha.cc/image/upload/v1720522759/mannequin/BFH01XX_VLA_Explore-Seat-Pack_H124_mannequin_31.jpg"
+   ]
   },
-
   {
    "line": "Explore",
    "name": "Rapha Explore Handlebar Pack 10L",
    "size": "10L",
    "slot": "barroll",
    "slot_should_be": null,
-
    "verified": false,
    "confidence": "low",
    "evidence": [
@@ -157,63 +247,90 @@
     "https://media.rapha.cc/image/upload/v1720522998/mannequin/BEZ01XX_VLA_Explroe-Handlebar-Pack_H124_mannequin_30.jpg",
     "https://www.rapha.cc/us/en/product/explore-handlebar-pack/BEZ01XXVLA (found via shop/luggage search index; note the catalogue's prior src guess (BFJ01XXVLA) was wrong - the correct SKU is BEZ01XXVLA, and it is a distinct, more expensive product from the cheaper 'Explore Bar Bag' BBA04XXFDW)"
    ],
-
-   "dims_cm": { "len": 30, "wid": 18, "hgt": 18 },
+   "dims_cm": {
+    "len": 30,
+    "wid": 18,
+    "hgt": 18
+   },
    "dims_state": "estimated_no_maker_spec",
    "dims_raw": "Rapha publishes NO length/width/height for this product - only '10L' capacity, same gap as the Seat Pack. No sizeGuide entry in the embedded product JSON.",
    "dims_note": "CORRECTED from the prior catalogue estimate (25 x 13 x 8cm), which was a serious volume-too-small error: that box is 2.6L against a 10L rating, a 3.8x undershoot, for a bag whose own product photos show it filling most of the space between drop-bar hoods. Re-estimated directly from the on-bike photo using the GRX brake hoods (visible, ~13cm each) and stem faceplate as scale references: the bag spans roughly 30cm across the bars (len, along-bar axis, since this bag lies ACROSS the bars rather than rolling fore-aft) and reads close to circular in cross-section at roughly 18cm. 30 x 18 x 18 = 9.7L box against the 10L rating (0.97x) - much more consistent with a packed roll-top than the old figure. Still flagged low-confidence because it is a photo estimate against a bag with no visible roll (see closure note) rather than a maker figure.",
    "capacity_l": 10,
-
    "geometry": {
     "form": "barrel",
     "crossSection": "round",
     "shoulder": "none",
     "notes": "Sits low and centred below the bar tops, straddling the stem, on a bracket that holds it clear of the bars rather than lashed directly to them. Rounded barrel ends bulge slightly past the two vertical girth straps. Front face has an X-pattern reflective bungee cross-lacing through webbing loop tabs with a central pull-toggle (lash point for a jacket or similar), and the Rapha 'ZXZ' zig-zag logo printed above it."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "both_ends",
     "hardware": "not directly visible in the strapped on-bike photos - maker copy describes it as a '100% waterproof drybag' with 'welded seams', which combined with the barrel form (round ends, no visible zip) points to a roll-sealed tube similar in construction to a two-end-roll dry bag, but I have not seen an unstrapped/open photo to confirm roll count or which end(s) actually roll"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "compression", "count": 2, "location": "girth", "hardware": "buckle", "material": "webbing" },
-    { "role": "daisy", "count": 1, "location": "front_face", "hardware": "daisy_loop", "material": "reflective bungee cord", "wrapsAround": null }
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "daisy",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "daisy_loop",
+     "material": "reflective bungee cord",
+     "wrapsAround": null
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": true,
     "reflective": "bungee cross-lacing cord on the front face",
-    "logo": { "type": "screen_print", "location": "front_face" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_face"
+    },
     "seams": "welded (maker copy: 'Durable and 100% waterproof drybag - ripstop nylon with welded seams')",
     "fabric": "ripstop nylon, welded seams - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_bar", "wid": "x", "hgt": "y" },
-    "attachesTo": ["handlebar_via_bracket"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar_via_bracket"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": null },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
     "notes": "Rigid mount, not a strap-to-bar roll: maker copy describes a 'Proprietary aluminium attachment bracket and cradle system' that holds the bag away from the bars specifically to prevent 'frame rub, cable damage and front wheel clearance issues on smaller frames', and to keep 'multiple hand positions' free on the drop bar tops. Treat as rigid-cradle mounted, same family as the Seat Pack's harness - do not sag this bag toward the tyre/fork."
    },
-
-   "colorways": [ { "name": "Vulcan / Asphalt", "hex": "#2e3036" } ],
-   "images": ["https://media.rapha.cc/image/upload/v1720522944/mannequin/BEZ01XX_VLA_Explroe-Handlebar-Pack_H124_mannequin_21.jpg"]
+   "colorways": [
+    {
+     "name": "Vulcan / Asphalt",
+     "hex": "#2e3036"
+    }
+   ],
+   "images": [
+    "https://media.rapha.cc/image/upload/v1720522944/mannequin/BEZ01XX_VLA_Explroe-Handlebar-Pack_H124_mannequin_21.jpg"
+   ]
   },
-
   {
    "line": "Explore",
    "name": "4 tapered wide x 10 high; JSON had wid/hgt swapped)",
    "size": null,
    "slot": "toptube",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -221,66 +338,103 @@
     "https://media.rapha.cc/image/upload/v1739875094/mannequin/BME01XX_VLA_Explore-Top-Tube-Bag-Long_H125_mannequin_13.jpg",
     "https://www.rapha.cc/us/en/product/explore-top-tube-bag---long/BME01XXVLA"
    ],
-
-   "dims_cm": { "len": 37, "wid": 4.5, "hgt": 10 },
+   "dims_cm": {
+    "len": 37,
+    "wid": 4.5,
+    "hgt": 10
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Maker copy: 'Dimensions (height x width x depth): 37 x 4.5 --> 4 x 10cm'. No range on the length/height axis - the '4.5 --> 4' is a small taper on the width axis only.",
    "dims_note": "Kept as the existing catalogue's len 37 / wid 4.5 / hgt 10 - this is correct once Rapha's confusingly-labelled 'height x width x depth' is remapped: their 'height' (37cm) is actually the fore-aft run along the top tube -> len; their 'width' (4.5->4cm tapered) is the narrow side-to-side dimension -> wid, with the taper recorded below; their 'depth' (10cm) is the vertical stand-off from the top tube -> hgt. This mapping is confirmed by the on-bike photo: the bag is clearly much longer than it is tall, and only slightly wider than it is at its narrow taper.",
    "capacity_l": 2,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.89, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.89,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Long slim wedge mounted directly behind the stem/head tube, tapered slightly narrower toward the rear to reduce knee strike (maker copy: 'Tapered shape to fit on top tube and minimise knee strike'). Flat matte navy body, embroidered 'Rapha' script on the side."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top_centre",
     "hardware": "single zip with a large pull tab for one-handed opening; maker copy: 'One-handed opening'"
    },
-
    "zips": [
-    { "run": "top_centre", "finish": "waterproof_welded" }
+    {
+     "run": "top_centre",
+     "finish": "waterproof_welded"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 3, "location": "underside", "hardware": "velcro", "material": "elastic loop", "wrapsAround": "top_tube" },
-    { "role": "stability", "count": 1, "location": "front_face", "hardware": "velcro", "material": "webbing", "wrapsAround": "head_tube_area" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "elastic loop",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "head_tube_area"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "embroidered", "location": "side_front" },
+    "logo": {
+     "type": "embroidered",
+     "location": "side_front"
+    },
     "seams": "highly water-resistant construction per maker copy",
     "fabric": "100% Nylon Main Body and Lining with PU and TPU coating - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube", "head_tube_area"],
-    "contactFaces": ["underside", "front_face"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube",
+     "head_tube_area"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": null, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": 0
+    },
     "notes": "Sits immediately behind the stem/head tube on top of the top tube, three elastic velcro loops cinch it to the tube and a fourth strap wraps the head tube/steerer area at the nose for extra stability. Maker copy states 'Two Hypalon (synthetic rubber) straps for top tube and one strap for head tube' - the on-bike photo shows what reads as three loop points along the underside plus the separate head-tube wrap, so the exact strap count is recorded as seen rather than forced to match the copy's wording."
    },
-
-   "colorways": [ { "name": "Vulcan / Asphalt", "hex": "#2e3036" } ],
-   "images": ["https://media.rapha.cc/image/upload/v1739875094/mannequin/BME01XX_VLA_Explore-Top-Tube-Bag-Long_H125_mannequin_10.jpg"]
+   "colorways": [
+    {
+     "name": "Vulcan / Asphalt",
+     "hex": "#2e3036"
+    }
+   ],
+   "images": [
+    "https://media.rapha.cc/image/upload/v1739875094/mannequin/BME01XX_VLA_Explore-Top-Tube-Bag-Long_H125_mannequin_10.jpg"
+   ]
   },
-
   {
    "line": "Explore",
    "name": "Rapha Explore Stem Bag",
    "size": null,
    "slot": "stembag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -288,65 +442,101 @@
     "https://media.rapha.cc/image/upload/v1725876150/mannequin/BMH01XX_VLA_Explore-Stem-Bag_H124_mannequin_11.jpg",
     "https://www.rapha.cc/us/en/product/explore-stem-bag/BMH01XXVLA"
    ],
-
-   "dims_cm": { "len": 16, "wid": 9, "hgt": 21, "dia": 10 },
+   "dims_cm": {
+    "len": 16,
+    "wid": 9,
+    "hgt": 21,
+    "dia": 10
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Maker copy: 'Dimensions (height x width x depth): 21 x 10 x 10cm'. Single fixed figures, cylindrical bag so width and depth are effectively the same (diameter).",
    "dims_note": "Existing catalogue dims kept as-is: hgt 21 matches maker's 'height' directly (the tall vertical axis when hanging off the bar/stem). The catalogue's len 16 / wid 9 are a touch under maker's 10cm width/depth figure but close enough (within the fabric's give at the rolled neck) not to override; catalogue also separately carries a dia:10 field which matches the maker figure exactly. No range published, so the unfurled/min-height rule does not apply.",
    "capacity_l": 1,
-
    "geometry": {
     "form": "cylinder",
     "crossSection": "round",
     "shoulder": "none",
     "notes": "Straight-sided fabric cylinder, narrower drawcord-cinched neck at the top opening to full diameter body, flat circular base. Side mesh/slip pocket visible on the body in the studio shot. Embroidered 'Rapha' wordmark on the front face, low."
    },
-
    "closure": {
     "type": "drawcord",
     "location": "top_centre",
     "hardware": "reflective drawcord with a cordlock toggle at the neck; maker copy: 'One-handed open and closure on the go'"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "daisy_loop", "material": "webbing", "wrapsAround": "handlebar" },
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "stem_or_fork_boss" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "daisy_loop",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "stem_or_fork_boss"
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.5 }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.5
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "drawcord",
-    "logo": { "type": "embroidered", "location": "front" },
+    "logo": {
+     "type": "embroidered",
+     "location": "front"
+    },
     "seams": "highly water-resistant construction per maker copy",
     "fabric": "100% Nylon Main Body and Lining with PU and TPU coating - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "z", "wid": "x", "hgt": "y" },
-    "attachesTo": ["handlebar", "stem_or_fork_boss"],
-    "contactFaces": ["nose_top", "underside"],
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "stem_or_fork_boss"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "underside"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": null, "frame_mm": null },
+    "clearance": {
+     "tyre_mm": null,
+     "frame_mm": null
+    },
     "notes": "Standard stem/feed-bag mount: top loop strap around the bar next to the stem, second strap down to a fork boss or around the head tube/stem to keep the bag from swinging out."
    },
-
-   "colorways": [ { "name": "Vulcan / Asphalt", "hex": "#2e3036" } ],
-   "images": ["https://media.rapha.cc/image/upload/v1725876146/mannequin/BMH01XX_VLA_Explore-Stem-Bag_H124_mannequin_10.jpg"]
+   "colorways": [
+    {
+     "name": "Vulcan / Asphalt",
+     "hex": "#2e3036"
+    }
+   ],
+   "images": [
+    "https://media.rapha.cc/image/upload/v1725876146/mannequin/BMH01XX_VLA_Explore-Stem-Bag_H124_mannequin_10.jpg"
+   ]
   },
-
   {
    "line": null,
    "name": "Essentials Bag",
    "size": null,
    "slot": "saddlebag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -354,56 +544,80 @@
     "https://media.rapha.cc/image/upload/v1753795483/mannequin/BKM02XX_GRV_Essentials-Bag_H125_mannequin_2.jpg",
     "https://www.rapha.cc/us/en/product/essentials-bag/BKM02XXGRV"
    ],
-
-   "dims_cm": { "len": 21, "wid": 5, "hgt": 16.5 },
+   "dims_cm": {
+    "len": 21,
+    "wid": 5,
+    "hgt": 16.5
+   },
    "dims_state": "maker_partial",
    "dims_raw": "Maker copy: 'Dimensions: W 21cm x H 16.5cm'. No depth published; capacity is explicitly declined by Rapha ('the Essentials bag is a slim design and therefore Rapha is not able to provide a litre capacity').",
    "dims_note": "THE CATALOGUE'S CAPACITY FIGURE (0.3L) IS FABRICATED - the field to distrust is capacity_l, not dims_cm. W21 x H16.5 are Rapha's own published figures (mapped len=21, hgt=16.5); the 5cm depth (wid) is a reasonable estimate for a slim flat zip pouch (Rapha publish none) confirmed by the flat-when-empty look in both photos. Rapha explicitly decline to state a litre capacity for this product, and 0.3L is not their figure for it - the honest answer is that no capacity value exists to record. capacity_l has been removed rather than carried forward as a guess.",
-
    "geometry": {
     "form": "slab",
     "crossSection": "flat_bottom",
     "shoulder": "none",
     "notes": "Flat rectangular zip pouch, no internal structure, drapes flat when empty as shown in both product photos. Reflective embroidered 'Rapha' script on the front face."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top_centre",
     "hardware": "zip pullers with reflective detail, per maker copy"
    },
-
    "zips": [
-    { "run": "top_centre", "finish": "matched" },
-    { "run": "front_panel", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    },
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "shoulder", "count": 1, "location": "top", "hardware": "hook", "material": "adjustable reflective cord", "wrapsAround": "body" }
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "top",
+     "hardware": "hook",
+     "material": "adjustable reflective cord",
+     "wrapsAround": "body"
+    }
    ],
-
    "pockets": [
-    { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.5 }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.5
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "cord strap, zip pullers, screen-printed logo",
-    "logo": { "type": "reflective_screen_print", "location": "front" },
+    "logo": {
+     "type": "reflective_screen_print",
+     "location": "front"
+    },
     "seams": "not stated as welded; machine-washable garment-style construction per care label",
     "fabric": "100% Nylon (polyamide), no coating/lamination stated - see brand_notes.fabric; visually a soft matte pouch, not the shiny welded look of the other five products"
    },
-
    "fits": "none",
    "mount": {
     "notes": "NOT A BIKE-MOUNTED BAG. It carries cross-body on an adjustable reflective cord strap with a small integrated hook that Rapha's own copy says 'can function as a stabiliser strap when attached back onto itself' - i.e. it can be cinched to ride closer to the body, but it has no saddle-rail, seatpost, or bar attachment of any kind. There is no shoulder/musette/crossbody slot in the catalogue's vocabulary, so this is flagged with fits:none and left out of the mounted-bag pool rather than forced into 'saddlebag'; slot_should_be is left null pending a catalogue-membership decision on whether off-bike carry items belong in this project at all."
    },
-
    "colorways": [
-    { "name": "Dove / Silver Reflective", "hex": "#aba8a7" },
-    { "name": "Grisaille / Silver Reflective", "hex": "#585e6f" }
+    {
+     "name": "Dove / Silver Reflective",
+     "hex": "#aba8a7"
+    },
+    {
+     "name": "Grisaille / Silver Reflective",
+     "hex": "#585e6f"
+    }
    ],
-   "images": ["https://media.rapha.cc/image/upload/v1753795484/mannequin/BKM02XX_GRV_Essentials-Bag_H125_mannequin_1.jpg"]
+   "images": [
+    "https://media.rapha.cc/image/upload/v1753795484/mannequin/BKM02XX_GRV_Essentials-Bag_H125_mannequin_1.jpg"
+   ]
   }
  ]
 }

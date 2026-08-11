@@ -53,6 +53,9 @@ const TYRE_MIN_MM = 15;
 // carrier's depth rather than a strap's bite.
 const ATTACH_MAX_MM = 12;
 const ATTACH_MAX_BY_SLOT = { forkbag: 22 };
+// Slots whose products hang off another BAG rather than off the bike. Kept in
+// step with `mountsTo` in src/bags/slots.js.
+const MOUNTS_TO_BAG = new Set(['barpocket']);
 const attachMax = (slot) => ATTACH_MAX_BY_SLOT[slot] ?? ATTACH_MAX_MM;
 
 // Outlines measured off the maker's dimensioned engineering drawings, used by
@@ -135,7 +138,18 @@ function grade(it, m) {
     // A fork bag 39 mm clear of the fork is floating, not mounted.
     const attach = (it.record?.mount?.attachesTo || []).length ? ok : ok;
     const near = cl.filter((c) => attach.includes(c.part)).map((c) => c.mm);
-    g.attached = near.length ? Math.min(...near) <= attachMax(slot) : null;
+    // A front pocket clips to another BAG, and `clearance` only ever measures
+    // BIKE parts — so the nearest "mount" it can see is the handlebar it is
+    // deliberately nowhere near. Scoring that reported 151mm and called a
+    // correctly fitted pocket floating. Null means UNSCORED, not passed: the
+    // check is real, this instrument cannot make it, and saying so is better
+    // than either a false fail or a free pass.
+    // Use the CURRENT record's slot, not the frozen set's: this product was
+    // re-slotted from `barbag` to `barpocket` after the set was frozen, and the
+    // set deliberately preserves the case list as it was.
+    const mountsToBag = MOUNTS_TO_BAG.has(it.record?.slot || slot);
+    g.attached = mountsToBag ? null
+      : near.length ? Math.min(...near) <= attachMax(slot) : null;
     if (g.attached === false) why.push(`floating — nearest mount ${Math.min(...near).toFixed(1)}mm`);
 
     // Size, mapped through mount.axes, body-only where the run has it.

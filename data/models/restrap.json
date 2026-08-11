@@ -2542,7 +2542,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2636,7 +2636,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube_bosses",
@@ -2740,7 +2740,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2842,7 +2842,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2945,7 +2945,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2972,7 +2972,7 @@
    "line": "Adventure",
    "name": "Rear Top Tube Bag",
    "size": "0.8L",
-   "slot": "toptube",
+   "slot": "toptube_rear",
    "slot_should_be": null,
    "verified": true,
    "confidence": "high",
@@ -3047,7 +3047,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "seatpost",

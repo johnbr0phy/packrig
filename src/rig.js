@@ -21,6 +21,9 @@
  * protect.
  */
 
+import { SLOTS, productSlotFor } from './bags/slots.js';
+import { productsForSlot } from './catalog.js';
+
 const norm = (s) => String(s ?? '').trim();
 /** Keys are compared loosely: reviewers tidy "(3.4L)" to "(3.5L)" and so on. */
 const loose = (s) => norm(s).toLowerCase().replace(/\s+/g, ' ');
@@ -102,6 +105,20 @@ export function applyRig(app, rig, { clear = true } = {}) {
   for (const b of rig.bags || []) {
     const hit = findProduct(app.catalog, b);
     if (!hit) { missing.push(b); continue; }
+    // A slot with `mountsTo` clips to another BAG, not to the bike, so it
+    // cannot be fitted on its own. The eval harness renders exactly one product
+    // per shot, which meant a front pocket was always "dropped — resolver could
+    // not place it": correct behaviour reported as a fault, on every run.
+    // Fit a host first, chosen from the same maker where possible so the pair
+    // reads as one product family rather than an arbitrary pairing.
+    const def = SLOTS[b.slot];
+    if (def?.mountsTo && !def.mountsTo.some((s) => app.bags.equipped[s])) {
+      for (const hostSlot of def.mountsTo) {
+        const opts = productsForSlot(app.catalog, productSlotFor(hostSlot));
+        const pick = opts.find((o) => o.brand.name === hit.brand.name) || opts[0];
+        if (pick) { app.bags.equip(hostSlot, pick.brand, pick.product, 0); break; }
+      }
+    }
     app.bags.equip(b.slot, hit.brand, hit.product, b.cw || 0);
     fitted++;
   }

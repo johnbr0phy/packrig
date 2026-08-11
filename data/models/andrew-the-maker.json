@@ -184,7 +184,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "toptube",
