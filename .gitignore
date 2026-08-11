@@ -5,3 +5,7 @@ assets/hdri/
 .DS_Store
 build/
 .bagshot.lock
+evals/runs/
+
+# built by tools/build-vendor.mjs for the no-build dev entry
+vendor/

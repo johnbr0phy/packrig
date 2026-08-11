@@ -17,7 +17,9 @@
 .rigs-btn:focus-visible{outline:2px solid var(--accent,#ff7a45);outline-offset:2px}
 @media (max-width:560px){.rigs-btn{height:44px}}
 
-.rigs-picker{max-width:560px;width:min(560px,calc(100vw - 32px))}
+/* The shell owns the width now (REDESIGN.md §3.1) — this used to size itself
+   against the viewport, which left it 560px wide inside a 488px sheet. */
+.rigs-picker{width:100%;min-width:0}
 .rigs-picker.is-busy{opacity:.72;pointer-events:none}
 
 .rig-account{

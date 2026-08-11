@@ -251,19 +251,13 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
 .tool-divider { width: 1px; height: 22px; background: rgba(255, 255, 255, 0.10); }
 
 /* ---- picker overlay ----------------------------------------------------- */
-.picker-veil {
-  position: absolute; inset: 0; background: rgba(5, 7, 10, 0.58);
-  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-  display: flex; align-items: center; justify-content: center;
-  animation: fade 0.18s ease;
-}
-@keyframes fade { from { opacity: 0; } }
-.picker {
-  width: min(880px, calc(100vw - 80px)); max-height: min(660px, calc(100vh - 120px));
-  display: flex; flex-direction: column; overflow: hidden;
-}
-.picker.mount-picker { width: min(720px, calc(100vw - 80px)); }
-.picker.brand-picker { width: min(560px, calc(100vw - 80px)); }
+/* REDESIGN.md §14.1: `.picker-veil` deleted. Every picker now lives in the one
+   sheet shell, which owns its own width and never dims the scene behind it, so
+   the picker itself is a plain flow child of `.sheet-body`. */
+.picker { display: flex; flex-direction: column; min-width: 0; min-height: 0; width: 100%; }
+/* The pk-head padding was tuned for a free-floating 880px card; inside the
+   sheet the shell already pads, so only the bottom gap is still wanted. */
+.sheet-body .pk-head { padding: 0 0 12px; }
 .pk-head { padding: 18px 22px 14px; display: flex; align-items: center; gap: 12px; }
 .pk-title { flex: 1; min-width: 0; }
 .pk-title h2 { font-size: 17px; font-weight: 700; letter-spacing: 0.02em; }
@@ -763,16 +757,9 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
   }
   .btn.quiet .bolt { margin-right: 4px; }
 
-  /* overlays become bottom sheets too — full bleed, and the close button
-     lands mid-screen where a thumb reaches instead of in the far corner */
-  .picker-veil { align-items: flex-end; }
-  .picker, .picker.mount-picker, .picker.brand-picker {
-    width: 100%; max-width: none;
-    max-height: 86vh;
-    max-height: 86dvh;
-    border-radius: var(--radius) var(--radius) 0 0;
-    padding-bottom: env(safe-area-inset-bottom);
-  }
+  /* The bottom-sheet treatment moved to the shell (`.sheet` in ui/sheet.css),
+     which is the only surface left to apply it to. The picker inside it is a
+     plain flow child at every width. */
   .pk-head { padding: 14px 14px 12px; gap: 8px; }
   .pk-title h2 { font-size: 15.5px; }
   /* the mode switch needs a whole row; close stays up on the title row rather

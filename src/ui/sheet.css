@@ -138,8 +138,31 @@
 #ui-root.sheet-open .card-main,
 #ui-root.sheet-open .card-act,
 #ui-root.sheet-open .bag-act,
-#ui-root.sheet-open .panel-count {
+#ui-root.sheet-open .panel-count,
+/* The rail is thumbnails, nothing else (§4). These rules used to name
+   `.card-sub` / `.card-main` / `.card-act`, which this markup has never had —
+   so with a rig on the bike the rail was a 56px column of squeezed brand names
+   and clipped capacities. The real classes are `.bag-*`. */
+#ui-root.sheet-open .bag-txt,
+#ui-root.sheet-open .ways,
+#ui-root.sheet-open .unfit-rm,
+#ui-root.sheet-open .kit-summary,
+#ui-root.sheet-open .share-kit,
+/* The two footer buttons keep their icons in the rail and drop their words —
+   "My rigs" wrapping to two lines inside 56px was the one thing that still read
+   as broken once the veil went. */
+#ui-root.sheet-open .add-bag .plus + *,
+#ui-root.sheet-open .rigs-btn .lbl,
+#ui-root.sheet-open .share-kit .lbl {
   display: none;
+}
+
+/* Icon-only, and still over the 44px floor. */
+#ui-root.sheet-open .panel-foot { padding: 0 var(--s-2) var(--s-2); }
+#ui-root.sheet-open .add-bag,
+#ui-root.sheet-open .rigs-btn {
+  width: 40px; min-width: 40px; height: 44px; padding: 0;
+  justify-content: center; gap: 0;
 }
 
 #ui-root.sheet-open .bag-list { padding: var(--s-2) 0; overflow: hidden auto; }
@@ -237,3 +260,186 @@
 /* §9.4 — with reduced motion the durations are already 0ms from tokens.css,
    so the sheet still ARRIVES from its edge, it just arrives immediately. No
    separate code path, which is what stops the two drifting apart. */
+
+/* ==========================================================================
+   The bag sheet — REDESIGN.md §5, phase 2.
+   Tapping a bag opens this: a bigger picture of it, its colourways, its specs,
+   and the three things you might want to do about it.
+   ========================================================================== */
+
+.bagsheet { display: flex; flex-direction: column; gap: 22px; }
+
+/* Hero, 3:2. The plate is white because a product shot photographed on white
+   and then dropped on a dark surface reads as a cut-out mistake. */
+.bs-hero {
+  position: relative; aspect-ratio: 3 / 2; border-radius: var(--r-card, 12px);
+  background: #fff; overflow: hidden; flex: none;
+}
+.bs-hero img { width: 100%; height: 100%; object-fit: contain; display: block; }
+/* The fallback: this bag's own colourway, not a grey box with a camera glyph.
+   §5.3 wants a render of the mesh here — not built yet. */
+.bs-hero.is-blank {
+  background:
+    radial-gradient(120% 90% at 50% 18%, rgba(255,255,255,.14), transparent 60%),
+    var(--bs-body, #5b6068);
+}
+
+.bs-id { display: flex; flex-direction: column; gap: 4px; }
+.bs-brand {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+  color: rgba(255,255,255,.52);
+}
+.bs-name { font-size: 21px; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; }
+.bs-sub { font-size: 12.5px; color: rgba(255,255,255,.66); font-variant-numeric: tabular-nums; }
+
+.bs-block { display: flex; flex-direction: column; gap: 10px; }
+.bs-label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.bs-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+  color: rgba(255,255,255,.52);
+}
+.bs-label-v { font-size: 12.5px; color: rgba(255,255,255,.8); text-align: right; min-width: 0; }
+
+/* 28px dots with a 44px hit area — the dot is the mark, not the target. */
+.bs-ways { display: flex; flex-wrap: wrap; gap: 10px; }
+.bs-way {
+  width: 28px; height: 28px; border-radius: 50%; border: none; padding: 0; cursor: pointer;
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,.45);
+  position: relative; transition: box-shadow .16s;
+}
+.bs-way::after { content: ''; position: absolute; inset: -8px; border-radius: 50%; }
+.bs-way:hover { box-shadow: 0 0 0 1.5px rgba(0,0,0,.45), 0 0 0 3px rgba(255,255,255,.35); }
+.bs-way.on { box-shadow: 0 0 0 2px rgba(0,0,0,.6), 0 0 0 4px #fff; }
+
+.bs-spec {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  min-height: 34px; padding: 6px 0; border-top: 1px solid rgba(255,255,255,.08);
+}
+.bs-spec:first-of-type { border-top: none; }
+.bs-spec-k { font-size: 12.5px; color: rgba(255,255,255,.55); }
+.bs-spec-v {
+  font-size: 13px; color: #fff; text-align: right;
+  font-variant-numeric: tabular-nums; font-weight: 500;
+}
+.bs-spec-v.is-ok { color: #7fd6a2; }
+.bs-spec-v.is-warn { color: #e8b871; }
+
+.bs-feats { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.bs-feats li {
+  font-size: 13px; color: rgba(255,255,255,.72); line-height: 1.6; padding-left: 14px;
+  position: relative;
+}
+.bs-feats li::before {
+  content: ''; position: absolute; left: 2px; top: 9px;
+  width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,.4);
+}
+
+/* The footer never scrolls away (§5.1). Two rows, 132h: Replace and Remove
+   side by side, Buy full width beneath because it leaves the app. */
+/* Sticky inside the scroll region rather than a sibling of it: the body is
+   what scrolls, so a `flex: none` footer outside it would have needed the
+   shell to grow a footer slot. `position: sticky; bottom: 0` gets the same
+   never-scrolls-away result without touching the shell's contract. */
+.bs-foot {
+  /* Sticky rests at the container's PADDING edge, so `bottom: 0` left the
+     body's 20px bottom padding uncovered and spec rows scrolled through it.
+     Offset by that padding to reach the border-box edge. */
+  position: sticky; bottom: calc(var(--s-5) * -1); z-index: 2;
+  display: flex; flex-direction: column; gap: 10px;
+  margin: 6px calc(var(--s-5) * -1) calc(var(--s-5) * -1);
+  padding: 14px var(--s-5) calc(var(--s-5) + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255,255,255,.10);
+  /* `--e3-bg` is 0.66 alpha — right for the sheet floating over the scene,
+     wrong here, where spec rows scrolled visibly under the buttons. The footer
+     needs its own opaque ground plus the same blur, so it reads as part of the
+     glass rather than a hole in it. */
+  background: #14161a;
+}
+/* Content dissolves into the footer instead of being guillotined by it. */
+.bs-foot::before {
+  content: ''; position: absolute; left: 0; right: 0; top: -24px; height: 24px;
+  pointer-events: none;
+  background: linear-gradient(transparent, #14161a);
+}
+.bs-foot-row { display: flex; gap: 12px; }
+.bs-btn {
+  flex: 1; height: 48px; border-radius: 12px; border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.08); color: #fff;
+  font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  text-decoration: none; transition: background .16s, border-color .16s;
+}
+.bs-btn:hover { background: rgba(255,255,255,.14); }
+/* The only loud fill in the sheet: the action that keeps you in the app. */
+.bs-btn.is-primary {
+  background: var(--accent, #e8a33d); border-color: transparent; color: #201603;
+  border-radius: 999px;
+}
+.bs-btn.is-primary:hover { filter: brightness(1.06); background: var(--accent, #e8a33d); }
+/* Destructive, so it is legible but never the loudest thing on screen. */
+.bs-btn.is-bad { color: #ff9c92; }
+.bs-btn.is-bad:hover { background: rgba(255,92,77,.16); border-color: rgba(255,92,77,.4); }
+.bs-btn.is-buy { width: 100%; }
+.bs-nolink { margin: 0; text-align: center; font-size: 11.5px; color: rgba(255,255,255,.45); }
+
+@media (max-width: 900px) {
+  /* At the peek detent a 132px footer IS the peek, so Buy waits for half/full. */
+  #ui-root.sheet-peek .bs-btn.is-buy,
+  #ui-root.sheet-peek .bs-nolink { display: none; }
+  .bs-btn { height: 46px; }
+}
+
+/* ---- undo toast ---------------------------------------------------------- */
+.toast {
+  position: absolute; left: 50%; bottom: 96px; transform: translate(-50%, 8px);
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 12px 10px 16px; border-radius: 12px;
+  background: rgba(18,20,24,.94); border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 12px 32px rgba(0,0,0,.44);
+  font-size: 13px; color: #fff; pointer-events: auto;
+  opacity: 0; transition: opacity .2s, transform .2s;
+  max-width: min(440px, calc(100vw - 32px));
+  z-index: 40;
+}
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+.toast-txt { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.toast-act {
+  flex: none; border: none; background: none; padding: 4px 6px; cursor: pointer;
+  font: inherit; font-weight: 700; color: var(--accent, #e8a33d);
+}
+.toast-act:hover { text-decoration: underline; }
+@media (max-width: 900px) {
+  .toast { bottom: calc(env(safe-area-inset-bottom) + 120px); }
+}
+
+/* The one action on an unfitted bag that the row itself cannot carry. Visible
+   at rest and over the 44px floor — the opposite of the `.bag-act` it replaces. */
+.unfit-rm {
+  flex: none; align-self: center; min-height: 32px; padding: 0 12px;
+  border-radius: 8px; border: 1px solid rgba(255,92,77,.35);
+  background: rgba(255,92,77,.12); color: #ff9c92;
+  font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+}
+.unfit-rm:hover { background: rgba(255,92,77,.2); }
+
+/* ---- the rail (REDESIGN.md §4) ------------------------------------------- */
+/* 40x40 thumbnails stacked with 8px gaps, plus the add button. Clicking one
+   swaps the sheet's contents, which is what `.bag-card`'s own click already
+   does now that it opens the bag sheet. */
+#ui-root.sheet-open .bag-card {
+  display: flex; justify-content: center; align-items: center;
+  padding: 0; margin: 0 0 8px; min-height: 0; gap: 0; background: none;
+}
+#ui-root.sheet-open .bag-card .bag-sw {
+  width: 40px; height: 40px; border-radius: 10px; flex: none;
+}
+#ui-root.sheet-open .bag-card.sel .bag-sw { box-shadow: 0 0 0 2px var(--accent, #e8a33d); }
+#ui-root.sheet-open .bag-list { padding: 8px 0 0; }
+
+/* The body's bottom fade mask applies to its sticky children too, so the
+   footer's lower 32px dissolved and the spec rows scrolled visibly through it.
+   A sheet that pins an action bar does its own dissolving — `.bs-foot::before`
+   is that gradient — so the mask comes off. */
+.sheet-body:has(.bs-foot) {
+  mask-image: none; -webkit-mask-image: none;
+}

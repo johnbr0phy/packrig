@@ -14,11 +14,16 @@
 <link rel="stylesheet" href="src/rigs.css">
 <link rel="stylesheet" href="src/ui/sheet.css">
 <link rel="stylesheet" href="src/aero/aero.css">
+<!-- firebase is bundled into vendor/ by tools/build-vendor.mjs — see that file
+     for why it cannot be mapped straight at node_modules. -->
 <script type="importmap">
 {
   "imports": {
     "three": "./node_modules/three/build/three.module.js",
-    "three/addons/": "./node_modules/three/examples/jsm/"
+    "three/addons/": "./node_modules/three/examples/jsm/",
+    "firebase/app": "./vendor/firebase-app.js",
+    "firebase/auth": "./vendor/firebase-auth.js",
+    "firebase/firestore": "./vendor/firebase-firestore.js"
   }
 }
 </script>

@@ -4,6 +4,11 @@ import { rigURL } from './rig.js';
 import { productsForSlot } from './catalog.js';
 import { PAINTS } from './bike.js';
 import { ENV_NAMES } from './environments.js';
+import {
+  buyLink, displayName, lineOf, litersOf, modelTitle, sizeIsVolume, sizeOf, srcOf,
+  stripLine, swatchStyle,
+} from './ui/product.js';
+import { initBagSheet } from './ui/bagsheet.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -52,115 +57,6 @@ const PAINT_LABEL = {
   Violet: 'Deep Violet',
 };
 
-const WORD = /[\p{L}\p{N}]+/gu;
-
-/** Words that identify the brand, from both its full and short name. */
-function brandWords(brand) {
-  const set = new Set();
-  for (const s of [brand?.name, brand?.short]) {
-    if (!s) continue;
-    for (const m of String(s).matchAll(WORD)) set.add(m[0].toLowerCase());
-  }
-  return set;
-}
-
-/** "Rapha Explore Seat Pack 10L" under brand RAPHA → "Explore Seat Pack 10L". */
-function modelName(product, brand) {
-  const full = String(product?.name || '');
-  const words = brandWords(brand);
-  if (!words.size) return full;
-  let cut = 0;
-  for (const m of full.matchAll(WORD)) {
-    if (!words.has(m[0].toLowerCase())) { cut = m.index; break; }
-    cut = m.index + m[0].length;
-  }
-  const rest = full.slice(cut).replace(/^[\s\-–—·/,:.]+/, '').trim();
-  return rest || full;
-}
-
-/** Capacity to one decimal at most: 10 → "10 L", 3.75 → "3.8 L". */
-function litersOf(p) {
-  const l = Number(p?.liters);
-  // A harness carries drybags sold separately, so it has NO capacity rather
-  // than zero litres — "0 L" reads as a product that holds nothing.
-  if (l === 0) return '—';
-  return Number.isFinite(l) ? `${Math.round(l * 10) / 10} L` : '—';
-}
-
-/** Model name with the trailing capacity dropped — it gets its own column. */
-function displayName(product, brand) {
-  const name = modelName(product, brand);
-  if (product?.liters == null) return name;
-  const tail = new RegExp(`[\\s·\\-–—]*${String(product.liters).replace('.', '\\.')}\\s*L$`, 'i');
-  return name.replace(tail, '').trim() || name;
-}
-
-/** Product family ("Expedition"). Older catalog entries have no line. */
-const lineOf = (p) => String(p?.line || '').trim();
-
-/** "14L" / "Large" — falls back to the volume when the catalog has no size. */
-function sizeOf(product) {
-  const s = String(product?.size ?? '').trim();
-  const base = s || (Number.isFinite(Number(product?.liters))
-    ? `${Math.round(Number(product.liters) * 10) / 10}L` : '');
-  // Some listings ship two bags. The maker's own "scope of delivery" tells us
-  // which; a bare "20L" on a paired listing reads as one bag and misleads.
-  const per = Number(product?.features?.bagsPerListing);
-  if (per === 2 && !/pair/i.test(base)) return `${base} · pair`;
-  return base;
-}
-
-/** True when the size says nothing the volume column isn't already saying. */
-function sizeIsVolume(product) {
-  const l = Number(product?.liters);
-  if (!Number.isFinite(l)) return false;
-  return sizeOf(product).replace(/\s+/g, '').toLowerCase() === `${Math.round(l * 10) / 10}l`;
-}
-
-/** Drop a leading line name so cards under "EXPEDITION" don't repeat it. */
-function stripLine(name, line) {
-  if (!line || !name.toLowerCase().startsWith(line.toLowerCase())) return name;
-  const rest = name.slice(line.length).replace(/^[\s\-–—·]+/, '').trim();
-  return rest || name;
-}
-
-/** Full model name including its line: "Expedition Handlebar Pack". */
-function modelTitle(product, brand) {
-  const line = lineOf(product);
-  const base = stripLine(displayName(product, brand), line);
-  return line ? `${line} ${base}` : base;
-}
-
-/** Official product page — only http(s), since the href comes from data. */
-function srcOf(product) {
-  const raw = String(product?.src || '').trim();
-  if (!raw) return '';
-  try {
-    const url = new URL(raw);
-    return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : '';
-  } catch {
-    return '';
-  }
-}
-
-/** Link out to the maker's product page; null when the catalog has no URL. */
-function buyLink(product, brand, label, cls) {
-  const href = srcOf(product);
-  if (!href) return null;
-  const a = elt('a', cls, label);
-  a.href = href;
-  a.target = '_blank';
-  a.rel = 'noopener noreferrer';
-  a.title = `Buy at ${brand?.short || brand?.name || 'the maker'}`;
-  a.onclick = (e) => e.stopPropagation(); // buying is not equipping
-  return a;
-}
-
-function swatchStyle(product, brand) {
-  const cols = (product?.colors?.length ? product.colors : brand?.palette) || [];
-  if (cols.length > 1) return `linear-gradient(135deg, ${cols[0]} 0 50%, ${cols[1]} 50% 100%)`;
-  return cols[0] || '#5b6068';
-}
 
 /**
  * Viewport shape, asked rather than sniffed. `compact` must stay in step with
@@ -197,7 +93,9 @@ export function initUI(app) {
   // soft scrim keeps the wordmark legible over pale skies (lake, desert)
   root.append(el('div', 'top-scrim'));
   const mark = el('div', 'wordmark');
-  mark.append(el('h1', null, 'PACKRIG'), el('p', null, 'Bikepacking configurator'));
+  // §14.3: a tracked-caps subtitle under a tracked-caps wordmark, saying nothing
+  // the screen does not. Deleted.
+  mark.append(el('h1', null, 'PACKRIG'));
   root.append(mark);
 
   // ---- left panel: what is on the bike -----------------------------------
@@ -375,7 +273,7 @@ export function initUI(app) {
     // a sheet sitting right under the message
     hint = elt('div', 'hint', TOUCH.matches
       ? 'Drag to orbit · pinch to zoom'
-      : 'Drag to orbit · scroll to zoom · add a bag from the panel');
+      : 'Drag to orbit · scroll to zoom');
     root.append(hint);
     setTimeout(killHint, 5000);
     canvas.addEventListener('pointerdown', killHint, { passive: true });
@@ -409,29 +307,81 @@ export function initUI(app) {
   tools.append(rotBtn, el('span', 'tool-divider'), homeBtn, el('span', 'tool-divider'), tunnelBtn);
   root.append(tools);
 
+  /**
+   * One line, bottom-centre, with an action. Built for undo (REDESIGN.md §5.1):
+   * removing a bag is a single tap with no confirm, so the way back has to be
+   * on screen rather than in a menu. Auto-dismisses; a second call replaces the
+   * first rather than stacking.
+   */
+  let toastTimer = null;
+  const toastEl = el('div', 'toast');
+  toastEl.hidden = true;
+  root.append(toastEl);
+  function notify(text, undo) {
+    clearTimeout(toastTimer);
+    toastEl.replaceChildren(elt('span', 'toast-txt', text));
+    if (undo) {
+      const b = elt('button', 'toast-act', 'Undo');
+      b.onclick = () => { hideToast(); undo(); };
+      toastEl.append(b);
+    }
+    toastEl.hidden = false;
+    void toastEl.offsetWidth;
+    toastEl.classList.add('on');
+    toastTimer = setTimeout(hideToast, 6000);
+  }
+  function hideToast() {
+    clearTimeout(toastTimer);
+    toastEl.classList.remove('on');
+    setTimeout(() => { if (!toastEl.classList.contains('on')) toastEl.hidden = true; }, 220);
+  }
+
+  const bagSheet = initBagSheet(app, {
+    openCatalogue: (uiSlot) => openBrandPicker(uiSlot),
+    sync: () => sync(),
+    notify,
+  });
+
   // ---- overlay plumbing ---------------------------------------------------
-  let overlay = null;
-  const onKey = (e) => { if (e.key === 'Escape') closeOverlay(); };
+  /*
+   * REDESIGN.md phase 1. These two functions used to build a centred `.picker`
+   * behind a full-screen `.picker-veil` — a dimming blur over the 3D scene,
+   * which REDESIGN.md §14.1 calls the biggest contradiction in the product.
+   * They now hand their body to the one sheet shell in `ui/sheet.js` and keep
+   * their old signatures, so all six call sites below are untouched.
+   *
+   * Escape, the close button and one-sheet-at-a-time all come from the shell.
+   */
+  let handle = null;
+
+  /** Which of the shell's widths a given picker wants. §3.1 of REDESIGN.md. */
+  const KIND_FOR = {
+    'appearance-sheet': 'detail',
+    'mount-picker': 'detail',
+    'brand-picker': 'detail',
+    'brand-index': 'catalog',
+    'brand-catalog': 'catalog',
+    'model-picker': 'catalog',
+  };
 
   function closeOverlay() {
-    if (!overlay) return;
-    overlay.remove();
-    overlay = null;
-    document.removeEventListener('keydown', onKey);
-    // the appearance controls are borrowed, not copied — put them back before
-    // the overlay that holds them is dropped on the floor
-    if (appearance.parentElement !== dock) dock.append(appearance);
+    app.sheets?.closeSheet();
   }
 
   function openOverlay(extraCls) {
-    closeOverlay();
-    const veil = el('div', 'picker-veil');
-    const pk = el('div', 'picker glass' + (extraCls ? ' ' + extraCls : ''));
-    veil.append(pk);
-    veil.onclick = (e) => { if (e.target === veil) closeOverlay(); };
-    document.addEventListener('keydown', onKey);
-    root.append(veil);
-    overlay = veil;
+    const pk = el('div', 'picker' + (extraCls ? ' ' + extraCls : ''));
+    handle = app.openSheet?.({
+      kind: KIND_FOR[extraCls] || 'catalog',
+      title: '',
+      render: (body) => body.append(pk),
+      // The appearance controls are borrowed from the dock, not copied — put
+      // them back before the body holding them is emptied, or the frame and
+      // bidon swatches vanish from the bar for the rest of the session.
+      onClose: () => {
+        handle = null;
+        if (appearance.parentElement !== dock) dock.append(appearance);
+      },
+    });
     return pk;
   }
 
@@ -456,14 +406,13 @@ export function initUI(app) {
       trail.append(elt('span', 'crumb-sep', '›'), elt('span', 'crumb cur', title));
       t.append(trail);
     }
-    t.append(elt('h2', null, title));
+    // The title and the close button belong to the sheet shell now, not to
+    // each picker — one header, drawn once. Crumbs, the back arrow and any
+    // `extra` control stay here because they are per-step, not per-sheet.
+    handle?.setTitle(title);
     if (sub) t.append(elt('p', null, sub));
     h.append(t);
     if (extra) h.append(extra);
-    const x = elt('button', 'pk-close', '✕');
-    x.title = 'Close';
-    x.onclick = closeOverlay;
-    h.append(x);
     return h;
   }
 
@@ -483,7 +432,7 @@ export function initUI(app) {
    */
   function openAppearance() {
     const pk = openOverlay('appearance-sheet');
-    pk.append(pickerHead({ title: 'Appearance', sub: 'Frame · bidons · scene' }));
+    pk.append(pickerHead({ title: 'Appearance', sub: '' }));
     pk.append(appearance);
   }
   // a window that grows past the sheet breakpoint gets its bar controls back
@@ -581,7 +530,7 @@ export function initUI(app) {
     const pk = openOverlay('mount-picker');
     pk.append(pickerHead({
       title: 'Choose a mount',
-      sub: 'Where on the bike does this bag go?',
+      sub: '',
       extra: modeSwitch('type'),
     }));
     const body = el('div', 'zones');
@@ -865,15 +814,22 @@ export function initUI(app) {
     const nameRow = el('div', 'bag-name-row');
     nameRow.append(elt('div', 'bag-model', modelTitle(rec.product, rec.brand)));
     txt.append(line, nameRow, elt('div', 'unfit-msg', 'Doesn’t fit this frame — try another size'));
-    const acts = el('div', 'bag-acts');
-    const swap = elt('button', 'bag-act', '⇄');
-    swap.title = 'Pick a different bag';
-    swap.onclick = (e) => { e.stopPropagation(); openBrandPicker(key); };
-    const rm = elt('button', 'bag-act rm', '✕');
-    rm.title = 'Remove';
-    rm.onclick = (e) => { e.stopPropagation(); app.bags.remove(key); sync(); };
-    acts.append(swap, rm);
-    card.append(sw, txt, acts);
+    // An unfitted bag has no `equipped` record, so it has no bag sheet to open —
+    // the row goes straight to the catalogue for its slot, which is the "try
+    // another size" the message is asking for. Removing it is the other useful
+    // action, so it gets a real 44px button rather than a 22px hover-reveal.
+    const rm = elt('button', 'unfit-rm', 'Remove');
+    rm.onclick = (e) => {
+      e.stopPropagation();
+      const { brand, product } = rec;
+      app.bags.remove(key);
+      sync();
+      notify(`Removed ${modelTitle(product, brand)}`, () => {
+        app.bags.equip(key, brand, product, rec.colorwayIndex || 0);
+        sync();
+      });
+    };
+    card.append(sw, txt, rm);
     card.onclick = () => openBrandPicker(key);
     return card;
   }
@@ -884,7 +840,7 @@ export function initUI(app) {
     const keys = Object.keys(SLOTS).filter((k) => app.bags.equipped[k]);
     if (!keys.length && !unfit.length) {
       listEl.append(el('div', 'empty-state',
-        'Nothing mounted yet.<br><span>Add a bag to start building your rig.</span>'));
+        'Start with a seat pack'));
       return 0;
     }
     for (const key of keys) {
@@ -925,22 +881,16 @@ export function initUI(app) {
       nameRow.append(modelEl, elt('div', 'bag-liters', litersOf(cur.product)));
       txt.append(line, nameRow);
 
-      const acts = el('div', 'bag-acts');
-      const buy = buyLink(cur.product, cur.brand, '↗', 'bag-act buy');
-      if (buy) acts.append(buy);
-      const swap = elt('button', 'bag-act', '⇄');
-      swap.title = `Swap the ${SLOTS[key].label.toLowerCase()}`;
-      swap.onclick = (e) => { e.stopPropagation(); openBrandPicker(key); };
-      const rm = elt('button', 'bag-act rm', '✕');
-      rm.title = `Remove from ${SLOTS[key].label}`;
-      rm.onclick = (e) => { e.stopPropagation(); app.bags.remove(key); sync(); };
-      acts.append(swap, rm);
-
-      card.append(sw, txt, acts);
+      // §14.9: `.bag-act` was three 22x22 buttons at `opacity: 0` until hover —
+      // half the hit-target floor, invisible on touch, and undiscoverable
+      // anywhere. Deleted; the sheet carries replace, remove and buy at 48h.
+      card.append(sw, txt);
       // the link runs both ways: hovering a card lifts the bag in the scene
       card.onmouseenter = () => app.focus?.setHovered?.(key);
       card.onmouseleave = () => app.focus?.setHovered?.(null);
-      card.onclick = () => openBrandPicker(key);
+      // §4: the whole row is one hit target, and it opens the bag sheet.
+      // Replace, remove and buy live in there now, not as 22px hover buttons.
+      card.onclick = () => { setSelected(key); app.focus?.setSelected?.(key); };
 
       // Colourways, straight from the maker's own page. Belongs INSIDE the card
       // it recolours — as a sibling it reads as detached from any one bag.
@@ -985,6 +935,9 @@ export function initUI(app) {
   function setSelected(slot) {
     selectedSlot = slot || null;
     paintSelection();
+    // REDESIGN.md §5: this used to ring the bag, zoom to it and stop there.
+    // A selection that leads nowhere is the dead end phase 2 exists to close.
+    if (slot && app.bags.equipped[slot]) bagSheet.open(slot);
     // bring it into view when the list is long enough to scroll
     if (selectedSlot) {
       // picking a bag off the bike while the sheet is peeking should show it

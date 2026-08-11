@@ -33,27 +33,29 @@ const when = (iso) => {
 };
 
 export function initRigsUI(app, { auth, store, host, onLoaded }) {
-  let overlay = null;
+  let pk = null;               // the body this panel draws into, or null when shut
+  let handle = null;           // the sheet shell holding it
   let mode = 'list';           // list | signin | signup | reset
   let busy = false;
   let notice = null;           // { kind:'ok'|'bad', text }
 
-  const close = () => {
-    overlay?.remove();
-    overlay = null;
-    document.removeEventListener('keydown', onKey);
-  };
-  const onKey = (e) => { if (e.key === 'Escape') close(); };
+  /*
+   * REDESIGN.md phase 1. This used to build its own `.picker-veil` — a second,
+   * unrelated overlay system sitting beside the one in `ui.js`, each unaware of
+   * the other, so two surfaces could be open at once over the same bike. Both
+   * now hand their body to the single shell in `ui/sheet.js`, which owns
+   * Escape, the close button, the camera reframe and the one-at-a-time rule.
+   */
+  const close = () => { app.sheets?.closeSheet(); };
 
   function shell() {
-    close();
-    const veil = el('div', 'picker-veil');
-    const pk = el('div', 'picker glass rigs-picker');
-    veil.append(pk);
-    veil.onclick = (e) => { if (e.target === veil) close(); };
-    document.addEventListener('keydown', onKey);
-    host.append(veil);
-    overlay = veil;
+    pk = el('div', 'picker rigs-picker');
+    handle = app.openSheet?.({
+      kind: 'detail',
+      title: '',
+      render: (body) => body.append(pk),
+      onClose: () => { pk = null; handle = null; },
+    });
     return pk;
   }
 
@@ -68,16 +70,17 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
   }
 
   // ---- pieces --------------------------------------------------------------
+  /**
+   * `sub` is deliberately rare now. REDESIGN.md §1.1: a title needs no subtitle
+   * unless the subtitle carries data the screen does not already show.
+   */
   function head(pk, title, sub) {
+    handle?.setTitle(title);
+    if (!sub) return;
     const h = el('header', 'pk-head');
     const t = el('div', 'pk-title');
-    t.append(el('h2', null, title));
-    if (sub) t.append(el('p', null, sub));
+    t.append(el('p', null, sub));
     h.append(t);
-    const x = el('button', 'pk-close', '✕');
-    x.title = 'Close';
-    x.onclick = close;
-    h.append(x);
     pk.append(h);
   }
 
@@ -108,12 +111,11 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
 
   // ---- list ----------------------------------------------------------------
   async function renderList(pk) {
-    head(pk, 'My rigs', auth.signedIn ? 'On your account' : 'Saved in this browser');
+    head(pk, 'My rigs', auth.signedIn ? '' : 'Saved in this browser');
     pk.append(accountBar());
     if (store.galleryEnabled) {
       const g = el('div', 'rig-account');
-      g.append(el('span', 'rig-acct-txt', 'See what other people are riding'));
-      const open = el('button', 'rig-link', 'Browse the gallery');
+      const open = el('button', 'rig-link', 'Gallery');
       open.onclick = () => { mode = 'gallery'; notice = null; render(); };
       g.append(open);
       pk.append(g);
@@ -123,7 +125,7 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
     const save = el('div', 'rig-saverow');
     const input = el('input', 'rig-name');
     input.type = 'text';
-    input.placeholder = 'Name this build — “Highland overnighter”';
+    input.placeholder = 'Name this rig';
     input.maxLength = 60;
     const btn = el('button', 'rig-save-btn', 'Save current bike');
     const doSave = () => guard(async () => {
@@ -147,7 +149,7 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
     catch (err) { body.append(el('p', 'rig-empty', err?.message || 'Could not load your rigs')); return; }
 
     if (!rows.length) {
-      body.append(el('p', 'rig-empty', 'No saved rigs yet. Build a bike, name it, and hit save.'));
+      body.append(el('p', 'rig-empty', 'No saved rigs yet'));
       return;
     }
 
@@ -238,7 +240,6 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
    * make public, and it never appears in the gallery or leaves this device.
    */
   function askAuthor(row) {
-    const pk = overlay?.firstElementChild;
     if (!pk) return;
     pk.replaceChildren();
     head(pk, 'Publish to the gallery', `“${row.name || 'Untitled rig'}” will be visible to anyone.`);
@@ -278,11 +279,10 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
 
   // ---- gallery -------------------------------------------------------------
   async function renderGallery(pk) {
-    head(pk, 'Bike gallery', 'Rigs people have published. Load any one and make it yours.');
+    head(pk, 'Gallery');
     const n = noticeEl(); if (n) pk.append(n);
 
     const back = el('div', 'rig-account');
-    back.append(el('span', 'rig-acct-txt', 'Anyone can browse this'));
     const mine = el('button', 'rig-link', 'My rigs');
     mine.onclick = () => { mode = 'list'; notice = null; render(); };
     back.append(mine);
@@ -296,7 +296,7 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
     catch (err) { body.append(el('p', 'rig-empty', err?.message || 'Could not load the gallery')); return; }
 
     if (!rows.length) {
-      body.append(el('p', 'rig-empty', 'Nothing published yet. Save a bike, then hit Publish — yours would be the first.'));
+      body.append(el('p', 'rig-empty', 'Nothing published yet'));
       return;
     }
 
@@ -464,8 +464,7 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
   }
 
   function render() {
-    if (!overlay) return;
-    const pk = overlay.firstElementChild;
+    if (!pk) return;
     pk.replaceChildren();
     pk.classList.toggle('is-busy', busy);
     if (mode === 'list') renderList(pk);
@@ -478,7 +477,8 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
       mode = (startMode === 'gallery' && store.galleryEnabled) ? 'gallery'
         : auth.enabled ? startMode : 'list';
       notice = null;
-      const pk = shell();
+      shell();
+      if (!pk) return;
       pk.classList.toggle('is-busy', busy);
       if (mode === 'list') renderList(pk);
       else if (mode === 'gallery') renderGallery(pk);

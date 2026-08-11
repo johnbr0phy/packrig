@@ -15,9 +15,11 @@ traps and data-pipeline detail — read both).
 > §13 is the new part: the records' `geometry` and rigidity now reach the
 > builders, and **every slot has been swept**. Start there — it has the numbers.
 >
-> Still untouched: the **UI rework** (§5 Track C — `DESIGN-SYSTEM.md` is written
-> and none of it is implemented) and **11 of 13 geometry builders** (§5 Track B —
-> only seatpack and stembag have been done).
+> The **UI rework** has moved to `REDESIGN.md`, which is now its plan of record —
+> §5 Track C below is superseded. Its first two steps *are* implemented
+> (`src/ui/tokens.css`, `sheet.js`, `scrim.js`, `surfaces.js`, all wired into
+> `main.js`); the rest is not. Still untouched: **11 of 13 geometry builders**
+> (§5 Track B — only seatpack and stembag have been done).
 
 ---
 
@@ -269,22 +271,11 @@ working a slot at 34% coverage is mostly guessing:
 
 This is the strongest argument for finishing Track A first.
 
-### Track C — the UI rework (phases 5–6; does no rendering)
+### Track C — the UI rework — superseded
 
-Follow `DESIGN-SYSTEM.md` §12 exactly. It is strictly ordered:
-
-1. **Tokens + Inter + the `--scrim-k` scrim well.** Nothing else works without
-   §3.3. One agent, and everything waits on it.
-2. **The sheet shell** — one component, three widths, rail collapse, dock
-   reposition, camera reframe, all on one tick. No veil, ever.
-3. **The product detail sheet** (§6.2) — this is the centrepiece of your brief:
-   big product image, spec, buy link, size and colourway pickers.
-4. **The catalogue sheet + facets** (§6.3).
-5. **3D selection/hover + camera reframing** (§6.6, §6.7).
-6. **The 14 deletions in §10** — last, but do all of them.
-
-Steps 1 and 2 are one agent and must finish before 3–5 fan out, because 3–5
-build against the `openSheet()` contract it defines.
+Moved to **`REDESIGN.md`**, which plans the menu rework together with the
+accounts, gallery and profile work it interleaves with. Phases 5–6 in the table
+below are replaced by that document's §13 build order.
 
 ### Track D — the adversarial critic pass (after B)
 
