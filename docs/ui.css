@@ -295,7 +295,7 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
   font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--ink-faint); margin-bottom: 9px;
 }
-.zone-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.zone-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px; }
 .mount-btn {
   display: flex; flex-direction: column; align-items: flex-start; gap: 3px;
   text-align: left; padding: 11px 13px; border-radius: 12px; cursor: pointer;
@@ -359,7 +359,10 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
 /* product cards */
 .cards {
   overflow-y: auto; padding: 4px 20px 22px; scrollbar-width: thin;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px;
+  /* auto-FIT, not auto-fill: a brand with one bag for this mount used to get a
+     half-width card marooned beside an empty track. Fit collapses the empty
+     tracks so the row it does have fills the sheet. */
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px;
 }
 .card {
   border: 1px solid rgba(255, 255, 255, 0.10); border-radius: 12px; padding: 13px 14px;
@@ -654,8 +657,8 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
      row: the card grows ~40px, but the name — the only thing on the card
      anyone reads — gets the full width. */
   .bag-acts { flex-basis: 100%; justify-content: flex-end; margin-top: 8px; }
-  .zone-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-  .cards { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+  .zone-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+  .cards { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 }
 
 /* ---- phone ---------------------------------------------------------------
@@ -769,8 +772,10 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
   .seg-btn { flex: 1; min-height: 40px; }
   .zones { padding: 2px 14px 20px; }
   .brand-list, .lines { padding: 2px 14px 20px; }
-  .cards { padding: 4px 14px 20px; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
-  .zone-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  /* One card per row on a phone. Two 170px columns could not hold a brand, a
+     model name and a capacity without every one of them wrapping. */
+  .cards { padding: 4px 14px 20px; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .zone-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
   .brand-row { padding: 14px 12px; }
   .br-palette { flex: 1; overflow: hidden; }
 

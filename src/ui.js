@@ -403,7 +403,9 @@ export function initUI(app) {
         b.onclick = c.onClick;
         trail.append(b);
       });
-      trail.append(elt('span', 'crumb-sep', '›'), elt('span', 'crumb cur', title));
+      // The current step is the sheet's own title (set below), so repeating it
+      // here gave every catalogue screen its name twice — §1.1.
+
       t.append(trail);
     }
     // The title and the close button belong to the sheet shell now, not to

@@ -127,61 +127,35 @@
 }
 
 /* §6.1's rail shows 40x40 thumbnails and a `+`, and NOTHING else.
-   Enumerating the text elements to hide was not enough: the empty state
-   ("Nothing mounted yet. Add a bag to start building your rig.") reflowed into
-   a 56px column and rendered as a stack of clipped words, which reads as a
-   rendering bug rather than as a state. So the rail hides everything by
-   default and re-shows the two things it is for. */
-#ui-root.sheet-open .panel-head,
-#ui-root.sheet-open .empty-state,
-#ui-root.sheet-open .card-sub,
-#ui-root.sheet-open .card-main,
-#ui-root.sheet-open .card-act,
-#ui-root.sheet-open .bag-act,
-#ui-root.sheet-open .panel-count,
-/* The rail is thumbnails, nothing else (§4). These rules used to name
-   `.card-sub` / `.card-main` / `.card-act`, which this markup has never had —
-   so with a rig on the bike the rail was a 56px column of squeezed brand names
-   and clipped capacities. The real classes are `.bag-*`. */
-#ui-root.sheet-open .bag-txt,
-#ui-root.sheet-open .ways,
-#ui-root.sheet-open .unfit-rm,
-#ui-root.sheet-open .kit-summary,
-#ui-root.sheet-open .share-kit,
-/* The two footer buttons keep their icons in the rail and drop their words —
-   "My rigs" wrapping to two lines inside 56px was the one thing that still read
-   as broken once the veil went. */
-#ui-root.sheet-open .add-bag .plus + *,
-#ui-root.sheet-open .rigs-btn .lbl,
-#ui-root.sheet-open .share-kit .lbl {
+   EVERY selector here is scoped to `.panel`. It did not used to be, and
+   `.card` / `.card-thumb` / `.card-sub` are the CATALOGUE's classes, not the
+   rig panel's — so the moment the catalogue moved inside the sheet (phase 1),
+   these rules squashed every product card in it to a 40x40 square with its
+   name clipped to "Water 11L…". The rig panel's own rows are `.bag-*`. */
+#ui-root.sheet-open .panel .panel-head,
+#ui-root.sheet-open .panel .empty-state,
+#ui-root.sheet-open .panel .bag-act,
+#ui-root.sheet-open .panel .panel-count,
+#ui-root.sheet-open .panel .bag-txt,
+#ui-root.sheet-open .panel .ways,
+#ui-root.sheet-open .panel .unfit-rm,
+#ui-root.sheet-open .panel .kit-summary,
+#ui-root.sheet-open .panel .share-kit,
+/* The footer buttons keep their icons in the rail and drop their words. */
+#ui-root.sheet-open .panel .add-bag .plus + *,
+#ui-root.sheet-open .panel .rigs-btn .lbl {
   display: none;
 }
 
 /* Icon-only, and still over the 44px floor. */
-#ui-root.sheet-open .panel-foot { padding: 0 var(--s-2) var(--s-2); }
-#ui-root.sheet-open .add-bag,
-#ui-root.sheet-open .rigs-btn {
+#ui-root.sheet-open .panel .panel-foot { padding: 0 var(--s-2) var(--s-2); }
+#ui-root.sheet-open .panel .add-bag,
+#ui-root.sheet-open .panel .rigs-btn {
   width: 40px; min-width: 40px; height: 44px; padding: 0;
   justify-content: center; gap: 0;
 }
 
-#ui-root.sheet-open .bag-list { padding: var(--s-2) 0; overflow: hidden auto; }
-
-/* Card becomes its own thumbnail: square, centred, no chrome. */
-#ui-root.sheet-open .card {
-  display: block;
-  width: 40px;
-  height: 40px;
-  min-height: 0;
-  margin: 0 auto var(--s-2);
-  padding: 0;
-  border-radius: var(--r-control);
-  overflow: hidden;
-}
-#ui-root.sheet-open .card-thumb {
-  width: 40px; height: 40px; margin: 0; border-radius: var(--r-control);
-}
-#ui-root.sheet-open .card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+#ui-root.sheet-open .panel .bag-list { padding: var(--s-2) 0; overflow: hidden auto; }
 
 /* The + survives, as a square button rather than a labelled row. */
 #ui-root.sheet-open .panel-foot { padding: var(--s-2); }
@@ -443,3 +417,20 @@
 .sheet-body:has(.bs-foot) {
   mask-image: none; -webkit-mask-image: none;
 }
+
+/* ---- pickers inside the sheet ------------------------------------------- */
+/* These bodies were written for a free-floating 880px card that scrolled its
+   own middle section. Nested inside the sheet's scroll region they collapse:
+   an `overflow-y: auto` child of a scrolling parent has no height to work
+   with, which is how a 720px catalogue rendered one clipped card in an
+   otherwise empty sheet. The sheet body is the only scroller now. */
+.sheet-body .cards,
+.sheet-body .lines,
+.sheet-body .brands,
+.sheet-body .zone-list {
+  overflow: visible;
+  padding-left: 0;
+  padding-right: 0;
+  min-height: 0;
+}
+.sheet-body .cards { padding-bottom: 4px; }
