@@ -1,6 +1,6 @@
 import { SLOTS, productSlotFor, colorwayFor } from './bags.js';
 import { initRigsUI } from './rigsui.js';
-import { captureRig, rigURL } from './rig.js';
+import { applyRig, captureRig, rigURL } from './rig.js';
 import { productsForSlot } from './catalog.js';
 import { PAINTS } from './bike.js';
 import { setSheetLift } from './mobile.js';
@@ -12,6 +12,7 @@ import { initBagSheet } from './ui/bagsheet.js';
 import { initHome } from './ui/home.js';
 import { initGallery } from './ui/gallery.js';
 import { initCatalogue } from './ui/catalogue.js';
+import { initRigNav } from './ui/rignav.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -90,7 +91,9 @@ export function initUI(app) {
       onAdopt: () => { /* the rig is already on the bike — just stay in the builder */ },
     });
     app.home = initHome(app, {
-      onCreate: () => { app.clearAll?.(); sync(); },
+      // "Create new rig" means exactly that: a clear bike at the rig level, not
+      // the list of ones you already have.
+      onCreate: () => { app.clearAll?.(); savedSnapshot = null; rigNav.current = null; rigNav.enter(null); sync(); },
       onGallery: () => app.gallery?.open(),
     });
     // The root level is where you arrive, unless a shared link means you have
@@ -290,10 +293,29 @@ export function initUI(app) {
   bagActions.append(addBtn, btnRand);
   bagsSec.append(bagActions);
 
+  /*
+   * Two levels in one column. `rigNav` owns the top one — the list of saved
+   * rigs — and the three sections below it are the second: the rig you have
+   * open. `data-level` on the panel decides which is showing, so switching is a
+   * class change rather than a rebuild, and the bike underneath never blinks.
+   */
+  const rigNav = initRigNav(app, {
+    onOpen: (row) => {
+      const { missing } = applyRig(app, row.rig);
+      savedSnapshot = snapshot();
+      sync();
+      if (missing?.length) console.warn('[packrig] saved rig references bags no longer in the catalogue:', missing);
+    },
+    onNew: () => { app.clearAll?.(); savedSnapshot = null; sync(); },
+    onRename: (id, name) => { if (id) app.rigs?.rename?.(id, name).catch(() => {}); },
+    onLevel: (lvl) => { panel.setAttribute('data-level', lvl); paintSave(); },
+  });
+
   // Bags first, bike second. The rig is what you came to build; frame colour is
   // a detail, and it was sitting above the content with equal billing — on a
   // phone it was the entire first screen of the panel.
-  panel.append(head, bagsSec, bikeSec, foot);
+  panel.append(head, rigNav.el, bagsSec, bikeSec, foot);
+  app.rigNav = rigNav;
 
   // the hint retires for good once the user has driven the camera, or after 5s
   const HINT_KEY = 'packrig.hintSeen';
@@ -377,14 +399,21 @@ export function initUI(app) {
   const saveLabel = elt('span', 'save-label', 'Save rig');
   saveBtn.append(saveLabel);
   saveBtn.onclick = () => {
-    if (saveBtn.classList.contains('is-done')) { app.openRigs?.(); return; }
-    const n = (app.rigs?.localCount?.() || 0) + 1;
-    const name = `My rig ${n}`;
-    Promise.resolve(app.rigs?.save(name))
-      .then(() => {
+    if (saveBtn.classList.contains('is-done')) { rigNav.showList(); return; }
+    const cur = rigNav.current;
+    // Saving an OPEN rig updates it. It used to make a new "My rig 4" every
+    // time, so the list filled with copies of one bike and the rig you thought
+    // you were editing never changed.
+    const write = cur?.id
+      ? app.rigs?.update(cur.id, { name: cur.name })
+      : app.rigs?.save(cur?.name || `Rig ${(app.rigs?.localCount?.() || 0) + 1}`);
+    Promise.resolve(write)
+      .then((row) => {
         savedSnapshot = snapshot();
+        rigNav.current = { id: row?.id ?? cur?.id ?? null, name: row?.name || cur?.name || 'Untitled rig', local: !!row?.local };
         paintSave();
-        notify(`Saved “${name}”`, null, { label: 'Rename', run: () => app.openRigs?.() });
+        notify(cur?.id ? `Saved “${rigNav.current.name}”` : `Saved “${rigNav.current.name}”`,
+          null, { label: 'Rename', run: () => document.querySelector('.rn-title')?.click() });
       })
       .catch((e) => notify(e?.message || 'Could not save that rig'));
   };
@@ -399,22 +428,27 @@ export function initUI(app) {
     saveBtn.hidden = bags === 0;
     saveBtn.classList.toggle('is-done', !dirty);
     saveLabel.textContent = dirty ? 'Save rig' : 'Saved ✓';
-    saveBtn.title = dirty ? 'Save this build' : 'Saved — open My rigs to rename it';
+    saveBtn.title = dirty ? 'Save this build' : 'Saved — tap for your other rigs';
+    // At the list level there is no rig to save; the button would be saving
+    // whatever happened to be on the bike behind the list.
+    if (app.rigNav?.level === 'list') saveBtn.hidden = true;
   }
   topRight.append(saveBtn);
 
   const acctBtn = el('button', 'acct-btn');
   const acctLabel = elt('span', 'acct-label', 'My rigs');
   acctBtn.append(el('span', 'acct-dot'), acctLabel);
-  acctBtn.onclick = () => app.openRigs?.();
+  // Signing in changes where rigs are STORED, not where they are found — they
+  // are the top of the left column now. So this opens the account, nothing else.
+  acctBtn.onclick = () => app.openRigs?.(app.auth?.signedIn ? 'list' : 'signin');
   function paintAccount() {
     const on = !!app.auth?.signedIn;
     acctBtn.classList.toggle('is-in', on);
     // The email is the identity; "My rigs" is what you came for. Signed out,
     // neither is true yet, so the button says the thing you can actually do.
-    acctLabel.textContent = on ? (app.auth.email || 'My rigs')
-      : app.auth?.enabled ? 'Sign in' : 'My rigs';
-    acctBtn.title = on ? 'Your saved rigs' : 'Save this build, or load one you saved before';
+    acctLabel.textContent = on ? (app.auth.email || 'Account') : 'Sign in';
+    acctBtn.title = on ? 'Your account' : 'Sign in so your rigs follow you between devices';
+    acctBtn.hidden = !app.auth?.enabled;
   }
   paintAccount();
   app.auth?.onChange?.(paintAccount);

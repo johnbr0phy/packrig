@@ -878,3 +878,88 @@ html, body, #ui-root { touch-action: manipulation; }
 /* Buttons and sheets: taps only, never a browser zoom. */
 .topbar button, .panel button, .sheet button, .home button, .gal button,
 .card, .bag-card, .mount-btn, .cat-chip, .cat-opt { touch-action: manipulation; }
+
+/* ==========================================================================
+   Your rigs, at the top of the left column.
+   ========================================================================== */
+
+.rignav { display: flex; flex-direction: column; min-height: 0; }
+
+/* The bar is the level indicator AND the way back. At the list it is a heading;
+   inside a rig it is the rig's name, which is also the rename control. */
+.rn-bar { display: flex; align-items: center; gap: 6px; padding: 14px 14px 8px; }
+.rn-back {
+  flex: none; width: 30px; height: 30px; margin-left: -6px;
+  display: grid; place-items: center; cursor: pointer;
+  border: none; border-radius: 8px; background: none; color: rgba(255,255,255,.7);
+}
+.rn-back:hover { background: rgba(255,255,255,.1); color: #fff; }
+.rn-title {
+  /* It is a rename control, not a caption — so it gets a target, not just a
+     line of text. 19px tall was under every floor there is. */
+  flex: 1; min-width: 0; min-height: 32px; display: flex; align-items: center;
+  text-align: left; padding: 0; border: none; background: none;
+  font: inherit; font-size: 15px; font-weight: 650; color: #fff; cursor: pointer;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rn-title:disabled {
+  cursor: default; font-size: 10.5px; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; color: rgba(255,255,255,.5);
+}
+.rn-title:not(:disabled):hover { text-decoration: underline; text-decoration-color: rgba(255,255,255,.3); }
+.rn-count { flex: none; font-size: 11.5px; color: rgba(255,255,255,.42); font-variant-numeric: tabular-nums; }
+.rn-rename {
+  flex: 1; min-width: 0; height: 30px; padding: 0 8px; border-radius: 7px;
+  border: 1px solid var(--accent, #e8a33d); background: rgba(255,255,255,.08);
+  color: #fff; font: inherit; font-size: 15px; font-weight: 650;
+}
+.rn-rename:focus { outline: none; }
+
+/* At the rig level the list is gone and the back arrow appears; at the list
+   level the reverse. One attribute, no rebuild, so the bike never blinks. */
+.panel[data-level='rig'] .rn-list { display: none; }
+.panel[data-level='rig'] .rn-back { display: grid; }
+.panel[data-level='list'] .rn-back { display: none; }
+.panel[data-level='list'] .nav-sec,
+.panel[data-level='list'] .panel-foot { display: none; }
+.panel[data-level='list'] .rignav { flex: 1 1 auto; }
+
+.rn-list { display: flex; flex-direction: column; gap: 2px; padding: 0 8px 12px; overflow-y: auto; min-height: 0; }
+.rn-row {
+  display: flex; align-items: center; gap: 11px; width: 100%; min-height: 60px;
+  padding: 8px 8px; border: none; border-radius: 10px; background: none; cursor: pointer;
+  text-align: left; font: inherit; color: inherit;
+}
+.rn-row:hover { background: rgba(255,255,255,.07); }
+
+/* The bags themselves, overlapped — you recognise your own rig by what is on
+   it. A render of the whole bike belongs here and will replace this once there
+   is somewhere to store one. */
+.rn-stack { flex: none; display: flex; align-items: center; }
+.rn-stack img {
+  width: 34px; height: 34px; border-radius: 8px; object-fit: cover; background: #fff;
+  box-shadow: 0 0 0 2px rgba(22,24,28,.95);
+}
+.rn-stack img + img { margin-left: -13px; }
+.rn-stack.is-empty { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,.07); }
+.rn-txt { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.rn-name {
+  font-size: 14px; font-weight: 600; color: #fff;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rn-meta { font-size: 11.5px; color: rgba(255,255,255,.52); font-variant-numeric: tabular-nums; }
+.rn-empty { margin: 4px 10px 12px; font-size: 13px; color: rgba(255,255,255,.5); }
+
+.rn-new {
+  margin: 6px 8px 0; min-height: 44px; border-radius: 10px; cursor: pointer;
+  border: 1px dashed rgba(255,255,255,.22); background: none; color: #fff;
+  font: inherit; font-size: 13.5px; font-weight: 600;
+}
+.rn-new:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.34); }
+
+@media (max-width: 560px) {
+  .rn-bar { padding: 10px 12px 6px; }
+  .rn-title { min-height: 40px; }
+  .rn-row { min-height: 64px; }
+  .rn-stack img { width: 38px; height: 38px; }
+}
