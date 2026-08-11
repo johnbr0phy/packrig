@@ -17,13 +17,14 @@
  * → SDK setup and configuration → Config.
  */
 export const FIREBASE_CONFIG = {
-  apiKey: '',
-  authDomain: '',
-  projectId: '',
-  appId: '',
+  apiKey: 'AIzaSyAsfc-J1aZO0bkbin7pH39ic497mWwRBxA',
+  authDomain: 'packrig.firebaseapp.com',
+  projectId: 'packrig',
+  appId: '1:718050135146:web:505c1929a788d0bda84e13',
   // storageBucket and messagingSenderId are in the console's snippet too. They
-  // are not needed for auth or Firestore, so they are deliberately omitted
-  // rather than carried as dead config.
+  // are only needed for Cloud Storage and Cloud Messaging, neither of which
+  // this app uses, so they are deliberately omitted rather than carried as
+  // dead config.
 };
 
 /**
