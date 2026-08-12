@@ -1,0 +1,767 @@
+/* ===========================================================================
+   THE BUILDER, v2 — the same instrument as the menu, in working mode.
+
+   WHAT THIS REPLACES. The builder and the menu were two brands. The menu is a
+   near-black column of bone type anchored to the left edge with the bike lit
+   beside it; the builder was a set of white rounded cards floating over the
+   same scene, and crossing between them felt like crossing between two
+   products. The owner's words: "the two pages feel like separate brands."
+
+   THREE COMPLAINTS, AND THE MEASUREMENTS BEHIND THEM
+
+   1. "the way the menu floats" — `.panel` sat at `top: 76px, left: 30px` as a
+      rounded card with air on all four sides. The menu's column is welded to
+      the viewport edge. One of them is a document; the other is furniture.
+
+   2. "oddly different heights" — measured at 1440x900: the panel is 800px tall
+      with ten bags on the bike and 376px with none, the mount sheet is 806px
+      starting at y=64, and the panel starts at y=76. Four surfaces that occupy
+      the same corner, no two of them the same size, and the size changing with
+      the contents. Nothing to rest your eye on.
+
+   3. "it just feels a bit cluttered" — and it was: eleven separate bordered
+      boxes in a 320px column, three widths of sheet, and a twelve-swatch
+      colour block louder than the bag list above it.
+
+   THE ANSWER IS ONE COLUMN. Flush to the left edge, flush to the top bar,
+   flush to the bottom of the window, at ONE width, always. Your rig lives in
+   it; picking a bag swaps its contents rather than opening a second thing
+   beside it. Nothing floats, nothing resizes, and the composition — dark
+   column left, lit bike right — is the menu's composition, so the two screens
+   are finally the same room.
+
+   Loaded after menu.css. Everything here is colour, border, radius and the
+   docking geometry. theme.css keeps its structural mapping — which selector
+   is a surface, which is a control — because that architecture is the good
+   part of it; what changes is what those surfaces are made of.
+   =========================================================================== */
+
+:root {
+  /* ---- one palette, shared with the menu ---------------------------------
+     These are menu.css's values, not approximations of them. Two layers of one
+     product cannot each have their own idea of what bone is. */
+  --ink-1: #F4F1EC;
+  --ink-2: rgba(244, 241, 236, 0.72);
+  --ink-3: rgba(244, 241, 236, 0.55);
+  --ink-4: rgba(244, 241, 236, 0.40);
+  --ink-faint: rgba(244, 241, 236, 0.40);
+  --ink: #F4F1EC;
+  --ink-dim: rgba(244, 241, 236, 0.72);
+  --ink-on-accent: #0A0B0D;
+
+  /* The accent is the menu's ember at the menu's value, because the surface it
+     sits on is now the menu's surface. It marks state and nothing else. */
+  --accent: #FF6A2B;
+  --accent-hi: #FF8551;
+  --accent-lo: #E85A1E;
+  --accent-soft: rgba(255, 106, 43, 0.16);
+  --accent-ring: rgba(255, 106, 43, 0.40);
+
+  /* Status, at values that read on near-black rather than on paper. */
+  --ok: #3ECF8E;
+  --warn: #E8A13B;
+  --bad: #F26D6D;
+
+  /* ---- surfaces ----------------------------------------------------------
+     The column is one step ABOVE the menu's veil, never equal to it: when the
+     menu closes onto the builder the panel has to arrive as a surface, not
+     dissolve into the same black. */
+  --surface: rgba(15, 16, 19, 0.93);
+  --surface-2: rgba(244, 241, 236, 0.05);
+  --surface-3: rgba(244, 241, 236, 0.09);
+  --line: rgba(244, 241, 236, 0.14);
+  --line-soft: rgba(244, 241, 236, 0.08);
+  --hairline: rgba(244, 241, 236, 0.08);
+  --fill-1: rgba(244, 241, 236, 0.05);
+  --fill-2: rgba(244, 241, 236, 0.09);
+  --fill-3: rgba(244, 241, 236, 0.14);
+
+  /* Shadows barely exist on a dark surface; separation is a border's job.
+     One lift survives, for the two things that genuinely float. */
+  --e1-shd: none;
+  --e2-shd: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --e3-shd: 0 16px 44px rgba(0, 0, 0, 0.50);
+  --e4-shd: 0 18px 48px rgba(0, 0, 0, 0.55);
+
+  /* A product photograph needs a light plate — most of the catalogue is
+     cut-outs shot on white, and a dark tile puts a halo around every one of
+     them. Bone rather than pure white, so the plate belongs to this palette
+     instead of being a hole punched in it. */
+  --plate: #F4F1EC;
+  --plate-edge: inset 0 0 0 1px rgba(244, 241, 236, 0.10);
+
+  /* ---- geometry ----------------------------------------------------------
+     ONE column width for every surface on the left. `--sheet-detail-w` and
+     `--sheet-catalog-w` were 490 and 720; a sheet that changes width when you
+     step from "choose a mount" to "choose a bag" is the app rearranging itself
+     underneath a decision you are in the middle of. reframe.js measures the
+     live rects rather than reading constants, so the camera follows this
+     automatically. */
+  --col-w: 396px;
+  --panel-w: var(--col-w);
+  --sheet-detail-w: var(--col-w);
+  --sheet-catalog-w: var(--col-w);
+
+  --radius: 4px;
+  --r-panel: 4px;
+  --r-dock: 4px;
+  --r-card: 4px;
+  --r-control: 4px;
+  --r-chip: 4px;
+  --r-swatch: 3px;
+  --r-pill: 4px;
+}
+
+/* ===========================================================================
+   DOCKING — the one column
+   =========================================================================== */
+
+#ui-root .topbar {
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+  background: var(--surface);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+}
+
+/*
+ * The panel and the sheet are the SAME BOX. Same left edge, same top, same
+ * bottom, same width — so swapping one for the other is a change of contents
+ * and reads as one surface thinking, rather than as two panels trading places.
+ */
+#ui-root .panel,
+#ui-root .sheet {
+  top: var(--topbar-h);
+  left: 0;
+  bottom: 0;
+  width: var(--col-w);
+  max-height: none;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--surface);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+}
+#ui-root .panel { position: fixed; }
+
+/* The rail. Collapsing the panel to 56px while a sheet covers the same column
+   was a state nobody could see — the sheet is directly on top of it. It simply
+   goes, and comes back when the sheet does. */
+#ui-root.sheet-open .panel {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms var(--ease-in, ease);
+}
+
+/* Scrim wells are for glass over a bright scene. These surfaces are opaque
+   enough not to need one, and a blurred dark copy behind an already-dark
+   panel only muddies its edge. */
+#ui-root .scrim-well { display: none !important; }
+
+/* ===========================================================================
+   THE COLUMN'S CONTENTS — fewer boxes
+   =========================================================================== */
+
+/* Section headings sit on a rule that runs the full width of the column, like
+   a table's, rather than being another inset box. */
+#ui-root .nav-sec + .nav-sec { border-top: 1px solid var(--line-soft); }
+#ui-root .nav-sec-title,
+#ui-root .kit-label,
+#ui-root .group-label,
+#ui-root .bottle-group .lbl {
+  color: var(--ink-3);
+  letter-spacing: 0.10em;
+}
+
+/*
+ * A bag row is a row, not a card. It had a 1px border, a 12px radius and a
+ * hover background — three ways of saying "this is one item" in a list whose
+ * items are already one per line. The rule between rows says it once.
+ */
+#ui-root .bag-card {
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--line-soft);
+  background: transparent;
+}
+#ui-root .bag-list { padding-left: 0; padding-right: 0; }
+#ui-root .bag-card:hover { background: var(--fill-1); }
+#ui-root .bag-card.sel {
+  background: var(--accent-soft);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+#ui-root .bag-model { color: var(--ink-1); }
+#ui-root .bag-meta { color: var(--ink-3); }
+#ui-root .bag-meta .m, #ui-root .bag-meta .sep, #ui-root .bag-size { color: var(--ink-4); }
+#ui-root .bag-liters { color: var(--ink-2); }
+
+/* The bag thumbnail keeps its light plate — see --plate above. */
+#ui-root .bag-sw, #ui-root .card-thumb, #ui-root .bs-hero, #ui-root .rn-stack img {
+  background: var(--plate);
+  box-shadow: var(--plate-edge);
+}
+#ui-root .rn-stack img { box-shadow: 0 0 0 2px var(--surface); }
+
+/*
+ * The colour block was the loudest thing in the column: twelve saturated
+ * circles under a list of muted bags, which is backwards — the bags are the
+ * subject and the paint is a preference. Smaller, quieter, on one line each.
+ */
+#ui-root .appearance { gap: 10px; }
+#ui-root .paint, #ui-root .bidon {
+  width: 20px; height: 20px;
+  border-radius: var(--r-swatch);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+#ui-root .paint.on, #ui-root .bidon.on {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35), 0 0 0 2px var(--surface), 0 0 0 3.5px var(--accent);
+}
+
+/* ===========================================================================
+   CONTROLS — one filled action per surface, as in the menu
+   =========================================================================== */
+
+#ui-root .acct-btn, #ui-root .home-up, #ui-root .btn, #ui-root .btn.quiet,
+#ui-root .btn.ghost, #ui-root .add-bag, #ui-root .share-kit, #ui-root .rn-new,
+#ui-root .cat-chip, #ui-root .cat-relax, #ui-root .bs-btn, #ui-root .tool-btn,
+#ui-root .sheet-close, #ui-root .rigs-btn, #ui-root .unfit-rm,
+#ui-root .size-chip, #ui-root .seg-btn {
+  background: transparent;
+  color: var(--ink-1);
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  box-shadow: none;
+}
+#ui-root .acct-btn:hover, #ui-root .home-up:hover, #ui-root .btn:hover,
+#ui-root .add-bag:hover, #ui-root .share-kit:hover, #ui-root .rn-new:hover,
+#ui-root .cat-chip:hover, #ui-root .cat-relax:hover, #ui-root .bs-btn:hover,
+#ui-root .tool-btn:hover, #ui-root .sheet-close:hover, #ui-root .size-chip:hover,
+#ui-root .seg-btn:hover {
+  background: var(--fill-1);
+  border-color: var(--line);
+  color: var(--ink-1);
+}
+#ui-root .tool-btn { border-color: transparent; }
+#ui-root .tool-btn.on, #ui-root .tool-btn.on:hover {
+  background: var(--accent-soft); color: var(--accent); border-color: transparent;
+}
+
+/* The primary action is bone on near-black — maximum contrast against its own
+   surface, exactly as in the menu. Never the accent: the accent is state. */
+#ui-root .save-btn, #ui-root .btn.primary, #ui-root .bs-btn.is-primary,
+#ui-root .rig-save-btn, #ui-root .rig-act.is-primary {
+  background: var(--ink-1);
+  color: #0A0B0D;
+  border: 1px solid var(--ink-1);
+  font-weight: 600;
+}
+#ui-root .save-btn:hover, #ui-root .btn.primary:hover, #ui-root .bs-btn.is-primary:hover,
+#ui-root .rig-save-btn:hover, #ui-root .rig-act.is-primary:hover {
+  background: #FBF7EF; border-color: #FBF7EF; color: #0A0B0D;
+}
+#ui-root .save-btn.is-done {
+  background: transparent; color: var(--ink-3); border-color: var(--line);
+}
+
+#ui-root .seg-btn.on { background: var(--fill-2); color: var(--ink-1); border-color: var(--line); }
+#ui-root .cat-chip.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+#ui-root .rn-new { border-style: dashed; color: var(--ink-2); }
+#ui-root .btn.ghost, #ui-root .btn.ghost:hover { color: var(--ink-2); }
+#ui-root .btn.ghost.confirm, #ui-root .bs-btn.is-bad, #ui-root .rig-act.rm, #ui-root .rig-act.is-bad {
+  color: var(--bad); border-color: rgba(242, 109, 109, 0.35); background: rgba(242, 109, 109, 0.10);
+}
+#ui-root .cat-clear, #ui-root .rig-link, #ui-root .toast-act, #ui-root .crumb:hover { color: var(--accent); }
+
+/* ===========================================================================
+   CARDS, SHEETS, INPUTS
+   =========================================================================== */
+
+#ui-root .card, #ui-root .rig-card, #ui-root .cat-pop, #ui-root .picker {
+  background: var(--surface-2);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-card);
+  color: var(--ink-1);
+}
+#ui-root .card:hover { border-color: var(--line); background: var(--surface-3); box-shadow: none; }
+#ui-root .card.on { border-color: var(--accent); background: var(--accent-soft); }
+#ui-root .card .name, #ui-root .bs-name, #ui-root .rn-name, #ui-root .sheet-title,
+#ui-root .kit-total, #ui-root .bs-spec-v, #ui-root .rn-title, #ui-root .mb-name,
+#ui-root .br-name, #ui-root .bs-label-v { color: var(--ink-1); }
+#ui-root .card .brand, #ui-root .bs-brand, #ui-root .bs-label, #ui-root .cat-count,
+#ui-root .panel-count, #ui-root .rn-count, #ui-root .crumb, #ui-root .crumb-sep,
+#ui-root .br-go, #ui-root .bs-nolink, #ui-root .peek-total { color: var(--ink-3); }
+#ui-root .card .meta, #ui-root .bs-sub, #ui-root .bs-spec-k, #ui-root .rn-meta,
+#ui-root .rn-empty, #ui-root .cat-opt-n, #ui-root .empty-state, #ui-root .bs-feats li,
+#ui-root .grade-blurb, #ui-root .aero-note, #ui-root .aero-cap, #ui-root .pk-title p {
+  color: var(--ink-2);
+}
+#ui-root .bs-foot { background: var(--surface); border-top-color: var(--line); }
+#ui-root .bs-foot::before { background: linear-gradient(transparent, var(--surface)); }
+#ui-root .bs-spec { border-top-color: var(--line-soft); }
+#ui-root .bs-hero-tag { background: rgba(10, 11, 13, 0.78); color: var(--ink-1); }
+#ui-root .cat-facets { border-bottom: 0; }
+
+#ui-root .cat-q, #ui-root .rn-rename, #ui-root .rig-input, #ui-root .rig-field input,
+#ui-root input[type='search'], #ui-root input[type='text'],
+#ui-root input[type='email'], #ui-root input[type='password'] {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  color: var(--ink-1);
+}
+#ui-root .cat-q::placeholder, #ui-root .rn-rename::placeholder,
+#ui-root input::placeholder { color: var(--ink-4); }
+#ui-root .cat-q:focus, #ui-root .rn-rename:focus, #ui-root input:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+  background: var(--surface-2);
+}
+#ui-root :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/*
+ * THE CATALOGUE IS A LIST, NOT A GRID.
+ *
+ * It was a three-up grid of tiles because the sheet was 720px wide. In a 396px
+ * column two-up gives every product a ~190px plate, and since most of the
+ * catalogue is cut-outs photographed on white, that is a wall of white
+ * rectangles down a dark panel — more plate than product, and about four bags
+ * visible per screen.
+ *
+ * As rows it is the same language as the kit list on the same column: a small
+ * plate, the maker, the model, the capacity. Ten bags visible instead of four,
+ * the white reduced to a thumbnail, and the two lists you move between all day
+ * finally look like the same list.
+ */
+#ui-root .sheet[data-kind='catalog'] .cards,
+#ui-root .sheet .cards {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+#ui-root .card {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  grid-template-areas:
+    "thumb brand  liters"
+    "thumb name   liters";
+  align-items: center;
+  column-gap: 12px;
+  row-gap: 2px;
+  /* The right pad is not decoration: the capacity is right-aligned in this
+     column and without it "30 L" — and the colourway dots beside it — sat hard
+     against the panel's own border, half off the edge. */
+  padding: 8px 12px 8px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  border-radius: 0;
+  background: transparent;
+  /* Row height comes from the 52px plate, not from the two lines of type. */
+  min-height: 68px;
+}
+#ui-root .card .brand { font-size: 10px; line-height: 1.2; }
+#ui-root .card .name { font-size: 13.5px; line-height: 1.3; }
+#ui-root .card .meta { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+#ui-root .card:hover { background: var(--fill-1); border-color: var(--line-soft); }
+#ui-root .card.on {
+  background: var(--accent-soft);
+  border-color: var(--line-soft);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+#ui-root .card .card-thumb {
+  grid-area: thumb;
+  width: 52px; height: 52px;
+  aspect-ratio: auto;
+  padding: 4px;
+  border-radius: 3px;
+}
+#ui-root .card .brand { grid-area: brand; align-self: end; margin: 0; }
+#ui-root .card .name  { grid-area: name;  align-self: start; min-height: 0; margin: 0; }
+#ui-root .card .meta  { grid-area: liters; margin: 0; text-align: right; }
+
+#ui-root .toast {
+  background: var(--surface); color: var(--ink-1);
+  border: 1px solid var(--line); border-radius: var(--r-control);
+  box-shadow: var(--e2-shd);
+}
+#ui-root .hint {
+  background: var(--surface); color: var(--ink-2);
+  border: 1px solid var(--line); border-radius: var(--r-control);
+}
+#ui-root .acct-dot { box-shadow: inset 0 0 0 1.5px var(--ink-4); }
+#ui-root .acct-btn.is-in .acct-dot { background: var(--ok); box-shadow: none; }
+
+/* ---- rows and pickers ---------------------------------------------------- */
+#ui-root .rn-row, #ui-root .cat-opt, #ui-root .mount-btn, #ui-root .brand-row, #ui-root .rn-item {
+  border-radius: var(--r-card);
+}
+#ui-root .rn-row:hover, #ui-root .cat-opt:hover, #ui-root .brand-row:hover {
+  background: var(--fill-1);
+}
+#ui-root .rn-back, #ui-root .rn-del, #ui-root .sheet-chevron, #ui-root .pk-back,
+#ui-root .pk-close { color: var(--ink-3); background: transparent; border: 0; }
+#ui-root .rn-back:hover, #ui-root .rn-del:hover, #ui-root .pk-close:hover { color: var(--ink-1); }
+#ui-root .rn-del:hover { background: rgba(242, 109, 109, 0.12); color: var(--bad); }
+#ui-root .bag-act { color: var(--ink-3); }
+#ui-root .bag-act:hover, #ui-root .bag-act.rm:hover { color: var(--ink-1); }
+#ui-root .bag-act.buy { color: var(--ink-4); }
+
+/* ---- the account sheet --------------------------------------------------- */
+#ui-root .rig-title, #ui-root .rig-name, #ui-root .rig-field-label,
+#ui-root .rigs-picker { color: var(--ink-1); }
+#ui-root .rig-meta, #ui-root .rig-acct-txt, #ui-root .rig-empty,
+#ui-root .rig-fineprint, #ui-root .rig-or, #ui-root .rig-alt { color: var(--ink-2); }
+#ui-root .rig-account { border-color: var(--line-soft); }
+#ui-root .rig-card:hover { background: var(--surface-3); }
+#ui-root .rig-act, #ui-root .rig-save-btn { border-radius: var(--r-control); }
+#ui-root .rig-act.on, #ui-root .rig-act.is-on {
+  background: var(--accent-soft); color: var(--accent); border-color: var(--accent);
+}
+#ui-root .rig-notice.is-ok {
+  background: rgba(62, 207, 142, 0.10); border: 1px solid rgba(62, 207, 142, 0.30); color: #7FE0B4;
+}
+#ui-root .rig-notice.is-bad {
+  background: rgba(242, 109, 109, 0.10); border: 1px solid rgba(242, 109, 109, 0.30); color: #F5A0A0;
+}
+
+/* ---- the wind tunnel ----------------------------------------------------- */
+#ui-root .aero-panel, #ui-root .aero-sec, #ui-root .aero-peek {
+  background: var(--surface); color: var(--ink-1);
+  border-color: var(--line);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+}
+#ui-root .aero-sec + .aero-sec { border-top: 1px solid var(--line-soft); }
+#ui-root .aero-title { color: var(--ink-3); }
+#ui-root .cda-value, #ui-root .watts-value, #ui-root .delta-value,
+#ui-root .peek-cost-value { color: var(--ink-1); }
+#ui-root .grade-badge { background: var(--accent-soft); color: var(--accent); }
+#ui-root .grade-name { color: var(--ink-1); }
+#ui-root .bs-spec-v.is-ok { color: var(--ok); }
+#ui-root .bs-spec-v.is-warn { color: var(--warn); }
+#ui-root .card-unfit { color: var(--warn); }
+
+/* ===========================================================================
+   NARROW — the column becomes the bottom sheet it already was
+   =========================================================================== */
+@media (max-width: 900px) {
+  :root { --col-w: 100%; }
+  /*
+   * A phone has no room for a column beside the bike, so the same surface
+   * docks to the BOTTOM edge instead of the left one — and it must keep the
+   * height cap MOBILE.md sets, or it fills the screen and the bike, which is
+   * the entire product, is not on it. (`max-height: none` in the desktop rule
+   * above did exactly that: the panel ran from the top bar to the floor.)
+   */
+  #ui-root .panel, #ui-root .sheet {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    max-height: 55vh;
+    border-right: 0;
+    border-top: 1px solid var(--line);
+  }
+  #ui-root .panel { position: fixed; }
+  /* Collapsed, the sheet is just its header — the handle you tap to get the
+     list back — so the bike gets the screen. */
+  #ui-root .panel.collapsed { max-height: none; }
+  #ui-root .sheet .cards { grid-template-columns: minmax(0, 1fr); }
+}
+
+
+/* ---- scroll fades eat padding, not rows -----------------------------------
+   `.bag-list.fade-bottom` and the sheet body both mask their last 32-34px. The
+   mask fades the bottom of the BOX, so without padding beneath the content the
+   final row is permanently half-dissolved even when you have scrolled to the
+   end — which reads as a rendering fault rather than as more below. The menu's
+   manifest had the same bug; same fix. */
+#ui-root .bag-list.fade-bottom { padding-bottom: 34px; }
+#ui-root .sheet-body { padding-bottom: calc(var(--s-5, 20px) + 32px); }
+
+/* ---- the count is a number, not a bulleted list ---------------------------
+   "BAGS ON BIKE · 10" put the separator hard against the label and the figure
+   at the far end of a flex row, so the middot read as an orphaned dot. The
+   count sits with its label. */
+#ui-root .panel-count::before { content: none; }
+#ui-root .nav-sec-head .panel-count { margin-left: 8px; margin-right: auto; }
+
+
+/* ---- the bag sheet's footer ----------------------------------------------
+   `.bs-foot` is a sticky bar over a scrolling body, so it needs a GROUND, not
+   a tint. It was inheriting `--surface` at 0.93 and the feature list scrolled
+   visibly through the buttons — the sheet.css comment beside it says the
+   footer "needs its own opaque ground", and the light theme had quietly taken
+   that away again. */
+#ui-root .bs-foot {
+  background: rgba(15, 16, 19, 0.985);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border-top: 1px solid var(--line);
+}
+#ui-root .bs-foot::before { background: linear-gradient(transparent, rgba(15, 16, 19, 0.985)); }
+#ui-root .sheet-body:has(.bs-foot) { padding-bottom: var(--s-5, 20px); }
+
+/* Two controls in a row, and a link. Three stacked full-width buttons is the
+   shape of a form, not of a decision about one bag: replace it, remove it, or
+   go and read the maker's page — and only the first of those is an action on
+   the rig. */
+#ui-root .bs-btn { height: 40px; border-radius: var(--r-control); font-weight: 550; }
+#ui-root .bs-btn.is-buy {
+  height: auto;
+  padding: 6px 2px;
+  border: 0;
+  background: transparent;
+  color: var(--ink-3);
+  font-weight: 450;
+  text-decoration: none;
+}
+#ui-root .bs-btn.is-buy:hover { color: var(--ink-1); background: transparent; text-decoration: underline; }
+
+
+/* ---- ink-4 is for things with no words in them ----------------------------
+   Measured with tools/_contrast-audit.mjs, which composites every ancestor's
+   background and scores each text node against the ground actually painted
+   behind it. These all sat at 3.5:1 — under the 4.5 floor for text this size —
+   because they had been given the level reserved for dots, ghost arrows and
+   index numerals. Same discipline as menu.css: if it has words, it is ink-3
+   or better. */
+#ui-root .bag-meta .m,
+#ui-root .bag-meta .sep,
+#ui-root .bag-size,
+#ui-root .zone-title,
+#ui-root .mb-sub,
+#ui-root .rn-count,
+#ui-root .crumb-sep,
+#ui-root .cat-opt-n {
+  color: var(--ink-3);
+}
+
+/* The two icons that replaced ⚡ and a text "+". They sit inside labelled
+   controls, so they take the label's ink and a fixed gap. */
+#ui-root .add-bag, #ui-root .btn.quiet { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+#ui-root .add-bag .plus, #ui-root .btn.quiet .bolt { flex: 0 0 auto; color: var(--ink-3); }
+#ui-root .add-bag:hover .plus, #ui-root .btn.quiet:hover .bolt { color: var(--ink-1); }
+
+
+/* ===========================================================================
+   ROUND TWO — what the review found
+   =========================================================================== */
+
+/* F1 — the mount picker was the old brand inside the new box: every option a
+   bordered rounded card, the whole list inside a second bordered container
+   inset from the column. Eleven boxes deep, which is the exact thing the
+   preamble at the top of this file condemns. Rows and rules, like every other
+   list in the column. */
+#ui-root .sheet .picker,
+#ui-root .sheet .zone-grid {
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+}
+#ui-root .zone-grid { display: block; }
+#ui-root .mount-btn {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  width: 100%;
+  padding: 12px 12px 12px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+}
+#ui-root .mount-btn:hover { background: var(--fill-1); }
+#ui-root .mount-btn:disabled { opacity: 0.4; }
+#ui-root .mb-name { grid-column: 1; color: var(--ink-1); }
+#ui-root .mb-sub { grid-column: 1 / -1; color: var(--ink-3); }
+
+/* F5 — ten lines of ember. Every occupied mount printed its product in full
+   accent, which made the sheet's dominant colour an accent that appears twice
+   per screen in the menu. Occupancy is marked the way a selected row is marked
+   everywhere else in this column: a 2px inset bar. The words go quiet. */
+#ui-root .mount-btn.occupied { box-shadow: inset 2px 0 0 var(--accent); }
+#ui-root .mount-btn.occupied .mb-sub { color: var(--ink-2); }
+
+/* F6 — one gutter. The kit list's rows started 13px from the viewport edge and
+   the catalogue's at 24px, with their text at 55px and 88px — the two lists
+   the whole redesign exists to unify, disagreeing by 33px at first glance. */
+#ui-root .bag-list, #ui-root .sheet-body .cards { padding-left: 0; padding-right: 0; }
+#ui-root .bag-card, #ui-root .card {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+#ui-root .sheet-body { padding-left: 0; padding-right: 0; }
+#ui-root .sheet-body > .picker > *:not(.zones):not(.cards):not(.lines) { padding-left: 16px; padding-right: 16px; }
+#ui-root .zone-title { padding-left: 16px; }
+
+/* F7 — the capacity column jittered: a row carrying colourway dots pushed its
+   litres left of a row without them, so the one column you read DOWN stopped
+   aligning. The dots get a fixed slot whether or not they are there. */
+#ui-root .card .meta {
+  display: grid;
+  grid-template-columns: max-content 40px;
+  align-items: center;
+  gap: 8px;
+}
+#ui-root .card .meta .liters { text-align: right; }
+
+/* F8 — prose in the readout face. theme.css routes `.bs-spec-v` into the mono,
+   which is right for "16 L" and wrong for "rolltop with quick-release buckle" —
+   and that file's own rule says so. Mono is re-applied by the code, on the
+   values that are actually numeric. */
+#ui-root .bs-spec-v { font-family: var(--font); max-width: 64%; text-align: right; }
+#ui-root .bs-spec-v.is-num { font-family: var(--font-num); font-variant-numeric: tabular-nums slashed-zero; }
+
+/* F9 — ink-4 was carrying words again: input placeholders and the buy link.
+   0.40 composites to 3.5:1 on this surface. Words are ink-3 or better. */
+#ui-root .cat-q::placeholder, #ui-root .rn-rename::placeholder,
+#ui-root input::placeholder, #ui-root .bag-act.buy { color: var(--ink-3); }
+
+/* F10 — the wind tunnel was the last floating rounded panel in the app, with a
+   drop shadow, its own radius, and two ways out. Docked as the right-hand
+   mirror of the rig column: the bike sits between two rules, which is the
+   composition the menu established. */
+#ui-root .aero-panel {
+  top: var(--topbar-h);
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: var(--col-w);
+  max-height: none;
+  border: 0;
+  border-left: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* F14 — the type ramp drifted between the layers. Fixed at the token rather
+   than patched per selector: the builder's caps were 650 weight at 0.13em
+   against the menu's 600 at 0.10em, and its primaries 600 against 550. */
+:root { --t-label: 600 10.5px/1 var(--font); --tr-label: 0.10em; }
+#ui-root .nav-sec-title, #ui-root .kit-label, #ui-root .group-label,
+#ui-root .bottle-group .lbl, #ui-root .zone-title, #ui-root .bs-label,
+#ui-root .cat-count, #ui-root .aero-title, #ui-root .rig-field-label {
+  font-weight: 600;
+  letter-spacing: 0.10em;
+}
+#ui-root .sheet-title { font-weight: 550; }
+#ui-root .save-btn, #ui-root .btn.primary, #ui-root .bs-btn.is-primary,
+#ui-root .rig-save-btn, #ui-root .rig-act.is-primary { font-weight: 550; }
+
+/* F15 — "Remove it" was a red filled box at equal width beside the primary,
+   which makes destruction half the decision. Quiet until you go near it. */
+#ui-root .bs-btn.is-bad, #ui-root .rig-act.rm, #ui-root .rig-act.is-bad {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink-2);
+}
+#ui-root .bs-btn.is-bad:hover, #ui-root .rig-act.rm:hover, #ui-root .rig-act.is-bad:hover {
+  background: rgba(242, 109, 109, 0.10);
+  border-color: rgba(242, 109, 109, 0.35);
+  color: var(--bad);
+}
+
+/* F4 — the saved-rigs sheet floated a bordered card inside an already-docked
+   column, and the topbar's filled "Save rig" was answered by a second filled
+   primary forty pixels below it. One filled action per surface. */
+#ui-root .rig-account, #ui-root .rig-saverow {
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+}
+#ui-root .rig-save-btn {
+  background: transparent;
+  color: var(--ink-1);
+  border: 1px solid var(--line);
+  font-weight: 550;
+}
+#ui-root .rig-save-btn:hover { background: var(--fill-1); border-color: var(--line); color: var(--ink-1); }
+
+/* F16 — the wordmark jumped 30px sideways between the two layers, at the one
+   anchor they share. One number, and the builder adopts the menu's. */
+#ui-root .topbar { padding-left: clamp(28px, 4.4vw, 72px); padding-right: clamp(28px, 4.4vw, 72px); }
+
+
+/* The last 42px of the spine. Rows that carry a plate must start their text at
+   the same x in both lists, and the plate was 40px in the kit and 52px in the
+   catalogue — so "Apidura" began at 61 in one list and 80 in the other. One
+   plate size; text at 80 in both. Rows with no plate (the mount picker) start
+   at the gutter itself, which is the same rule, not an exception to it. */
+#ui-root .bag-card .bag-sw { width: 52px; height: 52px; flex: 0 0 52px; border-radius: 3px; padding: 4px; }
+#ui-root .bag-card { gap: 12px; }
+#ui-root .zones, #ui-root .zone, #ui-root .lines { padding-left: 0; padding-right: 0; }
+#ui-root .zone-title { padding-left: 16px; padding-right: 16px; }
+
+
+/* The back chevron, and the header it lives in. */
+#ui-root .sheet-head { gap: 4px; }
+#ui-root .sheet-back {
+  flex: 0 0 auto;
+  display: grid; place-items: center;
+  width: 32px; height: 32px;
+  margin-left: -6px;
+  border: 0; background: transparent;
+  border-radius: var(--r-control);
+  color: var(--ink-3);
+  cursor: pointer;
+}
+#ui-root .sheet-back:hover { color: var(--ink-1); background: var(--fill-1); }
+#ui-root .sheet-back[hidden] { display: none; }
+
+/* The colour swatches and the running total were touching. */
+#ui-root .appearance { padding-bottom: 6px; }
+#ui-root .panel-foot { padding-top: 10px; border-top: 1px solid var(--line-soft); }
+
+
+/* A long model name ran under the litre column instead of wrapping — the row's
+   middle track is `minmax(0, 1fr)`, so the text had room to wrap and was being
+   held on one line by the grid card's old `white-space`. Two lines, then an
+   ellipsis; the capacity keeps its lane. */
+#ui-root .card .name {
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+#ui-root .card .brand { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+
+/* ---- the column fills, top and bottom -------------------------------------
+   The panel is a fixed-height column now, so its sections have to distribute
+   or the empty rig leaves 700px of black under the colour swatches and the
+   footer floats halfway up the screen. The bag list is the one section that
+   should absorb the slack: appearance and the running total belong at the
+   bottom edge, where they are in every state. */
+#ui-root .panel > .nav-sec:first-of-type {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+#ui-root .panel > .nav-sec:first-of-type .bag-list { flex: 1 1 auto; }
+#ui-root .panel > .nav-sec:first-of-type .nav-actions { flex: 0 0 auto; }
+#ui-root .panel > .nav-sec + .nav-sec, #ui-root .panel-foot { flex: 0 0 auto; }
+
+/* The empty state is the first thing anyone sees after "Build a rig", and it
+   was one 14px sentence adrift in that slack. It gets the room it is standing
+   in, and says the two things worth knowing. */
+#ui-root .empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
+  height: 100%;
+  padding: 24px 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+#ui-root .es-lead { color: var(--ink-1); font-size: 15px; font-weight: 550; }
+#ui-root .es-sub { color: var(--ink-3); font-size: 13px; max-width: 30ch; }

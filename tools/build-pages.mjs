@@ -135,6 +135,7 @@ copyFileSync(join(root, 'src/ui/theme.css'), join(docs, 'theme.css'));
 // ...and after even that, the v2 menu layer, which is a self-contained dark
 // surface and has to win over the light re-skin for everything under `.pr`.
 copyFileSync(join(root, 'src/ui/v2/menu.css'), join(docs, 'menu.css'));
+copyFileSync(join(root, 'src/ui/v2/builder.css'), join(docs, 'builder.css'));
 
 writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <html lang="en">
@@ -152,6 +153,7 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <link rel="stylesheet" href="aero.css" />
 <link rel="stylesheet" href="theme.css" />
 <link rel="stylesheet" href="menu.css" />
+<link rel="stylesheet" href="builder.css" />
 <style>html,body{height:100%;margin:0;background:#121212;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
 </head>
 <body>

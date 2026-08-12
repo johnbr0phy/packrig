@@ -69,7 +69,7 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
   /** Facet state lives per slot for the session — §9. */
   const memory = new Map();
 
-  function open(uiSlot) {
+  function open(uiSlot, { onBack = null } = {}) {
     const catSlot = productSlotFor(uiSlot);
     const all = productsForSlot(app.catalog, catSlot);
     const label = SLOTS[uiSlot]?.label || 'Bag';
@@ -81,6 +81,7 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
     const handle = openSheet({
       kind: 'catalog',
       title: label,
+      onBack,
       render: (b, h) => { body = b; draw(h); },
     });
 

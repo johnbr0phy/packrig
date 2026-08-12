@@ -201,7 +201,11 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   speedSlider.step = '1';
   speedSlider.value = '28';
   speedSlider.setAttribute('aria-label', 'Speed, kilometres per hour');
-  const speedReadout = elt('span', 'slider-readout speed-readout', '28 km/h');
+  // The sentence above the slider already reads "180 W to hold 28 km/h", so a
+  // live echo of the same figure beside the track is the same number twice on
+  // one line of sight. The track's own label is the range it covers, which is
+  // the thing the sentence does not say.
+  const speedReadout = elt('span', 'slider-readout speed-readout', '');
   speedSliderRow.append(speedSlider, speedReadout);
   wattsSec.append(wattsRow, speedSliderRow);
   body.append(wattsSec);
@@ -211,7 +215,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   const onSpeedUp = () => { speedDragging = false; };
   const onSpeedInput = () => {
     const kph = Number(speedSlider.value);
-    speedReadout.textContent = `${kph} km/h`;
+    speedReadout.textContent = '';
     wattsSpeedEcho.textContent = String(kph);
     onSpeedChange?.(kph);
   };
@@ -451,7 +455,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     if (!speedDragging && document.activeElement !== speedSlider) {
       speedSlider.value = String(ride.speedKph);
     }
-    speedReadout.textContent = `${Math.round(ride.speedKph)} km/h`;
+    speedReadout.textContent = '';
     wattsSpeedEcho.textContent = String(Math.round(ride.speedKph));
 
     tweenText(dW.value, comparison.addedW, signedFmt(dW, 0));

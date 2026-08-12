@@ -50,7 +50,17 @@ function specRow(key, value, { ok = false, warn = false } = {}) {
   if (value == null || value === '' || value === '—') return null;
   const r = el('div', 'bs-spec');
   r.append(el('span', 'bs-spec-k', key));
-  const v = el('span', 'bs-spec-v' + (ok ? ' is-ok' : '') + (warn ? ' is-warn' : ''), String(value));
+  /*
+   * A measurement is set in the mono; a sentence is not. "16 L" and "480 g" are
+   * readouts and line up as a column; "rolltop with quick-release buckle" is
+   * prose, and in a fixed-pitch face at 396px it nearly collides with its own
+   * label. The class decides, so the rule lives with the value rather than in
+   * a stylesheet guessing from the selector.
+   */
+  const text = String(value);
+  const numeric = /^[\d.,\s+-]*\d[\d.,\s]*(?:[a-zA-Z°%²³\/]{0,4})?$/.test(text.trim());
+  const v = el('span', 'bs-spec-v' + (numeric ? ' is-num' : '')
+    + (ok ? ' is-ok' : '') + (warn ? ' is-warn' : ''), text);
   r.append(v);
   return r;
 }

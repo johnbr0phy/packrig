@@ -48,6 +48,9 @@ const PATHS = {
   layers:    ['M10 3l6.5 3.5L10 10 3.5 6.5 10 3Z', 'M3.5 10.5 10 14l6.5-3.5', 'M3.5 13.5 10 17l6.5-3.5'],
   grid:      ['M3.5 3.5h5v5h-5z', 'M11.5 3.5h5v5h-5z', 'M3.5 11.5h5v5h-5z', 'M11.5 11.5h5v5h-5z'],
   plus:      ['M10 4.5v11', 'M4.5 10h11'],
+  // "Surprise me" carried a ⚡ emoji — the last piece of operating-system
+  // typography left in the app after the camera tools were redrawn.
+  bolt:      ['M11.2 2.5 4.8 11h4.2l-.8 6.5L15.2 9H11l.2-6.5Z'],
   check:     ['M4.5 10.5l3.5 3.5 7.5-8'],
   share:     ['M10 13V3.5', 'M6.5 6.5L10 3l3.5 3.5', 'M4.5 12v3a1.5 1.5 0 0 0 1.5 1.5h8a1.5 1.5 0 0 0 1.5-1.5v-3'],
   user:      ['M10 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z', 'M4 16.5c.9-2.6 3.1-4 6-4s5.1 1.4 6 4'],

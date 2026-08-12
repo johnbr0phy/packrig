@@ -70,6 +70,22 @@ export function initSheets(app, { root, applyBase } = {}) {
   // BEHIND the chrome, which is the only placement the blur can sample.
 
   const head = el('header', 'sheet-head');
+  /*
+   * A way back up.
+   *
+   * The flow is mount -> catalogue -> bag, and every step's header offered
+   * only a close button: from "Handlebar roll" there was no route back to
+   * "Choose a mount" except closing the whole thing and starting again. The
+   * chevron appears only when the caller passes `onBack`, so a sheet with no
+   * parent still shows exactly what it showed before.
+   */
+  const backBtn = el('button', 'sheet-back');
+  backBtn.type = 'button';
+  backBtn.hidden = true;
+  backBtn.innerHTML =
+    '<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false">'
+    + '<path d="M12.5 4L7 10l5.5 6" fill="none" stroke="currentColor" stroke-width="1.6" '
+    + 'stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const titleEl = el('h2', 'sheet-title t-title2');
   const closeBtn = el('button', 'sheet-close');
   closeBtn.type = 'button';
@@ -79,7 +95,7 @@ export function initSheets(app, { root, applyBase } = {}) {
     '<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false">' +
     '<path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.5" ' +
     'stroke-linecap="round"/></svg>';
-  head.append(titleEl, closeBtn);
+  head.append(backBtn, titleEl, closeBtn);
 
   const body = el('div', 'sheet-body');
   sheet.append(head, body);
@@ -97,7 +113,7 @@ export function initSheets(app, { root, applyBase } = {}) {
     if (e.key === 'Escape' && active) { e.stopPropagation(); close(); }
   }
 
-  function open({ kind = 'detail', title = '', render, onClose } = {}) {
+  function open({ kind = 'detail', title = '', render, onClose, onBack = null } = {}) {
     const first = !active;
     if (first) lastFocus = document.activeElement;
 
@@ -106,6 +122,9 @@ export function initSheets(app, { root, applyBase } = {}) {
     sheet.hidden = false;
     titleEl.textContent = title;
     sheet.setAttribute('aria-label', title || 'Details');
+    backBtn.hidden = !onBack;
+    backBtn.onclick = onBack || null;
+    backBtn.setAttribute('aria-label', 'Back');
     body.scrollTop = 0;
     body.replaceChildren();
 

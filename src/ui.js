@@ -213,7 +213,8 @@ export function initUI(app) {
   const summary = el('div', 'kit-summary');
   const totalEl = elt('span', 'kit-total', '0 L');
   summary.append(elt('span', 'kit-label', 'Total capacity'), totalEl);
-  const addBtn = el('button', 'add-bag', '<span class="plus">+</span> Add a bag');
+  const addBtn = el('button', 'add-bag');
+  addBtn.append(icon('plus', { size: 16, cls: 'plus' }), elt('span', null, 'Add a bag'));
   addBtn.title = 'Pick a mount point';
   addBtn.onclick = () => openMountPicker();
   const shareBtn = el('button', 'share-kit');
@@ -229,7 +230,8 @@ export function initUI(app) {
   listEl.addEventListener('scroll', updateFade);
 
   // ---- build actions: randomise, clear ------------------------------------
-  const btnRand = el('button', 'btn quiet', '<span class="bolt">⚡</span> Surprise me');
+  const btnRand = el('button', 'btn quiet');
+  btnRand.append(icon('bolt', { size: 16, cls: 'bolt' }), elt('span', null, 'Surprise me'));
   btnRand.onclick = () => app.randomize();
   // clearing the whole bike is destructive, so it asks once before it fires
   const btnClear = elt('button', 'btn ghost', 'Clear bike');
@@ -770,7 +772,7 @@ export function initUI(app) {
             : 'No products';
         b.append(elt('span', 'mb-sub', sub));
         if (!options.length) b.disabled = true;
-        else b.onclick = () => catalogue.open(key);
+        else b.onclick = () => catalogue.open(key, { onBack: openMountPicker });
         grid.append(b);
       }
       sec.append(grid);
@@ -1124,8 +1126,15 @@ export function initUI(app) {
     const unfit = Object.keys(app.bags.unfitted || {});
     const keys = Object.keys(SLOTS).filter((k) => app.bags.equipped[k]);
     if (!keys.length && !unfit.length) {
-      listEl.append(el('div', 'empty-state',
-        'Start with a seat pack'));
+      // The first screen after "Build a rig". It used to be four words; the
+      // column is a fixed height now and those four words sat alone in it.
+      const empty = el('div', 'empty-state');
+      empty.append(elt('p', 'es-lead', 'Nothing on the bike yet.'));
+      empty.append(elt('p', 'es-sub',
+        `${Object.keys(SLOTS).length} mounting points, `
+        + `${app.catalog.reduce((n, b) => n + b.products.length, 0)} bags to put on them. `
+        + 'A seat pack is the usual place to start.'));
+      listEl.append(empty);
       return 0;
     }
     for (const key of keys) {
@@ -1227,6 +1236,10 @@ export function initUI(app) {
     const n = renderList();
     paintSelection();
     countEl.textContent = String(n);
+    // Nothing to clear on an empty bike, and a destructive control offered
+    // against nothing is just one more thing in the column.
+    btnClear.hidden = n === 0;
+    if (n === 0) resetClear();
     const liters = Object.values(app.bags.equipped)
       .reduce((sum, e) => sum + (Number(e.product?.liters) || 0), 0);
     totalEl.textContent = `${liters.toFixed(1)} L`;

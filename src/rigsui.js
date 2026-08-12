@@ -111,7 +111,10 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
 
   // ---- list ----------------------------------------------------------------
   async function renderList(pk) {
-    head(pk, 'My rigs', auth.signedIn ? '' : 'Saved in this browser');
+    // The account bar below already says "Saved on this device". Saying it again
+  // as the sheet's subtitle, in tracked caps, forty pixels above, is the same
+  // sentence in two voices.
+  head(pk, 'My rigs', '');
     pk.append(accountBar());
     if (store.galleryEnabled) {
       const g = el('div', 'rig-account');
