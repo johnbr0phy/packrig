@@ -55,14 +55,17 @@ function offsetPolyEdges(points, insets) {
   return out;
 }
 
-/** Frame-bag boundary: hug the tubes, tucking slightly under the top tube. */
+/** Frame-bag boundary: hug the tubes. */
 export function framePanelPoly(ctx) {
   const r = ctx.frameEdgeR;
   if (!r) return insetPoly(ctx.framePoly, 14);
-  // edges are [seat tube, top tube, head tube, down tube]; the top tube inset is
-  // a shade under its radius so the fabric disappears behind the tube and reads
-  // as compressed up against it rather than hanging below it
-  return offsetPolyEdges(ctx.framePoly, [r[0] + 3, r[1] - 1, r[2] + 3, r[3] + 2]);
+  // edges are [seat tube, top tube, head tube, down tube].
+  // The top tube used to be inset a shade UNDER its radius so the fabric
+  // disappeared behind the tube. The extrusion bevel then grew that outline
+  // back outward by 5–6 mm and the bag punched a visible notch in the silver.
+  // Sit the panel on the inner surface (+1 mm) and let each builder pull the
+  // pre-bevel shape down by its own bevel, so the finished edge lands here.
+  return offsetPolyEdges(ctx.framePoly, [r[0] + 3, r[1] + 1, r[2] + 3, r[3] + 2]);
 }
 
 /** Sutherland–Hodgman against one half-plane; keeps the side where (q−p0)·n ≤ 0. */

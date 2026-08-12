@@ -135,6 +135,11 @@ export function buildFrameFull(p, brand, main, accent, ctx) {
   // does NOT strap to (mount.attachesTo is top tube / downtube / seat tube), so
   // anything inside it is a clash rather than a mount.
   poly = clipHalfPlane(poly, full[2].clone().addScaledVector(htN, -(bevelS + 3)), htN);
+  // Same story on the top tube: without this the bevel grows 5 mm of fabric
+  // through the silver and the tube reads as notched. Pull the pre-bevel
+  // edge down by the bevel PLUS a couple of millimetres so the finished
+  // lip sits under the tube, not inside it.
+  poly = clipHalfPlane(poly, ttA.clone().addScaledVector(upN, -(bevelS + 4)), upN);
   if (poly.length < 3) poly = full;
   // The Backcountry's radii are the softest thing about it: on
   // backcountry-full-frame-pack/dimensions-2.png the seat-tube corner sweeps
@@ -332,15 +337,24 @@ export function buildFrameFull(p, brand, main, accent, ctx) {
     // the bag, so drive the fold height off the DEPTH and stretch the lip to the
     // edge — passing r = half the top edge drew a 470mm porthole standing out
     // of the drive side, which is what the Ortlieb RC pair were rendering.
+    //
+    // The roll used to be parked ON the top-tube line and nudged 6 mm world-up,
+    // so the folded lip sat inside the silver. It belongs in the triangle,
+    // under the tube, same as the panel.
     const a = toLocal(pTop), b = toLocal(ttB);
-    a.z = b.z = depth / 2 - 8;
-    const r = Math.max(depth * 1.6, 24);
+    const span = a.distanceTo(b);
+    const r = Math.max(Math.min(depth * 0.7, 20), 14);
+    const foldH = Math.max(r * 0.3, 5);
+    const stack = 14 * 0.16 + foldH * 0.66;
     const mouth = rollTop(main, hwmF, {
       r, depth: 14, rings: 2, back: false,
-      widthScale: Math.max(a.distanceTo(b) / (1.68 * r), 0.4),
+      widthScale: Math.max(span / (1.68 * r), 0.4),
     });
     mouth.rotation.x = -Math.PI / 2;
-    mouth.position.copy(a.clone().lerp(b, 0.5)).add(v3(0, 6, 0));
+    mouth.rotation.z = Math.atan2(ttDir.y, ttDir.x);
+    const mid = a.clone().lerp(b, 0.5);
+    mid.z = 0;
+    mouth.position.copy(mid).addScaledVector(upN, -(stack + foldH + 8));
     grp.add(mouth);
   } else if (closure === 'zip_two_way' || closure === 'zip_horseshoe') {
     // Backcountry: ONE long two-way run just under the top edge that turns the

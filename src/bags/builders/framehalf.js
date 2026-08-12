@@ -307,16 +307,12 @@ export function buildFrameHalf(p, brand, main, accent, ctx) {
   // Declared here rather than with the kite below because the top edge needs it
   // too: it is the extrusion bevel, and it moves BOTH the top edge and the depth.
   const bevel = 6;
-  // NOT shifted down by the bevel, and the failed attempt is worth recording.
-  // The gate reports a 7mm top tube penetration on 101 of this slot's 103
-  // products, and the obvious theory was that the bevel expands the outline
-  // upward into the tube. Dropping the top edge by one bevel to compensate was
-  // measured across all 103: penetration went 101 -> 102, i.e. it did nothing,
-  // while the down-tube guard below — which measures headroom from this very
-  // point — bit harder and pushed the mean error from -1mm to -7mm. So the
-  // penetration comes from somewhere else and is still unexplained. Depth is
-  // unaffected either way: the `2 * bevel` deduction below sets it.
-  const noseTop = pHeadTop.clone().addScaledVector(ttDir, -8);
+  // The panel's top edge is the inner face of the top tube. The extrusion
+  // bevel grows the outline back toward the tube by `bevel`, so start the
+  // kite that far into the triangle or the finished edge notches the silver.
+  // (An earlier try dropped by one bevel while the panel still tucked UNDER
+  // the tube — net zero, still a bite. The panel now sits on the surface.)
+  const noseTop = pHeadTop.clone().addScaledVector(ttDir, -8).addScaledVector(down, bevel + 4);
   const rearTop = noseTop.clone().addScaledVector(ttDir, -runLen);
 
   // ---- the kite ------------------------------------------------------------
