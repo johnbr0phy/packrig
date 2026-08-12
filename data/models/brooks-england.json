@@ -1,1384 +1,2494 @@
 {
-  "brand": "Brooks England",
-  "slug": "brooks-england",
-  "reviewed_photos": 32,
-  "notes": "32 of the 80 local photos opened and read visually; all 80 additionally measured programmatically (non-white bounding box + row/column silhouette profiles) to check published aspect ratios. The remote CDN filenames recorded in data/brands.json name the view and the variant for every local file (e.g. '..._1_challenge_0_5L_dark_tan_bike_bags_front.jpg'), so each local -1..-4 could be mapped to a known view/size before measuring. Brooks' own spec tables label three numbers Height / Length / Width but do not apply those labels consistently between models, so every dims_raw below quotes the table verbatim and dims_note says which physical axis each number was assigned to and what evidence settled it.",
-
-  "brand_construction": {
-    "heritage_line": ["Classic", "Trekking", "Commuting"],
-    "modern_line": ["Scape"],
-    "leather_billet_attachment": "The Classic bags (Challenge, D-Shaped) hang from the saddle's bag loops on vegetable-tanned leather BILLETS, not webbing. A billet is a plain leather tongue about 12-15 mm wide and 2.5-3 mm thick with a single line of round punched holes down its length. Each billet is riveted or stitched to the bag and passes upward through a polished nickel-plated STEEL ROLLER BUCKLE - a rectangular frame with a centre bar carrying a free-spinning brass/steel roller and a single tapered tongue that drops into a punched hole. Above every roller buckle sits a second plain rectangular keeper loop (no tongue) that the billet tail is tucked back through, so the tail lies flat against the bag and points DOWN. There is no ladderlock, no cam and no side-release buckle anywhere on the heritage line. On the Trekking line (Isle of Wight, Rambler, Haul) the same idea is executed in black leather/Hypalon strapping with polished steel dome rivets instead of stitching, over a waxed cotton body. Anything rendered with nylon webbing and a plastic side-release buckle is the Scape line, not the heritage line.",
-    "hardware_finish": "Classic + Trekking: polished nickel/steel, warm grey-white highlights (#c9ccce), no black plastic. Scape: silver anodised aluminium cam buckles (#c9c9c9) plus matte black acetal cam and ladderlock hardware.",
-    "materials": {
-      "Classic": "vegetable-tanned leather throughout, body and straps the same hide and colour",
-      "Trekking": "weather-resistant waxed cotton / waxed canvas body (Seal Brown) with BLACK leather and Hypalon strapping - body colour and strap colour differ",
-      "Commuting": "water-resistant cotton canvas body with glossy black vegetable-tanned leather trim and billet",
-      "Scape": "coated woven nylon / TPU-laminated fabric, Hypalon details, nylon webbing, aluminium hardware"
+ "brand": "Brooks England",
+ "slug": "brooks-england",
+ "reviewed_photos": 32,
+ "notes": "32 of the 80 local photos opened and read visually; all 80 additionally measured programmatically (non-white bounding box + row/column silhouette profiles) to check published aspect ratios. The remote CDN filenames recorded in data/brands.json name the view and the variant for every local file (e.g. '..._1_challenge_0_5L_dark_tan_bike_bags_front.jpg'), so each local -1..-4 could be mapped to a known view/size before measuring. Brooks' own spec tables label three numbers Height / Length / Width but do not apply those labels consistently between models, so every dims_raw below quotes the table verbatim and dims_note says which physical axis each number was assigned to and what evidence settled it.",
+ "brand_construction": {
+  "heritage_line": [
+   "Classic",
+   "Trekking",
+   "Commuting"
+  ],
+  "modern_line": [
+   "Scape"
+  ],
+  "leather_billet_attachment": "The Classic bags (Challenge, D-Shaped) hang from the saddle's bag loops on vegetable-tanned leather BILLETS, not webbing. A billet is a plain leather tongue about 12-15 mm wide and 2.5-3 mm thick with a single line of round punched holes down its length. Each billet is riveted or stitched to the bag and passes upward through a polished nickel-plated STEEL ROLLER BUCKLE - a rectangular frame with a centre bar carrying a free-spinning brass/steel roller and a single tapered tongue that drops into a punched hole. Above every roller buckle sits a second plain rectangular keeper loop (no tongue) that the billet tail is tucked back through, so the tail lies flat against the bag and points DOWN. There is no ladderlock, no cam and no side-release buckle anywhere on the heritage line. On the Trekking line (Isle of Wight, Rambler, Haul) the same idea is executed in black leather/Hypalon strapping with polished steel dome rivets instead of stitching, over a waxed cotton body. Anything rendered with nylon webbing and a plastic side-release buckle is the Scape line, not the heritage line.",
+  "hardware_finish": "Classic + Trekking: polished nickel/steel, warm grey-white highlights (#c9ccce), no black plastic. Scape: silver anodised aluminium cam buckles (#c9c9c9) plus matte black acetal cam and ladderlock hardware.",
+  "materials": {
+   "Classic": "vegetable-tanned leather throughout, body and straps the same hide and colour",
+   "Trekking": "weather-resistant waxed cotton / waxed canvas body (Seal Brown) with BLACK leather and Hypalon strapping - body colour and strap colour differ",
+   "Commuting": "water-resistant cotton canvas body with glossy black vegetable-tanned leather trim and billet",
+   "Scape": "coated woven nylon / TPU-laminated fabric, Hypalon details, nylon webbing, aluminium hardware"
+  }
+ },
+ "products": [
+  {
+   "line": "Scape",
+   "name": "Seat Bag",
+   "size": "8L",
+   "slot": "seatpack",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-seat-bag-8l-1.jpg",
+    "assets/products/brooks-england/scape-seat-bag-8l-2.jpg",
+    "assets/products/brooks-england/scape-seat-bag-8l-3.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-seat-bag-black-bsb03pla00000"
+   ],
+   "dims_cm": {
+    "len": 60,
+    "wid": 14,
+    "hgt": 18
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Height 180 mm / Length 140 mm / Width 400-600 mm / Capacity 8 L / Max load 3 kg / Weight 500 g",
+   "dims_note": "CHANGED under the unfurled rule (was 46). The 400-600 mm range is the roll travel and it runs along the bag's own length, nose to tail - photo -3 shows the roll bundle at the tail and the long holster tongue running forward to the saddle. Unfurled length is therefore the 600 mm MAX = 60 cm. Height 180 and depth 140 are single published figures, so they are already at minimum. 60 x 14 x 18 = 15.1 L box against an 8 L rating, which is expected: the unfurled plan extent is not the packed volume.",
+   "render": {
+    "hgt_cm": 18,
+    "len_cm": 40,
+    "rolls": 3,
+    "basis": "SCHEMA NOTE: on this product the variable axis is the LENGTH, not the height - the roll runs nose-to-tail, so len_cm carries the render correction and hgt_cm simply restates the fixed published 180 mm. Brooks publishes the roll travel as a 400-600 mm range, so the drawn length takes the 400 mm MINIMUM. Photo scape-seat-bag-8l-3.jpg (top view) shows the tail turned down about three times, consistent with the short end of that range. Drawing the 60 cm unfurled figure would put the tail into the rear tyre.",
+    "note": "hgt_cm is fixed, not a correction; len_cm is the field that matters here"
+   },
+   "capacity_l": 8,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 0.25,
+     "tail": 1,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Holster-and-drybag, not a single sewn bag. The holster has a long narrow triangular TONGUE at the nose that runs forward under the saddle and carries the rail straps - it is only a few cm deep and is not a load-carrying part of the volume. The body swells rearward from that tongue to a full-depth blunt tail where the drybag rolls down. So unlike most seat packs the fat end is at the BACK. Bottom face carries a black textured abrasion 'mudguard' panel."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "tail",
+    "rolls": 3,
+    "hardware": "roll folds down and a webbing strap running forward along the top face pulls it to a silver anodised aluminium cam buckle on the holster spine"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_top",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "side",
+     "hardware": "ladderlock",
+     "material": "nylon_webbing"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "tail_wrap",
+     "hardware": "cam",
+     "material": "nylon_webbing"
     }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": true,
+    "valve": "round black air-release valve on the side panel, mid-body, to purge the drybag",
+    "lightMount": "webbing light loop at the tail",
+    "logo": {
+     "type": "screen_print",
+     "location": "side_rear"
+    },
+    "seams": "welded",
+    "fabric": "matte TPU-laminated shell over a removable IPX4 drybag; abrasion panel on the underside"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
+    "sag_deg": 3,
+    "clearance": {
+     "tyre_mm": 60,
+     "frame_mm": 0
+    },
+    "notes": "Tongue clamps flat between the saddle rails; the body cantilevers rearward and the tail is the heaviest part, so it droops. Roll the tail down before checking tyre clearance."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
   },
-
-  "products": [
-    {
-      "line": "Scape",
-      "name": "Seat Bag",
-      "size": "8L",
-      "slot": "seatpack",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-seat-bag-8l-1.jpg",
-        "assets/products/brooks-england/scape-seat-bag-8l-2.jpg",
-        "assets/products/brooks-england/scape-seat-bag-8l-3.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-seat-bag-black-bsb03pla00000"
-      ],
-      "dims_cm": { "len": 60, "wid": 14, "hgt": 18 },
-      "dims_state": "unfurled_min_height",
-      "dims_raw": "Height 180 mm / Length 140 mm / Width 400-600 mm / Capacity 8 L / Max load 3 kg / Weight 500 g",
-      "dims_note": "CHANGED under the unfurled rule (was 46). The 400-600 mm range is the roll travel and it runs along the bag's own length, nose to tail - photo -3 shows the roll bundle at the tail and the long holster tongue running forward to the saddle. Unfurled length is therefore the 600 mm MAX = 60 cm. Height 180 and depth 140 are single published figures, so they are already at minimum. 60 x 14 x 18 = 15.1 L box against an 8 L rating, which is expected: the unfurled plan extent is not the packed volume.",
-      "render": {
-        "hgt_cm": 18,
-        "len_cm": 40,
-        "rolls": 3,
-        "basis": "SCHEMA NOTE: on this product the variable axis is the LENGTH, not the height - the roll runs nose-to-tail, so len_cm carries the render correction and hgt_cm simply restates the fixed published 180 mm. Brooks publishes the roll travel as a 400-600 mm range, so the drawn length takes the 400 mm MINIMUM. Photo scape-seat-bag-8l-3.jpg (top view) shows the tail turned down about three times, consistent with the short end of that range. Drawing the 60 cm unfurled figure would put the tail into the rear tyre.",
-        "note": "hgt_cm is fixed, not a correction; len_cm is the field that matters here"
-      },
-      "capacity_l": 8,
-      "geometry": {
-        "form": "tapered_wedge",
-        "crossSection": "rounded_rect",
-        "taper": { "nose": 0.25, "tail": 1.0, "profile": "linear" },
-        "shoulder": "squared",
-        "notes": "Holster-and-drybag, not a single sewn bag. The holster has a long narrow triangular TONGUE at the nose that runs forward under the saddle and carries the rail straps - it is only a few cm deep and is not a load-carrying part of the volume. The body swells rearward from that tongue to a full-depth blunt tail where the drybag rolls down. So unlike most seat packs the fat end is at the BACK. Bottom face carries a black textured abrasion 'mudguard' panel."
-      },
-      "closure": {
-        "type": "rolltop",
-        "location": "tail",
-        "rolls": 3,
-        "hardware": "roll folds down and a webbing strap running forward along the top face pulls it to a silver anodised aluminium cam buckle on the holster spine"
-      },
-      "zips": [],
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "velcro", "material": "hypalon", "wrapsAround": "saddle_rails" },
-        { "role": "attachment", "count": 1, "location": "nose_front", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "seatpost" },
-        { "role": "compression", "count": 2, "location": "side", "hardware": "ladderlock", "material": "nylon_webbing" },
-        { "role": "compression", "count": 1, "location": "tail_wrap", "hardware": "cam", "material": "nylon_webbing" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": true,
-        "valve": "round black air-release valve on the side panel, mid-body, to purge the drybag",
-        "lightMount": "webbing light loop at the tail",
-        "logo": { "type": "screen_print", "location": "side_rear" },
-        "seams": "welded",
-        "fabric": "matte TPU-laminated shell over a removable IPX4 drybag; abrasion panel on the underside"
-      },
-      "mount": {
-        "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-        "attachesTo": ["saddle_rails", "seatpost"],
-        "contactFaces": ["nose_top", "nose_front"],
-        "sag_deg": 3,
-        "clearance": { "tyre_mm": 60, "frame_mm": 0 },
-        "notes": "Tongue clamps flat between the saddle rails; the body cantilevers rearward and the tail is the heaviest part, so it droops. Roll the tail down before checking tyre clearance."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
+  {
+   "line": "Scape",
+   "name": "Saddle Roll Bag",
+   "size": "1L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/brooks-england/scape-saddle-roll-bag-1l-1.jpg",
+    "assets/products/brooks-england/scape-saddle-roll-bag-1l-4.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-saddle-roll-bag-mud-green-bsb02pla00401"
+   ],
+   "dims_cm": {
+    "len": 32,
+    "wid": 10,
+    "hgt": 10
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Height 100 mm / Length 100 mm / Width 320 mm / Capacity 1 L / Weight 75 g",
+   "dims_note": "CHANGED under the unfurled rule (was 18.6). 320 mm against a 100 x 100 mm cross-section would be 3.2 L, so 320 is the FLAT/UNFURLED length, not the packed length - and the rule now asks for the unfurled figure, so len = 32. The 100 mm cross-section figures are single values and stand as the minimum. See the render block for the packed length actually to be drawn.",
+   "render": {
+    "hgt_cm": 10,
+    "len_cm": 26,
+    "rolls": 1,
+    "basis": "SCHEMA NOTE: the variable axis here is the LENGTH, not the height - len_cm carries the render correction and hgt_cm restates the fixed published 100 mm cross-section. Brooks publishes only the 320 mm UNFURLED length and no range, so the packed length is measured from photographs of the packed article: scape-saddle-roll-bag-1l-1.jpg (right side) and -3.jpg (left side). The bag lies diagonally in frame, so I took the principal axis of the mud-green body by PCA on the colour mask. Both views agree - long axis to maximum belly thickness is 2.74 and 2.64, call it 2.6. Against Brooks' 100 mm belly that gives a packed length of about 26 cm, and a tapered crescent 26 cm long on a 10 cm belly comes out at roughly 1 L, matching the rating. These are studio shots, not on-bike shots - Brooks published no on-bike image of this bag in the set that was downloaded.",
+    "note": "hgt_cm is fixed, not a correction; len_cm is the field that matters here"
+   },
+   "capacity_l": 1,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "oval",
+    "taper": {
+     "nose": 0.55,
+     "tail": 0.55,
+     "profile": "linear"
     },
-
+    "shoulder": "rounded",
+    "notes": "A flat sleeve rolled from BOTH ends toward the middle, so packed it reads as a crescent: fat oval belly, tapering to two flattened rolled-down ends. Ends do not stay round."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 3,
+    "hardware": "both ends roll inward and clip to a matte black acetal cam buckle on the belly strap"
+   },
+   "zips": [],
+   "straps": [
     {
-      "line": "Scape",
-      "name": "Saddle Roll Bag",
-      "size": "1L",
-      "slot": "saddlebag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "medium",
-      "evidence": [
-        "assets/products/brooks-england/scape-saddle-roll-bag-1l-1.jpg",
-        "assets/products/brooks-england/scape-saddle-roll-bag-1l-4.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-saddle-roll-bag-mud-green-bsb02pla00401"
-      ],
-      "dims_cm": { "len": 32, "wid": 10, "hgt": 10 },
-      "dims_state": "unfurled_min_height",
-      "dims_raw": "Height 100 mm / Length 100 mm / Width 320 mm / Capacity 1 L / Weight 75 g",
-      "dims_note": "CHANGED under the unfurled rule (was 18.6). 320 mm against a 100 x 100 mm cross-section would be 3.2 L, so 320 is the FLAT/UNFURLED length, not the packed length - and the rule now asks for the unfurled figure, so len = 32. The 100 mm cross-section figures are single values and stand as the minimum. See the render block for the packed length actually to be drawn.",
-      "render": {
-        "hgt_cm": 10,
-        "len_cm": 26,
-        "rolls": 1,
-        "basis": "SCHEMA NOTE: the variable axis here is the LENGTH, not the height - len_cm carries the render correction and hgt_cm restates the fixed published 100 mm cross-section. Brooks publishes only the 320 mm UNFURLED length and no range, so the packed length is measured from photographs of the packed article: scape-saddle-roll-bag-1l-1.jpg (right side) and -3.jpg (left side). The bag lies diagonally in frame, so I took the principal axis of the mud-green body by PCA on the colour mask. Both views agree - long axis to maximum belly thickness is 2.74 and 2.64, call it 2.6. Against Brooks' 100 mm belly that gives a packed length of about 26 cm, and a tapered crescent 26 cm long on a 10 cm belly comes out at roughly 1 L, matching the rating. These are studio shots, not on-bike shots - Brooks published no on-bike image of this bag in the set that was downloaded.",
-        "note": "hgt_cm is fixed, not a correction; len_cm is the field that matters here"
-      },
-      "capacity_l": 1,
-      "geometry": {
-        "form": "cylinder",
-        "crossSection": "oval",
-        "taper": { "nose": 0.55, "tail": 0.55, "profile": "linear" },
-        "shoulder": "rounded",
-        "notes": "A flat sleeve rolled from BOTH ends toward the middle, so packed it reads as a crescent: fat oval belly, tapering to two flattened rolled-down ends. Ends do not stay round."
-      },
-      "closure": {
-        "type": "rolltop",
-        "location": "end_cap",
-        "rolls": 3,
-        "hardware": "both ends roll inward and clip to a matte black acetal cam buckle on the belly strap"
-      },
-      "zips": [],
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "hypalon", "wrapsAround": "saddle_rails" },
-        { "role": "attachment", "count": 1, "location": "girth", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "seatpost" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": false,
-        "reflective": "none visible",
-        "logo": { "type": "woven_label", "location": "side" },
-        "seams": "welded",
-        "fabric": "coated woven nylon, matte, fine visible weave"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["saddle_rails", "seatpost"],
-        "contactFaces": ["top"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 40, "frame_mm": 0 },
-        "notes": "Hangs directly under the saddle with its long axis ACROSS the bike (rail to rail), not fore-aft - the two hook-and-loop tabs on the top face wrap the two rails and the webbing strap drops forward to the seatpost. Do not render it pointing at the rear wheel."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "saddle_rails"
     },
-
     {
-      "line": "Scape",
-      "name": "Saddle Pocket Bag",
-      "size": "0.7L",
-      "slot": "saddlebag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-saddle-pocket-bag-0-7l-1.jpg",
-        "assets/products/brooks-england/scape-saddle-pocket-bag-0-7l-2.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-saddle-pocket-bag-black-bsb01pla00000"
-      ],
-      "dims_cm": { "len": 15, "wid": 8, "hgt": 5.5 },
-      "dims_state": "packed",
-      "dims_raw": "Height 55 mm / Length 80 mm / Width 150 mm / Capacity 0,7 L / Weight 70 g",
-      "dims_note": "No range published, single figures only. 15 x 8 x 5.5 = 0.66 L against 0,7 L stated, so the axis assignment (150 across, 80 fore-aft, 55 tall) is self-consistent. Photo -1 is a 3/4 front and shows a wide shallow slab, which matches.",
-      "capacity_l": 0.7,
-      "geometry": {
-        "form": "halfmoon",
-        "crossSection": "d_shape",
-        "shoulder": "rounded",
-        "notes": "Shallow padded clam. Flat top face (presses on the saddle underside), belly curves down and the two ends round off. A wide black webbing band wraps the whole body left-to-right and carries the printed logo; the body proper is visible above and below it."
-      },
-      "closure": { "type": "zip_horseshoe", "location": "perimeter" },
-      "zips": [
-        { "count": 1, "run": "perimeter", "finish": "waterproof_welded", "pullSide": "non_drive", "notes": "coated auto-lock slider running the full way round the seam between the top face and the belly, so the bag opens like a clam" }
-      ],
-      "straps": [
-        { "role": "attachment", "count": 1, "location": "top", "hardware": "velcro", "material": "hypalon", "wrapsAround": "saddle_rails" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": false,
-        "logo": { "type": "screen_print", "location": "side" },
-        "seams": "welded",
-        "fabric": "coated woven nylon over internal foam padding on both faces",
-        "attachmentPanel": "black Hypalon panel on the top face with laser-cut slots, so the bag can also be hung off another Scape bag rather than the rails"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["saddle_rails"],
-        "contactFaces": ["top"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 80, "frame_mm": 0 },
-        "notes": "Sits hard up under the saddle, long axis across the bike. Small enough that it never approaches the tyre."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Handlebar Roll",
-      "size": "9-11L",
-      "slot": "barroll",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-handlebar-roll-9-11l-1.jpg",
-        "assets/products/brooks-england/scape-handlebar-roll-9-11l-2.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-handlebar-roll-mud-green-bhb03pla00401"
-      ],
-      "dims_cm": { "len": 40, "wid": 16, "hgt": 16 },
-      "dims_state": "unfurled_min_height",
-      "dims_raw": "Height 160 mm / Length 160 mm / Width 350-400 mm / Capacity 9 - 11 L / Max load 5 kg / Weight 670 g",
-      "dims_note": "CHANGED under the unfurled rule (was 36.5). The 350-400 mm range is the roll travel and it runs ALONG the bar, so len takes the 400 mm unfurled max. The 160 mm cross-section figures are single values and stand. Photo -1 shows the drybag rolled at BOTH ends, which is why the length is a range in the first place.",
-      "render": {
-        "hgt_cm": 16,
-        "len_cm": 35,
-        "rolls": 3,
-        "basis": "SCHEMA NOTE: the variable axis is the LENGTH (the roll runs along the bar), so len_cm carries the render correction and hgt_cm restates the fixed published 160 mm. Brooks publishes the roll travel as a 350-400 mm range, so the drawn length takes the 350 mm MINIMUM - which also matters for fitment, since 40 cm fouls the levers on a narrow drop bar and 35 cm does not. Photo scape-handlebar-roll-9-11l-1.jpg shows both end bundles turned down about three times.",
-        "note": "hgt_cm is fixed, not a correction; len_cm is the field that matters here"
-      },
-      "capacity_l": 11,
-      "geometry": {
-        "form": "cylinder",
-        "crossSection": "round",
-        "taper": { "nose": 0.7, "tail": 0.7, "profile": "linear" },
-        "shoulder": "rounded",
-        "notes": "Two-part: a black TPU drybag with a rolled bundle at each end, sitting in an open mud-green cordura holster that wraps the middle two-thirds and carries all the hardware. The exposed black roll bundles at each end are visually distinct from the green holster band in the middle - render them as separate materials."
-      },
-      "closure": {
-        "type": "rolltop",
-        "location": "end_cap",
-        "rolls": 3,
-        "hardware": "one black acetal cam buckle per end pulling the roll down against the holster"
-      },
-      "zips": [],
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "top", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "handlebar", "notes": "silver anodised aluminium cam buckles sitting proud above the bag, one either side of the stem" },
-        { "role": "stability", "count": 1, "location": "front_face", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "head_tube" },
-        { "role": "compression", "count": 2, "location": "front_face", "hardware": "cam", "material": "nylon_webbing", "notes": "black acetal, low on the front of the holster" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": "double row of webbing lash loops across the holster front",
-        "spacers": "EVA blocks behind the holster to hold the bag off the cables",
-        "logo": { "type": "screen_print", "location": "front" },
-        "seams": "welded drybag, stitched holster",
-        "fabric": "mud-green woven cordura holster over a black TPU-laminated drybag with two internal compartments"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["handlebar", "head_tube"],
-        "contactFaces": ["rear_face"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 60, "frame_mm": 20 },
-        "notes": "Hangs forward of and below the bar tops, long axis across the bike. Drop-bar or flat bar; the EVA spacers set the standoff so the cables run behind it. At 40 cm unfurled it will foul the levers on a narrow drop bar - it wants 42 cm+ of bar."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a", "accentNote": "black drybag ends against a mud-green holster in both colourways" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Handlebar Compact Bag",
-      "size": "10-12L",
-      "slot": "barbag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-handlebar-compact-bag-10-12l-1.jpg",
-        "assets/products/brooks-england/scape-handlebar-compact-bag-10-12l-2.jpg",
-        "assets/products/brooks-england/scape-handlebar-compact-bag-10-12l-3.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-handlebar-compact-bag-mud-green-bhb02pla00401"
-      ],
-      "dims_cm": { "len": 34, "wid": 14, "hgt": 25 },
-      "dims_state": "packed",
-      "dims_raw": "Height 250 mm / Length 140 mm / Width 340 mm / Capacity 10 - 12 L / Max load 5 kg / Weight 475 g",
-      "dims_note": "Single figures, no range - nothing to unfurl, this is a structured case. 340 across the bars, 250 tall, 140 deep gives 11.9 L, dead centre of the stated 10-12 L. Photo -3 shows a KLICKfix bracket bolted to the back panel: this is a bracket-mounted front case, not a roll, so no roll-length elongation applies.",
-      "capacity_l": 12,
-      "geometry": {
-        "form": "rounded_box",
-        "crossSection": "rounded_rect",
-        "shoulder": "squared",
-        "notes": "Structured briefcase-shaped box, corners softly rounded, sides slightly domed. Reads as luggage rather than a bikepacking bag."
-      },
-      "closure": { "type": "zip_horseshoe", "location": "top", "hardware": "double-pull sliders" },
-      "zips": [
-        { "count": 1, "run": "horseshoe_top", "finish": "waterproof_welded", "notes": "main lid, two sliders" },
-        { "count": 1, "run": "pocket", "finish": "waterproof_welded", "notes": "horizontal welded slash pocket across the upper front face, single slider with a large D-ring pull on the non-drive end" }
-      ],
-      "straps": [
-        { "role": "shoulder", "count": 1, "location": "top", "hardware": "buckle", "material": "nylon_webbing", "notes": "removable, silver anodised aluminium slide adjuster" },
-        { "role": "compression", "count": 2, "location": "underside", "hardware": "cam", "material": "nylon_webbing", "notes": "aluminium buckles on the bottom edge that cinch the case's volume down" }
-      ],
-      "pockets": [
-        { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.5 },
-        { "type": "slip", "count": 1, "location": "internal", "sizeFrac": 0.9, "notes": "padded 13in laptop sleeve" },
-        { "type": "zip", "count": 1, "location": "internal" },
-        { "type": "stretch", "count": 2, "location": "internal" }
-      ],
-      "details": {
-        "daisyChains": true,
-        "handle": "webbing grab handle across the top",
-        "logo": { "type": "screen_print", "location": "front" },
-        "seams": "stitched with taped edges",
-        "fabric": "mud-green woven cordura; back panel is black 3D spacer mesh",
-        "mountHardware": "KLICKfix bracket screwed through the back panel"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["handlebar"],
-        "contactFaces": ["rear_face"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 120, "frame_mm": 30 },
-        "notes": "Needs a KLICKfix handlebar adapter clamped to the bar - the bag does not strap on. Brooks warns it must not be fitted to carbon handlebars. Sits above and forward of the bar, so it clears the tyre easily but will foul a low stem/computer mount."
-      },
-      "colorways": [
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Handlebar Case",
-      "size": "8L",
-      "slot": "barbag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-handlebar-case-8l-1.jpg",
-        "assets/products/brooks-england/scape-handlebar-case-8l-3.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-handlebar-case-mud-green-bhb05pla00401"
-      ],
-      "dims_cm": { "len": 26, "wid": 17, "hgt": 22.5 },
-      "dims_state": "packed",
-      "dims_raw": "Height 225 mm / Length 170 mm / Width 260 mm / Capacity 8 L / Max load 5 kg / Weight 670 g",
-      "dims_note": "Single figures. Photo -1 is a straight-on front elevation and measures 1.16 wide-to-tall on the body; 260/225 = 1.156, so the assignment of 260 across the bars and 225 tall is confirmed directly. 26 x 22.5 x 17 = 9.9 L box for an 8 L rating, ratio 1.24 - normal for a structured case.",
-      "capacity_l": 8,
-      "geometry": {
-        "form": "box",
-        "crossSection": "rounded_rect",
-        "shoulder": "squared",
-        "notes": "Upright squared box. The lid is a full-width flap hinged at the back that rolls over the top and drops about a third of the way down the front face, its lower edge finishing in a soft curve - that horizontal lid edge is the case's strongest visual line."
-      },
-      "closure": { "type": "magnetic", "location": "lid", "hardware": "concealed magnetic catches under the flap's front edge" },
-      "zips": [
-        { "count": 1, "run": "pocket", "finish": "waterproof_welded", "notes": "horizontal welded slash pocket immediately below the lid edge on the front face, single slider with a large D-ring pull on the non-drive end" }
-      ],
-      "straps": [
-        { "role": "shoulder", "count": 1, "location": "side", "hardware": "buckle", "material": "nylon_webbing", "notes": "removable, clips to a D-ring on each end panel" }
-      ],
-      "pockets": [
-        { "type": "zip", "count": 1, "location": "front", "sizeFrac": 0.45 },
-        { "type": "slip", "count": 2, "location": "internal" }
-      ],
-      "details": {
-        "daisyChains": false,
-        "logo": { "type": "screen_print", "location": "front" },
-        "seams": "welded",
-        "fabric": "mud-green woven cordura, fully welded and waterproof",
-        "mountHardware": "KLICKfix bracket screwed centrally to the back panel, with two webbing lid keepers either side of it"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["handlebar"],
-        "contactFaces": ["rear_face"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 120, "frame_mm": 30 },
-        "notes": "KLICKfix bar adapter required; the case has no straps of its own. Lid opens rearward toward the rider."
-      },
-      "colorways": [
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Handlebar Pouch",
-      "size": "3L",
-      "slot": "barbag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-handlebar-pouch-3l-1.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-handlebar-pouch-mud-green-bhb01pla00401"
-      ],
-      "dims_cm": { "len": 24, "wid": 12, "hgt": 12 },
-      "dims_state": "packed",
-      "dims_raw": "Height 120 mm / Length 240 mm / Width 120 mm / Capacity 3 L / Max load 3 kg / Weight 140 g",
-      "dims_note": "Single figures; on this page the 240 mm does sit under the Length label. 24 x 12 x 12 = 3.5 L against 3 L stated. Photo -1 measures 1.68 long-to-tall including the bar straps standing above it, consistent with a 24 x 12 barrel.",
-      "capacity_l": 3,
-      "geometry": {
-        "form": "barrel",
-        "crossSection": "round",
-        "shoulder": "rounded",
-        "notes": "Short horizontal drum with flat circular end caps and no taper. Sits with its axis across the bike."
-      },
-      "closure": { "type": "zip_straight", "location": "front_face" },
-      "zips": [
-        { "count": 1, "run": "side_full", "finish": "waterproof_welded", "pullSide": "non_drive", "notes": "runs the full length of the pouch horizontally across the upper front face, one slider with a large D-ring easy-pull" }
-      ],
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "top", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "handlebar", "notes": "black acetal cam buckles on short webbing tabs standing above the drum" },
-        { "role": "stability", "count": 1, "location": "front_face", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "head_tube" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": "single row of three webbing lash loops across the lower front face",
-        "logo": { "type": "screen_print", "location": "front" },
-        "seams": "welded",
-        "fabric": "mud-green woven cordura",
-        "modular": "designed to stack on top of the Scape Handlebar Roll"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["handlebar", "head_tube"],
-        "contactFaces": ["rear_face", "top"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 80, "frame_mm": 15 },
-        "notes": "Hangs from the bar tops with the zip facing forward, or rides piggyback on the Handlebar Roll below it."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Feed Pouch",
-      "size": "1L",
-      "slot": "stembag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-feed-pouch-1l-1.jpg",
-        "assets/products/brooks-england/scape-feed-pouch-1l-3.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-feed-pouch-mud-green-bhb04pla00401"
-      ],
-      "dims_cm": { "len": 10, "wid": 10, "hgt": 16 },
-      "dims_state": "packed",
-      "dims_raw": "Height 160 mm / Length 100 mm / Width 100 mm / Capacity 1 L / Max load 1 kg / Weight 100 g",
-      "dims_note": "Rewritten as a triple so the axes are explicit: 100 x 100 mm is the footprint (len and wid), 160 mm is the vertical. Treat the 100 mm footprint as a ~10 cm diameter cylinder - pi x 5^2 x 16 = 1.26 L against a 1 L rating. The previous record carried len 16 / hgt 16 / dia 10, which double-counted the height.",
-      "capacity_l": 1,
-      "geometry": {
-        "form": "cylinder",
-        "crossSection": "round",
-        "shoulder": "rounded",
-        "notes": "Upright soft cylinder. Lower two-thirds mud-green cordura with a black webbing band round the base; the top third is a separate black collar that gathers on a drawcord."
-      },
-      "closure": { "type": "drawcord", "location": "top", "hardware": "single-hand cord lock on a black elastic drawcord" },
-      "zips": [],
-      "straps": [
-        { "role": "attachment", "count": 1, "location": "side", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "handlebar" },
-        { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "hypalon", "wrapsAround": "stem" }
-      ],
-      "pockets": [
-        { "type": "slip", "count": 1, "location": "side", "sizeFrac": 0.35, "notes": "narrow vertical slip pocket on the outboard face under the webbing band" }
-      ],
-      "details": {
-        "daisyChains": false,
-        "logo": { "type": "screen_print", "location": "front" },
-        "seams": "stitched",
-        "fabric": "mud-green woven cordura body, black coated collar",
-        "attachmentPanel": "black Hypalon panel with laser-cut strap slots on the inboard face"
-      },
-      "mount": {
-        "axes": { "len": "x", "wid": "z", "hgt": "+y" },
-        "attachesTo": ["handlebar", "stem"],
-        "contactFaces": ["side", "underside"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 150, "frame_mm": 10 },
-        "notes": "Stands upright in the corner between bar and stem, opening up. Must clear the brake hood and the cables running along the bar."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Frame Bag",
-      "size": "M",
-      "slot": "framebag_half",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-frame-bag-m-1.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-frame-bag-black-scapefr000000"
-      ],
-      "dims_cm": { "len": 46, "wid": 6, "hgt": 12 },
-      "dims_state": "packed",
-      "dims_raw": "Height 120 mm / Length 60 mm / Width 460 mm / Capacity 3 L / Max load 3 kg / Weight 200 g",
-      "dims_note": "Single figures. 46 x 12 x 6 = 3.3 L against 3 L stated, so this spec set is the M. Brooks' page shows the same table for both M and L, which is a page bug - see the L record.",
-      "capacity_l": 3,
-      "geometry": {
-        "form": "trapezoid_panel",
-        "crossSection": "flat_bottom",
-        "taper": { "nose": 1.0, "tail": 0.55, "profile": "linear" },
-        "shoulder": "squared",
-        "notes": "Long shallow slab that hangs under the top tube. Top edge dead straight (it follows the tube); bottom edge sweeps up in a shallow curve toward the rear so it clears the bottle boss. Deepest at the head-tube end, shallowest at the seat tube."
-      },
-      "closure": { "type": "zip_straight", "location": "top" },
-      "zips": [
-        { "count": 2, "run": "side_full", "finish": "waterproof_welded", "notes": "one full-length zip per side, tucked under a welded storm flap; the non-drive side is the KCC waterproof one. Ergonomic moulded pullers." }
-      ],
-      "straps": [
-        { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "hypalon", "wrapsAround": "top_tube" },
-        { "role": "attachment", "count": 1, "location": "side", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "seat_tube" },
-        { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "hypalon", "wrapsAround": "down_tube" }
-      ],
-      "pockets": [
-        { "type": "slip", "count": 1, "location": "internal", "notes": "small-items divider on the non-drive side" }
-      ],
-      "details": {
-        "daisyChains": false,
-        "hydrationPort": "grommet at the rear lower corner",
-        "logo": { "type": "screen_print", "location": "side" },
-        "seams": "welded",
-        "fabric": "matte coated woven nylon, entirely welded"
-      },
-      "mount": {
-        "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-        "attachesTo": ["top_tube", "seat_tube", "down_tube"],
-        "contactFaces": ["top", "rear"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 0 },
-        "notes": "Hangs from the top tube in the upper front triangle, straps wrapping the tube from above. Must leave the down-tube bottle cage clear; on a 56 cm frame the M leaves roughly a bottle's width of open triangle below it."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Frame Bag",
-      "size": "L",
-      "slot": "framebag_half",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "medium",
-      "evidence": [
-        "assets/products/brooks-england/scape-frame-bag-m-1.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-frame-bag-black-scapefr000000",
-        "https://www.bike24.com/p2724699.html"
-      ],
-      "dims_cm": { "len": 50, "wid": 6, "hgt": 12 },
-      "dims_state": "packed",
-      "dims_raw": "Brooks' own page prints the M table (460/120/60, 3 L) against BOTH size options. Retailer listing for the Large: 120 x 500 x 60 mm (H x W x D), 3.5 L.",
-      "dims_note": "CHANGED from a fabricated 52 x 13 x 6 (the old record was flagged est:true and no source carries those numbers). The Large is the same 120 mm depth and 60 mm width as the M and only grows along the tube, to 500 mm. 50 x 12 x 6 = 3.6 L, matching the retailer's 3.5 L. Brooks itself publishes no separate L table, hence confidence medium rather than high.",
-      "capacity_l": 3.5,
-      "geometry": {
-        "form": "trapezoid_panel",
-        "crossSection": "flat_bottom",
-        "taper": { "nose": 1.0, "tail": 0.55, "profile": "linear" },
-        "shoulder": "squared",
-        "notes": "Identical construction to the M, stretched along the tube. No photo of the L specifically exists in the local set - the M photos are the same mould."
-      },
-      "closure": { "type": "zip_straight", "location": "top" },
-      "zips": [
-        { "count": 2, "run": "side_full", "finish": "waterproof_welded", "notes": "one full-length zip per side under a welded storm flap" }
-      ],
-      "straps": [
-        { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "hypalon", "wrapsAround": "top_tube" },
-        { "role": "attachment", "count": 1, "location": "side", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "seat_tube" },
-        { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "hypalon", "wrapsAround": "down_tube" }
-      ],
-      "pockets": [
-        { "type": "slip", "count": 1, "location": "internal" }
-      ],
-      "details": {
-        "daisyChains": false,
-        "hydrationPort": "grommet at the rear lower corner",
-        "logo": { "type": "screen_print", "location": "side" },
-        "seams": "welded",
-        "fabric": "matte coated woven nylon, entirely welded"
-      },
-      "mount": {
-        "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-        "attachesTo": ["top_tube", "seat_tube", "down_tube"],
-        "contactFaces": ["top", "rear"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 0 },
-        "notes": "At 50 cm this fills essentially the whole top tube of a 56 cm frame; check it does not overrun the head tube at the front."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Top Tube Bag",
-      "size": "0.9L",
-      "slot": "toptube",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-top-tube-bag-0-9l-1.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-black-btt01pla00000"
-      ],
-      "dims_cm": { "len": 21, "wid": 4, "hgt": 11 },
-      "dims_state": "packed",
-      "dims_raw": "Height 110 mm / Length 40 mm / Width 210 mm / Capacity 0,9 L / Max load 1 kg / Weight 100 g",
-      "dims_note": "Single figures. Photo -1 is a straight drive-side elevation and measures 2.02 long-to-tall on the bounding box; 210/110 = 1.91, and the extra comes from the moulded nose overhanging the body. 21 x 11 x 4 = 0.92 L against 0,9 L. Unchanged.",
-      "capacity_l": 0.9,
-      "geometry": {
-        "form": "tapered_wedge",
-        "crossSection": "rounded_rect",
-        "taper": { "nose": 1.0, "tail": 0.45, "profile": "linear" },
-        "shoulder": "squared",
-        "notes": "Side profile is a wedge: tall and squared-off at the FRONT (head-tube end), the top face sloping down and back to a low rounded tail. Flat bottom sits on the tube. Narrow - only 4 cm across - so it reads as a fin from the front."
-      },
-      "closure": { "type": "zip_straight", "location": "top" },
-      "zips": [
-        { "count": 1, "run": "top_centre", "finish": "waterproof_welded", "notes": "runs along the sloping top face from the front high point down toward the tail, cord-and-toggle pull at the front" }
-      ],
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "hypalon", "wrapsAround": "top_tube" },
-        { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "hypalon", "wrapsAround": "head_tube" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": false,
-        "reflective": "logo print is reflective",
-        "cablePort": "TPU cable port at the front face",
-        "logo": { "type": "screen_print", "location": "side" },
-        "seams": "welded",
-        "fabric": "coated woven nylon with foam stiffening in the side walls and floor"
-      },
-      "mount": {
-        "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-        "attachesTo": ["top_tube", "head_tube"],
-        "contactFaces": ["underside", "front_face"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 0 },
-        "notes": "Sits ON TOP of the top tube behind the stem, tall end forward against the head tube. Must not foul the rider's knees or the stem faceplate."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Top Tube Bag Long",
-      "size": "1.5L",
-      "slot": "toptube",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-top-tube-bag-long-1-5l-1.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-long-black-btt02pla00000"
-      ],
-      "dims_cm": { "len": 37, "wid": 4.6, "hgt": 11 },
-      "dims_state": "packed",
-      "dims_raw": "Height 110 mm / Length 46 mm / Width 370 mm / Capacity 1,5 L / Max load 1,5 kg / Weight 100 g",
-      "dims_note": "Single figures. Photo -1 measures 3.39 long-to-tall against 370/110 = 3.36 - a direct confirmation of the axis assignment. 37 x 11 x 4.6 = 1.87 L box for a 1,5 L rating.",
-      "capacity_l": 1.5,
-      "geometry": {
-        "form": "tapered_wedge",
-        "crossSection": "rounded_rect",
-        "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
-        "shoulder": "squared",
-        "notes": "Same wedge as the 0.9 L but much longer and with a far shallower slope - tall squared block at the front third, then a long low blade running back almost to nothing."
-      },
-      "closure": { "type": "zip_straight", "location": "top" },
-      "zips": [
-        { "count": 1, "run": "top_centre", "finish": "waterproof_welded", "notes": "full-length along the top face, a cord-and-toggle pull at EACH end so it can be worked single-handed from either direction" }
-      ],
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "hypalon", "wrapsAround": "top_tube" },
-        { "role": "attachment", "count": 1, "location": "front_face", "hardware": "cam", "material": "nylon_webbing", "wrapsAround": "head_tube" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": false,
-        "logo": { "type": "screen_print", "location": "side" },
-        "seams": "welded",
-        "fabric": "coated woven nylon, welded"
-      },
-      "mount": {
-        "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-        "attachesTo": ["top_tube", "head_tube"],
-        "contactFaces": ["underside", "front_face"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 0 },
-        "notes": "On top of the top tube, tall end against the head tube. At 37 cm it reaches well back on a 56 cm frame - a builder should check it against knee sweep."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Top Tube Bag with Bolts",
-      "size": "0.9L",
-      "slot": "toptube",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-top-tube-bag-with-bolts-0-9l-1.jpg",
-        "assets/products/brooks-england/scape-top-tube-bag-with-bolts-0-9l-2.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-with-bolts-mud-green-btt03pla00401"
-      ],
-      "dims_cm": { "len": 21, "wid": 4, "hgt": 11 },
-      "dims_state": "packed",
-      "dims_raw": "Height 110 mm / Length 40 mm / Width 210 mm / Capacity 0,9 L / Max load 1 kg / Weight 100 g",
-      "dims_note": "Same shell as the strap version - photo -1 is the identical silhouette in a different colourway and measures the same 1.99 long-to-tall. Only the mounting differs.",
-      "capacity_l": 0.9,
-      "geometry": {
-        "form": "tapered_wedge",
-        "crossSection": "rounded_rect",
-        "taper": { "nose": 1.0, "tail": 0.45, "profile": "linear" },
-        "shoulder": "squared",
-        "notes": "Identical wedge to the 0.9 L strap version, with a rigid black bolt plate moulded into the floor. Photo -2 (underside 3/4) shows the plate proud of the fabric with two captive bolts standing out of it."
-      },
-      "closure": { "type": "zip_straight", "location": "top" },
-      "zips": [
-        { "count": 1, "run": "top_centre", "finish": "waterproof_welded", "notes": "along the sloping top face, cord-and-toggle pull at the front" }
-      ],
-      "straps": [
-        { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "hypalon", "wrapsAround": "head_tube", "notes": "retained as a backup/anti-rotation strap even in the bolt-on version" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": false,
-        "reflective": "logo print is reflective",
-        "cablePort": "TPU cable port at the front face",
-        "logo": { "type": "screen_print", "location": "side" },
-        "seams": "welded",
-        "fabric": "coated woven nylon",
-        "mountHardware": "rigid black bolt plate in the floor carrying two M5 bolts at the standard 64 mm top-tube boss spacing"
-      },
-      "mount": {
-        "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-        "attachesTo": ["top_tube_bosses", "head_tube"],
-        "contactFaces": ["underside"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 0 },
-        "notes": "Bolts down to top-tube bosses; a frame without those bosses cannot take it, and the bag then falls back on the single head-tube strap alone."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Pannier",
-      "size": "Large",
-      "slot": "pannier",
-      "slot_should_be": null,
-      "fits": "rack_only",
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/scape-pannier-large-1.jpg",
-        "assets/products/brooks-england/scape-pannier-large-3.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-large-pannier-black-scape0000l000"
-      ],
-      "dims_cm": { "len": 32, "wid": 16, "hgt": 40 },
-      "dims_state": "unfurled_min_height",
-      "dims_raw": "Height 400-600 mm / Length 160 mm / Width 320 mm / Capacity 18 - 22 L / Max load 9 kg / Weight 760 g",
-      "dims_note": "CHANGED (was 46). On a pannier the roll travel runs up the HEIGHT, and the rule takes the MINIMUM of a height range, so hgt = 40 not 46 and not 60. Length 320 is the fore-aft run and 160 the outboard depth, both single figures. 32 x 40 x 16 = 20.5 L, right inside the stated 18-22 L, which corroborates the assignment.",
-      "render": {
-        "hgt_cm": 40,
-        "rolls": 3,
-        "basis": "Brooks publishes a 400-600 mm height range, so the drawn height is the 400 mm MINIMUM. This matches dims_cm.hgt, which the dimension rule already sets to the range minimum on a height-rolling product. Photo scape-pannier-large-1.jpg shows the bag with the top turned down about three times to roughly that height."
-      },
-      "capacity_l": 22,
-      "geometry": {
-        "form": "rounded_box",
-        "crossSection": "flat_back",
-        "taper": { "nose": 1.0, "tail": 0.85, "profile": "linear" },
-        "shoulder": "rounded",
-        "notes": "Flat inboard face against the rack; outboard face domed. Corners of the lower half are heavily rounded and the bottom narrows slightly so it clears the heel and the chainstay. Above the roll line the fabric collapses into the roll bundle."
-      },
-      "closure": {
-        "type": "rolltop",
-        "location": "top",
-        "rolls": 3,
-        "hardware": "roll folds down and clips to a black acetal cam buckle at each top corner; an internal velcro strap holds the roll for extra volume"
-      },
-      "zips": [],
-      "straps": [
-        { "role": "compression", "count": 2, "location": "side", "hardware": "hook", "material": "elastic_cord", "notes": "shock cord with a cord lock running down each side face - these are the 'lateral daisy chain' and double as lash points" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": "lateral, one row per side face",
-        "logo": { "type": "screen_print", "location": "side" },
-        "seams": "welded",
-        "fabric": "matte TPU-laminated nylon, 100% welded, IPX4",
-        "mountHardware": "aluminium KLICKfix rail with two sprung hooks on the inboard face plus a lower hook-down"
-      },
-      "mount": {
-        "axes": { "len": "x", "wid": "z", "hgt": "-y" },
-        "attachesTo": ["rear_rack"],
-        "contactFaces": ["side"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 20 },
-        "notes": "Hangs off the rack top tube on the KLICKfix hooks, flat face inboard. Needs a rear (or front) rack - it cannot mount to a bare frame. At 40 cm rolled down the bottom sits low; check heel strike against the fore-aft position on the rack."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Scape",
-      "name": "Pannier",
-      "size": "Small",
-      "slot": "pannier",
-      "slot_should_be": null,
-      "fits": "rack_only",
-      "verified": true,
-      "confidence": "medium",
-      "evidence": [
-        "assets/products/brooks-england/scape-pannier-large-2.jpg",
-        "https://www.brooksengland.com/en-us/products/scape-large-pannier-black-scape0000l000",
-        "https://www.bike-components.de/en/Brooks/Scape-Pannier-Small-p80738/"
-      ],
-      "dims_cm": { "len": 26, "wid": 15, "hgt": 30 },
-      "dims_state": "unfurled_min_height",
-      "dims_raw": "Retailer spec for the Small: W 260 x H 300-470 x D 150 mm, capacity 10-13 L, max load 9 kg, weight 630 g. Brooks' own page publishes only the Large table.",
-      "dims_note": "CHANGED from a fabricated 26 x 42 x 14 (old record was est:true). The roll travel runs up the height, so hgt takes the 300 mm MINIMUM. 26 x 30 x 15 = 11.7 L, inside the stated 10-13 L. The local photo scape-pannier-large-2.jpg is in fact the SMALL pannier - the remote CDN filename is '..._1_pannier_small_black_scape_bike_bags_front.jpg' - and it shows a squarer, less elongated body than the Large, consistent with 26 x 30 rolled. Confidence medium because Brooks itself does not publish the Small table.",
-      "render": {
-        "hgt_cm": 30,
-        "rolls": 3,
-        "basis": "Published height range 300-470 mm, so the drawn height is the 300 mm MINIMUM. Matches dims_cm.hgt. Photo scape-pannier-large-2.jpg - which is the Small, per its remote CDN filename - shows the bag rolled down and measuring 1.08 wide-to-tall, close to 26/30 = 0.87 once the roll bundle standing proud of the body is allowed for."
-      },
-      "capacity_l": 13,
-      "geometry": {
-        "form": "rounded_box",
-        "crossSection": "flat_back",
-        "shoulder": "rounded",
-        "notes": "Same construction as the Large, shorter and shallower, so it reads nearly square in front elevation once rolled down."
-      },
-      "closure": {
-        "type": "rolltop",
-        "location": "top",
-        "rolls": 3,
-        "hardware": "black acetal cam buckle at each top corner, internal velcro roll strap"
-      },
-      "zips": [],
-      "straps": [
-        { "role": "compression", "count": 2, "location": "side", "hardware": "hook", "material": "elastic_cord" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": "lateral",
-        "logo": { "type": "screen_print", "location": "side" },
-        "seams": "welded",
-        "fabric": "matte TPU-laminated nylon, 100% welded, IPX4",
-        "mountHardware": "aluminium KLICKfix rail with sprung hooks"
-      },
-      "mount": {
-        "axes": { "len": "x", "wid": "z", "hgt": "-y" },
-        "attachesTo": ["rear_rack", "front_rack"],
-        "contactFaces": ["side"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 20 },
-        "notes": "Small enough that Brooks also sells it as a front/fork-rack bag. Needs a rack either way."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e" },
-        { "name": "Mud Green", "hex": "#55584a" }
-      ]
-    },
-
-    {
-      "line": "Classic",
-      "name": "Challenge Saddle Bag",
-      "size": "0.5L",
-      "slot": "saddlebag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/classic-challenge-saddle-bag-0-5l-1.jpg",
-        "assets/products/brooks-england/classic-challenge-saddle-bag-0-5l-3.jpg",
-        "https://www.brooksengland.com/en-us/products/challenge-saddle-bag-dark-tan-challe0017210"
-      ],
-      "dims_cm": { "len": 17.5, "wid": 4.5, "hgt": 7.8 },
-      "dims_state": "packed",
-      "dims_raw": "Height 78 mm / Length 45 mm / Width 175 mm / Capacity 0,5 L / Weight 140 g / Made in Italy",
-      "dims_note": "Single figures. The remote CDN filenames identify local -1 and -3 as the 0.5 L (dark tan and honey); both are straight front elevations and measure 2.03-2.08 long-to-tall against a published 175/78 = 2.24. The 7-9% surplus is the rolled top of the flap standing proud of Brooks' nominal height, not an error in the table. Kept as published. 17.5 x 7.8 x 4.5 = 0.61 L against 0,5 L.",
-      "capacity_l": 0.5,
-      "geometry": {
-        "form": "saddlebag_flap",
-        "crossSection": "d_shape",
-        "shoulder": "rounded",
-        "notes": "A wide shallow leather roll. Seen from the front it is a long horizontal body with a one-piece flap folded over the top and down the front to about half the body's height, the flap's lower edge running dead straight across. The ends are closed with a rounded leather side panel stitched round its whole edge, so in end elevation the bag is a D lying on its flat back. All one material and one colour - there is no fabric, no webbing and no plastic anywhere on it."
-      },
-      "closure": {
-        "type": "flap_buckle",
-        "location": "front_face",
-        "hardware": "a single vegetable-tanned leather billet, roughly 13 mm wide with punched holes, rising from the body's front face through a polished nickel-plated steel roller buckle riveted to the leading edge of the flap; above the roller buckle a plain rectangular keeper loop takes the billet tail, which then hangs down flat over the front face. Dead centre of the front."
-      },
-      "zips": [],
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "top", "hardware": "leather_billet", "material": "vegetable_tanned_leather", "wrapsAround": "saddle_bag_loops", "notes": "two narrow billets emerging vertically from the TOP of the flap, one either side of centre at roughly 1/3 and 2/3 across, standing about 20 mm proud. They pass through the saddle's bag loops and buckle INSIDE the hold of the bag - Brooks: 'buckles located within the hold itself' - so no buckle is visible on the outside top face, only the two bare billet tongues." }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": false,
-        "reflective": "none",
-        "logo": { "type": "embossed", "location": "flap_right", "text": "BROOKS / 18 ENGLAND 66, blind-embossed into the flap on the drive side" },
-        "seams": "saddle-stitched, visible thread along the end panels and the flap edge",
-        "fabric": "vegetable-tanned leather, 2.5-3 mm; the Dark Tan and Honey hides are matte/nubuck, the Brown and Black are smooth and glossy",
-        "internalStrap": "leather strap inside that encircles the tools to stop them rattling",
-        "madeIn": "Italy"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["saddle_bag_loops"],
-        "contactFaces": ["top"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 90, "frame_mm": 0 },
-        "notes": "Hangs from the two bag loops at the rear of a leather saddle, long axis ACROSS the bike, flap facing rearward. It needs a saddle with bag loops - it will not fit a modern railed-only saddle without an adapter. Tucked right under the saddle, so tyre clearance is never an issue."
-      },
-      "colorways": [
-        { "name": "Honey", "hex": "#c8913f", "leatherNote": "single-material bag - body and straps are the same hide" },
-        { "name": "Dark Tan", "hex": "#b07a4a", "leatherNote": "matte nubuck finish" },
-        { "name": "Brown", "hex": "#6b4327", "leatherNote": "smooth glossy finish" },
-        { "name": "Black", "hex": "#1c1c1e" }
-      ]
-    },
-
-    {
-      "line": "Classic",
-      "name": "Challenge Saddle Bag Large",
-      "size": "1.5L",
-      "slot": "saddlebag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/classic-challenge-saddle-bag-0-5l-2.jpg",
-        "assets/products/brooks-england/classic-challenge-saddle-bag-0-5l-4.jpg",
-        "https://www.bike24.com/p2724681.html",
-        "https://www.brooksengland.com/en-us/products/challenge-saddle-bag-dark-tan-challe0017210"
-      ],
-      "dims_cm": { "len": 20, "wid": 6.5, "hgt": 11 },
-      "dims_state": "packed",
-      "dims_raw": "Brooks' page gives no table for the 1.5 L. Retailer spec: Width 200 mm x Depth 65 mm x Height 110 mm, 1.5 L, 210 g, made in Italy.",
-      "dims_note": "REAL ERROR corrected: len was 25, it is 20. The remote CDN filenames identify local -2 and -4 as the 1.5 L (dark tan and honey). Both are straight front elevations and measure 1.81-1.85 long-to-tall. The retailer figure 200/110 = 1.82 matches that measurement almost exactly; the old 250/110 = 2.27 does not. Two independent photos and one published table agree, so this is a solid correction. 20 x 11 x 6.5 = 1.43 L against 1,5 L. Note the two saddle-loop billets visible on the 0.5 L are NOT visible in either 1.5 L photo - on the Large they sit further back on the flap and are hidden by it in a straight front view.",
-      "capacity_l": 1.5,
-      "geometry": {
-        "form": "saddlebag_flap",
-        "crossSection": "d_shape",
-        "shoulder": "rounded",
-        "notes": "Same construction as the 0.5 L but proportionally deeper - the front elevation is noticeably chunkier and the flap covers a larger fraction of the body. Rounded leather end panels, flat back, all one hide."
-      },
-      "closure": {
-        "type": "flap_buckle",
-        "location": "front_face",
-        "hardware": "one leather billet through a polished nickel-plated steel roller buckle riveted to the flap edge, with a plain rectangular keeper above it; the tail hangs down over the front. Centre front."
-      },
-      "zips": [],
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "top", "hardware": "leather_billet", "material": "vegetable_tanned_leather", "wrapsAround": "saddle_bag_loops", "notes": "two billets from the top of the flap that thread the saddle's bag loops and buckle inside the hold" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": false,
-        "logo": { "type": "embossed", "location": "flap_right", "text": "BROOKS / 18 ENGLAND 66" },
-        "seams": "saddle-stitched",
-        "fabric": "vegetable-tanned leather",
-        "internalStrap": "internal tool strap",
-        "madeIn": "Italy"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["saddle_bag_loops"],
-        "contactFaces": ["top"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 80, "frame_mm": 0 },
-        "notes": "As the 0.5 L - hangs from the saddle bag loops, long axis across the bike, flap rearward. Requires a saddle with bag loops."
-      },
-      "colorways": [
-        { "name": "Honey", "hex": "#c8913f" },
-        { "name": "Dark Tan", "hex": "#b07a4a" },
-        { "name": "Brown", "hex": "#6b4327" },
-        { "name": "Black", "hex": "#1c1c1e" }
-      ]
-    },
-
-    {
-      "line": "Classic",
-      "name": "D-Shaped Saddle Bag",
-      "size": "0.75L",
-      "slot": "saddlebag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "medium",
-      "evidence": [
-        "assets/products/brooks-england/classic-d-shaped-saddle-bag-0-75l-1.jpg",
-        "assets/products/brooks-england/classic-d-shaped-saddle-bag-0-75l-2.jpg",
-        "assets/products/brooks-england/classic-d-shaped-saddle-bag-0-75l-3.jpg",
-        "https://www.brooksengland.com/en-us/products/d-shaped-saddle-bag-brown-dshape0007205"
-      ],
-      "dims_cm": { "len": 16.5, "wid": 5, "hgt": 9 },
-      "dims_state": "packed",
-      "dims_raw": "Height 90 mm / Length 50 mm / Width 165 mm / Capacity 0,75 L / Weight 270 g / Made in Italy",
-      "dims_note": "Left at Brooks' published figures, but flagged medium: the two front-elevation photos (-1 a-brown, -3 dark tan) both measure 1.43-1.47 long-to-tall, whereas 165/90 = 1.83. If 165 mm is the horizontal, the photographed bag is closer to 115 mm tall, giving 165 x 115 x 50 = 0.95 L - and Brooks' own image asset names call this product 'd_shaped_1L'. I have NOT overwritten the table with that inference because a straight-on studio shot of a stuffed leather bag can add height, and 165 x 90 x 50 = 0.74 L reconciles exactly with the printed 0,75 L. A builder wanting a taller bag has a defensible basis for 11 cm; the published 9 cm is what is recorded.",
-      "capacity_l": 0.75,
-      "geometry": {
-        "form": "saddlebag_flap",
-        "crossSection": "d_shape",
-        "shoulder": "squared",
-        "notes": "Squarer and blockier than the Challenge. Front face is a plain flat leather panel with nothing on it but the blind-embossed logo; the flap folds over the top and down the front only a short way, its edge visible as a horizontal stitched line across the upper third. The side panels are the D: flat vertical back, flat top, and the front/bottom rolling round in one curve. A short leather pull tab sticks out of the non-drive end."
-      },
-      "closure": {
-        "type": "flap_strap",
-        "location": "rear_panel",
-        "hardware": "the closure is on the BACK, not the front. Two vegetable-tanned leather billets run vertically down the rear face over the flap, each passing through its own polished nickel-plated steel roller buckle riveted low on the back panel, with a plain keeper loop above each buckle. Brooks additionally describes a mushroom fastener retaining the removable inner purse."
-      },
-      "zips": [],
-      "straps": [
-        { "role": "attachment", "count": 2, "location": "top", "hardware": "leather_billet", "material": "vegetable_tanned_leather", "wrapsAround": "saddle_bag_loops", "notes": "the same two rear billets do double duty: they thread the saddle's bag loops above the bag and buckle down over the flap below it, so tightening the buckles both hangs the bag and shuts it. Their tops appear as two small tabs standing above the flap in the front view." }
-      ],
-      "pockets": [
-        { "type": "slip", "count": 1, "location": "internal", "notes": "removable inner purse; the outer sleeve stays permanently on the saddle" }
-      ],
-      "details": {
-        "daisyChains": false,
-        "logo": { "type": "embossed", "location": "front", "text": "BROOKS / 18 ENGLAND 66, centred on the front panel" },
-        "seams": "saddle-stitched, visible thread down both side panels",
-        "fabric": "vegetable-tanned leather, smooth glossy finish",
-        "madeIn": "Italy"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["saddle_bag_loops"],
-        "contactFaces": ["top", "rear"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 90, "frame_mm": 0 },
-        "notes": "Two-piece: the outer sleeve stays strapped to the saddle loops and the inner purse lifts out. Long axis across the bike, rear face (with the two buckles) pointing back at the rider. Needs a saddle with bag loops."
-      },
-      "colorways": [
-        { "name": "Honey", "hex": "#c8913f" },
-        { "name": "Dark Tan", "hex": "#b07a4a" },
-        { "name": "Brown", "hex": "#6b4327" },
-        { "name": "Black", "hex": "#1c1c1e" }
-      ]
-    },
-
-    {
-      "line": "Trekking",
-      "name": "Isle of Wight Saddle Bag",
-      "size": "2L",
-      "slot": "saddlebag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/trekking-isle-of-wight-saddle-bag-2l-1.jpg",
-        "assets/products/brooks-england/trekking-isle-of-wight-saddle-bag-2l-2.jpg",
-        "assets/products/brooks-england/trekking-isle-of-wight-saddle-bag-2l-3.jpg",
-        "assets/products/brooks-england/trekking-isle-of-wight-saddle-bag-2l-4.jpg",
-        "https://www.brooksengland.com/en-us/products/isle-of-wight-saddle-bag-seal-brown-btb0004a07291"
-      ],
-      "dims_cm": { "len": 21, "wid": 13, "hgt": 11 },
-      "dims_state": "packed",
-      "dims_raw": "Height 110 mm / Length 210 mm / Width 130 mm / Capacity 2 L / Weight 200 g",
-      "dims_note": "Confirmed by photo. Local -3 is the plan (top) view and local -4 the underside; both are flat-on and measure 1.67-1.73 long-to-wide, against a published 210/130 = 1.62. That directly confirms 210 as the fore-aft length and 130 as the across-the-bike width, with 110 the height. 21 x 13 x 11 = 3.0 L box for a 2 L rating - reasonable given how strongly the plan tapers.",
-      "capacity_l": 2,
-      "geometry": {
-        "form": "teardrop",
-        "crossSection": "oval",
-        "taper": { "nose": 0.45, "tail": 1.0, "profile": "curved" },
-        "shoulder": "rounded",
-        "notes": "In PLAN it is a teardrop: a narrow rounded nose pointing forward that swells out to a broad, almost circular tail. In side elevation it is a fat rounded loaf with no flat faces at all. This is the only Brooks bag in the catalogue with a genuinely curved plan - do not model it as a box."
-      },
-      "closure": {
-        "type": "zip_dual_slider",
-        "location": "top",
-        "hardware": "two coated zips with black leather pull tabs"
-      },
-      "zips": [
-        { "count": 2, "run": "horseshoe_top", "finish": "matched", "notes": "one zip runs down each side from the nose to the tail; opening both frees the whole upper panel, which lifts back as a hinged lid (photo -2 shows it peeled open, revealing a dark leather-lined interior). Both sliders park at the tail, tabs hanging down." }
-      ],
-      "straps": [
-        { "role": "attachment", "count": 1, "location": "girth", "hardware": "buckle", "material": "black_leather", "wrapsAround": "saddle_bag_loops", "notes": "a single black leather strap about 15 mm wide crossing the bag TRANSVERSELY over the top, roughly two-thirds of the way back, and buckling to a small polished steel buckle on each side. Two polished steel dome rivets sit on the strap either side of the centreline. This is the piece that carries the whole bag." },
-        { "role": "stability", "count": 1, "location": "nose_front", "hardware": "hook", "material": "elastic_cord", "wrapsAround": "seatpost", "notes": "black elastic shock cord with a barrel cord lock, emerging from a black Hypalon reinforcement patch at the nose and running forward/down to the seatpost" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": false,
-        "reflective": "none",
-        "logo": { "type": "metal_plate", "location": "side_rear", "text": "oval polished steel BROOKS nameplate riveted to the side panel near the tail" },
-        "seams": "stitched, with a webbing-bound seam along the underside",
-        "fabric": "weather-resistant waxed cotton, Seal Brown, with a visibly waxy mottled surface",
-        "trim": "black leather and black Hypalon strapping with polished steel dome rivets - the strap colour deliberately contrasts the brown body"
-      },
-      "mount": {
-        "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-        "attachesTo": ["saddle_bag_loops", "seatpost"],
-        "contactFaces": ["top"],
-        "sag_deg": 2,
-        "clearance": { "tyre_mm": 70, "frame_mm": 0 },
-        "notes": "Nose points FORWARD toward the seatpost, wide tail hangs out over the wheel. The transverse leather strap passes through the saddle's bag loops; the nose shock cord takes the fore-aft sway off the seatpost. Long axis runs fore-aft, unlike the Classic saddle bags which hang crosswise."
-      },
-      "colorways": [
-        { "name": "Seal Brown", "hex": "#4a3428", "leatherHex": "#1a1a1a", "leatherNote": "waxed cotton body in Seal Brown with BLACK leather strapping - body and leather colours differ" }
-      ]
-    },
-
-    {
-      "line": "Trekking",
-      "name": "Rambler Handlebar Bag",
-      "size": "10L",
-      "slot": "randobag",
-      "slot_should_be": null,
-      "verified": true,
-      "confidence": "medium",
-      "evidence": [
-        "assets/products/brooks-england/trekking-rambler-handlebar-bag-10l-1.jpg",
-        "assets/products/brooks-england/trekking-rambler-handlebar-bag-10l-2.jpg",
-        "assets/products/brooks-england/trekking-rambler-handlebar-bag-10l-3.jpg",
-        "assets/products/brooks-england/trekking-rambler-handlebar-bag-10l-4.jpg",
-        "https://www.brooksengland.com/en-us/products/rambler-handlebar-bag-seal-brown-btb0003a07291"
-      ],
-      "dims_cm": { "len": 30, "wid": 18, "hgt": 21 },
-      "dims_state": "packed",
-      "dims_raw": "Height 300 mm / Length 180 mm / Width 210 mm / Capacity 10 L / Weight 900 g",
-      "dims_note": "REAL ERROR corrected - the axes were transposed. The old record read len 21 / hgt 30, i.e. a bag half a metre tall and narrow, standing on end. Photos -1 (front) and -3 (back) are both straight-on elevations and are unambiguously WIDER THAN TALL (bounding box 1.54, body-only 1.20). So Brooks' 300 mm is the across-the-bars run, not the height. The remaining two numbers are assigned 210 = height and 180 = fore-aft depth, which is what the side view (-2, 0.75 depth-to-height) supports and what makes a classic 10 L rando box: 30 x 21 x 18 = 11.3 L against 10 L stated, ratio 1.13. Medium rather than high because the 210/180 split between height and depth rests on the side-view ratio, and the flap standing proud inflates the measured height by 10-15%.",
-      "capacity_l": 10,
-      "geometry": {
-        "form": "basket_box",
-        "crossSection": "rounded_rect",
-        "shoulder": "squared",
-        "notes": "Classic rando box, wider than tall, with a generous waxed-cotton flap that folds over the top and hangs down the front to about a third of the face. The flap's lower edge is a distinct dark horizontal band across the bag. Big black mesh drawcord pockets on both end panels stand proud of the body silhouette - they widen the bag noticeably in a front view and should be modelled as separate volumes, not as flat panels."
-      },
-      "closure": {
-        "type": "flap_strap",
-        "location": "front_face",
-        "hardware": "two brown nylon webbing straps running vertically over the flap and down the front face to alloy/plastic hardware at the bottom; adjustable so no fabric is left flapping when the bag is under-filled"
-      },
-      "zips": [],
-      "straps": [
-        { "role": "lid", "count": 2, "location": "front_face", "hardware": "ladderlock", "material": "nylon_webbing", "notes": "brown webbing, evenly spaced either side of the nameplate, continuing over the top and down the back" },
-        { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "nylon_webbing", "wrapsAround": "handlebar" },
-        { "role": "attachment", "count": 2, "location": "side", "hardware": "hook", "material": "elastic_cord", "notes": "shock cords running diagonally from the upper corners of the back panel down to the lower corners, hooking to the fork or rack" },
-        { "role": "stability", "count": 1, "location": "rear", "hardware": "buckle", "material": "nylon_webbing", "wrapsAround": "head_tube", "notes": "anchored to a black Hypalon plate low on the back panel" }
-      ],
-      "pockets": [
-        { "type": "mesh", "count": 2, "location": "side", "sizeFrac": 0.55, "notes": "elasticated drawcord mouth with a black cord lock on each" }
-      ],
-      "details": {
-        "daisyChains": "horizontal webbing lash strap across the back panel",
-        "reflective": "none",
-        "logo": { "type": "metal_plate", "location": "front", "text": "oval polished steel BROOKS nameplate riveted centrally to the flap" },
-        "seams": "stitched",
-        "fabric": "weather-resistant waxed cotton, Seal Brown, mottled wax finish",
-        "trim": "black Hypalon backing plate and black shock cord; the webbing is a mid brown that reads warmer than the body"
-      },
-      "mount": {
-        "axes": { "len": "z", "wid": "x", "hgt": "y" },
-        "attachesTo": ["handlebar", "head_tube", "front_rack"],
-        "contactFaces": ["rear_face"],
-        "sag_deg": 2,
-        "clearance": { "tyre_mm": 90, "frame_mm": 20 },
-        "notes": "Hangs off the bar on the two top straps with the shock cords pulling the lower corners back and down to the fork crown or a front rack. At 10 L and 900 g empty it really wants a front rack or a decaleur under it; strapped to the bar alone it will nod. Opens rearward toward the rider."
-      },
-      "colorways": [
-        { "name": "Seal Brown", "hex": "#4a3428", "leatherNote": "waxed cotton body with black Hypalon trim; no leather billets on this model - the strapping is nylon webbing" }
-      ]
-    },
-
-    {
-      "line": "Trekking",
-      "name": "Haul Pannier",
-      "size": "22L",
-      "slot": "pannier",
-      "slot_should_be": null,
-      "fits": "rack_only",
-      "verified": true,
-      "confidence": "high",
-      "evidence": [
-        "assets/products/brooks-england/trekking-haul-pannier-22l-1.jpg",
-        "assets/products/brooks-england/trekking-haul-pannier-22l-2.jpg",
-        "assets/products/brooks-england/trekking-haul-pannier-22l-3.jpg",
-        "https://www.brooksengland.com/en-us/products/haul-pannier-seal-brown-btb0001a07291"
-      ],
-      "dims_cm": { "len": 33, "wid": 20, "hgt": 37 },
-      "dims_state": "packed",
-      "dims_raw": "Height 370 mm / Length 130 mm / Width 330 mm / Capacity 22 L / Max load 7 kg / Weight 900 g. Brooks' 130 mm 'Length' is the flat body panel, not the loaded depth.",
-      "dims_note": "Confirms and refines the previous pass. Photo -1 (front) measures 501 x 563 px on the body = 0.890, against a published 330/370 = 0.892 - so len 33 and hgt 37 are right and the image scale is 0.659 mm/px. Photo -2 (side) then gives a loaded depth of 290-306 px = 19.1-20.2 cm, not the 13 cm printed: the body is a rounded box and a full-height mesh pocket stands proud of each end, none of which is in Brooks' flat panel figure. wid kept at 20. 33 x 37 x 20 = 24.4 L against 22 L, ratio 1.11; the old 13 cm gave 15.9 L, less than the rating, which was impossible.",
-      "capacity_l": 22,
-      "geometry": {
-        "form": "rounded_box",
-        "crossSection": "flat_back",
-        "taper": { "nose": 1.0, "tail": 0.8, "profile": "linear" },
-        "shoulder": "rounded",
-        "notes": "Tall waxed-canvas box that narrows toward the bottom. Full-width flap over the top hanging a third of the way down the front. Black mesh drawcord pockets on both end panels standing clearly proud of the body - they are the widest thing on the bag in a front view."
-      },
-      "closure": {
-        "type": "flap_strap",
-        "location": "front_face",
-        "hardware": "two brown webbing straps down the front face, each into a POLISHED ALLOY quick-release buckle - bright silver, not black plastic. They are the loudest hardware on the bag."
-      },
-      "zips": [],
-      "straps": [
-        { "role": "lid", "count": 2, "location": "front_face", "hardware": "buckle", "material": "nylon_webbing", "notes": "silver alloy buckles at chest height on the front face; the webbing continues over the top and down the back" },
-        { "role": "attachment", "count": 2, "location": "rear", "hardware": "hook", "material": "elastic_cord", "notes": "two shock cords with metal hooks dropping from a horizontal webbing daisy strap low on the back panel to the rack's lower stay" }
-      ],
-      "pockets": [
-        { "type": "mesh", "count": 2, "location": "side", "sizeFrac": 0.5, "notes": "drawcord mouth with a black cord lock each" }
-      ],
-      "details": {
-        "daisyChains": "horizontal webbing lash strap across the lower back panel",
-        "logo": { "type": "metal_plate", "location": "front", "text": "oval polished steel BROOKS nameplate riveted to the flap, 85 px wide in the studio shot - useful as an in-frame scale reference" },
-        "seams": "stitched",
-        "fabric": "weather-resistant waxed canvas, Seal Brown",
-        "mountHardware": "black rigid rail across the top of the back panel carrying FOUR hook positions, plus a black Hypalon skid plate riveted across the bottom of the back panel",
-        "stabiliser": "aluminium stabilising bar behind the back panel"
-      },
-      "mount": {
-        "axes": { "len": "x", "wid": "z", "hgt": "-y" },
-        "attachesTo": ["rear_rack"],
-        "contactFaces": ["side"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 25 },
-        "notes": "Hooks over the rack top tube on the upper rail; the two lower shock cords pull it back against the rack stay. Needs a rack. At 37 cm deep the bottom hangs well below the rack, so check heel clearance and mudguard overlap."
-      },
-      "colorways": [
-        { "name": "Seal Brown", "hex": "#4a3428", "leatherNote": "waxed canvas body; the strapping is brown nylon webbing with silver alloy buckles and black Hypalon plates - no leather billets on this model" }
-      ]
-    },
-
-    {
-      "line": "Trekking",
-      "name": "Half Haul Pannier",
-      "size": "12L",
-      "slot": "pannier",
-      "slot_should_be": null,
-      "fits": "rack_only",
-      "verified": true,
-      "confidence": "medium",
-      "evidence": [
-        "assets/products/brooks-england/trekking-half-haul-pannier-12l-1.jpg",
-        "assets/products/brooks-england/trekking-half-haul-pannier-12l-2.jpg",
-        "assets/products/brooks-england/trekking-half-haul-pannier-12l-3.jpg",
-        "https://www.brooksengland.com/en-us/products/half-haul-pannier-seal-brown-btb0002a07291"
-      ],
-      "dims_cm": { "len": 27, "wid": 16, "hgt": 37 },
-      "dims_state": "packed",
-      "dims_raw": "Height 370 mm / Length 160 mm / Width 210 mm / Capacity 12 L / Max load 7 kg / Weight 800 g",
-      "dims_note": "len CHANGED from 21 to 27 on photographic evidence; hgt and wid left at Brooks' figures. Method: the Haul and Half Haul studio shots share a scale, proved by two identical physical parts measuring the same in both frames - the oval steel nameplate is 85 px on the Haul and 84 px on the Half Haul, and the white alloy buckle is 56x72 px vs 55x70 px. The Haul front view calibrates that scale at 0.659 mm/px (501 px = 330 mm). On the Half Haul the same measurement gives 560 px height = 369 mm, matching Brooks' printed 370 independently, and 411 px width = 271 mm, against Brooks' printed 210. Recorded as 27. This is a photo-over-table call, so confidence is medium; a reviewer can re-run it from the two front-view files. 27 x 37 x 16 = 16.0 L against 12 L, ratio 1.33 - higher than the Haul's 1.11, but the bag tapers hard toward the bottom and the mesh pockets are external.",
-      "capacity_l": 12,
-      "geometry": {
-        "form": "rounded_box",
-        "crossSection": "flat_back",
-        "taper": { "nose": 1.0, "tail": 0.75, "profile": "linear" },
-        "shoulder": "rounded",
-        "notes": "Same family as the Haul - a taller, narrower version of the same box, with the same flap, the same two-strap front and the same pair of end mesh pockets. Narrows more sharply toward the bottom than the Haul does."
-      },
-      "closure": {
-        "type": "flap_strap",
-        "location": "front_face",
-        "hardware": "two brown webbing straps into polished alloy quick-release buckles on the front face"
-      },
-      "zips": [],
-      "straps": [
-        { "role": "lid", "count": 2, "location": "front_face", "hardware": "buckle", "material": "nylon_webbing" },
-        { "role": "attachment", "count": 2, "location": "rear", "hardware": "hook", "material": "elastic_cord", "notes": "shock cords from a horizontal webbing daisy strap low on the back panel" }
-      ],
-      "pockets": [
-        { "type": "mesh", "count": 2, "location": "side", "sizeFrac": 0.5 }
-      ],
-      "details": {
-        "daisyChains": "horizontal webbing lash strap across the lower back panel",
-        "logo": { "type": "metal_plate", "location": "front", "text": "oval polished steel BROOKS nameplate on the flap" },
-        "seams": "stitched",
-        "fabric": "weather-resistant waxed cotton, Seal Brown",
-        "mountHardware": "black rigid rail across the top of the back panel with TWO hook positions - the Haul has four, which is the clearest visual difference between the two backs - plus a black Hypalon skid plate at the bottom",
-        "stabiliser": "aluminium stabilising bar behind the back panel"
-      },
-      "mount": {
-        "axes": { "len": "x", "wid": "z", "hgt": "-y" },
-        "attachesTo": ["rear_rack", "front_rack"],
-        "contactFaces": ["side"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 25 },
-        "notes": "Brooks sells it for front or rear racks. Hooks over the rack top tube; two lower shock cords pull it in against the stay. Needs a rack."
-      },
-      "colorways": [
-        { "name": "Seal Brown", "hex": "#4a3428", "leatherNote": "waxed cotton body, brown nylon webbing, silver alloy buckles, black Hypalon plates" }
-      ]
-    },
-
-    {
-      "line": "Commuting",
-      "name": "Brick Lane Pannier",
-      "size": "15L",
-      "slot": "pannier",
-      "slot_should_be": null,
-      "fits": "rack_only",
-      "verified": true,
-      "confidence": "medium",
-      "evidence": [
-        "assets/products/brooks-england/commuting-brick-lane-pannier-15l-1.jpg",
-        "assets/products/brooks-england/commuting-brick-lane-pannier-15l-2.jpg",
-        "https://www.brooksengland.com/en-us/products/brick-lane-pannier-black-brickla007200"
-      ],
-      "dims_cm": { "len": 35, "wid": 12, "hgt": 36 },
-      "dims_state": "packed",
-      "dims_raw": "Height 360 mm / Length 120 mm / Width 350 mm / Capacity 15 L / Weight 950 g / Made in Italy. Fits racks 10-15 cm wide.",
-      "dims_note": "Dimensions are PER SIDE, and the photos say so: local -1 is the outer face of ONE bag (remote name '..._bricklane_panniers_black_bike_bags_side.jpg') and measures 0.93 wide-to-tall against a published 350/360 = 0.97. Local -2 is the pair seen end-on ('..._front.jpg'); at that same scale the pair spans about 43 cm across, consistent with two 12 cm bodies plus a 10-15 cm rack between them. Note the item is SOLD as a joined pair draped over the rack - the two bags are permanently bridged by a canvas yoke - so a builder must place two of these, not one. The 15 L figure is ambiguous: 35 x 36 x 12 = 15.1 L is exactly one side's box, which suggests Brooks quotes 15 L per side, but the page does not say. Confidence medium on the capacity only; the geometry is solid.",
-      "capacity_l": 15,
-      "geometry": {
-        "form": "slab",
-        "crossSection": "flat_back",
-        "shoulder": "squared",
-        "notes": "A flat, wide, almost square canvas slab with very little depth - it reads as a satchel, not a barrel. A large flap covers the top 55% of the outer face and finishes in a gently curved lower edge. Because the pair is joined by a yoke over the rack, the two bags share a single continuous top panel; render the bridge, not two independent bags. Photo -2 shows the pair splayed apart at the bottom with the yoke pinched in at the top."
-      },
-      "closure": {
-        "type": "flap_strap",
-        "location": "front_face",
-        "hardware": "a single glossy black vegetable-tanned LEATHER billet running vertically down the centre of the flap onto the body, closed on a polished steel stud/snap - the only leather fastening on the Commuting line. Above it, the rolled top edge is laced across with black elastic cord through polished metal eyelets, which is what lets the bag roll down for volume."
-      },
-      "zips": [],
-      "straps": [
-        { "role": "lid", "count": 1, "location": "front_face", "hardware": "leather_billet", "material": "black_leather", "notes": "centre of the flap, onto a steel stud" },
-        { "role": "compression", "count": 1, "location": "top", "hardware": "hook", "material": "elastic_cord", "notes": "black elastic laced in a criss-cross through metal eyelets along the rolled top edge" }
-      ],
-      "pockets": [],
-      "details": {
-        "daisyChains": false,
-        "reflective": "none",
-        "logo": { "type": "screen_print", "location": "front", "text": "BROOKS / 18 ENGLAND 66 in warm gold on the flap, drive side of centre" },
-        "seams": "stitched with leather-bound edges",
-        "fabric": "water-resistant cotton canvas with vegetable-tanned leather finishing at the corners and edges",
-        "madeIn": "Italy"
-      },
-      "mount": {
-        "axes": { "len": "x", "wid": "z", "hgt": "-y" },
-        "attachesTo": ["rear_rack"],
-        "contactFaces": ["top"],
-        "sag_deg": 0,
-        "clearance": { "tyre_mm": 0, "frame_mm": 20 },
-        "notes": "No hooks and no rail - the pair simply DRAPES over the rack top on its connecting yoke and is held by weight plus the elastic lacing; it releases when the tops are rolled. Needs a rear rack 10-15 cm wide. Because it hangs rather than clamps, it sits higher and further outboard than a hooked pannier."
-      },
-      "colorways": [
-        { "name": "Black", "hex": "#1c1c1e", "leatherHex": "#141414", "leatherNote": "matte black canvas against glossy black leather trim - the sheen difference is the only thing separating them" },
-        { "name": "Goose Beak", "hex": "#c9b487", "leatherHex": "#141414" },
-        { "name": "Sage Green", "hex": "#7d8a6a", "leatherHex": "#141414" },
-        { "name": "Grey", "hex": "#7a7c7e", "leatherHex": "#141414" }
-      ]
+     "role": "attachment",
+     "count": 1,
+     "location": "girth",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "seatpost"
     }
-  ]
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none visible",
+    "logo": {
+     "type": "woven_label",
+     "location": "side"
+    },
+    "seams": "welded",
+    "fabric": "coated woven nylon, matte, fine visible weave"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 40,
+     "frame_mm": 0
+    },
+    "notes": "Hangs directly under the saddle with its long axis ACROSS the bike (rail to rail), not fore-aft - the two hook-and-loop tabs on the top face wrap the two rails and the webbing strap drops forward to the seatpost. Do not render it pointing at the rear wheel."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Saddle Pocket Bag",
+   "size": "0.7L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-saddle-pocket-bag-0-7l-1.jpg",
+    "assets/products/brooks-england/scape-saddle-pocket-bag-0-7l-2.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-saddle-pocket-bag-black-bsb01pla00000"
+   ],
+   "dims_cm": {
+    "len": 15,
+    "wid": 8,
+    "hgt": 5.5
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 55 mm / Length 80 mm / Width 150 mm / Capacity 0,7 L / Weight 70 g",
+   "dims_note": "No range published, single figures only. 15 x 8 x 5.5 = 0.66 L against 0,7 L stated, so the axis assignment (150 across, 80 fore-aft, 55 tall) is self-consistent. Photo -1 is a 3/4 front and shows a wide shallow slab, which matches.",
+   "capacity_l": 0.7,
+   "geometry": {
+    "form": "halfmoon",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "Shallow padded clam. Flat top face (presses on the saddle underside), belly curves down and the two ends round off. A wide black webbing band wraps the whole body left-to-right and carries the printed logo; the body proper is visible above and below it."
+   },
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "perimeter"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "perimeter",
+     "finish": "waterproof_welded",
+     "pullSide": "non_drive",
+     "notes": "coated auto-lock slider running the full way round the seam between the top face and the belly, so the bag opens like a clam"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "saddle_rails"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
+    "seams": "welded",
+    "fabric": "coated woven nylon over internal foam padding on both faces",
+    "attachmentPanel": "black Hypalon panel on the top face with laser-cut slots, so the bag can also be hung off another Scape bag rather than the rails"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 80,
+     "frame_mm": 0
+    },
+    "notes": "Sits hard up under the saddle, long axis across the bike. Small enough that it never approaches the tyre."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Handlebar Roll",
+   "size": "9-11L",
+   "slot": "barroll",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-handlebar-roll-9-11l-1.jpg",
+    "assets/products/brooks-england/scape-handlebar-roll-9-11l-2.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-handlebar-roll-mud-green-bhb03pla00401"
+   ],
+   "dims_cm": {
+    "len": 40,
+    "wid": 16,
+    "hgt": 16
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Height 160 mm / Length 160 mm / Width 350-400 mm / Capacity 9 - 11 L / Max load 5 kg / Weight 670 g",
+   "dims_note": "CHANGED under the unfurled rule (was 36.5). The 350-400 mm range is the roll travel and it runs ALONG the bar, so len takes the 400 mm unfurled max. The 160 mm cross-section figures are single values and stand. Photo -1 shows the drybag rolled at BOTH ends, which is why the length is a range in the first place.",
+   "render": {
+    "hgt_cm": 16,
+    "len_cm": 35,
+    "rolls": 3,
+    "basis": "SCHEMA NOTE: the variable axis is the LENGTH (the roll runs along the bar), so len_cm carries the render correction and hgt_cm restates the fixed published 160 mm. Brooks publishes the roll travel as a 350-400 mm range, so the drawn length takes the 350 mm MINIMUM - which also matters for fitment, since 40 cm fouls the levers on a narrow drop bar and 35 cm does not. Photo scape-handlebar-roll-9-11l-1.jpg shows both end bundles turned down about three times.",
+    "note": "hgt_cm is fixed, not a correction; len_cm is the field that matters here"
+   },
+   "capacity_l": 11,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "taper": {
+     "nose": 0.7,
+     "tail": 0.7,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Two-part: a black TPU drybag with a rolled bundle at each end, sitting in an open mud-green cordura holster that wraps the middle two-thirds and carries all the hardware. The exposed black roll bundles at each end are visually distinct from the green holster band in the middle - render them as separate materials."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "end_cap",
+    "rolls": 3,
+    "hardware": "one black acetal cam buckle per end pulling the roll down against the holster"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "handlebar",
+     "notes": "silver anodised aluminium cam buckles sitting proud above the bag, one either side of the stem"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "head_tube"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "notes": "black acetal, low on the front of the holster"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": "double row of webbing lash loops across the holster front",
+    "spacers": "EVA blocks behind the holster to hold the bag off the cables",
+    "logo": {
+     "type": "screen_print",
+     "location": "front"
+    },
+    "seams": "welded drybag, stitched holster",
+    "fabric": "mud-green woven cordura holster over a black TPU-laminated drybag with two internal compartments"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "rear_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 60,
+     "frame_mm": 20
+    },
+    "notes": "Hangs forward of and below the bar tops, long axis across the bike. Drop-bar or flat bar; the EVA spacers set the standoff so the cables run behind it. At 40 cm unfurled it will foul the levers on a narrow drop bar - it wants 42 cm+ of bar."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a",
+     "accentNote": "black drybag ends against a mud-green holster in both colourways"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Handlebar Compact Bag",
+   "size": "10-12L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-handlebar-compact-bag-10-12l-1.jpg",
+    "assets/products/brooks-england/scape-handlebar-compact-bag-10-12l-2.jpg",
+    "assets/products/brooks-england/scape-handlebar-compact-bag-10-12l-3.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-handlebar-compact-bag-mud-green-bhb02pla00401"
+   ],
+   "dims_cm": {
+    "len": 34,
+    "wid": 14,
+    "hgt": 25
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 250 mm / Length 140 mm / Width 340 mm / Capacity 10 - 12 L / Max load 5 kg / Weight 475 g",
+   "dims_note": "Single figures, no range - nothing to unfurl, this is a structured case. 340 across the bars, 250 tall, 140 deep gives 11.9 L, dead centre of the stated 10-12 L. Photo -3 shows a KLICKfix bracket bolted to the back panel: this is a bracket-mounted front case, not a roll, so no roll-length elongation applies.",
+   "capacity_l": 12,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Structured briefcase-shaped box, corners softly rounded, sides slightly domed. Reads as luggage rather than a bikepacking bag."
+   },
+   "closure": {
+    "type": "zip_horseshoe",
+    "location": "top",
+    "hardware": "double-pull sliders"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "horseshoe_top",
+     "finish": "waterproof_welded",
+     "notes": "main lid, two sliders"
+    },
+    {
+     "count": 1,
+     "run": "pocket",
+     "finish": "waterproof_welded",
+     "notes": "horizontal welded slash pocket across the upper front face, single slider with a large D-ring pull on the non-drive end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "nylon_webbing",
+     "notes": "removable, silver anodised aluminium slide adjuster"
+    },
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "underside",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "notes": "aluminium buckles on the bottom edge that cinch the case's volume down"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.5
+    },
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal",
+     "sizeFrac": 0.9,
+     "notes": "padded 13in laptop sleeve"
+    },
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "internal"
+    },
+    {
+     "type": "stretch",
+     "count": 2,
+     "location": "internal"
+    }
+   ],
+   "details": {
+    "daisyChains": true,
+    "handle": "webbing grab handle across the top",
+    "logo": {
+     "type": "screen_print",
+     "location": "front"
+    },
+    "seams": "stitched with taped edges",
+    "fabric": "mud-green woven cordura; back panel is black 3D spacer mesh",
+    "mountHardware": "KLICKfix bracket screwed through the back panel"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "rear_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 120,
+     "frame_mm": 30
+    },
+    "notes": "Needs a KLICKfix handlebar adapter clamped to the bar - the bag does not strap on. Brooks warns it must not be fitted to carbon handlebars. Sits above and forward of the bar, so it clears the tyre easily but will foul a low stem/computer mount."
+   },
+   "colorways": [
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Handlebar Case",
+   "size": "8L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-handlebar-case-8l-1.jpg",
+    "assets/products/brooks-england/scape-handlebar-case-8l-3.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-handlebar-case-mud-green-bhb05pla00401"
+   ],
+   "dims_cm": {
+    "len": 26,
+    "wid": 17,
+    "hgt": 22.5
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 225 mm / Length 170 mm / Width 260 mm / Capacity 8 L / Max load 5 kg / Weight 670 g",
+   "dims_note": "Single figures. Photo -1 is a straight-on front elevation and measures 1.16 wide-to-tall on the body; 260/225 = 1.156, so the assignment of 260 across the bars and 225 tall is confirmed directly. 26 x 22.5 x 17 = 9.9 L box for an 8 L rating, ratio 1.24 - normal for a structured case.",
+   "capacity_l": 8,
+   "geometry": {
+    "form": "box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Upright squared box. The lid is a full-width flap hinged at the back that rolls over the top and drops about a third of the way down the front face, its lower edge finishing in a soft curve - that horizontal lid edge is the case's strongest visual line."
+   },
+   "closure": {
+    "type": "magnetic",
+    "location": "lid",
+    "hardware": "concealed magnetic catches under the flap's front edge"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "pocket",
+     "finish": "waterproof_welded",
+     "notes": "horizontal welded slash pocket immediately below the lid edge on the front face, single slider with a large D-ring pull on the non-drive end"
+    }
+   ],
+   "straps": [
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "side",
+     "hardware": "buckle",
+     "material": "nylon_webbing",
+     "notes": "removable, clips to a D-ring on each end panel"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.45
+    },
+    {
+     "type": "slip",
+     "count": 2,
+     "location": "internal"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "screen_print",
+     "location": "front"
+    },
+    "seams": "welded",
+    "fabric": "mud-green woven cordura, fully welded and waterproof",
+    "mountHardware": "KLICKfix bracket screwed centrally to the back panel, with two webbing lid keepers either side of it"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "rear_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 120,
+     "frame_mm": 30
+    },
+    "notes": "KLICKfix bar adapter required; the case has no straps of its own. Lid opens rearward toward the rider."
+   },
+   "colorways": [
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Handlebar Pouch",
+   "size": "3L",
+   "slot": "barbag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-handlebar-pouch-3l-1.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-handlebar-pouch-mud-green-bhb01pla00401"
+   ],
+   "dims_cm": {
+    "len": 24,
+    "wid": 12,
+    "hgt": 12
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 120 mm / Length 240 mm / Width 120 mm / Capacity 3 L / Max load 3 kg / Weight 140 g",
+   "dims_note": "Single figures; on this page the 240 mm does sit under the Length label. 24 x 12 x 12 = 3.5 L against 3 L stated. Photo -1 measures 1.68 long-to-tall including the bar straps standing above it, consistent with a 24 x 12 barrel.",
+   "capacity_l": 3,
+   "geometry": {
+    "form": "barrel",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "Short horizontal drum with flat circular end caps and no taper. Sits with its axis across the bike."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "front_face"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "side_full",
+     "finish": "waterproof_welded",
+     "pullSide": "non_drive",
+     "notes": "runs the full length of the pouch horizontally across the upper front face, one slider with a large D-ring easy-pull"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "handlebar",
+     "notes": "black acetal cam buckles on short webbing tabs standing above the drum"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": "single row of three webbing lash loops across the lower front face",
+    "logo": {
+     "type": "screen_print",
+     "location": "front"
+    },
+    "seams": "welded",
+    "fabric": "mud-green woven cordura",
+    "modular": "designed to stack on top of the Scape Handlebar Roll"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "rear_face",
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 80,
+     "frame_mm": 15
+    },
+    "notes": "Hangs from the bar tops with the zip facing forward, or rides piggyback on the Handlebar Roll below it."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Feed Pouch",
+   "size": "1L",
+   "slot": "stembag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-feed-pouch-1l-1.jpg",
+    "assets/products/brooks-england/scape-feed-pouch-1l-3.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-feed-pouch-mud-green-bhb04pla00401"
+   ],
+   "dims_cm": {
+    "len": 10,
+    "wid": 10,
+    "hgt": 16
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 160 mm / Length 100 mm / Width 100 mm / Capacity 1 L / Max load 1 kg / Weight 100 g",
+   "dims_note": "Rewritten as a triple so the axes are explicit: 100 x 100 mm is the footprint (len and wid), 160 mm is the vertical. Treat the 100 mm footprint as a ~10 cm diameter cylinder - pi x 5^2 x 16 = 1.26 L against a 1 L rating. The previous record carried len 16 / hgt 16 / dia 10, which double-counted the height.",
+   "capacity_l": 1,
+   "geometry": {
+    "form": "cylinder",
+    "crossSection": "round",
+    "shoulder": "rounded",
+    "notes": "Upright soft cylinder. Lower two-thirds mud-green cordura with a black webbing band round the base; the top third is a separate black collar that gathers on a drawcord."
+   },
+   "closure": {
+    "type": "drawcord",
+    "location": "top",
+    "hardware": "single-hand cord lock on a black elastic drawcord"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "stem"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.35,
+     "notes": "narrow vertical slip pocket on the outboard face under the webbing band"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "screen_print",
+     "location": "front"
+    },
+    "seams": "stitched",
+    "fabric": "mud-green woven cordura body, black coated collar",
+    "attachmentPanel": "black Hypalon panel with laser-cut strap slots on the inboard face"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "+y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "stem"
+    ],
+    "contactFaces": [
+     "side",
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 150,
+     "frame_mm": 10
+    },
+    "notes": "Stands upright in the corner between bar and stem, opening up. Must clear the brake hood and the cables running along the bar."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Frame Bag",
+   "size": "M",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-frame-bag-m-1.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-frame-bag-black-scapefr000000"
+   ],
+   "dims_cm": {
+    "len": 46,
+    "wid": 6,
+    "hgt": 12
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 120 mm / Length 60 mm / Width 460 mm / Capacity 3 L / Max load 3 kg / Weight 200 g",
+   "dims_note": "Single figures. 46 x 12 x 6 = 3.3 L against 3 L stated, so this spec set is the M. Brooks' page shows the same table for both M and L, which is a page bug - see the L record.",
+   "capacity_l": 3,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_bottom",
+    "taper": {
+     "nose": 1,
+     "tail": 0.55,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Long shallow slab that hangs under the top tube. Top edge dead straight (it follows the tube); bottom edge sweeps up in a shallow curve toward the rear so it clears the bottle boss. Deepest at the head-tube end, shallowest at the seat tube."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top"
+   },
+   "zips": [
+    {
+     "count": 2,
+     "run": "side_full",
+     "finish": "waterproof_welded",
+     "notes": "one full-length zip per side, tucked under a welded storm flap; the non-drive side is the KCC waterproof one. Ergonomic moulded pullers."
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "seat_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "down_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal",
+     "notes": "small-items divider on the non-drive side"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "hydrationPort": "grommet at the rear lower corner",
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
+    "seams": "welded",
+    "fabric": "matte coated woven nylon, entirely welded"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "seat_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "rear"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Hangs from the top tube in the upper front triangle, straps wrapping the tube from above. Must leave the down-tube bottle cage clear; on a 56 cm frame the M leaves roughly a bottle's width of open triangle below it."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Frame Bag",
+   "size": "L",
+   "slot": "framebag_half",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/brooks-england/scape-frame-bag-m-1.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-frame-bag-black-scapefr000000",
+    "https://www.bike24.com/p2724699.html"
+   ],
+   "dims_cm": {
+    "len": 50,
+    "wid": 6,
+    "hgt": 12
+   },
+   "dims_state": "packed",
+   "dims_raw": "Brooks' own page prints the M table (460/120/60, 3 L) against BOTH size options. Retailer listing for the Large: 120 x 500 x 60 mm (H x W x D), 3.5 L.",
+   "dims_note": "CHANGED from a fabricated 52 x 13 x 6 (the old record was flagged est:true and no source carries those numbers). The Large is the same 120 mm depth and 60 mm width as the M and only grows along the tube, to 500 mm. 50 x 12 x 6 = 3.6 L, matching the retailer's 3.5 L. Brooks itself publishes no separate L table, hence confidence medium rather than high.",
+   "capacity_l": 3.5,
+   "geometry": {
+    "form": "trapezoid_panel",
+    "crossSection": "flat_bottom",
+    "taper": {
+     "nose": 1,
+     "tail": 0.55,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Identical construction to the M, stretched along the tube. No photo of the L specifically exists in the local set - the M photos are the same mould."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top"
+   },
+   "zips": [
+    {
+     "count": 2,
+     "run": "side_full",
+     "finish": "waterproof_welded",
+     "notes": "one full-length zip per side under a welded storm flap"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "seat_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "down_tube"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "hydrationPort": "grommet at the rear lower corner",
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
+    "seams": "welded",
+    "fabric": "matte coated woven nylon, entirely welded"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "seat_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top",
+     "rear"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "At 50 cm this fills essentially the whole top tube of a 56 cm frame; check it does not overrun the head tube at the front."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Top Tube Bag",
+   "size": "0.9L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-top-tube-bag-0-9l-1.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-black-btt01pla00000"
+   ],
+   "dims_cm": {
+    "len": 21,
+    "wid": 4,
+    "hgt": 11
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 110 mm / Length 40 mm / Width 210 mm / Capacity 0,9 L / Max load 1 kg / Weight 100 g",
+   "dims_note": "Single figures. Photo -1 is a straight drive-side elevation and measures 2.02 long-to-tall on the bounding box; 210/110 = 1.91, and the extra comes from the moulded nose overhanging the body. 21 x 11 x 4 = 0.92 L against 0,9 L. Unchanged.",
+   "capacity_l": 0.9,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.45,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Side profile is a wedge: tall and squared-off at the FRONT (head-tube end), the top face sloping down and back to a low rounded tail. Flat bottom sits on the tube. Narrow - only 4 cm across - so it reads as a fin from the front."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "waterproof_welded",
+     "notes": "runs along the sloping top face from the front high point down toward the tail, cord-and-toggle pull at the front"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "logo print is reflective",
+    "cablePort": "TPU cable port at the front face",
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
+    "seams": "welded",
+    "fabric": "coated woven nylon with foam stiffening in the side walls and floor"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Sits ON TOP of the top tube behind the stem, tall end forward against the head tube. Must not foul the rider's knees or the stem faceplate."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Top Tube Bag Long",
+   "size": "1.5L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-top-tube-bag-long-1-5l-1.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-long-black-btt02pla00000"
+   ],
+   "dims_cm": {
+    "len": 37,
+    "wid": 4.6,
+    "hgt": 11
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 110 mm / Length 46 mm / Width 370 mm / Capacity 1,5 L / Max load 1,5 kg / Weight 100 g",
+   "dims_note": "Single figures. Photo -1 measures 3.39 long-to-tall against 370/110 = 3.36 - a direct confirmation of the axis assignment. 37 x 11 x 4.6 = 1.87 L box for a 1,5 L rating.",
+   "capacity_l": 1.5,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Same wedge as the 0.9 L but much longer and with a far shallower slope - tall squared block at the front third, then a long low blade running back almost to nothing."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "waterproof_welded",
+     "notes": "full-length along the top face, a cord-and-toggle pull at EACH end so it can be worked single-handed from either direction"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "cam",
+     "material": "nylon_webbing",
+     "wrapsAround": "head_tube"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
+    "seams": "welded",
+    "fabric": "coated woven nylon, welded"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "On top of the top tube, tall end against the head tube. At 37 cm it reaches well back on a 56 cm frame - a builder should check it against knee sweep."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Top Tube Bag with Bolts",
+   "size": "0.9L",
+   "slot": "toptube",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-top-tube-bag-with-bolts-0-9l-1.jpg",
+    "assets/products/brooks-england/scape-top-tube-bag-with-bolts-0-9l-2.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-top-tube-bag-with-bolts-mud-green-btt03pla00401"
+   ],
+   "dims_cm": {
+    "len": 21,
+    "wid": 4,
+    "hgt": 11
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 110 mm / Length 40 mm / Width 210 mm / Capacity 0,9 L / Max load 1 kg / Weight 100 g",
+   "dims_note": "Same shell as the strap version - photo -1 is the identical silhouette in a different colourway and measures the same 1.99 long-to-tall. Only the mounting differs.",
+   "capacity_l": 0.9,
+   "geometry": {
+    "form": "tapered_wedge",
+    "crossSection": "rounded_rect",
+    "taper": {
+     "nose": 1,
+     "tail": 0.45,
+     "profile": "linear"
+    },
+    "shoulder": "squared",
+    "notes": "Identical wedge to the 0.9 L strap version, with a rigid black bolt plate moulded into the floor. Photo -2 (underside 3/4) shows the plate proud of the fabric with two captive bolts standing out of it."
+   },
+   "closure": {
+    "type": "zip_straight",
+    "location": "top"
+   },
+   "zips": [
+    {
+     "count": 1,
+     "run": "top_centre",
+     "finish": "waterproof_welded",
+     "notes": "along the sloping top face, cord-and-toggle pull at the front"
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "hypalon",
+     "wrapsAround": "head_tube",
+     "notes": "retained as a backup/anti-rotation strap even in the bolt-on version"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "logo print is reflective",
+    "cablePort": "TPU cable port at the front face",
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
+    "seams": "welded",
+    "fabric": "coated woven nylon",
+    "mountHardware": "rigid black bolt plate in the floor carrying two M5 bolts at the standard 64 mm top-tube boss spacing"
+   },
+   "mount": {
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube_bosses",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
+    "notes": "Bolts down to top-tube bosses; a frame without those bosses cannot take it, and the bag then falls back on the single head-tube strap alone."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Pannier",
+   "size": "Large",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/scape-pannier-large-1.jpg",
+    "assets/products/brooks-england/scape-pannier-large-3.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-large-pannier-black-scape0000l000"
+   ],
+   "dims_cm": {
+    "len": 32,
+    "wid": 16,
+    "hgt": 40
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Height 400-600 mm / Length 160 mm / Width 320 mm / Capacity 18 - 22 L / Max load 9 kg / Weight 760 g",
+   "dims_note": "CHANGED (was 46). On a pannier the roll travel runs up the HEIGHT, and the rule takes the MINIMUM of a height range, so hgt = 40 not 46 and not 60. Length 320 is the fore-aft run and 160 the outboard depth, both single figures. 32 x 40 x 16 = 20.5 L, right inside the stated 18-22 L, which corroborates the assignment.",
+   "render": {
+    "hgt_cm": 40,
+    "rolls": 3,
+    "basis": "Brooks publishes a 400-600 mm height range, so the drawn height is the 400 mm MINIMUM. This matches dims_cm.hgt, which the dimension rule already sets to the range minimum on a height-rolling product. Photo scape-pannier-large-1.jpg shows the bag with the top turned down about three times to roughly that height."
+   },
+   "capacity_l": 22,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.85,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Flat inboard face against the rack; outboard face domed. Corners of the lower half are heavily rounded and the bottom narrows slightly so it clears the heel and the chainstay. Above the roll line the fabric collapses into the roll bundle."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "roll folds down and clips to a black acetal cam buckle at each top corner; an internal velcro strap holds the roll for extra volume"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "side",
+     "hardware": "hook",
+     "material": "elastic_cord",
+     "notes": "shock cord with a cord lock running down each side face - these are the 'lateral daisy chain' and double as lash points"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": "lateral, one row per side face",
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
+    "seams": "welded",
+    "fabric": "matte TPU-laminated nylon, 100% welded, IPX4",
+    "mountHardware": "aluminium KLICKfix rail with two sprung hooks on the inboard face plus a lower hook-down"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "side"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 20
+    },
+    "notes": "Hangs off the rack top tube on the KLICKfix hooks, flat face inboard. Needs a rear (or front) rack - it cannot mount to a bare frame. At 40 cm rolled down the bottom sits low; check heel strike against the fore-aft position on the rack."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Scape",
+   "name": "Pannier",
+   "size": "Small",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/brooks-england/scape-pannier-large-2.jpg",
+    "https://www.brooksengland.com/en-us/products/scape-large-pannier-black-scape0000l000",
+    "https://www.bike-components.de/en/Brooks/Scape-Pannier-Small-p80738/"
+   ],
+   "dims_cm": {
+    "len": 26,
+    "wid": 15,
+    "hgt": 30
+   },
+   "dims_state": "unfurled_min_height",
+   "dims_raw": "Retailer spec for the Small: W 260 x H 300-470 x D 150 mm, capacity 10-13 L, max load 9 kg, weight 630 g. Brooks' own page publishes only the Large table.",
+   "dims_note": "CHANGED from a fabricated 26 x 42 x 14 (old record was est:true). The roll travel runs up the height, so hgt takes the 300 mm MINIMUM. 26 x 30 x 15 = 11.7 L, inside the stated 10-13 L. The local photo scape-pannier-large-2.jpg is in fact the SMALL pannier - the remote CDN filename is '..._1_pannier_small_black_scape_bike_bags_front.jpg' - and it shows a squarer, less elongated body than the Large, consistent with 26 x 30 rolled. Confidence medium because Brooks itself does not publish the Small table.",
+   "render": {
+    "hgt_cm": 30,
+    "rolls": 3,
+    "basis": "Published height range 300-470 mm, so the drawn height is the 300 mm MINIMUM. Matches dims_cm.hgt. Photo scape-pannier-large-2.jpg - which is the Small, per its remote CDN filename - shows the bag rolled down and measuring 1.08 wide-to-tall, close to 26/30 = 0.87 once the roll bundle standing proud of the body is allowed for."
+   },
+   "capacity_l": 13,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "shoulder": "rounded",
+    "notes": "Same construction as the Large, shorter and shallower, so it reads nearly square in front elevation once rolled down."
+   },
+   "closure": {
+    "type": "rolltop",
+    "location": "top",
+    "rolls": 3,
+    "hardware": "black acetal cam buckle at each top corner, internal velcro roll strap"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "side",
+     "hardware": "hook",
+     "material": "elastic_cord"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": "lateral",
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
+    "seams": "welded",
+    "fabric": "matte TPU-laminated nylon, 100% welded, IPX4",
+    "mountHardware": "aluminium KLICKfix rail with sprung hooks"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack",
+     "front_rack"
+    ],
+    "contactFaces": [
+     "side"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 20
+    },
+    "notes": "Small enough that Brooks also sells it as a front/fork-rack bag. Needs a rack either way."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Mud Green",
+     "hex": "#55584a"
+    }
+   ]
+  },
+  {
+   "line": "Classic",
+   "name": "Challenge Saddle Bag",
+   "size": "0.5L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/classic-challenge-saddle-bag-0-5l-1.jpg",
+    "assets/products/brooks-england/classic-challenge-saddle-bag-0-5l-3.jpg",
+    "https://www.brooksengland.com/en-us/products/challenge-saddle-bag-dark-tan-challe0017210"
+   ],
+   "dims_cm": {
+    "len": 17.5,
+    "wid": 4.5,
+    "hgt": 7.8
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 78 mm / Length 45 mm / Width 175 mm / Capacity 0,5 L / Weight 140 g / Made in Italy",
+   "dims_note": "Single figures. The remote CDN filenames identify local -1 and -3 as the 0.5 L (dark tan and honey); both are straight front elevations and measure 2.03-2.08 long-to-tall against a published 175/78 = 2.24. The 7-9% surplus is the rolled top of the flap standing proud of Brooks' nominal height, not an error in the table. Kept as published. 17.5 x 7.8 x 4.5 = 0.61 L against 0,5 L.",
+   "capacity_l": 0.5,
+   "geometry": {
+    "form": "saddlebag_flap",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "A wide shallow leather roll. Seen from the front it is a long horizontal body with a one-piece flap folded over the top and down the front to about half the body's height, the flap's lower edge running dead straight across. The ends are closed with a rounded leather side panel stitched round its whole edge, so in end elevation the bag is a D lying on its flat back. All one material and one colour - there is no fabric, no webbing and no plastic anywhere on it."
+   },
+   "closure": {
+    "type": "flap_buckle",
+    "location": "front_face",
+    "hardware": "a single vegetable-tanned leather billet, roughly 13 mm wide with punched holes, rising from the body's front face through a polished nickel-plated steel roller buckle riveted to the leading edge of the flap; above the roller buckle a plain rectangular keeper loop takes the billet tail, which then hangs down flat over the front face. Dead centre of the front."
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "leather_billet",
+     "material": "vegetable_tanned_leather",
+     "wrapsAround": "saddle_bag_loops",
+     "notes": "two narrow billets emerging vertically from the TOP of the flap, one either side of centre at roughly 1/3 and 2/3 across, standing about 20 mm proud. They pass through the saddle's bag loops and buckle INSIDE the hold of the bag - Brooks: 'buckles located within the hold itself' - so no buckle is visible on the outside top face, only the two bare billet tongues."
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "logo": {
+     "type": "embossed",
+     "location": "flap_right",
+     "text": "BROOKS / 18 ENGLAND 66, blind-embossed into the flap on the drive side"
+    },
+    "seams": "saddle-stitched, visible thread along the end panels and the flap edge",
+    "fabric": "vegetable-tanned leather, 2.5-3 mm; the Dark Tan and Honey hides are matte/nubuck, the Brown and Black are smooth and glossy",
+    "internalStrap": "leather strap inside that encircles the tools to stop them rattling",
+    "madeIn": "Italy"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_bag_loops"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 90,
+     "frame_mm": 0
+    },
+    "notes": "Hangs from the two bag loops at the rear of a leather saddle, long axis ACROSS the bike, flap facing rearward. It needs a saddle with bag loops - it will not fit a modern railed-only saddle without an adapter. Tucked right under the saddle, so tyre clearance is never an issue."
+   },
+   "colorways": [
+    {
+     "name": "Honey",
+     "hex": "#c8913f",
+     "leatherNote": "single-material bag - body and straps are the same hide"
+    },
+    {
+     "name": "Dark Tan",
+     "hex": "#b07a4a",
+     "leatherNote": "matte nubuck finish"
+    },
+    {
+     "name": "Brown",
+     "hex": "#6b4327",
+     "leatherNote": "smooth glossy finish"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
+   ]
+  },
+  {
+   "line": "Classic",
+   "name": "Challenge Saddle Bag Large",
+   "size": "1.5L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/classic-challenge-saddle-bag-0-5l-2.jpg",
+    "assets/products/brooks-england/classic-challenge-saddle-bag-0-5l-4.jpg",
+    "https://www.bike24.com/p2724681.html",
+    "https://www.brooksengland.com/en-us/products/challenge-saddle-bag-dark-tan-challe0017210"
+   ],
+   "dims_cm": {
+    "len": 20,
+    "wid": 6.5,
+    "hgt": 11
+   },
+   "dims_state": "packed",
+   "dims_raw": "Brooks' page gives no table for the 1.5 L. Retailer spec: Width 200 mm x Depth 65 mm x Height 110 mm, 1.5 L, 210 g, made in Italy.",
+   "dims_note": "REAL ERROR corrected: len was 25, it is 20. The remote CDN filenames identify local -2 and -4 as the 1.5 L (dark tan and honey). Both are straight front elevations and measure 1.81-1.85 long-to-tall. The retailer figure 200/110 = 1.82 matches that measurement almost exactly; the old 250/110 = 2.27 does not. Two independent photos and one published table agree, so this is a solid correction. 20 x 11 x 6.5 = 1.43 L against 1,5 L. Note the two saddle-loop billets visible on the 0.5 L are NOT visible in either 1.5 L photo - on the Large they sit further back on the flap and are hidden by it in a straight front view.",
+   "capacity_l": 1.5,
+   "geometry": {
+    "form": "saddlebag_flap",
+    "crossSection": "d_shape",
+    "shoulder": "rounded",
+    "notes": "Same construction as the 0.5 L but proportionally deeper - the front elevation is noticeably chunkier and the flap covers a larger fraction of the body. Rounded leather end panels, flat back, all one hide."
+   },
+   "closure": {
+    "type": "flap_buckle",
+    "location": "front_face",
+    "hardware": "one leather billet through a polished nickel-plated steel roller buckle riveted to the flap edge, with a plain rectangular keeper above it; the tail hangs down over the front. Centre front."
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "leather_billet",
+     "material": "vegetable_tanned_leather",
+     "wrapsAround": "saddle_bag_loops",
+     "notes": "two billets from the top of the flap that thread the saddle's bag loops and buckle inside the hold"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "embossed",
+     "location": "flap_right",
+     "text": "BROOKS / 18 ENGLAND 66"
+    },
+    "seams": "saddle-stitched",
+    "fabric": "vegetable-tanned leather",
+    "internalStrap": "internal tool strap",
+    "madeIn": "Italy"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_bag_loops"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 80,
+     "frame_mm": 0
+    },
+    "notes": "As the 0.5 L - hangs from the saddle bag loops, long axis across the bike, flap rearward. Requires a saddle with bag loops."
+   },
+   "colorways": [
+    {
+     "name": "Honey",
+     "hex": "#c8913f"
+    },
+    {
+     "name": "Dark Tan",
+     "hex": "#b07a4a"
+    },
+    {
+     "name": "Brown",
+     "hex": "#6b4327"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
+   ]
+  },
+  {
+   "line": "Classic",
+   "name": "D-Shaped Saddle Bag",
+   "size": "0.75L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/brooks-england/classic-d-shaped-saddle-bag-0-75l-1.jpg",
+    "assets/products/brooks-england/classic-d-shaped-saddle-bag-0-75l-2.jpg",
+    "assets/products/brooks-england/classic-d-shaped-saddle-bag-0-75l-3.jpg",
+    "https://www.brooksengland.com/en-us/products/d-shaped-saddle-bag-brown-dshape0007205"
+   ],
+   "dims_cm": {
+    "len": 16.5,
+    "wid": 5,
+    "hgt": 9
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 90 mm / Length 50 mm / Width 165 mm / Capacity 0,75 L / Weight 270 g / Made in Italy",
+   "dims_note": "Left at Brooks' published figures, but flagged medium: the two front-elevation photos (-1 a-brown, -3 dark tan) both measure 1.43-1.47 long-to-tall, whereas 165/90 = 1.83. If 165 mm is the horizontal, the photographed bag is closer to 115 mm tall, giving 165 x 115 x 50 = 0.95 L - and Brooks' own image asset names call this product 'd_shaped_1L'. I have NOT overwritten the table with that inference because a straight-on studio shot of a stuffed leather bag can add height, and 165 x 90 x 50 = 0.74 L reconciles exactly with the printed 0,75 L. A builder wanting a taller bag has a defensible basis for 11 cm; the published 9 cm is what is recorded.",
+   "capacity_l": 0.75,
+   "geometry": {
+    "form": "saddlebag_flap",
+    "crossSection": "d_shape",
+    "shoulder": "squared",
+    "notes": "Squarer and blockier than the Challenge. Front face is a plain flat leather panel with nothing on it but the blind-embossed logo; the flap folds over the top and down the front only a short way, its edge visible as a horizontal stitched line across the upper third. The side panels are the D: flat vertical back, flat top, and the front/bottom rolling round in one curve. A short leather pull tab sticks out of the non-drive end."
+   },
+   "closure": {
+    "type": "flap_strap",
+    "location": "rear_panel",
+    "hardware": "the closure is on the BACK, not the front. Two vegetable-tanned leather billets run vertically down the rear face over the flap, each passing through its own polished nickel-plated steel roller buckle riveted low on the back panel, with a plain keeper loop above each buckle. Brooks additionally describes a mushroom fastener retaining the removable inner purse."
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "leather_billet",
+     "material": "vegetable_tanned_leather",
+     "wrapsAround": "saddle_bag_loops",
+     "notes": "the same two rear billets do double duty: they thread the saddle's bag loops above the bag and buckle down over the flap below it, so tightening the buckles both hangs the bag and shuts it. Their tops appear as two small tabs standing above the flap in the front view."
+    }
+   ],
+   "pockets": [
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal",
+     "notes": "removable inner purse; the outer sleeve stays permanently on the saddle"
+    }
+   ],
+   "details": {
+    "daisyChains": false,
+    "logo": {
+     "type": "embossed",
+     "location": "front",
+     "text": "BROOKS / 18 ENGLAND 66, centred on the front panel"
+    },
+    "seams": "saddle-stitched, visible thread down both side panels",
+    "fabric": "vegetable-tanned leather, smooth glossy finish",
+    "madeIn": "Italy"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_bag_loops"
+    ],
+    "contactFaces": [
+     "top",
+     "rear"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 90,
+     "frame_mm": 0
+    },
+    "notes": "Two-piece: the outer sleeve stays strapped to the saddle loops and the inner purse lifts out. Long axis across the bike, rear face (with the two buckles) pointing back at the rider. Needs a saddle with bag loops."
+   },
+   "colorways": [
+    {
+     "name": "Honey",
+     "hex": "#c8913f"
+    },
+    {
+     "name": "Dark Tan",
+     "hex": "#b07a4a"
+    },
+    {
+     "name": "Brown",
+     "hex": "#6b4327"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
+   ]
+  },
+  {
+   "line": "Trekking",
+   "name": "Isle of Wight Saddle Bag",
+   "size": "2L",
+   "slot": "saddlebag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/trekking-isle-of-wight-saddle-bag-2l-1.jpg",
+    "assets/products/brooks-england/trekking-isle-of-wight-saddle-bag-2l-2.jpg",
+    "assets/products/brooks-england/trekking-isle-of-wight-saddle-bag-2l-3.jpg",
+    "assets/products/brooks-england/trekking-isle-of-wight-saddle-bag-2l-4.jpg",
+    "https://www.brooksengland.com/en-us/products/isle-of-wight-saddle-bag-seal-brown-btb0004a07291"
+   ],
+   "dims_cm": {
+    "len": 21,
+    "wid": 13,
+    "hgt": 11
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 110 mm / Length 210 mm / Width 130 mm / Capacity 2 L / Weight 200 g",
+   "dims_note": "Confirmed by photo. Local -3 is the plan (top) view and local -4 the underside; both are flat-on and measure 1.67-1.73 long-to-wide, against a published 210/130 = 1.62. That directly confirms 210 as the fore-aft length and 130 as the across-the-bike width, with 110 the height. 21 x 13 x 11 = 3.0 L box for a 2 L rating - reasonable given how strongly the plan tapers.",
+   "capacity_l": 2,
+   "geometry": {
+    "form": "teardrop",
+    "crossSection": "oval",
+    "taper": {
+     "nose": 0.45,
+     "tail": 1,
+     "profile": "curved"
+    },
+    "shoulder": "rounded",
+    "notes": "In PLAN it is a teardrop: a narrow rounded nose pointing forward that swells out to a broad, almost circular tail. In side elevation it is a fat rounded loaf with no flat faces at all. This is the only Brooks bag in the catalogue with a genuinely curved plan - do not model it as a box."
+   },
+   "closure": {
+    "type": "zip_dual_slider",
+    "location": "top",
+    "hardware": "two coated zips with black leather pull tabs"
+   },
+   "zips": [
+    {
+     "count": 2,
+     "run": "horseshoe_top",
+     "finish": "matched",
+     "notes": "one zip runs down each side from the nose to the tail; opening both frees the whole upper panel, which lifts back as a hinged lid (photo -2 shows it peeled open, revealing a dark leather-lined interior). Both sliders park at the tail, tabs hanging down."
+    }
+   ],
+   "straps": [
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "black_leather",
+     "wrapsAround": "saddle_bag_loops",
+     "notes": "a single black leather strap about 15 mm wide crossing the bag TRANSVERSELY over the top, roughly two-thirds of the way back, and buckling to a small polished steel buckle on each side. Two polished steel dome rivets sit on the strap either side of the centreline. This is the piece that carries the whole bag."
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "nose_front",
+     "hardware": "hook",
+     "material": "elastic_cord",
+     "wrapsAround": "seatpost",
+     "notes": "black elastic shock cord with a barrel cord lock, emerging from a black Hypalon reinforcement patch at the nose and running forward/down to the seatpost"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "logo": {
+     "type": "metal_plate",
+     "location": "side_rear",
+     "text": "oval polished steel BROOKS nameplate riveted to the side panel near the tail"
+    },
+    "seams": "stitched, with a webbing-bound seam along the underside",
+    "fabric": "weather-resistant waxed cotton, Seal Brown, with a visibly waxy mottled surface",
+    "trim": "black leather and black Hypalon strapping with polished steel dome rivets - the strap colour deliberately contrasts the brown body"
+   },
+   "mount": {
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_bag_loops",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "sag_deg": 2,
+    "clearance": {
+     "tyre_mm": 70,
+     "frame_mm": 0
+    },
+    "notes": "Nose points FORWARD toward the seatpost, wide tail hangs out over the wheel. The transverse leather strap passes through the saddle's bag loops; the nose shock cord takes the fore-aft sway off the seatpost. Long axis runs fore-aft, unlike the Classic saddle bags which hang crosswise."
+   },
+   "colorways": [
+    {
+     "name": "Seal Brown",
+     "hex": "#4a3428",
+     "leatherHex": "#1a1a1a",
+     "leatherNote": "waxed cotton body in Seal Brown with BLACK leather strapping - body and leather colours differ"
+    }
+   ]
+  },
+  {
+   "line": "Trekking",
+   "name": "Rambler Handlebar Bag",
+   "size": "10L",
+   "slot": "randobag",
+   "slot_should_be": null,
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/brooks-england/trekking-rambler-handlebar-bag-10l-1.jpg",
+    "assets/products/brooks-england/trekking-rambler-handlebar-bag-10l-2.jpg",
+    "assets/products/brooks-england/trekking-rambler-handlebar-bag-10l-3.jpg",
+    "assets/products/brooks-england/trekking-rambler-handlebar-bag-10l-4.jpg",
+    "https://www.brooksengland.com/en-us/products/rambler-handlebar-bag-seal-brown-btb0003a07291"
+   ],
+   "dims_cm": {
+    "len": 30,
+    "wid": 18,
+    "hgt": 21
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 300 mm / Length 180 mm / Width 210 mm / Capacity 10 L / Weight 900 g",
+   "dims_note": "REAL ERROR corrected - the axes were transposed. The old record read len 21 / hgt 30, i.e. a bag half a metre tall and narrow, standing on end. Photos -1 (front) and -3 (back) are both straight-on elevations and are unambiguously WIDER THAN TALL (bounding box 1.54, body-only 1.20). So Brooks' 300 mm is the across-the-bars run, not the height. The remaining two numbers are assigned 210 = height and 180 = fore-aft depth, which is what the side view (-2, 0.75 depth-to-height) supports and what makes a classic 10 L rando box: 30 x 21 x 18 = 11.3 L against 10 L stated, ratio 1.13. Medium rather than high because the 210/180 split between height and depth rests on the side-view ratio, and the flap standing proud inflates the measured height by 10-15%.",
+   "capacity_l": 10,
+   "geometry": {
+    "form": "basket_box",
+    "crossSection": "rounded_rect",
+    "shoulder": "squared",
+    "notes": "Classic rando box, wider than tall, with a generous waxed-cotton flap that folds over the top and hangs down the front to about a third of the face. The flap's lower edge is a distinct dark horizontal band across the bag. Big black mesh drawcord pockets on both end panels stand proud of the body silhouette - they widen the bag noticeably in a front view and should be modelled as separate volumes, not as flat panels."
+   },
+   "closure": {
+    "type": "flap_strap",
+    "location": "front_face",
+    "hardware": "two brown nylon webbing straps running vertically over the flap and down the front face to alloy/plastic hardware at the bottom; adjustable so no fabric is left flapping when the bag is under-filled"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "lid",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "ladderlock",
+     "material": "nylon_webbing",
+     "notes": "brown webbing, evenly spaced either side of the nameplate, continuing over the top and down the back"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "nylon_webbing",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "side",
+     "hardware": "hook",
+     "material": "elastic_cord",
+     "notes": "shock cords running diagonally from the upper corners of the back panel down to the lower corners, hooking to the fork or rack"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "rear",
+     "hardware": "buckle",
+     "material": "nylon_webbing",
+     "wrapsAround": "head_tube",
+     "notes": "anchored to a black Hypalon plate low on the back panel"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.55,
+     "notes": "elasticated drawcord mouth with a black cord lock on each"
+    }
+   ],
+   "details": {
+    "daisyChains": "horizontal webbing lash strap across the back panel",
+    "reflective": "none",
+    "logo": {
+     "type": "metal_plate",
+     "location": "front",
+     "text": "oval polished steel BROOKS nameplate riveted centrally to the flap"
+    },
+    "seams": "stitched",
+    "fabric": "weather-resistant waxed cotton, Seal Brown, mottled wax finish",
+    "trim": "black Hypalon backing plate and black shock cord; the webbing is a mid brown that reads warmer than the body"
+   },
+   "mount": {
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "head_tube",
+     "front_rack"
+    ],
+    "contactFaces": [
+     "rear_face"
+    ],
+    "sag_deg": 2,
+    "clearance": {
+     "tyre_mm": 90,
+     "frame_mm": 20
+    },
+    "notes": "Hangs off the bar on the two top straps with the shock cords pulling the lower corners back and down to the fork crown or a front rack. At 10 L and 900 g empty it really wants a front rack or a decaleur under it; strapped to the bar alone it will nod. Opens rearward toward the rider."
+   },
+   "colorways": [
+    {
+     "name": "Seal Brown",
+     "hex": "#4a3428",
+     "leatherNote": "waxed cotton body with black Hypalon trim; no leather billets on this model - the strapping is nylon webbing"
+    }
+   ]
+  },
+  {
+   "line": "Trekking",
+   "name": "Haul Pannier",
+   "size": "22L",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "high",
+   "evidence": [
+    "assets/products/brooks-england/trekking-haul-pannier-22l-1.jpg",
+    "assets/products/brooks-england/trekking-haul-pannier-22l-2.jpg",
+    "assets/products/brooks-england/trekking-haul-pannier-22l-3.jpg",
+    "https://www.brooksengland.com/en-us/products/haul-pannier-seal-brown-btb0001a07291"
+   ],
+   "dims_cm": {
+    "len": 33,
+    "wid": 20,
+    "hgt": 37
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 370 mm / Length 130 mm / Width 330 mm / Capacity 22 L / Max load 7 kg / Weight 900 g. Brooks' 130 mm 'Length' is the flat body panel, not the loaded depth.",
+   "dims_note": "Confirms and refines the previous pass. Photo -1 (front) measures 501 x 563 px on the body = 0.890, against a published 330/370 = 0.892 - so len 33 and hgt 37 are right and the image scale is 0.659 mm/px. Photo -2 (side) then gives a loaded depth of 290-306 px = 19.1-20.2 cm, not the 13 cm printed: the body is a rounded box and a full-height mesh pocket stands proud of each end, none of which is in Brooks' flat panel figure. wid kept at 20. 33 x 37 x 20 = 24.4 L against 22 L, ratio 1.11; the old 13 cm gave 15.9 L, less than the rating, which was impossible.",
+   "capacity_l": 22,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.8,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Tall waxed-canvas box that narrows toward the bottom. Full-width flap over the top hanging a third of the way down the front. Black mesh drawcord pockets on both end panels standing clearly proud of the body - they are the widest thing on the bag in a front view."
+   },
+   "closure": {
+    "type": "flap_strap",
+    "location": "front_face",
+    "hardware": "two brown webbing straps down the front face, each into a POLISHED ALLOY quick-release buckle - bright silver, not black plastic. They are the loudest hardware on the bag."
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "lid",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "nylon_webbing",
+     "notes": "silver alloy buckles at chest height on the front face; the webbing continues over the top and down the back"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "rear",
+     "hardware": "hook",
+     "material": "elastic_cord",
+     "notes": "two shock cords with metal hooks dropping from a horizontal webbing daisy strap low on the back panel to the rack's lower stay"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.5,
+     "notes": "drawcord mouth with a black cord lock each"
+    }
+   ],
+   "details": {
+    "daisyChains": "horizontal webbing lash strap across the lower back panel",
+    "logo": {
+     "type": "metal_plate",
+     "location": "front",
+     "text": "oval polished steel BROOKS nameplate riveted to the flap, 85 px wide in the studio shot - useful as an in-frame scale reference"
+    },
+    "seams": "stitched",
+    "fabric": "weather-resistant waxed canvas, Seal Brown",
+    "mountHardware": "black rigid rail across the top of the back panel carrying FOUR hook positions, plus a black Hypalon skid plate riveted across the bottom of the back panel",
+    "stabiliser": "aluminium stabilising bar behind the back panel"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "side"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 25
+    },
+    "notes": "Hooks over the rack top tube on the upper rail; the two lower shock cords pull it back against the rack stay. Needs a rack. At 37 cm deep the bottom hangs well below the rack, so check heel clearance and mudguard overlap."
+   },
+   "colorways": [
+    {
+     "name": "Seal Brown",
+     "hex": "#4a3428",
+     "leatherNote": "waxed canvas body; the strapping is brown nylon webbing with silver alloy buckles and black Hypalon plates - no leather billets on this model"
+    }
+   ]
+  },
+  {
+   "line": "Trekking",
+   "name": "Half Haul Pannier",
+   "size": "12L",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/brooks-england/trekking-half-haul-pannier-12l-1.jpg",
+    "assets/products/brooks-england/trekking-half-haul-pannier-12l-2.jpg",
+    "assets/products/brooks-england/trekking-half-haul-pannier-12l-3.jpg",
+    "https://www.brooksengland.com/en-us/products/half-haul-pannier-seal-brown-btb0002a07291"
+   ],
+   "dims_cm": {
+    "len": 27,
+    "wid": 16,
+    "hgt": 37
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 370 mm / Length 160 mm / Width 210 mm / Capacity 12 L / Max load 7 kg / Weight 800 g",
+   "dims_note": "len CHANGED from 21 to 27 on photographic evidence; hgt and wid left at Brooks' figures. Method: the Haul and Half Haul studio shots share a scale, proved by two identical physical parts measuring the same in both frames - the oval steel nameplate is 85 px on the Haul and 84 px on the Half Haul, and the white alloy buckle is 56x72 px vs 55x70 px. The Haul front view calibrates that scale at 0.659 mm/px (501 px = 330 mm). On the Half Haul the same measurement gives 560 px height = 369 mm, matching Brooks' printed 370 independently, and 411 px width = 271 mm, against Brooks' printed 210. Recorded as 27. This is a photo-over-table call, so confidence is medium; a reviewer can re-run it from the two front-view files. 27 x 37 x 16 = 16.0 L against 12 L, ratio 1.33 - higher than the Haul's 1.11, but the bag tapers hard toward the bottom and the mesh pockets are external.",
+   "capacity_l": 12,
+   "geometry": {
+    "form": "rounded_box",
+    "crossSection": "flat_back",
+    "taper": {
+     "nose": 1,
+     "tail": 0.75,
+     "profile": "linear"
+    },
+    "shoulder": "rounded",
+    "notes": "Same family as the Haul - a taller, narrower version of the same box, with the same flap, the same two-strap front and the same pair of end mesh pockets. Narrows more sharply toward the bottom than the Haul does."
+   },
+   "closure": {
+    "type": "flap_strap",
+    "location": "front_face",
+    "hardware": "two brown webbing straps into polished alloy quick-release buckles on the front face"
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "lid",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "nylon_webbing"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "rear",
+     "hardware": "hook",
+     "material": "elastic_cord",
+     "notes": "shock cords from a horizontal webbing daisy strap low on the back panel"
+    }
+   ],
+   "pockets": [
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.5
+    }
+   ],
+   "details": {
+    "daisyChains": "horizontal webbing lash strap across the lower back panel",
+    "logo": {
+     "type": "metal_plate",
+     "location": "front",
+     "text": "oval polished steel BROOKS nameplate on the flap"
+    },
+    "seams": "stitched",
+    "fabric": "weather-resistant waxed cotton, Seal Brown",
+    "mountHardware": "black rigid rail across the top of the back panel with TWO hook positions - the Haul has four, which is the clearest visual difference between the two backs - plus a black Hypalon skid plate at the bottom",
+    "stabiliser": "aluminium stabilising bar behind the back panel"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack",
+     "front_rack"
+    ],
+    "contactFaces": [
+     "side"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 25
+    },
+    "notes": "Brooks sells it for front or rear racks. Hooks over the rack top tube; two lower shock cords pull it in against the stay. Needs a rack."
+   },
+   "colorways": [
+    {
+     "name": "Seal Brown",
+     "hex": "#4a3428",
+     "leatherNote": "waxed cotton body, brown nylon webbing, silver alloy buckles, black Hypalon plates"
+    }
+   ]
+  },
+  {
+   "line": "Commuting",
+   "name": "Brick Lane Pannier",
+   "size": "15L",
+   "slot": "pannier",
+   "slot_should_be": null,
+   "fits": "rack_only",
+   "verified": true,
+   "confidence": "medium",
+   "evidence": [
+    "assets/products/brooks-england/commuting-brick-lane-pannier-15l-1.jpg",
+    "assets/products/brooks-england/commuting-brick-lane-pannier-15l-2.jpg",
+    "https://www.brooksengland.com/en-us/products/brick-lane-pannier-black-brickla007200"
+   ],
+   "dims_cm": {
+    "len": 35,
+    "wid": 12,
+    "hgt": 36
+   },
+   "dims_state": "packed",
+   "dims_raw": "Height 360 mm / Length 120 mm / Width 350 mm / Capacity 15 L / Weight 950 g / Made in Italy. Fits racks 10-15 cm wide.",
+   "dims_note": "Dimensions are PER SIDE, and the photos say so: local -1 is the outer face of ONE bag (remote name '..._bricklane_panniers_black_bike_bags_side.jpg') and measures 0.93 wide-to-tall against a published 350/360 = 0.97. Local -2 is the pair seen end-on ('..._front.jpg'); at that same scale the pair spans about 43 cm across, consistent with two 12 cm bodies plus a 10-15 cm rack between them. Note the item is SOLD as a joined pair draped over the rack - the two bags are permanently bridged by a canvas yoke - so a builder must place two of these, not one. The 15 L figure is ambiguous: 35 x 36 x 12 = 15.1 L is exactly one side's box, which suggests Brooks quotes 15 L per side, but the page does not say. Confidence medium on the capacity only; the geometry is solid.",
+   "capacity_l": 15,
+   "geometry": {
+    "form": "slab",
+    "crossSection": "flat_back",
+    "shoulder": "squared",
+    "notes": "A flat, wide, almost square canvas slab with very little depth - it reads as a satchel, not a barrel. A large flap covers the top 55% of the outer face and finishes in a gently curved lower edge. Because the pair is joined by a yoke over the rack, the two bags share a single continuous top panel; render the bridge, not two independent bags. Photo -2 shows the pair splayed apart at the bottom with the yoke pinched in at the top."
+   },
+   "closure": {
+    "type": "flap_strap",
+    "location": "front_face",
+    "hardware": "a single glossy black vegetable-tanned LEATHER billet running vertically down the centre of the flap onto the body, closed on a polished steel stud/snap - the only leather fastening on the Commuting line. Above it, the rolled top edge is laced across with black elastic cord through polished metal eyelets, which is what lets the bag roll down for volume."
+   },
+   "zips": [],
+   "straps": [
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "leather_billet",
+     "material": "black_leather",
+     "notes": "centre of the flap, onto a steel stud"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "top",
+     "hardware": "hook",
+     "material": "elastic_cord",
+     "notes": "black elastic laced in a criss-cross through metal eyelets along the rolled top edge"
+    }
+   ],
+   "pockets": [],
+   "details": {
+    "daisyChains": false,
+    "reflective": "none",
+    "logo": {
+     "type": "screen_print",
+     "location": "front",
+     "text": "BROOKS / 18 ENGLAND 66 in warm gold on the flap, drive side of centre"
+    },
+    "seams": "stitched with leather-bound edges",
+    "fabric": "water-resistant cotton canvas with vegetable-tanned leather finishing at the corners and edges",
+    "madeIn": "Italy"
+   },
+   "mount": {
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "top"
+    ],
+    "sag_deg": 0,
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 20
+    },
+    "notes": "No hooks and no rail - the pair simply DRAPES over the rack top on its connecting yoke and is held by weight plus the elastic lacing; it releases when the tops are rolled. Needs a rear rack 10-15 cm wide. Because it hangs rather than clamps, it sits higher and further outboard than a hooked pannier."
+   },
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e",
+     "leatherHex": "#141414",
+     "leatherNote": "matte black canvas against glossy black leather trim - the sheen difference is the only thing separating them"
+    },
+    {
+     "name": "Goose Beak",
+     "hex": "#c9b487",
+     "leatherHex": "#141414"
+    },
+    {
+     "name": "Sage Green",
+     "hex": "#7d8a6a",
+     "leatherHex": "#141414"
+    },
+    {
+     "name": "Grey",
+     "hex": "#7a7c7e",
+     "leatherHex": "#141414"
+    }
+   ]
+  }
+ ]
 }

@@ -1,892 +1,1554 @@
 [
-  {
-    "brand": "Swift Industries",
-    "line": "Zeitgeist",
-    "name": "Zeitgeist Pack",
-    "size": "12L",
-    "src": "https://builtbyswift.com/products/zeitgeist-pack",
-    "verified": true,
-    "dims_cm": { "len": 48.3, "hgt": 22.9, "wid": 17.8 },
-    "dims_note": "page carries no printed dimensions or litre figure in text; dims_cm left as input. Colourways and images read from the page.",
-    "dims_state": "unknown",
-    "dims_raw": "",
-    "capacity_l": 12,
-    "colorways": [
-      { "name": "Coyote", "hex": "#b09068" },
-      { "name": "Luminary", "hex": "#d6dd4a" },
-      { "name": "Black", "hex": "#1c1c1e" }
-    ],
-    "images": [
-      "https://builtbyswift.com/cdn/shop/files/Zeitgeist-Coyote-Front-SwiftIndustries.jpg",
-      "https://builtbyswift.com/cdn/shop/files/Zeitgeist-Luminary-Front-SwiftIndustries.jpg",
-      "https://builtbyswift.com/cdn/shop/files/Zeitgeist-Coyote-Side-SwiftIndustries.jpg",
-      "https://builtbyswift.com/cdn/shop/files/Zeitgeist-SI600X0-LU-Open-3000.jpg"
-    ],
-    "features": { "closure": "flap", "mount": "handlebar" }
+ {
+  "brand": "Swift Industries",
+  "line": "Zeitgeist",
+  "name": "Zeitgeist Pack",
+  "size": "12L",
+  "src": "https://builtbyswift.com/products/zeitgeist-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 48.3,
+   "hgt": 22.9,
+   "wid": 17.8
   },
-  {
-    "brand": "Swift Industries",
-    "line": "Olliepack",
-    "name": "Olliepack Seat Bag",
-    "size": "6L",
-    "src": "https://builtbyswift.com/products/olliepack-seat-bag",
-    "verified": true,
-    "dims_cm": { "len": 43.2, "hgt": 14, "wid": 15.2 },
-    "dims_note": "no printed dimensions or litre figure in the page text; dims_cm left as input. Only Coyote shown as a variant.",
-    "dims_state": "unknown",
-    "dims_raw": "",
-    "capacity_l": 6,
-    "colorways": [{ "name": "Coyote", "hex": "#b09068" }],
-    "images": [
-      "https://builtbyswift.com/cdn/shop/files/Olliepack-Coyote-Zoom-SwiftIndustries.jpg",
-      "https://builtbyswift.com/cdn/shop/files/Olliepack-Coyote-Side-SwiftIndustries.jpg",
-      "https://builtbyswift.com/cdn/shop/files/Olliepack-SI600X-Coy-3000-Main.jpg",
-      "https://builtbyswift.com/cdn/shop/files/OlliepackSeatBag-SwiftIndustries-01.jpg",
-      "https://builtbyswift.com/cdn/shop/files/OlliepackSeatBag-SwiftIndustries-04.jpg"
-    ],
-    "features": { "closure": "rolltop", "mount": "saddle rails + seatpost" }
-  },
-  {
-    "brand": "Road Runner Bags",
-    "line": "Jammer",
-    "name": "Jammer Handlebar Bag",
-    "size": "7L",
-    "src": "https://roadrunnerbags.us/products/the-jammer-bag",
-    "verified": true,
-    "dims_cm": { "len": 25.4, "hgt": 21.3, "wid": 12.7 },
-    "dims_note": "page height 6\"-14\" is rolled-to-fully-expanded; packed hgt = 15.2 + 0.3*(35.6-15.2) = 21.3 cm. len = stated width 10\", wid = stated depth 5\". Input hgt of 35.6 was the fully-unrolled maximum.",
-    "dims_state": "unrolled",
-    "dims_raw": "Height: 6\"-14\", Width: 10\", Depth: 5\"; 5L rolled down, 11L fully expanded",
-    "capacity_l": 7,
-    "colorways": [
-      { "name": "Black Cordura", "hex": "#1f1f1f" },
-      { "name": "Burgundy Cordura", "hex": "#6b2233" },
-      { "name": "Grey Cordura", "hex": "#6e7276" },
-      { "name": "Navy Cordura", "hex": "#23334f" },
-      { "name": "Olive Cordura", "hex": "#5c5f3d" },
-      { "name": "Rust Cordura", "hex": "#a24d24" },
-      { "name": "Coyote Cordura", "hex": "#b3936a" },
-      { "name": "Hybrid (Teal/Pink/Purple)", "hex": "#2e8b8b" },
-      { "name": "Turmeric", "hex": "#d19a17" }
-    ],
-    "images": [],
-    "features": {
-      "closure": "rolltop",
-      "compressionStraps": 2,
-      "cord": true,
-      "note": "C.W.S. Closure Webbing System, dual vertical adjusting straps, 550 cord loops at top, four-point compression via webbing and D-rings; seam-taped 200D nylon liner"
-    }
-  },
-  {
-    "brand": "Road Runner Bags",
-    "line": "Sleeper",
-    "name": "Sleeper Bikepacking Saddle Bag",
-    "size": "6L",
-    "src": "https://roadrunnerbags.us/products/bikepacking-saddle-bag",
-    "verified": true,
-    "dims_cm": { "len": 33, "hgt": 11.4, "wid": 17.8 },
-    "dims_note": "page height 10\"-20\" is the roll length compressed-to-full; packed len = 25.4 + 0.3*(50.8-25.4) = 33.0 cm. Input len of 50.8 was the fully-unrolled maximum. wid = stated width 7\", hgt = stated depth 4.5\". Volume 2L compressed to 8.5L max.",
-    "dims_state": "unrolled",
-    "dims_raw": "Height: 10\"-20\", Width: 7\", Depth: 4.5\"; max volume 8.5L, min volume 2L; 12oz",
-    "capacity_l": 6,
-    "colorways": [
-      { "name": "Black Cordura", "hex": "#1f1f1f" },
-      { "name": "Burgundy Cordura", "hex": "#6b2233" },
-      { "name": "Grey Cordura", "hex": "#6e7276" },
-      { "name": "Navy Cordura", "hex": "#23334f" },
-      { "name": "Olive Cordura", "hex": "#5c5f3d" },
-      { "name": "Rust Cordura", "hex": "#a24d24" },
-      { "name": "Coyote Cordura", "hex": "#b3936a" }
-    ],
-    "images": [
-      "https://cdn.shopify.com/s/files/1/1384/6395/files/20231103_RoadRunnerBags_VirginaCreeperTrail_SRW_22.jpg?v=1709649628"
-    ],
-    "features": {
-      "closure": "rolltop",
-      "compressionStraps": 1,
-      "note": "roll-top with side-release buckle, underside skid plate, velcro seatpost strap, buckles threaded through saddle rails; 1000D Cordura, Mega Grip, 18oz vinyl, YKK hardware"
-    }
-  },
-  {
-    "brand": "Outer Shell Adventure",
-    "line": "Seatpack",
-    "name": "Seatpack",
-    "size": "10.5L",
-    "src": "https://www.outershell.com/products/seatpack",
-    "verified": true,
-    "dims_cm": { "len": 50.8, "hgt": 15.2, "wid": 21.6 },
-    "dims_note": "linear dimensions appear only in a spec graphic, not page text; dims_cm left as input. Page states fit requirement: 2\" exposed seatpost and 6.5\" saddle-to-tire clearance.",
-    "dims_state": "unknown",
-    "dims_raw": "10.5L: requires 2\" exposed seatpost and 6.5\" saddle-to-tire clearance",
-    "capacity_l": 10.5,
-    "colorways": [
-      { "name": "Black", "hex": "#1c1c1c" },
-      { "name": "Olive", "hex": "#5a5f3e" },
-      { "name": "Brown", "hex": "#6b4b31" },
-      { "name": "Autumn", "hex": "#a8532a" },
-      { "name": "Duck Camo", "hex": "#7b7a5a" },
-      { "name": "Cow", "hex": "#e8e4de" },
-      { "name": "Leopard", "hex": "#c8a06a" },
-      { "name": "Multicam Black", "hex": "#3a3d45" },
-      { "name": "ECOPAK Graphite", "hex": "#4a4d52" },
-      { "name": "ECOPAK Marigold", "hex": "#d9a01f" }
-    ],
-    "images": [],
-    "features": {
-      "closure": "rolltop",
-      "compressionStraps": 1,
-      "note": "arch-shaped plastic internal frame, Hypalon reinforced contact patches under saddle and along seatpost, six-point webbing attachment with corrosion-resistant metal cam buckles, velcro seatpost wrap; 1000D Cordura PU or EPLX600 ECOPAK"
-    }
-  },
-  {
-    "brand": "Outer Shell Adventure",
-    "line": "Seatpack",
-    "name": "Seatpack",
-    "size": "16L",
-    "src": "https://www.outershell.com/products/seatpack",
-    "verified": true,
-    "dims_cm": { "len": 55.9, "hgt": 19.1, "wid": 21.6 },
-    "dims_note": "linear dimensions appear only in a spec graphic, not page text; dims_cm left as input. Page states fit requirement: 4.5\" exposed seatpost and 8\" saddle-to-tire clearance.",
-    "dims_state": "unknown",
-    "dims_raw": "16L: requires 4.5\" exposed seatpost and 8\" saddle-to-tire clearance",
-    "capacity_l": 16,
-    "colorways": [
-      { "name": "Black", "hex": "#1c1c1c" },
-      { "name": "Olive", "hex": "#5a5f3e" },
-      { "name": "Brown", "hex": "#6b4b31" },
-      { "name": "Autumn", "hex": "#a8532a" },
-      { "name": "Duck Camo", "hex": "#7b7a5a" },
-      { "name": "Multicam Black", "hex": "#3a3d45" },
-      { "name": "ECOPAK Graphite", "hex": "#4a4d52" },
-      { "name": "ECOPAK Marigold", "hex": "#d9a01f" }
-    ],
-    "images": [],
-    "features": { "closure": "rolltop", "compressionStraps": 1 }
-  },
-  {
-    "brand": "Outer Shell Adventure",
-    "line": "Bar Bags",
-    "name": "Drawcord Handlebar Bag",
-    "size": "2.6-4.9L",
-    "src": "https://www.outershell.com/products/handlebar-bag",
-    "verified": true,
-    "dims_cm": { "len": 20.3, "hgt": 12.7, "wid": 10.2 },
-    "dims_note": "dimensions are given only in a spec image on the page; dims_cm left as input. Page states it fits five 12oz cans and needs 5\" clearance from handlebar centre to tyre top.",
-    "dims_state": "unknown",
-    "dims_raw": "fits up to five 12 oz. cans; requires 5\" clearance from center of handlebars to top of tire",
-    "capacity_l": 4.9,
-    "colorways": [
-      { "name": "Black", "hex": "#1c1c1c" },
-      { "name": "Olive", "hex": "#5a5f3e" },
-      { "name": "Brown", "hex": "#6b4b31" },
-      { "name": "Autumn", "hex": "#a8532a" },
-      { "name": "Duck Camo", "hex": "#7b7a5a" },
-      { "name": "Cow", "hex": "#e8e4de" },
-      { "name": "Leopard", "hex": "#c8a06a" },
-      { "name": "Multicam Black", "hex": "#3a3d45" },
-      { "name": "ECOPAK Graphite", "hex": "#4a4d52" },
-      { "name": "ECOPAK Marigold", "hex": "#d9a01f" },
-      { "name": "ECOPAK Maroon", "hex": "#6a2733" }
-    ],
-    "images": [],
-    "features": {
-      "closure": "drawcord",
-      "pockets": [
-        { "type": "stretch", "face": "side" },
-        { "type": "stretch", "face": "side" },
-        { "type": "sleeve", "face": "front" },
-        { "type": "zip-clear", "face": "lid" },
-        { "type": "zip", "face": "inside" }
-      ],
-      "note": "one-handed drawcord with cord lock, lid hooks around stem, cam buckles around handlebars, D-rings for shoulder strap"
-    }
-  },
-  {
-    "brand": "Salsa (EXP Series)",
-    "line": "EXP Series",
-    "name": "Saguaro Seat Bag",
-    "size": "14L",
-    "src": "https://www.salsacycles.com/products/exp-series-saguaro-seat-bag",
-    "verified": true,
-    "dims_cm": { "len": 48, "hgt": 18, "wid": 20 },
-    "dims_note": "page gives no linear dimensions, only that the holster takes a Medium (9L) or Large (14L) dry bag; dims_cm left as input. No colour options listed.",
-    "dims_state": "unknown",
-    "dims_raw": "The holster fits either our Medium (9 liters) or Large (14 liters) dry bag.",
-    "capacity_l": 14,
-    "colorways": [{ "name": "Black", "hex": "#1c1c1e" }],
-    "images": [
-      "https://www.salsacycles.com/cdn/shop/files/salsa-exp-saguaro-seat-bag-BG0371-01.png",
-      "https://www.salsacycles.com/cdn/shop/files/salsa-exp-saguaro-seat-bag-BG0371-02.png",
-      "https://www.salsacycles.com/cdn/shop/files/salsa-exp-saguaro-seat-bag-BG0371.png"
-    ],
-    "features": {
-      "closure": "rolltop",
-      "valve": true,
-      "note": "modular dry-bag holster, connects to saddle rails at four points, purge valve, dropper-post compatible"
-    }
-  },
-  {
-    "brand": "Salsa (EXP Series)",
-    "line": "EXP Series",
-    "name": "Cholla Half-Frame Bag",
-    "size": "2.1L (size 5)",
-    "src": "https://www.salsacycles.com/products/exp-series-cholla-half-frame-bag",
-    "verified": true,
-    "dims_cm": { "len": 48, "hgt": 8.9, "wid": 6 },
-    "dims_note": "size 5 row of the page's size table: top length 18.9\" = 48.0 cm, rear length 3.5\" = 8.9 cm (used as hgt). Width is not stated on the page; wid left as input. Confirms the input len of 47.9.",
-    "dims_state": "packed",
-    "dims_raw": "Size 5: Top Length 18.9\", Bottom Length 14.1\", Rear Length 3.5\", Volume 2.1L (table also lists sizes 1-6, 1L to 2.9L)",
-    "capacity_l": 2.1,
-    "colorways": [{ "name": "Black", "hex": "#1c1c1e" }],
-    "images": [
-      "https://www.salsacycles.com/cdn/shop/files/salsa-exp-series-cholla-half-frame-pack-BG0364.png",
-      "https://www.salsacycles.com/cdn/shop/files/salsa-exp-series-cholla-half-frame-pack-BG0364-01.png",
-      "https://www.salsacycles.com/cdn/shop/files/salsa-exp-series-cholla-half-frame-pack-BG0364-02.png",
-      "https://www.salsacycles.com/cdn/shop/files/salsa-exp-series-cholla-half-frame-pack-BG0364-03.png"
-    ],
-    "features": {
-      "closure": "zip",
-      "pockets": [{ "type": "slash", "face": "non-drive side" }],
-      "note": "drive-side access, direct-mount thumb screws on compatible Salsa frames plus One-Wrap straps, bluesign 1000D Cordura, molded-tooth zippers"
-    }
-  },
-  {
-    "brand": "Rogue Panda Designs",
-    "line": "Ripsey",
-    "name": "Ripsey Seat Bag V2",
-    "size": "8L",
-    "src": "https://roguepanda.com/products/ripsey-seat-bag",
-    "verified": true,
-    "dims_cm": { "len": 35, "hgt": 15, "wid": 15 },
-    "dims_note": "page states volume and clearances only, no linear dimensions; dims_cm left as input.",
-    "dims_state": "unknown",
-    "dims_raw": "8 Liters; tire clearance 3\" at half capacity, 4\" at full capacity; 16oz with Ultra 200X dry bag",
-    "capacity_l": 8,
-    "colorways": [{ "name": "Ultra 400X Black Magic", "hex": "#1a1a1c" }],
-    "images": [
-      "https://roguepanda.com/cdn/shop/files/ripsey-seat-bag-v2-studio-2.jpg",
-      "https://roguepanda.com/cdn/shop/files/ripsey-seat-bag-seatpost-clamp-closeup-studio.jpg",
-      "https://roguepanda.com/cdn/shop/files/DSC01528.jpg",
-      "https://roguepanda.com/cdn/shop/files/rogue-panda-ripsey-v2-review_36.jpg"
-    ],
-    "features": {
-      "closure": "rolltop",
-      "note": "removable dry bag on a patent-pending saddle clamp with rotating/sliding ABS shims, aluminium 31.6mm seatpost clamp, Austere CNC buckles; carbon-rail and dropper compatible. Rail-width options Standard 40-64mm / Wide 64-88mm"
-    }
-  },
-  {
-    "brand": "Arkel",
-    "line": "Rollpacker",
-    "name": "Rollpacker Rear",
-    "size": "20L",
-    "src": "https://arkel.ca/products/rollpacker-bikepacking-bag",
-    "verified": true,
-    "dims_cm": { "len": 38, "hgt": 24, "wid": 28 },
-    "dims_note": "page gives closed width 38 cm and open width 46.5 cm; len uses the closed (packed) figure. Confirms all three input dimensions exactly.",
-    "dims_state": "packed",
-    "dims_raw": "20L: closed width 38 cm (15 in), open width 46.5 cm (18.3 in), height 24 cm (9 in), depth 28 cm (11 in); Volume 20L (1220.5 cu. in.)",
-    "capacity_l": 20,
-    "colorways": [
-      { "name": "Black", "hex": "#1c1c1e" },
-      { "name": "Ocean Blue", "hex": "#1e5b82" },
-      { "name": "Mountain Brown", "hex": "#6b5140" }
-    ],
-    "images": [
-      "https://arkel.ca/cdn/shop/files/Arkel_BikeBags_Rollpacker-3_1800x1800.jpg",
-      "https://arkel.ca/cdn/shop/files/Arkel_Rollpacker_Rear_Bikepacking_Bag_on_a_gravel_bike_1800x1800.png",
-      "https://arkel.ca/cdn/shop/files/Arkel_BikeBags_Rollpacker_OCEAN_BLUE_REAR_1800x1800.jpg"
-    ],
-    "features": {
-      "closure": "rolltop",
-      "reflective": true,
-      "pockets": [{ "type": "zip", "face": "front", "capacity_l": 2 }],
-      "note": "FidLock magnetic buckle for one-handed access, proprietary aluminium hanger to seatpost and saddle rails, 100% waterproof X-Pac RX30 with 1000D Cordura and taped seams"
-    }
-  },
-  {
-    "brand": "WOHO",
-    "line": "XTouring",
-    "name": "XTouring Saddle Bag Dry L",
-    "size": "18L",
-    "src": "https://www.wohobike.com/products/xtouring-saddle-bag-dry-l-cyber-camo-black",
-    "verified": true,
-    "dims_cm": { "len": 53, "hgt": 20, "wid": 20 },
-    "dims_note": "page gives capacity and weight only; size chart is an image, no text dimensions. dims_cm left as input.",
-    "dims_state": "unknown",
-    "dims_raw": "18 Liter; 390g / 13.7oz",
-    "capacity_l": 18,
-    "colorways": [{ "name": "Cyber-Camo Diamond Black", "hex": "#2b2d30" }],
-    "images": [
-      "https://www.wohobike.com/cdn/shop/products/WOHOXtouringsaddleBagLDRY1_1024x1024@2x.jpg",
-      "https://www.wohobike.com/cdn/shop/products/WOHOXtouringsaddleBagLDRY2_1024x1024@2x.jpg",
-      "https://www.wohobike.com/cdn/shop/products/WOHOXtouringsaddleBagLDRY3_1024x1024@2x.jpg",
-      "https://www.wohobike.com/cdn/shop/products/WOHO_Xtouring_saddle_Bag_L_DRY_and_anti_sway_1024x1024@2x.jpg"
-    ],
-    "features": {
-      "closure": "rolltop",
-      "reflective": true,
-      "note": "three-point attachment with Saddle Rail Locking Mechanism, Duraflex/Nifco buckles, 3M Scotchlite reflective print, taped seams"
-    }
-  },
-  {
-    "brand": "EVOC",
-    "line": "Boa WP",
-    "name": "Seat Pack Boa WP 6",
-    "size": "6L",
-    "src": "https://evocsports.com/products/seat-pack-boa-wp-6",
-    "verified": true,
-    "dims_cm": { "len": 35, "hgt": 14, "wid": 14 },
-    "dims_note": "page dimensions match the input exactly.",
-    "dims_state": "packed",
-    "dims_raw": "35 cm x 14 cm x 14 cm; 6 L; 450.0 g",
-    "capacity_l": 6,
-    "colorways": [
-      { "name": "Carbon grey", "hex": "#3c3f43" },
-      { "name": "Steel", "hex": "#6f7b85" }
-    ],
-    "images": [
-      "https://evocsports.com/cdn/shop/files/100610121_SEAT_PACK_BOA_WP_6_dt00.jpg",
-      "https://evocsports.com/cdn/shop/files/100610121_SEAT_PACK_BOA_WP_6_dt01.jpg"
-    ],
-    "features": {
-      "closure": "rolltop",
-      "compressionStraps": 2,
-      "cord": true,
-      "reflective": true,
-      "note": "BOA Fit system for securing/releasing, roll-up opening, rubber seatpost padding, welded seams, elastic cord mount on exterior"
-    }
-  },
-  {
-    "brand": "VAUDE",
-    "line": "Trail",
-    "name": "Trailsaddle Compact L",
-    "size": "10.5L",
-    "src": "https://www.vaude.com/int/en/48370-trailsaddle-compact-l-10-5-liter-bicycle-saddle-bag.html",
-    "verified": true,
-    "dims_cm": { "len": 56, "hgt": 20, "wid": 24 },
-    "dims_note": "page dimensions match the input (width 56 is the long axis, used as len). Page's volume figure is 10 L, not the 10.5 L in the product title.",
-    "dims_state": "packed",
-    "dims_raw": "Height 20 cm, Width 56 cm, Depth 24 cm; Volume 10 liters; 620 g; max load 4 kg",
-    "capacity_l": 10,
-    "colorways": [],
-    "images": [],
-    "features": {
-      "closure": "rolltop",
-      "valve": true,
-      "cord": true,
-      "reflective": true,
-      "note": "waterproof roll closure with compression valve, KLICKfix attachment included, R-Klett fixation, velcro seat-tube strap, stabilising strap with hook buckle, spider cord on top, safety-light attachment; PVC-free PU-coated recycled polyamide"
-    }
-  },
-  {
-    "brand": "Chrome Industries",
-    "line": "Holman",
-    "name": "Holman Handlebar Bag",
-    "size": "3L",
-    "src": "https://www.chromeindustries.com/products/holman-handlebar-bag",
-    "verified": true,
-    "dims_cm": { "len": 20.3, "hgt": 12.7, "wid": 10.2 },
-    "dims_note": "page dimensions match the input exactly (width 8\" = len, height 5\", depth 4\").",
-    "dims_state": "packed",
-    "dims_raw": "Height: 5\" | Width: 8\" | Depth: 4\"; 3 liter; 0.42 lbs",
-    "capacity_l": 3,
-    "colorways": [
-      { "name": "Black XRF", "hex": "#1a1a1c" },
-      { "name": "Black", "hex": "#1c1c1e" }
-    ],
-    "images": [
-      "https://chromeindustries.com/cdn/shop/files/1-BG-354-BXRF_1.jpg",
-      "https://chromeindustries.com/cdn/shop/files/HOLMAN_HANDLBAR_BAG_BLACK_3Q_1.jpg",
-      "https://chromeindustries.com/cdn/shop/files/homanhandlebarbagonhandlebars.jpg"
-    ],
-    "features": {
-      "closure": "zip",
-      "reflective": true,
-      "pockets": [{ "type": "hook-and-loop", "face": "exterior" }],
-      "note": "one-handed zippered main compartment, modular replaceable attachment straps, reflective front panel on Black XRF; 600D recycled polyester with 150D liner"
-    }
-  },
-  {
-    "brand": "Lezyne",
-    "line": "Caddy",
-    "name": "XL-Caddy",
-    "size": "1.3L",
-    "src": "https://ride.lezyne.com/products/1-sb-caddy-v2xl04",
-    "verified": true,
-    "dims_cm": { "len": 33, "hgt": 8.8, "wid": 22 },
-    "dims_note": "page gives 330 x 220 x 88 mm, matching the input exactly. No litre figure stated on the page.",
-    "dims_state": "packed",
-    "dims_raw": "330mm x 220mm x 88mm; 424g",
-    "capacity_l": 1.3,
-    "colorways": [{ "name": "Black", "hex": "#1c1c1e" }],
-    "images": [
-      "https://ride.lezyne.com/cdn/shop/files/1-SB-CADDY-V2XL04_XL-Caddy_v1_R2_b860cb47-2c2f-4932-9c24-d7d19e46dd1c.jpg",
-      "https://ride.lezyne.com/cdn/shop/products/1-SB-CADDY-V2XL04_XLCaddy_v2_R2.png",
-      "https://ride.lezyne.com/cdn/shop/products/XLCaddy_R1.png"
-    ],
-    "features": {
-      "closure": "rolltop",
-      "cord": true,
-      "reflective": true,
-      "note": "roll-style enclosure with external draw cords, straps to seatpost and seat rails, light mounts, highly water-resistant"
-    }
-  },
-  {
-    "brand": "Straight Cut Design",
-    "line": "Dha",
-    "name": "Custom Dha Frame Bag",
-    "size": "4L",
-    "src": "https://straightcutdesign.com/products/custom-dha-frame-bag",
-    "verified": true,
-    "dims_cm": { "len": 40, "hgt": 15.5, "wid": 6 },
-    "dims_note": "page gives L:400 x H:155 x W:60mm, matching the input exactly.",
-    "dims_state": "packed",
-    "dims_raw": "L:400 x H:155 x W:60mm; 4 litre; 175g in VX21",
-    "capacity_l": 4,
-    "colorways": [
-      { "name": "Lilac", "hex": "#b8a3cc" },
-      { "name": "Black", "hex": "#1c1c1c" },
-      { "name": "Grey Heather-Olive", "hex": "#6a6a5c" },
-      { "name": "Cadmium Green", "hex": "#2f6b45" },
-      { "name": "Bright Red", "hex": "#c62b2b" }
-    ],
-    "images": [
-      "https://straightcutdesign.com/cdn/shop/products/vx42_Black_full_bike_f_1800x1800.jpg",
-      "https://straightcutdesign.com/cdn/shop/products/drainageholevx42_1800x1800.jpg",
-      "https://straightcutdesign.com/cdn/shop/products/SlimP.vx42black_1800x1800.jpg"
-    ],
-    "features": {
-      "closure": "zip",
-      "pockets": [{ "type": "slim", "face": "non-drive side" }],
-      "note": "lace-up top-tube attachment with cam-buckle down-tube straps, hydration/cable port on top edge, drainage hole on lower edge, YKK water-repellent zips; Cordura and X-Pac panel choices, handmade in Edinburgh"
-    }
-  },
-  {
-    "brand": "Buckhorn Bags",
-    "line": "Top Tube",
-    "name": "Buckhorn 8in Top Tube Bag",
-    "size": "1.1L",
-    "src": "https://www.buckhornbags.com/shop/p/8-top-tube-bags",
-    "verified": true,
-    "dims_cm": { "len": 20.3, "hgt": 9.5, "wid": 7.6 },
-    "dims_note": "page gives 8\" long, 3\"-2\" tapered wide, 3-3/4\" tall; wid is the larger 3\" = 7.6 cm, tapering to 5.1 cm. Matches the input exactly.",
-    "dims_state": "packed",
-    "dims_raw": "8\" Long, 3\"- 2\" (tapered) wide, 3-3/4\" Tall; about 1.1 L",
-    "capacity_l": 1.1,
-    "colorways": [
-      { "name": "Tabasco", "hex": "#a32a1f" },
-      { "name": "Whiskey", "hex": "#a9743c" },
-      { "name": "Evergreen", "hex": "#2c4a34" },
-      { "name": "Marigold", "hex": "#d8a021" },
-      { "name": "Bluebell", "hex": "#4a6a94" },
-      { "name": "Mountain Brown", "hex": "#6b5140" },
-      { "name": "Black", "hex": "#1f1f1f" },
-      { "name": "VX21 Black", "hex": "#232326" },
-      { "name": "X50 Coyote", "hex": "#b09068" },
-      { "name": "X50", "hex": "#8a8d90" }
-    ],
-    "images": [
-      "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1672432654040-P0GPH952UAMBYRNPKUZQ/TT+Medium+Xpac-4.jpg",
-      "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1670189673570-QG44453UCK3VDLUZ9W1Y/Waxed+Canvas+TT+Bag+Medium-6.jpg",
-      "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1672432652693-Z4A6T20BVN6Y7KIOCK1R/TT+Medium+Xpac-1.jpg"
-    ],
-    "features": {
-      "closure": "zip",
-      "shape": "tapered",
-      "note": "US-made water-resistant No.5 zip with cord pull, velcro or bolt-on mounting with stainless bolts and nylon washers; waxed canvas or X-Pac"
-    }
-  },
-  {
-    "brand": "Cedaero",
-    "line": "Tank Top",
-    "name": "Cedaero Tank Top Pack",
-    "size": "1L",
-    "src": "https://cedaero.com/products/tank-top-bag",
-    "verified": true,
-    "dims_cm": { "len": 22.9, "hgt": 10.8, "wid": 5.7 },
-    "dims_note": "page gives 9\" x 4.25\" x 2.25\", matching the input exactly.",
-    "dims_state": "packed",
-    "dims_raw": "Dimensions: 9\" x 4.25\" x 2.25\"; Capacity: 1L",
-    "capacity_l": 1,
-    "colorways": [
-      { "name": "Black", "hex": "#1c1c1c" },
-      { "name": "Mountain Brown", "hex": "#6b5140" },
-      { "name": "Granite", "hex": "#7a7d80" },
-      { "name": "Glacier", "hex": "#8fb4c4" },
-      { "name": "Kelp", "hex": "#4a5a3a" },
-      { "name": "Squid Ink", "hex": "#232838" },
-      { "name": "Basil", "hex": "#4f6b3a" },
-      { "name": "Cornflower", "hex": "#5b7bb8" },
-      { "name": "Paprika", "hex": "#b34527" },
-      { "name": "Turmeric", "hex": "#d19a17" },
-      { "name": "Blueberry", "hex": "#38416e" },
-      { "name": "Cantaloupe", "hex": "#e08a4c" },
-      { "name": "Barn Red", "hex": "#8e2b23" },
-      { "name": "Moss", "hex": "#5c6b3c" },
-      { "name": "Clay", "hex": "#9d6b4f" },
-      { "name": "Peacock", "hex": "#1f6f7a" },
-      { "name": "Iris", "hex": "#6a5a9c" },
-      { "name": "Bordeaux", "hex": "#5e2233" }
-    ],
-    "images": [],
-    "features": {
-      "closure": "zip",
-      "pockets": [{ "type": "interior", "face": "inside" }],
-      "note": "#9 Ideal zipper with Nanosphere coating, grippy straps plus adjustable One-Wrap velcro stem strap, foam stiffeners in all panels, key hook; 1000D Cordura / RX30 or X11 X-Pac / 15oz waxed canvas with 200D nylon lining. Page lists 40+ colourways; the most common are recorded here."
-    }
-  },
-  {
-    "brand": "Rapha",
-    "line": "Explore",
-    "name": "Rapha Explore Frame Pack 4L - Large",
-    "size": "4L",
-    "src": "https://www.rapha.cc/us/en/product/explore-frame-pack-4l---large/BFG01XXVLA",
-    "verified": true,
-    "dims_cm": { "len": 51.2, "hgt": 14.5, "wid": 5.5 },
-    "dims_note": "page carries no dimensions or colour list in its text; dims_cm left as input. Images verified on Rapha's CDN.",
-    "dims_state": "unknown",
-    "dims_raw": "",
-    "capacity_l": 4,
-    "colorways": [{ "name": "Dark Green", "hex": "#2f4034" }],
-    "images": [
-      "https://media.rapha.cc/image/upload/v1720195469/triptych/BFG01XX_frame-pack-large_h124_model_01.jpg",
-      "https://media.rapha.cc/image/upload/v1720195451/triptych/BFG01XX_frame-pack-large_h124_model_03.jpg",
-      "https://media.rapha.cc/image/upload/v1720195438/triptych/BFG01XX_frame-pack-large_h124_model_02.jpg"
-    ],
-    "features": { "closure": "zip", "note": "highly water-resistant, three sizes offered" }
-  },
-  {
-    "brand": "Road Runner Bags",
-    "line": "Burrito",
-    "name": "Burrito Supreme",
-    "size": "2.6L",
-    "src": "https://roadrunnerbags.us/products/burrito-supreme-handle-bar-bag",
-    "verified": true,
-    "dims_cm": { "len": 20.3, "dia": 12.7 },
-    "dims_note": "page gives width 8\" and diameter 5\", matching the input exactly.",
-    "dims_state": "packed",
-    "dims_raw": "Width: 8\", Diameter: 5\", 2.6L, 6oz",
-    "capacity_l": 2.6,
-    "colorways": [
-      { "name": "Black Cordura", "hex": "#1f1f1f" },
-      { "name": "Burgundy Cordura", "hex": "#6b2233" },
-      { "name": "Coyote Cordura", "hex": "#b3936a" },
-      { "name": "Grey Cordura", "hex": "#6e7276" },
-      { "name": "Navy Cordura", "hex": "#23334f" },
-      { "name": "Olive Cordura", "hex": "#5c5f3d" },
-      { "name": "Rust Cordura", "hex": "#a24d24" },
-      { "name": "The Jaystone (Teal and Orange Cordura)", "hex": "#1f7d80" },
-      { "name": "The Clint (Turmeric and Pink Cordura)", "hex": "#d19a17" }
-    ],
-    "images": [],
-    "features": {
-      "closure": "zip",
-      "cord": true,
-      "note": "YKK water-resistant zipper tape and slider, removable handlebar mounting straps, double-sided velcro head-tube stability strap, 550 cord loops, nylon webbing MOLLE panel on the front, removable HDPE stiffener; 1000D Cordura with 400D grey nylon liner"
-    }
-  },
-  {
-    "brand": "Outer Shell Adventure",
-    "line": "Basket Bag",
-    "name": "137 Basket Bag",
-    "size": "13.6L",
-    "src": "https://www.outershell.com/products/137-basket-bag",
-    "verified": true,
-    "dims_cm": { "len": 33, "hgt": 20.3, "wid": 20.3 },
-    "dims_note": "dimensions appear only in a spec graphic, not the page text; dims_cm left as input.",
-    "dims_state": "unknown",
-    "dims_raw": "",
-    "capacity_l": 13.6,
-    "colorways": [
-      { "name": "Black", "hex": "#1c1c1c" },
-      { "name": "Olive", "hex": "#5a5f3e" },
-      { "name": "Brown", "hex": "#6b4b31" },
-      { "name": "Autumn", "hex": "#a8532a" },
-      { "name": "Duck Camo", "hex": "#7b7a5a" },
-      { "name": "Cow", "hex": "#e8e4de" },
-      { "name": "Leopard", "hex": "#c8a06a" },
-      { "name": "Multicam Black", "hex": "#3a3d45" },
-      { "name": "ECOPAK Graphite", "hex": "#4a4d52" },
-      { "name": "ECOPAK Marigold", "hex": "#d9a01f" }
-    ],
-    "images": [],
-    "features": {
-      "closure": "flap",
-      "compressionStraps": 2,
-      "cord": true,
-      "pockets": [
-        { "type": "zip", "face": "front" },
-        { "type": "zip", "face": "rear" },
-        { "type": "zip", "face": "side" }
-      ],
-      "note": "two buckled straps secure the bottom, lid with elastic bungee cord and hooks, side compression straps, D-rings for shoulder strap, plastic stiffeners, attachment loops across bottom for small racks (Wald 1372, Pelago, Velo Orange)"
-    }
-  },
-  {
-    "brand": "Rogue Panda Designs",
-    "line": "Alamo",
-    "name": "Alamo Top Tube Bag (Gordito Grande)",
-    "size": "1.75L",
-    "src": "https://roguepanda.com/products/alamo-top-tube-bag",
-    "verified": true,
-    "dims_cm": { "len": 27.9, "hgt": 10.2, "wid": 8.9 },
-    "dims_note": "Gordito Grande is the Gordo shape at 11\" long: 3.5\" wide x 4\" tall at the front, tapering to 2.5\" x 2.5\" at the rear. wid/hgt use the larger front values; matches the input exactly.",
-    "dims_state": "packed",
-    "dims_raw": "Gordito Grande: 3.5 inches wide and 4 inches tall in the front, 11 inches long, tapers to 2.5 inches wide and 2.5 inches tall at the rear; 1.75 liters",
-    "capacity_l": 1.75,
-    "colorways": [{ "name": "Ultra 200X Black Magic", "hex": "#1a1a1c" }],
-    "images": [],
-    "features": {
-      "closure": "zip",
-      "shape": "tapered",
-      "note": "full-length molded-tooth zipper, combined strap-bolt attachment (two 9\" straps and one 15\" strap), cable port for charging electronics; dozens of custom fabrics via the builder"
-    }
-  },
-  {
-    "brand": "Arkel",
-    "line": "Orca",
-    "name": "Orca 2 45",
-    "size": "45L pair",
-    "src": "https://arkel.ca/products/orca-panniers",
-    "verified": true,
-    "dims_cm": { "len": 31, "hgt": 45, "wid": 28 },
-    "dims_note": "page gives volumes and weights only, no linear dimensions; dims_cm left as input. Important: 45L is the PAIR volume — each pannier is 22.5L, so the catalogue's 45L for a single bag is double-counted.",
-    "dims_state": "unknown",
-    "dims_raw": "Orca 45: Pair volume 45L, Unit volume 22.5L; pair weight 2.29kg (5.5 lbs), unit weight 1.145kg",
-    "capacity_l": 22.5,
-    "colorways": [
-      { "name": "Red", "hex": "#b4342b" },
-      { "name": "Grey", "hex": "#6e7276" }
-    ],
-    "images": [],
-    "features": {
-      "closure": "rolltop",
-      "reflective": true,
-      "note": "100% waterproof welded 1000D TPU with C0 coating, roll-top closing to the side or top, Cam-Lock attachment system, internal organizer with padded bottom, reflective logos and light tabs, reinforced bottom, shoulder strap included"
-    }
-  },
-  {
-    "brand": "WOHO",
-    "line": "XTouring",
-    "name": "XTouring Handlebar Harness + Dry Bag 15L",
-    "size": "15L",
-    "src": "https://www.wohobike.com/products/xtouring-handlebar-harness-black-camo-dry-bag-15l-bundle-1",
-    "verified": true,
-    "dims_cm": { "len": 44, "dia": 20 },
-    "dims_note": "page gives the 15L dry bag as 20 x 20 x 44 cm, matching the input exactly. Harness itself is 28.5 x 26 x 0.4 cm flat.",
-    "dims_state": "packed",
-    "dims_raw": "Harness (L x W x H) 28.5 x 26 x 0.4cm; Dry bag 15L: 20 x 20 x 44 cm / 7.9\" x 7.9\" x 17.3\"; 7L: 15 x 15 x 35 cm. Handlebar to front tire clearance required: 7L 22cm, 15L 27cm",
-    "capacity_l": 15,
-    "colorways": [{ "name": "Honeycomb Iron Grey", "hex": "#55585c" }],
-    "images": [],
-    "features": {
-      "closure": "rolltop",
-      "daisyChains": true,
-      "note": "secure roll-top closure, heavy-duty WOHO quick-attach straps, front daisy chain for stability; 1000D ballistic nylon harness, 210D nylon bag with TPU layer rated 15,000mm H2O. Harness 180g, 15L bag 145g"
-    }
-  },
-  {
-    "brand": "EVOC",
-    "line": "Boa WP",
-    "name": "Handlebar Pack Boa WP 5",
-    "size": "5L",
-    "src": "https://evocsports.com/products/handlebar-pack-boa-wp-5",
-    "verified": true,
-    "dims_cm": { "len": 30, "hgt": 15, "wid": 15 },
-    "dims_note": "page dimensions match the input exactly.",
-    "dims_state": "packed",
-    "dims_raw": "30 cm x 15 cm x 15 cm; 5 litre; 300 g; adaptable volume by means of roll-in ends",
-    "capacity_l": 5,
-    "colorways": [
-      { "name": "Carbon grey", "hex": "#3c3f43" },
-      { "name": "Steel", "hex": "#6f7b85" }
-    ],
-    "images": [
-      "https://evocsports.com/cdn/shop/files/102810121_HANDLEBAR_PACK_BOA_WP_5_dt00.jpg",
-      "https://evocsports.com/cdn/shop/files/102810131_HANDLEBAR_PACK_BOA_WP_5_dt00.jpg"
-    ],
-    "features": {
-      "closure": "rolltop",
-      "cord": true,
-      "reflective": true,
-      "note": "BOA Fit system instead of buckles, roll-in ends give access from both sides, elastic cord mount on exterior, ventilation orifices for compression, welded seams"
-    }
-  },
-  {
-    "brand": "VAUDE",
-    "line": "Trail",
-    "name": "Trailfront Cage",
-    "size": "10L",
-    "src": "https://www.vaude.com/int/en/48363-trailfront-cage-10-liter-bicycle-handlebar-bag.html",
-    "verified": true,
-    "dims_cm": { "len": 54, "hgt": 20, "wid": 20 },
-    "dims_note": "page dimensions match the input exactly (width 54 is the long axis, used as len).",
-    "dims_state": "packed",
-    "dims_raw": "Volume 10 liters; Height 20 cm, Width 54 cm, Depth 20 cm; 610 g; max load 5 kg",
-    "capacity_l": 10,
-    "colorways": [],
-    "images": [],
-    "features": {
-      "closure": "rolltop",
-      "cord": true,
-      "note": "removable waterproof dry bag on a permanently mounted handlebar cage with EVA spacers, velcro fixation, elastic bands for extra items; PVC-free PU-coated recycled polyamide, Green Shape certified"
-    }
-  },
-  {
-    "brand": "Cedaero",
-    "line": "Fork Lift",
-    "name": "Cedaero Fork Lift Pack",
-    "size": "3.3L",
-    "src": "https://cedaero.com/products/fopoon-fork-pack",
-    "verified": true,
-    "dims_cm": { "len": 30.5, "hgt": 8.9, "wid": 11.4 },
-    "dims_note": "page gives 12\" x 4.5\" x 3.5\", matching the input exactly.",
-    "dims_state": "packed",
-    "dims_raw": "Dimensions: 12\" x 4.5\" x 3.5\"; 3.3 liter capacity",
-    "capacity_l": 3.3,
-    "colorways": [
-      { "name": "Black", "hex": "#1c1c1c" },
-      { "name": "Darkstar", "hex": "#2a2f3a" },
-      { "name": "Sunburst", "hex": "#e0a020" },
-      { "name": "Lichen Crust", "hex": "#8d9670" },
-      { "name": "Saffron", "hex": "#e2a32c" },
-      { "name": "Royal", "hex": "#2a4a9c" },
-      { "name": "Barn Red", "hex": "#8e2b23" },
-      { "name": "Mandarin", "hex": "#d96a1e" },
-      { "name": "Bordeaux", "hex": "#5e2233" },
-      { "name": "Iris", "hex": "#6a5a9c" },
-      { "name": "Peacock", "hex": "#1f6f7a" },
-      { "name": "Moss", "hex": "#5c6b3c" },
-      { "name": "Clay", "hex": "#9d6b4f" },
-      { "name": "Grey", "hex": "#7a7d80" },
-      { "name": "Bluestone", "hex": "#55707f" },
-      { "name": "Mallard", "hex": "#2c4a4a" },
-      { "name": "Raven", "hex": "#232326" },
-      { "name": "Emerald City", "hex": "#1f6b4a" },
-      { "name": "Rust Bucket", "hex": "#9a4a22" },
-      { "name": "Squid Ink", "hex": "#232838" },
-      { "name": "Basil", "hex": "#4f6b3a" },
-      { "name": "Cornflower", "hex": "#5b7bb8" },
-      { "name": "Paprika", "hex": "#b34527" },
-      { "name": "Turmeric", "hex": "#d19a17" }
-    ],
-    "images": ["https://cedaero.com/cdn/shop/files/fork_lift_squid_ink.jpg"],
-    "features": {
-      "closure": "zip",
-      "note": "#9 Ideal coil zipper with Nanosphere DWR, 210D nylon liner, Hypalon attachment sleeve for cargo-cage mounting, lower access. Fabrics: 1000D Cordura, 15oz waxed canvas, RX30 X-Pac. Made in USA"
-    }
-  },
-  {
-    "brand": "Buckhorn Bags",
-    "line": "Panniers",
-    "name": "Buckhorn Waxed Canvas Panniers",
-    "size": "9-13L each",
-    "src": "https://www.buckhornbags.com/shop/p/waxed-canvas-panniers",
-    "verified": true,
-    "dims_cm": { "len": 29.8, "hgt": 34.3, "wid": 10.2 },
-    "dims_note": "page height 12\"-17\" is the roll range; packed hgt = 30.5 + 0.3*(43.2-30.5) = 34.3 cm. Input hgt of 38 sat near the unrolled maximum. Volume is 9-13L PER BAG (18-26L the pair), not the 20L single figure in the catalogue.",
-    "dims_state": "unrolled",
-    "dims_raw": "11-3/4\" Wide x 12\"-17\" Tall x 4\" Deep; 9L-13L each; 28 oz per pair",
-    "capacity_l": 10.2,
-    "colorways": [
-      { "name": "Olive Drab", "hex": "#4f5340" },
-      { "name": "Field Tan", "hex": "#b09a72" },
-      { "name": "MOD Navy", "hex": "#2a3448" }
-    ],
-    "images": [],
-    "features": {
-      "closure": "rolltop",
-      "compressionStraps": 2,
-      "note": "four Voile nano straps to the top rack rail plus two cam straps controlling the bottom, no hard rattling components; Made-in-USA #10 waxed canvas, white VX21 RS liner, closed-cell foam back panel, Hypalon attach points"
-    }
-  },
-  {
-    "brand": "AGU",
-    "line": "Venture",
-    "name": "AGU Seat-Pack Venture Extreme Waterproof",
-    "size": "9L",
-    "src": "https://agu.com/eu/seat-pack-venture-extreme-waterproof",
-    "verified": true,
-    "dims_cm": { "len": 50, "hgt": 10, "wid": 15 },
-    "dims_note": "the catalogue's src (agu.com/en/seatpack-venture, the 10L Venture Seat-Pack) 404s to automated fetches; this is the Extreme Waterproof sibling, which does publish figures. Page order is 50 x 15 x 10 cm unlabelled — read as len 50, wid 15, hgt 10. Confirms the input len of 50 but swaps the input's wid 10 / hgt 15.",
-    "dims_state": "packed",
-    "dims_raw": "50 x 15 x 10 centimeters, the volume is 9 liters and it weighs 512 grams",
-    "capacity_l": 9,
-    "colorways": [{ "name": "Black", "hex": "#1c1c1e" }],
-    "images": [
-      "https://agu.com/media/catalog/product/4/1/41503001_000_main_01_5.jpg",
-      "https://cdn.agu.com/assets/4/4/b/7/44b7bc02405da4faa069b3f05aba51ad373052cc_41503001_000_sphere_01.jpg",
-      "https://cdn.agu.com/assets/4/f/2/c/4f2c011f10f7e0ecdd49bceedb3fbb9de6c14034_41503001_000_sphere_02.jpg",
-      "https://cdn.agu.com/assets/9/a/f/7/9af7d51cd00c425e4bc58c5080337c5366ac8991_41503001_000_sphere_03.jpg"
-    ],
-    "features": {
-      "closure": "rolltop",
-      "compressionStraps": 2,
-      "note": "removable 100% waterproof drybag inside a permanently mounted outer holster, quick-release buckle, velcro seat-tube fastening"
-    }
-  },
-  {
-    "brand": "Blackburn Design",
-    "line": "Outpost",
-    "name": "Outpost Frame Bag Medium",
-    "size": "4.2L",
-    "src": "https://www.bellhelmets.com/product/outpost-frame-bag-medium/350170000100000040.html",
-    "verified": false,
-    "dims_cm": { "len": 47, "hgt": 12, "wid": 6 },
-    "dims_note": "UNVERIFIED. blackburndesign.com 301-redirects to bellhelmets.com, whose product pages render entirely client-side — three separate fetches returned only the product title and no specification text. dims_cm left exactly as input. Applies to all 16 Blackburn products in the catalogue.",
-    "dims_state": "unknown",
-    "dims_raw": "",
-    "capacity_l": 4.2,
-    "colorways": [],
-    "images": [],
-    "features": {}
-  },
-  {
-    "brand": "Bags by Bird",
-    "line": "Goldback",
-    "name": "Goldback 12.5W",
-    "size": "27L",
-    "src": "https://www.bagsxbird.com/product-page/goldback-12-5wide",
-    "verified": false,
-    "dims_cm": { "len": 43, "hgt": 26.7, "wid": 20.3 },
-    "dims_note": "UNVERIFIED. bagsxbird.com is a Wix site whose product body is truncated to the page title on fetch; two attempts failed. dims_cm left as input. Search indexing of the maker's own pages indicates a 12.5\"-wide main compartment with 8\" depth and 27L across main compartment plus two side pockets (32L for the TALL version, 22L for the 11W, 27L for the 11W TALL), and colourways navy / deep forest / charcoal — but none of that was read from the page itself, so it is not asserted here.",
-    "dims_state": "unknown",
-    "dims_raw": "",
-    "capacity_l": 27,
-    "colorways": [],
-    "images": [],
-    "features": {}
-  },
-  {
-    "brand": "Zefal",
-    "line": "Z Adventure",
-    "name": "Zefal Z Adventure R17",
-    "size": "17L",
-    "src": "https://www.zefal.com/en/saddle-bags/456-z-adventure-r17.html",
-    "verified": false,
-    "dims_cm": { "len": 62, "hgt": 20, "wid": 24 },
-    "dims_note": "UNVERIFIED. zefal.com returns HTTP 403 to automated fetches; three separate product URLs on the domain all refused. dims_cm left exactly as input. Applies to all 6 Zefal products in the catalogue. Note the input's 62cm length looks like a fully-unrolled figure for a 17L roll-top seatpack and should be treated with suspicion until read.",
-    "dims_state": "unknown",
-    "dims_raw": "",
-    "capacity_l": 17,
-    "colorways": [],
-    "images": [],
-    "features": {}
-  },
-  {
-    "brand": "Specialized x Fjällräven",
-    "line": "Hoja",
-    "name": "Fjällräven Hoja Handlebar Rolltop",
-    "size": "13L",
-    "src": "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-handlebar-rolltop/",
-    "verified": false,
-    "dims_cm": { "len": 21, "hgt": 23, "wid": 22 },
-    "dims_note": "UNVERIFIED. fjallraven.com returns HTTP 403 to automated fetches on both the UK and US storefronts. dims_cm left exactly as input. Applies to all 6 Specialized x Fjällräven products in the catalogue. The input dims are nearly cubic (21 x 22 x 23) which is implausible for a handlebar roll and probably an unrolled or misordered figure.",
-    "dims_state": "unknown",
-    "dims_raw": "",
-    "capacity_l": 13,
-    "colorways": [],
-    "images": [],
-    "features": {}
+  "dims_note": "page carries no printed dimensions or litre figure in text; dims_cm left as input. Colourways and images read from the page.",
+  "dims_state": "unknown",
+  "dims_raw": "",
+  "capacity_l": 12,
+  "colorways": [
+   {
+    "name": "Coyote",
+    "hex": "#b09068"
+   },
+   {
+    "name": "Luminary",
+    "hex": "#d6dd4a"
+   },
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://builtbyswift.com/cdn/shop/files/Zeitgeist-Coyote-Front-SwiftIndustries.jpg",
+   "https://builtbyswift.com/cdn/shop/files/Zeitgeist-Luminary-Front-SwiftIndustries.jpg",
+   "https://builtbyswift.com/cdn/shop/files/Zeitgeist-Coyote-Side-SwiftIndustries.jpg",
+   "https://builtbyswift.com/cdn/shop/files/Zeitgeist-SI600X0-LU-Open-3000.jpg"
+  ],
+  "features": {
+   "closure": "flap",
+   "mount": "handlebar"
   }
+ },
+ {
+  "brand": "Swift Industries",
+  "line": "Olliepack",
+  "name": "Olliepack Seat Bag",
+  "size": "6L",
+  "src": "https://builtbyswift.com/products/olliepack-seat-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 43.2,
+   "hgt": 14,
+   "wid": 15.2
+  },
+  "dims_note": "no printed dimensions or litre figure in the page text; dims_cm left as input. Only Coyote shown as a variant.",
+  "dims_state": "unknown",
+  "dims_raw": "",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Coyote",
+    "hex": "#b09068"
+   }
+  ],
+  "images": [
+   "https://builtbyswift.com/cdn/shop/files/Olliepack-Coyote-Zoom-SwiftIndustries.jpg",
+   "https://builtbyswift.com/cdn/shop/files/Olliepack-Coyote-Side-SwiftIndustries.jpg",
+   "https://builtbyswift.com/cdn/shop/files/Olliepack-SI600X-Coy-3000-Main.jpg",
+   "https://builtbyswift.com/cdn/shop/files/OlliepackSeatBag-SwiftIndustries-01.jpg",
+   "https://builtbyswift.com/cdn/shop/files/OlliepackSeatBag-SwiftIndustries-04.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "mount": "saddle rails + seatpost"
+  }
+ },
+ {
+  "brand": "Road Runner Bags",
+  "line": "Jammer",
+  "name": "Jammer Handlebar Bag",
+  "size": "7L",
+  "src": "https://roadrunnerbags.us/products/the-jammer-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 25.4,
+   "hgt": 21.3,
+   "wid": 12.7
+  },
+  "dims_note": "page height 6\"-14\" is rolled-to-fully-expanded; packed hgt = 15.2 + 0.3*(35.6-15.2) = 21.3 cm. len = stated width 10\", wid = stated depth 5\". Input hgt of 35.6 was the fully-unrolled maximum.",
+  "dims_state": "unrolled",
+  "dims_raw": "Height: 6\"-14\", Width: 10\", Depth: 5\"; 5L rolled down, 11L fully expanded",
+  "capacity_l": 7,
+  "colorways": [
+   {
+    "name": "Black Cordura",
+    "hex": "#1f1f1f"
+   },
+   {
+    "name": "Burgundy Cordura",
+    "hex": "#6b2233"
+   },
+   {
+    "name": "Grey Cordura",
+    "hex": "#6e7276"
+   },
+   {
+    "name": "Navy Cordura",
+    "hex": "#23334f"
+   },
+   {
+    "name": "Olive Cordura",
+    "hex": "#5c5f3d"
+   },
+   {
+    "name": "Rust Cordura",
+    "hex": "#a24d24"
+   },
+   {
+    "name": "Coyote Cordura",
+    "hex": "#b3936a"
+   },
+   {
+    "name": "Hybrid (Teal/Pink/Purple)",
+    "hex": "#2e8b8b"
+   },
+   {
+    "name": "Turmeric",
+    "hex": "#d19a17"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "compressionStraps": 2,
+   "cord": true,
+   "note": "C.W.S. Closure Webbing System, dual vertical adjusting straps, 550 cord loops at top, four-point compression via webbing and D-rings; seam-taped 200D nylon liner"
+  }
+ },
+ {
+  "brand": "Road Runner Bags",
+  "line": "Sleeper",
+  "name": "Sleeper Bikepacking Saddle Bag",
+  "size": "6L",
+  "src": "https://roadrunnerbags.us/products/bikepacking-saddle-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 33,
+   "hgt": 11.4,
+   "wid": 17.8
+  },
+  "dims_note": "page height 10\"-20\" is the roll length compressed-to-full; packed len = 25.4 + 0.3*(50.8-25.4) = 33.0 cm. Input len of 50.8 was the fully-unrolled maximum. wid = stated width 7\", hgt = stated depth 4.5\". Volume 2L compressed to 8.5L max.",
+  "dims_state": "unrolled",
+  "dims_raw": "Height: 10\"-20\", Width: 7\", Depth: 4.5\"; max volume 8.5L, min volume 2L; 12oz",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Black Cordura",
+    "hex": "#1f1f1f"
+   },
+   {
+    "name": "Burgundy Cordura",
+    "hex": "#6b2233"
+   },
+   {
+    "name": "Grey Cordura",
+    "hex": "#6e7276"
+   },
+   {
+    "name": "Navy Cordura",
+    "hex": "#23334f"
+   },
+   {
+    "name": "Olive Cordura",
+    "hex": "#5c5f3d"
+   },
+   {
+    "name": "Rust Cordura",
+    "hex": "#a24d24"
+   },
+   {
+    "name": "Coyote Cordura",
+    "hex": "#b3936a"
+   }
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/1384/6395/files/20231103_RoadRunnerBags_VirginaCreeperTrail_SRW_22.jpg?v=1709649628"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "compressionStraps": 1,
+   "note": "roll-top with side-release buckle, underside skid plate, velcro seatpost strap, buckles threaded through saddle rails; 1000D Cordura, Mega Grip, 18oz vinyl, YKK hardware"
+  }
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "line": "Seatpack",
+  "name": "Seatpack",
+  "size": "10.5L",
+  "src": "https://www.outershell.com/products/seatpack",
+  "verified": true,
+  "dims_cm": {
+   "len": 50.8,
+   "hgt": 15.2,
+   "wid": 21.6
+  },
+  "dims_note": "linear dimensions appear only in a spec graphic, not page text; dims_cm left as input. Page states fit requirement: 2\" exposed seatpost and 6.5\" saddle-to-tire clearance.",
+  "dims_state": "unknown",
+  "dims_raw": "10.5L: requires 2\" exposed seatpost and 6.5\" saddle-to-tire clearance",
+  "capacity_l": 10.5,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Olive",
+    "hex": "#5a5f3e"
+   },
+   {
+    "name": "Brown",
+    "hex": "#6b4b31"
+   },
+   {
+    "name": "Autumn",
+    "hex": "#a8532a"
+   },
+   {
+    "name": "Duck Camo",
+    "hex": "#7b7a5a"
+   },
+   {
+    "name": "Cow",
+    "hex": "#e8e4de"
+   },
+   {
+    "name": "Leopard",
+    "hex": "#c8a06a"
+   },
+   {
+    "name": "Multicam Black",
+    "hex": "#3a3d45"
+   },
+   {
+    "name": "ECOPAK Graphite",
+    "hex": "#4a4d52"
+   },
+   {
+    "name": "ECOPAK Marigold",
+    "hex": "#d9a01f"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "compressionStraps": 1,
+   "note": "arch-shaped plastic internal frame, Hypalon reinforced contact patches under saddle and along seatpost, six-point webbing attachment with corrosion-resistant metal cam buckles, velcro seatpost wrap; 1000D Cordura PU or EPLX600 ECOPAK"
+  }
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "line": "Seatpack",
+  "name": "Seatpack",
+  "size": "16L",
+  "src": "https://www.outershell.com/products/seatpack",
+  "verified": true,
+  "dims_cm": {
+   "len": 55.9,
+   "hgt": 19.1,
+   "wid": 21.6
+  },
+  "dims_note": "linear dimensions appear only in a spec graphic, not page text; dims_cm left as input. Page states fit requirement: 4.5\" exposed seatpost and 8\" saddle-to-tire clearance.",
+  "dims_state": "unknown",
+  "dims_raw": "16L: requires 4.5\" exposed seatpost and 8\" saddle-to-tire clearance",
+  "capacity_l": 16,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Olive",
+    "hex": "#5a5f3e"
+   },
+   {
+    "name": "Brown",
+    "hex": "#6b4b31"
+   },
+   {
+    "name": "Autumn",
+    "hex": "#a8532a"
+   },
+   {
+    "name": "Duck Camo",
+    "hex": "#7b7a5a"
+   },
+   {
+    "name": "Multicam Black",
+    "hex": "#3a3d45"
+   },
+   {
+    "name": "ECOPAK Graphite",
+    "hex": "#4a4d52"
+   },
+   {
+    "name": "ECOPAK Marigold",
+    "hex": "#d9a01f"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "compressionStraps": 1
+  }
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "line": "Bar Bags",
+  "name": "Drawcord Handlebar Bag",
+  "size": "2.6-4.9L",
+  "src": "https://www.outershell.com/products/handlebar-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 20.3,
+   "hgt": 12.7,
+   "wid": 10.2
+  },
+  "dims_note": "dimensions are given only in a spec image on the page; dims_cm left as input. Page states it fits five 12oz cans and needs 5\" clearance from handlebar centre to tyre top.",
+  "dims_state": "unknown",
+  "dims_raw": "fits up to five 12 oz. cans; requires 5\" clearance from center of handlebars to top of tire",
+  "capacity_l": 4.9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Olive",
+    "hex": "#5a5f3e"
+   },
+   {
+    "name": "Brown",
+    "hex": "#6b4b31"
+   },
+   {
+    "name": "Autumn",
+    "hex": "#a8532a"
+   },
+   {
+    "name": "Duck Camo",
+    "hex": "#7b7a5a"
+   },
+   {
+    "name": "Cow",
+    "hex": "#e8e4de"
+   },
+   {
+    "name": "Leopard",
+    "hex": "#c8a06a"
+   },
+   {
+    "name": "Multicam Black",
+    "hex": "#3a3d45"
+   },
+   {
+    "name": "ECOPAK Graphite",
+    "hex": "#4a4d52"
+   },
+   {
+    "name": "ECOPAK Marigold",
+    "hex": "#d9a01f"
+   },
+   {
+    "name": "ECOPAK Maroon",
+    "hex": "#6a2733"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "drawcord",
+   "pockets": [
+    {
+     "type": "stretch",
+     "face": "side"
+    },
+    {
+     "type": "stretch",
+     "face": "side"
+    },
+    {
+     "type": "sleeve",
+     "face": "front"
+    },
+    {
+     "type": "zip-clear",
+     "face": "lid"
+    },
+    {
+     "type": "zip",
+     "face": "inside"
+    }
+   ],
+   "note": "one-handed drawcord with cord lock, lid hooks around stem, cam buckles around handlebars, D-rings for shoulder strap"
+  }
+ },
+ {
+  "brand": "Salsa (EXP Series)",
+  "line": "EXP Series",
+  "name": "Saguaro Seat Bag",
+  "size": "14L",
+  "src": "https://www.salsacycles.com/products/exp-series-saguaro-seat-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 48,
+   "hgt": 18,
+   "wid": 20
+  },
+  "dims_note": "page gives no linear dimensions, only that the holster takes a Medium (9L) or Large (14L) dry bag; dims_cm left as input. No colour options listed.",
+  "dims_state": "unknown",
+  "dims_raw": "The holster fits either our Medium (9 liters) or Large (14 liters) dry bag.",
+  "capacity_l": 14,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://www.salsacycles.com/cdn/shop/files/salsa-exp-saguaro-seat-bag-BG0371-01.png",
+   "https://www.salsacycles.com/cdn/shop/files/salsa-exp-saguaro-seat-bag-BG0371-02.png",
+   "https://www.salsacycles.com/cdn/shop/files/salsa-exp-saguaro-seat-bag-BG0371.png"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "valve": true,
+   "note": "modular dry-bag holster, connects to saddle rails at four points, purge valve, dropper-post compatible"
+  }
+ },
+ {
+  "brand": "Salsa (EXP Series)",
+  "line": "EXP Series",
+  "name": "Cholla Half-Frame Bag",
+  "size": "2.1L (size 5)",
+  "src": "https://www.salsacycles.com/products/exp-series-cholla-half-frame-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 48,
+   "hgt": 8.9,
+   "wid": 6
+  },
+  "dims_note": "size 5 row of the page's size table: top length 18.9\" = 48.0 cm, rear length 3.5\" = 8.9 cm (used as hgt). Width is not stated on the page; wid left as input. Confirms the input len of 47.9.",
+  "dims_state": "packed",
+  "dims_raw": "Size 5: Top Length 18.9\", Bottom Length 14.1\", Rear Length 3.5\", Volume 2.1L (table also lists sizes 1-6, 1L to 2.9L)",
+  "capacity_l": 2.1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://www.salsacycles.com/cdn/shop/files/salsa-exp-series-cholla-half-frame-pack-BG0364.png",
+   "https://www.salsacycles.com/cdn/shop/files/salsa-exp-series-cholla-half-frame-pack-BG0364-01.png",
+   "https://www.salsacycles.com/cdn/shop/files/salsa-exp-series-cholla-half-frame-pack-BG0364-02.png",
+   "https://www.salsacycles.com/cdn/shop/files/salsa-exp-series-cholla-half-frame-pack-BG0364-03.png"
+  ],
+  "features": {
+   "closure": "zip",
+   "pockets": [
+    {
+     "type": "slash",
+     "face": "non-drive side"
+    }
+   ],
+   "note": "drive-side access, direct-mount thumb screws on compatible Salsa frames plus One-Wrap straps, bluesign 1000D Cordura, molded-tooth zippers"
+  }
+ },
+ {
+  "brand": "Rogue Panda Designs",
+  "line": "Ripsey",
+  "name": "Ripsey Seat Bag V2",
+  "size": "8L",
+  "src": "https://roguepanda.com/products/ripsey-seat-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 35,
+   "hgt": 15,
+   "wid": 15
+  },
+  "dims_note": "page states volume and clearances only, no linear dimensions; dims_cm left as input.",
+  "dims_state": "unknown",
+  "dims_raw": "8 Liters; tire clearance 3\" at half capacity, 4\" at full capacity; 16oz with Ultra 200X dry bag",
+  "capacity_l": 8,
+  "colorways": [
+   {
+    "name": "Ultra 400X Black Magic",
+    "hex": "#1a1a1c"
+   }
+  ],
+  "images": [
+   "https://roguepanda.com/cdn/shop/files/ripsey-seat-bag-v2-studio-2.jpg",
+   "https://roguepanda.com/cdn/shop/files/ripsey-seat-bag-seatpost-clamp-closeup-studio.jpg",
+   "https://roguepanda.com/cdn/shop/files/DSC01528.jpg",
+   "https://roguepanda.com/cdn/shop/files/rogue-panda-ripsey-v2-review_36.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "note": "removable dry bag on a patent-pending saddle clamp with rotating/sliding ABS shims, aluminium 31.6mm seatpost clamp, Austere CNC buckles; carbon-rail and dropper compatible. Rail-width options Standard 40-64mm / Wide 64-88mm"
+  }
+ },
+ {
+  "brand": "Arkel",
+  "line": "Rollpacker",
+  "name": "Rollpacker Rear",
+  "size": "20L",
+  "src": "https://arkel.ca/products/rollpacker-bikepacking-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 38,
+   "hgt": 24,
+   "wid": 28
+  },
+  "dims_note": "page gives closed width 38 cm and open width 46.5 cm; len uses the closed (packed) figure. Confirms all three input dimensions exactly.",
+  "dims_state": "packed",
+  "dims_raw": "20L: closed width 38 cm (15 in), open width 46.5 cm (18.3 in), height 24 cm (9 in), depth 28 cm (11 in); Volume 20L (1220.5 cu. in.)",
+  "capacity_l": 20,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   },
+   {
+    "name": "Ocean Blue",
+    "hex": "#1e5b82"
+   },
+   {
+    "name": "Mountain Brown",
+    "hex": "#6b5140"
+   }
+  ],
+  "images": [
+   "https://arkel.ca/cdn/shop/files/Arkel_BikeBags_Rollpacker-3_1800x1800.jpg",
+   "https://arkel.ca/cdn/shop/files/Arkel_Rollpacker_Rear_Bikepacking_Bag_on_a_gravel_bike_1800x1800.png",
+   "https://arkel.ca/cdn/shop/files/Arkel_BikeBags_Rollpacker_OCEAN_BLUE_REAR_1800x1800.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "reflective": true,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "front",
+     "capacity_l": 2
+    }
+   ],
+   "note": "FidLock magnetic buckle for one-handed access, proprietary aluminium hanger to seatpost and saddle rails, 100% waterproof X-Pac RX30 with 1000D Cordura and taped seams"
+  }
+ },
+ {
+  "brand": "WOHO",
+  "line": "XTouring",
+  "name": "XTouring Saddle Bag Dry L",
+  "size": "18L",
+  "src": "https://www.wohobike.com/products/xtouring-saddle-bag-dry-l-cyber-camo-black",
+  "verified": true,
+  "dims_cm": {
+   "len": 53,
+   "hgt": 20,
+   "wid": 20
+  },
+  "dims_note": "page gives capacity and weight only; size chart is an image, no text dimensions. dims_cm left as input.",
+  "dims_state": "unknown",
+  "dims_raw": "18 Liter; 390g / 13.7oz",
+  "capacity_l": 18,
+  "colorways": [
+   {
+    "name": "Cyber-Camo Diamond Black",
+    "hex": "#2b2d30"
+   }
+  ],
+  "images": [
+   "https://www.wohobike.com/cdn/shop/products/WOHOXtouringsaddleBagLDRY1_1024x1024@2x.jpg",
+   "https://www.wohobike.com/cdn/shop/products/WOHOXtouringsaddleBagLDRY2_1024x1024@2x.jpg",
+   "https://www.wohobike.com/cdn/shop/products/WOHOXtouringsaddleBagLDRY3_1024x1024@2x.jpg",
+   "https://www.wohobike.com/cdn/shop/products/WOHO_Xtouring_saddle_Bag_L_DRY_and_anti_sway_1024x1024@2x.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "reflective": true,
+   "note": "three-point attachment with Saddle Rail Locking Mechanism, Duraflex/Nifco buckles, 3M Scotchlite reflective print, taped seams"
+  }
+ },
+ {
+  "brand": "EVOC",
+  "line": "Boa WP",
+  "name": "Seat Pack Boa WP 6",
+  "size": "6L",
+  "src": "https://evocsports.com/products/seat-pack-boa-wp-6",
+  "verified": true,
+  "dims_cm": {
+   "len": 35,
+   "hgt": 14,
+   "wid": 14
+  },
+  "dims_note": "page dimensions match the input exactly.",
+  "dims_state": "packed",
+  "dims_raw": "35 cm x 14 cm x 14 cm; 6 L; 450.0 g",
+  "capacity_l": 6,
+  "colorways": [
+   {
+    "name": "Carbon grey",
+    "hex": "#3c3f43"
+   },
+   {
+    "name": "Steel",
+    "hex": "#6f7b85"
+   }
+  ],
+  "images": [
+   "https://evocsports.com/cdn/shop/files/100610121_SEAT_PACK_BOA_WP_6_dt00.jpg",
+   "https://evocsports.com/cdn/shop/files/100610121_SEAT_PACK_BOA_WP_6_dt01.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "compressionStraps": 2,
+   "cord": true,
+   "reflective": true,
+   "note": "BOA Fit system for securing/releasing, roll-up opening, rubber seatpost padding, welded seams, elastic cord mount on exterior"
+  }
+ },
+ {
+  "brand": "VAUDE",
+  "line": "Trail",
+  "name": "Trailsaddle Compact L",
+  "size": "10.5L",
+  "src": "https://www.vaude.com/int/en/48370-trailsaddle-compact-l-10-5-liter-bicycle-saddle-bag.html",
+  "verified": true,
+  "dims_cm": {
+   "len": 56,
+   "hgt": 20,
+   "wid": 24
+  },
+  "dims_note": "page dimensions match the input (width 56 is the long axis, used as len). Page's volume figure is 10 L, not the 10.5 L in the product title.",
+  "dims_state": "packed",
+  "dims_raw": "Height 20 cm, Width 56 cm, Depth 24 cm; Volume 10 liters; 620 g; max load 4 kg",
+  "capacity_l": 10,
+  "colorways": [],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "valve": true,
+   "cord": true,
+   "reflective": true,
+   "note": "waterproof roll closure with compression valve, KLICKfix attachment included, R-Klett fixation, velcro seat-tube strap, stabilising strap with hook buckle, spider cord on top, safety-light attachment; PVC-free PU-coated recycled polyamide"
+  }
+ },
+ {
+  "brand": "Chrome Industries",
+  "line": "Holman",
+  "name": "Holman Handlebar Bag",
+  "size": "3L",
+  "src": "https://www.chromeindustries.com/products/holman-handlebar-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 20.3,
+   "hgt": 12.7,
+   "wid": 10.2
+  },
+  "dims_note": "page dimensions match the input exactly (width 8\" = len, height 5\", depth 4\").",
+  "dims_state": "packed",
+  "dims_raw": "Height: 5\" | Width: 8\" | Depth: 4\"; 3 liter; 0.42 lbs",
+  "capacity_l": 3,
+  "colorways": [
+   {
+    "name": "Black XRF",
+    "hex": "#1a1a1c"
+   },
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://chromeindustries.com/cdn/shop/files/1-BG-354-BXRF_1.jpg",
+   "https://chromeindustries.com/cdn/shop/files/HOLMAN_HANDLBAR_BAG_BLACK_3Q_1.jpg",
+   "https://chromeindustries.com/cdn/shop/files/homanhandlebarbagonhandlebars.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "reflective": true,
+   "pockets": [
+    {
+     "type": "hook-and-loop",
+     "face": "exterior"
+    }
+   ],
+   "note": "one-handed zippered main compartment, modular replaceable attachment straps, reflective front panel on Black XRF; 600D recycled polyester with 150D liner"
+  }
+ },
+ {
+  "brand": "Lezyne",
+  "line": "Caddy",
+  "name": "XL-Caddy",
+  "size": "1.3L",
+  "src": "https://ride.lezyne.com/products/1-sb-caddy-v2xl04",
+  "verified": true,
+  "dims_cm": {
+   "len": 33,
+   "hgt": 8.8,
+   "wid": 22
+  },
+  "dims_note": "page gives 330 x 220 x 88 mm, matching the input exactly. No litre figure stated on the page.",
+  "dims_state": "packed",
+  "dims_raw": "330mm x 220mm x 88mm; 424g",
+  "capacity_l": 1.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://ride.lezyne.com/cdn/shop/files/1-SB-CADDY-V2XL04_XL-Caddy_v1_R2_b860cb47-2c2f-4932-9c24-d7d19e46dd1c.jpg",
+   "https://ride.lezyne.com/cdn/shop/products/1-SB-CADDY-V2XL04_XLCaddy_v2_R2.png",
+   "https://ride.lezyne.com/cdn/shop/products/XLCaddy_R1.png"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "cord": true,
+   "reflective": true,
+   "note": "roll-style enclosure with external draw cords, straps to seatpost and seat rails, light mounts, highly water-resistant"
+  }
+ },
+ {
+  "brand": "Straight Cut Design",
+  "line": "Dha",
+  "name": "Custom Dha Frame Bag",
+  "size": "4L",
+  "src": "https://straightcutdesign.com/products/custom-dha-frame-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 40,
+   "hgt": 15.5,
+   "wid": 6
+  },
+  "dims_note": "page gives L:400 x H:155 x W:60mm, matching the input exactly.",
+  "dims_state": "packed",
+  "dims_raw": "L:400 x H:155 x W:60mm; 4 litre; 175g in VX21",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Lilac",
+    "hex": "#b8a3cc"
+   },
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Grey Heather-Olive",
+    "hex": "#6a6a5c"
+   },
+   {
+    "name": "Cadmium Green",
+    "hex": "#2f6b45"
+   },
+   {
+    "name": "Bright Red",
+    "hex": "#c62b2b"
+   }
+  ],
+  "images": [
+   "https://straightcutdesign.com/cdn/shop/products/vx42_Black_full_bike_f_1800x1800.jpg",
+   "https://straightcutdesign.com/cdn/shop/products/drainageholevx42_1800x1800.jpg",
+   "https://straightcutdesign.com/cdn/shop/products/SlimP.vx42black_1800x1800.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "pockets": [
+    {
+     "type": "slim",
+     "face": "non-drive side"
+    }
+   ],
+   "note": "lace-up top-tube attachment with cam-buckle down-tube straps, hydration/cable port on top edge, drainage hole on lower edge, YKK water-repellent zips; Cordura and X-Pac panel choices, handmade in Edinburgh"
+  }
+ },
+ {
+  "brand": "Buckhorn Bags",
+  "line": "Top Tube",
+  "name": "Buckhorn 8in Top Tube Bag",
+  "size": "1.1L",
+  "src": "https://www.buckhornbags.com/shop/p/8-top-tube-bags",
+  "verified": true,
+  "dims_cm": {
+   "len": 20.3,
+   "hgt": 9.5,
+   "wid": 7.6
+  },
+  "dims_note": "page gives 8\" long, 3\"-2\" tapered wide, 3-3/4\" tall; wid is the larger 3\" = 7.6 cm, tapering to 5.1 cm. Matches the input exactly.",
+  "dims_state": "packed",
+  "dims_raw": "8\" Long, 3\"- 2\" (tapered) wide, 3-3/4\" Tall; about 1.1 L",
+  "capacity_l": 1.1,
+  "colorways": [
+   {
+    "name": "Tabasco",
+    "hex": "#a32a1f"
+   },
+   {
+    "name": "Whiskey",
+    "hex": "#a9743c"
+   },
+   {
+    "name": "Evergreen",
+    "hex": "#2c4a34"
+   },
+   {
+    "name": "Marigold",
+    "hex": "#d8a021"
+   },
+   {
+    "name": "Bluebell",
+    "hex": "#4a6a94"
+   },
+   {
+    "name": "Mountain Brown",
+    "hex": "#6b5140"
+   },
+   {
+    "name": "Black",
+    "hex": "#1f1f1f"
+   },
+   {
+    "name": "VX21 Black",
+    "hex": "#232326"
+   },
+   {
+    "name": "X50 Coyote",
+    "hex": "#b09068"
+   },
+   {
+    "name": "X50",
+    "hex": "#8a8d90"
+   }
+  ],
+  "images": [
+   "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1672432654040-P0GPH952UAMBYRNPKUZQ/TT+Medium+Xpac-4.jpg",
+   "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1670189673570-QG44453UCK3VDLUZ9W1Y/Waxed+Canvas+TT+Bag+Medium-6.jpg",
+   "https://images.squarespace-cdn.com/content/v1/5ff89f38e3802f025d838b0b/1672432652693-Z4A6T20BVN6Y7KIOCK1R/TT+Medium+Xpac-1.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "shape": "tapered",
+   "note": "US-made water-resistant No.5 zip with cord pull, velcro or bolt-on mounting with stainless bolts and nylon washers; waxed canvas or X-Pac"
+  }
+ },
+ {
+  "brand": "Cedaero",
+  "line": "Tank Top",
+  "name": "Cedaero Tank Top Pack",
+  "size": "1L",
+  "src": "https://cedaero.com/products/tank-top-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 22.9,
+   "hgt": 10.8,
+   "wid": 5.7
+  },
+  "dims_note": "page gives 9\" x 4.25\" x 2.25\", matching the input exactly.",
+  "dims_state": "packed",
+  "dims_raw": "Dimensions: 9\" x 4.25\" x 2.25\"; Capacity: 1L",
+  "capacity_l": 1,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Mountain Brown",
+    "hex": "#6b5140"
+   },
+   {
+    "name": "Granite",
+    "hex": "#7a7d80"
+   },
+   {
+    "name": "Glacier",
+    "hex": "#8fb4c4"
+   },
+   {
+    "name": "Kelp",
+    "hex": "#4a5a3a"
+   },
+   {
+    "name": "Squid Ink",
+    "hex": "#232838"
+   },
+   {
+    "name": "Basil",
+    "hex": "#4f6b3a"
+   },
+   {
+    "name": "Cornflower",
+    "hex": "#5b7bb8"
+   },
+   {
+    "name": "Paprika",
+    "hex": "#b34527"
+   },
+   {
+    "name": "Turmeric",
+    "hex": "#d19a17"
+   },
+   {
+    "name": "Blueberry",
+    "hex": "#38416e"
+   },
+   {
+    "name": "Cantaloupe",
+    "hex": "#e08a4c"
+   },
+   {
+    "name": "Barn Red",
+    "hex": "#8e2b23"
+   },
+   {
+    "name": "Moss",
+    "hex": "#5c6b3c"
+   },
+   {
+    "name": "Clay",
+    "hex": "#9d6b4f"
+   },
+   {
+    "name": "Peacock",
+    "hex": "#1f6f7a"
+   },
+   {
+    "name": "Iris",
+    "hex": "#6a5a9c"
+   },
+   {
+    "name": "Bordeaux",
+    "hex": "#5e2233"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "pockets": [
+    {
+     "type": "interior",
+     "face": "inside"
+    }
+   ],
+   "note": "#9 Ideal zipper with Nanosphere coating, grippy straps plus adjustable One-Wrap velcro stem strap, foam stiffeners in all panels, key hook; 1000D Cordura / RX30 or X11 X-Pac / 15oz waxed canvas with 200D nylon lining. Page lists 40+ colourways; the most common are recorded here."
+  }
+ },
+ {
+  "brand": "Rapha",
+  "line": "Explore",
+  "name": "Rapha Explore Frame Pack 4L - Large",
+  "size": "4L",
+  "src": "https://www.rapha.cc/us/en/product/explore-frame-pack-4l---large/BFG01XXVLA",
+  "verified": true,
+  "dims_cm": {
+   "len": 51.2,
+   "hgt": 14.5,
+   "wid": 5.5
+  },
+  "dims_note": "page carries no dimensions or colour list in its text; dims_cm left as input. Images verified on Rapha's CDN.",
+  "dims_state": "unknown",
+  "dims_raw": "",
+  "capacity_l": 4,
+  "colorways": [
+   {
+    "name": "Dark Green",
+    "hex": "#2f4034"
+   }
+  ],
+  "images": [
+   "https://media.rapha.cc/image/upload/v1720195469/triptych/BFG01XX_frame-pack-large_h124_model_01.jpg",
+   "https://media.rapha.cc/image/upload/v1720195451/triptych/BFG01XX_frame-pack-large_h124_model_03.jpg",
+   "https://media.rapha.cc/image/upload/v1720195438/triptych/BFG01XX_frame-pack-large_h124_model_02.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "note": "highly water-resistant, three sizes offered"
+  }
+ },
+ {
+  "brand": "Road Runner Bags",
+  "line": "Burrito",
+  "name": "Burrito Supreme",
+  "size": "2.6L",
+  "src": "https://roadrunnerbags.us/products/burrito-supreme-handle-bar-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 20.3,
+   "dia": 12.7
+  },
+  "dims_note": "page gives width 8\" and diameter 5\", matching the input exactly.",
+  "dims_state": "packed",
+  "dims_raw": "Width: 8\", Diameter: 5\", 2.6L, 6oz",
+  "capacity_l": 2.6,
+  "colorways": [
+   {
+    "name": "Black Cordura",
+    "hex": "#1f1f1f"
+   },
+   {
+    "name": "Burgundy Cordura",
+    "hex": "#6b2233"
+   },
+   {
+    "name": "Coyote Cordura",
+    "hex": "#b3936a"
+   },
+   {
+    "name": "Grey Cordura",
+    "hex": "#6e7276"
+   },
+   {
+    "name": "Navy Cordura",
+    "hex": "#23334f"
+   },
+   {
+    "name": "Olive Cordura",
+    "hex": "#5c5f3d"
+   },
+   {
+    "name": "Rust Cordura",
+    "hex": "#a24d24"
+   },
+   {
+    "name": "The Jaystone (Teal and Orange Cordura)",
+    "hex": "#1f7d80"
+   },
+   {
+    "name": "The Clint (Turmeric and Pink Cordura)",
+    "hex": "#d19a17"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "cord": true,
+   "note": "YKK water-resistant zipper tape and slider, removable handlebar mounting straps, double-sided velcro head-tube stability strap, 550 cord loops, nylon webbing MOLLE panel on the front, removable HDPE stiffener; 1000D Cordura with 400D grey nylon liner"
+  }
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "line": "Basket Bag",
+  "name": "137 Basket Bag",
+  "size": "13.6L",
+  "src": "https://www.outershell.com/products/137-basket-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 33,
+   "hgt": 20.3,
+   "wid": 20.3
+  },
+  "dims_note": "dimensions appear only in a spec graphic, not the page text; dims_cm left as input.",
+  "dims_state": "unknown",
+  "dims_raw": "",
+  "capacity_l": 13.6,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Olive",
+    "hex": "#5a5f3e"
+   },
+   {
+    "name": "Brown",
+    "hex": "#6b4b31"
+   },
+   {
+    "name": "Autumn",
+    "hex": "#a8532a"
+   },
+   {
+    "name": "Duck Camo",
+    "hex": "#7b7a5a"
+   },
+   {
+    "name": "Cow",
+    "hex": "#e8e4de"
+   },
+   {
+    "name": "Leopard",
+    "hex": "#c8a06a"
+   },
+   {
+    "name": "Multicam Black",
+    "hex": "#3a3d45"
+   },
+   {
+    "name": "ECOPAK Graphite",
+    "hex": "#4a4d52"
+   },
+   {
+    "name": "ECOPAK Marigold",
+    "hex": "#d9a01f"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "flap",
+   "compressionStraps": 2,
+   "cord": true,
+   "pockets": [
+    {
+     "type": "zip",
+     "face": "front"
+    },
+    {
+     "type": "zip",
+     "face": "rear"
+    },
+    {
+     "type": "zip",
+     "face": "side"
+    }
+   ],
+   "note": "two buckled straps secure the bottom, lid with elastic bungee cord and hooks, side compression straps, D-rings for shoulder strap, plastic stiffeners, attachment loops across bottom for small racks (Wald 1372, Pelago, Velo Orange)"
+  }
+ },
+ {
+  "brand": "Rogue Panda Designs",
+  "line": "Alamo",
+  "name": "Alamo Top Tube Bag (Gordito Grande)",
+  "size": "1.75L",
+  "src": "https://roguepanda.com/products/alamo-top-tube-bag",
+  "verified": true,
+  "dims_cm": {
+   "len": 27.9,
+   "hgt": 10.2,
+   "wid": 8.9
+  },
+  "dims_note": "Gordito Grande is the Gordo shape at 11\" long: 3.5\" wide x 4\" tall at the front, tapering to 2.5\" x 2.5\" at the rear. wid/hgt use the larger front values; matches the input exactly.",
+  "dims_state": "packed",
+  "dims_raw": "Gordito Grande: 3.5 inches wide and 4 inches tall in the front, 11 inches long, tapers to 2.5 inches wide and 2.5 inches tall at the rear; 1.75 liters",
+  "capacity_l": 1.75,
+  "colorways": [
+   {
+    "name": "Ultra 200X Black Magic",
+    "hex": "#1a1a1c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "zip",
+   "shape": "tapered",
+   "note": "full-length molded-tooth zipper, combined strap-bolt attachment (two 9\" straps and one 15\" strap), cable port for charging electronics; dozens of custom fabrics via the builder"
+  }
+ },
+ {
+  "brand": "Arkel",
+  "line": "Orca",
+  "name": "Orca 2 45",
+  "size": "45L pair",
+  "src": "https://arkel.ca/products/orca-panniers",
+  "verified": true,
+  "dims_cm": {
+   "len": 31,
+   "hgt": 45,
+   "wid": 28
+  },
+  "dims_note": "page gives volumes and weights only, no linear dimensions; dims_cm left as input. Important: 45L is the PAIR volume — each pannier is 22.5L, so the catalogue's 45L for a single bag is double-counted.",
+  "dims_state": "unknown",
+  "dims_raw": "Orca 45: Pair volume 45L, Unit volume 22.5L; pair weight 2.29kg (5.5 lbs), unit weight 1.145kg",
+  "capacity_l": 22.5,
+  "colorways": [
+   {
+    "name": "Red",
+    "hex": "#b4342b"
+   },
+   {
+    "name": "Grey",
+    "hex": "#6e7276"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "reflective": true,
+   "note": "100% waterproof welded 1000D TPU with C0 coating, roll-top closing to the side or top, Cam-Lock attachment system, internal organizer with padded bottom, reflective logos and light tabs, reinforced bottom, shoulder strap included"
+  }
+ },
+ {
+  "brand": "WOHO",
+  "line": "XTouring",
+  "name": "XTouring Handlebar Harness + Dry Bag 15L",
+  "size": "15L",
+  "src": "https://www.wohobike.com/products/xtouring-handlebar-harness-black-camo-dry-bag-15l-bundle-1",
+  "verified": true,
+  "dims_cm": {
+   "len": 44,
+   "dia": 20
+  },
+  "dims_note": "page gives the 15L dry bag as 20 x 20 x 44 cm, matching the input exactly. Harness itself is 28.5 x 26 x 0.4 cm flat.",
+  "dims_state": "packed",
+  "dims_raw": "Harness (L x W x H) 28.5 x 26 x 0.4cm; Dry bag 15L: 20 x 20 x 44 cm / 7.9\" x 7.9\" x 17.3\"; 7L: 15 x 15 x 35 cm. Handlebar to front tire clearance required: 7L 22cm, 15L 27cm",
+  "capacity_l": 15,
+  "colorways": [
+   {
+    "name": "Honeycomb Iron Grey",
+    "hex": "#55585c"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "daisyChains": true,
+   "note": "secure roll-top closure, heavy-duty WOHO quick-attach straps, front daisy chain for stability; 1000D ballistic nylon harness, 210D nylon bag with TPU layer rated 15,000mm H2O. Harness 180g, 15L bag 145g"
+  }
+ },
+ {
+  "brand": "EVOC",
+  "line": "Boa WP",
+  "name": "Handlebar Pack Boa WP 5",
+  "size": "5L",
+  "src": "https://evocsports.com/products/handlebar-pack-boa-wp-5",
+  "verified": true,
+  "dims_cm": {
+   "len": 30,
+   "hgt": 15,
+   "wid": 15
+  },
+  "dims_note": "page dimensions match the input exactly.",
+  "dims_state": "packed",
+  "dims_raw": "30 cm x 15 cm x 15 cm; 5 litre; 300 g; adaptable volume by means of roll-in ends",
+  "capacity_l": 5,
+  "colorways": [
+   {
+    "name": "Carbon grey",
+    "hex": "#3c3f43"
+   },
+   {
+    "name": "Steel",
+    "hex": "#6f7b85"
+   }
+  ],
+  "images": [
+   "https://evocsports.com/cdn/shop/files/102810121_HANDLEBAR_PACK_BOA_WP_5_dt00.jpg",
+   "https://evocsports.com/cdn/shop/files/102810131_HANDLEBAR_PACK_BOA_WP_5_dt00.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "cord": true,
+   "reflective": true,
+   "note": "BOA Fit system instead of buckles, roll-in ends give access from both sides, elastic cord mount on exterior, ventilation orifices for compression, welded seams"
+  }
+ },
+ {
+  "brand": "VAUDE",
+  "line": "Trail",
+  "name": "Trailfront Cage",
+  "size": "10L",
+  "src": "https://www.vaude.com/int/en/48363-trailfront-cage-10-liter-bicycle-handlebar-bag.html",
+  "verified": true,
+  "dims_cm": {
+   "len": 54,
+   "hgt": 20,
+   "wid": 20
+  },
+  "dims_note": "page dimensions match the input exactly (width 54 is the long axis, used as len).",
+  "dims_state": "packed",
+  "dims_raw": "Volume 10 liters; Height 20 cm, Width 54 cm, Depth 20 cm; 610 g; max load 5 kg",
+  "capacity_l": 10,
+  "colorways": [],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "cord": true,
+   "note": "removable waterproof dry bag on a permanently mounted handlebar cage with EVA spacers, velcro fixation, elastic bands for extra items; PVC-free PU-coated recycled polyamide, Green Shape certified"
+  }
+ },
+ {
+  "brand": "Cedaero",
+  "line": "Fork Lift",
+  "name": "Cedaero Fork Lift Pack",
+  "size": "3.3L",
+  "src": "https://cedaero.com/products/fopoon-fork-pack",
+  "verified": true,
+  "dims_cm": {
+   "len": 30.5,
+   "hgt": 8.9,
+   "wid": 11.4
+  },
+  "dims_note": "page gives 12\" x 4.5\" x 3.5\", matching the input exactly.",
+  "dims_state": "packed",
+  "dims_raw": "Dimensions: 12\" x 4.5\" x 3.5\"; 3.3 liter capacity",
+  "capacity_l": 3.3,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "Darkstar",
+    "hex": "#2a2f3a"
+   },
+   {
+    "name": "Sunburst",
+    "hex": "#e0a020"
+   },
+   {
+    "name": "Lichen Crust",
+    "hex": "#8d9670"
+   },
+   {
+    "name": "Saffron",
+    "hex": "#e2a32c"
+   },
+   {
+    "name": "Royal",
+    "hex": "#2a4a9c"
+   },
+   {
+    "name": "Barn Red",
+    "hex": "#8e2b23"
+   },
+   {
+    "name": "Mandarin",
+    "hex": "#d96a1e"
+   },
+   {
+    "name": "Bordeaux",
+    "hex": "#5e2233"
+   },
+   {
+    "name": "Iris",
+    "hex": "#6a5a9c"
+   },
+   {
+    "name": "Peacock",
+    "hex": "#1f6f7a"
+   },
+   {
+    "name": "Moss",
+    "hex": "#5c6b3c"
+   },
+   {
+    "name": "Clay",
+    "hex": "#9d6b4f"
+   },
+   {
+    "name": "Grey",
+    "hex": "#7a7d80"
+   },
+   {
+    "name": "Bluestone",
+    "hex": "#55707f"
+   },
+   {
+    "name": "Mallard",
+    "hex": "#2c4a4a"
+   },
+   {
+    "name": "Raven",
+    "hex": "#232326"
+   },
+   {
+    "name": "Emerald City",
+    "hex": "#1f6b4a"
+   },
+   {
+    "name": "Rust Bucket",
+    "hex": "#9a4a22"
+   },
+   {
+    "name": "Squid Ink",
+    "hex": "#232838"
+   },
+   {
+    "name": "Basil",
+    "hex": "#4f6b3a"
+   },
+   {
+    "name": "Cornflower",
+    "hex": "#5b7bb8"
+   },
+   {
+    "name": "Paprika",
+    "hex": "#b34527"
+   },
+   {
+    "name": "Turmeric",
+    "hex": "#d19a17"
+   }
+  ],
+  "images": [
+   "https://cedaero.com/cdn/shop/files/fork_lift_squid_ink.jpg"
+  ],
+  "features": {
+   "closure": "zip",
+   "note": "#9 Ideal coil zipper with Nanosphere DWR, 210D nylon liner, Hypalon attachment sleeve for cargo-cage mounting, lower access. Fabrics: 1000D Cordura, 15oz waxed canvas, RX30 X-Pac. Made in USA"
+  }
+ },
+ {
+  "brand": "Buckhorn Bags",
+  "line": "Panniers",
+  "name": "Buckhorn Waxed Canvas Panniers",
+  "size": "9-13L each",
+  "src": "https://www.buckhornbags.com/shop/p/waxed-canvas-panniers",
+  "verified": true,
+  "dims_cm": {
+   "len": 29.8,
+   "hgt": 34.3,
+   "wid": 10.2
+  },
+  "dims_note": "page height 12\"-17\" is the roll range; packed hgt = 30.5 + 0.3*(43.2-30.5) = 34.3 cm. Input hgt of 38 sat near the unrolled maximum. Volume is 9-13L PER BAG (18-26L the pair), not the 20L single figure in the catalogue.",
+  "dims_state": "unrolled",
+  "dims_raw": "11-3/4\" Wide x 12\"-17\" Tall x 4\" Deep; 9L-13L each; 28 oz per pair",
+  "capacity_l": 10.2,
+  "colorways": [
+   {
+    "name": "Olive Drab",
+    "hex": "#4f5340"
+   },
+   {
+    "name": "Field Tan",
+    "hex": "#b09a72"
+   },
+   {
+    "name": "MOD Navy",
+    "hex": "#2a3448"
+   }
+  ],
+  "images": [],
+  "features": {
+   "closure": "rolltop",
+   "compressionStraps": 2,
+   "note": "four Voile nano straps to the top rack rail plus two cam straps controlling the bottom, no hard rattling components; Made-in-USA #10 waxed canvas, white VX21 RS liner, closed-cell foam back panel, Hypalon attach points"
+  }
+ },
+ {
+  "brand": "AGU",
+  "line": "Venture",
+  "name": "AGU Seat-Pack Venture Extreme Waterproof",
+  "size": "9L",
+  "src": "https://agu.com/eu/seat-pack-venture-extreme-waterproof",
+  "verified": true,
+  "dims_cm": {
+   "len": 50,
+   "hgt": 10,
+   "wid": 15
+  },
+  "dims_note": "the catalogue's src (agu.com/en/seatpack-venture, the 10L Venture Seat-Pack) 404s to automated fetches; this is the Extreme Waterproof sibling, which does publish figures. Page order is 50 x 15 x 10 cm unlabelled — read as len 50, wid 15, hgt 10. Confirms the input len of 50 but swaps the input's wid 10 / hgt 15.",
+  "dims_state": "packed",
+  "dims_raw": "50 x 15 x 10 centimeters, the volume is 9 liters and it weighs 512 grams",
+  "capacity_l": 9,
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1c1c1e"
+   }
+  ],
+  "images": [
+   "https://agu.com/media/catalog/product/4/1/41503001_000_main_01_5.jpg",
+   "https://cdn.agu.com/assets/4/4/b/7/44b7bc02405da4faa069b3f05aba51ad373052cc_41503001_000_sphere_01.jpg",
+   "https://cdn.agu.com/assets/4/f/2/c/4f2c011f10f7e0ecdd49bceedb3fbb9de6c14034_41503001_000_sphere_02.jpg",
+   "https://cdn.agu.com/assets/9/a/f/7/9af7d51cd00c425e4bc58c5080337c5366ac8991_41503001_000_sphere_03.jpg"
+  ],
+  "features": {
+   "closure": "rolltop",
+   "compressionStraps": 2,
+   "note": "removable 100% waterproof drybag inside a permanently mounted outer holster, quick-release buckle, velcro seat-tube fastening"
+  }
+ },
+ {
+  "brand": "Blackburn Design",
+  "line": "Outpost",
+  "name": "Outpost Frame Bag Medium",
+  "size": "4.2L",
+  "src": "https://www.bellhelmets.com/product/outpost-frame-bag-medium/350170000100000040.html",
+  "verified": false,
+  "dims_cm": {
+   "len": 47,
+   "hgt": 12,
+   "wid": 6
+  },
+  "dims_note": "UNVERIFIED. blackburndesign.com 301-redirects to bellhelmets.com, whose product pages render entirely client-side — three separate fetches returned only the product title and no specification text. dims_cm left exactly as input. Applies to all 16 Blackburn products in the catalogue.",
+  "dims_state": "unknown",
+  "dims_raw": "",
+  "capacity_l": 4.2,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Bags by Bird",
+  "line": "Goldback",
+  "name": "Goldback 12.5W",
+  "size": "27L",
+  "src": "https://www.bagsxbird.com/product-page/goldback-12-5wide",
+  "verified": false,
+  "dims_cm": {
+   "len": 43,
+   "hgt": 26.7,
+   "wid": 20.3
+  },
+  "dims_note": "UNVERIFIED. bagsxbird.com is a Wix site whose product body is truncated to the page title on fetch; two attempts failed. dims_cm left as input. Search indexing of the maker's own pages indicates a 12.5\"-wide main compartment with 8\" depth and 27L across main compartment plus two side pockets (32L for the TALL version, 22L for the 11W, 27L for the 11W TALL), and colourways navy / deep forest / charcoal — but none of that was read from the page itself, so it is not asserted here.",
+  "dims_state": "unknown",
+  "dims_raw": "",
+  "capacity_l": 27,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Zefal",
+  "line": "Z Adventure",
+  "name": "Zefal Z Adventure R17",
+  "size": "17L",
+  "src": "https://www.zefal.com/en/saddle-bags/456-z-adventure-r17.html",
+  "verified": false,
+  "dims_cm": {
+   "len": 62,
+   "hgt": 20,
+   "wid": 24
+  },
+  "dims_note": "UNVERIFIED. zefal.com returns HTTP 403 to automated fetches; three separate product URLs on the domain all refused. dims_cm left exactly as input. Applies to all 6 Zefal products in the catalogue. Note the input's 62cm length looks like a fully-unrolled figure for a 17L roll-top seatpack and should be treated with suspicion until read.",
+  "dims_state": "unknown",
+  "dims_raw": "",
+  "capacity_l": 17,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ },
+ {
+  "brand": "Fjällräven",
+  "line": "Hoja",
+  "name": "Hoja Handlebar Rolltop",
+  "size": "13L",
+  "src": "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-handlebar-rolltop/",
+  "verified": false,
+  "dims_cm": {
+   "len": 21,
+   "hgt": 23,
+   "wid": 22
+  },
+  "dims_note": "UNVERIFIED. fjallraven.com returns HTTP 403 to automated fetches on both the UK and US storefronts. dims_cm left exactly as input. Applies to all 6 Specialized x Fjällräven products in the catalogue. The input dims are nearly cubic (21 x 22 x 23) which is implausible for a handlebar roll and probably an unrolled or misordered figure.",
+  "dims_state": "unknown",
+  "dims_raw": "",
+  "capacity_l": 13,
+  "colorways": [],
+  "images": [],
+  "features": {}
+ }
 ]

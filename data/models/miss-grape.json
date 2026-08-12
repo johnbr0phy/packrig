@@ -23,7 +23,11 @@
     "assets/products/miss-grape/cluster-cluster-2-waterproof-2l-4.jpg",
     "https://missgrape.net/en/road/seat-bags-road/cluster-2-waterproof/"
    ],
-   "dims_cm": { "len": 35, "wid": 15, "hgt": 10 },
+   "dims_cm": {
+    "len": 35,
+    "wid": 15,
+    "hgt": 10
+   },
    "dims_state": "unfurled_max_len_wid",
    "dims_raw": "MAX VOLUME 2 litres / MAX. LENGTH 35cm / min length 28cm / Max width 15cm / min Width 5cm / HEIGHT 10cm / WEIGHT 142 gr",
    "dims_note": "len is the published MAX (unfurled) length per the dimension rule, not the previously-stored 30.1cm packed interpolation. wid is the max width at the nose (taper block carries the 5cm tail). hgt has only one published figure so it is used as-is.",
@@ -31,7 +35,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.33, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.33,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Small tapered pouch, wide and squared at the saddle end, narrowing to a rounded point at the tail. A wide anti-slip band (grip-coated) wraps the body just below the rails."
    },
@@ -43,26 +51,60 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "nose_top", "hardware": "velcro", "material": "webbing with internal grip coating", "wrapsAround": "saddle_rails" },
-    { "role": "stability", "count": 1, "location": "girth", "hardware": "buckle", "material": "green webbing over a wide grip-coated anti-slip band", "wrapsAround": "seatpost" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_top",
+     "hardware": "velcro",
+     "material": "webbing with internal grip coating",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "green webbing over a wide grip-coated anti-slip band",
+     "wrapsAround": "seatpost"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "tail_flank" },
+    "logo": {
+     "type": "screen_print",
+     "location": "tail_flank"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "+z", "hgt": "-y" },
-    "attachesTo": ["saddle_rails", "seatpost"],
-    "contactFaces": ["nose_top"],
+    "axes": {
+     "len": "-x",
+     "wid": "+z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "saddle_rails",
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 55,
+     "frame_mm": 0
+    },
     "notes": "Tiny bag clamped tight against the saddle nose and cinched down onto the seatpost; barely cantilevers, minimal droop."
    },
-   "colorways": [ { "name": "Black", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2025/03/MGCLUSTER_2_WP_CATALOG-NBG_1.jpg"
    ],
@@ -86,7 +128,11 @@
     "assets/products/miss-grape/cluster-cluster-7-waterproof-7l-3.jpg",
     "https://missgrape.net/en/road/seat-bags/cluster-7-waterproof/"
    ],
-   "dims_cm": { "len": 44, "wid": 16, "hgt": 14 },
+   "dims_cm": {
+    "len": 44,
+    "wid": 16,
+    "hgt": 14
+   },
    "dims_state": "single_published",
    "dims_raw": "VOLUME max 7 litres / VOLUME min 1 litre / MAX. LENGTH 44cm / length 16cm / HEIGHT 14cm / WEIGHT 256 gr / MAXIMUM CAPACITY 5kg / 11lbs",
    "dims_note": "Miss Grape publishes one triple, no separate min length, so 44cm is used as-is for len per the 'only one figure published, use it' rule. The second 'length 16cm' entry on the page is the bag's width, not a second length figure. Volume drops to 1L when rolled down further, which the render block below addresses.",
@@ -94,7 +140,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Same family silhouette as Cluster 2, scaled up: glossy reinforced nose panel under the saddle, dotted-fabric body tapering to a rounded tail."
    },
@@ -106,8 +156,21 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "nose_front", "hardware": "velcro", "material": "webbing", "wrapsAround": "seatpost" },
-    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "green webbing" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "green webbing"
+    }
    ],
    "pockets": [],
    "details": {
@@ -115,21 +178,42 @@
     "compressionStraps": 2,
     "reflective": false,
     "valve": false,
-    "logo": { "type": "screen_print", "location": "tail_flank" },
+    "logo": {
+     "type": "screen_print",
+     "location": "tail_flank"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC main body; glossy PVC-coated nose panel"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "+z", "hgt": "-y" },
-    "attachesTo": ["seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "+z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 4,
-    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 55,
+     "frame_mm": 0
+    },
     "notes": "Nose clamps against the saddle/seatpost junction; wedge cantilevers rearward and droops slightly under load, same as the Cluster 2 but larger."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1a1a1c" },
-    { "name": "Adventure Black/Green", "hex": "#3f4d3a" }
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    },
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#3f4d3a"
+    }
    ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/12/MGCLUSTER_7_WP_CATALOG.jpg"
@@ -153,7 +237,11 @@
     "assets/products/miss-grape/cluster-cluster-13-waterproof-13l-2.jpg",
     "https://missgrape.net/en/adventure-series/seat-bags/cluster-13-waterproof/"
    ],
-   "dims_cm": { "len": 49, "wid": 20, "hgt": 14 },
+   "dims_cm": {
+    "len": 49,
+    "wid": 20,
+    "hgt": 14
+   },
    "dims_state": "single_published_plus_estimated_width",
    "dims_raw": "VOLUME 13 litres / MAX. LENGTH 49cm / HEIGHT 14cm / WEIGHT 419 gr / MAXIMUM CAPACITY 5kg / 11lbs",
    "dims_note": "len and hgt are the maker's only published figures, used as-is. Miss Grape publishes NO width for this model. The stored 20cm is an ESTIMATE, not a maker figure - it comes from the studio photo's proportions (bag width looks about 0.4x its length, matching the Internode-family ratio) and roughly matches an older back-computation-from-volume guess in brands.json, which this record does not trust on its own. Flagged medium confidence for the width specifically.",
@@ -161,7 +249,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Same Cluster wedge silhouette, bigger: glossy reinforced nose cap, dotted body, rounded tapered tail. Adventure-series colourway with green/black webbing."
    },
@@ -173,8 +265,22 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "nose_front", "hardware": "velcro", "material": "webbing with internal grip coating", "wrapsAround": "seatpost" },
-    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "green webbing", "wrapsAround": null }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "webbing with internal grip coating",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "green webbing",
+     "wrapsAround": null
+    }
    ],
    "pockets": [],
    "details": {
@@ -182,20 +288,38 @@
     "compressionStraps": 2,
     "reflective": false,
     "mudguardBottom": true,
-    "logo": { "type": "screen_print", "location": "tail_flank" },
+    "logo": {
+     "type": "screen_print",
+     "location": "tail_flank"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC main body; glossy PVC-coated nose panel"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "+z", "hgt": "-y" },
-    "attachesTo": ["seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "+z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 5,
-    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 55,
+     "frame_mm": 0
+    },
     "notes": "Sold as acting as a rear mudguard per Miss Grape (mudguardBottom flag); the underside should sit over the tyre line."
    },
    "colorways": [
-    { "name": "Black/Green webbing (Adventure)", "hex": "#1a1a1c" }
+    {
+     "name": "Black/Green webbing (Adventure)",
+     "hex": "#1a1a1c"
+    }
    ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/MGCLUSTER_13_WP_CATALOG_NBG.jpeg"
@@ -219,7 +343,11 @@
     "assets/products/miss-grape/cluster-cluster-20-waterproof-20-18-6l-2.jpg",
     "https://missgrape.net/en/adventure-series/seat-bags/cluster-20-waterproof/"
    ],
-   "dims_cm": { "len": 62, "wid": 22, "hgt": 18 },
+   "dims_cm": {
+    "len": 62,
+    "wid": 22,
+    "hgt": 18
+   },
    "dims_state": "single_published_plus_estimated_width",
    "dims_raw": "VOLUME 18.6 litres / MAX. LENGTH 62cm / HEIGHT 18cm / WEIGHT 478 gr / MAXIMUM CAPACITY 5kg / 11lbs",
    "dims_note": "Model is named Cluster 20 but the published volume is 18.6L. len/hgt are the maker's only published figures. No width published - the stored 22cm is an ESTIMATE from photo proportion (same family ratio as Cluster 13), not a maker figure. Medium confidence on width only.",
@@ -227,7 +355,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Largest Cluster; same wedge silhouette as Cluster 7/13. Visible diagonal green compression strap crossing the glossy nose panel, buckled at centre."
    },
@@ -239,28 +371,59 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "nose_front", "hardware": "velcro", "material": "webbing", "wrapsAround": "seatpost" },
-    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "green webbing" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "nose_front",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "green webbing"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "compressionStraps": 2,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "tail_flank" },
+    "logo": {
+     "type": "screen_print",
+     "location": "tail_flank"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC main body; glossy PVC-coated nose panel"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "+z", "hgt": "-y" },
-    "attachesTo": ["seatpost"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "+z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 6,
-    "clearance": { "tyre_mm": 55, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 55,
+     "frame_mm": 0
+    },
     "notes": "Largest and heaviest Cluster; expect the most droop of the family at max load."
    },
    "colorways": [
-    { "name": "Black/Green webbing (Adventure)", "hex": "#1a1a1c" }
+    {
+     "name": "Black/Green webbing (Adventure)",
+     "hex": "#1a1a1c"
+    }
    ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/MGCLUSTER_20_WP_CATALOG.jpg"
@@ -284,7 +447,10 @@
     "assets/products/miss-grape/tendril-tendril-4-10-waterproof-4-10l-4.jpg",
     "https://missgrape.net/en/road/handlebar-bags/tendril-4-10-waterproof/"
    ],
-   "dims_cm": { "len": 55, "dia": 14 },
+   "dims_cm": {
+    "len": 55,
+    "dia": 14
+   },
    "dims_state": "unfurled_max_len",
    "dims_raw": "DIAMETER 14cm / MIN. WIDTH 27cm / MAX. WIDTH 55cm / MIN. VOLUME 4 litres / MAX VOLUME 10 litres / WEIGHT 240g",
    "dims_note": "Maker labels the roll-range axis 'width' but it is this bag's own long axis (len, along the bar) per the axis convention. Per the dimension rule, len uses the UNFURLED maximum (55cm), not the previously stored 35.4cm packed interpolation. dia is the single published figure.",
@@ -292,7 +458,11 @@
    "geometry": {
     "form": "truncated_cylinder",
     "crossSection": "round",
-    "taper": { "nose": 1.0, "tail": 1.0, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 1,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Straight-sided dry-bag cylinder that rolls shut at BOTH ends; each end folds into a small triangular welt rather than a true flat cap."
    },
@@ -304,27 +474,54 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "green webbing", "wrapsAround": "handlebar" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "green webbing",
+     "wrapsAround": "handlebar"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "front_face" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_face"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Two green webbing straps cinch the bag body directly to the drop bar top, no separate harness plate. Must clear the stem/headset and brake levers - the 55cm unfurled max is wider than most drop bars and should not be used for fitment checks."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1a1a1c" },
-    { "name": "Adventure Black/Green", "hex": "#3f4d3a" }
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    },
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#3f4d3a"
+    }
    ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/04/MGTENDRIL_4_10_WP_CATALOG_NBG.jpg"
@@ -347,7 +544,10 @@
     "assets/products/miss-grape/tendril-tendril-10-7-waterproof-10-17l-1.jpg",
     "https://missgrape.net/en/adventure-series/handlebar-bags/tendril-10-7-waterproof/"
    ],
-   "dims_cm": { "len": 70, "dia": 18 },
+   "dims_cm": {
+    "len": 70,
+    "dia": 18
+   },
    "dims_state": "unfurled_max_len",
    "dims_raw": "DIAMETER 18cm / MIN. WIDTH 34cm / MAX. WIDTH 70cm / MIN. VOLUME 10 litres / MAX VOLUME 17 litres / WEIGHT 396g",
    "dims_note": "Same mapping as the 4.10: maker's 'width' range is this bag's len axis. Unfurled maximum (70cm) used per the dimension rule, replacing the old 44.8cm packed interpolation.",
@@ -355,7 +555,11 @@
    "geometry": {
     "form": "truncated_cylinder",
     "crossSection": "round",
-    "taper": { "nose": 1.0, "tail": 1.0, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 1,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Larger Adventure-series version of the Tendril 4.10, same both-ends-roll cylinder."
    },
@@ -367,26 +571,50 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "front_face" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_face"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 0, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 0,
+     "frame_mm": 0
+    },
     "notes": "Straps mount close together near the stem on flat/riser bars in the on-bike photo, not spread to the drops. 70cm unfurled max is far wider than any handlebar and must not drive render size."
    },
    "colorways": [
-    { "name": "Adventure Black/Green", "hex": "#3f4d3a" }
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#3f4d3a"
+    }
    ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/06/MGTENDRIL_10_7_WP_CATALOG.jpg"
@@ -410,7 +638,11 @@
     "assets/products/miss-grape/internode-internode-2-waterproof-2l-2.jpg",
     "https://missgrape.net/en/road/frame-bags/internode-2-waterproof/"
    ],
-   "dims_cm": { "len": 31, "wid": 7, "hgt": 15 },
+   "dims_cm": {
+    "len": 31,
+    "wid": 7,
+    "hgt": 15
+   },
    "dims_state": "fully_published",
    "dims_raw": "Length 31cm / Height 15cm / MIN. width 5cm / MAX. width 7cm / VOLUME 2 litres / WEIGHT 139g",
    "dims_note": "All three axes published; wid uses the max (7cm) at the head-tube end, taper block carries the 5cm tail. Every figure checks against the studio photo proportions - the small road frame bag in this catalogue for which Miss Grape publishes a genuine width.",
@@ -418,7 +650,11 @@
    "geometry": {
     "form": "triangle_panel",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.71, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.71,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Flat-backed triangular panel that hangs below the top tube; tall glossy-reinforced corner at the head-tube end tapering down to a low, rounded corner at the seat-tube end."
    },
@@ -428,29 +664,65 @@
     "hardware": "single black zip pull, runs the length of the top edge offset toward the top tube"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "toptube" },
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "seattube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "toptube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seattube"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "rear_corner" },
+    "logo": {
+     "type": "screen_print",
+     "location": "rear_corner"
+    },
     "lightMount": "small green webbing pull loop and black D-ring at the seat-tube corner",
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["toptube", "seattube"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "toptube",
+     "seattube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Hangs directly under the top tube on two hook-and-loop loops, with a third strap anchoring the low tail corner near the seat tube/seatpost junction. Flush against the tube, minimal bulge (7cm max width)."
    },
-   "colorways": [ { "name": "Black", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2021/04/MGINTERNODE_2_WP_CATALOG_NBG.jpg"
    ]
@@ -467,7 +739,11 @@
     "assets/products/miss-grape/internode-internode-3-waterproof-3l-1.jpg",
     "https://missgrape.net/en/road/frame-bags/internode-3-waterproof/"
    ],
-   "dims_cm": { "len": 41, "wid": 7, "hgt": 16 },
+   "dims_cm": {
+    "len": 41,
+    "wid": 7,
+    "hgt": 16
+   },
    "dims_state": "fully_published",
    "dims_raw": "Length 41cm / Height 16cm / MIN. width 5cm / MAX. width 7cm / VOLUME 3 litres / WEIGHT 179g",
    "dims_note": "All three axes published; wid is the max (7cm), taper carries the 5cm tail per the maker range.",
@@ -475,7 +751,11 @@
    "geometry": {
     "form": "triangle_panel",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.71, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.71,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Same Internode family silhouette as the 2L, longer and taller. Three velcro loops visible along the top edge in studio photo."
    },
@@ -485,28 +765,64 @@
     "hardware": "single zip pull, top edge, offset toward the top tube"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "toptube" },
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "seattube" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "toptube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seattube"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "rear_corner" },
+    "logo": {
+     "type": "screen_print",
+     "location": "rear_corner"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["toptube", "seattube"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "toptube",
+     "seattube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Same hanging-under-toptube arrangement as Internode 2, with a third top loop for the extra length."
    },
-   "colorways": [ { "name": "Black", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2021/04/MGINTERNODE_3_WP_CATALOG_NBG.jpg"
    ]
@@ -523,7 +839,11 @@
     "assets/products/miss-grape/internode-internode-4-waterproof-4l-1.jpg",
     "https://missgrape.net/en/adventures/frame-bags/internode-4-waterproof/"
    ],
-   "dims_cm": { "len": 42, "wid": 7, "hgt": 10 },
+   "dims_cm": {
+    "len": 42,
+    "wid": 7,
+    "hgt": 10
+   },
    "dims_state": "single_published_plus_estimated_width",
    "dims_raw": "Length A 42cm / LENGTH C 30cm / HEIGHT B 10cm / HEIGHT D 3cm / VOLUME 4 litres / WEIGHT 198g",
    "dims_note": "len uses the top (long) edge figure A=42cm; hgt uses the tall front figure B=10cm, the taper block carries the 3cm rear. Miss Grape publishes NO width for the Adventures Internodes. wid=7cm is carried over from the Internode 2's published max width (same family, same visual proportion in the studio photo) - an ESTIMATE, not a maker figure. The published 4L rating does not close against this outline (roughly 234 sq cm cross-section area implies a much narrower real capacity, closer to 1.8-2.9L); treat Adventures litres as marketing figures, not a dimension problem.",
@@ -531,7 +851,11 @@
    "geometry": {
     "form": "triangle_panel",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Long, shallow wedge rather than a tall triangle - flat top edge tapering from 10cm at the head-tube end down to 3cm at the seat-tube end. Four velcro loops along the top edge visible in the studio photo."
    },
@@ -541,28 +865,64 @@
     "hardware": "single zip pull, offset toward the top tube along the long shallow top edge"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "toptube" },
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "seattube" }
+    {
+     "role": "attachment",
+     "count": 4,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "toptube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seattube"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "rear_corner" },
+    "logo": {
+     "type": "screen_print",
+     "location": "rear_corner"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["toptube", "seattube"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "toptube",
+     "seattube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Same hang-under-toptube arrangement, four loops given the extra length."
    },
-   "colorways": [ { "name": "Adventure Black/Green", "hex": "#3f4d3a" } ],
+   "colorways": [
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#3f4d3a"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2021/07/MGINTERNODE_4_WP_CATALOG_NBG.jpg"
    ]
@@ -579,7 +939,11 @@
     "assets/products/miss-grape/internode-internode-5-waterproof-5l-1.jpg",
     "https://missgrape.net/en/adventures/frame-bags/internode-5-waterproof/"
    ],
-   "dims_cm": { "len": 49, "wid": 7, "hgt": 12 },
+   "dims_cm": {
+    "len": 49,
+    "wid": 7,
+    "hgt": 12
+   },
    "dims_state": "single_published_plus_estimated_width",
    "dims_raw": "Length A 49cm / LENGTH C 35cm / HEIGHT B 12cm / HEIGHT D 3cm / VOLUME 5 litres / WEIGHT 227g",
    "dims_note": "len/hgt use the maker's A/B figures (long top edge, tall front); taper carries C/D. No width published; wid=7cm carried over from the Internode 2 (same reasoning as the 4L) and cross-checked against retailer listings (bike-packing.de, BIKE24, santafixie), none of which list a width either - all repeat only 49 x 12cm. Estimate, not a maker figure.",
@@ -587,7 +951,11 @@
    "geometry": {
     "form": "triangle_panel",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.25, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.25,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Longer, shallower wedge again; four velcro top loops visible."
    },
@@ -597,28 +965,64 @@
     "hardware": "single zip pull, offset toward the top tube"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "toptube" },
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "seattube" }
+    {
+     "role": "attachment",
+     "count": 4,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "toptube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "seattube"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "rear_corner" },
+    "logo": {
+     "type": "screen_print",
+     "location": "rear_corner"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["toptube", "seattube"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "toptube",
+     "seattube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Same hang-under-toptube arrangement as the other Internodes."
    },
-   "colorways": [ { "name": "Adventure Black/Green", "hex": "#3f4d3a" } ],
+   "colorways": [
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#3f4d3a"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2021/05/MGINTERNODE_5_WP_CATALOG_NBG.jpg"
    ]
@@ -635,7 +1039,11 @@
     "assets/products/miss-grape/internode-internode-6-waterproof-6l-1.jpg",
     "https://missgrape.net/en/adventures/frame-bags/internode-6-waterproof/"
    ],
-   "dims_cm": { "len": 52, "wid": 7, "hgt": 14 },
+   "dims_cm": {
+    "len": 52,
+    "wid": 7,
+    "hgt": 14
+   },
    "dims_state": "single_published_plus_estimated_width",
    "dims_raw": "Length A 52cm / LENGTH C 37cm / HEIGHT B 14cm / HEIGHT D 4cm / VOLUME 6 litres / WEIGHT 249g",
    "dims_note": "len/hgt use the maker's A/B figures; taper carries C/D. No width published; wid=7cm carried over from the Internode 2, same reasoning as the 4L/5L. Studio photo confirms roughly a 3.2:1 length-to-height silhouette against the published 3.7:1, so the outline is right even if the width is an estimate.",
@@ -643,7 +1051,11 @@
    "geometry": {
     "form": "triangle_panel",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.29, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.29,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Largest Internode; four top loops plus TWO stacked loops at the head-tube end nose corner (visible doubled tab in the studio photo), likely because the nose is deep enough to need its own second tie point."
    },
@@ -653,28 +1065,65 @@
     "hardware": "single zip pull, offset toward the top tube"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 4, "location": "top", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "toptube" },
-    { "role": "attachment", "count": 2, "location": "front_face", "hardware": "velcro", "material": "webbing loop", "wrapsAround": "headtube" }
+    {
+     "role": "attachment",
+     "count": 4,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "toptube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "webbing loop",
+     "wrapsAround": "headtube"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "rear_corner" },
+    "logo": {
+     "type": "screen_print",
+     "location": "rear_corner"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["toptube", "headtube"],
-    "contactFaces": ["top", "front_face"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "toptube",
+     "headtube"
+    ],
+    "contactFaces": [
+     "top",
+     "front_face"
+    ],
     "sag_deg": 0,
     "notes": "Largest Internode gets a doubled tie point at the nose in addition to the four top-tube loops."
    },
-   "colorways": [ { "name": "Adventure Black/Green", "hex": "#3f4d3a" } ],
+   "colorways": [
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#3f4d3a"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2021/05/MGINTERNODE_6_WP_CATALOG_NBG.jpg"
    ]
@@ -692,14 +1141,22 @@
     "assets/products/miss-grape/node-node-rd-road-2.jpg",
     "https://missgrape.net/en/road/top-tube-bags/node/"
    ],
-   "dims_cm": { "len": 20, "wid": 4.8, "hgt": 8 },
+   "dims_cm": {
+    "len": 20,
+    "wid": 4.8,
+    "hgt": 8
+   },
    "dims_state": "fully_published",
    "dims_raw": "Length 20cm / Height 8cm / Length 4.8cm (width) / WEIGHT 98g",
    "dims_note": "Page lists two entries labelled Length; the second (4.8cm) is the bag's width.",
    "geometry": {
     "form": "teardrop",
     "crossSection": "d_shape",
-    "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.4,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "Tall glossy-reinforced nose at the head-tube end tapering down to a low tail toward the saddle; flat underside against the top tube."
    },
@@ -709,27 +1166,64 @@
     "hardware": "single zip pull running nose-to-tail along the ridge"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "webbing", "wrapsAround": "headtube" },
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "toptube"
+    }
    ],
    "pockets": [],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "nose_panel" },
+    "logo": {
+     "type": "screen_print",
+     "location": "nose_panel"
+    },
     "seams": "welded",
     "fabric": "dotted nylon main body; glossy PVC-coated nose panel"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-    "attachesTo": ["headtube", "toptube"],
-    "contactFaces": ["underside", "front_face"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "headtube",
+     "toptube"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
     "sag_deg": 0,
     "notes": "Nose butts against the head tube/stem area, held by a velcro loop; tail strapped to the top tube. Straddles the tube, body sits above it."
    },
-   "colorways": [ { "name": "Black", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/MGNODE_ROAD_CATALOG_NBG.jpg"
    ]
@@ -747,14 +1241,22 @@
     "assets/products/miss-grape/node-node-2h-rd-road-bolt-on-3.jpg",
     "https://missgrape.net/en/road/top-tube-bags/node-2h/"
    ],
-   "dims_cm": { "len": 20, "wid": 4.8, "hgt": 8 },
+   "dims_cm": {
+    "len": 20,
+    "wid": 4.8,
+    "hgt": 8
+   },
    "dims_state": "fully_published",
    "dims_raw": "Length 20cm / Height 8cm / Length 4.8cm (width) / WEIGHT 98g",
    "dims_note": "Same body as Node Rd; only the nose mount differs.",
    "geometry": {
     "form": "teardrop",
     "crossSection": "d_shape",
-    "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.4,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "Identical shape to Node Rd; on-bike photo shows it sitting directly against the head tube/stem with no strap bulk at the nose."
    },
@@ -764,26 +1266,54 @@
     "hardware": "single zip pull, nose-to-tail"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "toptube"
+    }
    ],
    "pockets": [],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "nose_panel" },
+    "logo": {
+     "type": "screen_print",
+     "location": "nose_panel"
+    },
     "seams": "welded",
     "fabric": "dotted nylon main body; glossy PVC-coated nose panel"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-    "attachesTo": ["toptube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "toptube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Nose bolts to a rigid two-bolt baseplate fixed to threaded bosses under the top tube near the head tube - a frame-dependent mount, not present on every bike (dims_note in the catalogue flags it as 'not compatible with the MBC URS model'). Tail still uses a velcro strap around the top tube."
    },
-   "colorways": [ { "name": "Black", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2020/05/MGNODE_2H_ROAD_CATALOG_NBG.jpg"
    ]
@@ -800,7 +1330,11 @@
     "assets/products/miss-grape/node-big-node-1-8l-1.jpg",
     "https://missgrape.net/en/road/top-tube-bags/big-node-road/"
    ],
-   "dims_cm": { "len": 40, "wid": 4.5, "hgt": 9 },
+   "dims_cm": {
+    "len": 40,
+    "wid": 4.5,
+    "hgt": 9
+   },
    "dims_state": "fully_published",
    "dims_raw": "Length 40cm / Height 9cm / Length 4.5cm (width) / WEIGHT 186g / VOLUME 1.8 litres",
    "dims_note": "Page lists two entries labelled Length; the second is the bag's width.",
@@ -808,7 +1342,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "d_shape",
-    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "Much longer and lower than the small Node - a long shallow wedge running most of the top tube, tall glossy nose at the head-tube end, low tail. Two velcro loops visible near the tail."
    },
@@ -818,27 +1356,64 @@
     "hardware": "single zip pull, nose-to-tail"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "front_face", "hardware": "velcro", "material": "webbing", "wrapsAround": "headtube" },
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "toptube"
+    }
    ],
    "pockets": [],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "nose_panel" },
+    "logo": {
+     "type": "screen_print",
+     "location": "nose_panel"
+    },
     "seams": "welded",
     "fabric": "dotted nylon main body; glossy PVC-coated nose panel"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-    "attachesTo": ["headtube", "toptube"],
-    "contactFaces": ["underside", "front_face"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "headtube",
+     "toptube"
+    ],
+    "contactFaces": [
+     "underside",
+     "front_face"
+    ],
     "sag_deg": 0,
     "notes": "Long enough to need two tail loops in addition to the nose strap."
    },
-   "colorways": [ { "name": "Black", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2023/04/MGBIGNODE_CATALOG_NBG_2.jpg"
    ]
@@ -855,7 +1430,11 @@
     "assets/products/miss-grape/node-big-node-2h-1-8l-bolt-on-1.jpg",
     "https://missgrape.net/en/road/top-tube-bags/big-node-2h-road/"
    ],
-   "dims_cm": { "len": 40, "wid": 4.5, "hgt": 9 },
+   "dims_cm": {
+    "len": 40,
+    "wid": 4.5,
+    "hgt": 9
+   },
    "dims_state": "fully_published",
    "dims_raw": "Length 40cm / Height 9cm / Length 4.5cm (width) / WEIGHT 179g / VOLUME 1.8 litres",
    "dims_note": "Same body as Big Node; bolt-on nose mount replaces the strap.",
@@ -863,7 +1442,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "d_shape",
-    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "Same long shallow wedge as Big Node."
    },
@@ -873,26 +1456,54 @@
     "hardware": "single zip pull, nose-to-tail"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "toptube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "toptube"
+    }
    ],
    "pockets": [],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "nose_panel" },
+    "logo": {
+     "type": "screen_print",
+     "location": "nose_panel"
+    },
     "seams": "welded",
     "fabric": "dotted nylon main body; glossy PVC-coated nose panel"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-    "attachesTo": ["toptube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "toptube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Nose bolts to a two-bolt baseplate on threaded top-tube bosses near the head tube, same frame-dependent caveat as the Node 2H Rd."
    },
-   "colorways": [ { "name": "Black", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2023/04/MGBIGNODE_2H_CATALOG_NBG.jpg"
    ]
@@ -909,14 +1520,22 @@
     "assets/products/miss-grape/node-node-adventure-adventure-1.jpg",
     "https://missgrape.net/en/adventure-series/top-tube-bags/node/"
    ],
-   "dims_cm": { "len": 25, "wid": 7, "hgt": 12 },
+   "dims_cm": {
+    "len": 25,
+    "wid": 7,
+    "hgt": 12
+   },
    "dims_state": "fully_published",
    "dims_raw": "Length 25cm / Height 12cm / Length 7cm (width) / WEIGHT 125g",
    "dims_note": "Page lists two entries labelled Length; the second is the bag's width.",
    "geometry": {
     "form": "teardrop",
     "crossSection": "d_shape",
-    "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.4,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "Bulkier than the road Node, with a stretch-mesh pocket panel on one side face not present on the road version."
    },
@@ -926,28 +1545,61 @@
     "hardware": "single zip pull with a green webbing accessory loop at the nose end"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing roller strap", "wrapsAround": "toptube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing roller strap",
+     "wrapsAround": "toptube"
+    }
    ],
    "pockets": [
-    { "type": "mesh", "count": 1, "location": "side", "sizeFrac": 0.4 }
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.4
+    }
    ],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "nose_panel" },
+    "logo": {
+     "type": "screen_print",
+     "location": "nose_panel"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC; stretch mesh side pocket"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-    "attachesTo": ["toptube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "toptube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Single roller-buckle strap around the top tube visible in the studio photo; nose likely also butts the head tube though no dedicated strap was visible there."
    },
-   "colorways": [ { "name": "Adventure Black/Green", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2016/09/MGNODE_ADV_CATALOG_NBG.jpg"
    ]
@@ -964,14 +1616,22 @@
     "assets/products/miss-grape/node-node-2h-adventure-adventure-bolt-on-1.jpg",
     "https://missgrape.net/en/adventure-series/top-tube-bags/node-2h/"
    ],
-   "dims_cm": { "len": 25, "wid": 7, "hgt": 12 },
+   "dims_cm": {
+    "len": 25,
+    "wid": 7,
+    "hgt": 12
+   },
    "dims_state": "fully_published",
    "dims_raw": "Length 25cm / Height 12cm / Length 7cm (width) / WEIGHT 125g",
    "dims_note": "Same body as Node Adventure; bolt-on nose mount.",
    "geometry": {
     "form": "teardrop",
     "crossSection": "d_shape",
-    "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.4,
+     "profile": "linear"
+    },
     "shoulder": "rounded",
     "notes": "Same mesh-pocketed body as Node Adventure."
    },
@@ -981,28 +1641,61 @@
     "hardware": "single zip pull with a green webbing accessory loop at the nose"
    },
    "zips": [
-    { "run": "top_side", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_side",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "toptube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "toptube"
+    }
    ],
    "pockets": [
-    { "type": "mesh", "count": 1, "location": "side", "sizeFrac": 0.4 }
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.4
+    }
    ],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "nose_panel" },
+    "logo": {
+     "type": "screen_print",
+     "location": "nose_panel"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC; stretch mesh side pocket"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-    "attachesTo": ["toptube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "toptube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Two-bolt baseplate at the nose, frame-dependent mount like the other 2H variants."
    },
-   "colorways": [ { "name": "Adventure Black/Green", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2018/11/MGNODE_2H_ADV_CATALOG_NGB.jpg"
    ]
@@ -1019,7 +1712,12 @@
     "assets/products/miss-grape/bud-bud-1l-1.jpg",
     "https://missgrape.net/en/adventure-series/handlebar-bags/bud/"
    ],
-   "dims_cm": { "len": 15, "wid": 9, "hgt": 15, "dia": 9 },
+   "dims_cm": {
+    "len": 15,
+    "wid": 9,
+    "hgt": 15,
+    "dia": 9
+   },
    "dims_state": "fully_published",
    "dims_raw": "diameter 9cm / height 15cm / VOLUME 1 litre / WEIGHT 88g",
    "dims_note": "Both figures published directly; 15cm over a 9cm circle is 0.95L against the stated 1L, so no correction needed.",
@@ -1037,24 +1735,56 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "headtube" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "forkleg" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "headtube"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "forkleg"
+    }
    ],
    "pockets": [],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "front_face" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_face"
+    },
     "seams": "welded (fabric) / sewn (mesh)",
     "fabric": "open mesh lower body, solid dotted-nylon upper collar"
    },
    "mount": {
-    "axes": { "len": "-y", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["headtube", "forkleg"],
-    "contactFaces": ["top", "underside"],
+    "axes": {
+     "len": "-y",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "headtube",
+     "forkleg"
+    ],
+    "contactFaces": [
+     "top",
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Hangs from a velcro strap high on the head tube/stem, stabilised lower down by a second strap around the fork leg."
    },
-   "colorways": [ { "name": "Adventure Black/Green", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2016/09/MGBUD_CATALOG_NBG.jpg"
    ]
@@ -1072,7 +1802,12 @@
     "assets/products/miss-grape/moon-moon-2l-2.jpg",
     "https://missgrape.net/en/commuting/handlebar-bags/moon/"
    ],
-   "dims_cm": { "len": 23, "wid": 11, "hgt": 11, "dia": 11 },
+   "dims_cm": {
+    "len": 23,
+    "wid": 11,
+    "hgt": 11,
+    "dia": 11
+   },
    "dims_state": "fully_published",
    "dims_raw": "length 23cm / diameter 11cm / volume 2 litres / WEIGHT 155g",
    "dims_note": "23cm over an 11cm circle is 2.19L against the stated 2L; both figures accepted as-is.",
@@ -1089,28 +1824,61 @@
     "hardware": "single zip pull with a green tab, runs end-to-end across the top"
    },
    "zips": [
-    { "run": "top_centre", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_centre",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "handlebar" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    }
    ],
    "pockets": [
-    { "type": "mesh", "count": 2, "location": "side", "sizeFrac": 0.15 }
+    {
+     "type": "mesh",
+     "count": 2,
+     "location": "side",
+     "sizeFrac": 0.15
+    }
    ],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "front_face" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_face"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Sits centred on the bar near the stem on two velcro straps, no separate harness plate."
    },
-   "colorways": [ { "name": "Black", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2019/12/MGMOON_CATALOG.jpg"
    ]
@@ -1127,7 +1895,12 @@
     "assets/products/miss-grape/moon-moon-ic-2-3l-1.jpg",
     "https://missgrape.net/en/product/commuting/handlebar-bags-commuting/moon-ic/"
    ],
-   "dims_cm": { "len": 26.5, "wid": 11.5, "hgt": 11.5, "dia": 11.5 },
+   "dims_cm": {
+    "len": 26.5,
+    "wid": 11.5,
+    "hgt": 11.5,
+    "dia": 11.5
+   },
    "dims_state": "fully_published",
    "dims_raw": "length 26.5cm / diameter 11.5cm / volume 2.3 litres / WEIGHT 252g",
    "dims_note": "IC = integrated-cockpit version, sized to sit between aerobar extensions; 26.5cm over an 11.5cm circle bounds 2.75L against a stated 2.3L, consistent with a flatter cross-section than a true cylinder.",
@@ -1144,26 +1917,54 @@
     "hardware": "single zip pull with green tabs at both ends"
    },
    "zips": [
-    { "run": "top_centre", "count": 1, "finish": "matched", "pullSide": "single" }
+    {
+     "run": "top_centre",
+     "count": 1,
+     "finish": "matched",
+     "pullSide": "single"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "handlebar" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    }
    ],
    "pockets": [],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "front_face" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_face"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Sits between the pursuit/aerobar extensions on an integrated-cockpit setup, strapped to the base bar on two velcro loops."
    },
-   "colorways": [ { "name": "Black", "hex": "#1a1a1c" } ],
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2024/11/MGMOON_IC_CATALOG_1jpg.jpg"
    ]
@@ -1181,7 +1982,10 @@
     "assets/products/miss-grape/trunk-trunk-6-waterproof-6l-2.jpg",
     "https://missgrape.net/en/fork-bags/trunk-6-waterproof/"
    ],
-   "dims_cm": { "len": 36, "dia": 13 },
+   "dims_cm": {
+    "len": 36,
+    "dia": 13
+   },
    "dims_state": "single_published",
    "dims_raw": "max. height 36cm / diameter 13cm / VOLUME 6 litres / WEIGHT 119g",
    "dims_note": "Maker labels this 'max height' but it is the bag's long axis (len) when strapped upright to a cage, not a true height off the ground. 36cm over a 13cm circle bounds only 4.8L, so this is the size at 6L max fill, kept as published (only one figure given).",
@@ -1200,26 +2004,56 @@
    },
    "zips": [],
    "straps": [
-    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "green webbing" },
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "strap", "material": "webbing", "wrapsAround": null }
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "green webbing"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "strap",
+     "material": "webbing",
+     "wrapsAround": null
+    }
    ],
    "pockets": [],
    "details": {
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "front_face" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_face"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "along_forkleg", "wid": "z", "hgt": "+x" },
-    "attachesTo": ["forkleg"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_forkleg",
+     "wid": "z",
+     "hgt": "+x"
+    },
+    "attachesTo": [
+     "forkleg"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Miss Grape lists the mount as a 'fork three-pack / cargo cage' - the bag straps into a cage bracket rather than clamping the fork directly. Not photographed in situ on a cage, so the attachment strap count/placement here is inferred from the product's own webbing hardware rather than an on-fork photo - confidence medium."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1a1a1c" },
-    { "name": "Adventure Black/Green", "hex": "#3f4d3a" }
+    {
+     "name": "Black",
+     "hex": "#1a1a1c"
+    },
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#3f4d3a"
+    }
    ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2021/05/MGTRUNK_6_WP_CATALOG_DETAIL.jpg"
@@ -1242,7 +2076,10 @@
     "assets/products/miss-grape/trunk-trunk-6-aero-bar-waterproof-6l-1.jpg",
     "https://missgrape.net/en/adventure/aero-bar-bags/trunk-6-aero-bar-waterproof/"
    ],
-   "dims_cm": { "len": 36, "dia": 13 },
+   "dims_cm": {
+    "len": 36,
+    "dia": 13
+   },
    "dims_state": "single_published",
    "dims_raw": "max. height 36cm / diameter 13cm / VOLUME 6 litres / WEIGHT 121g",
    "dims_note": "Same body as the fork Trunk 6, 2g heavier per the page; same 36cm single-figure caveat.",
@@ -1261,23 +2098,46 @@
    },
    "zips": [],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "aerobar_extension" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "aerobar_extension"
+    }
    ],
    "pockets": [],
    "details": {
     "reflective": true,
-    "logo": { "type": "screen_print", "location": "front_face" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_face"
+    },
     "seams": "welded",
     "fabric": "dotted nylon 420/polyester 300, PU water-repellent, 10,000mm WC"
    },
    "mount": {
-    "axes": { "len": "along_bar", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["aerobar_extension"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "aerobar_extension"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Clamped between the two aerobar extensions on two webbing straps, resting on the base bar in front of the stem, as shown in the on-bike photo."
    },
-   "colorways": [ { "name": "Adventure Black/Green", "hex": "#3f4d3a" } ],
+   "colorways": [
+    {
+     "name": "Adventure Black/Green",
+     "hex": "#3f4d3a"
+    }
+   ],
    "images": [
     "https://ed58xxhnoja.exactdn.com/wp-content/uploads/2023/05/MGTRUNK_AEROBAR_CATALOG_NBG-1.jpg"
    ],

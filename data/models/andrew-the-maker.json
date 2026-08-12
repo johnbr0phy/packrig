@@ -19,7 +19,11 @@
     "assets/products/andrew-the-maker/atm-atm-top-tube-bag-one-size-1.jpg",
     "https://www.andrewthemaker.com/shop/toptubebag"
    ],
-   "dims_cm": { "len": 24.1, "wid": 5.7, "hgt": 11.4 },
+   "dims_cm": {
+    "len": 24.1,
+    "wid": 5.7,
+    "hgt": 11.4
+   },
    "dims_state": "maker",
    "dims_raw": "The bag measures 2.25\"W, 9.5\"L, and 4.5\"H.",
    "dims_note": "Rigid zip bag with an internal plastic stiffener - single fixed figure, no range, so the printed inches convert straight across.",
@@ -27,7 +31,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "flat_bottom",
-    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Tall squared nose at the head-tube end tapering along the top-zip line to a low tail, flat bottom straddling the top tube. Rounded/padded top ridge along the zip run."
    },
@@ -37,33 +45,76 @@
     "hardware": "single slider with a black pull tab, no storm flap"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing", "wrapsAround": "toptube" },
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "toptube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "toptube"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "toptube"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": true,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "seams": "sewn",
     "fabric": "coated canvas, no visible X-Pac grid in this photo - see brand_notes.fabric"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["toptube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "toptube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Two buckle straps around the top tube, one near the head tube and one further back; maker copy also lists bolt-on (oblong holes, Wolftooth B-Rad compatible) and a cable pass-through at the front lower corner (not visible in this crop)."
    },
    "colorways": [
-    { "name": "Red", "hex": "#c1272d" },
-    { "name": "Royal Blue", "hex": "#23479c" },
-    { "name": "Bright Green", "hex": "#3fae49" },
-    { "name": "Safety Orange", "hex": "#f45c17" },
-    { "name": "Black", "hex": "#1c1c1e" }
+    {
+     "name": "Red",
+     "hex": "#c1272d"
+    },
+    {
+     "name": "Royal Blue",
+     "hex": "#23479c"
+    },
+    {
+     "name": "Bright Green",
+     "hex": "#3fae49"
+    },
+    {
+     "name": "Safety Orange",
+     "hex": "#f45c17"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
    ]
   },
   {
@@ -78,7 +129,11 @@
     "assets/products/andrew-the-maker/atm-rear-tt-sack-one-size-1.jpg",
     "https://www.andrewthemaker.com/shop/rear-top-tube-sack"
    ],
-   "dims_cm": { "len": 15, "wid": 6, "hgt": 10 },
+   "dims_cm": {
+    "len": 15,
+    "wid": 6,
+    "hgt": 10
+   },
    "dims_state": "unknown",
    "dims_raw": "",
    "dims_note": "No dimensions or litre figure published. The single side-elevation photo confirms the proportions are right for a stubby wedge (fills the triangle behind the saddle between seat tube and top tube), but the absolute scale (15x6x10cm) is an estimate matching the maker copy's 'a phone, wallet, and some snacks', not maker data. Same sub-type as Restrap's Rear Top Tube Bag - the usual fore-aft-elongation check does not apply to this shape.",
@@ -86,7 +141,11 @@
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "flat_bottom",
-    "taper": { "nose": 1.0, "tail": 0.4, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.4,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Short, stubby wedge - proportionally much shorter front-to-back than the front-mounted ATM bag since it only fills the small triangle behind the saddle. Single top zip along the sloped edge."
    },
@@ -96,30 +155,60 @@
     "hardware": "single slider, no storm flap"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "seams": "sewn",
     "fabric": "coated canvas, no visible X-Pac grid in this photo - see brand_notes.fabric"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["toptube", "seattube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "toptube",
+     "seattube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "notes": "Two straps at the seat tube / top tube junction, rear-facing (opens toward the rider, behind the saddle) - opposite orientation from the front-mounted ATM Top Tube Bag."
+    "notes": "Two straps at the seat tube / top tube junction, rear-facing (opens toward the rider, behind the saddle) - opposite orientation from the front-mounted ATM Top Tube Bag. Sits ON TOP of the top tube, tucked under the nose of the saddle, strapping to both the top tube and the seatpost. An earlier record said hgt:-y, which the builder reads as hanging UNDER the tube, and it rendered down in the frame triangle over the bottle. Corrected on the owner s direct observation."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1e" },
-    { "name": "Poppy Red", "hex": "#d63b28" },
-    { "name": "Multicam", "hex": "#8a7a5c" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Poppy Red",
+     "hex": "#d63b28"
+    },
+    {
+     "name": "Multicam",
+     "hex": "#8a7a5c"
+    }
    ]
   },
   {
@@ -135,7 +224,11 @@
     "assets/products/andrew-the-maker/barbar-barbar-bag-10-10-inch-2.jpg",
     "https://www.andrewthemaker.com/shop/barbar-bag"
    ],
-   "dims_cm": { "len": 25.4, "wid": 10.2, "hgt": 10.2 },
+   "dims_cm": {
+    "len": 25.4,
+    "wid": 10.2,
+    "hgt": 10.2
+   },
    "dims_state": "maker",
    "dims_raw": "It comes in two different widths, 8\" and 10\" with a diameter around 4\".",
    "dims_note": "Fixed-diameter zip barrel, not a roll - len from the 10in width (bar-to-bar run), hgt/wid both the approximate 4in diameter. An 8in-wide version exists at the same diameter (not catalogued here).",
@@ -151,33 +244,77 @@
     "hardware": "two sliders meeting centre-top, silver pulls, no storm flap - exposed zip"
    },
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "webbing", "wrapsAround": "handlebar" },
-    { "role": "stability", "count": 1, "location": "underside", "hardware": "boa", "material": "shock_cord", "wrapsAround": "steerer" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    },
+    {
+     "role": "stability",
+     "count": 1,
+     "location": "underside",
+     "hardware": "boa",
+     "material": "shock_cord",
+     "wrapsAround": "steerer"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "seams": "sewn",
     "fabric": "shows a faint diagonal quilt stitch consistent with X-Pac - see brand_notes.fabric"
    },
    "mount": {
-    "axes": { "len": "z", "wid": "+x", "hgt": "-y" },
-    "attachesTo": ["handlebar", "steerer"],
-    "contactFaces": ["top", "rear_face"],
+    "axes": {
+     "len": "z",
+     "wid": "+x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "steerer"
+    ],
+    "contactFaces": [
+     "top",
+     "rear_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 60 },
+    "clearance": {
+     "tyre_mm": 60
+    },
     "notes": "Two hook-and-loop strap-and-buckle mounts loop over the bar; a shock-cord toggle hangs off the bottom-centre of the bag in photo 2 to cinch down to the steerer/headset as a stabiliser, matching the maker copy's 'handlebar and head tube straps, adjustable positions'."
    },
    "colorways": [
-    { "name": "Red", "hex": "#c1272d" },
-    { "name": "Royal Blue", "hex": "#23479c" },
-    { "name": "Teal", "hex": "#1f8a8a" },
-    { "name": "Black", "hex": "#1c1c1e" }
+    {
+     "name": "Red",
+     "hex": "#c1272d"
+    },
+    {
+     "name": "Royal Blue",
+     "hex": "#23479c"
+    },
+    {
+     "name": "Teal",
+     "hex": "#1f8a8a"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
    ]
   },
   {
@@ -192,7 +329,11 @@
     "assets/products/andrew-the-maker/many-things-sack-many-things-sack-v1-2-standard-sold-as-a-pa-1.jpg",
     "https://www.andrewthemaker.com/shop/many-things-sack"
    ],
-   "dims_cm": { "len": 8.9, "wid": 16.5, "hgt": 25.4 },
+   "dims_cm": {
+    "len": 8.9,
+    "wid": 16.5,
+    "hgt": 25.4
+   },
    "dims_state": "maker",
    "dims_raw": "Standard 10\" h x 6.5-5.5\" tapered w x 3.5\" d",
    "dims_note": "hgt is the fixed 10in (25.4cm) body height, no range on that axis. wid carries the LARGER end of the taper (6.5in=16.5cm at the cage-mouth/top) per the tapered-axis rule; the narrower 5.5in=14.0cm tail-end goes in geometry.taper. len is the fixed 3.5in (8.9cm) depth, front-to-back off the fork leg - this is the axis that previously made the CapsuleGeometry render as a sphere (negative length) because len, not hgt, was being treated as the long axis; hgt is correctly the long axis here.",
@@ -200,7 +341,11 @@
    "geometry": {
     "form": "cage_pack",
     "crossSection": "flat_back",
-    "taper": { "nose": 1.0, "tail": 0.85, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.85,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Upright rectangular sack, narrower at the base than the mouth, flat back sleeve against the fork leg/cage. A single triangular flap folds down over the top opening and is cinched by ONE vertical webbing strap with a side-release buckle running down the front centre - visually a fold-and-buckle flap, not a multi-turn roll, though the maker's own copy calls it a 'roll-top compression strap'. Diamond X-Pac quilt stitch visible on the black shell."
    },
@@ -211,30 +356,69 @@
    },
    "zips": [],
    "straps": [
-    { "role": "compression", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing" },
-    { "role": "attachment", "count": 2, "location": "side", "hardware": "velcro", "material": "webbing", "wrapsAround": "forkleg" }
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "side",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "forkleg"
+    }
    ],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "side" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "side"
+    },
     "seams": "sewn",
     "fabric": "X-Pac, visible diamond quilt stitch on the black shell"
    },
    "mount": {
-    "axes": { "len": "+x", "wid": "z", "hgt": "along_forkleg" },
-    "attachesTo": ["fork_cage", "fork_leg"],
-    "contactFaces": ["rear_face"],
+    "axes": {
+     "len": "+x",
+     "wid": "z",
+     "hgt": "along_forkleg"
+    },
+    "attachesTo": [
+     "fork_cage",
+     "fork_leg"
+    ],
+    "contactFaces": [
+     "rear_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 40 },
+    "clearance": {
+     "tyre_mm": 40
+    },
     "notes": "PAIR VS SINGLE: catalogued size 'Standard (sold as a pair)' is a purchase-quantity option, not a two-in-one product - each sack is a single upright sleeve for ONE King Many Things Cage on ONE fork leg, and the maker sells singles, pairs and cage+bag bundles. capacity_l (3.4L) is PER BAG, matching MODEL-SPEC's pair-vs-single rule. SLOT CONFIRMED, not a pannier: the single photo shows no rack hooks, no rail clips and no wide flat panel - only side webbing loops for cage/strap retention and a front centre compression buckle, consistent with a cage-mounted sack that slides down over a triple-boss fork cage (4-point mount: cage sleeve + front strap through the lower cage loop + two velcro fork-leg straps per the maker copy). 'Pannier attachments' are listed on the maker's page as one optional extra, not the primary mount, which is likely the source of the pannier suspicion in HANDOVER.md."
    },
    "colorways": [
-    { "name": "Olive", "hex": "#6b6b3f" },
-    { "name": "Ranger Green", "hex": "#4e5545" },
-    { "name": "Safety Orange", "hex": "#f45c17" },
-    { "name": "Black", "hex": "#1c1c1e" }
+    {
+     "name": "Olive",
+     "hex": "#6b6b3f"
+    },
+    {
+     "name": "Ranger Green",
+     "hex": "#4e5545"
+    },
+    {
+     "name": "Safety Orange",
+     "hex": "#f45c17"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
    ]
   },
   {
@@ -250,7 +434,11 @@
     "assets/products/andrew-the-maker/granny-s-pantry-granny-s-pantry-one-size-2.jpg",
     "https://www.andrewthemaker.com/shop/grannys-pantry"
    ],
-   "dims_cm": { "len": 22, "wid": 15, "hgt": 15 },
+   "dims_cm": {
+    "len": 22,
+    "wid": 15,
+    "hgt": 15
+   },
    "dims_state": "unknown",
    "dims_raw": "",
    "dims_note": "No dimensions or litre figure published; maker copy calls it 'kinda like a small Rando Style bag but more stable and smaller' with a Klickfix bracket rated to 14lb. dims_cm is an unchanged estimate for a small rando bag, not maker data.",
@@ -268,30 +456,64 @@
    },
    "zips": [],
    "straps": [
-    { "role": "compression", "count": 2, "location": "girth", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "compression",
+     "count": 2,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
    "pockets": [
-    { "type": "stretch", "count": 1, "location": "front", "sizeFrac": 0.5 }
+    {
+     "type": "stretch",
+     "count": 1,
+     "location": "front",
+     "sizeFrac": 0.5
+    }
    ],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "seams": "sewn",
     "fabric": "heather-grey coated canvas, no visible X-Pac grid in these photos - see brand_notes.fabric"
    },
    "mount": {
-    "axes": { "len": "+x", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["stem", "headtube"],
-    "contactFaces": ["rear_face"],
+    "axes": {
+     "len": "+x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "stem",
+     "headtube"
+    ],
+    "contactFaces": [
+     "rear_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 90 },
+    "clearance": {
+     "tyre_mm": 90
+    },
     "notes": "Klickfix quick-release bracket with an aluminium rail, visible on the top-rear of the bag in the on-bike photo (photo 2); a strap-mount version is also offered per the maker copy. Sits directly ahead of the stem, similar position to the Nuke Sunrise Silo but boxier and larger."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1e" },
-    { "name": "Dark Brown", "hex": "#4c3320" },
-    { "name": "Red", "hex": "#c1272d" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Dark Brown",
+     "hex": "#4c3320"
+    },
+    {
+     "name": "Red",
+     "hex": "#c1272d"
+    }
    ]
   },
   {
@@ -306,7 +528,11 @@
     "assets/products/andrew-the-maker/custom-frame-bag-full-single-compartment-custom-frame-bag-ma-1.jpg",
     "https://www.andrewthemaker.com/shop/full-frame-bag"
    ],
-   "dims_cm": { "len": 55, "hgt": 30, "wid": 6 },
+   "dims_cm": {
+    "len": 55,
+    "hgt": 30,
+    "wid": 6
+   },
    "dims_state": "unknown",
    "dims_raw": "",
    "dims_note": "Fully custom to a frame template; no dimensions or litre figure published. dims_cm is an unchanged mid-range full-triangle estimate, not maker data.",
@@ -323,28 +549,54 @@
     "hardware": "single slider, no storm flap"
    },
    "zips": [
-    { "run": "top_side", "finish": "matched" }
+    {
+     "run": "top_side",
+     "finish": "matched"
+    }
    ],
    "straps": [],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "seams": "sewn",
     "fabric": "printed MultiCam pattern - diamond quilt grid not distinguishable against the print; see brand_notes.fabric"
    },
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["toptube", "downtube", "seattube"],
-    "contactFaces": ["top_edge", "underside"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "toptube",
+     "downtube",
+     "seattube"
+    ],
+    "contactFaces": [
+     "top_edge",
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Perimeter loop tabs, laced or zip-tied to the frame; maker copy also lists straps, lace-up, or bolt-on as options."
    },
    "colorways": [
-    { "name": "Poppy Red", "hex": "#d63b28" },
-    { "name": "Baby Blue", "hex": "#8fc3e3" },
-    { "name": "Black", "hex": "#1c1c1e" }
+    {
+     "name": "Poppy Red",
+     "hex": "#d63b28"
+    },
+    {
+     "name": "Baby Blue",
+     "hex": "#8fc3e3"
+    },
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
    ]
   },
   {
@@ -359,7 +611,11 @@
     "assets/products/andrew-the-maker/gravel-banger-gravel-banger-half-bag-made-to-measure-1.jpg",
     "https://www.andrewthemaker.com/shop/gravel-banger-half-bag"
    ],
-   "dims_cm": { "len": 42, "hgt": 16, "wid": 6 },
+   "dims_cm": {
+    "len": 42,
+    "hgt": 16,
+    "wid": 6
+   },
    "dims_state": "unknown",
    "dims_raw": "",
    "dims_note": "Custom built to each frame; no dimensions or litre figure published. dims_cm is an unchanged estimate for a typical half-frame bag, not maker data. Maker copy quotes a 12-16 week lead time.",
@@ -376,28 +632,51 @@
     "hardware": "single slider, no storm flap"
    },
    "zips": [
-    { "run": "front_panel", "finish": "matched" }
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    }
    ],
    "straps": [],
    "pockets": [],
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "seams": "sewn",
     "fabric": "printed Realtree camo - diamond quilt grid not distinguishable against the print; see brand_notes.fabric"
    },
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["toptube"],
-    "contactFaces": ["top_edge"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "toptube"
+    ],
+    "contactFaces": [
+     "top_edge"
+    ],
     "sag_deg": 0,
     "notes": "Hangs from loop tabs along the top tube; maker copy also lists straps or bolt-on with a machined aluminium stiffener as options."
    },
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1e" },
-    { "name": "Ranger Green", "hex": "#4e5545" },
-    { "name": "Safety Orange", "hex": "#f45c17" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Ranger Green",
+     "hex": "#4e5545"
+    },
+    {
+     "name": "Safety Orange",
+     "hex": "#f45c17"
+    }
    ]
   }
  ]

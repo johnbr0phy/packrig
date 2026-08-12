@@ -13,213 +13,313 @@
    "size": "18L",
    "slot": "saddlebag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "assets/products/carradice/originals-nelson-longflap-saddlebag-18l-1.jpg",
     "https://www.carradice.co.uk/products/originals-nelson-saddlebag"
    ],
-
-   "dims_cm": { "len": 44, "wid": 22, "hgt": 19 },
+   "dims_cm": {
+    "len": 44,
+    "wid": 22,
+    "hgt": 19
+   },
    "dims_state": "unfurled_min_height",
    "dims_raw": "Dimensions (WxHxD): 22x19x36(44)cms 8.7\"x7.5\"x14.2(17.3\")",
    "dims_note": "CORRECTED from brands.json, which had this scrambled (len:19, hgt:22, wid:36 - none of which match the page's own W/H/D order). Verified independently via curl with a browser User-Agent (raw HTML confirms the string verbatim) against WebFetch, both agree. Physical direction: W=22 is across the bike, D=36(44 extended) is fore-aft depth, H=19 is top-to-bottom - this W=across/D=fore-aft convention is corroborated independently by a BikeRadar review of the Camper (see that product's dims_note: their measured 'fairly deep (23cm)' matches Camper's own D=22, not its W=36). `len` per spec is the LONGER of the two horizontal axes regardless of which way it points: here D, unfurled to 44cm for the fully-extended longflap, is longer than W=22, so len=44/wid=22/mount.axes.len=\"-x\" (fore-aft). CONFLICTING SECONDARY SOURCE: britishbicycle.com's listing for this same product gives '35cm wide x 21cm high x 20cm deep', explicitly labelling the ~35cm figure 'wide/across the bike' - the opposite orientation from Carradice's own current page, and not a close numeric match to either axis assignment of Carradice's live 22/19/36(44). Treated as a stale or mistranscribed retailer copy rather than followed: Carradice's own page was verified twice independently (WebFetch + curl-with-UA) and its W=across/D=fore-aft convention is corroborated on Camper by an independent reviewer, so it is trusted over a single secondary retailer listing that doesn't even numerically match the current spec.",
    "capacity_l": 18,
-
    "geometry": {
     "form": "saddlebag_flap",
     "crossSection": "flat_back",
     "shoulder": "none",
     "notes": "Traditional rounded barrel-shaped canvas body, flat mounting face against the saddle rails/support, front flap (the 'longflap') folds down over the front face and buckles; extending the flap out is what adds the extra 8cm of length and the extra volume. Small external slip pocket on the front face with its own leather billet strap and buckle."
    },
-
    "closure": {
     "type": "flap_buckle",
     "location": "front",
     "hardware": "single leather billet strap through a nickel buckle at the flap centre; longflap extension is the same strap let out further"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "leather_billet", "material": "leather", "wrapsAround": "saddlebag_loops" },
-    { "role": "lid", "count": 1, "location": "front_face", "hardware": "leather_billet", "material": "leather" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "leather_billet",
+     "material": "leather",
+     "wrapsAround": "saddlebag_loops"
+    },
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "leather_billet",
+     "material": "leather"
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "front" }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "embossed_leather_patch", "location": "front_face" },
+    "logo": {
+     "type": "embossed_leather_patch",
+     "location": "front_face"
+    },
     "seams": "sewn, waxed canvas (traditional construction, not welded)",
     "fabric": "18oz waxed cotton duck / leather trim - matches brands.json; see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_loops", "saddlebag_support"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "z",
+     "wid": "-x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_loops",
+     "saddlebag_support"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 5,
-    "clearance": { "tyre_mm": 50, "frame_mm": 0 },
-    "notes": "Hangs from two leather straps through saddle bag-loops (visible chrome D-ring at the mount point in the photo) and rests on a metal saddlebag support rack under the body - the support is a separate accessory, visible in the evidence photo, not modelled as part of this bag. Traditional saddle-rail hanging bag, not a seatpost-clamped design. AXIS RESOLUTION: len(44)=fore-aft, wid(22)=across-bike. Unlike the Camper (see that product's mount.notes), Nelson's fore-aft axis is the longer one, but ONLY because of the longflap: Carradice's own page shows this bag's resting depth is 36cm (already exceeding its 22cm width) BEFORE the flap even extends to 44cm - so Nelson is a genuinely narrow, deep-bodied bag, not a case of the flap flipping which axis dominates. It rides on a saddlebag support rack rather than hanging free, which is what makes a 44cm fore-aft projection plausible without fouling the rear tyre - the support carries it back over the rack deck rather than into the tyre gap."
+    "clearance": {
+     "tyre_mm": 50,
+     "frame_mm": 0
+    },
+    "notes": "Hangs from two leather straps through saddle bag-loops (visible chrome D-ring at the mount point in the photo) and rests on a metal saddlebag support rack under the body - the support is a separate accessory, visible in the evidence photo, not modelled as part of this bag. Traditional saddle-rail hanging bag, not a seatpost-clamped design. AXIS RESOLUTION: len(44)=fore-aft, wid(22)=across-bike. Unlike the Camper (see that product's mount.notes), Nelson's fore-aft axis is the longer one, but ONLY because of the longflap: Carradice's own page shows this bag's resting depth is 36cm (already exceeding its 22cm width) BEFORE the flap even extends to 44cm - so Nelson is a genuinely narrow, deep-bodied bag, not a case of the flap flipping which axis dominates. It rides on a saddlebag support rack rather than hanging free, which is what makes a 44cm fore-aft projection plausible without fouling the rear tyre - the support carries it back over the rack deck rather than into the tyre gap. AXIS CORRECTED 8 Aug: len -> z (across the bike), wid -> -x (fore-aft). The earlier resolution established the family convention itself — Carradice publish W x H x D with W ACROSS the bike and D fore-aft, checked against the maker studio shots and an independent review of the Camper — and then exempted this bag from it, leaving the largest figure pointing fore-aft. Both evidence photos settle it: the bag's side POCKET faces the camera when the camera is beside the bike, which can only happen if the pockets are at the two ends of an axis that runs across the bike. Nothing had ever drawn this, because no builder read mount.axes until saddlebag.js did; the moment it did, the Nelson rendered as a 44cm-deep suitcase behind the saddle."
    },
-
    "colorways": [
-    { "name": "Black", "hex": "#2b2b28" },
-    { "name": "Green", "hex": "#2f4032" },
-    { "name": "Burgundy", "hex": "#5a2029" }
+    {
+     "name": "Black",
+     "hex": "#2b2b28"
+    },
+    {
+     "name": "Green",
+     "hex": "#2f4032"
+    },
+    {
+     "name": "Burgundy",
+     "hex": "#5a2029"
+    }
    ],
-   "images": ["assets/products/carradice/originals-nelson-longflap-saddlebag-18l-1.jpg"]
+   "images": [
+    "assets/products/carradice/originals-nelson-longflap-saddlebag-18l-1.jpg"
+   ]
   },
-
   {
    "line": "Originals",
    "name": "Barley Saddlebag",
    "size": "9L",
    "slot": "saddlebag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "assets/products/carradice/originals-barley-saddlebag-9l-1.jpg",
     "https://www.carradice.co.uk/products/originals-barley-saddlebag"
    ],
-
-   "dims_cm": { "len": 29, "wid": 18, "hgt": 15 },
+   "dims_cm": {
+    "len": 29,
+    "wid": 18,
+    "hgt": 15
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Dimensions (WxHxD): 18x15x29cms 7.1\"x6\"x11.4\"",
    "dims_note": "CORRECTED from brands.json, which had wid and len swapped relative to the page's own W/H/D label (stored len:15, wid:29 - the reverse of the page). Verified independently via curl with a browser User-Agent, matches WebFetch. W=18 (across the bike -> wid), H=15 (top-to-bottom -> hgt), D=29 (fore-aft, the bag's own long axis -> len). No range given, single figure used directly. 18x15x29 = 7.8L box against the stated 9L, consistent with a canvas flap bag that over-stuffs slightly past its rated size.",
    "capacity_l": 9,
-
    "geometry": {
     "form": "saddlebag_flap",
     "crossSection": "flat_back",
     "shoulder": "none",
     "notes": "Smaller, squarer version of the Nelson without the longflap extension. Rounded canvas body, flat mounting face, front flap buckles down over the body. On-bike photo shows twin parallel strap channels dividing the flap visually into two lobes; this is the flap's strap routing, not two separate compartments."
    },
-
    "closure": {
     "type": "flap_buckle",
     "location": "front",
     "hardware": "two leather billet straps through nickel buckles"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "leather_billet", "material": "leather", "wrapsAround": "saddlebag_loops" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "leather_billet",
+     "material": "leather",
+     "wrapsAround": "saddlebag_loops"
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "side" }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "side"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "embossed_leather_patch", "location": "front_face" },
+    "logo": {
+     "type": "embossed_leather_patch",
+     "location": "front_face"
+    },
     "seams": "sewn, waxed canvas (traditional construction, not welded)",
     "fabric": "18oz waxed cotton duck / leather trim - matches brands.json; see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_loops"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "z",
+     "wid": "-x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_loops"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 4,
-    "clearance": { "tyre_mm": 60, "frame_mm": 0 },
-    "notes": "Hangs from two leather straps through saddle bag-loops, no support rack visible in this photo (small enough to self-support). Traditional saddle-rail hanging bag. AXIS RESOLUTION: len(29)=fore-aft, wid(18)=across-bike, same W=across/D=fore-aft convention used for all four Carradice saddlebags in this file (see Camper's mount.notes for the full reasoning and the one case, Camper, where it flips). Like Nelson and unlike Camper, Barley's fore-aft axis is the longer one even with no flap-extension figure published - Barley is a narrower, deeper-bodied bag by design, not a wide flat one."
+    "clearance": {
+     "tyre_mm": 60,
+     "frame_mm": 0
+    },
+    "notes": "Hangs from two leather straps through saddle bag-loops, no support rack visible in this photo (small enough to self-support). Traditional saddle-rail hanging bag. AXIS RESOLUTION: len(29)=fore-aft, wid(18)=across-bike, same W=across/D=fore-aft convention used for all four Carradice saddlebags in this file (see Camper's mount.notes for the full reasoning and the one case, Camper, where it flips). Like Nelson and unlike Camper, Barley's fore-aft axis is the longer one even with no flap-extension figure published - Barley is a narrower, deeper-bodied bag by design, not a wide flat one. AXIS CORRECTED 8 Aug: len -> z (across the bike), wid -> -x (fore-aft). The earlier resolution established the family convention itself — Carradice publish W x H x D with W ACROSS the bike and D fore-aft, checked against the maker studio shots and an independent review of the Camper — and then exempted this bag from it, leaving the largest figure pointing fore-aft. Both evidence photos settle it: the bag's side POCKET faces the camera when the camera is beside the bike, which can only happen if the pockets are at the two ends of an axis that runs across the bike. Nothing had ever drawn this, because no builder read mount.axes until saddlebag.js did; the moment it did, the Nelson rendered as a 44cm-deep suitcase behind the saddle."
    },
-
    "colorways": [
-    { "name": "Black", "hex": "#2b2b28" },
-    { "name": "Green", "hex": "#2f4032" },
-    { "name": "Burgundy", "hex": "#5a2029" }
+    {
+     "name": "Black",
+     "hex": "#2b2b28"
+    },
+    {
+     "name": "Green",
+     "hex": "#2f4032"
+    },
+    {
+     "name": "Burgundy",
+     "hex": "#5a2029"
+    }
    ],
-   "images": ["assets/products/carradice/originals-barley-saddlebag-9l-1.jpg"]
+   "images": [
+    "assets/products/carradice/originals-barley-saddlebag-9l-1.jpg"
+   ]
   },
-
   {
    "line": "Originals",
    "name": "Camper Longflap Saddlebag",
    "size": "24L",
    "slot": "saddlebag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "assets/products/carradice/originals-camper-longflap-saddlebag-24l-1.jpg",
     "https://www.carradice.co.uk/products/originals-camper-longflap-saddlebag"
    ],
-
-   "dims_cm": { "len": 36, "wid": 22, "hgt": 26 },
+   "dims_cm": {
+    "len": 36,
+    "wid": 22,
+    "hgt": 26
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Dimensions (WxHxD): 36 x 26 x 22 cm",
    "dims_note": "CORRECTED from my own first pass, which put D under `len` and W under `wid` on every Carradice saddlebag uniformly - fine for Nelson/Barley/SQR Slim (where D happens to be the bigger horizontal number) but WRONG here, where W is bigger. Per MODEL-SPEC.md, `len` is defined as the LONGER of the bag's two horizontal axes, not 'always the fore-aft one' - `mount.axes` is the separate field that records which world-direction that longer axis actually points for this product. Page labels W=36 (across the bike), H=26 (top-to-bottom), D=22 (fore-aft depth) - all re-verified via curl with a browser User-Agent, matching WebFetch. Independently corroborated: a BikeRadar review of this exact bag describes it as 'fairly deep (23cm)', matching the maker's own D=22 almost exactly and confirming W=across/D=fore-aft is the right physical reading, not a mislabel. Since W(36) > D(22) here, len=36 (across-bike) and wid=22 (fore-aft) - the reverse key assignment from Nelson/Barley, where D is the bigger number. Unlike Nelson, no bracketed extended figure is published for the longflap here, so the single D=22 figure is used as-is; 36x26x22 = 20.6L box against the stated 24L, the balance plausibly coming from the flap being let out beyond its resting 22cm depth in practice (not separately quoted).",
    "capacity_l": 24,
-
    "geometry": {
     "form": "saddlebag_flap",
     "crossSection": "flat_back",
     "shoulder": "none",
     "notes": "Largest of the three Originals saddlebags; wider (36cm across) than it is tall, rounded canvas body, front flap buckles down. Side lash loops visible for extra strapping."
    },
-
    "closure": {
     "type": "flap_buckle",
     "location": "front",
     "hardware": "leather billet strap(s) through nickel buckle(s), longflap extends the covered depth"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "leather_billet", "material": "leather", "wrapsAround": "saddlebag_loops" },
-    { "role": "daisy", "count": 2, "location": "side", "hardware": "daisy_loop", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "leather_billet",
+     "material": "leather",
+     "wrapsAround": "saddlebag_loops"
+    },
+    {
+     "role": "daisy",
+     "count": 2,
+     "location": "side",
+     "hardware": "daisy_loop",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "front" }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "front"
+    }
    ],
-
    "details": {
     "daisyChains": true,
     "reflective": false,
-    "logo": { "type": "embossed_leather_patch", "location": "front_face" },
+    "logo": {
+     "type": "embossed_leather_patch",
+     "location": "front_face"
+    },
     "seams": "sewn, waxed canvas (traditional construction, not welded)",
     "fabric": "18oz waxed cotton duck / leather trim - matches brands.json; see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "z", "wid": "-x", "hgt": "y" },
-    "attachesTo": ["saddle_loops", "saddlebag_support"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "z",
+     "wid": "-x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_loops",
+     "saddlebag_support"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 5,
-    "clearance": { "tyre_mm": 45, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 45,
+     "frame_mm": 0
+    },
     "notes": "Largest and heaviest of the three - photo shows it resting on a rear rack for support, similar to the Nelson. At 24L this needs a support rack or rear rack under it in practice; the rack itself is a separate accessory, not modelled. AXIS RESOLUTION (flagged by a reviewer as inconsistent with Nelson - resolved, not a bug): here len(36) is the ACROSS-BIKE axis and wid(22) is fore-aft, the reverse of Nelson and Barley in this same file, where len is fore-aft. This is real, not a mapping error: all four Carradice saddlebags share the same physical convention (the maker's W = across the bike, D = fore-aft depth, corroborated independently by a BikeRadar review measuring this bag's depth at 23cm against the maker's own D=22) - `len` just tracks whichever of the two is numerically longer per spec, and for Camper that is W (across-bike, 36cm) rather than D (fore-aft, 22cm). Nelson and Barley are narrow-and-deep bags; Camper is wide-and-shallow, achieving its larger 24L mostly through width and height rather than fore-aft depth. clearance.tyre_mm above is keyed to the 22cm fore-aft (wid) figure, the axis that actually faces the rear tyre."
    },
-
    "colorways": [
-    { "name": "Black", "hex": "#2b2b28" },
-    { "name": "Burgundy", "hex": "#5a2029" },
-    { "name": "Field Green", "hex": "#4b5a3c" }
+    {
+     "name": "Black",
+     "hex": "#2b2b28"
+    },
+    {
+     "name": "Burgundy",
+     "hex": "#5a2029"
+    },
+    {
+     "name": "Field Green",
+     "hex": "#4b5a3c"
+    }
    ],
-   "images": ["assets/products/carradice/originals-camper-longflap-saddlebag-24l-1.jpg"]
+   "images": [
+    "assets/products/carradice/originals-camper-longflap-saddlebag-24l-1.jpg"
+   ]
   },
-
   {
    "line": "Super C",
    "name": "Super C SQR Slim",
    "size": "16L",
    "slot": "saddlebag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -227,120 +327,178 @@
     "https://carradice.co.uk/cdn/shop/products/carradice_scsqrslim-2.jpg (maker studio shot of the frame-side mounting face, fetched directly)",
     "https://www.carradice.co.uk/products/super-c-seatpost-qr-slim-saddlebag"
    ],
-
-   "dims_cm": { "len": 29, "wid": 15, "hgt": 36 },
+   "dims_cm": {
+    "len": 29,
+    "wid": 15,
+    "hgt": 36
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Dimensions (WxHxD): 29x36x15cms 11.4\"x14.2\"x5.9\"",
    "dims_note": "AXIS-FUMBLE CHECK, run per the team's known SQR history: brands.json stored len:15/hgt:36/wid:29 (i.e. NOT wid==len, so not the specific old bug) and I re-verified the PHYSICAL direction from scratch rather than trust that note, but on reflection the KEY assignment was still wrong per spec. Fetched the maker's own studio photo of the bag's frame-side mounting face directly (carradice.co.uk/cdn/shop/products/carradice_scsqrslim-2.jpg): that face is visibly taller than it is wide, close to a 0.8:1 width:height ratio, matching W=29/H=36=0.81 - so W=29 is across-the-bike and H=36 is top-to-bottom, confirmed. D=15 is the shallow fore-aft depth, matching the 'Slim' name (kept thin front-to-back to clear the rider's heels off an SQR block). CORRECTED here: per MODEL-SPEC.md, `len` is the LONGER of the two horizontal axes, not always the fore-aft one - since W(29, across-bike) > D(15, fore-aft), len=29/wid=15, with mount.axes.len=\"z\" (across bike) and mount.axes.wid=\"-x\" (fore-aft). This mirrors the Camper, not Nelson/Barley: SQR Slim is wide-and-shallow, same as Camper, both being the two products in this file where the across-bike axis outruns the fore-aft one. The on-bike customer photo (evidence 1) is from an ambiguous 3/4 angle and was NOT used for the width:height call, only to check hardware/mount details. 29x36x15 = 15.7L box against the stated 16L - a squat, boxy shape, not a tapered wedge.",
    "capacity_l": 16,
-
    "geometry": {
     "form": "saddlebag_flap",
     "crossSection": "rounded_rect",
     "shoulder": "none",
     "notes": "Modern technical version of a traditional saddlebag shape: a compact rounded box hanging off a quick-release seatpost block rather than saddle-loop straps. Frame-side face is a tall rounded rectangle with two vertical mounting straps and a top carry handle (per the maker studio photo); the opposite (outer) face carries the reflective 'Super C' branded patch and a horizontal compression strap (visible in the on-bike photo)."
    },
-
    "closure": {
     "type": "flap_buckle",
     "location": "top",
     "hardware": "single plastic side-release buckle at the top-front edge"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "sqr_block" },
-    { "role": "compression", "count": 1, "location": "girth", "hardware": "velcro", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "sqr_block"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "velcro",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "triangular reflective patch below the 'Super C' branded badge",
-    "logo": { "type": "woven_patch", "location": "outer_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "outer_face"
+    },
     "seams": "self-sealing (maker copy), welded-look finish - see brand_notes.fabric for the material discrepancy",
     "fabric": "maker states 18oz waxed cotton duck; photos show a smooth matte technical fabric with plastic hardware, not visibly waxed canvas - flagged, see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "z", "wid": "-x", "hgt": "y" },
-    "attachesTo": ["sqr_block"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "z",
+     "wid": "-x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "sqr_block"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": 65, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 65,
+     "frame_mm": 0
+    },
     "notes": "Mounts via Carradice's SQR quick-release block clamped to the seatpost, not saddle-rail straps like the Originals bags - the block itself is a separate accessory (not modelled). Body hangs close and shallow behind the seatpost, its 'Slim' depth keeping it clear of the rider's heels. AXIS RESOLUTION: len(29) is across-bike, wid(15) is fore-aft - the shallow 15cm axis is what 'Slim' refers to and is what clearance.tyre_mm above is keyed to. Grouped with the Camper as the two Carradice saddlebags in this file where the across-bike axis is longer than the fore-aft one; see Camper's mount.notes for the full reasoning shared across all four."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#2b2b28" } ],
-   "images": ["assets/products/carradice/super-c-super-c-sqr-slim-16l-1.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b28"
+    }
+   ],
+   "images": [
+    "assets/products/carradice/super-c-super-c-sqr-slim-16l-1.jpg"
+   ]
   },
-
   {
    "line": "Super C",
    "name": "Super C Rear Panniers",
    "size": "27L each (54L pair)",
    "slot": "pannier",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "assets/products/carradice/super-c-super-c-rear-panniers-27l-each-54l-pair-1.jpg",
     "https://www.carradice.co.uk/products/super-c-rear-panniers-pair"
    ],
-
-   "dims_cm": { "len": 33, "wid": 22, "hgt": 40 },
+   "dims_cm": {
+    "len": 33,
+    "wid": 22,
+    "hgt": 40
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "Dimensions (WxHxD): 33x40x22cms 13\"x15.7\"x8.7\" (each pannier)",
    "dims_note": "Confirmed correct as already stored, independently re-verified via curl with a browser User-Agent (matches WebFetch). For a pannier the maker's 'W' conventionally names the long flat panel that runs fore-aft along the rack (-> our len), not the across-bike protrusion, and 'D' names how far it sticks out sideways from the rack (-> our wid); this reading matches the on-bike photo, where the pannier body is clearly longer front-to-back than it is thick side-to-side, and is by far the tallest dimension of the three. Stored litres (27L) is per pannier; 54L is the pair.",
    "capacity_l": 27,
-
    "geometry": {
     "form": "box",
     "crossSection": "flat_back",
     "shoulder": "none",
     "notes": "Boxy pannier, flat rack-facing back panel, front-facing flap pocket with its own buckle closure (visible on the front-most pannier in the photo, below the 'Super C' patch), reflective circular patch on the lower side face."
    },
-
    "closure": {
     "type": "flap_buckle",
     "location": "top",
     "hardware": "single plastic side-release buckle at the top flap"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "lid", "count": 1, "location": "front_face", "hardware": "buckle", "material": "webbing" },
-    { "role": "shoulder", "count": 1, "location": "top", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "lid",
+     "count": 1,
+     "location": "front_face",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [
-    { "type": "zip", "count": 1, "location": "front" }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "circular patch, lower side face",
-    "logo": { "type": "woven_patch", "location": "top_front" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "top_front"
+    },
     "seams": "self-sealing (maker copy) - see brand_notes.fabric for the material discrepancy",
     "fabric": "maker states 18oz waxed cotton duck; photos show a smooth matte technical fabric with plastic hardware, not visibly waxed canvas - flagged, see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["rear_rack"],
-    "contactFaces": ["rear_face"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "rear_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "frame_mm": 0 },
+    "clearance": {
+     "frame_mm": 0
+    },
     "notes": "Standard rack-hook pannier, no rail or seatpost mounting; requires a rear rack."
    },
    "fits": "rack_only",
-
-   "colorways": [ { "name": "Black", "hex": "#2b2b28" } ],
-   "images": ["assets/products/carradice/super-c-super-c-rear-panniers-27l-each-54l-pair-1.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#2b2b28"
+    }
+   ],
+   "images": [
+    "assets/products/carradice/super-c-super-c-rear-panniers-27l-each-54l-pair-1.jpg"
+   ]
   }
  ]
 }

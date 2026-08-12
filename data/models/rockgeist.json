@@ -263,7 +263,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -391,7 +391,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -519,7 +519,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -637,7 +637,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube_bosses",
@@ -752,7 +752,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube_bosses",
@@ -867,7 +867,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube_bosses",
@@ -1691,7 +1691,7 @@
    "line": "Horton",
    "name": "Horton Front Pouch",
    "size": "One Size",
-   "slot": "barbag",
+   "slot": "barpocket",
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -5238,7 +5238,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -5272,7 +5272,7 @@
    "line": "Custom Framebag",
    "name": "Custom Medic Top-Tube Bag (saddle side)",
    "size": "Custom",
-   "slot": "toptube",
+   "slot": "toptube_rear",
    "verified": false,
    "confidence": "low",
    "evidence": [
@@ -5349,7 +5349,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",

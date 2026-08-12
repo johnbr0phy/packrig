@@ -13,332 +13,466 @@
    "size": "16.4L (single)",
    "slot": "pannier",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "assets/products/banjo-brothers/waterproof-waterproof-cycling-pannier-16-4l-single-1.webp",
     "https://www.banjobrothers.com/products/banjo-brothers-waterproof-cycling-pannier"
    ],
-
-   "dims_cm": { "len": 30.5, "wid": 17.8, "hgt": 35.6 },
+   "dims_cm": {
+    "len": 30.5,
+    "wid": 17.8,
+    "hgt": 35.6
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "1000 cubic inches / 16.4 liters; 14\" H x 12\" L x 7\" W",
    "dims_note": "Confirmed correct as already stored, independently re-verified via WebFetch (matches brands.json). Page labels directly: H=14in=35.6cm -> hgt, L=12in=30.5cm -> len, W=7in=17.8cm -> wid. Sold and priced as a single pannier, not a pair. No range given, so no unfurled/min-height pick needed; hgt as published is treated as the as-used (partially rolled) figure since the photo already shows the bag rolled shut - see render.",
    "capacity_l": 16.4,
-
    "geometry": {
     "form": "box",
     "crossSection": "flat_back",
     "shoulder": "none",
     "notes": "Boxy roll-top pannier, flat rack-facing back with visible rack hook hardware at the top, domed rolled top flap with a webbing carry handle threaded through it. White piping down the front vertical edge, red reflector/light-mount clip on the front-top corner, small circular reflective 'Banjo Brothers' badge on the front face."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "top",
     "rolls": 1,
     "hardware": "single fold-over roll, no separate buckle visible - carry handle strap doubles as the closure retainer"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "shoulder", "count": 1, "location": "top", "hardware": "webbing", "material": "webbing" }
+    {
+     "role": "shoulder",
+     "count": 1,
+     "location": "top",
+     "hardware": "webbing",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "white piping down the front edge; small circular reflective badge; red reflector/light clip on the front-top corner",
-    "logo": { "type": "printed_badge", "location": "front_lower" },
+    "logo": {
+     "type": "printed_badge",
+     "location": "front_lower"
+    },
     "seams": "welded liner (maker copy: 'welded-seam waterproof liner')",
     "fabric": "840D ballistic nylon / ripstop with welded liner - matches brands.json; see brand_notes.fabric"
    },
-
    "render": {
     "hgt_cm": 35.6,
     "rolls": 1,
     "basis": "no unrolled figure is published to apply the minimum-of-range rule to; the photo already shows the bag rolled shut with a single fold, so the photographed/published figure is used directly as the drawn height."
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["rear_rack"],
-    "contactFaces": ["rear_face"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "rear_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "frame_mm": 0 },
+    "clearance": {
+     "frame_mm": 0
+    },
     "notes": "Standard rack-hook pannier; silver hook hardware visible at the top of the back panel in the photo. Requires a rear rack."
    },
    "fits": "rack_only",
-
-   "colorways": [ { "name": "Black", "hex": "#141414" } ],
-   "images": ["assets/products/banjo-brothers/waterproof-waterproof-cycling-pannier-16-4l-single-1.webp"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#141414"
+    }
+   ],
+   "images": [
+    "assets/products/banjo-brothers/waterproof-waterproof-cycling-pannier-16-4l-single-1.webp"
+   ]
   },
-
   {
    "line": "Deluxe",
    "name": "Deluxe Seat Bag, Medium",
    "size": "Medium (1.2L)",
    "slot": "seatpack",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "assets/products/banjo-brothers/deluxe-deluxe-seat-bag-medium-medium-1-2l-1.jpg",
     "https://www.banjobrothers.com/products/deluxe-seat-bag-medium"
    ],
-
-   "dims_cm": { "len": 17.1, "wid": 10.2, "hgt": 7.6 },
+   "dims_cm": {
+    "len": 17.1,
+    "wid": 10.2,
+    "hgt": 7.6
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "65-81 cubic inches / 1.1-1.3 liters; 6.75\" L x 4\" W x 3\" H",
    "dims_note": "Confirmed correct as already stored, independently re-verified via WebFetch. Page labels directly: L=6.75in=17.1cm -> len, W=4in=10.2cm -> wid, H=3in=7.6cm -> hgt. Capacity is a range (1.1-1.3L) because the bottom gusset expands, not because any linear dimension is a range; dims are single figures. Stored the capacity midpoint 1.2L.",
    "capacity_l": 1.2,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.6, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.6,
+     "profile": "linear"
+    },
     "shoulder": "none",
     "notes": "Small firm-sided wedge, gusseted/expandable bottom seam, grey reflective piping around the full perimeter, rear pull-tab and cord-lock for a supplementary drawcord closure behind the main zip."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top",
     "hardware": "single slider zip along the top, plus a rear drawcord/toggle"
    },
-
    "zips": [
-    { "run": "top_centre", "count": 1, "finish": "matched" }
+    {
+     "run": "top_centre",
+     "count": 1,
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "velcro", "material": "hook-and-loop", "wrapsAround": "seatpost" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "velcro",
+     "material": "hook-and-loop",
+     "wrapsAround": "seatpost"
+    }
    ],
-
    "pockets": [
-    { "type": "slip", "count": 1, "location": "internal" }
+    {
+     "type": "slip",
+     "count": 1,
+     "location": "internal"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "grey reflective piping around the full perimeter",
-    "logo": { "type": "woven_patch", "location": "top_rear" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "top_rear"
+    },
     "seams": "gusseted, expandable bottom seam",
     "fabric": "840D ballistic nylon / ripstop (page does not state fabric explicitly for this product; photo texture is consistent with the brand string) - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["seatpost"],
-    "contactFaces": ["nose_top"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "seatpost"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
     "sag_deg": 2,
-    "clearance": { "tyre_mm": 70, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 70,
+     "frame_mm": 0
+    },
     "notes": "Single hook-and-loop strap around the seatpost just below the saddle rails; small, self-supporting wedge, no rail straps needed."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#141414" } ],
-   "images": ["assets/products/banjo-brothers/deluxe-deluxe-seat-bag-medium-medium-1-2l-1.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#141414"
+    }
+   ],
+   "images": [
+    "assets/products/banjo-brothers/deluxe-deluxe-seat-bag-medium-medium-1-2l-1.jpg"
+   ]
   },
-
   {
    "line": "Handlebar Bag",
    "name": "Handlebar Bag, Small",
    "size": "Small (2L)",
    "slot": "barbag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "assets/products/banjo-brothers/handlebar-bag-handlebar-bag-small-small-2l-1.jpg",
     "https://www.banjobrothers.com/products/handlebar-bag-small"
    ],
-
-   "dims_cm": { "len": 20.3, "wid": 11.4, "hgt": 11.4 },
+   "dims_cm": {
+    "len": 20.3,
+    "wid": 11.4,
+    "hgt": 11.4
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "120 cubic inches / 2.0 liters; 8\" L x 4.5\" W x 4.5\" H",
    "dims_note": "CORRECTED from brands.json, which stored len:11.4 and wid:20.3 - the reverse of what the page's own axis labels give, and inconsistent with its own dims_note ('the 20.3cm long axis runs across the bars') which describes len but was written into the wid field. Rewritten whole: L=8in=20.3cm is the bag's own longest run (across the bars) -> len; W=H=4.5in=11.4cm is the round diameter -> wid and hgt both 11.4 (they are numerically identical on the page, so this pair cannot itself be transposed).",
    "capacity_l": 2,
-
    "geometry": {
     "form": "cylinder",
     "crossSection": "round",
     "shoulder": "none",
     "notes": "Rigid-lined cylinder (maker copy: 'rigid liner to prevent sagging') lying across the bars, grey reflective stripe wrapping the perimeter over a two-way zip, cord-pull tabs on both zip sliders at one end."
    },
-
    "closure": {
     "type": "zip_two_way",
     "location": "top",
     "hardware": "dual-slider zip under the reflective wrap stripe, paracord pull tabs"
    },
-
    "zips": [
-    { "run": "perimeter", "count": 1, "finish": "contrast", "notes": "reflective fabric strip sewn over the zip run" }
+    {
+     "run": "perimeter",
+     "count": 1,
+     "finish": "contrast",
+     "notes": "reflective fabric strip sewn over the zip run"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "velcro", "material": "hook-and-loop", "wrapsAround": "handlebar" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "hook-and-loop",
+     "wrapsAround": "handlebar"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "full-perimeter grey reflective stripe over the zip",
-    "logo": { "type": "none_visible", "location": "" },
+    "logo": {
+     "type": "none_visible",
+     "location": ""
+    },
     "seams": "welded (maker copy: fabric is waterproof, zip is covered)",
     "fabric": "840D ballistic nylon / ripstop (page does not state fabric explicitly for this product; photo texture is consistent with the brand string) - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "z", "wid": "x", "hgt": "y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "z",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
-    "clearance": { "tyre_mm": 45, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 45,
+     "frame_mm": 0
+    },
     "notes": "Two hook-and-loop straps directly over the bar tops, close in behind the stem. Rigid liner keeps the round cross-section from sagging onto cables."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#141414" } ],
-   "images": ["assets/products/banjo-brothers/handlebar-bag-handlebar-bag-small-small-2l-1.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#141414"
+    }
+   ],
+   "images": [
+    "assets/products/banjo-brothers/handlebar-bag-handlebar-bag-small-small-2l-1.jpg"
+   ]
   },
-
   {
    "line": "Top Tube Bag",
    "name": "Top Tube Bag, Large",
    "size": "Large (1.1L)",
    "slot": "toptube",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "assets/products/banjo-brothers/top-tube-bag-top-tube-bag-large-large-1-1l-1.jpg",
     "https://www.banjobrothers.com/products/top-tube-bag-large"
    ],
-
-   "dims_cm": { "len": 17.8, "wid": 6.4, "hgt": 10.2 },
+   "dims_cm": {
+    "len": 17.8,
+    "wid": 6.4,
+    "hgt": 10.2
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "65 cubic inches / 1.1 liters; 7\" L x 4' H x 2.5\" W",
    "dims_note": "Confirmed correct as already stored, independently re-verified via WebFetch (page text has a stray apostrophe on the H figure, clearly meant as inches: 4\"H). L=7in=17.8cm -> len, H=4in=10.2cm -> hgt, W=2.5in=6.4cm -> wid. 17.8x6.4x10.2 = 1.16L against the stated 1.1L / 65 cu in, a close match confirming this mapping - all three axes could not be wrong and still agree this closely. Rounded gas-tank silhouette in the photo (about 1.75:1 length:height) is consistent with a stubby 7in bag, not a tapered wedge.",
    "capacity_l": 1.1,
-
    "geometry": {
     "form": "box",
     "crossSection": "rounded_rect",
     "shoulder": "none",
     "notes": "Short rounded gas-tank pack sitting behind the stem, white piping trim, circular 'Banjo Brothers' badge on the side face. Fairly boxy, not a sharp wedge - matches the close length:height agreement between box volume and stated capacity."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top",
     "hardware": "single slider with paracord pull tab, along the top ridge"
    },
-
    "zips": [
-    { "run": "top_centre", "count": 1, "finish": "matched" }
+    {
+     "run": "top_centre",
+     "count": 1,
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "hook-and-loop", "wrapsAround": "toptube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "hook-and-loop",
+     "wrapsAround": "toptube"
+    }
    ],
-
    "pockets": [
-    { "type": "zip", "count": 1, "location": "side" }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "side"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": true,
-    "logo": { "type": "printed_badge", "location": "side_face" },
+    "logo": {
+     "type": "printed_badge",
+     "location": "side_face"
+    },
     "seams": "covered/weatherproofed zip (maker copy: 'the fabric is waterproof and the zippers are covered')",
     "fabric": "840D ballistic nylon / ripstop (page does not state fabric explicitly for this product; photo texture is consistent with the brand string) - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["toptube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "toptube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "frame_mm": 0 },
+    "clearance": {
+     "frame_mm": 0
+    },
     "notes": "Straddles the top tube behind the stem on two hook-and-loop straps, rounded end forward, badge/pocket side facing out. Side zip pocket noted in brands.json's source features but not independently visible in the single photo angle reviewed here - carried over at medium confidence within an otherwise high-confidence record."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#141414" } ],
-   "images": ["assets/products/banjo-brothers/top-tube-bag-top-tube-bag-large-large-1-1l-1.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#141414"
+    }
+   ],
+   "images": [
+    "assets/products/banjo-brothers/top-tube-bag-top-tube-bag-large-large-1-1l-1.jpg"
+   ]
   },
-
   {
    "line": "Rack Top Bag",
    "name": "Rack Top Bag",
    "size": "8.4L",
    "slot": "trunk",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
     "assets/products/banjo-brothers/rack-top-bag-rack-top-bag-8-4l-1.jpg",
     "https://www.banjobrothers.com/products/banjo-brothers-rack-top-bag"
    ],
-
-   "dims_cm": { "len": 37.5, "wid": 14, "hgt": 17.1 },
+   "dims_cm": {
+    "len": 37.5,
+    "wid": 14,
+    "hgt": 17.1
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "510 cubic inches; 14.75\" L x 5.5\" W x 6.75\" H",
    "dims_note": "Confirmed correct as already stored, independently re-verified via WebFetch. L=14.75in=37.5cm -> len, W=5.5in=14cm -> wid, H=6.75in=17.1cm -> hgt. The product page itself renders 510 cubic inches as '14.3L', which is a page error - 510 cu in is actually 8.36L, and the dims box (37.5x14x17.1cm = 9.0L) confirms the litre figure, not the page's mislabeled '14.3L'. Stored capacity_l as 8.4, matching the correct conversion.",
    "capacity_l": 8.4,
-
    "geometry": {
     "form": "rounded_box",
     "crossSection": "flat_bottom",
     "shoulder": "squared",
     "notes": "Domed trunk bag, flat rack-mounting base, gusseted accordion pocket panel on the front face below the main zip, badge patch on the front-left. Reflective stripe wraps the lower perimeter."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top",
     "hardware": "single slider zip running front-to-back over the dome, cord-lock pull"
    },
-
    "zips": [
-    { "run": "top_centre", "count": 1, "finish": "matched" }
+    {
+     "run": "top_centre",
+     "count": 1,
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "buckle", "material": "webbing", "wrapsAround": "rear_rack" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "rear_rack"
+    }
    ],
-
    "pockets": [
-    { "type": "stretch", "count": 1, "location": "front" }
+    {
+     "type": "stretch",
+     "count": 1,
+     "location": "front"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "stripe around the lower perimeter",
-    "logo": { "type": "printed_badge", "location": "front_left" },
+    "logo": {
+     "type": "printed_badge",
+     "location": "front_left"
+    },
     "seams": "welded (maker copy: 'ballistic bottom panel')",
     "fabric": "840D ballistic nylon / ripstop with welded liner - matches brands.json; see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["rear_rack"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "rear_rack"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "frame_mm": 0 },
+    "clearance": {
+     "frame_mm": 0
+    },
     "notes": "Straps down to the rear rack deck, does not use rack hooks (unlike the pannier) - visible black webbing straps loop around the rack tubing in the photo."
    },
    "fits": "rack_only",
-
-   "colorways": [ { "name": "Black", "hex": "#141414" } ],
-   "images": ["assets/products/banjo-brothers/rack-top-bag-rack-top-bag-8-4l-1.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#141414"
+    }
+   ],
+   "images": [
+    "assets/products/banjo-brothers/rack-top-bag-rack-top-bag-8-4l-1.jpg"
+   ]
   }
  ]
 }

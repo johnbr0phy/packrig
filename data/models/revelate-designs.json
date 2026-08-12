@@ -1561,7 +1561,7 @@
    "line": "Scrambler",
    "name": "Scrambler Pocket",
    "size": "3.5L",
-   "slot": "barbag",
+   "slot": "barpocket",
    "slot_should_be": null,
    "verified": false,
    "confidence": "low",
@@ -2013,7 +2013,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2101,7 +2101,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube_bosses"
@@ -2193,7 +2193,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2289,7 +2289,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2316,7 +2316,7 @@
    "line": "Jerrycan",
    "name": "Jerrycan",
    "size": "Regular",
-   "slot": "toptube",
+   "slot": "toptube_rear",
    "slot_should_be": null,
    "verified": true,
    "confidence": "high",
@@ -2390,7 +2390,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2416,7 +2416,7 @@
    "line": "Jerrycan",
    "name": "Jerrycan",
    "size": "Bent",
-   "slot": "toptube",
+   "slot": "toptube_rear",
    "slot_should_be": null,
    "verified": true,
    "confidence": "high",
@@ -2489,7 +2489,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2589,7 +2589,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",
@@ -2694,7 +2694,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube"
@@ -2784,7 +2784,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube"

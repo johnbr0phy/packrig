@@ -32,7 +32,7 @@
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
     "taper": {
-     "nose": 1.0,
+     "nose": 1,
      "tail": 0.2,
      "profile": "linear"
     },
@@ -145,7 +145,7 @@
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
     "taper": {
-     "nose": 1.0,
+     "nose": 1,
      "tail": 0.625,
      "profile": "linear"
     },
@@ -200,7 +200,7 @@
     "axes": {
      "len": "along_toptube",
      "wid": "z",
-     "hgt": "y"
+     "hgt": "perp_toptube"
     },
     "attachesTo": [
      "top_tube",

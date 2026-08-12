@@ -14,7 +14,6 @@
    "size": "Standard (9.5 inch)",
    "slot": "toptube",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -22,70 +21,105 @@
     "assets/products/jpaks/snakpak-standard-snakpak-9-5-standard-9-5-inch-2.jpg",
     "https://jpaks.com/shop-1/p/top-tube-storage"
    ],
-
-   "dims_cm": { "len": 24.1, "wid": 6, "hgt": 10 },
+   "dims_cm": {
+    "len": 24.1,
+    "wid": 6,
+    "hgt": 10
+   },
    "dims_state": "maker_partial",
    "dims_raw": "Only the product name publishes a figure: 'Standard SnakPak - 9.5\"'. No width, height, or litre figure is published anywhere on the page.",
    "dims_note": "len=24.1cm (9.5in) is the one real, maker-published number - the bag's fixed nose-to-tail length, no unfurled/packed distinction applies since this is a rigid zippered shell, not a roll-top. hgt and wid are my estimate from the studio photos: a squat wedge roughly 10cm tall at the nose, narrowing in width toward the tail. Not a range, so the new min-height rule doesn't apply here.",
    "capacity_l": 1.4,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.55, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.55,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Squared-off wedge, flat top with a top-mounted zip, tapers narrower toward the tail for knee clearance. Nose end (wide, velcro tab visible) mounts toward the head tube/stem; tail (narrow point) toward the saddle."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top",
     "hardware": "single top-mounted zip running the full length, plastic zipper pull"
    },
-
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": true,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "side_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "side_face"
+    },
     "seams": "sewn",
     "fabric": "X-Pac ripstop with printed graphic face (Donut, Rad Splatter, Trout Print, Black Topo, B&W Checkerboard) or plain X-Pac in solid colors - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "frame_mm": 0 },
+    "clearance": {
+     "frame_mm": 0
+    },
     "notes": "Straps directly beneath the top tube via velcro plus the underside daisy-chain grippers; sits centred on the tube (wid centred at z=0), rising straight up (+y) from the tube surface. Nose (wide end) faces the head tube/stem, tail (narrow end) faces the saddle."
    },
-
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1e" },
-    { "name": "Donut Print", "hex": "#e8b8c4" },
-    { "name": "Rad Splatter", "hex": "#7d6f8c" },
-    { "name": "Red", "hex": "#b7242c" },
-    { "name": "Blue", "hex": "#2f5f9e" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Donut Print",
+     "hex": "#e8b8c4"
+    },
+    {
+     "name": "Rad Splatter",
+     "hex": "#7d6f8c"
+    },
+    {
+     "name": "Red",
+     "hex": "#b7242c"
+    },
+    {
+     "name": "Blue",
+     "hex": "#2f5f9e"
+    }
    ]
   },
-
   {
    "line": "SnakPak",
    "name": "LargeFarva SnakPak 15\"",
    "size": "LargeFarva (15 inch)",
    "slot": "toptube",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -93,70 +127,102 @@
     "assets/products/jpaks/snakpak-largefarva-snakpak-15-largefarva-15-inch-2.jpg",
     "https://jpaks.com/shop-1/p/top-tube-storage-84gfk"
    ],
-
-   "dims_cm": { "len": 38.1, "wid": 7, "hgt": 11 },
+   "dims_cm": {
+    "len": 38.1,
+    "wid": 7,
+    "hgt": 11
+   },
    "dims_state": "maker_partial",
    "dims_raw": "Only the product name publishes a figure: 'LargeFarva SnakPak - 15\"'. No width, height, or litre figure is published.",
    "dims_note": "len=38.1cm (15in) is the real maker-published length. hgt and wid are my estimate, scaled up slightly from the Standard SnakPak's proportions since this is the largest bag in the same wedge family (9.5in/12in/12in EXT/15in run). No published range, so the min-height rule doesn't apply.",
    "capacity_l": 2.9,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.6, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.6,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Same squared wedge family as the Standard SnakPak, longer body, slightly deeper cross-section. Camo colorway photo shows the top zip runs the full length with a visible ridge/batten along the spine (matches the HDPE-spine construction in brand aesthetic notes)."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top",
     "hardware": "single top-mounted zip running the full length, pull tab with a small loop"
    },
-
    "zips": [
-    { "run": "top_centre", "finish": "matched" }
+    {
+     "run": "top_centre",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "underside", "hardware": "velcro", "material": "webbing", "wrapsAround": "top_tube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "webbing",
+     "wrapsAround": "top_tube"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": true,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "side_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "side_face"
+    },
     "seams": "sewn",
     "fabric": "X-Pac ripstop, printed (Rad Splatter shown) or solid/camo - see brand_notes.fabric",
     "notes": "Two adjustable internal velcro dividers per dims_raw source text (not visible externally)."
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "+y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
-    "clearance": { "frame_mm": 0 },
+    "clearance": {
+     "frame_mm": 0
+    },
     "notes": "Same mounting as the Standard SnakPak: velcro plus rubber-gripper daisy chain underneath, centred on the tube, nose toward the head tube."
    },
-
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1e" },
-    { "name": "Donut Print", "hex": "#e8b8c4" },
-    { "name": "Rad Splatter", "hex": "#7d6f8c" },
-    { "name": "Trout Print", "hex": "#7f9a86" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Donut Print",
+     "hex": "#e8b8c4"
+    },
+    {
+     "name": "Rad Splatter",
+     "hex": "#7d6f8c"
+    },
+    {
+     "name": "Trout Print",
+     "hex": "#7f9a86"
+    }
    ]
   },
-
   {
    "line": "DropperPak",
    "name": "DropperPak V.2",
    "size": "One Size",
    "slot": "seatpack",
    "slot_should_be": null,
-
    "verified": false,
    "confidence": "low",
    "evidence": [
@@ -165,76 +231,118 @@
     "assets/products/jpaks/dropperpak-dropperpak-v-2-one-size-3.jpg",
     "https://jpaks.com/shop-1/p/coming-soon-dropperpak-coming-soon"
    ],
-
-   "dims_cm": { "len": 40, "wid": 15, "hgt": 13 },
+   "dims_cm": {
+    "len": 40,
+    "wid": 15,
+    "hgt": 13
+   },
    "dims_state": "estimate",
    "dims_raw": "No dimensions and no litre figure anywhere on the JPaks page. Described only as adding length and clearance over V.1, a third rear compression strap, and an HDPE spine.",
    "dims_note": "No maker figures exist at all - not even a range to apply the min/unfurled rule to. All three axes are my estimate from the on-bike photos: len is the full nose-to-tail run with the roll extended (photo 1, black); wid is the widest point at the nose/harness end (photo 3, blue); hgt is my estimate of the ROLLED (minimum) height, following the spirit of the new rule even though no published range exists to source it from - see render.basis.",
    "capacity_l": 8,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.3, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.3,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Nose is a rigid harness/cradle held off the seatpost by the DropStop clamp (visible as a grey collar around the seatpost in photo 1); the roll-top drybag body tapers to a narrow rolled tail. Photo 3 (blue) shows a two-part construction: a black cradle at the nose with daisy loops, and a separate roll-top liner bag compressed by straps."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "tail",
     "rolls": 2,
     "hardware": "side-release buckle at the tail tip; 3 compression straps (per dims_note source text) cinch the roll"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "cam", "material": "webbing", "wrapsAround": "seatpost" },
-    { "role": "compression", "count": 3, "location": "tail_wrap", "hardware": "buckle", "material": "webbing" },
-    { "role": "daisy", "count": 2, "location": "top", "hardware": "d_ring" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "cam",
+     "material": "webbing",
+     "wrapsAround": "seatpost"
+    },
+    {
+     "role": "compression",
+     "count": 3,
+     "location": "tail_wrap",
+     "hardware": "buckle",
+     "material": "webbing"
+    },
+    {
+     "role": "daisy",
+     "count": 2,
+     "location": "top",
+     "hardware": "d_ring"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective piping visible along the compression-strap edge in the black colorway",
-    "logo": { "type": "screen_print", "location": "side_rear" },
+    "logo": {
+     "type": "screen_print",
+     "location": "side_rear"
+    },
     "seams": "sewn",
     "fabric": "X-Pac, faint diagonal grid visible even in the solid black colorway - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["seatpost", "saddle_rails"],
-    "contactFaces": ["nose_top", "nose_front"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "seatpost",
+     "saddle_rails"
+    ],
+    "contactFaces": [
+     "nose_top",
+     "nose_front"
+    ],
     "sag_deg": 3,
-    "clearance": { "tyre_mm": 50, "frame_mm": 0 },
+    "clearance": {
+     "tyre_mm": 50,
+     "frame_mm": 0
+    },
     "notes": "DropStop clamp holds the whole bag off the seatpost/dropper stanchion so it clears the seal head when the post drops - this is a rigid standoff, not a strap cinched directly to the post. A separate strap set also loops up around the saddle rails per photo 1."
    },
-
    "colorways": [
-    { "name": "Black X-Pac", "hex": "#1c1c1e" },
-    { "name": "LS42 Heather Grey", "hex": "#9ba1a6" },
-    { "name": "Red X-Pac", "hex": "#b7242c" },
-    { "name": "Blue X-Pac", "hex": "#2f5f9e" }
+    {
+     "name": "Black X-Pac",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "LS42 Heather Grey",
+     "hex": "#9ba1a6"
+    },
+    {
+     "name": "Red X-Pac",
+     "hex": "#b7242c"
+    },
+    {
+     "name": "Blue X-Pac",
+     "hex": "#2f5f9e"
+    }
    ],
-
    "render": {
     "hgt_cm": 13,
     "rolls": 2,
     "basis": "No height figure is published at all (not even a range). Estimated from the on-bike blue-colorway photo (dropperpak-dropperpak-v-2-one-size-3.jpg), which shows the roll-top liner turned down twice against a nose width of roughly 15cm - the packed height reads noticeably shorter than the nose is wide."
    }
   },
-
   {
    "line": "RukSak",
    "name": "RukSak V.2",
    "size": "One Size",
    "slot": "stembag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -243,142 +351,215 @@
     "assets/products/jpaks/ruksak-ruksak-v-2-one-size-3.jpg",
     "https://jpaks.com/shop-1/p/ruksak"
    ],
-
-   "dims_cm": { "len": 10, "wid": 10, "hgt": 15 },
+   "dims_cm": {
+    "len": 10,
+    "wid": 10,
+    "hgt": 15
+   },
    "dims_state": "estimate",
    "dims_raw": "No dimensions or litre figure published; sized around 'a water bottle or frosty beverage'. Sold individually (bagsPerListing: 1), not as a pair - the page states this explicitly.",
    "dims_note": "All axes are my estimate. The closed-cell foam liner gives the body a fixed cylindrical height; the drawcord collar above it gathers closed but is short and does not meaningfully change the overall rendered height, so I have not treated this as a variable-height/roll item. hgt reduced slightly from a first-pass 17cm to 15cm to better match the body:collar ratio visible in the studio photos.",
    "capacity_l": 1.7,
-
    "geometry": {
     "form": "cylinder",
     "crossSection": "round",
     "shoulder": "rounded",
     "notes": "Closed-cell foam liner cylinder with a pleated expandable mesh panel wrapping roughly half the circumference on the outer/leading side (checkerboard and camo photos both show the mesh panel is wider than a third of the body), drain grommet visible in the base."
    },
-
    "closure": {
     "type": "drawcord",
     "location": "top",
     "hardware": "single drawcord with a plastic cord-lock and loop pull, red or white cord depending on colorway"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "side", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    }
    ],
-
    "pockets": [
-    { "type": "mesh", "count": 1, "location": "side", "sizeFrac": 0.5 }
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "side",
+     "sizeFrac": 0.5
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
     "valve": "drain grommet in the base",
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "seams": "sewn",
     "fabric": "X-Pac printed face (Rad Splatter, Duck Camo, B&W Checkerboard shown) over a closed-cell foam liner - see brand_notes.fabric"
    },
-
    "mount": {
-    "axes": { "len": "x", "wid": "z", "hgt": "-y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["side_flat"],
+    "axes": {
+     "len": "x",
+     "wid": "z",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "side_flat"
+    ],
     "sag_deg": 0,
-    "clearance": { "frame_mm": 40 },
+    "clearance": {
+     "frame_mm": 40
+    },
     "notes": "Universal left or right of the stem per the maker's own description - hangs from a single side-mounted buckle strap around the bar, cylinder axis vertical. Sold and mounted individually (one bag, one side); len/wid are just the diameter so their axis mapping is arbitrary for the round cross-section."
    },
-
    "colorways": [
-    { "name": "Black/Black", "hex": "#1c1c1e" },
-    { "name": "Rad Splatter print", "hex": "#7d6f8c" },
-    { "name": "B&W Checkered", "hex": "#8c8c8c" },
-    { "name": "Duck Camo", "hex": "#6e6a52" },
-    { "name": "Bahama Blue", "hex": "#2f9fd0" }
+    {
+     "name": "Black/Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Rad Splatter print",
+     "hex": "#7d6f8c"
+    },
+    {
+     "name": "B&W Checkered",
+     "hex": "#8c8c8c"
+    },
+    {
+     "name": "Duck Camo",
+     "hex": "#6e6a52"
+    },
+    {
+     "name": "Bahama Blue",
+     "hex": "#2f9fd0"
+    }
    ]
   },
-
   {
    "line": "FramePak",
    "name": "FramePak (Custom)",
    "size": "Made to measure",
    "slot": "framebag_full",
    "slot_should_be": null,
-
    "verified": false,
    "confidence": "low",
    "evidence": [
     "assets/products/jpaks/framepak-framepak-custom-made-to-measure-2.jpg",
     "https://jpaks.com/framepaks"
    ],
-
-   "dims_cm": { "len": 55, "hgt": 32, "wid": 6.5 },
+   "dims_cm": {
+    "len": 55,
+    "hgt": 32,
+    "wid": 6.5
+   },
    "dims_state": "estimate",
    "dims_raw": "Fully custom to the rider's frame triangle - no dimensions or litre figure published anywhere.",
    "dims_note": "Fully custom product, so there is no single correct answer; these are a mid-range estimate for a 56cm gravel front triangle. framepak-framepak-custom-made-to-measure-1.jpg (filed as this product's first image) is NOT a photo of this product - it is a plain fabric swatch closeup with no bag visible (see brand_notes.assetMismatch) and was not used as sizing evidence. Only image 2 (two bags on a cutting table) was used.",
    "capacity_l": 9,
-
    "geometry": {
     "form": "trapezoid_panel",
     "crossSection": "flat_back",
-    "taper": { "nose": 0.15, "tail": 1.0, "profile": "linear" },
+    "taper": {
+     "nose": 0.15,
+     "tail": 1,
+     "profile": "linear"
+    },
     "shoulder": "pointed",
     "notes": "Full-frame triangle bag: narrow/pointed at the head tube end, full depth along the seat tube/BB end. Photo shows two bags side by side, one with a narrower waist - JPaks builds these per-frame, so the exact taper varies by customer bike."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top",
     "hardware": "single zip following the top edge (along the down tube/top tube line), orange pull tabs, orange contrast stitching"
    },
-
    "zips": [
-    { "run": "top_side", "finish": "contrast" },
-    { "run": "pocket", "finish": "contrast" }
+    {
+     "run": "top_side",
+     "finish": "contrast"
+    },
+    {
+     "run": "pocket",
+     "finish": "contrast"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "daisy_loop", "material": "webbing", "wrapsAround": "head_tube" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "daisy_loop",
+     "material": "webbing",
+     "wrapsAround": "head_tube"
+    }
    ],
-
    "pockets": [
-    { "type": "zip", "count": 1, "location": "front" }
+    {
+     "type": "zip",
+     "count": 1,
+     "location": "front"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "seams": "sewn",
     "fabric": "X-Pac in solid colors (RX30 Cayenne shown), diagonal grid confirmed on the swatch photo - see brand_notes.fabric",
     "custom": true
    },
-
    "mount": {
-    "axes": { "len": "along_downtube", "wid": "z", "hgt": "+y" },
-    "attachesTo": ["down_tube", "top_tube", "seat_tube", "head_tube"],
-    "contactFaces": ["underside", "top"],
+    "axes": {
+     "len": "along_downtube",
+     "wid": "z",
+     "hgt": "+y"
+    },
+    "attachesTo": [
+     "down_tube",
+     "top_tube",
+     "seat_tube",
+     "head_tube"
+    ],
+    "contactFaces": [
+     "underside",
+     "top"
+    ],
     "sag_deg": 0,
-    "clearance": { "frame_mm": 0 },
+    "clearance": {
+     "frame_mm": 0
+    },
     "notes": "Fills the full front triangle: underside rides along the down tube, top edge runs under the top tube, nose loop anchors near the head tube. Straps or JPaks' own bolt-on mounting washers per the maker's mount description; bolt-on option not visible in these photos."
    },
-
    "colorways": [
-    { "name": "RX30 Cayenne", "hex": "#9e3418" },
-    { "name": "Black X-Pac", "hex": "#1c1c1e" },
-    { "name": "LS21 Dark Grey", "hex": "#55595e" }
+    {
+     "name": "RX30 Cayenne",
+     "hex": "#9e3418"
+    },
+    {
+     "name": "Black X-Pac",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "LS21 Dark Grey",
+     "hex": "#55595e"
+    }
    ]
   },
-
   {
    "line": "Refugi",
    "name": "Refugi Harness",
    "size": "One Size (harness only)",
    "slot": "barroll",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -386,55 +567,77 @@
     "assets/products/jpaks/refugi-refugi-harness-one-size-harness-only-2.jpg",
     "https://jpaks.com/shop-1/p/refugi-harness"
    ],
-
-   "dims_cm": { "len": 30, "hgt": 12, "wid": 8 },
+   "dims_cm": {
+    "len": 30,
+    "hgt": 12,
+    "wid": 8
+   },
    "dims_state": "estimate",
    "dims_raw": "No dimensions published. This is a HARNESS, not a bag - roll-top drybags that clip into it are sold separately.",
    "dims_note": "liters is 0 by definition, not unmeasured - there is no bag volume here, only the foam mounting cradle. dims_cm is my estimate of the cradle panel itself, scaled from the on-bike photo against the visible brake lever/handlebar for reference. Image 1 shows a single foam mounting block in isolation (one of a pair), not the assembled harness - image 2 (on-bike, Chumba drop-bar gravel bike) is the better geometry reference and confirms fitment on a drop-bar frame.",
    "capacity_l": 0,
-
    "geometry": {
     "form": "slab",
     "crossSection": "flat_back",
     "shoulder": "pointed",
     "notes": "Flat shield-shaped foam cradle, wide across the top where it clamps the bar, tapering to a rounded point at the bottom where it sits against the head tube/fork crown. Individual foam mounting blocks (image 1) are teardrop-shaped pucks under the main panel."
    },
-
    "closure": {
     "type": "flap_buckle",
     "location": "top",
     "hardware": "RockLockster acrylic quick-release buckles standard (Austere machined buckles optional upgrade per source text)"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 3, "location": "top", "hardware": "buckle", "material": "webbing", "wrapsAround": "handlebar" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "buckle",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "woven_patch", "location": "front_face" },
+    "logo": {
+     "type": "woven_patch",
+     "location": "front_face"
+    },
     "seams": "sewn",
     "fabric": "X-Pac exterior over closed-cell foam, EPDM interior grip panel - see brand_notes.fabric",
     "notes": "Includes an 'Eye Patch' head-tube protector and 3D-printed H-Bar spacers per source text, neither clearly visible in these two photos."
    },
-
    "mount": {
-    "axes": { "len": "along_bar", "wid": "x", "hgt": "-y" },
-    "attachesTo": ["handlebar", "stem"],
-    "contactFaces": ["rear_face"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "x",
+     "hgt": "-y"
+    },
+    "attachesTo": [
+     "handlebar",
+     "stem"
+    ],
+    "contactFaces": [
+     "rear_face"
+    ],
     "sag_deg": 0,
-    "clearance": { "frame_mm": 10 },
+    "clearance": {
+     "frame_mm": 10
+    },
     "notes": "Sits on top of and just forward of the bar, directly ahead of the stem, dropping down to rest against the head tube/fork crown area. On-bike photo confirms it works on drop bars (shown mounted between STI-style levers on a Chumba gravel bike) as well as flat bars per the maker's own description. No bag volume to render - a companion roll-top drybag (not sold by JPaks as part of this listing) would sit inside the cradle."
    },
-
    "colorways": [
-    { "name": "Black", "hex": "#1c1c1e" },
-    { "name": "Checkered", "hex": "#8c8c8c" }
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    },
+    {
+     "name": "Checkered",
+     "hex": "#8c8c8c"
+    }
    ]
   }
  ]

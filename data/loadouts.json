@@ -1,0 +1,642 @@
+[
+  {
+    "id": "expedition",
+    "name": "The Expedition",
+    "kicker": "All Apidura",
+    "note": "One maker, one line, every mount filled. This is the shape of a bike crossing a continent unsupported — bar to fork to frame to tail.",
+    "tags": [
+      "Apidura",
+      "Expedition",
+      "Self-supported"
+    ],
+    "stats": {
+      "litres": 53.6,
+      "bags": 10,
+      "makers": 1,
+      "cda": 0.459,
+      "watts": 180,
+      "addedW": 28,
+      "grade": "D · Sail"
+    },
+    "rig": {
+      "v": 1,
+      "name": "The Expedition",
+      "env": "mountain",
+      "paint": "Slate",
+      "bags": [
+        {
+          "slot": "barroll",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Handlebar Pack",
+          "size": "14L",
+          "cw": 0
+        },
+        {
+          "slot": "barpocket",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Front Accessory Pack",
+          "size": "3.5L",
+          "cw": 0
+        },
+        {
+          "slot": "framebag_full",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Full Frame Pack",
+          "size": "8L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Top Tube Pack",
+          "size": "1L",
+          "cw": 0
+        },
+        {
+          "slot": "stemL",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Stem Pack",
+          "size": "1.3L",
+          "cw": 0
+        },
+        {
+          "slot": "stemR",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Stem Pack",
+          "size": "1.3L",
+          "cw": 0
+        },
+        {
+          "slot": "seatpack",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Saddle Pack",
+          "size": "16L",
+          "cw": 0
+        },
+        {
+          "slot": "forkL",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Cargo Cage Pack",
+          "size": "3.5L",
+          "cw": 0
+        },
+        {
+          "slot": "forkR",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Cargo Cage Pack",
+          "size": "3.5L",
+          "cw": 0
+        },
+        {
+          "slot": "downtube",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Downtube Pack",
+          "size": "1.5L",
+          "cw": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "light-and-fast",
+    "name": "Light & Fast",
+    "kicker": "Apidura Racing",
+    "note": "Four bags, nothing above the bars, nothing off the fork. Everything here is reachable at speed and nothing here flaps.",
+    "tags": [
+      "Apidura",
+      "Racing",
+      "Ultra-distance"
+    ],
+    "stats": {
+      "litres": 9.9,
+      "bags": 4,
+      "makers": 1,
+      "cda": 0.384,
+      "watts": 158,
+      "addedW": 6,
+      "grade": "A · Clean"
+    },
+    "rig": {
+      "v": 1,
+      "name": "Light & Fast",
+      "env": "mountain",
+      "paint": "Midnight",
+      "bags": [
+        {
+          "slot": "seatpack",
+          "brand": "Apidura",
+          "line": "Racing",
+          "name": "Saddle Pack",
+          "size": "5L",
+          "cw": 0
+        },
+        {
+          "slot": "barbag",
+          "brand": "Apidura",
+          "line": "Racing",
+          "name": "Handlebar Pack",
+          "size": "2L",
+          "cw": 0
+        },
+        {
+          "slot": "framebag_half",
+          "brand": "Apidura",
+          "line": "Racing",
+          "name": "Frame Pack",
+          "size": "2.4L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Apidura",
+          "line": "Racing",
+          "name": "Top Tube Pack",
+          "size": "0.5L",
+          "cw": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "heavy-load",
+    "name": "Heavy Load",
+    "kicker": "Ortlieb, fully loaded",
+    "note": "Racks, rollers and welded seams. The touring answer to the same question the soft bags ask — carry it all, and keep it dry.",
+    "tags": [
+      "Ortlieb",
+      "Touring",
+      "Waterproof"
+    ],
+    "stats": {
+      "litres": 81.6,
+      "bags": 8,
+      "makers": 1,
+      "cda": 0.544,
+      "watts": 205,
+      "addedW": 53,
+      "grade": "F · Barn Door"
+    },
+    "rig": {
+      "v": 1,
+      "name": "Heavy Load",
+      "env": "lake",
+      "paint": "Forest",
+      "bags": [
+        {
+          "slot": "pannierL",
+          "brand": "Ortlieb",
+          "line": "Back-Roller",
+          "name": "Back-Roller",
+          "size": "20L",
+          "cw": 0
+        },
+        {
+          "slot": "pannierR",
+          "brand": "Ortlieb",
+          "line": "Back-Roller",
+          "name": "Back-Roller",
+          "size": "20L",
+          "cw": 0
+        },
+        {
+          "slot": "trunk",
+          "brand": "Ortlieb",
+          "line": "Trunk-Bag",
+          "name": "Trunk-Bag RC",
+          "size": "12L",
+          "cw": 0
+        },
+        {
+          "slot": "barbag",
+          "brand": "Ortlieb",
+          "line": "Handlebar-Pack",
+          "name": "Handlebar-Pack QR",
+          "size": "11L",
+          "cw": 0
+        },
+        {
+          "slot": "framebag_full",
+          "brand": "Ortlieb",
+          "line": "Frame-Pack",
+          "name": "Frame-Pack",
+          "size": "6L",
+          "cw": 0
+        },
+        {
+          "slot": "forkL",
+          "brand": "Ortlieb",
+          "line": "Fork-Pack",
+          "name": "Fork-Pack",
+          "size": "5.8L",
+          "cw": 0
+        },
+        {
+          "slot": "forkR",
+          "brand": "Ortlieb",
+          "line": "Fork-Pack",
+          "name": "Fork-Pack",
+          "size": "5.8L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Ortlieb",
+          "line": "Fuel-Pack",
+          "name": "Fuel-Pack",
+          "size": "1L",
+          "cw": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "dirt-drop",
+    "name": "Dirt Drop",
+    "kicker": "Revelate Designs",
+    "note": "Built in Alaska for ground that fights back. Seat pack on a hard mount, harness up front, feed bags either side of the stem.",
+    "tags": [
+      "Revelate",
+      "Singletrack",
+      "Off-road"
+    ],
+    "stats": {
+      "litres": 45.8,
+      "bags": 8,
+      "makers": 1,
+      "cda": 0.427,
+      "watts": 171,
+      "addedW": 19,
+      "grade": "C · Draggy"
+    },
+    "rig": {
+      "v": 1,
+      "name": "Dirt Drop",
+      "env": "forest",
+      "paint": "Oxblood",
+      "bags": [
+        {
+          "slot": "seatpack",
+          "brand": "Revelate Designs",
+          "line": "Spinelock",
+          "name": "Spinelock",
+          "size": "16L",
+          "cw": 0
+        },
+        {
+          "slot": "barroll",
+          "brand": "Revelate Designs",
+          "line": "Sweetroll",
+          "name": "Sweetroll",
+          "size": "15L",
+          "cw": 0
+        },
+        {
+          "slot": "barpocket",
+          "brand": "Revelate Designs",
+          "line": "Scrambler",
+          "name": "Scrambler Pocket",
+          "size": "3.5L",
+          "cw": 0
+        },
+        {
+          "slot": "framebag_full",
+          "brand": "Revelate Designs",
+          "line": "Ranger",
+          "name": "Ranger Frame Bag",
+          "size": "MD",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Revelate Designs",
+          "line": "Mag-Tank",
+          "name": "Mag-Tank 2000",
+          "size": "1.4L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube_rear",
+          "brand": "Revelate Designs",
+          "line": "Jerrycan",
+          "name": "Jerrycan",
+          "size": "Regular",
+          "cw": 0
+        },
+        {
+          "slot": "stemL",
+          "brand": "Revelate Designs",
+          "line": "Feedbag",
+          "name": "Mountain Feedbag",
+          "size": "1L",
+          "cw": 0
+        },
+        {
+          "slot": "stemR",
+          "brand": "Revelate Designs",
+          "line": "Feedbag",
+          "name": "Mountain Feedbag",
+          "size": "1L",
+          "cw": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "the-system",
+    "name": "The System",
+    "kicker": "Tailfin, end to end",
+    "note": "One engineered mounting platform carrying everything. Machined, modular, and heavier on the wallet than on the bike.",
+    "tags": [
+      "Tailfin",
+      "Modular",
+      "Rack-based"
+    ],
+    "stats": {
+      "litres": 78.1,
+      "bags": 8,
+      "makers": 1,
+      "cda": 0.58,
+      "watts": 216,
+      "addedW": 64,
+      "grade": "F · Barn Door"
+    },
+    "rig": {
+      "v": 1,
+      "name": "The System",
+      "env": "mountain",
+      "paint": "Midnight",
+      "bags": [
+        {
+          "slot": "trunk",
+          "brand": "Tailfin",
+          "line": "CargoPack",
+          "name": "CargoPack System",
+          "size": "18L",
+          "cw": 0
+        },
+        {
+          "slot": "pannierL",
+          "brand": "Tailfin",
+          "line": "Panniers",
+          "name": "Pannier",
+          "size": "16L",
+          "cw": 0
+        },
+        {
+          "slot": "pannierR",
+          "brand": "Tailfin",
+          "line": "Panniers",
+          "name": "Pannier",
+          "size": "16L",
+          "cw": 0
+        },
+        {
+          "slot": "forkL",
+          "brand": "Tailfin",
+          "line": "Fork Packs",
+          "name": "Fork Pack",
+          "size": "5L",
+          "cw": 0
+        },
+        {
+          "slot": "forkR",
+          "brand": "Tailfin",
+          "line": "Fork Packs",
+          "name": "Fork Pack",
+          "size": "5L",
+          "cw": 0
+        },
+        {
+          "slot": "barroll",
+          "brand": "Tailfin",
+          "line": "Bar System",
+          "name": "Bar Bag System - Drop Bar",
+          "size": "Large (12.5L)",
+          "cw": 0
+        },
+        {
+          "slot": "framebag_half",
+          "brand": "Tailfin",
+          "line": "Frame Bags",
+          "name": "Half Frame Bag",
+          "size": "4.5L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Tailfin",
+          "line": "Top Tube",
+          "name": "Top Tube Bag",
+          "size": "1.1L Zip/Flip",
+          "cw": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "overnighter",
+    "name": "The Overnighter",
+    "kicker": "Five small makers",
+    "note": "Out after work, back before the second coffee. One sleep system, one change of clothes, and five bags from five people who sew.",
+    "tags": [
+      "Handmade",
+      "Sub-24",
+      "Mixed"
+    ],
+    "stats": {
+      "litres": 19.9,
+      "bags": 5,
+      "makers": 4,
+      "cda": 0.392,
+      "watts": 160,
+      "addedW": 8,
+      "grade": "A · Clean"
+    },
+    "rig": {
+      "v": 1,
+      "name": "The Overnighter",
+      "env": "forest",
+      "paint": "Sand",
+      "bags": [
+        {
+          "slot": "seatpack",
+          "brand": "Outer Shell Adventure",
+          "line": "Seatpack",
+          "name": "Seatpack",
+          "size": "10.5L",
+          "cw": 0
+        },
+        {
+          "slot": "barbag",
+          "brand": "Wizard Works",
+          "line": "Presto",
+          "name": "Lil Presto Barrel Bag",
+          "size": "Large (3.5L)",
+          "cw": 0
+        },
+        {
+          "slot": "framebag_half",
+          "brand": "Swift Industries",
+          "line": "Hold Fast",
+          "name": "Hold Fast Half Frame Bag",
+          "size": "3.25L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Rockgeist",
+          "line": "Cache",
+          "name": "Cache Top Tube Bag (Velcro)",
+          "size": "Large",
+          "cw": 0
+        },
+        {
+          "slot": "stemL",
+          "brand": "Wizard Works",
+          "line": "Voila",
+          "name": "Voila Stem Bag",
+          "size": "Large",
+          "cw": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "randonneur",
+    "name": "The Randonneur",
+    "kicker": "Front load, old rules",
+    "note": "Weight over the front wheel and a saddlebag the size of a suitcase. The oldest way to carry a load on a bicycle, and still one of the best.",
+    "tags": [
+      "Carradice",
+      "Swift",
+      "Classic"
+    ],
+    "stats": {
+      "litres": 34.6,
+      "bags": 5,
+      "makers": 2,
+      "cda": 0.43,
+      "watts": 172,
+      "addedW": 20,
+      "grade": "C · Draggy"
+    },
+    "rig": {
+      "v": 1,
+      "name": "The Randonneur",
+      "env": "lake",
+      "paint": "Sand",
+      "bags": [
+        {
+          "slot": "randobag",
+          "brand": "Swift Industries",
+          "line": "Sugarloaf",
+          "name": "Sugarloaf Basket Bag",
+          "size": "11L",
+          "cw": 0
+        },
+        {
+          "slot": "saddlebag",
+          "brand": "Carradice",
+          "line": "Originals",
+          "name": "Nelson Longflap Saddlebag",
+          "size": "18L",
+          "cw": 0
+        },
+        {
+          "slot": "framebag_half",
+          "brand": "Swift Industries",
+          "line": "Hold Fast",
+          "name": "Hold Fast Half Frame Bag",
+          "size": "4L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Swift Industries",
+          "line": "Moxie",
+          "name": "Moxie Top Tube Bag",
+          "size": "0.6L",
+          "cw": 0
+        },
+        {
+          "slot": "stemR",
+          "brand": "Swift Industries",
+          "line": "Sidekick",
+          "name": "Sidekick Stem Pouch",
+          "size": "1L",
+          "cw": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "aero",
+    "name": "Aero",
+    "kicker": "Apidura Aero + Racing",
+    "note": "Bags shaped by a wind tunnel rather than by a volume target. Open the tunnel on this one and watch where the air goes.",
+    "tags": [
+      "Apidura",
+      "Aero",
+      "Time trial"
+    ],
+    "stats": {
+      "litres": 8.7,
+      "bags": 4,
+      "makers": 1,
+      "cda": 0.372,
+      "watts": 154,
+      "addedW": 3,
+      "grade": "A+ · Bullet"
+    },
+    "rig": {
+      "v": 1,
+      "name": "Aero",
+      "env": "desert",
+      "paint": "Midnight",
+      "bags": [
+        {
+          "slot": "framebag_half",
+          "brand": "Apidura",
+          "line": "Aero",
+          "name": "Frame Module",
+          "size": "Large",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Apidura",
+          "line": "Aero",
+          "name": "Top Tube Module",
+          "size": "0.4L",
+          "cw": 0
+        },
+        {
+          "slot": "seatpack",
+          "brand": "Apidura",
+          "line": "Racing",
+          "name": "Saddle Pack",
+          "size": "3L",
+          "cw": 0
+        },
+        {
+          "slot": "barbag",
+          "brand": "Apidura",
+          "line": "Racing",
+          "name": "Aerobar Pack",
+          "size": "2.5L",
+          "cw": 0
+        }
+      ]
+    }
+  }
+]

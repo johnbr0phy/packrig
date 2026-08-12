@@ -14,7 +14,6 @@
    "size": "5L",
    "slot": "barbag",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -22,62 +21,80 @@
     "https://cdn.shopify.com/s/files/1/0927/0899/5336/files/102810121_HANDLEBAR_PACK_BOA_WP_5_dt01.jpg",
     "https://evocsports.com/products/handlebar-pack-boa-wp-5"
    ],
-
-   "dims_cm": { "len": 30, "wid": 15, "hgt": 15 },
+   "dims_cm": {
+    "len": 30,
+    "wid": 15,
+    "hgt": 15
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "evocsports.com: 'Measures 30 x 15 x 15 cm', volume 5L (a 2.5L variant of the same product also exists, not modeled here). No range given.",
    "dims_note": "Single fixed figures, no maker range. Round cross-section tube so wid=hgt=15 (diameter) as with other rolltop dry-bag products in this catalogue; len=30 is the tube's long axis along the bar.",
    "capacity_l": 5,
-
    "geometry": {
     "form": "barrel",
     "crossSection": "round",
     "shoulder": "none",
     "notes": "Straight fabric tube, rolls closed independently at both ends per maker copy ('roll-in ends for adaptable volume') and confirmed in the studio photo, which shows a finished roll-fold with buckle visible at each end. Rigid black BOA bracket sits across the top-centre of the bag, not a separate cage - the fabric is captured directly under the bracket's two strap arms."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "both_ends",
     "hardware": "side-release buckle at each end"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "boa", "material": "webbing", "wrapsAround": "handlebar" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "boa",
+     "material": "webbing",
+     "wrapsAround": "handlebar"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective logo print",
-    "logo": { "type": "screen_print", "location": "side" },
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
     "seams": "welded",
     "fabric": "Polyamide 73% / Polyester 27%, welded seams - see brand_notes.fabric (not Cordura)",
     "notes_unschematized": "Elastic cord criss-crossing the top of the bag for extra gear lash-up, visible in both photos; not modeled in the straps[] vocabulary."
    },
-
    "mount": {
-    "axes": { "len": "along_bar", "wid": "x", "hgt": "y" },
-    "attachesTo": ["handlebar"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_bar",
+     "wid": "x",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "handlebar"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "BOA Fit System dial tensions two strap arms directly against the bar - rigid once dialed in, no separate cage plate. Maker states it fits MTB through road bar diameters. No clearance figure published."
    },
-
-   "colorways": [ { "name": "Carbon Grey", "hex": "#54585c" } ],
-   "images": ["https://cdn.shopify.com/s/files/1/0927/0899/5336/files/102810121_HANDLEBAR_PACK_BOA_WP_5_dt00.jpg"]
+   "colorways": [
+    {
+     "name": "Carbon Grey",
+     "hex": "#54585c"
+    }
+   ],
+   "images": [
+    "https://cdn.shopify.com/s/files/1/0927/0899/5336/files/102810121_HANDLEBAR_PACK_BOA_WP_5_dt00.jpg"
+   ]
   },
-
   {
    "line": "Boa WP",
    "name": "EVOC Seat Pack Boa WP 6",
    "size": "6L",
    "slot": "seatpack",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -85,64 +102,92 @@
     "https://cdn.shopify.com/s/files/1/0927/0899/5336/files/100610121_SEAT_PACK_BOA_WP_6_dt01.jpg",
     "https://evocsports.com/products/seat-pack-boa-wp-6"
    ],
-
-   "dims_cm": { "len": 35, "wid": 14, "hgt": 14 },
+   "dims_cm": {
+    "len": 35,
+    "wid": 14,
+    "hgt": 14
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "evocsports.com: 'Measures 35 x 14 x 14 cm', volume 6L, weight 450g. No range given.",
    "dims_note": "Single fixed figures, no maker range. len=35 is nose-to-tail (matches the photo's clearly elongated wedge); wid/hgt (14/14) are equal in the maker's own figures even though the photographed cross-section is a flattened wedge, not round - taken at face value since there is no way to independently split them from the studio photo alone.",
    "capacity_l": 6,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "flat_bottom",
-    "taper": { "nose": 1.0, "tail": 0.5, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.5,
+     "profile": "linear"
+    },
     "shoulder": "squared",
     "notes": "Wedge tapering from a squared nose (rigid BOA rail-clamp bracket with a moulded rubber saddle-rail pad) back to a rolled, buckled tail. One wide webbing compression strap wraps the mid-body girth in addition to the rail clamp."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "tail",
     "hardware": "side-release buckle"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 1, "location": "nose_top", "hardware": "boa", "material": "plastic", "wrapsAround": "saddle_rails" },
-    { "role": "compression", "count": 1, "location": "girth", "hardware": "buckle", "material": "webbing" }
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "nose_top",
+     "hardware": "boa",
+     "material": "plastic",
+     "wrapsAround": "saddle_rails"
+    },
+    {
+     "role": "compression",
+     "count": 1,
+     "location": "girth",
+     "hardware": "buckle",
+     "material": "webbing"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective logo print",
-    "logo": { "type": "screen_print", "location": "side" },
+    "logo": {
+     "type": "screen_print",
+     "location": "side"
+    },
     "seams": "welded",
     "fabric": "Polyamide 73% / Polyester 27%, welded seams - see brand_notes.fabric (not Cordura)",
     "notes_unschematized": "Elastic bungee cord across the top of the nose for extra gear, visible in both photos; not modeled in straps[]. Soft rubber pad protects the saddle rails at the clamp."
    },
-
    "mount": {
-    "axes": { "len": "-x", "wid": "z", "hgt": "y" },
-    "attachesTo": ["saddle_rails"],
-    "contactFaces": ["nose_top"],
+    "axes": {
+     "len": "-x",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "saddle_rails"
+    ],
+    "contactFaces": [
+     "nose_top"
+    ],
     "sag_deg": 1,
     "notes": "BOA dial tensions the rail clamp directly (maker copy: 'quick-fix mounting'), so the nose holds rigid; the tail is only girth-strapped so it can sag marginally under a full load. No clearance figure published."
    },
-
-   "colorways": [ { "name": "Carbon Grey", "hex": "#54585c" } ],
-   "images": ["https://cdn.shopify.com/s/files/1/0927/0899/5336/files/100610121_SEAT_PACK_BOA_WP_6_dt00.jpg"]
+   "colorways": [
+    {
+     "name": "Carbon Grey",
+     "hex": "#54585c"
+    }
+   ],
+   "images": [
+    "https://cdn.shopify.com/s/files/1/0927/0899/5336/files/100610121_SEAT_PACK_BOA_WP_6_dt00.jpg"
+   ]
   },
-
   {
    "line": "Frame Pack WP Classic",
    "name": "EVOC Frame Pack WP",
    "size": "3.5L",
    "slot": "framebag_full",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "medium",
    "evidence": [
@@ -150,65 +195,97 @@
     "https://cdn.shopify.com/s/files/1/0534/2321/0695/products/721475-01_2.jpg",
     "https://evocsports.us/products/frame-pack-wp"
    ],
-
-   "dims_cm": { "len": 47.5, "wid": 5.5, "hgt": 15 },
+   "dims_cm": {
+    "len": 47.5,
+    "wid": 5.5,
+    "hgt": 15
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "evocsports.us: '15 x 47.5 x 5.5 cm'. Product is sold in two capacities, 1.5L and 3.5L, but the page gives only this one dims string - it is not clear whether it is shared across both sizes or is specific to one. Weight given separately per size (1.5L: 204g; 3.5L: 318g/295g depending on color).",
    "dims_note": "Mapped Width(47.5, fore-aft under the top tube) to len, Depth(5.5) to wid, Height(15) to hgt, matching the photographed half-moon panel proportions. Catalog entry states 3.5L so that capacity was kept, but I could not confirm from the page whether 47.5x5.5x15 is the 3.5L bag's own figure or a shared spec across both sizes - flagged rather than silently assumed.",
    "capacity_l": 3.5,
-
    "geometry": {
     "form": "trapezoid_panel",
     "crossSection": "d_shape",
     "notes": "Semi-rigid half-moon frame-triangle panel, flat/padded on the frame-facing side, gently domed on the outward face. A diagonal zip near the nose end (upper-left in the studio photo) opens a smaller pocket - maker copy describes 'two main compartments with partition' and 'a dedicated nutrition compartment' but the main-compartment opening mechanism itself is not clearly identifiable in the two photos available, so it is not asserted here."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "front",
     "hardware": "zip pull near the nose, matched to body color"
    },
-
    "zips": [
-    { "run": "front_panel", "finish": "matched" }
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "velcro", "wrapsAround": "top_tube" },
-    { "role": "attachment", "count": 2, "location": "front", "hardware": "velcro", "material": "velcro" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "velcro",
+     "wrapsAround": "top_tube"
+    },
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "front",
+     "hardware": "velcro",
+     "material": "velcro"
+    }
    ],
-
    "pockets": [
-    { "type": "stretch", "count": 1, "location": "side" }
+    {
+     "type": "stretch",
+     "count": 1,
+     "location": "side"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "front_panel" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_panel"
+    },
     "fabric": "140/500D Shantung with water-repellent P200D coating - an older-generation spec, distinct from the rest of this catalogue slice; see brand_notes.fabric",
     "notes_unschematized": "Maker calls this an 'Easy 5-Point Mounting System' - 3 top-rail velcro loops plus 2 more (nose and tail) accounts for the 5 points; 'included protective stickers prevent scratches' on the frame, not modeled."
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube", "down_tube"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube",
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Semi-rigid panel, holds its own shape once the 5-point velcro system is cinched. No clearance figure published."
    },
-
-   "colorways": [ { "name": "Carbon Grey", "hex": "#54585c" } ],
-   "images": ["https://cdn.shopify.com/s/files/1/0534/2321/0695/products/721475-01_1.jpg"]
+   "colorways": [
+    {
+     "name": "Carbon Grey",
+     "hex": "#54585c"
+    }
+   ],
+   "images": [
+    "https://cdn.shopify.com/s/files/1/0534/2321/0695/products/721475-01_1.jpg"
+   ]
   },
-
   {
    "line": "Multi Frame Pack WP",
    "name": "EVOC Multi Frame Pack WP",
    "size": "1.2L (M)",
    "slot": "framebag_half",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "low",
    "evidence": [
@@ -216,66 +293,96 @@
     "https://cdn.shopify.com/s/files/1/0927/0899/5336/files/102806121M_MULTI_FRAME_PACK_WP_dt01.jpg",
     "https://evocsports.com/products/multi-frame-pack-wp"
    ],
-
-   "dims_cm": { "len": 24.5, "wid": 5, "hgt": 11 },
+   "dims_cm": {
+    "len": 24.5,
+    "wid": 5,
+    "hgt": 11
+   },
    "dims_state": "unverified_catalog_carry_forward",
    "dims_raw": "This product is sold in S and M sizes on one page. I was able to directly confirm S from the page text: 'Measures 5 x 21 x 9.5 cm, Volume 0.8L, Weight 80g'. The M variant's dims/volume text is rendered client-side on size selection and did not appear in either a WebFetch or a raw curl of the page; Shopify's product.json confirmed M's weight as 100g (vs S's 80g) but carries no dimension metafield. The catalog's existing entry (this record) uses len 24.5 / wid 5 / hgt 11 cm at 1.2L for what would be the M size, which is plausible (scaling S's dims by the 80g->100g weight ratio lands close to those numbers) but is NOT a figure I re-read from the maker this pass.",
    "dims_note": "Carried forward unchanged from the existing catalog record per the 'do not invent' rule - I could not re-verify the M variant's dims from the maker this pass, only its weight. If a future pass finds the true M spec table, it should replace this.",
    "capacity_l": 1.2,
-
    "geometry": {
     "form": "trapezoid_panel",
     "crossSection": "d_shape",
     "notes": "Small semi-rigid half-moon panel, same family styling as the Frame Pack WP - front zip pocket, foam-backed flat frame-facing side. Photographed unit is unclear whether it is the S or M size (Shopify serves the same 'M' image set for both by default); geometry description should be treated as indicative for the line, not size-specific."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "front",
     "hardware": "matched-color zip with a small pull loop"
    },
-
    "zips": [
-    { "run": "front_panel", "finish": "matched" }
+    {
+     "run": "front_panel",
+     "finish": "matched"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 3, "location": "top", "hardware": "velcro", "material": "velcro" },
-    { "role": "attachment", "count": 1, "location": "side", "hardware": "velcro", "material": "velcro" }
+    {
+     "role": "attachment",
+     "count": 3,
+     "location": "top",
+     "hardware": "velcro",
+     "material": "velcro"
+    },
+    {
+     "role": "attachment",
+     "count": 1,
+     "location": "side",
+     "hardware": "velcro",
+     "material": "velcro"
+    }
    ],
-
    "pockets": [
-    { "type": "mesh", "count": 1, "location": "internal" }
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "internal"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
-    "logo": { "type": "screen_print", "location": "front_panel" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front_panel"
+    },
     "seams": "welded, waterproof zip",
     "fabric": "Polyamide 73% / Polyester 27%, welded seams - see brand_notes.fabric (not Cordura)",
     "notes_unschematized": "Velcro straps are cuttable-to-length and maker states they can be run vertically or horizontally on the frame for versatile mounting; transparent frame-protection strips included."
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "y"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 0,
     "notes": "Semi-rigid panel, velcro-only mount but holds shape. No clearance figure published."
    },
-
-   "colorways": [ { "name": "Carbon Grey", "hex": "#54585c" } ],
-   "images": ["https://cdn.shopify.com/s/files/1/0927/0899/5336/files/102806121M_MULTI_FRAME_PACK_WP_dt00.jpg"]
+   "colorways": [
+    {
+     "name": "Carbon Grey",
+     "hex": "#54585c"
+    }
+   ],
+   "images": [
+    "https://cdn.shopify.com/s/files/1/0927/0899/5336/files/102806121M_MULTI_FRAME_PACK_WP_dt00.jpg"
+   ]
   },
-
   {
    "line": "Top Tube Pack WP",
    "name": "EVOC Top Tube Pack WP",
    "size": "0.8L",
    "slot": "toptube",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -283,66 +390,95 @@
     "https://cdn.shopify.com/s/files/1/0927/0899/5336/files/102805121_TOP_TUBE_PACK_WP_dt01.jpg",
     "https://evocsports.com/products/top-tube-pack-wp"
    ],
-
-   "dims_cm": { "len": 20, "wid": 5, "hgt": 8.5 },
+   "dims_cm": {
+    "len": 20,
+    "wid": 5,
+    "hgt": 8.5
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "evocsports.com: 'Measures 20 x 8.5 x 5 cm', volume 0.8L, weight 90g. No range given.",
    "dims_note": "Single fixed figures, no maker range. len=20 (fore-aft along top tube), wid=5 (thickness), hgt=8.5 (top-to-bottom), matching the photographed wedge proportions.",
    "capacity_l": 0.8,
-
    "geometry": {
     "form": "tapered_wedge",
     "crossSection": "rounded_rect",
-    "taper": { "nose": 1.0, "tail": 0.85, "profile": "linear" },
+    "taper": {
+     "nose": 1,
+     "tail": 0.85,
+     "profile": "linear"
+    },
     "notes": "Small structured box, slightly taller at the nose than the tail. A raised welded storm-flap runs the length of the top ridge, covering the zip beneath it."
    },
-
    "closure": {
     "type": "zip_straight",
     "location": "top",
     "hardware": "one-handed pull with a cord loop tab; storm-flap over the zip"
    },
-
    "zips": [
-    { "run": "top_centre", "finish": "storm_flap" }
+    {
+     "run": "top_centre",
+     "finish": "storm_flap"
+    }
    ],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "underside", "hardware": "velcro", "material": "velcro", "wrapsAround": "top_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "underside",
+     "hardware": "velcro",
+     "material": "velcro",
+     "wrapsAround": "top_tube"
+    }
    ],
-
    "pockets": [
-    { "type": "mesh", "count": 1, "location": "internal" }
+    {
+     "type": "mesh",
+     "count": 1,
+     "location": "internal"
+    }
    ],
-
    "details": {
     "daisyChains": false,
     "reflective": "reflective logo print",
-    "logo": { "type": "screen_print", "location": "front" },
+    "logo": {
+     "type": "screen_print",
+     "location": "front"
+    },
     "seams": "welded, waterproof zip",
     "fabric": "Polyamide 73% / Polyester 27%, welded seams - see brand_notes.fabric (not Cordura)",
     "notes_unschematized": "Velcro straps are individually adjustable/cuttable; a bolt-on mount is also offered on frames with mounting bosses, not modeled as a separate mount option."
    },
-
    "mount": {
-    "axes": { "len": "along_toptube", "wid": "z", "hgt": "y" },
-    "attachesTo": ["top_tube"],
-    "contactFaces": ["underside"],
+    "axes": {
+     "len": "along_toptube",
+     "wid": "z",
+     "hgt": "perp_toptube"
+    },
+    "attachesTo": [
+     "top_tube"
+    ],
+    "contactFaces": [
+     "underside"
+    ],
     "sag_deg": 0,
     "notes": "Rigid structured box, no sag. No clearance figure published."
    },
-
-   "colorways": [ { "name": "Carbon Grey", "hex": "#54585c" } ],
-   "images": ["https://cdn.shopify.com/s/files/1/0927/0899/5336/files/102805121_TOP_TUBE_PACK_WP_dt00.jpg"]
+   "colorways": [
+    {
+     "name": "Carbon Grey",
+     "hex": "#54585c"
+    }
+   ],
+   "images": [
+    "https://cdn.shopify.com/s/files/1/0927/0899/5336/files/102805121_TOP_TUBE_PACK_WP_dt00.jpg"
+   ]
   },
-
   {
    "line": "Downtube Pack WP",
    "name": "EVOC Downtube Pack WP 1.2",
    "size": "1.2L",
    "slot": "downtube",
    "slot_should_be": null,
-
    "verified": true,
    "confidence": "high",
    "evidence": [
@@ -350,50 +486,67 @@
     "https://cdn.shopify.com/s/files/1/0534/2321/0695/files/102825100-DOWNTUBE-PACK-WP-1-2-dt05.jpg",
     "https://evocsports.us/products/downtube-pack-wp-frame-bag"
    ],
-
-   "dims_cm": { "len": 30, "wid": 8, "hgt": 7 },
+   "dims_cm": {
+    "len": 30,
+    "wid": 8,
+    "hgt": 7
+   },
    "dims_state": "maker_single_figure",
    "dims_raw": "evocsports.us: '2.8 x 11.8 x 3.1 inches (7 x 30 x 8 cm)', volume 1.2L, weight 70g. No range given.",
    "dims_note": "Single fixed figures, no maker range. len=30 (tube long axis along the down tube), wid=8/hgt=7 (near-round cross-section), matching the photographed cylindrical roll.",
    "capacity_l": 1.2,
-
    "geometry": {
     "form": "cylinder",
     "crossSection": "d_shape",
     "notes": "Soft rolltop fabric tube, the only genuinely floppy (non-structured) bag in this set - see brand_notes.rigid_soft. Two moulded rubber/TPU mounting pads with slotted strap channels sit along the top of the tube for the frame straps, flattening that face slightly against the down tube."
    },
-
    "closure": {
     "type": "rolltop",
     "location": "tail",
     "hardware": "side-release buckle; maker copy: 'tightens when partially filled to prevent rattling'"
    },
-
    "zips": [],
-
    "straps": [
-    { "role": "attachment", "count": 2, "location": "top", "hardware": "ladderlock", "material": "webbing", "wrapsAround": "down_tube" }
+    {
+     "role": "attachment",
+     "count": 2,
+     "location": "top",
+     "hardware": "ladderlock",
+     "material": "webbing",
+     "wrapsAround": "down_tube"
+    }
    ],
-
    "pockets": [],
-
    "details": {
     "daisyChains": false,
     "reflective": false,
     "fabric": "100% polyester, waterproof PU coating, PFAS-free - see brand_notes.fabric (not Cordura, not the Polyamide/Polyester blend used elsewhere in this catalogue slice)",
     "notes_unschematized": "Anti-slip backing pad under the mounting straps prevents sliding on rough terrain per maker copy; 'universal frame mounting, no bosses needed'."
    },
-
    "mount": {
-    "axes": { "len": "along_downtube", "wid": "z", "hgt": "x" },
-    "attachesTo": ["down_tube"],
-    "contactFaces": ["top"],
+    "axes": {
+     "len": "along_downtube",
+     "wid": "z",
+     "hgt": "x"
+    },
+    "attachesTo": [
+     "down_tube"
+    ],
+    "contactFaces": [
+     "top"
+    ],
     "sag_deg": 3,
     "notes": "Velcro/TPU strap mount only, no rigid dock - softest-mounted bag in this brand, can sag slightly more than the structured panel bags. No clearance figure published."
    },
-
-   "colorways": [ { "name": "Black", "hex": "#1c1c1e" } ],
-   "images": ["https://cdn.shopify.com/s/files/1/0534/2321/0695/files/102825100-DOWNTUBE-PACK-WP-1-2-dt04.jpg"]
+   "colorways": [
+    {
+     "name": "Black",
+     "hex": "#1c1c1e"
+    }
+   ],
+   "images": [
+    "https://cdn.shopify.com/s/files/1/0534/2321/0695/files/102825100-DOWNTUBE-PACK-WP-1-2-dt04.jpg"
+   ]
   }
  ]
 }
