@@ -16774,6 +16774,7 @@
      "form": "triangle_panel",
      "crossSection": "rounded_rect",
      "shoulder": "squared",
+     "belly": 0.82,
      "taper": {
       "nose": 0.33,
       "tail": 0.56,
@@ -16845,6 +16846,7 @@
      "form": "triangle_panel",
      "crossSection": "rounded_rect",
      "shoulder": "squared",
+     "belly": 0.82,
      "taper": {
       "nose": 0.33,
       "tail": 0.64,
@@ -16916,6 +16918,7 @@
      "form": "triangle_panel",
      "crossSection": "rounded_rect",
      "shoulder": "squared",
+     "belly": 0.82,
      "taper": {
       "nose": 0.34,
       "tail": 0.65,
@@ -16987,6 +16990,7 @@
      "form": "triangle_panel",
      "crossSection": "rounded_rect",
      "shoulder": "squared",
+     "belly": 0.82,
      "taper": {
       "nose": 0.42,
       "tail": 0.65,
@@ -17058,6 +17062,7 @@
      "form": "triangle_panel",
      "crossSection": "rounded_rect",
      "shoulder": "squared",
+     "belly": 0.82,
      "taper": {
       "nose": 0.48,
       "tail": 0.71,
@@ -17129,6 +17134,7 @@
      "form": "triangle_panel",
      "crossSection": "rounded_rect",
      "shoulder": "squared",
+     "belly": 0.82,
      "taper": {
       "nose": 0.46,
       "tail": 0.71,
@@ -17200,6 +17206,7 @@
      "form": "trapezoid_panel",
      "crossSection": "rounded_rect",
      "shoulder": "squared",
+     "belly": 0.82,
      "taper": {
       "nose": 0.33,
       "tail": 0.58,
@@ -17271,6 +17278,7 @@
      "form": "trapezoid_panel",
      "crossSection": "rounded_rect",
      "shoulder": "squared",
+     "belly": 0.82,
      "taper": {
       "nose": 0.33,
       "tail": 0.65,
@@ -17342,6 +17350,7 @@
      "form": "trapezoid_panel",
      "crossSection": "rounded_rect",
      "shoulder": "squared",
+     "belly": 0.82,
      "taper": {
       "nose": 0.34,
       "tail": 0.67,

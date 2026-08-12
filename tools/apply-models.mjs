@@ -131,6 +131,25 @@ function geometryFor(mp, label) {
   // dropped silently, the builder reads undefined, and the feature simply does
   // not appear — with no error anywhere. That cost two attempts to notice.
   if (typeof g.sleeve === 'boolean') out.sleeve = g.sleeve;
+  // WHERE ALONG ITS LENGTH the bag is deepest, as a fraction from the mounting
+  // end — 0.5 is mid-length. Added 12 Aug for framebag_half, where it decides
+  // the whole silhouette and nothing could say it.
+  //
+  // framehalf.js derives the belly from the bike: the lower-front edge lies on
+  // the down tube, so the deepest point is wherever that edge has got `hgt`
+  // deep. That is measurably true of Apidura, whose six drawings it reproduces
+  // to within 5%. It is false of Tailfin, whose frame packs stand clear of the
+  // down tube along all but the forward 15-20% and are deepest at 0.82 — and
+  // the builder's own header says the belly "is not in the records and must
+  // not be". That was right while one family was the only evidence and is
+  // wrong now, which is what a second well-documented brand is for.
+  //
+  // Absent means "derive it", so no existing product changes.
+  const belly = num(g.belly);
+  if (belly !== null) {
+    if (belly > 0.05 && belly < 0.95) out.belly = belly;
+    else offVocab.push(`${label}: geometry.belly = ${g.belly} (want a fraction in (0.05, 0.95))`);
+  }
   const t = g.taper;
   if (t && typeof t === 'object') {
     const nose = num(t.nose), tail = num(t.tail);

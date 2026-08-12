@@ -384,7 +384,34 @@ export function buildFrameHalf(p, brand, main, accent, ctx) {
   const wantRun = dtDrop > 0.05 ? (h - noseD) / dtDrop : 0;
   const maxRun = dtRun > 0.05 ? Math.max(0, (runLen - 14) / dtRun) : 0;
   const bellyRun = Math.min(wantRun, maxRun);
-  const belly = noseBot.clone().addScaledVector(dtBack, bellyRun);
+  // WHERE THE BELLY SITS. The header above says this "is not in the records and
+  // must not be: it falls out of the frame", and for Apidura that is measurably
+  // true — the derivation below reproduces all six of their drawings to within
+  // 5%. It is true because an Apidura half pack's lower-front edge LIES ON the
+  // down tube, so the deepest point is simply where that edge has got `hgt`
+  // deep, and the frame supplies the angle.
+  //
+  // Tailfin's do not lie on the down tube. Their nine two-view drawings show a
+  // tall blunt REAR face at the seat tube, a lower edge falling only ~9 degrees
+  // forward, the deepest point at 0.82 of the length, then a steep ~40 degree
+  // climb to a shallow front face — and only the forward 15-20% of that lower
+  // edge touches the tube at all, which is what keeps the bottle cages usable.
+  // Derive the belly from the frame for that bag and you get the wrong object.
+  //
+  // So the rule stands with one amendment: derive it, UNLESS the record has
+  // measured it. `geometry.belly` is a fraction of the length from the
+  // SEAT-TUBE end. Absent on every product but Tailfin's nine, so the Apidura
+  // derivation is untouched — this widens the vocabulary rather than replacing
+  // the rule, which is the difference between a fix and a brand leak.
+  const bellyFrac = Number.isFinite(geom.belly) ? geom.belly : null;
+  const belly = bellyFrac === null
+    ? noseBot.clone().addScaledVector(dtBack, bellyRun)
+    // Measured: the deepest point sits `bellyFrac` along the top edge and the
+    // full depth `h` below it. Clamped inside the two bottom corners so the
+    // outline stays convex-walkable however the record is written.
+    : rearTop.clone()
+        .addScaledVector(ttDir, runLen * Math.min(Math.max(bellyFrac, 0.06), 0.94))
+        .addScaledVector(down, h);
 
   // Walk the outline: forward along the top tube, down the nose face, back along
   // the down-tube edge to the belly, back along the lower-rear edge, up the

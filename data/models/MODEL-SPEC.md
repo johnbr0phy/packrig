@@ -96,8 +96,28 @@ from it, so the decision is auditable instead of invisible.
 Never edit `dims_cm` to make the render come out right. The two fields exist so
 that honest data and correct drawing do not have to fight each other.
 
+### `geometry.belly` — where along its length the bag is deepest
+
+A fraction from the MOUNTING end: 0.5 is mid-length, 0.82 is four-fifths of the
+way toward the far end. Omit it unless you have measured it off a drawing or a
+square-on photograph.
+
+**Omitting it is not the same as writing 0.5.** A builder that has no `belly`
+derives the position from the bike, which is the right answer for any bag whose
+lower edge rests on a tube — an Apidura half frame pack's belly is simply where
+its down-tube edge has got `hgt` deep, and that derivation reproduces all six of
+their drawings to within 5%. Writing a number turns that off. Only do it when
+the bag does NOT follow the tube: Tailfin's frame packs stand clear of the down
+tube along all but their forward 15-20% and are deepest at 0.82, so deriving
+gives the wrong object for them and the right one for Apidura.
+
+Read as `geomOf(p).belly`, which is `null` when unmeasured.
+
 **Tapered axes:** put the LARGER value in `dims_cm` and describe the taper in
-the `geometry.taper` block, which is what actually shapes the mesh.
+the `geometry.taper` block, which is what actually shapes the mesh — literally,
+since 8 Aug: `nose` and `tail` are read as a ratio and drive the builder's taper
+directly, replacing a `vr.range()` guess. Both must be in `(0, 1]` with `tail`
+no larger than `nose`, or `apply-models.mjs` drops the block and says so.
 
 **Pair vs single:** pannier and fork-bag volumes are often quoted for the pair.
 `capacity_l` is always the SINGLE bag. Keep the page's phrasing in `dims_raw`.
@@ -220,6 +240,20 @@ guesses. An empty `zips: []` means "I looked and there are none"; a missing
 Stick to these. A builder can only render what it recognises. If nothing fits,
 use the closest term and explain in `geometry.notes`.
 
+**`details.structure_class`** — `soft` · `semi` · `rigid`. **Write this.** It is
+the one field the builders read directly to decide whether a bag deforms, and
+until 8 Aug it did not exist, so 131 records described rigidity only in prose,
+spread across `details.stiffener`, `details.rigid_structure`, `geometry.notes`
+and `mount.notes`. `tools/lib/stiffness.mjs` now bootstraps a value out of that
+prose, and where you set `structure_class` it uses yours verbatim instead.
+
+Judge the **bag body**, not the mounting hardware. This is the distinction the
+classifier most often has to make and the one reviewers most often blur: Thule's
+Shield pannier bolts to a rigid moulded rail and is itself a limp welded
+tarpaulin sack — `soft`. Use `semi` for a bag that holds a shape but still gives
+(foam-backed panels, an HDPE frame sheet, a welded self-supporting shell), and
+`rigid` only for a body that does not deform at all.
+
 **`geometry.form`** — `tapered_wedge` · `horseshoe` · `cylinder` ·
 `truncated_cylinder` · `box` · `rounded_box` · `halfmoon` · `teardrop` ·
 `trapezoid_panel` · `triangle_panel` · `slab` · `holster` · `cage_pack` ·
@@ -251,7 +285,18 @@ use the closest term and explain in `geometry.notes`.
 `+x` = toward the FRONT wheel, `-x` = toward the REAR wheel, `+y` = up,
 `-y` = down, `+z` / `-z` = out to the drive / non-drive side.
 Use `along_downtube`, `along_toptube`, `along_seattube`, `along_forkleg`,
-`along_bar` where the axis follows a tube rather than a world direction.
+`along_bar` where the axis follows a tube rather than a world direction, and
+`perp_downtube`, `perp_toptube`, `perp_seattube`, `perp_forkleg` for the axis
+that stands OFF that tube — how far the bag hangs away from it.
+
+The `perp_` names matter more than they look. A bag on a raked tube has no axis
+on a world direction at all: the down tube sits at about 46 degrees, so a pack
+strapped under it has its length and its depth both split across world x and y.
+Writing `hgt: "y"` for such a bag, which is what these records did for want of
+anything better, tells the size gate to measure `0.724 x length + 0.690 x depth`
+and call the answer the height. That reported the Apidura down tube packs as
+"+147% too tall" for five rounds of fixes, on bags whose depth is within 6% of
+published, while hiding the real fault: they are 22-33% too SHORT.
 
 ---
 

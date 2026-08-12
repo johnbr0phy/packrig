@@ -54,6 +54,101 @@ export function featuresOf(p) {
   };
 }
 
+/**
+ * Normalised measured-geometry block; every field is safe to read before the
+ * data lands, and every field is `null` when the record says nothing.
+ *
+ * This is the half of `data/models/*.json` the builders were missing. 697 of
+ * 702 products carry a `geometry` block written from product photos — the
+ * silhouette family, the cross-section, whether the shoulder is squared or
+ * rounded, and a measured nose→tail taper — and until `apply-models.mjs`
+ * started merging it, every builder invented all of it with `vr.range()`.
+ * BUILDER-BRIEF §4: variation must be driven by the data.
+ *
+ * **A null is not a licence to guess wildly.** Fall back to the same narrow
+ * `vr.range()` you would have used, so an unmeasured product still varies
+ * deterministically — but where `taperRatio` exists, use it.
+ */
+export function geomOf(p) {
+  const g = (p && p.geometry) || {};
+  const t = g.taper && typeof g.taper === 'object' ? g.taper : null;
+  const nose = Number.isFinite(t?.nose) && t.nose > 0 ? t.nose : null;
+  const tail = Number.isFinite(t?.tail) && t.tail > 0 ? t.tail : null;
+  return {
+    form: g.form || null,
+    crossSection: g.crossSection || null,
+    shoulder: g.shoulder || null,
+    profile: t?.profile || null,
+    /**
+     * Where along its length the bag is DEEPEST, as a fraction from the
+     * mounting end. `null` where unmeasured, which is nearly everywhere — and
+     * null means "derive it from the bike", not "assume the middle".
+     *
+     * Only framebag_half reads it today. See the note there: the belly falls
+     * out of the frame for a bag whose lower edge lies on the down tube, and
+     * does not for one that stands clear of it.
+     */
+    belly: Number.isFinite(g.belly) && g.belly > 0 && g.belly < 1 ? g.belly : null,
+    /**
+     * The NARROW end as a fraction of the wide end, always in (0, 1]. Ratio,
+     * never absolute, so it survives a dimension correction underneath it.
+     * 1 means no taper — a barrel — which is a real answer, not a missing one.
+     *
+     * Read it with `taperNarrowEnd`: reviewers do not agree on which end of a
+     * bag is its "nose". Seat pack records overwhelmingly write nose 1.0 →
+     * tail 0.33, but 13 of the 24 saddlebags and 4 seat packs write it the
+     * other way round — Ortlieb's Saddle-Bag is nose 0.45 → tail 1.0, meaning
+     * the end under the saddle nose is the pinched one. An earlier version of
+     * this helper returned `min(tail / nose, 1)`, which silently reported
+     * "no taper" for every one of those.
+     */
+    taperRatio: nose !== null && tail !== null ? Math.min(nose, tail) / Math.max(nose, tail) : null,
+    /** Which end `taperRatio` describes: 'tail' | 'nose' | 'none' | null. */
+    taperNarrowEnd: nose === null || tail === null ? null
+      : tail < nose ? 'tail' : tail > nose ? 'nose' : 'none',
+  };
+}
+
+/**
+ * Which world direction each catalogue axis points, from the record's
+ * `mount.axes`. `null` where unrecorded — 697 of 702 products have it.
+ *
+ * BUILDER-BRIEF Rule 2: `p.mm.len`/`wid`/`hgt` do not mean the same world axis
+ * in every slot, and three separate builders have shipped a 90-degree
+ * transposition by assuming they do. The block that settles it per product is
+ * this one, and until 8 Aug no builder could see it.
+ *
+ * `alongTube` is true for the `along_*` values, which name a tube rather than a
+ * direction; the builder has to resolve those against the bike itself.
+ */
+export function axesOf(p) {
+  const a = (p && p.axes) || {};
+  const one = (v) => (typeof v === 'string' && v ? v : null);
+  return {
+    len: one(a.len),
+    wid: one(a.wid),
+    hgt: one(a.hgt),
+    /** true when this axis runs fore-aft in the frame plane (±x). */
+    isForeAft: (k) => /^[-+]?x$/.test(String(a[k] ?? '')),
+    /** true when this axis runs across the bike (±z). */
+    isAcross: (k) => /^[-+]?z$/.test(String(a[k] ?? '')),
+    alongTube: (k) => /^along_/.test(String(a[k] ?? '')),
+  };
+}
+
+/**
+ * `soft` | `semi` | `rigid` — how much the shell should deform.
+ *
+ * Ortlieb's stiffened back plate, Tailfin's carbon space frame and Topeak's
+ * moulded shells are not sacks, and rendering them with the same pillow bulge
+ * as a Cordura drybag is the difference BUILDER-BRIEF §4 calls "structure".
+ * Absent means soft, which is what every builder assumed before this existed.
+ */
+export function stiffnessOf(p) {
+  const s = p && p.structure;
+  return s === 'rigid' || s === 'semi' ? s : 'soft';
+}
+
 /** Resolve body/accent colours: colorways win, product.colors is the fallback. */
 const hexToInt = (h) => (typeof h === 'number' ? h : parseInt(String(h).replace('#', ''), 16));
 
