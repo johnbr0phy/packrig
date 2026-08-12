@@ -3591,7 +3591,8 @@
           "profile": "linear"
         },
         "notes": "Tailfin's own word is teardrop, and it reads that way in profile: a tall blunt vertical front face against the stem, a domed top that sweeps down and back, and a low rounded tail. Seen from above it is a narrow lens - 65mm at the top ridge pinching to 48mm at the footbed - which is what keeps it clear of the knees. Nose = the front end at the stem, tail = the rear end. The smallest and slimmest of the three; the only one offered as Zip only.",
-        "shoulder": "rounded"
+        "shoulder": "rounded",
+        "topLine": "continuous"
       },
       "closure": {
         "type": "zip_straight",
@@ -3690,7 +3691,8 @@
           "profile": "linear"
         },
         "notes": "Same teardrop as the 0.8L, one size up and fuller - tall blunt front face at the stem, domed top sweeping down and back, low rounded tail, lens-shaped in plan. This size is offered with either a Zip lid or a Flip lid, which changes the top of the model: the Zip is a plain domed top with a single fore-aft zip, the Flip is a hinged lid that lifts from the rear with a wider sealed rim.",
-        "shoulder": "rounded"
+        "shoulder": "rounded",
+        "topLine": "continuous"
       },
       "closure": {
         "type": "zip_straight",
@@ -3789,7 +3791,8 @@
           "profile": "linear"
         },
         "notes": "Largest of the three and the MTB-oriented one: same teardrop but visibly fatter at 90mm wide. Tall blunt front face at the stem, domed top sweeping down and back, low rounded tail. Available Zip or Flip - the Flip replaces the top zip with a hinged rear-opening lid.",
-        "shoulder": "rounded"
+        "shoulder": "rounded",
+        "topLine": "continuous"
       },
       "closure": {
         "type": "zip_straight",
@@ -3888,7 +3891,8 @@
           "profile": "linear"
         },
         "notes": "A long low blade lying along the top tube, roughly four times longer than it is tall. The TALL end (85mm) is at the FRONT next to the stem; the body sweeps down in a long straight line to a low pointed tail (50mm) near the seat tube. Narrow in plan so it sits between the knees. A moulded rib runs the full length of each side and the whole shell is 3D-welded and self-supporting - Tailfin state it needs no front stabilising strap. PROFILE, diagnosed 12 Aug and NOT yet drawn. The taper IS reaching the builder - toptube.js reads geomOf(p).taperRatio and this record's 0.59 arrives intact - so 'no taper' is the wrong description of the fault. What is wrong is the SHAPE the taper is spent on. toptube.js builds the profile its header documents measuring off five Apidura elevations: 'a rear END FACE raked steeply back up from the base, then a straight CHAMFER over the rear-upper corner, then a DEAD FLAT top over the front', with the flat starting around 0.4 of the length. Tailfin's Long Top Tube Bag does not do that - the maker publishes a CONTINUOUS fall over the whole length (115 MM to 68 MM on this size), which is the 'teardrop design' the range is sold on. So the bag is drawn full-depth over its front two thirds and does all its tapering in the back third. Same class of fault as the frame bag belly: an Apidura-measured profile applied to a brand that is not shaped that way, and the fix is the same kind - a record-stated profile family, not a branch on a brand name.",
-        "shoulder": "rounded"
+        "shoulder": "rounded",
+        "topLine": "continuous"
       },
       "closure": {
         "type": "zip_straight",
@@ -3986,7 +3990,8 @@
           "profile": "linear"
         },
         "notes": "Long low blade along the top tube. Tall end (105mm) forward at the stem, sweeping down in a straight line to a low pointed tail (65mm) at the seat tube. Narrow in plan, moulded rib down each side, self-supporting welded shell. PROFILE, diagnosed 12 Aug and NOT yet drawn. The taper IS reaching the builder - toptube.js reads geomOf(p).taperRatio and this record's 0.59 arrives intact - so 'no taper' is the wrong description of the fault. What is wrong is the SHAPE the taper is spent on. toptube.js builds the profile its header documents measuring off five Apidura elevations: 'a rear END FACE raked steeply back up from the base, then a straight CHAMFER over the rear-upper corner, then a DEAD FLAT top over the front', with the flat starting around 0.4 of the length. Tailfin's Long Top Tube Bag does not do that - the maker publishes a CONTINUOUS fall over the whole length (115 MM to 68 MM on this size), which is the 'teardrop design' the range is sold on. So the bag is drawn full-depth over its front two thirds and does all its tapering in the back third. Same class of fault as the frame bag belly: an Apidura-measured profile applied to a brand that is not shaped that way, and the fix is the same kind - a record-stated profile family, not a branch on a brand name.",
-        "shoulder": "rounded"
+        "shoulder": "rounded",
+        "topLine": "continuous"
       },
       "closure": {
         "type": "zip_straight",
@@ -4084,7 +4089,8 @@
           "profile": "linear"
         },
         "notes": "Longest of the three at half a metre. Tall end (115mm) forward at the stem, sweeping down to a low pointed tail (68mm). Narrow in plan, moulded rib down each side, self-supporting welded shell. PROFILE, diagnosed 12 Aug and NOT yet drawn. The taper IS reaching the builder - toptube.js reads geomOf(p).taperRatio and this record's 0.59 arrives intact - so 'no taper' is the wrong description of the fault. What is wrong is the SHAPE the taper is spent on. toptube.js builds the profile its header documents measuring off five Apidura elevations: 'a rear END FACE raked steeply back up from the base, then a straight CHAMFER over the rear-upper corner, then a DEAD FLAT top over the front', with the flat starting around 0.4 of the length. Tailfin's Long Top Tube Bag does not do that - the maker publishes a CONTINUOUS fall over the whole length (115 MM to 68 MM on this size), which is the 'teardrop design' the range is sold on. So the bag is drawn full-depth over its front two thirds and does all its tapering in the back third. Same class of fault as the frame bag belly: an Apidura-measured profile applied to a brand that is not shaped that way, and the fix is the same kind - a record-stated profile family, not a branch on a brand name.",
-        "shoulder": "rounded"
+        "shoulder": "rounded",
+        "topLine": "continuous"
       },
       "closure": {
         "type": "zip_straight",

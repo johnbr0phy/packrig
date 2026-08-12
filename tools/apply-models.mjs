@@ -72,6 +72,10 @@ const FORMS = new Set(['tapered_wedge', 'horseshoe', 'cylinder', 'truncated_cyli
 const SECTIONS = new Set(['round', 'oval', 'rounded_rect', 'd_shape', 'flat_bottom', 'flat_back', 'teardrop']);
 const SHOULDERS = new Set(['squared', 'rounded', 'none', 'pointed', 'chamfered']);
 const PROFILES = new Set(['linear', 'concave', 'convex', 'curved']);
+// geometry.topLine — deliberately NOT reusing PROFILES, which describes the
+// curve of a taper between two ends. This names which shape family the top
+// edge belongs to, which is a different question with a different answer.
+const TOP_LINES = new Set(['stepped', 'continuous']);
 // mount.axes vocabulary, MODEL-SPEC "Axis convention". The `along_*` values name
 // a tube rather than a world direction; they are carried through verbatim and it
 // is the builder's job to resolve them against the bike.
@@ -145,6 +149,9 @@ function geometryFor(mp, label) {
   // wrong now, which is what a second well-documented brand is for.
   //
   // Absent means "derive it", so no existing product changes.
+  // How the top line runs, for a slot whose builder has more than one profile
+  // family. Same reasoning as `belly`: absent means the builder's own default.
+  take('topLine', TOP_LINES, g.topLine);
   const belly = num(g.belly);
   if (belly !== null) {
     if (belly > 0.05 && belly < 0.95) out.belly = belly;

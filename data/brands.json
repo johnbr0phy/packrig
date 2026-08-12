@@ -17543,6 +17543,7 @@
      "form": "teardrop",
      "crossSection": "teardrop",
      "shoulder": "rounded",
+     "topLine": "continuous",
      "taper": {
       "nose": 1,
       "tail": 0.55,
@@ -17607,6 +17608,7 @@
      "form": "teardrop",
      "crossSection": "teardrop",
      "shoulder": "rounded",
+     "topLine": "continuous",
      "taper": {
       "nose": 1,
       "tail": 0.55,
@@ -17671,6 +17673,7 @@
      "form": "teardrop",
      "crossSection": "teardrop",
      "shoulder": "rounded",
+     "topLine": "continuous",
      "taper": {
       "nose": 1,
       "tail": 0.55,
@@ -17735,6 +17738,7 @@
      "form": "slab",
      "crossSection": "teardrop",
      "shoulder": "rounded",
+     "topLine": "continuous",
      "taper": {
       "nose": 1,
       "tail": 0.59,
@@ -17799,6 +17803,7 @@
      "form": "slab",
      "crossSection": "teardrop",
      "shoulder": "rounded",
+     "topLine": "continuous",
      "taper": {
       "nose": 1,
       "tail": 0.62,
@@ -17863,6 +17868,7 @@
      "form": "slab",
      "crossSection": "teardrop",
      "shoulder": "rounded",
+     "topLine": "continuous",
      "taper": {
       "nose": 1,
       "tail": 0.59,
