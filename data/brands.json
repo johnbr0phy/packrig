@@ -16261,9 +16261,9 @@
      "basis": "maker publishes a width RANGE of 290-445mm, so render.len_cm is the MINIMUM (290mm) exactly as the spec does for a height range. dims_cm.len is the 445mm unfurled max and must not be drawn on a drop bar: on top of the min/max range, WaveLock pulls each end in a further <=35mm to clear the hoods. Confirmed rolled short in assets/products/tailfin/bar-system-bar-bag-system-drop-bar-small-9-1l-1.jpg."
     },
     "geometry": {
-     "form": "cylinder",
-     "crossSection": "round",
-     "shoulder": "rounded"
+     "form": "rounded_box",
+     "crossSection": "flat_back",
+     "shoulder": "squared"
     },
     "closure": {
      "type": "rolltop",
@@ -16335,9 +16335,9 @@
      "basis": "maker range 335-460mm; render.len_cm is the minimum 335mm. dims_cm.len is the 460mm unfurled max. WaveLock draws each end in a further <=35mm on drop bars. See assets/products/tailfin/bar-system-bar-bag-system-drop-bar-large-12-5l-1.jpg."
     },
     "geometry": {
-     "form": "cylinder",
-     "crossSection": "round",
-     "shoulder": "rounded"
+     "form": "rounded_box",
+     "crossSection": "flat_back",
+     "shoulder": "squared"
     },
     "closure": {
      "type": "rolltop",
@@ -16409,9 +16409,9 @@
      "basis": "maker range 420-650mm; render.len_cm is the minimum 420mm. dims_cm.len is the 650mm unfurled max. Flat-bar ends buckle rather than WaveLock, so there is no extra inward fold. See assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-small-14-9l-1.jpg."
     },
     "geometry": {
-     "form": "cylinder",
-     "crossSection": "round",
-     "shoulder": "rounded"
+     "form": "rounded_box",
+     "crossSection": "flat_back",
+     "shoulder": "squared"
     },
     "closure": {
      "type": "rolltop",
@@ -16483,9 +16483,9 @@
      "basis": "maker range 480-720mm; render.len_cm is the minimum 480mm. dims_cm.len is the 720mm unfurled max, which is the widest bag in the catalogue and unusable on a drop bar. See assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-large-18-9l-1.jpg."
     },
     "geometry": {
-     "form": "cylinder",
-     "crossSection": "round",
-     "shoulder": "rounded"
+     "form": "rounded_box",
+     "crossSection": "flat_back",
+     "shoulder": "squared"
     },
     "closure": {
      "type": "rolltop",

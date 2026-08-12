@@ -11,7 +11,8 @@
     "SCHEMA EXTENSION NEEDING RATIFICATION: the spec's `render` block only offers `hgt_cm`, but on Tailfin's bar rolls and downtube packs the variable axis is LENGTH, not height - they roll at the ends or at the top of a pack lying along a tube. Drawing dims_cm.len for the MTB Large bar bag would put a 72cm bag on the bars, which is the same category of error the CargoPack's 42cm height was. Those 9 products therefore carry `render.len_cm` instead of `render.hgt_cm`, populated by the same rule (minimum of the published range where one exists). If the builder only reads `hgt_cm` these 9 will still render at their unfurled length - please confirm whether `len_cm` should be adopted spec-wide.",
     "`proprietary_mount` added to all 39 products: a string naming the Tailfin-only hardware required, or `false` for genuinely universal products. 20 need Tailfin hardware, 19 do not. This is deliberately separate from `fits`, which stays reserved for the spec's four values and is set to `rack_only` only on the 6 products that actually need a rack. Fork Packs, Cage Packs and Bar Cage Bags use proprietary Tailfin mounts but are NOT rack-mounted and DO fit a 56cm drop-bar gravel bike that has the relevant bosses, so tagging them `rack_only` would be wrong.",
     "Frame bags: Tailfin publish no per-size fit chart at all - they replaced it with a machine-learning sizing web app. The one linear figure that exists for the range is that the nine models suit bike sizes 47-61 cm; it is now in every frame bag's dims_note. The design notes also revealed an internal size-specific CARBON SPACE FRAME (two rods along the top edge and under the zip, user-removable), which is what the visible rib in the studio photos is - now in every frame bag's details.rigid_structure.",
-    "ROUND 1 (11 Aug, cross-brand gauntlet): the assertion in these notes that Tailfin publishes no linear dimensions for the frame bags, fork packs, cage packs, downtube packs and rear top tube bags is WRONG, and it was wrong because the evidence had never been fetched. assets/products/tailfin/ held 37 distinct images; tools/harvest-brand.mjs now holds 485 plus 22 rasterised sizing PDFs, and every one of the 16 product pages carries a labelled dimension drawing. Records corrected against those drawings this round: 2 downtube packs, 2 fork packs, 3 cage packs. VOCABULARY GAP recorded rather than fudged: the panniers and fork packs taper at different rates on their two section axes and geometry.taper carries one ratio, so the pair is in geometry.notes and the mean is in the field."
+    "ROUND 1 (11 Aug, cross-brand gauntlet): the assertion in these notes that Tailfin publishes no linear dimensions for the frame bags, fork packs, cage packs, downtube packs and rear top tube bags is WRONG, and it was wrong because the evidence had never been fetched. assets/products/tailfin/ held 37 distinct images; tools/harvest-brand.mjs now holds 485 plus 22 rasterised sizing PDFs, and every one of the 16 product pages carries a labelled dimension drawing. Records corrected against those drawings this round: 2 downtube packs, 2 fork packs, 3 cage packs. VOCABULARY GAP recorded rather than fudged: the panniers and fork packs taper at different rates on their two section axes and geometry.taper carries one ratio, so the pair is in geometry.notes and the mean is in the field.",
+    "ROUND 1 layer-C list, for whoever ratifies vocabulary: (1) geometry.crossSection cannot say 'flat on the top and the front', which is the Bar Bag System's whole silhouette. (2) geometry.taper carries one ratio where the panniers and fork packs measurably taper at different rates on their two section axes. (3) There is no way to require a HANDLEBAR TYPE, so the two MTB Flat Bar SKUs and the 11L/15L Bar Cage Bags render on a drop bar the maker says they do not fit. (4) Rack-mounted SKUs have no per-brand rack asset, so Tailfin's thru-axle carbon arch is drawn as a generic wire pannier rack."
   ],
   "products": [
     {
@@ -1525,6 +1526,7 @@
       "verified": true,
       "confidence": "high",
       "evidence": [
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-6.jpg",
         "assets/products/tailfin/bar-system-bar-bag-system-drop-bar-small-9-1l-1.jpg",
         "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
       ],
@@ -1539,10 +1541,10 @@
       "dims_note": "MATERIAL CHANGE: len was 33.6 (a min+0.3*range interpolation). The new rule takes the UNFURLED figure for the horizontal axes, so len is now the published MAX width of 445mm. Diameter 160mm is a maker figure and fixes both wid and hgt. IMPORTANT CAVEAT for the builder: on drop bars Tailfin's WaveLock closure pulls each end IN by up to 35mm to keep the hoods clear, so the width actually presented at the bar is roughly 445 - 70 = 375mm. Draw 44.5 as the fabric extent, but check hood clearance against ~37.5cm.",
       "capacity_l": 9.1,
       "geometry": {
-        "form": "cylinder",
-        "crossSection": "round",
-        "notes": "A horizontal drybag held forward of the bar on a rigid clamp harness. Round in section, near-constant diameter along its length, with both ends gathered into vertical rolls that fold inward. The front face carries a flat moulded panel and is the visible 'face' of the bag; the rear face is flattened where it presses against the harness.",
-        "shoulder": "rounded"
+        "form": "rounded_box",
+        "crossSection": "flat_back",
+        "notes": "A horizontal drybag held forward of the bar on a rigid clamp harness. Round in section, near-constant diameter along its length, with both ends gathered into vertical rolls that fold inward. The front face carries a flat moulded panel and is the visible 'face' of the bag; the rear face is flattened where it presses against the harness. MEASURED SECTION, correcting this record's own 'cylinder'/'round'. The front elevations on the bar bag page (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-6.jpg and its 38/42/48 cm siblings, each printed with a handlebar-width scale bar) show a squared bag with a FLAT TOP DECK carrying a row of moulded ladder-strap keepers along its front edge, a flat near-vertical front panel with a grab handle, and squared lower corners. It is not a barrel. Only the ends round off, and that is the WaveLock cone drawing them inboard. The Bar Cage Bag is a different object and IS a round dry bag - its records are deliberately left at 'round'. VOCABULARY GAP: crossSection has no term for 'flat on the top and the front'; 'flat_back' is the closest value barroll.js will act on and it buys the flat panel, but the flat top deck - which is what the strap keepers are moulded into - cannot be said at all.",
+        "shoulder": "squared"
       },
       "closure": {
         "type": "rolltop",
@@ -1636,6 +1638,7 @@
       "verified": true,
       "confidence": "high",
       "evidence": [
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-6.jpg",
         "assets/products/tailfin/bar-system-bar-bag-system-drop-bar-large-12-5l-1.jpg",
         "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
       ],
@@ -1650,10 +1653,10 @@
       "dims_note": "MATERIAL CHANGE: len was 37.2 (an interpolation). New rule takes the UNFURLED max width, 460mm. Diameter 180mm is a maker figure and fixes wid and hgt. WaveLock draws each end in by up to 35mm on drop bars, so the effective width at the bar is roughly 39cm.",
       "capacity_l": 12.5,
       "geometry": {
-        "form": "cylinder",
-        "crossSection": "round",
-        "notes": "Same silhouette as the Small, one diameter step up. Horizontal drybag on a rigid clamp harness, round section, both ends rolled and folded inward, flat moulded panel on the front face, flattened rear face against the harness.",
-        "shoulder": "rounded"
+        "form": "rounded_box",
+        "crossSection": "flat_back",
+        "notes": "Same silhouette as the Small, one diameter step up. Horizontal drybag on a rigid clamp harness, round section, both ends rolled and folded inward, flat moulded panel on the front face, flattened rear face against the harness. MEASURED SECTION, correcting this record's own 'cylinder'/'round'. The front elevations on the bar bag page (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-6.jpg and its 38/42/48 cm siblings, each printed with a handlebar-width scale bar) show a squared bag with a FLAT TOP DECK carrying a row of moulded ladder-strap keepers along its front edge, a flat near-vertical front panel with a grab handle, and squared lower corners. It is not a barrel. Only the ends round off, and that is the WaveLock cone drawing them inboard. The Bar Cage Bag is a different object and IS a round dry bag - its records are deliberately left at 'round'. VOCABULARY GAP: crossSection has no term for 'flat on the top and the front'; 'flat_back' is the closest value barroll.js will act on and it buys the flat panel, but the flat top deck - which is what the strap keepers are moulded into - cannot be said at all.",
+        "shoulder": "squared"
       },
       "closure": {
         "type": "rolltop",
@@ -1747,6 +1750,7 @@
       "verified": true,
       "confidence": "high",
       "evidence": [
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-6.jpg",
         "assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-small-14-9l-1.jpg",
         "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
       ],
@@ -1761,10 +1765,10 @@
       "dims_note": "MATERIAL CHANGE: len was 48.9 (an interpolation). New rule takes the UNFURLED max width, 650mm - this is the flat-bar version and 65cm across a flat bar is realistic. Diameter 160mm is a maker figure. Note the true capacity is 14.7L, not the 14.9L in the product title. On flat bars the ends close with side-release buckles rather than WaveLock, so there is no inward fold and the full 65cm is presented.",
       "capacity_l": 14.7,
       "geometry": {
-        "form": "cylinder",
-        "crossSection": "round",
-        "notes": "A long horizontal drybag on a rigid clamp harness - much longer than the drop-bar version at the same 160mm diameter, so it reads as a slender tube. Ends roll three times and are buckled shut rather than folded inward.",
-        "shoulder": "rounded"
+        "form": "rounded_box",
+        "crossSection": "flat_back",
+        "notes": "A long horizontal drybag on a rigid clamp harness - much longer than the drop-bar version at the same 160mm diameter, so it reads as a slender tube. Ends roll three times and are buckled shut rather than folded inward. MEASURED SECTION, correcting this record's own 'cylinder'/'round'. The front elevations on the bar bag page (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-6.jpg and its 38/42/48 cm siblings, each printed with a handlebar-width scale bar) show a squared bag with a FLAT TOP DECK carrying a row of moulded ladder-strap keepers along its front edge, a flat near-vertical front panel with a grab handle, and squared lower corners. It is not a barrel. Only the ends round off, and that is the WaveLock cone drawing them inboard. The Bar Cage Bag is a different object and IS a round dry bag - its records are deliberately left at 'round'. VOCABULARY GAP: crossSection has no term for 'flat on the top and the front'; 'flat_back' is the closest value barroll.js will act on and it buys the flat panel, but the flat top deck - which is what the strap keepers are moulded into - cannot be said at all.",
+        "shoulder": "squared"
       },
       "closure": {
         "type": "rolltop",
@@ -1858,6 +1862,7 @@
       "verified": true,
       "confidence": "high",
       "evidence": [
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-6.jpg",
         "assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-large-18-9l-1.jpg",
         "https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/"
       ],
@@ -1872,10 +1877,10 @@
       "dims_note": "MATERIAL CHANGE: len was 55.2 (an interpolation). New rule takes the UNFURLED max width, 720mm - the largest bag in the Tailfin catalogue and matched to a wide flat bar. Diameter 180mm is a maker figure. Flat-bar ends buckle rather than WaveLock, so the full 72cm is presented at the bar.",
       "capacity_l": 18.9,
       "geometry": {
-        "form": "cylinder",
-        "crossSection": "round",
-        "notes": "The longest and fattest bar bag - a 72cm horizontal tube at 180mm diameter. Ends roll three times and buckle shut. Flat moulded panel on the front face; rear face flattened against the harness.",
-        "shoulder": "rounded"
+        "form": "rounded_box",
+        "crossSection": "flat_back",
+        "notes": "The longest and fattest bar bag - a 72cm horizontal tube at 180mm diameter. Ends roll three times and buckle shut. Flat moulded panel on the front face; rear face flattened against the harness. MEASURED SECTION, correcting this record's own 'cylinder'/'round'. The front elevations on the bar bag page (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-6.jpg and its 38/42/48 cm siblings, each printed with a handlebar-width scale bar) show a squared bag with a FLAT TOP DECK carrying a row of moulded ladder-strap keepers along its front edge, a flat near-vertical front panel with a grab handle, and squared lower corners. It is not a barrel. Only the ends round off, and that is the WaveLock cone drawing them inboard. The Bar Cage Bag is a different object and IS a round dry bag - its records are deliberately left at 'round'. VOCABULARY GAP: crossSection has no term for 'flat on the top and the front'; 'flat_back' is the closest value barroll.js will act on and it buys the flat panel, but the flat top deck - which is what the strap keepers are moulded into - cannot be said at all.",
+        "shoulder": "squared"
       },
       "closure": {
         "type": "rolltop",
