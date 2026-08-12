@@ -66,7 +66,14 @@
      The column is one step ABOVE the menu's veil, never equal to it: when the
      menu closes onto the builder the panel has to arrive as a surface, not
      dissolve into the same black. */
-  --surface: rgba(15, 16, 19, 0.93);
+  /* ONE black, and no blur.
+     At 0.93 alpha exactly 7% of the scene passes — indistinguishable from
+     paint, as the night shot proves — while `backdrop-filter` forced a full
+     readback over a live WebGL frame on the panel, the top bar AND the aero
+     panel. We were paying for glass and shipping paint. This is also the one
+     black now: the file had rgba(15,16,19) here and rgba(10,11,13) in five
+     other places, which is two blacks in a system with one. */
+  --surface: rgba(12, 13, 16, 0.965);
   --surface-2: rgba(244, 241, 236, 0.05);
   --surface-3: rgba(244, 241, 236, 0.09);
   --line: rgba(244, 241, 236, 0.14);
@@ -88,7 +95,10 @@
      them. Bone rather than pure white, so the plate belongs to this palette
      instead of being a hole punched in it. */
   --plate: #F4F1EC;
-  --plate-edge: inset 0 0 0 1px rgba(244, 241, 236, 0.10);
+  /* A 10% BONE line on a BONE plate is invisible by construction — every
+     thumbnail and the hero were relying on it for an edge and none of them had
+     one. The plate is light, so its edge is dark. */
+  --plate-edge: inset 0 0 0 1px rgba(10, 11, 13, 0.10);
 
   /* ---- geometry ----------------------------------------------------------
      ONE column width for every surface on the left. `--sheet-detail-w` and
@@ -142,8 +152,6 @@
   border-bottom: 1px solid var(--line);
   box-shadow: none;
   background: var(--surface);
-  backdrop-filter: blur(14px) saturate(120%);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
 }
 
 /*
@@ -163,8 +171,6 @@
   border-radius: 0;
   box-shadow: none;
   background: var(--surface);
-  backdrop-filter: blur(14px) saturate(120%);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
 }
 #ui-root .panel { position: fixed; }
 
@@ -450,8 +456,6 @@
 #ui-root .aero-panel, #ui-root .aero-sec, #ui-root .aero-peek {
   background: var(--surface); color: var(--ink-1);
   border-color: var(--line);
-  backdrop-filter: blur(14px) saturate(120%);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
 }
 #ui-root .aero-sec + .aero-sec { border-top: 1px solid var(--line-soft); }
 #ui-root .aero-title { color: var(--ink-3); }
@@ -517,12 +521,10 @@
    footer "needs its own opaque ground", and the light theme had quietly taken
    that away again. */
 #ui-root .bs-foot {
-  background: rgba(15, 16, 19, 0.985);
-  backdrop-filter: blur(14px) saturate(120%);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  background: #0C0D10;
   border-top: 1px solid var(--line);
 }
-#ui-root .bs-foot::before { background: linear-gradient(transparent, rgba(15, 16, 19, 0.985)); }
+#ui-root .bs-foot::before { background: linear-gradient(transparent, #0C0D10); }
 #ui-root .sheet-body:has(.bs-foot) { padding-bottom: var(--s-5, 20px); }
 
 /* Two controls in a row, and a link. Three stacked full-width buttons is the
@@ -869,3 +871,368 @@
 #ui-root .cat-opt { border-radius: var(--r-control); }
 #ui-root .cat-opt:hover { background: var(--fill-1); }
 #ui-root .cat-chip { height: 32px; border-radius: var(--r-control); font-weight: 550; }
+
+
+/* ===========================================================================
+   ROUND THREE
+   =========================================================================== */
+
+/* R1 — THE BAG SHEET HAD FALLEN OFF THE SPINE. Measured: `.bs-brand`,
+   `.bs-name`, `.bs-label` and every spec row started at x=0, hard against the
+   viewport edge, on the one screen nearest the money — while the catalogue one
+   level above held 63px. `.bs-body` is not the element sheet.css pads, so the
+   earlier rule aimed at nothing. The rows carry the gutter; the photographic
+   plate is pulled back out to full bleed, because a product shot wants the
+   width and a spec row wants the margin. */
+/* The gutter goes on the ROWS, never on the leaves. Padding `.bs-label` and
+   `.bs-label-v` individually put 63px inside the right-hand value as well as
+   in front of the left-hand one, which shoves "Black" toward the edge it is
+   supposed to be aligned to. One padded container per line. */
+#ui-root .sheet .bs-brand,
+#ui-root .sheet .bs-name,
+#ui-root .sheet .bs-sub,
+#ui-root .sheet .bs-label-row,
+#ui-root .sheet .bs-spec,
+#ui-root .sheet .bs-feats,
+#ui-root .sheet .bs-ways,
+#ui-root .sheet .bs-nolink {
+  padding-left: var(--col-gut);
+  padding-right: var(--col-gut);
+}
+/* A `.bs-label` that is a block-level heading takes the gutter; one sitting
+   inside an already-padded row does not. */
+#ui-root .sheet .bs-block > .bs-label {
+  padding-left: var(--col-gut);
+  padding-right: var(--col-gut);
+}
+#ui-root .sheet .bs-label-row > .bs-label,
+#ui-root .sheet .bs-label-row > .bs-label-v { padding-left: 0; padding-right: 0; }
+#ui-root .sheet .bs-hero { margin-left: 0; margin-right: 0; border-radius: 0; }
+
+/* R3 — the wide breakpoint existed in one layer only, so the "same column by
+   construction" claim was true at exactly one width. These steps mirror
+   menu.css's 1700px block line for line. */
+@media (min-width: 1700px) {
+  :root { --col-body: 484px; }
+  #ui-root .bag-model, #ui-root .card .name, #ui-root .mb-sub { font-size: 14px; }
+  #ui-root .bag-liters, #ui-root .card .meta, #ui-root .mb-name { font-size: 13px; }
+  #ui-root .sheet-title { font-size: 26px; }
+}
+
+/* R4 — the wind tunnel opened a SECOND 516px column and left the first one up:
+   1032px of chrome and a 400px slit for the bike, on the screen whose whole
+   argument is that nothing covers the product. The rig column stands down while
+   the tunnel is open, exactly as it does under a sheet, and the tunnel adopts
+   the shared top lead so its first line meets the other column's. */
+#ui-root.aero-open .panel {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms var(--ease-in, ease);
+}
+#ui-root .aero-panel { padding-top: var(--col-lead); }
+
+/* R10 — the tunnel spent the accent on DATA: every contributor bar, the slider
+   thumb and the grade badge. Four accents on one panel, in a system where the
+   accent means "this is the selected thing". The bars go quiet; the one you are
+   pointing at takes the ember. */
+#ui-root .watts-bar, #ui-root .watts-fill, #ui-root .part-bar, #ui-root .part-fill {
+  background: var(--fill-3);
+}
+#ui-root .part-row:hover .part-fill,
+#ui-root .part-row.is-on .part-fill,
+#ui-root .watts-row:hover .watts-fill { background: var(--accent); }
+#ui-root .slider-thumb, #ui-root input[type='range']::-webkit-slider-thumb { background: var(--ink-1); }
+
+/* R6 — two filled primaries on screen at once: "Replace it" in the sheet and
+   "Save rig" in the top bar. The sheet is the surface you are working on; the
+   bar yields to it. */
+#ui-root.sheet-open .save-btn {
+  background: transparent;
+  color: var(--ink-2);
+  border-color: var(--line);
+}
+
+/* R11 — the selected bag row was a wide rust slab: `--accent-soft` at 0.16
+   across a full-width row is the loudest element in the column. The menu marks
+   its current chip with a 6% bone fill and a 2px bar; so does this. */
+#ui-root .bag-card.sel, #ui-root .card.on, #ui-root .mount-btn.occupied {
+  background: var(--fill-1);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+/* R14 — the by-type / by-brand switch floated at x=508, aligned to nothing in
+   a column where everything else starts at 63. */
+#ui-root .pk-head, #ui-root .seg {
+  padding-left: var(--col-gut);
+  padding-right: var(--col-gut);
+  justify-content: flex-start;
+}
+#ui-root .seg { display: flex; }
+
+/* R15 — the saved-rigs empty line was the last thing off the grid. */
+#ui-root .rig-empty, #ui-root .rn-empty, #ui-root .cat-empty, #ui-root .pk-title {
+  padding-left: var(--col-gut);
+  padding-right: var(--col-gut);
+}
+#ui-root .rig-acct-txt {
+  font: 600 10.5px/1 var(--font);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* R17 — the empty state centred itself while every other column in the app
+   anchors. menu.css spends eleven lines arguing why: a column that lands
+   somewhere different each time is a slideshow. */
+#ui-root .empty-state {
+  justify-content: flex-start;
+  padding-top: clamp(40px, 12vh, 104px);
+}
+
+/* R12 — three grammars for "leave this". The menu's is a labelled control; the
+   sheets get the same one. */
+#ui-root .sheet-close {
+  width: auto;
+  height: auto;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  color: var(--ink-2);
+}
+#ui-root .sheet-close:hover { color: var(--ink-1); background: var(--fill-1); }
+
+/* R7 — the rig's name lost a whole register crossing the seam: 36px/500 with a
+   tracked kicker in the menu, 15px/600 in the panel, 19px/600 in a sheet. One
+   register for one object. */
+#ui-root .sheet-title, #ui-root .rignav .rn-title {
+  font: 500 24px/1.1 var(--font);
+  letter-spacing: -0.024em;
+  color: var(--ink-1);
+}
+
+/* R8 — the wordmark was specified twice and drawn twice: 700/14px/0.24em in the
+   menu, 0.06em at whatever size ui.css left it in the bar. It is the one anchor
+   both layers share. */
+#ui-root .wordmark h1 {
+  font: 700 14px/1 var(--font);
+  letter-spacing: 0.24em;
+  color: var(--ink-1);
+}
+
+/* The tunnel's close takes the same labelled grammar as every other exit. */
+#ui-root .aero-close {
+  width: auto; height: auto;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  color: var(--ink-2);
+}
+#ui-root .aero-close:hover { color: var(--ink-1); background: var(--fill-1); }
+#ui-root .aero-foot[hidden] { display: none; }
+
+
+/* ===========================================================================
+   ROUND THREE, PART TWO — the state layer and the motion layer
+   =========================================================================== */
+
+/* F7 — THE PANEL'S EXIT FADE COULD NEVER RENDER. sheet.css hides the panel with
+   `visibility: hidden` on a transition that delays visibility by the sheet's
+   out-duration. Overriding the `transition` shorthand here with opacity alone
+   dropped that delay, so `visibility: hidden` applied on frame one and the
+   160ms fade painted nothing — the panel teleported and reframe.js measured a
+   ghost settling. The delay has to be restated with the override. */
+#ui-root.sheet-open .panel,
+#ui-root.aero-open .panel {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 160ms var(--ease-in, ease), visibility 0s linear 160ms;
+}
+
+/* F5 — hovers that reassigned their own resting values. The only live change in
+   the whole control class was a 5% bone fill, which is an 11-point RGB shift on
+   this surface: sub-threshold. And `.btn.ghost:hover` changed literally
+   nothing. Deleted the no-ops so the next reader can see what moves. */
+#ui-root .acct-btn:hover, #ui-root .home-up:hover, #ui-root .btn:hover,
+#ui-root .add-bag:hover, #ui-root .share-kit:hover, #ui-root .rn-new:hover,
+#ui-root .cat-chip:hover, #ui-root .cat-relax:hover, #ui-root .bs-btn:hover,
+#ui-root .tool-btn:hover, #ui-root .size-chip:hover, #ui-root .seg-btn:hover {
+  background: var(--fill-2);
+}
+#ui-root .btn.ghost:hover { color: var(--ink-1); }
+
+/* F6 — nothing in the builder acknowledged a click. The menu's primary has had
+   a pressed state since the first round; the builder's forty controls had none. */
+#ui-root .acct-btn, #ui-root .home-up, #ui-root .btn, #ui-root .add-bag,
+#ui-root .share-kit, #ui-root .rn-new, #ui-root .cat-chip, #ui-root .bs-btn,
+#ui-root .tool-btn, #ui-root .sheet-close, #ui-root .save-btn, #ui-root .seg-btn,
+#ui-root .size-chip, #ui-root .rig-act, #ui-root .rig-save-btn, #ui-root .aero-close {
+  transition: background-color 120ms var(--ease-out, ease),
+              color 120ms var(--ease-out, ease),
+              border-color 120ms var(--ease-out, ease),
+              transform var(--d-press, 90ms) var(--ease-out, ease);
+}
+#ui-root .acct-btn:active, #ui-root .home-up:active, #ui-root .btn:active,
+#ui-root .add-bag:active, #ui-root .share-kit:active, #ui-root .rn-new:active,
+#ui-root .cat-chip:active, #ui-root .bs-btn:active, #ui-root .tool-btn:active,
+#ui-root .sheet-close:active, #ui-root .save-btn:active, #ui-root .seg-btn:active,
+#ui-root .size-chip:active, #ui-root .rig-act:active, #ui-root .rig-save-btn:active,
+#ui-root .aero-close:active { transform: translateY(1px); }
+/* Rows are pressed too — they are the most-clicked things in the app. */
+#ui-root .bag-card:active, #ui-root .card:active, #ui-root .mount-btn:active,
+#ui-root .brand-row:active, #ui-root .cat-opt:active { background: var(--fill-3); }
+
+/* F16 — `opacity: 0.4` on a disabled row multiplies the alpha inks: the
+   sub-label landed near 1.5:1 and the row's own hairline dimmed with it,
+   notching the table. Dim the ink, never the element. */
+#ui-root .mount-btn:disabled { opacity: 1; cursor: default; }
+#ui-root .mount-btn:disabled .mb-name,
+#ui-root .mount-btn:disabled .mb-sub { color: var(--ink-4); }
+#ui-root .mount-btn:disabled:hover { background: transparent; }
+
+/* F9 — the 2px ember bar meant two different things: "selected" in the kit list
+   and "occupied" in the mount picker, where five of them showed at once. A mark
+   that says CURRENT cannot also say INVENTORY. Occupied rows already print
+   their product instead of an option count; that is the mark. */
+#ui-root .mount-btn.occupied { box-shadow: none; background: transparent; }
+#ui-root .mount-btn.occupied:hover { background: var(--fill-1); }
+#ui-root .mount-btn.occupied .mb-name::after {
+  content: '';
+  display: inline-block;
+  width: 4px; height: 4px;
+  margin-left: 8px;
+  vertical-align: 2px;
+  border-radius: 50%;
+  background: var(--ink-3);
+}
+
+/* F11 — at night the column had no edge: a bone hairline at 14% is invisible
+   against a scene sitting at rgb(8-15). Two pixels, one of each polarity —
+   whichever the scene is, one of them survives. */
+#ui-root .panel, #ui-root .sheet { box-shadow: 1px 0 0 rgba(0, 0, 0, 0.55); }
+#ui-root .aero-panel { box-shadow: -1px 0 0 rgba(0, 0, 0, 0.55); }
+#ui-root .topbar { box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55); }
+
+/* F14 — the mode switch announced the mode of the whole sheet with a 4.5%
+   delta. It is a mode, so it is unambiguous. */
+#ui-root .seg-btn.on {
+  background: var(--ink-1);
+  color: #0A0B0D;
+  border-color: var(--ink-1);
+}
+
+/* F18 — radii that survived the sweep into a 4px system, all of them visible
+   the moment somebody saves a rig or hits a bag that will not fit. */
+#ui-root .rn-new, #ui-root .rn-rename, #ui-root .rn-stack img,
+#ui-root .unfit-rm, #ui-root .bs-hero-tag, #ui-root .rig-notice,
+#ui-root .cat-opt, #ui-root .bag-sw, #ui-root .card-thumb {
+  border-radius: var(--r-control);
+}
+#ui-root .sheet-close:focus-visible { outline: 2px solid var(--accent); box-shadow: none; }
+
+/* F17 — the speed slider was a default range input in the most engineered panel
+   in the app: a 2px grey track and an unstyled thumb. */
+#ui-root .aero-panel input[type='range'] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 24px; background: transparent; cursor: pointer;
+}
+#ui-root .aero-panel input[type='range']::-webkit-slider-runnable-track {
+  height: 3px; border-radius: 2px;
+  background: var(--fill-2);
+}
+#ui-root .aero-panel input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 16px; height: 16px; margin-top: -6.5px;
+  border-radius: 50%;
+  background: var(--ink-1);
+  box-shadow: 0 0 0 2px var(--surface);
+}
+#ui-root .aero-panel input[type='range']:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent);
+}
+
+/* ---- MOTION ----------------------------------------------------------------
+   The builder had none: the menu arrives like a title sequence and the builder
+   swapped contents like a page reload. One vocabulary, from the tokens that
+   already exist — arriving on `--ease-out`, leaving on `--ease-in`, nothing
+   overshoots.
+
+   WHAT NEVER MOVES: the column's box, the top bar, the section rules, the
+   litre column's x, the search field, and the 3D scene's exposure. */
+
+/* The panel and the sheet are the same rect, so the sheet must not arrive from
+   a side — a box that occupies an identical position cannot slide into it
+   without saying it is a different box. Contents only. */
+#ui-root .sheet { transform: none !important; }
+#ui-root .sheet:not(.open) { opacity: 0; }
+#ui-root .sheet.open { opacity: 1; }
+
+@keyframes bd-row-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+#ui-root .sheet.open .bag-card,
+#ui-root .sheet.open .card,
+#ui-root .sheet.open .mount-btn,
+#ui-root .sheet.open .brand-row,
+#ui-root .sheet.open .bs-block,
+#ui-root .panel .bag-card {
+  animation: bd-row-in 240ms var(--ease-out, ease) both;
+}
+/* Capped at eight: past that the stagger is a queue, not a gesture, and the
+   ninth row onward arrives with the eighth. */
+#ui-root .sheet.open .card:nth-child(1),  #ui-root .panel .bag-card:nth-child(1)  { animation-delay: 0ms; }
+#ui-root .sheet.open .card:nth-child(2),  #ui-root .panel .bag-card:nth-child(2)  { animation-delay: 24ms; }
+#ui-root .sheet.open .card:nth-child(3),  #ui-root .panel .bag-card:nth-child(3)  { animation-delay: 48ms; }
+#ui-root .sheet.open .card:nth-child(4),  #ui-root .panel .bag-card:nth-child(4)  { animation-delay: 72ms; }
+#ui-root .sheet.open .card:nth-child(5),  #ui-root .panel .bag-card:nth-child(5)  { animation-delay: 96ms; }
+#ui-root .sheet.open .card:nth-child(6),  #ui-root .panel .bag-card:nth-child(6)  { animation-delay: 120ms; }
+#ui-root .sheet.open .card:nth-child(7),  #ui-root .panel .bag-card:nth-child(7)  { animation-delay: 144ms; }
+#ui-root .sheet.open .card:nth-child(n+8),#ui-root .panel .bag-card:nth-child(n+8){ animation-delay: 168ms; }
+
+/* The aero panel is the ONE surface that legitimately enters from an edge: it
+   is a new column arriving beside the bike, not a swap inside an existing one. */
+#ui-root .aero-panel { animation: bd-aero-in 280ms var(--ease-out, ease) both; }
+@keyframes bd-aero-in {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #ui-root .sheet.open .bag-card, #ui-root .sheet.open .card,
+  #ui-root .sheet.open .mount-btn, #ui-root .sheet.open .brand-row,
+  #ui-root .sheet.open .bs-block, #ui-root .panel .bag-card,
+  #ui-root .aero-panel { animation: none; }
+}
+
+/* F4 — the vertical budget was upside down: a hero's 110px lead on a working
+   column, while a ten-bag rig showed six rows before the fade. */
+:root { --col-lead: clamp(20px, 3vh, 36px); }
+#ui-root .sheet-head { padding-top: 30px; padding-bottom: 16px; }
+#ui-root .empty-state { padding-top: clamp(28px, 8vh, 72px); }
+#ui-root .sheet-close { display: inline-flex; align-items: center; gap: 8px; font: 550 13px/1 var(--font); }
+
+
+/* The mode switch, finally on the spine. Three things were wrong: the sheet
+   header's title element is empty here (the title belongs to the sheet shell
+   now), so it still took its share of a flex row and pushed the switch to the
+   middle; the switch carried its own 999px pill in a 4px system; and it had
+   been given the gutter as padding, so its pill started at 0 while its buttons
+   started at 63. The empty title collapses, the pill goes, the buttons are the
+   control. */
+#ui-root .pk-head { display: flex; align-items: center; gap: 12px; }
+#ui-root .pk-head .pk-title:empty { display: none; }
+#ui-root .seg {
+  padding: 0;
+  margin: 0;
+  gap: 6px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+#ui-root .seg-btn {
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  padding: 7px 14px;
+  font: 550 12.5px/1 var(--font);
+}

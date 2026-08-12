@@ -124,6 +124,8 @@ export function initMenu(app, { onBuild } = {}) {
   const browse = initBrowse(app, {
     // A load that resolves after the menu closes must not mount its rig.
     isLive: () => open_,
+    // The gallery's empty state offers the one thing worth doing from it.
+    onEmptyBuild: () => { app.__enteredBuilder = true; close({ build: true }); },
     onAdopt: (item) => {
       // Taking a rig means it is now yours and the stash is void.
       stashDirty = false;

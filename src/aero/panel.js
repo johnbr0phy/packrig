@@ -225,7 +225,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
 
   // ---- 3. delta vs. bare bike --------------------------------------------
   const deltaSec = el('section', 'aero-sec aero-delta');
-  deltaSec.append(elt('h3', 'aero-sec-label', 'Cost of the kit'));
+  deltaSec.append(elt('h3', 'aero-sec-label', 'Cost of the bags'));
   const deltaGrid = el('div', 'delta-grid');
   // label flips with the value's sign — "less power" reads as self-contradictory
   // sitting under a positive number, and after the occlusion fix lands a lone
@@ -311,7 +311,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     const wakeFrac = frontal > 0 ? (part.wakeArea || 0) / frontal : 0;
     const nearZero = Math.abs(part.cda) < 0.0005;
     if (wakeFrac < 0.9 && !nearZero) return null;
-    return 'Sheltered by the kit ahead of it on the bike — a real result, not a bug.';
+    return 'Sheltered by the bag ahead of it on the rig — a real result, not a bug.';
   }
 
   function renderWaterfall(result, ride) {
@@ -438,9 +438,21 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   body.append(assum);
 
   // ---- 8. exit ------------------------------------------------------------
+  /*
+   * One way out, not two.
+   *
+   * The panel carried a bare ✕ at the top AND a full-width "Exit wind tunnel"
+   * button at the bottom, plus the toolbar toggle that opened it — three
+   * exits for one state, and the full-width one was the largest control in a
+   * panel whose subject is a number. The ✕ is labelled now (builder.css gives
+   * `.sheet-close` and this one the menu's grammar), so the button has nothing
+   * left to add.
+   */
   const foot = el('div', 'aero-foot');
   const exitBtn = elt('button', 'aero-exit-btn', 'Exit wind tunnel');
   exitBtn.onclick = () => onExit?.();
+  exitBtn.hidden = true;
+  foot.hidden = true;
   foot.append(exitBtn);
   root.append(foot);
 

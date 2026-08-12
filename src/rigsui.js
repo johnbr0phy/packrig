@@ -130,7 +130,7 @@ export function initRigsUI(app, { auth, store, host, onLoaded }) {
     input.type = 'text';
     input.placeholder = 'Name this rig';
     input.maxLength = 60;
-    const btn = el('button', 'rig-save-btn', 'Save current bike');
+    const btn = el('button', 'rig-save-btn', 'Save this rig');
     const doSave = () => guard(async () => {
       const name = input.value.trim() || 'Untitled rig';
       const bags = Object.keys(app.bags.equipped).length;

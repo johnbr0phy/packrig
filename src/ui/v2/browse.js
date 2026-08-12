@@ -94,7 +94,7 @@ function manifestOf(app, rig) {
   return rows;
 }
 
-export function initBrowse(app, { onAdopt, onDirty, isLive } = {}) {
+export function initBrowse(app, { onAdopt, onDirty, isLive, onEmptyBuild } = {}) {
   // Per-kind cursor, so stepping out to the start screen and back into the
   // gallery puts you where you were rather than at rig one.
   const cursor = { loadouts: 0, gallery: 0 };
@@ -205,6 +205,16 @@ export function initBrowse(app, { onAdopt, onDirty, isLive } = {}) {
     e.append(el('p', 'pr-note', kind === 'loadouts'
       ? 'The curated rigs did not load. The builder still works — everything in the catalogue is there.'
       : 'Nobody has published a rig yet. Build one, save it and publish it, and yours would be the first in here.'));
+    // An empty state without its verb is a dead end, and this is the screen most
+    // likely to be somebody's first: one of three doors on the start screen
+    // opened onto a sentence and nothing to press.
+    const act = el('div', 'pr-actions');
+    const go = el('button', 'pr-btn is-primary');
+    go.type = 'button';
+    go.append(el('span', null, 'Build a rig'));
+    go.onclick = () => onEmptyBuild?.();
+    act.append(go);
+    e.append(act);
     nodes.spec.append(e);
   }
 

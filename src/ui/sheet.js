@@ -91,8 +91,12 @@ export function initSheets(app, { root, applyBase } = {}) {
   closeBtn.type = 'button';
   closeBtn.setAttribute('aria-label', 'Close');
   // §7: no emoji, no text glyphs. One inline SVG, 20x20, 1.5px stroke.
+  // Labelled, like the menu's. Three surfaces offered three grammars for the
+  // same act — a labelled control in the menu, a bare glyph in the sheets, a
+  // glyph AND a full-width button in the wind tunnel.
   closeBtn.innerHTML =
-    '<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false">' +
+    '<span>Close</span>' +
+    '<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false">' +
     '<path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.5" ' +
     'stroke-linecap="round"/></svg>';
   head.append(backBtn, titleEl, closeBtn);

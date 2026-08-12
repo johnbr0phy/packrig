@@ -348,7 +348,9 @@
 .pr-eyebrow {
   margin: 0 0 22px;
   font: 600 10.5px/1 var(--font);
-  letter-spacing: 0.18em;
+  /* 0.10em, matching every other 10.5px caps label in both layers. The eyebrow
+     and the kicker sat at 0.18 — same role, same size, 0.08em apart. */
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--pr-ink-3);
 }
@@ -570,7 +572,9 @@
 .pr-kicker {
   margin: 0 0 10px;
   font: 600 10.5px/1 var(--font);
-  letter-spacing: 0.18em;
+  /* 0.10em, matching every other 10.5px caps label in both layers. The eyebrow
+     and the kicker sat at 0.18 — same role, same size, 0.08em apart. */
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--pr-ink-3);
 }

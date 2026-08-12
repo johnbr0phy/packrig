@@ -127,8 +127,29 @@ export function initUI(app) {
     };
     // The root level is where you arrive, unless a shared link means you have
     // already been handed a specific rig to look at.
-    if (!app.__cameWithRig) app.menu.open('start');
-    else app.__enteredBuilder = true;
+    if (!app.__cameWithRig) {
+      app.menu.open('start');
+    } else {
+      app.__enteredBuilder = true;
+      /*
+       * Somebody has been sent this bike. They arrive in the builder with no
+       * idea what they are looking at or that it is theirs to change — the one
+       * moment in the product with a genuine audience, and it said nothing.
+       * Everything in the line is already on the bike; none of it is a fetch.
+       */
+      queueMicrotask(() => {
+        const bags = Object.keys(app.bags?.equipped || {}).length;
+        if (!bags) return;
+        const litres = Object.values(app.bags.equipped)
+          .reduce((n, e) => n + (Number(e.product?.liters) || 0), 0);
+        notify(
+          `Someone shared this rig — ${bags} bag${bags === 1 ? '' : 's'}, `
+          + `${Math.round(litres * 10) / 10} L. Change anything you like.`,
+          null,
+          { label: 'Start mine', run: () => app.menu?.open('start') },
+        );
+      });
+    }
   });
 
   // ---- the top bar --------------------------------------------------------
@@ -157,8 +178,8 @@ export function initUI(app) {
   // chevron, the running total and the "+" are inert on desktop — CSS only
   // gives them a box below 560px.
   const chevron = elt('button', 'sheet-chevron', '▾');
-  chevron.title = 'Collapse the kit list';
-  chevron.setAttribute('aria-label', 'Collapse the kit list');
+  chevron.title = 'Collapse the rig';
+  chevron.setAttribute('aria-label', 'Collapse the rig');
   const peekTotal = elt('span', 'peek-total', '');
   const sheetAdd = elt('button', 'sheet-add', '+');
   sheetAdd.title = 'Pick a mount point';
@@ -179,7 +200,7 @@ export function initUI(app) {
     collapsed = !!next;
     panel.classList.toggle('collapsed', collapsed);
     chevron.setAttribute('aria-expanded', String(!collapsed));
-    chevron.title = collapsed ? 'Show the kit list' : 'Collapse the kit list';
+    chevron.title = collapsed ? 'Show the rig' : 'Collapse the rig';
     head.setAttribute('aria-expanded', String(!collapsed));
     head.setAttribute('aria-label', collapsed ? 'Show your rig' : 'Hide your rig and see the bike');
     /*
@@ -218,9 +239,9 @@ export function initUI(app) {
   addBtn.title = 'Pick a mount point';
   addBtn.onclick = () => openMountPicker();
   const shareBtn = el('button', 'share-kit');
-  const shareLabel = elt('span', 'lbl', 'Share kit');
+  const shareLabel = elt('span', 'lbl', 'Share rig');
   shareBtn.append(elt('span', 'ic', '⧉'), shareLabel);
-  shareBtn.title = 'Copy a link to this build';
+  shareBtn.title = 'Copy a link to this rig';
   shareBtn.onclick = () => shareKit(shareBtn, shareLabel);
   // The panel's own "My rigs" button is gone: the top bar carries the account,
   // and two buttons opening the same panel from opposite corners is exactly the
@@ -234,17 +255,28 @@ export function initUI(app) {
   btnRand.append(icon('bolt', { size: 16, cls: 'bolt' }), elt('span', null, 'Surprise me'));
   btnRand.onclick = () => app.randomize();
   // clearing the whole bike is destructive, so it asks once before it fires
-  const btnClear = elt('button', 'btn ghost', 'Clear bike');
+  const btnClear = elt('button', 'btn ghost', 'Clear rig');
   let clearTimer = null;
   const resetClear = () => {
     clearTimeout(clearTimer);
     btnClear.classList.remove('confirm');
-    btnClear.textContent = 'Clear bike';
+    btnClear.textContent = 'Clear rig';
   };
   btnClear.onclick = () => {
     if (btnClear.classList.contains('confirm')) {
       resetClear();
+      // Removing ONE bag has always offered an undo; removing all of them —
+      // the more destructive of the two by an order of magnitude — offered a
+      // confirm and then nothing. Same snapshot the save button already takes.
+      const before = (() => { try { return captureRig(app, { name: '' }); } catch { return null; } })();
+      const n = Object.keys(app.bags.equipped).length;
       app.clearAll();
+      if (before && n) {
+        notify(`Cleared ${n} bag${n === 1 ? '' : 's'}`, () => {
+          applyRig(app, before);
+          sync();
+        });
+      }
       return;
     }
     btnClear.classList.add('confirm');
@@ -274,17 +306,25 @@ export function initUI(app) {
     ['#6fa892', 'Mint'], ['#c2601f', 'Burnt orange'], ['#e8e6e1', 'Chalk'],
     ['#1d1f22', 'Black'], ['#c9483a', 'Red'], ['#3f6ea8', 'Blue'],
   ];
-  let bidonPick = 0;
+  /*
+   * Both bottles, every time.
+   *
+   * This used to alternate: the first press painted the seat-tube bottle, the
+   * next the down-tube one, and so on off a running counter. That is not a
+   * control — you cannot aim it. Pressing "Red" twice painted two different
+   * bottles, and there was no way to say which one you meant. Nobody arrives
+   * wanting two differently-coloured bidons badly enough to guess a parity, so
+   * one press paints the pair and the swatch that is on is the colour they are.
+   */
   for (const [hex, label] of BIDON_COLORS) {
     const sw = el('button', 'bidon');
     sw.style.background = hex;
     sw.title = label;
     sw.setAttribute('aria-label', `Bidon colour: ${label}`);
     sw.onclick = () => {
-      // alternate which bottle you're painting, so both are reachable
-      const key = bidonPick % 2 === 0 ? 'st' : 'dt';
-      app.bike.setBottleColor(key, parseInt(hex.slice(1), 16));
-      bidonPick++;
+      const c = parseInt(hex.slice(1), 16);
+      app.bike.setBottleColor('st', c);
+      app.bike.setBottleColor('dt', c);
       for (const b of bidons.children) b.classList.remove('on');
       sw.classList.add('on');
     };
@@ -319,7 +359,7 @@ export function initUI(app) {
    */
   const bagsSec = el('section', 'nav-sec');
   const bagsHead = el('div', 'nav-sec-head');
-  bagsHead.append(elt('h2', 'nav-sec-title', 'Bags on bike'), countEl, btnClear);
+  bagsHead.append(elt('h2', 'nav-sec-title', 'Bags on the rig'), countEl, btnClear);
   bagsSec.append(bagsHead, listEl);
   const bagActions = el('div', 'nav-actions');
   bagActions.append(addBtn, btnRand);
