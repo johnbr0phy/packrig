@@ -304,6 +304,18 @@ export function buildFrameHalf(p, brand, main, accent, ctx) {
   // panel's head-tube edge leaves the nose ~6mm clear of the tube itself.
   const ends = endFractions(p, vr);
   const runLen = Math.min(p.mm.len, ttLen - 36);
+  // Declared here rather than with the kite below because the top edge needs it
+  // too: it is the extrusion bevel, and it moves BOTH the top edge and the depth.
+  const bevel = 6;
+  // NOT shifted down by the bevel, and the failed attempt is worth recording.
+  // The gate reports a 7mm top tube penetration on 101 of this slot's 103
+  // products, and the obvious theory was that the bevel expands the outline
+  // upward into the tube. Dropping the top edge by one bevel to compensate was
+  // measured across all 103: penetration went 101 -> 102, i.e. it did nothing,
+  // while the down-tube guard below — which measures headroom from this very
+  // point — bit harder and pushed the mean error from -1mm to -7mm. So the
+  // penetration comes from somewhere else and is still unexplained. Depth is
+  // unaffected either way: the `2 * bevel` deduction below sets it.
   const noseTop = pHeadTop.clone().addScaledVector(ttDir, -8);
   const rearTop = noseTop.clone().addScaledVector(ttDir, -runLen);
 
@@ -319,12 +331,25 @@ export function buildFrameHalf(p, brand, main, accent, ctx) {
   // 2.5cm head-tube face it is +4mm on 25 — the face renders 16% over, and the
   // round-2 critics read the whole head-tube end as too fat. Deduct it once, on
   // the published figure, exactly as the belly does.
-  const bevel = 6;
+  //
+  // CORRECTED 12 Aug: the deduction was ONE bevel and it has to be TWO. The
+  // bevel expands the outline outward on every side, so a vertical extent gains
+  // one at the top and one at the bottom — `2 * bevel`, which is exactly what
+  // the WIDTH solve ninety lines below already deducts (`wantW - 2 * bevel`)
+  // for the same geometric reason on the other axis. The height axis only ever
+  // deducted one, so every bag in the slot finished a bevel deep.
+  //
+  // Measured before this change, across all 103 products the slot draws for 35
+  // brands: median +15mm on the published depth, near-constant in millimetres
+  // rather than proportional, which is the signature of an additive term and
+  // not of a scale error. Tailfin's nine ran +16 to +19mm on bags from 118 to
+  // 201mm deep. Six of the twelve is this; the top-edge shift above is the
+  // other six.
   const cap = Math.min(p.mm.hgt, 300);
-  let h = Math.max(24, cap - bevel);
+  let h = Math.max(24, cap - 2 * bevel);
   // Held as FRACTIONS of h so the down-tube guard below stays closed-form.
-  const fNose = Math.min(Math.max(ends.nose * cap - bevel, 5) / h, 0.90);
-  const fTail = Math.min(Math.max(ends.tail * cap - bevel, 6) / h, 0.96);
+  const fNose = Math.min(Math.max(ends.nose * cap - 2 * bevel, 5) / h, 0.90);
+  const fTail = Math.min(Math.max(ends.tail * cap - 2 * bevel, 6) / h, 0.96);
   // Guard, not a fudge: nothing here may reach past the down tube. Both bottom
   // corners sit `frac * h` along `down` from a point on the top tube, and the
   // clearance to the down-tube edge falls off linearly in h, so the ceiling is
@@ -359,7 +384,34 @@ export function buildFrameHalf(p, brand, main, accent, ctx) {
   const wantRun = dtDrop > 0.05 ? (h - noseD) / dtDrop : 0;
   const maxRun = dtRun > 0.05 ? Math.max(0, (runLen - 14) / dtRun) : 0;
   const bellyRun = Math.min(wantRun, maxRun);
-  const belly = noseBot.clone().addScaledVector(dtBack, bellyRun);
+  // WHERE THE BELLY SITS. The header above says this "is not in the records and
+  // must not be: it falls out of the frame", and for Apidura that is measurably
+  // true — the derivation below reproduces all six of their drawings to within
+  // 5%. It is true because an Apidura half pack's lower-front edge LIES ON the
+  // down tube, so the deepest point is simply where that edge has got `hgt`
+  // deep, and the frame supplies the angle.
+  //
+  // Tailfin's do not lie on the down tube. Their nine two-view drawings show a
+  // tall blunt REAR face at the seat tube, a lower edge falling only ~9 degrees
+  // forward, the deepest point at 0.82 of the length, then a steep ~40 degree
+  // climb to a shallow front face — and only the forward 15-20% of that lower
+  // edge touches the tube at all, which is what keeps the bottle cages usable.
+  // Derive the belly from the frame for that bag and you get the wrong object.
+  //
+  // So the rule stands with one amendment: derive it, UNLESS the record has
+  // measured it. `geometry.belly` is a fraction of the length from the
+  // SEAT-TUBE end. Absent on every product but Tailfin's nine, so the Apidura
+  // derivation is untouched — this widens the vocabulary rather than replacing
+  // the rule, which is the difference between a fix and a brand leak.
+  const bellyFrac = Number.isFinite(geom.belly) ? geom.belly : null;
+  const belly = bellyFrac === null
+    ? noseBot.clone().addScaledVector(dtBack, bellyRun)
+    // Measured: the deepest point sits `bellyFrac` along the top edge and the
+    // full depth `h` below it. Clamped inside the two bottom corners so the
+    // outline stays convex-walkable however the record is written.
+    : rearTop.clone()
+        .addScaledVector(ttDir, runLen * Math.min(Math.max(bellyFrac, 0.06), 0.94))
+        .addScaledVector(down, h);
 
   // Walk the outline: forward along the top tube, down the nose face, back along
   // the down-tube edge to the belly, back along the lower-rear edge, up the

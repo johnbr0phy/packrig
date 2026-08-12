@@ -80,6 +80,16 @@ export function geomOf(p) {
     shoulder: g.shoulder || null,
     profile: t?.profile || null,
     /**
+     * Where along its length the bag is DEEPEST, as a fraction from the
+     * mounting end. `null` where unmeasured, which is nearly everywhere — and
+     * null means "derive it from the bike", not "assume the middle".
+     *
+     * Only framebag_half reads it today. See the note there: the belly falls
+     * out of the frame for a bag whose lower edge lies on the down tube, and
+     * does not for one that stands clear of it.
+     */
+    belly: Number.isFinite(g.belly) && g.belly > 0 && g.belly < 1 ? g.belly : null,
+    /**
      * The NARROW end as a fraction of the wide end, always in (0, 1]. Ratio,
      * never absolute, so it survives a dimension correction underneath it.
      * 1 means no taper — a barrel — which is a real answer, not a missing one.

@@ -147,8 +147,18 @@ const NOTCH_DEPTH = 0.19;      // the length, ~19% of the height. Bracket mounts
  * strapped. Ortlieb's standard Handlebar-Pack says "two hook-and-loop straps
  * with spacers", which names a packer INSIDE a strap and stays strapped, which
  * is why `spacer` is deliberately not in this list.
+ *
+ * Widened 12 Aug for `harness`, `cradle` and `bar cage`. Tailfin's two bar
+ * families are both rigid-mounted and neither used a word on the old list: the
+ * Bar Bag System record says "the Tailfin bar harness (included in the System)"
+ * and the Bar Cage Bag says "the Tailfin Bar Cage plus its handlebar clamp
+ * bracket". All seven were therefore drawn cinched around the handlebar. The
+ * widening was checked against all 56 barroll products in the catalogue first
+ * and flips NONE of them — it changes nothing that exists today and only lets a
+ * record that names its bracket be believed. `strap`, `velcro` and `spacer`
+ * stay off the list for the reason given above.
  */
-const RIGID_MOUNT = /\b(bar[-\s]?space|bar[-\s]?lock|bracket|rigid mount|tool[-\s]?free mount|mounting block|quick[-\s]?release mount)\b/i;
+const RIGID_MOUNT = /\b(bar[-\s]?space|bar[-\s]?lock|bar[-\s]?cage|bracket|cradle|harness|rigid mount|tool[-\s]?free mount|mounting block|quick[-\s]?release mount)\b/i;
 
 /**
  * Is this trace the outline of a BAG, or of the drawing it was scraped from?

@@ -237,6 +237,11 @@ app.openWindTunnel = async () => {
   // than merely collapse — collapsed, its peek header still overlaps the HUD
   // and still steals a hit-test region. ui.css hides it on this class.
   document.body.classList.toggle('aero-open', app.aero.active);
+  // ...and on #ui-root, because every rule in ui/v2/builder.css is scoped under
+  // that id — including the one that stands the rig column down while the
+  // tunnel is open (R4). Set on `body` alone, that rule matched nothing, and
+  // the desktop showed 1032px of chrome with a slit of bike between it.
+  document.getElementById('ui-root')?.classList.toggle('aero-open', app.aero.active);
   app.ui?.sync();
 };
 

@@ -1063,8 +1063,11 @@
    this layer it appears on a control. */
 .pr-btn.is-live { border-color: var(--pr-accent); color: var(--pr-accent); }
 .pr-btn.is-live:hover { background: rgba(255, 106, 43, 0.10); }
-/* The way out of the list, set apart from the actions on the rig itself. */
-.pr-btn.is-new { margin-left: auto; border-style: dashed; color: var(--pr-ink-2); }
+/* The way out of the list, set apart from the actions on the rig itself: its
+   own row, left-aligned on the column's spine. `margin-left: auto` put it in
+   the middle of an empty second line, which reads as a button that has come
+   loose rather than as one that is deliberately apart. */
+.pr-btn.is-new { flex: 0 0 100%; border-style: dashed; color: var(--pr-ink-2); }
 
 .pr-publish {
   display: flex;
