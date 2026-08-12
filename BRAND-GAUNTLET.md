@@ -291,3 +291,46 @@ measurement rather than a guess. Fork and cage packs are still drawn as one
 object when they are two mounting systems. The rack-top bags show no roll
 turn-down. Bar bag branding is a boxed upper-case plate where the real mark is
 a reflective lower-case wordmark at one end.
+
+### Two attempts on the rack-top bags that did NOT land, 12 Aug
+
+Recorded because a failed attempt with numbers is worth more than a silent
+revert, and because both were plausible enough that the next person will try
+them again.
+
+**1. The turn-down roll.** The `trunk` critique's headline was that "not one
+roll turn-down, strap, buckle or T-hook appears on any of the sixteen frames,
+so the single most recognisable thing about a Tailfin rack-top bag is
+missing". That is true — `rollTop` builds a mouth for a bag whose opening
+faces the camera, and laid flat on a rack trunk it reads as a small disc on a
+dead-flat lid.
+
+Built properly — stacked cylinders along the fore-aft axis, turn count from
+the record, webbing band and buckle, with the whole cap stack taken OUT of the
+published height rather than added on top of it (the published height of a
+roll-top rack bag is measured to the top of the roll; Tailfin's own
+`render.basis` says exactly that). Measured across all 17 products in the
+slot: **5 newly dropped by the resolver, 4 newly clashing, 1 fixed.** A ~50 mm
+tube running 95% of the bag's length at its very top fouls the saddle, and
+these bags had 6–25 mm of saddle clearance to give.
+
+What it needs next: a shorter roll set back from the front edge, with saddle
+clearance measured *before* the turn count is chosen — not a taller cap
+squeezed into the same envelope.
+
+**2. The bulge solve, ported from `pannier.js`.** Same fault visibly present:
+the box built at the published size and then every face domed outward on top.
+The closed form that took the panniers from **+17% to −1%** takes the trunks
+from **+7% to about −12%**. It over-corrects by roughly 2.5x.
+
+The reason is measurable and is the useful part. The model says the finished
+face lands `2 x bulgeAmt` outside the built box. On the panniers that holds.
+On the trunks the observed contribution is about **0.4 of it** — the CargoPack
+built at 164 mm finishes at 178 mm where the model predicts 200 mm. So
+`boxBulge`'s delivered amplitude depends on the proportions of the box it is
+applied to, and a solve that assumes the full amount is only safe on a slot
+where it has been measured.
+
+**The rule this earns:** a dimensional correction derived on one slot must be
+re-measured on the next before it is trusted there. Both of these looked like
+the same bug wearing the same clothes, and one of them was.
