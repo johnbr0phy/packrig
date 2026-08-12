@@ -40,7 +40,7 @@
 
 import * as THREE from 'three';
 import { v3, deg, tubeAlong } from '../../lib.js';
-import { addPockets, cordMat, daisyChain, drawcordEnd, flapArc, orientArc, pocketArc, reflectiveArc, valveDisc, zipperRun } from '../features.js';
+import { addPockets, cordMat, daisyChain, drawcordEnd, flapArc, meshPanelMat, orientArc, reflectiveArc, valveDisc, zipperRun } from '../features.js';
 import { seamCurve, strapAssembly, wrapStrap } from '../hardware.js';
 import { loftBody, measuredProfile, sectionFor, sectionUnit } from '../loft.js';
 import { featuresOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
@@ -79,13 +79,44 @@ const stationSampler = (a) => measuredProfile({ profile: { profile: silhouetteOf
 function silhouetteOf(a) {
   if (!Array.isArray(a) || a.length < 4) return null;
   const n = a.length;
-  let peak = 0;
-  for (let i = 1; i < n; i++) if (a[i] > a[peak]) peak = i;
-  const e = a.slice();
-  for (let i = 1; i <= peak; i++) e[i] = Math.max(e[i], e[i - 1]);
-  for (let i = n - 2; i >= peak; i--) e[i] = Math.max(e[i], e[i + 1]);
+  // A stuffed seat pack is a CONVEX pillow. The tracer follows straps and the
+  // dimension arc on the roll (Expedition dimensions-1.png: a 10–13% spike
+  // over three stations at ~60% of length). Unimodal-fill keeps that as a
+  // long plateau then a cliff — hung, two lobes and a dent. Flatten interior
+  // spikes against a wide neighbourhood (leave the neck and the roll-off
+  // alone), then take the upper hull so the underside is one pillow.
+  const cleaned = a.slice();
+  for (let i = 4; i < n - 4; i++) {
+    const w = [];
+    for (let k = -7; k <= 7; k++) {
+      if (Math.abs(k) <= 2) continue;
+      const j = i + k;
+      if (j >= 0 && j < n) w.push(a[j]);
+    }
+    w.sort((x, y) => x - y);
+    const med = w[w.length >> 1];
+    if (cleaned[i] > med + 0.04) cleaned[i] = med;
+  }
+  const hull = [];
+  const cross = (o, p, q) => (p[0] - o[0]) * (q[1] - o[1]) - (p[1] - o[1]) * (q[0] - o[0]);
+  for (let i = 0; i < n; i++) {
+    const p = [i, cleaned[i]];
+    while (hull.length >= 2 && cross(hull[hull.length - 2], hull[hull.length - 1], p) >= 0) {
+      hull.pop();
+    }
+    hull.push(p);
+  }
+  const e = new Array(n);
+  for (let s = 0; s < hull.length - 1; s++) {
+    const [i0, y0] = hull[s], [i1, y1] = hull[s + 1];
+    const span = i1 - i0 || 1;
+    for (let i = i0; i <= i1; i++) e[i] = y0 + (y1 - y0) * ((i - i0) / span);
+  }
   const out = e.slice();
-  for (let i = 1; i < n - 1; i++) out[i] = e[i - 1] * 0.25 + e[i] * 0.5 + e[i + 1] * 0.25;
+  for (let i = 1; i < n - 1; i++) {
+    out[i] = e[Math.max(i - 2, 0)] * 0.1 + e[i - 1] * 0.2 + e[i] * 0.4
+      + e[i + 1] * 0.2 + e[Math.min(i + 2, n - 1)] * 0.1;
+  }
   return out;
 }
 
@@ -297,6 +328,24 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   const widthAt = (t) => maxW * (samplePlan ? samplePlan(t)
     : parametric(t, Math.min(tFull * 1.2, 0.9), 0.8, 0.72));
 
+  // A seat pack is a WEDGE, not a tube. Expedition dimensions-1.png is the
+  // type drawing: the top line stays near the saddle, the belly drops as the
+  // section grows, the post end is a neck, the tail is a blunt roll. Lofting
+  // that height envelope about the centreline makes a cigar — same silhouette
+  // height, wrong 3/4 read. Shift the section down so the extra depth hangs
+  // under the rails. Racing / oval teardrops stay centred: those ARE sausages.
+  const hangBelly = (geom.form === 'tapered_wedge' || geom.form === 'holster')
+    && geom.crossSection !== 'round' && geom.crossSection !== 'oval';
+  // Pin the top at the neck and drop the extra depth as ONE pillow, not two
+  // lobes. depthAt still carries a little leftover wobble after silhouetteOf;
+  // a 3-tap on the hang stops that wobble becoming a dent on the underside.
+  const hangDepth = (t) => hangBelly
+    ? (depthAt(Math.max(0, t - 0.05)) + depthAt(t) * 2 + depthAt(Math.min(1, t + 0.05))) / 4
+    : depthAt(t);
+  const shiftAt = (t) => hangBelly ? (depthAt(0.06) - hangDepth(t)) : 0;
+  const topAt = (t) => depthAt(t) + shiftAt(t);
+  const downAt = (t) => depthAt(t) - shiftAt(t);
+
   // `p.closure.type` is the controlled-vocabulary field apply-models.mjs
   // merges. The old code switched on `features.closure`, which is free text —
   // "rolltop with quick-release buckle" is not `=== 'rolltop'`, so all 65
@@ -390,9 +439,14 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   // t = 0.9 and bolted the closure on, leaving the loft's flat end cap showing
   // ("flat-cut cylinder" in the review). The outline closes the tail itself, so
   // there is no extra pinch here: see the note on `lipA`.
-  const xs = sectionFor(geom.crossSection, 'rounded_rect');
+  // A hung wedge is stuffed-round underneath (one pillow) and flatter on top
+  // where it sits under the rails. The record's rounded_rect is the right
+  // *family* — flat flanks, piped corners — but equal radii leave a flat
+  // underside that reads as two keels and a dent.
+  const xs = hangBelly ? 'round_belly' : sectionFor(geom.crossSection, 'rounded_rect');
   const sectionAt = (t) => ({
     a: Math.max(depthAt(t), 0.5), b: Math.max(widthAt(t), 0.5),
+    cu: shiftAt(t),
   });
   const loft = loftBody({ len: bodyLen, rings: 30, shape: xs, sectionAt });
   const shell = soft(loft.geo, main, {
@@ -532,8 +586,8 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
     dc.position.x = bx(1) - 4;
     grp.add(dc);
   } else if (closure === 'zip') {
-    grp.add(zipperRun(v3(bx(0.2), depthAt(0.2) * 0.78, 0),
-      v3(bx(0.9), depthAt(0.9) * 0.72, 0), hwm, { accentMat: accent }));
+    grp.add(zipperRun(v3(bx(0.2), topAt(0.2) * 0.78, 0),
+      v3(bx(0.9), topAt(0.9) * 0.72, 0), hwm, { accentMat: accent }));
   } else if (closure === 'flap') {
     const t = 0.72;
     const fl = flapArc(accent, wm, hwm, { R: depthAt(t) + lift, len: bodyLen * 0.4, arc: deg(165) });
@@ -544,9 +598,11 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
     // The mouth is a wide flat lip; roll it across the bike. The bar runs to
     // the body's own half-width at the tail so it finishes the section instead
     // of standing out past it.
-    body.add(rolledTail(main, hwm, wm, {
+    const tail = rolledTail(main, hwm, wm, {
       cx: bx(1) - rollR * 0.45, r: rollR, half: Math.max(widthAt(1), rollR * 1.2),
-    }));
+    });
+    tail.position.y = shiftAt(1);
+    body.add(tail);
   }
 
   // ---- compression ---------------------------------------------------------
@@ -589,6 +645,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
     st.rotation.y = Math.PI / 2;   // ring axis +z → +x: the band girths the body
     st.rotation.x = deg(5);        // the drawings run these slightly diagonal
     st.position.x = bx(t);
+    st.position.y = shiftAt(t);    // follow the dropped belly, or the band floats
     grp.add(st);
   });
 
@@ -597,7 +654,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
     // sit on the shell at its own station, not at the body's widest radius —
     // a long span referenced to the deepest section overhangs a tapering back
     const dc = daisyChain(wm, { len: bodyLen * 0.3, rows: 2, band: Math.min(maxD * 0.34, 17) });
-    dc.position.set(bx(0.5), depthAt(0.5) + trim, 0);
+    dc.position.set(bx(0.5), topAt(0.5) + trim, 0);
     dc.rotation.z = deg(4);
     grp.add(dc);
   }
@@ -613,12 +670,12 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
     const pts = [];
     for (let k = 0; k <= 8; k++) {
       const t = 0.42 + (0.5 * k) / 8;
-      pts.push(v3(bx(t), depthAt(t) + trim + 1.5, 0));
+      pts.push(v3(bx(t), topAt(t) + trim + 1.5, 0));
     }
     body.add(tubeAlong(pts, 1.7, cordMat(), { segments: 18, radialSegments: 5 }));
     for (const t of [0.42, 0.92]) {
       const hook = new THREE.Mesh(new THREE.BoxGeometry(8, 7, 6), hwm);
-      hook.position.set(bx(t), depthAt(t) + trim, 0);
+      hook.position.set(bx(t), topAt(t) + trim, 0);
       body.add(hook);
     }
   }
@@ -627,7 +684,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
     // past the widest point of the bag, which is a tenth of the width budget on
     // a Racing pack — and a valve is a moulded fitting flush with the fabric.
     const vd = valveDisc(hwm);
-    vd.position.set(bx(0.34), depthAt(0.34) * 0.3, widthAt(0.34) - 5.5);
+    vd.position.set(bx(0.34), shiftAt(0.34) + depthAt(0.34) * 0.3, widthAt(0.34) - 5.5);
     grp.add(vd);
   }
   if (feats.reflective) {
@@ -643,24 +700,45 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
       body.add(rs);
     }
   }
-  // Mesh side pockets. The record's machine-readable `pockets` block
-  // (`[{ type: 'mesh', count: 2, location: 'side' }]`) is NOT merged into
-  // brands.json by tools/apply-models.mjs, so featuresOf(p).pockets is empty
-  // for the whole slot and addPockets draws nothing; what does arrive is the
-  // free-text `features.pockets`. Read that here so the Expedition gets the
-  // large flank mesh panel that is half its silhouette in dimensions-1.png.
-  // Reported as a data-pipeline gap rather than papered over any further.
+  // Mesh flank PANEL, not a stuffed pocket. Expedition dimensions-1.png and
+  // studio-2.jpg show a large inlaid mesh field on each cheek — barely proud,
+  // covering the middle of the side, hemmed. pocketArc lathed a 4 mm blister
+  // at the equator and, after the belly hang, that blister read as a dent
+  // plus a blob. Built in loft space and parented to `rolled`.
   const pocketText = typeof p.features?.pockets === 'string' ? p.features.pockets : '';
   if (/mesh/i.test(pocketText) && /side|flank/i.test(pocketText)) {
+    const t0 = 0.20, t1 = 0.74, N = 16;
+    const uLo = -0.48, uHi = 0.38, proud = 1.4;
     for (const s of [1, -1]) {
-      const t = 0.5;
-      const g = pocketArc(main, hwm, {
-        R: widthAt(t) + trim, len: Math.min(bodyLen * 0.42, 210), arc: deg(70),
-        proud: 4, mesh: true,
-      });
-      orientArc(g, v3(-1, 0, 0), v3(0, -0.15, s));
-      g.position.x = bx(t);
-      body.add(g);
+      const pos = [], uv = [], idx = [];
+      const edge = { lo: [], hi: [] };
+      for (let i = 0; i <= N; i++) {
+        const t = t0 + (t1 - t0) * (i / N);
+        const a = Math.max(depthAt(t), 0.5);
+        const b = Math.max(widthAt(t), 0.5);
+        const y = t * bodyLen;
+        const z = s * (b + proud);
+        const lo = v3(uLo * a + shiftAt(t), y, z);
+        const hi = v3(uHi * a + shiftAt(t), y, z);
+        pos.push(lo.x, lo.y, lo.z, hi.x, hi.y, hi.z);
+        uv.push(0, i / N, 1, i / N);
+        edge.lo.push(lo); edge.hi.push(hi);
+        if (i < N) {
+          const a0 = i * 2;
+          if (s > 0) idx.push(a0, a0 + 1, a0 + 2, a0 + 1, a0 + 3, a0 + 2);
+          else idx.push(a0, a0 + 2, a0 + 1, a0 + 1, a0 + 2, a0 + 3);
+        }
+      }
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+      geo.setIndex(idx);
+      geo.computeVertexNormals();
+      const panel = new THREE.Mesh(geo, meshPanelMat());
+      panel.userData.noCollide = true;
+      rolled.add(panel);
+      const hem = [...edge.lo, ...edge.hi.slice().reverse(), edge.lo[0]];
+      rolled.add(seamCurve(webbing(), hem, 1.15));
     }
   }
   addPockets(grp, feats, main, hwm, {
@@ -674,7 +752,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
     },
     top: (make) => {
       const t = 0.5;
-      const g = make.arc(depthAt(t) + trim, Math.min(bodyLen * 0.26, 140), deg(58));
+      const g = make.arc(topAt(t) + trim, Math.min(bodyLen * 0.26, 140), deg(58));
       orientArc(g, v3(-1, 0, 0), v3(0, 1, 0));
       g.position.x = bx(t);
       body.add(g);
@@ -713,7 +791,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   // Expedition (flat-topped, still at full depth 70% of the way out) and an
   // oval Racing (down to 85% by then) get different answers, which is exactly
   // the difference the rail gap turned on.
-  const unit = sectionUnit(sectionFor(geom.crossSection, 'rounded_rect')).pts;
+  const unit = sectionUnit(xs).pts;
   const shoulderU = (f) => {
     let best = 0;
     for (let i = 0; i < unit.length; i++) {
@@ -738,7 +816,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
    * under the saddle on packs whose straps are supposed to be pulling on it.
    */
   const railDropFor = (gx, dyPrev) => {
-    if (!rails) return anchorPos.y + 46 - anchorPos.y - depthAt(0.12) - swell - 12;
+    if (!rails) return anchorPos.y + 46 - anchorPos.y - topAt(0.12) - swell - 12;
     let need = Infinity;
     for (let k = 0; k <= 4; k++) {
       const rp = rails.right[0].clone().lerp(rails.right[1], k / 4);
@@ -747,7 +825,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
       const dx = rp.x - anchorPos.x - gx, dy = rp.y - anchorPos.y - dyPrev;
       const lx = dx * ct + dy * st;
       const t = Math.min(Math.max((-lx - plateOut) / bodyLen, 0), 1);
-      const sy = depthAt(t) * shoulderU(Math.min(rails.z / Math.max(widthAt(t), 1), 1)) + swell;
+      const sy = shiftAt(t) + depthAt(t) * shoulderU(Math.min(rails.z / Math.max(widthAt(t), 1), 1)) + swell;
       need = Math.min(need, rp.y - railR - 3 - (lx * st + sy * ct) - anchorPos.y);
     }
     return need;
@@ -766,7 +844,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
   // "belly": the pack swells rearward, so the deepest part of it is the part
   // hanging over the wheel and sampling near the nose under-reads it badly.
   const tAxle = Math.min(Math.max((runToAxle - plateOut) / bodyLen, 0), 1);
-  const depthOverTyre = Math.max(depthAt(tAxle), depthAt(0.5)) + swell;
+  const depthOverTyre = Math.max(downAt(tAxle), downAt(0.5)) + swell;
   const tyreFloor = ctx.points.rearAxle.y + tyreOuter + 18 + depthOverTyre
     + droopAtAxle - anchorPos.y;
   // Third floor: the nose hangs `noseDrop` below the bag's centreline and can
@@ -869,7 +947,7 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
         // starts on the centreline and lands 21mm out is a diagonal strut.
         const tBody = Math.min(Math.max((-railPt.x - plateOut) / bodyLen, 0.04), 0.6);
         const fz = Math.min(rails.z / Math.max(widthAt(tBody), 1), 1);
-        const from = v3(bx(tBody), depthAt(tBody) * shoulderU(fz) + trim, side * rails.z);
+        const from = v3(bx(tBody), shiftAt(tBody) + depthAt(tBody) * shoulderU(fz) + trim, side * rails.z);
         const to = v3(railPt.x, railPt.y, side * rails.z);
         // NOT flagged as mount hardware: unlike the post collar these run
         // BACKWARD from the rails onto the bag, so they cost the measured

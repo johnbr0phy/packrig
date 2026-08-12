@@ -70,6 +70,10 @@ export function sectionUnit(shape, { detail = 5 } = {}) {
     case 'd_shape':     r = [0.9, 0.9, 0.22, 0.22]; flatBottom = true; break;
     case 'flat_bottom': r = [0.42, 0.42, 0.16, 0.16]; break;
     case 'flat_back':   r = [0.34, 0.34, 0.14, 0.14]; break;
+    // Stuffed wedge hung off a rail: flatter on top (sits under the saddle),
+    // pillow-round on the belly. rounded_rect's equal 0.30 radii leave a flat
+    // underside that reads as two keels with a dent between them.
+    case 'round_belly': r = [0.24, 0.24, 0.72, 0.72]; break;
     case 'rounded_rect':
     default:            r = [0.30, 0.30, 0.30, 0.30]; break;
   }
