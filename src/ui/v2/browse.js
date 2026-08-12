@@ -1,13 +1,24 @@
 /**
- * Browse — one view, two sources: the curated Loadouts and the rig Gallery.
+ * Browse — one view, two sources: the curated Loadouts and your own saved rigs.
  *
- * WHY ONE VIEW. Reading a loadout and reading somebody's gallery rig are the
- * same act: look at a built bike, find out what is on it, decide whether you
- * want it. v1 had a gallery and no loadouts, and the gallery consisted of two
- * arrows and a name plate — which told you a rig was called "Full tour" and had
- * "7 bags · 75.0 L", and nothing whatever about what those seven bags WERE.
- * That is a slideshow, and a slideshow of a thing you cannot read is boring by
- * the third frame.
+ * THERE WAS A THIRD. A public Gallery of everyone else's rigs, on this same
+ * view. It is out, on the owner's call — "it adds too much complexity to the
+ * pages" — and he is right about what it cost: a second remote query with its
+ * own composite index, a fallback that quietly showed you your OWN rigs when
+ * nothing had been published, a publish flow with a display-name prompt and a
+ * consent line, and a third entry on a front page that should offer two things.
+ * None of it earned that while the thing being published had nowhere worth
+ * appearing. `rigstore.js` keeps `gallery()` and `setPublished()` — the
+ * documents already carry the field and FIREBASE.md already describes the
+ * rules — but nothing calls them, and bringing it back is a UI job.
+ *
+ * WHY ONE VIEW FOR THE TWO THAT REMAIN. Reading a curated loadout and reading
+ * a bike you built last week are the same act: look at a built bike, find out
+ * what is on it, decide whether you want it. v1 had two arrows and a name
+ * plate — which told you a rig was called "Full tour" and had "7 bags ·
+ * 75.0 L", and nothing whatever about what those seven bags WERE. That is a
+ * slideshow, and a slideshow of a thing you cannot read is boring by the third
+ * frame.
  *
  * WHAT MAKES IT WORTH STAYING IN. The manifest. Every bag on the bike, listed
  * by mounting point, with its maker, its model and its capacity, set in tabular
@@ -116,7 +127,7 @@ export function initBrowse(app, {
 } = {}) {
   // Per-kind cursor, so stepping out to the start screen and back into the
   // gallery puts you where you were rather than at rig one.
-  const cursor = { loadouts: 0, gallery: 0, rigs: 0 };
+  const cursor = { loadouts: 0, rigs: 0 };
   let kind = 'loadouts';
   let items = [];
   let nodes = null;
@@ -126,8 +137,8 @@ export function initBrowse(app, {
    *
    * Comparing the wrapper element was not enough. Closing the menu leaves
    * `nodes.wrap` pointing at the very node the closure captured — detached,
-   * but still equal — so a gallery request that resolved a second after the
-   * user pressed Close passed the guard and mounted a stranger's rig onto the
+   * but still equal — so a request that resolved a second after the user
+   * pressed Close passed the guard and mounted somebody else's rig onto the
    * bike they had just gone back to. Silently, with no menu on screen.
    */
   let token = 0;
@@ -146,37 +157,6 @@ export function initBrowse(app, {
       stats: l.stats,
       rig: l.rig,
     }));
-  }
-
-  // Set when the gallery is showing YOUR saved rigs because nothing has been
-  // published. The view says so rather than presenting them as other people's.
-  let fallbackToMine = false;
-
-  async function loadGallery() {
-    let rows = [];
-    let mine = false;
-    try { rows = (await app.rigs?.gallery?.({ limit: 40 })) || []; } catch { rows = []; }
-    if (!rows.length) {
-      try { rows = (await app.rigs?.list?.()) || []; mine = rows.length > 0; } catch { rows = []; }
-    }
-    fallbackToMine = mine;
-    return rows.map((row) => {
-      const man = manifestOf(app, row.rig);
-      return {
-        id: row.id,
-        name: row.name || 'Untitled rig',
-        kicker: mine ? 'Your rig' : `by ${row.author || 'Anonymous'}`,
-        note: '',
-        tags: [...new Set(man.map((m) => m.brand))].slice(0, 4),
-        stats: {
-          litres: Math.round(man.reduce((n, m) => n + m.raw, 0) * 10) / 10,
-          bags: man.length,
-          makers: new Set(man.map((m) => m.brand)).size,
-        },
-        rig: row.rig,
-        mine,
-      };
-    });
   }
 
   /** Your own saved rigs. Newest first, straight off the store. */
@@ -210,7 +190,7 @@ export function initBrowse(app, {
     const mine = ++token;
     // The previous view's rigs are NOT this view's rigs. Leaving them in place
     // during the load meant an arrow key pressed in that window stepped through
-    // the gallery while the header said Loadouts, and mounted the wrong rig.
+    // your own rigs while the header said Loadouts, and mounted the wrong one.
     items = [];
     chips = [];
     const wrap = el('div', 'pr-browse');
@@ -222,15 +202,10 @@ export function initBrowse(app, {
 
     nodes = { wrap, spec, railWrap };
 
-    spec.append(el('p', 'pr-loading', kind === 'loadouts'
-      ? 'Loading loadouts…'
-      : kind === 'rigs' ? 'Finding your rigs…'
-        : 'Looking for published rigs…'));
+    spec.append(el('p', 'pr-loading',
+      kind === 'rigs' ? 'Finding your rigs…' : 'Loading loadouts…'));
 
-    const source = kind === 'loadouts' ? loadLoadouts
-      : kind === 'rigs' ? loadMine
-      : loadGallery;
-    source()
+    (kind === 'rigs' ? loadMine() : loadLoadouts())
       .then((list) => {
         // A late resolve for a view the user has already left must not paint
         // over the view they are now looking at — and must never touch the bike.
@@ -249,13 +224,10 @@ export function initBrowse(app, {
   function paintEmpty() {
     nodes.spec.replaceChildren();
     const e = el('div', 'pr-empty');
-    e.append(el('h2', 'pr-title', kind === 'loadouts' ? 'No loadouts'
-      : kind === 'rigs' ? 'No saved rigs yet'
-        : 'Nothing published yet'));
+    e.append(el('h2', 'pr-title', kind === 'rigs' ? 'No saved rigs yet' : 'No loadouts'));
     if (kind !== 'rigs') {
-      e.append(el('p', 'pr-note', kind === 'loadouts'
-        ? 'The curated rigs did not load. The builder still works — everything in the catalogue is there.'
-        : 'Nobody has published a rig yet. Build one, save it and publish it, and yours would be the first in here.'));
+      e.append(el('p', 'pr-note',
+        'The curated rigs did not load. The builder still works — everything in the catalogue is there.'));
     }
     // An empty state without its verb is a dead end, and this is the screen most
     // likely to be somebody's first: one of three doors on the start screen
@@ -360,14 +332,8 @@ export function initBrowse(app, {
     counter.append(el('span', null, ` / ${String(items.length).padStart(2, '0')}`));
     spec.append(staged(counter));
 
-    // On the fallback the aside says "these are your own saved rigs", which is
-    // the kicker's line as well — so the kicker steps aside rather than saying
-    // it first in fewer words.
-    const aside = kind === 'gallery' && fallbackToMine
-      ? 'Nothing has been published yet — these are your own saved rigs.' : '';
-    if (it.kicker && !aside) spec.append(staged(el('p', 'pr-kicker', it.kicker)));
+    if (it.kicker) spec.append(staged(el('p', 'pr-kicker', it.kicker)));
     spec.append(staged(el('h2', 'pr-title', it.name)));
-    if (aside) spec.append(staged(el('p', 'pr-aside', aside)));
     if (it.note) spec.append(staged(el('p', 'pr-note', it.note)));
 
     // Three numbers, read as a group. Tabular figures so the litre column of
@@ -449,9 +415,7 @@ export function initBrowse(app, {
     const actions = el('div', 'pr-actions');
     const take = el('button', 'pr-btn is-primary');
     take.type = 'button';
-    take.append(el('span', null, kind === 'loadouts' ? 'Build on this'
-      : kind === 'rigs' ? 'Open this rig'
-        : 'Make it mine'));
+    take.append(el('span', null, kind === 'rigs' ? 'Open this rig' : 'Build on this'));
     take.onclick = () => onAdopt?.(it);
     actions.append(take);
     if (kind === 'rigs') for (const b of ownActions(it)) actions.append(b);
@@ -507,19 +471,10 @@ export function initBrowse(app, {
       notify?.(await copyText(url) ? 'Link copied' : 'Could not copy that link');
     }));
 
-    // Publishing needs shared storage and an account: a gallery is by
-    // definition something other people can read.
-    if (store?.galleryEnabled && app.auth?.signedIn && row.id && !row.local) {
-      if (row.published) {
-        out.push(act('Published ✓', 'is-live', async () => {
-          try { await store.setPublished(row.id, false); }
-          catch (e) { notify?.(e?.message || 'Could not take that down'); return; }
-          after(`“${it.name}” is out of the gallery`);
-        }));
-      } else {
-        out.push(act('Publish', '', () => askAuthor(it, row, after)));
-      }
-    }
+    // No Publish. There is nowhere for a published rig to appear while the
+    // gallery is out, and a button that sends your bike somewhere nobody can
+    // look at is worse than no button. `rigstore.setPublished` is still there
+    // for whenever it comes back.
 
     if (row.id) {
       // No dialogue. One press arms it, a second does it, and it disarms
@@ -546,47 +501,6 @@ export function initBrowse(app, {
     // find the door they came through.
     out.push(act('Build a rig', 'is-new', () => onNew?.()));
     return out;
-  }
-
-  /**
-   * Publishing asks for a display name once and remembers it. It is NOT the
-   * account email — an email is the one thing an account holder never chose to
-   * make public, and it never appears in the gallery or leaves this device.
-   */
-  const AUTHOR_KEY = 'packrig_author';
-  const lastAuthor = () => { try { return localStorage.getItem(AUTHOR_KEY) || ''; } catch { return ''; } };
-
-  function askAuthor(it, row, after) {
-    const form = el('form', 'pr-publish');
-    const who = document.createElement('input');
-    who.className = 'pr-input';
-    who.type = 'text';
-    who.maxLength = 40;
-    who.placeholder = 'Anonymous';
-    who.value = lastAuthor();
-    who.setAttribute('aria-label', 'Shown in the gallery as');
-    form.append(el('label', 'pr-publish-l', 'Shown as'), who);
-    const go = el('button', 'pr-btn is-primary');
-    go.type = 'submit';
-    go.append(el('span', null, 'Publish'));
-    const no = el('button', 'pr-btn');
-    no.type = 'button';
-    no.append(el('span', null, 'Cancel'));
-    no.onclick = () => form.replaceWith(...ownActions(it));
-    form.append(go, no);
-    form.append(el('p', 'pr-fineprint',
-      'The bike, its name and this display name become public. Your email never does, '
-      + 'and you can take it down again at any time.'));
-    form.onsubmit = async (e) => {
-      e.preventDefault();
-      const author = who.value.trim().slice(0, 40) || 'Anonymous';
-      try { localStorage.setItem(AUTHOR_KEY, author); } catch { /* private mode */ }
-      try { await app.rigs.setPublished(row.id, true, author); }
-      catch (err) { notify?.(err?.message || 'Could not publish that rig'); return; }
-      after(`“${it.name}” is in the gallery`);
-    };
-    nodes.spec.querySelector('.pr-actions')?.replaceChildren(form);
-    setTimeout(() => who.focus(), 0);
   }
 
   async function copyText(text) {

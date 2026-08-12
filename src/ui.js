@@ -94,9 +94,7 @@ export function initUI(app) {
      * The old name, kept because four headless tools drive this by it. It now
      * routes each mode at the surface that owns it.
      */
-    app.openRigs = (m) => (m === 'gallery' ? app.menu?.open('gallery')
-      : m === 'list' ? app.menu?.open('rigs')
-        : account.open('signin'));
+    app.openRigs = (m) => (m === 'list' ? app.menu?.open('rigs') : account.open('signin'));
     app.__rigURL = () => kitURL();   // headless tests assert on the real link
   });
 
@@ -110,14 +108,14 @@ export function initUI(app) {
   // reason `rigsUI` is: they read `app.rigs`, which main.js attaches around us.
   queueMicrotask(() => {
     /*
-     * The menu — start screen, loadouts and gallery — is one module now rather
+     * The menu — start screen, saved rigs and loadouts — is one module now rather
      * than the two unrelated surfaces (`ui/home.js`, `ui/gallery.js`) it
      * replaces. See src/ui/v2/menu.js for why they had to become one thing.
      */
     app.menu = initMenu(app, {
       onBuild: ({ adopted, build }) => {
-        // "Build a rig" means a bare frame. Arriving from a loadout or a
-        // gallery rig means that rig, already mounted, now yours to edit.
+        // "Build a rig" means a bare frame. Arriving from a loadout or one of
+        // your own rigs means that rig, already mounted, ready to edit.
         if (build && !adopted) {
           app.clearAll?.();
           savedSnapshot = null;
@@ -133,8 +131,8 @@ export function initUI(app) {
           openMountPicker();
         } else if (adopted) {
           // One of YOUR rigs keeps its id, so the save dock says "Save changes"
-          // and writes back to it. Somebody else's — a loadout, a gallery rig —
-          // arrives as a new unsaved bike, which is what "make it mine" means.
+          // and writes back to it. A loadout arrives as a new unsaved bike,
+          // which is what building on one means.
           const own = adopted.own ? adopted.row : null;
           savedSnapshot = own ? snapshot() : null;
           rigNav.current = {
@@ -148,20 +146,15 @@ export function initUI(app) {
       },
     });
     /*
-     * `app.home` and `app.gallery` survive as adapters. Four headless tools
-     * drive the root menu by those names (tools/_menutest.mjs, _ttsweep.mjs,
-     * _contrast.mjs, bag-portraits.mjs); renaming the module should not
-     * silently turn every screenshot harness into a no-op.
+     * `app.home` survives as an adapter. Four headless tools drive the root
+     * menu by that name (tools/_menutest.mjs, _ttsweep.mjs, _contrast.mjs,
+     * bag-portraits.mjs); renaming the module should not silently turn every
+     * screenshot harness into a no-op. `app.gallery` went with the gallery.
      */
     app.home = {
       open: () => app.menu?.open('start'),
       close: () => app.menu?.close(),
       get isOpen() { return app.menu?.isOpen && app.menu?.view === 'start'; },
-    };
-    app.gallery = {
-      open: () => app.menu?.open('gallery'),
-      close: () => app.menu?.close(),
-      get isOpen() { return app.menu?.isOpen && app.menu?.view === 'gallery'; },
     };
     // The root level is where you arrive, unless a shared link means you have
     // already been handed a specific rig to look at.
@@ -946,12 +939,48 @@ export function initUI(app) {
     }
     c.append(meta);
     if (unfit) c.append(elt('div', 'card-unfit', unfit));
-    c.onclick = () => {
-      app.bags.equip(uiSlot, brand, product);
-      closeOverlay();
-      sync();
-    };
+    c.onclick = () => fitAndStay(uiSlot, { brand, product }, c);
     return c;
+  }
+
+  /**
+   * Fit a bag AND STAY WHERE YOU ARE.
+   *
+   * Choosing a bag used to close the sheet, so adding four bags meant walking
+   * the whole tree four times: Add a bag → the mount list → the 103 half-frame
+   * bags → back out to nothing. The owner's note: "load the bag onto the bike
+   * but leave the menu as it is so I can go back to the previous page and
+   * select my next bag."
+   *
+   * The list stays open, the bike behind it changes, and the row you pressed
+   * takes the fitted mark. It repaints the marks by hand rather than redrawing
+   * the grid: a redraw resets the scroller to the top, and losing your place in
+   * a list of 103 is a worse tax than the one this is removing.
+   */
+  function fitAndStay(uiSlot, entry, cardEl) {
+    // What was on that mount a moment ago, so Undo puts THAT back rather than
+    // leaving the slot empty — swapping a bag and swapping it back are the same
+    // gesture here, and the second one has to be exact.
+    const prev = app.bags.equipped[uiSlot];
+    const before = prev
+      ? { brand: prev.brand, product: prev.product, cw: prev.colorwayIndex || 0 }
+      : null;
+    app.bags.equip(uiSlot, entry.brand, entry.product);
+    sync();
+    const grid = cardEl?.closest('.cards');
+    if (grid) {
+      for (const other of grid.querySelectorAll('.card')) other.classList.toggle('on', other === cardEl);
+      // Size chips belong to a card, not to the grid: only the pressed card's
+      // can be current, and only the one that was pressed.
+      for (const chip of grid.querySelectorAll('.size-chip')) chip.classList.remove('on');
+    }
+    const cur = app.bags.equipped[uiSlot];
+    notify(`Fitted ${cur ? modelTitle(cur.product, cur.brand) : entry.product.name}`, () => {
+      if (before) app.bags.equip(uiSlot, before.brand, before.product, before.cw);
+      else app.bags.remove(uiSlot);
+      sync();
+      cardEl?.classList.remove('on');
+    });
   }
 
   /**
@@ -1048,11 +1077,7 @@ export function initUI(app) {
    */
   function modelCards(items, uiSlot, brand, models = null) {
     const cur = app.bags.equipped[uiSlot];
-    const equip = (entry) => {
-      app.bags.equip(uiSlot, entry.brand, entry.product);
-      closeOverlay();
-      sync();
-    };
+    const equip = (entry, cardEl) => fitAndStay(uiSlot, entry, cardEl);
     const cards = el('div', 'cards');
     for (const [, group] of (models ? [[null, models]] : groupByLine(items))) {
       for (const model of group) {
@@ -1101,13 +1126,17 @@ export function initUI(app) {
           for (const v of model.variants) {
             const chip = elt('button', 'size-chip' + (cur && cur.product === v.product ? ' on' : ''), sizeOf(v.product));
             chip.title = `${model.title} · ${sizeOf(v.product)}`;
-            chip.onclick = (e) => { e.stopPropagation(); equip(v); };
+            chip.onclick = (e) => {
+              e.stopPropagation();
+              equip(v, c);
+              chip.classList.add('on');     // which SIZE is on the bike, not just which bag
+            };
             sizes.append(chip);
           }
           if (buy) sizes.append(buy);
           c.append(sizes);
         } else {
-          c.onclick = () => equip(model.variants[0]);
+          c.onclick = () => equip(model.variants[0], c);
         }
         cards.append(c);
       }

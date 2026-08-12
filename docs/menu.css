@@ -1059,44 +1059,6 @@
   border-color: rgba(242, 109, 109, 0.35);
   color: #F26D6D;
 }
-/* Published is a STATE, and state is what the ember is for — the only place in
-   this layer it appears on a control. */
-.pr-btn.is-live { border-color: var(--pr-accent); color: var(--pr-accent); }
-.pr-btn.is-live:hover { background: rgba(255, 106, 43, 0.10); }
-/* The way out of the list, set apart from the actions on the rig itself: its
-   own row, left-aligned on the column's spine. `margin-left: auto` put it in
-   the middle of an empty second line, which reads as a button that has come
-   loose rather than as one that is deliberately apart. */
+/* The way out of the list, on its own row and left-aligned on the column's
+   spine — deliberately apart from the actions on the rig itself. */
 .pr-btn.is-new { flex: 0 0 100%; border-style: dashed; color: var(--pr-ink-2); }
-
-.pr-publish {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-.pr-publish-l {
-  font: 600 10.5px/1 var(--font);
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  color: var(--pr-ink-3);
-}
-.pr-input {
-  flex: 1 1 160px;
-  min-width: 0;
-  height: 42px;
-  padding: 0 12px;
-  border: 1px solid var(--pr-rule);
-  border-radius: 4px;
-  background: var(--pr-fill);
-  color: var(--pr-ink);
-  font: 400 14px/1 var(--font);
-}
-.pr-input:focus { outline: none; border-color: var(--pr-accent); }
-.pr-fineprint {
-  flex: 1 1 100%;
-  margin: 0;
-  font: 400 12px/1.5 var(--font);
-  color: var(--pr-ink-3);
-}

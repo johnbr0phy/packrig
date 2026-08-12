@@ -128,9 +128,14 @@ export function createRigStore(app, auth) {
     get knownCount() { return known; },
 
     /**
-     * Whether a gallery is possible at all. The rigs view (ui/v2/browse.js)
-     * hides every publish control when this is false, so on a local-only build
-     * the app never offers something it cannot do. Absent, it reads as `undefined` and the
+     * Whether a gallery would be possible at all.
+     *
+     * NOTHING READS THIS AT THE MOMENT. The gallery and the publish flow were
+     * taken out of the UI — see the head of ui/v2/browse.js — and this getter,
+     * `setPublished` and `gallery` below are what is left of the data half:
+     * the documents already carry `published`, FIREBASE.md already describes
+     * the rules and the index, and re-adding the screens is then a UI job.
+     * They are kept for that reason and for no other. Absent, it reads as `undefined` and the
      * gallery quietly disappears with no error — which is how a feature gets
      * built, shipped and never seen.
      */
@@ -287,7 +292,8 @@ export function createRigStore(app, auth) {
     },
 
     /**
-     * Publish to the gallery, or take it back down.
+     * Publish to the gallery, or take it back down. No caller at present; see
+     * `galleryEnabled` above.
      *
      * A local rig cannot be published: it exists only in this browser, so there
      * is nothing for anyone else to read.
@@ -308,7 +314,7 @@ export function createRigStore(app, auth) {
 
     /**
      * Everything anyone has published, newest first. Works signed out — that is
-     * the whole point of a gallery.
+     * the whole point of a gallery. No caller at present; see `galleryEnabled`.
      *
      * The rules in FIREBASE.md allow reading a document only when
      * `published == true`, so a stranger's query can never return a private

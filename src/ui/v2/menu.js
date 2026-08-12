@@ -16,13 +16,14 @@
  * You are never looking at a picture of a menu.
  *
  * THREE LEVELS, ONE SHELL:
- *   start      the root — what this is, and three ways in
+ *   start      the root — what this is, and the ways in
+ *   rigs       the bikes you have saved, once there are any
  *   loadouts   eight curated rigs, on the bike, with their manifests
- *   gallery    everyone else's rigs, in the same frame
  *
- * `loadouts` and `gallery` are the same view (`browse.js`) with different
+ * `loadouts` and `rigs` are the same view (`browse.js`) with different
  * sources, because they are the same act: look at a rig somebody built, read
- * what is on it, take it if you want it.
+ * what is on it, take it if you want it. There was a `gallery` — everyone
+ * else's rigs — and it is out for now; see the head of browse.js.
  *
  *   initMenu(app, { onBuild }) -> { open, close, go, get view, get isOpen }
  */
@@ -46,7 +47,6 @@ const VIEWS = [
   // rigs" that opens an empty page is a promise the app has not kept yet.
   { id: 'rigs',     label: 'My rigs', needsRigs: true },
   { id: 'loadouts', label: 'Loadouts' },
-  { id: 'gallery',  label: 'Gallery' },
 ];
 
 /** Do we have saved rigs? Synchronous by design — see rigstore's `knownCount`. */
@@ -154,7 +154,7 @@ export function initMenu(app, { onBuild } = {}) {
   const browse = initBrowse(app, {
     // A load that resolves after the menu closes must not mount its rig.
     isLive: () => open_,
-    // The gallery's empty state offers the one thing worth doing from it.
+    // An empty list offers the one thing worth doing from it.
     onEmptyBuild: startBuild,
     onNew: startBuild,
     // Deleting or publishing changes the list under you; redraw the view.
@@ -222,7 +222,6 @@ export function initMenu(app, { onBuild } = {}) {
         onBuild: startBuild,
         onRigs: () => go('rigs'),
         onLoadouts: () => go('loadouts'),
-        onGallery: () => go('gallery'),
       }));
     } else {
       stage.append(browse.render(view));

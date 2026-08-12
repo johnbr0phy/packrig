@@ -25,7 +25,7 @@
  * builder. With rigs on file the row becomes "My rigs", and starting a new one
  * is a button on that page.
  *
- *   renderStart(app, { rigs, onBuild, onRigs, onLoadouts, onGallery }) -> HTMLElement
+ *   renderStart(app, { rigs, onBuild, onRigs, onLoadouts }) -> HTMLElement
  */
 
 import { icon } from './icons.js';
@@ -46,7 +46,7 @@ const staged = (node) => {
   return node;
 };
 
-export function renderStart(app, { rigs = 0, onBuild, onRigs, onLoadouts, onGallery } = {}) {
+export function renderStart(app, { rigs = 0, onBuild, onRigs, onLoadouts } = {}) {
   seq = 0;
   const wrap = el('div', 'pr-start');
 
@@ -90,12 +90,10 @@ export function renderStart(app, { rigs = 0, onBuild, onRigs, onLoadouts, onGall
       desc: 'Expedition, racing, heavy touring — eight, already built.',
       run: onLoadouts,
     },
-    {
-      n: '03',
-      name: 'Gallery',
-      desc: 'What other people are riding, and how it is packed.',
-      run: onGallery,
-    },
+    // There was an 03, `Gallery` — what other people are riding. Pulled: it is
+    // the one door here that needed a backend, an index, a publish flow and a
+    // moderation answer before it showed anybody anything, and a contents page
+    // with a door that opens onto an empty room is worse than a shorter one.
   ];
 
   for (const e of ENTRIES) {
