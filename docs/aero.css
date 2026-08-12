@@ -278,7 +278,7 @@
    The builder docks at 900px. A second, narrower breakpoint here used to
    keep the tunnel as a side card on iPad while the bags were already a
    sheet — two rooms again. Same edge, same 55vh cap. */
-@media (max-width: 900px) {
+@media (max-width: 560px) {
   .aero-panel {
     top: auto;
     left: 0;
@@ -300,7 +300,7 @@
 @media (max-width: 560px), ((pointer: coarse) and (max-height: 480px)) {
   .aero-title { display: none; }
   .aero-close span { display: none; }
-  .aero-close { padding: 8px; }
+  .aero-close { padding: 8px; min-width: 44px; min-height: 44px; }
   .aero-head { padding: 6px 16px 0; justify-content: flex-end; }
   .peek-cost-label { display: none; }
   .cda-explainer, .grade-blurb, .yaw-hint, .aero-delta { display: none; }

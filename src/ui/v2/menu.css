@@ -986,7 +986,7 @@
    the phone composition — lede deleted, column crushed into the bottom half —
    on a screen with room for the full desktop layout. Touch affordances that
    genuinely depend on the pointer get their own block below. */
-@media (max-width: 900px) {
+@media (max-width: 560px) {
   .pr {
     --pr-gut: 20px;
     --pr-col: 100%;
@@ -1069,6 +1069,45 @@
   .pr-step { display: none; }
   .pr-chip { padding-top: 15px; padding-bottom: 15px; }
   .pr-item { padding-top: 18px; padding-bottom: 18px; }
+  .pr-swatch { width: 44px; height: 44px; }
+  .pr-close { min-width: 44px; min-height: 44px; }
+  .pr-size { min-height: 44px; }
+}
+
+/* Landscape phone: keep the desktop left column so the bike stays visible.
+   Pin Setup's submit — it was below the fold on 852×393. */
+@media (pointer: coarse) and (max-height: 520px) and (min-width: 561px) {
+  .pr-display { font-size: clamp(22px, 4.4vw, 28px); }
+  .pr-lede, .pr-stat, .pr-item-desc, .pr-eyebrow, .pr-size-r { display: none; }
+  .pr-menu { margin-top: 12px; }
+  .pr-item { padding-top: 12px; padding-bottom: 12px; }
+  .pr-start, .pr-spec {
+    max-height: calc(100dvh - 56px);
+    overflow-y: auto;
+  }
+  .pr-setup {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 56px);
+    overflow: hidden;
+  }
+  .pr-setup-form {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    margin-top: 10px;
+    gap: 12px;
+  }
+  .pr-setup-go {
+    position: sticky;
+    bottom: 0;
+    align-self: stretch;
+    justify-content: center;
+    margin-top: 0;
+    padding: 10px 0 max(10px, env(safe-area-inset-bottom));
+    background: linear-gradient(180deg, transparent, rgba(10, 11, 13, 0.96) 28%);
+  }
+  .pr-note, .pr-grade { display: none; }
 }
 
 /* The wind tunnel's verdict, under the figures it explains. The grade is a

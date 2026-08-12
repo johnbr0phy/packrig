@@ -318,6 +318,14 @@
    DESKTOP decision; it says nothing about a thumb. */
 @media (pointer: coarse) {
   #ui-root .paint, #ui-root .bidon { width: 44px; height: 44px; }
+  #ui-root .tool-btn, #ui-root .acct-btn {
+    width: 44px; height: 44px; min-width: 44px; min-height: 44px;
+    padding: 0;
+  }
+  #ui-root .save-btn, #ui-root .btn.ghost, #ui-root .aero-close {
+    min-height: 44px;
+  }
+  #ui-root .size-pick { min-width: 44px; min-height: 44px; }
 }
 
 /* ===========================================================================
@@ -551,17 +559,12 @@
 #ui-root .size-pick.on { color: var(--ink-1); border-color: var(--ink-2); background: var(--fill-2); }
 
 /* ===========================================================================
-   NARROW — the column becomes the bottom sheet it already was
+   PHONE PORTRAIT — the column becomes a bottom sheet
+   Tablet (561–900) stays a side column. A 900px sheet ate landscape phones
+   (852×393) and iPads: 55vh of 393px is 216px of overlapping chrome.
    =========================================================================== */
-@media (max-width: 900px) {
+@media (max-width: 560px) {
   :root { --col-w: 100%; }
-  /*
-   * A phone has no room for a column beside the bike, so the same surface
-   * docks to the BOTTOM edge instead of the left one — and it must keep the
-   * height cap MOBILE.md sets, or it fills the screen and the bike, which is
-   * the entire product, is not on it. (`max-height: none` in the desktop rule
-   * above did exactly that: the panel ran from the top bar to the floor.)
-   */
   #ui-root .panel, #ui-root .sheet, #ui-root .aero-panel {
     top: auto;
     left: 0;
@@ -573,8 +576,6 @@
     border-top: 1px solid var(--line);
   }
   #ui-root .panel { position: fixed; }
-  /* Collapsed, the sheet is just its header — the handle you tap to get the
-     list back — so the bike gets the screen. */
   #ui-root .panel.collapsed { max-height: none; }
   #ui-root .sheet .cards { grid-template-columns: minmax(0, 1fr); }
 }
@@ -1664,7 +1665,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  #ui-root .rn-bar .save-btn { height: 32px; padding: 0 12px; font-size: 12.5px; }
+  #ui-root .rn-bar .save-btn { min-height: 44px; height: 44px; padding: 0 14px; font-size: 13px; }
   #ui-root .share-kit { display: none; }
   #ui-root .panel-foot { display: none; }
   #ui-root .nav-sec-title { font-size: 10px; }
@@ -1674,7 +1675,7 @@
   #ui-root .add-bag, #ui-root .btn.quiet { font-size: 13px; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 560px) {
   #ui-root .app-veil {
     background:
       linear-gradient(180deg,
@@ -1683,14 +1684,9 @@
         rgba(10, 11, 13, 0.12) 10%,
         rgba(10, 11, 13, 0) 16%);
   }
-  #ui-root .panel, #ui-root .sheet {
-    background: rgba(10, 11, 13, 0.96);
-    border-top: 1px solid var(--line);
-  }
-  /* F10 pins the tunnel to the left spine on desktop. That rule is later
-     than the first 900px block, so without this the phone sheet is stretched
-     from the top bar to the floor — 780px of empty glass over the bike. */
-  #ui-root .aero-panel {
+  /* Restate docking after the desktop F10 `max-height: none` / `top: topbar`
+     rules, or the tunnel sheet stretches from the bar to the floor. */
+  #ui-root .panel, #ui-root .sheet, #ui-root .aero-panel {
     top: auto;
     left: 0;
     right: 0;
@@ -1700,4 +1696,45 @@
     background: rgba(10, 11, 13, 0.96);
     border-top: 1px solid var(--line);
   }
+}
+
+/* Landscape phone (852×393): a bottom sheet leaves no bike. Side column,
+   one row of chrome — name + Save — and the tunnel stays a thin peek. */
+@media (pointer: coarse) and (max-height: 520px) and (min-width: 561px) {
+  #ui-root .panel, #ui-root .sheet {
+    position: fixed;
+    top: var(--topbar-h);
+    left: 0;
+    right: auto;
+    bottom: 0;
+    width: min(320px, 42vw);
+    max-height: none;
+    background: none;
+    border-top: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #ui-root .bike-sec,
+  #ui-root .share-kit,
+  #ui-root .panel-foot,
+  #ui-root .nav-sec-head .btn.ghost { display: none; }
+  #ui-root .rignav .rn-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #ui-root .aero-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    max-height: 28vh;
+    background: rgba(10, 11, 13, 0.96);
+    border-top: 1px solid var(--line);
+  }
+  #ui-root .aero-panel.expanded { max-height: 46vh; }
 }

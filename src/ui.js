@@ -63,6 +63,7 @@ const PAINT_LABEL = {
 const mql = (q) => (window.matchMedia ? window.matchMedia(q) : { matches: false, addEventListener() {} });
 const COMPACT = mql('(max-width: 900px), (pointer: coarse)');
 const PHONE = mql('(max-width: 560px)');
+const SHORT = mql('(max-height: 520px)');
 const TOUCH = mql('(pointer: coarse)');
 
 export function initUI(app) {
@@ -612,7 +613,7 @@ export function initUI(app) {
     saveBtn.hidden = bags === 0;
     saveBtn.classList.toggle('is-done', !dirty);
     saveLabel.textContent = dirty
-      ? (PHONE.matches ? 'Save' : (rigNav?.current?.id ? 'Save changes' : 'Save this rig'))
+      ? ((PHONE.matches || SHORT.matches) ? 'Save' : (rigNav?.current?.id ? 'Save changes' : 'Save this rig'))
       : 'Saved';
     saveBtn.title = dirty ? 'Keep this build' : 'Saved';
     paintTry();
