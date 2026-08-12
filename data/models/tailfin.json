@@ -10,7 +10,8 @@
     "`render` block added per the amended spec. 22 of 39 products carry one; the 17 that do not are the 9 frame bags and 8 top-tube bags, all of which are zipped, non-rolling and fixed in height.",
     "SCHEMA EXTENSION NEEDING RATIFICATION: the spec's `render` block only offers `hgt_cm`, but on Tailfin's bar rolls and downtube packs the variable axis is LENGTH, not height - they roll at the ends or at the top of a pack lying along a tube. Drawing dims_cm.len for the MTB Large bar bag would put a 72cm bag on the bars, which is the same category of error the CargoPack's 42cm height was. Those 9 products therefore carry `render.len_cm` instead of `render.hgt_cm`, populated by the same rule (minimum of the published range where one exists). If the builder only reads `hgt_cm` these 9 will still render at their unfurled length - please confirm whether `len_cm` should be adopted spec-wide.",
     "`proprietary_mount` added to all 39 products: a string naming the Tailfin-only hardware required, or `false` for genuinely universal products. 20 need Tailfin hardware, 19 do not. This is deliberately separate from `fits`, which stays reserved for the spec's four values and is set to `rack_only` only on the 6 products that actually need a rack. Fork Packs, Cage Packs and Bar Cage Bags use proprietary Tailfin mounts but are NOT rack-mounted and DO fit a 56cm drop-bar gravel bike that has the relevant bosses, so tagging them `rack_only` would be wrong.",
-    "Frame bags: Tailfin publish no per-size fit chart at all - they replaced it with a machine-learning sizing web app. The one linear figure that exists for the range is that the nine models suit bike sizes 47-61 cm; it is now in every frame bag's dims_note. The design notes also revealed an internal size-specific CARBON SPACE FRAME (two rods along the top edge and under the zip, user-removable), which is what the visible rib in the studio photos is - now in every frame bag's details.rigid_structure."
+    "Frame bags: Tailfin publish no per-size fit chart at all - they replaced it with a machine-learning sizing web app. The one linear figure that exists for the range is that the nine models suit bike sizes 47-61 cm; it is now in every frame bag's dims_note. The design notes also revealed an internal size-specific CARBON SPACE FRAME (two rods along the top edge and under the zip, user-removable), which is what the visible rib in the studio photos is - now in every frame bag's details.rigid_structure.",
+    "ROUND 1 (11 Aug, cross-brand gauntlet): the assertion in these notes that Tailfin publishes no linear dimensions for the frame bags, fork packs, cage packs, downtube packs and rear top tube bags is WRONG, and it was wrong because the evidence had never been fetched. assets/products/tailfin/ held 37 distinct images; tools/harvest-brand.mjs now holds 485 plus 22 rasterised sizing PDFs, and every one of the 16 product pages carries a labelled dimension drawing. Records corrected against those drawings this round: 2 downtube packs, 2 fork packs, 3 cage packs. VOCABULARY GAP recorded rather than fudged: the panniers and fork packs taper at different rates on their two section axes and geometry.taper carries one ratio, so the pair is in geometry.notes and the mean is in the field."
   ],
   "products": [
     {
@@ -289,31 +290,30 @@
       "size": "10L",
       "slot": "trunk",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "medium",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/speedpack-speedpack-system-10l-1.jpg",
-        "assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/dimensions-2.jpg",
         "https://www.tailfin.cc/product/racks-rear-systems/rear-systems/speedpack-system/"
       ],
       "dims_cm": {
         "len": 43.5,
         "wid": 18.5,
-        "hgt": 13
+        "hgt": 15.5
       },
-      "dims_state": "unfurled_min_height",
-      "dims_raw": "Dimensions 185mm (rear width), 435mm (length). Volume 10L (+3.0L Pocket)",
-      "dims_note": "len 43.5 and wid 18.5 are Tailfin's published plan figures and are correct. Tailfin publishes NO height for this bag at all, rolled or unrolled, so hgt is left at the existing catalogue estimate of 13 cm and this record is marked unverified for that axis. 13 cm is consistent with the low aero slab in the photos and with 10L over the stated 43.5 x 18.5 footprint, but it is an estimate, not a maker figure.",
+      "dims_state": "drawn_packed",
+      "dims_raw": "435 MM (length) / 185 MM (width) / 155 MM (height), off the SpeedPack Top Bag two-view drawing.",
+      "dims_note": "MATERIAL CHANGE, and it settles an argument the record was having with itself. dims_cm.hgt was 13, which the previous note admits was never a maker figure; render.hgt_cm was 18, estimated off a photograph, and the note flagged that the two disagreed. Tailfin do publish the height - 155 MM on the SpeedPack Top Bag's own two-view drawing - so both estimates are gone and dims_cm and render now agree on the measured number. Drawing the old 18 cm is what buried the saddle in the bag's top face in all four render angles. The 435 MM length and 185 MM width the record already held are confirmed exactly by the same drawing.",
       "capacity_l": 10,
       "geometry": {
         "form": "slab",
         "crossSection": "flat_bottom",
         "taper": {
-          "nose": 1,
-          "tail": 0.65,
+          "nose": 0.45,
+          "tail": 1,
           "profile": "linear"
         },
-        "notes": "A low, wide, aero slab lying flat on the rack deck - far shallower than the CargoPack. Domed top, dead-flat bottom, generous radius on all four top edges. The forward end (nose, at the seatpost) is the full-height blunt end; the body narrows and drops toward the rear where the fabric gathers into a vertical roll. Height is under a third of the width, which is what makes it read as a SpeedPack rather than a trunk bag.",
+        "notes": "A low, wide, aero slab lying flat on the rack deck - far shallower than the CargoPack. Domed top, dead-flat bottom, generous radius on all four top edges. The forward end (nose, at the seatpost) is the full-height blunt end; the body narrows and drops toward the rear where the fabric gathers into a vertical roll. Height is under a third of the width, which is what makes it read as a SpeedPack rather than a trunk bag. MEASURED SILHOUETTE off assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/dimensions-2.jpg: a wedge, not a constant-section box. Tall and blunt at the REAR, where the roll is folded down against the rear face and pinched by a buckled strap, tapering forward to a low rounded nose that tucks under the saddle. The 155 MM is measured at the tall rear end.",
         "shoulder": "rounded"
       },
       "closure": {
@@ -395,9 +395,9 @@
         "https://www.tailfin.cc/product/racks-rear-systems/rear-systems/speedpack-system/"
       ],
       "render": {
-        "hgt_cm": 18,
+        "hgt_cm": 15.5,
         "rolls": 3,
-        "basis": "measured in assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg. Scale from the bag's published 435mm length in the same frame (550px across); the packed body measures ~240px from the rack deck to the top edge at the rear and ~220px at mid-length, i.e. 175-190mm. Drawn at 18cm. NOTE this DISAGREES with dims_cm.hgt of 13, which was never a maker figure - Tailfin publish no height for this bag - and now looks too low. dims_cm is left untouched per the spec. The roll is at the tail, not the top, so length rather than height is this bag's variable axis; the published 43.5cm length matches the photo and needs no correction. Cross-check only: 43.5 x 18.5 x 18 = 14.5L bounding box, about 10L for a tapered domed slab, matching the stated 10L."
+        "basis": "The drawing is of the packed bag with its roll turned down against the rear face, so 155 MM is the drawn height, not an unrolled figure. No estimate is involved any more."
       },
       "proprietary_mount": "Tailfin rear rack (carbon or alloy) - INCLUDED with this SKU. Thru-axle mounted with a seatpost top stay."
     },
@@ -407,31 +407,31 @@
       "size": "10L",
       "slot": "trunk",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "medium",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/dimensions-2.jpg",
         "https://www.tailfin.cc/product/pannier-rack-top-bags/rack-top-bags/speedpack-top-bag/"
       ],
       "fits": "rack_only",
       "dims_cm": {
         "len": 43.5,
         "wid": 18.5,
-        "hgt": 13
+        "hgt": 15.5
       },
-      "dims_state": "unfurled_min_height",
-      "dims_raw": "Dimensions 185mm (rear width), 435mm (length). Volume 10L (+3.0L Pocket)",
-      "dims_note": "Same bag as the SpeedPack System without the rack. len/wid are maker figures; no height is published anywhere, so hgt stays at the 13 cm catalogue estimate and this record is unverified for that axis.",
+      "dims_state": "drawn_packed",
+      "dims_raw": "435 MM (length) / 185 MM (width) / 155 MM (height), off the SpeedPack Top Bag two-view drawing.",
+      "dims_note": "MATERIAL CHANGE, and it settles an argument the record was having with itself. dims_cm.hgt was 13, which the previous note admits was never a maker figure; render.hgt_cm was 18, estimated off a photograph, and the note flagged that the two disagreed. Tailfin do publish the height - 155 MM on the SpeedPack Top Bag's own two-view drawing - so both estimates are gone and dims_cm and render now agree on the measured number. Drawing the old 18 cm is what buried the saddle in the bag's top face in all four render angles. The 435 MM length and 185 MM width the record already held are confirmed exactly by the same drawing.",
       "capacity_l": 10,
       "geometry": {
         "form": "slab",
         "crossSection": "flat_bottom",
         "taper": {
-          "nose": 1,
-          "tail": 0.65,
+          "nose": 0.45,
+          "tail": 1,
           "profile": "linear"
         },
-        "notes": "Low aero slab, domed top, flat bottom, blunt full-height nose at the seatpost end narrowing to a vertical roll at the rear.",
+        "notes": "Low aero slab, domed top, flat bottom, blunt full-height nose at the seatpost end narrowing to a vertical roll at the rear. MEASURED SILHOUETTE off assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/dimensions-2.jpg: a wedge, not a constant-section box. Tall and blunt at the REAR, where the roll is folded down against the rear face and pinched by a buckled strap, tapering forward to a low rounded nose that tucks under the saddle. The 155 MM is measured at the tall rear end.",
         "shoulder": "rounded"
       },
       "closure": {
@@ -508,9 +508,9 @@
         "https://www.tailfin.cc/product/pannier-rack-top-bags/rack-top-bags/speedpack-top-bag/"
       ],
       "render": {
-        "hgt_cm": 18,
+        "hgt_cm": 15.5,
         "rolls": 3,
-        "basis": "measured in assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg. Scale from the bag's published 435mm length in the same frame (550px across); the packed body measures ~240px from the rack deck to the top edge at the rear and ~220px at mid-length, i.e. 175-190mm. Drawn at 18cm. NOTE this DISAGREES with dims_cm.hgt of 13, which was never a maker figure - Tailfin publish no height for this bag - and now looks too low. dims_cm is left untouched per the spec. The roll is at the tail, not the top, so length rather than height is this bag's variable axis; the published 43.5cm length matches the photo and needs no correction. Cross-check only: 43.5 x 18.5 x 18 = 14.5L bounding box, about 10L for a tapered domed slab, matching the stated 10L."
+        "basis": "The drawing is of the packed bag with its roll turned down against the rear face, so 155 MM is the drawn height, not an unrolled figure. No estimate is involved any more."
       },
       "proprietary_mount": "Tailfin rear rack, SOLD SEPARATELY. Proprietary deck-rail interface."
     },
@@ -523,6 +523,7 @@
       "verified": true,
       "confidence": "high",
       "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-1.jpg",
         "assets/products/tailfin/panniers-mini-pannier-5l-1.jpg",
         "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/"
       ],
@@ -541,10 +542,10 @@
         "crossSection": "rounded_rect",
         "taper": {
           "nose": 1,
-          "tail": 0.6,
+          "tail": 0.62,
           "profile": "linear"
         },
-        "notes": "A tall drybag that tapers downward, not fore-aft: it is 170 x 120mm at the shoulders and only 110 x 70mm at the base, so the silhouette is a truncated pyramid standing on end with soft rounded corners. The mounting face (inboard, against the rack or fork) is flat and stiffened; the outboard face bulges. The rolled top is a horizontal tube across the shoulders. Model taper along the HEIGHT axis (nose = top, tail = bottom), not along len.",
+        "notes": "A tall drybag that tapers downward, not fore-aft: it is 170 x 120mm at the shoulders and only 110 x 70mm at the base, so the silhouette is a truncated pyramid standing on end with soft rounded corners. The mounting face (inboard, against the rack or fork) is flat and stiffened; the outboard face bulges. The rolled top is a horizontal tube across the shoulders. Model taper along the HEIGHT axis (nose = top, tail = bottom), not along len. MEASURED TAPER, off assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-1.jpg: 170 x 120 MM at the roll narrowing to 110 x 70 MM at the base. The two axes do not shrink at the same rate - 0.65 fore-aft against 0.58 in thickness - and geometry.taper can only carry one ratio, so tail is their mean (0.62) and this note is the record of what was lost. A pannier that keeps its width but collapses in thickness toward the base is the shape that clears a heel; a single scalar cannot say that.",
         "shoulder": "squared"
       },
       "closure": {
@@ -632,6 +633,7 @@
       "verified": true,
       "confidence": "high",
       "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-1.jpg",
         "assets/products/tailfin/panniers-mini-pannier-10l-1.jpg",
         "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/"
       ],
@@ -653,7 +655,7 @@
           "tail": 0.7,
           "profile": "linear"
         },
-        "notes": "Same truncated-pyramid-on-end silhouette as the 5L but less severely tapered (140/210 and 110/150 at the base). Flat stiffened inboard face, bulging outboard face, horizontal rolled tube across the shoulders.",
+        "notes": "Same truncated-pyramid-on-end silhouette as the 5L but less severely tapered (140/210 and 110/150 at the base). Flat stiffened inboard face, bulging outboard face, horizontal rolled tube across the shoulders. MEASURED TAPER, off assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-1.jpg: 210 x 150 MM at the roll narrowing to 140 x 110 MM at the base. The two axes do not shrink at the same rate - 0.67 fore-aft against 0.73 in thickness - and geometry.taper can only carry one ratio, so tail is their mean (0.70) and this note is the record of what was lost. A pannier that keeps its width but collapses in thickness toward the base is the shape that clears a heel; a single scalar cannot say that.",
         "shoulder": "squared"
       },
       "closure": {
@@ -741,6 +743,7 @@
       "verified": true,
       "confidence": "high",
       "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-1.jpg",
         "assets/products/tailfin/panniers-pannier-16l-1.jpg",
         "assets/products/tailfin/fork-packs-fork-pack-5l-4.jpg",
         "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/"
@@ -760,10 +763,10 @@
         "crossSection": "rounded_rect",
         "taper": {
           "nose": 1,
-          "tail": 0.63,
+          "tail": 0.64,
           "profile": "linear"
         },
-        "notes": "Tall drybag tapering downward - 260 x 190mm at the shoulders to 170 x 120mm at the base, so it reads as a soft truncated pyramid standing on end. The taper is along HEIGHT, not along len. Inboard face flat and hard; outboard face bulges when loaded. Rolled top forms a horizontal tube across the shoulders with a G-hook clipped down each end.",
+        "notes": "Tall drybag tapering downward - 260 x 190mm at the shoulders to 170 x 120mm at the base, so it reads as a soft truncated pyramid standing on end. The taper is along HEIGHT, not along len. Inboard face flat and hard; outboard face bulges when loaded. Rolled top forms a horizontal tube across the shoulders with a G-hook clipped down each end. MEASURED TAPER, off assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-1.jpg: 260 x 190 MM at the roll narrowing to 170 x 120 MM at the base. The two axes do not shrink at the same rate - 0.65 fore-aft against 0.63 in thickness - and geometry.taper can only carry one ratio, so tail is their mean (0.64) and this note is the record of what was lost. A pannier that keeps its width but collapses in thickness toward the base is the shape that clears a heel; a single scalar cannot say that.",
         "shoulder": "squared"
       },
       "closure": {
@@ -851,6 +854,7 @@
       "verified": true,
       "confidence": "high",
       "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-1.jpg",
         "assets/products/tailfin/panniers-pannier-22l-1.jpg",
         "assets/products/tailfin/fork-packs-fork-pack-5l-4.jpg",
         "https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/"
@@ -870,10 +874,10 @@
         "crossSection": "rounded_rect",
         "taper": {
           "nose": 1,
-          "tail": 0.72,
+          "tail": 0.69,
           "profile": "linear"
         },
-        "notes": "Same family as the 16L but noticeably fuller - 320 x 220mm at the shoulders down to 250 x 130mm at the base. Taper runs down the HEIGHT axis. Flat hard inboard face, bulging outboard face.",
+        "notes": "Same family as the 16L but noticeably fuller - 320 x 220mm at the shoulders down to 250 x 130mm at the base. Taper runs down the HEIGHT axis. Flat hard inboard face, bulging outboard face. MEASURED TAPER, off assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-1.jpg: 320 x 220 MM at the roll narrowing to 250 x 130 MM at the base. The two axes do not shrink at the same rate - 0.78 fore-aft against 0.59 in thickness - and geometry.taper can only carry one ratio, so tail is their mean (0.69) and this note is the record of what was lost. A pannier that keeps its width but collapses in thickness toward the base is the shape that clears a heel; a single scalar cannot say that.",
         "shoulder": "squared"
       },
       "closure": {
@@ -958,31 +962,28 @@
       "size": "5L",
       "slot": "forkbag",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "medium",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/fork-packs-fork-pack-5l-1.jpg",
-        "assets/products/tailfin/fork-packs-fork-pack-5l-2.jpg",
-        "assets/products/tailfin/fork-packs-fork-pack-5l-3.jpg",
-        "assets/products/tailfin/fork-packs-fork-pack-5l-4.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/dimensions-1.jpg",
         "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/"
       ],
       "dims_cm": {
-        "len": 15,
-        "wid": 15,
-        "hgt": 28,
-        "dia": 15
+        "len": 17.0,
+        "wid": 12.0,
+        "hgt": 38.0,
+        "dia": 12.0
       },
-      "dims_state": "unknown",
-      "dims_raw": "no linear dimensions published - the page gives volume (5L), weight and construction only; fitment is by printable template",
-      "dims_note": "UNVERIFIED. Tailfin publishes no linear dimensions for this line, so dims_cm is left at the existing catalogue estimate (28cm tall, 15cm across, previously stored as hgt+dia). The estimate is written out here as a proper len/wid/hgt triple, with dia preserved. Do not treat any of these three as a maker figure. The studio pair shot confirms the 5L is roughly three-quarters the height of the 10L, which is consistent with 28 vs 35.",
+      "dims_state": "drawn_packed",
+      "dims_raw": "Front elevation 170 MM across at the shoulders narrowing to 110 MM at the base; side elevation 120 MM at the shoulders narrowing to 70 MM at the base; 380 MM overall height. Mount plate 152.6 x 51.6 MM, 26.8 MM standoff, 3 x M5 at 64 + 64 MM centres.",
+      "dims_note": "MATERIAL CHANGE, and it overturns this record's own dims_raw. The previous entry said Tailfin publish no linear dimensions for this line; they do - the fork packs page carries a labelled two-view engineering drawing that the earlier harvest never fetched. dims_cm now carries the SHOULDER section (the widest, per the spec's tapered-axis rule: larger value in dims_cm, taper in geometry) and the drawn 380 MM height. len is across the bike, wid is fore-aft, hgt runs down the fork leg. The base section is 110 x 70 MM, which is geometry.taper.tail = 0.61.",
       "capacity_l": 5,
       "geometry": {
         "form": "tapered_wedge",
         "crossSection": "d_shape",
         "taper": {
           "nose": 1,
-          "tail": 0.6,
+          "tail": 0.61,
           "profile": "linear"
         },
         "notes": "A tall drybag hanging on the fork leg, wider at the shoulders and tapering to a narrower rounded base - a smaller sibling of the Mini Pannier, not a horizontal cylinder. Cross-section is a flattened D: flat on the inboard face against the fork, rounded outboard. Taper runs down the HEIGHT axis. The studio pair shot shows the 5L and 10L side by side with the same silhouette and the same vertical webbing ladder down each end.",
@@ -1057,9 +1058,9 @@
         "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/"
       ],
       "render": {
-        "hgt_cm": 28,
+        "hgt_cm": 38.0,
         "rolls": 3,
-        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/fork-packs-fork-pack-5l-2.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+        "basis": "380 MM is the drawn height of the pack as illustrated, rolled and buckled - the drawing shows the roll band closed. There is no unrolled figure to take a minimum from, so hgt_cm carries the drawn figure."
       },
       "proprietary_mount": "Tailfin Fork Pack Mount (7075-T6 CNC hard-anodised alloy rail) PLUS the same X-Clamp QR as the panniers. Also needs fork bosses at 64mm spacing. No rack involved."
     },
@@ -1069,31 +1070,28 @@
       "size": "10L",
       "slot": "forkbag",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "medium",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/fork-packs-fork-pack-10l-1.jpg",
-        "assets/products/tailfin/fork-packs-fork-pack-10l-2.jpg",
-        "assets/products/tailfin/fork-packs-fork-pack-10l-3.jpg",
-        "assets/products/tailfin/fork-packs-fork-pack-10l-4.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/dimensions-2.jpg",
         "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/"
       ],
       "dims_cm": {
-        "len": 19,
-        "wid": 19,
-        "hgt": 35,
-        "dia": 19
+        "len": 21.0,
+        "wid": 15.0,
+        "hgt": 40.0,
+        "dia": 15.0
       },
-      "dims_state": "unknown",
-      "dims_raw": "no linear dimensions published - volume (10L), weight and construction only; fitment by printable template",
-      "dims_note": "UNVERIFIED. No maker dimensions exist for this line. dims_cm is the existing catalogue estimate rewritten as a proper triple with dia preserved. The studio pair shot confirms the 10L is clearly taller and fuller than the 5L, consistent with 35 vs 28, but no number here is sourced.",
+      "dims_state": "drawn_packed",
+      "dims_raw": "Front elevation 210 MM at the shoulders to 140 MM at the base; side elevation 150 MM at the shoulders to 110 MM at the base; 400 MM overall height. Same mount plate as the 5L.",
+      "dims_note": "MATERIAL CHANGE, same correction as the 5L: the line IS dimensioned, on the fork packs page's own two-view drawing. Note the 10L is only 5 percent longer than the 5L (400 vs 380 MM) - almost all the extra volume is in the section, so anything that scales all three axes by the cube root of volume is wrong for this line. Base section 140 x 110 MM gives geometry.taper.tail = 0.70.",
       "capacity_l": 10,
       "geometry": {
         "form": "tapered_wedge",
         "crossSection": "d_shape",
         "taper": {
           "nose": 1,
-          "tail": 0.65,
+          "tail": 0.7,
           "profile": "linear"
         },
         "notes": "Tall drybag on the fork leg, wider at the shoulders tapering to a rounded base. Flattened-D cross-section, flat inboard against the fork. Taper runs down the HEIGHT axis.",
@@ -1168,9 +1166,9 @@
         "https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/"
       ],
       "render": {
-        "hgt_cm": 35,
+        "hgt_cm": 40.0,
         "rolls": 3,
-        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/fork-packs-fork-pack-10l-2.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+        "basis": "400 MM is the drawn height of the pack rolled and buckled, as illustrated. No unrolled figure is published."
       },
       "proprietary_mount": "Tailfin Fork Pack Mount plus the X-Clamp QR, and fork bosses at 64mm spacing. No rack involved."
     },
@@ -1180,24 +1178,21 @@
       "size": "1.7L",
       "slot": "forkbag",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "medium",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-1.jpg",
-        "assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-2.jpg",
-        "assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-3.jpg",
-        "assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-4.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-1.jpg",
         "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
       ],
       "dims_cm": {
-        "len": 9.5,
-        "wid": 9.5,
-        "hgt": 24,
-        "dia": 9.5
+        "len": 7.5,
+        "wid": 7.5,
+        "hgt": 29.0,
+        "dia": 7.5
       },
-      "dims_state": "unknown",
-      "dims_raw": "no linear dimensions published - volume 1.7L, weight 115g, max load 1.5kg per bolt",
-      "dims_note": "UNVERIFIED. Tailfin publish volume and weight only for the Cage Packs. dims_cm is the existing catalogue estimate rewritten as a proper triple with dia preserved. The three-size studio shot confirms the size ladder (1.7L clearly shortest, 5L tallest and fattest) but carries no scale.",
+      "dims_state": "drawn_packed",
+      "dims_raw": "75 MM across the front elevation, 75 MM across the side elevation, 290 MM height. Speed Hooks 91 MM centre-to-centre, each 22 MM tall.",
+      "dims_note": "MATERIAL CHANGE and the largest single error in this slot. The catalogue held 9.5 x 9.5 x 24 - 27 percent too fat and 17 percent too short. 75 x 75 x 290 MM is off the cage-packs page's labelled drawing, and 0.075 x 0.075 x 0.29 = 1.63 L against the published 1.7 L, which is the cross-check that says the drawing is of the PACKED bag, not an unrolled one. Tailfin sell this size specifically on narrow profile and crank clearance, so the width was the failure that mattered.",
       "capacity_l": 1.7,
       "geometry": {
         "form": "cylinder",
@@ -1283,9 +1278,9 @@
         "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
       ],
       "render": {
-        "hgt_cm": 24,
+        "hgt_cm": 29.0,
         "rolls": 3,
-        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-3.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+        "basis": "290 MM is the drawn height of the pack rolled and buckled. Volume checks out at 1.63 L against a published 1.7 L, so this is the packed state."
       },
       "proprietary_mount": "Tailfin Cargo Cage (Small) plus Tailfin Cargo Straps, both sold separately, plus 3-bolt bosses. The pack has no structure of its own and cannot be used standalone."
     },
@@ -1295,23 +1290,21 @@
       "size": "3L",
       "slot": "forkbag",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "medium",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/cargo-cage-system-cage-pack-3l-1.jpg",
-        "assets/products/tailfin/cargo-cage-system-cage-pack-3l-3.jpg",
-        "assets/products/tailfin/cargo-cage-system-cage-pack-3l-4.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-1.jpg",
         "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
       ],
       "dims_cm": {
-        "len": 11.3,
-        "wid": 11.3,
-        "hgt": 30,
-        "dia": 11.3
+        "len": 12.0,
+        "wid": 12.0,
+        "hgt": 32.0,
+        "dia": 12.0
       },
-      "dims_state": "unknown",
-      "dims_raw": "no linear dimensions published - volume 3L, weight 154g, max load 1.5kg per bolt",
-      "dims_note": "UNVERIFIED. Volume and weight only from the maker; dims_cm is the existing catalogue estimate rewritten as a triple with dia preserved.",
+      "dims_state": "drawn_packed",
+      "dims_raw": "120 MM front elevation, 120 MM side elevation, 320 MM height. Speed Hooks 91 MM centres, 22 MM tall.",
+      "dims_note": "MATERIAL CHANGE: measured off the cage-packs page labelled drawing, replacing an unsourced 11.3 x 11.3 x 30 estimate. 0.12 x 0.12 x 0.32 = 4.6 L against a published 3 L, so the drawn box is the bounding box of a bag that is not square in section and not full to the top; the linear figures are the drawing, the volume is the maker.",
       "capacity_l": 3,
       "geometry": {
         "form": "cylinder",
@@ -1397,9 +1390,9 @@
         "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
       ],
       "render": {
-        "hgt_cm": 30,
+        "hgt_cm": 32.0,
         "rolls": 3,
-        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/cargo-cage-system-cage-pack-3l-3.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+        "basis": "320 MM is the drawn height of the pack rolled and buckled."
       },
       "proprietary_mount": "Tailfin Cargo Cage plus Tailfin Cargo Straps, sold separately, plus 3-bolt bosses. Cannot be used standalone."
     },
@@ -1409,23 +1402,21 @@
       "size": "5L",
       "slot": "forkbag",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "medium",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/cargo-cage-system-cage-pack-5l-1.jpg",
-        "assets/products/tailfin/cargo-cage-system-cage-pack-5l-3.jpg",
-        "assets/products/tailfin/cargo-cage-system-cage-pack-5l-4.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-1.jpg",
         "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
       ],
       "dims_cm": {
         "len": 13.5,
         "wid": 13.5,
-        "hgt": 35,
+        "hgt": 38.0,
         "dia": 13.5
       },
-      "dims_state": "unknown",
-      "dims_raw": "no linear dimensions published - volume 5L, weight 183g, max load 1.5kg per bolt",
-      "dims_note": "UNVERIFIED. Volume and weight only; dims_cm is the existing catalogue estimate rewritten as a triple with dia preserved.",
+      "dims_state": "drawn_packed",
+      "dims_raw": "135 MM front elevation, 135 MM side elevation, 380 MM height. Speed Hooks 91 MM centres, 22 MM tall. Circular one-way air vent low on the face - 5L only.",
+      "dims_note": "MATERIAL CHANGE on the height only: 380 MM off the labelled drawing against a held 35 cm. The 13.5 cm section was already right.",
       "capacity_l": 5,
       "geometry": {
         "form": "cylinder",
@@ -1519,9 +1510,9 @@
         "https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/"
       ],
       "render": {
-        "hgt_cm": 35,
+        "hgt_cm": 38.0,
         "rolls": 3,
-        "basis": "Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/cargo-cage-system-cage-pack-5l-3.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."
+        "basis": "380 MM is the drawn height of the pack rolled and buckled."
       },
       "proprietary_mount": "Tailfin Cargo Cage (Large) plus Tailfin Cargo Straps, sold separately, plus 3-bolt bosses. Cannot be used standalone."
     },
@@ -2065,8 +2056,8 @@
       ],
       "render": {
         "len_cm": 36,
-        "rolls": 3,
-        "basis": "maker range 360-540mm; render.len_cm is the minimum 360mm. dims_cm.len is the 540mm unfurled max. Rolled short in assets/products/tailfin/bar-system-bar-cage-bag-small-8l-4.jpg."
+        "rolls": 2,
+        "basis": "maker range 360-540mm; render.len_cm is the minimum 360mm. dims_cm.len is the 540mm unfurled max. Rolled short in assets/products/tailfin/bar-system-bar-cage-bag-small-8l-4.jpg. ROLL COUNT CORRECTED from 3 to 2: the maker's own labelled width drawings (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-21.jpg and studio-22.jpg) both print '(2 rolls for waterproofing)' under the max-width dimension, and page.txt says the bag is fully waterproof rolled twice at each end. The Bar Bag System's counts - 2 on the drop-bar sizes, 3 on the flat-bar sizes - are confirmed correct by dimensions-1.png and dimensions-2.png."
       },
       "proprietary_mount": "Tailfin Bar Cage plus its handlebar clamp bracket, SOLD SEPARATELY. Different mount from the Bar Bag System harness."
     },
@@ -2164,8 +2155,8 @@
       ],
       "render": {
         "len_cm": 37,
-        "rolls": 3,
-        "basis": "maker range 370-540mm; render.len_cm is the minimum 370mm. dims_cm.len is the 540mm unfurled max."
+        "rolls": 2,
+        "basis": "maker range 370-540mm; render.len_cm is the minimum 370mm. dims_cm.len is the 540mm unfurled max. ROLL COUNT CORRECTED from 3 to 2: the maker's own labelled width drawings (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-21.jpg and studio-22.jpg) both print '(2 rolls for waterproofing)' under the max-width dimension, and page.txt says the bag is fully waterproof rolled twice at each end. The Bar Bag System's counts - 2 on the drop-bar sizes, 3 on the flat-bar sizes - are confirmed correct by dimensions-1.png and dimensions-2.png."
       },
       "proprietary_mount": "Tailfin Bar Cage plus handlebar clamp bracket, SOLD SEPARATELY."
     },
@@ -2263,8 +2254,8 @@
       ],
       "render": {
         "len_cm": 38,
-        "rolls": 3,
-        "basis": "maker range 380-560mm; render.len_cm is the minimum 380mm. dims_cm.len is the 560mm unfurled max."
+        "rolls": 2,
+        "basis": "maker range 380-560mm; render.len_cm is the minimum 380mm. dims_cm.len is the 560mm unfurled max. ROLL COUNT CORRECTED from 3 to 2: the maker's own labelled width drawings (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-21.jpg and studio-22.jpg) both print '(2 rolls for waterproofing)' under the max-width dimension, and page.txt says the bag is fully waterproof rolled twice at each end. The Bar Bag System's counts - 2 on the drop-bar sizes, 3 on the flat-bar sizes - are confirmed correct by dimensions-1.png and dimensions-2.png."
       },
       "proprietary_mount": "Tailfin Bar Cage plus handlebar clamp bracket, SOLD SEPARATELY."
     },
@@ -3333,25 +3324,22 @@
       "size": "1.7L",
       "slot": "downtube",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "low",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-1.jpg",
-        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-2.jpg",
-        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-3.jpg",
-        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-4.jpg",
+        "assets/products/tailfin/full/frame-bags-downtube-packs/dimensions-2.jpg",
         "https://www.tailfin.cc/product/frame-bags/downtube-packs/",
         "https://road.cc/offroad/content/review/racks/tailfin-v-mount-pack-10253",
         "https://www.tailfin.cc/us/product/frame-bags/downtube-packs/"
       ],
       "dims_cm": {
-        "len": 38,
+        "len": 29.0,
         "wid": 7.5,
-        "hgt": 6
+        "hgt": 7.5
       },
-      "dims_state": "unknown",
-      "dims_raw": "1.7L, 210g, 3kg max load - no linear dimensions published; sizing by printable template",
-      "dims_note": "UNVERIFIED. Volume, weight and load only from the maker; dims_cm left at the existing catalogue estimate. The flat-lay photo alongside a folded jacket, a multitool wallet, a Lezyne mini pump and a tube gives a rough scale check - the pack is a little longer than the pump and about three tool-wallets tall - which is consistent with ~38cm, but that is corroboration, not a measurement. FIT CONSTRAINT (not a bag dimension, but it bounds the render): a measured review reports the 1.7L swallows objects up to 88mm diameter, so the pack's internal bore is ~88mm and its external cross-section must exceed that. The dims_cm estimate of 7.5 x 6.0 cm is therefore too SLIM to be right and should be treated as the weakest number in this record. dims_cm is left unchanged per the spec rather than being re-derived. Tailfin also state the 1.7L is the road/gravel size, chosen over the 3L because of crank and down tube width, and that the V-Mounts slide 19mm up and down the pack to clear bottle bosses.",
+      "dims_state": "drawn_packed",
+      "dims_raw": "Off the maker two/three-view spec drawing: 290 MM x 75 MM x 75 MM",
+      "dims_note": "MATERIAL CHANGE. The old record said 38 x 7.5 x 6 and carried a basis note asserting Tailfin publish no length for this line. They do: the '1.7L V Mount Packs' three-view on the downtube packs page reads 290 MM overall length, 75 MM across the mount face and 75 MM on the edge-on elevation, with the bag rolled and buckled - the state we hold. The fabricated 9 cm of surplus length is exactly what drove the pack's roll-top end 22 mm into the front tyre and its tail into the crank on every render. FIT, measured after the correction landed: at 290 MM this pack now clears the front tyre by 3.4 mm on the rig's frame, where the old fabricated 380 MM drove it 22 mm into the tyre. That clash is closed.",
       "capacity_l": 1.7,
       "geometry": {
         "form": "truncated_cylinder",
@@ -3434,9 +3422,9 @@
         "https://www.tailfin.cc/product/frame-bags/downtube-packs/"
       ],
       "render": {
-        "len_cm": 38,
-        "rolls": 3,
-        "basis": "the roll is at the top of a pack that lies ALONG the down tube, so length is its variable axis. Tailfin publish no length at all, so there is no range to take a minimum from; render.len_cm carries the dims_cm estimate through unchanged. Both flat-lay photos (assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-1.jpg and -2.jpg) show the pack rolled and clipped shut, which is the state the estimate represents."
+        "len_cm": 29.0,
+        "rolls": 2,
+        "basis": "The drawing is of the rolled, buckled pack, so the drawn length IS the packed length. No unrolled figure is published."
       },
       "proprietary_mount": false
     },
@@ -3446,25 +3434,22 @@
       "size": "3L",
       "slot": "downtube",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "low",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-1.jpg",
-        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-2.jpg",
-        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-3.jpg",
-        "assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-4.jpg",
+        "assets/products/tailfin/full/frame-bags-downtube-packs/dimensions-1.jpg",
         "https://www.tailfin.cc/product/frame-bags/downtube-packs/",
         "https://road.cc/offroad/content/review/racks/tailfin-v-mount-pack-10253",
         "https://www.tailfin.cc/us/product/frame-bags/downtube-packs/"
       ],
       "dims_cm": {
-        "len": 44,
-        "wid": 9,
-        "hgt": 7.6
+        "len": 32.0,
+        "wid": 12.0,
+        "hgt": 12.0
       },
-      "dims_state": "unknown",
-      "dims_raw": "3L, 277g, 3kg max load - no linear dimensions published",
-      "dims_note": "UNVERIFIED. Volume, weight and load only; dims_cm left at the existing catalogue estimate. The flat-lay photo shows this size swallowing a 1L Nalgene, a gas canister, a pot, a mini pump and a tube, which is consistent with ~3L but is not a measurement. FIT CONSTRAINT (not a bag dimension, but it bounds the render): a measured review reports the 3L swallows objects up to 120mm diameter and quotes a 75mm width, so its internal bore is ~120mm. The dims_cm estimate of 9.0 x 7.6 cm cannot contain a 120mm object and is therefore too slim; it is the weakest number in this record and is left unchanged per the spec rather than re-derived. Tailfin recommend the 3L for MTB rather than road/gravel, on crank and down tube clearance grounds. V-Mounts slide 19mm along the pack to clear bottle bosses.",
+      "dims_state": "drawn_packed",
+      "dims_raw": "Off the maker two/three-view spec drawing: 320 MM x 120 MM x 120 MM",
+      "dims_note": "MATERIAL CHANGE, wrong in both directions at once. The old record said 44 x 9 x 7.6; the '3L V Mount Packs' three-view reads 320 MM long and 120 x 120 MM in section, rolled and buckled. The drawing carries its own cross-check - 'max internal fill diameter for cylindrical items 106 MM' - which cannot live inside a 90 x 76 mm bag. We were drawing a long thin sausage where the real product is a short fat column. FIT, measured after the correction landed: at 320 MM this pack does NOT fit the rig's frame. The builder solves the pack back down the down tube until its nose clears the front tyre, floors that at the bottom-bracket end, and then refuses to fake the rest - it renders 22.5 mm inside the tyre. The 1.7L at 290 MM clears by 3.4 mm on the same frame, and 320-290 = 30 MM against a 3.4+22.5 = 25.9 MM swing, which is the cross-check that says the geometry is right and the pack is simply too long for the window. This is a product-fit fact, not a drawing error: Tailfin ship a print-at-home fit template for this line precisely because it does not suit every frame. Do not shorten dims_cm to make the render come out clean.",
       "capacity_l": 3,
       "geometry": {
         "form": "truncated_cylinder",
@@ -3547,11 +3532,12 @@
         "https://www.tailfin.cc/product/frame-bags/downtube-packs/"
       ],
       "render": {
-        "len_cm": 44,
-        "rolls": 3,
-        "basis": "length is the variable axis - the roll is at the top of a pack lying along the down tube. No maker length is published, so render.len_cm carries the dims_cm estimate through unchanged. Photographed rolled and clipped shut in assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-1.jpg and -2.jpg."
+        "len_cm": 32.0,
+        "rolls": 2,
+        "basis": "The drawing is of the rolled, buckled pack, so the drawn length IS the packed length. No unrolled figure is published."
       },
-      "proprietary_mount": false
+      "proprietary_mount": false,
+      "fit_constraint": "Needs about 300 MM of clear down tube between the chainring tip circle and the front tyre. Measured window on the rig frame is ~295 MM, so the 3L overruns by ~25 MM and the 1.7L fits."
     },
     {
       "line": "Top Tube",
@@ -3625,7 +3611,7 @@
         "axes": {
           "len": "x",
           "wid": "z",
-          "hgt": "y"
+          "hgt": "perp_toptube"
         },
         "attachesTo": [
           "toptube"
@@ -3724,7 +3710,7 @@
         "axes": {
           "len": "x",
           "wid": "z",
-          "hgt": "y"
+          "hgt": "perp_toptube"
         },
         "attachesTo": [
           "toptube"
@@ -3823,7 +3809,7 @@
         "axes": {
           "len": "x",
           "wid": "z",
-          "hgt": "y"
+          "hgt": "perp_toptube"
         },
         "attachesTo": [
           "toptube"
@@ -3921,7 +3907,7 @@
         "axes": {
           "len": "along_toptube",
           "wid": "z",
-          "hgt": "y"
+          "hgt": "perp_toptube"
         },
         "attachesTo": [
           "toptube"
@@ -4019,7 +4005,7 @@
         "axes": {
           "len": "along_toptube",
           "wid": "z",
-          "hgt": "y"
+          "hgt": "perp_toptube"
         },
         "attachesTo": [
           "toptube"
@@ -4117,7 +4103,7 @@
         "axes": {
           "len": "along_toptube",
           "wid": "z",
-          "hgt": "y"
+          "hgt": "perp_toptube"
         },
         "attachesTo": [
           "toptube"
@@ -4148,7 +4134,7 @@
       "line": "Top Tube",
       "name": "Rear Top Tube Bag",
       "size": "0.9L Road/Gravel",
-      "slot": "toptube",
+      "slot": "toptube_rear",
       "slot_should_be": null,
       "verified": false,
       "confidence": "medium",
@@ -4224,7 +4210,7 @@
         "axes": {
           "len": "along_toptube",
           "wid": "z",
-          "hgt": "y"
+          "hgt": "perp_toptube"
         },
         "attachesTo": [
           "toptube",
@@ -4257,7 +4243,7 @@
       "line": "Top Tube",
       "name": "Rear Top Tube Bag",
       "size": "0.8L MTB",
-      "slot": "toptube",
+      "slot": "toptube_rear",
       "slot_should_be": null,
       "verified": false,
       "confidence": "medium",
@@ -4333,7 +4319,7 @@
         "axes": {
           "len": "along_toptube",
           "wid": "z",
-          "hgt": "y"
+          "hgt": "perp_toptube"
         },
         "attachesTo": [
           "toptube",

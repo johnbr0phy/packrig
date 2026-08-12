@@ -1,0 +1,267 @@
+{
+  "slot": "barroll",
+  "images_opened": 51,
+  "note_on_bundle_regeneration": "The bundle was regenerated mid-review: the bar-bag-system harvest went from 10 images to 110, adding dimensions-3..7 (Bar Cage engineering drawings) and ~90 photographs. I re-read barroll.md and opened the five new drawings plus a sample of the new photographs (studio-10, studio-33, studio-35, studio-45, studio-60, studio-70, studio-90, lifestyle-3). The new drawings SETTLE the Bar Cage geometry that I had recorded as missing; nothing in them overturns a finding below. I verified studio-5.jpg is unchanged after renumbering, so the studio-* references in this file still point at the images I read. I have NOT opened the other ~80 new photographs — with 110 images on one page a second pass is warranted, but the mount question is now settled and I do not expect it to move.",
+  "images_not_opened": [
+    "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-7.jpg",
+    "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-10.jpg",
+    "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-13.jpg",
+    "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-15.jpg",
+    "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-18.jpg",
+    "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-19.jpg",
+    "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-26.jpg",
+    "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-29.jpg"
+  ],
+  "settled_questions": [
+    {
+      "question": "Is the Bar Bag System a soft roll strapped to the bar, or a shaped bag on a bracket?",
+      "answer": "A shaped bag on a rigid bolt-on bracket. dimensions-1/2.png draw a rigid clamp assembly at the bag's centre, and studio-4.jpg is an exploded view of it: two alloy clamp arms (branded 'tailfin') that bolt around the handlebar, a 22.2mm accessory stub bar carried on them, and a central moulded cradle/spine (part C) that the bag keys onto. studio-1.jpg shows the assembly fitted: the bag hangs off the cradle forward of the bar with no strap of any kind passing around the handlebar. The bag body is NOT a circular barrel — studio-5/6/7/8.jpg (front elevations with 38/42/48cm bar-width scales) show a flat-topped, flat-fronted rounded-rectangle section with a moulded top deck carrying rows of ladder-strap keepers, and a Hypalon front panel with moulded lugs.",
+      "verified": true
+    },
+    {
+      "question": "How does the Bar Bag System stand off the bar?",
+      "answer": "Direction settled, magnitude NOT settled. The clamp arms hold the bag forward of the handlebar plane and roughly level with / just below the bar tops, so the bag never contacts the bar, tape, cables or hoods. On drop bars the WaveLock end closure additionally pulls each end inboard by <=35mm to clear the hoods (studio-2.jpg and studio-3.jpg both carry a '-35mm' callout). No published image or drawing in this harvest gives a dimensioned fore-aft offset.",
+      "verified": false,
+      "missing": "PARTLY RESOLVED by the regenerated bundle. dimensions-3/4/5/7.jpg now dimension the Bar Cage plate at 240MM wide x 120MM high with a 370MM overall system width, clamp spacing adjustable 34-99MM (32.5MM slide range) or 39-61MM (25MM slide range) depending on variant, and 11MM clamp posts; dimensions-6.jpg gives the clamp bore as 31.8MM or 35MM handlebars. STILL MISSING is the one number I wanted: a side elevation dimensioning the fore-aft standoff from the bar centreline to the cage face or bar-bag cradle. None of the seven drawings is a side view, and none shows the rear of the Bar Bag System where it keys onto its cradle. Tailfin's 'Bike Fit' and 'Product Assembly' guides and printable fit templates (linked from page.txt) remain the likely source."
+    },
+    {
+      "question": "What is the Bar Cage Bag mounted on?",
+      "answer": "NOT cargo-cage bosses. It mounts on the Tailfin Bar Cage: a rigid moulded cage plate carried on two ring clamps that bolt to the handlebar (dimensions-1.png labels them A bag / B cage / C bar clamps / G straps; studio-30.jpg and studio-14.jpg show the cage empty on a drop bar). The bag is held against the cage face by two moulded 'Speed Hooks' on the bag's back panel that drop into the cage's central slots (studio-9.jpg, studio-25.jpg) plus two Tailfin TPU ladder-strap cargo straps threaded through the cage (50cm pair for 8L, 65cm pair for 11L/15L per page.txt). The cage bracket is reversible: studio-23.jpg and studio-30.jpg show it clamped above the bar tops, studio-17.jpg and studio-5.jpg show it below them; in both cases the bag sits forward of the bar plane. The bag itself is a true round dry bag with twist-and-tuck rolled ends (lifestyle-1.jpg shows all three sizes off the bike), a Hypalon back panel with an anti-abrasion TPU patch, light-loop slots and an air valve (feature-1.jpg).",
+      "verified": true
+    }
+  ],
+  "products": [
+    {
+      "name": "Bar System / Bar Bag System - Drop Bar",
+      "size": "Small (9.1L)",
+      "score": 2,
+      "biggest_gap": "We draw a plain circular barrel cinched to the bar by fabric straps; the real bag is a flat-topped, flat-fronted structured bag hung forward of the bar on a bolt-on alloy clamp bracket, touching the handlebar nowhere.",
+      "layer": "C",
+      "correction": "The identifying object is the mount, and we have no way to express it. Add a rigid-bracket mount type: two clamp arms on the bar (studio-4.jpg) carrying a central cradle that positions the bag forward of the bar plane with an air gap to the bar and cables. Then change the section from a circle to a rounded rectangle with a flat top deck and flat front face (studio-5.jpg/studio-6.jpg front elevations, 38cm and 42cm bar scale bars) and put the moulded ladder-strap keeper row along the top deck edge. Size itself is right: 290mm min width and 160mm diameter both confirmed on dimensions-2.png, and our own-axis bbox reads 16.0 x 16.3 x 29.2cm.",
+      "evidence": [
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/dimensions-2.png",
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-1.jpg",
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-4.jpg",
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-5.jpg",
+        "shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-small-9-1l/front.png"
+      ]
+    },
+    {
+      "name": "Bar System / Bar Bag System - Drop Bar",
+      "size": "Large (12.5L)",
+      "score": 2,
+      "biggest_gap": "Same generic barrel-on-straps as the Small, and because it hangs below and behind the bar instead of forward of it, the 180mm body is driven into the front tyre (1.9mm contact) — the real bag clears the tyre because the bracket carries it forward and up.",
+      "layer": "C",
+      "correction": "Same bracket work as the Small. Record numbers are confirmed by dimensions-2.png: Min. Width 335MM, Max. Width 460MM, 180MM diameter, '(2 rolls for waterproofing)'. The tyre contact is a symptom of mounting position, not of size — moving the bag forward of the bar plane onto the cradle removes it without shrinking the bag.",
+      "evidence": [
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/dimensions-2.png",
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-6.jpg",
+        "shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-large-12-5l/front.png",
+        "shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-large-12-5l/side.png"
+      ]
+    },
+    {
+      "name": "Bar System / Bar Bag System - MTB Flat Bar",
+      "size": "Small (14.9L)",
+      "score": 2,
+      "biggest_gap": "It is drawn on a drop-bar bike, so nothing distinguishes it from the drop-bar variant — the flat-bar bag's whole identity is that its ends close on side-release buckles instead of the WaveLock cone, and that it is 420-650mm wide because a flat bar has the room.",
+      "layer": "A",
+      "correction": "The record needs a handlebar-type requirement so the harness puts this SKU on a flat bar. The maker sells the two families as separate, non-interchangeable products ('Drop or Flat Bar Bag?' in page.txt: 'MTB Flat Bars / Side Release Buckles' vs 'Road & Gravel Drop Bars / WaveLock Bag Closure'). Widths confirmed on dimensions-1.png: Min. Width 420MM, Max. Width 650MM, 160MM diameter, '(3 rolls for waterproofing)'. The end treatment should be a squared fold closed by a visible side-release buckle (studio-2.jpg), not the tapered diagonal cinch of the drop-bar bag (studio-3.jpg).",
+      "evidence": [
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/dimensions-1.png",
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-2.jpg",
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/page.txt",
+        "shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-small-14-9l/front.png"
+      ]
+    },
+    {
+      "name": "Bar System / Bar Bag System - MTB Flat Bar",
+      "size": "Large (18.9L)",
+      "score": 1,
+      "biggest_gap": "The catalogue's widest bag, 485mm across, is drawn spanning a drop-bar cockpit it physically cannot be fitted to, and it interpenetrates the handlebar by 2.5mm.",
+      "layer": "A",
+      "correction": "Same handlebar-type requirement as the Flat Bar Small; this SKU must not be placed on a drop bar at all. Dimensions confirmed on dimensions-1.png: Min. Width 480MM, Max. Width 720MM, 180MM diameter, '(3 rolls for waterproofing)'. Once it is on a flat bar and hung forward of the bar on the clamp bracket the handlebar contact disappears; do not fix it by shrinking the bag.",
+      "evidence": [
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/dimensions-1.png",
+        "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-8.jpg",
+        "shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-large-18-9l/front.png",
+        "shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-large-18-9l/side.png"
+      ]
+    },
+    {
+      "name": "Bar System / Bar Cage Bag",
+      "size": "Small (8L)",
+      "score": 2,
+      "biggest_gap": "The Bar Cage — the rigid slotted plate that this bag exists to sit on, and the one thing that makes it recognisable — is missing entirely; we draw the bag strapped straight to the handlebar, and we add two white reflective rectangles that are not on the product.",
+      "layer": "C",
+      "correction": "Draw the Bar Cage: a moulded rectangular cage plate on two handlebar ring clamps, standing forward of the bar plane, with the bag captured against its face by two black TPU ladder-slot cargo straps (page.txt: the 8L ships with a pair of 50cm straps) and two moulded Speed Hooks on the bag's back panel. See dimensions-1.png parts A/B/C/G and studio-30.jpg (cage alone on a drop bar), studio-9.jpg and studio-25.jpg (Speed Hook engaging the cage). Delete the two white rectangles — the reflective element is the 'tailfin.' wordmark itself (feature-2.jpg). Sizes are right: page.txt gives Min 360mm / Max 540mm / 135mm diameter.",
+      "evidence": [
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/dimensions-1.png",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-30.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-9.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-23.jpg",
+        "shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-small-8l/front.png"
+      ]
+    },
+    {
+      "name": "Bar System / Bar Cage Bag",
+      "size": "Medium (11L)",
+      "score": 2,
+      "biggest_gap": "Same missing Bar Cage, and the ends are drawn as smooth ellipsoid bulges when the real bag closes with a twisted, tucked dry-bag roll that gathers to a knot at each end.",
+      "layer": "C",
+      "correction": "Cage as for the Small (65cm strap pair for this size per page.txt). For the end shape use lifestyle-1.jpg, which shows all three sizes off the bike: each end gathers into a flattened, twisted fold, not a rounded cap. Record numbers confirmed on the labelled drawing studio-21.jpg: Min. Width 370MM, Max. Width 540MM, 165MM diameter. That drawing also reads '(2 rolls for waterproofing)', so our render.rolls of 3 is wrong for this family.",
+      "evidence": [
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-21.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/lifestyle-1.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-5.jpg",
+        "shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-medium-11l/front.png"
+      ]
+    },
+    {
+      "name": "Bar System / Bar Cage Bag",
+      "size": "Large (15L)",
+      "score": 2,
+      "biggest_gap": "Same missing Bar Cage, and it is drawn on a drop bar where the maker explicitly steers riders to the 8L — hung under the bar rather than forward on the cage, the 180mm body touches the front tyre.",
+      "layer": "C",
+      "correction": "Cage as for the Small. page.txt: 'The 8L Bag is the recommended size for drop handlebar bikes... minimum compatible handlebar width is 38cm' — the 11L and 15L should default to a flat bar. Record numbers confirmed on the labelled drawing studio-22.jpg: Min. Width 380MM, Max. Width 560MM, 180MM diameter, '(2 rolls for waterproofing)'.",
+      "evidence": [
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-22.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/page.txt",
+        "shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-large-15l/tq.png"
+      ]
+    }
+  ],
+  "slot_wide": [
+    {
+      "fault": "All seven bags are drawn as soft rolls cinched to the handlebar by two or three fabric straps, and neither Tailfin product attaches that way — both hang off a rigid bolt-on bracket and touch the bar nowhere.",
+      "layer": "C",
+      "affects": ["9.1L", "12.5L", "14.9L", "18.9L", "8L", "11L", "15L"],
+      "correction": "We need a rigid-bracket mount primitive. Bar Bag System: two alloy clamp arms bolted around the bar carrying a 22.2mm accessory stub bar and a central moulded cradle the bag keys onto (studio-4.jpg exploded, studio-1.jpg fitted). Bar Cage Bag: a moulded slotted cage plate on two bar ring clamps, bag held by 2 Speed Hooks + 2 TPU ladder straps (cage-bag dimensions-1.png parts A/B/C/G, cage-bag studio-30.jpg, cage-bag studio-9.jpg). The cage is now fully dimensioned by the regenerated bundle — bar-bag-system dimensions-3/4/5/7.jpg give a 240MM x 120MM plate, 370MM overall system width, clamps for 31.8MM or 35MM bars spaced 34-99MM apart — so this is buildable to real numbers, and bar-bag-system studio-10.png is a clean front-on photograph of the bare plate to model from. Until it exists no Tailfin bar bag will read as a Tailfin."
+    },
+    {
+      "fault": "Every bag sits behind and below the handlebar, nested into the drops and over the tyre; every published Tailfin photo puts the bag forward of the bar plane, clear of bar, tape, cables and hoods.",
+      "layer": "B",
+      "affects": ["9.1L", "12.5L", "14.9L", "18.9L", "8L", "11L", "15L"],
+      "correction": "Move the bag axis forward of the bar centreline and set it roughly level with the bar tops (the cage bracket is reversible: above the bar in studio-23.jpg/studio-30.jpg, below it in studio-17.jpg/studio-5.jpg, forward of it in both). This alone clears the three reported clashes (drop-bar Large 1.9mm tyre, flat-bar Large 2.5mm handlebar, cage Large 1.7mm tyre) without touching any dimension. I could not read a fore-aft offset in millimetres off any published image — see the missing-evidence note."
+    },
+    {
+      "fault": "The Bar Bag System body is drawn as a circular barrel; it is a flat-topped, flat-fronted rounded rectangle with a moulded top deck.",
+      "layer": "B",
+      "affects": ["9.1L", "12.5L", "14.9L", "18.9L"],
+      "correction": "Change the section to a rounded rectangle. The front elevations studio-5/6/7/8.jpg (with 38cm/42cm/42cm/48cm bar-width scale bars) show a flat top deck carrying a row of moulded ladder-strap keepers along its front edge, a flat Hypalon front panel with moulded lugs and a grab handle, and squared lower corners. The Bar Cage Bag, by contrast, IS a round dry bag and should stay circular."
+    },
+    {
+      "fault": "End closures are generic rounded caps; the two families close differently and the difference is how you tell them apart.",
+      "layer": "B",
+      "affects": ["9.1L", "12.5L", "14.9L", "18.9L", "8L", "11L", "15L"],
+      "correction": "Drop-bar Bar Bag: WaveLock cone, a diagonal tapered cinch drawing the end inboard <=35mm with no exposed buckle (studio-3.jpg). Flat-bar Bar Bag: squared fold closed by a visible side-release buckle (studio-2.jpg). Bar Cage Bag: twist-and-tuck dry-bag roll gathering to a flattened knot (lifestyle-1.jpg, studio-24.jpg)."
+    },
+    {
+      "fault": "Branding is wrong on all seven: we apply a boxed upper-case 'TAILFIN' plate to the middle of the front face, and add two white rectangles to the cage bags that do not exist on the product.",
+      "layer": "B",
+      "affects": ["9.1L", "12.5L", "14.9L", "18.9L", "8L", "11L", "15L"],
+      "correction": "Use a reflective grey lower-case 'tailfin.' wordmark set at ONE end of the bag, reading along the bag axis, on the taper/roll band — studio-1.jpg and studio-23.jpg for the cage bag, studio-2.jpg/studio-3.jpg for the bar bag (which also carries a small vertical 'Technical Bikepacking Equipment' line at the opposite end). Delete the white rectangles; the wordmark is the reflective element (feature-2.jpg, feature-3.jpg)."
+    },
+    {
+      "fault": "The Bar Cage Bag records hold render.rolls = 3; the maker's own drawings and FAQ both say 2.",
+      "layer": "A",
+      "affects": ["8L", "11L", "15L"],
+      "correction": "Set render.rolls = 2 for all three Bar Cage Bags. studio-21.jpg and studio-22.jpg both print '(2 rolls for waterproofing)' under the max-width dimension, and page.txt: 'The Bar Cage Bag is 100% waterproof when the bag is rolled x 2 times at each end'. The Bar Bag System roll counts we hold are correct (2 for drop bar per dimensions-2.png, 3 for flat bar per dimensions-1.png)."
+    },
+    {
+      "fault": "Handlebar-type fitment is not carried in the record, so the two MTB Flat Bar SKUs and the two larger Bar Cage Bags are rendered on a drop-bar bike they do not fit.",
+      "layer": "A",
+      "affects": ["14.9L", "18.9L", "11L", "15L"],
+      "correction": "Add a required-handlebar field. Bar Bag System is sold as two non-interchangeable variants (page.txt 'Drop or Flat Bar Bag?': flat bar = side-release buckles, drop bar = WaveLock; drop-bar Small needs 38cm+ bars, drop-bar Large 40cm+). Bar Cage Bag: page.txt recommends the 8L for drop bars with a 38cm minimum, which leaves 11L and 15L as flat-bar sizes."
+    }
+  ],
+  "measured_dims": [
+    {
+      "name": "Bar System / Bar Bag System - Drop Bar",
+      "size": "Small (9.1L)",
+      "len_cm": 44.5,
+      "wid_cm": 16.0,
+      "hgt_cm": 16.0,
+      "source": "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/dimensions-2.png",
+      "reading": "Top view, upper drawing. 'Min. Width 290MM' across the rolled-short state, 'Max. Width 445MM' across the unfurled state, '(2 rolls for waterproofing)'. Diameter leader lines read 160MM on both states. State measured: both — 290mm rolled, 445mm unfurled. Volume block confirms '4.0L - 9.1L Small (+1.6L Pocket)'. Matches the record exactly.",
+      "confidence": "high"
+    },
+    {
+      "name": "Bar System / Bar Bag System - Drop Bar",
+      "size": "Large (12.5L)",
+      "len_cm": 46.0,
+      "wid_cm": 18.0,
+      "hgt_cm": 18.0,
+      "source": "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/dimensions-2.png",
+      "reading": "Top view, lower drawing. 'Min. Width 335MM', 'Max. Width 460MM', '(2 rolls for waterproofing)', diameter 180MM. State measured: both. Volume block '6.7L - 12.5L Large (+2.7L Pocket)'. Matches the record exactly.",
+      "confidence": "high"
+    },
+    {
+      "name": "Bar System / Bar Bag System - MTB Flat Bar",
+      "size": "Small (14.9L)",
+      "len_cm": 65.0,
+      "wid_cm": 16.0,
+      "hgt_cm": 16.0,
+      "source": "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/dimensions-1.png",
+      "reading": "Top view, upper drawing. 'Min. Width 420MM', 'Max. Width 650MM', '(3 rolls for waterproofing)', diameter 160MM. State measured: both. Volume block '5.8L - 14.7L Small (+2.7L Pocket)' — note the drawing says 14.7L where the record and the SKU name say 14.9L; the pocket-inclusive figure is what the SKU name uses, so this is a labelling difference, not an error worth chasing.",
+      "confidence": "high"
+    },
+    {
+      "name": "Bar System / Bar Bag System - MTB Flat Bar",
+      "size": "Large (18.9L)",
+      "len_cm": 72.0,
+      "wid_cm": 18.0,
+      "hgt_cm": 18.0,
+      "source": "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/dimensions-1.png",
+      "reading": "Top view, lower drawing. 'Min. Width 480MM', 'Max. Width 720MM', '(3 rolls for waterproofing)', diameter 180MM. State measured: both. Volume block '8.7L - 18.9L Large (+3.5L Pocket)'. Matches the record exactly.",
+      "confidence": "high"
+    },
+    {
+      "name": "Bar System / Bar Cage Bag",
+      "size": "Medium (11L)",
+      "len_cm": 54.0,
+      "wid_cm": 16.5,
+      "hgt_cm": 16.5,
+      "source": "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-21.jpg",
+      "reading": "A labelled two-state drawing filed among the studio images, not under dimensions-*. 'Min. Width 370MM', 'Max. Width 540MM', diameter 165MM on both states, '(2 rolls for waterproofing)'. State measured: both. Matches the record exactly and contradicts our render.rolls of 3.",
+      "confidence": "high"
+    },
+    {
+      "name": "Bar System / Bar Cage Bag",
+      "size": "Large (15L)",
+      "len_cm": 56.0,
+      "wid_cm": 18.0,
+      "hgt_cm": 18.0,
+      "source": "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/studio-22.jpg",
+      "reading": "Same drawing style, also filed as a studio image. 'Min. Width 380MM', 'Max. Width 560MM', diameter 180MM, '(2 rolls for waterproofing)'. State measured: both. Matches the record exactly.",
+      "confidence": "high"
+    },
+    {
+      "name": "Bar System / Bar Cage Bag",
+      "size": "Small (8L)",
+      "len_cm": 54.0,
+      "wid_cm": 13.5,
+      "hgt_cm": 13.5,
+      "source": "assets/products/tailfin/full/cargo-cage-system-cage-packs-bar-cage-bag/page.txt",
+      "reading": "NOT off a drawing — the maker's specification table: 'Bar Cage Bag Small / Weight 222g / Volume 8 Litre / Dimensions Width: Min 360mm Max 540mm Diameter: 135mm'. No labelled drawing for the Small was harvested (studio-21 and studio-22 cover Medium and Large only). Matches the record exactly.",
+      "confidence": "high"
+    },
+    {
+      "name": "Bar Cage (the mount, not a bag — we hold no record for it)",
+      "size": "one size",
+      "len_cm": 24.0,
+      "wid_cm": 37.0,
+      "hgt_cm": 12.0,
+      "source": "assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/dimensions-7.jpg",
+      "reading": "Isometric with three leaders: 'Width 240MM', 'Height 120MM', and 'Max. Width 370MM' / 'Min. Width 370MM' across the clamps — i.e. the cage plate is 240 x 120mm and the assembly spans 370mm on the bar. Corroborated by the front elevations dimensions-3.jpg and dimensions-4.jpg, which repeat 240MM and 120MM and add: clamp spacing 'Maximum distance between clamps 99MM' / 'Minimum 34MM', '32.5MM clamp adjustment', 11MM clamp posts, 25MM and 6MM plate edge offsets. dimensions-5.jpg is a second variant of the same plate with clamp spacing 61MM max / 39MM min and 25MM adjustment. dimensions-6.jpg captions the clamp: 'Ø31.8MM or Ø35MM Handlebars'. len_cm/hgt_cm here are the plate; wid_cm is the on-bar span. These five drawings arrived with the bundle regeneration and were filed under the bar-bag-system folder even though they document the Bar Cage.",
+      "confidence": "high"
+    }
+  ],
+  "missing_evidence": [
+    "STILL MISSING — a side elevation, fit template or assembly drawing giving the fore-aft standoff from the handlebar centreline to the cage face / bar-bag cradle. All twelve drawings we now hold are top views, front elevations or isometrics; every photograph shows the standoff qualitatively but none dimensions it. Tailfin's 'Bike Fit' and 'Product Assembly' guides and printable fit templates (linked from page.txt) are the likely source. This is the single number that would let the builder place the bag correctly rather than by eye.",
+    "STILL MISSING — any rear/harness-face view of the Bar Bag System showing how the bag keys onto its cradle. Even across 110 images I found no back view; studio-4.jpg's exploded mount is all we have on the interface.",
+    "STILL MISSING — a labelled dimensions drawing for the Bar Cage Bag Small (8L) to match cage-bag studio-21.jpg and studio-22.jpg. Only the spec-table text exists for that size.",
+    "RESOLVED by the regeneration — the Bar Cage's own dimensions. bar-bag-system dimensions-3/4/5/6/7.jpg give the plate at 240 x 120mm, 370mm on-bar span, clamps for 31.8/35mm bars, spacing 34-99mm. No need to go back for the Bar Cage product page.",
+    "WORTH A SECOND PASS — I opened 8 of the ~90 new bar-bag-system photographs. The mount question is settled and I do not expect the rest to move it, but a fresh critic on that page alone would now have far better evidence for the bag body's section and end details than I did."
+  ]
+}

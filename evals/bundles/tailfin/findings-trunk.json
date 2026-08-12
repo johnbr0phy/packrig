@@ -1,0 +1,121 @@
+{
+  "slot": "trunk",
+  "images_opened": 47,
+  "products": [
+    {
+      "name": "CargoPack / CargoPack System",
+      "size": "18L",
+      "score": 2,
+      "biggest_gap": "This SKU IS the rack, and the rack is wrong: we draw a generic four-strut steel wire pannier rack with seatstay struts and a lower wheel hoop, where the Tailfin rack is a single carbon arch per side running from the thru-axle up to a deck that cantilevers forward and clamps to the seatpost, with nothing touching the seatstays.",
+      "layer": "C",
+      "correction": "The System renders are pixel-for-pixel the same object as the Top Bag renders bar a camera nudge, so the rack contributes nothing. Model the Tailfin rear rack as a distinct mount: deck rail ~350mm long sitting ~406mm above the rear axle and ~77mm above the tyre crown (measured in assets/products/tailfin/full/racks-rear-systems-rear-systems-cargopack-system/feature-1.jpg, scale 1.747 px/mm from the bag's 435mm length); one curved strut per side from the deck's rear tip down and rearward to the thru-axle; the deck's forward end clamped to the seatpost, no seatstay contact, no lower hoop. Same rack visible in racks-rear-systems-rear-systems-cargopack-system/on-bike-1.jpg and pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/lifestyle-2.jpg. Until a rack can be expressed per-brand, the two System SKUs cannot be told from the Top Bag SKUs.",
+      "evidence": [
+        "assets/products/tailfin/full/racks-rear-systems-rear-systems-cargopack-system/feature-1.jpg",
+        "assets/products/tailfin/full/racks-rear-systems-rear-systems-cargopack-system/on-bike-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/lifestyle-2.jpg",
+        "shots/tailfin-v0/tailfin-cargopack-cargopack-system-18l/side.png"
+      ]
+    },
+    {
+      "name": "CargoPack / CargoPack Top Bag",
+      "size": "18L",
+      "score": 2,
+      "biggest_gap": "Zero roll turn-downs are visible: we draw a smooth closed box with a dead-flat top, where the real bag carries a fat rolled fabric tube running the full 435mm fore-aft along the top, standing ~80mm proud of the body shoulder and pinched down by a single webbing strap with a T-buckle over the middle.",
+      "layer": "B",
+      "correction": "The record already says rolls:3; the drawing does not follow it. Build the top as a fore-aft roll tube (axis along the bike, NOT across it) sitting on the body: in assets/.../cargopack-top-bag/feature-17.jpg (scale 1.713 px/mm from the 435mm length) the body shoulder is at ~160mm above the deck and the roll crown at ~239mm, so the tube is ~79mm deep and runs the whole length. Seen from behind (studio-11.jpg and the rear elevation of dimensions-1.jpg) that tube reads as a rounded dome wider than the body, peaked at the centre, with a single buckle on the crown. Add the top strap with its T-buckle at mid-length and the T-hook side straps the page calls out. Also: the top profile is an arch peaking about 60-70% of the way rearward and falling at both ends, not a flat lid. Height: the drawing's packed outline scales to 198mm max, the photos give 216-239mm; the drawn 23cm is inside that range and needs no change, but the 42cm in dims_cm is the UNROLLED figure (labelled '420MM (rear) / 380MM (front)' on dimensions-1.jpg) and must stay off the bike.",
+      "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-cargopack-top-bag/dimensions-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-cargopack-top-bag/feature-17.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-cargopack-top-bag/studio-11.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-cargopack-top-bag/feature-12.jpg",
+        "assets/products/tailfin/cargopack-cargopack-top-bag-18l-1.jpg",
+        "shots/tailfin-v0/tailfin-cargopack-cargopack-top-bag-18l/side.png"
+      ]
+    },
+    {
+      "name": "SpeedPack / SpeedPack System",
+      "size": "10L",
+      "score": 2,
+      "biggest_gap": "Drawn 180mm tall (bbox 218mm) against a maker-labelled 155MM on the SpeedPack's own two-view drawing, which is why the bag's top face ends up flush against the saddle rails in every one of our four angles.",
+      "layer": "A",
+      "correction": "dims_cm.hgt of 13 is wrong and the render's 18 overshoots the other way. assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/dimensions-2.jpg labels the bag 435MM long, 185MM wide, 155MM tall in the packed/rolled state (no unrolled ghost is drawn, unlike the CargoPack sheet, so 155 IS the on-bike figure). Set dims_cm to {len:43.5, wid:18.5, hgt:15.5} and draw 15.5cm. Volume cross-check: 435x185x155 = 12.5L bounding box, ~10L for a tapered dome, matching the stated 10L; the drawn 18cm gives 14.5L box / ~11.7L, the recorded 13cm gives 10.5L box / ~8.4L. Note the JPEG is anisotropically resized (435mm spans 437px horizontally but 155mm spans 188px vertically), so only the printed labels are usable, not scaled measurements off that file. Dropping to 155mm also clears the saddle collision seen in front.png/rear.png.",
+      "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/dimensions-2.jpg",
+        "shots/tailfin-v0/tailfin-speedpack-speedpack-system-10l/side.png",
+        "shots/tailfin-v0/tailfin-speedpack-speedpack-top-bag-10l/front.png"
+      ]
+    },
+    {
+      "name": "SpeedPack / SpeedPack Top Bag",
+      "size": "10L",
+      "score": 2,
+      "biggest_gap": "Drawn as a constant-section box with square ends, where the SpeedPack is a wedge: tall and blunt at the rear where a ~3-turn roll is folded down against the rear face, tapering forward to a low rounded nose that tucks under the saddle.",
+      "layer": "B",
+      "correction": "From assets/.../speedpack-top-bag/dimensions-2.jpg (mirrored: front at left, rear at right) the top surface rises steadily from a rounded low nose at the front to the 155MM maximum at roughly 75% of the way rearward, then drops over a blunt rear face; the closure is a lip and buckle at the rear top with a single cam-buckle strap running under the bag, not a lid. assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg confirms the same silhouette on the bike (rear tall, front low under the saddle) and studio-5.jpg shows the rolled tube at the rear end, roughly three turns, with the air valve and 'tailfin' logo on the FRONT half of the side panel. Our render has no roll, no wedge, no strap, and the front end is the same section as the rear.",
+      "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/dimensions-2.jpg",
+        "assets/products/tailfin/speedpack-speedpack-top-bag-10l-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/studio-5.jpg",
+        "shots/tailfin-v0/tailfin-speedpack-speedpack-top-bag-10l/side.png"
+      ]
+    }
+  ],
+  "slot_wide": [
+    {
+      "fault": "All four renders are smooth constant-section rounded boxes with flat lids: not one roll turn-down, strap, buckle or T-hook appears on any of the sixteen frames, so the single most recognisable thing about a Tailfin rack-top bag is missing.",
+      "layer": "B",
+      "correction": "The records already carry rolls:3 for all four. The CargoPack roll runs fore-aft along the whole top and stands ~80mm proud of the body (feature-17.jpg, studio-11.jpg); the SpeedPack roll is folded down at the rear end instead (speedpack-speedpack-top-bag-10l-1.jpg, studio-5.jpg). Both need the closure strap: CargoPack a single top strap with a T-buckle at mid-length plus T-hooks down the sides, SpeedPack a single cam-buckle strap crossing the lower rear.",
+      "affects": ["CargoPack System 18L", "CargoPack Top Bag 18L", "SpeedPack System 10L", "SpeedPack Top Bag 10L"]
+    },
+    {
+      "fault": "The 'System' renders are the same object as the 'Top Bag' renders with only a camera nudge, and both show the same generic wire pannier rack, so the rack that the System SKUs actually sell is nowhere in the catalogue.",
+      "layer": "C",
+      "correction": "Give rack-mounted bags a per-brand rack asset. The Tailfin rack: single curved carbon strut per side from thru-axle to the deck's rear tip, deck cantilevered forward to a seatpost clamp, no seatstay struts and no lower wheel hoop (feature-1.jpg, lifestyle-2.jpg, on-bike-1.jpg). Our render's four-strut steel rack with seatstay diagonals reads as a supermarket rack.",
+      "affects": ["CargoPack System 18L", "SpeedPack System 10L"]
+    },
+    {
+      "fault": "Neither bag is drawn with its fore-aft width taper; the record carries a single wid and the renders are the same section end to end, so the narrow end is not expressed anywhere.",
+      "layer": "C",
+      "correction": "The narrow end is the FRONT, the end that tucks under the saddle. Tailfin's own spec text for the CargoPack Top Bag gives 'Top Bag Dimensions (width) 164mm (rear) / 128mm (front)' and 'Unrolled Height 420mm (rear) / 380mm (front)' - a 22% narrowing forward. Our render is 17.8cm across at both ends, i.e. ~5cm too wide at the nose. Needs a wid_front (or a taper ratio) on the record before the builder can act.",
+      "affects": ["CargoPack System 18L", "CargoPack Top Bag 18L", "SpeedPack System 10L", "SpeedPack Top Bag 10L"]
+    },
+    {
+      "fault": "Bag placement relative to wheel and saddle is roughly right on the CargoPack pair but the SpeedPack pair rides so high that the saddle sits embedded in the bag's top face.",
+      "layer": "A",
+      "correction": "Real geometry from feature-1.jpg (scale 1.747 px/mm): the bag straddles the rear axle with about two thirds of its 435mm behind it, the deck sits ~406mm above the axle and ~77mm above the tyre crown, and the bag's front end tucks ~126mm under the saddle with the CargoPack's crown roughly level with the saddle top. Our CargoPack renders match that within a few centimetres. The SpeedPack, 180mm drawn against a labelled 155mm, has its lid at saddle-rail height in shots/tailfin-v0/tailfin-speedpack-speedpack-top-bag-10l/front.png and rear.png; correcting the height to 15.5cm fixes the collision.",
+      "affects": ["SpeedPack System 10L", "SpeedPack Top Bag 10L"]
+    }
+  ],
+  "measured_dims": [
+    {
+      "name": "CargoPack / CargoPack Top Bag",
+      "size": "18L",
+      "len_cm": 43.5,
+      "wid_cm": 16.4,
+      "hgt_cm": 42.0,
+      "source": "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-cargopack-top-bag/dimensions-1.jpg",
+      "reading": "Two-view engineering drawing, uniformly scaled (435mm spans 1170px horizontally, 164mm spans 436px on the end elevation, 380mm spans 1000px vertically, 420mm spans 1146px vertically - 2.63 to 2.73 px/mm throughout). Labelled: 435MM length on the side elevation; 164MM width on the rear elevation; 380MM unrolled height at the front (left) and 420MM unrolled height at the rear (right), both measured from the bag's bottom panel. Also labelled 64MM bottle-boss spacing and 32MM light-slot width on the rear face. This is the UNROLLED state - the solid packed outline is drawn inside the ghosted unrolled sleeve.",
+      "confidence": "high"
+    },
+    {
+      "name": "CargoPack / CargoPack Top Bag (packed state, scaled not labelled)",
+      "size": "18L",
+      "len_cm": 43.5,
+      "wid_cm": 16.4,
+      "hgt_cm": 19.8,
+      "source": "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-cargopack-top-bag/dimensions-1.jpg",
+      "reading": "Scaled off the solid (rolled-down) outline in the same drawing at 2.675 px/mm, baseline y=1201: the packed crown reaches 198mm above the bag bottom at about 70% of the length rearward, falling to ~153mm at the rear tip and ~110mm at the front nose. NOT a labelled figure. Photographs of the bag packed fuller give more: 216mm in racks-rear-systems-rear-systems-cargopack-system/feature-1.jpg and 239mm in cargopack-top-bag/feature-17.jpg. The drawn 23cm sits inside that photographic range, so this row is context for the profile shape rather than a correction to the height.",
+      "confidence": "medium"
+    },
+    {
+      "name": "SpeedPack / SpeedPack Top Bag",
+      "size": "10L",
+      "len_cm": 43.5,
+      "wid_cm": 18.5,
+      "hgt_cm": 15.5,
+      "source": "assets/products/tailfin/full/pannier-rack-top-bags-rack-top-bags-speedpack-top-bag/dimensions-2.jpg",
+      "reading": "Two-view drawing, all three figures printed: 435MM on the side elevation, 185MM on the end elevation, 155MM on the side elevation's vertical arrow spanning the bag's full body height at its tall (rear) end. The bag is drawn closed and packed with no unrolled ghost, so 155mm is the on-bike height. Caveat: this JPEG is anisotropically resized (435mm = 437px horizontally, 155mm = 188px vertically, and the end view is at a different scale again from the side view), so only the printed labels are trustworthy here.",
+      "confidence": "high"
+    }
+  ]
+}

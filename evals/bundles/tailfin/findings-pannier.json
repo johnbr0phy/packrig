@@ -1,0 +1,185 @@
+{
+  "slot": "pannier+downtube",
+  "images_opened": 36,
+  "products": [
+    {
+      "name": "Panniers / Mini Pannier",
+      "slot": "pannier",
+      "size": "5L",
+      "score": 2,
+      "biggest_gap": "We draw a hard, straight-sided rounded slab with a stuck-on TAILFIN placard, where the real 5L Mini Pannier is a soft roll-top dry bag whose body tapers sharply toward a rounded base - 170mm wide at the top down to 110mm at the bottom, 120mm thick at the top down to 70mm at the bottom.",
+      "layer": "B",
+      "correction": "Record is correct (17 x 12 x 38 matches the top-of-bag figures 170MM / 120MM / 380MM in assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-1.jpg, rolled and buckled state). The drawn body is over-size on two axes: mount-axis across is 14.7cm vs a recorded 12.0 (+23%) and mount-axis along is 40.8cm vs a recorded 38.0 (+7%). Bring both back to record, then add the taper the drawing gives: bottom fore-aft 110MM (0.65 of the 170MM top) and bottom thickness 70MM (0.58 of the 120MM top), applied over roughly the lower two thirds of the height. Replace the placard with a roll-top cuff closed by a single side-release buckle spanning the width (dimensions-2.png, lifestyle-1.jpg) and add the X-Clamp pair at the top of the back panel with the rotatable lower hook at the bottom.",
+      "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-2.png",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/studio-14.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/studio-12.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/lifestyle-1.jpg"
+      ]
+    },
+    {
+      "name": "Panniers / Mini Pannier",
+      "slot": "pannier",
+      "size": "10L",
+      "score": 2,
+      "biggest_gap": "Same fault as the 5L - a rigid untapered box instead of a roll-top dry bag that narrows from 210mm to 140mm fore-aft and from 150mm to 110mm thick as it drops to the base.",
+      "layer": "B",
+      "correction": "Record is correct (21 x 15 x 40 matches 210MM / 150MM / 400MM in dimensions-1.jpg, rolled state). Drawn body is over-size: mount-axis across 18.0cm vs recorded 15.0 (+20%), mount-axis along 43.4cm vs recorded 40.0 (+8.5%). Taper from the same drawing: bottom fore-aft 140MM (0.67 of 210MM), bottom thickness 110MM (0.73 of 150MM). Add roll-top cuff plus single buckle, X-Clamp pair and lower hook.",
+      "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-2.png",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/studio-14.jpg"
+      ]
+    },
+    {
+      "name": "Panniers / Pannier",
+      "slot": "pannier",
+      "size": "16L",
+      "score": 2,
+      "biggest_gap": "The drawn bag is a rigid rounded slab, 28% too thick, and misses the trapezoidal roll-top silhouette that is the whole visual signature of this pannier - 260mm wide and 190mm thick at the roll, shrinking to 170mm x 120mm at the base.",
+      "layer": "B",
+      "correction": "Record is correct (26 x 19 x 44 matches 260MM / 190MM / 440MM in assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-1.jpg, rolled state). Drawn body is over-size on all three: mount-axis across 24.3cm vs recorded 19.0 (+28%), perp 29.1cm vs recorded 26.0 (+12%), along 49.5cm vs recorded 44.0 (+12.5%). Taper from the same drawing: bottom fore-aft 170MM (0.65 of 260MM), bottom thickness 120MM (0.63 of 190MM). The wireframe in studio-16.jpg is a clean silhouette reference for the trapezoid. Add the roll cuff with a flat webbing strap and centre buckle, the moulded Hypalon side panel with its slot ladder and round air valve (studio-4.jpg), and one T-hook compression strap.",
+      "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-3.png",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/studio-16.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/lifestyle-2.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/studio-4.jpg"
+      ]
+    },
+    {
+      "name": "Panniers / Pannier",
+      "slot": "pannier",
+      "size": "22L",
+      "score": 2,
+      "biggest_gap": "Same rigid untapered slab; the real 22L is a soft roll-top whose thickness collapses from 220mm at the roll to 130mm at the base, which is what lets it clear a heel, and we draw it 27cm thick top to bottom.",
+      "layer": "B",
+      "correction": "Record is correct (32 x 22 x 44 matches 320MM / 220MM / 440MM in dimensions-1.jpg, rolled state). Drawn body is over-size: mount-axis across 26.9cm vs recorded 22.0 (+22%), perp 35.3cm vs recorded 32.0 (+10%), along 50.6cm vs recorded 44.0 (+15%). Taper from the same drawing: bottom fore-aft 250MM (0.78 of 320MM), bottom thickness 130MM (0.59 of 220MM) - note the 22L is much squarer in front elevation than the 16L but tapers harder in thickness, so the two sizes need different taper ratios, not one shared number. Add roll cuff plus buckle, air valve, slot-ladder side panel and T-hook strap.",
+      "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-2.png",
+        "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/lifestyle-3.jpg"
+      ]
+    },
+    {
+      "name": "Frame Bags / Downtube Pack (V-Mount)",
+      "slot": "downtube",
+      "size": "1.7L",
+      "score": 1,
+      "biggest_gap": "The record's 38cm length is fabricated - Tailfin's own drawing says 290MM - and the extra 9cm is exactly what drives the pack's roll-top end 22mm into the front tyre and its tail into the crank.",
+      "layer": "A",
+      "correction": "Set dims_cm to len 29.0, wid 7.5, hgt 7.5, read straight off assets/products/tailfin/full/frame-bags-downtube-packs/dimensions-2.jpg: 290 MM overall length, 75 MM across the mount face, 75 MM on the edge-on side elevation (bag rolled and buckled shut, which is the state we hold). That is a 9.1cm shortening on the long axis and it should clear the tyre on its own. The recorded height of 6.0 is also low - it is 75MM, not 60MM. Orientation: the roll-top and its side-release buckle sit at the HEAD-TUBE end and the tapered, rounded tail points down at the bottom bracket; the maker's own FAQ says you clip the rolled top down the sides 'to keep the top of the bag away from the front wheel', so the roll is the wheel-side end. Add the two moulded V-Mount plates on the tube face with TPU cargo straps wrapping the tube (18.5cm straps for this size), and the moulded slot ladder on the outboard face.",
+      "evidence": [
+        "assets/products/tailfin/full/frame-bags-downtube-packs/dimensions-2.jpg",
+        "assets/products/tailfin/full/frame-bags-downtube-packs/on-bike-1.jpg",
+        "assets/products/tailfin/full/frame-bags-downtube-packs/lifestyle-9.jpg",
+        "assets/products/tailfin/full/frame-bags-downtube-packs/lifestyle-11.jpg",
+        "assets/products/tailfin/full/frame-bags-downtube-packs/page.txt"
+      ]
+    },
+    {
+      "name": "Frame Bags / Downtube Pack (V-Mount)",
+      "slot": "downtube",
+      "size": "3L",
+      "score": 1,
+      "biggest_gap": "The record is wrong in both directions at once - the pack is 320MM long, not 440, and 120 x 120MM in section, not 90 x 76 - so we draw a long thin sausage that spears the front tyre where the real thing is a short fat column that swallows a Nalgene.",
+      "layer": "A",
+      "correction": "Set dims_cm to len 32.0, wid 12.0, hgt 12.0, read off assets/products/tailfin/full/frame-bags-downtube-packs/dimensions-1.jpg: 320 MM overall length, 120 MM across the mount face, 120 MM on the side elevation (rolled and buckled state). The same drawing carries an independent cross-check: 'max internal fill diameter for cylindrical items 106 MM', which cannot live inside a 90 x 76mm bag. The current record looks back-computed from volume (44 x 9 x 7.6 = 3.01L exactly), which is the failure mode the brief warns about; the true 320 x 120 x 120 envelope is 4.6L of box holding 3L after the taper. Separately, the builder currently renders BOTH sizes at an identical 38.1cm along-axis despite records of 38 and 44, so the length is being driven by something other than the record and will need checking after the record is fixed. Orientation as for the 1.7L: roll-top and buckle at the head-tube end, tapered tail down at the bottom bracket. Ships with 2 x 30cm cargo straps.",
+      "evidence": [
+        "assets/products/tailfin/full/frame-bags-downtube-packs/dimensions-1.jpg",
+        "assets/products/tailfin/full/frame-bags-downtube-packs/lifestyle-11.jpg",
+        "assets/products/tailfin/full/frame-bags-downtube-packs/lifestyle-4.jpg",
+        "assets/products/tailfin/full/frame-bags-downtube-packs/page.txt"
+      ]
+    }
+  ],
+  "slot_wide": [
+    {
+      "fault": "Both Downtube Pack records carry a fabricated length that no Tailfin drawing supports, and the surplus is what puts the pack through the front tyre on every render.",
+      "layer": "A",
+      "affects": ["1.7L", "3L"],
+      "correction": "1.7L 380mm -> 290mm (dimensions-2.jpg); 3L 440mm -> 320mm (dimensions-1.jpg). Both records were marked verified:false with a basis note saying 'Tailfin publish no length at all' - they do, on the two spec drawings sitting in the bundle. Fix the length first and re-run the clash check before touching anything else."
+    },
+    {
+      "fault": "Every pannier in this slot is drawn as a rigid, straight-sided box, while all four are soft roll-top dry bags that taper hard toward a rounded base - the single feature that makes a Tailfin pannier recognisable at a glance.",
+      "layer": "C",
+      "affects": ["5L", "10L", "16L", "22L"],
+      "correction": "The record holds one len/wid/hgt triple and cannot express a bag that is 190mm thick at the top and 120mm at the bottom. Needs a taper term (a bottom-scale pair, fore-aft and thickness) on the pannier record. Measured ratios, bottom over top: 5L 0.65 / 0.58, 10L 0.67 / 0.73, 16L 0.65 / 0.63, 22L 0.78 / 0.59 - they differ enough per size that a single shared constant will not do. Sources: mini-panniers/dimensions-1.jpg and panniers/dimensions-1.jpg."
+    },
+    {
+      "fault": "The pannier builder inflates the record it is given - thickness runs 20-28% over and height 7-15% over on every one of the four sizes.",
+      "layer": "B",
+      "affects": ["5L", "10L", "16L", "22L"],
+      "correction": "Mount-axis across vs recorded wid: 14.7/12.0, 18.0/15.0, 24.3/19.0, 26.9/22.0. Mount-axis along vs recorded hgt: 40.8/38, 43.4/40, 49.5/44, 50.6/44. The overshoot scales with size so it reads as a multiplier rather than a fixed padding; the records themselves check out exactly against the drawings, so this is builder-side."
+    },
+    {
+      "fault": "None of the six bags shows its closure or its mounting hardware, and the panniers carry a large flat TAILFIN placard that appears on no Tailfin product.",
+      "layer": "B",
+      "affects": ["5L", "10L", "16L", "22L", "1.7L", "3L"],
+      "correction": "Panniers: roll-top cuff closed by one webbing strap and a centre side-release buckle across the full width; two CNC X-Clamps on the top rail of the back panel plus one lower hook at the base; T-hook compression strap around the lower body; moulded Hypalon side panel with a vertical slot ladder, and on the 16/22L a round air valve. Downtube packs: roll-top cuff and buckle at the head-tube end, two V-Mount plates on the tube face with TPU cargo straps wrapping the tube. The small etched tailfin wordmark sits low on the side panel, not as a badge across the face. Sources: mini-panniers/dimensions-2.png, panniers/dimensions-2.png and dimensions-3.png, panniers/studio-4.jpg, downtube/dimensions-1.jpg, downtube/lifestyle-9.jpg."
+    }
+  ],
+  "measured_dims": [
+    {
+      "name": "Panniers / Mini Pannier",
+      "size": "5L",
+      "len_cm": 17.0,
+      "wid_cm": 12.0,
+      "hgt_cm": 38.0,
+      "source": "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-1.jpg",
+      "reading": "Two-view drawing, bag shown rolled and buckled. Front elevation 170 MM across the top and 110 MM across the bottom; end elevation 120 MM at the top and 70 MM at the bottom; height 380 MM. Recorded triple is the top-of-bag figure.",
+      "confidence": "high"
+    },
+    {
+      "name": "Panniers / Mini Pannier",
+      "size": "10L",
+      "len_cm": 21.0,
+      "wid_cm": 15.0,
+      "hgt_cm": 40.0,
+      "source": "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-mini-panniers/dimensions-1.jpg",
+      "reading": "Rolled and buckled. Front elevation 210 MM top / 140 MM bottom; end elevation 150 MM top / 110 MM bottom; height 400 MM.",
+      "confidence": "high"
+    },
+    {
+      "name": "Panniers / Pannier",
+      "size": "16L",
+      "len_cm": 26.0,
+      "wid_cm": 19.0,
+      "hgt_cm": 44.0,
+      "source": "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-1.jpg",
+      "reading": "Rolled and buckled. Front elevation 260 MM top / 170 MM bottom; end elevation 190 MM top / 120 MM bottom; height 440 MM.",
+      "confidence": "high"
+    },
+    {
+      "name": "Panniers / Pannier",
+      "size": "22L",
+      "len_cm": 32.0,
+      "wid_cm": 22.0,
+      "hgt_cm": 44.0,
+      "source": "assets/products/tailfin/full/pannier-rack-top-bags-rear-pannier-bags-panniers/dimensions-1.jpg",
+      "reading": "Rolled and buckled. Front elevation 320 MM top / 250 MM bottom; end elevation 220 MM top / 130 MM bottom; height 440 MM.",
+      "confidence": "high"
+    },
+    {
+      "name": "Frame Bags / Downtube Pack (V-Mount)",
+      "size": "1.7L",
+      "len_cm": 29.0,
+      "wid_cm": 7.5,
+      "hgt_cm": 7.5,
+      "source": "assets/products/tailfin/full/frame-bags-downtube-packs/dimensions-2.jpg",
+      "reading": "'1.7L V Mount Packs' three-view, bag rolled and buckled. 290 MM overall length; 75 MM across the mount-face elevation; 75 MM on the edge-on side elevation. Also labelled: 22 MM between the two V-Mount plates, 6.7 MM strap slot for two passes of cargo strap, 88 MM max internal fill diameter for cylindrical items (that last figure exceeds the 75 MM external, so it must be measured with the bag stuffed and bulging - I did not use it to derive any dimension).",
+      "confidence": "high"
+    },
+    {
+      "name": "Frame Bags / Downtube Pack (V-Mount)",
+      "size": "3L",
+      "len_cm": 32.0,
+      "wid_cm": 12.0,
+      "hgt_cm": 12.0,
+      "source": "assets/products/tailfin/full/frame-bags-downtube-packs/dimensions-1.jpg",
+      "reading": "'3L V Mount Packs' three-view, bag rolled and buckled. 320 MM overall length; 120 MM across the mount-face elevation; 120 MM on the edge-on side elevation; 120 MM again on the third view. Cross-check on the same sheet: 106 MM max internal fill diameter for cylindrical items, consistent with a 120 MM external section.",
+      "confidence": "high"
+    }
+  ]
+}

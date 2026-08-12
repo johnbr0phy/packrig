@@ -1,0 +1,173 @@
+{
+  "slot": "forkbag",
+  "images_opened": 80,
+  "products": [
+    {
+      "name": "Fork Packs / Fork Pack",
+      "size": "5L",
+      "score": 2,
+      "biggest_gap": "We draw the Fork Pack as a cone sitting in a wire cargo cage with two horizontal cargo straps, but the real Fork Pack has no cage and no straps around its body at all - it is a rigid-framed tapered roll-top wedge that clips onto a CNC alloy X-Clamp plate bolted to the fork leg.",
+      "layer": "B",
+      "correction": "Delete the cargo cage and the two encircling straps from this product entirely; they belong to the Cage Pack. Replace with the Fork Pack Mount: a flat alloy plate 152.6 MM long x 51.6 MM wide x 26.8 MM proud of the fork (dimensions-1.jpg), bolted at 3 x M5 bosses on 64 MM + 64 MM centres, with the X-Clamp lever hook engaging a 10 MM pin on the bag's back panel. The bag body is a tapered slab, not a solid of revolution, and it tapers the OPPOSITE way to our render: 170 MM wide x 120 MM deep at the top, narrowing to 110 MM x 70 MM at the bottom, 380 MM tall (dimensions-1.jpg). Our render is 26.3 cm along the mount axis - 31 percent short of 380 MM - and 15.3 cm across against 17.0 cm at the top / 11.0 cm at the bottom. Top closure is a rolled dry-bag top with one horizontal webbing strap and a side-release buckle at the front centre (studio-1.jpg). The only straps on the product are two removable vertical side compression straps, 20 MM webbing (dimensions-1.jpg, page.txt).",
+      "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/dimensions-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/studio-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/feature-1.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/on-bike-1.jpg",
+        "shots/tailfin-v0/tailfin-fork-packs-fork-pack-5l/side.png"
+      ]
+    },
+    {
+      "name": "Fork Packs / Fork Pack",
+      "size": "10L",
+      "score": 2,
+      "biggest_gap": "Same object as our 5L only scaled - a cone in a cargo cage with two straps - where the real 10L is a rigid-framed roll-top wedge on an X-Clamp mount, and it is 400 MM long against our 33.0 cm.",
+      "layer": "B",
+      "correction": "As for the 5L: remove the cage and the encircling straps, add the X-Clamp / Fork Pack Mount (152.6 MM x 51.6 MM x 26.8 MM, 64+64 MM boss centres - identical mount on both sizes, dimensions-2.jpg). Body is 400 MM tall, 210 MM wide x 150 MM deep at the top tapering to 140 MM x 110 MM at the bottom (dimensions-2.jpg). Record dims_cm {len 19, wid 19, hgt 35} should become an asymmetric tapered section: 21.0 x 15.0 at the top, 14.0 x 11.0 at the bottom, 40.0 tall. Note the 10L is only 5 percent longer than the 5L (400 vs 380 MM) - the extra volume is almost all in section, so scaling all three axes by cube-root of volume is wrong for this line.",
+      "evidence": [
+        "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/dimensions-2.jpg",
+        "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/studio-1.jpg",
+        "shots/tailfin-v0/tailfin-fork-packs-fork-pack-10l/front.png",
+        "shots/tailfin-v0/tailfin-fork-packs-fork-pack-10l/side.png"
+      ]
+    },
+    {
+      "name": "Cargo Cage System / Cage Pack",
+      "size": "1.7L",
+      "score": 2,
+      "biggest_gap": "At 9.7 cm across and only 22.9 cm long with domed ends and a lidded cap, our 1.7L is a fat barrel in a cage and reads as a water bottle; the real one is a slim flat-backed roll-top dry bag, 75 MM wide and 290 MM long - a 3.9:1 slab, not our 2.4:1 barrel.",
+      "layer": "A",
+      "correction": "Record dims_cm {len 9.5, wid 9.5, hgt 24} is wrong in both directions: dimensions-1.jpg labels the 1.7L Cage Pack 75 MM x 75 MM x 290 MM. Set len 7.5, wid 7.5, hgt 29.0 - 21 percent narrower and 21 percent longer than we hold. The maker calls this size out specifically for narrow profile / BB clearance (page.txt, 'Maximum size, no crank rub'), so the excess width is the failure that matters. Section is a rounded rectangle with a flat back, not a circle, so the dia 9.5 field should not be driving a lathe profile.",
+      "evidence": [
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-1.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/studio-4.jpg",
+        "shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-1-7l/tq.png"
+      ]
+    },
+    {
+      "name": "Cargo Cage System / Cage Pack",
+      "size": "3L",
+      "score": 3,
+      "biggest_gap": "The cage and two straps are right, but the bag itself is a lathe-turned barrel capped by an overhanging slab lid instead of a roll-top dry bag with the top folded over and a buckled strap across it.",
+      "layer": "B",
+      "correction": "Replace the domed/lidded barrel with a roll-top slab: straight slightly-flared side walls, a flat welded bottom seam (straight line in the wide view, rounded wedge in the narrow view - dimensions-1.jpg shows both), and a rolled top band closed by one horizontal webbing strap with a side-release buckle at the front centre (studio-6.jpg, lifestyle-1.jpg). Add the two Speed Hooks on the back face: 91 MM between hook centres, each hook 22 MM tall, projecting off the back panel to catch the cage rail (dimensions-1.jpg, all three sizes share the 91/22 MM figures). Dims: 120 MM x 120 MM x 320 MM against our record's 11.3 x 11.3 x 30 - so len/wid 12.0 and hgt 32.0.",
+      "evidence": [
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-1.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/studio-6.jpg",
+        "shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-3l/tq.png"
+      ]
+    },
+    {
+      "name": "Cargo Cage System / Cage Pack",
+      "size": "5L",
+      "score": 3,
+      "biggest_gap": "Right system, wrong bag: a lidded barrel rather than a roll-top slab, and none of the three things that identify the 5L specifically - the one-way air vent at the bottom of the face, the side compression straps, and the T-Hook straps that ship only with this size.",
+      "layer": "B",
+      "correction": "Body 135 MM x 135 MM x 380 MM (dimensions-1.jpg); our record's hgt 35 is 3 cm short, len/wid 13.5 is correct. Same roll-top and Speed Hook treatment as the 3L (91 MM centres, 22 MM hooks). Add the circular one-way air vent low on the front face - it is drawn on both views of the 5L in dimensions-1.jpg and photographed in studio-11.jpg / studio-6.jpg - and the optional side compression straps, both of which page.txt lists as 5L-only features. The 5L also takes the 65 cm cargo straps (feature-1.jpg), which is why the strap wrap should read longer than on the 3L.",
+      "evidence": [
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-1.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/studio-11.jpg",
+        "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/lifestyle-1.jpg",
+        "shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-5l/rear.png"
+      ]
+    }
+  ],
+  "slot_wide": [
+    {
+      "fault": "The Fork Pack and the Cage Pack are drawn as the same object - identical body, identical wire cargo cage, identical pair of horizontal encircling straps - when the maker's own FAQ says they are two different mounting systems and the Fork Pack has neither a cage nor straps around its body.",
+      "layer": "B",
+      "affects": ["Fork Pack 5L", "Fork Pack 10L", "Cage Pack 1.7L", "Cage Pack 3L", "Cage Pack 5L"],
+      "correction": "Split the two products. Cage Pack keeps the cargo cage (Large 213 MM x 44 MM x 34 MM / Small 149 MM x 44 MM x 34 MM, 3 x M5 at 64 MM centres, dimensions-4.jpg and dimensions-5.jpg) plus two perforated TPU cargo straps and gains Speed Hooks on its back panel. Fork Pack loses both and gains the alloy X-Clamp mount plate (152.6 MM x 51.6 MM, 26.8 MM standoff, dimensions-1.jpg) with a hard back panel and internal aluminium frame; its only straps are two removable 20 MM vertical side compression straps. page.txt: 'Fork Packs use a mini x-clamp mounting system rather than a cage and straps like the cage packs.'"
+    },
+    {
+      "fault": "Every bag in the slot is a solid of revolution - a barrel or a truncated cone with domed or lidded ends - where all five real products are flat-backed roll-top dry bags with a rounded-rectangle section, a flat welded bottom seam and a fabric top folded over and strapped shut.",
+      "layer": "C",
+      "affects": ["Fork Pack 5L", "Fork Pack 10L", "Cage Pack 1.7L", "Cage Pack 3L", "Cage Pack 5L"],
+      "correction": "The slot needs a roll-top vocabulary that none of these records can currently express: a rolled top band with a horizontal buckled strap, a flat back panel (the Cage Packs carry a welded anti-abrasion patch there on the 3L and 5L per page.txt), and a bottom that is a straight welded seam in the wide elevation but a rounded wedge in the narrow elevation. Both cage-pack views in dimensions-1.jpg show exactly that asymmetry - a lathe profile cannot produce it. The record's dia field (equal to len and wid on all five) is actively driving the wrong shape and should be dropped for this slot."
+    },
+    {
+      "fault": "Every record in the slot is short along its own mount axis, by 10 to 31 percent, and the fork packs are additionally modelled as constant or reverse-tapered where the real ones taper markedly narrower toward the axle.",
+      "layer": "A",
+      "affects": ["Fork Pack 5L", "Fork Pack 10L", "Cage Pack 1.7L", "Cage Pack 3L", "Cage Pack 5L"],
+      "correction": "Drawn lengths against measured render 'along': Fork Pack 5L 380 MM vs 26.3 cm (-31 percent), Fork Pack 10L 400 MM vs 33.0 cm (-18 percent), Cage Pack 1.7L 290 MM vs 22.9 cm (-21 percent), 3L 320 MM vs 28.6 cm (-11 percent), 5L 380 MM vs 33.3 cm (-12 percent). Fix the records first (hgt 38.0 / 40.0 / 29.0 / 32.0 / 38.0), then check the builder is not eating length in end caps. For the fork packs the section must also taper: 5L 170x120 down to 110x70, 10L 210x150 down to 140x110 - our renders flare the other way, wide at the axle end."
+    },
+    {
+      "fault": "The Speed Hook, which is the single feature Tailfin uses to sell the Cage Pack, is absent from all three cage packs, and the identifying strap hardware is generic black bands rather than the perforated tailfin-branded TPU cargo straps.",
+      "layer": "C",
+      "affects": ["Cage Pack 1.7L", "Cage Pack 3L", "Cage Pack 5L"],
+      "correction": "Two moulded hooks on the back panel at 91 MM centres, 22 MM tall each, identical on all three sizes (dimensions-1.jpg - the only dimension the drawing repeats verbatim across the range). The cargo straps are perforated ladder-hole TPU with a cam buckle and a tailfin wordmark, 40 cm for the 1.7L, 50 cm for the 3L, 50/65 cm for the 5L (feature-1.jpg). Strap keepers are separate moulded loops (feature-3.png)."
+    }
+  ],
+  "measured_dims": [
+    {
+      "name": "Fork Packs / Fork Pack",
+      "size": "5L",
+      "len_cm": 17.0,
+      "wid_cm": 12.0,
+      "hgt_cm": 38.0,
+      "source": "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/dimensions-1.jpg",
+      "reading": "380 MM overall height on the front elevation; front elevation 170 MM across at the top narrowing to 110 MM at the bottom; side elevation 120 MM at the top narrowing to 70 MM at the bottom. len_cm/wid_cm above are the top (maximum) section. Bag drawn rolled and buckled shut. Same sheet: Fork Pack Mount 152.6 MM tall, 51.6 MM wide, 26.8 MM standoff, 7 MM plate, boss centres 64 MM + 64 MM; X-Clamp pin 10 MM; side compression straps 20 MM webbing.",
+      "confidence": "high"
+    },
+    {
+      "name": "Fork Packs / Fork Pack",
+      "size": "10L",
+      "len_cm": 21.0,
+      "wid_cm": 15.0,
+      "hgt_cm": 40.0,
+      "source": "assets/products/tailfin/full/pannier-rack-top-bags-fork-packs-fork-packs/dimensions-2.jpg",
+      "reading": "400 MM overall height; front elevation 210 MM at the top to 140 MM at the bottom; side elevation 150 MM at the top to 110 MM at the bottom. len_cm/wid_cm are the top section. Mount identical to the 5L at 152.6 x 51.6 x 26.8 MM. Bag drawn rolled and buckled shut.",
+      "confidence": "high"
+    },
+    {
+      "name": "Cargo Cage System / Cage Pack",
+      "size": "1.7L",
+      "len_cm": 7.5,
+      "wid_cm": 7.5,
+      "hgt_cm": 29.0,
+      "source": "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-1.jpg",
+      "reading": "290 MM height, 75 MM across the front elevation, 75 MM across the side elevation. Speed Hooks 91 MM centre-to-centre, each 22 MM tall. STATE CAVEAT: the top is drawn with a roll band and buckle, i.e. closed, but 7.5 x 7.5 x 29.0 cm is only 1.63 L as a full rectangular box and the real section is a rounded slab, so a 1.7 L bag cannot fit inside 290 MM when rolled - the 290 MM is more likely the extended/unrolled length with the closure merely drawn. I could not settle which; treat the height as 'as drawn' and do not derive a second rolled figure from it.",
+      "confidence": "high"
+    },
+    {
+      "name": "Cargo Cage System / Cage Pack",
+      "size": "3L",
+      "len_cm": 12.0,
+      "wid_cm": 12.0,
+      "hgt_cm": 32.0,
+      "source": "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-1.jpg",
+      "reading": "320 MM height, 120 MM on the front elevation, 120 MM on the side elevation. Speed Hooks 91 MM centres, 22 MM tall. Same state caveat as the 1.7L, though the arithmetic is not contradictory at this size.",
+      "confidence": "high"
+    },
+    {
+      "name": "Cargo Cage System / Cage Pack",
+      "size": "5L",
+      "len_cm": 13.5,
+      "wid_cm": 13.5,
+      "hgt_cm": 38.0,
+      "source": "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-1.jpg",
+      "reading": "380 MM height, 135 MM on the front elevation, 135 MM on the side elevation. Speed Hooks 91 MM centres, 22 MM tall. Circular one-way air vent drawn low on both elevations - 5L only.",
+      "confidence": "high"
+    },
+    {
+      "name": "Cargo Cage (Large) - mount hardware for the Cage Packs",
+      "size": "Large",
+      "len_cm": 4.4,
+      "wid_cm": 3.4,
+      "hgt_cm": 21.3,
+      "source": "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-4.jpg",
+      "reading": "213 MM tall with load chip, 222.2 MM without; 44 MM wide on the face, 71.6 MM across the widest strap slots; 34 MM deep with load chip, 16.2 MM plate depth; 3 x M5 slots at 64 MM + 64 MM centres with 2 MM adjustment; weight 79 g.",
+      "confidence": "high"
+    },
+    {
+      "name": "Cargo Cage (Small) - mount hardware for the Cage Packs",
+      "size": "Small",
+      "len_cm": 4.4,
+      "wid_cm": 3.4,
+      "hgt_cm": 14.9,
+      "source": "assets/products/tailfin/full/cargo-cage-system-cage-packs-cage-packs/dimensions-5.jpg",
+      "reading": "149 MM tall with load chip, 158.2 MM without; 44 MM wide on the face, 71.6 MM across the strap slots; 34 MM deep with load chip, 16.2 MM plate depth; 2 x M5 slots at 64 MM centres; weight 57 g.",
+      "confidence": "high"
+    }
+  ]
+}
