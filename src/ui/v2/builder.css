@@ -1644,13 +1644,38 @@
  * is what a bottom sheet does everywhere else on a phone.
  */
 @media (max-width: 560px) {
-  #ui-root .panel { overflow-y: auto; -webkit-overflow-scrolling: touch; }
-  #ui-root .panel > .nav-sec:first-of-type { flex: 0 0 auto; }
-  #ui-root .panel > .nav-sec:first-of-type .bag-list {
-    flex: 0 0 auto;
+  /* The sheet is a column, not one long scroller. The bag list scrolls;
+     Add a bag / Try another stay put at the bottom. A single panel scroller
+     let the list paint through those buttons — tap hit the card behind,
+     and the list still moved under them. */
+  #ui-root .panel {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  #ui-root .panel > .bags-sec {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #ui-root .panel > .bags-sec .bag-list {
+    flex: 1 1 auto;
     min-height: 0;
     max-height: none;
-    overflow: visible;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  #ui-root .panel > .bags-sec .nav-actions {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+    background: #0C0D10;
+    border-top: 1px solid var(--line);
+    padding-top: 10px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
   }
 
   /* The 55vh sheet cannot carry a long name, a full Save label, Share,
