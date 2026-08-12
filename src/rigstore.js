@@ -169,6 +169,9 @@ export function createRigStore(app, auth) {
 
     /** Save the bike as it stands. */
     async save(name) {
+      if (auth.enabled && !auth.signedIn) {
+        throw new Error('You need an account to save a rig.');
+      }
       note(known + 1);
       const rig = captureRig(app, { name });
       const now = new Date().toISOString();
@@ -218,6 +221,9 @@ export function createRigStore(app, auth) {
      * is the rig itself and "update" has to mean the build you came in with.
      */
     async update(id, { name, rig: given } = {}) {
+      if (auth.enabled && !auth.signedIn) {
+        throw new Error('You need an account to save a rig.');
+      }
       const rig = given || captureRig(app, { name });
       const now = new Date().toISOString();
       if (!remote()) {

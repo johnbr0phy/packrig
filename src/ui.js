@@ -585,11 +585,67 @@ export function initUI(app) {
       return row;
     });
   }
+  // A save is an account thing. Signed out, Save opens the create-account
+  // window; the bike is not written until they are in. A Google redirect
+  // wipes the page, so the kit rides in sessionStorage until we come back.
+  const PENDING_SAVE = 'packrig.pendingSave';
+  const stashPendingSave = (after = 'stay') => {
+    try {
+      const name = rigNav.current?.name || randomRigName();
+      sessionStorage.setItem(PENDING_SAVE, JSON.stringify({
+        name, after, rig: captureRig(app, { name }),
+      }));
+    } catch { /* private mode */ }
+  };
+  const clearPendingSave = () => {
+    try { sessionStorage.removeItem(PENDING_SAVE); } catch { /* */ }
+  };
+  const consumePendingSave = () => {
+    if (!app.auth?.signedIn) { clearPendingSave(); return Promise.resolve(); }
+    let raw = null;
+    try { raw = sessionStorage.getItem(PENDING_SAVE); } catch { /* */ }
+    if (!raw) return Promise.resolve();
+    clearPendingSave();
+    let pending;
+    try { pending = JSON.parse(raw); } catch { return Promise.resolve(); }
+    if (!pending?.rig) return Promise.resolve();
+    return Promise.resolve(app.rigs?.saveRig(pending.name || randomRigName(), pending.rig))
+      .then((row) => {
+        notify(`Saved “${row?.name || pending.name}”. It’s in My rigs.`);
+      })
+      .catch((e) => notify(e?.message || 'Could not save that rig'));
+  };
+  const requireAccount = (reason) => {
+    if (app.auth?.signedIn) return Promise.resolve(true);
+    if (!app.auth?.enabled) {
+      notify('You need an account to save, and accounts are not available right now.');
+      return Promise.resolve(false);
+    }
+    return new Promise((resolve) => {
+      account.open('signup', {
+        reason: reason || 'You need an account to save a rig.',
+        onReady: () => resolve(true),
+        onCancel: () => resolve(false),
+      });
+    });
+  };
+  if (app.auth?.enabled) {
+    Promise.resolve(app.auth.hydrate?.()).then(() => consumePendingSave());
+  }
   saveBtn.onclick = () => {
     if (saveBtn.classList.contains('is-done')) return;
-    saveCurrent()
-      .then(() => notify(`Saved “${rigNav.current.name}”`,
-        null, { label: 'Rename', run: () => document.querySelector('.rn-title')?.click() }))
+    stashPendingSave('stay');
+    requireAccount()
+      .then((ok) => {
+        if (!ok) { clearPendingSave(); return null; }
+        return saveCurrent();
+      })
+      .then((row) => {
+        if (!row) return;
+        clearPendingSave();
+        notify(`Saved “${rigNav.current.name}”`,
+          null, { label: 'Rename', run: () => document.querySelector('.rn-title')?.click() });
+      })
       .catch((e) => notify(e?.message || 'Could not save that rig'));
   };
   function paintTry() {
@@ -615,7 +671,9 @@ export function initUI(app) {
     saveLabel.textContent = dirty
       ? ((PHONE.matches || SHORT.matches) ? 'Save' : (rigNav?.current?.id ? 'Save changes' : 'Save this rig'))
       : 'Saved';
-    saveBtn.title = dirty ? 'Keep this build' : 'Saved';
+    saveBtn.title = dirty
+      ? (app.auth?.signedIn ? 'Keep this build' : 'Create an account to save this rig')
+      : 'Saved';
     paintTry();
   }
 
@@ -685,7 +743,10 @@ export function initUI(app) {
     card.setAttribute('aria-modal', 'true');
     card.setAttribute('aria-label', 'Save this rig?');
     card.append(elt('h2', 'ac-title', `Save “${name}”?`));
-    card.append(elt('p', 'ac-note', 'Home is always the empty bike. Save keeps a copy in My rigs.'));
+    card.append(elt('p', 'ac-note',
+      app.auth?.signedIn
+        ? 'Home is always the empty bike. Save keeps a copy in My rigs.'
+        : 'Save needs an account. Home is always the empty bike.'));
     const row = el('div', 'ac-leave-row');
     const lose = el('button', 'ac-btn');
     lose.type = 'button';
@@ -706,15 +767,7 @@ export function initUI(app) {
       if (e.key === 'Escape') { e.preventDefault(); dismiss(); }
     };
     lose.onclick = () => dismiss(onLeave);
-    keep.onclick = () => {
-      keep.disabled = true;
-      Promise.resolve(onSave())
-        .then(() => dismiss())
-        .catch((e) => {
-          keep.disabled = false;
-          notify(e?.message || 'Could not save that rig');
-        });
-    };
+    keep.onclick = () => dismiss(onSave);
     scrim.onmousedown = (e) => { if (e.target === scrim) dismiss(); };
     document.addEventListener('keydown', onKey, true);
     root.append(scrim);
@@ -733,12 +786,23 @@ export function initUI(app) {
     }
     const name = rigNav.current?.name || 'this rig';
     askLeaveSave(name, {
-      onSave: () => saveCurrent().then((row) => {
-        leaveTunnel();
-        discardKit();
-        goHome();
-        notify(`Saved “${row?.name || name}”`);
-      }),
+      onSave: () => {
+        stashPendingSave('home');
+        requireAccount()
+          .then((ok) => {
+            if (!ok) { clearPendingSave(); return null; }
+            return saveCurrent();
+          })
+          .then((row) => {
+            if (!row) return;
+            clearPendingSave();
+            leaveTunnel();
+            discardKit();
+            goHome();
+            notify(`Saved “${row?.name || name}”`);
+          })
+          .catch((e) => notify(e?.message || 'Could not save that rig'));
+      },
       onLeave: () => { leaveTunnel(); discardKit(); goHome(); },
     });
   };

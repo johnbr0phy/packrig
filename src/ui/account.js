@@ -36,6 +36,18 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
   let busy = false;
   let notice = null;            // { kind:'ok'|'bad', text }
   let lastFocus = null;
+  // Set when Save opened this dialogue: a reason line, and what to do after
+  // they are in. Closing without signing in runs onCancel instead.
+  let reasonNote = null;
+  let onReady = null;
+  let onCancel = null;
+
+  function takeHooks() {
+    const ready = onReady, cancel = onCancel;
+    onReady = onCancel = null;
+    reasonNote = null;
+    return { ready, cancel };
+  }
 
   function close() {
     if (!scrim) return;
@@ -48,6 +60,8 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
     setTimeout(() => dead.remove(), 200);
     lastFocus?.focus?.({ preventScroll: true });
     lastFocus = null;
+    const { cancel } = takeHooks();
+    if (!auth?.signedIn) cancel?.();
   }
 
   function onKey(e) {
@@ -104,7 +118,7 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
       reset ? 'Reset your password' : signup ? 'Create an account' : 'Log in'));
     card.append(el('p', 'ac-note', reset
       ? 'We will email you a link to set a new one.'
-      : 'So your rigs follow you between devices.'));
+      : (reasonNote || 'So your rigs follow you between devices.')));
 
     if (notice) card.append(el('div', `ac-notice is-${notice.kind}`, notice.text));
 
@@ -200,6 +214,14 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
   /** Local rigs ride up to the account on the way in. */
   async function afterSignIn() {
     const { pushed } = (await store?.migrateLocal?.()) || { pushed: 0 };
+    const { ready } = takeHooks();
+    if (ready) {
+      // Save (or whatever asked) continues from here. Do not leave them on
+      // the "Your account" screen — they came to keep a bike, not to linger.
+      close();
+      await ready();
+      return;
+    }
     mode = 'account';
     notice = pushed
       ? { kind: 'ok', text: `Logged in — ${pushed} rig${pushed === 1 ? '' : 's'} from this device moved to your account.` }
@@ -228,8 +250,15 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
   /**
    * `open()` with no argument does the right thing from either state: the
    * account when there is one, the log-in form when there is not.
+   *
+   * `opts.reason` replaces the default note — used when Save sent them here.
+   * `opts.onReady` runs after a successful sign-in / sign-up (and the
+   * dialogue closes first). `opts.onCancel` runs if they close it unsigned.
    */
-  function open(next) {
+  function open(next, opts = {}) {
+    reasonNote = opts.reason || null;
+    onReady = typeof opts.onReady === 'function' ? opts.onReady : null;
+    onCancel = typeof opts.onCancel === 'function' ? opts.onCancel : null;
     if (!auth?.enabled) {
       // Never swallow the click. If Firebase did not boot, say so in the
       // same window — a hidden button plus a no-op click is how login vanished.
