@@ -1,0 +1,225 @@
+{
+  "slot": "toptube+toptube_rear",
+  "images_opened": 18,
+  "method_note": "Tailfin ship the print-at-home sizing sheets as real PDFs alongside the rasters (dimensions-1/3/4/5/8.pdf). Their geometry is vector and 1:1, so dimension text and outline extents were read out of the PDF coordinate space rather than eyeballed off a raster. Scale was proved independently: the '0-5cm' ruler graphic on the Rear Top Tube Bag A4 sheet measures exactly 50.000 mm in page units. Photographs were used only for shape and orientation questions.",
+  "products": [
+    {
+      "name": "Top Tube / Top Tube Bag / 0.8L Zip",
+      "slot": "toptube",
+      "size": "0.8L Zip",
+      "score": 3,
+      "biggest_gap": "Right teardrop, right way round, but drawn 19% too tall on the perpendicular and as a flat-topped slab-sided box instead of a bag whose top surface curves down continuously and whose cross-section narrows from 65mm at the base to 48mm at the crown.",
+      "layer": "B",
+      "correction": "Record is exactly right and comes straight off the maker drawing (dimensions-8.pdf p1: 224 MM length, 65 MM max width, 100 MM height). Our render measures perp 119mm against a true max of 100mm — cut the perpendicular height by 16%. Also: 100 MM is the height at ONE station only (the front/stem end); the same drawing calls 83 MM at a mid station, so the profile must ramp down continuously toward the rear, and the section must taper 65mm (base) -> 48mm (crown), not run slab-sided. Length is +6% (238 vs 224). Width is correct (64 vs 65).",
+      "evidence": [
+        "assets/products/tailfin/full/top-tube-cockpit-top-tube-bag/dimensions-8.png",
+        "assets/products/tailfin/full/top-tube-cockpit-top-tube-bag/dimensions-8.pdf",
+        "shots/tailfin-v0/tailfin-top-tube-top-tube-bag-0-8l-zip/side.png"
+      ]
+    },
+    {
+      "name": "Top Tube / Top Tube Bag / 1.1L Zip/Flip",
+      "slot": "toptube",
+      "size": "1.1L Zip/Flip",
+      "score": 3,
+      "biggest_gap": "Same family fault as the 0.8L: 20% over-height and a flat-topped box where the maker draws a continuously falling top line.",
+      "layer": "B",
+      "correction": "Record matches the drawing exactly (dimensions-8.pdf p2: 249 MM length, 75 MM width, 104 MM height, 89 MM at the mid station). Render perp 125mm vs true 104mm -> reduce 17%. Length 262 vs 249 (+5%). Width 75 correct.",
+      "evidence": [
+        "assets/products/tailfin/full/top-tube-cockpit-top-tube-bag/dimensions-8.pdf",
+        "shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-1l-zip-flip/side.png"
+      ]
+    },
+    {
+      "name": "Top Tube / Top Tube Bag / 1.5L Zip/Flip",
+      "slot": "toptube",
+      "size": "1.5L Zip/Flip",
+      "score": 3,
+      "biggest_gap": "21% over-height, and the three sizes are drawn as one shape scaled uniformly when the maker's own numbers show the 1.5L is proportionally much wider (90mm on 272mm) than the 0.8L (65mm on 224mm).",
+      "layer": "B",
+      "correction": "Record matches the drawing exactly (dimensions-8.pdf p3: 272 MM length, 90 MM width, 114 MM height, 95 MM at the mid station). Render perp 138mm vs true 114mm -> reduce 17%. Length 287 vs 272 (+5.5%). Width 89 correct.",
+      "evidence": [
+        "assets/products/tailfin/full/top-tube-cockpit-top-tube-bag/dimensions-8.pdf",
+        "shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-5l-zip-flip/side.png"
+      ]
+    },
+    {
+      "name": "Top Tube / Long Top Tube Bag / 1.6L",
+      "slot": "toptube",
+      "size": "1.6L",
+      "score": 2,
+      "biggest_gap": "We draw a constant-depth loaf; the real 1.6L loses 41% of its depth along its length, from 85mm at the head-tube end to 50mm at the seat-tube end, and that taper is the whole point of the product.",
+      "layer": "B",
+      "correction": "Record's length 370 and height 85 are both correct (dimensions-1.pdf p2 '370 MM', p3 '85 MM'). The 50mm end is the REAR (seat-tube) end and the 85mm end is the FRONT (head-tube/stem) end — confirmed on studio-1.jpg, where the bag is visibly deepest right behind the stem and shallowest where it meets the seat tube. Our render is 104mm deep and constant: cut to 85mm at the front and taper to 50mm at the rear. At the rear end we are currently 108% over.",
+      "evidence": [
+        "assets/products/tailfin/full/top-tube-cockpit-long-top-tube-bag/dimensions-1.pdf",
+        "assets/products/tailfin/full/top-tube-cockpit-long-top-tube-bag/studio-1.jpg",
+        "shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-1-6l/side.png"
+      ]
+    },
+    {
+      "name": "Top Tube / Long Top Tube Bag / 2.2L",
+      "slot": "toptube",
+      "size": "2.2L",
+      "score": 2,
+      "biggest_gap": "No taper at all where the maker specifies 105mm falling to 65mm, so the bag reads as a battery pack rather than a Tailfin long top tube bag.",
+      "layer": "B",
+      "correction": "Record's 470 length and 105 height are correct (dimensions-1.pdf p2 '470MM', p3 '105 MM'). Taper to 65 MM at the rear (seat-tube) end. Render perp 128mm constant vs 105 front / 65 rear: -18% at the front, -49% at the rear.",
+      "evidence": [
+        "assets/products/tailfin/full/top-tube-cockpit-long-top-tube-bag/dimensions-1.pdf",
+        "shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-2-2l/tq.png"
+      ]
+    },
+    {
+      "name": "Top Tube / Long Top Tube Bag / 3L",
+      "slot": "toptube",
+      "size": "3L",
+      "score": 2,
+      "biggest_gap": "No taper (115mm should fall to 68mm) and, uniquely in this line, the render is 31mm SHORT — 469mm drawn against 500mm specified, so the 2.2L and 3L come out nearly the same length.",
+      "layer": "B",
+      "correction": "dimensions-1.pdf p2 gives '500MM'; our render measures 469mm along its own mount axis, 6% short. Height 115 MM at the front tapering to 68 MM at the rear (dimensions-1.pdf p3). Render perp 142mm constant vs 115 front / 68 rear.",
+      "evidence": [
+        "assets/products/tailfin/full/top-tube-cockpit-long-top-tube-bag/dimensions-1.pdf",
+        "shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-3l/side.png"
+      ]
+    },
+    {
+      "name": "Top Tube / Rear Top Tube Bag / 0.9L Road/Gravel",
+      "slot": "toptube_rear",
+      "size": "0.9L Road/Gravel",
+      "score": 2,
+      "biggest_gap": "The bag is drawn back to front: our wedge is tall at the front and tapers toward the seat tube, whereas the real bag is a sail that stands tallest hard against the seatpost and tapers to a point going forward.",
+      "layer": "A",
+      "correction": "Record is wrong on both axes. True length 185 MM (labelled on dimensions-4.jpg; independently measured at 185.0mm off the 1:1 A4 template dimensions-2.pdf) against a recorded 250 — we are 35% too long. True height above the top tube 134mm, ~139mm including the V-mount base, against a recorded 90 — we are 21% too short. Set verified:true, len 18.5, hgt 13.4. Then mirror the taper: tall face at the rear, butted against the seat tube/seatpost, tapering forward. Two cross-checks in the maker's own FAQ agree: 'more than 575mm of space on your Top Tube' to run this with the 370mm 1.6L Long (575-370=205mm, i.e. a 185mm bag plus a gap, not a 250mm one), and 'minimum saddle height 165mm... measured from the Top Tube to the base of the seat rails' for a 134mm-tall bag.",
+      "evidence": [
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-4.jpg",
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-2.pdf",
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-2.png",
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/lifestyle-1.jpg",
+        "shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-9l-road-gravel/side.png"
+      ]
+    },
+    {
+      "name": "Top Tube / Rear Top Tube Bag / 0.8L MTB",
+      "slot": "toptube_rear",
+      "size": "0.8L MTB",
+      "score": 2,
+      "biggest_gap": "Same reversed wedge as the 0.9L, and the only thing that distinguishes the MTB version — 15mm less height so a dropper post can pass — is invisible because both our renders are the wrong shape anyway.",
+      "layer": "A",
+      "correction": "Record is wrong on both axes. True length 182 MM and true overall height 124 MM, both labelled on dimensions-5.jpg; the body above the top tube measures 118.9mm off the 1:1 template (dimensions-2.pdf), the remaining ~5mm being the V-mount base. Recorded 250 x 70 -> should be len 18.2, hgt 11.9. Set verified:true. The 15mm height difference from the 0.9L is exactly the difference in Tailfin's minimum saddle heights (150mm MTB vs 165mm Road/Gravel), which is what makes the MTB version dropper-compatible.",
+      "evidence": [
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-5.jpg",
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-2.pdf",
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/lifestyle-1.jpg",
+        "shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-8l-mtb/tq.png"
+      ]
+    }
+  ],
+  "slot_wide": [
+    {
+      "fault": "Every bag in the toptube slot proper is drawn about 20% too deep on the perpendicular axis, uniformly, which is a constant multiplier rather than six independent errors.",
+      "layer": "B",
+      "affects": ["0.8L Zip", "1.1L Zip/Flip", "1.5L Zip/Flip", "1.6L", "2.2L", "3L"],
+      "correction": "Rendered perp / recorded hgt is 1.19, 1.20, 1.21, 1.22, 1.22, 1.23 across the six. The record is not the problem — all six recorded heights are read verbatim off Tailfin's own drawings. Something in the toptube mount inflates the perpendicular dimension by ~1.20; find and remove that factor rather than editing six records. Note that along-tube length is only +5% and across-tube width is correct to within 1mm, so the fault is isolated to the perpendicular axis."
+    },
+    {
+      "fault": "No bag in this slot tapers along its length, but every Tailfin top tube bag does — it is the feature the maker sells the range on ('teardrop design for an unobstructed ride', 'sculpted 3D welded shapes eliminate knee rub').",
+      "layer": "B",
+      "affects": ["0.8L Zip", "1.1L Zip/Flip", "1.5L Zip/Flip", "1.6L", "2.2L", "3L"],
+      "correction": "For all six, the deep end is FORWARD (head tube / stem) and the shallow end is REARWARD (seat tube). The three Long bags need an explicit second height: 85->50, 105->65, 115->68 mm (dimensions-1.pdf p3). The three short bags need a falling top line rather than a flat one — the 0.8L drawing calls 100 MM at the rear-facing tall station and 83 MM at a mid station, the 1.1L 104/89, the 1.5L 114/95. Our short bags do have a bevel in the right direction, so this is a shape refinement there and a missing feature entirely on the Long bags."
+    },
+    {
+      "fault": "Both Rear Top Tube Bags are drawn as ordinary top tube bags nudged up against the seat tube, which is the wrong object: the real bag is a rear-anchored triangular sail with a concave face that cradles the seatpost.",
+      "layer": "C",
+      "affects": ["0.9L Road/Gravel", "0.8L MTB"],
+      "correction": "This slot needs a mount concept we do not appear to have: the datum is the seat tube, not the middle of the top tube. The bag's tall rear face sits hard against the seat tube/seatpost and the profile falls forward to a rounded point on the top tube; two rubber cargo straps go round the top tube and an optional third round the seatpost. The rear face is concave in plan so it wraps the post (see studio-1.jpg, shot down the seat tube). Height is greater than half the length here (134mm on 185mm), which is the opposite proportion to every other bag in the slot, so a shared 'long low wedge' primitive will not express it."
+    },
+    {
+      "fault": "The `verified: false` on both Rear Top Tube Bags rests on a claim that Tailfin publish no labelled numbers for them. That claim is false twice over.",
+      "layer": "A",
+      "affects": ["0.9L Road/Gravel", "0.8L MTB"],
+      "correction": "First, dimensions-4.jpg and dimensions-5.jpg ARE labelled engineering drawings — cropped, but '185 MM'/'182 MM' and '124 MM' read clean. Second, the print-at-home template is genuinely 1:1 and therefore self-scaling: dimensions-2.pdf is a 303.0 x 216.0 mm page (A4 landscape 297x210 plus 3mm bleed) that instructs 'print at 100% scale', and its ruler graphic measures exactly 50.000 mm in page units, so page size IS the scale and the outlines can be measured directly. The two methods agree to 0.0mm on both lengths. Both records should be corrected and marked verified:true."
+    },
+    {
+      "fault": "The world-aligned box in the bundle is unusable for this slot and actively misleading for the rear bags.",
+      "layer": "B",
+      "affects": ["0.9L Road/Gravel", "0.8L MTB"],
+      "correction": "Every product in both bundles reports exactly 7.1cm 'across' in the world box regardless of its real width (5.0 to 9.0cm), and the two rear bags report 56.9/56.7cm fore-aft for bags whose own-axis length is 25.9/25.5cm. Whatever the world box is measuring includes strap or mount geometry and not just the bag. I judged everything on the own-axis numbers as instructed, but this is worth a look on its own account."
+    }
+  ],
+  "measured_dims": [
+    {
+      "name": "Top Tube / Top Tube Bag / 0.8L Zip",
+      "size": "0.8L Zip",
+      "len_cm": 22.4, "wid_cm": 6.5, "hgt_cm": 10.0,
+      "source": "assets/products/tailfin/full/top-tube-cockpit-top-tube-bag/dimensions-8.pdf (page 1) / dimensions-8.png",
+      "reading": "Plan view '224 MM' overall length and '65MM' max width, with '39 MM' and '38 MM' at the two ends; side elevation '100 MM' max height and '83 MM' at a mid station; end elevation '48 MM' crown width over '65 MM' base width and '100 MM' height. Mount detail: V-mounts at '134 MM' centres, '25 MM' insets, '64 MM' bolt spacing, '4 MM' footbed.",
+      "confidence": "high"
+    },
+    {
+      "name": "Top Tube / Top Tube Bag / 1.1L Zip/Flip",
+      "size": "1.1L Zip/Flip",
+      "len_cm": 24.9, "wid_cm": 7.5, "hgt_cm": 10.4,
+      "source": "assets/products/tailfin/full/top-tube-cockpit-top-tube-bag/dimensions-8.pdf (page 2)",
+      "reading": "'249 MM' length, '75MM' width (called twice), '104 MM' height (called twice), '89 MM' at the mid station, '41 MM'/'42 MM' end widths, '134 MM' V-mount centres.",
+      "confidence": "high"
+    },
+    {
+      "name": "Top Tube / Top Tube Bag / 1.5L Zip/Flip",
+      "size": "1.5L Zip/Flip",
+      "len_cm": 27.2, "wid_cm": 9.0, "hgt_cm": 11.4,
+      "source": "assets/products/tailfin/full/top-tube-cockpit-top-tube-bag/dimensions-8.pdf (page 3)",
+      "reading": "'272 MM' length, '90MM' width (called twice), '114 MM' height (called twice), '95 MM' at the mid station, '42 MM'/'48 MM' end widths, '134 MM' V-mount centres.",
+      "confidence": "high"
+    },
+    {
+      "name": "Top Tube / Long Top Tube Bag / 1.6L",
+      "size": "1.6L",
+      "len_cm": 37.0, "wid_cm": null, "hgt_cm": 8.5,
+      "hgt_rear_cm": 5.0,
+      "source": "assets/products/tailfin/full/top-tube-cockpit-long-top-tube-bag/dimensions-1.pdf (pages 2 and 3)",
+      "reading": "Page 2 '370 MM' beside the '1.6Litre' outline. Page 3 carries the six taper heights for the range, '50 MM' and '85 MM' being the 1.6L pair; 85 is the front (head-tube) end and 50 the rear, per studio-1.jpg. No width is called on this sheet.",
+      "confidence": "high"
+    },
+    {
+      "name": "Top Tube / Long Top Tube Bag / 2.2L",
+      "size": "2.2L",
+      "len_cm": 47.0, "wid_cm": null, "hgt_cm": 10.5,
+      "hgt_rear_cm": 6.5,
+      "source": "assets/products/tailfin/full/top-tube-cockpit-long-top-tube-bag/dimensions-1.pdf (pages 2 and 3)",
+      "reading": "'470MM' length; taper '105 MM' front to '65 MM' rear. No width called.",
+      "confidence": "high"
+    },
+    {
+      "name": "Top Tube / Long Top Tube Bag / 3L",
+      "size": "3L",
+      "len_cm": 50.0, "wid_cm": null, "hgt_cm": 11.5,
+      "hgt_rear_cm": 6.8,
+      "source": "assets/products/tailfin/full/top-tube-cockpit-long-top-tube-bag/dimensions-1.pdf (pages 2 and 3)",
+      "reading": "'500MM' length; taper '115 MM' front to '68 MM' rear. No width called.",
+      "confidence": "high"
+    },
+    {
+      "name": "Top Tube / Rear Top Tube Bag / 0.9L Road/Gravel",
+      "size": "0.9L Road/Gravel",
+      "len_cm": 18.5, "wid_cm": null, "hgt_cm": 13.4,
+      "source": "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-4.jpg + assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-2.pdf",
+      "reading": "'185 MM' labelled under the side elevation on dimensions-4.jpg. The same outline on the 1:1 A4 template measures 185.0mm long and 133.8mm tall from the top-tube contact line to the crown (page 303.0x216.0mm, ruler graphic exactly 50.000mm). '46 MM' and '45 MM' also appear on dimensions-4.jpg but I could not tie either to a specific station on the cropped image, so I am not calling a width.",
+      "confidence": "high"
+    },
+    {
+      "name": "Top Tube / Rear Top Tube Bag / 0.8L MTB",
+      "size": "0.8L MTB",
+      "len_cm": 18.2, "wid_cm": null, "hgt_cm": 11.9,
+      "hgt_overall_cm": 12.4,
+      "source": "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-5.jpg + assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-2.pdf",
+      "reading": "'182 MM' and '124 MM' labelled on dimensions-5.jpg. The same outline on the 1:1 A4 template measures 182.0mm long and 118.9mm from the top-tube contact line to the crown; the 124 MM call includes the ~5mm V-mount base drawn below that line. '42 MM' and '50 MM' also appear but could not be tied to a station, so no width called.",
+      "confidence": "high"
+    }
+  ],
+  "open_questions": [
+    "No width is confirmed for any of the three Long Top Tube Bags or either Rear Top Tube Bag. The record holds 5.5/5.8/6.3 and 5.0/5.5 and I found nothing that either confirms or contradicts them. Next file I would open: assets/products/tailfin/full/top-tube-cockpit-long-top-tube-bag/dimensions-3.jpg through dimensions-14.jpg — twelve rasters I did not reach, which given the naming are almost certainly the per-size two-view drawings and should carry width call-outs the way dimensions-8.pdf does for the short bags.",
+    "The Rear Top Tube Bag drawings call '100 degrees' (0.9L, dimensions-4.jpg) and '85 degrees' (0.8L, dimensions-5.jpg). Tailfin say 'the angles of the packs are also designed to fit neatly into the frame geometry', so these are probably the included angle between the top-tube face and the seat-tube face and would pin the mount exactly. Both are on the cropped right-hand edge of their images and I could not see which corner they annotate.",
+    "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/studio-15.png is a blank white image. Worth pruning from the bundle."
+  ]
+}

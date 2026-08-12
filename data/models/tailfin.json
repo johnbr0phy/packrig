@@ -14,7 +14,8 @@
     "ROUND 1 (11 Aug, cross-brand gauntlet): the assertion in these notes that Tailfin publishes no linear dimensions for the frame bags, fork packs, cage packs, downtube packs and rear top tube bags is WRONG, and it was wrong because the evidence had never been fetched. assets/products/tailfin/ held 37 distinct images; tools/harvest-brand.mjs now holds 485 plus 22 rasterised sizing PDFs, and every one of the 16 product pages carries a labelled dimension drawing. Records corrected against those drawings this round: 2 downtube packs, 2 fork packs, 3 cage packs. VOCABULARY GAP recorded rather than fudged: the panniers and fork packs taper at different rates on their two section axes and geometry.taper carries one ratio, so the pair is in geometry.notes and the mean is in the field.",
     "ROUND 1 layer-C list, for whoever ratifies vocabulary: (1) geometry.crossSection cannot say 'flat on the top and the front', which is the Bar Bag System's whole silhouette. (2) geometry.taper carries one ratio where the panniers and fork packs measurably taper at different rates on their two section axes. (3) There is no way to require a HANDLEBAR TYPE, so the two MTB Flat Bar SKUs and the 11L/15L Bar Cage Bags render on a drop bar the maker says they do not fit. (4) Rack-mounted SKUs have no per-brand rack asset, so Tailfin's thru-axle carbon arch is drawn as a generic wire pannier rack.",
     "ROUND 1 SILHOUETTE FINDING, framebag_half, 9 products, layer B and the biggest single shape fault in the brand: Tailfin frame bags are NOT the Apidura kite. Tall blunt rear end face at the seat tube, lower edge falling gently forward at ~9 degrees, deepest point at ~0.82 of the length toward the head tube, then a steep ~40-degree climb to a shallow front face. Only the forward 15-20% of the lower edge touches the down tube. framehalf.js derives its belly position from the down tube angle assuming the whole lower-front edge rests on the tube, which is true for Apidura and false here. SCHEMA GAP: the belly fraction has no field - geometry.taper carries the two end faces only - so a per-product profile term is needed before this can be drawn correctly. Also unmodelled: the V-Mount pads (3-4 along the top edge at 134/261/329/345/366 MM from the FRONT end, plus 2 on the lower-front edge) with cargo straps threading through them around the TOP TUBE and the DOWN TUBE - nothing touches the seat tube or head tube - The critique also called the -7 mm top tube reading on all nine products a penetration fault. It is NOT one, and this correction is recorded rather than quietly dropped: bagshot prints it under 'mounts on', not 'CLASH', because a bag is supposed to touch the tube it hangs from (tools/bagshot.mjs CONTACT_OK). It reads exactly -7.0 mm on 101 of the 103 products this slot draws for 35 brands, unchanged by any geometry change tried against it - a constant, i.e. the attachment gate being satisfied, not a bevel or a placement error.",
-    "FIT, framebag_half: the 3.8/4.5/5.3/6.5L Half Frame Packs are longer than the rig frame's usable top tube (~48 cm) and are drawn clamped to it, 2-10 percent under their published length. Tailfin size this range for bikes from 47 to 61 cm; the rig is a 56, so this is the range working as intended rather than a fault. Recorded per product in fit_constraint. Same call as the 3L Downtube Pack."
+    "FIT, framebag_half: the 3.8/4.5/5.3/6.5L Half Frame Packs are longer than the rig frame's usable top tube (~48 cm) and are drawn clamped to it, 2-10 percent under their published length. Tailfin size this range for bikes from 47 to 61 cm; the rig is a 56, so this is the range working as intended rather than a fault. Recorded per product in fit_constraint. Same call as the 3L Downtube Pack.",
+    "ROUND 1, toptube+toptube_rear (the eighth and last slot critiqued): the two Rear Top Tube Bags are drawn BACK TO FRONT - tall at the stem end, tapering to the seat tube, where the real bag is a sail tallest against the seatpost tapering forward. toptube.js already has a `rear` flag and it is correctly true for these products, so the fault is downstream of that flag, not a missing one. NOT fixed this round: that builder draws 101 products and an unverified change to it is how this project loses a round. Also open in the slot: every toptube bag is ~20% over on the perpendicular axis, and the three Long Top Tube Bags carry a measured taper in geometry.taper that the render does not show at all (85->50, 105->65, 115->68 MM)."
   ],
   "products": [
     {
@@ -4156,30 +4157,31 @@
       "size": "0.9L Road/Gravel",
       "slot": "toptube_rear",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "medium",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/top-tube-rear-top-tube-bag-0-9l-road-gravel-1.jpg",
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-4.jpg",
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-2.pdf",
         "https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/"
       ],
       "dims_cm": {
-        "len": 25,
+        "len": 18.5,
         "wid": 5,
-        "hgt": 9
+        "hgt": 13.4
       },
-      "dims_state": "unknown",
-      "dims_raw": "0.9L, 109-118g - no linear dimensions published; the spec sheet is a print-at-home sizing template with no labelled numbers",
-      "dims_note": "UNVERIFIED. Tailfin publish volume and weight only. dims_cm left at the existing catalogue estimate. Tailfin do say this version is NARROWER than the MTB one to reduce thigh contact, and the MTB one is SHORTER in height for dropper clearance - the existing estimates (9cm vs 7cm tall, 5.0 vs 5.5cm wide) happen to encode both of those relationships correctly, which is a sanity check but not a measurement.",
+      "dims_state": "drawn",
+      "dims_raw": "185 MM length, 134 MM height above the top tube (~139 MM including the V-mount base).",
+      "dims_note": "MATERIAL CHANGE, and it overturns this record's own claim for the second time in this brand. The old entry said Tailfin publish volume and weight only and that the spec sheet is 'a print-at-home sizing template with no labelled numbers'. False twice over. First, dimensions-4.jpg IS a labelled drawing and the figures read clean. Second, the print-at-home template (dimensions-2.pdf) is genuinely 1:1 and therefore SELF-SCALING: it is a 303 x 216 MM page (A4 landscape plus 3 MM bleed) that instructs 'print at 100% scale', and its printed ruler measures exactly 50.000 MM in page units, so the page size IS the scale and the outline can be measured directly. The two methods agree to 0.0 MM on the length. Was 25 x 5 x 9 - 35% too long and 21-41% too short. wid is NOT measured by either method and is left at the catalogue estimate. CROSS-CHECK from the maker's own FAQ: they say you need 'more than 575 MM of top tube' to run this alongside the 370 MM 1.6L Long Top Tube Bag; 575 - 370 = 205 MM, which fits a 185 MM bag plus a gap and does not fit a 250 MM one.",
       "capacity_l": 0.9,
       "geometry": {
         "form": "teardrop",
         "crossSection": "teardrop",
         "taper": {
-          "nose": 0.5,
+          "nose": 0.3,
           "tail": 1,
           "profile": "linear"
         },
-        "notes": "A small 3D-welded wedge that sits at the BACK of the top tube, so it is the mirror image of the front Top Tube Bag: the tall blunt end is at the REAR against the seatpost (tail = 1.0) and it tapers down and forward to a low nose (nose = 0.5). Narrow in plan - this is the road/gravel version, deliberately slimmer than the MTB one to keep it off the rider's thighs. Self-supporting welded shell, no sag.",
+        "notes": "A small 3D-welded wedge that sits at the BACK of the top tube, so it is the mirror image of the front Top Tube Bag: the tall blunt end is at the REAR against the seatpost (tail = 1.0) and it tapers down and forward to a low nose (nose = 0.5). Narrow in plan - this is the road/gravel version, deliberately slimmer than the MTB one to keep it off the rider's thighs. Self-supporting welded shell, no sag. SILHOUETTE, and we currently draw it BACK TO FRONT. The real bag is a rear-anchored sail: it stands tallest hard against the seat tube / seatpost and tapers FORWARD to a rounded point on the top tube. Our render is tall at the stem end and points at the seat tube - verified by eye against the on-bike photography, not just asserted. taper is therefore nose 0.3 (the forward point) / tail 1.0 (the tall rear face), the opposite of what a forward-facing top tube bag carries. The rear face is also CONCAVE in plan so it wraps the seatpost, which nothing in the schema can say. Height here is greater than half the length (134 on 185), the opposite proportion to every other bag in the slot, so a shared 'long low wedge' primitive will not produce it.",
         "shoulder": "rounded"
       },
       "closure": {
@@ -4265,30 +4267,31 @@
       "size": "0.8L MTB",
       "slot": "toptube_rear",
       "slot_should_be": null,
-      "verified": false,
-      "confidence": "medium",
+      "verified": true,
+      "confidence": "high",
       "evidence": [
-        "assets/products/tailfin/top-tube-rear-top-tube-bag-0-8l-mtb-1.jpg",
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-5.jpg",
+        "assets/products/tailfin/full/top-tube-cockpit-rear-top-tube-bag/dimensions-2.pdf",
         "https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/"
       ],
       "dims_cm": {
-        "len": 25,
+        "len": 18.2,
         "wid": 5.5,
-        "hgt": 7
+        "hgt": 11.9
       },
-      "dims_state": "unknown",
-      "dims_raw": "0.8L, 112-121g - no linear dimensions published; sizing is by print-at-home template with no labelled numbers",
-      "dims_note": "UNVERIFIED. Volume and weight only from the maker. dims_cm left at the existing catalogue estimate. Tailfin describe the MTB version as SHORTER in height than the road/gravel one so it clears a dropper post, and slightly less narrow; the existing 7cm (vs 9cm) height and 5.5cm (vs 5.0cm) width encode that correctly, which is corroboration rather than measurement.",
+      "dims_state": "drawn",
+      "dims_raw": "182 MM length, 124 MM overall height; 118.9 MM of body above the top tube, the balance being the V-mount base.",
+      "dims_note": "MATERIAL CHANGE, and it overturns this record's own claim for the second time in this brand. The old entry said Tailfin publish volume and weight only and that the spec sheet is 'a print-at-home sizing template with no labelled numbers'. False twice over. First, dimensions-5.jpg IS a labelled drawing and the figures read clean. Second, the print-at-home template (dimensions-2.pdf) is genuinely 1:1 and therefore SELF-SCALING: it is a 303 x 216 MM page (A4 landscape plus 3 MM bleed) that instructs 'print at 100% scale', and its printed ruler measures exactly 50.000 MM in page units, so the page size IS the scale and the outline can be measured directly. The two methods agree to 0.0 MM on the length. Was 25 x 5.5 x 7 - 35% too long and 21-41% too short. wid is NOT measured by either method and is left at the catalogue estimate. CROSS-CHECK from the maker's own FAQ: they say you need 'more than 575 MM of top tube' to run this alongside the 370 MM 1.6L Long Top Tube Bag; 575 - 370 = 205 MM, which fits a 185 MM bag plus a gap and does not fit a 250 MM one.",
       "capacity_l": 0.8,
       "geometry": {
         "form": "teardrop",
         "crossSection": "teardrop",
         "taper": {
-          "nose": 0.5,
+          "nose": 0.3,
           "tail": 1,
           "profile": "linear"
         },
-        "notes": "Same mirrored wedge as the road/gravel version but noticeably lower in height so a dropper post can slam past it, and cut to a slacker MTB seat-tube angle. Tall blunt end at the REAR against the seatpost, tapering down and forward to a low nose. Self-supporting welded shell.",
+        "notes": "Same mirrored wedge as the road/gravel version but noticeably lower in height so a dropper post can slam past it, and cut to a slacker MTB seat-tube angle. Tall blunt end at the REAR against the seatpost, tapering down and forward to a low nose. Self-supporting welded shell. SILHOUETTE, and we currently draw it BACK TO FRONT. The real bag is a rear-anchored sail: it stands tallest hard against the seat tube / seatpost and tapers FORWARD to a rounded point on the top tube. Our render is tall at the stem end and points at the seat tube - verified by eye against the on-bike photography, not just asserted. taper is therefore nose 0.3 (the forward point) / tail 1.0 (the tall rear face), the opposite of what a forward-facing top tube bag carries. The rear face is also CONCAVE in plan so it wraps the seatpost, which nothing in the schema can say. Height here is greater than half the length (134 on 185), the opposite proportion to every other bag in the slot, so a shared 'long low wedge' primitive will not produce it.",
         "shoulder": "rounded"
       },
       "closure": {

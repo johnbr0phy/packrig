@@ -17886,9 +17886,9 @@
     "size": "0.9L Road/Gravel",
     "liters": 0.9,
     "dims_cm": {
-     "len": 25,
-     "hgt": 9,
-     "wid": 5
+     "len": 18.5,
+     "wid": 5,
+     "hgt": 13.4
     },
     "colors": [
      "#1a1a1a",
@@ -17927,7 +17927,7 @@
      "crossSection": "teardrop",
      "shoulder": "rounded",
      "taper": {
-      "nose": 0.5,
+      "nose": 0.3,
       "tail": 1,
       "profile": "linear"
      }
@@ -17949,9 +17949,9 @@
     "size": "0.8L MTB",
     "liters": 0.8,
     "dims_cm": {
-     "len": 25,
-     "hgt": 7,
-     "wid": 5.5
+     "len": 18.2,
+     "wid": 5.5,
+     "hgt": 11.9
     },
     "colors": [
      "#1a1a1a",
@@ -17990,7 +17990,7 @@
      "crossSection": "teardrop",
      "shoulder": "rounded",
      "taper": {
-      "nose": 0.5,
+      "nose": 0.3,
       "tail": 1,
       "profile": "linear"
      }
