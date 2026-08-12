@@ -120,12 +120,15 @@ export function createRigStore(app, auth) {
    */
   let known = readLocal().length;
   const note = (n) => { known = n; };
+  // Saves now live on an account. Signed out, the local leftover pile is
+  // invisible — it still migrates up on sign-in, but it is not "your rigs".
+  const guest = () => auth.enabled && !auth.signedIn;
 
   const api = {
     get remote() { return remote(); },
 
     /** Last-known number of saved rigs. See `known` above. */
-    get knownCount() { return known; },
+    get knownCount() { return guest() ? 0 : known; },
 
     /**
      * Whether a gallery would be possible at all.
@@ -143,6 +146,7 @@ export function createRigStore(app, auth) {
 
     /** Newest first. Shape: { id, name, rig, updated_at, local } */
     async list() {
+      if (guest()) return [];
       if (!remote()) {
         const rows = readLocal()
           .slice()

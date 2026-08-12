@@ -51,7 +51,10 @@ const VIEWS = [
 ];
 
 /** Do we have saved rigs? Synchronous by design — see rigstore's `knownCount`. */
-const rigCount = (app) => app.rigs?.knownCount || 0;
+const rigCount = (app) => {
+  if (app.auth?.enabled && !app.auth.signedIn) return 0;
+  return app.rigs?.knownCount || 0;
+};
 
 export function initMenu(app, { onBuild } = {}) {
   const host = document.getElementById('ui-root');
@@ -120,7 +123,17 @@ export function initMenu(app, { onBuild } = {}) {
     logBtn.title = on ? 'Your account' : 'Log in so your rigs follow you between devices';
   }
   paintLogin();
-  app.auth?.onChange?.(paintLogin);
+  app.auth?.onChange?.(() => {
+    paintLogin();
+    if (!open_) return;
+    // Signing out must not leave you in My rigs staring at someone-on-this-
+    // browser's leftover kits. Home has no saved bikes when you are a guest.
+    if (view === 'rigs' && !app.auth?.signedIn) go('start');
+    else {
+      paintChrome();
+      if (view === 'start') render();
+    }
+  });
 
   head.append(logBtn, closeBtn);
 
@@ -198,7 +211,7 @@ export function initMenu(app, { onBuild } = {}) {
       b.setAttribute('aria-current', on ? 'page' : 'false');
       // The rigs tab appears with your first saved rig and never before it.
       const def = VIEWS.find((v) => v.id === id);
-      b.hidden = !!def?.needsRigs && !rigs && id !== view;
+      b.hidden = !!def?.needsRigs && !rigs;
     }
     paintLogin();
     // Start and setup are home. Close means "back to the builder" and only
