@@ -214,8 +214,9 @@ export function initUI(app) {
   // chevron, the running total and the "+" are inert on desktop — CSS only
   // gives them a box below 560px.
   const chevron = elt('button', 'sheet-chevron', '▾');
-  chevron.title = 'Collapse the rig';
-  chevron.setAttribute('aria-label', 'Collapse the rig');
+  chevron.title = 'See the bike';
+  chevron.setAttribute('aria-label', 'See the bike');
+  const minLbl = elt('span', 'sheet-min-l', 'See bike');
   const peekTotal = elt('span', 'peek-total', '');
   const sheetAdd = elt('button', 'sheet-add', '+');
   sheetAdd.title = 'Pick a mount point';
@@ -228,7 +229,7 @@ export function initUI(app) {
   // The chevron duplicates the grab handle and the "+" duplicates the Add a bag
   // button six rows below it. Both go; the header carries the peek total, which
   // is the one thing you cannot see when the sheet is collapsed.
-  head.append(chevron, peekTotal);
+  head.append(chevron, minLbl, peekTotal);
   const listEl = el('div', 'bag-list');
 
   let collapsed = false;
@@ -236,9 +237,10 @@ export function initUI(app) {
     collapsed = !!next;
     panel.classList.toggle('collapsed', collapsed);
     chevron.setAttribute('aria-expanded', String(!collapsed));
-    chevron.title = collapsed ? 'Show the rig' : 'Collapse the rig';
+    chevron.title = collapsed ? 'Show the menu' : 'See the bike';
+    minLbl.textContent = collapsed ? 'Show menu' : 'See bike';
     head.setAttribute('aria-expanded', String(!collapsed));
-    head.setAttribute('aria-label', collapsed ? 'Show your rig' : 'Hide your rig and see the bike');
+    head.setAttribute('aria-label', collapsed ? 'Show the menu' : 'See the bike');
     /*
      * Retune the phone camera to the sheet that is actually there.
      *
@@ -250,7 +252,7 @@ export function initUI(app) {
      * the opposite of what closing it was for.
      */
     if (PHONE.matches) {
-      setSheetLift(collapsed ? 0.05 : 0.22);
+      setSheetLift(collapsed ? 0 : 0.22);
       app.sheets?.resync?.();
     }
   }

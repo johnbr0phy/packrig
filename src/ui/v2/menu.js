@@ -33,6 +33,7 @@ import { renderStart } from './start.js';
 import { renderSetup } from './setup.js';
 import { initBrowse } from './browse.js';
 import { captureRig, applyRig } from '../../rig.js';
+import { setSheetLift } from '../../mobile.js';
 
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
@@ -104,6 +105,38 @@ export function initMenu(app, { onBuild } = {}) {
   closeBtn.title = 'Back to the bike (Esc)';
   closeBtn.onclick = () => close();
 
+  // Phone only (CSS hides it above 560). The menu owns the lower half, so
+  // there has to be a way to put it away and look at the bike without
+  // leaving — Close goes back to the builder, which is a different door.
+  const minBtn = el('button', 'pr-min');
+  minBtn.type = 'button';
+  const minLbl = el('span', 'pr-min-l', 'See bike');
+  minBtn.append(minLbl, icon('down', { size: 16 }));
+  minBtn.title = 'Hide the menu and look at the bike';
+  minBtn.setAttribute('aria-expanded', 'true');
+  let minimized = false;
+  const phone = () => typeof matchMedia === 'function' && matchMedia('(max-width: 560px)').matches;
+  const syncMenuLift = () => {
+    if (!phone()) return;
+    if (!open_) {
+      const peek = host.querySelector('.panel.collapsed');
+      setSheetLift(peek ? 0 : 0.22);
+    } else {
+      setSheetLift(minimized ? 0 : 0.22);
+    }
+    app.sheets?.resync?.();
+  };
+  function setMinimized(next) {
+    minimized = !!next && phone();
+    root.classList.toggle('is-min', minimized);
+    minLbl.textContent = minimized ? 'Show menu' : 'See bike';
+    minBtn.title = minimized ? 'Show the menu' : 'Hide the menu and look at the bike';
+    minBtn.setAttribute('aria-expanded', String(!minimized));
+    minBtn.setAttribute('aria-label', minimized ? 'Show the menu' : 'See the bike');
+    syncMenuLift();
+  }
+  minBtn.onclick = () => setMinimized(!minimized);
+
   /*
    * Log in, top right, on the front page — where every site anyone has used
    * puts it. It was reachable only from inside the builder, behind a button
@@ -135,7 +168,7 @@ export function initMenu(app, { onBuild } = {}) {
     }
   });
 
-  head.append(logBtn, closeBtn);
+  head.append(logBtn, minBtn, closeBtn);
 
   root.append(head);
 
@@ -219,6 +252,7 @@ export function initMenu(app, { onBuild } = {}) {
     // still on the bike. A Close on the front page is a door to nowhere.
     closeBtn.hidden = view === 'start' || view === 'setup';
     root.dataset.view = view;
+    if (!phone()) setMinimized(false);
   }
 
   /**
@@ -306,6 +340,8 @@ export function initMenu(app, { onBuild } = {}) {
     open_ = true;
     root.hidden = false;
     host.classList.add('menu-open');
+    setMinimized(false);
+    syncMenuLift();
     setBehindInert(true);
     if (app.controls) {
       restoreRotate = app.controls.autoRotate;
@@ -336,6 +372,8 @@ export function initMenu(app, { onBuild } = {}) {
     stashDirty = false;
     root.classList.remove('on');
     host.classList.remove('menu-open');
+    setMinimized(false);
+    syncMenuLift();
     setBehindInert(false);
     document.removeEventListener('keydown', onKey, true);
     if (app.controls && restoreRotate !== null) {
@@ -354,6 +392,7 @@ export function initMenu(app, { onBuild } = {}) {
       e.stopPropagation();
       // Escape steps UP a level before it leaves. Leaving from two levels down
       // with one key is how people lose their place.
+      if (minimized) { setMinimized(false); return; }
       if (view !== 'start') go('start');
       else if (!closeBtn.hidden) close();
       return;
