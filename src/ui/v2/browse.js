@@ -36,7 +36,15 @@ const el = (tag, cls, text) => {
   return n;
 };
 
+/** Prose and chips: "12 L", "5.8 L" — a trailing zero is noise in a sentence. */
 const num = (v) => (Math.round(Number(v) * 10) / 10).toFixed(1).replace(/\.0$/, '');
+/** Columns: "12.0 L", "5.8 L" — the decimal point is the alignment. */
+const fixed1 = (v) => {
+  const n = Number(v);
+  // A harness carries dry bags sold separately: no capacity, rather than zero.
+  if (!Number.isFinite(n) || n === 0) return '—';
+  return `${n.toFixed(1)} L`;
+};
 
 /** Curated loadouts, fetched once. */
 let loadoutsPromise = null;
@@ -71,7 +79,11 @@ function manifestOf(app, rig) {
       mount: SLOTS[b.slot]?.label || b.slot,
       brand: hit.brand.short || hit.brand.name,
       model: modelTitle(hit.product, hit.brand),
-      litres: litersOf(hit.product),
+      // One decimal, always, in the MANIFEST. `litersOf` drops a trailing zero,
+      // which is right in prose and wrong in a column: right-aligned, "5.8"
+      // then puts its tenths under "12"'s units and the column stops being a
+      // column. A spec sheet aligns on the decimal point.
+      litres: fixed1(hit.product.liters),
       raw: Number(hit.product.liters) || 0,
     });
   }
@@ -301,7 +313,7 @@ export function initBrowse(app, { onAdopt, onDirty, isLive } = {}) {
       f.append(el('b', 'pr-fig-v', v), el('span', 'pr-fig-k', k));
       return f;
     };
-    stats.append(fig(num(it.stats.litres), 'litres'));
+    stats.append(fig(Number(it.stats.litres).toFixed(1), 'litres'));
     stats.append(fig(String(it.stats.bags), it.stats.bags === 1 ? 'bag' : 'bags'));
     stats.append(fig(String(it.stats.makers), it.stats.makers === 1 ? 'maker' : 'makers'));
     spec.append(staged(stats));

@@ -71,7 +71,6 @@ export function renderStart(app, { onBuild, onLoadouts, onGallery } = {}) {
       name: 'Build a rig',
       desc: `A bare frame and ${mountCount} mounting points to fill.`,
       run: onBuild,
-      primary: true,
     },
     {
       n: '02',
@@ -89,7 +88,10 @@ export function renderStart(app, { onBuild, onLoadouts, onGallery } = {}) {
 
   for (const e of ENTRIES) {
     const li = el('li', 'pr-menu-li');
-    const b = el('button', 'pr-item' + (e.primary ? ' is-primary' : ''));
+    // No `is-primary`. The contents-page form deliberately gives the three
+    // destinations equal billing, and the class it used to carry matched no
+    // rule in any stylesheet — dead markup dressed as hierarchy.
+    const b = el('button', 'pr-item');
     b.type = 'button';
     b.append(el('span', 'pr-idx', e.n));
     const body = el('span', 'pr-item-body');

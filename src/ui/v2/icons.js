@@ -32,8 +32,13 @@ const PATHS = {
   // The camera tools. `orbit` replaces ⟳, `reframe` replaces ⌂, `wind`
   // replaces 💨 — a real airflow mark rather than a cartoon gust.
   orbit:     ['M10 3.5a6.5 6.5 0 1 1-6.19 4.5', 'M3.2 3.4v4h4'],
+  // Four corner brackets alone is the fullscreen glyph in every operating
+  // system, and this sits two icons away from `orbit` in a camera cluster —
+  // people were going to press it expecting fullscreen. The focal dot makes it
+  // a viewfinder: brackets around a subject, which is what reframing is.
   reframe:   ['M3.5 7V4.5a1 1 0 0 1 1-1H7', 'M13 3.5h2.5a1 1 0 0 1 1 1V7',
-              'M16.5 13v2.5a1 1 0 0 1-1 1H13', 'M7 16.5H4.5a1 1 0 0 1-1-1V13'],
+              'M16.5 13v2.5a1 1 0 0 1-1 1H13', 'M7 16.5H4.5a1 1 0 0 1-1-1V13',
+              'M10 11.1a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Z'],
   wind:      ['M2.5 7h8.2a2.2 2.2 0 1 0-2.2-2.2', 'M2.5 10.5h11a2.2 2.2 0 1 1-2.2 2.2',
               'M2.5 14h6'],
 
