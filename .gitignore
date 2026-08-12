@@ -12,3 +12,6 @@ build/
 
 # built by tools/build-vendor.mjs for the no-build dev entry
 vendor/
+
+# written by tools/gen3d.mjs when a mesh exists; empty until then
+data/generated.json
