@@ -30,6 +30,7 @@
 
 import { icon } from './icons.js';
 import { renderStart } from './start.js';
+import { renderSetup } from './setup.js';
 import { initBrowse } from './browse.js';
 import { captureRig, applyRig } from '../../rig.js';
 
@@ -113,7 +114,7 @@ export function initMenu(app, { onBuild } = {}) {
   logBtn.onclick = () => app.account?.open();
   function paintLogin() {
     const on = !!app.auth?.signedIn;
-    logBtn.hidden = !app.auth?.enabled;
+    logBtn.hidden = false;
     logBtn.classList.toggle('is-in', on);
     logLbl.textContent = on ? (app.auth.email || 'Account') : 'Log in';
     logBtn.title = on ? 'Your account' : 'Log in so your rigs follow you between devices';
@@ -145,11 +146,22 @@ export function initMenu(app, { onBuild } = {}) {
   // or the menu is a trap that quietly overwrites your work.
   let stash = null;
   let stashDirty = false;
+  // Set when leaving the builder with a kit that should stay on the bike
+  // (a save). Don't-save clears first, so start can show the empty hero.
+  let keepScene = false;
   // False until the first render has happened, so the boot render does not
   // steal focus from the document.
   let moved = false;
 
-  const startBuild = () => { app.__enteredBuilder = true; close({ build: true }); };
+  // A loadout waiting to be named. Null means this setup is a bare new bike.
+  let pendingAdopt = null;
+
+  const startBuild = () => {
+    pendingAdopt = null;
+    try { app.clearAll?.(); } catch { /* empty bike is the point */ }
+    go('setup');
+  };
+  const startSurprise = () => { app.__enteredBuilder = true; close({ surprise: true }); };
 
   const browse = initBrowse(app, {
     // A load that resolves after the menu closes must not mount its rig.
@@ -164,10 +176,17 @@ export function initMenu(app, { onBuild } = {}) {
     // mounts each rig, so the live bike is not it.
     getWorking: () => stash,
     onAdopt: (item) => {
-      // Taking a rig means it is now yours and the stash is void.
-      stashDirty = false;
-      stash = null;
-      close({ adopted: item });
+      // Your own saved rigs are already named and painted. A loadout is
+      // becoming yours, so it takes the same setup step as a new build.
+      if (item?.own) {
+        pendingAdopt = null;
+        stashDirty = false;
+        stash = null;
+        close({ adopted: item });
+        return;
+      }
+      pendingAdopt = item;
+      go('setup');
     },
     onDirty: () => { stashDirty = true; },
   });
@@ -183,11 +202,10 @@ export function initMenu(app, { onBuild } = {}) {
       b.hidden = !!def?.needsRigs && !rigs && id !== view;
     }
     paintLogin();
-    // Nothing to close back to on a first visit with a bare bike: the menu IS
-    // the app at that point, and a Close button that lands you on an empty
-    // frame with no way back is worse than no button.
-    const hasBike = Object.keys(app.bags?.equipped || {}).length > 0;
-    closeBtn.hidden = !hasBike && !app.__enteredBuilder;
+    // Start and setup are home. Close means "back to the builder" and only
+    // belongs on Loadouts / My rigs — even after Surprise me, even with bags
+    // still on the bike. A Close on the front page is a door to nowhere.
+    closeBtn.hidden = view === 'start' || view === 'setup';
     root.dataset.view = view;
   }
 
@@ -204,7 +222,7 @@ export function initMenu(app, { onBuild } = {}) {
   }
 
   function go(next) {
-    if (!VIEWS.some((v) => v.id === next)) next = 'start';
+    if (next !== 'setup' && !VIEWS.some((v) => v.id === next)) next = 'start';
     if (open_ && view === next) return;
     view = next;
     if (!open_) return openInternal();
@@ -214,14 +232,26 @@ export function initMenu(app, { onBuild } = {}) {
   function render() {
     stage.replaceChildren();
     if (view === 'start') {
-      // Coming back to the root means coming back to YOUR bike, not the last
-      // rig you happened to scroll past in the gallery.
-      restoreStash();
+      pendingAdopt = null;
+      if (keepScene) keepScene = false;
+      else restoreStash();
       stage.append(renderStart(app, {
         rigs: rigCount(app),
         onBuild: startBuild,
+        onSurprise: startSurprise,
         onRigs: () => go('rigs'),
         onLoadouts: () => go('loadouts'),
+      }));
+    } else if (view === 'setup') {
+      stage.append(renderSetup(app, {
+        name: pendingAdopt?.name || '',
+        onDone: (setup) => {
+          const adopted = pendingAdopt;
+          pendingAdopt = null;
+          stashDirty = false;
+          stash = null;
+          close({ build: !adopted, adopted, setup });
+        },
       }));
     } else {
       stage.append(browse.render(view));
@@ -275,16 +305,18 @@ export function initMenu(app, { onBuild } = {}) {
     render();
   }
 
-  function open(next = 'start') {
+  function open(next = 'start', opts = {}) {
+    if (opts.keepScene) keepScene = true;
     if (open_) { go(next); return; }
-    view = VIEWS.some((v) => v.id === next) ? next : 'start';
+    view = VIEWS.some((v) => v.id === next) ? next : (next === 'setup' ? 'setup' : 'start');
     openInternal();
   }
 
-  function close({ adopted = null, build = false } = {}) {
+  function close({ adopted = null, build = false, surprise = false, setup = null } = {}) {
     if (!open_) return;
     // Backing out of the menu without taking anything puts your own bike back.
-    if (!adopted) restoreStash();
+    // Surprise me / a finished setup are taking something — the stash dies.
+    if (!adopted && !surprise && !setup) restoreStash();
     open_ = false;
     browse.cancel();
     stash = null;
@@ -299,7 +331,7 @@ export function initMenu(app, { onBuild } = {}) {
     }
     app.__enteredBuilder = true;
     setTimeout(() => { if (!open_) { root.hidden = true; stage.replaceChildren(); } }, 320);
-    onBuild?.({ adopted, build });
+    onBuild?.({ adopted, build, surprise, setup });
   }
 
   function onKey(e) {

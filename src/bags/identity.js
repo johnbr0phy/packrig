@@ -180,9 +180,18 @@ export function colorwayFor(brand, product, index = 0) {
       if (Number.isFinite(main)) return { main, accent: main, name: null };
     }
   }
+  const cols = product?.colors;
+  if (Array.isArray(cols) && cols.length) {
+    const i = ((index % cols.length) + cols.length) % cols.length;
+    const main = hexToInt(cols[i]);
+    const accent = hexToInt(cols[(i + 1) % cols.length]);
+    if (Number.isFinite(main)) {
+      return { main, accent: Number.isFinite(accent) ? accent : main, name: null };
+    }
+  }
   return {
-    main: product?.colors?.[0] ?? brand?.palette?.[0] ?? 0x3b3f45,
-    accent: product?.colors?.[1] ?? brand?.palette?.[1] ?? product?.colors?.[0] ?? 0x2a2d31,
+    main: brand?.palette?.[0] ?? 0x3b3f45,
+    accent: brand?.palette?.[1] ?? brand?.palette?.[0] ?? 0x2a2d31,
     name: null,
   };
 }

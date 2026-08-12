@@ -6,32 +6,55 @@ import { mm, deg, v3, tubeBetween, capsuleBetween, tubeAlong, labelTexture } fro
  * geometry chart (Trek Checkpoint-class, size 56) then scaled to metres.
  * Coordinate system: +X = forward, +Y = up, +Z = drive side (faces camera).
  */
-export const GEO = {
-  wheelbase: 1032,
-  chainstay: 428,
-  bbDrop: 76,
-  headAngle: 71.7,
-  seatAngle: 73.3,
-  stack: 583,
-  reach: 386,
-  headTube: 155,
-  seatTube: 520,
+/** Parts that do not change with frame size. */
+const PARTS = {
   forkOffset: 49,
   rimBSD: 622,
   tireWidth: 45,
-  saddleHeight: 705,
   saddleLength: 270,
   saddleWidth: 143,
-  saddleRailSpacing: 44,   // data/geometry-journeyer57.json: saddle_rail_spacing_z
+  saddleRailSpacing: 44,
   saddleRailDia: 7,
   crankLength: 172.5,
   barWidth: 440,
   barReach: 70,
   barDrop: 115,
-  stemLength: 90,
-  spacers: 48,
   rotor: 160,
 };
+
+/**
+ * Three sizes of the same gravel family (Checkpoint-class).
+ * Medium is the original chart. Small and Large keep the same stance and
+ * stretch stack / reach / tubes from neighbouring published sizes.
+ */
+export const FRAME_SIZES = {
+  S: {
+    id: 'S', label: 'Small', rider: '160–170 cm',
+    wheelbase: 1016, chainstay: 428, bbDrop: 76,
+    headAngle: 71.4, seatAngle: 73.8,
+    stack: 562, reach: 376, headTube: 115, seatTube: 490,
+    saddleHeight: 665, stemLength: 80, spacers: 35,
+    ...PARTS,
+  },
+  M: {
+    id: 'M', label: 'Medium', rider: '170–180 cm',
+    wheelbase: 1032, chainstay: 428, bbDrop: 76,
+    headAngle: 71.7, seatAngle: 73.3,
+    stack: 583, reach: 386, headTube: 155, seatTube: 520,
+    saddleHeight: 705, stemLength: 90, spacers: 48,
+    ...PARTS,
+  },
+  L: {
+    id: 'L', label: 'Large', rider: '180–193 cm',
+    wheelbase: 1056, chainstay: 430, bbDrop: 74,
+    headAngle: 72.0, seatAngle: 73.0,
+    stack: 616, reach: 398, headTube: 200, seatTube: 580,
+    saddleHeight: 755, stemLength: 100, spacers: 55,
+    ...PARTS,
+  },
+};
+
+export const GEO = FRAME_SIZES.M;
 
 export const PAINTS = {
   Slate:   { color: 0x4a5560, accent: 0xd84a35 },
@@ -72,8 +95,8 @@ function contactShadowTexture() {
   return new THREE.CanvasTexture(c);
 }
 
-export function createBike({ paint = 'Slate' } = {}) {
-  const g = GEO;
+export function createBike({ paint = 'Slate', size = 'M' } = {}) {
+  const g = FRAME_SIZES[size] || FRAME_SIZES.M;
   const P = computePoints(g);
   const root = new THREE.Group();
   root.name = 'bike';
@@ -884,6 +907,12 @@ export function createBike({ paint = 'Slate' } = {}) {
     if (m) m.bodyMat.color.setHex(hex);
   }
 
+  /** Current bidon colour as a number, or null. */
+  function bottleColor(key) {
+    const m = bottleMounts[key];
+    return m ? m.bodyMat.color.getHex() : null;
+  }
+
   // ---- Contact shadows ---------------------------------------------------
   const csTex = contactShadowTexture();
   for (const axle of [P.rearAxle, P.frontAxle]) {
@@ -969,7 +998,10 @@ export function createBike({ paint = 'Slate' } = {}) {
     bottleMounts,
     slideBottle,
     setBottleColor,
+    bottleColor,
     bottleColors: BOTTLE_COLORS,
+    size: g.id,
+    sizeLabel: g.label,
     setPaint(name) {
       const def = PAINTS[name];
       if (def) M.paint.color.setHex(def.color);

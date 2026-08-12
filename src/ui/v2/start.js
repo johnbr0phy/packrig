@@ -25,7 +25,7 @@
  * builder. With rigs on file the row becomes "My rigs", and starting a new one
  * is a button on that page.
  *
- *   renderStart(app, { rigs, onBuild, onRigs, onLoadouts }) -> HTMLElement
+ *   renderStart(app, { rigs, onBuild, onSurprise, onRigs, onLoadouts }) -> HTMLElement
  */
 
 import { icon } from './icons.js';
@@ -46,7 +46,7 @@ const staged = (node) => {
   return node;
 };
 
-export function renderStart(app, { rigs = 0, onBuild, onRigs, onLoadouts } = {}) {
+export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoadouts } = {}) {
   seq = 0;
   const wrap = el('div', 'pr-start');
 
@@ -72,11 +72,14 @@ export function renderStart(app, { rigs = 0, onBuild, onRigs, onLoadouts } = {})
   const mountCount = Object.keys(SLOTS).length;
 
   const list = el('ul', 'pr-menu');
+  // Three doors, same size. "Surprise me" used to hide inside the builder,
+  // next to Add a bag — a starting idea dressed as a workshop tool. It lives
+  // here now, with Build and Loadouts, because that is when you want it.
   const ENTRIES = [
     rigs > 0 ? {
       n: '01',
       name: 'My rigs',
-      desc: `${rigs} saved. Load one, publish it, or start another.`,
+      desc: `${rigs} saved. Open one, or start another.`,
       run: onRigs,
     } : {
       n: '01',
@@ -86,14 +89,16 @@ export function renderStart(app, { rigs = 0, onBuild, onRigs, onLoadouts } = {})
     },
     {
       n: '02',
+      name: 'Surprise me',
+      desc: 'A loaded bike, picked for you. Keep it or try another.',
+      run: onSurprise,
+    },
+    {
+      n: '03',
       name: 'Loadouts',
       desc: 'Expedition, racing, heavy touring — eight, already built.',
       run: onLoadouts,
     },
-    // There was an 03, `Gallery` — what other people are riding. Pulled: it is
-    // the one door here that needed a backend, an index, a publish flow and a
-    // moderation answer before it showed anybody anything, and a contents page
-    // with a door that opens onto an empty room is worse than a shorter one.
   ];
 
   for (const e of ENTRIES) {

@@ -6,7 +6,8 @@ import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
-import { createBike, PAINTS } from './bike.js';
+import { createBike, PAINTS, FRAME_SIZES } from './bike.js';
+import { disposeObject } from './lib.js';
 import { Environments } from './environments.js';
 import { BagSystem, SLOTS } from './bags.js';
 import { loadCatalog } from './catalog.js';
@@ -67,12 +68,19 @@ composer.addPass(new OutputPass());
 if (profile.post.smaa) composer.addPass(new SMAAPass(window.innerWidth, window.innerHeight));
 
 // ---- Bike --------------------------------------------------------------
-const bike = createBike({ paint: params.get('paint') || 'Slate' });
-// centre the bike: its BB sits at origin; wheels touch y = bbDrop - tireR (negative)
-const P = bike.points;
-const wheelBottom = (P.rearAxle.y - (P.tireR + bike.geo.tireWidth / 2)) * 0.001;
-bike.group.position.y = -wheelBottom; // wheels rest on y=0
-const bikeCenter = new THREE.Vector3(((P.rearAxle.x + P.frontAxle.x) / 2) * 0.001, 0.62, 0);
+let bike = createBike({
+  paint: params.get('paint') || 'Slate',
+  size: params.get('size') || 'M',
+});
+function plantBike(b) {
+  const P = b.points;
+  const wheelBottom = (P.rearAxle.y - (P.tireR + b.geo.tireWidth / 2)) * 0.001;
+  b.group.position.y = -wheelBottom;
+}
+plantBike(bike);
+let bikeCenter = new THREE.Vector3(
+  ((bike.points.rearAxle.x + bike.points.frontAxle.x) / 2) * 0.001, 0.62, 0,
+);
 scene.add(bike.group);
 
 // ---- Camera presets ----------------------------------------------------
@@ -109,7 +117,12 @@ const app = {
   scene, camera, renderer, controls, bike, envs,
   catalog: null,
   bags: null,
-  state: { env: params.get('env') || 'mountain', paint: params.get('paint') || 'Slate', kit: {} },
+  state: {
+    env: params.get('env') || 'mountain',
+    paint: params.get('paint') || 'Slate',
+    size: bike.size || 'M',
+    kit: {},
+  },
   setEnv(name) {
     app.state.env = name;
     envs.set(name);
@@ -120,8 +133,41 @@ const app = {
   },
   setPaint(name) {
     app.state.paint = name;
-    bike.setPaint(name);
+    app.bike.setPaint(name);
     app.ui?.sync();
+  },
+  setSize(size) {
+    if (!FRAME_SIZES[size] || app.bike?.size === size) {
+      app.state.size = app.bike?.size || 'M';
+      return;
+    }
+    const paint = app.state.paint || 'Slate';
+    const bidon = app.bike.bottleColor?.('st');
+    const kit = app.bags
+      ? Object.entries(app.bags.equipped).map(([slot, e]) => ({
+        slot, brand: e.brand, product: e.product, cw: e.colorwayIndex || 0,
+      }))
+      : [];
+    app.bags?.clearAll();
+    scene.remove(app.bike.group);
+    disposeObject(app.bike.group);
+    bike = createBike({ paint, size });
+    plantBike(bike);
+    bikeCenter.set(
+      ((bike.points.rearAxle.x + bike.points.frontAxle.x) / 2) * 0.001, 0.62, 0,
+    );
+    scene.add(bike.group);
+    app.bike = bike;
+    if (app.bags) app.bags.bike = bike;
+    app.state.size = bike.size;
+    if (bidon != null) {
+      bike.setBottleColor('st', bidon);
+      bike.setBottleColor('dt', bidon);
+    }
+    for (const e of kit) app.bags?.equip(e.slot, e.brand, e.product, e.cw);
+    frameBike();
+    app.ui?.sync();
+    app.scrim?.invalidate();
   },
   randomize() {
     app.bags.randomKit();
@@ -267,7 +313,7 @@ const _fitBox = new THREE.Box3();
 function frameBike() {
   if (SHOT_MODE || REVIEW_MODE) return;   // review mode owns its own framing
   applyViewOffset(camera);
-  _fitBox.setFromObject(bike.group);
+  _fitBox.setFromObject(app.bike.group);
   if (!_fitBox.isEmpty()) fitToBox(camera, controls, _fitBox);
   // applyViewOffset has just overwritten the camera's view offset with the
   // no-sheet value. If a sheet is open, put the sheet's framing back, or a

@@ -55,6 +55,7 @@ export function captureRig(app, { name = '' } = {}) {
     name,
     env: app.state?.env || 'mountain',
     paint: app.state?.paint || 'Slate',
+    size: app.state?.size || app.bike?.size || 'M',
     bags,
   };
 }
@@ -100,6 +101,7 @@ export function findProduct(catalog, b) {
 export function applyRig(app, rig, { clear = true } = {}) {
   if (!rig) return { fitted: 0, missing: [] };
   if (clear) for (const slot of Object.keys(app.bags.equipped)) app.bags.remove(slot);
+  if (rig.size && app.setSize) app.setSize(rig.size);
   const missing = [];
   let fitted = 0;
   for (const b of rig.bags || []) {
@@ -157,16 +159,17 @@ export function encodeRig(rig) {
     rig.env || '',
     rig.paint || '',
     (rig.bags || []).map((b) => [b.slot, b.brand, b.line, b.name, b.size, b.cw || 0]),
+    rig.size || 'M',
   ];
   return b64url.encode(JSON.stringify(payload));
 }
 
 export function decodeRig(str) {
   try {
-    const [v, env, paint, bags] = JSON.parse(b64url.decode(str));
+    const [v, env, paint, bags, size] = JSON.parse(b64url.decode(str));
     if (!Array.isArray(bags)) return null;
     return {
-      v: v || 1, name: '', env, paint,
+      v: v || 1, name: '', env, paint, size: size || 'M',
       bags: bags.map(([slot, brand, line, name, size, cw]) => ({ slot, brand, line, name, size, cw: cw || 0 })),
     };
   } catch {

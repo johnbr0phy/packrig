@@ -431,7 +431,7 @@
     max-height: 62dvh;
     display: flex; flex-direction: column;
   }
-  #ui-root .panel-head { flex: 0 0 auto; }
+  #ui-root .panel-head { display: flex; flex: 0 0 auto; }
 
   /* ONE scroll region: the panel itself, with the handle stuck to the top of
      it. Giving the bag list its own scroller inside a fixed-height panel meant
@@ -757,15 +757,9 @@ html, body, #ui-root { touch-action: manipulation; }
 
 .rignav { display: flex; flex-direction: column; min-height: 0; }
 
-/* The bar is the level indicator AND the way back. At the list it is a heading;
-   inside a rig it is the rig's name, which is also the rename control. */
-.rn-bar { display: flex; align-items: center; gap: 6px; padding: 14px 14px 8px; }
-.rn-back {
-  flex: none; width: 30px; height: 30px; margin-left: -6px;
-  display: grid; place-items: center; cursor: pointer;
-  border: none; border-radius: 8px; background: none; color: rgba(255,255,255,.7);
-}
-.rn-back:hover { background: rgba(255,255,255,.1); color: #fff; }
+/* Name on the left, save on the right. PACKRIG in the top bar is how you leave. */
+.rn-bar { display: flex; align-items: center; gap: 10px; padding: 14px 0 8px; }
+.rn-actions { flex: none; margin-left: auto; display: flex; align-items: center; }
 .rn-title {
   /* It is a rename control, not a caption — so it gets a target, not just a
      line of text. 19px tall was under every floor there is. */
@@ -790,8 +784,6 @@ html, body, #ui-root { touch-action: manipulation; }
 /* At the rig level the list is gone and the back arrow appears; at the list
    level the reverse. One attribute, no rebuild, so the bike never blinks. */
 .panel[data-level='rig'] .rn-list { display: none; }
-.panel[data-level='rig'] .rn-back { display: grid; }
-.panel[data-level='list'] .rn-back { display: none; }
 .panel[data-level='list'] .nav-sec,
 .panel[data-level='list'] .panel-foot { display: none; }
 .panel[data-level='list'] .rignav { flex: 1 1 auto; }
@@ -830,7 +822,7 @@ html, body, #ui-root { touch-action: manipulation; }
 .rn-new:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.34); }
 
 @media (max-width: 560px) {
-  .rn-bar { padding: 10px 12px 6px; }
+  .rn-bar { padding: 10px 0 6px; }
   .rn-title { min-height: 40px; }
   .rn-row { min-height: 64px; }
   .rn-stack img { width: 38px; height: 38px; }

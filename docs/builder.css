@@ -538,6 +538,17 @@
 #ui-root .bs-spec-v.is-ok { color: var(--ok); }
 #ui-root .bs-spec-v.is-warn { color: var(--warn); }
 #ui-root .card-unfit { color: var(--warn); }
+#ui-root .card.is-small { opacity: 0.55; }
+#ui-root .card.is-small .card-unfit { color: var(--ink-3); }
+#ui-root .size-picks { display: flex; gap: 6px; }
+#ui-root .size-pick {
+  min-width: 36px; height: 28px; padding: 0 10px;
+  border: 1px solid var(--line); border-radius: var(--r-control);
+  background: transparent; color: var(--ink-2);
+  font: 550 12px/1 var(--font); cursor: pointer;
+}
+#ui-root .size-pick:hover { color: var(--ink-1); background: var(--fill-1); }
+#ui-root .size-pick.on { color: var(--ink-1); border-color: var(--ink-2); background: var(--fill-2); }
 
 /* ===========================================================================
    NARROW — the column becomes the bottom sheet it already was
@@ -835,39 +846,125 @@
    footer floats halfway up the screen. The bag list is the one section that
    should absorb the slack: appearance and the running total belong at the
    bottom edge, where they are in every state. */
-#ui-root .panel > .nav-sec:first-of-type {
+/* The name row used to shrink to zero and draw on top of Bike / Bags —
+   "Untitled rig" printed straight through the list. Keep chrome content-sized;
+   only the bag list absorbs the leftover height. */
+#ui-root .panel > .rignav,
+#ui-root .panel > .bike-sec,
+#ui-root .panel > .panel-foot { flex: 0 0 auto; min-height: auto; }
+#ui-root .panel > .bags-sec {
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
   flex-direction: column;
 }
-/* `min-height: 0` is not decoration. A flex item's default minimum size is its
-   CONTENT, so a list of seven bags refuses to shrink below its natural height
-   and pushes `Add a bag`, the appearance swatches and the total straight out of
-   the bottom of the panel. Invisible on a desktop column 800px tall; on a
-   390x780 phone the sheet is 429px and everything below the list was off the
-   screen. Found by tools/_mobile.mjs once its start-screen selector was
-   repaired and it finally reached the builder it was written to audit. */
-#ui-root .panel > .nav-sec:first-of-type .bag-list { flex: 1 1 auto; min-height: 0; }
-#ui-root .panel > .nav-sec:first-of-type .nav-actions { flex: 0 0 auto; }
-#ui-root .panel > .nav-sec + .nav-sec, #ui-root .panel-foot { flex: 0 0 auto; }
+#ui-root .panel > .bags-sec .bag-list { flex: 1 1 auto; min-height: 0; }
+#ui-root .panel > .bags-sec .nav-actions { flex: 0 0 auto; }
+#ui-root .panel > .bike-sec { flex: 0 0 auto; }
 
-/* The empty state is the first thing anyone sees after "Build a rig", and it
-   was one 14px sentence adrift in that slack. It gets the room it is standing
-   in, and says the two things worth knowing. */
-#ui-root .empty-state {
+/* Empty bike: the column is the menu. Same grammar as the homepage rows. */
+#ui-root .starter {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 6px;
-  height: 100%;
-  padding: 24px 16px;
-  font-size: 14px;
-  line-height: 1.6;
+  padding: 8px 0 20px;
 }
-#ui-root .es-lead { color: var(--ink-1); font-size: 15px; font-weight: 550; }
-#ui-root .es-sub { color: var(--ink-3); font-size: 13px; max-width: 30ch; }
+#ui-root .starter-lead {
+  margin: 0;
+  padding: 8px 0 12px;
+  font: 650 10.5px/1 var(--font);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+#ui-root .starter-list { display: flex; flex-direction: column; }
+#ui-root .starter-row {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 0;
+  border: 0;
+  border-top: 1px solid var(--hairline, rgba(255,255,255,0.09));
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+#ui-root .starter-row:last-of-type { border-bottom: 1px solid var(--hairline, rgba(255,255,255,0.09)); }
+#ui-root .starter-row:hover { background: var(--fill-1); }
+#ui-root .starter-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+#ui-root .starter-name {
+  font: 550 16px/1.25 var(--font);
+  letter-spacing: -0.012em;
+  color: var(--ink-1);
+}
+#ui-root .starter-hint {
+  font: 400 12.5px/1.35 var(--font);
+  color: var(--ink-3);
+}
+#ui-root .starter-go { color: var(--ink-3); opacity: 0.7; }
+#ui-root .starter-row:hover .starter-go { color: var(--ink-1); opacity: 1; }
+#ui-root .starter-more {
+  margin: 14px 0 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-2);
+  font: 550 13px/1.4 var(--font);
+  text-align: left;
+  cursor: pointer;
+}
+#ui-root .starter-more:hover { color: var(--ink-1); }
+
+/* Bike settings — one closed row under the name. The column is for bags. */
+#ui-root .bike-toggle {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 0;
+  border: 0;
+  border-bottom: 1px solid var(--hairline, rgba(255,255,255,0.09));
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+#ui-root .bike-toggle-k {
+  font: 650 10.5px/1 var(--font);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+#ui-root .bike-sum {
+  font: 400 12.5px/1.3 var(--font);
+  color: var(--ink-2);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#ui-root .bike-toggle:hover .bike-sum { color: var(--ink-1); }
+#ui-root .bike-sec .appearance {
+  padding-top: 12px;
+  border-bottom: 1px solid var(--hairline, rgba(255,255,255,0.09));
+}
+#ui-root .bike-sec .appearance[hidden] { display: none; }
+#ui-root .nav-sec-head[hidden],
+#ui-root .nav-actions[hidden],
+#ui-root .btn.quiet[hidden],
+#ui-root .add-bag[hidden] { display: none; }
+#ui-root .btn.quiet.confirm {
+  color: var(--bad);
+  border-color: rgba(242, 109, 109, 0.35);
+  background: rgba(242, 109, 109, 0.10);
+}
+
+/* Phone handle. Empty on desktop and it was still taking a padded row. */
+#ui-root .panel-head { display: none; }
 
 
 /* ===========================================================================
@@ -876,10 +973,14 @@
    =========================================================================== */
 
 #ui-root .panel > .rignav,
+#ui-root .panel > .bike-sec > .bike-toggle,
 #ui-root .panel > .nav-sec > .nav-sec-head,
 #ui-root .panel > .nav-sec > .nav-sec-title,
 #ui-root .panel > .nav-sec > .nav-actions,
 #ui-root .panel > .nav-sec > .appearance,
+#ui-root .starter-lead,
+#ui-root .starter-row,
+#ui-root .starter-more,
 #ui-root .panel-foot,
 #ui-root .sheet-head,
 #ui-root .sheet-body > .picker > .cat-search,
@@ -1318,43 +1419,24 @@
 }
 
 /* ===========================================================================
-   THE SAVE DOCK — bottom right, over the scene
+   SAVE — next to the rig name, in the column
 
-   It was a pill in the top bar, in a row with the camera tools and the account
-   button, which is where a person looks for TOOLS. A save is an offer: it
-   should not exist until there is a bike worth keeping, and then it should
-   appear in the corner nothing else occupies. Bottom-right is the one corner
-   the column, the bar and the wind-tunnel panel all leave alone.
+   It used to float bottom-right, a second island of chrome. The name and the
+   keep-this action are one thought, so they sit on one row.
    =========================================================================== */
-#ui-root .save-dock {
-  position: fixed;
-  right: clamp(20px, 2.2vw, 32px);
-  bottom: clamp(20px, 2.4vh, 32px);
-  z-index: 35;
-  display: flex;
-  animation: save-rise 320ms var(--ease-out, cubic-bezier(0.16, 1, 0.30, 1)) both;
+#ui-root .rn-actions { flex: none; margin-left: auto; display: flex; align-items: center; }
+#ui-root .rn-bar .save-btn {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 13px;
+  box-shadow: none;
 }
-#ui-root .save-dock[hidden] { display: none; }
-@keyframes save-rise {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: none; }
+#ui-root .rn-bar .save-btn[hidden] { display: none; }
+/* The name shares the row with Save now, so it cannot keep the 24px sheet size. */
+#ui-root .rignav .rn-title {
+  font: 550 16px/1.2 var(--font);
+  letter-spacing: -0.014em;
 }
-@media (prefers-reduced-motion: reduce) {
-  #ui-root .save-dock { animation: none; }
-}
-#ui-root .save-dock .save-btn {
-  height: 44px;
-  padding: 0 22px;
-  border-radius: var(--r-pill);
-  font-size: 14px;
-  /* It is the one thing here NOT sitting on the ramp, so it carries its own
-     separation from a scene that may be a noon desert or a midnight road. */
-  box-shadow: 0 10px 30px rgba(6, 7, 9, 0.45), 0 2px 6px rgba(6, 7, 9, 0.35);
-}
-/* One surface at a time. While a picker or the tunnel is open, the primary
-   action belongs to that panel and this one gets out of the frame entirely. */
-#ui-root.aero-open .save-dock { display: none; }
-#ui-root.menu-open .save-dock { display: none; }
 
 /* ===========================================================================
    THE ACCOUNT DIALOGUE — src/ui/account.js
@@ -1445,6 +1527,10 @@
   background: var(--ink-1); border-color: var(--ink-1); color: #0A0B0D;
 }
 #ui-root .ac-btn.is-primary:hover { background: #FBF7EF; border-color: #FBF7EF; }
+#ui-root .ac-leave-row {
+  display: flex; gap: 10px; margin-top: 20px;
+}
+#ui-root .ac-leave-row .ac-btn { width: auto; flex: 1; margin-top: 0; }
 #ui-root .ac-btn.is-google { background: #FFF; border-color: #FFF; color: #1F1F1F; margin-top: 0; }
 #ui-root .ac-btn.is-google:hover { background: #F1F1F1; border-color: #F1F1F1; }
 

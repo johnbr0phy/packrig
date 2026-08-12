@@ -415,7 +415,7 @@ export function initBrowse(app, {
     const actions = el('div', 'pr-actions');
     const take = el('button', 'pr-btn is-primary');
     take.type = 'button';
-    take.append(el('span', null, kind === 'rigs' ? 'Open this rig' : 'Build on this'));
+    take.append(el('span', null, kind === 'rigs' ? 'Open this rig' : 'Build this rig'));
     take.onclick = () => onAdopt?.(it);
     actions.append(take);
     if (kind === 'rigs') for (const b of ownActions(it)) actions.append(b);

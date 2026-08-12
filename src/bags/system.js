@@ -9,6 +9,7 @@ import { fabricMaterial } from './materials.js';
 import { BUILDERS } from './registry.js';
 import { RESOLVE, STEP, TOL, boxesOverlap, proxyBoxes } from './resolve.js';
 import { SLOTS, productSlotFor } from './slots.js';
+import { willFit } from './fit.js';
 
 // ---- BagSystem -----------------------------------------------------------
 export class BagSystem {
@@ -119,7 +120,10 @@ export class BagSystem {
   /** How many colourways a product offers (1 when the data has none). */
   static colorwayCount(product) {
     const ways = product?.features?.colorways;
-    return Array.isArray(ways) && ways.length ? ways.length : 1;
+    if (Array.isArray(ways) && ways.length) return ways.length;
+    const cols = product?.colors;
+    if (Array.isArray(cols) && cols.length) return cols.length;
+    return 1;
   }
 
   remove(uiSlot) {
@@ -424,6 +428,13 @@ export class BagSystem {
       return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
     };
     const pick = (arr) => arr[Math.floor(rnd() * arr.length)];
+    const pickCw = (product) => Math.floor(rnd() * BagSystem.colorwayCount(product));
+    // Prefer a bag that actually comes in more than one colour, so Surprise me
+    // is not a row of default-black. Fall back to the whole slot if none do.
+    const pickColourful = (opts) => {
+      const rich = opts.filter((o) => BagSystem.colorwayCount(o.product) > 1);
+      return pick(rich.length && rnd() < 0.75 ? rich : opts);
+    };
     this._batch = true;
     this.clearAll();
     const plan = [
@@ -450,22 +461,31 @@ export class BagSystem {
           uiSlot = 'pannierPair';
         }
         if (uiSlot === 'pannierPair') {
-          const opts = productsForSlot(this.catalog, 'pannier');
+          const opts = productsForSlot(this.catalog, 'pannier')
+            .filter((o) => willFit('pannierL', o.product, this.bike));
           if (opts.length) {
-            const o = pick(opts);
-            this.equip('pannierL', o.brand, o.product);
-            this.equip('pannierR', o.brand, o.product);
+            const o = pickColourful(opts);
+            const cw = pickCw(o.product);
+            this.equip('pannierL', o.brand, o.product, cw);
+            this.equip('pannierR', o.brand, o.product, cw);
           }
           continue;
         }
-        const opts = productsForSlot(this.catalog, productSlotFor(uiSlot));
+        const opts = productsForSlot(this.catalog, productSlotFor(uiSlot))
+          .filter((o) => willFit(uiSlot, o.product, this.bike));
         if (!opts.length) continue;
-        const o = pick(opts);
-        this.equip(uiSlot, o.brand, o.product);
+        const o = pickColourful(opts);
+        this.equip(uiSlot, o.brand, o.product, pickCw(o.product));
       }
     } finally {
       this._batch = false;
     }
+    // Bidons are part of the picture. One colour for the pair, from the same
+    // swatches the panel offers, so the control still tells the truth.
+    const bidons = [0x6fa892, 0xc2601f, 0xe8e6e1, 0x1d1f22, 0xc9483a, 0x3f6ea8];
+    const bottle = pick(bidons);
+    this.bike.setBottleColor?.('st', bottle);
+    this.bike.setBottleColor?.('dt', bottle);
     this.resolveCollisions();
     return seed;
   }

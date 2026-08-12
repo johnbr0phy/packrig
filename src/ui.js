@@ -2,7 +2,8 @@ import { SLOTS, productSlotFor, colorwayFor } from './bags.js';
 import { initAccount } from './ui/account.js';
 import { applyRig, captureRig, rigURL } from './rig.js';
 import { productsForSlot } from './catalog.js';
-import { PAINTS } from './bike.js';
+import { PAINTS, FRAME_SIZES } from './bike.js';
+import { judgeFit, willFit } from './bags/fit.js';
 import { setSheetLift } from './mobile.js';
 import {
   buyLink, displayName, lineOf, litersOf, modelTitle, sizeEchoesName, sizeIsVolume,
@@ -13,6 +14,7 @@ import { initMenu } from './ui/v2/menu.js';
 import { icon } from './ui/v2/icons.js';
 import { initCatalogue } from './ui/catalogue.js';
 import { initRigNav } from './ui/rignav.js';
+import { randomRigName } from './ui/v2/rignames.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -84,19 +86,15 @@ export function initUI(app) {
    * are the work — so they moved to the menu's `rigs` view, the gallery was
    * already there, and what is left is what an account actually is.
    */
-  let account = null;
-  queueMicrotask(() => {
-    account = initAccount(app, {
-      auth: app.auth, store: app.rigs, host: root, onChange: () => sync(),
-    });
-    app.account = account;
-    /*
-     * The old name, kept because four headless tools drive this by it. It now
-     * routes each mode at the surface that owns it.
-     */
-    app.openRigs = (m) => (m === 'list' ? app.menu?.open('rigs') : account.open('signin'));
-    app.__rigURL = () => kitURL();   // headless tests assert on the real link
+  // Account is created NOW, not after a microtask: the homepage Log in button
+  // used to fire `app.account?.open()` while account was still null, which
+  // swallowed the click. The dialogue must exist before the menu does.
+  const account = initAccount(app, {
+    auth: app.auth, store: app.rigs, host: root, onChange: () => sync(),
   });
+  app.account = account;
+  app.openRigs = (m) => (m === 'list' ? app.menu?.open('rigs') : account.open('signin'));
+  app.__rigURL = () => kitURL();
 
   // remember the opening camera framing so "reset view" has somewhere to go
   const homeView = {
@@ -113,31 +111,37 @@ export function initUI(app) {
      * replaces. See src/ui/v2/menu.js for why they had to become one thing.
      */
     app.menu = initMenu(app, {
-      onBuild: ({ adopted, build }) => {
-        // "Build a rig" means a bare frame. Arriving from a loadout or one of
-        // your own rigs means that rig, already mounted, ready to edit.
-        if (build && !adopted) {
+      onBuild: ({ adopted, build, surprise, setup } = {}) => {
+        fromSurprise = !!surprise;
+        surpriseSnap = null;
+        const applySetup = (s) => {
+          if (!s) return;
+          if (s.size) app.setSize?.(s.size);
+          if (s.paint) app.setPaint?.(s.paint);
+          if (s.bidon != null) {
+            app.bike?.setBottleColor?.('st', s.bidon);
+            app.bike?.setBottleColor?.('dt', s.bidon);
+          }
+        };
+        if (surprise) {
+          app.randomize();
+          savedSnapshot = null;
+          rigNav.current = { id: null, name: randomRigName(), local: true };
+          rigNav.enter(rigNav.current);
+          surpriseSnap = snapshot();
+        } else if (build && !adopted) {
           app.clearAll?.();
           savedSnapshot = null;
-          rigNav.current = null;
-          rigNav.enter(null);
-          /*
-           * "Build a rig" is a promise to put a bag on a bicycle, and it used
-           * to deliver an empty column with a paragraph explaining that the
-           * bike was empty and an `Add a bag` button to press next. There is
-           * only one thing anybody does here first, so do it: the mount list
-           * is what the column holds the moment you arrive.
-           */
-          openMountPicker();
+          applySetup(setup);
+          rigNav.current = { id: null, name: setup?.name || randomRigName(), local: true };
+          rigNav.enter(rigNav.current);
         } else if (adopted) {
-          // One of YOUR rigs keeps its id, so the save dock says "Save changes"
-          // and writes back to it. A loadout arrives as a new unsaved bike,
-          // which is what building on one means.
           const own = adopted.own ? adopted.row : null;
           savedSnapshot = own ? snapshot() : null;
+          applySetup(setup);
           rigNav.current = {
             id: own?.id ?? null,
-            name: adopted.name || 'Untitled rig',
+            name: setup?.name || adopted.name || randomRigName(),
             local: own ? !!own.local : true,
           };
           rigNav.enter(rigNav.current);
@@ -147,7 +151,7 @@ export function initUI(app) {
     });
     /*
      * `app.home` survives as an adapter. Four headless tools drive the root
-     * menu by that name (tools/_menutest.mjs, _ttsweep.mjs, _contrast.mjs,
+     * menu by that name (tools/scratch/_menutest.mjs, _ttsweep.mjs, _contrast.mjs,
      * bag-portraits.mjs); renaming the module should not silently turn every
      * screenshot harness into a no-op. `app.gallery` went with the gallery.
      */
@@ -281,10 +285,36 @@ export function initUI(app) {
   root.append(panel);
   listEl.addEventListener('scroll', updateFade);
 
-  // ---- build actions: randomise, clear ------------------------------------
-  const btnRand = el('button', 'btn quiet');
-  btnRand.append(icon('bolt', { size: 16, cls: 'bolt' }), elt('span', null, 'Surprise me'));
-  btnRand.onclick = () => app.randomize();
+  // ---- build actions: add, try another, clear -----------------------------
+  // Surprise me lives on the homepage now. In here it is only "Try another",
+  // and only on an unsaved surprise kit — never on a bike you already saved.
+  const tryBtn = el('button', 'btn quiet');
+  const tryLabel = elt('span', null, 'Try another');
+  tryBtn.append(icon('bolt', { size: 16, cls: 'bolt' }), tryLabel);
+  tryBtn.title = 'Another random kit';
+  tryBtn.hidden = true;
+  let tryTimer = null;
+  const resetTry = () => {
+    clearTimeout(tryTimer);
+    tryBtn.classList.remove('confirm');
+    paintTry();
+  };
+  tryBtn.onclick = () => {
+    if (!fromSurprise || rigNav.current?.id) return;
+    const dirty = surpriseSnap && surpriseSnap !== snapshot();
+    if (dirty && !tryBtn.classList.contains('confirm')) {
+      tryBtn.classList.add('confirm');
+      tryLabel.textContent = 'Replace everything?';
+      tryTimer = setTimeout(resetTry, 3000);
+      return;
+    }
+    app.randomize();
+    const keep = rigNav.current || { id: null, local: true };
+    rigNav.current = { ...keep, name: randomRigName() };
+    surpriseSnap = snapshot();
+    resetTry();
+    sync();
+  };
   // clearing the whole bike is destructive, so it asks once before it fires
   const btnClear = elt('button', 'btn ghost', 'Clear rig');
   let clearTimer = null;
@@ -314,6 +344,21 @@ export function initUI(app) {
     btnClear.textContent = 'Sure?';
     clearTimer = setTimeout(resetClear, 3000);
   };
+
+  const sizeGroup = el('div', 'paint-group size-group');
+  sizeGroup.append(elt('span', 'group-label', 'Size'));
+  const sizes = el('div', 'size-picks');
+  for (const spec of Object.values(FRAME_SIZES)) {
+    const b = el('button', 'size-pick');
+    b.type = 'button';
+    b.dataset.size = spec.id;
+    b.textContent = spec.id;
+    b.title = `${spec.label} · ${spec.rider}`;
+    b.setAttribute('aria-label', `Frame size ${spec.label}, ${spec.rider}`);
+    b.onclick = () => app.setSize?.(spec.id);
+    sizes.append(b);
+  }
+  sizeGroup.append(sizes);
 
   const paintGroup = el('div', 'paint-group');
   paintGroup.append(elt('span', 'group-label', 'Frame'));
@@ -351,6 +396,7 @@ export function initUI(app) {
     const sw = el('button', 'bidon');
     sw.style.background = hex;
     sw.title = label;
+    sw.dataset.hex = String(parseInt(hex.slice(1), 16));
     sw.setAttribute('aria-label', `Bidon colour: ${label}`);
     sw.onclick = () => {
       const c = parseInt(hex.slice(1), 16);
@@ -369,31 +415,49 @@ export function initUI(app) {
   // so bringing it back later is a few lines and no data work.
 
   /*
-   * The "Bike" section of the left column: what the frame and the bottles look
-   * like. These were swatch groups floating in a bottom bar, one shelf away
-   * from the bags they sit next to on the actual bicycle. Everything you are
-   * building now reads down one column — bike, then bags.
+   * Bike settings live in a closed drawer. Name and colours were asked up
+   * front; the column you work in is the bags. Open this when you want to
+   * change the frame or the bottles.
    */
-  const bikeSec = el('section', 'nav-sec');
-  bikeSec.append(elt('h2', 'nav-sec-title', 'Bike'));
+  const bikeSec = el('section', 'nav-sec bike-sec');
+  const bikeToggle = el('button', 'bike-toggle');
+  bikeToggle.type = 'button';
+  const bikeToggleK = elt('span', 'bike-toggle-k', 'Bike');
+  const bikeSum = elt('span', 'bike-sum', '');
+  bikeToggle.append(bikeToggleK, bikeSum);
+  bikeToggle.setAttribute('aria-expanded', 'false');
   const appearance = el('div', 'appearance');
-  appearance.append(paintGroup, bidonGroup);
-  bikeSec.append(appearance);
+  appearance.hidden = true;
+  appearance.append(sizeGroup, paintGroup, bidonGroup);
+  bikeToggle.onclick = () => {
+    const open = appearance.hidden;
+    appearance.hidden = !open;
+    bikeSec.classList.toggle('is-open', open);
+    bikeToggle.setAttribute('aria-expanded', String(open));
+  };
+  bikeSec.append(bikeToggle, appearance);
+
+  function paintBikeSum() {
+    const sz = FRAME_SIZES[app.bike?.size || app.state?.size]?.label || 'Medium';
+    const paint = PAINT_LABEL[app.state?.paint] || app.state?.paint || 'Frame';
+    const n = app.bike?.bottleColor?.('st');
+    const bottle = BIDON_COLORS.find(([h]) => parseInt(h.slice(1), 16) === n)?.[1] || 'Bidons';
+    bikeSum.textContent = `${sz} · ${paint} · ${bottle}`;
+  }
 
 
   /*
    * The "Bags" section, and the column assembled.
    *
-   * Reading order is the order you build in: choose how the bike looks, see
-   * what is on it, add to it. `Surprise me` sits with `Add a bag` because they
-   * are the same decision taken two ways — one deliberate, one not.
+   * Reading order is the order you build in: see what is on it, add to it.
+   * `Try another` only appears after Surprise me, and it is not Add a bag's peer.
    */
-  const bagsSec = el('section', 'nav-sec');
+  const bagsSec = el('section', 'nav-sec bags-sec');
   const bagsHead = el('div', 'nav-sec-head');
   bagsHead.append(elt('h2', 'nav-sec-title', 'Bags on the rig'), countEl, btnClear);
   bagsSec.append(bagsHead, listEl);
   const bagActions = el('div', 'nav-actions');
-  bagActions.append(addBtn, btnRand);
+  bagActions.append(addBtn, tryBtn);
   bagsSec.append(bagActions);
 
   /*
@@ -407,8 +471,6 @@ export function initUI(app) {
       if (id) app.rigs?.rename?.(id, name).catch(() => {});
       paintSave();
     },
-    // Back goes up to the library, which is a menu view now.
-    onList: () => app.menu?.open('rigs'),
     onLevel: (lvl) => { panel.setAttribute('data-level', lvl); paintSave(); },
   });
   panel.setAttribute('data-level', 'rig');
@@ -416,7 +478,7 @@ export function initUI(app) {
   // Bags first, bike second. The rig is what you came to build; frame colour is
   // a detail, and it was sitting above the content with equal billing — on a
   // phone it was the entire first screen of the panel.
-  panel.append(head, rigNav.el, bagsSec, bikeSec, foot);
+  panel.append(head, rigNav.el, bikeSec, bagsSec, foot);
   app.rigNav = rigNav;
 
   // the hint retires for good once the user has driven the camera, or after 5s
@@ -494,68 +556,70 @@ export function initUI(app) {
    * state it already tracks.
    */
   /*
-   * Save rig — REDESIGN.md §6, goal 2.
+   * Save rig — next to the name, not floating in a corner.
    *
    * It appears the moment there is something worth saving and disappears when
-   * there is not, so the answer to "can I keep this?" is always on screen
-   * rather than behind a menu. Saving does not ask for an account first: the
-   * store has a full local branch and `migrateLocal()` pushes local rigs up on
-   * the first sign-in, so a signed-out save is a real save.
+   * there is not. Saving does not ask for an account first: the store has a
+   * full local branch and `migrateLocal()` pushes local rigs up on the first
+   * sign-in, so a signed-out save is a real save.
    */
-  let savedSnapshot = null;          // the rig as it was when last saved
+  let savedSnapshot = null;
+  let fromSurprise = false;
+  let surpriseSnap = null;
   const snapshot = () => {
     try { return JSON.stringify(captureRig(app, { name: '' })); } catch { return null; }
   };
-  /*
-   * It lives bottom-right, on its own, over the scene — not in the top bar.
-   * A save is the one thing on this screen that is an OFFER rather than a
-   * tool: it should appear where nothing was a moment ago, the instant there
-   * is a bike worth keeping, and it cannot do that from inside a row of camera
-   * buttons that is always there.
-   */
-  const saveDock = el('div', 'save-dock');
   const saveBtn = el('button', 'save-btn');
   const saveLabel = elt('span', 'save-label', 'Save this rig');
   saveBtn.append(saveLabel);
-  saveDock.append(saveBtn);
-  saveBtn.onclick = () => {
-    if (saveBtn.classList.contains('is-done')) { rigNav.showList(); return; }
+  rigNav.actions.append(saveBtn);
+  function saveCurrent() {
     const cur = rigNav.current;
-    // Saving an OPEN rig updates it. It used to make a new "My rig 4" every
-    // time, so the list filled with copies of one bike and the rig you thought
-    // you were editing never changed.
     const write = cur?.id
       ? app.rigs?.update(cur.id, { name: cur.name })
-      : app.rigs?.save(cur?.name || `Rig ${(app.rigs?.localCount?.() || 0) + 1}`);
-    Promise.resolve(write)
-      .then((row) => {
-        savedSnapshot = snapshot();
-        rigNav.current = { id: row?.id ?? cur?.id ?? null, name: row?.name || cur?.name || 'Untitled rig', local: !!row?.local };
-        paintSave();
-        notify(cur?.id ? `Saved “${rigNav.current.name}”` : `Saved “${rigNav.current.name}”`,
-          null, { label: 'Rename', run: () => document.querySelector('.rn-title')?.click() });
-      })
+      : app.rigs?.save(cur?.name || randomRigName());
+    return Promise.resolve(write).then((row) => {
+      savedSnapshot = snapshot();
+      fromSurprise = false;
+      surpriseSnap = null;
+      rigNav.current = { id: row?.id ?? cur?.id ?? null, name: row?.name || cur?.name || randomRigName(), local: !!row?.local };
+      paintSave();
+      return row;
+    });
+  }
+  saveBtn.onclick = () => {
+    if (saveBtn.classList.contains('is-done')) return;
+    saveCurrent()
+      .then(() => notify(`Saved “${rigNav.current.name}”`,
+        null, { label: 'Rename', run: () => document.querySelector('.rn-title')?.click() }))
       .catch((e) => notify(e?.message || 'Could not save that rig'));
   };
-  /**
-   * Three states, and the third is the one that matters: once saved, the button
-   * goes quiet rather than vanishing, and comes back the instant the bike
-   * differs from what was stored.
-   */
+  function paintTry() {
+    const bags = Object.keys(app.bags?.equipped || {}).length;
+    const show = fromSurprise && !rigNav.current?.id && bags > 0;
+    tryBtn.hidden = !show;
+    if (!show) {
+      tryBtn.classList.remove('confirm');
+      return;
+    }
+    if (tryBtn.classList.contains('confirm')) return;
+    const dirty = !!(surpriseSnap && surpriseSnap !== snapshot());
+    tryLabel.textContent = dirty ? 'Replace all bags' : 'Try another';
+    tryBtn.title = dirty
+      ? 'This replaces every bag on the bike'
+      : 'Another random kit';
+  }
   function paintSave() {
     const bags = Object.keys(app.bags?.equipped || {}).length;
     const dirty = !savedSnapshot || savedSnapshot !== snapshot();
-    saveDock.hidden = bags === 0;
+    saveBtn.hidden = bags === 0;
     saveBtn.classList.toggle('is-done', !dirty);
-    // "Save this rig" the first time, "Save changes" when it is an edit — the
-    // second one is the answer to "will this make another copy?", which is the
-    // question the list full of "My rig 4"s taught people to ask.
     saveLabel.textContent = dirty
       ? (rigNav?.current?.id ? 'Save changes' : 'Save this rig')
-      : 'Saved ✓';
-    saveBtn.title = dirty ? 'Keep this build' : 'Saved — open your rigs';
+      : 'Saved';
+    saveBtn.title = dirty ? 'Keep this build' : 'Saved';
+    paintTry();
   }
-  root.append(saveDock);
 
   const acctBtn = el('button', 'acct-btn');
   const acctLabel = elt('span', 'acct-label', 'Log in');
@@ -574,7 +638,7 @@ export function initUI(app) {
     acctBtn.classList.toggle('is-in', on);
     acctLabel.textContent = on ? (app.auth.email || 'Account') : 'Log in';
     acctBtn.title = on ? 'Your account' : 'Log in so your rigs follow you between devices';
-    acctBtn.hidden = !app.auth?.enabled;
+    acctBtn.hidden = false;
   }
   paintAccount();
   app.auth?.onChange?.(paintAccount);
@@ -599,12 +663,82 @@ export function initUI(app) {
   mark.title = 'Back to the start';
   mark.setAttribute('aria-label', 'Packrig — back to the start');
   mark.classList.add('is-link');
-  const goHome = () => app.menu?.open('start');
-  mark.onclick = goHome;
+  const goHome = (opts = {}) => app.menu?.open('start', opts);
+  const unsavedKit = () => {
+    const bags = Object.keys(app.bags?.equipped || {}).length;
+    if (!bags) return false;
+    if (!rigNav.current?.id) return true;
+    return !savedSnapshot || savedSnapshot !== snapshot();
+  };
+  const discardKit = () => {
+    app.clearAll?.();
+    fromSurprise = false;
+    surpriseSnap = null;
+    savedSnapshot = null;
+    rigNav.current = { id: null, name: '', local: true };
+    rigNav.enter(rigNav.current);
+    sync();
+  };
+  function askLeaveSave(name, { onSave, onLeave }) {
+    const scrim = el('div', 'ac-scrim');
+    const card = el('div', 'ac-card');
+    card.setAttribute('role', 'dialog');
+    card.setAttribute('aria-modal', 'true');
+    card.setAttribute('aria-label', 'Save this rig?');
+    card.append(elt('h2', 'ac-title', `Save “${name}”?`));
+    card.append(elt('p', 'ac-note', 'Don’t save clears the bags from the bike.'));
+    const row = el('div', 'ac-leave-row');
+    const lose = el('button', 'ac-btn');
+    lose.type = 'button';
+    lose.textContent = 'Don’t save';
+    const keep = el('button', 'ac-btn is-primary');
+    keep.type = 'button';
+    keep.textContent = 'Save';
+    row.append(lose, keep);
+    card.append(row);
+    scrim.append(card);
+    const dismiss = (fn) => {
+      scrim.classList.remove('on');
+      document.removeEventListener('keydown', onKey, true);
+      setTimeout(() => scrim.remove(), 200);
+      fn?.();
+    };
+    const onKey = (e) => {
+      if (e.key === 'Escape') { e.preventDefault(); dismiss(); }
+    };
+    lose.onclick = () => dismiss(onLeave);
+    keep.onclick = () => {
+      keep.disabled = true;
+      Promise.resolve(onSave())
+        .then(() => dismiss())
+        .catch((e) => {
+          keep.disabled = false;
+          notify(e?.message || 'Could not save that rig');
+        });
+    };
+    scrim.onmousedown = (e) => { if (e.target === scrim) dismiss(); };
+    document.addEventListener('keydown', onKey, true);
+    root.append(scrim);
+    void scrim.offsetWidth;
+    scrim.classList.add('on');
+    keep.focus();
+  }
+  const leaveHome = () => {
+    if (app.menu?.isOpen || !unsavedKit()) {
+      goHome({ keepScene: true });
+      return;
+    }
+    const name = rigNav.current?.name || 'this rig';
+    askLeaveSave(name, {
+      onSave: () => saveCurrent().then(() => goHome({ keepScene: true })),
+      onLeave: () => { discardKit(); goHome(); },
+    });
+  };
+  mark.onclick = leaveHome;
   mark.onkeydown = (e) => {
     if (e.key !== 'Enter' && e.key !== ' ') return;
     e.preventDefault();
-    goHome();
+    leaveHome();
   };
 
   topbar.append(topRight);
@@ -838,7 +972,8 @@ export function initUI(app) {
         const def = SLOTS[key];
         if (!def) continue;
         const cur = app.bags.equipped[key];
-        const options = productsForSlot(app.catalog, productSlotFor(key));
+        const options = productsForSlot(app.catalog, productSlotFor(key))
+          .filter((o) => willFit(key, o.product, app.bike));
         const b = el('button', 'mount-btn' + (cur ? ' occupied' : ''));
         b.append(elt('span', 'mb-name', def.label));
         const sub = cur
@@ -909,7 +1044,12 @@ export function initUI(app) {
   function catCard(entry, uiSlot, unfit) {
     const cur = app.bags.equipped[uiSlot];
     const { brand, product } = entry;
-    const c = el('div', 'card' + (cur?.product === product ? ' on' : '') + (unfit ? ' is-unfit' : ''));
+    const judged = judgeFit(uiSlot, product, app.bike);
+    const small = !unfit && judged.status === 'small';
+    const c = el('div', 'card'
+      + (cur?.product === product ? ' on' : '')
+      + (unfit ? ' is-unfit' : '')
+      + (small ? ' is-small' : ''));
     const shot = product.images?.[0];
     if (shot) {
       const wrap = el('div', 'card-thumb');
@@ -939,6 +1079,7 @@ export function initUI(app) {
     }
     c.append(meta);
     if (unfit) c.append(elt('div', 'card-unfit', unfit));
+    else if (small) c.append(elt('div', 'card-unfit', judged.reason));
     c.onclick = () => fitAndStay(uiSlot, { brand, product }, c);
     return c;
   }
@@ -994,6 +1135,8 @@ export function initUI(app) {
     if (def?.mountsTo && !def.mountsTo.some((s) => app.bags.equipped[s])) {
       return `Needs a ${def.mountsTo.map((s) => (SLOTS[s]?.label || s).toLowerCase()).join(' or ')} first`;
     }
+    const j = judgeFit(uiSlot, entry.product, app.bike);
+    if (j.status === 'big') return j.reason;
     return null;
   }
 
@@ -1233,20 +1376,55 @@ export function initUI(app) {
     return card;
   }
 
+  /**
+   * Empty bike: the column is the menu. Same shape as the homepage — a short
+   * list of places, one tap to the bags that go there. "Add a bag" at the
+   * bottom of an empty panel is a button that explains the screen is empty.
+   */
+  const STARTER = [
+    { slot: 'seatpack',      hint: 'Behind the saddle' },
+    { slot: 'barroll',       hint: 'On the handlebars' },
+    { slot: 'framebag_full', hint: 'In the main triangle' },
+    { slot: 'toptube',       hint: 'On the top tube' },
+    { slot: 'forkL',         hint: 'On the fork' },
+    { slot: 'pannierL',      hint: 'On a rear rack' },
+  ];
+
+  function renderStarter() {
+    const wrap = el('div', 'starter');
+    wrap.append(elt('p', 'starter-lead', 'Where first?'));
+    const list = el('div', 'starter-list');
+    for (const row of STARTER) {
+      const def = SLOTS[row.slot];
+      if (!def) continue;
+      const n = productsForSlot(app.catalog, productSlotFor(row.slot))
+        .filter((o) => willFit(row.slot, o.product, app.bike)).length;
+      if (!n) continue;
+      const b = el('button', 'starter-row');
+      b.type = 'button';
+      const body = el('span', 'starter-body');
+      body.append(elt('span', 'starter-name', def.label));
+      body.append(elt('span', 'starter-hint', `${row.hint} · ${n}`));
+      b.append(body);
+      b.append(icon('right', { size: 18, cls: 'starter-go' }));
+      b.onclick = () => catalogue.open(row.slot);
+      list.append(b);
+    }
+    wrap.append(list);
+    const more = el('button', 'starter-more');
+    more.type = 'button';
+    more.append(elt('span', null, 'Every mount point'));
+    more.onclick = () => openMountPicker();
+    wrap.append(more);
+    return wrap;
+  }
+
   function renderList() {
     listEl.innerHTML = '';
     const unfit = Object.keys(app.bags.unfitted || {});
     const keys = Object.keys(SLOTS).filter((k) => app.bags.equipped[k]);
     if (!keys.length && !unfit.length) {
-      // The first screen after "Build a rig". It used to be four words; the
-      // column is a fixed height now and those four words sat alone in it.
-      const empty = el('div', 'empty-state');
-      empty.append(elt('p', 'es-lead', 'Nothing on the bike yet.'));
-      empty.append(elt('p', 'es-sub',
-        `${Object.keys(SLOTS).length} mounting points, `
-        + `${app.catalog.reduce((n, b) => n + b.products.length, 0)} bags to put on them. `
-        + 'A seat pack is the usual place to start.'));
-      listEl.append(empty);
+      listEl.append(renderStarter());
       return 0;
     }
     for (const key of keys) {
@@ -1348,6 +1526,9 @@ export function initUI(app) {
     const n = renderList();
     paintSelection();
     countEl.textContent = String(n);
+    bagsHead.hidden = n === 0;
+    bagActions.hidden = n === 0;
+    addBtn.hidden = n === 0;
     // Nothing to clear on an empty bike, and a destructive control offered
     // against nothing is just one more thing in the column.
     btnClear.hidden = n === 0;
@@ -1359,6 +1540,12 @@ export function initUI(app) {
     foot.classList.toggle('has-kit', n > 0);
     updateFade();
     paints.querySelectorAll('.paint').forEach((c) => c.classList.toggle('on', c.dataset.paint === app.state.paint));
+    sizes.querySelectorAll('.size-pick').forEach((c) => c.classList.toggle('on', c.dataset.size === (app.bike?.size || app.state.size)));
+    const bottleHex = app.bike?.bottleColor?.('st');
+    if (bottleHex != null) {
+      for (const b of bidons.children) b.classList.toggle('on', Number(b.dataset.hex) === bottleHex);
+    }
+    paintBikeSum();
     rotBtn.classList.toggle('on', !!app.controls?.autoRotate);
     // Every change to the bike runs through here, which is exactly when the
     // save CTA needs to reconsider whether there is anything unsaved.

@@ -230,9 +230,15 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
    * account when there is one, the log-in form when there is not.
    */
   function open(next) {
-    if (!auth?.enabled) return;
-    mode = next || (auth.signedIn ? 'account' : 'signin');
-    if (mode === 'account' && !auth.signedIn) mode = 'signin';
+    if (!auth?.enabled) {
+      // Never swallow the click. If Firebase did not boot, say so in the
+      // same window — a hidden button plus a no-op click is how login vanished.
+      mode = 'signin';
+      notice = { kind: 'bad', text: 'Accounts are not available right now. Check you are online and refresh.' };
+    } else {
+      mode = next || (auth.signedIn ? 'account' : 'signin');
+    }
+    if (mode === 'account' && !auth?.signedIn) mode = 'signin';
     if (scrim) { render(); return; }
     lastFocus = document.activeElement;
     scrim = el('div', 'ac-scrim');
