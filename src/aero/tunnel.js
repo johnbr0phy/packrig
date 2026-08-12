@@ -298,7 +298,8 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
 
     const vFov = THREE.MathUtils.degToRad(camera.fov);
     const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
-    const CAM_MARGIN = 1.45; // comfortable headroom, not a tight crop — see report
+    // Portrait is a tall rider in a short frame; 1.45 crops wheels and bars.
+    const CAM_MARGIN = window.innerWidth <= 560 ? 1.95 : 1.45;
 
     // On phone the HUD is a bottom sheet, not a side panel, so it eats
     // vertical rather than horizontal room — and unlike the desktop side

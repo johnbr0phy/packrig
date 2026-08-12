@@ -312,15 +312,12 @@ input[type='email'], input[type='password'] {
 
 /* ---- the wind tunnel ----------------------------------------------------- */
 .aero-panel, .aero-sec, .aero-peek {
-  background: var(--surface); color: var(--ink-1);
-  border-color: var(--line);
+  background: none; color: var(--ink-1);
+  border-color: var(--line-soft);
   backdrop-filter: none; -webkit-backdrop-filter: none;
 }
 .aero-sec + .aero-sec { border-top: 1px solid var(--line-soft); }
-/* The grade letter keeps the one tinted mark; the WORD beside it does not.
-   "Sail" in ember was the loudest text on the panel, and a verdict is not a
-   selected state — the accent's only job in this product. */
-.grade-badge { background: var(--accent-soft); color: var(--accent); }
+.grade-badge { background: none; color: var(--ink-1); }
 .grade-name { color: var(--ink-1); }
 .grade-blurb, .aero-note, .aero-cap { color: var(--ink-2); }
 

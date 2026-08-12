@@ -12,7 +12,7 @@ import { createRider } from './rider.js';
 import { createTunnel } from './tunnel.js';
 import { createAeroPanel } from './panel.js';
 
-export function initAero(app, { scene, camera, renderer, controls, composer, passes, measure }) {
+export function initAero(app, { scene, camera, renderer, controls, composer, passes, measure, onToggle }) {
   const { bike, bags } = app;
 
   const meter = createAeroMeter({ renderer, scene, bike, bags });
@@ -149,7 +149,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
 
   /** Kit changed while the tunnel is open: re-measure and re-route the air. */
   function onKitChange() {
-    if (!tunnel.active) return;
+    if (!open) return;
     rebuildFlow();
     measureNow();
     app.focus?.refresh();
@@ -161,6 +161,13 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
   // tunnel.enter()/exit() already handle being called mid-transition.
   let open = false;
 
+  function onKey(e) {
+    if (e.key !== 'Escape') return;
+    e.preventDefault();
+    e.stopPropagation();
+    exit();
+  }
+
   function enter() {
     if (open) return;
     open = true;
@@ -168,6 +175,8 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
     tunnel.enter();
     rebuildFlow();
     measureNow();
+    document.addEventListener('keydown', onKey, true);
+    onToggle?.(true);
   }
 
   function exit() {
@@ -175,6 +184,8 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
     open = false;
     tunnel.exit();
     panel.el.remove();
+    document.removeEventListener('keydown', onKey, true);
+    onToggle?.(false);
   }
 
   return {

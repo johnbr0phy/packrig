@@ -540,10 +540,7 @@ export function initUI(app) {
   tunnelBtn.append(icon('wind'));
   tunnelBtn.title = 'Wind tunnel';
   tunnelBtn.setAttribute('aria-label', 'Open the wind tunnel');
-  tunnelBtn.onclick = () => {
-    tunnelBtn.classList.toggle('on');
-    app.openWindTunnel?.();
-  };
+  tunnelBtn.onclick = () => { app.openWindTunnel?.(); };
   tools.append(rotBtn, el('span', 'tool-divider'), homeBtn, el('span', 'tool-divider'), tunnelBtn);
   topRight.append(tools);
 
@@ -615,7 +612,7 @@ export function initUI(app) {
     saveBtn.hidden = bags === 0;
     saveBtn.classList.toggle('is-done', !dirty);
     saveLabel.textContent = dirty
-      ? (rigNav?.current?.id ? 'Save changes' : 'Save this rig')
+      ? (PHONE.matches ? 'Save' : (rigNav?.current?.id ? 'Save changes' : 'Save this rig'))
       : 'Saved';
     saveBtn.title = dirty ? 'Keep this build' : 'Saved';
     paintTry();
@@ -664,6 +661,7 @@ export function initUI(app) {
   mark.setAttribute('aria-label', 'Packrig — back to the start');
   mark.classList.add('is-link');
   const goHome = (opts = {}) => app.menu?.open('start', opts);
+  const leaveTunnel = () => { try { app.aero?.exit?.(); } catch { /* not open */ } };
   const unsavedKit = () => {
     const bags = Object.keys(app.bags?.equipped || {}).length;
     if (!bags) return false;
@@ -725,13 +723,14 @@ export function initUI(app) {
   }
   const leaveHome = () => {
     if (app.menu?.isOpen || !unsavedKit()) {
+      leaveTunnel();
       goHome({ keepScene: true });
       return;
     }
     const name = rigNav.current?.name || 'this rig';
     askLeaveSave(name, {
-      onSave: () => saveCurrent().then(() => goHome({ keepScene: true })),
-      onLeave: () => { discardKit(); goHome(); },
+      onSave: () => saveCurrent().then(() => { leaveTunnel(); goHome({ keepScene: true }); }),
+      onLeave: () => { leaveTunnel(); discardKit(); goHome(); },
     });
   };
   mark.onclick = leaveHome;
@@ -1547,6 +1546,7 @@ export function initUI(app) {
     }
     paintBikeSum();
     rotBtn.classList.toggle('on', !!app.controls?.autoRotate);
+    tunnelBtn.classList.toggle('on', !!document.body.classList.contains('aero-open'));
     // Every change to the bike runs through here, which is exactly when the
     // save CTA needs to reconsider whether there is anything unsaved.
     paintSave();

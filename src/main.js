@@ -274,21 +274,15 @@ app.openWindTunnel = async () => {
       scene, camera, renderer, controls, composer,
       passes: { gtao, bloom },   // either may be null on a phone; tunnel.js no-ops
       measure: measureProfile(),
+      onToggle(on) {
+        document.body.classList.toggle('aero-open', on);
+        document.getElementById('ui-root')?.classList.toggle('aero-open', on);
+        app.ui?.sync();
+      },
     });
     app.bags.onChange(() => app.aero.onKitChange());
   }
   app.aero.toggle();
-  // One sheet at a time. On a phone both panels are bottom sheets anchored to
-  // the same edge, so the kit list has to get out of the way entirely rather
-  // than merely collapse — collapsed, its peek header still overlaps the HUD
-  // and still steals a hit-test region. ui.css hides it on this class.
-  document.body.classList.toggle('aero-open', app.aero.active);
-  // ...and on #ui-root, because every rule in ui/v2/builder.css is scoped under
-  // that id — including the one that stands the rig column down while the
-  // tunnel is open (R4). Set on `body` alone, that rule matched nothing, and
-  // the desktop showed 1032px of chrome with a slit of bike between it.
-  document.getElementById('ui-root')?.classList.toggle('aero-open', app.aero.active);
-  app.ui?.sync();
 };
 
 /**

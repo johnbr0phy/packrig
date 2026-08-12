@@ -84,19 +84,19 @@ export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoad
     } : {
       n: '01',
       name: 'Build a rig',
-      desc: `A bare frame and ${mountCount} mounting points to fill.`,
+      desc: `A bare frame and ${mountCount} mounts.`,
       run: onBuild,
     },
     {
       n: '02',
       name: 'Surprise me',
-      desc: 'A loaded bike, picked for you. Keep it or try another.',
+      desc: 'A loaded bike, picked for you.',
       run: onSurprise,
     },
     {
       n: '03',
       name: 'Loadouts',
-      desc: 'Expedition, racing, heavy touring — eight, already built.',
+      desc: 'Eight rigs, already built.',
       run: onLoadouts,
     },
   ];

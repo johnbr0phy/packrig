@@ -212,7 +212,8 @@
 /* At the root the numbered list IS the navigation, and a second copy of it in
    the corner is the same three words twice on one screen. The strip appears
    when you are inside a section, where it is the only way across. */
-.pr[data-view="start"] .pr-tabs { display: none; }
+.pr[data-view="start"] .pr-tabs,
+.pr[data-view="setup"] .pr-tabs { display: none; }
 .pr-tabs > * { pointer-events: auto; }
 
 .pr-tab {
@@ -1027,10 +1028,22 @@
   }
   .pr-display { font-size: clamp(30px, 8.6vw, 40px); }
   .pr-lede { display: none; }          /* the bike is the pitch on a phone */
+  .pr-eyebrow { display: none; }
   .pr-menu { margin-top: 20px; }
   .pr-item { padding: 14px 4px; grid-template-columns: 28px 1fr 20px; }
   .pr-item-name { font-size: 17px; }
   .pr-stat { margin-top: 18px; gap: 0 18px; }
+
+  /* Setup is a form over the bike — drop the rider-height captions so the
+     three sizes sit on one line, and hide Log in on browse so Close fits. */
+  .pr-size-r { display: none; }
+  .pr-size { padding: 10px 12px; }
+  .pr-setup-form { margin-top: 16px; gap: 16px; }
+  .pr-name { font-size: 18px; height: 40px; }
+  .pr:not([data-view='start']):not([data-view='setup']) .pr-login { display: none; }
+
+  .pr-note, .pr-grade { display: none; }
+  .pr-spec { max-height: 48vh; }
 
   .pr-browse { grid-template-rows: 1fr auto; }
   .pr-spec {
@@ -1081,6 +1094,9 @@
   font-size: 12px;
   color: var(--pr-ink-2);
   white-space: nowrap;
+}
+@media (max-width: 900px) {
+  .pr-grade { display: none; }
 }
 
 /* ===========================================================================

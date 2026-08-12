@@ -8,6 +8,7 @@
 // needs it — via model.js's `power()`. `ASSUMPTIONS` is also pulled straight
 // from model.js since it's a static list nothing else needs to touch.
 import { power, ASSUMPTIONS } from './model.js';
+import { icon } from '../ui/v2/icons.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -99,14 +100,18 @@ function cdaAtYaw(byYaw, deg) {
 }
 
 export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPart } = {}) {
-  const root = el('div', 'aero-panel glass');
+  const root = el('div', 'aero-panel');
 
-  // ---- header ---------------------------------------------------------
+  // Same exit as the menu: a labelled Close, not a bare ✕. The tunnel is a
+  // level of the app, not a dialog, and a glyph that means "dismiss this
+  // card" is the wrong verb for leaving a room.
   const head = el('header', 'aero-head');
   head.append(elt('span', 'aero-title', 'Wind tunnel'));
-  const closeBtn = elt('button', 'aero-close', '✕');
-  closeBtn.title = 'Exit wind tunnel';
-  closeBtn.setAttribute('aria-label', 'Exit wind tunnel');
+  const closeBtn = el('button', 'aero-close');
+  closeBtn.type = 'button';
+  closeBtn.append(el('span', null, 'Close'), icon('close', { size: 18 }));
+  closeBtn.title = 'Back to the bike (Esc)';
+  closeBtn.setAttribute('aria-label', 'Close wind tunnel');
   closeBtn.onclick = () => onExit?.();
   head.append(closeBtn);
   root.append(head);

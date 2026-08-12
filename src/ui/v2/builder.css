@@ -526,14 +526,14 @@
 
 /* ---- the wind tunnel ----------------------------------------------------- */
 #ui-root .aero-panel, #ui-root .aero-sec, #ui-root .aero-peek {
-  background: var(--surface); color: var(--ink-1);
-  border-color: var(--line);
+  background: none; color: var(--ink-1);
+  border-color: var(--line-soft);
 }
 #ui-root .aero-sec + .aero-sec { border-top: 1px solid var(--line-soft); }
 #ui-root .aero-title { color: var(--ink-3); }
 #ui-root .cda-value, #ui-root .watts-value, #ui-root .delta-value,
 #ui-root .peek-cost-value { color: var(--ink-1); }
-#ui-root .grade-badge { background: var(--accent-soft); color: var(--accent); }
+#ui-root .grade-badge { background: none; color: var(--ink-1); }
 #ui-root .grade-name { color: var(--ink-1); }
 #ui-root .bs-spec-v.is-ok { color: var(--ok); }
 #ui-root .bs-spec-v.is-warn { color: var(--warn); }
@@ -562,7 +562,7 @@
    * the entire product, is not on it. (`max-height: none` in the desktop rule
    * above did exactly that: the panel ran from the top bar to the floor.)
    */
-  #ui-root .panel, #ui-root .sheet {
+  #ui-root .panel, #ui-root .sheet, #ui-root .aero-panel {
     top: auto;
     left: 0;
     right: 0;
@@ -730,21 +730,22 @@
 #ui-root .cat-q::placeholder, #ui-root .rn-rename::placeholder,
 #ui-root input::placeholder, #ui-root .bag-act.buy { color: var(--ink-3); }
 
-/* F10 — the wind tunnel was the last floating rounded panel in the app, with a
-   drop shadow, its own radius, and two ways out. Docked as the right-hand
-   mirror of the rig column: the bike sits between two rules, which is the
-   composition the menu established. */
+/* F10 — the wind tunnel was the last floating rounded panel, then a second
+   column on the RIGHT that boxed the bike in. It is the same left spine as
+   the rig list and the menu: one column, type over the veil, bike on the
+   right. */
 #ui-root .aero-panel {
+  position: fixed;
   top: var(--topbar-h);
-  right: 0;
+  left: 0;
+  right: auto;
   bottom: 0;
-  left: auto;
   width: var(--col-w);
   max-height: none;
   border: 0;
-  border-left: 1px solid var(--line);
   border-radius: 0;
   box-shadow: none;
+  background: none;
 }
 
 /* F14 — the type ramp drifted between the layers. Fixed at the token rather
@@ -1099,11 +1100,9 @@
   #ui-root .sheet-title { font-size: 26px; }
 }
 
-/* R4 — the wind tunnel opened a SECOND 516px column and left the first one up:
-   1032px of chrome and a 400px slit for the bike, on the screen whose whole
-   argument is that nothing covers the product. The rig column stands down while
-   the tunnel is open, exactly as it does under a sheet, and the tunnel adopts
-   the shared top lead so its first line meets the other column's. */
+/* R4 — the wind tunnel used to open a SECOND column on the right and leave
+   the rig list up: 1032px of chrome and a slit of bike. The rig column stands
+   down; the tunnel takes its place, same spine, same lead. */
 #ui-root.aero-open .panel {
   opacity: 0;
   pointer-events: none;
@@ -1292,7 +1291,7 @@
 /* The column has no edge to draw any more — it dissolves into the scene the
    way the menu's does, and a hairline at the point where the ramp is still at
    0.88 would be a rule floating in a gradient. */
-#ui-root .aero-panel { box-shadow: -1px 0 0 rgba(0, 0, 0, 0.55); }
+#ui-root .aero-panel { box-shadow: none; }
 
 /* F14 — the mode switch announced the mode of the whole sheet with a 4.5%
    delta. It is a mode, so it is unambiguous. */
@@ -1371,12 +1370,12 @@
 #ui-root .sheet.open .card:nth-child(7),  #ui-root .panel .bag-card:nth-child(7)  { animation-delay: 144ms; }
 #ui-root .sheet.open .card:nth-child(n+8),#ui-root .panel .bag-card:nth-child(n+8){ animation-delay: 168ms; }
 
-/* The aero panel is the ONE surface that legitimately enters from an edge: it
-   is a new column arriving beside the bike, not a swap inside an existing one. */
+/* The tunnel takes the same column the rig list just vacated, so it fades
+   in place — a slide from the right would say it is a different box. */
 #ui-root .aero-panel { animation: bd-aero-in 280ms var(--ease-out, ease) both; }
 @keyframes bd-aero-in {
-  from { opacity: 0; transform: translateX(24px); }
-  to   { opacity: 1; transform: none; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1652,6 +1651,27 @@
     max-height: none;
     overflow: visible;
   }
+
+  /* The 55vh sheet cannot carry a long name, a full Save label, Share,
+     Clear, and the bag list. Name truncates; Save is three letters;
+     Share and the capacity caption go. */
+  #ui-root .rn-bar { gap: 8px; min-width: 0; }
+  #ui-root .rignav .rn-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #ui-root .rn-bar .save-btn { height: 32px; padding: 0 12px; font-size: 12.5px; }
+  #ui-root .share-kit { display: none; }
+  #ui-root .panel-foot { display: none; }
+  #ui-root .nav-sec-title { font-size: 10px; }
+  #ui-root .btn.ghost { padding: 6px 10px; font-size: 12px; }
+  #ui-root .panel-foot { padding-top: 8px; padding-bottom: max(8px, env(safe-area-inset-bottom)); }
+  #ui-root .nav-actions { gap: 8px; }
+  #ui-root .add-bag, #ui-root .btn.quiet { font-size: 13px; }
 }
 
 @media (max-width: 900px) {
@@ -1664,6 +1684,19 @@
         rgba(10, 11, 13, 0) 16%);
   }
   #ui-root .panel, #ui-root .sheet {
+    background: rgba(10, 11, 13, 0.96);
+    border-top: 1px solid var(--line);
+  }
+  /* F10 pins the tunnel to the left spine on desktop. That rule is later
+     than the first 900px block, so without this the phone sheet is stretched
+     from the top bar to the floor — 780px of empty glass over the bike. */
+  #ui-root .aero-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    max-height: 55vh;
     background: rgba(10, 11, 13, 0.96);
     border-top: 1px solid var(--line);
   }
