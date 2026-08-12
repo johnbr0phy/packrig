@@ -146,9 +146,8 @@ export function initMenu(app, { onBuild } = {}) {
   // or the menu is a trap that quietly overwrites your work.
   let stash = null;
   let stashDirty = false;
-  // Set when leaving the builder with a kit that should stay on the bike
-  // (a save). Don't-save clears first, so start can show the empty hero.
-  let keepScene = false;
+  // Homepage is always the empty bike. keepScene used to leave a saved kit
+  // on the hero; that is gone — My rigs holds the copy.
   // False until the first render has happened, so the boot render does not
   // steal focus from the document.
   let moved = false;
@@ -233,8 +232,10 @@ export function initMenu(app, { onBuild } = {}) {
     stage.replaceChildren();
     if (view === 'start') {
       pendingAdopt = null;
-      if (keepScene) keepScene = false;
-      else restoreStash();
+      // The front door is always the bagless bike. Stash is for Close back
+      // into the builder from Loadouts / My rigs, not for this screen.
+      try { app.clearAll?.(); } catch { /* empty is the point */ }
+      app.ui?.sync?.();
       stage.append(renderStart(app, {
         rigs: rigCount(app),
         onBuild: startBuild,
@@ -305,8 +306,7 @@ export function initMenu(app, { onBuild } = {}) {
     render();
   }
 
-  function open(next = 'start', opts = {}) {
-    if (opts.keepScene) keepScene = true;
+  function open(next = 'start') {
     if (open_) { go(next); return; }
     view = VIEWS.some((v) => v.id === next) ? next : (next === 'setup' ? 'setup' : 'start');
     openInternal();

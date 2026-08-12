@@ -685,7 +685,7 @@ export function initUI(app) {
     card.setAttribute('aria-modal', 'true');
     card.setAttribute('aria-label', 'Save this rig?');
     card.append(elt('h2', 'ac-title', `Save “${name}”?`));
-    card.append(elt('p', 'ac-note', 'Don’t save clears the bags from the bike.'));
+    card.append(elt('p', 'ac-note', 'Home is always the empty bike. Save keeps a copy in My rigs.'));
     const row = el('div', 'ac-leave-row');
     const lose = el('button', 'ac-btn');
     lose.type = 'button';
@@ -723,14 +723,22 @@ export function initUI(app) {
     keep.focus();
   }
   const leaveHome = () => {
+    // The start screen is always the empty bike. Save first if there is
+    // something to keep — then strip the bags either way.
     if (app.menu?.isOpen || !unsavedKit()) {
       leaveTunnel();
-      goHome({ keepScene: true });
+      discardKit();
+      goHome();
       return;
     }
     const name = rigNav.current?.name || 'this rig';
     askLeaveSave(name, {
-      onSave: () => saveCurrent().then(() => { leaveTunnel(); goHome({ keepScene: true }); }),
+      onSave: () => saveCurrent().then((row) => {
+        leaveTunnel();
+        discardKit();
+        goHome();
+        notify(`Saved “${row?.name || name}”`);
+      }),
       onLeave: () => { leaveTunnel(); discardKit(); goHome(); },
     });
   };
