@@ -3,10 +3,10 @@
 import * as THREE from 'three';
 import { v3 } from '../../lib.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { boxBulge } from '../deform.js';
+import { boxBulge, deformScale } from '../deform.js';
 import { addPockets, bungeeLattice, daisyChain, drawcordEnd, flapLid, reflectiveStrip, zipperRun } from '../features.js';
 import { seamStrip } from '../hardware.js';
-import { featuresOf, variantOf } from '../identity.js';
+import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
 export function buildPannier(p, brand, main, accent, ctx, side) {
@@ -14,15 +14,41 @@ export function buildPannier(p, brand, main, accent, ctx, side) {
   // panniers hang tall and narrow: biggest listed dimension is the drop
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
+  // soft | semi | rigid, from the model records — see stiffnessOf().
+  const stiff = stiffnessOf(p);
   const dims = [p.mm.len, p.mm.wid, p.mm.hgt].sort((a, b) => b - a);
-  const h = Math.min(dims[0], 520), w = Math.min(dims[1], 440), d = Math.min(dims[2], 260);
-  // The stuffing pushes the face out by `bulgeAmt`; trim placed on the
-  // undeformed half-depth therefore sinks INSIDE the shell — which is why
-  // reflectors, straps and half the brand patch were invisible.
-  const bulgeAmt = Math.min(w, h, d) * vr.range(0.09, 0.14);
+  const h0 = Math.min(dims[0], 520), w0 = Math.min(dims[1], 440), d0 = Math.min(dims[2], 260);
+  // SOLVE BACKWARDS FOR THE BULGE, as framehalf.js does for its width.
+  //
+  // The published figures are the FINISHED bag. This built the box AT them and
+  // then domed every face outward by `bulgeAmt` on top, so every pannier in the
+  // catalogue finished 2 x bulgeAmt over on all three axes. Measured across all
+  // 62 the slot draws: thickness a median +17% over the record, +7% to +18%,
+  // and the critique caught it independently on Tailfin's four at +20% to +28%.
+  //
+  // The dome is `frac * min(w,h,d)`, scaled by deformScale(stiffness) inside
+  // soft() — a rigid shell takes none of it. Since the bulge is driven by the
+  // SMALLEST of the three, and that is what we are solving for, it is circular;
+  // but only linearly, so it closes:
+  //
+  //   b = frac * k * (m - 2b)   =>   b = frac * k * m / (1 + 2 * frac * k)
+  //
+  // where m is the published smallest dimension. Then each axis starts 2b short
+  // and the finished surface lands on the published figure.
+  const bulgeFrac = vr.range(0.09, 0.14);
+  const kDeform = deformScale(stiff);
+  const mPub = Math.min(w0, h0, d0);
+  const bulgeAmt = (bulgeFrac * kDeform * mPub) / (1 + 2 * bulgeFrac * kDeform);
+  const h = Math.max(h0 - 2 * bulgeAmt, 24);
+  const w = Math.max(w0 - 2 * bulgeAmt, 24);
+  const d = Math.max(d0 - 2 * bulgeAmt, 12);
+  // Where the FINISHED skin is, which is now the published half-depth. Trim
+  // placed on the undeformed half-depth sinks inside the shell — which is why
+  // reflectors, straps and half the brand patch used to be invisible.
   const faceZ = d / 2 + bulgeAmt;
   const body = soft(new RoundedBoxGeometry(w, h, d, 8, Math.min(24, d * 0.28)), main, {
     amp: vr.range(2.6, 3.8), freq: vr.range(0.02, 0.028), seed: vr.seed % 947,
+    stiffness: stiff,
     bulge: boxBulge(w / 2, h / 2, d / 2, bulgeAmt),
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.42,
   });
