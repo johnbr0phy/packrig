@@ -437,6 +437,25 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
     grp.add(bk);
   }
 
+  // ---- cage, or plate? --------------------------------------------------
+  // Not every fork bag sits in a cargo cage. Tailfin's Fork Pack clips to a
+  // CNC alloy rail bolted straight to the blade — no cage, no bands round the
+  // body — and drawing it in a cage made it the same object as their Cage Pack,
+  // which is a different product on a different mounting system. The maker's
+  // own FAQ: "Fork Packs use a mini x-clamp mounting system rather than a cage
+  // and straps like the cage packs."
+  //
+  // Decided from what the RECORD says the bag needs, exactly as barroll.js
+  // decides strapped-or-bracket, and never from a brand name. Default is the
+  // cage: 20 of this slot's 29 products say nothing about their hardware and
+  // must keep the object they have. Only a record that names a plate/rail/clamp
+  // mount AND does not name a cage loses it — 2 products today, both Tailfin
+  // Fork Packs, which is exactly the set that is wrong.
+  const attachment = String(p.features?.attachment || '');
+  const CAGE_MOUNT = /\b(cargo[-\s]?cage|anything cage|three[-\s]?pack|cage)\b/i;
+  const PLATE_MOUNT = /\b(x[-\s]?clamp|mount plate|alloy rail|mounting rail|fork pack mount)\b/i;
+  const caged = CAGE_MOUNT.test(attachment) || !PLATE_MOUNT.test(attachment);
+
   // ---- the cargo cage ---------------------------------------------------
   // This bag does not mount to the fork. `mount.attachesTo` is
   // ["cargo_cage", "fork_leg"] and the record is blunt about it: "REQUIRES a
@@ -534,7 +553,35 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
     bar.position.set(xf * cradleFore, cradleY, side * (rimOut - rimIn) / 2);
     cage.add(bar);
   }
-  grp.add(cage);
+  // The plate alternative: a flat rail bolted to the blade's boss line, the bag
+  // clipped to its face. Dimensions off the maker's own mount drawing —
+  // 152.6mm long, 51.6mm wide, standing 26.8mm proud of the fork, 3 x M5 at
+  // 64mm centres. Same noCollide reasoning as the cage: it is SUPPOSED to touch
+  // the blade.
+  if (caged) {
+    grp.add(cage);
+  } else {
+    const rail = new THREE.Group();
+    rail.userData.noCollide = true;
+    const railLen = Math.min(152.6, bodyLen * 0.62);
+    const railY = baseY + bodyLen * 0.46;
+    const back = new THREE.Mesh(new THREE.BoxGeometry(51.6, railLen, 6), cageMat);
+    back.position.set(0, railY, plateZ + side * 3);
+    rail.add(back);
+    // The standoff block between the rail and the bag's inboard face, which is
+    // what holds the pack clear of the blade.
+    const standoff = Math.abs(cageZ - plateZ);
+    const boss = new THREE.Mesh(new THREE.BoxGeometry(34, railLen * 0.72, Math.max(standoff, 6)), cageMat);
+    boss.position.set(0, railY, plateZ + side * (standoff / 2));
+    rail.add(boss);
+    for (const f of [-1, 0, 1]) {
+      const bolt = new THREE.Mesh(new THREE.CylinderGeometry(4.2, 4.2, 7, 10), hwm);
+      bolt.rotation.x = Math.PI / 2;
+      bolt.position.set(0, railY + f * Math.min(64, railLen * 0.42), plateZ + side * 6);
+      rail.add(bolt);
+    }
+    grp.add(rail);
+  }
 
   // ---- cage straps ------------------------------------------------------
   // Two bands, low on the body. dimensions-1 puts them in the bottom third
@@ -555,7 +602,11 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   // centre on a bag whose fabric half-width is 45, which is how a 9cm-wide pack
   // measured 114mm (+27%). They are also the "open C-loop curling in mid-air"
   // the round-2 critic saw — a tail rotated 85° out of the band's own plane.
-  const nStraps = Math.min(feats.compressionStraps ?? 2, 3);
+  // A plate-mounted pack has nothing to strap TO: these bands wrap the CAGE,
+  // and the maker's own spec for the Fork Pack lists only two removable
+  // vertical side compression straps. Drawing cage bands on it was half of what
+  // made it read as the same object as the Cage Pack.
+  const nStraps = caged ? Math.min(feats.compressionStraps ?? 2, 3) : 0;
   // strapAssembly builds its ring in xy and rotation.x = 90° sends its y to z,
   // so `r` is the ACROSS-bike half-span and `ellipse` scales the fore-aft one.
   const bandHalf = Math.max((rimIn + rimOut) / 2, 8);

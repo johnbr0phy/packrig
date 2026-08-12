@@ -20,7 +20,7 @@
  * `hydrate()` completes the redirect half on the way back in.
  *
  * The exported surface is unchanged from the Supabase client this replaces, so
- * `rigstore.js` and `rigsui.js` did not have to move: enabled, user, signedIn,
+ * `rigstore.js` and the account dialogue did not have to move: enabled, user, signedIn,
  * onChange, signUp, signIn, signInWithGoogle, signOut, resetPassword, token,
  * hydrate.
  */
@@ -106,7 +106,7 @@ export function createAuth() {
     get enabled() { return !!auth; },
     get user() { return user; },
     get signedIn() { return !!user; },
-    /** rigsui.js shows this in the account bar. Kept as its own getter because
+    /** ui/account.js shows this. Kept as its own getter because
      *  that file reads `auth.email` directly, and an undefined here degrades
      *  silently to the string "Signed in" rather than erroring. */
     get email() { return user?.email || ''; },

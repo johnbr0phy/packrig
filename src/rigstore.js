@@ -22,7 +22,7 @@
  * whole policy is nine lines.
  *
  * The exported surface is unchanged from the Supabase store this replaces, so
- * `rigsui.js` did not have to move.
+ * the UI did not have to move.
  */
 
 import {
@@ -108,13 +108,29 @@ export function createRigStore(app, auth) {
     };
   };
 
+  /*
+   * How many rigs this person has, cheaply and synchronously.
+   *
+   * The start screen has to decide between saying "Build a rig" and "My rigs"
+   * on its FIRST paint, and `list()` is a network round trip when signed in.
+   * Signed out the local store answers instantly; signed in this starts at the
+   * local count and is corrected by the first `list()`, which the rigs view
+   * runs anyway. A menu row that settles a beat later is a far smaller problem
+   * than a menu row that waits for Firestore before it renders at all.
+   */
+  let known = readLocal().length;
+  const note = (n) => { known = n; };
+
   const api = {
     get remote() { return remote(); },
 
+    /** Last-known number of saved rigs. See `known` above. */
+    get knownCount() { return known; },
+
     /**
-     * Whether a gallery is possible at all. rigsui.js hides every publish and
-     * browse control when this is false, so on a local-only build the app never
-     * offers something it cannot do. Absent, it reads as `undefined` and the
+     * Whether a gallery is possible at all. The rigs view (ui/v2/browse.js)
+     * hides every publish control when this is false, so on a local-only build
+     * the app never offers something it cannot do. Absent, it reads as `undefined` and the
      * gallery quietly disappears with no error — which is how a feature gets
      * built, shipped and never seen.
      */
@@ -123,10 +139,12 @@ export function createRigStore(app, auth) {
     /** Newest first. Shape: { id, name, rig, updated_at, local } */
     async list() {
       if (!remote()) {
-        return readLocal()
+        const rows = readLocal()
           .slice()
           .sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''))
           .map((r) => ({ ...r, local: true }));
+        note(rows.length);
+        return rows;
       }
       // Filter in Firestore, sort here. `where` + `orderBy` on different fields
       // is a composite query, and Firestore refuses it until somebody creates
@@ -136,14 +154,17 @@ export function createRigStore(app, auth) {
       // The gallery below genuinely needs its index; this does not.
       return guarded('load your rigs', async () => {
         const snap = await getDocs(query(rigs(), where('uid', '==', me())));
-        return snap.docs
+        const rows = snap.docs
           .map(row)
           .sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''));
+        note(rows.length);
+        return rows;
       });
     },
 
     /** Save the bike as it stands. */
     async save(name) {
+      note(known + 1);
       const rig = captureRig(app, { name });
       const now = new Date().toISOString();
       if (!remote()) {
@@ -169,6 +190,7 @@ export function createRigStore(app, auth) {
      * deleted, not the one you happen to be looking at.
      */
     async saveRig(name, rig) {
+      note(known + 1);
       const now = new Date().toISOString();
       if (!remote()) {
         const rows = readLocal();
@@ -185,8 +207,13 @@ export function createRigStore(app, auth) {
       });
     },
 
-    async update(id, { name } = {}) {
-      const rig = captureRig(app, { name });
+    /**
+     * Overwrite a saved rig. Captures the live bike unless a rig is handed in —
+     * the rigs view browses by MOUNTING each rig, so there the bike on screen
+     * is the rig itself and "update" has to mean the build you came in with.
+     */
+    async update(id, { name, rig: given } = {}) {
+      const rig = given || captureRig(app, { name });
       const now = new Date().toISOString();
       if (!remote()) {
         const rows = readLocal();
@@ -222,6 +249,7 @@ export function createRigStore(app, auth) {
     },
 
     async remove(id) {
+      note(Math.max(0, known - 1));
       if (!remote()) {
         writeLocal(readLocal().filter((r) => r.id !== id));
         return;

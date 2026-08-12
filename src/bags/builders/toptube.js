@@ -98,11 +98,40 @@ function tint(geo, at) {
  * Returns { at(t), tip, tJ, tF } with t = 0 at the geometry's rear end and 1 at
  * its stem end.
  */
-function topProfile({ len, h, tail, form }) {
+function topProfile({ len, h, tail, form, topLine }) {
   // The extreme rear corner is a rounded cap, not the top of the rake: the
   // drawings bottom out at 0.10-0.28 of full height there. A slab's rear
   // corner is a sharp parallelogram edge, so it runs down almost to the base.
   const tip = form === 'slab' ? 0.06 : Math.min(0.18, tail * 0.4);
+  // THE SECOND FAMILY. Everything below this line — rear rake, chamfer, dead
+  // flat over the front — was measured off five Apidura elevations and is
+  // documented as such in this function's header. It is right for Apidura and
+  // it is not universal: Tailfin publish a CONTINUOUS fall over the whole
+  // length for their top tube packs (115mm to 68mm on the 3L Long), which is
+  // the "teardrop design for an unobstructed ride" the range is sold on.
+  // Drawn with the stepped profile, such a bag is full-depth over its front
+  // two thirds and does all its tapering in the back third — which is a
+  // different object, and it was reported as "no taper at all" even though the
+  // taper ratio was arriving intact.
+  //
+  // Absent means stepped, so the 95 products that have not measured a top line
+  // keep exactly the shape they have.
+  if (topLine === 'continuous') {
+    // The extreme rear corner still caps off — a rolled or welded end is not a
+    // knife edge on any drawing in the slot — but from there the top rises in
+    // ONE straight run to full height at the stem end.
+    const tJ = 0.08;
+    return {
+      tip,
+      tJ,
+      tF: 1,
+      at(t) {
+        if (t <= 0) return tip;
+        if (t < tJ) return tip + (tail - tip) * (t / tJ);
+        return tail + (1 - tail) * ((t - tJ) / (1 - tJ));
+      },
+    };
+  }
   const rakeDeg = form === 'slab' ? 52 : 62;
   const chamDeg = form === 'tapered_wedge' ? 13 : 30;
   let rakeRun = ((tail - tip) * h) / Math.tan(rakeDeg * DEG);
@@ -241,7 +270,7 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   // The measured rear-end height, from the record, with the old guess kept only
   // where the record is silent. BUILDER-BRIEF §1: use the measured value.
   const tail = Math.min(Math.max(geom.taperRatio ?? vr.range(0.5, 0.65), 0.15), 1);
-  const prof = topProfile({ len, h, tail, form: geom.form });
+  const prof = topProfile({ len, h, tail, form: geom.form, topLine: geom.topLine });
   const hFactor = (t) => prof.at(t);
 
   // ---- PILLOW BUDGET ----------------------------------------------------

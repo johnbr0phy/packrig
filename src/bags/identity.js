@@ -90,6 +90,16 @@ export function geomOf(p) {
      */
     belly: Number.isFinite(g.belly) && g.belly > 0 && g.belly < 1 ? g.belly : null,
     /**
+     * How the bag's TOP LINE runs from its mounting end to its far end.
+     * `null` where unmeasured, and null means "the slot's own default", not
+     * "flat" — read the slot's builder for what that default is and why.
+     *
+     * Only toptube reads it today: 'stepped' is the rear-rake / chamfer /
+     * dead-flat-front shape measured off five Apidura elevations, and
+     * 'continuous' is a single fall over the whole length.
+     */
+    topLine: g.topLine === 'continuous' || g.topLine === 'stepped' ? g.topLine : null,
+    /**
      * The NARROW end as a fraction of the wide end, always in (0, 1]. Ratio,
      * never absolute, so it survives a dimension correction underneath it.
      * 1 means no taper — a barrel — which is a real answer, not a missing one.

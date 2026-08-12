@@ -6,19 +6,16 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { boxBulge } from '../deform.js';
 import { addPockets, bungeeLattice, daisyChain, flapLid, reflectiveStrip, zipperRun } from '../features.js';
 import { rollTop, seamStrip } from '../hardware.js';
-import { featuresOf, stiffnessOf, variantOf } from '../identity.js';
+import { featuresOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
 
 export function buildTrunk(p, brand, main, accent) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
-  // soft | semi | rigid, from the model records — see stiffnessOf().
-  const stiff = stiffnessOf(p);
   const w = Math.min(p.mm.len, 500), h = Math.min(p.mm.hgt, 340), d = Math.min(p.mm.wid, 300);
   const body = soft(new RoundedBoxGeometry(w, h, d, 8, Math.min(22, d * 0.26)), main, {
     amp: vr.range(2.4, 3.6), freq: vr.range(0.024, 0.032), seed: vr.seed % 941,
-    stiffness: stiff,
     bulge: boxBulge(w / 2, h / 2, d / 2, Math.min(w, h, d) * vr.range(0.09, 0.14)),
     aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.42,
   });
