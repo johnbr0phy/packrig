@@ -49,7 +49,56 @@ export class BagSystem {
     const side = uiSlot.endsWith('L') ? -1 : 1;
     const mesh = builder(product, brand, main, accent, this.bike, side);
     mesh.name = `bag:${uiSlot}`;
-    this.bike.anchors[slotDef.anchor].add(mesh);
+
+    // A slot with `mountsTo` hangs off another BAG, not off the bike. If no
+    // host is fitted there is nothing to clip to, so the pocket is unfitted
+    // rather than silently strapped to the handlebar — which is what it used
+    // to do, and why it rendered floating in front of the bars attached to
+    // nothing.
+    const host = slotDef.mountsTo && slotDef.mountsTo.map((s) => this.equipped[s]).find(Boolean);
+    if (slotDef.mountsTo && !host) {
+      disposeObject(mesh);
+      this.unfitted[uiSlot] = { brand, product, why: `needs a ${slotDef.mountsTo.join(' or ')} to clip to` };
+      this.updateFixtures();
+      if (!this._batch) this.resolveCollisions();
+      return;
+    }
+    if (host) {
+      // Sit on the host's forward face, centred across it and a little below
+      // its top edge, which is where both makers' straps put it. Measured off
+      // the host's own bounds so it follows whatever bag is actually fitted.
+      //
+      // Everything here is in the HOST'S LOCAL space. Measuring the host with
+      // Box3.setFromObject gives WORLD coordinates, and assigning those to
+      // `mesh.position` — which is local — put the pocket 43 metres down the
+      // road with a bounding box a tenth of a unit across. Bag meshes are
+      // mm-local under an anchor that is not, so the two spaces differ by
+      // three orders of magnitude and the error is silent: the bag equips, the
+      // parent is right, and it is simply not on the bike.
+      host.mesh.updateWorldMatrix(true, true);
+      const inv = new THREE.Matrix4().copy(host.mesh.matrixWorld).invert();
+      const hb = new THREE.Box3();
+      const v = new THREE.Vector3();
+      host.mesh.traverse((o) => {
+        if (!o.isMesh || !o.geometry?.attributes?.position) return;
+        const M = new THREE.Matrix4().multiplyMatrices(inv, o.matrixWorld);
+        const pos = o.geometry.attributes.position;
+        const step = Math.max(1, Math.floor(pos.count / 200));
+        for (let i = 0; i < pos.count; i += step) hb.expandByPoint(v.fromBufferAttribute(pos, i).applyMatrix4(M));
+      });
+      // The pocket is not parented yet, so its own matrixWorld IS its local
+      // matrix and this box is already in the space we are about to place it in.
+      const ps = new THREE.Box3().setFromObject(mesh).getSize(new THREE.Vector3());
+      host.mesh.add(mesh);
+      if (!hb.isEmpty()) {
+        const hs = hb.getSize(new THREE.Vector3());
+        const hc = hb.getCenter(new THREE.Vector3());
+        mesh.position.set(hb.max.x + ps.x / 2, hc.y - hs.y * 0.1, hc.z);
+      }
+      mesh.userData.hostSlot = Object.keys(this.equipped).find((k) => this.equipped[k] === host);
+    } else {
+      this.bike.anchors[slotDef.anchor].add(mesh);
+    }
     this.equipped[uiSlot] = {
       brand, product, mesh, colorwayIndex, colorway: cw,
       basePos: mesh.position.clone(),
@@ -77,6 +126,12 @@ export class BagSystem {
     delete this.unfitted[uiSlot];
     const cur = this.equipped[uiSlot];
     if (!cur) return;
+    // Anything clipped TO this bag goes with it. Otherwise removing a handlebar
+    // roll disposes the pocket's parent out from under it and leaves a pocket
+    // hanging in mid-air, which is the same bug this slot exists to fix.
+    for (const [k, def] of Object.entries(SLOTS)) {
+      if (def.mountsTo && def.mountsTo.includes(uiSlot) && this.equipped[k]) this.remove(k);
+    }
     cur.mesh.parent?.remove(cur.mesh);
     disposeObject(cur.mesh);
     delete this.equipped[uiSlot];
@@ -209,7 +264,13 @@ export class BagSystem {
     bike.group.updateMatrixWorld(true);
     const toFrame = new THREE.Matrix4().copy(F.matrixWorld).invert();
 
-    this.unfitted = {};
+    // Keep entries the resolver did not put there. A pocket with no handlebar
+    // bag to clip to is unfitted for a reason the resolver knows nothing about,
+    // and wiping the map here would drop the explanation the UI shows.
+    const keep = Object.fromEntries(
+      Object.entries(this.unfitted).filter(([, v]) => v && v.why),
+    );
+    this.unfitted = keep;
     const slots = Object.keys(this.equipped);
     for (const s of slots) {
       const rec = this.equipped[s];

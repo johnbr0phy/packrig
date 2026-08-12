@@ -5,14 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="data:," />
 <title>Packrig — Bikepacking Bag Configurator</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- DESIGN-SYSTEM.md §12 step 1: tokens and the self-hosted font come first,
+     ui.css consumes them, and the new shell overrides last. Inter is local, so
+     there is no font CDN to preconnect to. -->
+<link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="src/ui/tokens.css">
 <link rel="stylesheet" href="src/ui.css">
+<link rel="stylesheet" href="src/ui/sheet.css">
 <link rel="stylesheet" href="src/aero/aero.css">
+<!-- Last: theme.css re-skins everything above it. Colour, border, radius and
+     shadow only — no layout. -->
+<link rel="stylesheet" href="src/ui/theme.css">
+<!-- The v2 menu layer sits above theme.css: it is a self-contained dark
+     surface for the start screen, loadouts and gallery, and it must win over
+     the light re-skin for everything scoped under .pr -->
+<link rel="stylesheet" href="src/ui/v2/menu.css">
+<!-- ...and the builder on the same system, so the two layers stop being two
+     brands. Colour, border, radius and the docking geometry only. -->
+<link rel="stylesheet" href="src/ui/v2/builder.css">
+<!-- firebase is bundled into vendor/ by tools/build-vendor.mjs — see that file
+     for why it cannot be mapped straight at node_modules. -->
 <script type="importmap">
 {
   "imports": {
     "three": "./node_modules/three/build/three.module.js",
-    "three/addons/": "./node_modules/three/examples/jsm/"
+    "three/addons/": "./node_modules/three/examples/jsm/",
+    "firebase/app": "./vendor/firebase-app.js",
+    "firebase/auth": "./vendor/firebase-auth.js",
+    "firebase/firestore": "./vendor/firebase-firestore.js"
   }
 }
 </script>

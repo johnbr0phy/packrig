@@ -150,6 +150,21 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   const body = el('div', 'aero-body');
   root.append(body);
 
+  // ---- 0. the grade, up top ----------------------------------------------
+  // This is the headline: every other figure here moves when you change speed,
+  // and the letter does not — `grade()` normalises to a reference speed, so it
+  // describes the RIG. That makes it the one line worth reading first.
+  const gradeSec = el('section', 'aero-sec aero-grade');
+  const gradeBadge = el('div', 'grade-badge');
+  const gradeLetter = elt('span', 'grade-letter', '—');
+  gradeBadge.append(gradeLetter);
+  const gradeCopy = el('div', 'grade-copy');
+  const gradeName = elt('div', 'grade-name', '');
+  const gradeBlurb = elt('div', 'grade-blurb', '');
+  gradeCopy.append(gradeName, gradeBlurb);
+  gradeSec.append(gradeBadge, gradeCopy);
+  body.append(gradeSec);
+
   // ---- 1. CdA headline -------------------------------------------------
   const cdaSec = el('section', 'aero-sec aero-cda');
   const cdaRow = el('div', 'cda-row');
@@ -186,7 +201,11 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   speedSlider.step = '1';
   speedSlider.value = '28';
   speedSlider.setAttribute('aria-label', 'Speed, kilometres per hour');
-  const speedReadout = elt('span', 'slider-readout speed-readout', '28 km/h');
+  // The sentence above the slider already reads "180 W to hold 28 km/h", so a
+  // live echo of the same figure beside the track is the same number twice on
+  // one line of sight. The track's own label is the range it covers, which is
+  // the thing the sentence does not say.
+  const speedReadout = elt('span', 'slider-readout speed-readout', '');
   speedSliderRow.append(speedSlider, speedReadout);
   wattsSec.append(wattsRow, speedSliderRow);
   body.append(wattsSec);
@@ -196,7 +215,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   const onSpeedUp = () => { speedDragging = false; };
   const onSpeedInput = () => {
     const kph = Number(speedSlider.value);
-    speedReadout.textContent = `${kph} km/h`;
+    speedReadout.textContent = '';
     wattsSpeedEcho.textContent = String(kph);
     onSpeedChange?.(kph);
   };
@@ -206,7 +225,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
 
   // ---- 3. delta vs. bare bike --------------------------------------------
   const deltaSec = el('section', 'aero-sec aero-delta');
-  deltaSec.append(elt('h3', 'aero-sec-label', 'Cost of the kit'));
+  deltaSec.append(elt('h3', 'aero-sec-label', 'Cost of the bags'));
   const deltaGrid = el('div', 'delta-grid');
   // label flips with the value's sign — "less power" reads as self-contradictory
   // sitting under a positive number, and after the occlusion fix lands a lone
@@ -292,7 +311,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     const wakeFrac = frontal > 0 ? (part.wakeArea || 0) / frontal : 0;
     const nearZero = Math.abs(part.cda) < 0.0005;
     if (wakeFrac < 0.9 && !nearZero) return null;
-    return 'Sheltered by the kit ahead of it on the bike — a real result, not a bug.';
+    return 'Sheltered by the bag ahead of it on the rig — a real result, not a bug.';
   }
 
   function renderWaterfall(result, ride) {
@@ -361,17 +380,6 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     }
   }
 
-  // ---- 5. grade -------------------------------------------------------
-  const gradeSec = el('section', 'aero-sec aero-grade');
-  const gradeBadge = el('div', 'grade-badge');
-  const gradeLetter = elt('span', 'grade-letter', '—');
-  gradeBadge.append(gradeLetter);
-  const gradeCopy = el('div', 'grade-copy');
-  const gradeName = elt('div', 'grade-name', '');
-  const gradeBlurb = elt('div', 'grade-blurb', '');
-  gradeCopy.append(gradeName, gradeBlurb);
-  gradeSec.append(gradeBadge, gradeCopy);
-  body.append(gradeSec);
 
   // ---- 6. yaw -----------------------------------------------------------
   const yawSec = el('section', 'aero-sec aero-yaw');
@@ -430,9 +438,21 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   body.append(assum);
 
   // ---- 8. exit ------------------------------------------------------------
+  /*
+   * One way out, not two.
+   *
+   * The panel carried a bare ✕ at the top AND a full-width "Exit wind tunnel"
+   * button at the bottom, plus the toolbar toggle that opened it — three
+   * exits for one state, and the full-width one was the largest control in a
+   * panel whose subject is a number. The ✕ is labelled now (builder.css gives
+   * `.sheet-close` and this one the menu's grammar), so the button has nothing
+   * left to add.
+   */
   const foot = el('div', 'aero-foot');
   const exitBtn = elt('button', 'aero-exit-btn', 'Exit wind tunnel');
   exitBtn.onclick = () => onExit?.();
+  exitBtn.hidden = true;
+  foot.hidden = true;
   foot.append(exitBtn);
   root.append(foot);
 
@@ -447,7 +467,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     if (!speedDragging && document.activeElement !== speedSlider) {
       speedSlider.value = String(ride.speedKph);
     }
-    speedReadout.textContent = `${Math.round(ride.speedKph)} km/h`;
+    speedReadout.textContent = '';
     wattsSpeedEcho.textContent = String(Math.round(ride.speedKph));
 
     tweenText(dW.value, comparison.addedW, signedFmt(dW, 0));

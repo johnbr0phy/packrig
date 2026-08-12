@@ -1,0 +1,481 @@
+/* ===========================================================================
+   THEME — light, bordered, quiet.
+
+   What this replaces and why. The chrome was dark translucent glass with 20px
+   radii and pill buttons everywhere. Over a photographic 3D scene that reads as
+   heavy and, at the corners, cheap: a 999px pill next to a 20px panel next to a
+   28px dock is three different ideas about roundness in one screen, and glass
+   over a bright sky is a smear rather than a surface.
+
+   The model here is Stripe and Apple, and what they actually share is not a
+   colour — it is RESTRAINT:
+
+     · One surface colour. White. Not four elevations of tinted glass.
+     · A hairline, not a shadow, does the separating. Shadows are for lift, and
+       lift is rare.
+     · Small radii, used consistently. 10px on a panel, 6px on a control. A pill
+       is reserved for things that are actually pill-shaped, which here is
+       nothing.
+     · Type carries hierarchy — size and weight — instead of five tracked-caps
+       labels shouting at one volume.
+     · Exactly one accent, on exactly the primary action.
+
+   Loaded LAST, so it re-skins without touching layout: everything below is
+   colour, border, radius and shadow. If a rule here changes a position or a
+   size, it is in the wrong file.
+
+   ON LEGIBILITY OVER A LIVE SCENE. White chrome over a bright desert sky needs
+   the hairline to survive; a 1px #E3E8EE line on white does not read against a
+   pale horizon. So surfaces are opaque white with a slightly darker border than
+   a print design would use, plus a soft shadow — which is exactly how Stripe
+   floats a card over a photograph.
+   =========================================================================== */
+
+:root {
+  /* ---- ink ---------------------------------------------------------------
+     Warm stone, not cool slate.
+
+     These were #0F172A / #475569 / #64748B — Tailwind's slate ramp, which is a
+     blue-grey. The menu layer above this one is bone (#F4F1EC) over near-black
+     on a scene of red-brown earth and tan sidewalls, and a blue-grey builder
+     under a warm menu reads as two different studios' work rather than as one
+     product in two lights. Same values, warm hue: contrast against white is
+     unchanged (ink-3 is 4.9:1, ink-4 3.7:1) and the temperature now matches
+     the layer above and the scene behind.
+
+     Near-black rather than black: #1C1917 on white is the same contrast as
+     black and considerably less severe. */
+  --ink-1: #1C1917;
+  --ink-2: #57534E;
+  --ink-3: #78716C;
+  /* The faintest ink still has to be readable; if it does not need to be read,
+     it should not be on the screen. */
+  --ink-4: #8A8178;
+  --ink-faint: #8A8178;
+  --ink: #1C1917;
+  --ink-dim: #57534E;
+  --ink-on-accent: #FFFFFF;
+
+  /* ---- accent ------------------------------------------------------------
+     One ember, and it does exactly one job: mark what is CURRENTLY SELECTED.
+     It is never a button fill.
+
+     It was a blue (#0B5FFF), on the argument that a cool accent never competes
+     with a warm scene. The argument was sound and the outcome was not: the
+     menu layer above this one marks state in ember (#FF6A2B), so the product
+     shipped two accents — an orange underline in the menu and a blue button
+     forty pixels below it after you pressed Build. Two accents in one app is
+     two apps.
+
+     So the accent unifies on ember, tuned per surface for contrast rather than
+     copied by hex: #FF6A2B is 2.6:1 on white and unusable here, #C2410C is
+     4.9:1 and is the same colour at the value this surface needs. The PRIMARY
+     ACTION stops being the accent entirely and becomes maximum contrast
+     against its own surface — near-black here, bone in the menu — which is the
+     same rule stated once and applied twice. */
+  --accent: #C2410C;
+  --accent-hi: #EA580C;
+  --accent-lo: #9A3412;
+  --accent-soft: rgba(234, 88, 12, 0.10);
+  --accent-ring: rgba(234, 88, 12, 0.32);
+  --ok: #0F9D58;
+  --warn: #B45309;
+  --bad: #DC2626;
+
+  /* ---- surfaces ----------------------------------------------------------
+     One white, one off-white, one hairline. The four glass elevations collapse
+     to two: a surface, and a surface that is lifted. */
+  --surface: #FFFFFF;
+  --surface-2: #FAF8F5;
+  --surface-3: #F3F0EB;
+  --line: #E4DFD7;
+  --line-soft: #EFEBE4;
+
+  --e1-bg: var(--surface);
+  --e1-blur: none;
+  --e1-brd: var(--line);
+  --e1-shd: 0 1px 2px rgba(28, 25, 23, 0.06);
+
+  --e2-bg: var(--surface);
+  --e2-blur: none;
+  --e2-brd: var(--line);
+  --e2-shd: 0 1px 2px rgba(28, 25, 23, 0.05), 0 8px 24px rgba(28, 25, 23, 0.10);
+
+  --e3-bg: var(--surface);
+  --e3-blur: none;
+  --e3-brd: var(--line);
+  --e3-shd: 0 1px 2px rgba(28, 25, 23, 0.05), 0 16px 40px rgba(28, 25, 23, 0.13);
+
+  --e4-bg: var(--surface);
+  --e4-blur: none;
+  --e4-brd: var(--line);
+  --e4-shd: 0 12px 32px rgba(28, 25, 23, 0.16);
+
+  --glass-bg: var(--surface);
+
+  --fill-1: #F3F0EB;
+  --fill-2: #EBE6DE;
+  --fill-3: #E4DFD7;
+  --hairline: var(--line-soft);
+
+  /* ---- radius ------------------------------------------------------------
+     Three steps, shared with the menu layer: 4 on anything you press, 8 on a
+     card, 10 on a panel. It was 5/6/8/10/12 here against 4 in the menu, which
+     is five ideas about roundness across one product — the exact criticism
+     this file opens by making of the theme it replaced. Pills are gone. */
+  --radius: 8px;
+  --r-panel: 10px;
+  --r-dock: 10px;
+  --r-card: 8px;
+  --r-control: 4px;
+  --r-chip: 4px;
+  --r-swatch: 4px;
+  --r-pill: 4px;
+
+  --plate: #FFFFFF;
+  --plate-edge: inset 0 0 0 1px rgba(28, 25, 23, 0.08);
+  --scrim-k: 0;
+
+  /* ---- numerals ----------------------------------------------------------
+     The menu layer sets every litre, count and index in the system mono and
+     calls it the difference between a spec sheet and a landing page. It is —
+     but only if the app agrees with itself, and the builder was setting
+     0.459 m², 180 W and 30 L in the same sans as its own prose. `--font-num`
+     already exists in tokens.css and already routes every figure in the app;
+     it simply pointed at the body face. Zero bytes, no new asset. */
+  --font-num: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/* Everything that is a READOUT rather than a sentence — and the distinction is
+   the whole rule. "55 bags · 24 brands" is a sentence with figures in it and
+   stays in the body face; "0.459" is a measurement and does not. Tabular, so a
+   column of litres reads down and a changing wattage does not jitter. */
+/* `.panel-count` was "(10)" — a parenthesised figure inside a tracked-caps
+   label, which is spreadsheet grammar sitting an inch from the wind tunnel's
+   written prose. It is a number, so it is set as one: a mono figure at reading
+   ink, with a middot separating it from its label in ui.css. */
+.kit-total, .bag-liters, .peek-total, .panel-count, .rn-count,
+.cda-value, .watts-value, .delta-value, .peek-cost-value,
+.card .liters, .bs-spec-v {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums slashed-zero;
+  letter-spacing: 0;
+}
+
+/* ---- the surfaces themselves --------------------------------------------- */
+.glass, .panel, .topbar, .sheet, .viewtools, .home-card, .gal-bar, .gal-top, .toast,
+.cat-pop, .picker {
+  background: var(--surface);
+  color: var(--ink-1);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+.panel {
+  border: 1px solid var(--line);
+  border-radius: var(--r-panel);
+  box-shadow: var(--e2-shd);
+}
+.sheet {
+  border: 1px solid var(--line);
+  border-radius: var(--r-panel);
+  box-shadow: var(--e3-shd);
+}
+.topbar {
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+  border-radius: 0;
+}
+/* The scrim well existed to keep white text legible over a bright sky. The
+   text is dark on an opaque surface now, so it has nothing left to do. */
+.scrim-well { display: none !important; }
+.top-scrim { display: none; }
+
+/* ---- type ---------------------------------------------------------------- */
+.wordmark h1 { color: var(--ink-1); letter-spacing: 0.06em; font-weight: 700; }
+.nav-sec-title, .rn-title:disabled, .gal-title, .cat-count, .kit-label,
+.group-label, .bottle-group .lbl, .bs-label, .bs-brand, .card .brand, .panel-count {
+  color: var(--ink-3);
+}
+.nav-sec + .nav-sec { border-top: 1px solid var(--line-soft); }
+.rn-name, .bag-model, .bs-name, .card .name, .gal-name, .sheet-title, .home-mark,
+.kit-total, .bag-liters, .bs-spec-v, .rn-title { color: var(--ink-1); }
+.rn-meta, .bag-meta, .bs-sub, .bs-spec-k, .gal-meta, .rn-empty, .cat-opt-n,
+.home-sub, .home-note, .card .meta { color: var(--ink-2); }
+.bag-meta .m, .bag-size { color: var(--ink-3); }
+
+/* ---- controls ------------------------------------------------------------
+   Two kinds. A primary, which is the accent and appears once per surface, and
+   everything else, which is a white button with a hairline. */
+.save-btn, .bs-btn.is-primary, .rig-save-btn, .btn.primary {
+  background: var(--ink-1); color: #fff; border: 1px solid transparent;
+  border-radius: var(--r-control); box-shadow: 0 1px 2px rgba(28, 25, 23, 0.10);
+  font-weight: 600;
+}
+.save-btn:hover, .bs-btn.is-primary:hover, .rig-save-btn:hover,
+.btn.primary:hover {
+  background: #33302C; filter: none;
+}
+.save-btn.is-done {
+  background: var(--surface); color: var(--ink-2);
+  border-color: var(--line); box-shadow: none;
+}
+
+.acct-btn, .home-up, .btn, .btn.quiet, .btn.ghost, .add-bag, .share-kit, .rn-new,
+.home-btn, .gal-back, .cat-chip, .cat-relax, .bs-btn, .tool-btn, .sheet-close,
+.gal-arrow, .rigs-btn, .unfit-rm, .size-chip, .seg-btn {
+  background: var(--surface);
+  color: var(--ink-1);
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  box-shadow: none;
+}
+.acct-btn:hover, .home-up:hover, .btn:hover, .add-bag:hover, .share-kit:hover,
+.rn-new:hover, .home-btn:hover, .gal-back:hover, .cat-chip:hover, .cat-relax:hover,
+.bs-btn:hover, .tool-btn:hover, .sheet-close:hover, .gal-arrow:hover, .size-chip:hover {
+  background: var(--surface-3);
+  color: var(--ink-1);
+  border-color: var(--line);
+}
+.tool-btn { border-color: transparent; }
+.tool-btn.on, .tool-btn.on:hover { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+.rn-new { border-style: dashed; color: var(--ink-2); }
+.cat-chip.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-lo); }
+.bs-btn.is-bad { color: var(--bad); }
+.bs-btn.is-bad:hover { background: #FEF2F2; border-color: #FCA5A5; }
+.btn.ghost, .btn.ghost:hover { color: var(--ink-2); }
+.btn.ghost.confirm { color: var(--bad); border-color: #FCA5A5; background: #FEF2F2; }
+.cat-clear, .rig-link, .toast-act, .crumb:hover { color: var(--accent); }
+
+/* ---- rows and cards ------------------------------------------------------ */
+.bag-card, .rn-row, .card, .rig-card, .mount-btn, .brand-row, .cat-opt, .rn-item {
+  border-radius: var(--r-card);
+}
+.bag-card:hover, .rn-row:hover, .cat-opt:hover, .mount-btn:hover, .brand-row:hover {
+  background: var(--surface-3);
+}
+.bag-card.sel { background: var(--accent-soft); box-shadow: inset 2px 0 0 var(--accent); }
+.card { border: 1px solid var(--line); background: var(--surface); }
+.card:hover { border-color: var(--accent); background: var(--surface); box-shadow: var(--e1-shd); }
+.card.on { border-color: var(--accent); background: var(--accent-soft); }
+.bag-sw, .card-thumb, .rn-stack img { background: var(--surface-3); }
+.rn-stack img { box-shadow: 0 0 0 2px var(--surface); }
+.bs-hero { background: var(--surface-3); box-shadow: inset 0 0 0 1px var(--line-soft); }
+.bs-spec { border-top-color: var(--line-soft); }
+.bs-foot { background: var(--surface); border-top-color: var(--line); }
+.bs-foot::before { background: linear-gradient(transparent, var(--surface)); }
+.bs-hero-tag { background: rgba(28, 25, 23, 0.72); color: #fff; }
+
+/* ---- inputs -------------------------------------------------------------- */
+.cat-q, .rn-rename, .rig-input, input[type='search'], input[type='text'],
+input[type='email'], input[type='password'] {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-control);
+  color: var(--ink-1);
+}
+.cat-q::placeholder, .rn-rename::placeholder, input::placeholder { color: var(--ink-4); }
+.cat-q:focus, .rn-rename:focus, input:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+  background: var(--surface);
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---- swatches ------------------------------------------------------------ */
+.paint { box-shadow: inset 0 0 0 1px rgba(28, 25, 23, 0.16), 0 1px 2px rgba(28, 25, 23, 0.12); }
+.bidon { box-shadow: inset 0 0 0 1px rgba(28, 25, 23, 0.16); }
+.paint.on, .bidon.on, .bs-way.on {
+  box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent);
+}
+.bs-way { box-shadow: inset 0 0 0 1px rgba(28, 25, 23, 0.18); }
+.bs-way:hover { box-shadow: inset 0 0 0 1px rgba(28, 25, 23, 0.18), 0 0 0 3px var(--fill-2); }
+
+/* ---- the root menu, the gallery, the toast ------------------------------- */
+.home { background: rgba(248, 250, 252, 0.55); }
+.home-card { border: 1px solid var(--line); border-radius: var(--r-panel); box-shadow: var(--e3-shd); }
+.gal-top { background: linear-gradient(var(--surface), rgba(255, 255, 255, 0)); }
+.gal-bar { border: 1px solid var(--line); border-radius: var(--r-panel); box-shadow: var(--e2-shd); }
+.gal-arrow { border-radius: var(--r-control); box-shadow: var(--e1-shd); }
+.gal-dot { background: var(--ink-4); }
+.gal-dot.on { background: var(--ink-1); }
+.gal-empty { color: var(--ink-2); }
+.toast {
+  border: 1px solid var(--line); border-radius: var(--r-control);
+  box-shadow: var(--e2-shd); color: var(--ink-1);
+}
+.hint {
+  background: var(--surface); color: var(--ink-2);
+  border: 1px solid var(--line); border-radius: var(--r-control);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+.cat-pop { border: 1px solid var(--line); border-radius: var(--r-card); box-shadow: var(--e4-shd); }
+.cat-facets { border-bottom: none; }
+
+/* ---- the wind tunnel ----------------------------------------------------- */
+.aero-panel, .aero-sec, .aero-peek {
+  background: var(--surface); color: var(--ink-1);
+  border-color: var(--line);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+.aero-sec + .aero-sec { border-top: 1px solid var(--line-soft); }
+/* The grade letter keeps the one tinted mark; the WORD beside it does not.
+   "Sail" in ember was the loudest text on the panel, and a verdict is not a
+   selected state — the accent's only job in this product. */
+.grade-badge { background: var(--accent-soft); color: var(--accent); }
+.grade-name { color: var(--ink-1); }
+.grade-blurb, .aero-note, .aero-cap { color: var(--ink-2); }
+
+/* ---- anything that was white text or a white icon ------------------------
+   The dark theme wrote a lot of `#fff` and `rgba(255,255,255,…)` directly.
+   On white those are invisible, and an invisible back arrow is worse than no
+   back arrow — the control is there, it takes the tap, and nothing appears to
+   happen. Swept here rather than edited in place, so the theme stays the only
+   file that decides colour. */
+.rn-back, .rn-del, .sheet-close, .gal-arrow, .gal-back, .tool-btn, .pk-back,
+.pk-close, .crumb, .bag-act, .sheet-chevron, .sheet-add, .toast-txt,
+.gal-count, .gal-title, .home-btn, .rn-title, .cat-opt, .cat-chip,
+.bs-btn, .btn, .add-bag, .share-kit, .rn-new, .acct-btn, .home-up, .mount-btn,
+.brand-row, .bag-model, .rig-link, .env-label, .seg-btn, .size-chip {
+  color: var(--ink-1);
+}
+.rn-back svg, .rn-del svg, .sheet-close svg, .gal-arrow svg, .tool-btn svg { color: inherit; }
+.rn-back, .rn-del, .sheet-chevron, .pk-back, .pk-close, .crumb { color: var(--ink-3); }
+.rn-back:hover, .rn-del:hover, .sheet-close:hover, .pk-close:hover { color: var(--ink-1); }
+.rn-del:hover { background: #FEF2F2; color: var(--bad); }
+.toast-act, .cat-clear, .rig-link { color: var(--accent); }
+.save-btn, .bs-btn.is-primary, .rig-save-btn, .btn.primary { color: #fff; }
+.bs-hero-tag { color: #fff; }
+.acct-dot { box-shadow: inset 0 0 0 1.5px var(--ink-4); }
+.acct-btn.is-in .acct-dot { background: var(--ok); box-shadow: none; }
+.plus, .bolt, .ic { color: inherit; }
+
+/* The one place white-on-dark stays: an image plate is white by definition, and
+   the label over it has to sit on the image. */
+.card-thumb, .bs-hero { background: var(--surface); }
+
+@media (max-width: 560px) {
+  /* The phone sheet's handle band was still painted with the dark theme's
+     gradient — a black strip across the top of a white sheet. */
+  #ui-root .panel-head {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  #ui-root .panel-head::before { background: var(--line); }
+}
+
+/* ---- the account sheet ---------------------------------------------------
+   `rigs.css` predates all of this and writes white text and pale-on-pale
+   states directly. On a white surface that is not "a bit off" — it is a panel
+   of invisible controls: rig names, dates, the name field, the "Signed in."
+   confirmation and every Load button all rendered white on white, leaving a
+   column of ghost outlines and two words. Swept here with the rest. */
+.rig-meta, .rig-acct-txt, .rig-empty, .rig-fineprint, .rig-or, .rig-alt { color: var(--ink-2); }
+.rig-account { border-color: var(--line-soft); }
+.rig-card { border: 1px solid var(--line); border-radius: var(--r-card); background: var(--surface); }
+.rig-card:hover { background: var(--surface-3); }
+.rig-input, .rig-field input {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-control); color: var(--ink-1);
+}
+.rig-saverow input { color: var(--ink-1); }
+
+/* Buttons in here were tinted fills with tinted text — legible on black, a
+   wash on white. Same two kinds as everywhere else: one primary, everything
+   else a white button with a hairline. */
+.rig-act, .rig-save-btn {
+  background: var(--surface); color: var(--ink-1);
+  border: 1px solid var(--line); border-radius: var(--r-control);
+}
+.rig-act:hover, .rig-save-btn:hover { background: var(--surface-3); }
+.rig-act.is-primary, .rig-save-btn {
+  background: var(--ink-1); color: #fff; border-color: transparent;
+}
+.rig-act.is-primary:hover, .rig-save-btn:hover { background: #33302C; color: #fff; }
+.rig-act.rm, .rig-act.is-bad { color: var(--bad); background: var(--surface); }
+.rig-act.rm:hover { background: #FEF2F2; border-color: #FCA5A5; }
+.rig-act.on, .rig-act.is-on {
+  background: var(--accent-soft); color: var(--accent-lo); border-color: var(--accent);
+}
+
+/* A notice has to be readable, which means dark text on a tint — not tinted
+   text on the same tint. */
+.rig-notice { border-radius: var(--r-control); }
+.rig-notice.is-ok { background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; }
+.rig-notice.is-bad { background: #FEF2F2; border: 1px solid #FCA5A5; color: #991B1B; }
+/* The one remaining low-contrast line: the subtitle under a sheet title. */
+.pk-title p { color: var(--ink-2); }
+
+/* Four more that were still writing white: the "·" separator between a brand
+   and its mount, the rig count beside "Your rigs", and the gallery's own top
+   row — which sits on a gradient to transparent, so it needs a colour of its
+   own rather than inheriting one. */
+.bag-meta .sep, .rn-count, .crumb-sep { color: var(--ink-4); }
+.gal-title { color: var(--ink-3); }
+.gal-count, .gal-back { color: var(--ink-2); }
+.gal-top { background: linear-gradient(var(--surface) 40%, rgba(255,255,255,0)); }
+
+/* The bag sheet's own leftovers: the colourway name, the verified tag and the
+   feature list were all still white. */
+.bs-label-v, .bs-feats li, .bs-spec-v { color: var(--ink-1); }
+.bs-feats li { color: var(--ink-2); }
+.bs-feats li::before { background: var(--ink-4); }
+.bs-spec-v.is-ok { color: #047857; }
+.bs-spec-v.is-warn { color: var(--warn); }
+.card-unfit { color: var(--warn); }
+.gal-count { color: var(--ink-3); }
+
+
+/* ---- the sweep, finished --------------------------------------------------
+   The sweep above caught most of the dark theme's hard-coded whites and missed
+   these. Two of the misses were not cosmetic:
+
+   · `.empty-state` is the ONLY content in the kit panel before you add a bag,
+     and it was white on white — so a first-time visitor's first screen after
+     pressing Build was a large empty rectangle with no words in it. That is a
+     considerable part of what "the site feels cheap" was describing.
+
+   · The whole wind-tunnel readout was white on white. CdA, the watts figure,
+     the delta columns, the grade letter and the peek cost all rendered
+     invisible, so the panel showed its labels and its units with no numbers
+     between them — a feature that looks broken rather than absent.
+
+   Found by diffing every `color:` in ui.css / sheet.css / rigs.css /
+   aero.css against the selectors this file sets a colour on. */
+.empty-state { color: var(--ink-2); }
+.empty-state span { color: var(--ink-3); }
+.panel-title, .peek-total, .crumb.cur, .br-go, .bs-nolink { color: var(--ink-3); }
+.mb-name, .br-name { color: var(--ink-1); }
+.bag-act.buy { color: var(--ink-3); }
+.bag-act:hover, .bag-act.rm:hover, .cat-opt:hover, .rig-act:hover { color: var(--ink-1); }
+.env-chip.on { color: var(--ink-1); }
+.rigs-btn:hover { color: var(--ink-1); }
+.rig-name::placeholder, .rig-input::placeholder { color: var(--ink-4); }
+.rig-act.is-bad[data-armed='1'] { color: #fff; background: var(--bad); border-color: transparent; }
+#ui-root .panel.collapsed .peek-total { color: var(--ink-1); }
+
+/* The wind tunnel's numbers. These are the readout — the reason the panel is
+   open — so they take the strongest ink, and the units beside them do not. */
+.aero-title { color: var(--ink-3); }
+.cda-value, .watts-value, .delta-value, .peek-cost-value { color: var(--ink-1); }
+.grade-name { color: var(--accent); }
+
+
+/* ---- the catalogue grid ---------------------------------------------------
+   Vendor photography arrives in three incompatible treatments — cut-outs on
+   white, full-bleed lifestyle shots, and warm studio backgrounds — and putting
+   them straight into a grid makes the grid look like a scrape rather than a
+   catalogue. We cannot reshoot anyone's product photography, but we can give
+   every one of them the same stage: a fixed plate, the image CONTAINED inside
+   it with air around it, and the plate itself a surface rather than white, so
+   a cut-out and a lifestyle shot occupy the same rectangle. */
+.card-thumb, .bag-sw.photo {
+  background: var(--surface-2);
+  box-shadow: inset 0 0 0 1px var(--line-soft);
+}
+.card-thumb { aspect-ratio: 4 / 3; padding: 10px; }
+.card-thumb img { width: 100%; height: 100%; object-fit: contain; }
+
+
+/* The catalogue grid's litre figures are what you compare across a row, and a
+   one-line product name next to a two-line one put them at different heights.
+   Two lines are reserved whether or not the second is used. */
+.card .name { min-height: 2.6em; }

@@ -68,6 +68,41 @@ FILES=(
   tools/build-pages.mjs
 )
 
+# ---------------------------------------------------------------------------
+# ANYTHING INSIDE THE BUNDLE MUST BE PUBLISHED WITH IT.
+#
+# The list above is hand-written on purpose: this checkout is shared and the
+# branch carries a lot of unrelated work, so a deploy should name what it
+# publishes. But `tools/build-pages.mjs` bundles the WORKING TREE, and a
+# hand-written list cannot keep up with a file another session touches — which
+# is exactly what happened. Three bag builders, then five more files, were
+# inside every docs/packrig.js published from here while their sources sat
+# unpublished, and origin/main could not rebuild its own deploy.
+#
+# So the bundled set is DERIVED rather than remembered: esbuild is asked which
+# sources it actually reached, and every one that differs from origin/main is
+# added. That is not sweeping the tree — it is the minimum for a deploy anyone
+# can reproduce. Everything it adds is printed, so it is never silent.
+echo "· resolving what the bundle actually contains"
+npx --no-install esbuild src/main.js --bundle --format=esm --target=es2022 \
+  --metafile=/tmp/packrig-meta.json --outfile=/dev/null >/dev/null 2>&1
+BUNDLED=$(node -e '
+  const m = require("/tmp/packrig-meta.json");
+  console.log(Object.keys(m.inputs).filter((f) => f.startsWith("src/")).sort().join("\n"));
+')
+EXTRA=()
+for f in $BUNDLED; do
+  case " ${FILES[*]} " in *" $f "*) continue;; esac
+  if ! git -C "$ROOT" show "origin/main:$f" 2>/dev/null | cmp -s - "$ROOT/$f"; then
+    EXTRA+=("$f")
+  fi
+done
+if [ ${#EXTRA[@]} -gt 0 ]; then
+  echo "   bundled sources that differ from origin/main and are not in the list above:"
+  for f in "${EXTRA[@]}"; do echo "     + $f"; done
+  FILES+=("${EXTRA[@]}")
+fi
+
 # A deploy whose bundle cannot be rebuilt from the sources it ships beside is a
 # deploy nobody can reproduce. Every file esbuild reaches through src/main.js
 # and that this branch has modified must be in the list above; three were not —

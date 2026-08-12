@@ -12,10 +12,20 @@ import { BagSystem, SLOTS } from './bags.js';
 import { loadCatalog } from './catalog.js';
 import { initUI } from './ui.js';
 import { initFocus } from './focus.js';
+import { createAuth } from './auth.js';
+import { createRigStore } from './rigstore.js';
+import { rigFromParams, applyRig } from './rig.js';
 import { applyRendererProfile, applyViewOffset, fitToBox, measureProfile } from './mobile.js';
+import { initScrim } from './ui/scrim.js';
+import { initSurfaces } from './ui/surfaces.js';
+import { initSheets } from './ui/sheet.js';
 
 const params = new URLSearchParams(location.search);
 const SHOT_MODE = params.has('shot');
+// `?review=1` embeds the scene in the eval harness: no app chrome, but live
+// orbit controls and a postMessage API for swapping the bag and hiding the
+// bicycle. See src/review.js.
+const REVIEW_MODE = params.has('review');
 
 const canvas = document.getElementById('scene');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: SHOT_MODE });
@@ -104,6 +114,9 @@ const app = {
     app.state.env = name;
     envs.set(name);
     app.ui?.sync();
+    // A new HDRI changes the substrate under every panel. Re-read now rather
+    // than waiting out the 500ms move throttle (§3.3).
+    app.scrim?.invalidate();
   },
   setPaint(name) {
     app.state.paint = name;
@@ -122,6 +135,10 @@ const app = {
 window.app = app;
 window.__THREE = THREE;   // headless audits need it to measure bounds
 window.__SLOTS = SLOTS;   // tools/audit-exclusions.mjs reads the exclusion table
+// tools/measure-loadouts.mjs mounts each curated rig and reads the tunnel's
+// numbers back, to bake them into data/loadouts.json as build output.
+app.__applyRig = (rig) => applyRig(app, rig);
+app.__aeroReadout = () => app.aero?.readout?.() || null;
 
 // ---- Boot --------------------------------------------------------------
 let readyResolve;
@@ -133,18 +150,32 @@ app.bags = new BagSystem(bike, catalog);
 await envs.set(app.state.env); // HDRI must be lit before first frame
 applyCam(params.get('cam') || 'hero');
 
-// kit from URL: kit=rand | kit=seatpack:0:1,barroll:2:0 | kit=full
+// Accounts and saved rigs. Both work with no backend configured: rigs go to
+// this browser, and `auth.enabled` is false so nothing offers to sign in.
+app.auth = createAuth();
+app.rigs = createRigStore(app, app.auth);
+if (app.auth.enabled) app.auth.hydrate();
+
+// A shared rig arrives in the URL. `?r=` is the durable form — it names the
+// maker and model of every bag, so it still resolves the same bike after the
+// catalogue is re-sorted. `?kit=` is the old positional form and is still read,
+// because it is the only one in anyone's history.
+const shared = rigFromParams(params, catalog);
 const kitParam = params.get('kit');
-if (kitParam === 'rand') {
+if (shared) {
+  // Somebody has been handed a specific bike to look at. Dropping them on the
+  // root menu instead would make them find it again, so ui.js reads this and
+  // skips the menu when it is set.
+  app.__cameWithRig = true;
+  const { missing } = applyRig(app, shared, { clear: false });
+  if (missing.length) console.warn('[packrig] shared link references bags no longer in the catalogue:', missing);
+} else if (kitParam === 'rand') {
+  app.__cameWithRig = true;      // the screenshot harness drives these
   const seed = parseInt(params.get('seed') || '42', 10);
   app.bags.randomKit(seed);
 } else if (kitParam === 'full') {
+  app.__cameWithRig = true;
   app.bags.fullKit();
-} else if (kitParam) {
-  for (const part of kitParam.split(',')) {
-    const [slot, bi, pi] = part.split(':');
-    app.bags.equip(slot, catalog[+bi], catalog[+bi]?.products[+pi]);
-  }
 }
 
 // ?focus=<slot>: close-up camera on that bag for product-vs-spec review shots
@@ -160,7 +191,24 @@ if (focusSlot) {
     const pull = focusSlot.startsWith('framebag') ? 2.1 : 1;
     const wp = new THREE.Vector3();
     a.getWorldPosition(wp);
-    camera.position.set(wp.x + 0.45 * pull, wp.y + 0.18 * pull, wp.z + 0.85 * pull);
+    // This block runs AFTER applyCam() and used to overwrite camera.position
+    // unconditionally, which silently discarded `?cam=` entirely. Because
+    // bagshot always passes `focus=<slot>`, every "angle" it rendered was the
+    // same three-quarter shot: side, tq, rear and front differed by ~5% of
+    // pixels, i.e. only by the bag changing shape. Three rounds of critics
+    // believed they were judging four views of each bag and were judging one.
+    //
+    // So honour `cam` here by orbiting the focus position around the anchor.
+    // The radius and height are the old vector's, so `tq` is bit-for-bit what
+    // this always produced and the other three are genuinely new viewpoints.
+    const R = Math.hypot(0.45, 0.85);          // 0.962, the original stand-off
+    const AZ = { side: 0, tq: Math.atan2(0.45, 0.85), front: Math.PI / 2, rear: -Math.PI / 2 };
+    const th = AZ[params.get('cam')] ?? AZ.tq;
+    camera.position.set(
+      wp.x + Math.sin(th) * R * pull,
+      wp.y + 0.18 * pull,
+      wp.z + Math.cos(th) * R * pull,
+    );
     controls.target.copy(wp);
     controls.update();
   } else {
@@ -189,6 +237,11 @@ app.openWindTunnel = async () => {
   // than merely collapse — collapsed, its peek header still overlaps the HUD
   // and still steals a hit-test region. ui.css hides it on this class.
   document.body.classList.toggle('aero-open', app.aero.active);
+  // ...and on #ui-root, because every rule in ui/v2/builder.css is scoped under
+  // that id — including the one that stands the rig column down while the
+  // tunnel is open (R4). Set on `body` alone, that rule matched nothing, and
+  // the desktop showed 1032px of chrome with a slit of bike between it.
+  document.getElementById('ui-root')?.classList.toggle('aero-open', app.aero.active);
   app.ui?.sync();
 };
 
@@ -212,14 +265,34 @@ const DESKTOP_LAYOUT = window.matchMedia('(min-width: 901px) and (pointer: fine)
  */
 const _fitBox = new THREE.Box3();
 function frameBike() {
-  if (SHOT_MODE) return;
+  if (SHOT_MODE || REVIEW_MODE) return;   // review mode owns its own framing
   applyViewOffset(camera);
   _fitBox.setFromObject(bike.group);
   if (!_fitBox.isEmpty()) fitToBox(camera, controls, _fitBox);
+  // applyViewOffset has just overwritten the camera's view offset with the
+  // no-sheet value. If a sheet is open, put the sheet's framing back, or a
+  // resize silently un-does the reframe and drops the bike behind the sheet.
+  app.sheets?.resync();
+  app.surfaces?.sync();
 }
 
-if (!SHOT_MODE) {
+if (REVIEW_MODE) {
+  document.getElementById('ui-root').style.display = 'none';
+  const { initReview } = await import('./review.js');
+  app.review = initReview(app, { SLOTS, applyCam });
+} else if (!SHOT_MODE) {
   app.ui = initUI(app);
+  // DESIGN-SYSTEM §12 steps 1-2, after initUI because both attach to surfaces
+  // that initUI creates. Order matters: the wells must exist before scrim.js
+  // looks for `.scrim-sampled`, and the sheet shell needs somewhere to put its
+  // own well.
+  // Sheets FIRST: initSurfaces walks the DOM once and the sheet has to be in
+  // it, or the one surface that most needs a scrim well never gets one. The
+  // first smoke test found 4 wells where there should be 6.
+  app.sheets = initSheets(app, { applyBase: () => applyViewOffset(camera) });
+  app.openSheet = app.sheets?.openSheet;
+  app.surfaces = initSurfaces(document.getElementById('ui-root'));
+  app.scrim = initScrim(app);
   // hover half-selects a bag; clicking commits it and centres the zoom on it
   app.focus = initFocus(app, { camera, controls, renderer });
   frameBike();
@@ -246,7 +319,13 @@ renderer.setAnimationLoop((t) => {
   app.focus?.tick(dt);
   app.aero?.tick(dt);
   controls.update();
+  app.reframe?.tick();
   envs.tick(t * 0.001);
   composer.render();
+  // AFTER the draw: scrim.js samples the real framebuffer, so it needs a frame
+  // to exist. Sampling a re-render into an offscreen target instead gave a
+  // scene that had skipped tone mapping and the whole post chain, and desert
+  // read barely brighter than mountain dawn.
+  app.scrim?.tick();
   if (++frames === 10) { readyResolve(true); window.__READY_DONE = true; }
 });

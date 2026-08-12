@@ -4,7 +4,7 @@
 
 import * as THREE from 'three';
 import { labelTexture, fabricTexture } from '../lib.js';
-import { shadeAO, stuffed } from './deform.js';
+import { deformScale, shadeAO, stuffed } from './deform.js';
 
 // ---- fabric materials ----------------------------------------------------
 export const texCache = {};
@@ -22,10 +22,31 @@ export function fabricMaterial(fabricKey, colorHex) {
 
 function fabricMaterialInner(fabricKey, color) {
   switch (fabricKey) {
+    // A welded TPU laminate is satin, not chrome, and this branch was the only
+    // one of the four that could not tell the difference. It was the only
+    // fabric with a clearcoat, the only one with NO sheen, and it carried less
+    // than half the bump relief of the other three (0.42 against 0.74–1.05) —
+    // a smooth, weave-less, clear-coated shell, which is a moulded plastic or
+    // metal part however soft the geometry underneath it is. That is what two
+    // reviewers hit independently: Apidura's whole catalogue routes here (its
+    // `fabric` string is "TPU laminate (shiny welded)"), and every Apidura bag
+    // whose panel is not near-black — the Backcountry food pouches, the
+    // Expedition Stem Pack, the City Handlebar Pack — came back described as
+    // "mirror-polished metal" and "machined from aluminium". The black ones did
+    // not, because a black albedo hides a specular lobe it cannot brighten.
+    //
+    // Three changes, all in the same direction. clearcoatRoughness 0.6 → 0.9 is
+    // the one that kills the mirror: at 0.6 the coat returns a sharp image of
+    // the sun and the sky. sheen at the same weak, tinted setting the woven
+    // fabrics use is the lobe that reads as cloth at grazing angles. And the
+    // bump comes back into the same band as the rest, so the shell has a weave
+    // on it at all. Base roughness stays the lowest of the woven set: a welded
+    // laminate IS glossier than Cordura, which is what the brand data means.
     case 'tpu':
       return new THREE.MeshPhysicalMaterial({
-        color, roughness: 0.72, metalness: 0.0, clearcoat: 0.08, clearcoatRoughness: 0.6,
-        bumpMap: texCache.cordura, bumpScale: 0.42,
+        color, roughness: 0.78, metalness: 0.0, clearcoat: 0.06, clearcoatRoughness: 0.9,
+        sheen: 0.1, sheenRoughness: 0.86, sheenColor: color.clone().lerp(new THREE.Color(0xffffff), 0.05),
+        bumpMap: texCache.cordura, bumpScale: 0.7,
       });
     // Sheen is a broad white-ish lobe over the whole albedo. Pushed hard it lifts
     // every colourway toward off-white and inverts the ordering — a #1c1c1c black
@@ -73,10 +94,27 @@ export function seamMat(mat) {
   return m;
 }
 
-/** Stuffed + occluded fabric panel in one call. */
+/**
+ * Stuffed + occluded fabric panel in one call.
+ *
+ * `stiffness` — `soft` (default, and the behaviour every existing caller got
+ * before this argument existed) | `semi` | `rigid`. It comes from the product's
+ * `structure` field via `stiffnessOf(p)`; pass it and a moulded Topeak shell or
+ * a Tailfin carbon-framed frame bag stops pillowing like a Cordura sack.
+ *
+ * A rigid product skips the displacement pass altogether rather than running it
+ * with a zero amplitude — see DEFORM_SCALE in deform.js for why those differ.
+ * Baked occlusion still applies: a hard shell is still shaded underneath.
+ */
 export function soft(geo, mat, opts = {}) {
-  const { amp = 3, freq = 0.03, seed = 1, flatAxis = null, bulge = null, aoDir = null, aoK = 0.82, aoSpan = 0.45 } = opts;
-  stuffed(geo, { amp, freq, seed, flatAxis, bulge });
+  const { amp = 3, freq = 0.03, seed = 1, flatAxis = null, bulge = null, aoDir = null, aoK = 0.82, aoSpan = 0.45, stiffness = 'soft' } = opts;
+  const k = deformScale(stiffness);
+  if (k > 0) {
+    // Scale the bulge with the noise: a semi-rigid panel domes less between its
+    // seams for the same reason it takes less noise — there is a plate behind it.
+    const b = bulge && k !== 1 ? (...a) => bulge(...a) * k : bulge;
+    stuffed(geo, { amp: amp * k, freq, seed, flatAxis, bulge: b });
+  }
   if (aoDir) {
     shadeAO(geo, { dir: aoDir, k: aoK, span: aoSpan });
     return new THREE.Mesh(geo, vcMat(mat));

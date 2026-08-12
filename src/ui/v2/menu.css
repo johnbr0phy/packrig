@@ -1,0 +1,1064 @@
+/* ===========================================================================
+   MENU v2 — the start screen, the loadouts and the gallery.
+
+   Loaded LAST, after theme.css, and scoped almost entirely under `.pr`. It
+   owns one layer of the app and does not re-skin the builder underneath it,
+   which is deliberate: the builder's light chrome is a separate argument and
+   changing both at once means never knowing which change did what.
+
+   THE THREE RULES THIS FILE ENFORCES
+
+   1. NOTHING COVERS THE BIKE. No card, no modal, no veil across the frame.
+      The menu is a column of type in the left third, and the readability
+      behind it comes from a horizontal gradient that is fully transparent by
+      62% across. Past that line the scene is untouched — full brightness, no
+      blur, still orbitable, because `pointer-events` are granted only to the
+      controls themselves and never to the layer.
+
+   2. DARK CHROME, AND NOT AS A STYLE CHOICE. This scene runs five HDRIs from
+      midnight to noon desert. White chrome over a bright sky needs a border
+      dark enough to survive it, and over a night sky the same border is a
+      slab; the polarity of the ink has to flip and it cannot. Near-black
+      chrome with bone ink is stable against all five, and it leaves the bike
+      as the brightest object in the frame, which is what it should be.
+
+   3. TYPE CARRIES THE HIERARCHY, NOT BOXES. There is exactly one filled
+      button on any screen. Everything else separates with a hairline, a size
+      change or a change of ink. Filled rectangles are how the old build said
+      "this is a control", and eleven of them in one panel is what "cheap"
+      looks like.
+   =========================================================================== */
+
+.pr {
+  --pr-bg: #0A0B0D;
+  --pr-ink: #F4F1EC;                        /* bone, not white — white on near-black rings */
+  /*
+   * These alphas are MEASURED, not chosen. The type column sits on a gradient
+   * over a live scene, so its background is whatever the sky happens to be,
+   * and the honest way to set an ink level is to sample the rendered frame and
+   * compute the ratio the text actually gets. Sampling the 98th-percentile
+   * background under the column across five environments gave rgb(107,103,101)
+   * at its brightest — where 0.60 was 2.89:1 and 0.38 was 2.03:1. The lede and
+   * every row description on the start screen were failing, in the middle of a
+   * design whose whole argument is legibility over a live scene.
+   *
+   * With the ramp below holding to 24%, the worst ground is about rgb(60,58,57)
+   * and these give 9.4:1 / 5.8:1 / 4.1:1.
+   */
+  --pr-ink-2: rgba(244, 241, 236, 0.72);
+  --pr-ink-3: rgba(244, 241, 236, 0.55);
+  /* ink-4 is the level 0.38 used to be, kept for things with no WORDS in them:
+     the 01/02/03 index numerals and the strip's position figures. Anything
+     that has to be read uses ink-3 or better. */
+  --pr-ink-4: rgba(244, 241, 236, 0.40);
+  --pr-rule: rgba(244, 241, 236, 0.16);
+  --pr-rule-soft: rgba(244, 241, 236, 0.09);
+  --pr-fill: rgba(244, 241, 236, 0.06);
+  --pr-fill-2: rgba(244, 241, 236, 0.11);
+
+  /* The one accent. It marks the CURRENT thing — the active tab, the selected
+     rig, the index of the row under the cursor — and nothing else. It is never
+     a button fill: the primary action is bone, because a bone rectangle on
+     near-black is the most emphatic thing available and spending the accent on
+     it would leave nothing louder for state. */
+  --pr-accent: #FF6A2B;
+
+  /* Numerals live in the system mono. Zero bytes, and it is the difference
+     between a spec sheet and a landing page. Every litre, every count and
+     every index in this layer is set in it, tabular. */
+  --pr-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* The halo behind text that sits on the scene rather than on the column. */
+  --pr-halo: 0 1px 2px rgba(6, 7, 9, 0.92), 0 0 16px rgba(6, 7, 9, 0.72);
+
+  --pr-gut: clamp(28px, 4.4vw, 72px);
+  /* Narrowed from 460px. The column's right edge is where the ramp has to
+     still be opaque, and at 460px that edge landed at 32% of the frame — the
+     same 32% where the rear wheel starts. Something had to give, and 40px of
+     column costs one wrapped product name where the alternative was body text
+     at 2:1. */
+  --pr-col: clamp(300px, 27vw, 404px);
+  /* Where the type actually stops, and how far past it the ramp runs. Both are
+     px, and that is the point: the ramp used to be written in viewport
+     percentages while the column was clamped in pixels, so the two agreed at
+     1440 and nowhere else — at 2560 the ramp reached zero at 1460px, which is
+     900px of unexplained darkening across the middle of the bike. */
+  --pr-colend: calc(var(--pr-gut) + var(--pr-col));
+  --pr-tail: 320px;
+  --pr-ease: cubic-bezier(0.16, 1, 0.30, 1);
+
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  color: var(--pr-ink);
+  opacity: 0;
+  transition: opacity 260ms var(--pr-ease);
+  /* The layer never takes the pointer. Controls opt back in one by one, which
+     is what keeps the bike draggable with the menu open. */
+  pointer-events: none;
+}
+.pr.on { opacity: 1; }
+.pr[hidden] { display: none; }
+
+/* `#ui-root > *` in ui.css sets pointer-events:auto on every direct child, and
+   an id outranks a class, so the layer's own `pointer-events: none` above is
+   overruled by it and the menu swallows every drag meant for the bike behind
+   it. This is the one rule that has to carry the id — scoping the whole block
+   that way instead would also outrank `.pr.on`, and the menu would open at
+   opacity 0. (It did. That is the entire reason this comment exists.) */
+#ui-root > .pr { pointer-events: none; }
+
+/* The readability ramp. Two gradients: one across for the column, one up from
+   the bottom for the strip. Neither one touches the right third. */
+.pr-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Measured against the shot, not guessed: the first version ramped to zero at
+     64% and 55% of the frame was visibly darkened, including the rear wheel and
+     half the bags — the exact thing rule 1 above forbids. The column of type is
+     460px on a 1440 frame, which is 32%; the ramp is opaque to 26%, gone by 44%,
+     and the bike lives entirely past it. */
+  /*
+   * Eight stops, not four. A four-stop ramp against a pale sky paints a
+   * visible vertical BAND where the slope changes — the eye finds the second
+   * derivative long before it finds the value, so the cheap-looking artefact
+   * is the kink, not the darkness. These stops approximate a smoothstep, so
+   * there is no kink to find, and the ramp can then afford to be wide and
+   * shallow: it is under 0.16 by the time it reaches the rear wheel and gone
+   * entirely at 56%.
+   */
+  background:
+    /* 1 — the column. Holds flat across every pixel the type occupies, then
+       decays over --pr-tail. Eight stops, because a four-stop ramp against a
+       pale sky paints a visible vertical BAND where the slope changes: the eye
+       finds the second derivative long before it finds the value. */
+    linear-gradient(90deg,
+      rgba(10, 11, 13, 0.90) 0,
+      rgba(10, 11, 13, 0.88) var(--pr-colend),
+      rgba(10, 11, 13, 0.68) calc(var(--pr-colend) + var(--pr-tail) * 0.22),
+      rgba(10, 11, 13, 0.44) calc(var(--pr-colend) + var(--pr-tail) * 0.44),
+      rgba(10, 11, 13, 0.22) calc(var(--pr-colend) + var(--pr-tail) * 0.66),
+      rgba(10, 11, 13, 0.07) calc(var(--pr-colend) + var(--pr-tail) * 0.84),
+      rgba(10, 11, 13, 0) calc(var(--pr-colend) + var(--pr-tail))),
+    /* 2 — the top edge, FULL WIDTH. The column ramp is gone by the time it
+       reaches the tab strip in the opposite corner, so over a noon desert sky
+       "Start" and "Gallery" composited at about 1.1:1 — invisible. The top
+       110px is sky in all five environments, so a scrim there costs nothing
+       and is the difference between a navigation and a rumour. */
+    linear-gradient(180deg,
+      rgba(10, 11, 13, 0.58) 0,
+      rgba(10, 11, 13, 0.55) 32px,
+      rgba(10, 11, 13, 0.46) 72px,
+      rgba(10, 11, 13, 0.32) 112px,
+      rgba(10, 11, 13, 0.17) 148px,
+      rgba(10, 11, 13, 0.06) 176px,
+      rgba(10, 11, 13, 0) 200px),
+    /* 3 — the bottom edge, under the strip. */
+    linear-gradient(0deg,
+      rgba(10, 11, 13, 0.62) 0,
+      rgba(10, 11, 13, 0.36) 5%,
+      rgba(10, 11, 13, 0.15) 11%,
+      rgba(10, 11, 13, 0.04) 17%,
+      rgba(10, 11, 13, 0) 23%);
+  opacity: 0;
+  transition: opacity 420ms var(--pr-ease);
+}
+.pr.on .pr-veil { opacity: 1; }
+
+/* ---- header --------------------------------------------------------------
+   A vignette, not a bar. There is no filled band across the top: the wordmark,
+   the sections and the way out sit directly on the scene, and what makes them
+   legible is the top edge of the veil plus a halo on the glyphs themselves.
+
+   The halo is doing more work than it looks. Measuring the composite with all
+   text hidden, the ground under the tab strip is rgb(187) over a noon desert
+   sky — and bone ink on rgb(187) tops out at 1.9:1 no matter what alpha you
+   choose, because the ceiling is the ground, not the ink. Either the ground
+   comes down or the text is unreadable. The scrim brings it to about rgb(95)
+   and the shadow darkens the two or three pixels immediately around each
+   stroke, which is where contrast is actually perceived. It is the same
+   mechanism a film subtitle uses, for the same reason. */
+.pr-head {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 44px);
+  padding: 24px var(--pr-gut) 16px;
+  pointer-events: none;
+}
+.pr-head > * { pointer-events: auto; }
+
+.pr-mark {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 4px 0;         /* horizontal padding pushed the wordmark off the column edge */
+  margin: 0 auto 0 0;
+  cursor: pointer;
+  color: var(--pr-ink);
+  font: 700 14px/1 var(--font);
+  letter-spacing: 0.24em;
+  text-shadow: var(--pr-halo);
+  transition: opacity 160ms var(--pr-ease);
+}
+.pr-mark:hover { opacity: 0.72; }
+.pr-mark:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: 8px; border-radius: 2px; }
+
+.pr-tabs { display: flex; align-items: center; gap: 4px; pointer-events: none; }
+/* At the root the numbered list IS the navigation, and a second copy of it in
+   the corner is the same three words twice on one screen. The strip appears
+   when you are inside a section, where it is the only way across. */
+.pr[data-view="start"] .pr-tabs { display: none; }
+.pr-tabs > * { pointer-events: auto; }
+
+.pr-tab {
+  appearance: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 4px;
+  /* Navigation, over sky, at 13px. It sat at ink-3 and the inactive sections
+     were the least legible text in the app in three of five environments; the
+     ladder here is ink-2 (available) vs ink (current), not ink-3 vs ink. */
+  color: var(--pr-ink-2);
+  font: 550 13px/1 var(--font);
+  letter-spacing: 0.01em;
+  position: relative;
+  text-shadow: var(--pr-halo);
+  transition: color 160ms var(--pr-ease), background-color 160ms var(--pr-ease);
+}
+.pr-tab:hover { color: var(--pr-ink); background: var(--pr-fill); }
+.pr-tab.is-on { color: var(--pr-ink); }
+/* The current section is marked with a 2px accent rule under the label rather
+   than a filled pill. A pill is a button that looks pressed; a rule is a
+   position indicator, which is what a tab actually is. */
+.pr-tab.is-on::after {
+  content: '';
+  position: absolute;
+  left: 14px; right: 14px; bottom: 2px;
+  height: 2px;
+  background: var(--pr-accent);
+  border-radius: 2px;
+}
+.pr-tab:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: 2px; }
+
+.pr-close {
+  appearance: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px 14px;
+  border: 1px solid var(--pr-rule);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--pr-ink-2);
+  font: 550 13px/1 var(--font);
+  text-shadow: var(--pr-halo);
+  transition: color 160ms var(--pr-ease), border-color 160ms var(--pr-ease), background-color 160ms var(--pr-ease);
+}
+.pr-close:hover { color: var(--pr-ink); border-color: rgba(244, 241, 236, 0.30); background: var(--pr-fill); }
+.pr-close:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: 2px; }
+.pr-close[hidden] { display: none; }
+
+/* ---- stage ----------------------------------------------------------------
+   The stage is `tabindex="-1"` so a view change has somewhere to move focus
+   for a screen reader. It is not keyboard-reachable and it is the full width
+   of the app, so the UA's default ring paints a 2px line straight across the
+   screen under the header — which is exactly what it did. Controls inside it
+   keep their own `:focus-visible` rings. */
+/*
+ * The stage takes focus by script on every view change (see menu.js), so it
+ * must never paint a ring — it is 1440px wide and the ring lands as a 2px
+ * accent rule straight across the top of the menu.
+ *
+ * The id is not decoration. builder.css sets `#ui-root :focus-visible { outline:
+ * 2px solid var(--accent) }`, and an id beats two classes, so the class-only
+ * version of this rule lost and the ring came back — the single largest accent
+ * surface in the product, painted by a belt-and-braces accessibility rule from
+ * the OTHER layer. Two reviewers reported it and a check of mine that read
+ * `outline-color` without reading `outline-style` said it wasn't there.
+ */
+#ui-root .pr-stage:focus,
+#ui-root .pr-stage:focus-visible { outline: none; box-shadow: none; }
+/* Backstop for anything in this layer that takes focus by script rather than by
+   keyboard. A programmatic focus should not paint a ring; a Tab press should. */
+.pr :focus:not(:focus-visible) { outline: none; }
+.pr-stage {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  pointer-events: none;
+}
+
+/* The load-in. One rule, and every staged element in every view obeys it,
+   because `--i` is set by the code that builds the row rather than by a
+   selector that has to be kept in step with the markup.
+
+   540ms is long for a UI transition and deliberate: this is the app opening,
+   not a menu toggling, and the stagger is the only motion on the screen. The
+   travel is 16px and the curve has no overshoot — things arrive, they do not
+   bounce. */
+.pr-st {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.pr-stage.in .pr-st {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 540ms var(--pr-ease) calc(var(--i, 0) * 62ms),
+    transform 540ms var(--pr-ease) calc(var(--i, 0) * 62ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pr-st { opacity: 1; transform: none; }
+  .pr-stage.in .pr-st { transition: none; }
+  .pr, .pr-veil { transition: none; }
+}
+
+/* ===========================================================================
+   START
+   =========================================================================== */
+
+.pr-start {
+  pointer-events: auto;
+  align-self: center;
+  min-width: 0;
+  /*
+   * `--pr-col` is the MEASURE — the width of the text — and with
+   * `box-sizing: border-box` (ui.css) a bare `width: var(--pr-col)` puts both
+   * gutters INSIDE it, leaving 278px of measure at 1440 instead of 404. The
+   * 66px display then re-wrapped every hand-set line into six, the column grew
+   * past the stage, and `align-self: center` on an overflowing flex child
+   * clipped the top of the headline off the screen — through the wordmark.
+   * The front page, at the commonest laptop size.
+   *
+   * Adding the gutters back makes the content box exactly `--pr-col` and puts
+   * the last character at `--pr-colend`, which is where the ramp's own comment
+   * has always claimed the type ends.
+   */
+  width: calc(var(--pr-col) + 2 * var(--pr-gut));
+  /* `safe` so that if the content ever does exceed the stage, it overflows
+     DOWNWARD into a scroll rather than centring and cutting off its own top. */
+  align-self: safe center;
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 0 var(--pr-gut) clamp(28px, 5vh, 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pr-eyebrow {
+  margin: 0 0 22px;
+  font: 600 10.5px/1 var(--font);
+  /* 0.10em, matching every other 10.5px caps label in both layers. The eyebrow
+     and the kicker sat at 0.18 — same role, same size, 0.08em apart. */
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--pr-ink-3);
+}
+
+.pr-display {
+  margin: 0;
+  font-family: var(--font);
+  /* 66px never fitted "Load the bike" in a 404px measure; 56px does, at about
+     375px. Size and measure were clamped against different things and
+     collided. */
+  font-size: clamp(36px, 3.9vw, 56px);
+  font-weight: 500;
+  line-height: 0.99;
+  letter-spacing: -0.035em;
+  /* Optical, not metric. Inter's left side bearing at display size pushed the
+     "L" of "Load" 4px right of the 64px edge that the eyebrow, the lede, the
+     index column and the stat line all establish. Nobody names it; everyone
+     sees the column is soft. */
+  margin-left: -0.07em;
+  color: var(--pr-ink);
+}
+.pr-line { display: block; }
+
+.pr-lede {
+  margin: 22px 0 0;
+  max-width: 40ch;
+  font: 400 14.5px/1.62 var(--font);
+  color: var(--pr-ink-2);
+}
+
+/* The entry points. A contents page: an index number, a name, a line saying
+   what is behind it, and a rule between each. Nothing is filled and nothing is
+   coloured, so the eye is choosing between three destinations rather than
+   being told which one to press. */
+.pr-menu {
+  list-style: none;
+  margin: clamp(30px, 4.6vh, 46px) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--pr-rule);
+}
+.pr-menu-li { border-bottom: 1px solid var(--pr-rule); }
+
+.pr-item {
+  appearance: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 34px 1fr 20px;
+  align-items: baseline;
+  gap: 0 16px;
+  padding: 16px 6px 16px 0;
+  text-align: left;
+  color: var(--pr-ink);
+  transition: background-color 160ms var(--pr-ease);
+}
+/* The nudge on hover used to animate `padding-left`, which is a LAYOUT
+   property: it reflowed the description text on every hover and sheared the
+   01/02/03 index column 8px out of alignment with itself. Same movement,
+   compositor only, and the rail holds rank. */
+.pr-item > * { transition: transform 220ms var(--pr-ease); }
+.pr-item:hover > * { transform: translateX(8px); }
+.pr-item:hover { background: var(--pr-fill); }
+.pr-item:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: -2px; }
+
+.pr-idx {
+  font-family: var(--pr-mono);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  color: var(--pr-ink-4);
+  transition: color 160ms var(--pr-ease);
+}
+.pr-item:hover .pr-idx { color: var(--pr-accent); }
+
+.pr-item-body { display: block; }
+.pr-item-name {
+  display: block;
+  font: 550 19px/1.25 var(--font);
+  letter-spacing: -0.012em;
+}
+.pr-item-desc {
+  display: block;
+  margin-top: 4px;
+  font: 400 13px/1.45 var(--font);
+  color: var(--pr-ink-3);
+}
+.pr-item-go {
+  align-self: center;
+  color: var(--pr-ink-3);
+  transform: translateX(4px);
+  opacity: 0;
+  transition: transform 220ms var(--pr-ease), opacity 220ms var(--pr-ease), color 160ms var(--pr-ease);
+}
+/* The chevron carries the row's own 8px nudge as well as its 4px reveal, or it
+   is the one child that stays put while the rest of the row moves. */
+.pr-item:hover .pr-item-go,
+.pr-item:focus-visible .pr-item-go { opacity: 1; transform: translateX(8px); color: var(--pr-ink); }
+
+/* The one fact worth putting on a front page: how much is actually in here. */
+/* The same object as `.pr-figs` on the browse screen — "N things in this
+   catalogue / this rig" — and it was set in a second, quieter voice: 15px mono
+   over a lowercase 11.5px key, inline, against 22px mono over tracked caps,
+   stacked. One object, one style. The front page's single most persuasive fact
+   was whispering. */
+.pr-stat {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin: clamp(24px, 3.6vh, 34px) 0 0;
+}
+.pr-stat-cell { display: flex; flex-direction: column; gap: 3px; }
+.pr-stat-v {
+  font-family: var(--pr-mono);
+  font-size: 18px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  color: var(--pr-ink);
+}
+.pr-stat-k {
+  font: 400 10.5px/1 var(--font);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--pr-ink-3);
+}
+
+/* ===========================================================================
+   BROWSE — loadouts and gallery
+   =========================================================================== */
+
+.pr-browse {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  /*
+   * `minmax(0, 1fr)`, not `1fr`. A grid track sized `1fr` still floors at the
+   * MAX-CONTENT of its widest item, and the widest item here is the strip:
+   * eight chips at ~180px each is a 1440px track. On a 393px phone that made
+   * the whole column 1440px wide, so the note ran off the right edge and the
+   * litre column was off-screen entirely — a layout bug that hid the one
+   * number the manifest exists to show.
+   */
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  width: 100%;
+  pointer-events: none;
+}
+
+/*
+ * The column owns its own height, and the MANIFEST is the only part of it that
+ * scrolls. The first version scrolled the whole column, which on a ten-bag
+ * loadout pushed "Build on this" off the bottom of the screen — the primary
+ * action of the screen, invisible, on the most interesting rig in the set.
+ */
+.pr-spec {
+  pointer-events: auto;
+  align-self: stretch;
+  justify-self: start;
+  /* Same reckoning as .pr-start above: the gutters are inside the box. */
+  width: calc(var(--pr-col) + 2 * var(--pr-gut));
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  /*
+   * ANCHORED, not centred.
+   *
+   * `justify-content: center` re-centres the whole block to each rig's content
+   * height, so the counter sat at y=85 on an eight-row loadout and y=104 on a
+   * seven-row one — a 19px jump on every step through the strip. The entire
+   * argument of this screen is that you can compare two rigs by reading the
+   * same column twice; a column that lands somewhere different each time is a
+   * slideshow with better type. Title, kicker, counter and figures now sit at
+   * an identical Y for every rig, and the manifest absorbs the variance.
+   */
+  justify-content: flex-start;
+  padding: clamp(56px, 10vh, 110px) var(--pr-gut) 10px;
+}
+
+/* Stepping between rigs re-runs the same stagger the view opened with, so
+   moving through the strip reads as the same gesture as arriving. */
+/*
+ * Stepping to the next rig is NOT the app opening, and it was timed as if it
+ * were: 460ms plus 34ms per row is ~730ms for an eight-bag manifest, while the
+ * 3D rig re-mounts on the same frame you pressed. For half a second the panel
+ * described the bike that had already been replaced. Slow entrance, fast
+ * steering.
+ */
+.pr-spec.swap .pr-st {
+  animation: pr-swap 300ms var(--pr-ease) both;
+  animation-delay: calc(var(--i, 0) * 22ms);
+}
+@keyframes pr-swap {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pr-spec.swap .pr-st { animation: none; opacity: 1; transform: none; }
+}
+
+.pr-counter {
+  margin: 0 0 18px;
+  font-family: var(--pr-mono);
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  color: var(--pr-ink-3);
+}
+.pr-counter b { color: var(--pr-ink); font-weight: 500; }
+
+/* Quiet. This is a caption above a title — "ALL APIDURA", "by Anonymous" —
+   and in orange it was the highest-contrast element on a screen whose subject
+   is a bicycle. The accent belongs to the active tab and the active chip,
+   which are the only two things on screen that are STATE. */
+.pr-kicker {
+  margin: 0 0 10px;
+  font: 600 10.5px/1 var(--font);
+  /* 0.10em, matching every other 10.5px caps label in both layers. The eyebrow
+     and the kicker sat at 0.18 — same role, same size, 0.08em apart. */
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--pr-ink-3);
+}
+
+.pr-title {
+  margin: 0;
+  font-family: var(--font);
+  /* Ceiling dropped from 42px with the column. At 42px in a 278px measure,
+     "The Expedition" broke as "The / Expedition" — a two-line title whose
+     first line is one short word, which is the worst of both. */
+  font-size: clamp(28px, 2.6vw, 36px);
+  margin-left: -0.04em;   /* same side-bearing correction as .pr-display */
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.030em;
+  color: var(--pr-ink);
+}
+
+/* A quiet aside, for the one case where the screen has to explain itself. */
+.pr-aside {
+  margin: 8px 0 0;
+  font: 400 12px/1.5 var(--font);
+  color: var(--pr-ink-3);
+}
+
+.pr-note {
+  margin: 16px 0 0;
+  max-width: 38ch;
+  font: 400 13.5px/1.6 var(--font);
+  color: var(--pr-ink-2);
+}
+
+/* Three numbers, read across. The unit is small and quiet and the figure is
+   large and mono, because the figure is what gets compared between two rigs
+   and the unit is the same every time. */
+.pr-figs {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 28px;
+  margin: 22px 0 0;
+  padding: 16px 0;
+  border-top: 1px solid var(--pr-rule);
+  border-bottom: 1px solid var(--pr-rule);
+}
+.pr-fig { display: flex; flex-direction: column; gap: 3px; }
+.pr-fig-v {
+  font-family: var(--pr-mono);
+  font-size: 22px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  color: var(--pr-ink);
+}
+.pr-fig-k {
+  font: 400 10.5px/1 var(--font);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--pr-ink-3);
+}
+
+/* The manifest. Mount on the left in the quietest ink, the product in the
+   middle at reading weight, capacity right-aligned in tabular figures so the
+   column can be read down. */
+/* The scroll is masked rather than cut: a row sliced in half at a hard edge
+   reads as a rendering fault, a row fading out reads as more below. */
+.pr-manifest {
+  margin: 4px 0 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 26px), transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 26px), transparent 100%);
+  /* The mask fades the bottom 26px of the BOX, not of the content, so without
+     this the last row stays permanently half-dissolved even when you have
+     scrolled to the end — which is precisely the rendering-fault look the mask
+     exists to avoid. The padding gives the fade something to eat. */
+  padding-bottom: 26px;
+}
+.pr-manifest::-webkit-scrollbar { display: none; }
+/* Two rows, three cells. The mount label takes row 1 on its own; the product
+   and its capacity share row 2 and a baseline, because the capacity belongs to
+   the product. */
+.pr-mrow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 3px 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--pr-rule-soft);
+}
+.pr-mrow .pr-mmount { grid-area: 1 / 1 / 2 / -1; }
+.pr-mrow:last-child { border-bottom: 0; }
+.pr-mmount {
+  font: 400 10.5px/1.3 var(--font);
+  /* 0.06em was tighter than every other 10.5px caps label in the file, which
+     all sit at 0.10-0.18em. One voice, one tracking. */
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--pr-ink-3);
+}
+.pr-mprod { grid-area: 2 / 1; min-width: 0; overflow-wrap: anywhere; }
+/* Maker and model on one line. The maker is the quieter of the two because
+   the model is what you would search for, and the mount above has already
+   told you where it goes. */
+/* Ink carries the whole distinction. It was weight AND ink, pulling opposite
+   ways: 600 said the maker leads, full-strength ink said the model did. */
+.pr-mbrand {
+  font: 500 12.5px/1.4 var(--font);
+  color: var(--pr-ink-2);
+}
+.pr-mmodel {
+  font: 450 12.5px/1.4 var(--font);
+  color: var(--pr-ink);
+}
+.pr-ml {
+  grid-area: 2 / 2;
+  text-align: right;
+  font-family: var(--pr-mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.pr-ml-v { color: var(--pr-ink); }
+/* The unit is the same three glyphs on every row. It is there so a figure
+   without context is never shown, not so it can be read eighteen times. */
+.pr-ml-u { color: var(--pr-ink-4); }
+
+.pr-actions {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--pr-rule);
+  display: flex;
+  gap: 10px;
+}
+
+/* The only filled control in the layer. Bone on near-black — nothing on this
+   screen can be louder, which is exactly what a single primary action wants. */
+.pr-btn {
+  appearance: none;
+  cursor: pointer;
+  border: 1px solid var(--pr-rule);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--pr-ink);
+  padding: 14px 24px;
+  font: 550 14px/1 var(--font);
+  transition: background-color 160ms var(--pr-ease), border-color 160ms var(--pr-ease), transform 90ms var(--pr-ease);
+}
+.pr-btn:hover { background: var(--pr-fill); }
+.pr-btn:active { transform: translateY(1px); }
+.pr-btn:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: 2px; }
+.pr-btn.is-primary {
+  background: var(--pr-ink);
+  border-color: var(--pr-ink);
+  color: #0A0B0D;
+}
+/* Not #FFFFFF. Line 34 of this file argues for bone "not white — white on
+   near-black rings", and the hover is the one moment the user is looking
+   straight at the button. One warm half-step. */
+.pr-btn.is-primary:hover { background: #FBF7EF; border-color: #FBF7EF; }
+
+.pr-loading, .pr-empty { color: var(--pr-ink-2); }
+.pr-empty .pr-title { margin-bottom: 12px; }
+.pr-loading { font: 400 13px/1.5 var(--font); }
+
+/* ---- the strip ------------------------------------------------------------
+   Dots told you there were twelve rigs and which number you were on. This
+   tells you their names and their capacities, which is the information you
+   would use to decide where to go next — so it is a strip you steer with
+   rather than an indicator you read. */
+.pr-railwrap {
+  display: flex;
+  min-width: 0;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 12px var(--pr-gut) clamp(20px, 3vh, 34px);
+  pointer-events: none;
+}
+.pr-railwrap > * { pointer-events: auto; }
+
+.pr-step {
+  appearance: none;
+  flex: 0 0 auto;
+  cursor: pointer;
+  width: 38px; height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--pr-rule);
+  border-radius: 4px;
+  background: rgba(10, 11, 13, 0.55);
+  color: var(--pr-ink-2);
+  transition: color 160ms var(--pr-ease), background-color 160ms var(--pr-ease);
+}
+.pr-step:hover { color: var(--pr-ink); background: var(--pr-fill-2); }
+.pr-step:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: 2px; }
+
+.pr-rail {
+  /* Chrome that sits OUTSIDE the column's ramp carries its own plate — the
+     same rgba(10,11,13,0.55) `.pr-step` already uses. The strip's hairlines at
+     bone-0.09 simply vanished over bright ground. */
+  background: rgba(10, 11, 13, 0.55);
+  /* `flex: 1` stretched the strip's own top and bottom rules across whatever
+     track was left over, so a wide display showed 500px of empty ruled shelf
+     after the last rig — which reads as content that failed to load. It takes
+     the width of its chips and no more; the next arrow docks against them. */
+  flex: 0 1 auto;
+  min-width: 0;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-top: 1px solid var(--pr-rule-soft);
+  border-bottom: 1px solid var(--pr-rule-soft);
+}
+.pr-rail::-webkit-scrollbar { display: none; }
+
+.pr-chip {
+  appearance: none;
+  border: 0;
+  border-right: 1px solid var(--pr-rule-soft);
+  background: none;
+  cursor: pointer;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 20px 13px 16px;
+  text-align: left;
+  color: var(--pr-ink-2);
+  position: relative;
+  transition: color 160ms var(--pr-ease), background-color 160ms var(--pr-ease);
+}
+.pr-chip:last-child { border-right: 0; }
+.pr-chip:hover { color: var(--pr-ink); background: var(--pr-fill); }
+.pr-chip:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: -2px; }
+
+/* No `opacity` on these. An opacity on an element whose colour is already an
+   alpha token MULTIPLIES the two: 0.38 ink at 0.66 opacity is 0.25 effective,
+   and the strip's litre figures were landing at about 2.1:1. Set the ink
+   level; never dim it a second time. */
+.pr-chip-n {
+  font-family: var(--pr-mono);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--pr-ink-4);
+}
+.pr-chip-body { display: flex; flex-direction: column; gap: 2px; }
+.pr-chip-name { font: 500 13px/1.2 var(--font); letter-spacing: -0.005em; white-space: nowrap; }
+.pr-chip-l {
+  font-family: var(--pr-mono);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--pr-ink-3);
+}
+
+.pr-chip.is-on { color: var(--pr-ink); background: var(--pr-fill); }
+.pr-chip.is-on::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: -1px;
+  height: 2px;
+  background: var(--pr-accent);
+}
+
+/* ===========================================================================
+   THE BUILDER, WHILE THE MENU IS OPEN
+   Everything belonging to the level below goes away completely. A top bar
+   fading to 20% behind a menu is still a top bar you can see the ghost of.
+   =========================================================================== */
+#ui-root.menu-open .panel,
+#ui-root.menu-open .topbar,
+#ui-root.menu-open .viewtools,
+#ui-root.menu-open .hint,
+#ui-root.menu-open .toast,
+#ui-root.menu-open .sheet {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms var(--pr-ease);
+}
+
+/* ===========================================================================
+   WIDE
+   The column is a MEASURE, not a fraction — it is capped at 404px so a line of
+   the lede never runs past about 60 characters. That is right typographically
+   and, left alone, wrong compositionally: on a 2560 display the cap makes the
+   whole column 16% of the frame and the screen reads under-scaled, like a
+   1440 layout someone stretched the window on. So past 1700px the measure and
+   the type both step up together, which keeps the character count where it
+   belongs and puts the composition back in proportion to the frame.
+   =========================================================================== */
+@media (min-width: 1700px) {
+  .pr {
+    --pr-col: 484px;
+    --pr-tail: 380px;
+  }
+  .pr-display { font-size: clamp(56px, 3.4vw, 74px); }
+  .pr-title { font-size: clamp(36px, 2.2vw, 48px); }
+  .pr-lede, .pr-note { font-size: 15.5px; }
+  .pr-item-name { font-size: 21px; }
+  .pr-item-desc, .pr-mmodel, .pr-mbrand { font-size: 14px; }
+  .pr-ml { font-size: 13px; }
+  .pr-fig-v { font-size: 25px; }
+  .pr-chip-name { font-size: 14px; }
+  .pr-mark { font-size: 15px; }
+  .pr-tab { font-size: 14px; }
+}
+
+/* ===========================================================================
+   NARROW
+   The column becomes the screen's lower half and the bike keeps the upper —
+   the same split the builder already uses on a phone, so the two levels do not
+   disagree about where the bike lives.
+   =========================================================================== */
+/* Width only. `(pointer: coarse)` dragged a 1366px iPad Pro in landscape into
+   the phone composition — lede deleted, column crushed into the bottom half —
+   on a screen with room for the full desktop layout. Touch affordances that
+   genuinely depend on the pointer get their own block below. */
+@media (max-width: 900px) {
+  .pr {
+    --pr-gut: 20px;
+    --pr-col: 100%;
+  }
+  /*
+   * On a phone the column is the bottom half of the screen, so a horizontal
+   * ramp is meaningless and a full-height vertical one buries the bike. The
+   * veil shrinks to a short scrim under the header — white wordmark over a
+   * noon sky needs it — and the panel below carries its own surface, fading in
+   * over its first 40px so it has an edge without a hard line.
+   */
+  .pr-veil {
+    background:
+      linear-gradient(180deg,
+        rgba(10, 11, 13, 0.78) 0%,
+        rgba(10, 11, 13, 0.42) 5%,
+        rgba(10, 11, 13, 0.12) 10%,
+        rgba(10, 11, 13, 0) 16%);
+  }
+  .pr-start, .pr-spec, .pr-railwrap {
+    background: linear-gradient(180deg,
+      rgba(10, 11, 13, 0) 0,
+      rgba(10, 11, 13, 0.90) 40px,
+      rgba(10, 11, 13, 0.96) 96px);
+  }
+  .pr-railwrap { background: rgba(10, 11, 13, 0.96); }
+  .pr-head { padding: 16px var(--pr-gut) 12px; gap: 10px; }
+  .pr-mark { font-size: 13px; letter-spacing: 0.24em; }
+  .pr-tab { padding: 7px 10px; font-size: 12.5px; }
+  .pr-tab.is-on::after { left: 10px; right: 10px; }
+  .pr-close span { display: none; }
+  .pr-close { padding: 8px; }
+
+  .pr-stage { align-items: flex-end; }
+  .pr-start {
+    width: 100%;
+    align-self: flex-end;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+  .pr-display { font-size: clamp(30px, 8.6vw, 40px); }
+  .pr-lede { display: none; }          /* the bike is the pitch on a phone */
+  .pr-menu { margin-top: 20px; }
+  .pr-item { padding: 14px 4px; grid-template-columns: 28px 1fr 20px; }
+  .pr-item-name { font-size: 17px; }
+  .pr-stat { margin-top: 18px; gap: 0 18px; }
+
+  .pr-browse { grid-template-rows: 1fr auto; }
+  .pr-spec {
+    width: 100%;
+    align-self: flex-end;
+    max-height: 52vh;
+    padding-bottom: 4px;
+  }
+  .pr-title { font-size: clamp(24px, 6.6vw, 32px); }
+  .pr-note { max-width: none; }
+  .pr-figs { gap: 22px; margin-top: 18px; padding: 12px 0; }
+  .pr-fig-v { font-size: 19px; }
+  .pr-manifest { max-height: none; }
+  .pr-actions .pr-btn { flex: 1; justify-content: center; text-align: center; }
+  .pr-railwrap { padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+  .pr-step { display: none; }          /* swipe the strip; two arrows is desktop furniture */
+}
+
+
+/* Touch, at any width: the strip is swiped, so the two step arrows are desktop
+   furniture, and every hit target comes up to 44px. */
+@media (pointer: coarse) {
+  .pr-step { display: none; }
+  .pr-chip { padding-top: 15px; padding-bottom: 15px; }
+  .pr-item { padding-top: 18px; padding-bottom: 18px; }
+}
+
+/* The wind tunnel's verdict, under the figures it explains. The grade is a
+   letter and two words — "F · Barn Door" — and it is the only place in this
+   layer where a measurement gets to be funny. */
+.pr-grade {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--pr-rule);
+}
+.pr-grade-k {
+  font: 400 10.5px/1 var(--font);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--pr-ink-3);
+}
+.pr-grade-v {
+  font-family: var(--pr-mono);
+  font-size: 12px;
+  color: var(--pr-ink-2);
+  white-space: nowrap;
+}
+
+/* ===========================================================================
+   LOG IN — top right of the menu, on the front page
+
+   It was reachable only from inside the builder, behind a control that said
+   "Sign in" and opened a panel of saved rigs. The front door belongs on the
+   front page, in the corner every site on the internet has taught people to
+   look in. Same material as `.pr-close` beside it: a hairline, no fill. The
+   account is not the loudest thing on this screen and never should be.
+   =========================================================================== */
+.pr-login {
+  appearance: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--pr-rule);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--pr-ink-2);
+  font: 550 12.5px/1 var(--font);
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: var(--pr-halo);
+  transition: color 160ms var(--pr-ease), border-color 160ms var(--pr-ease), background-color 160ms var(--pr-ease);
+}
+.pr-login:hover { color: var(--pr-ink); border-color: rgba(244, 241, 236, 0.30); background: var(--pr-fill); }
+.pr-login:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: 2px; }
+.pr-login[hidden] { display: none; }
+/* Signed in it carries a state dot, because then the button is an identity
+   rather than an invitation. */
+.pr-login.is-in::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--pr-accent);
+  flex: 0 0 auto;
+}
+
+/* ===========================================================================
+   THE RIGS VIEW — what you can do to a bike that is yours
+
+   The actions row holds one primary and a handful of quiet ones now, so it
+   wraps rather than dividing the width by six.
+   =========================================================================== */
+.pr[data-view='rigs'] .pr-actions { flex-wrap: wrap; }
+.pr-btn.is-bad:hover {
+  background: rgba(242, 109, 109, 0.10);
+  border-color: rgba(242, 109, 109, 0.35);
+  color: #F26D6D;
+}
+/* The way out of the list, on its own row and left-aligned on the column's
+   spine — deliberately apart from the actions on the rig itself. */
+.pr-btn.is-new { flex: 0 0 100%; border-style: dashed; color: var(--pr-ink-2); }

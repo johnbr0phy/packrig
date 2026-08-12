@@ -87,6 +87,19 @@ function smoothNormals(geo, groups) {
 }
 
 /**
+ * How much of the soft-goods pass a product should receive, by `structure`
+ * (see `stiffnessOf` in identity.js, fed from the model records).
+ *
+ * `rigid` is 0, and callers must read that as **skip `stuffed` entirely**, not
+ * as "displace by zero". The two are different: `stuffed` welds and re-derives
+ * smooth normals as a side effect, which is exactly the wrong thing for a
+ * moulded shell — it would round the shading of the creases on Topeak's
+ * faceted DryShell while moving no vertex at all.
+ */
+export const DEFORM_SCALE = { soft: 1, semi: 0.4, rigid: 0 };
+export const deformScale = (s) => DEFORM_SCALE[s] ?? 1;
+
+/**
  * Push vertices out along their (welded) normals with a few octaves of value
  * noise — the difference between a smooth primitive and a packed dry bag.
  * `flatAxis` restricts displacement to the two big faces of an extrusion.

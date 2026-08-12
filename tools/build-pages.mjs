@@ -15,7 +15,7 @@
  *
  *   node tools/build-pages.mjs
  */
-import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, existsSync, cpSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -66,11 +66,77 @@ for (const b of brands) {
 console.log(`   ${hotlinked} products hot-link a photo (${restored} URLs restored from images_remote) · ${noPhoto} without`);
 writeFileSync(join(docs, 'data/brands.json'), JSON.stringify(brands));
 
+// The measured silhouettes. src/catalog.js fetches BOTH of these and falls back
+// to the builders' parametric curves when a fetch 404s — silently, because a
+// missing profile is a legitimate state for the 201 products that have none.
+// So shipping without them does not break the build or log anything: it just
+// quietly serves the old guessed shapes, and every bag that was fixed by
+// measuring the maker's engineering drawing reverts on the live site only.
+// `diagram-profiles.json` is the one that matters most — it is what took the
+// seat packs from back-to-front to correct.
+// `loadouts.json` is not optional in the same way the profile files are: the
+// Loadouts level of the menu is a whole section of the app, and without this
+// file it renders its empty state on the live site while working perfectly in
+// the dev build. Build it from source rather than copying, so a catalogue
+// change that breaks a curated rig fails HERE rather than shipping a loadout
+// that quietly mounts six bags instead of ten.
+console.log('· loadouts');
+execFileSync('node', ['tools/build-loadouts.mjs'], { cwd: root, stdio: 'inherit' });
+copyFileSync(join(root, 'data/loadouts.json'), join(docs, 'data/loadouts.json'));
+
+for (const f of ['profiles.json', 'diagram-profiles.json', 'portraits.json']) {
+  const src = join(root, 'data', f);
+  if (!existsSync(src)) { console.log(`   (no data/${f} — skipping)`); continue; }
+  writeFileSync(join(docs, 'data', f), JSON.stringify(JSON.parse(readFileSync(src, 'utf8'))));
+  console.log(`   data/${f}: ${(readFileSync(join(docs, 'data', f)).length / 1024).toFixed(0)}KB`);
+}
+
+// DESIGN-SYSTEM.md §12 step 1. tokens.css sits at src/ui/tokens.css in the
+// repo and at docs/tokens.css in the deploy, so its @font-face URL — which is
+// resolved relative to the STYLESHEET, not the page — has to be rewritten for
+// the shallower path. Getting this wrong fails silently: the page renders in
+// the system fallback and looks nearly right.
+// The rendered portraits for the 201 products that ship no photograph. Without
+// them the deployed catalogue falls back to coloured plates while the dev build
+// shows pictures, which is the sort of difference nobody notices until a
+// screenshot of the live site turns up looking worse than the local one.
+{
+  const src = join(root, 'assets/portraits');
+  if (existsSync(src)) {
+    cpSync(src, join(docs, 'assets/portraits'), { recursive: true });
+    const n = readdirSync(join(docs, 'assets/portraits')).length;
+    const kb = readdirSync(join(docs, 'assets/portraits'))
+      .reduce((t, f) => t + statSync(join(docs, 'assets/portraits', f)).size, 0) / 1024;
+    console.log(`   portraits: ${n} files, ${kb.toFixed(0)}KB`);
+  } else {
+    console.log('   (no assets/portraits — run tools/bag-portraits.mjs)');
+  }
+}
+
+mkdirSync(join(docs, 'assets/fonts'), { recursive: true });
+copyFileSync(join(root, 'assets/fonts/InterVariable.woff2'), join(docs, 'assets/fonts/InterVariable.woff2'));
+copyFileSync(join(root, 'assets/fonts/Inter-LICENSE.txt'), join(docs, 'assets/fonts/Inter-LICENSE.txt'));
+{
+  const tokens = readFileSync(join(root, 'src/ui/tokens.css'), 'utf8');
+  const rewritten = tokens.replace('../../assets/fonts/', './assets/fonts/');
+  if (rewritten === tokens) throw new Error('tokens.css: expected @font-face url ../../assets/fonts/ to rewrite');
+  writeFileSync(join(docs, 'tokens.css'), rewritten);
+}
+copyFileSync(join(root, 'src/ui/sheet.css'), join(docs, 'sheet.css'));
+
 copyFileSync(join(root, 'src/ui.css'), join(docs, 'ui.css'));
+// `src/rigs.css` is gone with rigsui.js — the account is a dialogue in
+// ui/v2/builder.css and saved rigs are a menu view.
 // The wind tunnel's HUD styles live in their own file. index.html below must
 // link BOTH — the panel renders unstyled if this is copied and not linked, or
 // missing entirely if neither, and nothing in the bundle would complain.
 copyFileSync(join(root, 'src/aero/aero.css'), join(docs, 'aero.css'));
+// Last in the cascade, so it re-skins everything the others set.
+copyFileSync(join(root, 'src/ui/theme.css'), join(docs, 'theme.css'));
+// ...and after even that, the v2 menu layer, which is a self-contained dark
+// surface and has to win over the light re-skin for everything under `.pr`.
+copyFileSync(join(root, 'src/ui/v2/menu.css'), join(docs, 'menu.css'));
+copyFileSync(join(root, 'src/ui/v2/builder.css'), join(docs, 'builder.css'));
 
 writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <html lang="en">
@@ -80,8 +146,14 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <link rel="icon" href="data:," />
 <title>Packrig — Bikepacking Bag Configurator</title>
 <meta name="description" content="Build a bikepacking rig in 3D from a catalogue of 700+ real bags across 50 makers." />
+<link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="tokens.css" />
 <link rel="stylesheet" href="ui.css" />
+<link rel="stylesheet" href="sheet.css" />
 <link rel="stylesheet" href="aero.css" />
+<link rel="stylesheet" href="theme.css" />
+<link rel="stylesheet" href="menu.css" />
+<link rel="stylesheet" href="builder.css" />
 <style>html,body{height:100%;margin:0;background:#121212;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
 </head>
 <body>

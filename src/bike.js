@@ -150,7 +150,16 @@ export function createBike({ paint = 'Slate' } = {}) {
     // nearly straight blade, slight forward sweep in the lower third
     const m1 = a.clone().lerp(axle, 0.45).add(v3(-4, 0, side * 4));
     const m2 = a.clone().lerp(axle, 0.8).add(v3(3, 0, side * 2));
-    F.add(tubeAlong([a, m1, m2, axle], 12, M.paint, { segments: 24 }));
+    // Name the blade explicitly. bagshot identifies a collider by which frame
+    // LANDMARK its bounding-box centre is nearest, within 130mm. A curved blade
+    // is a TubeGeometry whose bbox centre sits ~190mm from the front axle and
+    // ~211mm from the head bottom, so it matches nothing and is reported as
+    // "unnamed part" — meaning the thing a fork bag is actually bolted to was
+    // measured and then ignored by every clearance rule, while the collider the
+    // harness DID call "fork leg" was a wheel spoke.
+    const blade = tubeAlong([a, m1, m2, axle], 12, M.paint, { segments: 24 });
+    blade.userData.part = 'fork leg';
+    F.add(blade);
   }
   const crownMesh = new THREE.Mesh(new THREE.BoxGeometry(42, 30, 74), M.paint);
   crownMesh.position.copy(crown);

@@ -1,0 +1,852 @@
+/* ===========================================================================
+   The sheet shell — DESIGN-SYSTEM.md §6.2, §6.1 rail state, §6.4 dock.
+   Step 2 of §12. Loaded AFTER ui.css so it wins during the migration.
+
+   Everything here hangs off one class on #ui-root: `.sheet-open`. That is
+   deliberate — §5 requires the sheet, the rail collapse and the dock move to
+   happen on one tick and one curve, and the cheapest way to guarantee that is
+   for all three to be transitions on a single class change.
+   =========================================================================== */
+
+/* ---- the shell ----------------------------------------------------------- */
+/* `hidden` is NOT enough on its own. The UA sheet's `[hidden] { display: none }`
+   loses to ANY display declaration in an author stylesheet, and .sheet sets
+   `display: flex` — so `sheet.hidden = true` left a full-height, 544px-wide
+   element sitting over the right third of the viewport at opacity 0, with
+   pointer-events still auto, eating every click that landed on it. That is
+   what killed the wind tunnel button: it lives top-right, and
+   elementFromPoint at its centre returned `sheet-head`.
+   Both rules below, deliberately: the first is the actual fix, the second
+   means a future `display` change cannot resurrect the bug. */
+.sheet[hidden] { display: none; }
+.sheet:not(.open) { pointer-events: none; }
+
+/* LEFT-ANCHORED. This was a right-hand side sheet, which put chrome on both
+   flanks of the bike at once — rail on the left, sheet on the right — and made
+   the whole interface feel like it was closing in. Everything lives in one
+   column now: the rig list at rest, and whatever you drill into replaces it in
+   place. One column of chrome, one free area, one direction for the camera to
+   move. */
+.sheet {
+  position: fixed;
+  top: var(--topbar-h, 64px);
+  left: var(--gutter);
+  bottom: var(--gutter);
+  width: var(--sheet-detail-w);
+  border-radius: var(--r-panel);
+  display: flex;
+  flex-direction: column;
+  overflow: visible;              /* the scrim well must not be clipped */
+  pointer-events: auto;
+  z-index: 40;
+
+  /* Enters from the edge it belongs to (§5, §1.6): nothing fades in from
+     nowhere. Width is transitioned too, so `detail` -> `catalog` is a resize
+     rather than a close and a reopen. */
+  opacity: 0;
+  transform: translateX(-24px);
+  transition:
+    opacity var(--d-sheet-out) var(--ease-in),
+    transform var(--d-sheet-out) var(--ease-in),
+    width var(--d-sheet) var(--ease-out);
+}
+
+.sheet.open {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity var(--d-sheet) var(--ease-out),
+    transform var(--d-sheet) var(--ease-out),
+    width var(--d-sheet) var(--ease-out);
+}
+
+.sheet[data-kind='catalog'] { width: var(--sheet-catalog-w); }
+
+/* ---- head ---------------------------------------------------------------- */
+.sheet-head {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-5) var(--s-5) var(--s-3);
+  border-bottom: 1px solid var(--hairline);
+  flex: 0 0 auto;
+}
+
+.sheet-title {
+  margin: 0;
+  flex: 1 1 auto;
+  color: var(--ink-1);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* §9.3: 44px hit-target floor. The visible box is 36px; the padding makes up
+   the difference without changing the optical size. */
+.sheet-close {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: var(--r-control);
+  background: var(--fill-1);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background var(--d-micro) var(--ease-out),
+              color var(--d-micro) var(--ease-out),
+              transform var(--d-press) var(--ease-out);
+}
+.sheet-close:hover { background: var(--fill-2); color: var(--ink-1); }
+.sheet-close:active { transform: scale(0.975); }
+.sheet-close:focus-visible { outline: 2px solid var(--accent-ring); outline-offset: 2px; }
+
+/* ---- body ---------------------------------------------------------------- */
+.sheet-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: var(--s-5);
+  color: var(--ink-2);
+  font: var(--t-body);
+  /* §6.1's fade-bottom, generalised: content should look like it continues
+     rather than being guillotined by the panel edge. */
+  mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 32px), transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 32px), transparent 100%);
+}
+
+/* ---- 2. the rig panel collapses to a rail (§6.1 "Rail state") ------------ */
+/* Same tick, same curve as the sheet. The panel keeps its own glass; only its
+   width and the opacity of its contents change, so nothing is re-created and
+   the browser can transition rather than relayout from scratch. */
+#ui-root .panel {
+  transition: width var(--d-sheet) var(--ease-out);
+}
+
+/* No rail. The sheet occupies the same column, so the panel steps aside
+   entirely rather than collapsing to a 56px strip of thumbnails beside it.
+   `visibility` rather than `display` so its width transition still runs and
+   reframe.js can measure it settling. */
+#ui-root.sheet-open .panel {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--d-sheet-out) var(--ease-in), visibility 0s linear var(--d-sheet-out);
+}
+
+/* The + survives, as a square button rather than a labelled row. */
+#ui-root.sheet-open .panel-foot { padding: var(--s-2); }
+#ui-root.sheet-open .add-bag {
+  width: 40px; height: 40px; min-width: 0; padding: 0;
+  margin: 0 auto; display: grid; place-items: center;
+  border-radius: var(--r-control);
+  font-size: 0;                       /* kills the label without a selector */
+  overflow: hidden;
+}
+#ui-root.sheet-open .add-bag .plus { font-size: 20px; line-height: 1; }
+
+/* ---- 3. the dock repositions (§6.4) -------------------------------------- */
+/* The dock lives INSIDE .bottom-bar, which is the element actually anchored to
+   the viewport (left: gutter + panel-w, right: gutter). Two lessons from the
+   smoke test, both worth keeping:
+     - translating .dock AND .bottom-bar applied the shift twice, because one
+       is nested in the other. The dock ended 179px off the left edge.
+     - a transform is the wrong tool anyway. .bottom-bar is anchored to both
+       edges, so moving its anchors makes it RESIZE to the free area rather
+       than slide out of one side of it. */
+/* The bottom bar and the top-right tool cluster are both gone — everything
+   they held lives in the top bar now, which spans the viewport and therefore
+   does not move when a sheet opens. Nothing left to reposition. */
+
+/* ui.css sets its own family on .panel/.dock children; the design system owns
+   type now, and sheet.css loads last. */
+#ui-root, .sheet, .picker { font-family: var(--font); }
+
+/* ---- compact: a bottom sheet, not a side sheet --------------------------- */
+/* §6.2 chose a right side sheet for the desktop reasons it gives — the bike's
+   silhouette is wide and short, so horizontal space is what is spare. None of
+   that holds on a phone, where MOBILE.md already established bottom sheets and
+   mobile.js already lifts the camera to clear them. Matching that is why
+   reframe.js refuses to run below this breakpoint. Keep this query in step
+   with COMPACT in ui.js and DESKTOP_LAYOUT in main.js. */
+@media (max-width: 900px), (pointer: coarse) {
+  .sheet {
+    top: auto;
+    left: var(--s-2);
+    right: var(--s-2);
+    bottom: var(--s-2);
+    width: auto;
+    max-height: min(72vh, 620px);
+    transform: translateY(24px);
+  }
+  .sheet.open { transform: translateY(0); }
+  .sheet[data-kind='catalog'] { width: auto; }
+
+  /* The rail is a desktop idea. On a phone the panel is already a bottom
+     sheet, and two stacked bottom sheets is exactly the "one surface at a
+     time" violation §1.4 forbids — so the panel hides outright instead. */
+  #ui-root.sheet-open .panel {
+    width: auto;
+    min-width: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #ui-root.sheet-open .bottom-bar { left: var(--s-2); right: var(--s-2); }
+  #ui-root.sheet-open .viewtools { transform: none; }
+}
+
+/* §9.4 — with reduced motion the durations are already 0ms from tokens.css,
+   so the sheet still ARRIVES from its edge, it just arrives immediately. No
+   separate code path, which is what stops the two drifting apart. */
+
+/* ==========================================================================
+   The bag sheet — REDESIGN.md §5, phase 2.
+   Tapping a bag opens this: a bigger picture of it, its colourways, its specs,
+   and the three things you might want to do about it.
+   ========================================================================== */
+
+.bagsheet { display: flex; flex-direction: column; gap: 22px; }
+
+/* Hero, 3:2. The plate is white because a product shot photographed on white
+   and then dropped on a dark surface reads as a cut-out mistake. */
+.bs-hero {
+  position: relative; aspect-ratio: 3 / 2; border-radius: var(--r-card, 12px);
+  background: #fff; overflow: hidden; flex: none;
+}
+.bs-hero img { width: 100%; height: 100%; object-fit: contain; display: block; }
+/* The fallback: this bag's own colourway, not a grey box with a camera glyph.
+   §5.3 wants a render of the mesh here — not built yet. */
+.bs-hero.is-blank {
+  background:
+    radial-gradient(120% 90% at 50% 18%, rgba(255,255,255,.14), transparent 60%),
+    var(--bs-body, #5b6068);
+}
+
+.bs-id { display: flex; flex-direction: column; gap: 4px; }
+.bs-brand {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+  color: rgba(255,255,255,.52);
+}
+.bs-name { font-size: 21px; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; }
+.bs-sub { font-size: 12.5px; color: rgba(255,255,255,.66); font-variant-numeric: tabular-nums; }
+
+.bs-block { display: flex; flex-direction: column; gap: 10px; }
+.bs-label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.bs-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+  color: rgba(255,255,255,.52);
+}
+.bs-label-v { font-size: 12.5px; color: rgba(255,255,255,.8); text-align: right; min-width: 0; }
+
+/* 28px dots with a 44px hit area — the dot is the mark, not the target. */
+.bs-ways { display: flex; flex-wrap: wrap; gap: 10px; }
+.bs-way {
+  width: 28px; height: 28px; border-radius: 50%; border: none; padding: 0; cursor: pointer;
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,.45);
+  position: relative; transition: box-shadow .16s;
+}
+.bs-way::after { content: ''; position: absolute; inset: -8px; border-radius: 50%; }
+.bs-way:hover { box-shadow: 0 0 0 1.5px rgba(0,0,0,.45), 0 0 0 3px rgba(255,255,255,.35); }
+.bs-way.on { box-shadow: 0 0 0 2px rgba(0,0,0,.6), 0 0 0 4px #fff; }
+
+.bs-spec {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  min-height: 34px; padding: 6px 0; border-top: 1px solid rgba(255,255,255,.08);
+}
+.bs-spec:first-of-type { border-top: none; }
+.bs-spec-k { font-size: 12.5px; color: rgba(255,255,255,.55); }
+.bs-spec-v {
+  font-size: 13px; color: #fff; text-align: right;
+  font-variant-numeric: tabular-nums; font-weight: 500;
+}
+.bs-spec-v.is-ok { color: #7fd6a2; }
+.bs-spec-v.is-warn { color: #e8b871; }
+
+.bs-feats { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.bs-feats li {
+  font-size: 13px; color: rgba(255,255,255,.72); line-height: 1.6; padding-left: 14px;
+  position: relative;
+}
+.bs-feats li::before {
+  content: ''; position: absolute; left: 2px; top: 9px;
+  width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,.4);
+}
+
+/* The footer never scrolls away (§5.1). Two rows, 132h: Replace and Remove
+   side by side, Buy full width beneath because it leaves the app. */
+/* Sticky inside the scroll region rather than a sibling of it: the body is
+   what scrolls, so a `flex: none` footer outside it would have needed the
+   shell to grow a footer slot. `position: sticky; bottom: 0` gets the same
+   never-scrolls-away result without touching the shell's contract. */
+.bs-foot {
+  /* Sticky rests at the container's PADDING edge, so `bottom: 0` left the
+     body's 20px bottom padding uncovered and spec rows scrolled through it.
+     Offset by that padding to reach the border-box edge. */
+  position: sticky; bottom: calc(var(--s-5) * -1); z-index: 2;
+  display: flex; flex-direction: column; gap: 10px;
+  margin: 6px calc(var(--s-5) * -1) calc(var(--s-5) * -1);
+  padding: 14px var(--s-5) calc(var(--s-5) + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255,255,255,.10);
+  /* `--e3-bg` is 0.66 alpha — right for the sheet floating over the scene,
+     wrong here, where spec rows scrolled visibly under the buttons. The footer
+     needs its own opaque ground plus the same blur, so it reads as part of the
+     glass rather than a hole in it. */
+  background: #14161a;
+}
+/* Content dissolves into the footer instead of being guillotined by it. */
+.bs-foot::before {
+  content: ''; position: absolute; left: 0; right: 0; top: -24px; height: 24px;
+  pointer-events: none;
+  background: linear-gradient(transparent, #14161a);
+}
+.bs-foot-row { display: flex; gap: 12px; }
+.bs-btn {
+  flex: 1; height: 48px; border-radius: 12px; border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.08); color: #fff;
+  font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  text-decoration: none; transition: background .16s, border-color .16s;
+}
+.bs-btn:hover { background: rgba(255,255,255,.14); }
+/* The only loud fill in the sheet: the action that keeps you in the app. */
+.bs-btn.is-primary {
+  background: var(--accent, #e8a33d); border-color: transparent; color: #201603;
+  border-radius: 999px;
+}
+.bs-btn.is-primary:hover { filter: brightness(1.06); background: var(--accent, #e8a33d); }
+/* Destructive, so it is legible but never the loudest thing on screen. */
+.bs-btn.is-bad { color: #ff9c92; }
+.bs-btn.is-bad:hover { background: rgba(255,92,77,.16); border-color: rgba(255,92,77,.4); }
+.bs-btn.is-buy { width: 100%; }
+.bs-nolink { margin: 0; text-align: center; font-size: 11.5px; color: rgba(255,255,255,.45); }
+
+@media (max-width: 900px) {
+  /* At the peek detent a 132px footer IS the peek, so Buy waits for half/full. */
+  #ui-root.sheet-peek .bs-btn.is-buy,
+  #ui-root.sheet-peek .bs-nolink { display: none; }
+  .bs-btn { height: 46px; }
+}
+
+/* ---- undo toast ---------------------------------------------------------- */
+.toast {
+  position: absolute; left: 50%; bottom: 96px; transform: translate(-50%, 8px);
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 12px 10px 16px; border-radius: 12px;
+  background: rgba(18,20,24,.94); border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 12px 32px rgba(0,0,0,.44);
+  font-size: 13px; color: #fff; pointer-events: auto;
+  opacity: 0; transition: opacity .2s, transform .2s;
+  max-width: min(440px, calc(100vw - 32px));
+  z-index: 40;
+}
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+.toast-txt { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.toast-act {
+  flex: none; border: none; background: none; padding: 4px 6px; cursor: pointer;
+  font: inherit; font-weight: 700; color: var(--accent, #e8a33d);
+}
+.toast-act:hover { text-decoration: underline; }
+@media (max-width: 900px) {
+  .toast { bottom: calc(env(safe-area-inset-bottom) + 120px); }
+}
+
+/* The one action on an unfitted bag that the row itself cannot carry. Visible
+   at rest and over the 44px floor — the opposite of the `.bag-act` it replaces. */
+.unfit-rm {
+  flex: none; align-self: center; min-height: 32px; padding: 0 12px;
+  border-radius: 8px; border: 1px solid rgba(255,92,77,.35);
+  background: rgba(255,92,77,.12); color: #ff9c92;
+  font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+}
+.unfit-rm:hover { background: rgba(255,92,77,.2); }
+
+/* ---- the rail (REDESIGN.md §4) ------------------------------------------- */
+/* 40x40 thumbnails stacked with 8px gaps, plus the add button. Clicking one
+   swaps the sheet's contents, which is what `.bag-card`'s own click already
+   does now that it opens the bag sheet. */
+#ui-root.sheet-open .bag-card {
+  display: flex; justify-content: center; align-items: center;
+  padding: 0; margin: 0 0 8px; min-height: 0; gap: 0; background: none;
+}
+#ui-root.sheet-open .bag-card .bag-sw {
+  width: 40px; height: 40px; border-radius: 10px; flex: none;
+}
+#ui-root.sheet-open .bag-card.sel .bag-sw { box-shadow: 0 0 0 2px var(--accent, #e8a33d); }
+#ui-root.sheet-open .bag-list { padding: 8px 0 0; }
+
+/* The body's bottom fade mask applies to its sticky children too, so the
+   footer's lower 32px dissolved and the spec rows scrolled visibly through it.
+   A sheet that pins an action bar does its own dissolving — `.bs-foot::before`
+   is that gradient — so the mask comes off. */
+.sheet-body:has(.bs-foot) {
+  mask-image: none; -webkit-mask-image: none;
+}
+
+/* ---- pickers inside the sheet ------------------------------------------- */
+/* These bodies were written for a free-floating 880px card that scrolled its
+   own middle section. Nested inside the sheet's scroll region they collapse:
+   an `overflow-y: auto` child of a scrolling parent has no height to work
+   with, which is how a 720px catalogue rendered one clipped card in an
+   otherwise empty sheet. The sheet body is the only scroller now. */
+.sheet-body .cards,
+.sheet-body .lines,
+.sheet-body .brands,
+.sheet-body .zone-list {
+  overflow: visible;
+  padding-left: 0;
+  padding-right: 0;
+  min-height: 0;
+}
+.sheet-body .cards { padding-bottom: 4px; }
+
+/* The root menu and the gallery carousel used to live here — `.home*` and
+   `.gal*`, about 150 lines of card, veil, arrow and dot rules. Both surfaces
+   were rewritten as one menu layer; their styles moved with them to
+   src/ui/v2/menu.css and nothing in this file referenced them. */
+
+
+/* ==========================================================================
+   PHONE — the one-column rework, on a 390px screen.
+
+   The desktop rework landed with the phone rules still describing the layout it
+   replaced: a panel whose only child was a bag list, a bottom bar that no
+   longer exists, and swatch rows sized for a dock. On a real iPhone that came
+   out as FRAME and BIDONS printed through "BAGS ON BIKE", six 56px circles
+   running off the right edge, and Save rig hanging off the top bar. The
+   assertions missed all of it because every one of those overlaps is INSIDE a
+   panel, and the panel's own rect was fine.
+   ========================================================================== */
+
+/* Also a phone on its side: 852x393 is wider than the phone breakpoint but has
+   less room top to bottom than any of them, and the old rules left the swatch
+   rows unwrapped in a 298px panel and the bag list 10px tall. */
+@media (max-width: 560px), ((pointer: coarse) and (max-height: 520px)) {
+  /* The bottom bar is gone, so the sheet sits on the safe area, not 64px above
+     a bar that is not there any more. */
+  #ui-root .panel {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    max-height: 62dvh;
+    display: flex; flex-direction: column;
+  }
+  #ui-root .panel-head { flex: 0 0 auto; }
+
+  /* ONE scroll region: the panel itself, with the handle stuck to the top of
+     it. Giving the bag list its own scroller inside a fixed-height panel meant
+     the list was whatever height was left after Bike, the actions and the
+     totals had taken theirs — which on a 390px screen was nothing, so a rig
+     with six bags in it rendered as "BAGS ON BIKE (6)" over empty space. */
+  #ui-root .panel { overflow-y: auto; overscroll-behavior: contain; }
+  /* `.rignav` had no flex basis, so in a scrolling flex column it shrank to
+     nothing and its bar drew on top of the section beneath it — "Untitled rig"
+     printed straight through "BAGS ON BIKE". Everything in this column is
+     content-sized; the panel scrolls, not the children. */
+  #ui-root .rignav,
+  #ui-root .nav-sec,
+  #ui-root .panel-foot { flex: 0 0 auto; min-height: 0; }
+  #ui-root .bag-list { overflow: visible; max-height: none; }
+  #ui-root .panel-head {
+    position: sticky; top: 0; z-index: 2; min-height: 40px; padding: 4px 8px;
+    background: linear-gradient(rgba(20,22,26,.96), rgba(20,22,26,.82));
+  }
+
+  /* Label above swatches, not beside them: a 46px label plus six circles does
+     not fit 366px, and `flex` with no wrap simply ran them off the edge. */
+  #ui-root .appearance { gap: 14px; padding: 0 14px 12px; }
+  #ui-root .paint-group,
+  #ui-root .bottle-group { flex-direction: column; align-items: stretch; gap: 7px; }
+  #ui-root .group-label,
+  #ui-root .bottle-group .lbl { width: auto; }
+  #ui-root .paints,
+  #ui-root .bidons { flex-wrap: wrap; gap: 10px; }
+  /* Six 44px swatches and five 10px gaps come to 314px, which fits inside 366.
+     So they are simply 44px — the real target, not a 34px mark with an
+     invisible pad around it. (That pad also widened the button's scroll box,
+     which is a small lie the overflow audit was right to object to.) */
+  #ui-root .paint,
+  #ui-root .bidon { width: 44px; height: 44px; }
+
+  #ui-root .nav-sec-head { padding: 12px 14px 6px; }
+  #ui-root .nav-sec-title { padding: 12px 14px 6px; }
+  #ui-root .nav-sec-head .nav-sec-title { padding: 0; }
+  #ui-root .nav-actions { padding: 4px 10px 12px; gap: 8px; }
+  #ui-root .nav-actions > * { min-height: 46px; }
+
+  /* THE TOP BAR AT 390px. It used to hold a wordmark, a Menu button, three
+     tools, Save rig and an email — none of which fit, and the overflow was
+     hidden rather than wrapped, so Save rig fell off the end. Two of those are
+     gone now: Save is a dock in the bottom-right corner, and Menu was a second
+     control doing the wordmark's job.
+     So the WORDMARK COMES BACK, and it has to: with Menu deleted it is the
+     only way up to the menu on a phone. Wordmark, three tools and the account
+     dot fit inside 390px with room to spare. */
+  #ui-root .topbar { gap: 8px; padding: 0 10px; }
+  #ui-root .topbar .wordmark { display: block; margin-right: auto; }
+  #ui-root .top-right { gap: 6px; flex: 0 1 auto; min-width: 0; }
+  #ui-root .viewtools { padding: 1px; }
+  #ui-root .tool-btn { width: 36px; height: 36px; font-size: 17px; }
+  #ui-root .acct-btn { padding: 0 10px; }
+  #ui-root .acct-btn .acct-label { display: none; }
+  #ui-root .save-btn { padding: 0 13px; font-size: 12.5px; }
+}
+
+/* Landscape phone: the panel stays a side column (a bottom sheet at 393px tall
+   would leave no bike), so it needs its own height budget rather than the
+   phone's 62dvh, and the list needs a floor or the sections above it eat the
+   whole panel. */
+@media (pointer: coarse) and (max-height: 520px) and (min-width: 561px) {
+  #ui-root .panel {
+    top: calc(var(--topbar-h) + 8px); bottom: 8px;
+    max-height: none; width: min(320px, 42vw);
+  }
+  #ui-root .bag-list { min-height: 120px; }
+  #ui-root .paint, #ui-root .bidon { width: 34px; height: 34px; }
+  #ui-root .nav-actions { flex-direction: column; }
+}
+
+/* A render of our model, not a photograph of the product — said plainly, in the
+   corner of the plate, because the spec table beside it is scrupulous about
+   where its numbers come from and the picture should be too. */
+.bs-hero-tag {
+  position: absolute; left: 10px; bottom: 10px;
+  padding: 4px 8px; border-radius: 6px;
+  background: rgba(12, 14, 17, 0.72); color: rgba(255, 255, 255, 0.82);
+  font-size: 9.5px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+}
+
+/* ==========================================================================
+   The faceted catalogue — REDESIGN.md §9.
+   ========================================================================== */
+.cat { gap: 0; }
+.cat-search { padding: 0 0 10px; }
+.cat-q {
+  width: 100%; height: 40px; padding: 0 14px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06);
+  color: #fff; font: inherit; font-size: 13.5px; -webkit-appearance: none;
+}
+.cat-q::placeholder { color: rgba(255,255,255,.42); }
+.cat-q:focus { outline: none; border-color: var(--accent, #e8a33d); background: rgba(255,255,255,.09); }
+
+/* The facet row scrolls sideways rather than wrapping to three lines on a
+   phone — it is a toolbar, and a toolbar that reflows is a moving target. */
+.cat-facets {
+  position: relative; display: flex; gap: 8px; padding-bottom: 10px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.cat-facets::-webkit-scrollbar { display: none; }
+.cat-chip {
+  flex: none; height: 34px; padding: 0 13px; border-radius: 8px; cursor: pointer;
+  border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.84); font: inherit; font-size: 12.5px; font-weight: 600;
+  white-space: nowrap;
+}
+.cat-chip:hover { background: rgba(255,255,255,.11); color: #fff; }
+.cat-chip.on { border-color: var(--accent, #e8a33d); background: rgba(232,168,61,.16); color: #fff; }
+
+.cat-pop {
+  position: absolute; top: 40px; z-index: 5; min-width: 210px; max-height: 320px;
+  overflow-y: auto; padding: 6px; border-radius: 12px;
+  background: rgba(20,22,26,.97); border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 18px 44px rgba(0,0,0,.5);
+}
+.cat-opt {
+  display: flex; width: 100%; align-items: center; gap: 10px; min-height: 36px;
+  padding: 0 10px; border: none; border-radius: 8px; background: none; cursor: pointer;
+  color: rgba(255,255,255,.86); font: inherit; font-size: 13px; text-align: left;
+}
+.cat-opt:hover { background: rgba(255,255,255,.09); color: #fff; }
+.cat-opt.on { color: var(--accent, #e8a33d); font-weight: 650; }
+.cat-opt-l { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* A facet without a count is a guess — every row carries one. */
+.cat-opt-n { flex: none; font-size: 11.5px; color: rgba(255,255,255,.45); font-variant-numeric: tabular-nums; }
+
+.cat-count {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 2px 0 10px; font-size: 11.5px; color: rgba(255,255,255,.5);
+}
+.cat-clear {
+  border: none; background: none; padding: 0; cursor: pointer; font: inherit;
+  font-size: 11.5px; font-weight: 600; color: var(--accent, #e8a33d);
+}
+.cat-clear:hover { text-decoration: underline; }
+
+.cat-empty { padding: 26px 4px; text-align: center; }
+.cat-empty p { margin: 0 0 14px; font-size: 14px; color: rgba(255,255,255,.78); }
+.cat-outs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.cat-relax {
+  height: 36px; padding: 0 14px; border-radius: 999px; cursor: pointer; font: inherit;
+  font-size: 12.5px; font-weight: 600;
+  border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.07); color: #fff;
+}
+.cat-relax:hover { background: rgba(255,255,255,.14); }
+.cat-more { height: 1px; }
+
+.card .brand {
+  font-size: 9.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+  color: rgba(255,255,255,.5); margin-bottom: 2px;
+}
+/* Shown, not hidden: greyed-out is the least legible thing over a bright scene,
+   so an unfittable bag keeps its contrast and states the reason. */
+.card.is-unfit { border-left: 2px solid #ff5c4d; }
+.card-unfit { margin-top: 6px; font-size: 10.5px; color: #e8b871; }
+
+/* Three across in the 720px catalogue sheet, per §9's grid. The base rule's
+   240px minimum only ever yielded two, which wastes the width the catalogue
+   width exists to provide. */
+.sheet[data-kind='catalog'] .cards { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+/* A 32px fade is generous against a paragraph and mean against a 210px product
+   card: it left a card row showing as a lit sliver at the panel edge rather
+   than reading as more below. The catalogue gets a fade proportional to what
+   it is cutting. */
+.sheet[data-kind='catalog'] .sheet-body {
+  mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 64px), transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 64px), transparent 100%);
+}
+.sheet[data-kind='catalog'] .card-thumb { aspect-ratio: 4 / 3; }
+
+/* ==========================================================================
+   Design review, second pass.
+   ========================================================================== */
+
+/* FRAME PAINT AND BIDONS WERE THE SAME OBJECT. Two rows of identical circles,
+   told apart only by a 10px label beside them — so the eye had to read before
+   it could choose. DESIGN-SYSTEM §6.4 says the groups are distinguished by
+   SHAPE, and it is right: paint gets the metallic sheen of a painted tube,
+   bidons stay flat, and the difference is legible at a glance and at speed. */
+.paint {
+  background-image: radial-gradient(115% 95% at 32% 22%,
+    rgba(255,255,255,.42), rgba(255,255,255,.06) 46%, rgba(0,0,0,.30));
+  background-blend-mode: overlay;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.16), 0 1px 3px rgba(0,0,0,.4);
+}
+.bidon { box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
+
+/* ONE BUTTON LANGUAGE IN THE TOP BAR. There were three in 500px: an Ember pill,
+   a bordered pill, and a dark capsule holding the camera tools — a container
+   inside a container, on a bar that is already a surface. The tools are icons
+   on the bar now, and the one filled button is the one action that matters. */
+/* `.viewtools` also carries `.glass`, which paints its own background — so the
+   capsule survived being told not to have one. */
+.topbar .viewtools.glass {
+  background: none; border: none; box-shadow: none;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  padding: 0; gap: 2px;
+}
+.topbar .tool-divider { display: none; }
+.topbar .tool-btn { width: 38px; height: 38px; border-radius: 10px; }
+.acct-btn { border-color: transparent; background: rgba(255,255,255,.07); }
+.acct-btn:hover { background: rgba(255,255,255,.13); }
+.home-up {
+  border-color: transparent;
+  background: rgba(255, 255, 255, .07);
+  /* was `height: 32px`, which is shorter than the button's own line box plus
+     its padding — the word "Menu" sat clipped against its own border. Let the
+     padding size it. */
+  min-height: 32px;
+  padding: 7px 12px;
+  line-height: 1;
+}
+
+/* FIVE TRACKED-CAPS LABELS IN ONE COLUMN. "BIKE", "FRAME", "BIDONS", "BAGS ON
+   BIKE", "TOTAL CAPACITY" all shouted at the same volume, so none of them led.
+   Section headings keep the treatment; the two swatch labels drop to sentence
+   case at reading weight, because they label a control rather than open a
+   section. */
+.group-label, .bottle-group .lbl {
+  font-size: 11.5px; font-weight: 500; letter-spacing: 0; text-transform: none;
+  color: rgba(255,255,255,.5);
+}
+
+/* THE BAG ROW'S NAME RAN UNDER ITS OWN CAPACITY COLUMN. `.bag-name-row` is a
+   flex row, so a two-line name wrapped beneath the litres and the number lost
+   its column. The capacity is now a fixed right-hand column that the name
+   cannot flow into. */
+.bag-name-row { align-items: flex-start; gap: 10px; }
+.bag-model { flex: 1 1 auto; min-width: 0; }
+.bag-liters { flex: 0 0 auto; text-align: right; padding-top: 1px; }
+
+/* CATALOGUE PLATES WERE A JUMBLE: cutouts on white next to lifestyle shots next
+   to square crops, at three effective aspect ratios. We cannot re-shoot the
+   maker's photographs, but we can stop the grid amplifying the difference —
+   one plate, one ratio, contained rather than cropped, so every card presents
+   the product the same way. */
+.sheet[data-kind='catalog'] .card-thumb {
+  background: #fff; border-radius: 10px; overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+}
+.sheet[data-kind='catalog'] .card-thumb img { width: 100%; height: 100%; object-fit: contain; }
+/* A single colourway is not a choice, and it was rendering as one stray white
+   square on a card that had nothing else to say. */
+.card .chips:has(.chip:only-child) { display: none; }
+
+/* Out of the product's way: the hint sat dead centre over the bike. Bottom of
+   the free area, quieter, and gone on the first drag. */
+#ui-root .hint {
+  bottom: 26px; top: auto;
+  font-size: 11.5px; opacity: .72;
+  background: rgba(12,14,17,.55);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+@media (max-width: 560px) {
+  /* Above the sheet, not on the bike. */
+  #ui-root .hint { bottom: auto; top: calc(var(--topbar-h) + 12px); }
+}
+
+/* The phone sheet's handle band was ~100px of empty black with a chevron and a
+   plus adrift in it. It is a grab handle: it should look like one. */
+@media (max-width: 560px) {
+  #ui-root .panel-head { min-height: 34px; padding: 3px 8px; gap: 6px; }
+  #ui-root .panel-head::before {
+    content: ''; position: absolute; left: 50%; top: 7px; transform: translateX(-50%);
+    width: 36px; height: 4px; border-radius: 2px; background: rgba(255,255,255,.22);
+  }
+  #ui-root .panel-head { position: sticky; padding-top: 15px; }
+  #ui-root .sheet-chevron { width: 34px; height: 34px; }
+  #ui-root .sheet-add { width: 38px; height: 38px; }
+}
+
+@media (max-width: 560px) {
+  /* The handle band was 110px of empty black holding a chevron and a plus. The
+     grab handle is the affordance; the chevron said the same thing twice and
+     the plus said what "Add a bag" says six rows down. */
+  #ui-root .panel-head { min-height: 30px; padding: 14px 10px 4px; }
+  #ui-root .sheet-chevron { display: none; }
+  #ui-root .peek-total { margin-left: auto; }
+}
+
+/* ==========================================================================
+   Two phone bugs reported from a real device.
+   ========================================================================== */
+
+@media (max-width: 560px) {
+  /* THE SHEET WOULD NOT CLOSE. Tapping the header has always toggled
+     `.collapsed`, and it was still firing — but `.panel.collapsed { max-height:
+     var(--peek-h) }` lives in ui.css at class specificity, and the one-column
+     rework set `#ui-root .panel { max-height: 62dvh }` with an id in front of
+     it. The class could never win, so the state changed and the sheet did not
+     move. Same weight, so it can. */
+  #ui-root .panel.collapsed { max-height: var(--peek-h); overflow: hidden; }
+  #ui-root .panel.collapsed .panel-head { background: none; }
+  :root { --peek-h: 58px; }
+
+  /* The header is the control, so it should read as one: a hairline under it
+     while collapsed, and the running total pulled in beside the handle. */
+  #ui-root .panel.collapsed .peek-total { font-size: 13px; color: rgba(255,255,255,.9); }
+}
+
+/* DOUBLE-TAP WAS ZOOMING THE PAGE AND LEAVING IT THERE. Once the browser has
+   zoomed a fixed-position layout there is no scroll that brings the top bar
+   back — you are stuck looking at the middle of the app until you pinch out,
+   which is not obvious and not discoverable.
+   `manipulation` keeps pinch and drops the double-tap gesture, which nothing
+   here wanted: every double-tappable thing in this UI is a button. */
+html, body, #ui-root { touch-action: manipulation; }
+/* MOBILE.md rule 6: the canvas owns its gestures. Anything the browser handles
+   here — double-tap zoom, pan, rubber-band — is a gesture stolen from the
+   camera. */
+#scene { touch-action: none; }
+/* Buttons and sheets: taps only, never a browser zoom. */
+.topbar button, .panel button, .sheet button,
+.card, .bag-card, .mount-btn, .cat-chip, .cat-opt { touch-action: manipulation; }
+
+/* ==========================================================================
+   Your rigs, at the top of the left column.
+   ========================================================================== */
+
+.rignav { display: flex; flex-direction: column; min-height: 0; }
+
+/* The bar is the level indicator AND the way back. At the list it is a heading;
+   inside a rig it is the rig's name, which is also the rename control. */
+.rn-bar { display: flex; align-items: center; gap: 6px; padding: 14px 14px 8px; }
+.rn-back {
+  flex: none; width: 30px; height: 30px; margin-left: -6px;
+  display: grid; place-items: center; cursor: pointer;
+  border: none; border-radius: 8px; background: none; color: rgba(255,255,255,.7);
+}
+.rn-back:hover { background: rgba(255,255,255,.1); color: #fff; }
+.rn-title {
+  /* It is a rename control, not a caption — so it gets a target, not just a
+     line of text. 19px tall was under every floor there is. */
+  flex: 1; min-width: 0; min-height: 32px; display: flex; align-items: center;
+  text-align: left; padding: 0; border: none; background: none;
+  font: inherit; font-size: 15px; font-weight: 650; color: #fff; cursor: pointer;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rn-title:disabled {
+  cursor: default; font-size: 10.5px; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; color: rgba(255,255,255,.5);
+}
+.rn-title:not(:disabled):hover { text-decoration: underline; text-decoration-color: rgba(255,255,255,.3); }
+.rn-count { flex: none; font-size: 11.5px; color: rgba(255,255,255,.42); font-variant-numeric: tabular-nums; }
+.rn-rename {
+  flex: 1; min-width: 0; height: 30px; padding: 0 8px; border-radius: 7px;
+  border: 1px solid var(--accent, #e8a33d); background: rgba(255,255,255,.08);
+  color: #fff; font: inherit; font-size: 15px; font-weight: 650;
+}
+.rn-rename:focus { outline: none; }
+
+/* At the rig level the list is gone and the back arrow appears; at the list
+   level the reverse. One attribute, no rebuild, so the bike never blinks. */
+.panel[data-level='rig'] .rn-list { display: none; }
+.panel[data-level='rig'] .rn-back { display: grid; }
+.panel[data-level='list'] .rn-back { display: none; }
+.panel[data-level='list'] .nav-sec,
+.panel[data-level='list'] .panel-foot { display: none; }
+.panel[data-level='list'] .rignav { flex: 1 1 auto; }
+
+.rn-list { display: flex; flex-direction: column; gap: 2px; padding: 0 8px 12px; overflow-y: auto; min-height: 0; }
+.rn-row {
+  display: flex; align-items: center; gap: 11px; width: 100%; min-height: 60px;
+  padding: 8px 8px; border: none; border-radius: 10px; background: none; cursor: pointer;
+  text-align: left; font: inherit; color: inherit;
+}
+.rn-row:hover { background: rgba(255,255,255,.07); }
+
+/* The bags themselves, overlapped — you recognise your own rig by what is on
+   it. A render of the whole bike belongs here and will replace this once there
+   is somewhere to store one. */
+.rn-stack { flex: none; display: flex; align-items: center; }
+.rn-stack img {
+  width: 34px; height: 34px; border-radius: 8px; object-fit: cover; background: #fff;
+  box-shadow: 0 0 0 2px rgba(22,24,28,.95);
+}
+.rn-stack img + img { margin-left: -13px; }
+.rn-stack.is-empty { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,.07); }
+.rn-txt { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.rn-name {
+  font-size: 14px; font-weight: 600; color: #fff;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rn-meta { font-size: 11.5px; color: rgba(255,255,255,.52); font-variant-numeric: tabular-nums; }
+.rn-empty { margin: 4px 10px 12px; font-size: 13px; color: rgba(255,255,255,.5); }
+
+.rn-new {
+  margin: 6px 8px 0; min-height: 44px; border-radius: 10px; cursor: pointer;
+  border: 1px dashed rgba(255,255,255,.22); background: none; color: #fff;
+  font: inherit; font-size: 13.5px; font-weight: 600;
+}
+.rn-new:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.34); }
+
+@media (max-width: 560px) {
+  .rn-bar { padding: 10px 12px 6px; }
+  .rn-title { min-height: 40px; }
+  .rn-row { min-height: 64px; }
+  .rn-stack img { width: 38px; height: 38px; }
+}
+
+/* The row and its delete control. The control stays out of the way until the
+   row is hovered or focused — but it is always in the DOM and always reachable
+   by keyboard, because "hidden until hover" is not a control on a touch screen.
+   On touch it is simply always visible. */
+.rn-item { position: relative; display: flex; align-items: center; }
+.rn-item .rn-row { flex: 1 1 auto; min-width: 0; padding-right: 34px; }
+.rn-del {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  width: 28px; height: 28px; display: grid; place-items: center;
+  border: none; border-radius: 6px; background: none; cursor: pointer;
+  opacity: 0; transition: opacity .12s;
+}
+.rn-item:hover .rn-del, .rn-del:focus-visible { opacity: 1; }
+@media (pointer: coarse) { .rn-del { opacity: 1; width: 34px; height: 34px; } }

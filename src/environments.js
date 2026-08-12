@@ -558,8 +558,14 @@ const DEFS = {
   night: {
     hdr: 'assets/hdri/dikhololo_night_2k.hdr',
     // moon behind the bike from the default cameras → rim light on the silhouette
-    sun: { dir: [-9, 6.5, -14], color: 0x9cbcf2, intensity: 1.25 },
-    exposure: 1.14,
+    //
+    // Raised from 1.25 / 1.14. The rim light read beautifully on a bare frame
+    // and hid a loaded one: the menu's whole argument is that the bike you are
+    // reading about is the bike you are looking at, and at night a ten-bag
+    // Apidura rig with a full manifest beside it rendered as one black
+    // silhouette. Enough key to carry the bag faces; still unmistakably night.
+    sun: { dir: [-9, 6.5, -14], color: 0x9cbcf2, intensity: 1.9 },
+    exposure: 1.24,
     envIntensity: 1.35,
     ground: 0x333c55,
     fog: 0x101830,

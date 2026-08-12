@@ -10,7 +10,11 @@ const SHORT = {
   'Outer Shell Adventure': 'Outer Shell',
   'Brooks England': 'Brooks',
   'Chrome Industries': 'Chrome',
-  'Specialized x Fjällräven': 'Spec/Fjällräven',
+  // Was 'Specialized x Fjällräven' → 'Spec/Fjällräven'. Renamed to Fjällräven
+  // on 8 Aug: all six products are Fjällräven's own Hoja line, sold on
+  // fjallraven.com, and the reviewer found no Specialized text, logo or S-mark
+  // in any of the ~16 product photos or in the copy on any of the six pages.
+  'Fjällräven': 'Fjällräven',
   'Straight Cut Design': 'Straight Cut',
   'Rogue Panda Designs': 'Rogue Panda',
   'Buckhorn Bags': 'Buckhorn',
@@ -28,9 +32,38 @@ const FABRIC_KEY = (s = '') => {
   return 'cordura';
 };
 
+const slugify = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 export async function loadCatalog() {
   const res = await fetch('./data/brands.json');
   const brands = await res.json();
+  // Silhouettes measured off the maker's own photographs by tools/silhouette.mjs.
+  // Optional: a product with no measured profile falls back to the builder's
+  // parametric curve, so this file can be built up a slot at a time.
+  const profiles = await fetch('./data/profiles.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+  // Outlines measured off the maker's own DIMENSIONED ENGINEERING DRAWING by
+  // tools/diagram-outline.mjs, and preferred over the photo-traced ones above
+  // wherever both exist. A photograph is a lit object at an unknown angle in
+  // perspective; the drawing is orthographic, unlit and dimensioned, and it
+  // also yields the plan-view width profile, which photographs almost never do.
+  const diagrams = await fetch('./data/diagram-profiles.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+  /*
+   * A render of every bag that ships no photograph.
+   *
+   * 201 of 702 products have no image at all — small makers, discontinued
+   * models, and a long tail nobody photographed — and everywhere the app showed
+   * a bag it had to show a coloured plate instead. tools/bag-portraits.mjs
+   * renders each of them from its own measured record, in the app's own
+   * lighting, and this folds the result into `images` so every call site that
+   * already reads a photograph picks it up without knowing the difference.
+   *
+   * It goes in LAST and never overwrites: a real photograph of the real product
+   * always beats a render of our model of it.
+   */
+  const portraits = await fetch('./data/portraits.json').then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+  const portraitKey = (brandName, p) => [brandName, p.line, p.name, p.size]
+    .filter(Boolean).join('-').toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 90);
   brands.forEach((b, bi) => {
     b.index = bi;
     b.short = SHORT[b.name] || b.name;
@@ -39,6 +72,12 @@ export async function loadCatalog() {
       p.index = pi;
       p.brandIndex = bi;
       if (!p.slot) p.slot = 'seatpack';
+      if (!p.images?.length) {
+        const shot = portraits[portraitKey(b.short, p)] || portraits[portraitKey(b.name, p)];
+        // `rendered` so the UI can be honest about what it is showing when it
+        // matters — a spec sheet should not imply a photograph exists.
+        if (shot) { p.images = [shot]; p.rendered = true; }
+      }
       // ensure sane dims in mm
       const d = p.dims_cm || {};
       // `dims_cm` is the honest published record and is what the spec table
@@ -61,6 +100,12 @@ export async function loadCatalog() {
         hgt: (drawHgt || d.dia || 12) * 10,
         dia: (d.dia || Math.min(drawWid || 14, drawHgt || 14)) * 10,
       };
+      // Measured shape, published scale. The profile is peak-normalised, so it
+      // says nothing about size — the builder still takes every dimension from
+      // the catalogue and uses this only for the curve between them.
+      const key = slugify([b.name, p.line, p.name, p.size].filter(Boolean).join(' '));
+      const prof = diagrams[key] || profiles[key];
+      if (prof?.profile?.length) p.profile = prof;
     });
   });
   return brands;

@@ -930,19 +930,19 @@ export const GRADE_REF_KPH = RIDE_DEFAULTS.speedKph;
 
 export const GRADES = [
   { letter: 'A+', name: 'Bullet',    maxW: 5,
-    blurb: 'Barely there. The wind cannot tell you are carrying anything.' },
+    blurb: 'The wind cannot tell you are carrying anything. Whether you can is between you and your back.' },
   { letter: 'A',  name: 'Clean',     maxW: 10,
-    blurb: 'A real load that costs almost nothing. Hard to do better with luggage on.' },
+    blurb: 'A real load for almost no money. This is about as well as luggage can be made to behave, so do enjoy it while nobody is asking you to carry a tent.' },
   { letter: 'B',  name: 'Tidy',      maxW: 17,
-    blurb: 'Noticeable over a long day, invisible over a short one.' },
+    blurb: 'Invisible over an afternoon, quietly present by hour six. You will blame the hills, and the hills will accept this, because the hills are used to it.' },
   { letter: 'C',  name: 'Draggy',    maxW: 26,
-    blurb: 'You are paying for the volume. Fine at touring pace, expensive at a fast one.' },
+    blurb: 'You are now paying rent on the volume. Perfectly civil at touring pace; noticeably less funny the moment somebody at the front decides to press on.' },
   { letter: 'D',  name: 'Sail',      maxW: 36,
-    blurb: 'Enough drag to change the day’s plan. Worth asking what is out in the wind.' },
+    blurb: 'Enough drag to rewrite the day’s plan without consulting you. Worth a long look at what is actually catching the wind out there, and a longer one at whether it needs to be.' },
   { letter: 'E',  name: 'Billboard', maxW: 50,
-    blurb: 'More of this effort is fighting air than carrying gear.' },
+    blurb: 'More of this effort is now spent shoving air out of the way than carrying anything useful. A headwind will feel like a personal remark.' },
   { letter: 'F',  name: 'Barn Door', maxW: Infinity,
-    blurb: 'You have built a sail that happens to hold gear. Own it, or repack it.' },
+    blurb: 'Congratulations: you have built a sail that happens to hold gear. Own it entirely, tell everyone it is for stability, or repack it in the layby like the rest of us.' },
 ];
 
 /**

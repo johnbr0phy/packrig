@@ -38,7 +38,18 @@ const want = {
   limit: parseInt(arg('limit', '0'), 10) || 0,
   shots: !has('no-shots'),
   angles: (arg('angles') || 'side,tq,rear,front').split(','),
+  // Output controls, added for the eval harness. Defaults reproduce the
+  // original behaviour exactly: shots/bag, PNG, 2x. An eval run keeps every
+  // version forever, and a 4 MB PNG x 4 angles x 70 products is 1.1 GB per
+  // run — so eval-render.mjs asks for JPEG at 1.5x instead (~100 MB).
+  out: arg('out'),
+  glb: has('glb'),
+  slugs: arg('slugs'),
+  fmt: arg('fmt', 'png'),
+  quality: parseInt(arg('quality', '82'), 10),
+  dsf: parseFloat(arg('dsf', '2')),
 };
+const OUT_ROOT = want.out ? (want.out.endsWith('/') ? want.out : want.out + '/') : `${root}shots/bag/`;
 
 // Catalogue slot names are not UI slot names — mapping only `pannier` once made
 // every fork/stem bag read back as "dropped".
@@ -86,9 +97,16 @@ function classify(slot, clearance) {
 
 const slugify = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
+// An explicit slug list, one per line — how the eval harness asks for exactly
+// the frozen set and nothing else, across any number of brands.
+const only = want.slugs
+  ? new Set(readFileSync(want.slugs, 'utf8').split('\n').map((s) => s.trim()).filter(Boolean))
+  : null;
+
 const brands = JSON.parse(readFileSync(root + 'data/brands.json'));
 const jobs = [];
 brands.forEach((b, bi) => b.products.forEach((p, pi) => {
+  if (only && !only.has(slugify([b.name, p.line, p.name, p.size].filter(Boolean).join(' ')))) return;
   if (want.brand && b.name.toLowerCase() !== want.brand.toLowerCase()) return;
   if (want.line && String(p.line || '').toLowerCase() !== want.line.toLowerCase()) return;
   if (want.name && !String(p.name).toLowerCase().includes(want.name.toLowerCase())) return;
@@ -130,7 +148,15 @@ function measureInPage(uiSlot) {
     ['headTop', P.headTop], ['headBottom', P.headBottom],
     ['saddle', P.saddlePos], ['bar', P.barCenter],
   ];
-  const nameFor = (a, b) => {
+  // A part may name ITSELF via userData.part, and that always wins. The
+  // landmark guess below cannot name anything whose bounding-box centre is more
+  // than 130mm from a frame landmark, which is every curved tube: the fork
+  // blade's centre is ~190mm from the front axle, so it reported as "unnamed
+  // part" and no CONTACT_OK rule could ever apply to it. Meanwhile a wheel spoke
+  // WAS being named 'fork leg', so the fork bag gate was grading the distance to
+  // a spoke. See src/bike.js where the blades set userData.part.
+  const nameFor = (a, b, self = null) => {
+    if (self) return self;
     const near = (v) => {
       let best = null, bd = 1e9;
       for (const [n, m] of marks) {
@@ -202,7 +228,7 @@ function measureInPage(uiSlot) {
       const b = new THREE.Vector3(0, -par.height / 2, 0).applyMatrix4(M);
       const r = Math.max(par.radiusTop, par.radiusBottom) * k;
       if (r > 60) return;                            // rims / big discs, not tubes
-      colliders.push({ kind: 'seg', name: nameFor(a, b), a: a.toArray(), b: b.toArray(), r });
+      colliders.push({ kind: 'seg', name: nameFor(a, b, o.userData?.part), a: a.toArray(), b: b.toArray(), r });
       return;
     }
     // Anything else — curved fork blades (TubeGeometry), the saddle, the bars —
@@ -222,7 +248,7 @@ function measureInPage(uiSlot) {
       v.fromBufferAttribute(pos, i).applyMatrix4(M);
       cloud.push(v.x, v.y, v.z);
     }
-    colliders.push({ kind: 'cloud', name: nameFor(c, c), pts: cloud });
+    colliders.push({ kind: 'cloud', name: nameFor(c, c, o.userData?.part), pts: cloud });
   });
 
   // Bag surface points, in frame-local mm, decimated so this stays fast.
@@ -306,13 +332,139 @@ function measureInPage(uiSlot) {
     if (!prev || r.min < prev.min) byName.set(r.name, r);
   }
 
+  // The bag's own side-elevation profile, measured exactly the way
+  // tools/silhouette.mjs measures the product photograph: principal axis of the
+  // silhouette, then the perpendicular half-extent at 40 stations, peak
+  // normalised. That makes the two directly comparable, so the harness can
+  // score the one thing every other gate is blind to — does this look like the
+  // shape in the photo. `pts` is already hardware-free, which matches the way
+  // the photo measurement drops strap spikes.
+  const NST = 40;
+  const profile40 = (() => {
+    let mx = 0, my = 0, k = 0;
+    for (let i = 0; i < pts.length; i += 3) { mx += pts[i]; my += pts[i + 1]; k++; }
+    if (!k) return null;
+    mx /= k; my /= k;
+    let sxx = 0, syy = 0, sxy = 0;
+    for (let i = 0; i < pts.length; i += 3) {
+      const dx = pts[i] - mx, dy = pts[i + 1] - my;
+      sxx += dx * dx; syy += dy * dy; sxy += dx * dy;
+    }
+    const th = 0.5 * Math.atan2(2 * (sxy / k), sxx / k - syy / k);
+    const ux = Math.cos(th), uy = Math.sin(th), vx = -uy, vy = ux;
+    let uMin = Infinity, uMax = -Infinity;
+    for (let i = 0; i < pts.length; i += 3) {
+      const u = (pts[i] - mx) * ux + (pts[i + 1] - my) * uy;
+      if (u < uMin) uMin = u; if (u > uMax) uMax = u;
+    }
+    const L = uMax - uMin;
+    if (!(L > 1)) return null;
+    const lo = new Array(NST).fill(Infinity), hi = new Array(NST).fill(-Infinity);
+    for (let i = 0; i < pts.length; i += 3) {
+      const dx = pts[i] - mx, dy = pts[i + 1] - my;
+      const u = dx * ux + dy * uy, v = dx * vx + dy * vy;
+      let s = Math.floor(((u - uMin) / L) * NST);
+      if (s < 0) s = 0; if (s >= NST) s = NST - 1;
+      if (v < lo[s]) lo[s] = v;
+      if (v > hi[s]) hi[s] = v;
+    }
+    const half = lo.map((l, s) => (Number.isFinite(l) ? (hi[s] - l) / 2 : 0));
+    const peak = Math.max(...half);
+    if (!(peak > 0)) return null;
+    const norm = half.map((h) => +(h / peak).toFixed(4));
+    // Orient MOUNTING END FIRST, decided by where the bag actually hangs.
+    //
+    // This used to put the NARROW end first, matching how the reference
+    // profiles were oriented. That made the IoU score structurally unable to
+    // see a bag drawn back to front: reversing the geometry also reverses
+    // which end the rule picks, so the two profiles line up again and the
+    // score is unchanged. It is not a small blind spot — when v3 reversed the
+    // taper on all eleven seat packs, this metric rated them 0.862, the
+    // highest of any slot in the catalogue, while a critic scored the same
+    // bags 1 and 2 out of 5.
+    //
+    // The mount is the fixed fact: the bag's parent IS its anchor, so project
+    // the anchor onto the principal axis and start from whichever end it sits
+    // nearer. Now a reversed bag scores badly, which is the entire point of
+    // having the metric.
+    const anchorWorld = new THREE.Vector3();
+    (bagRoot.parent || bagRoot).getWorldPosition(anchorWorld);
+    const aL = anchorWorld.applyMatrix4(toLocal);
+    const uA = (aL.x - mx) * ux + (aL.y - my) * uy;
+    if (Math.abs(uA - uMax) < Math.abs(uA - uMin)) norm.reverse();
+    return norm;
+  })();
+
   const box = localBox(bagRoot);
   const size = box.getSize(new THREE.Vector3());
+
+  // The same box over the BODY only — no straps, buckles or cage arms. Those
+  // stand off the bag by design and wrap the frame, so including them inflates
+  // width by tens of percent on every slot at once, which reads as a builder
+  // fault when it is the measurement. `pts` is already hardware-free.
+  const bodyBox = new THREE.Box3();
+  for (let i = 0; i < pts.length; i += 3) bodyBox.expandByPoint(new THREE.Vector3(pts[i], pts[i + 1], pts[i + 2]));
+  const bodySize = bodyBox.getSize(new THREE.Vector3());
+
+  // The same body box again, but in the BAG'S OWN frame rather than the bike's.
+  //
+  // Why this exists. A down tube pack lies on a tube raked at 46.35 degrees, so
+  // a box aligned to the bike's axes mixes the bag's length into its height:
+  //     bbox y = L*sin(46.35) + D*cos(46.35) = 0.724L + 0.690D
+  // A 208mm bag 65mm deep therefore measures ~187mm on the world y axis, and
+  // the size gate — which maps this record's `perp_downtube` height onto y —
+  // called that "+147% too tall". It is not: measured in the bag's own frame
+  // the three down tube packs are 65.0 / 70.0 / 90.0mm against published
+  // 65 / 70 / 90. Exact. FIVE rounds of fixers hunted a height bug in the
+  // geometry that was never there, because the instrument was reporting the
+  // length on the height axis.
+  //
+  // In this frame the tube-relative axis names in `mount.axes` are exact:
+  // along_* is the bag's own long axis and perp_* its own outward normal, for
+  // every slot in the catalogue, whatever angle it hangs at.
+  // Extents measured on the bag's OWN principal axis, not the bike's.
+  //
+  // `bagRoot`'s frame is the ANCHOR's, which is bike-aligned; the builder
+  // rotates the geometry inside it. So a box in either frame mixes a raked
+  // bag's length into its height. The bag's own long axis is the principal
+  // axis of its point cloud, the same one profile40 uses.
+  //
+  //   along  the long axis          -> `along_downtube`, `along_toptube`, ...
+  //   perp   perpendicular, in XY   -> `perp_downtube`, ...
+  //   across the bike's z            -> `across`, `lateral`
+  const mountSize = (() => {
+    let mx = 0, my = 0, n = 0;
+    for (let i = 0; i < pts.length; i += 3) { mx += pts[i]; my += pts[i + 1]; n++; }
+    if (!n) return null;
+    mx /= n; my /= n;
+    let sxx = 0, syy = 0, sxy = 0;
+    for (let i = 0; i < pts.length; i += 3) {
+      const dx = pts[i] - mx, dy = pts[i + 1] - my;
+      sxx += dx * dx; syy += dy * dy; sxy += dx * dy;
+    }
+    const th = 0.5 * Math.atan2(2 * (sxy / n), sxx / n - syy / n);
+    const ux = Math.cos(th), uy = Math.sin(th), vx = -uy, vy = ux;
+    let uMin = Infinity, uMax = -Infinity, vMin = Infinity, vMax = -Infinity;
+    let zMin = Infinity, zMax = -Infinity;
+    for (let i = 0; i < pts.length; i += 3) {
+      const dx = pts[i] - mx, dy = pts[i + 1] - my;
+      const u = dx * ux + dy * uy, v = dx * vx + dy * vy, z = pts[i + 2];
+      if (u < uMin) uMin = u; if (u > uMax) uMax = u;
+      if (v < vMin) vMin = v; if (v > vMax) vMax = v;
+      if (z < zMin) zMin = z; if (z > zMax) zMax = z;
+    }
+    return { along: uMax - uMin, perp: vMax - vMin, across: zMax - zMin };
+  })();
   const groundY = P.rearAxle.y - (P.tireR + g.tireWidth / 2);
   return {
     dropped: false,
     samples: pts.length / 3,
     bbox_mm: { x: +size.x.toFixed(1), y: +size.y.toFixed(1), z: +size.z.toFixed(1) },
+    bbox_body_mm: { x: +bodySize.x.toFixed(1), y: +bodySize.y.toFixed(1), z: +bodySize.z.toFixed(1) },
+    bbox_mount_mm: mountSize
+      ? { along: +mountSize.along.toFixed(1), perp: +mountSize.perp.toFixed(1), across: +mountSize.across.toFixed(1) }
+      : null,
+    profile40,
     frame_min: box.min.toArray().map((n) => +n.toFixed(1)),
     frame_max: box.max.toArray().map((n) => +n.toFixed(1)),
     groundClearance_mm: +(box.min.y - groundY).toFixed(1),
@@ -322,12 +474,39 @@ function measureInPage(uiSlot) {
   };
 }
 
+/**
+ * Export the equipped bag as a GLB, base64'd back to Node.
+ *
+ * A still cannot be rotated, and the live app can only ever show the CURRENT
+ * code — so comparing two past versions in 3D needs the geometry of each one
+ * frozen at render time. This is that. Only the bag: the bike is identical in
+ * every run and would triple the file for nothing.
+ */
+async function exportInPage(uiSlot) {
+  const app = window.app;
+  const rec = app?.bags?.equipped?.[uiSlot];
+  if (!rec?.mesh) return null;
+  const { GLTFExporter } = await import('three/addons/exporters/GLTFExporter.js');
+  return new Promise((resolve) => {
+    new GLTFExporter().parse(rec.mesh, (buf) => {
+      const bytes = new Uint8Array(buf);
+      let s = '';
+      // Chunked: String.fromCharCode(...bytes) blows the argument limit on
+      // anything over ~100k, which is most of these.
+      for (let i = 0; i < bytes.length; i += 8192) {
+        s += String.fromCharCode.apply(null, bytes.subarray(i, i + 8192));
+      }
+      resolve(btoa(s));
+    }, () => resolve(null), { binary: true, onlyVisible: true });
+  });
+}
+
 // ---- drive ---------------------------------------------------------------
 const launch = () => puppeteer.launch({ executablePath: CHROME, headless: true,
   args: ['--hide-scrollbars'] });
 let browser = await launch();
 let page = await browser.newPage();
-await page.setViewport({ width: 1100, height: 820, deviceScaleFactor: 2 });
+await page.setViewport({ width: 1100, height: 820, deviceScaleFactor: want.dsf });
 
 const report = [];
 let bad = 0;
@@ -338,13 +517,13 @@ for (const j of list) {
     await browser.close().catch(() => {});
     browser = await launch();
     page = await browser.newPage();
-    await page.setViewport({ width: 1100, height: 820, deviceScaleFactor: 2 });
+    await page.setViewport({ width: 1100, height: 820, deviceScaleFactor: want.dsf });
   }
   n++;
   const errs = [];
   const onErr = (e) => errs.push(String(e.message || e).slice(0, 160));
   page.on('pageerror', onErr);
-  const dir = `${root}shots/bag/${j.slug}`;
+  const dir = `${OUT_ROOT}${j.slug}`;
   let res;
   try {
     const angles = want.shots ? want.angles : ['side'];
@@ -353,10 +532,18 @@ for (const j of list) {
       const url = `${BASE}/?shot=1&kit=${j.ui}:${j.bi}:${j.pi}&cam=${cam}&focus=${j.ui}&env=lake`;
       await page.goto(url, { waitUntil: 'networkidle0', timeout: 25000 });
       await page.waitForFunction('window.__READY_DONE === true', { timeout: 12000 }).catch(() => {});
-      if (ai === 0) res = await page.evaluate(measureInPage, j.ui);
+      if (ai === 0) {
+        res = await page.evaluate(measureInPage, j.ui);
+        if (want.glb) {
+          const b64 = await page.evaluate(exportInPage, j.ui).catch(() => null);
+          if (b64) { mkdirSync(dir, { recursive: true }); writeFileSync(`${dir}/bag.glb`, Buffer.from(b64, 'base64')); }
+        }
+      }
       if (want.shots) {
         mkdirSync(dir, { recursive: true });
-        await page.screenshot({ path: `${dir}/${cam}.png` });
+        await page.screenshot(want.fmt === 'jpeg'
+          ? { path: `${dir}/${cam}.jpg`, type: 'jpeg', quality: want.quality }
+          : { path: `${dir}/${cam}.png` });
       }
     }
   } catch (e) {
@@ -364,7 +551,7 @@ for (const j of list) {
     await browser.close().catch(() => {});
     browser = await launch();
     page = await browser.newPage();
-    await page.setViewport({ width: 1100, height: 820, deviceScaleFactor: 2 });
+    await page.setViewport({ width: 1100, height: 820, deviceScaleFactor: want.dsf });
   }
   page.off('pageerror', onErr);
 
@@ -394,10 +581,10 @@ for (const j of list) {
   if (errs.length) console.log(`    page errors: ${errs[0]}`);
 }
 
-mkdirSync(root + 'shots/bag', { recursive: true });
-const outPath = root + 'shots/bag/report.json';
+mkdirSync(OUT_ROOT, { recursive: true });
+const outPath = `${OUT_ROOT}report.json`;
 writeFileSync(outPath, JSON.stringify(report, null, 1));
 await browser.close();
-console.log(`\n${list.length - bad}/${list.length} clean · report → shots/bag/report.json`);
-if (want.shots) console.log(`images → shots/bag/<slug>/{${want.angles.join(',')}}.png`);
+console.log(`\n${list.length - bad}/${list.length} clean · report → ${outPath}`);
+if (want.shots) console.log(`images → ${OUT_ROOT}<slug>/{${want.angles.join(',')}}.${want.fmt === 'jpeg' ? 'jpg' : 'png'}`);
 process.exit(bad ? 1 : 0);
