@@ -48,6 +48,11 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
   pointer-events: auto;
 }
 .wordmark { user-select: none; margin-right: auto; }
+/* The wordmark is the way home now (ui.js wires it), so it has to behave like
+   one: a pointer, a hover state, and a focus ring for the keyboard. */
+.wordmark.is-link { cursor: pointer; border-radius: 4px; padding: 4px 6px; margin-left: -6px; transition: opacity 160ms ease; }
+.wordmark.is-link:hover { opacity: .62; }
+.wordmark.is-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* §14.4: 0.34em tracking at weight 800 is the loudest dated signal in a UI. */
 .wordmark h1 { font-size: 17px; letter-spacing: 0.10em; font-weight: 700; color: #fff; }
 .top-right { display: flex; align-items: center; gap: 10px; }
@@ -114,7 +119,9 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
   font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
 }
 .panel-title { color: rgba(255, 255, 255, 0.62); }
-.panel-count { color: rgba(255, 255, 255, 0.55); font-weight: 700; letter-spacing: 0.08em; }
+.panel-count { color: rgba(255, 255, 255, 0.55); font-weight: 600; letter-spacing: 0; }
+/* The separator the parentheses used to be. */
+.panel-count::before { content: '·'; margin: 0 6px 0 2px; opacity: .5; }
 
 .bag-list {
   overflow-y: auto; padding: 2px 9px 8px; scrollbar-width: thin;

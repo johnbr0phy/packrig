@@ -74,6 +74,16 @@ writeFileSync(join(docs, 'data/brands.json'), JSON.stringify(brands));
 // measuring the maker's engineering drawing reverts on the live site only.
 // `diagram-profiles.json` is the one that matters most — it is what took the
 // seat packs from back-to-front to correct.
+// `loadouts.json` is not optional in the same way the profile files are: the
+// Loadouts level of the menu is a whole section of the app, and without this
+// file it renders its empty state on the live site while working perfectly in
+// the dev build. Build it from source rather than copying, so a catalogue
+// change that breaks a curated rig fails HERE rather than shipping a loadout
+// that quietly mounts six bags instead of ten.
+console.log('· loadouts');
+execFileSync('node', ['tools/build-loadouts.mjs'], { cwd: root, stdio: 'inherit' });
+copyFileSync(join(root, 'data/loadouts.json'), join(docs, 'data/loadouts.json'));
+
 for (const f of ['profiles.json', 'diagram-profiles.json', 'portraits.json']) {
   const src = join(root, 'data', f);
   if (!existsSync(src)) { console.log(`   (no data/${f} — skipping)`); continue; }
@@ -122,6 +132,9 @@ copyFileSync(join(root, 'src/rigs.css'), join(docs, 'rigs.css'));
 copyFileSync(join(root, 'src/aero/aero.css'), join(docs, 'aero.css'));
 // Last in the cascade, so it re-skins everything the others set.
 copyFileSync(join(root, 'src/ui/theme.css'), join(docs, 'theme.css'));
+// ...and after even that, the v2 menu layer, which is a self-contained dark
+// surface and has to win over the light re-skin for everything under `.pr`.
+copyFileSync(join(root, 'src/ui/v2/menu.css'), join(docs, 'menu.css'));
 
 writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <html lang="en">
@@ -138,6 +151,7 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <link rel="stylesheet" href="sheet.css" />
 <link rel="stylesheet" href="aero.css" />
 <link rel="stylesheet" href="theme.css" />
+<link rel="stylesheet" href="menu.css" />
 <style>html,body{height:100%;margin:0;background:#121212;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
 </head>
 <body>

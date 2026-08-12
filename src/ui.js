@@ -9,8 +9,8 @@ import {
   sizeOf, srcOf, stripLine, swatchStyle,
 } from './ui/product.js';
 import { initBagSheet } from './ui/bagsheet.js';
-import { initHome } from './ui/home.js';
-import { initGallery } from './ui/gallery.js';
+import { initMenu } from './ui/v2/menu.js';
+import { icon } from './ui/v2/icons.js';
 import { initCatalogue } from './ui/catalogue.js';
 import { initRigNav } from './ui/rignav.js';
 
@@ -87,18 +87,48 @@ export function initUI(app) {
   // The two levels above the builder. Created after a microtask for the same
   // reason `rigsUI` is: they read `app.rigs`, which main.js attaches around us.
   queueMicrotask(() => {
-    app.gallery = initGallery(app, {
-      onAdopt: () => { /* the rig is already on the bike — just stay in the builder */ },
+    /*
+     * The menu — start screen, loadouts and gallery — is one module now rather
+     * than the two unrelated surfaces (`ui/home.js`, `ui/gallery.js`) it
+     * replaces. See src/ui/v2/menu.js for why they had to become one thing.
+     */
+    app.menu = initMenu(app, {
+      onBuild: ({ adopted, build }) => {
+        // "Build a rig" means a bare frame. Arriving from a loadout or a
+        // gallery rig means that rig, already mounted, now yours to edit.
+        if (build && !adopted) {
+          app.clearAll?.();
+          savedSnapshot = null;
+          rigNav.current = null;
+          rigNav.enter(null);
+        } else if (adopted) {
+          savedSnapshot = null;
+          rigNav.current = { id: null, name: adopted.name || 'Untitled rig', local: true };
+          rigNav.enter(rigNav.current);
+        }
+        sync();
+      },
     });
-    app.home = initHome(app, {
-      // "Create new rig" means exactly that: a clear bike at the rig level, not
-      // the list of ones you already have.
-      onCreate: () => { app.clearAll?.(); savedSnapshot = null; rigNav.current = null; rigNav.enter(null); sync(); },
-      onGallery: () => app.gallery?.open(),
-    });
+    /*
+     * `app.home` and `app.gallery` survive as adapters. Four headless tools
+     * drive the root menu by those names (tools/_menutest.mjs, _ttsweep.mjs,
+     * _contrast.mjs, bag-portraits.mjs); renaming the module should not
+     * silently turn every screenshot harness into a no-op.
+     */
+    app.home = {
+      open: () => app.menu?.open('start'),
+      close: () => app.menu?.close(),
+      get isOpen() { return app.menu?.isOpen && app.menu?.view === 'start'; },
+    };
+    app.gallery = {
+      open: () => app.menu?.open('gallery'),
+      close: () => app.menu?.close(),
+      get isOpen() { return app.menu?.isOpen && app.menu?.view === 'gallery'; },
+    };
     // The root level is where you arrive, unless a shared link means you have
     // already been handed a specific rig to look at.
-    if (!app.__cameWithRig) app.home.open();
+    if (!app.__cameWithRig) app.menu.open('start');
+    else app.__enteredBuilder = true;
   });
 
   // ---- the top bar --------------------------------------------------------
@@ -121,7 +151,7 @@ export function initUI(app) {
   // ---- left panel: what is on the bike -----------------------------------
   const panel = el('div', 'panel glass');
   const head = el('header', 'panel-head');
-  const countEl = elt('span', 'panel-count', '(0)');
+  const countEl = elt('span', 'panel-count', '0');
   // On a phone the panel is a bottom sheet, and its header doubles as the
   // handle: tap to peek at the bike, tap again to get the list back. The
   // chevron, the running total and the "+" are inert on desktop — CSS only
@@ -349,15 +379,23 @@ export function initUI(app) {
   }
 
   // ---- top-right camera tools --------------------------------------------
+  /*
+   * The camera tools. These were an emoji and two symbol-block characters —
+   * 💨, ⟳ and ⌂ — which is three different typefaces in one 96px control, one
+   * of them rendered by the operating system in colour. They are drawn from
+   * the one icon set now; see src/ui/v2/icons.js.
+   */
   const tools = el('div', 'viewtools glass');
-  const rotBtn = elt('button', 'tool-btn', '⟳');
+  const rotBtn = el('button', 'tool-btn');
+  rotBtn.append(icon('orbit'));
   rotBtn.title = 'Auto-rotate';
   rotBtn.setAttribute('aria-label', 'Toggle auto-rotate');
   rotBtn.onclick = () => {
     app.controls.autoRotate = !app.controls.autoRotate;
     rotBtn.classList.toggle('on', app.controls.autoRotate);
   };
-  const homeBtn = elt('button', 'tool-btn', '⌂');
+  const homeBtn = el('button', 'tool-btn');
+  homeBtn.append(icon('reframe'));
   homeBtn.title = 'Reset view';
   homeBtn.setAttribute('aria-label', 'Reset camera to the default view');
   homeBtn.onclick = () => {
@@ -365,7 +403,8 @@ export function initUI(app) {
     if (homeView.target) app.controls.target.copy(homeView.target);
     app.controls.update();
   };
-  const tunnelBtn = elt('button', 'tool-btn', '💨');
+  const tunnelBtn = el('button', 'tool-btn');
+  tunnelBtn.append(icon('wind'));
   tunnelBtn.title = 'Wind tunnel';
   tunnelBtn.setAttribute('aria-label', 'Open the wind tunnel');
   tunnelBtn.onclick = () => {
@@ -466,8 +505,29 @@ export function initUI(app) {
   menuBtn.title = 'Back to the start';
   menuBtn.setAttribute('aria-label', 'Back to the start');
   menuBtn.textContent = 'Menu';
-  menuBtn.onclick = () => { app.gallery?.close?.(); app.home?.open?.(); };
+  menuBtn.onclick = () => app.menu?.open('start');
   mark.after(menuBtn);
+
+  /*
+   * The wordmark goes home too.
+   *
+   * It is the first thing anyone clicks when they want out of a screen, on
+   * every site anyone has ever used, and here it did nothing at all — an inert
+   * <h1> in the corner. Making it a button rather than an <h1> wrapped in one
+   * keeps the heading semantics where they were and adds no markup.
+   */
+  mark.setAttribute('role', 'link');
+  mark.setAttribute('tabindex', '0');
+  mark.title = 'Back to the start';
+  mark.setAttribute('aria-label', 'Packrig — back to the start');
+  mark.classList.add('is-link');
+  const goHome = () => app.menu?.open('start');
+  mark.onclick = goHome;
+  mark.onkeydown = (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    e.preventDefault();
+    goHome();
+  };
 
   topbar.append(topRight);
   root.append(topbar);
@@ -1166,7 +1226,7 @@ export function initUI(app) {
   function sync() {
     const n = renderList();
     paintSelection();
-    countEl.textContent = `(${n})`;
+    countEl.textContent = String(n);
     const liters = Object.values(app.bags.equipped)
       .reduce((sum, e) => sum + (Number(e.product?.liters) || 0), 0);
     totalEl.textContent = `${liters.toFixed(1)} L`;
