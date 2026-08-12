@@ -1,6 +1,9 @@
 # Packrig — Handover
 
-Run: `node tools/serve.mjs` → http://localhost:8735 (no build step; refresh picks up `src/`).
+> Geometry traps and data-pipeline lessons. Still live. For the map of
+> the repo and what is current, read `STATUS.md`.
+
+Run: `npm start` → http://localhost:8735 (no build step; refresh picks up `src/`).
 
 ## READ THIS FIRST: how reliable is this session's work?
 
@@ -143,8 +146,8 @@ the feet follow, because the rider reads `crankAngle` instead of hard-coding
 | `tools/audit-fit.mjs` | Equips every product, reports which the resolver drops |
 | `tools/audit-slots.mjs` | Slot misclassification: line-outlier + name-mismatch. **15 flagged, all now explained** |
 | `tools/fix-roll-ranges.mjs` | Rewrites roll dims to the CLOSED end. 30 records still need `dims_raw` ranges |
-| `tools/_rand.mjs` | Stress harness: 25x "Surprise me", reports page errors + panel/bike mismatch |
-| `tools/_focus.mjs` | Drives hover/click focus headlessly and asserts panel sync |
+| `tools/scratch/_rand.mjs` | Stress harness: 25x "Surprise me", reports page errors + panel/bike mismatch |
+| `tools/scratch/_focus.mjs` | Drives hover/click focus headlessly and asserts panel sync |
 
 **Two traps already hit — don't repeat them:**
 - `apply-verified` reads files alphabetically and later files OVERWRITE earlier.

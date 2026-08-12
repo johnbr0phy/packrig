@@ -1,9 +1,30 @@
 # Packrig — next run
 
+> **Archived 12 Aug 2026.** This is the log of the 7–8 Aug agent run, not
+> the current map of the repo. For what is true now, read `STATUS.md`.
+> Traps in §8 still hold. Commands that say `tools/_rand.mjs` now live at
+> `tools/scratch/_rand.mjs`.
+
 What the interrupted agent run was doing, what actually landed, and what is left.
 
 Written 2026-08-07. Companion to `HANDOVER.md` (which is still accurate on
 traps and data-pipeline detail — read both).
+
+> **STATUS, 8 Aug (later) — the catalogue track is DONE and now WIRED.** All 50
+> brands are reviewed and **702 of 702** products merge cleanly; the last two
+> were Bags by Bird's duplicate "Better Half Framebag" entries and they are
+> fixed. Sections 1-4 below describe the state on the night of the crash and are
+> kept as the record of what happened; **for what is actually true now, read
+> §10, §12 and §13.**
+>
+> §13 is the new part: the records' `geometry` and rigidity now reach the
+> builders, and **every slot has been swept**. Start there — it has the numbers.
+>
+> The **UI rework** has moved to `REDESIGN.md`, which is now its plan of record —
+> §5 Track C below is superseded. Its first two steps *are* implemented
+> (`src/ui/tokens.css`, `sheet.js`, `scrim.js`, `surfaces.js`, all wired into
+> `main.js`); the rest is not. Still untouched: **11 of 13 geometry builders**
+> (§5 Track B — only seatpack and stembag have been done).
 
 ---
 
@@ -255,22 +276,11 @@ working a slot at 34% coverage is mostly guessing:
 
 This is the strongest argument for finishing Track A first.
 
-### Track C — the UI rework (phases 5–6; does no rendering)
+### Track C — the UI rework — superseded
 
-Follow `DESIGN-SYSTEM.md` §12 exactly. It is strictly ordered:
-
-1. **Tokens + Inter + the `--scrim-k` scrim well.** Nothing else works without
-   §3.3. One agent, and everything waits on it.
-2. **The sheet shell** — one component, three widths, rail collapse, dock
-   reposition, camera reframe, all on one tick. No veil, ever.
-3. **The product detail sheet** (§6.2) — this is the centrepiece of your brief:
-   big product image, spec, buy link, size and colourway pickers.
-4. **The catalogue sheet + facets** (§6.3).
-5. **3D selection/hover + camera reframing** (§6.6, §6.7).
-6. **The 14 deletions in §10** — last, but do all of them.
-
-Steps 1 and 2 are one agent and must finish before 3–5 fan out, because 3–5
-build against the `openSheet()` contract it defines.
+Moved to **`REDESIGN.md`**, which plans the menu rework together with the
+accounts, gallery and profile work it interleaves with. Phases 5–6 in the table
+below are replaced by that document's §13 build order.
 
 ### Track D — the adversarial critic pass (after B)
 
@@ -338,7 +348,7 @@ judgement call: if it does not pass, do not start the next phase.
 
 | # | Phase | Agents at once | Renders? | Gate before moving on |
 |---|---|---:|---|---|
-| 0 | By hand: fix `forkbag.js:24`; sweep the 9 unaudited slots | 0 | yes, serial | `node tools/_rand.mjs` clean |
+| 0 | By hand: fix `forkbag.js:24`; sweep the 9 unaudited slots | 0 | yes, serial | `node tools/scratch/_rand.mjs` clean |
 | 1 | Brand reviews, batch 1 — the 6 largest unreviewed | **3** | no | 6 new files in `data/models/` |
 | 2 | Brand reviews, batch 2 | **3** | no | 6 more files |
 | 3 | …repeat batches of 3 until all 50 brands are done | **3** | no | 50 files in `data/models/` |
@@ -396,7 +406,7 @@ node tools/validate-dims.mjs               # implausible dimensions
 node tools/audit-slots.mjs                 # slot misclassification
 node tools/audit-fit.mjs                   # what the resolver drops (slow: ~10 min)
 node tools/audit-exclusions.mjs            # no two excluded slots mounted at once
-node tools/_rand.mjs                       # 25x "Surprise me", reports page errors
+node tools/scratch/_rand.mjs               # 25x "Surprise me", reports page errors
 
 node tools/apply-models.mjs --dry          # models/ -> brands.json, preview
 node tools/apply-models.mjs                # ...then apply; re-run the clearance audits after
@@ -419,6 +429,16 @@ node tools/build-pages.mjs                 # regenerate docs/
 git add docs/ && git commit && git push    # this is what deploys
 node tools/build-artifact.mjs              # separate: build/packrig.html, for the Artifact
 ```
+
+**`main`'s `docs/` is not necessarily a build of `main`'s `src/`.** Learned the
+expensive way on 8 Aug. Building from a clean worktree pinned to `origin/main`
+looks like the careful thing to do when the shared checkout has an unmerged
+feature branch in it — but the shipped `docs/aero.css` was already byte-
+identical to the *wind-tunnel* tree's `src/aero/aero.css`, because that work had
+been deployed from here on purpose. Rebuilding from `origin/main` deleted 105
+lines of `aero.css` and 306 of `ui.css` from the live site. **Before you rebuild,
+diff the current `docs/` against a build of the tree you are about to build
+from**, and if they differ, find out which source produced what is live.
 
 **Verify by hash, not by the API.** GitHub's Pages build record lags — it
 reported the previous commit as "latest built" while the new files were already
@@ -540,6 +560,26 @@ I had guessed Nelson was the risk. It was Camper and SQR Slim. Worth remembering
 that `len >= wid` holding in a file says nothing about whether `mount.axes` is
 right — the two are independent, and only the axes block decides orientation.
 
+> **REOPENED and settled again, 8 Aug.** This section was half right and the
+> half it got wrong sat undetected because **nothing read `mount.axes`**, so no
+> conclusion it reached could show up on screen either way.
+>
+> It established the family convention — Carradice publish W × H × D with W
+> across the bike — and then exempted the Nelson and Barley from it, calling
+> them "genuinely deep fore-aft" and leaving their largest figure on `-x`. The
+> moment `saddlebag.js` started reading the block, the Nelson rendered as a
+> 44 cm-deep suitcase behind the saddle.
+>
+> Both evidence photos settle it: a Carradice side **pocket** faces the camera
+> when the camera is beside the bike, and that can only happen if the pockets
+> sit at the two ends of an axis running **across** the bike. Nelson and Barley
+> are now `len: z`, matching the Camper and the SQR Slim. The whole line is
+> consistent, which is what the convention implied all along.
+>
+> The lesson is not about Carradice. **A conclusion about data that no code
+> reads cannot be wrong yet** — it has nothing to be wrong against. Expect more
+> of these as the remaining builders start reading the blocks they were given.
+
 ---
 
 ## 12. What the overnight catalogue run learned
@@ -582,9 +622,145 @@ independent. Carradice's Camper and SQR Slim both had a sane-looking dims triple
 while pointing their dominant axis fore-aft — a suitcase behind the saddle.
 
 ### Still open after this run
-- **Rigid vs soft** is now recorded for several brands (Thule Paramount, EVOC's
-  BOA packs, all five Cedaero products) and nothing reads it. `deform.js` should.
+- ~~**Rigid vs soft** is now recorded for several brands and nothing reads it.~~
+  Done — §13.
 - Lezyne **Caddy Sack M** has no visible mounting hardware in any photo and no
   attachment system in the maker copy, yet sits in the `downtube` slot.
 - VAUDE **Aqua Back Plus** publishes a 31cm depth that the reviewer could not
   confirm against the studio photo — unusually deep for a pannier.
+
+---
+
+## 13. The records reach the builders, and every slot is swept
+
+### The wiring (done)
+
+`tools/apply-models.mjs` used to carry only `dims_cm`, `render` and `fits`. It
+now also merges the machine-readable half of each `geometry` block — **699
+products, 386 of them with a taper** — validated against MODEL-SPEC's
+vocabulary, and a `structure` class. `geometry.notes` is deliberately not
+carried: prose for a human, ~180 KB on the wire, and it is the field the Apidura
+seat pack record has backwards.
+
+Read it in a builder through `identity.js`:
+
+```js
+const geom  = geomOf(p);        // form, crossSection, shoulder, profile, taperRatio
+const stiff = stiffnessOf(p);   // 'soft' | 'semi' | 'rigid'
+soft(geo, main, { amp, freq, seed, stiffness: stiff });
+```
+
+`soft()` honours it: `semi` takes 40% of the noise and bulge, `rigid` skips the
+displacement pass entirely. All 13 builders pass it. `seatpack.js` reads
+`taper.tail` instead of `vr.range(0.30, 0.42)`.
+
+**Rigidity had no field in the spec**, so 131 records wrote it as prose across
+six different keys. `tools/lib/stiffness.mjs` classifies it — 11 rigid, 82 semi
+— and `--stiffness` prints the sentence behind every call. It is not a grep for
+`/rigid/`: the commonest thing these records say is that the *hardware* is rigid
+and the *bag* is not, and a grep gets Thule's limp Shield pannier exactly
+backwards. `details.structure_class` is now in MODEL-SPEC as the field a
+reviewer should write; where it exists the prose matching is skipped.
+
+Two traps found doing it, both worth carrying:
+
+- **A `bulge` that positions the bag is not a bulge.** `toptube.js` hollowed its
+  underside through the `bulge` callback so the tube nested into it. `rigid`
+  skips that pass — five structured top tube bags would have sat *on* the tube.
+  It is carved into the geometry now. Check any other builder before you make it
+  conditional on stiffness.
+- **The user-facing summary of the records was looser than the records.** EVOC's
+  two BOA packs are described as rigid, but the record itself says "the fabric
+  body itself is a soft rolltop tube" and only the BOA bracket is hard. They
+  classify `soft`, which is what the record actually says. Same for Cedaero:
+  two of the five are rigid, one semi, and the two custom frame packs say
+  nothing at all.
+
+### The sweep — all 13 slots, `--no-shots`, post-merge
+
+This is phase 0 of §6, and it is done. **Three builders have real defects and
+the other ten are clean.** Numbers, not estimates:
+
+| Slot | Clean | Products | Worst |
+|---|---:|---:|---|
+| **downtube** | **0** | **12** | **down tube −24.8mm, front tyre −22.0mm** |
+| **framebag_full** | **42** | **77** | seatpost −0.8mm (35 products, all −0.2 to −0.8) |
+| **framebag_half** | **93** | **103** | down tube −20.3mm |
+| trunk | 15 | 17 | — |
+| randobag | 10 | 11 | front tyre −1.8mm |
+| toptube | 100 | 100 | clean |
+| barbag | 74 | 74 | clean |
+| barroll | 56 | 56 | clean |
+| pannier | 62 | 62 | clean |
+| seatpack | 78 | 78 | clean |
+| saddlebag | 44 | 44 | clean |
+| forkbag | 29 | 29 | clean |
+| stembag | 38 | 38 | clean |
+| toptube_rear | 1 | 1 | clean |
+
+**Start Track B with `downtube.js`.** Every one of its 12 products is buried
+23–25 mm into the down tube and most also cut into the front tyre. That is
+`HANDOVER.md`'s long-standing "downtube bag hits the front wheel", and the
+uniformity of the depth says it is one placement bug, not twelve.
+
+**`framebag_full` next, but read the numbers first.** 35 products all graze the
+seatpost between −0.2 and −0.8 mm. Per this project's own lesson — a constant
+reading across many products is a signature of the *measurement*, not the thing
+measured — that is one clamp being half a millimetre generous, not 35 bags.
+It is cheap to fix and it clears 45% of the slot.
+
+`framebag_half`'s 10 are a genuine spread (−8.3 to −20.3 mm, seat tube and down
+tube both), so those are per-product.
+
+`pannier.js` was the suggested starting point and it measures 62/62 clean, so
+its work is fidelity — silhouette, hardware, the stiffened back panels the
+`structure` field now exposes — not fitment.
+
+### saddlebag.js — reviewed 8 Aug, off the back of one bug report
+
+"The Shrew is a seatpost bag, not a saddle bag." It was rendering as a flat slab
+across the bike. Two faults, both slot-wide:
+
+- **`mount.axes` was never merged.** 697 records carry it, Rule 2 calls it the
+  block that decides orientation, and `apply-models.mjs` was dropping it, so
+  every builder hard-codes one mapping for its whole slot. 25 of the 44
+  saddlebags say `len` runs fore-aft; the builder said it runs across. Merged
+  now, along with `closure.type`.
+- **One shape for two families.** `buildSaddlebag` drew a rounded box with a
+  flap for everything, and 24 of the 44 are `tapered_wedge`/`teardrop` rolltops
+  — small seat packs. They now build as a lathe, deep under the saddle and
+  tapering to a rolled tail, plan-narrowed by the measured taper.
+
+Also fixed a bug in this morning's `geomOf`: `taperRatio` returned
+`min(tail / nose, 1)`, which reports "no taper" for the 13 saddlebags and 4 seat
+packs whose records put the narrow end at the nose. It returns narrow/wide now,
+with `taperNarrowEnd` naming the end.
+
+**The remaining eleven builders should each expect the same two questions:** is
+your slot really one shape, and are you reading `axesOf(p)` or assuming? Both
+answers are in the records already.
+
+### The batch to run when the machine is free
+
+Track B was held on 8 Aug, deliberately: another session had three agents on the
+mobile pass and the box was 5.75 GB into swap on 8 GB. Geometry agents both read
+photos and drive a headless Chrome, which is the exact mix §6 says never to
+overlap. Nothing is lost by waiting — all of the above is committed and live.
+
+The sweep changes the grouping §5 proposes. Run these three first, in this
+order of importance rather than the old slot-family pairing:
+
+| Agent | Files | Why |
+|---|---|---|
+| `geo-downtube` | `downtube.js` | 0/12. One placement bug. Alone, because it is the only builder where every product fails. |
+| `geo-framefull` | `framefull.js` | 42/77, 35 of them a −0.2 to −0.8mm seatpost graze. Look for one over-generous clamp before touching any product. |
+| `geo-framehalf` | `framehalf.js` | 93/103, a real −8.3 to −20.3mm spread. Per-product. |
+
+Then the clean-but-unreviewed ten, which are fidelity work and can go in any
+order: `pannier.js` (62), `barbag.js` (74), `barroll.js` (56), `toptube.js`
+(100), `trunk.js` (17, 15 clean), `randobag.js` (11, 10 clean), `saddlebag.js`
+(44), `forkbag.js` (29).
+
+Give each agent `BUILDER-BRIEF.md` — its §1 now tells them to read `geomOf(p)`
+and `stiffnessOf(p)` rather than inventing taper constants, which is the whole
+reason the wiring went in first.

@@ -1,16 +1,20 @@
 {
-  "name": "bikes",
+  "name": "packrig",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "3D bikepacking bag configurator",
+  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node tools/serve.mjs",
+    "build": "node tools/build-pages.mjs",
+    "vendor": "node tools/build-vendor.mjs",
+    "test": "node tools/aero-check.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "firebase": "^12.17.1",
     "puppeteer-core": "^25.5.0",
     "three": "^0.185.1"
   }

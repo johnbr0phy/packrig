@@ -1,0 +1,11 @@
+import puppeteer from 'puppeteer-core';
+const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-swiftshader']});
+const p=await b.newPage();
+p.on('response',r=>{ if(r.status()>=400) console.log(r.status(), r.url()); });
+p.on('pageerror',e=>console.log('PAGEERROR:', e.message));
+await p.setViewport({width:1440,height:900});
+await p.goto(process.argv[2],{waitUntil:'networkidle2',timeout:60000});
+await new Promise(r=>setTimeout(r,2500));
+console.log('menu present:', await p.evaluate(()=>!!document.querySelector('.pr')));
+console.log('ui-root children:', await p.evaluate(()=>[...document.getElementById('ui-root').children].map(n=>n.className).join(' | ')));
+await b.close();

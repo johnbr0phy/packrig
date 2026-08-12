@@ -1,0 +1,26 @@
+// F6's acceptance test: every list in the column must share one left edge.
+import puppeteer from 'puppeteer-core';
+const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-swiftshader']});
+const p=await b.newPage(); await p.setViewport({width:1440,height:900});
+await p.goto('http://localhost:8735/index.html',{waitUntil:'domcontentloaded'});
+await p.waitForFunction('window.__READY_DONE === true',{timeout:30000});
+const w=(ms)=>new Promise(r=>setTimeout(r,ms)); await w(1300);
+await p.evaluate(()=>window.app.menu.go('loadouts')); await w(1700);
+await p.evaluate(()=>document.querySelector(".pr-btn.is-primary")?.click()); await w(1400);
+const L=(sel)=>p.evaluate(s=>{const n=document.querySelector(s); return n?Math.round(n.getBoundingClientRect().left):null;},sel);
+const rows=[];
+rows.push(['kit row thumb', await L('.bag-card .bag-sw')]);
+rows.push(['kit row text',  await L('.bag-card .bag-meta')]);
+rows.push(['kit section label', await L('.nav-sec-title')]);
+await p.evaluate(()=>document.querySelector('.add-bag')?.click()); await w(1300);
+rows.push(['mount row text', await L('.mount-btn .mb-name')]);
+rows.push(['mount zone label', await L('.zone-title')]);
+await p.evaluate(()=>document.querySelector('.mount-btn')?.click()); await w(1500);
+rows.push(['catalogue thumb', await L('.card .card-thumb')]);
+rows.push(['catalogue text',  await L('.card .brand')]);
+await b.close();
+for(const [k,v] of rows) console.log(k.padEnd(20), String(v).padStart(4));
+const thumbs=[rows[0][1],rows[5][1]].filter(v=>v!=null);
+const text=[rows[1][1],rows[3][1],rows[6][1]].filter(v=>v!=null);
+console.log('\nthumb spine spread:', Math.max(...thumbs)-Math.min(...thumbs),'px');
+console.log('text  spine spread:', Math.max(...text)-Math.min(...text),'px');

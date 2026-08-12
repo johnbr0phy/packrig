@@ -1,0 +1,15 @@
+import puppeteer from 'puppeteer-core';
+const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-swiftshader']});
+const p=await b.newPage(); await p.setViewport({width:1440,height:900});
+await p.goto('http://localhost:8735/index.html',{waitUntil:'domcontentloaded'});
+await p.waitForFunction('window.__READY_DONE === true',{timeout:30000});
+const w=(ms)=>new Promise(r=>setTimeout(r,ms)); await w(1300);
+await p.evaluate(()=>window.app.menu.go('loadouts')); await w(1700);
+await p.evaluate(()=>document.querySelector('.pr-btn.is-primary').click()); await w(1300);
+await p.evaluate(()=>document.querySelector('.add-bag')?.click()); await w(1200);
+await p.evaluate(()=>document.querySelector('.mount-btn')?.click()); await w(1600);
+console.log(await p.evaluate(()=>document.querySelector('.card')?.outerHTML.replace(/></g,'>\n<')));
+console.log('--- bag-card ---');
+await p.evaluate(()=>document.querySelector('.sheet-close')?.click()); await w(900);
+console.log(await p.evaluate(()=>document.querySelector('.bag-card')?.outerHTML.replace(/></g,'>\n<')));
+await b.close();

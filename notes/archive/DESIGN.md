@@ -1,5 +1,8 @@
 # Packrig — 3D Bikepacking Bag Configurator
 
+> **Archived 12 Aug 2026.** Original brief. The checklist below is done.
+> Current map: `STATUS.md`. Current design values: `DESIGN-SYSTEM.md`.
+
 ## Goal
 A stunningly beautiful, single-page Three.js app where you attach real-brand bikepacking
 bags to an exactly-proportioned gravel bike, orbit around it in 3D, switch scenic

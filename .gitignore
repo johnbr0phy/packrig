@@ -1,7 +1,14 @@
 node_modules/
+.DS_Store
+
+# local renders and downloaded media — too big, regenerated
 shots/
 assets/products/
 assets/hdri/
-.DS_Store
+assets/generated/
+evals/runs/
 build/
 .bagshot.lock
+
+# built by tools/build-vendor.mjs for the no-build dev entry
+vendor/

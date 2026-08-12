@@ -10,7 +10,7 @@ const opt = (name, dflt) => {
 };
 const BASE = opt('base', 'http://localhost:8735');
 const SET = opt('set', 'default');
-const outDir = new URL(`../shots/${SET}/`, import.meta.url).pathname;
+const outDir = new URL(`../../shots/${SET}/`, import.meta.url).pathname;
 mkdirSync(outDir, { recursive: true });
 
 const SHOTS = [

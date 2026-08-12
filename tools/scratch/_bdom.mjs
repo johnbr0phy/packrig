@@ -1,0 +1,21 @@
+import puppeteer from 'puppeteer-core';
+const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-swiftshader']});
+const p=await b.newPage(); await p.setViewport({width:1440,height:900});
+await p.goto('http://localhost:8735/index.html',{waitUntil:'domcontentloaded'});
+await p.waitForFunction('window.__READY_DONE === true',{timeout:30000});
+const w=(ms)=>new Promise(r=>setTimeout(r,ms)); await w(1300);
+await p.evaluate(()=>window.app.menu.go('loadouts')); await w(1700);
+await p.evaluate(()=>document.querySelector('.pr-btn.is-primary').click()); await w(1300);
+const tree=(sel,depth)=>p.evaluate((s,d)=>{
+  const walk=(n,lvl)=>{ if(lvl>d) return '';
+    const cls=[...n.classList].join('.');
+    let out='  '.repeat(lvl)+n.tagName.toLowerCase()+(cls?'.'+cls:'')+'\n';
+    for(const c of n.children) out+=walk(c,lvl+1);
+    return out; };
+  const n=document.querySelector(s); return n?walk(n,0):'(absent)';
+},sel,depth);
+console.log('=== PANEL ==='); console.log(await tree('.panel',3));
+await p.evaluate(()=>document.querySelector('.add-bag')?.click()); await w(1200);
+await p.evaluate(()=>document.querySelector('.mount-btn')?.click()); await w(1500);
+console.log('=== SHEET (catalogue) ==='); console.log(await tree('.sheet',4));
+await b.close();
