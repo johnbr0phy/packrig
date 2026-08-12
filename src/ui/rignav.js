@@ -1,35 +1,20 @@
 /**
- * Your rigs, as the top level of the left column.
+ * The rig you have open, as the head of the left column.
  *
- * THE PROBLEM WITH WHERE THEY WERE. Saved rigs lived inside a sheet you reached
- * by pressing your own email address in the top-right corner. That is filing
- * the work under the filing cabinet: an account is how a rig gets to another
- * device, not what a rig IS, and nobody looking for last week's setup thinks
- * "I should press my email". Saving was equally hidden — a button that made a
- * rig with a name you never chose and then gave you no way back to it.
+ * THIS USED TO BE TWO LEVELS. A list of every saved rig sat at the top of the
+ * builder's column, and stepping into one revealed the bags, the bike and the
+ * total below it. That put your whole library on the same page as `Add a bag`
+ * and `Surprise me` — two different jobs sharing one surface, so the column
+ * meant something different depending on a level nothing on screen named.
  *
- * SO THE NAV HAS TWO LEVELS, and the rigs are the first one:
+ * The library moved OUT, to the menu's `rigs` view, where it has the bike
+ * beside it and the room to say what is on each one (see ui/v2/browse.js).
+ * What is left here is the one thing the builder needs to say: which rig you
+ * are editing, and what it is called. `Back` goes to the library.
  *
- *   Your rigs        every saved rig, newest first, plus New rig
- *      ↓ tap one — it loads onto the bike
- *   ‹ Summer rig     the rig you are in: its bags, its bike, its total
- *      ‹ back to the list
- *
- * That is the same shape as every list-detail interface anyone has used, and it
- * makes the two things that were hard — finding a rig, and knowing which one
- * you are editing — the two things the column says first.
- *
- * The account does not disappear; it stops being the door. Signing in still
- * lives in the top bar, and it changes where rigs are STORED, not where they
- * are found: signed out they are in this browser, signed in they follow you,
- * and `migrateLocal()` carries the local ones up on the way through.
- *
- *   initRigNav(app, { onOpen, onNew, onRename, notify }) -> { el, refresh,
- *                                                            enter, showList,
- *                                                            get current }
+ *   initRigNav(app, { onRename, onList, onLevel }) -> { el, enter, showList,
+ *                                                       refresh, current }
  */
-
-import { rigLitres } from '../rig.js';
 
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
@@ -49,54 +34,29 @@ const chevronLeft = () => {
   return svg;
 };
 
-/** "today" / "3 days ago" / a date. */
-function when(iso) {
-  if (!iso) return '';
-  const d = new Date(iso);
-  if (Number.isNaN(+d)) return '';
-  const days = Math.floor((Date.now() - d) / 86400000);
-  if (days <= 0) return 'today';
-  if (days === 1) return 'yesterday';
-  if (days < 30) return `${days} days ago`;
-  return d.toLocaleDateString();
-}
-
-export function initRigNav(app, { onOpen, onNew, onRename, onLevel, notify } = {}) {
+export function initRigNav(app, { onRename, onList, onLevel } = {}) {
   const root = el('div', 'rignav');
 
-  // ---- the bar that says which level you are on ----------------------------
   const bar = el('div', 'rn-bar');
   const back = el('button', 'rn-back');
   back.type = 'button';
   back.setAttribute('aria-label', 'Back to your rigs');
+  back.title = 'Your rigs';
   back.append(chevronLeft());
   const title = el('button', 'rn-title');
   title.type = 'button';
   const countEl = el('span', 'rn-count', '');
   bar.append(back, title, countEl);
+  root.append(bar);
 
-  // ---- level 0: the list ---------------------------------------------------
-  const listWrap = el('div', 'rn-list');
-  const newBtn = el('button', 'rn-new', 'New rig');
-  newBtn.type = 'button';
-
-  root.append(bar, listWrap);
-
-  let level = 'list';      // 'list' | 'rig'
+  // The panel has one level now. `data-level` survives because the stylesheet
+  // and the save button both read it, and because a second level is exactly
+  // what should NOT come back here.
+  const level = 'rig';
   let current = null;      // { id, name, local } — the rig being edited, if saved
-  let rows = [];
 
   back.onclick = () => showList();
-  newBtn.onclick = () => {
-    current = null;
-    onNew?.();
-    enter(null);
-  };
 
-  /**
-   * Rename in place. The name is the only thing about a rig you choose, so it
-   * should be editable where you read it rather than inside a dialogue.
-   */
   /*
    * Rename in place. The name is the only thing about a rig you choose, so it
    * should be editable where you read it rather than inside a dialogue.
@@ -126,7 +86,6 @@ export function initRigNav(app, { onOpen, onNew, onRename, onLevel, notify } = {
     paintBar();
   };
   title.onclick = () => {
-    if (level !== 'rig') return;
     renaming = true;
     nameInput.value = current?.name || '';
     title.hidden = true;
@@ -142,149 +101,31 @@ export function initRigNav(app, { onOpen, onNew, onRename, onLevel, notify } = {
 
   function paintBar() {
     root.dataset.level = level;
-    // The level is a fact about the whole panel, not just this bar — the
-    // sections below and the Save button both key off it. Announcing it here
-    // means every path that changes level tells them, including the back
-    // button, which a wrapper around `showList()` could never catch.
     onLevel?.(level);
-    if (level === 'list') {
-      title.textContent = 'Your rigs';
-      title.disabled = true;
-      countEl.textContent = rows.length ? String(rows.length) : '';
-    } else {
-      title.textContent = current?.name || 'Untitled rig';
-      title.disabled = false;
-      title.title = 'Rename this rig';
-      countEl.textContent = '';
-    }
-  }
-
-  /**
-   * A row per rig: the bags it holds, shown as the bags themselves.
-   *
-   * A render of the whole rig is what belongs here, and it is what phase 4 of
-   * REDESIGN.md will put here once there is somewhere to store one. Until then
-   * the product photographs stack up into something you can recognise your own
-   * rig by, which is the job, and it costs nothing we do not already have.
-   */
-  function rowFor(r) {
-    const card = el('button', 'rn-row');
-    card.type = 'button';
-
-    const stack = el('span', 'rn-stack');
-    const shots = (r.rig?.bags || [])
-      .map((b) => findShot(b))
-      .filter(Boolean)
-      .slice(0, 4);
-    if (shots.length) {
-      for (const src of shots) {
-        const img = document.createElement('img');
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.alt = '';
-        img.referrerPolicy = 'no-referrer';
-        img.src = src;
-        img.onerror = () => img.remove();
-        stack.append(img);
-      }
-    } else {
-      stack.classList.add('is-empty');
-    }
-
-    const txt = el('span', 'rn-txt');
-    txt.append(el('span', 'rn-name', r.name || 'Untitled rig'));
-    const bags = r.rig?.bags?.length || 0;
-    const l = rigLitres(r.rig, app.catalog);
-    txt.append(el('span', 'rn-meta',
-      `${bags} bag${bags === 1 ? '' : 's'} · ${l.toFixed(1)} L · ${when(r.updated_at)}`));
-
-    card.append(stack, txt);
-    card.onclick = () => open(r);
-
-    /*
-     * Delete. There was no way to remove a rig at all, so a stray save — a
-     * mistyped name, a bike you were only trying out — stayed in the list for
-     * good. It offers an undo rather than a confirm: one tap to remove, one tap
-     * to change your mind, and no dialogue in between asking whether you meant
-     * the thing you just pressed.
-     */
-    const del = el('button', 'rn-del');
-    del.type = 'button';
-    del.title = `Delete “${r.name || 'Untitled rig'}”`;
-    del.setAttribute('aria-label', del.title);
-    del.innerHTML = '<svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true">'
-      + '<path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.6" '
-      + 'stroke-linecap="round"/></svg>';
-    del.onclick = async (e) => {
-      e.stopPropagation();
-      const undo = { name: r.name, rig: r.rig };
-      try { await app.rigs?.remove?.(r.id); } catch (err) { notify?.(err?.message || 'Could not delete that rig'); return; }
-      if (current?.id === r.id) current = null;
-      await showList();
-      notify?.(`Deleted “${undo.name || 'Untitled rig'}”`, null, {
-        label: 'Undo',
-        run: async () => { await app.rigs?.saveRig?.(undo.name, undo.rig); showList(); },
-      });
-    };
-    const wrap = el('div', 'rn-item');
-    wrap.append(card, del);
-    return wrap;
-  }
-
-  /** The first photograph of a saved bag, matched back through the catalogue. */
-  function findShot(b) {
-    for (const br of app.catalog || []) {
-      if (String(br.name || '').toLowerCase() !== String(b.brand || '').toLowerCase()
-        && String(br.short || '').toLowerCase() !== String(b.brand || '').toLowerCase()) continue;
-      for (const p of br.products) {
-        if (String(p.name || '').toLowerCase() !== String(b.name || '').toLowerCase()) continue;
-        if (b.size && String(p.size || '').toLowerCase() !== String(b.size).toLowerCase()) continue;
-        return p.images?.[0] || null;
-      }
-    }
-    return null;
-  }
-
-  function open(r) {
-    current = { id: r.id, name: r.name, local: !!r.local };
-    onOpen?.(r);
-    enter(current);
+    title.textContent = current?.name || 'Untitled rig';
+    title.disabled = false;
+    title.title = 'Rename this rig';
+    // Saved rigs live one screen up; unsaved ones have nowhere to go back to.
+    back.hidden = !(app.rigs?.knownCount > 0);
+    countEl.textContent = '';
   }
 
   /** Show the detail level for `rig` (null = an unsaved new one). */
   function enter(rig) {
-    level = 'rig';
     current = rig ? { ...rig } : current;
     paintBar();
   }
 
-  async function showList() {
-    level = 'list';
-    paintBar();
-    listWrap.replaceChildren(el('p', 'rn-empty', 'Loading…'));
-    try {
-      rows = (await app.rigs?.list?.()) || [];
-    } catch (e) {
-      listWrap.replaceChildren(el('p', 'rn-empty', e?.message || 'Could not load your rigs'));
-      return;
-    }
-    paintBar();
-    listWrap.replaceChildren();
-    if (!rows.length) {
-      // One line, and the way out is the button under it — not a paragraph
-      // explaining what a rig is to somebody already looking at one.
-      listWrap.append(el('p', 'rn-empty', 'No saved rigs yet.'));
-    } else {
-      for (const r of rows) listWrap.append(rowFor(r));
-    }
-    listWrap.append(newBtn);
+  /** Your rigs are a menu view now; this is the door to it. */
+  function showList() {
+    onList?.();
   }
 
   return {
     el: root,
     enter,
     showList,
-    refresh: () => (level === 'list' ? showList() : paintBar()),
+    refresh: () => paintBar(),
     get level() { return level; },
     get current() { return current; },
     set current(v) { current = v; paintBar(); },

@@ -18,7 +18,14 @@
  * is the single most persuasive fact about this app and it was nowhere on the
  * old screen. It is read from the live catalogue, so it cannot go stale.
  *
- *   renderStart(app, { onBuild, onLoadouts, onGallery }) -> HTMLElement
+ * THE FIRST ROW CHANGES ONCE YOU HAVE SAVED SOMETHING. "Build a rig" is the
+ * right first line for somebody with an empty bike and the wrong one for
+ * somebody coming back — what they want is the bike they built last week, and
+ * it was reachable only by pressing their own email address inside the
+ * builder. With rigs on file the row becomes "My rigs", and starting a new one
+ * is a button on that page.
+ *
+ *   renderStart(app, { rigs, onBuild, onRigs, onLoadouts, onGallery }) -> HTMLElement
  */
 
 import { icon } from './icons.js';
@@ -39,7 +46,7 @@ const staged = (node) => {
   return node;
 };
 
-export function renderStart(app, { onBuild, onLoadouts, onGallery } = {}) {
+export function renderStart(app, { rigs = 0, onBuild, onRigs, onLoadouts, onGallery } = {}) {
   seq = 0;
   const wrap = el('div', 'pr-start');
 
@@ -66,7 +73,12 @@ export function renderStart(app, { onBuild, onLoadouts, onGallery } = {}) {
 
   const list = el('ul', 'pr-menu');
   const ENTRIES = [
-    {
+    rigs > 0 ? {
+      n: '01',
+      name: 'My rigs',
+      desc: `${rigs} saved. Load one, publish it, or start another.`,
+      run: onRigs,
+    } : {
       n: '01',
       name: 'Build a rig',
       desc: `A bare frame and ${mountCount} mounting points to fill.`,

@@ -125,7 +125,8 @@ copyFileSync(join(root, 'assets/fonts/Inter-LICENSE.txt'), join(docs, 'assets/fo
 copyFileSync(join(root, 'src/ui/sheet.css'), join(docs, 'sheet.css'));
 
 copyFileSync(join(root, 'src/ui.css'), join(docs, 'ui.css'));
-copyFileSync(join(root, 'src/rigs.css'), join(docs, 'rigs.css'));
+// `src/rigs.css` is gone with rigsui.js — the account is a dialogue in
+// ui/v2/builder.css and saved rigs are a menu view.
 // The wind tunnel's HUD styles live in their own file. index.html below must
 // link BOTH — the panel renders unstyled if this is copied and not linked, or
 // missing entirely if neither, and nothing in the bundle would complain.
@@ -148,7 +149,6 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="tokens.css" />
 <link rel="stylesheet" href="ui.css" />
-<link rel="stylesheet" href="rigs.css" />
 <link rel="stylesheet" href="sheet.css" />
 <link rel="stylesheet" href="aero.css" />
 <link rel="stylesheet" href="theme.css" />

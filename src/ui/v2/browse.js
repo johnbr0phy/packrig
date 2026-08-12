@@ -21,11 +21,16 @@
  * you are looking at, at full brightness, orbitable, in the same light as
  * everything else in the app.
  *
+ * THREE SOURCES NOW, NOT TWO. `rigs` is your own saved bikes, and it is the
+ * same view for the same reason: a saved rig is a built bike you want to look
+ * at and read. It differs only in what you can DO with one — it is yours, so
+ * the actions are update, share, publish and delete rather than "make it mine".
+ *
  *   initBrowse(app, { onAdopt, onDirty }) -> { render(kind), onKey }
  */
 
 import { icon } from './icons.js';
-import { applyRig, findProduct } from '../../rig.js';
+import { applyRig, encodeRig, findProduct } from '../../rig.js';
 import { SLOTS } from '../../bags/slots.js';
 import { litersOf, modelTitle } from '../product.js';
 
@@ -94,10 +99,24 @@ function manifestOf(app, rig) {
   return rows;
 }
 
-export function initBrowse(app, { onAdopt, onDirty, isLive, onEmptyBuild } = {}) {
+/** "today" / "3 days ago" / a date — for a saved rig's own timestamp. */
+function when(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(+d)) return '';
+  const days = Math.floor((Date.now() - d) / 86400000);
+  if (days <= 0) return 'saved today';
+  if (days === 1) return 'saved yesterday';
+  if (days < 30) return `saved ${days} days ago`;
+  return `saved ${d.toLocaleDateString()}`;
+}
+
+export function initBrowse(app, {
+  onAdopt, onDirty, isLive, onEmptyBuild, onNew, onRefresh, notify, getWorking,
+} = {}) {
   // Per-kind cursor, so stepping out to the start screen and back into the
   // gallery puts you where you were rather than at rig one.
-  const cursor = { loadouts: 0, gallery: 0 };
+  const cursor = { loadouts: 0, gallery: 0, rigs: 0 };
   let kind = 'loadouts';
   let items = [];
   let nodes = null;
@@ -160,6 +179,30 @@ export function initBrowse(app, { onAdopt, onDirty, isLive, onEmptyBuild } = {})
     });
   }
 
+  /** Your own saved rigs. Newest first, straight off the store. */
+  async function loadMine() {
+    let rows = [];
+    try { rows = (await app.rigs?.list?.()) || []; } catch { rows = []; }
+    return rows.map((r) => {
+      const man = manifestOf(app, r.rig);
+      return {
+        id: r.id,
+        name: r.name || 'Untitled rig',
+        kicker: when(r.updated_at),
+        note: '',
+        tags: [...new Set(man.map((m) => m.brand))].slice(0, 4),
+        stats: {
+          litres: Math.round(man.reduce((n, m) => n + m.raw, 0) * 10) / 10,
+          bags: man.length,
+          makers: new Set(man.map((m) => m.brand)).size,
+        },
+        rig: r.rig,
+        row: r,
+        own: true,
+      };
+    });
+  }
+
   // ---- the view ----------------------------------------------------------
 
   function render(nextKind) {
@@ -180,9 +223,14 @@ export function initBrowse(app, { onAdopt, onDirty, isLive, onEmptyBuild } = {})
     nodes = { wrap, spec, railWrap };
 
     spec.append(el('p', 'pr-loading', kind === 'loadouts'
-      ? 'Loading loadouts…' : 'Looking for published rigs…'));
+      ? 'Loading loadouts…'
+      : kind === 'rigs' ? 'Finding your rigs…'
+        : 'Looking for published rigs…'));
 
-    (kind === 'loadouts' ? loadLoadouts() : loadGallery())
+    const source = kind === 'loadouts' ? loadLoadouts
+      : kind === 'rigs' ? loadMine
+      : loadGallery;
+    source()
       .then((list) => {
         // A late resolve for a view the user has already left must not paint
         // over the view they are now looking at — and must never touch the bike.
@@ -201,10 +249,14 @@ export function initBrowse(app, { onAdopt, onDirty, isLive, onEmptyBuild } = {})
   function paintEmpty() {
     nodes.spec.replaceChildren();
     const e = el('div', 'pr-empty');
-    e.append(el('h2', 'pr-title', kind === 'loadouts' ? 'No loadouts' : 'Nothing published yet'));
-    e.append(el('p', 'pr-note', kind === 'loadouts'
-      ? 'The curated rigs did not load. The builder still works — everything in the catalogue is there.'
-      : 'Nobody has published a rig yet. Build one, save it and publish it, and yours would be the first in here.'));
+    e.append(el('h2', 'pr-title', kind === 'loadouts' ? 'No loadouts'
+      : kind === 'rigs' ? 'No saved rigs yet'
+        : 'Nothing published yet'));
+    if (kind !== 'rigs') {
+      e.append(el('p', 'pr-note', kind === 'loadouts'
+        ? 'The curated rigs did not load. The builder still works — everything in the catalogue is there.'
+        : 'Nobody has published a rig yet. Build one, save it and publish it, and yours would be the first in here.'));
+    }
     // An empty state without its verb is a dead end, and this is the screen most
     // likely to be somebody's first: one of three doors on the start screen
     // opened onto a sentence and nothing to press.
@@ -397,9 +449,12 @@ export function initBrowse(app, { onAdopt, onDirty, isLive, onEmptyBuild } = {})
     const actions = el('div', 'pr-actions');
     const take = el('button', 'pr-btn is-primary');
     take.type = 'button';
-    take.append(el('span', null, kind === 'loadouts' ? 'Build on this' : 'Make it mine'));
+    take.append(el('span', null, kind === 'loadouts' ? 'Build on this'
+      : kind === 'rigs' ? 'Open this rig'
+        : 'Make it mine'));
     take.onclick = () => onAdopt?.(it);
     actions.append(take);
+    if (kind === 'rigs') for (const b of ownActions(it)) actions.append(b);
     spec.append(staged(actions));
 
     // Re-run the stagger for the new rig only when it was a deliberate step;
@@ -408,6 +463,146 @@ export function initBrowse(app, { onAdopt, onDirty, isLive, onEmptyBuild } = {})
       spec.classList.remove('swap');
       void spec.offsetWidth;
       spec.classList.add('swap');
+    }
+  }
+
+  /**
+   * What you can do to a rig that is YOURS. Everything the account sheet used
+   * to carry, on the screen where the rig actually is.
+   *
+   * `Update` is the one that needs saying out loud. This view browses by
+   * mounting each rig on the bike, so "the bike as it is now" is the rig you
+   * are reading — writing that back would be a no-op. What it means here is
+   * the build you walked in with, which the menu stashed on the way in, and
+   * the button only exists while there is one and it differs.
+   */
+  function ownActions(it) {
+    const out = [];
+    const store = app.rigs;
+    const row = it.row || {};
+    const act = (label, cls, run) => {
+      const b = el('button', `pr-btn${cls ? ' ' + cls : ''}`);
+      b.type = 'button';
+      b.append(el('span', null, label));
+      b.onclick = run;
+      return b;
+    };
+    const after = (msg) => { notify?.(msg); onRefresh?.(); };
+
+    const working = getWorking?.();
+    const hasWork = (working?.bags?.length || 0) > 0
+      && JSON.stringify(working.bags) !== JSON.stringify(it.rig?.bags || []);
+    if (hasWork && row.id) {
+      out.push(act('Update from your build', '', async () => {
+        try { await store.update(row.id, { name: it.name, rig: working }); }
+        catch (e) { notify?.(e?.message || 'Could not update that rig'); return; }
+        after(`Updated “${it.name}”`);
+      }));
+    }
+
+    out.push(act('Share', '', async () => {
+      // A frozen snapshot: the link carries the rig, so later edits never
+      // change what somebody else already opened.
+      const url = `${location.origin}${location.pathname}?r=${encodeRig(it.rig)}`;
+      notify?.(await copyText(url) ? 'Link copied' : 'Could not copy that link');
+    }));
+
+    // Publishing needs shared storage and an account: a gallery is by
+    // definition something other people can read.
+    if (store?.galleryEnabled && app.auth?.signedIn && row.id && !row.local) {
+      if (row.published) {
+        out.push(act('Published ✓', 'is-live', async () => {
+          try { await store.setPublished(row.id, false); }
+          catch (e) { notify?.(e?.message || 'Could not take that down'); return; }
+          after(`“${it.name}” is out of the gallery`);
+        }));
+      } else {
+        out.push(act('Publish', '', () => askAuthor(it, row, after)));
+      }
+    }
+
+    if (row.id) {
+      // No dialogue. One press arms it, a second does it, and it disarms
+      // itself — the same pattern `Clear rig` uses in the builder.
+      const del = act('Delete', 'is-bad', async () => {
+        if (del.dataset.armed !== '1') {
+          del.dataset.armed = '1';
+          del.firstChild.textContent = 'Really?';
+          setTimeout(() => {
+            if (!del.isConnected) return;
+            del.dataset.armed = '0';
+            del.firstChild.textContent = 'Delete';
+          }, 3000);
+          return;
+        }
+        try { await store.remove(row.id); }
+        catch (e) { notify?.(e?.message || 'Could not delete that rig'); return; }
+        after(`Deleted “${it.name}”`);
+      });
+      out.push(del);
+    }
+    // The way OUT of the list, on the list. Somebody arriving at their rigs
+    // and wanting a new one should not have to go back to the start screen to
+    // find the door they came through.
+    out.push(act('Build a rig', 'is-new', () => onNew?.()));
+    return out;
+  }
+
+  /**
+   * Publishing asks for a display name once and remembers it. It is NOT the
+   * account email — an email is the one thing an account holder never chose to
+   * make public, and it never appears in the gallery or leaves this device.
+   */
+  const AUTHOR_KEY = 'packrig_author';
+  const lastAuthor = () => { try { return localStorage.getItem(AUTHOR_KEY) || ''; } catch { return ''; } };
+
+  function askAuthor(it, row, after) {
+    const form = el('form', 'pr-publish');
+    const who = document.createElement('input');
+    who.className = 'pr-input';
+    who.type = 'text';
+    who.maxLength = 40;
+    who.placeholder = 'Anonymous';
+    who.value = lastAuthor();
+    who.setAttribute('aria-label', 'Shown in the gallery as');
+    form.append(el('label', 'pr-publish-l', 'Shown as'), who);
+    const go = el('button', 'pr-btn is-primary');
+    go.type = 'submit';
+    go.append(el('span', null, 'Publish'));
+    const no = el('button', 'pr-btn');
+    no.type = 'button';
+    no.append(el('span', null, 'Cancel'));
+    no.onclick = () => form.replaceWith(...ownActions(it));
+    form.append(go, no);
+    form.append(el('p', 'pr-fineprint',
+      'The bike, its name and this display name become public. Your email never does, '
+      + 'and you can take it down again at any time.'));
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      const author = who.value.trim().slice(0, 40) || 'Anonymous';
+      try { localStorage.setItem(AUTHOR_KEY, author); } catch { /* private mode */ }
+      try { await app.rigs.setPublished(row.id, true, author); }
+      catch (err) { notify?.(err?.message || 'Could not publish that rig'); return; }
+      after(`“${it.name}” is in the gallery`);
+    };
+    nodes.spec.querySelector('.pr-actions')?.replaceChildren(form);
+    setTimeout(() => who.focus(), 0);
+  }
+
+  async function copyText(text) {
+    try { await navigator.clipboard.writeText(text); return true; }
+    catch {
+      // The clipboard API needs a secure context — fall back to a hidden field.
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.append(ta);
+        ta.select();
+        const ok = document.execCommand('copy');
+        ta.remove();
+        return ok;
+      } catch { return false; }
     }
   }
 

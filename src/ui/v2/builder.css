@@ -146,12 +146,76 @@
    DOCKING — the one column
    =========================================================================== */
 
+/*
+ * THE FADE IS THE SHELL, AND IT DOES NOT STOP AT THE MENU.
+ *
+ * The menu is a column of type over a horizontal ramp with the bike lit beside
+ * it, and the builder was a filled near-black column with a filled bar across
+ * the top. Pressing "Build a rig" therefore swapped one background for another
+ * mid-animation — the owner's note: "the fade doesn't need to disappear and the
+ * background doesn't need to do what it just did."
+ *
+ * So the ramp belongs to the APP, not to the menu: `.app-veil` below is the
+ * same gradient stack as `.pr-veil` in menu.css, painted permanently behind
+ * every screen, and the panel, the sheet and the top bar are transparent
+ * surfaces sitting ON it. Crossing between menu and builder now changes what
+ * is written in the column and nothing else.
+ */
+#ui-root .app-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* Copied from menu.css's `.pr-veil`, in the same order, against the column
+     geometry above — `--col-gut + --col-body` is `--pr-colend` by construction.
+     Eight stops per ramp: a four-stop ramp against a pale sky paints a visible
+     vertical band where the slope changes. */
+  --veil-end: calc(var(--col-gut) + var(--col-body));
+  --veil-tail: 320px;
+  background:
+    linear-gradient(90deg,
+      rgba(10, 11, 13, 0.90) 0,
+      rgba(10, 11, 13, 0.88) var(--veil-end),
+      rgba(10, 11, 13, 0.68) calc(var(--veil-end) + var(--veil-tail) * 0.22),
+      rgba(10, 11, 13, 0.44) calc(var(--veil-end) + var(--veil-tail) * 0.44),
+      rgba(10, 11, 13, 0.22) calc(var(--veil-end) + var(--veil-tail) * 0.66),
+      rgba(10, 11, 13, 0.07) calc(var(--veil-end) + var(--veil-tail) * 0.84),
+      rgba(10, 11, 13, 0) calc(var(--veil-end) + var(--veil-tail))),
+    linear-gradient(180deg,
+      rgba(10, 11, 13, 0.58) 0,
+      rgba(10, 11, 13, 0.55) 32px,
+      rgba(10, 11, 13, 0.46) 72px,
+      rgba(10, 11, 13, 0.32) 112px,
+      rgba(10, 11, 13, 0.17) 148px,
+      rgba(10, 11, 13, 0.06) 176px,
+      rgba(10, 11, 13, 0) 200px),
+    linear-gradient(0deg,
+      rgba(10, 11, 13, 0.62) 0,
+      rgba(10, 11, 13, 0.36) 5%,
+      rgba(10, 11, 13, 0.15) 11%,
+      rgba(10, 11, 13, 0.04) 17%,
+      rgba(10, 11, 13, 0) 23%);
+}
+/* The menu paints its own copy of the ramp on top. Two identical ramps
+   multiply into a column half a stop darker than either, so the app's one
+   steps aside for the 420ms the menu's is fading in. */
+#ui-root.menu-open .app-veil { opacity: 0; transition: opacity 300ms ease; }
+#ui-root .app-veil { transition: opacity 300ms ease; }
+
+/* The bar is a vignette now, like `.pr-head`: the wordmark and the tools sit
+   directly on the scene and the top edge of the ramp is what carries them. */
 #ui-root .topbar {
   border-radius: 0;
   border: 0;
-  border-bottom: 1px solid var(--line);
   box-shadow: none;
-  background: var(--surface);
+  background: none;
+}
+/* Same mechanism a film subtitle uses — the two or three pixels around each
+   stroke are where contrast is actually perceived. */
+#ui-root .topbar .wordmark h1,
+#ui-root .topbar .home-up,
+#ui-root .topbar .acct-btn {
+  text-shadow: 0 1px 2px rgba(6, 7, 9, 0.92), 0 0 16px rgba(6, 7, 9, 0.72);
 }
 
 /*
@@ -167,10 +231,12 @@
   width: var(--col-w);
   max-height: none;
   border: 0;
-  border-right: 1px solid var(--line);
+  border-right: 0;
   border-radius: 0;
   box-shadow: none;
-  background: var(--surface);
+  /* Transparent: the ramp behind it IS the surface. A fill here and the column
+     has an edge the menu's column does not, which is the whole complaint. */
+  background: none;
 }
 #ui-root .panel { position: fixed; }
 
@@ -436,7 +502,6 @@
 
 /* ---- the account sheet --------------------------------------------------- */
 #ui-root .rig-title, #ui-root .rig-name, #ui-root .rig-field-label,
-#ui-root .rigs-picker { color: var(--ink-1); }
 #ui-root .rig-meta, #ui-root .rig-acct-txt, #ui-root .rig-empty,
 #ui-root .rig-fineprint, #ui-root .rig-or, #ui-root .rig-alt { color: var(--ink-2); }
 #ui-root .rig-account { border-color: var(--line-soft); }
@@ -769,7 +834,14 @@
   display: flex;
   flex-direction: column;
 }
-#ui-root .panel > .nav-sec:first-of-type .bag-list { flex: 1 1 auto; }
+/* `min-height: 0` is not decoration. A flex item's default minimum size is its
+   CONTENT, so a list of seven bags refuses to shrink below its natural height
+   and pushes `Add a bag`, the appearance swatches and the total straight out of
+   the bottom of the panel. Invisible on a desktop column 800px tall; on a
+   390x780 phone the sheet is 429px and everything below the list was off the
+   screen. Found by tools/_mobile.mjs once its start-screen selector was
+   repaired and it finally reached the builder it was written to audit. */
+#ui-root .panel > .nav-sec:first-of-type .bag-list { flex: 1 1 auto; min-height: 0; }
 #ui-root .panel > .nav-sec:first-of-type .nav-actions { flex: 0 0 auto; }
 #ui-root .panel > .nav-sec + .nav-sec, #ui-root .panel-foot { flex: 0 0 auto; }
 
@@ -1109,9 +1181,10 @@
 /* F11 — at night the column had no edge: a bone hairline at 14% is invisible
    against a scene sitting at rgb(8-15). Two pixels, one of each polarity —
    whichever the scene is, one of them survives. */
-#ui-root .panel, #ui-root .sheet { box-shadow: 1px 0 0 rgba(0, 0, 0, 0.55); }
+/* The column has no edge to draw any more — it dissolves into the scene the
+   way the menu's does, and a hairline at the point where the ramp is still at
+   0.88 would be a rule floating in a gradient. */
 #ui-root .aero-panel { box-shadow: -1px 0 0 rgba(0, 0, 0, 0.55); }
-#ui-root .topbar { box-shadow: 0 1px 0 rgba(0, 0, 0, 0.55); }
 
 /* F14 — the mode switch announced the mode of the whole sheet with a 4.5%
    delta. It is a mode, so it is unambiguous. */
@@ -1235,4 +1308,270 @@
   border-radius: var(--r-control);
   padding: 7px 14px;
   font: 550 12.5px/1 var(--font);
+}
+
+/* ===========================================================================
+   THE SAVE DOCK — bottom right, over the scene
+
+   It was a pill in the top bar, in a row with the camera tools and the account
+   button, which is where a person looks for TOOLS. A save is an offer: it
+   should not exist until there is a bike worth keeping, and then it should
+   appear in the corner nothing else occupies. Bottom-right is the one corner
+   the column, the bar and the wind-tunnel panel all leave alone.
+   =========================================================================== */
+#ui-root .save-dock {
+  position: fixed;
+  right: clamp(20px, 2.2vw, 32px);
+  bottom: clamp(20px, 2.4vh, 32px);
+  z-index: 35;
+  display: flex;
+  animation: save-rise 320ms var(--ease-out, cubic-bezier(0.16, 1, 0.30, 1)) both;
+}
+#ui-root .save-dock[hidden] { display: none; }
+@keyframes save-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #ui-root .save-dock { animation: none; }
+}
+#ui-root .save-dock .save-btn {
+  height: 44px;
+  padding: 0 22px;
+  border-radius: var(--r-pill);
+  font-size: 14px;
+  /* It is the one thing here NOT sitting on the ramp, so it carries its own
+     separation from a scene that may be a noon desert or a midnight road. */
+  box-shadow: 0 10px 30px rgba(6, 7, 9, 0.45), 0 2px 6px rgba(6, 7, 9, 0.35);
+}
+/* One surface at a time. While a picker or the tunnel is open, the primary
+   action belongs to that panel and this one gets out of the frame entirely. */
+#ui-root.aero-open .save-dock { display: none; }
+#ui-root.menu-open .save-dock { display: none; }
+
+/* ===========================================================================
+   THE ACCOUNT DIALOGUE — src/ui/account.js
+
+   The one modal in the app, and the one place a scrim is right: a log-in is
+   not about the bike, so covering the bike for the twenty seconds it takes is
+   honest rather than contradictory. Everything else about it is the menu's
+   material — near-black, bone ink, hairlines, one filled action.
+   =========================================================================== */
+#ui-root .ac-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(6, 7, 9, 0.62);
+  opacity: 0;
+  transition: opacity 180ms var(--ease-out, ease);
+}
+#ui-root .ac-scrim.on { opacity: 1; }
+
+#ui-root .ac-card {
+  position: relative;
+  width: min(380px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 28px 28px 24px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #0E0F12;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  color: var(--ink-1);
+  transform: translateY(8px) scale(0.99);
+  transition: transform 220ms var(--ease-out, cubic-bezier(0.16, 1, 0.30, 1));
+}
+#ui-root .ac-scrim.on .ac-card { transform: none; }
+#ui-root .ac-card.is-busy { opacity: 0.72; pointer-events: none; }
+
+#ui-root .ac-close {
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  border: 0; border-radius: var(--r-control);
+  background: none; color: var(--ink-3); cursor: pointer;
+}
+#ui-root .ac-close:hover { background: var(--fill-1); color: var(--ink-1); }
+
+#ui-root .ac-title { margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.012em; }
+#ui-root .ac-who { margin: 10px 0 0; font-size: 15px; color: var(--ink-1); }
+#ui-root .ac-note { margin: 6px 0 20px; font-size: 13px; line-height: 1.45; color: var(--ink-3); }
+
+#ui-root .ac-notice {
+  margin: 0 0 16px; padding: 10px 12px;
+  border-radius: var(--r-control); font-size: 13px; line-height: 1.4;
+  background: var(--fill-1); color: var(--ink-2);
+}
+#ui-root .ac-notice.is-bad { color: var(--bad); box-shadow: inset 0 0 0 1px rgba(242, 109, 109, 0.28); }
+#ui-root .ac-notice.is-ok { color: var(--ok); box-shadow: inset 0 0 0 1px rgba(62, 207, 142, 0.22); }
+
+#ui-root .ac-form { display: block; }
+#ui-root .ac-field { display: block; margin-bottom: 14px; }
+#ui-root .ac-field-label {
+  display: block; margin-bottom: 6px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.09em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+#ui-root .ac-input {
+  width: 100%; height: 44px; padding: 0 12px;
+  border-radius: var(--r-control);
+  border: 1px solid var(--line);
+  background: var(--fill-1);
+  color: var(--ink-1); font: inherit; font-size: 14px;
+}
+#ui-root .ac-input:focus { outline: none; border-color: var(--accent); background: var(--fill-2); }
+
+#ui-root .ac-btn {
+  width: 100%; height: 44px; margin-top: 8px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  border-radius: var(--r-control);
+  border: 1px solid var(--line);
+  background: none; color: var(--ink-1);
+  font: inherit; font-size: 14px; font-weight: 550; cursor: pointer;
+}
+#ui-root .ac-btn:hover { background: var(--fill-1); }
+#ui-root .ac-btn.is-primary {
+  background: var(--ink-1); border-color: var(--ink-1); color: #0A0B0D;
+}
+#ui-root .ac-btn.is-primary:hover { background: #FBF7EF; border-color: #FBF7EF; }
+#ui-root .ac-btn.is-google { background: #FFF; border-color: #FFF; color: #1F1F1F; margin-top: 0; }
+#ui-root .ac-btn.is-google:hover { background: #F1F1F1; border-color: #F1F1F1; }
+
+#ui-root .ac-or {
+  position: relative;
+  margin: 16px 0;
+  text-align: center;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-4);
+}
+#ui-root .ac-or::before, #ui-root .ac-or::after {
+  content: ''; position: absolute; top: 50%; width: calc(50% - 22px); height: 1px;
+  background: var(--line-soft);
+}
+#ui-root .ac-or::before { left: 0; }
+#ui-root .ac-or::after { right: 0; }
+
+#ui-root .ac-alt { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
+#ui-root .ac-link {
+  border: 0; background: none; padding: 0; cursor: pointer;
+  font: inherit; font-size: 12.5px; color: var(--ink-3); text-decoration: underline;
+  text-underline-offset: 3px;
+}
+#ui-root .ac-link:hover { color: var(--ink-1); }
+
+/* ===========================================================================
+   THE PICKING LISTS ARE THE MENU'S LIST
+
+   The owner's note, in full: "the size of the text in the left hand nav should
+   be the same size, so handlebar roll, handlebar bag, front pocket, should be
+   the same size as build a rig, loadouts, gallery … when I go through into the
+   actual bags listed, it's also all right to have it at that size with the
+   name and the image a little bit bigger."
+
+   He is right, and the reason is structural rather than a matter of taste.
+   `Build a rig / Loadouts / Gallery` and `Handlebar roll / Handlebar bag /
+   Front pocket` are the SAME OBJECT — one rank down. Setting the second at
+   13px against the first at 19px says they are different kinds of thing, so
+   the column appears to shrink as you go deeper into it, which is the opposite
+   of what is happening: you are getting closer to the decision.
+
+   So: one size for a destination in this column, at every level, taken from
+   `.pr-item-name` in menu.css — 550 19px/1.25 at -0.012em — with the same two
+   breakpoint steps that file uses. The description under it takes
+   `.pr-item-desc`'s 13px.
+   =========================================================================== */
+#ui-root .mb-name,
+#ui-root .br-name,
+#ui-root .card .name {
+  font-size: 19px;
+  font-weight: 550;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+}
+#ui-root .mb-sub { font-size: 13px; line-height: 1.45; }
+
+/* The rows have to grow with the type or the list reads as text crammed into
+   furniture built for something smaller. */
+/* Block padding only — the left and right are the column's spine (see ONE
+   SPINE above), and a shorthand here quietly moved every mount row 56px left
+   of the title above it. */
+#ui-root .mount-btn { padding-top: 15px; padding-bottom: 15px; gap: 3px 12px; }
+#ui-root .brand-row { min-height: 64px; }
+
+/*
+ * And the photograph with them. At 52px the product was a stamp beside a name
+ * doing all the work; at 72 you can tell a harness from a roll from a holster
+ * without reading, which is the entire argument for hot-linking the maker's
+ * own shot. The row's height still comes from the plate, not from the type.
+ */
+#ui-root .card {
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  min-height: 88px;
+}
+#ui-root .card .card-thumb { width: 72px; height: 72px; }
+#ui-root .card .brand { font-size: 10.5px; }
+
+/* menu.css's own two steps, mirrored — see R3 above for why this file carries
+   the same breakpoints line for line. */
+@media (min-width: 1700px) {
+  #ui-root .mb-name,
+  #ui-root .br-name,
+  #ui-root .card .name { font-size: 21px; }
+  #ui-root .mb-sub { font-size: 14px; }
+}
+@media (max-width: 900px) {
+  #ui-root .mb-name,
+  #ui-root .br-name,
+  #ui-root .card .name { font-size: 17px; }
+  #ui-root .card { grid-template-columns: 64px minmax(0, 1fr) auto; min-height: 80px; }
+  #ui-root .card .card-thumb { width: 64px; height: 64px; }
+}
+
+/* ===========================================================================
+   THE RAMP ON A PHONE — the same answer menu.css gives
+
+   A horizontal ramp is a statement about a column beside the bike, and on a
+   phone there is no column beside the bike: the panel docks to the bottom
+   edge. So the app veil becomes what `.pr-veil` becomes below 900px — a short
+   scrim under the top bar, and nothing else — and the docked surfaces take
+   their own ground back, because a bottom sheet over a live scene with no fill
+   is a list you cannot read.
+   =========================================================================== */
+/*
+ * On a phone the column is a 55vh bottom sheet, and four sections cannot each
+ * hold their own height inside it: with the list allowed to shrink (see
+ * `min-height: 0` above) it collapsed to 36px, and without that it pushed the
+ * swatches and the total off the bottom. Neither is a list.
+ *
+ * So the PANEL is the scroller down here, not the bag list inside it. The
+ * sections flow, the sheet scrolls as one thing, and nothing is nested — which
+ * is what a bottom sheet does everywhere else on a phone.
+ */
+@media (max-width: 560px) {
+  #ui-root .panel { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  #ui-root .panel > .nav-sec:first-of-type { flex: 0 0 auto; }
+  #ui-root .panel > .nav-sec:first-of-type .bag-list {
+    flex: 0 0 auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 900px) {
+  #ui-root .app-veil {
+    background:
+      linear-gradient(180deg,
+        rgba(10, 11, 13, 0.78) 0%,
+        rgba(10, 11, 13, 0.42) 5%,
+        rgba(10, 11, 13, 0.12) 10%,
+        rgba(10, 11, 13, 0) 16%);
+  }
+  #ui-root .panel, #ui-root .sheet {
+    background: rgba(10, 11, 13, 0.96);
+    border-top: 1px solid var(--line);
+  }
 }

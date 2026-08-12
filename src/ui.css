@@ -64,7 +64,7 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
   font: inherit; font-size: 13px; font-weight: 700; white-space: nowrap;
   transition: filter .15s, background .2s, color .2s;
 }
-.save-btn[hidden] { display: none; }
+.save-btn[hidden], .save-dock[hidden] { display: none; }
 .save-btn:hover { filter: brightness(1.06); }
 /* Saved and unchanged: still there, no longer shouting. */
 .save-btn.is-done {
@@ -72,6 +72,11 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
+/* `display` here outranks the UA stylesheet's `[hidden] { display: none }`, so
+   without the second rule a build with accounts switched off draws an empty
+   29px pill in the top bar — the label is hidden on a phone and only the
+   status dot is left. */
+.acct-btn[hidden] { display: none; }
 .acct-btn {
   display: inline-flex; align-items: center; gap: 8px;
   height: 36px; padding: 0 14px; border-radius: 999px; cursor: pointer;

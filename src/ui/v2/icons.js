@@ -31,7 +31,16 @@ const PATHS = {
 
   // The camera tools. `orbit` replaces ⟳, `reframe` replaces ⌂, `wind`
   // replaces 💨 — a real airflow mark rather than a cartoon gust.
-  orbit:     ['M10 3.5a6.5 6.5 0 1 1-6.19 4.5', 'M3.2 3.4v4h4'],
+  //
+  // `orbit` is redrawn. The first version was a 315-degree arc with a separate
+  // two-stroke corner mark at 3.2,3.4 — a right angle floating OUTSIDE the
+  // circle it belonged to, at a tangent that pointed nowhere near the way the
+  // arc was travelling. At 20px that reads as a circle with something broken
+  // stuck to it, which is what the owner meant by "the logo for spinning looks
+  // super weird". This is one arc from the top, clockwise, 300 degrees, and a
+  // chevron whose vertex sits ON the arc's start pointing along its tangent —
+  // so the head and the tail meet, as an arrow's do.
+  orbit:     ['M10 3.5a6.5 6.5 0 1 1-5.63 3.25', 'M7.8 2L10 3.5 7.8 5'],
   // Four corner brackets alone is the fullscreen glyph in every operating
   // system, and this sits two icons away from `orbit` in a camera cluster —
   // people were going to press it expecting fullscreen. The focal dot makes it

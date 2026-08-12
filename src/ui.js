@@ -1,5 +1,5 @@
 import { SLOTS, productSlotFor, colorwayFor } from './bags.js';
-import { initRigsUI } from './rigsui.js';
+import { initAccount } from './ui/account.js';
 import { applyRig, captureRig, rigURL } from './rig.js';
 import { productsForSlot } from './catalog.js';
 import { PAINTS } from './bike.js';
@@ -67,14 +67,36 @@ export function initUI(app) {
   const root = document.getElementById('ui-root');
   root.innerHTML = '';
 
-  // Saved rigs + accounts. Created here so it can borrow #ui-root and sync().
-  let rigsUI = null;
+  /*
+   * The app's own readability ramp, painted before anything else and never
+   * removed. The menu used to own the gradient — so leaving the menu deleted
+   * the composition and replaced it with a filled column and a filled bar.
+   * It belongs to the shell; see the `.app-veil` block in ui/v2/builder.css.
+   */
+  root.append(el('div', 'app-veil'));
+
+  /*
+   * The account, and only the account.
+   *
+   * `rigsui.js` used to live here: one sheet holding the sign-in form, the
+   * saved rigs, the gallery and the publish flow, opened by pressing your own
+   * email address in the top bar. Saved rigs are not an account feature — they
+   * are the work — so they moved to the menu's `rigs` view, the gallery was
+   * already there, and what is left is what an account actually is.
+   */
+  let account = null;
   queueMicrotask(() => {
-    rigsUI = initRigsUI(app, {
-      auth: app.auth, store: app.rigs, host: root,
-      onLoaded: () => sync(),
+    account = initAccount(app, {
+      auth: app.auth, store: app.rigs, host: root, onChange: () => sync(),
     });
-    app.openRigs = (m) => rigsUI.open(m);
+    app.account = account;
+    /*
+     * The old name, kept because four headless tools drive this by it. It now
+     * routes each mode at the surface that owns it.
+     */
+    app.openRigs = (m) => (m === 'gallery' ? app.menu?.open('gallery')
+      : m === 'list' ? app.menu?.open('rigs')
+        : account.open('signin'));
     app.__rigURL = () => kitURL();   // headless tests assert on the real link
   });
 
@@ -101,9 +123,25 @@ export function initUI(app) {
           savedSnapshot = null;
           rigNav.current = null;
           rigNav.enter(null);
+          /*
+           * "Build a rig" is a promise to put a bag on a bicycle, and it used
+           * to deliver an empty column with a paragraph explaining that the
+           * bike was empty and an `Add a bag` button to press next. There is
+           * only one thing anybody does here first, so do it: the mount list
+           * is what the column holds the moment you arrive.
+           */
+          openMountPicker();
         } else if (adopted) {
-          savedSnapshot = null;
-          rigNav.current = { id: null, name: adopted.name || 'Untitled rig', local: true };
+          // One of YOUR rigs keeps its id, so the save dock says "Save changes"
+          // and writes back to it. Somebody else's — a loadout, a gallery rig —
+          // arrives as a new unsaved bike, which is what "make it mine" means.
+          const own = adopted.own ? adopted.row : null;
+          savedSnapshot = own ? snapshot() : null;
+          rigNav.current = {
+            id: own?.id ?? null,
+            name: adopted.name || 'Untitled rig',
+            local: own ? !!own.local : true,
+          };
           rigNav.enter(rigNav.current);
         }
         sync();
@@ -372,17 +410,15 @@ export function initUI(app) {
    * class change rather than a rebuild, and the bike underneath never blinks.
    */
   const rigNav = initRigNav(app, {
-    onOpen: (row) => {
-      const { missing } = applyRig(app, row.rig);
-      savedSnapshot = snapshot();
-      sync();
-      if (missing?.length) console.warn('[packrig] saved rig references bags no longer in the catalogue:', missing);
+    onRename: (id, name) => {
+      if (id) app.rigs?.rename?.(id, name).catch(() => {});
+      paintSave();
     },
-    onNew: () => { app.clearAll?.(); savedSnapshot = null; sync(); },
-    onRename: (id, name) => { if (id) app.rigs?.rename?.(id, name).catch(() => {}); },
+    // Back goes up to the library, which is a menu view now.
+    onList: () => app.menu?.open('rigs'),
     onLevel: (lvl) => { panel.setAttribute('data-level', lvl); paintSave(); },
-    notify: (t, u, a) => notify(t, u, a),
   });
+  panel.setAttribute('data-level', 'rig');
 
   // Bags first, bike second. The rig is what you came to build; frame colour is
   // a detail, and it was sitting above the content with equal billing — on a
@@ -477,9 +513,18 @@ export function initUI(app) {
   const snapshot = () => {
     try { return JSON.stringify(captureRig(app, { name: '' })); } catch { return null; }
   };
+  /*
+   * It lives bottom-right, on its own, over the scene — not in the top bar.
+   * A save is the one thing on this screen that is an OFFER rather than a
+   * tool: it should appear where nothing was a moment ago, the instant there
+   * is a bike worth keeping, and it cannot do that from inside a row of camera
+   * buttons that is always there.
+   */
+  const saveDock = el('div', 'save-dock');
   const saveBtn = el('button', 'save-btn');
-  const saveLabel = elt('span', 'save-label', 'Save rig');
+  const saveLabel = elt('span', 'save-label', 'Save this rig');
   saveBtn.append(saveLabel);
+  saveDock.append(saveBtn);
   saveBtn.onclick = () => {
     if (saveBtn.classList.contains('is-done')) { rigNav.showList(); return; }
     const cur = rigNav.current;
@@ -507,29 +552,35 @@ export function initUI(app) {
   function paintSave() {
     const bags = Object.keys(app.bags?.equipped || {}).length;
     const dirty = !savedSnapshot || savedSnapshot !== snapshot();
-    saveBtn.hidden = bags === 0;
+    saveDock.hidden = bags === 0;
     saveBtn.classList.toggle('is-done', !dirty);
-    saveLabel.textContent = dirty ? 'Save rig' : 'Saved ✓';
-    saveBtn.title = dirty ? 'Save this build' : 'Saved — tap for your other rigs';
-    // At the list level there is no rig to save; the button would be saving
-    // whatever happened to be on the bike behind the list.
-    if (app.rigNav?.level === 'list') saveBtn.hidden = true;
+    // "Save this rig" the first time, "Save changes" when it is an edit — the
+    // second one is the answer to "will this make another copy?", which is the
+    // question the list full of "My rig 4"s taught people to ask.
+    saveLabel.textContent = dirty
+      ? (rigNav?.current?.id ? 'Save changes' : 'Save this rig')
+      : 'Saved ✓';
+    saveBtn.title = dirty ? 'Keep this build' : 'Saved — open your rigs';
   }
-  topRight.append(saveBtn);
+  root.append(saveDock);
 
   const acctBtn = el('button', 'acct-btn');
-  const acctLabel = elt('span', 'acct-label', 'My rigs');
+  const acctLabel = elt('span', 'acct-label', 'Log in');
   acctBtn.append(el('span', 'acct-dot'), acctLabel);
   // Signing in changes where rigs are STORED, not where they are found — they
   // are the top of the left column now. So this opens the account, nothing else.
-  acctBtn.onclick = () => app.openRigs?.(app.auth?.signedIn ? 'list' : 'signin');
+  /*
+   * It opens the ACCOUNT. It used to open a panel of saved rigs, so the way to
+   * last week's bike was to press your own email address — filing the work
+   * under the filing cabinet. The rigs are in the menu, where the front page
+   * links to them by name.
+   */
+  acctBtn.onclick = () => account?.open();
   function paintAccount() {
     const on = !!app.auth?.signedIn;
     acctBtn.classList.toggle('is-in', on);
-    // The email is the identity; "My rigs" is what you came for. Signed out,
-    // neither is true yet, so the button says the thing you can actually do.
-    acctLabel.textContent = on ? (app.auth.email || 'Account') : 'Sign in';
-    acctBtn.title = on ? 'Your account' : 'Sign in so your rigs follow you between devices';
+    acctLabel.textContent = on ? (app.auth.email || 'Account') : 'Log in';
+    acctBtn.title = on ? 'Your account' : 'Log in so your rigs follow you between devices';
     acctBtn.hidden = !app.auth?.enabled;
   }
   paintAccount();
@@ -537,18 +588,10 @@ export function initUI(app) {
   topRight.append(acctBtn);
 
   /*
-   * One level up. The builder is not the root of the app any more — `home.js`
-   * is — so there has to be a way back to it that is not the browser's back
-   * button. It sits next to the wordmark because that is where "up" lives in
-   * every other application anyone has used.
+   * There is no `Menu` button. It sat 12px from the wordmark and did exactly
+   * what the wordmark does — two controls, one destination, adjacent. The
+   * wordmark is the one everybody presses first, so it is the one that stays.
    */
-  const menuBtn = el('button', 'home-up');
-  menuBtn.type = 'button';
-  menuBtn.title = 'Back to the start';
-  menuBtn.setAttribute('aria-label', 'Back to the start');
-  menuBtn.textContent = 'Menu';
-  menuBtn.onclick = () => app.menu?.open('start');
-  mark.after(menuBtn);
 
   /*
    * The wordmark goes home too.
@@ -1292,6 +1335,10 @@ export function initUI(app) {
     // save CTA needs to reconsider whether there is anything unsaved.
     paintSave();
   }
+
+  // The menu's rigs view reports a delete, a publish or a copied link through
+  // the one toast this app has.
+  app.toast = notify;
 
   sync();
   // setSheetCollapsed is the hook for "only one sheet open at a time": the

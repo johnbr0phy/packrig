@@ -42,9 +42,15 @@ const el = (tag, cls, text) => {
 /** Views, in the order the tab strip shows them. */
 const VIEWS = [
   { id: 'start',    label: 'Start' },
+  // Only once there is something in it — see `paintChrome`. A tab reading "My
+  // rigs" that opens an empty page is a promise the app has not kept yet.
+  { id: 'rigs',     label: 'My rigs', needsRigs: true },
   { id: 'loadouts', label: 'Loadouts' },
   { id: 'gallery',  label: 'Gallery' },
 ];
+
+/** Do we have saved rigs? Synchronous by design — see rigstore's `knownCount`. */
+const rigCount = (app) => app.rigs?.knownCount || 0;
 
 export function initMenu(app, { onBuild } = {}) {
   const host = document.getElementById('ui-root');
@@ -93,7 +99,29 @@ export function initMenu(app, { onBuild } = {}) {
   closeBtn.append(el('span', null, 'Close'), icon('close', { size: 18 }));
   closeBtn.title = 'Back to the bike (Esc)';
   closeBtn.onclick = () => close();
-  head.append(closeBtn);
+
+  /*
+   * Log in, top right, on the front page — where every site anyone has used
+   * puts it. It was reachable only from inside the builder, behind a button
+   * that said "Sign in" and opened a panel of saved rigs, so the front door
+   * was two screens in and led somewhere else.
+   */
+  const logBtn = el('button', 'pr-login');
+  logBtn.type = 'button';
+  const logLbl = el('span', 'pr-login-l', 'Log in');
+  logBtn.append(logLbl);
+  logBtn.onclick = () => app.account?.open();
+  function paintLogin() {
+    const on = !!app.auth?.signedIn;
+    logBtn.hidden = !app.auth?.enabled;
+    logBtn.classList.toggle('is-in', on);
+    logLbl.textContent = on ? (app.auth.email || 'Account') : 'Log in';
+    logBtn.title = on ? 'Your account' : 'Log in so your rigs follow you between devices';
+  }
+  paintLogin();
+  app.auth?.onChange?.(paintLogin);
+
+  head.append(logBtn, closeBtn);
 
   root.append(head);
 
@@ -121,11 +149,20 @@ export function initMenu(app, { onBuild } = {}) {
   // steal focus from the document.
   let moved = false;
 
+  const startBuild = () => { app.__enteredBuilder = true; close({ build: true }); };
+
   const browse = initBrowse(app, {
     // A load that resolves after the menu closes must not mount its rig.
     isLive: () => open_,
     // The gallery's empty state offers the one thing worth doing from it.
-    onEmptyBuild: () => { app.__enteredBuilder = true; close({ build: true }); },
+    onEmptyBuild: startBuild,
+    onNew: startBuild,
+    // Deleting or publishing changes the list under you; redraw the view.
+    onRefresh: () => { if (open_) render(); },
+    notify: (msg) => app.toast?.(msg),
+    // The bike you walked in with, for `Update from your build` — browsing
+    // mounts each rig, so the live bike is not it.
+    getWorking: () => stash,
     onAdopt: (item) => {
       // Taking a rig means it is now yours and the stash is void.
       stashDirty = false;
@@ -136,11 +173,16 @@ export function initMenu(app, { onBuild } = {}) {
   });
 
   function paintChrome() {
+    const rigs = rigCount(app);
     for (const [id, b] of tabBtns) {
       const on = id === view;
       b.classList.toggle('is-on', on);
       b.setAttribute('aria-current', on ? 'page' : 'false');
+      // The rigs tab appears with your first saved rig and never before it.
+      const def = VIEWS.find((v) => v.id === id);
+      b.hidden = !!def?.needsRigs && !rigs && id !== view;
     }
+    paintLogin();
     // Nothing to close back to on a first visit with a bare bike: the menu IS
     // the app at that point, and a Close button that lands you on an empty
     // frame with no way back is worse than no button.
@@ -176,7 +218,9 @@ export function initMenu(app, { onBuild } = {}) {
       // rig you happened to scroll past in the gallery.
       restoreStash();
       stage.append(renderStart(app, {
-        onBuild: () => { app.__enteredBuilder = true; close({ build: true }); },
+        rigs: rigCount(app),
+        onBuild: startBuild,
+        onRigs: () => go('rigs'),
         onLoadouts: () => go('loadouts'),
         onGallery: () => go('gallery'),
       }));
@@ -208,7 +252,9 @@ export function initMenu(app, { onBuild } = {}) {
    * both, and it is put on the individual surfaces rather than on `#ui-root`
    * because the menu is a child of that root and would take itself out too.
    */
-  const BEHIND = '.panel, .topbar, .viewtools, .hint, .toast, .sheet';
+  // `.toast` is deliberately NOT in here: the rigs view reports a delete or a
+  // publish through it, and an inert toast is an undo button nobody can press.
+  const BEHIND = '.panel, .topbar, .viewtools, .hint, .sheet, .save-dock';
   function setBehindInert(on) {
     for (const n of host.querySelectorAll(BEHIND)) n.inert = on;
   }

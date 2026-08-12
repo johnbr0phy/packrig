@@ -474,14 +474,16 @@
   #ui-root .nav-actions { padding: 4px 10px 12px; gap: 8px; }
   #ui-root .nav-actions > * { min-height: 46px; }
 
-  /* THE TOP BAR AT 390px. Wordmark, Menu, three tools, Save rig and an email
-     do not fit, and the overflow was hidden rather than wrapped — Save rig, the
-     one control REDESIGN.md §6 says must always be visible, was the part that
-     fell off. So the wordmark goes (the Menu button is the way up, and the tab
-     says what the site is), and the account collapses to its status dot. */
+  /* THE TOP BAR AT 390px. It used to hold a wordmark, a Menu button, three
+     tools, Save rig and an email — none of which fit, and the overflow was
+     hidden rather than wrapped, so Save rig fell off the end. Two of those are
+     gone now: Save is a dock in the bottom-right corner, and Menu was a second
+     control doing the wordmark's job.
+     So the WORDMARK COMES BACK, and it has to: with Menu deleted it is the
+     only way up to the menu on a phone. Wordmark, three tools and the account
+     dot fit inside 390px with room to spare. */
   #ui-root .topbar { gap: 8px; padding: 0 10px; }
-  #ui-root .topbar .wordmark { display: none; }
-  #ui-root .home-up { margin-left: 0; margin-right: auto; }
+  #ui-root .topbar .wordmark { display: block; margin-right: auto; }
   #ui-root .top-right { gap: 6px; flex: 0 1 auto; min-width: 0; }
   #ui-root .viewtools { padding: 1px; }
   #ui-root .tool-btn { width: 36px; height: 36px; font-size: 17px; }
