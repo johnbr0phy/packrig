@@ -2270,32 +2270,32 @@
       "size": "2.3L",
       "slot": "framebag_half",
       "slot_should_be": null,
-      "verified": false,
+      "verified": true,
       "confidence": "medium",
       "evidence": [
-        "assets/products/tailfin/frame-bags-half-frame-bag-2-3l-1.jpg",
+        "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg",
         "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
         "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
         "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
       ],
       "dims_cm": {
-        "len": 36,
-        "wid": 6,
-        "hgt": 11
+        "len": 41.2,
+        "wid": 7.2,
+        "hgt": 11.9
       },
-      "dims_state": "unknown",
-      "dims_raw": "XS, 2.3L, 200g bag only / 248g with straps - no linear dimensions published; fitment is by printable A4/US-Letter sizing poster which carries no labelled numbers",
-      "dims_note": "UNVERIFIED. Tailfin publish volume and weight for all six sizes but no linear dimensions at all. dims_cm is left at the existing catalogue estimate. Do not treat it as sourced. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "dims_state": "drawn",
+      "dims_raw": "412 MM length and 119 MM maximum depth off the Half Frame Packs two-view drawing; 72 MM across on its end elevation. End-face depths 67 MM at the seat-tube end and 39 MM at the head-tube end.",
+      "dims_note": "MATERIAL CHANGE, and it overturns this record's own claim that Tailfin publish no linear dimensions for this line. They publish a labelled two-view engineering drawing covering all six sizes (assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg); it had simply never been fetched. Was 36 x 6 x 11, an unsourced catalogue estimate whose range was compressed at the bottom and overshot at the top - the 2.3L was 5 cm short and the 6.5L 3 cm long. hgt is the drawing's MAXIMUM depth below the top tube, off the end elevation; the two end-face depths are in geometry.taper. CONFIDENCE: the length and width are read straight off labelled arrows and are high confidence. The height is the end-elevation figure and I am confident it is the bag's maximum depth rather than a sub-measure, but this reading was made by the agent applying the fix, NOT by an independent critic - the framebag_half critique never completed. A second reading is owed before this slot is called done.",
       "capacity_l": 2.3,
       "geometry": {
         "form": "triangle_panel",
         "crossSection": "rounded_rect",
         "taper": {
-          "nose": 1,
-          "tail": 0.25,
+          "nose": 0.33,
+          "tail": 0.56,
           "profile": "linear"
         },
-        "notes": "A moulded, semi-rigid blade that fills the front-upper corner of the main triangle. Straight top edge running along the top tube; the front edge drops steeply where it follows the down tube; the body tapers rearward to a narrow point near the seat tube. The face is not flat - a moulded rib runs the length near the top edge and the lower third is a separate lighter grey textured panel. Tailfin's own phrase is 'no bulge, no budge': it keeps its shape fully loaded, so do not model it as a sagging soft pouch.",
+        "notes": "A moulded, semi-rigid blade that fills the front-upper corner of the main triangle. Straight top edge running along the top tube; the front edge drops steeply where it follows the down tube; the body tapers rearward to a narrow point near the seat tube. The face is not flat - a moulded rib runs the length near the top edge and the lower third is a separate lighter grey textured panel. Tailfin's own phrase is 'no bulge, no budge': it keeps its shape fully loaded, so do not model it as a sagging soft pouch. MEASURED FROM assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg: length 412 MM, maximum depth 119 MM, 72 MM across. The seat-tube end face is 67 MM deep and the head-tube end face 39 MM. Per framehalf.js's convention taper.nose is the HEAD-tube end and taper.tail the SEAT-tube end, both as fractions of hgt. Note the deepest point is neither end face, so this bag does have a belly - but whether its position matches the Apidura kite this builder draws is NOT established and needs the critique that did not complete.",
         "shoulder": "squared"
       },
       "closure": {
@@ -2388,32 +2388,32 @@
       "size": "3.0L",
       "slot": "framebag_half",
       "slot_should_be": null,
-      "verified": false,
+      "verified": true,
       "confidence": "medium",
       "evidence": [
-        "assets/products/tailfin/frame-bags-half-frame-bag-3-0l-1.jpg",
+        "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg",
         "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
         "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
         "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
       ],
       "dims_cm": {
-        "len": 40,
-        "wid": 6,
-        "hgt": 12.5
+        "len": 44.0,
+        "wid": 7.2,
+        "hgt": 14.0
       },
-      "dims_state": "unknown",
-      "dims_raw": "S, 3.0L, 242g bag only / 290g with straps - no linear dimensions published",
-      "dims_note": "UNVERIFIED. No maker linear dimensions for this line; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "dims_state": "drawn",
+      "dims_raw": "440 MM length and 140 MM maximum depth off the Half Frame Packs two-view drawing; 72 MM across on its end elevation. End-face depths 89 MM at the seat-tube end and 46 MM at the head-tube end.",
+      "dims_note": "MATERIAL CHANGE, and it overturns this record's own claim that Tailfin publish no linear dimensions for this line. They publish a labelled two-view engineering drawing covering all six sizes (assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg); it had simply never been fetched. Was 40 x 6 x 12.5, an unsourced catalogue estimate whose range was compressed at the bottom and overshot at the top - the 2.3L was 5 cm short and the 6.5L 3 cm long. hgt is the drawing's MAXIMUM depth below the top tube, off the end elevation; the two end-face depths are in geometry.taper. CONFIDENCE: the length and width are read straight off labelled arrows and are high confidence. The height is the end-elevation figure and I am confident it is the bag's maximum depth rather than a sub-measure, but this reading was made by the agent applying the fix, NOT by an independent critic - the framebag_half critique never completed. A second reading is owed before this slot is called done.",
       "capacity_l": 3,
       "geometry": {
         "form": "triangle_panel",
         "crossSection": "rounded_rect",
         "taper": {
-          "nose": 1,
-          "tail": 0.25,
+          "nose": 0.33,
+          "tail": 0.64,
           "profile": "linear"
         },
-        "notes": "Moulded semi-rigid blade filling the front-upper corner of the main triangle: straight top edge on the top tube, steep front edge following the down tube, tapering rearward to a point. Moulded rib near the top edge, lighter textured panel along the bottom. Self-supporting, no bulge.",
+        "notes": "Moulded semi-rigid blade filling the front-upper corner of the main triangle: straight top edge on the top tube, steep front edge following the down tube, tapering rearward to a point. Moulded rib near the top edge, lighter textured panel along the bottom. Self-supporting, no bulge. MEASURED FROM assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg: length 440 MM, maximum depth 140 MM, 72 MM across. The seat-tube end face is 89 MM deep and the head-tube end face 46 MM. Per framehalf.js's convention taper.nose is the HEAD-tube end and taper.tail the SEAT-tube end, both as fractions of hgt. Note the deepest point is neither end face, so this bag does have a belly - but whether its position matches the Apidura kite this builder draws is NOT established and needs the critique that did not complete.",
         "shoulder": "squared"
       },
       "closure": {
@@ -2506,32 +2506,32 @@
       "size": "3.8L",
       "slot": "framebag_half",
       "slot_should_be": null,
-      "verified": false,
+      "verified": true,
       "confidence": "medium",
       "evidence": [
-        "assets/products/tailfin/frame-bags-half-frame-bag-3-8l-1.jpg",
+        "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg",
         "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
         "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
         "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
       ],
       "dims_cm": {
-        "len": 44,
-        "wid": 6.4,
-        "hgt": 13.5
+        "len": 49.0,
+        "wid": 7.2,
+        "hgt": 15.7
       },
-      "dims_state": "unknown",
-      "dims_raw": "M, 3.8L, 284g bag only / 332g with straps - no linear dimensions published",
-      "dims_note": "UNVERIFIED. No maker linear dimensions; dims_cm left at the existing catalogue estimate. This is the size shown in the shared studio photo on a pink Canyon, where the bag spans most of the top tube and reaches roughly a third of the way down the down tube. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "dims_state": "drawn",
+      "dims_raw": "490 MM length and 157 MM maximum depth off the Half Frame Packs two-view drawing; 72 MM across on its end elevation. End-face depths 102 MM at the seat-tube end and 53 MM at the head-tube end.",
+      "dims_note": "MATERIAL CHANGE, and it overturns this record's own claim that Tailfin publish no linear dimensions for this line. They publish a labelled two-view engineering drawing covering all six sizes (assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg); it had simply never been fetched. Was 44 x 6.4 x 13.5, an unsourced catalogue estimate whose range was compressed at the bottom and overshot at the top - the 2.3L was 5 cm short and the 6.5L 3 cm long. hgt is the drawing's MAXIMUM depth below the top tube, off the end elevation; the two end-face depths are in geometry.taper. CONFIDENCE: the length and width are read straight off labelled arrows and are high confidence. The height is the end-elevation figure and I am confident it is the bag's maximum depth rather than a sub-measure, but this reading was made by the agent applying the fix, NOT by an independent critic - the framebag_half critique never completed. A second reading is owed before this slot is called done.",
       "capacity_l": 3.8,
       "geometry": {
         "form": "triangle_panel",
         "crossSection": "rounded_rect",
         "taper": {
-          "nose": 1,
-          "tail": 0.25,
+          "nose": 0.34,
+          "tail": 0.65,
           "profile": "linear"
         },
-        "notes": "Moulded semi-rigid blade: straight top edge along the top tube, steep front edge down the down tube, tapering rearward to a narrow point. A moulded rib runs the length near the top edge; the lower third is a lighter grey textured panel with a distinct welded seam line. Self-supporting when loaded.",
+        "notes": "Moulded semi-rigid blade: straight top edge along the top tube, steep front edge down the down tube, tapering rearward to a narrow point. A moulded rib runs the length near the top edge; the lower third is a lighter grey textured panel with a distinct welded seam line. Self-supporting when loaded. MEASURED FROM assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg: length 490 MM, maximum depth 157 MM, 72 MM across. The seat-tube end face is 102 MM deep and the head-tube end face 53 MM. Per framehalf.js's convention taper.nose is the HEAD-tube end and taper.tail the SEAT-tube end, both as fractions of hgt. Note the deepest point is neither end face, so this bag does have a belly - but whether its position matches the Apidura kite this builder draws is NOT established and needs the critique that did not complete.",
         "shoulder": "squared"
       },
       "closure": {
@@ -2624,32 +2624,32 @@
       "size": "4.5L",
       "slot": "framebag_half",
       "slot_should_be": null,
-      "verified": false,
+      "verified": true,
       "confidence": "medium",
       "evidence": [
-        "assets/products/tailfin/frame-bags-half-frame-bag-4-5l-1.jpg",
+        "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg",
         "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
         "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
         "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
       ],
       "dims_cm": {
-        "len": 48,
-        "wid": 6.5,
-        "hgt": 14.5
+        "len": 50.6,
+        "wid": 7.0,
+        "hgt": 16.5
       },
-      "dims_state": "unknown",
-      "dims_raw": "L, 4.5L, 302g bag only / 350g with straps - no linear dimensions published",
-      "dims_note": "UNVERIFIED. No maker linear dimensions; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "dims_state": "drawn",
+      "dims_raw": "506 MM length and 165 MM maximum depth off the Half Frame Packs two-view drawing; 70 MM across on its end elevation. End-face depths 107 MM at the seat-tube end and 69 MM at the head-tube end.",
+      "dims_note": "MATERIAL CHANGE, and it overturns this record's own claim that Tailfin publish no linear dimensions for this line. They publish a labelled two-view engineering drawing covering all six sizes (assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg); it had simply never been fetched. Was 48 x 6.5 x 14.5, an unsourced catalogue estimate whose range was compressed at the bottom and overshot at the top - the 2.3L was 5 cm short and the 6.5L 3 cm long. hgt is the drawing's MAXIMUM depth below the top tube, off the end elevation; the two end-face depths are in geometry.taper. CONFIDENCE: the length and width are read straight off labelled arrows and are high confidence. The height is the end-elevation figure and I am confident it is the bag's maximum depth rather than a sub-measure, but this reading was made by the agent applying the fix, NOT by an independent critic - the framebag_half critique never completed. A second reading is owed before this slot is called done.",
       "capacity_l": 4.5,
       "geometry": {
         "form": "triangle_panel",
         "crossSection": "rounded_rect",
         "taper": {
-          "nose": 1,
-          "tail": 0.25,
+          "nose": 0.42,
+          "tail": 0.65,
           "profile": "linear"
         },
-        "notes": "Moulded semi-rigid blade, straight top edge, steep front edge down the down tube, tapering rearward to a point. Moulded rib near the top, lighter textured lower panel. Self-supporting.",
+        "notes": "Moulded semi-rigid blade, straight top edge, steep front edge down the down tube, tapering rearward to a point. Moulded rib near the top, lighter textured lower panel. Self-supporting. MEASURED FROM assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg: length 506 MM, maximum depth 165 MM, 70 MM across. The seat-tube end face is 107 MM deep and the head-tube end face 69 MM. Per framehalf.js's convention taper.nose is the HEAD-tube end and taper.tail the SEAT-tube end, both as fractions of hgt. Note the deepest point is neither end face, so this bag does have a belly - but whether its position matches the Apidura kite this builder draws is NOT established and needs the critique that did not complete.",
         "shoulder": "squared"
       },
       "closure": {
@@ -2742,32 +2742,32 @@
       "size": "5.3L",
       "slot": "framebag_half",
       "slot_should_be": null,
-      "verified": false,
+      "verified": true,
       "confidence": "medium",
       "evidence": [
-        "assets/products/tailfin/frame-bags-half-frame-bag-5-3l-1.jpg",
+        "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg",
         "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
         "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
         "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
       ],
       "dims_cm": {
-        "len": 52,
-        "wid": 6.6,
-        "hgt": 15.5
+        "len": 51.5,
+        "wid": 7.0,
+        "hgt": 19.0
       },
-      "dims_state": "unknown",
-      "dims_raw": "XL, 5.3L, 316g bag only / 364g with straps - no linear dimensions published",
-      "dims_note": "UNVERIFIED. No maker linear dimensions; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "dims_state": "drawn",
+      "dims_raw": "515 MM length and 190 MM maximum depth off the Half Frame Packs two-view drawing; 70 MM across on its end elevation. End-face depths 134 MM at the seat-tube end, head-tube end face not labelled for this size.",
+      "dims_note": "MATERIAL CHANGE, and it overturns this record's own claim that Tailfin publish no linear dimensions for this line. They publish a labelled two-view engineering drawing covering all six sizes (assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg); it had simply never been fetched. Was 52 x 6.6 x 15.5, an unsourced catalogue estimate whose range was compressed at the bottom and overshot at the top - the 2.3L was 5 cm short and the 6.5L 3 cm long. hgt is the drawing's MAXIMUM depth below the top tube, off the end elevation; the two end-face depths are in geometry.taper. CONFIDENCE: the length and width are read straight off labelled arrows and are high confidence. The height is the end-elevation figure and I am confident it is the bag's maximum depth rather than a sub-measure, but this reading was made by the agent applying the fix, NOT by an independent critic - the framebag_half critique never completed. A second reading is owed before this slot is called done.",
       "capacity_l": 5.3,
       "geometry": {
         "form": "triangle_panel",
         "crossSection": "rounded_rect",
         "taper": {
-          "nose": 1,
-          "tail": 0.25,
+          "nose": 0.44,
+          "tail": 0.71,
           "profile": "linear"
         },
-        "notes": "Moulded semi-rigid blade, straight top edge, steep front edge, tapering rearward to a point. Moulded rib near the top, lighter textured lower panel. Self-supporting.",
+        "notes": "Moulded semi-rigid blade, straight top edge, steep front edge, tapering rearward to a point. Moulded rib near the top, lighter textured lower panel. Self-supporting. MEASURED FROM assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg: length 515 MM, maximum depth 190 MM, 70 MM across. The seat-tube end face is 134 MM deep, and the head-tube end face is not labelled at this size. Per framehalf.js's convention taper.nose is the HEAD-tube end and taper.tail the SEAT-tube end, both as fractions of hgt. Note the deepest point is neither end face, so this bag does have a belly - but whether its position matches the Apidura kite this builder draws is NOT established and needs the critique that did not complete. INTERPOLATED, flagged rather than hidden: 5.3L is the one size whose head-tube end face the drawing does not label. Its measured neighbours give 69/165 = 0.42 (4.5L) and 92/201 = 0.46 (6.5L), so nose is set to 0.44 between them. Without it apply-models drops the whole taper block as a fragment and the builder falls back to a vr.range() guess, which is strictly worse than a stated interpolation between two measurements 4 mm apart.",
         "shoulder": "squared"
       },
       "closure": {
@@ -2860,32 +2860,32 @@
       "size": "6.5L",
       "slot": "framebag_half",
       "slot_should_be": null,
-      "verified": false,
+      "verified": true,
       "confidence": "medium",
       "evidence": [
-        "assets/products/tailfin/frame-bags-half-frame-bag-6-5l-1.jpg",
+        "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg",
         "https://www.tailfin.cc/product/frame-bags/half-frame-bag/",
         "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
         "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
       ],
       "dims_cm": {
-        "len": 56,
-        "wid": 7,
-        "hgt": 16.5
+        "len": 53.1,
+        "wid": 7.0,
+        "hgt": 20.1
       },
-      "dims_state": "unknown",
-      "dims_raw": "XXL, 6.5L, 334g bag only / 382g with straps - no linear dimensions published",
-      "dims_note": "UNVERIFIED. No maker linear dimensions; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "dims_state": "drawn",
+      "dims_raw": "531 MM length and 201 MM maximum depth off the Half Frame Packs two-view drawing; 70 MM across on its end elevation. End-face depths 142 MM at the seat-tube end and 92 MM at the head-tube end.",
+      "dims_note": "MATERIAL CHANGE, and it overturns this record's own claim that Tailfin publish no linear dimensions for this line. They publish a labelled two-view engineering drawing covering all six sizes (assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg); it had simply never been fetched. Was 56 x 7 x 16.5, an unsourced catalogue estimate whose range was compressed at the bottom and overshot at the top - the 2.3L was 5 cm short and the 6.5L 3 cm long. hgt is the drawing's MAXIMUM depth below the top tube, off the end elevation; the two end-face depths are in geometry.taper. CONFIDENCE: the length and width are read straight off labelled arrows and are high confidence. The height is the end-elevation figure and I am confident it is the bag's maximum depth rather than a sub-measure, but this reading was made by the agent applying the fix, NOT by an independent critic - the framebag_half critique never completed. A second reading is owed before this slot is called done.",
       "capacity_l": 6.5,
       "geometry": {
         "form": "triangle_panel",
         "crossSection": "rounded_rect",
         "taper": {
-          "nose": 1,
-          "tail": 0.25,
+          "nose": 0.46,
+          "tail": 0.71,
           "profile": "linear"
         },
-        "notes": "Largest of the six. Moulded semi-rigid blade, straight top edge, steep front edge, tapering rearward to a point. Moulded rib near the top, lighter textured lower panel.",
+        "notes": "Largest of the six. Moulded semi-rigid blade, straight top edge, steep front edge, tapering rearward to a point. Moulded rib near the top, lighter textured lower panel. MEASURED FROM assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg: length 531 MM, maximum depth 201 MM, 70 MM across. The seat-tube end face is 142 MM deep and the head-tube end face 92 MM. Per framehalf.js's convention taper.nose is the HEAD-tube end and taper.tail the SEAT-tube end, both as fractions of hgt. Note the deepest point is neither end face, so this bag does have a belly - but whether its position matches the Apidura kite this builder draws is NOT established and needs the critique that did not complete.",
         "shoulder": "squared"
       },
       "closure": {
@@ -2978,32 +2978,32 @@
       "size": "1.9L",
       "slot": "framebag_half",
       "slot_should_be": null,
-      "verified": false,
+      "verified": true,
       "confidence": "medium",
       "evidence": [
-        "assets/products/tailfin/frame-bags-wedge-frame-bag-1-9l-1.jpg",
+        "assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg",
         "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/",
         "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
         "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
       ],
       "dims_cm": {
-        "len": 32,
-        "wid": 6,
-        "hgt": 10
+        "len": 35.2,
+        "wid": 7.3,
+        "hgt": 11.8
       },
-      "dims_state": "unknown",
-      "dims_raw": "Small, 1.9L, 170g bag only / 208g with straps - no linear dimensions published",
-      "dims_note": "UNVERIFIED. Tailfin publish volume and weight only for the Wedge range. dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "dims_state": "drawn",
+      "dims_raw": "352 MM length, 118 MM maximum depth, 73 MM across on the end elevation; end-face depths 69 MM at the seat-tube end and 39 MM at the head-tube end. Wedge Frame Packs two-view drawing.",
+      "dims_note": "MATERIAL CHANGE, overturning this record's claim that Tailfin publish volume and weight only for the Wedge range. The labelled two-view drawing (assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg) covers all three sizes; it had never been fetched. Was 32 x 6 x 10, an unsourced estimate short on every axis. CROSS-CHECK worth recording: this drawing's head-tube end faces are 39/46/53 MM, identical to the 2.3/3.0/3.8L Half Frame Packs' - the two lines share that end - which is independent confirmation that the arrows are being read against the right sizes on both sheets. CONFIDENCE: length and width are labelled arrows and high confidence; hgt is the end-elevation maximum depth, read by the agent applying the fix rather than by an independent critic, since the framebag_half critique never completed. A second reading is owed.",
       "capacity_l": 1.9,
       "geometry": {
         "form": "trapezoid_panel",
         "crossSection": "rounded_rect",
         "taper": {
-          "nose": 1,
-          "tail": 0.2,
+          "nose": 0.33,
+          "tail": 0.58,
           "profile": "linear"
         },
-        "notes": "Shorter and steeper than the Half Frame Bag: a compact wedge tucked under the top tube. Straight top edge, a deep blunt front end near the head tube, and a long shallow taper rearward to a sharp point. Same moulded semi-rigid construction with a rib along the top and a lighter textured lower panel. 'No bulge, no budge' - it holds shape loaded.",
+        "notes": "Shorter and steeper than the Half Frame Bag: a compact wedge tucked under the top tube. Straight top edge, a deep blunt front end near the head tube, and a long shallow taper rearward to a sharp point. Same moulded semi-rigid construction with a rib along the top and a lighter textured lower panel. 'No bulge, no budge' - it holds shape loaded. MEASURED FROM assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg: 352 MM long, 118 MM maximum depth, 73 MM across, seat-tube end face 69 MM, head-tube end face 39 MM. taper.nose is the HEAD-tube end per framehalf.js's convention.",
         "shoulder": "squared"
       },
       "closure": {
@@ -3095,32 +3095,32 @@
       "size": "2.7L",
       "slot": "framebag_half",
       "slot_should_be": null,
-      "verified": false,
+      "verified": true,
       "confidence": "medium",
       "evidence": [
-        "assets/products/tailfin/frame-bags-wedge-frame-bag-2-7l-1.jpg",
+        "assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg",
         "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/",
         "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
         "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
       ],
       "dims_cm": {
-        "len": 36,
-        "wid": 6.5,
-        "hgt": 11.5
+        "len": 38.0,
+        "wid": 7.3,
+        "hgt": 13.9
       },
-      "dims_state": "unknown",
-      "dims_raw": "Medium, 2.7L, 194g bag only / 232g with straps - no linear dimensions published",
-      "dims_note": "UNVERIFIED. Volume and weight only; dims_cm left at the existing catalogue estimate. This is the size in the shared studio photo, where it occupies roughly the front half of the top tube and drops about a third of the frame depth. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "dims_state": "drawn",
+      "dims_raw": "380 MM length, 139 MM maximum depth, 73 MM across on the end elevation; end-face depths 91 MM at the seat-tube end and 46 MM at the head-tube end. Wedge Frame Packs two-view drawing.",
+      "dims_note": "MATERIAL CHANGE, overturning this record's claim that Tailfin publish volume and weight only for the Wedge range. The labelled two-view drawing (assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg) covers all three sizes; it had never been fetched. Was 36 x 6.5 x 11.5, an unsourced estimate short on every axis. CROSS-CHECK worth recording: this drawing's head-tube end faces are 39/46/53 MM, identical to the 2.3/3.0/3.8L Half Frame Packs' - the two lines share that end - which is independent confirmation that the arrows are being read against the right sizes on both sheets. CONFIDENCE: length and width are labelled arrows and high confidence; hgt is the end-elevation maximum depth, read by the agent applying the fix rather than by an independent critic, since the framebag_half critique never completed. A second reading is owed.",
       "capacity_l": 2.7,
       "geometry": {
         "form": "trapezoid_panel",
         "crossSection": "rounded_rect",
         "taper": {
-          "nose": 1,
-          "tail": 0.2,
+          "nose": 0.33,
+          "tail": 0.65,
           "profile": "linear"
         },
-        "notes": "Compact wedge under the top tube: straight top edge, deep blunt front end near the head tube, long shallow taper rearward to a sharp point. Moulded semi-rigid panels with a rib along the top and a lighter textured lower panel.",
+        "notes": "Compact wedge under the top tube: straight top edge, deep blunt front end near the head tube, long shallow taper rearward to a sharp point. Moulded semi-rigid panels with a rib along the top and a lighter textured lower panel. MEASURED FROM assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg: 380 MM long, 139 MM maximum depth, 73 MM across, seat-tube end face 91 MM, head-tube end face 46 MM. taper.nose is the HEAD-tube end per framehalf.js's convention.",
         "shoulder": "squared"
       },
       "closure": {
@@ -3212,32 +3212,32 @@
       "size": "3.5L",
       "slot": "framebag_half",
       "slot_should_be": null,
-      "verified": false,
+      "verified": true,
       "confidence": "medium",
       "evidence": [
-        "assets/products/tailfin/frame-bags-wedge-frame-bag-3-5l-1.jpg",
+        "assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg",
         "https://www.tailfin.cc/product/frame-bags/wedge-frame-bag/",
         "https://www.tailfin.cc/blog/frame-bags-product-design-notes/",
         "https://bikerumor.com/tailfin-frame-bag-9-different-sizes-fits-most-bikes/"
       ],
       "dims_cm": {
-        "len": 40,
-        "wid": 7,
-        "hgt": 12.5
+        "len": 43.0,
+        "wid": 7.3,
+        "hgt": 15.6
       },
-      "dims_state": "unknown",
-      "dims_raw": "Large, 3.5L, 230g bag only / 277.6g with straps - no linear dimensions published",
-      "dims_note": "UNVERIFIED. Volume and weight only; dims_cm left at the existing catalogue estimate. FIT CONSTRAINT (no bag dimension is published, but this bounds the render): Tailfin state the nine-model range - six Half Frame plus three Wedge - suits bike sizes from 47 to 61 cm, and there is deliberately NO static per-size fit chart. Tailfin replaced it with a machine-learning sizing web app (frame-bag-finder.tailfin.cc) that scales the bag from a photo of the bike plus wheel size and tyre width, backed by printable A4/US-Letter templates. Sizing is optimised for road and gravel geometry, which is narrower than MTB.",
+      "dims_state": "drawn",
+      "dims_raw": "430 MM length, 156 MM maximum depth, 73 MM across on the end elevation; end-face depths 104 MM at the seat-tube end and 53 MM at the head-tube end. Wedge Frame Packs two-view drawing.",
+      "dims_note": "MATERIAL CHANGE, overturning this record's claim that Tailfin publish volume and weight only for the Wedge range. The labelled two-view drawing (assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg) covers all three sizes; it had never been fetched. Was 40 x 7 x 12.5, an unsourced estimate short on every axis. CROSS-CHECK worth recording: this drawing's head-tube end faces are 39/46/53 MM, identical to the 2.3/3.0/3.8L Half Frame Packs' - the two lines share that end - which is independent confirmation that the arrows are being read against the right sizes on both sheets. CONFIDENCE: length and width are labelled arrows and high confidence; hgt is the end-elevation maximum depth, read by the agent applying the fix rather than by an independent critic, since the framebag_half critique never completed. A second reading is owed.",
       "capacity_l": 3.5,
       "geometry": {
         "form": "trapezoid_panel",
         "crossSection": "rounded_rect",
         "taper": {
-          "nose": 1,
-          "tail": 0.2,
+          "nose": 0.34,
+          "tail": 0.67,
           "profile": "linear"
         },
-        "notes": "Largest wedge. Straight top edge, deep blunt front end, long shallow taper rearward to a point. Moulded semi-rigid panels, rib along the top, lighter textured lower panel.",
+        "notes": "Largest wedge. Straight top edge, deep blunt front end, long shallow taper rearward to a point. Moulded semi-rigid panels, rib along the top, lighter textured lower panel. MEASURED FROM assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg: 430 MM long, 156 MM maximum depth, 73 MM across, seat-tube end face 104 MM, head-tube end face 53 MM. taper.nose is the HEAD-tube end per framehalf.js's convention.",
         "shoulder": "squared"
       },
       "closure": {

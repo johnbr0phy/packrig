@@ -16726,9 +16726,9 @@
     "size": "2.3L",
     "liters": 2.3,
     "dims_cm": {
-     "len": 36,
-     "hgt": 11,
-     "wid": 6
+     "len": 41.2,
+     "wid": 7.2,
+     "hgt": 11.9
     },
     "colors": [
      "#1a1a1a",
@@ -16775,8 +16775,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.33,
+      "tail": 0.56,
       "profile": "linear"
      }
     },
@@ -16797,9 +16797,9 @@
     "size": "3.0L",
     "liters": 3,
     "dims_cm": {
-     "len": 40,
-     "hgt": 12.5,
-     "wid": 6
+     "len": 44,
+     "wid": 7.2,
+     "hgt": 14
     },
     "colors": [
      "#1a1a1a",
@@ -16846,8 +16846,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.33,
+      "tail": 0.64,
       "profile": "linear"
      }
     },
@@ -16868,9 +16868,9 @@
     "size": "3.8L",
     "liters": 3.8,
     "dims_cm": {
-     "len": 44,
-     "hgt": 13.5,
-     "wid": 6.4
+     "len": 49,
+     "wid": 7.2,
+     "hgt": 15.7
     },
     "colors": [
      "#1a1a1a",
@@ -16917,8 +16917,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.34,
+      "tail": 0.65,
       "profile": "linear"
      }
     },
@@ -16939,9 +16939,9 @@
     "size": "4.5L",
     "liters": 4.5,
     "dims_cm": {
-     "len": 48,
-     "hgt": 14.5,
-     "wid": 6.5
+     "len": 50.6,
+     "wid": 7,
+     "hgt": 16.5
     },
     "colors": [
      "#1a1a1a",
@@ -16988,8 +16988,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.42,
+      "tail": 0.65,
       "profile": "linear"
      }
     },
@@ -17010,9 +17010,9 @@
     "size": "5.3L",
     "liters": 5.3,
     "dims_cm": {
-     "len": 52,
-     "hgt": 15.5,
-     "wid": 6.6
+     "len": 51.5,
+     "wid": 7,
+     "hgt": 19
     },
     "colors": [
      "#1a1a1a",
@@ -17059,8 +17059,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.44,
+      "tail": 0.71,
       "profile": "linear"
      }
     },
@@ -17081,9 +17081,9 @@
     "size": "6.5L",
     "liters": 6.5,
     "dims_cm": {
-     "len": 56,
-     "hgt": 16.5,
-     "wid": 7
+     "len": 53.1,
+     "wid": 7,
+     "hgt": 20.1
     },
     "colors": [
      "#1a1a1a",
@@ -17130,8 +17130,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.25,
+      "nose": 0.46,
+      "tail": 0.71,
       "profile": "linear"
      }
     },
@@ -17152,9 +17152,9 @@
     "size": "1.9L",
     "liters": 1.9,
     "dims_cm": {
-     "len": 32,
-     "hgt": 10,
-     "wid": 6
+     "len": 35.2,
+     "wid": 7.3,
+     "hgt": 11.8
     },
     "colors": [
      "#1a1a1a",
@@ -17201,8 +17201,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.2,
+      "nose": 0.33,
+      "tail": 0.58,
       "profile": "linear"
      }
     },
@@ -17223,9 +17223,9 @@
     "size": "2.7L",
     "liters": 2.7,
     "dims_cm": {
-     "len": 36,
-     "hgt": 11.5,
-     "wid": 6.5
+     "len": 38,
+     "wid": 7.3,
+     "hgt": 13.9
     },
     "colors": [
      "#1a1a1a",
@@ -17272,8 +17272,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.2,
+      "nose": 0.33,
+      "tail": 0.65,
       "profile": "linear"
      }
     },
@@ -17294,9 +17294,9 @@
     "size": "3.5L",
     "liters": 3.5,
     "dims_cm": {
-     "len": 40,
-     "hgt": 12.5,
-     "wid": 7
+     "len": 43,
+     "wid": 7.3,
+     "hgt": 15.6
     },
     "colors": [
      "#1a1a1a",
@@ -17343,8 +17343,8 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 1,
-      "tail": 0.2,
+      "nose": 0.34,
+      "tail": 0.67,
       "profile": "linear"
      }
     },
