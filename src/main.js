@@ -135,6 +135,10 @@ const app = {
 window.app = app;
 window.__THREE = THREE;   // headless audits need it to measure bounds
 window.__SLOTS = SLOTS;   // tools/audit-exclusions.mjs reads the exclusion table
+// tools/measure-loadouts.mjs mounts each curated rig and reads the tunnel's
+// numbers back, to bake them into data/loadouts.json as build output.
+app.__applyRig = (rig) => applyRig(app, rig);
+app.__aeroReadout = () => app.aero?.readout?.() || null;
 
 // ---- Boot --------------------------------------------------------------
 let readyResolve;

@@ -43,13 +43,21 @@ export function modelName(product, brand) {
   return rest || full;
 }
 
-/** Capacity to one decimal at most: 10 → "10 L", 3.75 → "3.8 L". */
+/**
+ * Capacity, always to ONE decimal: 10 → "10.0 L", 3.75 → "3.8 L".
+ *
+ * The trailing zero is deliberate and it is the difference between a column and
+ * a list. These figures are right-aligned in tabular figures and read DOWN — the
+ * kit list, the catalogue, the manifest — and with mixed precision "5.8" puts
+ * its tenths under "12"'s units and the column stops aligning. Prose and the
+ * gallery strip use their own short form, where a trailing zero is just noise.
+ */
 export function litersOf(p) {
   const l = Number(p?.liters);
   // A harness carries drybags sold separately, so it has NO capacity rather
   // than zero litres — "0 L" reads as a product that holds nothing.
   if (l === 0) return '—';
-  return Number.isFinite(l) ? `${Math.round(l * 10) / 10} L` : '—';
+  return Number.isFinite(l) ? `${(Math.round(l * 10) / 10).toFixed(1)} L` : '—';
 }
 
 /** Model name with the trailing capacity dropped — it gets its own column. */

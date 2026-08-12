@@ -186,6 +186,28 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
     get active() { return tunnel.active; },
     /** Panel → scene highlight mirroring, matching focus.js's two-way binding. */
     setHighlight(key) { panel.setHighlight(key); },
+    /**
+     * The current numbers, as data rather than as a rendered panel.
+     *
+     * tools/measure-loadouts.mjs reads this to bake the eight curated rigs'
+     * aero cost into data/loadouts.json, so the Loadouts screen can print
+     * watts without every visitor paying for a GPU measurement pass. Returns
+     * null until the first measurement has landed.
+     */
+    readout() {
+      if (!result) return null;
+      const c = compare(baselineCda, result.cdaHeadOn, ride);
+      const g = grade(c.addedW, { speedKph: ride.speedKph });
+      return {
+        cda: result.cdaHeadOn,
+        cdaWeighted: result.cdaWeighted,
+        baselineCda,
+        speedKph: ride.speedKph,
+        totalW: power({ cda: result.cdaHeadOn, ...ride }).totalW,
+        addedW: c.addedW,
+        grade: `${g.letter} · ${g.name}`,
+      };
+    },
     dispose() {
       exit();
       panel.dispose();
