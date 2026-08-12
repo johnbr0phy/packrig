@@ -12,7 +12,11 @@
     "stats": {
       "litres": 53.6,
       "bags": 10,
-      "makers": 1
+      "makers": 1,
+      "cda": 0.459,
+      "watts": 180,
+      "addedW": 28,
+      "grade": "D · Sail"
     },
     "rig": {
       "v": 1,
@@ -116,7 +120,11 @@
     "stats": {
       "litres": 9.9,
       "bags": 4,
-      "makers": 1
+      "makers": 1,
+      "cda": 0.384,
+      "watts": 158,
+      "addedW": 6,
+      "grade": "A · Clean"
     },
     "rig": {
       "v": 1,
@@ -172,7 +180,11 @@
     "stats": {
       "litres": 81.6,
       "bags": 8,
-      "makers": 1
+      "makers": 1,
+      "cda": 0.544,
+      "watts": 205,
+      "addedW": 53,
+      "grade": "F · Barn Door"
     },
     "rig": {
       "v": 1,
@@ -260,7 +272,11 @@
     "stats": {
       "litres": 45.8,
       "bags": 8,
-      "makers": 1
+      "makers": 1,
+      "cda": 0.427,
+      "watts": 171,
+      "addedW": 19,
+      "grade": "C · Draggy"
     },
     "rig": {
       "v": 1,
@@ -348,7 +364,11 @@
     "stats": {
       "litres": 78.1,
       "bags": 8,
-      "makers": 1
+      "makers": 1,
+      "cda": 0.58,
+      "watts": 216,
+      "addedW": 64,
+      "grade": "F · Barn Door"
     },
     "rig": {
       "v": 1,
@@ -436,7 +456,11 @@
     "stats": {
       "litres": 19.9,
       "bags": 5,
-      "makers": 4
+      "makers": 4,
+      "cda": 0.392,
+      "watts": 160,
+      "addedW": 8,
+      "grade": "A · Clean"
     },
     "rig": {
       "v": 1,
@@ -500,7 +524,11 @@
     "stats": {
       "litres": 34.6,
       "bags": 5,
-      "makers": 2
+      "makers": 2,
+      "cda": 0.43,
+      "watts": 172,
+      "addedW": 20,
+      "grade": "C · Draggy"
     },
     "rig": {
       "v": 1,
@@ -564,7 +592,11 @@
     "stats": {
       "litres": 8.7,
       "bags": 4,
-      "makers": 1
+      "makers": 1,
+      "cda": 0.372,
+      "watts": 154,
+      "addedW": 3,
+      "grade": "A+ · Bullet"
     },
     "rig": {
       "v": 1,

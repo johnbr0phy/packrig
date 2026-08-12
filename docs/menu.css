@@ -272,7 +272,20 @@
    of the app, so the UA's default ring paints a 2px line straight across the
    screen under the header — which is exactly what it did. Controls inside it
    keep their own `:focus-visible` rings. */
-.pr-stage:focus, .pr-stage:focus-visible { outline: none; }
+/*
+ * The stage takes focus by script on every view change (see menu.js), so it
+ * must never paint a ring — it is 1440px wide and the ring lands as a 2px
+ * accent rule straight across the top of the menu.
+ *
+ * The id is not decoration. builder.css sets `#ui-root :focus-visible { outline:
+ * 2px solid var(--accent) }`, and an id beats two classes, so the class-only
+ * version of this rule lost and the ring came back — the single largest accent
+ * surface in the product, painted by a belt-and-braces accessibility rule from
+ * the OTHER layer. Two reviewers reported it and a check of mine that read
+ * `outline-color` without reading `outline-style` said it wasn't there.
+ */
+#ui-root .pr-stage:focus,
+#ui-root .pr-stage:focus-visible { outline: none; box-shadow: none; }
 /* Backstop for anything in this layer that takes focus by script rather than by
    keyboard. A programmatic focus should not paint a ring; a Tab press should. */
 .pr :focus:not(:focus-visible) { outline: none; }
@@ -967,4 +980,29 @@
   .pr-step { display: none; }
   .pr-chip { padding-top: 15px; padding-bottom: 15px; }
   .pr-item { padding-top: 18px; padding-bottom: 18px; }
+}
+
+/* The wind tunnel's verdict, under the figures it explains. The grade is a
+   letter and two words — "F · Barn Door" — and it is the only place in this
+   layer where a measurement gets to be funny. */
+.pr-grade {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--pr-rule);
+}
+.pr-grade-k {
+  font: 400 10.5px/1 var(--font);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--pr-ink-3);
+}
+.pr-grade-v {
+  font-family: var(--pr-mono);
+  font-size: 12px;
+  color: var(--pr-ink-2);
+  white-space: nowrap;
 }

@@ -255,7 +255,10 @@ export function initBrowse(app, { onAdopt, onDirty, isLive, onEmptyBuild } = {})
       c.append(el('span', 'pr-chip-n', String(i + 1).padStart(2, '0')));
       const body = el('span', 'pr-chip-body');
       body.append(el('span', 'pr-chip-name', it.name));
-      body.append(el('span', 'pr-chip-l', `${num(it.stats.litres)} L`));
+      body.append(el('span', 'pr-chip-l',
+        it.stats.addedW != null
+          ? `${num(it.stats.litres)} L · +${it.stats.addedW} W`
+          : `${num(it.stats.litres)} L`));
       c.append(body);
       c.onclick = () => show(i);
       rail.append(c);
@@ -325,8 +328,31 @@ export function initBrowse(app, { onAdopt, onDirty, isLive, onEmptyBuild } = {})
     };
     stats.append(fig(Number(it.stats.litres).toFixed(1), 'litres'));
     stats.append(fig(String(it.stats.bags), it.stats.bags === 1 ? 'bag' : 'bags'));
-    stats.append(fig(String(it.stats.makers), it.stats.makers === 1 ? 'maker' : 'makers'));
+    /*
+     * The aero cost, measured rather than asserted: tools/measure-loadouts.mjs
+     * mounts each of these rigs in a browser, runs the wind tunnel's GPU
+     * measurement over a yaw sweep, and bakes the result into loadouts.json.
+     *
+     * It is here because litres alone cannot start an argument — "Aero, 8.7 L"
+     * against "The Expedition, 53.6 L" is a statement about volume, and the
+     * question anyone actually has is what the volume costs. +3 W against
+     * +28 W is that question answered.
+     */
+    if (it.stats.addedW != null) {
+      const f = fig(`+${it.stats.addedW}`, 'watts');
+      f.title = `${it.stats.grade} — measured in the wind tunnel at ${it.stats.watts} W to hold 28 km/h`;
+      stats.append(f);
+    } else {
+      stats.append(fig(String(it.stats.makers), it.stats.makers === 1 ? 'maker' : 'makers'));
+    }
     spec.append(staged(stats));
+
+    if (it.stats.grade) {
+      const g = el('p', 'pr-grade');
+      g.append(el('span', 'pr-grade-k', 'Wind tunnel'));
+      g.append(el('span', 'pr-grade-v', it.stats.grade));
+      spec.append(staged(g));
+    }
 
     // The manifest — the reason to be on this screen.
     const rows = manifestOf(app, it.rig);

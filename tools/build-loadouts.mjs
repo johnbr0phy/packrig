@@ -287,6 +287,46 @@ if (errors.length) {
   process.exit(1);
 }
 
+/*
+ * Carry the measured aero numbers forward.
+ *
+ * `stats.cda`, `watts`, `addedW` and `grade` are produced by
+ * tools/measure-loadouts.mjs, which mounts each rig in a real browser and reads
+ * the wind tunnel's GPU measurement back. They are expensive, they are build
+ * output, and this script rewrites the file they live in — so without this it
+ * would silently erase them on every run, including the one inside
+ * tools/build-pages.mjs that fires on every deploy.
+ *
+ * They are only carried forward when the RIG IS UNCHANGED. A measurement of a
+ * loadout that no longer exists is worse than no measurement: it is a number
+ * with a rig's name on it that was never measured on that rig.
+ */
+try {
+  const prev = JSON.parse(readFileSync(join(root, 'data/loadouts.json'), 'utf8'));
+  const byId = new Map(prev.map((l) => [l.id, l]));
+  let kept = 0;
+  let stale = 0;
+  for (const l of out) {
+    const old = byId.get(l.id);
+    if (!old?.stats || old.stats.watts == null) continue;
+    if (JSON.stringify(old.rig.bags) !== JSON.stringify(l.rig.bags)) { stale++; continue; }
+    l.stats.cda = old.stats.cda;
+    l.stats.watts = old.stats.watts;
+    l.stats.addedW = old.stats.addedW;
+    l.stats.grade = old.stats.grade;
+    kept++;
+  }
+  if (kept) console.log(`   carried forward measured aero for ${kept} loadout${kept === 1 ? '' : 's'}`);
+  if (stale) console.log(`   DROPPED aero for ${stale} changed loadout${stale === 1 ? '' : 's'} — re-run tools/measure-loadouts.mjs`);
+} catch {
+  console.log('   (no previous data/loadouts.json — run tools/measure-loadouts.mjs to add aero)');
+}
+
+const unmeasured = out.filter((l) => l.stats.watts == null).map((l) => l.id);
+if (unmeasured.length) {
+  console.log(`   NOT MEASURED: ${unmeasured.join(', ')} — run tools/measure-loadouts.mjs`);
+}
+
 writeFileSync(join(root, 'data/loadouts.json'), JSON.stringify(out, null, 2) + '\n');
 console.log(`wrote data/loadouts.json — ${out.length} loadouts`);
 for (const l of out) {
