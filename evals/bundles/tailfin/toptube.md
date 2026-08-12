@@ -2,42 +2,48 @@
 
 ## Top Tube / Top Tube Bag / 0.8L Zip
 - record dims_cm: {"len":22.4,"wid":6.5,"hgt":10}  render: null  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 32.3 x 7.1 x 15.1   [on its own mount axes: along 23.8, perp 11.9, across 6.4]
+- measured render size on the bag's OWN mount axes (cm): along 23.8, perp 11.9, across 6.4  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 32.3 fore-aft x 7.1 across x 15.1 tall
 - CLASH/contact: top tube 1.2mm
 - OUR RENDER: shots/tailfin-v0/tailfin-top-tube-top-tube-bag-0-8l-zip/front.png, shots/tailfin-v0/tailfin-top-tube-top-tube-bag-0-8l-zip/rear.png, shots/tailfin-v0/tailfin-top-tube-top-tube-bag-0-8l-zip/side.png, shots/tailfin-v0/tailfin-top-tube-top-tube-bag-0-8l-zip/tq.png
 - product page: https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/
 
 ## Top Tube / Top Tube Bag / 1.1L Zip/Flip
 - record dims_cm: {"len":24.9,"wid":7.5,"hgt":10.4}  render: null  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 34.9 x 7.8 x 15.7   [on its own mount axes: along 26.2, perp 12.5, across 7.5]
+- measured render size on the bag's OWN mount axes (cm): along 26.2, perp 12.5, across 7.5  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 34.9 fore-aft x 7.8 across x 15.7 tall
 - CLASH/contact: top tube 1.6mm
 - OUR RENDER: shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-1l-zip-flip/front.png, shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-1l-zip-flip/rear.png, shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-1l-zip-flip/side.png, shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-1l-zip-flip/tq.png
 - product page: https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/
 
 ## Top Tube / Top Tube Bag / 1.5L Zip/Flip
 - record dims_cm: {"len":27.2,"wid":9,"hgt":11.4}  render: null  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 37.3 x 9.3 x 16.9   [on its own mount axes: along 28.7, perp 13.8, across 8.9]
+- measured render size on the bag's OWN mount axes (cm): along 28.7, perp 13.8, across 8.9  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 37.3 fore-aft x 9.3 across x 16.9 tall
 - CLASH/contact: top tube 2.3mm
 - OUR RENDER: shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-5l-zip-flip/front.png, shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-5l-zip-flip/rear.png, shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-5l-zip-flip/side.png, shots/tailfin-v0/tailfin-top-tube-top-tube-bag-1-5l-zip-flip/tq.png
 - product page: https://www.tailfin.cc/product/top-tube-cockpit/top-tube-bag/
 
 ## Top Tube / Long Top Tube Bag / 1.6L
 - record dims_cm: {"len":37,"wid":5.5,"hgt":8.5}  render: null  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 46.5 x 7.1 x 14.9   [on its own mount axes: along 37.5, perp 10.4, across 5.5]
+- measured render size on the bag's OWN mount axes (cm): along 37.5, perp 10.4, across 5.5  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 46.5 fore-aft x 7.1 across x 14.9 tall
 - CLASH/contact: top tube 1.3mm
 - OUR RENDER: shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-1-6l/front.png, shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-1-6l/rear.png, shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-1-6l/side.png, shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-1-6l/tq.png
 - product page: https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/
 
 ## Top Tube / Long Top Tube Bag / 2.2L
 - record dims_cm: {"len":47,"wid":5.8,"hgt":10.5}  render: null  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 55.7 x 7.1 x 17.7   [on its own mount axes: along 46.7, perp 12.8, across 5.8]
+- measured render size on the bag's OWN mount axes (cm): along 46.7, perp 12.8, across 5.8  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 55.7 fore-aft x 7.1 across x 17.7 tall
 - CLASH/contact: top tube 1.3mm
 - OUR RENDER: shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-2-2l/front.png, shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-2-2l/rear.png, shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-2-2l/side.png, shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-2-2l/tq.png
 - product page: https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/
 
 ## Top Tube / Long Top Tube Bag / 3L
 - record dims_cm: {"len":50,"wid":6.3,"hgt":11.5}  render: null  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 55.9 x 7.1 x 18.8   [on its own mount axes: along 46.9, perp 14.2, across 6.3]
+- measured render size on the bag's OWN mount axes (cm): along 46.9, perp 14.2, across 6.3  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 55.9 fore-aft x 7.1 across x 18.8 tall
 - CLASH/contact: top tube 1.3mm
 - OUR RENDER: shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-3l/front.png, shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-3l/rear.png, shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-3l/side.png, shots/tailfin-v0/tailfin-top-tube-long-top-tube-bag-3l/tq.png
 - product page: https://www.tailfin.cc/product/top-tube-cockpit/long-top-tube-bag/

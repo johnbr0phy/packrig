@@ -17059,7 +17059,7 @@
      "crossSection": "rounded_rect",
      "shoulder": "squared",
      "taper": {
-      "nose": 0.44,
+      "nose": 0.48,
       "tail": 0.71,
       "profile": "linear"
      }

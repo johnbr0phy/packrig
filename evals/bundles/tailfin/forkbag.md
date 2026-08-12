@@ -1,32 +1,37 @@
 # Tailfin — slot `forkbag` — 5 products
 
 ## Fork Packs / Fork Pack / 5L
-- record dims_cm: {"len":15,"wid":15,"hgt":28,"dia":15}  render: {"hgt_cm":28,"rolls":3,"basis":"Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/fork-packs-fork-pack-5l-2.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."}  verified: false
-- measured render bbox (fore-aft x across x tall, cm): 23.5 x 19.4 x 27.7   [on its own mount axes: along 26.3, perp 14.2, across 15.3]
+- record dims_cm: {"len":17,"wid":12,"hgt":38,"dia":12}  render: {"hgt_cm":38,"rolls":3,"basis":"380 MM is the drawn height of the pack as illustrated, rolled and buckled - the drawing shows the roll band closed. There is no unrolled figure to take a minimum from, so hgt_cm carries the drawn figure."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 26.3, perp 14.2, across 15.3  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 23.5 fore-aft x 19.4 across x 27.7 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-fork-packs-fork-pack-5l/front.png, shots/tailfin-v0/tailfin-fork-packs-fork-pack-5l/rear.png, shots/tailfin-v0/tailfin-fork-packs-fork-pack-5l/side.png, shots/tailfin-v0/tailfin-fork-packs-fork-pack-5l/tq.png
 - product page: https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/
 
 ## Fork Packs / Fork Pack / 10L
-- record dims_cm: {"len":19,"wid":19,"hgt":35,"dia":19}  render: {"hgt_cm":35,"rolls":3,"basis":"Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/fork-packs-fork-pack-10l-2.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."}  verified: false
-- measured render bbox (fore-aft x across x tall, cm): 26.3 x 19.4 x 33.9   [on its own mount axes: along 33.0, perp 14.2, across 15.3]
+- record dims_cm: {"len":21,"wid":15,"hgt":40,"dia":15}  render: {"hgt_cm":40,"rolls":3,"basis":"400 MM is the drawn height of the pack rolled and buckled, as illustrated. No unrolled figure is published."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 33.0, perp 14.2, across 15.3  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 26.3 fore-aft x 19.4 across x 33.9 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-fork-packs-fork-pack-10l/front.png, shots/tailfin-v0/tailfin-fork-packs-fork-pack-10l/rear.png, shots/tailfin-v0/tailfin-fork-packs-fork-pack-10l/side.png, shots/tailfin-v0/tailfin-fork-packs-fork-pack-10l/tq.png
 - product page: https://www.tailfin.cc/product/pannier-rack-top-bags/fork-packs/fork-packs/
 
 ## Cargo Cage System / Cage Pack / 1.7L
-- record dims_cm: {"len":9.5,"wid":9.5,"hgt":24,"dia":9.5}  render: {"hgt_cm":24,"rolls":3,"basis":"Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/cargo-cage-system-cage-pack-1-7l-3.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."}  verified: false
-- measured render bbox (fore-aft x across x tall, cm): 17.6 x 13.9 x 23.3   [on its own mount axes: along 22.9, perp 9.1, across 9.7]
+- record dims_cm: {"len":7.5,"wid":7.5,"hgt":29,"dia":7.5}  render: {"hgt_cm":29,"rolls":3,"basis":"290 MM is the drawn height of the pack rolled and buckled. Volume checks out at 1.63 L against a published 1.7 L, so this is the packed state."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 22.9, perp 9.1, across 9.7  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 17.6 fore-aft x 13.9 across x 23.3 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-1-7l/front.png, shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-1-7l/rear.png, shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-1-7l/side.png, shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-1-7l/tq.png
 - product page: https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/
 
 ## Cargo Cage System / Cage Pack / 3L
-- record dims_cm: {"len":11.3,"wid":11.3,"hgt":30,"dia":11.3}  render: {"hgt_cm":30,"rolls":3,"basis":"Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/cargo-cage-system-cage-pack-3l-3.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."}  verified: false
-- measured render bbox (fore-aft x across x tall, cm): 21.6 x 15.7 x 28.8   [on its own mount axes: along 28.6, perp 10.9, across 11.5]
+- record dims_cm: {"len":12,"wid":12,"hgt":32,"dia":12}  render: {"hgt_cm":32,"rolls":3,"basis":"320 MM is the drawn height of the pack rolled and buckled."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 28.6, perp 10.9, across 11.5  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 21.6 fore-aft x 15.7 across x 28.8 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-3l/front.png, shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-3l/rear.png, shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-3l/side.png, shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-3l/tq.png
 - product page: https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/
 
 ## Cargo Cage System / Cage Pack / 5L
-- record dims_cm: {"len":13.5,"wid":13.5,"hgt":35,"dia":13.5}  render: {"hgt_cm":35,"rolls":3,"basis":"Tailfin publish no height for this line, unrolled or otherwise, so there is no range to take a minimum from. The dims_cm estimate already represents a normally packed, rolled-down pack - in assets/products/tailfin/cargo-cage-system-cage-pack-5l-3.jpg every size is photographed rolled and buckled shut - so render.hgt_cm carries it through unchanged rather than inventing a second number. Confidence is the same as dims_cm: an estimate, not a measurement."}  verified: false
-- measured render bbox (fore-aft x across x tall, cm): 25.5 x 17.9 x 33.6   [on its own mount axes: along 33.3, perp 13.1, across 13.8]
+- record dims_cm: {"len":13.5,"wid":13.5,"hgt":38,"dia":13.5}  render: {"hgt_cm":38,"rolls":3,"basis":"380 MM is the drawn height of the pack rolled and buckled."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 33.3, perp 13.1, across 13.8  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 25.5 fore-aft x 17.9 across x 33.6 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-5l/front.png, shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-5l/rear.png, shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-5l/side.png, shots/tailfin-v0/tailfin-cargo-cage-system-cage-pack-5l/tq.png
 - product page: https://www.tailfin.cc/product/cargo-cage-system/cage-packs/cage-packs/
 

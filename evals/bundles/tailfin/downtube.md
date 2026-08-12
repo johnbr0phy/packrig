@@ -1,15 +1,17 @@
 # Tailfin — slot `downtube` — 2 products
 
 ## Frame Bags / Downtube Pack (V-Mount) / 1.7L
-- record dims_cm: {"len":38,"wid":7.5,"hgt":6}  render: {"len_cm":38,"rolls":3,"basis":"the roll is at the top of a pack that lies ALONG the down tube, so length is its variable axis. Tailfin publish no length at all, so there is no range to take a minimum from; render.len_cm carries the dims_cm estimate through unchanged. Both flat-lay photos (assets/products/tailfin/frame-bags-downtube-pack-v-mount-1-7l-1.jpg and -2.jpg) show the pack rolled and clipped shut, which is the state the estimate represents."}  verified: false
-- measured render bbox (fore-aft x across x tall, cm): 30.7 x 8.5 x 31.7   [on its own mount axes: along 38.1, perp 6.3, across 7.6]
+- record dims_cm: {"len":29,"wid":7.5,"hgt":7.5}  render: {"len_cm":29,"rolls":2,"basis":"The drawing is of the rolled, buckled pack, so the drawn length IS the packed length. No unrolled figure is published."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 38.1, perp 6.3, across 7.6  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 30.7 fore-aft x 8.5 across x 31.7 tall
 - CLASH/contact: front tyre -22mm, crank / BB -3.1mm, down tube -2.5mm
 - OUR RENDER: shots/tailfin-v0/tailfin-frame-bags-downtube-pack-v-mount-1-7l/front.png, shots/tailfin-v0/tailfin-frame-bags-downtube-pack-v-mount-1-7l/rear.png, shots/tailfin-v0/tailfin-frame-bags-downtube-pack-v-mount-1-7l/side.png, shots/tailfin-v0/tailfin-frame-bags-downtube-pack-v-mount-1-7l/tq.png
 - product page: https://www.tailfin.cc/product/frame-bags/downtube-packs/
 
 ## Frame Bags / Downtube Pack (V-Mount) / 3L
-- record dims_cm: {"len":44,"wid":9,"hgt":7.6}  render: {"len_cm":44,"rolls":3,"basis":"length is the variable axis - the roll is at the top of a pack lying along the down tube. No maker length is published, so render.len_cm carries the dims_cm estimate through unchanged. Photographed rolled and clipped shut in assets/products/tailfin/frame-bags-downtube-pack-v-mount-3l-1.jpg and -2.jpg."}  verified: false
-- measured render bbox (fore-aft x across x tall, cm): 31.8 x 10.0 x 32.8   [on its own mount axes: along 38.1, perp 8.0, across 9.1]
+- record dims_cm: {"len":32,"wid":12,"hgt":12}  render: {"len_cm":32,"rolls":2,"basis":"The drawing is of the rolled, buckled pack, so the drawn length IS the packed length. No unrolled figure is published."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 38.1, perp 8.0, across 9.1  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 31.8 fore-aft x 10.0 across x 32.8 tall
 - CLASH/contact: front tyre -22.5mm, crank / BB -4.9mm, down tube -2.5mm
 - OUR RENDER: shots/tailfin-v0/tailfin-frame-bags-downtube-pack-v-mount-3l/front.png, shots/tailfin-v0/tailfin-frame-bags-downtube-pack-v-mount-3l/rear.png, shots/tailfin-v0/tailfin-frame-bags-downtube-pack-v-mount-3l/side.png, shots/tailfin-v0/tailfin-frame-bags-downtube-pack-v-mount-3l/tq.png
 - product page: https://www.tailfin.cc/product/frame-bags/downtube-packs/

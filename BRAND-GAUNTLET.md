@@ -238,9 +238,56 @@ template for the line. That went into the record as `fit_constraint`, not into
 the builder as a fudge — shortening `dims_cm` to make a render come out clean
 is the exact move MODEL-SPEC forbids.
 
-**Still open:** critics for `framebag_half` (9), `toptube`+`toptube_rear` (8)
-and `trunk` (4) never wrote their findings. The layer-B and layer-C faults the
-three landed critics found — every bar bag strapped around the bar when both
-Tailfin families hang off a rigid bracket forward of it; every fork and cage
-pack a lathe-turned barrel when all five are flat-backed roll-top slabs; the
-pannier builder inflating its record by 20–28% — are untouched.
+### Tailfin — round 1 continued
+
+`trunk` landed late, making four critics of eight. It found the SpeedPack
+drawn 18 cm tall against a maker-labelled 155 mm, which is why the saddle sat
+embedded in the bag's top face; corrected, that clearance went to 31.7 mm.
+
+**The bar bags were not a geometry bug, and that is the transferable lesson.**
+`barroll.js` has had a rigid-bracket path all along and picks between it and
+the strapped path by testing `features.attachment` — the maker's own words for
+the hardware. All seven Tailfin bar bags had that field null, so they fell
+through to strapped, while their own records said "the Tailfin bar harness
+(included in the System)" in `mount.requires`. Evidence on disk, nothing
+carrying it to the screen: the same shape as all four instrument faults in
+APIDURA-GAUNTLET §v5–v9.
+
+Fixed without naming a brand anywhere — `apply-models` backfills
+`features.attachment` from `mount.requires` where the catalogue is silent (20
+gaps), and `RIGID_MOUNT` gained `harness`/`cradle`/`bar cage` after checking
+that the widening flips none of the catalogue's 56 handlebar rolls. **Bar bags
+went 4/7 clean to 7/7, no dimension touched**, all three clashes closing by the
+margins the critic predicted.
+
+**All nine frame bags measured** off the two-view drawings their records said
+did not exist. The estimates were wrong in both directions — the 2.3L 5 cm
+short, the 6.5L 3 cm long — so no scale factor would have found it. The six
+Half Frame sizes had been rendering 11.5–12.0 cm deep whatever their size, i.e.
+all six were one object; they now run 13.5–23.6 cm and track their own spec.
+
+Tailfin now stands at **37 of 39 verified, 25 at high confidence.**
+
+### Two things this round got right by refusing
+
+`tools/validate-dims.mjs`, run afterwards, flags exactly one Tailfin product:
+the MTB Flat Bar Large, 72 cm across, "too big for frame". That is the same
+product the barroll critic said must never be placed on a drop bar. Two
+instruments that share no code agreeing is worth more than either alone, and it
+is the strongest evidence yet for the handlebar-type requirement the vocabulary
+still lacks.
+
+And the frame bag heights are recorded at `confidence: medium` with a note
+saying they were read by the agent applying the fix rather than by an
+independent critic, because the `framebag_half` critique died three times. That
+is the gauntlet's rule 3 — the builder never grades its own work — and the
+honest move when it cannot be satisfied is to say so in the record, not to
+quietly promote a self-check to a verification.
+
+**Still open:** the `toptube`+`toptube_rear` critique (8 products) has never
+run. A systematic +12–17% depth overshoot survives on all six Half Frame sizes
+and +20–28% on the panniers — both builder multipliers, both wanting
+measurement rather than a guess. Fork and cage packs are still drawn as one
+object when they are two mounting systems. The rack-top bags show no roll
+turn-down. Bar bag branding is a boxed upper-case plate where the real mark is
+a reflective lower-case wordmark at one end.

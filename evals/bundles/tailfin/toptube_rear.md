@@ -2,14 +2,16 @@
 
 ## Top Tube / Rear Top Tube Bag / 0.9L Road/Gravel
 - record dims_cm: {"len":25,"wid":5,"hgt":9}  render: null  verified: false
-- measured render bbox (fore-aft x across x tall, cm): 56.9 x 7.1 x 14.5   [on its own mount axes: along 25.9, perp 10.6, across 5.0]
+- measured render size on the bag's OWN mount axes (cm): along 25.9, perp 10.6, across 5.0  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 56.9 fore-aft x 7.1 across x 14.5 tall
 - CLASH/contact: top tube 0.1mm
 - OUR RENDER: shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-9l-road-gravel/front.png, shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-9l-road-gravel/rear.png, shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-9l-road-gravel/side.png, shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-9l-road-gravel/tq.png
 - product page: https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/
 
 ## Top Tube / Rear Top Tube Bag / 0.8L MTB
 - record dims_cm: {"len":25,"wid":5.5,"hgt":7}  render: null  verified: false
-- measured render bbox (fore-aft x across x tall, cm): 56.7 x 7.1 x 12.5   [on its own mount axes: along 25.5, perp 8.4, across 5.5]
+- measured render size on the bag's OWN mount axes (cm): along 25.5, perp 8.4, across 5.5  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 56.7 fore-aft x 7.1 across x 12.5 tall
 - CLASH/contact: top tube 0.1mm
 - OUR RENDER: shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-8l-mtb/front.png, shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-8l-mtb/rear.png, shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-8l-mtb/side.png, shots/tailfin-v0/tailfin-top-tube-rear-top-tube-bag-0-8l-mtb/tq.png
 - product page: https://www.tailfin.cc/product/top-tube-cockpit/rear-top-tube-bag/

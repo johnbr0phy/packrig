@@ -2,45 +2,52 @@
 
 ## Bar System / Bar Bag System - Drop Bar / Small (9.1L)
 - record dims_cm: {"len":44.5,"wid":16,"hgt":16,"dia":16}  render: {"len_cm":29,"rolls":2,"basis":"maker publishes a width RANGE of 290-445mm, so render.len_cm is the MINIMUM (290mm) exactly as the spec does for a height range. dims_cm.len is the 445mm unfurled max and must not be drawn on a drop bar: on top of the min/max range, WaveLock pulls each end in a further <=35mm to clear the hoods. Confirmed rolled short in assets/products/tailfin/bar-system-bar-bag-system-drop-bar-small-9-1l-1.jpg."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 20.9 x 29.2 x 19.5   [on its own mount axes: along 16.0, perp 16.3, across 29.2]
+- measured render size on the bag's OWN mount axes (cm): along 16.0, perp 16.3, across 29.2  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 20.9 fore-aft x 29.2 across x 19.5 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-small-9-1l/front.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-small-9-1l/rear.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-small-9-1l/side.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-small-9-1l/tq.png
 - product page: https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/
 
 ## Bar System / Bar Bag System - Drop Bar / Large (12.5L)
 - record dims_cm: {"len":46,"wid":18,"hgt":18,"dia":18}  render: {"len_cm":33.5,"rolls":2,"basis":"maker range 335-460mm; render.len_cm is the minimum 335mm. dims_cm.len is the 460mm unfurled max. WaveLock draws each end in a further <=35mm on drop bars. See assets/products/tailfin/bar-system-bar-bag-system-drop-bar-large-12-5l-1.jpg."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 23.1 x 33.6 x 20.4   [on its own mount axes: along 18.2, perp 18.3, across 33.6]
+- measured render size on the bag's OWN mount axes (cm): along 18.2, perp 18.3, across 33.6  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 23.1 fore-aft x 33.6 across x 20.4 tall
 - CLASH/contact: front tyre 1.9mm
 - OUR RENDER: shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-large-12-5l/front.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-large-12-5l/rear.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-large-12-5l/side.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-drop-bar-large-12-5l/tq.png
 - product page: https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/
 
 ## Bar System / Bar Bag System - MTB Flat Bar / Small (14.9L)
 - record dims_cm: {"len":65,"wid":16,"hgt":16,"dia":16}  render: {"len_cm":42,"rolls":3,"basis":"maker range 420-650mm; render.len_cm is the minimum 420mm. dims_cm.len is the 650mm unfurled max. Flat-bar ends buckle rather than WaveLock, so there is no extra inward fold. See assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-small-14-9l-1.jpg."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 21.1 x 42.2 x 19.5   [on its own mount axes: along 16.2, perp 16.3, across 42.2]
+- measured render size on the bag's OWN mount axes (cm): along 16.2, perp 16.3, across 42.2  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 21.1 fore-aft x 42.2 across x 19.5 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-small-14-9l/front.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-small-14-9l/rear.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-small-14-9l/side.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-small-14-9l/tq.png
 - product page: https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/
 
 ## Bar System / Bar Bag System - MTB Flat Bar / Large (18.9L)
 - record dims_cm: {"len":72,"wid":18,"hgt":18,"dia":18}  render: {"len_cm":48,"rolls":3,"basis":"maker range 480-720mm; render.len_cm is the minimum 480mm. dims_cm.len is the 720mm unfurled max, which is the widest bag in the catalogue and unusable on a drop bar. See assets/products/tailfin/bar-system-bar-bag-system-mtb-flat-bar-large-18-9l-1.jpg."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 22.9 x 48.5 x 20.3   [on its own mount axes: along 18.2, perp 18.4, across 48.5]
+- measured render size on the bag's OWN mount axes (cm): along 18.2, perp 18.4, across 48.5  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 22.9 fore-aft x 48.5 across x 20.3 tall
 - CLASH/contact: handlebar 2.5mm
 - OUR RENDER: shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-large-18-9l/front.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-large-18-9l/rear.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-large-18-9l/side.png, shots/tailfin-v0/tailfin-bar-system-bar-bag-system-mtb-flat-bar-large-18-9l/tq.png
 - product page: https://www.tailfin.cc/product/bar-systems/bar-bags/bar-bag-system/
 
 ## Bar System / Bar Cage Bag / Small (8L)
-- record dims_cm: {"len":54,"wid":13.5,"hgt":13.5,"dia":13.5}  render: {"len_cm":36,"rolls":3,"basis":"maker range 360-540mm; render.len_cm is the minimum 360mm. dims_cm.len is the 540mm unfurled max. Rolled short in assets/products/tailfin/bar-system-bar-cage-bag-small-8l-4.jpg."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 18.6 x 36.3 x 17.0   [on its own mount axes: along 13.7, perp 13.7, across 36.3]
+- record dims_cm: {"len":54,"wid":13.5,"hgt":13.5,"dia":13.5}  render: {"len_cm":36,"rolls":2,"basis":"maker range 360-540mm; render.len_cm is the minimum 360mm. dims_cm.len is the 540mm unfurled max. Rolled short in assets/products/tailfin/bar-system-bar-cage-bag-small-8l-4.jpg. ROLL COUNT CORRECTED from 3 to 2: the maker's own labelled width drawings (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-21.jpg and studio-22.jpg) both print '(2 rolls for waterproofing)' under the max-width dimension, and page.txt says the bag is fully waterproof rolled twice at each end. The Bar Bag System's counts - 2 on the drop-bar sizes, 3 on the flat-bar sizes - are confirmed correct by dimensions-1.png and dimensions-2.png."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 13.7, perp 13.7, across 36.3  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 18.6 fore-aft x 36.3 across x 17.0 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-small-8l/front.png, shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-small-8l/rear.png, shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-small-8l/side.png, shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-small-8l/tq.png
 - product page: https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/
 
 ## Bar System / Bar Cage Bag / Medium (11L)
-- record dims_cm: {"len":54,"wid":16.5,"hgt":16.5,"dia":16.5}  render: {"len_cm":37,"rolls":3,"basis":"maker range 370-540mm; render.len_cm is the minimum 370mm. dims_cm.len is the 540mm unfurled max."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 21.5 x 37.1 x 20.0   [on its own mount axes: along 16.8, perp 16.8, across 37.1]
+- record dims_cm: {"len":54,"wid":16.5,"hgt":16.5,"dia":16.5}  render: {"len_cm":37,"rolls":2,"basis":"maker range 370-540mm; render.len_cm is the minimum 370mm. dims_cm.len is the 540mm unfurled max. ROLL COUNT CORRECTED from 3 to 2: the maker's own labelled width drawings (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-21.jpg and studio-22.jpg) both print '(2 rolls for waterproofing)' under the max-width dimension, and page.txt says the bag is fully waterproof rolled twice at each end. The Bar Bag System's counts - 2 on the drop-bar sizes, 3 on the flat-bar sizes - are confirmed correct by dimensions-1.png and dimensions-2.png."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 16.8, perp 16.8, across 37.1  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 21.5 fore-aft x 37.1 across x 20.0 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-medium-11l/front.png, shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-medium-11l/rear.png, shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-medium-11l/side.png, shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-medium-11l/tq.png
 - product page: https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/
 
 ## Bar System / Bar Cage Bag / Large (15L)
-- record dims_cm: {"len":56,"wid":18,"hgt":18,"dia":18}  render: {"len_cm":38,"rolls":3,"basis":"maker range 380-560mm; render.len_cm is the minimum 380mm. dims_cm.len is the 560mm unfurled max."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 23.1 x 38.3 x 20.4   [on its own mount axes: along 18.4, perp 18.4, across 38.3]
+- record dims_cm: {"len":56,"wid":18,"hgt":18,"dia":18}  render: {"len_cm":38,"rolls":2,"basis":"maker range 380-560mm; render.len_cm is the minimum 380mm. dims_cm.len is the 560mm unfurled max. ROLL COUNT CORRECTED from 3 to 2: the maker's own labelled width drawings (assets/products/tailfin/full/bar-systems-bar-bags-bar-bag-system/studio-21.jpg and studio-22.jpg) both print '(2 rolls for waterproofing)' under the max-width dimension, and page.txt says the bag is fully waterproof rolled twice at each end. The Bar Bag System's counts - 2 on the drop-bar sizes, 3 on the flat-bar sizes - are confirmed correct by dimensions-1.png and dimensions-2.png."}  verified: true
+- measured render size on the bag's OWN mount axes (cm): along 18.4, perp 18.4, across 38.3  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 23.1 fore-aft x 38.3 across x 20.4 tall
 - CLASH/contact: front tyre 1.7mm
 - OUR RENDER: shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-large-15l/front.png, shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-large-15l/rear.png, shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-large-15l/side.png, shots/tailfin-v0/tailfin-bar-system-bar-cage-bag-large-15l/tq.png
 - product page: https://www.tailfin.cc/product/cargo-cage-system/cage-packs/bar-cage-bag/

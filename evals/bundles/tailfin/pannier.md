@@ -2,25 +2,29 @@
 
 ## Panniers / Mini Pannier / 5L
 - record dims_cm: {"len":17,"wid":12,"hgt":38}  render: {"hgt_cm":38,"rolls":3,"basis":"Tailfin's spec-sheet height of 380mm is drawn with the bag already rolled and buckled shut, so it IS the rolled figure - no unfurled height is published anywhere and no estimate is needed. Confirmed against assets/products/tailfin/panniers-mini-pannier-5l-1.jpg, where the bag hangs at roughly this proportion of its own published width."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 17.5 x 17.2 x 40.8   [on its own mount axes: along 40.8, perp 17.4, across 14.7]
+- measured render size on the bag's OWN mount axes (cm): along 40.8, perp 17.4, across 14.7  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 17.5 fore-aft x 17.2 across x 40.8 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-panniers-mini-pannier-5l/front.png, shots/tailfin-v0/tailfin-panniers-mini-pannier-5l/rear.png, shots/tailfin-v0/tailfin-panniers-mini-pannier-5l/side.png, shots/tailfin-v0/tailfin-panniers-mini-pannier-5l/tq.png
 - product page: https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/
 
 ## Panniers / Mini Pannier / 10L
 - record dims_cm: {"len":21,"wid":15,"hgt":40}  render: {"hgt_cm":40,"rolls":3,"basis":"Tailfin's spec-sheet height of 400mm is drawn with the bag already rolled and buckled shut, so it IS the rolled figure - no unfurled height is published anywhere and no estimate is needed. Confirmed against assets/products/tailfin/panniers-mini-pannier-10l-1.jpg, where the bag hangs at roughly this proportion of its own published width."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 21.6 x 20.4 x 43.4   [on its own mount axes: along 43.4, perp 21.5, across 18.0]
+- measured render size on the bag's OWN mount axes (cm): along 43.4, perp 21.5, across 18.0  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 21.6 fore-aft x 20.4 across x 43.4 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-panniers-mini-pannier-10l/front.png, shots/tailfin-v0/tailfin-panniers-mini-pannier-10l/rear.png, shots/tailfin-v0/tailfin-panniers-mini-pannier-10l/side.png, shots/tailfin-v0/tailfin-panniers-mini-pannier-10l/tq.png
 - product page: https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/mini-panniers/
 
 ## Panniers / Pannier / 16L
 - record dims_cm: {"len":26,"wid":19,"hgt":44}  render: {"hgt_cm":44,"rolls":3,"basis":"Tailfin's spec-sheet height of 440mm is drawn with the bag already rolled and buckled shut, so it IS the rolled figure - no unfurled height is published anywhere and no estimate is needed. Confirmed against assets/products/tailfin/panniers-pannier-16l-1.jpg, where the bag hangs at roughly this proportion of its own published width."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 27.4 x 26.4 x 48.6   [on its own mount axes: along 49.5, perp 29.1, across 24.3]
+- measured render size on the bag's OWN mount axes (cm): along 49.5, perp 29.1, across 24.3  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 27.4 fore-aft x 26.4 across x 48.6 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-panniers-pannier-16l/front.png, shots/tailfin-v0/tailfin-panniers-pannier-16l/rear.png, shots/tailfin-v0/tailfin-panniers-pannier-16l/side.png, shots/tailfin-v0/tailfin-panniers-pannier-16l/tq.png
 - product page: https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/
 
 ## Panniers / Pannier / 22L
 - record dims_cm: {"len":32,"wid":22,"hgt":44}  render: {"hgt_cm":44,"rolls":3,"basis":"Tailfin's spec-sheet height of 440mm is drawn with the bag already rolled and buckled shut, so it IS the rolled figure - no unfurled height is published anywhere and no estimate is needed. Confirmed against assets/products/tailfin/panniers-pannier-22l-1.jpg, where the bag hangs at roughly this proportion of its own published width."}  verified: true
-- measured render bbox (fore-aft x across x tall, cm): 32.5 x 29.4 x 48.7   [on its own mount axes: along 50.6, perp 35.3, across 26.9]
+- measured render size on the bag's OWN mount axes (cm): along 50.6, perp 35.3, across 26.9  — compare these with dims_cm
+- (world-aligned box, for reference only, cm): 32.5 fore-aft x 29.4 across x 48.7 tall
 - OUR RENDER: shots/tailfin-v0/tailfin-panniers-pannier-22l/front.png, shots/tailfin-v0/tailfin-panniers-pannier-22l/rear.png, shots/tailfin-v0/tailfin-panniers-pannier-22l/side.png, shots/tailfin-v0/tailfin-panniers-pannier-22l/tq.png
 - product page: https://www.tailfin.cc/product/pannier-rack-top-bags/rear-pannier-bags/panniers/
 

@@ -1,0 +1,215 @@
+{
+  "slot": "framebag_half",
+  "images_opened": 17,
+  "notes_on_state": "All figures below are for the bag in its finished, welded 3D shape (zip closure, no roll-top), which is the state both the drawings and the studio photos show. No rolled/unrolled ambiguity exists for this line.",
+  "products": [
+    {
+      "name": "Frame Bags / Half Frame Bag",
+      "size": "2.3L",
+      "score": 3,
+      "biggest_gap": "The silhouette is an Apidura-style belly-in-the-middle wedge, but the real bag has a tall blunt rear end face, a lower edge that falls gently forward, and its single deepest point at ~80-85% of the way toward the head tube where a short steep edge climbs back up to a 39mm front end face on the down tube.",
+      "layer": "B",
+      "correction": "Rebuild the profile from dimensions-5.jpg: length 412MM along the top tube; rear (seat-tube) end face 67MM deep; front (head-tube) end face 39MM deep; maximum depth 119MM reached ~15-20% back from the front end. Also fix dims_cm to len 41.2 / wid 7.2 / hgt 11.9 (record says 36 / 6 / 11).",
+      "evidence": [
+        "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg",
+        "assets/products/tailfin/full/frame-bags-half-frame-bag/studio-2.png"
+      ]
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag",
+      "size": "3.0L",
+      "score": 3,
+      "biggest_gap": "Same wrong silhouette as the 2.3L, and the record length is 4cm short of the drawn 440MM.",
+      "layer": "B",
+      "correction": "dimensions-5.jpg: length 440MM, rear end face 89MM, front end face 46MM, max depth 140MM, max width 72MM. Record should read len 44.0 / wid 7.2 / hgt 14.0 (currently 40 / 6 / 12.5).",
+      "evidence": ["assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg"]
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag",
+      "size": "3.8L",
+      "score": 3,
+      "biggest_gap": "Record height 13.5cm against a drawn maximum of 157MM, so the render sits 2cm too shallow on top of the wrong profile.",
+      "layer": "A",
+      "correction": "dimensions-5.jpg: length 490MM, rear end face 102MM, front end face 53MM, max depth 157MM, max width 72MM. Record should read len 49.0 / wid 7.2 / hgt 15.7 (currently 44 / 6.4 / 13.5).",
+      "evidence": ["assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg"]
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag",
+      "size": "4.5L",
+      "score": 2,
+      "biggest_gap": "The render is clamped at 48.0cm along and 12.0cm perpendicular, so it is 27% too shallow against the drawn 165MM height and is drawn identically to the 5.3L and 6.5L.",
+      "layer": "B",
+      "correction": "Remove the along/perp clamp. dimensions-4.jpg: length 506MM, rear end face 107MM, front end face 69MM, max depth 165MM, max width 70MM. Record should read len 50.6 / wid 7.0 / hgt 16.5 (currently 48 / 6.5 / 14.5).",
+      "evidence": [
+        "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg",
+        "shots/tailfin-v0/tailfin-frame-bags-half-frame-bag-6-5l/side.png"
+      ]
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag",
+      "size": "5.3L",
+      "score": 2,
+      "biggest_gap": "At 12.0cm the render is 37% shallower than the drawn 190MM maximum height, and it is pixel-identical to the 4.5L and 6.5L renders.",
+      "layer": "B",
+      "correction": "dimensions-4.jpg: length 515MM, rear end face 134MM, front end face 92MM, max depth 190MM, max width 70MM. Record should read len 51.5 / wid 7.0 / hgt 19.0 (currently 52 / 6.6 / 15.5). Note the real length progression flattens right out at the top of the range (506, 515, 531) while the record marches on in 4cm steps.",
+      "evidence": ["assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg"]
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag",
+      "size": "6.5L",
+      "score": 2,
+      "biggest_gap": "The flagship size is drawn as the same 48.0 x 12.0cm slab as the 4.5L when the real bag is 531MM long and 201MM deep — the render is 40% short on height and has no deep front lobe at all.",
+      "layer": "B",
+      "correction": "dimensions-4.jpg: length 531MM, rear end face 142MM, front end face 92MM, max depth 201MM, max width 70MM. Record should read len 53.1 / wid 7.0 / hgt 20.1 (currently 56 / 7 / 16.5) — the record is 3cm too LONG and 3.6cm too SHALLOW at once.",
+      "evidence": ["assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg"]
+    },
+    {
+      "name": "Frame Bags / Wedge Frame Bag",
+      "size": "1.9L",
+      "score": 3,
+      "biggest_gap": "Length and profile are in the right ballpark but the bag is drawn with the belly in the middle rather than a deep front-bottom corner that anchors to the down tube behind the head tube.",
+      "layer": "B",
+      "correction": "wedge dimensions-4.jpg: length 352MM, rear end face 69MM, front end face 39MM, max depth 118MM, max width 73MM. Record should read len 35.2 / wid 7.3 / hgt 11.8 (currently 32 / 6 / 10).",
+      "evidence": [
+        "assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg",
+        "assets/products/tailfin/full/frame-bags-wedge-frame-bag/studio-2.png"
+      ]
+    },
+    {
+      "name": "Frame Bags / Wedge Frame Bag",
+      "size": "2.7L",
+      "score": 3,
+      "biggest_gap": "Render perpendicular size 11.9cm against a drawn 139MM maximum height, and the wrong silhouette.",
+      "layer": "B",
+      "correction": "wedge dimensions-4.jpg: length 380MM, rear end face 91MM, front end face 46MM, max depth 139MM, max width 73MM. Record should read len 38.0 / wid 7.3 / hgt 13.9 (currently 36 / 6.5 / 11.5).",
+      "evidence": ["assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg"]
+    },
+    {
+      "name": "Frame Bags / Wedge Frame Bag",
+      "size": "3.5L",
+      "score": 3,
+      "biggest_gap": "Render perpendicular size clamps at 11.9cm — the same figure as the 2.7L — against a drawn 156MM, so the top two wedge sizes differ only in length.",
+      "layer": "B",
+      "correction": "wedge dimensions-4.jpg: length 430MM, rear end face 104MM, front end face 53MM, max depth 156MM, max width 73MM. Record should read len 43.0 / wid 7.3 / hgt 15.6 (currently 40 / 7 / 12.5).",
+      "evidence": ["assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg"]
+    }
+  ],
+  "slot_wide": [
+    {
+      "fault": "The record's claim that Tailfin publishes no linear dimensions for this line is false — Tailfin publishes full two-view engineering drawings with labelled millimetres covering all nine sizes, and every one of our nine dims_cm rows is an invented arithmetic progression that does not match them.",
+      "layer": "A",
+      "affects": ["2.3L", "3.0L", "3.8L", "4.5L", "5.3L", "6.5L", "1.9L", "2.7L", "3.5L"],
+      "correction": "Replace all nine dims_cm rows with the measured_dims below and set verified: true, sourcing dimensions-4.jpg / dimensions-5.jpg in each folder. Note the real half-frame length progression is 412, 440, 490, 506, 515, 531MM — it flattens hard at the top, while our record marches 36/40/44/48/52/56cm."
+    },
+    {
+      "fault": "The silhouette is wrong end-for-end: our builder draws an Apidura profile (shallow at both ends, belly in the middle, lower-front edge lying on the down tube), whereas every Tailfin frame bag in this slot has a TALL BLUNT REAR end face at the seat tube, a lower edge that falls only gently forward from it, its deepest point at roughly 80-85% of the length toward the head tube, and then a short steep climb to a very SHALLOW FRONT end face — only that front ~15-20% of the lower edge lies on the down tube, and the rest sits well clear of it so the bottle cages stay usable.",
+      "layer": "B",
+      "affects": ["2.3L", "3.0L", "3.8L", "4.5L", "5.3L", "6.5L", "1.9L", "2.7L", "3.5L"],
+      "correction": "Drive the profile from four numbers per size: length, rear end-face height, front end-face height, and max depth located at ~0.82 of the length from the rear. Rear end face is 1.6x to 1.7x the front end face on the small sizes and the max depth is 1.4x to 1.6x the rear end face. The steep lower-front edge sits at roughly 40 degrees to the top tube; the long rear portion of the lower edge at only about 9 degrees."
+    },
+    {
+      "fault": "The render is clamped in both the along and perpendicular axes: along tops out at 48.0cm and perp at ~12.0cm, so the 4.5L, 5.3L and 6.5L Half Frame Bags are drawn as the same object, and the 6.5L ends up 40% shallower than the real bag (12.0 vs 20.1cm).",
+      "layer": "B",
+      "affects": ["4.5L", "5.3L", "6.5L", "2.7L", "3.5L"],
+      "correction": "Remove or raise the clamp. Real maxima in this slot are 53.1cm along and 20.1cm deep (Half Frame 6.5L)."
+    },
+    {
+      "fault": "The cross-section is inverted in character: the real bag is a trapezoid that NARROWS toward the top tube and WIDENS toward the bottom — confirmed on both end elevations — and it is wider overall than our render.",
+      "layer": "B",
+      "affects": ["2.3L", "3.0L", "3.8L", "4.5L", "5.3L", "6.5L", "1.9L", "2.7L", "3.5L"],
+      "correction": "Half Frame end elevations read 72MM (dimensions-5.jpg, 2.3/3.0/3.8L group) and 70MM (dimensions-4.jpg, 4.5/5.3/6.5L group) at the BOTTOM of the bag; Wedge reads 73MM. The plan views give the top-face width as 52MM at the rear end tapering out to 64MM at the front end, so the section is roughly 52-64MM at the top tube opening out to 70-73MM at its lowest point. Our renders measure 5.8-6.9cm across, i.e. up to 20% narrow, and are presumably prismatic."
+    },
+    {
+      "fault": "Every product in the slot reports a -7mm top tube clash, i.e. the bag body is penetrating the top tube rather than hanging from it on V-Mount pads.",
+      "layer": "B",
+      "affects": ["2.3L", "3.0L", "3.8L", "4.5L", "5.3L", "6.5L", "1.9L", "2.7L", "3.5L"],
+      "correction": "The top face is flat and sits below the tube; the moulded V-Mount pads stand proud of it and the strap passes over the tube. There should be a small positive standoff, not a 7mm interpenetration."
+    },
+    {
+      "fault": "Mounting: it is BOTH V-Mount hardware and straps, and it is on two tubes, not one. Moulded V-Mount pads are welded to the bag (3 along the top edge on the small sizes, 4 on the large, at 134 / 261 / 329 / 345 / 366MM from the FRONT end, plus 2 on the lower-front edge). Tailfin cargo straps thread through those pads and wrap the tube — 3 x 18.5cm plus 1 x 29cm supplied with the Half Frame, 2 x 18.5cm plus 1 x 29cm with the Wedge. Nothing whatsoever contacts the seat tube or the head tube; the lower pair strap to the DOWN TUBE just behind the head tube.",
+      "layer": "B",
+      "affects": ["2.3L", "3.0L", "3.8L", "4.5L", "5.3L", "6.5L", "1.9L", "2.7L", "3.5L"],
+      "correction": "Model V-Mount pads on the top edge at the published offsets from the front end, plus two on the lower-front edge, with straps around the top tube and down tube. No bolt-through frame-boss hardware appears in any Tailfin image for this line; the only bolt-on option Tailfin documents is for its Top Tube Packs."
+    },
+    {
+      "fault": "The Half Frame and Wedge lines are the same object family, not two unrelated shapes — they share end-face heights (39/46/53MM at the front), the same 52-to-64MM top taper, the same V-Mount at 134MM from the front, and near-identical maximum heights (118/139/156 vs 119/140/157). The Wedge is simply the shorter bag for a given depth.",
+      "layer": "B",
+      "affects": ["1.9L", "2.7L", "3.5L"],
+      "correction": "Wedge 1.9/2.7/3.5L should map onto Half Frame 2.3/3.0/3.8L's cross-section and end faces with lengths 352/380/430MM instead of 412/440/490MM."
+    }
+  ],
+  "measured_dims": [
+    {
+      "name": "Frame Bags / Half Frame Bag", "size": "2.3L",
+      "len_cm": 41.2, "wid_cm": 7.2, "hgt_cm": 11.9,
+      "source": "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg",
+      "reading": "412MM overall length on the side elevation; 72MM at the bottom of the end elevation (widest point); 119MM overall height on the end elevation. Side elevation also gives 67MM rear (seat-tube) end-face height and 39MM front (head-tube) end-face height.",
+      "confidence": "high"
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag", "size": "3.0L",
+      "len_cm": 44.0, "wid_cm": 7.2, "hgt_cm": 14.0,
+      "source": "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg",
+      "reading": "440MM length; 140MM end-elevation height; 72MM end-elevation width (the drawing gives one width for the 2.3/3.0/3.8L group). Rear end face 89MM, front end face 46MM.",
+      "confidence": "high"
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag", "size": "3.8L",
+      "len_cm": 49.0, "wid_cm": 7.2, "hgt_cm": 15.7,
+      "source": "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-5.jpg",
+      "reading": "490MM length; 157MM end-elevation height; 72MM end-elevation width. Rear end face 102MM, front end face 53MM.",
+      "confidence": "high"
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag", "size": "4.5L",
+      "len_cm": 50.6, "wid_cm": 7.0, "hgt_cm": 16.5,
+      "source": "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg",
+      "reading": "506MM length; 165MM end-elevation height; 70MM at the bottom of the end elevation. Rear end face 107MM, front end face 69MM. Plan view gives 50MM top-face width at the rear end.",
+      "confidence": "high"
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag", "size": "5.3L",
+      "len_cm": 51.5, "wid_cm": 7.0, "hgt_cm": 19.0,
+      "source": "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg",
+      "reading": "515MM length; 190MM end-elevation height; 70MM end-elevation width (one width given for the 4.5/5.3/6.5L group). Rear end face 134MM. Front end face 92MM — the drawing only carries two front-face figures (69 and 92) for three sizes, so 5.3L and 6.5L appear to share 92MM.",
+      "confidence": "medium"
+    },
+    {
+      "name": "Frame Bags / Half Frame Bag", "size": "6.5L",
+      "len_cm": 53.1, "wid_cm": 7.0, "hgt_cm": 20.1,
+      "source": "assets/products/tailfin/full/frame-bags-half-frame-bag/dimensions-4.jpg",
+      "reading": "531MM length; 201MM end-elevation height; 70MM end-elevation width. Rear end face 142MM, front end face 92MM (shared figure, see 5.3L note).",
+      "confidence": "high"
+    },
+    {
+      "name": "Frame Bags / Wedge Frame Bag", "size": "1.9L",
+      "len_cm": 35.2, "wid_cm": 7.3, "hgt_cm": 11.8,
+      "source": "assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg",
+      "reading": "352MM length; 118MM end-elevation height; 73MM at the bottom of the end elevation. Rear end face 69MM, front end face 39MM.",
+      "confidence": "high"
+    },
+    {
+      "name": "Frame Bags / Wedge Frame Bag", "size": "2.7L",
+      "len_cm": 38.0, "wid_cm": 7.3, "hgt_cm": 13.9,
+      "source": "assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg",
+      "reading": "380MM length; 139MM end-elevation height; 73MM end-elevation width (one width for all three Wedge sizes). Rear end face 91MM, front end face 46MM.",
+      "confidence": "high"
+    },
+    {
+      "name": "Frame Bags / Wedge Frame Bag", "size": "3.5L",
+      "len_cm": 43.0, "wid_cm": 7.3, "hgt_cm": 15.6,
+      "source": "assets/products/tailfin/full/frame-bags-wedge-frame-bag/dimensions-4.jpg",
+      "reading": "430MM length; 156MM end-elevation height; 73MM end-elevation width. Rear end face 104MM, front end face 53MM. Plan view V-mounts at 134, 242 and 316.5MM from the front end.",
+      "confidence": "high"
+    }
+  ],
+  "answers_to_specific_questions": {
+    "does_tailfin_publish_linear_dims": "Yes. The specification tab on the product page carries only weights, which is presumably why the record says otherwise, but the Dimensions gallery on both product pages holds true two-view engineering drawings with labelled millimetres for all nine sizes: frame-bags-half-frame-bag/dimensions-5.jpg (2.3/3.0/3.8L), frame-bags-half-frame-bag/dimensions-4.jpg (4.5/5.3/6.5L) and frame-bags-wedge-frame-bag/dimensions-4.jpg (1.9/2.7/3.5L). Tailfin also publishes life-size printable templates (dimensions-2/3).",
+    "the_three_vertical_figures": "For the 4.5L: 107MM is the height of the bag's REAR end face, the blunt near-vertical panel at the seat-tube end; 69MM is the height of the FRONT end face, the short panel at the head-tube end; and 165MM on the end elevation is the bag's overall MAXIMUM height, taken through the deepest section. 165MM is the figure that belongs in hgt.",
+    "which_end_is_deep": "The bag is deep at the FRONT-BOTTOM, not at either end face. Reading rear to front: a tall blunt rear end face (107MM on the 4.5L) at the seat tube, a lower edge falling gently forward at about 9 degrees to the top tube, the deepest point (165MM) at roughly 80-85% of the length toward the head tube, then a short steep edge at about 40 degrees climbing to a shallow 69MM front end face. Between the two end faces the rear one is the taller.",
+    "is_our_apidura_silhouette_right": "No. Our builder's shape — shallow at both ends, belly in the middle, lower-front edge lying along the down tube — is wrong on all three counts. Tailfin's rear end is the tall blunt one, the belly is at the front, and only the forward 15-20% of the lower edge touches the down tube; the rest of the lower edge stands well clear of it, which is exactly what keeps the bottle cages usable and is visible in frame-bags-half-frame-bag/studio-2.png.",
+    "cross_section": "Confirmed. Both end elevations are trapezoids that narrow toward the top tube and widen toward the bottom: 70MM (Half, large), 72MM (Half, small) and 73MM (Wedge) at the lowest point, against a top-face width the plan views give as 52MM at the rear end opening out to 64MM at the front end. The very top carries a shallow V notch where the V-Mount pad saddles the tube.",
+    "mounting": "Both, on two tubes. Moulded V-Mount pads are welded to the bag — three or four along the top edge at 134 / 261 / 329 / 345 / 366MM from the front end depending on size, plus two on the lower-front edge — and Tailfin cargo straps (3 x 18.5cm and 1 x 29cm for the Half Frame; 2 x 18.5cm and 1 x 29cm for the Wedge) thread through those pads and wrap the tube. The top set goes over the TOP TUBE, the lower pair around the DOWN TUBE just behind the head tube. Nothing contacts the seat tube or the head tube, which matches the maker's own positioning and the Radavist quote on the page. No bolt-through frame-boss option appears anywhere in this line's imagery."
+  },
+  "budget_note": "Stopped at 17 images with the brief's questions all settled. The next file I would open is frame-bags-half-frame-bag/feature-4.jpg, to check whether the V-Mount pad is strap-only or also takes a bolt, which is the one mounting detail I am asserting from absence of evidence rather than from a photograph of the hardware."
+}
