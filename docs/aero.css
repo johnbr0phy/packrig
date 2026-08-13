@@ -301,15 +301,25 @@
   .aero-title { display: none; }
   .aero-close span { display: none; }
   .aero-close { padding: 8px; min-width: 44px; min-height: 44px; }
-  .aero-head { padding: 6px 8px 0 16px; justify-content: flex-end; gap: 4px; }
-  .aero-min { display: inline-flex; }
-  .aero-panel.is-min {
-    max-height: 52px;
-    overflow: hidden;
+  .aero-head {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    left: auto;
+    z-index: 6;
+    padding: 0;
+    width: auto;
+    min-height: 44px;
+    justify-content: flex-end;
+    gap: 0;
+    background: none;
   }
-  .aero-panel.is-min .aero-peek,
-  .aero-panel.is-min .aero-body,
-  .aero-panel.is-min .aero-foot { display: none; }
+  .aero-min { display: inline-flex; }
+  /* Peek = closed metrics (up). Expanded = open (down). */
+  .aero-panel .nav-min .nav-min-up { display: block; }
+  .aero-panel .nav-min .nav-min-dn { display: none; }
+  .aero-panel.expanded .nav-min .nav-min-up { display: none; }
+  .aero-panel.expanded .nav-min .nav-min-dn { display: block; }
   .peek-cost-label { display: none; }
   .cda-explainer, .grade-blurb, .yaw-hint, .aero-delta { display: none; }
   .aero-sec { padding: 12px 20px; }
@@ -324,7 +334,7 @@
      through assumptions) up to the 55vh cap, scrollable. */
   .aero-peek {
     display: flex; flex-direction: column; gap: 9px;
-    padding: 8px 16px 14px; min-height: 44px; cursor: pointer;
+    padding: 10px 96px 14px 16px; min-height: 44px; cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
   .peek-handle {
@@ -349,8 +359,7 @@
     max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   .peek-offender-watts { font-size: 13px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
-  .peek-chevron { flex: none; color: var(--ink-faint); font-size: 13px; transition: transform 0.2s; }
-  .aero-panel.expanded .peek-chevron { transform: rotate(180deg); }
+  .peek-chevron { display: none; }
 
   /* everything below the peek row is the "below the fold" material — the
      full CdA readout, waterfall, yaw slider and assumptions block */

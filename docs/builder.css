@@ -1780,17 +1780,31 @@
   }
   #ui-root .sheet-head { position: relative; padding-right: 8px; }
 
+  #ui-root .aero-panel { padding-top: 0; }
   #ui-root .aero-min { display: inline-flex; }
-  #ui-root .aero-panel.is-min {
-    max-height: 52px;
-    overflow: hidden;
+  #ui-root .aero-head {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    left: auto;
+    z-index: 6;
+    padding: 0;
+    width: auto;
+    min-height: 44px;
+    background: none;
+    border: 0;
   }
-  #ui-root .aero-panel.is-min .aero-peek,
-  #ui-root .aero-panel.is-min .aero-body,
-  #ui-root .aero-panel.is-min .aero-foot {
-    display: none;
+  #ui-root .aero-panel .nav-min .nav-min-up { display: block; }
+  #ui-root .aero-panel .nav-min .nav-min-dn { display: none; }
+  #ui-root .aero-panel.expanded .nav-min .nav-min-up { display: none; }
+  #ui-root .aero-panel.expanded .nav-min .nav-min-dn { display: block; }
+  #ui-root .aero-panel.expanded .aero-body {
+    display: block;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    flex: 1 1 auto;
+    min-height: 0;
   }
-  #ui-root .aero-head { position: relative; }
 }
 
 /* Landscape phone (852×393): a bottom sheet leaves no bike. Side column,

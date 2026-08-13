@@ -9,7 +9,6 @@
 // from model.js since it's a static list nothing else needs to touch.
 import { power, ASSUMPTIONS } from './model.js';
 import { icon } from '../ui/v2/icons.js';
-import { setSheetLift } from '../mobile.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -116,9 +115,9 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   closeBtn.onclick = () => onExit?.();
   const minBtn = el('button', 'aero-min nav-min');
   minBtn.type = 'button';
-  minBtn.title = 'Hide the menu and look at the bike';
-  minBtn.setAttribute('aria-label', 'See the bike');
-  minBtn.setAttribute('aria-expanded', 'true');
+  minBtn.title = 'Show the numbers';
+  minBtn.setAttribute('aria-label', 'Show the numbers');
+  minBtn.setAttribute('aria-expanded', 'false');
   minBtn.append(
     icon('down', { size: 18, cls: 'nav-min-dn' }),
     icon('up', { size: 18, cls: 'nav-min-up' }),
@@ -154,21 +153,20 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   root.append(peekBar);
 
   function setExpanded(v) {
-    root.classList.toggle('expanded', v);
-    peekBar.setAttribute('aria-expanded', String(v));
+    root.classList.toggle('expanded', !!v);
+    peekBar.setAttribute('aria-expanded', String(!!v));
+    minBtn.setAttribute('aria-expanded', String(!!v));
+    minBtn.title = v ? 'Show less' : 'Show the numbers';
+    minBtn.setAttribute('aria-label', v ? 'Show less' : 'Show the numbers');
   }
   function setMinimized(next) {
-    const phone = typeof matchMedia === 'function' && matchMedia('(max-width: 560px)').matches;
-    const on = !!next && phone;
-    root.classList.toggle('is-min', on);
-    minBtn.title = on ? 'Show the menu' : 'Hide the menu and look at the bike';
-    minBtn.setAttribute('aria-expanded', String(!on));
-    minBtn.setAttribute('aria-label', on ? 'Show the menu' : 'See the bike');
-    if (phone) setSheetLift(on ? 0 : 0.22);
+    // Peek is the compact state. A third "tucked" state hid the numbers
+    // behind a chevron that people tap to open the metrics.
+    if (next) setExpanded(false);
   }
   minBtn.onclick = (e) => {
     e.stopPropagation();
-    setMinimized(!root.classList.contains('is-min'));
+    setExpanded(!root.classList.contains('expanded'));
   };
   peekBar.onclick = () => setExpanded(!root.classList.contains('expanded'));
   peekBar.onkeydown = (e) => {
