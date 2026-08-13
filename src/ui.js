@@ -209,36 +209,28 @@ export function initUI(app) {
   const panel = el('div', 'panel glass');
   const head = el('header', 'panel-head');
   const countEl = elt('span', 'panel-count', '0');
-  // On a phone the panel is a bottom sheet, and its header doubles as the
-  // handle: tap to peek at the bike, tap again to get the list back. The
-  // chevron, the running total and the "+" are inert on desktop — CSS only
-  // gives them a box below 560px.
-  const chevron = elt('button', 'sheet-chevron', '▾');
-  chevron.title = 'See the bike';
-  chevron.setAttribute('aria-label', 'See the bike');
-  const minLbl = elt('span', 'sheet-min-l', 'See bike');
+  // Phone only: a chevron top-right of the bottom slab. Tap to tuck the menu
+  // and look at the bike; tap again to bring it back. Desktop never shows it.
+  const minBtn = el('button', 'nav-min');
+  minBtn.type = 'button';
+  minBtn.title = 'Hide the menu and look at the bike';
+  minBtn.setAttribute('aria-label', 'See the bike');
+  minBtn.setAttribute('aria-expanded', 'true');
+  minBtn.append(
+    icon('down', { size: 18, cls: 'nav-min-dn' }),
+    icon('up', { size: 18, cls: 'nav-min-up' }),
+  );
   const peekTotal = elt('span', 'peek-total', '');
-  const sheetAdd = elt('button', 'sheet-add', '+');
-  sheetAdd.title = 'Pick a mount point';
-  sheetAdd.setAttribute('aria-label', 'Add a bag');
-  sheetAdd.onclick = (e) => { e.stopPropagation(); openMountPicker(); };
-  // No title here: "Bike" and "Bags on bike" are the section headings below,
-  // and a third heading above them saying the same thing is the duplication
-  // §1.1 is about. The header survives for the phone, where it is the sheet's
-  // drag handle and running total.
-  // The chevron duplicates the grab handle and the "+" duplicates the Add a bag
-  // button six rows below it. Both go; the header carries the peek total, which
-  // is the one thing you cannot see when the sheet is collapsed.
-  head.append(chevron, minLbl, peekTotal);
+  head.append(minBtn, peekTotal);
   const listEl = el('div', 'bag-list');
 
   let collapsed = false;
   function setSheetCollapsed(next) {
     collapsed = !!next;
     panel.classList.toggle('collapsed', collapsed);
-    chevron.setAttribute('aria-expanded', String(!collapsed));
-    chevron.title = collapsed ? 'Show the menu' : 'See the bike';
-    minLbl.textContent = collapsed ? 'Show menu' : 'See bike';
+    minBtn.setAttribute('aria-expanded', String(!collapsed));
+    minBtn.title = collapsed ? 'Show the menu' : 'Hide the menu and look at the bike';
+    minBtn.setAttribute('aria-label', collapsed ? 'Show the menu' : 'See the bike');
     head.setAttribute('aria-expanded', String(!collapsed));
     head.setAttribute('aria-label', collapsed ? 'Show the menu' : 'See the bike');
     /*
@@ -257,7 +249,13 @@ export function initUI(app) {
     }
   }
   setSheetCollapsed(false);
-  head.onclick = () => { if (PHONE.matches) setSheetCollapsed(!collapsed); };
+  minBtn.onclick = (e) => {
+    e.stopPropagation();
+    if (PHONE.matches) setSheetCollapsed(!collapsed);
+  };
+  // Tucked, the whole peek is the control — you should not have to hit the
+  // 44px icon to get the menu back.
+  head.onclick = () => { if (PHONE.matches && collapsed) setSheetCollapsed(false); };
   head.setAttribute('role', 'button');
   head.setAttribute('tabindex', '0');
   head.onkeydown = (e) => {
@@ -721,8 +719,16 @@ export function initUI(app) {
   mark.title = 'Back to the start';
   mark.setAttribute('aria-label', 'Packrig — back to the start');
   mark.classList.add('is-link');
-  const goHome = (opts = {}) => app.menu?.open('start', opts);
+  const goHome = () => app.menu?.open('start');
   const leaveTunnel = () => { try { app.aero?.exit?.(); } catch { /* not open */ } };
+  const closeChrome = () => {
+    leaveTunnel();
+    try { app.account?.close(); } catch { /* */ }
+    try { app.sheets?.closeSheet(); } catch { /* */ }
+    try { app.menu?.setMinimized?.(false); } catch { /* */ }
+    try { app.sheets?.setMinimized?.(false); } catch { /* */ }
+    try { app.aero?.setMinimized?.(false); } catch { /* */ }
+  };
   const unsavedKit = () => {
     const bags = Object.keys(app.bags?.equipped || {}).length;
     if (!bags) return false;
@@ -777,13 +783,29 @@ export function initUI(app) {
     scrim.classList.add('on');
     keep.focus();
   }
+  const landHome = () => {
+    closeChrome();
+    discardKit();
+    goHome();
+  };
   const leaveHome = () => {
-    // The start screen is always the empty bike. Save first if there is
-    // something to keep — then strip the bags either way.
-    if (app.menu?.isOpen || !unsavedKit()) {
-      leaveTunnel();
-      discardKit();
-      goHome();
+    // PACKRIG is the same door from every screen: leave the builder, offer
+    // to keep the kit if it is unsaved, then land on the empty homepage
+    // with every other overlay closed.
+    closeChrome();
+    if (app.menu?.isOpen) {
+      const held = app.menu.takeStash?.();
+      if (held?.bags?.length) {
+        try { applyRig(app, held); } catch { /* */ }
+        sync();
+      } else {
+        // Browsing a loadout or a saved rig is not "your unsaved kit".
+        landHome();
+        return;
+      }
+    }
+    if (!unsavedKit()) {
+      landHome();
       return;
     }
     const name = rigNav.current?.name || 'this rig';
@@ -798,14 +820,12 @@ export function initUI(app) {
           .then((row) => {
             if (!row) return;
             clearPendingSave();
-            leaveTunnel();
-            discardKit();
-            goHome();
+            landHome();
             notify(`Saved “${row?.name || name}”`);
           })
           .catch((e) => notify(e?.message || 'Could not save that rig'));
       },
-      onLeave: () => { leaveTunnel(); discardKit(); goHome(); },
+      onLeave: () => landHome(),
     });
   };
   mark.onclick = leaveHome;
@@ -1634,5 +1654,5 @@ export function initUI(app) {
   sync();
   // setSheetCollapsed is the hook for "only one sheet open at a time": the
   // wind tunnel calls it rather than reaching into this panel itself.
-  return { sync, setSelected, setHovered, paintSelection, setSheetCollapsed, closeOverlay };
+  return { sync, setSelected, setHovered, paintSelection, setSheetCollapsed, closeOverlay, leaveHome };
 }

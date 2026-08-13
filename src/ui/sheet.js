@@ -36,6 +36,8 @@
  */
 
 import { initReframe } from './reframe.js';
+import { icon } from './v2/icons.js';
+import { setSheetLift } from '../mobile.js';
 
 const KIND_WIDTH = { detail: 'var(--sheet-detail-w)', catalog: 'var(--sheet-catalog-w)' };
 
@@ -99,7 +101,16 @@ export function initSheets(app, { root, applyBase } = {}) {
     '<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" focusable="false">' +
     '<path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.5" ' +
     'stroke-linecap="round"/></svg>';
-  head.append(backBtn, titleEl, closeBtn);
+  const minBtn = el('button', 'sheet-min nav-min');
+  minBtn.type = 'button';
+  minBtn.title = 'Hide the menu and look at the bike';
+  minBtn.setAttribute('aria-label', 'See the bike');
+  minBtn.setAttribute('aria-expanded', 'true');
+  minBtn.append(
+    icon('down', { size: 18, cls: 'nav-min-dn' }),
+    icon('up', { size: 18, cls: 'nav-min-up' }),
+  );
+  head.append(backBtn, titleEl, closeBtn, minBtn);
 
   const body = el('div', 'sheet-body');
   sheet.append(head, body);
@@ -107,6 +118,20 @@ export function initSheets(app, { root, applyBase } = {}) {
 
   let active = null;
   let lastFocus = null;
+  let minimized = false;
+  const phone = () => typeof matchMedia === 'function' && matchMedia('(max-width: 560px)').matches;
+  function setMinimized(next) {
+    minimized = !!next && phone() && !!active;
+    sheet.classList.toggle('is-min', minimized);
+    minBtn.title = minimized ? 'Show the menu' : 'Hide the menu and look at the bike';
+    minBtn.setAttribute('aria-expanded', String(!minimized));
+    minBtn.setAttribute('aria-label', minimized ? 'Show the menu' : 'See the bike');
+    if (phone() && active) {
+      setSheetLift(minimized ? 0 : 0.22);
+      reframe?.update({ opening: false });
+    }
+  }
+  minBtn.onclick = () => setMinimized(!minimized);
 
   const setSheetWidthVar = (kind) => {
     document.documentElement.style.setProperty(
@@ -131,6 +156,7 @@ export function initSheets(app, { root, applyBase } = {}) {
     backBtn.setAttribute('aria-label', 'Back');
     body.scrollTop = 0;
     body.replaceChildren();
+    setMinimized(false);
 
     // Width first, then the class that animates: the custom property has to be
     // in place before the transition starts or the first frame lands at 0.
@@ -167,6 +193,7 @@ export function initSheets(app, { root, applyBase } = {}) {
     document.removeEventListener('keydown', onKey, true);
 
     sheet.classList.remove('open');
+    setMinimized(false);
     host.classList.remove('sheet-open');
     delete host.dataset.sheet;
     setSheetWidthVar(null);
@@ -219,6 +246,7 @@ export function initSheets(app, { root, applyBase } = {}) {
   const api = {
     openSheet: open,
     closeSheet: close,
+    setMinimized,
     get isOpen() { return !!active; },
     get kind() { return active?.kind || null; },
     /** Steps 3-5 call this when the viewport changed under an open sheet. */

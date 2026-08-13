@@ -172,6 +172,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
     if (open) return;
     open = true;
     document.getElementById('ui-root').append(panel.el);
+    panel.setMinimized?.(false);
     tunnel.enter();
     rebuildFlow();
     measureNow();
@@ -183,6 +184,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
     if (!open) return;
     open = false;
     tunnel.exit();
+    panel.setMinimized?.(false);
     panel.el.remove();
     document.removeEventListener('keydown', onKey, true);
     onToggle?.(false);
@@ -191,6 +193,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
   return {
     enter,
     exit,
+    setMinimized(next) { panel.setMinimized?.(next); },
     toggle() { open ? exit() : enter(); },
     onKitChange,
     tick(dt) { tunnel.tick(dt); },

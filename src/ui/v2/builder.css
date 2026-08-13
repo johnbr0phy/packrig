@@ -1672,7 +1672,9 @@
     position: relative;
     z-index: 3;
     pointer-events: auto;
-    background: #0C0D10;
+    background: rgba(12, 13, 16, 0.72);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
     border-top: 1px solid var(--line);
     padding-top: 10px;
     padding-bottom: max(12px, env(safe-area-inset-bottom));
@@ -1718,9 +1720,77 @@
     bottom: 0;
     width: auto;
     max-height: 55vh;
-    background: rgba(10, 11, 13, 0.96);
+    background: rgba(12, 13, 16, 0.58);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
     border-top: 1px solid var(--line);
   }
+
+  /* The chevron sits on the slab, not in a padded handle band. */
+  #ui-root .panel { position: fixed; }
+  #ui-root .panel.collapsed { max-height: 52px; overflow: hidden; }
+  #ui-root .panel-head {
+    display: flex;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    left: auto;
+    z-index: 6;
+    width: auto;
+    min-height: 44px;
+    padding: 0;
+    background: none;
+    border: 0;
+    pointer-events: none;
+  }
+  #ui-root .panel-head::before { display: none; }
+  #ui-root .panel-head .nav-min { display: inline-flex; pointer-events: auto; }
+  #ui-root .sheet-min-l,
+  #ui-root .peek-total { display: none; }
+  #ui-root .rignav { padding-right: 52px; }
+  #ui-root .panel.collapsed > *:not(.panel-head) {
+    visibility: hidden;
+    pointer-events: none;
+  }
+  #ui-root .panel.collapsed .panel-head {
+    pointer-events: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    justify-content: flex-end;
+    min-height: 52px;
+    padding-right: 4px;
+  }
+
+  #ui-root .sheet-min { display: inline-flex; }
+  #ui-root .sheet.is-min {
+    max-height: 52px;
+    overflow: hidden;
+  }
+  #ui-root .sheet.is-min .sheet-body { display: none; }
+  #ui-root .sheet.is-min .sheet-head {
+    padding: 4px 8px;
+    min-height: 52px;
+    border-bottom: 0;
+    justify-content: flex-end;
+  }
+  #ui-root .sheet.is-min .sheet-head > *:not(.sheet-min) {
+    visibility: hidden;
+    pointer-events: none;
+  }
+  #ui-root .sheet-head { position: relative; padding-right: 8px; }
+
+  #ui-root .aero-min { display: inline-flex; }
+  #ui-root .aero-panel.is-min {
+    max-height: 52px;
+    overflow: hidden;
+  }
+  #ui-root .aero-panel.is-min .aero-peek,
+  #ui-root .aero-panel.is-min .aero-body,
+  #ui-root .aero-panel.is-min .aero-foot {
+    display: none;
+  }
+  #ui-root .aero-head { position: relative; }
 }
 
 /* Landscape phone (852×393): a bottom sheet leaves no bike. Side column,
@@ -1758,7 +1828,9 @@
     bottom: 0;
     width: auto;
     max-height: 28vh;
-    background: rgba(10, 11, 13, 0.96);
+    background: rgba(12, 13, 16, 0.58);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
     border-top: 1px solid var(--line);
   }
   #ui-root .aero-panel.expanded { max-height: 46vh; }

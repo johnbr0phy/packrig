@@ -635,6 +635,37 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
    a phone — above 560px the panel is a panel, not a sheet. */
 .sheet-chevron, .sheet-add, .peek-total, .sheet-min-l { display: none; }
 
+/* Phone-only: the little chevron that tucks a bottom nav so you can see the
+   bike. Same control on the homepage, the builder, the bag picker and the
+   wind tunnel — icon, top-right of the slab, nothing else. */
+.nav-min {
+  appearance: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: rgba(244, 241, 236, 0.72);
+  cursor: pointer;
+  flex: 0 0 auto;
+  pointer-events: auto;
+}
+.nav-min:hover { color: #F4F1EC; background: rgba(244, 241, 236, 0.06); }
+.nav-min:focus-visible { outline: 2px solid #FF6A2B; outline-offset: 2px; }
+.nav-min .nav-min-up { display: none; }
+.is-min .nav-min .nav-min-dn,
+.collapsed .nav-min .nav-min-dn { display: none; }
+.is-min .nav-min .nav-min-up,
+.collapsed .nav-min .nav-min-up { display: block; }
+@media (max-width: 560px) {
+  .nav-min { display: inline-flex; }
+}
+
 /* ---- touch, at any width -------------------------------------------------
    A small laptop window is not a phone, but an iPad in landscape is not a
    desktop either. These rules key off the pointer, not the viewport: they

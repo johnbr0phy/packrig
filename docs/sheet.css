@@ -103,6 +103,26 @@
 .sheet-close:active { transform: scale(0.975); }
 .sheet-close:focus-visible { outline: 2px solid var(--accent-ring); outline-offset: 2px; }
 
+.sheet-min { display: none; }
+@media (max-width: 560px) {
+  .sheet-min { display: inline-flex; }
+  .sheet.is-min {
+    max-height: 52px;
+    overflow: hidden;
+  }
+  .sheet.is-min .sheet-body { display: none; }
+  .sheet.is-min .sheet-head {
+    padding: 4px 8px;
+    min-height: 52px;
+    border-bottom: 0;
+    justify-content: flex-end;
+  }
+  .sheet.is-min .sheet-head > *:not(.sheet-min) {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
 /* ---- body ---------------------------------------------------------------- */
 .sheet-body {
   flex: 1 1 auto;

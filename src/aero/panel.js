@@ -9,6 +9,7 @@
 // from model.js since it's a static list nothing else needs to touch.
 import { power, ASSUMPTIONS } from './model.js';
 import { icon } from '../ui/v2/icons.js';
+import { setSheetLift } from '../mobile.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -113,7 +114,16 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   closeBtn.title = 'Back to the bike (Esc)';
   closeBtn.setAttribute('aria-label', 'Close wind tunnel');
   closeBtn.onclick = () => onExit?.();
-  head.append(closeBtn);
+  const minBtn = el('button', 'aero-min nav-min');
+  minBtn.type = 'button';
+  minBtn.title = 'Hide the menu and look at the bike';
+  minBtn.setAttribute('aria-label', 'See the bike');
+  minBtn.setAttribute('aria-expanded', 'true');
+  minBtn.append(
+    icon('down', { size: 18, cls: 'nav-min-dn' }),
+    icon('up', { size: 18, cls: 'nav-min-up' }),
+  );
+  head.append(closeBtn, minBtn);
   root.append(head);
 
   // ---- mobile peek summary --------------------------------------------
@@ -147,6 +157,19 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     root.classList.toggle('expanded', v);
     peekBar.setAttribute('aria-expanded', String(v));
   }
+  function setMinimized(next) {
+    const phone = typeof matchMedia === 'function' && matchMedia('(max-width: 560px)').matches;
+    const on = !!next && phone;
+    root.classList.toggle('is-min', on);
+    minBtn.title = on ? 'Show the menu' : 'Hide the menu and look at the bike';
+    minBtn.setAttribute('aria-expanded', String(!on));
+    minBtn.setAttribute('aria-label', on ? 'Show the menu' : 'See the bike');
+    if (phone) setSheetLift(on ? 0 : 0.22);
+  }
+  minBtn.onclick = (e) => {
+    e.stopPropagation();
+    setMinimized(!root.classList.contains('is-min'));
+  };
   peekBar.onclick = () => setExpanded(!root.classList.contains('expanded'));
   peekBar.onkeydown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpanded(!root.classList.contains('expanded')); }
@@ -532,5 +555,5 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     setExpanded(false);
   }
 
-  return { el: root, update, setHighlight, collapse, dispose };
+  return { el: root, update, setHighlight, collapse, setMinimized, dispose };
 }

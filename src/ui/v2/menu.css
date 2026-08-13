@@ -1006,20 +1006,26 @@
         rgba(10, 11, 13, 0.12) 10%,
         rgba(10, 11, 13, 0) 16%);
   }
-  .pr-start, .pr-spec, .pr-railwrap {
-    background: linear-gradient(180deg,
-      rgba(10, 11, 13, 0) 0,
-      rgba(10, 11, 13, 0.90) 40px,
-      rgba(10, 11, 13, 0.96) 96px);
+  .pr-start, .pr-browse {
+    position: relative;
+    background: rgba(12, 13, 16, 0.58);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
   }
-  .pr-railwrap { background: rgba(10, 11, 13, 0.96); }
+  .pr-spec, .pr-railwrap { background: none; }
   .pr-head { padding: 16px var(--pr-gut) 12px; gap: 10px; }
   .pr-mark { font-size: 13px; letter-spacing: 0.24em; }
   .pr-tab { padding: 7px 10px; font-size: 12.5px; }
   .pr-tab.is-on::after { left: 10px; right: 10px; }
   .pr-close span { display: none; }
   .pr-close { padding: 8px; }
-  .pr-min { display: inline-flex; }
+  .pr-min {
+    display: inline-flex;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    z-index: 5;
+  }
 
   .pr-stage { align-items: flex-end; }
   .pr-start {
@@ -1046,7 +1052,14 @@
   .pr-note, .pr-grade { display: none; }
   .pr-spec { max-height: 48vh; }
 
-  .pr-browse { grid-template-rows: 1fr auto; }
+  .pr-browse {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: flex-end;
+    width: 100%;
+    max-height: 55vh;
+  }
   .pr-spec {
     width: 100%;
     align-self: flex-end;
@@ -1174,47 +1187,34 @@
   cursor: pointer;
   display: none;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border: 1px solid var(--pr-rule);
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
   border-radius: 4px;
   background: transparent;
   color: var(--pr-ink-2);
-  font: 550 13px/1 var(--font);
-  text-shadow: var(--pr-halo);
-  min-height: 44px;
-  transition: color 160ms var(--pr-ease), border-color 160ms var(--pr-ease), background-color 160ms var(--pr-ease);
+  pointer-events: auto;
 }
-.pr-min:hover { color: var(--pr-ink); border-color: rgba(244, 241, 236, 0.30); background: var(--pr-fill); }
+.pr-min:hover { color: var(--pr-ink); background: var(--pr-fill); }
 .pr-min:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: 2px; }
 
-/* Menu tucked away: the bike owns the screen. A single dock at the bottom
-   brings the menu back. The layer is already pointer-events: none. */
+/* Menu tucked away: the bike owns the screen. The slab shrinks to a 52px
+   peek with the chevron still top-right, so you can bring it back. */
 .pr.is-min .pr-veil { opacity: 0.35; }
-.pr.is-min .pr-stage { display: none; }
-.pr.is-min .pr-head {
-  position: fixed;
-  left: 12px;
-  right: 12px;
-  bottom: max(16px, env(safe-area-inset-bottom));
-  top: auto;
-  justify-content: center;
-  gap: 0;
-  padding: 8px;
-  background: rgba(12, 13, 16, 0.94);
-  border: 1px solid var(--pr-rule);
-  border-radius: 14px;
+.pr.is-min .pr-start,
+.pr.is-min .pr-browse {
+  max-height: 52px;
+  min-height: 52px;
+  overflow: hidden;
+  padding-top: 4px;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
 }
-.pr.is-min .pr-mark,
-.pr.is-min .pr-tabs,
-.pr.is-min .pr-login,
-.pr.is-min .pr-close { display: none; }
-.pr.is-min .pr-min {
-  flex: 1;
-  justify-content: center;
-  border: 0;
-  background: transparent;
-  min-height: 44px;
+.pr.is-min .pr-start > *:not(.pr-min),
+.pr.is-min .pr-browse > *:not(.pr-min) {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 @media (max-width: 560px) {

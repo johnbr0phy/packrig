@@ -81,7 +81,10 @@ export function initMenu(app, { onBuild } = {}) {
   mark.append(el('span', 'pr-mark-txt', 'PACKRIG'));
   mark.title = 'Back to the start';
   mark.setAttribute('aria-label', 'Back to the start');
-  mark.onclick = () => go('start');
+  mark.onclick = () => {
+    if (typeof app.ui?.leaveHome === 'function') app.ui.leaveHome();
+    else go('start');
+  };
   head.append(mark);
 
   const tabs = el('nav', 'pr-tabs');
@@ -105,21 +108,24 @@ export function initMenu(app, { onBuild } = {}) {
   closeBtn.title = 'Back to the bike (Esc)';
   closeBtn.onclick = () => close();
 
-  // Phone only (CSS hides it above 560). The menu owns the lower half, so
-  // there has to be a way to put it away and look at the bike without
-  // leaving — Close goes back to the builder, which is a different door.
-  const minBtn = el('button', 'pr-min');
+  // Phone only (CSS hides it above 560). Lives on the bottom slab, top-right —
+  // a chevron, not a labelled header button. Close leaves; this just tucks
+  // the menu so you can look at the bike.
+  const minBtn = el('button', 'pr-min nav-min');
   minBtn.type = 'button';
-  const minLbl = el('span', 'pr-min-l', 'See bike');
-  minBtn.append(minLbl, icon('down', { size: 16 }));
+  minBtn.append(
+    icon('down', { size: 18, cls: 'nav-min-dn' }),
+    icon('up', { size: 18, cls: 'nav-min-up' }),
+  );
   minBtn.title = 'Hide the menu and look at the bike';
   minBtn.setAttribute('aria-expanded', 'true');
+  minBtn.setAttribute('aria-label', 'See the bike');
   let minimized = false;
   const phone = () => typeof matchMedia === 'function' && matchMedia('(max-width: 560px)').matches;
   const syncMenuLift = () => {
     if (!phone()) return;
     if (!open_) {
-      const peek = host.querySelector('.panel.collapsed');
+      const peek = host.querySelector('.panel.collapsed, .sheet.is-min, .aero-panel.is-min');
       setSheetLift(peek ? 0 : 0.22);
     } else {
       setSheetLift(minimized ? 0 : 0.22);
@@ -129,13 +135,16 @@ export function initMenu(app, { onBuild } = {}) {
   function setMinimized(next) {
     minimized = !!next && phone();
     root.classList.toggle('is-min', minimized);
-    minLbl.textContent = minimized ? 'Show menu' : 'See bike';
     minBtn.title = minimized ? 'Show the menu' : 'Hide the menu and look at the bike';
     minBtn.setAttribute('aria-expanded', String(!minimized));
     minBtn.setAttribute('aria-label', minimized ? 'Show the menu' : 'See the bike');
     syncMenuLift();
   }
   minBtn.onclick = () => setMinimized(!minimized);
+  function dockMin() {
+    const slab = stage.querySelector('.pr-start, .pr-browse') || stage.firstElementChild;
+    if (slab) slab.append(minBtn);
+  }
 
   /*
    * Log in, top right, on the front page — where every site anyone has used
@@ -168,7 +177,7 @@ export function initMenu(app, { onBuild } = {}) {
     }
   });
 
-  head.append(logBtn, minBtn, closeBtn);
+  head.append(logBtn, closeBtn);
 
   root.append(head);
 
@@ -304,6 +313,7 @@ export function initMenu(app, { onBuild } = {}) {
     } else {
       stage.append(browse.render(view));
     }
+    dockMin();
     paintChrome();
     animateIn();
     // Only when the menu was already open: on first paint the page has just
@@ -401,7 +411,13 @@ export function initMenu(app, { onBuild } = {}) {
   }
 
   return {
-    open, close, go,
+    open, close, go, setMinimized,
+    takeStash() {
+      const held = stash;
+      stash = null;
+      stashDirty = false;
+      return held;
+    },
     get view() { return view; },
     get isOpen() { return open_; },
   };
