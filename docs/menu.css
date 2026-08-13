@@ -1031,26 +1031,26 @@
   .pr-start {
     width: 100%;
     align-self: flex-end;
-    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    padding: 20px var(--pr-gut) max(20px, env(safe-area-inset-bottom));
   }
-  .pr-display { font-size: clamp(30px, 8.6vw, 40px); }
+  .pr-display { font-size: clamp(30px, 8.6vw, 40px); padding-right: 44px; }
   .pr-lede { display: none; }          /* the bike is the pitch on a phone */
   .pr-eyebrow { display: none; }
-  .pr-menu { margin-top: 20px; }
+  .pr-menu { margin-top: 16px; }
   .pr-item { padding: 14px 4px; grid-template-columns: 28px 1fr 20px; }
   .pr-item-name { font-size: 17px; }
-  .pr-stat { margin-top: 18px; gap: 0 18px; }
+  .pr-stat { margin-top: 16px; gap: 0 18px; }
 
   /* Setup is a form over the bike — drop the rider-height captions so the
      three sizes sit on one line, and hide Log in on browse so Close fits. */
   .pr-size-r { display: none; }
   .pr-size { padding: 10px 12px; }
-  .pr-setup-form { margin-top: 16px; gap: 16px; }
+  .pr-setup-form { margin-top: 14px; gap: 14px; }
   .pr-name { font-size: 18px; height: 40px; }
+  .pr-setup-go { align-self: stretch; justify-content: center; }
   .pr:not([data-view='start']):not([data-view='setup']) .pr-login { display: none; }
 
   .pr-note, .pr-grade { display: none; }
-  .pr-spec { max-height: 48vh; }
 
   .pr-browse {
     display: flex;
@@ -1063,16 +1063,21 @@
   .pr-spec {
     width: 100%;
     align-self: flex-end;
-    max-height: 52vh;
-    padding-bottom: 4px;
+    max-height: none;
+    /* Desktop keeps a tall lead so the column matches the hero. On a phone
+       that lead is just empty glass above the counter. */
+    padding: 20px var(--pr-gut) 8px;
   }
-  .pr-title { font-size: clamp(24px, 6.6vw, 32px); }
+  .pr-title { font-size: clamp(24px, 6.6vw, 32px); padding-right: 44px; }
   .pr-note { max-width: none; }
-  .pr-figs { gap: 22px; margin-top: 18px; padding: 12px 0; }
+  .pr-figs { gap: 22px; margin-top: 14px; padding: 12px 0; }
   .pr-fig-v { font-size: 19px; }
-  .pr-manifest { max-height: none; }
+  .pr-counter { margin-bottom: 12px; }
+  /* The bike is the list on a phone. The names live in the strip below. */
+  .pr-browse[data-kind='loadouts'] .pr-manifest { display: none; }
+  .pr-actions { padding-top: 14px; }
   .pr-actions .pr-btn { flex: 1; justify-content: center; text-align: center; }
-  .pr-railwrap { padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+  .pr-railwrap { padding: 8px var(--pr-gut) max(16px, env(safe-area-inset-bottom)); }
   .pr-step { display: none; }          /* swipe the strip; two arrows is desktop furniture */
 }
 

@@ -194,6 +194,7 @@ export function initBrowse(app, {
     items = [];
     chips = [];
     const wrap = el('div', 'pr-browse');
+    wrap.dataset.kind = kind;
 
     const spec = el('div', 'pr-spec');
     const railWrap = el('div', 'pr-railwrap');

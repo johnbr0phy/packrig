@@ -91,6 +91,9 @@ export function initMenu(app, { onBuild } = {}) {
   tabs.setAttribute('aria-label', 'Menu sections');
   const tabBtns = new Map();
   for (const v of VIEWS) {
+    // Start is the homepage. PACKRIG is the way back — a Start tab next to
+    // Loadouts is a second door to the same room.
+    if (v.id === 'start') continue;
     const b = el('button', 'pr-tab', v.label);
     b.type = 'button';
     b.onclick = () => go(v.id);

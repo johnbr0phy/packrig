@@ -136,6 +136,10 @@ export function initUI(app) {
           applySetup(setup);
           rigNav.current = { id: null, name: setup?.name || randomRigName(), local: true };
           rigNav.enter(rigNav.current);
+          sync();
+          // Same door as Add a bag — one mount list, not a second "where first".
+          openMountPicker();
+          return;
         } else if (adopted) {
           const own = adopted.own ? adopted.row : null;
           savedSnapshot = own ? snapshot() : null;
@@ -1470,57 +1474,11 @@ export function initUI(app) {
     return card;
   }
 
-  /**
-   * Empty bike: the column is the menu. Same shape as the homepage — a short
-   * list of places, one tap to the bags that go there. "Add a bag" at the
-   * bottom of an empty panel is a button that explains the screen is empty.
-   */
-  const STARTER = [
-    { slot: 'seatpack',      hint: 'Behind the saddle' },
-    { slot: 'barroll',       hint: 'On the handlebars' },
-    { slot: 'framebag_full', hint: 'In the main triangle' },
-    { slot: 'toptube',       hint: 'On the top tube' },
-    { slot: 'forkL',         hint: 'On the fork' },
-    { slot: 'pannierL',      hint: 'On a rear rack' },
-  ];
-
-  function renderStarter() {
-    const wrap = el('div', 'starter');
-    wrap.append(elt('p', 'starter-lead', 'Where first?'));
-    const list = el('div', 'starter-list');
-    for (const row of STARTER) {
-      const def = SLOTS[row.slot];
-      if (!def) continue;
-      const n = productsForSlot(app.catalog, productSlotFor(row.slot))
-        .filter((o) => willFit(row.slot, o.product, app.bike)).length;
-      if (!n) continue;
-      const b = el('button', 'starter-row');
-      b.type = 'button';
-      const body = el('span', 'starter-body');
-      body.append(elt('span', 'starter-name', def.label));
-      body.append(elt('span', 'starter-hint', `${row.hint} · ${n}`));
-      b.append(body);
-      b.append(icon('right', { size: 18, cls: 'starter-go' }));
-      b.onclick = () => catalogue.open(row.slot);
-      list.append(b);
-    }
-    wrap.append(list);
-    const more = el('button', 'starter-more');
-    more.type = 'button';
-    more.append(elt('span', null, 'Every mount point'));
-    more.onclick = () => openMountPicker();
-    wrap.append(more);
-    return wrap;
-  }
-
   function renderList() {
     listEl.innerHTML = '';
     const unfit = Object.keys(app.bags.unfitted || {});
     const keys = Object.keys(SLOTS).filter((k) => app.bags.equipped[k]);
-    if (!keys.length && !unfit.length) {
-      listEl.append(renderStarter());
-      return 0;
-    }
+    if (!keys.length && !unfit.length) return 0;
     for (const key of keys) {
       const cur = app.bags.equipped[key];
       const card = el('div', 'bag-card');
@@ -1621,8 +1579,8 @@ export function initUI(app) {
     paintSelection();
     countEl.textContent = String(n);
     bagsHead.hidden = n === 0;
-    bagActions.hidden = n === 0;
-    addBtn.hidden = n === 0;
+    addBtn.hidden = false;
+    bagActions.hidden = false;
     // Nothing to clear on an empty bike, and a destructive control offered
     // against nothing is just one more thing in the column.
     btnClear.hidden = n === 0;
