@@ -1,0 +1,86 @@
+<!doctype html>
+<!--
+  The social card. Rendered by tools/og-card.mjs, which injects the wind-tunnel
+  plate as a data URI into #plate and screenshots this page at 1200x630 — the
+  size X, Slack, iMessage and every other unfurler expects.
+
+  Two skins, chosen with ?v=dark|light. Dark is what ships: it is the product's
+  own polarity, and white ink on a near-black field is the strongest contrast a
+  timeline card can carry at the ~500px it is actually displayed.
+
+  Nothing here may be smaller than ~15px: the card is shown at roughly 0.42x, so
+  a 13px label lands at 5px and is mush. That is the only hard rule on this page.
+-->
+<html lang="en"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:'Inter';src:url('/assets/fonts/InterVariable.woff2') format('woff2-variations');font-weight:100 900;font-display:block}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:630px;overflow:hidden}
+body{font-family:'Inter',system-ui,sans-serif;font-feature-settings:'cv05' 1,'ss03' 1;-webkit-font-smoothing:antialiased}
+.card{position:relative;width:1200px;height:630px;overflow:hidden;background:#0d0f12}
+#plate{position:absolute;inset:0;background-repeat:no-repeat;background-position:center;background-size:cover}
+.num{font-variant-numeric:tabular-nums slashed-zero}
+
+/* The wash is what makes the type legible over a render nobody art-directed:
+   opaque where the words are, gone by the time it reaches the bike. */
+.dark{--ink:rgba(255,255,255,.97);--ink2:rgba(255,255,255,.66);--ink3:rgba(255,255,255,.44);--rule:rgba(255,255,255,.18);--amber:#FF8A4C}
+.dark .wash{position:absolute;inset:0;background:
+  /* the bottom-left corner is the brightest part of the tunnel floor and the
+     amber label was sitting straight on it — this is what holds that corner */
+  radial-gradient(118% 82% at -8% 112%,rgba(13,15,18,.96) 0%,rgba(13,15,18,.88) 34%,rgba(13,15,18,.42) 58%,rgba(13,15,18,0) 78%),
+  linear-gradient(97deg,
+  rgba(13,15,18,.97) 0%,rgba(13,15,18,.95) 34%,rgba(13,15,18,.74) 46%,rgba(13,15,18,.20) 58%,rgba(13,15,18,0) 68%)}
+.light{--ink:#111417;--ink2:rgba(17,20,23,.62);--ink3:rgba(17,20,23,.42);--rule:rgba(17,20,23,.16);--amber:#D2601A}
+.light .wash{position:absolute;inset:0;background:
+  radial-gradient(118% 82% at -8% 112%,rgba(233,235,238,.97) 0%,rgba(233,235,238,.9) 34%,rgba(233,235,238,.45) 58%,rgba(233,235,238,0) 78%),
+  linear-gradient(101deg,
+  rgba(233,235,238,.985) 0%,rgba(233,235,238,.96) 30%,rgba(233,235,238,.72) 44%,rgba(233,235,238,.18) 55%,rgba(233,235,238,0) 64%)}
+
+.body{position:absolute;inset:0;padding:54px 64px}
+.mark{display:flex;align-items:center;gap:14px}
+.mark b{font-size:25px;font-weight:650;letter-spacing:.19em;color:var(--ink)}
+h1{position:absolute;left:64px;top:158px;font-size:66px;line-height:1.04;font-weight:620;letter-spacing:-.025em;color:var(--ink)}
+.sub{position:absolute;left:64px;top:398px;width:566px;font-size:23.5px;line-height:1.46;font-weight:420;color:var(--ink2)}
+.strip{position:absolute;left:64px;bottom:54px;display:flex;align-items:flex-end;gap:34px}
+.cell{display:flex;flex-direction:column;gap:7px}
+.cell .v{font-size:38px;font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1}
+.cell .v u{text-decoration:none;font-size:20px;font-weight:550;color:var(--ink2);margin-left:3px}
+.cell .k{font-size:15px;font-weight:650;letter-spacing:.105em;color:var(--ink3);text-transform:uppercase}
+.sep{width:1px;height:44px;background:var(--rule);margin-bottom:4px}
+.hot .v{color:var(--amber)}
+.hot .k{color:var(--amber);opacity:.85}
+</style></head>
+<body>
+<div class="card dark" id="card">
+  <div id="plate"></div>
+  <div class="wash"></div>
+  <div class="body">
+    <div class="mark">
+      <svg width="34" height="22" viewBox="0 0 34 22" fill="none" style="color:var(--amber)">
+        <path d="M1 5h20a4.5 4.5 0 1 0-4.5-4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M1 11h25a4.5 4.5 0 1 1-4.5 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M1 17h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+      </svg>
+      <b>PACKRIG</b>
+    </div>
+    <h1 id="head">What is your<br>setup costing<br>you in watts?</h1>
+    <div class="sub" id="sub">Build a bikepacking rig in 3D, then send it down a wind tunnel and find out.</div>
+    <div class="strip">
+      <div class="cell"><div class="v num"><span id="cda">0.458</span><u>m²</u></div><div class="k">CdA measured</div></div>
+      <div class="sep"></div>
+      <div class="cell"><div class="v num"><span id="watts">180</span><u>W</u></div><div class="k">to hold <span id="kph">28</span> km/h</div></div>
+      <div class="sep"></div>
+      <div class="cell hot"><div class="v num">+<span id="added">28</span><u>W</u></div><div class="k">cost of the bags</div></div>
+    </div>
+  </div>
+</div>
+<script>
+  const p = new URLSearchParams(location.search);
+  document.getElementById('card').className = 'card ' + (p.get('v') || 'dark');
+  // The numbers come from the same measurement pass the card's render came
+  // from, so the card can never quote a figure the app would not print.
+  for (const k of ['cda', 'watts', 'added', 'kph']) {
+    if (p.has(k)) document.getElementById(k).textContent = p.get(k);
+  }
+</script>
+</body></html>
