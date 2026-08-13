@@ -503,12 +503,22 @@
      only way up to the menu on a phone. Wordmark, three tools and the account
      dot fit inside 390px with room to spare. */
   #ui-root .topbar { gap: 8px; padding: 0 10px; }
-  #ui-root .topbar .wordmark { display: block; margin-right: auto; }
+  /* `display: block` here predates the mark sitting beside the name — it put
+     the glyph on its own line above PACKRIG. The reason this rule exists is
+     `margin-right: auto`, not the display value, so it keeps the row. */
+  #ui-root .topbar .wordmark { display: flex; align-items: center; margin-right: auto; }
   #ui-root .top-right { gap: 6px; flex: 0 1 auto; min-width: 0; }
   #ui-root .viewtools { padding: 1px; }
   #ui-root .tool-btn { width: 36px; height: 36px; font-size: 17px; }
-  #ui-root .acct-btn { padding: 0 10px; }
+  #ui-root .acct-btn {
+    width: 44px; height: 44px; padding: 0;
+    border: 0; border-radius: 50%;
+    background: transparent;
+    justify-content: center;
+  }
   #ui-root .acct-btn .acct-label { display: none; }
+  #ui-root .acct-face { width: 32px; height: 32px; }
+  #ui-root .acct-face svg { width: 18px; height: 18px; }
   #ui-root .save-btn { padding: 0 13px; font-size: 12.5px; }
 }
 

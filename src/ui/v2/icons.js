@@ -50,6 +50,15 @@ const PATHS = {
               'M10 11.1a1.1 1.1 0 1 0 0-2.2 1.1 1.1 0 0 0 0 2.2Z'],
   wind:      ['M2.5 7h8.2a2.2 2.2 0 1 0-2.2-2.2', 'M2.5 10.5h11a2.2 2.2 0 1 1-2.2 2.2',
               'M2.5 14h6'],
+  // The brand mark — the thing beside PACKRIG in the top bar, on the favicon
+  // and on the link-preview card. It is deliberately the same idea as `wind`
+  // above, because the product's one idea is moving air; it is NOT the same
+  // drawing. This one is wider, its curls are bigger relative to the lines, and
+  // it is always drawn in the accent at a heavier stroke, while `wind` is a
+  // control that inherits ink at 1.5. Sitting them side by side in one bar is
+  // the only place the distinction has to hold, and at 20px it does.
+  gust:      ['M2 6h11.5a2.6 2.6 0 1 0-2.6-2.6', 'M2 10h14.5a2.6 2.6 0 1 1-2.6 2.6',
+              'M2 14h8'],
 
   // Navigation and objects
   bike:      ['M5.5 15.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z', 'M14.5 15.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z',
@@ -66,14 +75,14 @@ const PATHS = {
   search:    ['M9 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z', 'M13.5 13.5 17 17'],
 };
 
-export function icon(name, { size = 20, cls = '' } = {}) {
+export function icon(name, { size = 20, cls = '', stroke = 1.5 } = {}) {
   const svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('viewBox', '0 0 20 20');
   svg.setAttribute('width', String(size));
   svg.setAttribute('height', String(size));
   svg.setAttribute('fill', 'none');
   svg.setAttribute('stroke', 'currentColor');
-  svg.setAttribute('stroke-width', '1.5');
+  svg.setAttribute('stroke-width', String(stroke));
   svg.setAttribute('stroke-linecap', 'round');
   svg.setAttribute('stroke-linejoin', 'round');
   svg.setAttribute('aria-hidden', 'true');

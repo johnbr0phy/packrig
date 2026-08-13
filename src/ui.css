@@ -47,7 +47,16 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
   border-left: 0; border-right: 0; border-top: 0;
   pointer-events: auto;
 }
-.wordmark { user-select: none; margin-right: auto; }
+.wordmark { user-select: none; margin-right: auto; display: flex; align-items: center; gap: 9px; }
+/* The mark is the only hue in the bar, which is the point: §3.3 gives the
+   accent two jobs, and identity is the one that earns a third. `flex: none` so
+   it cannot be squeezed by the h1 on a narrow phone, and the same halo the
+   wordmark carries so it survives a bright desert behind it. */
+.wordmark-gust {
+  flex: none;
+  color: var(--accent);
+  filter: drop-shadow(0 1px 2px rgba(6, 7, 9, 0.92));
+}
 /* The wordmark is the way home now (ui.js wires it), so it has to behave like
    one: a pointer, a hover state, and a focus ring for the keyboard. */
 .wordmark.is-link { cursor: pointer; border-radius: 4px; padding: 4px 6px; margin-left: -6px; transition: opacity 160ms ease; }
@@ -86,13 +95,14 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
 }
 .acct-btn:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
 .acct-label { overflow: hidden; text-overflow: ellipsis; }
-/* Signed out the dot is hollow, signed in it is lit. One glyph, two states,
-   no words spent saying which. */
-.acct-dot {
-  width: 7px; height: 7px; border-radius: 50%; flex: none;
-  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.45);
+.acct-face {
+  width: 22px; height: 22px; border-radius: 50%; flex: none;
+  overflow: hidden; display: grid; place-items: center;
+  background: rgba(244, 241, 236, 0.10);
 }
-.acct-btn.is-in .acct-dot { background: #6fd39b; box-shadow: none; }
+.acct-face img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.acct-face svg { width: 14px; height: 14px; }
+.acct-face.has-photo { background: rgba(244, 241, 236, 0.08); }
 
 /* ---- left panel --------------------------------------------------------- */
 .panel {
@@ -772,6 +782,7 @@ html, body { height: 100%; overflow: hidden; background: #0d0f13; }
     left: max(var(--gutter), env(safe-area-inset-left));
   }
   .wordmark h1 { font-size: 16px; letter-spacing: 0.26em; }
+  .wordmark { gap: 7px; }
   .wordmark p { display: none; }
   .viewtools {
     top: calc(10px + env(safe-area-inset-top));

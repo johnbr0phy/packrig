@@ -205,6 +205,8 @@
   text-shadow: var(--pr-halo);
   transition: opacity 160ms var(--pr-ease);
 }
+.pr-mark { display: inline-flex; align-items: center; gap: 8px; }
+.pr-mark-gust { flex: none; color: var(--pr-accent, var(--accent)); }
 .pr-mark:hover { opacity: 0.72; }
 .pr-mark:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: 8px; border-radius: 2px; }
 
@@ -1014,7 +1016,7 @@
   }
   .pr-spec, .pr-railwrap { background: none; }
   .pr-head { padding: 16px var(--pr-gut) 12px; gap: 10px; }
-  .pr-mark { font-size: 13px; letter-spacing: 0.24em; }
+  .pr-mark { font-size: 13px; letter-spacing: 0.24em; gap: 6px; }
   .pr-tab { padding: 7px 10px; font-size: 12.5px; }
   .pr-tab.is-on::after { left: 10px; right: 10px; }
   .pr-close span { display: none; }
@@ -1229,13 +1231,25 @@
 .pr-login:hover { color: var(--pr-ink); border-color: rgba(244, 241, 236, 0.30); background: var(--pr-fill); }
 .pr-login:focus-visible { outline: 2px solid var(--pr-accent); outline-offset: 2px; }
 .pr-login[hidden] { display: none; }
-/* Signed in it carries a state dot, because then the button is an identity
-   rather than an invitation. */
-.pr-login.is-in::before {
-  content: '';
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--pr-accent);
-  flex: 0 0 auto;
+/* The face is the identity. Google supplies a photo; email sign-up gets
+   the same person-glyph as the rest of the set. */
+.pr-face {
+  width: 22px; height: 22px; border-radius: 50%; flex: none;
+  overflow: hidden; display: grid; place-items: center;
+  background: var(--pr-fill);
+}
+.pr-face img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pr-face svg { width: 14px; height: 14px; }
+.pr-face.has-photo { background: rgba(244, 241, 236, 0.08); }
+@media (max-width: 560px) {
+  .pr-login.is-in {
+    width: 44px; height: 44px; padding: 0;
+    border-color: transparent;
+    justify-content: center;
+  }
+  .pr-login.is-in .pr-login-l { display: none; }
+  .pr-login .pr-face { width: 32px; height: 32px; }
+  .pr-login .pr-face svg { width: 18px; height: 18px; }
 }
 
 /* ===========================================================================

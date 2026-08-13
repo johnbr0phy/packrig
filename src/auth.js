@@ -110,6 +110,8 @@ export function createAuth() {
      *  that file reads `auth.email` directly, and an undefined here degrades
      *  silently to the string "Signed in" rather than erroring. */
     get email() { return user?.email || ''; },
+    get photo() { return user?.photo || ''; },
+    get name() { return user?.name || ''; },
 
     onChange(fn) { listeners.add(fn); return () => listeners.delete(fn); },
 

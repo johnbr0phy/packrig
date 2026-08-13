@@ -334,7 +334,7 @@
   .aero-panel.expanded .nav-min .nav-min-up { display: none; }
   .aero-panel.expanded .nav-min .nav-min-dn { display: block; }
 
-  .cda-explainer, .grade-blurb, .yaw-hint, .aero-delta { display: none; }
+  .cda-explainer, .yaw-hint, .aero-delta { display: none; }
   .aero-sec { padding: 12px 20px; }
   .aero-grade { gap: 10px; }
   .grade-letter { font-size: 28px; }
@@ -355,6 +355,32 @@
   .peek-handle { display: none; }
   .peek-chevron { display: none; }
   .peek-cost-label { display: none; }
+  .peek-grade {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0 0 6px;
+  }
+  .peek-grade-letter {
+    font-family: var(--font-num, ui-monospace, SFMono-Regular, Menlo, monospace);
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--ink-1, #F4F1EC);
+  }
+  .peek-grade-name {
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--ink-1, #F4F1EC);
+  }
+  .peek-grade-blurb {
+    margin: 0 0 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--ink-2, rgba(244, 241, 236, 0.72));
+    max-width: 42ch;
+  }
   .peek-row { display: flex; align-items: baseline; gap: 16px; }
   .peek-cost { display: flex; align-items: baseline; gap: 4px; flex: none; }
   .peek-cost-value {

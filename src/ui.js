@@ -15,6 +15,7 @@ import { icon } from './ui/v2/icons.js';
 import { initCatalogue } from './ui/catalogue.js';
 import { initRigNav } from './ui/rignav.js';
 import { randomRigName } from './ui/v2/rignames.js';
+import { paintFace } from './ui/face.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -205,7 +206,10 @@ export function initUI(app) {
    */
   const topbar = el('div', 'topbar glass');
   const mark = el('div', 'wordmark');
-  mark.append(el('h1', null, 'PACKRIG'));
+  // The mark before the name, in the accent — the same drawing as the favicon
+  // and the link-preview card, so the three places anyone meets this product
+  // agree on what it looks like.
+  mark.append(icon('gust', { size: 20, cls: 'wordmark-gust', stroke: 2 }), el('h1', null, 'PACKRIG'));
   topbar.append(mark);
   const topRight = el('div', 'top-right');
 
@@ -682,8 +686,9 @@ export function initUI(app) {
   }
 
   const acctBtn = el('button', 'acct-btn');
+  const acctFace = el('span', 'acct-face');
   const acctLabel = elt('span', 'acct-label', 'Log in');
-  acctBtn.append(el('span', 'acct-dot'), acctLabel);
+  acctBtn.append(acctFace, acctLabel);
   // Signing in changes where rigs are STORED, not where they are found — they
   // are the top of the left column now. So this opens the account, nothing else.
   /*
@@ -696,9 +701,10 @@ export function initUI(app) {
   function paintAccount() {
     const on = !!app.auth?.signedIn;
     acctBtn.classList.toggle('is-in', on);
-    acctLabel.textContent = on ? (app.auth.email || 'Account') : 'Log in';
+    acctLabel.textContent = on ? (app.auth.name || app.auth.email || 'Account') : 'Log in';
     acctBtn.title = on ? 'Your account' : 'Log in so your rigs follow you between devices';
     acctBtn.hidden = false;
+    paintFace(acctFace, app.auth);
   }
   paintAccount();
   app.auth?.onChange?.(paintAccount);

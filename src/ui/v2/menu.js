@@ -34,6 +34,7 @@ import { renderSetup } from './setup.js';
 import { initBrowse } from './browse.js';
 import { captureRig, applyRig } from '../../rig.js';
 import { setSheetLift } from '../../mobile.js';
+import { paintFace } from '../face.js';
 
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
@@ -78,7 +79,8 @@ export function initMenu(app, { onBuild } = {}) {
 
   const mark = el('button', 'pr-mark');
   mark.type = 'button';
-  mark.append(el('span', 'pr-mark-txt', 'PACKRIG'));
+  mark.append(icon('gust', { size: 18, cls: 'pr-mark-gust', stroke: 2 }),
+              el('span', 'pr-mark-txt', 'PACKRIG'));
   mark.title = 'Back to the start';
   mark.setAttribute('aria-label', 'Back to the start');
   mark.onclick = () => {
@@ -157,15 +159,17 @@ export function initMenu(app, { onBuild } = {}) {
    */
   const logBtn = el('button', 'pr-login');
   logBtn.type = 'button';
+  const logFace = el('span', 'pr-face');
   const logLbl = el('span', 'pr-login-l', 'Log in');
-  logBtn.append(logLbl);
+  logBtn.append(logFace, logLbl);
   logBtn.onclick = () => app.account?.open();
   function paintLogin() {
     const on = !!app.auth?.signedIn;
     logBtn.hidden = false;
     logBtn.classList.toggle('is-in', on);
-    logLbl.textContent = on ? (app.auth.email || 'Account') : 'Log in';
+    logLbl.textContent = on ? (app.auth.name || app.auth.email || 'Account') : 'Log in';
     logBtn.title = on ? 'Your account' : 'Log in so your rigs follow you between devices';
+    paintFace(logFace, app.auth);
   }
   paintLogin();
   app.auth?.onChange?.(() => {

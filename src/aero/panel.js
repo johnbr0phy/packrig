@@ -138,6 +138,11 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   peekBar.setAttribute('aria-label', 'Expand wind tunnel details');
   peekBar.setAttribute('aria-expanded', 'false');
   const peekHandle = el('div', 'peek-handle');
+  const peekGrade = el('div', 'peek-grade');
+  const peekLetter = elt('span', 'peek-grade-letter', '—');
+  const peekName = elt('span', 'peek-grade-name', '');
+  peekGrade.append(peekLetter, peekName);
+  const peekBlurb = elt('p', 'peek-grade-blurb', '');
   const peekRow = el('div', 'peek-row');
   const peekCostValue = elt('span', 'peek-cost-value', '0');
   const peekCostLabel = elt('span', 'peek-cost-label', 'more power, same speed');
@@ -149,7 +154,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   peekOffender.append(peekOffenderName, peekOffenderWatts);
   const peekChevron = elt('span', 'peek-chevron', '⌄');
   peekRow.append(peekCost, peekOffender, peekChevron);
-  peekBar.append(peekHandle, peekRow);
+  peekBar.append(peekHandle, peekGrade, peekBlurb, peekRow);
   root.append(peekBar);
 
   function setExpanded(v) {
@@ -508,6 +513,10 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     gradeLetter.textContent = g.letter;
     gradeName.textContent = g.name;
     gradeBlurb.textContent = g.blurb;
+    peekLetter.textContent = g.letter;
+    peekName.textContent = g.name;
+    const cut = String(g.blurb || '').match(/^[^.!?]+[.!?]/);
+    peekBlurb.textContent = (cut ? cut[0] : g.blurb || '').trim();
 
     // ride.yawDeg is the tunnel's live yaw state (index.js includes it); sync
     // the slider to it the same way the speed slider syncs, then refresh the
