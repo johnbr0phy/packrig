@@ -1782,14 +1782,21 @@
 
   #ui-root .aero-panel { padding-top: 0; }
   #ui-root .aero-min { display: inline-flex; }
-  #ui-root .aero-head {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    left: auto;
-    z-index: 6;
+  #ui-root .aero-close {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    min-width: 44px;
+    min-height: 44px;
     padding: 0;
+  }
+  #ui-root .aero-head {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
     width: auto;
+    padding: 4px 8px 0 16px;
     min-height: 44px;
     background: none;
     border: 0;
@@ -1798,6 +1805,7 @@
   #ui-root .aero-panel .nav-min .nav-min-dn { display: none; }
   #ui-root .aero-panel.expanded .nav-min .nav-min-up { display: none; }
   #ui-root .aero-panel.expanded .nav-min .nav-min-dn { display: block; }
+  #ui-root .aero-panel.expanded .aero-peek { display: none; }
   #ui-root .aero-panel.expanded .aero-body {
     display: block;
     overflow-y: auto;

@@ -298,29 +298,42 @@
 /* Peek/expand is for the short screen — phone, or a landscape thumb —
    where the smoke is the show and the numbers start as a two-line summary. */
 @media (max-width: 560px), ((pointer: coarse) and (max-height: 480px)) {
-  .aero-title { display: none; }
-  .aero-close span { display: none; }
-  .aero-close { padding: 8px; min-width: 44px; min-height: 44px; }
+  /* One header: name, close, chevron. The numbers live below it, not
+     underneath two floating boxes. */
+  .aero-title { display: block; }
   .aero-head {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    left: auto;
-    z-index: 6;
-    padding: 0;
-    width: auto;
-    min-height: 44px;
+    position: relative;
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
     gap: 0;
+    padding: 4px 8px 0 16px;
+    min-height: 44px;
+    width: auto;
     background: none;
   }
+  .aero-title {
+    margin-right: auto;
+    font: 600 11px/1 var(--font);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .aero-close {
+    border: 0;
+    background: none;
+    padding: 0;
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    justify-content: center;
+  }
+  .aero-close span { display: none; }
   .aero-min { display: inline-flex; }
-  /* Peek = closed metrics (up). Expanded = open (down). */
   .aero-panel .nav-min .nav-min-up { display: block; }
   .aero-panel .nav-min .nav-min-dn { display: none; }
   .aero-panel.expanded .nav-min .nav-min-up { display: none; }
   .aero-panel.expanded .nav-min .nav-min-dn { display: block; }
-  .peek-cost-label { display: none; }
+
   .cda-explainer, .grade-blurb, .yaw-hint, .aero-delta { display: none; }
   .aero-sec { padding: 12px 20px; }
   .aero-grade { gap: 10px; }
@@ -328,56 +341,53 @@
   .cda-value { font-size: 28px; }
   .watts-value { font-size: 22px; }
 
-  /* ---- peek/expand ------------------------------------------------------
-     Collapsed (peek) is the entry state: header + this bar only, nothing
-     else. Expanding reveals the full .aero-body (everything from CdA down
-     through assumptions) up to the 55vh cap, scrollable. */
+  /* Closed: two figures. Open: they are in the body, so this row goes. */
   .aero-peek {
-    display: flex; flex-direction: column; gap: 9px;
-    padding: 10px 96px 14px 16px; min-height: 44px; cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 4px 16px 14px;
+    min-height: 44px;
+    cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
-  .peek-handle {
-    align-self: center; width: 36px; height: 4px; border-radius: 999px;
-    background: rgba(255, 255, 255, 0.22); flex: none;
-  }
-  .peek-row { display: flex; align-items: center; gap: 10px; }
-  .peek-cost { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 5px; flex: none; }
+  .aero-panel.expanded .aero-peek { display: none; }
+  .peek-handle { display: none; }
+  .peek-chevron { display: none; }
+  .peek-cost-label { display: none; }
+  .peek-row { display: flex; align-items: baseline; gap: 16px; }
+  .peek-cost { display: flex; align-items: baseline; gap: 4px; flex: none; }
   .peek-cost-value {
     font-family: var(--font-num, ui-monospace, SFMono-Regular, Menlo, monospace);
-    font-size: 22px; font-weight: 500; color: var(--ink-1, #F4F1EC);
+    font-size: 28px; font-weight: 500; color: var(--ink-1, #F4F1EC);
     font-variant-numeric: tabular-nums; line-height: 1;
   }
-  .peek-cost-unit { font-size: 12px; font-weight: 600; color: var(--ink-dim); }
-  .peek-cost-label { flex-basis: 100%; font-size: 10px; color: var(--ink-faint); line-height: 1.3; }
+  .peek-cost-unit { font-size: 13px; font-weight: 600; color: var(--ink-dim); }
   .peek-offender {
-    flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-end;
-    gap: 2px; text-align: right; padding-left: 8px; border-left: 1px solid rgba(255, 255, 255, 0.09);
+    flex: 1; min-width: 0;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+    text-align: right;
   }
   .peek-offender-name {
-    font-size: 11.5px; font-weight: 600; color: var(--ink);
+    font-size: 12px; font-weight: 550; color: var(--ink);
     max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
-  .peek-offender-watts { font-size: 13px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
-  .peek-chevron { display: none; }
+  .peek-offender-watts {
+    font-size: 13px; font-weight: 600; color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
 
-  /* everything below the peek row is the "below the fold" material — the
-     full CdA readout, waterfall, yaw slider and assumptions block */
   .aero-body { display: none; }
-  .aero-panel.expanded .aero-body { display: block; }
+  .aero-panel.expanded .aero-body {
+    display: block;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .aero-foot { display: none; }
   .aero-panel.expanded .aero-foot { display: block; }
-
-  /* Pin header/peek/footer to their content size and let only .aero-body
-     absorb the shrink. Without this, expanding on a short viewport (55vh of
-     393px landscape is ~216px, nowhere near enough for every section) makes
-     the flex column shrink EVERY child including this one — .aero-peek has
-     no scroll affordance of its own, so its wrapped two-line label just
-     overflowed down into the CdA section sitting right underneath it. Only
-     .aero-body gets `overflow-y: auto` (see the base rule above), so it's
-     the only child that can safely give up space. */
   .aero-head, .aero-peek, .aero-foot { flex: none; }
-  .aero-panel.expanded .aero-body { flex: 1 1 auto; min-height: 0; }
 }
 
 /* ---- touch: 44px minimum slider targets --------------------------------
