@@ -523,7 +523,7 @@
     ],
     "stats": {
       "litres": 34.6,
-      "bags": 5,
+      "bags": 4,
       "makers": 2,
       "cda": 0.43,
       "watts": 172,
@@ -536,14 +536,6 @@
       "env": "lake",
       "paint": "Sand",
       "bags": [
-        {
-          "slot": "randobag",
-          "brand": "Swift Industries",
-          "line": "Sugarloaf",
-          "name": "Sugarloaf Basket Bag",
-          "size": "11L",
-          "cw": 0
-        },
         {
           "slot": "saddlebag",
           "brand": "Carradice",
@@ -591,7 +583,7 @@
     ],
     "stats": {
       "litres": 8.7,
-      "bags": 4,
+      "bags": 3,
       "makers": 1,
       "cda": 0.372,
       "watts": 154,
@@ -604,14 +596,6 @@
       "env": "desert",
       "paint": "Midnight",
       "bags": [
-        {
-          "slot": "framebag_half",
-          "brand": "Apidura",
-          "line": "Aero",
-          "name": "Frame Module",
-          "size": "Large",
-          "cw": 0
-        },
         {
           "slot": "toptube",
           "brand": "Apidura",
