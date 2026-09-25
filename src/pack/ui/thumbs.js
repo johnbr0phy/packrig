@@ -112,5 +112,8 @@ export function thumbImg(it, cls = 'pkg-thumb') {
   return img;
 }
 
+/** How many thumbnails are still to draw (tools wait for 0 before a screenshot). */
+export const thumbsPending = () => queue.length + (pumping ? 1 : 0);
+
 /** Catalogue entry → the shape thumbFor wants. */
 export const asThumbItem = (g) => ({ archetype: g.archetype, dims: g.packed_cm, color: g.color, ref: g.id, name: g.name });

@@ -217,11 +217,14 @@ export function createPack3D(app) {
         const k = `${place.slot}:${place.loc}`;
         const n = (stack[k] = (stack[k] || 0) + 1) - 1;
         const cx = (bb.min.x + bb.max.x) / 2, cz = (bb.min.z + bb.max.z) / 2;
+        const rear = place.slot.startsWith('seat') || place.slot === 'saddlebag';
         if (place.loc === 'lashed') {
           // across the top of the bag, long axis across the bike like a real
           // strapped-on bundle, stacked if there is more than one
-          const far = place.slot.startsWith('seat') || place.slot === 'saddlebag' ? bb.min.x + (bb.max.x - bb.min.x) * 0.3 : cx;
-          node.position.set(far - n * (dims[1] + 6), bb.max.y + dims[2] / 2 + 2, cz);
+          const far = rear ? bb.min.x + (bb.max.x - bb.min.x) * 0.3 : cx;
+          const x = far - n * (dims[1] + 6);
+          const top = surfaceY(eq.mesh, F, x, cz, -1) ?? bb.max.y;
+          node.position.set(x, top + dims[2] / 2 + 2, cz);
           node.rotation.set(0, Math.PI / 2, 0);
           if (place.slot.startsWith('bar')) {
             node.position.set(bb.max.x + dims[2] / 2 + 2, (bb.min.y + bb.max.y) / 2 + n * (dims[1] + 4), cz);
@@ -229,11 +232,14 @@ export function createPack3D(app) {
           }
         } else {
           // hanging off the tail on a carabiner: below and just inside the end
-          const tailX = place.slot.startsWith('seat') || place.slot === 'saddlebag' ? bb.min.x + dims[0] * 0.5 : cx;
-          node.position.set(tailX + n * 20, bb.min.y - dims[1] / 2 - 18, (bb.max.z + 6 + dims[2] / 2) * (n % 2 ? -1 : 1));
+          // the underside AT that x, not the box's lowest point: a tilted
+          // wedge's lowest point is its shoulder, far below the tail
+          const tailX = (rear ? bb.min.x + Math.max(dims[0] * 0.5, (bb.max.x - bb.min.x) * 0.18) : cx) + n * 20;
+          const under = surfaceY(eq.mesh, F, tailX, cz, 1) ?? bb.min.y;
+          node.position.set(tailX, under - dims[1] / 2 - 16, (dims[2] / 2 + 4) * (n % 2 ? -1 : 1));
           node.rotation.set(0.2, 0, Math.PI / 2);
           const clip = new THREE.Mesh(new THREE.TorusGeometry(6, 1.3, 5, 14), new THREE.MeshStandardMaterial({ color: 0x9a9da2, metalness: 0.8, roughness: 0.3 }));
-          clip.position.set(node.position.x, bb.min.y - 8, node.position.z);
+          clip.position.set(node.position.x, under - 6, node.position.z);
           clip.userData.packItem = true;
           outside.add(clip);
         }
@@ -262,6 +268,20 @@ export function createPack3D(app) {
       outside.add(node);
     }
     F.add(outside);
+  }
+
+  /** Height of the bag body's surface at (x, z) in frame coords: dir -1 = top (ray down), 1 = underside (ray up). */
+  const ray = new THREE.Raycaster();
+  function surfaceY(bag, F, x, z, dir) {
+    const body = [];
+    bag.traverse((o) => { if (o.isMesh && !o.userData.noCollide && !o.userData.packItem) body.push(o); });
+    if (!body.length) return null;
+    const o = new THREE.Vector3(x, dir < 0 ? 5000 : -5000, z).applyMatrix4(F.matrixWorld);
+    const d = new THREE.Vector3(0, -dir, 0).transformDirection(F.matrixWorld);
+    ray.set(o, d);
+    const hit = ray.intersectObjects(body, false)[0];
+    if (!hit) return null;
+    return hit.point.applyMatrix4(new THREE.Matrix4().copy(F.matrixWorld).invert()).y;
   }
 
   function frameMountFor(it) {

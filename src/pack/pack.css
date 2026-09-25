@@ -101,7 +101,7 @@ body.pkg-dragging #ui-root .pkg-group { outline: 1px dashed var(--line); }
 #ui-root .pkg-item:focus-visible, #ui-root .pkg-ghead:focus-visible, #ui-root .pkg-btn:focus-visible,
 #ui-root .pkg-place:focus-visible, #ui-root .pkg-tile:focus-visible, #ui-root .pkg-add-btn:focus-visible { outline: 2px solid var(--ink-1); outline-offset: 2px; }
 #ui-root .pkg-thumb { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 8px; background: var(--fill-1); object-fit: contain; }
-#ui-root .pkg-thumb:not([src]), #ui-root .pkg-tile-img:not([src]), #ui-root .pkg-ihero-img:not([src]) { opacity: 0; }
+#ui-root .pkg-tile-img:not([src]), #ui-root .pkg-ihero-img:not([src]) { opacity: 0; }
 #ui-root .pkg-item-t, #ui-root .pkg-lrow-t { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 auto; }
 #ui-root .pkg-item-n { font: var(--t-body-s); color: var(--ink-1); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 #ui-root .pkg-item-s { font: var(--t-micro); color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }

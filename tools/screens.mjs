@@ -95,6 +95,12 @@ async function shoot(id, state, device, setup, suffix = '') {
   await p.waitForFunction('window.__READY_DONE', { timeout: 120000 });
   await p.evaluate(`window.__SHEET = ${JSON.stringify(SHEET)};` + HELPERS);
   try { await p.evaluate(`(async () => { ${setup} })()`); } catch (e) { errs.push('setup: ' + e.message); }
+  // thumbnails draw a few per frame; wait for the queue so two runs match
+  await p.evaluate(async () => {
+    const { thumbsPending } = await import('./src/pack/ui/thumbs.js');
+    for (let i = 0; i < 600 && thumbsPending(); i++) await new Promise((r) => setTimeout(r, 100));
+    await new Promise((r) => setTimeout(r, 300));
+  }).catch((e) => errs.push('thumbs: ' + e.message));
   const scroll = await p.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   const file = `${OUT}${id}-${device}-${state}${suffix}.png`;
   const buf = await p.screenshot({ path: file });
