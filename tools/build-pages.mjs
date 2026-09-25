@@ -137,6 +137,11 @@ copyFileSync(join(root, 'src/ui/theme.css'), join(docs, 'theme.css'));
 // surface and has to win over the light re-skin for everything under `.pr`.
 copyFileSync(join(root, 'src/ui/v2/menu.css'), join(docs, 'menu.css'));
 copyFileSync(join(root, 'src/ui/v2/builder.css'), join(docs, 'builder.css'));
+// Packing: its stylesheet (last, on the same tokens) and the gear catalogue
+// the locker fetches from ./data/gear.json. Both are needed: without the CSS
+// the Gear tab renders unstyled, without the JSON the locker is empty.
+copyFileSync(join(root, 'src/pack/pack.css'), join(docs, 'pack.css'));
+copyFileSync(join(root, 'data/gear.json'), join(docs, 'data/gear.json'));
 
 // The link-preview image the meta tags below point at. Built by
 // tools/og-card.mjs from a real measured rig — see that file — and copied
@@ -179,6 +184,7 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <link rel="stylesheet" href="theme.css" />
 <link rel="stylesheet" href="menu.css" />
 <link rel="stylesheet" href="builder.css" />
+<link rel="stylesheet" href="pack.css" />
 <style>html,body{height:100%;margin:0;background:#121212;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
 </head>
 <body>
