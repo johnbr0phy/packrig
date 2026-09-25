@@ -120,5 +120,26 @@ console.log(`  ${res.placed.length} placed, ${res.overflow.length} overflow, fil
 ok(res.fill.frac <= 0.921, 'never over the usable volume');
 ok(res.placed.every((p) => p.center[0] >= 0 && p.center[0] <= 480), 'everything inside the bag length');
 
+// a wedge that is NARROW at the mount: the canister must go further in, not fail
+{
+  const st2 = [];
+  for (let i = 0; i < 12; i++) {
+    const u0 = i * 40, t = 1 - (u0 + 20) / 480;              // t=1 at the tail (u=0), 0 at the post
+    const h = 30 + 130 * t, w = 30 + 110 * t;
+    st2.push({ u0, u1: u0 + 40, v0: -h / 2, v1: h / 2, w0: -w / 2, w1: w / 2 });
+  }
+  const cav2 = { u0: 0, u1: 480, mount: 480, stations: st2, litres: 13 };
+  const can = resolveItem({ uid: 'c', ref: 'gas-100' }, gear);
+  const r2 = solveBag(cav2, [can], { slot: 'seatpack' });
+  ok(r2.placed.length === 1, `canister finds the fat part of a pinched-nose pack (${JSON.stringify(r2.overflow)})`);
+  const poles = resolveItem({ uid: 'p', name: 'Tent poles', g: 400, a: 'pole_bundle', d: [55, 5, 5] }, gear);
+  const cav3 = { ...cav2, u1: 300, stations: st2.map((s) => ({ ...s, u0: s.u0 * 0.625, u1: s.u1 * 0.625 })), mount: 300 };
+  const r3 = solveBag(cav3, [poles], { slot: 'toptube' });
+  ok(r3.overflow[0]?.reason === 'length', 'poles longer than the bag are refused, with the reason');
+  const big = ['sleeping-bag', 'tent-1p', 'puffy-synth', 'rain-jacket'].map((id, i) => resolveItem({ uid: `b${i}`, ref: id }, gear));
+  const r4 = solveBag({ ...cav2, litres: 5 }, big, { slot: 'seatpack' });
+  ok(r4.overflow.some((o) => o.reason === 'volume') && r4.fill.frac <= 0.921, `a 5 L bag says no politely (${r4.overflow.length} refused, ${Math.round(r4.fill.frac * 100)}%)`);
+}
+
 console.log(fails ? `\n${fails} FAILED` : '\nall passed');
 process.exit(fails ? 1 : 0);

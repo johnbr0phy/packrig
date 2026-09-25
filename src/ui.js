@@ -16,6 +16,7 @@ import { initCatalogue } from './ui/catalogue.js';
 import { initRigNav } from './ui/rignav.js';
 import { randomRigName } from './ui/v2/rignames.js';
 import { paintFace } from './ui/face.js';
+import { initPackUI } from './pack/ui/index.js';
 
 const el = (tag, cls, html) => {
   const e = document.createElement(tag);
@@ -489,6 +490,16 @@ export function initUI(app) {
   // phone it was the entire first screen of the panel.
   panel.append(head, rigNav.el, bikeSec, bagsSec, foot);
   app.rigNav = rigNav;
+  // Packing: the same column, a second view. Bags | Gear sits under the rig
+  // name; in Gear the bag list, bike drawer and capacity foot step aside.
+  const packUI = initPackUI(app, {
+    panel,
+    notify: (...a) => notify(...a),
+    selectBag: (slot) => { setSelected(slot); app.focus?.setSelected?.(slot); },
+  });
+  app.packUI = packUI;
+  rigNav.el.after(packUI.tabs);
+  bagsSec.after(packUI.section);
 
   // the hint retires for good once the user has driven the camera, or after 5s
   const HINT_KEY = 'packrig.hintSeen';
@@ -884,6 +895,8 @@ export function initUI(app) {
     openCatalogue: (uiSlot) => catalogue.open(uiSlot),
     sync: () => sync(),
     notify,
+    insideFor: (slot, host) => app.packUI?.insideFor(slot, host),
+    onClose: () => app.packUI?.sheetClosed(),
   });
 
   // ---- overlay plumbing ---------------------------------------------------

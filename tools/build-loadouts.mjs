@@ -19,6 +19,10 @@
  * advertises 54 L and mounts 48 is worse than one that advertises nothing.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
+import { importSheet } from '../src/pack/sheet.js';
+import { packFromLoadout } from '../src/pack/share.js';
+import { resolveItem } from '../src/pack/model.js';
+import { indexGear } from '../src/pack/gear.js';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -53,6 +57,51 @@ const SLOT_NAMES = (() => {
  * catalogue has no lines (Rapha); size may be empty for one-size products.
  */
 const LOADOUTS = [
+  {
+    // What a first-timer's bike gets when they tap "What are you bringing?"
+    // on a bare frame: the four bags nearly every first overnighter uses —
+    // seat pack for the soft stuff, bar roll for the sleep system, a half
+    // frame bag for the heavy small things, a top tube bag for snacks.
+    id: 'first-overnighter',
+    name: 'First overnighter',
+    kicker: 'Four bags, one night out',
+    note: 'The setup most people start with: a seat pack and a bar roll for the '
+        + 'bulky camp kit, a half frame bag for the heavy small things, a top tube bag for the phone and snacks. Bottles stay in their cages.',
+    tags: ['Overnighter', 'Starter'],
+    paint: 'Slate',
+    env: 'mountain',
+    bags: [
+      ['seatpack',      'Apidura', 'Expedition', 'Saddle Pack',    '13L'],
+      ['barroll',       'Apidura', 'Expedition', 'Handlebar Pack', '14L'],
+      ['framebag_half', 'Apidura', 'Expedition', 'Frame Pack',     '4.3L'],
+      ['toptube',       'Apidura', 'Expedition', 'Top Tube Pack',  '1L'],
+    ],
+  },
+  {
+    // The owner's own sheet, "Bike Gear (Megafuck)", imported through the same
+    // importer a person pasting their sheet uses (src/pack/sheet.js). The bags
+    // are real products that fit what his columns hold; his bike and bag
+    // weights come from the sheet's own total rows.
+    id: 'megafuck',
+    name: 'Megafuck',
+    kicker: 'The owner’s sheet · packed',
+    note: 'Sixty-seven things, every one in the bag it goes in: tent on the fork, '
+        + 'sleeping bag in the seat pack, the pot dangling off the back. Open any bag to see inside.',
+    tags: ['Packed', 'Overnighter+', 'Real kit list'],
+    paint: 'Forest',
+    env: 'forest',
+    pack: { sheet: 'data/seed/megafuck.tsv', totals: 'Gear\t\t302.1\nBike\t\t398\nBags\t\t304\nAll up\t\t1004' },
+    bags: [
+      ['seatpack',      'Apidura', 'Expedition', 'Saddle Pack',          '16L'],
+      ['barroll',       'Apidura', 'Expedition', 'Handlebar Pack',       '14L'],
+      ['barpocket',     'Apidura', 'Expedition', 'Front Accessory Pack', '3.5L'],
+      ['framebag_half', 'Apidura', 'Expedition', 'Frame Pack',           '5.7L'],
+      ['toptube',       'Apidura', 'Expedition', 'Top Tube Pack',        '1L'],
+      ['toptube_rear',  'Andrew The Maker', 'ATM', 'Rear TT Sack',       'One Size'],
+      ['forkL',         'Andrew The Maker', 'Many Things Sack', 'Many Things Sack v1.2', 'Standard (sold as a pair)'],
+      ['forkR',         'Andrew The Maker', 'Many Things Sack', 'Many Things Sack v1.2', 'Standard (sold as a pair)'],
+    ],
+  },
   {
     id: 'expedition',
     name: 'The Expedition',
@@ -178,7 +227,7 @@ const LOADOUTS = [
     paint: 'Sand',
     env: 'lake',
     bags: [
-      ['randobag',      'Swift Industries', 'Sugarloaf', 'Sugarloaf Basket Bag',       '11L'],
+      ['randobag',      'Swift Industries', 'Capstone', 'Capstone Handlebar Bag',     '4L'],
       ['saddlebag',     'Carradice',        'Originals', 'Nelson Longflap Saddlebag',  '18L'],
       ['framebag_half', 'Swift Industries', 'Hold Fast', 'Hold Fast Half Frame Bag',   '4L'],
       ['toptube',       'Swift Industries', 'Moxie',     'Moxie Top Tube Bag',         '0.6L'],
@@ -195,7 +244,7 @@ const LOADOUTS = [
     paint: 'Midnight',
     env: 'desert',
     bags: [
-      ['framebag_half', 'Apidura', 'Aero',   'Frame Module',    'Large'],
+      ['framebag_half', 'Apidura', 'Racing', 'Frame Pack',      '2.4L'],
       ['toptube',       'Apidura', 'Aero',   'Top Tube Module', '0.4L'],
       ['seatpack',      'Apidura', 'Racing', 'Saddle Pack',     '3L'],
       ['barbag',        'Apidura', 'Racing', 'Aerobar Pack',    '2.5L'],
@@ -218,6 +267,7 @@ function find(brandName, line, name, size) {
   return { brand, product: hit };
 }
 
+const GEAR = indexGear(JSON.parse(readFileSync(join(root, 'data/gear.json'), 'utf8')));
 const errors = [];
 const out = LOADOUTS.map((spec) => {
   let litres = 0;
@@ -278,8 +328,23 @@ const out = LOADOUTS.map((spec) => {
     },
     // The rig itself, in exactly the shape src/rig.js:applyRig() consumes.
     rig: { v: 1, name: spec.name, env: spec.env, paint: spec.paint, bags },
+    ...(spec.pack ? packOf(spec) : {}),
   };
 });
+
+/**
+ * A curated loadout with a packing list: import the sheet exactly as a person
+ * pasting it would, and carry the result as a v2 rig. Fails loudly if the
+ * sheet stops importing whole.
+ */
+function packOf(spec) {
+  const text = readFileSync(join(root, spec.pack.sheet), 'utf8') + '\n' + (spec.pack.totals || '');
+  const { locker, loadout, report } = importSheet(text, { gear: GEAR, name: spec.name });
+  if (!report.rows) errors.push(`${spec.id}: packing sheet imported no rows`);
+  const pack = packFromLoadout(locker, loadout, GEAR);
+  const gearG = locker.items.reduce((a, it) => a + resolveItem(it, GEAR).g, 0);
+  return { packStats: { items: pack.items.length, gear_g: Math.round(gearG) }, rigPack: pack };
+}
 
 if (errors.length) {
   console.error('LOADOUT RESOLUTION FAILED — refusing to write a broken file:');
@@ -327,6 +392,14 @@ if (unmeasured.length) {
   console.log(`   NOT MEASURED: ${unmeasured.join(', ')} — run tools/measure-loadouts.mjs`);
 }
 
+// fold the packing list into the rig: v2, exactly what captureRig would write
+for (const l of out) {
+  if (!l.rigPack) continue;
+  l.rig = { ...l.rig, v: 2, pack: l.rigPack };
+  l.stats.items = l.packStats.items;
+  l.stats.gear_g = l.packStats.gear_g;
+  delete l.rigPack; delete l.packStats;
+}
 writeFileSync(join(root, 'data/loadouts.json'), JSON.stringify(out, null, 2) + '\n');
 console.log(`wrote data/loadouts.json — ${out.length} loadouts`);
 for (const l of out) {

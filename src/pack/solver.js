@@ -78,6 +78,13 @@ function makeCursor(cav) {
       cur.flip = -cur.flip;
       return tryDir(a) || tryDir(b);
     },
+    /** Hand back the far `len` of an interval just taken (the cursor steps back). */
+    give(iv, len) {
+      for (const d of ['1', '-1']) {
+        if (d === '1' && Math.abs(cur.pos['1'] - iv[1]) < 1e-6) { cur.pos['1'] -= len; return; }
+        if (d === '-1' && Math.abs(cur.pos['-1'] - iv[0]) < 1e-6) { cur.pos['-1'] += len; return; }
+      }
+    },
     remaining() {
       if (!centre) return dirToFar > 0 ? cav.u1 - cur.pos['1'] : cur.pos['-1'] - cav.u0;
       return (cav.u1 - cur.pos['1']) + (cur.pos['-1'] - cav.u0);
@@ -164,22 +171,40 @@ export function solveBag(cav, items, { slot = null } = {}) {
   const cur = makeCursor(cav);
   const dense = (a, b) => (b.g / b.litres) - (a.g / a.litres);
   rigid.sort(dense);
-  let slab = null;                    // { a, b, depth, rows: {vTop, wCursor, rowH} }
-  const openSlab = (depth) => {
-    const iv = cur.take(depth);
-    if (!iv) return null;
-    const st = stationAt(cav, (iv[0] + iv[1]) / 2);
-    return { a: iv[0], b: iv[1], st, depth, v: st.v0, w: st.w0, rowH: 0 };
+  let slab = null;
+  const gaps = [];                   // u-intervals skipped by rigid items, soft things fill them later
+  const fitsSection = (st, M, S) => {
+    const a = Math.max(st.v1 - st.v0, st.w1 - st.w0), b = Math.min(st.v1 - st.v0, st.w1 - st.w0);
+    return M <= a + 0.5 && S <= b + 0.5;
+  };
+  const openSlab = (depth, M, S) => {
+    // walk outward until the section is big enough for this item; a canister
+    // does not go in the pinched nose of a seat pack, it goes where it fits
+    for (let tries = 0; tries < 40; tries++) {
+      const iv = cur.take(depth);
+      if (!iv) return null;
+      // the slab must fit along its whole depth, not just at its middle
+      const lo = stationAt(cav, iv[0] + 0.5), hi = stationAt(cav, iv[1] - 0.5), mid = stationAt(cav, (iv[0] + iv[1]) / 2);
+      const st = [lo, mid, hi].reduce((m, x) => (area(x) < area(m) ? x : m), mid);
+      if (fitsSection(st, M, S)) return { a: iv[0], b: iv[1], st, depth, v: st.v0, w: st.w0, rowH: 0 };
+      gaps.push(iv);
+      if (depth > 30) {
+        // step in smaller increments so we don't jump past the fat part
+        cur.give?.(iv, depth - 20);
+        gaps[gaps.length - 1] = [iv[0], iv[0] + 20];
+      }
+    }
+    return null;
   };
   for (const it of rigid) {
     // longest dimension along the bag, the other two in the section; the
     // bigger of those across whichever of v/w has more room
-    const [L, M, S] = it.mm;
+    const [L, Mm, Sm] = it.mm;
     const put = (sl) => {
       const st = sl.st;
       const vSpan = st.v1 - st.v0, wSpan = st.w1 - st.w0;
-      let fv = S, fw = M;                     // footprint in the section
-      if (vSpan > wSpan) { fv = M; fw = S; }
+      let fv = Sm, fw = Mm;                     // footprint in the section
+      if (vSpan > wSpan) { fv = Mm; fw = Sm; }
       if (L > sl.depth + 0.5) return null;
       if (sl.w + fw > st.w1 + 0.5) { sl.v += sl.rowH; sl.w = st.w0; sl.rowH = 0; }
       if (sl.v + fv > st.v1 + 0.5 || fw > wSpan + 0.5) return null;
@@ -189,7 +214,7 @@ export function solveBag(cav, items, { slot = null } = {}) {
     };
     let spot = slab && put(slab);
     if (!spot) {
-      const ns = openSlab(Math.max(L, 10));
+      const ns = openSlab(Math.max(L, 10), Mm, Sm);
       if (ns) { slab = ns; spot = put(slab); }
     }
     if (!spot) {
@@ -202,7 +227,9 @@ export function solveBag(cav, items, { slot = null } = {}) {
 
   // ---- 4. soft fill ----------------------------------------------------------
   soft.sort(dense);
-  const free = cur.free().filter(([a, b]) => b - a > 1);
+  // skipped gaps first (closest to the mount, where soft things pad the hard
+  // ones), then whatever is left beyond the last rigid slab
+  const free = [...gaps.map(([a, b]) => [a, b, 1]), ...cur.free()].filter(([a, b]) => b - a > 1);
   let fi = 0;
   const ptr = free.map(([a, b, d]) => (d > 0 ? a : b));
   // any unused depth in the last rigid slab is fair game for soft items too:

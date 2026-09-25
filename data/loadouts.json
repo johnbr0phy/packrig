@@ -1,5 +1,481 @@
 [
   {
+    "id": "first-overnighter",
+    "name": "First overnighter",
+    "kicker": "Four bags, one night out",
+    "note": "The setup most people start with: a seat pack and a bar roll for the bulky camp kit, a half frame bag for the heavy small things, a top tube bag for the phone and snacks. Bottles stay in their cages.",
+    "tags": [
+      "Overnighter",
+      "Starter"
+    ],
+    "stats": {
+      "litres": 32.3,
+      "bags": 4,
+      "makers": 1
+    },
+    "rig": {
+      "v": 1,
+      "name": "First overnighter",
+      "env": "mountain",
+      "paint": "Slate",
+      "bags": [
+        {
+          "slot": "seatpack",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Saddle Pack",
+          "size": "13L",
+          "cw": 0
+        },
+        {
+          "slot": "barroll",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Handlebar Pack",
+          "size": "14L",
+          "cw": 0
+        },
+        {
+          "slot": "framebag_half",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Frame Pack",
+          "size": "4.3L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Top Tube Pack",
+          "size": "1L",
+          "cw": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "megafuck",
+    "name": "Megafuck",
+    "kicker": "The owner’s sheet · packed",
+    "note": "Sixty-seven things, every one in the bag it goes in: tent on the fork, sleeping bag in the seat pack, the pot dangling off the back. Open any bag to see inside.",
+    "tags": [
+      "Packed",
+      "Overnighter+",
+      "Real kit list"
+    ],
+    "stats": {
+      "litres": 48,
+      "bags": 8,
+      "makers": 2,
+      "items": 67,
+      "gear_g": 8563
+    },
+    "rig": {
+      "v": 2,
+      "name": "Megafuck",
+      "env": "forest",
+      "paint": "Forest",
+      "bags": [
+        {
+          "slot": "seatpack",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Saddle Pack",
+          "size": "16L",
+          "cw": 0
+        },
+        {
+          "slot": "barroll",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Handlebar Pack",
+          "size": "14L",
+          "cw": 0
+        },
+        {
+          "slot": "barpocket",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Front Accessory Pack",
+          "size": "3.5L",
+          "cw": 0
+        },
+        {
+          "slot": "framebag_half",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Frame Pack",
+          "size": "5.7L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube",
+          "brand": "Apidura",
+          "line": "Expedition",
+          "name": "Top Tube Pack",
+          "size": "1L",
+          "cw": 0
+        },
+        {
+          "slot": "toptube_rear",
+          "brand": "Andrew The Maker",
+          "line": "ATM",
+          "name": "Rear TT Sack",
+          "size": "One Size",
+          "cw": 0
+        },
+        {
+          "slot": "forkL",
+          "brand": "Andrew The Maker",
+          "line": "Many Things Sack",
+          "name": "Many Things Sack v1.2",
+          "size": "Standard (sold as a pair)",
+          "cw": 0
+        },
+        {
+          "slot": "forkR",
+          "brand": "Andrew The Maker",
+          "line": "Many Things Sack",
+          "name": "Many Things Sack v1.2",
+          "size": "Standard (sold as a pair)",
+          "cw": 0
+        }
+      ],
+      "pack": {
+        "items": [
+          "sleeping-bag",
+          "tent-ymg-1p",
+          "chair",
+          [
+            "battery-pack",
+            null,
+            "Battery Pack"
+          ],
+          [
+            "neoair-xlite",
+            null,
+            "Neoair Xlite"
+          ],
+          "tar-comp-pillow",
+          "camp-shoes",
+          [
+            "first-aid-kit",
+            null,
+            "First Aid Kit"
+          ],
+          [
+            "montbell-anorak",
+            null,
+            "Mont Bell Anorak"
+          ],
+          "pot-ti",
+          [
+            "rain-trousers",
+            null,
+            "Waterproof Trousers"
+          ],
+          [
+            "cycling-shorts",
+            null,
+            "Cycling Shorts"
+          ],
+          [
+            "capilene-air",
+            184.3,
+            "Patagonia Capilene Air"
+          ],
+          [
+            "iphone-14-pro",
+            170.1,
+            "iPhone 14 pro"
+          ],
+          [
+            "overshoes",
+            null,
+            "Waterproof Overshoes"
+          ],
+          [
+            "hand-pump",
+            null,
+            "Hand Pump"
+          ],
+          [
+            "casual-shorts",
+            null,
+            "Casual Shorts"
+          ],
+          [
+            "glasses-case",
+            null,
+            "Eye Glasses / Sunglasses / case"
+          ],
+          [
+            "bug-spray",
+            null,
+            "Mosquito Spray"
+          ],
+          [
+            "leatherman-skel",
+            null,
+            "Leatherman skeletool"
+          ],
+          [
+            "tubolito-650b",
+            133.2,
+            "Tubolito 1 (650b)"
+          ],
+          [
+            "tubolito-650b",
+            133.2,
+            "Tubolito 2 (650b)"
+          ],
+          [
+            "gopro-7",
+            null,
+            "Go Pro 7"
+          ],
+          [
+            "gopro-6",
+            116.2,
+            "Go Pro 6"
+          ],
+          "headlamp",
+          [
+            "tee-bike",
+            null,
+            "On-Bike T-shirt"
+          ],
+          "tee-camp",
+          "wallet",
+          [
+            "socks-hiking",
+            null,
+            "Hiking Socks"
+          ],
+          [
+            "bidon-750",
+            null,
+            "Water Bottle 1"
+          ],
+          [
+            "bidon-750",
+            null,
+            "Water Bottle 2"
+          ],
+          [
+            "shakedry",
+            110.6,
+            "Gore Tex Shakedry jacket"
+          ],
+          [
+            "tent-pegs",
+            null,
+            "Tent Pegs"
+          ],
+          [
+            "gas-100",
+            99.2
+          ],
+          [
+            "tent-poles",
+            null,
+            "Tent Poles"
+          ],
+          [
+            "boxers",
+            null,
+            "Boxer Shorts 1"
+          ],
+          "sunscreen",
+          [
+            "paracord",
+            null,
+            "Paracord - bear line"
+          ],
+          [
+            "pedco-ultrapod",
+            82.2,
+            "Pedco ultra pod"
+          ],
+          [
+            "wet-wipes",
+            null,
+            "Wet Wipes"
+          ],
+          "pillow-inflate",
+          [
+            "foldup-backpack",
+            null,
+            "Foldup Backpack"
+          ],
+          [
+            "bike-tool",
+            null,
+            "Bike Tool"
+          ],
+          [
+            "toothbrush-kit",
+            null,
+            "Tooth brush + tooth paste"
+          ],
+          [
+            "gloves-short",
+            null,
+            "Cycling gloves - fingerless"
+          ],
+          [
+            "gloves-full",
+            null,
+            "Cycling gloves - full finger"
+          ],
+          "water-filter",
+          [
+            "zip-lock",
+            null,
+            "Zip lock lock"
+          ],
+          [
+            "apple-watch",
+            28.3
+          ],
+          "lighter",
+          "spork-ti",
+          [
+            "gopro-battery",
+            28.3,
+            "Go pro battery 2"
+          ],
+          [
+            "gopro-charger",
+            null,
+            "Go pro double battery recharger"
+          ],
+          [
+            "cable-iphone",
+            null,
+            "iPhone Cable"
+          ],
+          [
+            "usb-plug",
+            null,
+            "USB Wall Plug"
+          ],
+          [
+            "cable-lightning",
+            null,
+            "Lightning USB Cable"
+          ],
+          "watch-charger",
+          [
+            "cable-microusb",
+            null,
+            "Micro USB Cable"
+          ],
+          [
+            "cable-gopro",
+            null,
+            "Go Pro Cable"
+          ],
+          [
+            "buff",
+            28.3
+          ],
+          [
+            "tyre-levers",
+            28.3,
+            "Plastic tire removal tool *2"
+          ],
+          [
+            "electrical-tape",
+            null,
+            "Electrical Tape"
+          ],
+          "soap-bar",
+          "stove",
+          "pot-lid",
+          [
+            "patch-kit",
+            14.2,
+            "Patch kit"
+          ],
+          "clothes-line"
+        ],
+        "at": [
+          "seatpack",
+          "forkR",
+          "barroll",
+          "framebag_half",
+          "barroll",
+          "forkR",
+          "seatpack:lashed",
+          "framebag_half",
+          "seatpack",
+          "seatpack:dangle",
+          "forkL",
+          "body",
+          "barroll",
+          "frame",
+          "forkL",
+          "frame",
+          "seatpack",
+          "toptube",
+          "framebag_half",
+          "toptube_rear",
+          "toptube_rear",
+          "toptube_rear",
+          "frame",
+          "body",
+          "barpocket",
+          "body",
+          "forkL",
+          "body:hip",
+          "forkL",
+          "frame",
+          "frame",
+          "forkL",
+          "framebag_half",
+          "framebag_half",
+          "framebag_half",
+          "forkL",
+          "framebag_half",
+          "framebag_half",
+          "body:hip",
+          "framebag_half",
+          "barpocket",
+          "barpocket",
+          "toptube_rear",
+          "barpocket",
+          "framebag_half:L",
+          "framebag_half:L",
+          "home",
+          "framebag_half:L",
+          "body",
+          "barpocket",
+          "barpocket",
+          "barpocket",
+          "framebag_half",
+          "framebag_half",
+          "framebag_half",
+          "framebag_half",
+          "framebag_half",
+          "framebag_half",
+          "framebag_half",
+          "seatpack",
+          "framebag_half:L",
+          "framebag_half:L",
+          "framebag_half",
+          "barpocket",
+          "framebag_half",
+          "toptube_rear",
+          "barpocket"
+        ],
+        "bike_g": 11283.1,
+        "bags_g": 8618.3
+      }
+    }
+  },
+  {
     "id": "expedition",
     "name": "The Expedition",
     "kicker": "All Apidura",
@@ -522,13 +998,9 @@
       "Classic"
     ],
     "stats": {
-      "litres": 34.6,
-      "bags": 4,
-      "makers": 2,
-      "cda": 0.43,
-      "watts": 172,
-      "addedW": 20,
-      "grade": "C · Draggy"
+      "litres": 27.6,
+      "bags": 5,
+      "makers": 2
     },
     "rig": {
       "v": 1,
@@ -536,6 +1008,14 @@
       "env": "lake",
       "paint": "Sand",
       "bags": [
+        {
+          "slot": "randobag",
+          "brand": "Swift Industries",
+          "line": "Capstone",
+          "name": "Capstone Handlebar Bag",
+          "size": "4L",
+          "cw": 0
+        },
         {
           "slot": "saddlebag",
           "brand": "Carradice",
@@ -582,13 +1062,9 @@
       "Time trial"
     ],
     "stats": {
-      "litres": 8.7,
-      "bags": 3,
-      "makers": 1,
-      "cda": 0.372,
-      "watts": 154,
-      "addedW": 3,
-      "grade": "A+ · Bullet"
+      "litres": 8.3,
+      "bags": 4,
+      "makers": 1
     },
     "rig": {
       "v": 1,
@@ -596,6 +1072,14 @@
       "env": "desert",
       "paint": "Midnight",
       "bags": [
+        {
+          "slot": "framebag_half",
+          "brand": "Apidura",
+          "line": "Racing",
+          "name": "Frame Pack",
+          "size": "2.4L",
+          "cw": 0
+        },
         {
           "slot": "toptube",
           "brand": "Apidura",

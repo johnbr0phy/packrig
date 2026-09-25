@@ -20,6 +20,7 @@ import { applyRendererProfile, applyViewOffset, fitToBox, measureProfile } from 
 import { initScrim } from './ui/scrim.js';
 import { initSurfaces } from './ui/surfaces.js';
 import { initSheets } from './ui/sheet.js';
+import { initPack } from './pack/index.js';
 
 const params = new URLSearchParams(location.search);
 const SHOT_MODE = params.has('shot');
@@ -184,6 +185,7 @@ window.__SLOTS = SLOTS;   // tools/audit-exclusions.mjs reads the exclusion tabl
 // tools/measure-loadouts.mjs mounts each curated rig and reads the tunnel's
 // numbers back, to bake them into data/loadouts.json as build output.
 app.__applyRig = (rig) => applyRig(app, rig);
+app.__applyRigAs = (rig, source) => applyRig(app, rig, { source });
 app.__aeroReadout = () => app.aero?.readout?.() || null;
 
 // ---- Boot --------------------------------------------------------------
@@ -200,20 +202,23 @@ applyCam(params.get('cam') || 'hero');
 // this browser, and `auth.enabled` is false so nothing offers to sign in.
 app.auth = createAuth();
 app.rigs = createRigStore(app, app.auth);
+// Packing: the locker, loadouts and what is in each bag. Before any shared
+// link is applied, because a v2 link carries a packing list to show.
+initPack(app);
 if (app.auth.enabled) app.auth.hydrate();
 
 // A shared rig arrives in the URL. `?r=` is the durable form — it names the
 // maker and model of every bag, so it still resolves the same bike after the
 // catalogue is re-sorted. `?kit=` is the old positional form and is still read,
 // because it is the only one in anyone's history.
-const shared = rigFromParams(params, catalog);
+const shared = await rigFromParams(params, catalog);
 const kitParam = params.get('kit');
 if (shared) {
   // Somebody has been handed a specific bike to look at. Dropping them on the
   // root menu instead would make them find it again, so ui.js reads this and
   // skips the menu when it is set.
   app.__cameWithRig = true;
-  const { missing } = applyRig(app, shared, { clear: false });
+  const { missing } = applyRig(app, shared, { clear: false, source: 'link' });
   if (missing.length) console.warn('[packrig] shared link references bags no longer in the catalogue:', missing);
 } else if (kitParam === 'rand') {
   app.__cameWithRig = true;      // the screenshot harness drives these
@@ -358,6 +363,7 @@ renderer.setAnimationLoop((t) => {
   prevT = t;
   app.focus?.tick(dt);
   app.aero?.tick(dt);
+  app.pack?.tick();
   controls.update();
   app.reframe?.tick();
   envs.tick(t * 0.001);
