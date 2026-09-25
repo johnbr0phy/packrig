@@ -77,6 +77,12 @@ ok(r2.text.split('\n')[0].startsWith('Item\tCategory\toz\tSeat post bag\tFork ri
 console.log('\n3. share by link, open signed out in a fresh browser');
 const url = await p1.evaluate(() => app.__rigURLWithPack());
 ok(url.includes('?r=2.'), `v2 link, ${url.length} characters`);
+// read what we compare against, then close page 1: two live software-GL
+// pages starve each other past READY (LOG #10)
+const bags1 = await p1.evaluate(() => Object.keys(app.bags.equipped).sort());
+const v1 = await p1.evaluate(async () => { const { encodeRig, captureRig } = await import('/src/rig.js'); return `${location.origin}/?r=${encodeRig(captureRig(app, { withPack: false }))}`; });
+const p1errors = [...p1.errors];
+await p1.browserContext().close();
 const p2 = await page(url);
 await p2.evaluate(() => { app.packUI.setMode('gear'); });
 await new Promise((r) => setTimeout(r, 1500));
@@ -85,18 +91,16 @@ const view = await p2.evaluate(() => ({ mine: app.pack.state.mine, bags: Object.
 ok(!view.signedIn, 'signed out');
 ok(!view.mine, 'shown as someone else\'s list, not written into this browser\'s locker');
 ok(JSON.stringify(s3) === JSON.stringify(s2), `packing list survives the link (${s3.length} items)`);
-const bags1 = await p1.evaluate(() => Object.keys(app.bags.equipped).sort());
 ok(JSON.stringify(view.bags) === JSON.stringify(bags1), 'same bags on the bike');
 await p2.screenshot({ path: OUT + '2-shared-link.png' });
 const copied = await p2.evaluate(() => { const r = app.pack.copyView(); return { n: app.pack.lib.locker.items.length, mine: app.pack.state.mine, missing: r.missing.length }; });
 ok(copied.mine && copied.n === 67, `copy to my locker: ${copied.n} items, ${copied.missing} flagged to get`);
 await p2.screenshot({ path: OUT + '3-copied.png' });
 // software GL: one live page at a time, or the next one never reaches READY
-const errs = [...p1.errors, ...p2.errors];
+const errs = [...p1errors, ...p2.errors];
 
 console.log('\n4. old links');
-const v1 = await p1.evaluate(async () => { const { encodeRig, captureRig } = await import('/src/rig.js'); return `${location.origin}/?r=${encodeRig(captureRig(app, { withPack: false }))}`; });
-await p1.close(); await p2.close();
+await p2.close();
 const p3 = await page(v1);
 const v1bags = await p3.evaluate(() => ({ bags: Object.keys(app.bags.equipped).sort(), pack: !!app.pack.view }));
 ok(JSON.stringify(v1bags.bags) === JSON.stringify(bags1) && !v1bags.pack, 'v1 ?r= link opens the same bike, no packing list');
