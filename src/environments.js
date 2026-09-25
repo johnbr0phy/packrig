@@ -683,6 +683,9 @@ export class Environments {
   // -------------------------------------------------------------- ground
 
   _buildGround() {
+    // seeded mottling: the same ground every load (screens.mjs --twice)
+    let seed = 0x2545f491;
+    const rnd = () => { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
     const scene = this.scene;
     const gc = document.createElement('canvas');
     gc.width = gc.height = 512;
@@ -690,21 +693,21 @@ export class Environments {
     gctx.fillStyle = '#8e8a80';
     gctx.fillRect(0, 0, 512, 512);
     for (let i = 0; i < 300; i++) {
-      const v = 108 + Math.random() * 88;
-      gctx.fillStyle = `rgba(${v},${v - 5},${v - 13},${0.06 + Math.random() * 0.1})`;
-      const r = 18 + Math.random() * 46;
-      const x = Math.random() * 512, y = Math.random() * 512;
+      const v = 108 + rnd() * 88;
+      gctx.fillStyle = `rgba(${v},${v - 5},${v - 13},${0.06 + rnd() * 0.1})`;
+      const r = 18 + rnd() * 46;
+      const x = rnd() * 512, y = rnd() * 512;
       for (const dx of [-512, 0, 512]) for (const dy of [-512, 0, 512]) {
         gctx.beginPath();
-        gctx.ellipse(x + dx, y + dy, r, r * (0.4 + Math.random() * 0.6), Math.random() * 3, 0, Math.PI * 2);
+        gctx.ellipse(x + dx, y + dy, r, r * (0.4 + rnd() * 0.6), rnd() * 3, 0, Math.PI * 2);
         gctx.fill();
       }
     }
     for (let i = 0; i < 34000; i++) {
-      const v = 92 + Math.random() * 118;
-      gctx.fillStyle = `rgba(${v},${v - 6},${v - 15},${0.16 + Math.random() * 0.28})`;
-      const r = Math.random() < 0.93 ? 0.8 + Math.random() * 2.2 : 3 + Math.random() * 6.5;
-      const x = Math.random() * 512, y = Math.random() * 512;
+      const v = 92 + rnd() * 118;
+      gctx.fillStyle = `rgba(${v},${v - 6},${v - 15},${0.16 + rnd() * 0.28})`;
+      const r = rnd() < 0.93 ? 0.8 + rnd() * 2.2 : 3 + rnd() * 6.5;
+      const x = rnd() * 512, y = rnd() * 512;
       for (const dx of [-512, 0, 512]) for (const dy of [-512, 0, 512]) {
         gctx.beginPath();
         gctx.arc(x + dx, y + dy, r, 0, Math.PI * 2);

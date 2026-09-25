@@ -110,7 +110,7 @@ controls.minDistance = 1.2;
 controls.maxDistance = 9;
 controls.maxPolarAngle = Math.PI / 2 - 0.02;
 controls.autoRotate = false;
-controls.autoRotateSpeed = 0.9;
+controls.autoRotateSpeed = STILL ? 0 : 0.9;   // `?still`: the start menu's idle orbit holds for screenshots
 
 // ---- Environments ------------------------------------------------------
 const envs = new Environments(scene, renderer);
