@@ -1,6 +1,8 @@
 // node tools/_probe.mjs "<query>" — load, print errors and readiness
 import puppeteer from 'puppeteer-core';
 import { CHROME } from './lib/chrome.mjs';
+import { takeRenderLock } from './lib/renderlock.mjs';
+await takeRenderLock('_probe');
 const b = await puppeteer.launch({ executablePath: CHROME, headless: true });
 const p = await b.newPage();
 p.on('console', (m) => { if (['error', 'warning'].includes(m.type()) && !/RGBE|Noise|deprecated|ERR_TUNNEL|Failed to load/.test(m.text())) console.log('console', m.type(), m.text().slice(0, 300)); });

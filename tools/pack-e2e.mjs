@@ -11,6 +11,8 @@
 import puppeteer from 'puppeteer-core';
 import { readFileSync, mkdirSync } from 'node:fs';
 import { CHROME } from './lib/chrome.mjs';
+import { takeRenderLock } from './lib/renderlock.mjs';
+await takeRenderLock('pack-e2e');
 
 const root = new URL('../', import.meta.url).pathname;
 const OUT = root + 'shots/e2e/';
