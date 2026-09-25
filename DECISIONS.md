@@ -400,3 +400,11 @@ the rest is:
   but clean; noted for a system.js pass.
 - **Record straps/pockets/zips are not merged into brands.json** by
   apply-models. Builders that need them (frame bags) carry a generated table.
+- **Seat packs too deep for the frame are drawn cinched, not clipped.** Five
+  13 to 16.5 L packs list 28 to 30 cm of depth; this frame has less room
+  between rails and tyre. The builder searches tilt both ways (tail-up drops
+  the shoulder) and then draws the pack up to a third flatter
+  (`userData.cinchedTo`). A pack that still can't fit is dropped with a
+  notice, as the Carradice SQR Slim is. Fit is shown honestly, not faked.
+- **Front rack deck** is sized from the tyre (`max(360, tireR + 45)`), as the
+  rear rack already was.

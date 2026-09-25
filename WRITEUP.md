@@ -58,7 +58,27 @@ pack, because the owner's list of what looked wrong was right.
 - Seat pack rebuilt from scratch: a tapered wedge with a squared shoulder
   under the rails, kicking up to a roll-top tail sized from the bag's own
   depth; the Arkel Rollpacker is a transverse roll, not a box.
-- (Other slots: see the per-slot sections below as they land.)
+- Every other slot was rebuilt the same way (axis header checked against the
+  records, shape from the data, straps from `straps.js`, zero clashes on a
+  full sweep). What changed, in the owner's terms:
+
+| Slot | Was | Now | Sweep |
+|---|---|---|---|
+| Seat pack | sausage / gravy boat; Arkel a microwave | tapered wedge, squared shoulder under the rails, roll-top tail; big packs drawn cinched when this frame is too small; Arkel a transverse roll | 78/78 |
+| Bar roll | domed keg ends | ends pinched flat and rolled into a strapped bundle; spacers, cradles, harnesses; >= 18 mm from the tyre (was 0.9) | 55/55 |
+| Bar bag / pocket | lids as shelves; capsules | box bags on flat straps; 19 cylinders drawn as rolls; pocket a slim lozenge on the roll's face | 69/70 (1 tight), 3/3 |
+| Full frame | ring-strap "vertebrae", gap at the seat tube | thin panel filling the triangle, meeting all four tubes, flat velcro | 50/50 |
+| Half frame | hid bottles | hugs the top tube; 0 bottles hidden (was 23) | 78/78 |
+| Top tube | hard toolboxes | soft slumped wedge, nose at the stem, zip on the crown | 90/90 (+10 rear) |
+| Stem | lunchboxes | soft cylinders, drawcord and toggle, mesh pockets | 38/38 |
+| Fork | torus coils | cage bolted to the leg, dry sack with a roll-top, clear of spokes and rotor | 29/29 |
+| Downtube | tyre clashes | slim wedge anchored at the front, thin straps | 12/12 |
+| Pannier | flat suitcases | tall roll-tops hooked on a visible rack, heel clearance | 60/60 |
+| Trunk | overhung both ends | on the deck, overhang to the rear only | 15/15 |
+| Rando bag | inside the rack tubes | on the rack, just ahead of the bar; rack deck raised off the tyre | 4/4 |
+| Saddle bag | long behind the saddle | Carradice/Brooks wide across the bike, flap, leather straps, end pockets | 42/43 (SQR Slim can't fit this frame) |
+
+  Before/after contact sheets for each are in `shots/slots/<slot>/`.
 
 **Tools**
 - `silscore.mjs`: orientation-free silhouette score against traced outlines.
