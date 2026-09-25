@@ -224,3 +224,41 @@ so in your report instead of changing it.
 - Before/after clearance for the worst products in your slot.
 - Any product that cannot be made to fit, and why.
 - Anything you found wrong in the shared helpers or in the model data.
+
+---
+
+## 9. Traps found in the September run (read these too)
+
+1. **Straps are ribbons, not tori.** Use `src/bags/straps.js`: `ribbonLoop`
+   (a flat band following a section perimeter or any loop), `tubeWrap` (a band
+   round a frame tube, rail, post or fork leg), `strapRun` (a flat strip lying
+   on a face), `buckle`, and `meshOf` to merge them into one draw call. A torus
+   scaled into a band reads as a ring or a coil at any distance — that is the
+   "vertebrae" on every frame bag. 20–25 mm wide, 1.5 mm thick, on the surface.
+2. **Do not trust a traced outline's orientation.** `data/profiles.json` and
+   `data/diagram-profiles.json` were oriented by the old "narrow end attaches"
+   rule, which the owner has contradicted for seat packs (deep square
+   shoulder at the post, blade tail). The DRAWING traces of Apidura seat packs
+   are also sausages with two rounded ends, unlike the 3/4 photo traces of the
+   same bags. Use a trace for the SHAPE of a curve if it helps; decide the
+   direction from the owner's description, the record and your own reasoning,
+   and write it in the header.
+3. **Score shape with `tools/silscore.mjs`** (orientation-free IoU of the
+   side or front outline against the traced maker outline; `tools/silsheet.py`
+   draws the comparison). Only ~90 Apidura products have a traced outline;
+   everything else is scored against its form's template or not at all. A high
+   IoU against a wrong trace is not a win — look at the sheet.
+4. **Maker photos are unreachable in the cloud sandbox** (egress policy). The
+   evidence you have is the per-product record in `data/models/<brand>.json`
+   (written with the photo open), the traces, `reference/*.png`, and what you
+   know about the product. Say which you used.
+5. **Renders are slow here** (SwiftShader): ~13 s a product numbers-only, ~75 s
+   with four angles. Use `--no-shots` for sweeps and shots for the products you
+   are judging. Everything still goes through the lock (`bagshot-q.mjs`,
+   `silscore.mjs` takes the same lock).
+6. **Near-black is not black.** `fabricMaterial` lifts albedo below 2.6%
+   linear (`liftDark`); don't fight it with a darker colour in a builder.
+7. **The packing layer measures your mesh.** `src/pack/cavity.js` slices the
+   bag's non-`noCollide` meshes along their longest axis to find its inside.
+   Flag straps, buckles, cages and anything that is not the bag's body
+   `userData.noCollide = true`, or the contents will be laid out through them.

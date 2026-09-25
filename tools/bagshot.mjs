@@ -567,9 +567,13 @@ for (const j of list) {
   const { clash, contact, tight } = classify(j.slot, res.clearance);
   rec.clash = clash;
   const d = j.dims || {};
-  const bb = res.bbox_mm;
+  // The BODY — straps, buckles and cage arms reach past a bag by design and
+  // are excluded, as `noCollide` already says. Printing the all-mesh box made
+  // a 54 cm seat pack read 61 cm because its post strap wraps the post.
+  const bb = res.bbox_body_mm || res.bbox_mm;
+  const ms = res.bbox_mount_mm;
   console.log(`${clash.length ? '✗' : tight.length ? '!' : '✓'} ${label}  [${j.slot}]`);
-  console.log(`    spec ${d.len ?? '?'}×${d.wid ?? '?'}×${d.hgt ?? '?'} cm   rendered ${(bb.x / 10).toFixed(1)}×${(bb.z / 10).toFixed(1)}×${(bb.y / 10).toFixed(1)} cm (fore-aft × across × tall)   ground ${(res.groundClearance_mm / 10).toFixed(1)} cm`);
+  console.log(`    spec ${d.len ?? '?'}×${d.wid ?? '?'}×${d.hgt ?? '?'} cm   body ${(bb.x / 10).toFixed(1)}×${(bb.z / 10).toFixed(1)}×${(bb.y / 10).toFixed(1)} cm (fore-aft × across × tall)${ms ? `  own axes ${(ms.along / 10).toFixed(1)}×${(ms.across / 10).toFixed(1)}×${(ms.perp / 10).toFixed(1)}` : ''}   ground ${(res.groundClearance_mm / 10).toFixed(1)} cm`);
   if (clash.length) {
     bad++;
     console.log(`    CLASH: ${clash.map((c) => `${c.part} ${c.mm}mm`).join(', ')}`);

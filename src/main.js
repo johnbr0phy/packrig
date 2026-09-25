@@ -25,6 +25,7 @@ import { attachLockerSync } from './pack/remote.js';
 
 const params = new URLSearchParams(location.search);
 const SHOT_MODE = params.has('shot');
+const STILL = params.has('still');
 // `?review=1` embeds the scene in the eval harness: no app chrome, but live
 // orbit controls and a postMessage API for swapping the bag and hiding the
 // bicycle. See src/review.js.
@@ -386,7 +387,9 @@ renderer.setAnimationLoop((t) => {
   controls.update();
   aimKicker();
   app.reframe?.tick();
-  envs.tick(t * 0.001);
+  // `?still` holds the environment's clock at zero so screenshots of the same
+  // state are the same pixels (tools/screens.mjs checks exactly that)
+  envs.tick(STILL ? 0 : t * 0.001);
   composer.render();
   // AFTER the draw: scrim.js samples the real framebuffer, so it needs a frame
   // to exist. Sampling a re-render into an offscreen target instead gave a
