@@ -16,7 +16,7 @@
  */
 import puppeteer from 'puppeteer-core';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { createHash } from 'node:crypto';
+import { inflateSync } from 'node:zlib';
 import { CHROME } from './lib/chrome.mjs';
 import { takeRenderLock } from './lib/renderlock.mjs';
 
@@ -81,6 +81,40 @@ const SCREENS = [
 ];
 
 await takeRenderLock('screens');
+// decode an 8-bit RGB/RGBA PNG (what Chrome writes) with node's zlib
+function pixelsOf(_p, buf) {
+  let o = 8, w = 0, h = 0, ct = 0; const idat = [];
+  while (o < buf.length) {
+    const len = buf.readUInt32BE(o), type = buf.toString('ascii', o + 4, o + 8), d = buf.subarray(o + 8, o + 8 + len);
+    if (type === 'IHDR') { w = d.readUInt32BE(0); h = d.readUInt32BE(4); ct = d[9]; }
+    if (type === 'IDAT') idat.push(d);
+    o += 12 + len;
+  }
+  const bpp = ct === 6 ? 4 : 3, stride = w * bpp;
+  const raw = inflateSync(Buffer.concat(idat)), out = new Uint8Array(w * h * 4);
+  let prev = new Uint8Array(stride);
+  for (let y = 0; y < h; y++) {
+    const f = raw[y * (stride + 1)], line = raw.subarray(y * (stride + 1) + 1, (y + 1) * (stride + 1)), cur = new Uint8Array(stride);
+    for (let i = 0; i < stride; i++) {
+      const a = i >= bpp ? cur[i - bpp] : 0, b = prev[i], c = i >= bpp ? prev[i - bpp] : 0;
+      const pr = f === 0 ? 0 : f === 1 ? a : f === 2 ? b : f === 3 ? (a + b) >> 1
+        : (() => { const pp = a + b - c, pa = Math.abs(pp - a), pb = Math.abs(pp - b), pc = Math.abs(pp - c); return pa <= pb && pa <= pc ? a : pb <= pc ? b : c; })();
+      cur[i] = (line[i] + pr) & 255;
+    }
+    for (let x = 0; x < w; x++) for (let k = 0; k < 3; k++) out[(y * w + x) * 4 + k] = cur[x * bpp + k];
+    prev = cur;
+  }
+  return out;
+}
+function diffCount(a, b) {
+  if (!a || !b || a.length !== b.length) return -1;
+  let n = 0;
+  for (let i = 0; i < a.length; i += 4) {
+    if (Math.max(Math.abs(a[i] - b[i]), Math.abs(a[i + 1] - b[i + 1]), Math.abs(a[i + 2] - b[i + 2])) > 8) n++;
+  }
+  return n;
+}
+
 const report = [];
 let fails = 0;
 const b = await puppeteer.launch({ executablePath: CHROME, headless: true, args: ['--hide-scrollbars'] });
@@ -94,6 +128,7 @@ async function shoot(id, state, device, setup, suffix = '') {
   await p.goto('http://localhost:8735/?still', { waitUntil: 'load', timeout: 120000 });
   await p.waitForFunction('window.__READY_DONE', { timeout: 120000 });
   await p.evaluate(`window.__SHEET = ${JSON.stringify(SHEET)};` + HELPERS);
+  await p.addStyleTag({ content: '*{caret-color:transparent!important}' });   // a blinking caret is not a difference
   try { await p.evaluate(`(async () => { ${setup} })()`); } catch (e) { errs.push('setup: ' + e.message); }
   // thumbnails draw a few per frame; wait for the queue so two runs match
   await p.evaluate(async () => {
@@ -117,8 +152,9 @@ async function shoot(id, state, device, setup, suffix = '') {
   const scroll = await p.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   const file = `${OUT}${id}-${device}-${state}${suffix}.png`;
   const buf = await p.screenshot({ path: file });
+  const px = pixelsOf(p, buf);
   await ctx.close();
-  return { file, errs, scroll, hash: createHash('sha1').update(buf).digest('hex').slice(0, 12) };
+  return { file, errs, scroll, px };
 }
 
 for (const [id, state, setup] of SCREENS) {
@@ -128,12 +164,17 @@ for (const [id, state, setup] of SCREENS) {
     const row = { id, state, device, file: r.file.replace(root, ''), errs: r.errs, scroll: r.scroll };
     if (twice) {
       const r2 = await shoot(id, state, device, setup, '-2');
-      row.same = r.hash === r2.hash;
+      // decoded pixels, not bytes: software GL rasterises a few dozen sub-pixel
+      // spoke edges differently run to run; more than 100 pixels (~0.01%) off
+      // by more than 8/255 is a real difference
+      const off = diffCount(r.px, r2.px);
+      row.diffPx = off;
+      row.same = off >= 0 && off <= 100;
       if (!row.same) { fails++; }
     }
     if (r.errs.length || r.scroll > 0) fails++;
     report.push(row);
-    console.log(`${r.errs.length || r.scroll > 0 || row.same === false ? '✗' : '✓'} ${id} ${device} ${state}${r.scroll > 0 ? `  horizontal scroll ${r.scroll}px` : ''}${row.same === false ? '  pixels differ between runs' : ''}${r.errs.length ? '  ' + r.errs.join(' | ').slice(0, 300) : ''}`);
+    console.log(`${r.errs.length || r.scroll > 0 || row.same === false ? '✗' : '✓'} ${id} ${device} ${state}${r.scroll > 0 ? `  horizontal scroll ${r.scroll}px` : ''}${row.same === false ? `  pixels differ between runs (${row.diffPx})` : row.diffPx != null ? `  (${row.diffPx} px differ)` : ''}${r.errs.length ? '  ' + r.errs.join(' | ').slice(0, 300) : ''}`);
   }
 }
 await b.close();

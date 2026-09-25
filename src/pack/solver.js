@@ -336,11 +336,16 @@ export function solveBag(cav, items, opts = {}) {
         // little air so neighbours read as separate
         const fitted = volBetween(cav, lo, hi) / 1e6;
         const top = rigidTop(lo, hi);
-        const vFloor = Number.isFinite(top) ? Math.min(Math.max(top, st.v0), st.v1 - 6) : st.v0;
-        const vs = (st.v1 - vFloor) * 0.94, ws = (st.w1 - st.w0) * 0.94;
+        // the ceiling is the LOWEST top along the run, not the middle's: a
+        // half frame bag's top line and a seat pack's rail line change along
+        // the bag, and a mid-station ceiling pushed a mat up into the top tube
+        const run = stationsIn(lo, hi);
+        const ceil = run.length ? Math.min(...run.map((x) => x.v1)) : st.v1;
+        const vFloor = Number.isFinite(top) ? Math.min(Math.max(top, st.v0), ceil - 6) : Math.min(st.v0, ceil - 6);
+        const vs = (ceil - vFloor) * 0.94, ws = (st.w1 - st.w0) * 0.94;
         placed.push({
           uid: it.uid, rigid: false,
-          center: [(lo + hi) / 2, (vFloor + st.v1) / 2, (st.w0 + st.w1) / 2],
+          center: [(lo + hi) / 2, (vFloor + ceil) / 2, (st.w0 + st.w1) / 2],
           size: [Math.max(hi - lo - 3, 2), vs, ws],
           squeeze: it.compress * squeeze,
           partial: fitted < 0,
