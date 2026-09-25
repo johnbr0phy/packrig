@@ -133,7 +133,14 @@ async function shoot(id, state, device, setup, suffix = '') {
   // thumbnails draw a few per frame; wait for the queue so two runs match
   await p.evaluate(async () => {
     const { thumbsPending } = await import('./src/pack/ui/thumbs.js');
-    for (let i = 0; i < 600 && thumbsPending(); i++) await new Promise((r) => setTimeout(r, 100));
+    // lazy thumbnails queue only once seen, so also wait for every visible
+    // empty one to be filled
+    const emptyVisible = () => [...document.querySelectorAll('img.pkg-thumb, img.pkg-tile-img, img.pkg-ihero-img')].some((im) => {
+      if (im.getAttribute('src')) return false;
+      const r = im.getBoundingClientRect();
+      return r.width > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth;
+    });
+    for (let i = 0; i < 600 && (thumbsPending() || emptyVisible()); i++) await new Promise((r) => setTimeout(r, 100));
     await new Promise((r) => setTimeout(r, 300));
   }).catch((e) => errs.push('thumbs: ' + e.message));
   // the camera eases (damping, focus glides): shoot once it has stopped, or
