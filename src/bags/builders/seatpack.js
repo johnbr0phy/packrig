@@ -32,8 +32,8 @@
 // ---- PLACEMENT (every value derived from the bike, Rule 1) ----------------
 //   top of the pack      just under ctx.rails, touching them (strap thickness)
 //   front face           against the seatpost, from ctx.points.sd / seatTop
-//   tilt                 tail up 7–9°, more if the tail would reach the tyre
-//   tyre                 ≥ 18 mm from rearAxle + tireR + tireWidth/2
+//   tilt                 tail up 7–9°, up to 20° if the tail would reach the tyre
+//   tyre                 ≥ 22 mm (solve) from rearAxle + tireR + tireWidth/2
 //   frame                nose above ctx.framePoly[1] + its tube radius
 // Nothing here is a literal offset off a screenshot.
 
@@ -80,19 +80,31 @@ function buildTransverse(p, brand, main, accent, ctx, vr) {
   grp.add(body);
   const strapGeos = [], hwGeos = [];
   for (const s of [1, -1]) {
-    // each end: the mouth pinched flat and rolled — a squashed bar standing
-    // up across the end, not a dome
-    const lip = new THREE.Mesh(new THREE.BoxGeometry(depth * 0.24, tall * 0.8, endRoll * 0.9), main);
-    lip.position.set(0, 0, s * (bodyW / 2 + endRoll * 0.45));
+    // each end: the mouth pinched flat (a soft stadium-section lip) and rolled
+    // into a bundle standing up across the end; not a dome, not a disc
+    const lipW = depth * 0.13, rollR = endRoll * 0.55;
+    const lipG = new THREE.CylinderGeometry(1, 1, tall * 0.8, 24, 1);
+    lipG.scale(lipW, 1, endRoll * 0.42);
+    const lip = new THREE.Mesh(lipG, main);
+    lip.position.set(0, 0, s * (bodyW / 2 + endRoll * 0.4));
     grp.add(lip);
-    const rollBar = new THREE.Mesh(new THREE.CylinderGeometry(endRoll * 0.55, endRoll * 0.55, tall * 0.86, 16), main);
-    rollBar.scale.set(0.85, 1, 1);
-    rollBar.position.set(0, 0, s * (bodyW / 2 + endRoll * 1.2));
+    const rollBar = new THREE.Mesh(new THREE.CapsuleGeometry(rollR, Math.max(tall * 0.84 - rollR * 2, 10), 6, 16), main);
+    rollBar.scale.set(1.15, 1, 0.9);
+    rollBar.position.set(0, 0, s * (bodyW / 2 + endRoll * 1.1));
     grp.add(rollBar);
-    // the buckle strap that holds the roll down
-    const pts = [];
-    for (let i = 0; i <= 12; i++) { const a = (i / 12) * Math.PI; pts.push(v3(Math.cos(a) * (depth / 2 + 1), Math.sin(a) * (tall / 2 + 1) - tall * 0.05, s * (bodyW / 2 - 8))); }
-    strapGeos.push(ribbonLoop(pts, v3(0, 0, 1), v3(0, 0, s * (bodyW / 2 - 8)), { width: 20, closed: false, lift: 0.3 }));
+    // the buckle strap that holds the roll: a closed band round lip + bundle
+    // at mid-height, lying on them (the old open arc floated round the full
+    // body radius where the end is pinched to a third of it)
+    const cz = s * (bodyW / 2 + endRoll * 0.85);
+    const hx = Math.max(lipW, rollR * 1.15) + 1.5, hz = endRoll * 0.85 + 1.5;
+    const band = [];
+    for (let i = 0; i < 32; i++) {
+      const a = (i / 32) * Math.PI * 2, c = Math.cos(a), sn = Math.sin(a);
+      // superellipse: a rounded rectangle that hugs the flat lip
+      band.push(v3(Math.sign(c) * Math.abs(c) ** 0.5 * hx, 0, cz + Math.sign(sn) * Math.abs(sn) ** 0.5 * hz));
+    }
+    strapGeos.push(ribbonLoop(band, v3(0, 1, 0), v3(0, 0, cz), { width: 20, lift: 0.4 }));
+    hwGeos.push(...buckle(v3(0, 0, cz + s * (hz + 1.5)), v3(1, 0, 0), v3(0, 0, s), { width: 18 }));
   }
   // two straps round the roll into the cradle
   for (const z of [-bodyW * 0.22, bodyW * 0.22]) {
@@ -129,7 +141,25 @@ function buildTransverse(p, brand, main, accent, ctx, vr) {
   return shadowify(grp);
 }
 
+/**
+ * A pack deeper than the room between rails and tyre on this frame is drawn
+ * packed a little flatter (up to four 8% steps of depth), as it would ride
+ * cinched down; userData.cinchedTo records the depth drawn. Past that it is
+ * left to the resolver, which drops it: it does not fit this frame.
+ */
 export function buildSeatpack(p, brand, main, accent, ctx) {
+  let grp = buildSeatpackOnce(p, brand, main, accent, ctx);
+  let q = p;
+  for (let i = 0; i < 4 && grp.userData.wedge && (grp.userData.clearance?.tyre ?? 99) < 22; i++) {
+    q = { ...q, mm: { ...q.mm, hgt: q.mm.hgt * 0.92 } };
+    grp.traverse((o) => o.geometry?.dispose?.());
+    grp = buildSeatpackOnce(q, brand, main, accent, ctx);
+    grp.userData.cinchedTo = Math.round(q.mm.hgt);
+  }
+  return grp;
+}
+
+function buildSeatpackOnce(p, brand, main, accent, ctx) {
   // wider than it is long: a transverse roll, not a wedge
   if (p.mm.wid > p.mm.len * 1.05) return buildTransverse(p, brand, main, accent, ctx, variantOf(brand, p));
   const grp = new THREE.Group();
@@ -435,6 +465,26 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
     bots.push(v3(xOf(t), top(t) - D(t) - bodyAmp));
   }
   bots.push(v3(tailX - rollR * 1.6, lipC - rollR));
+  // ...and the real mesh: cradles, pockets, sag and noise put the lowest
+  // fabric below the analytic outline, which is where the tyre clashes were.
+  // The lowest body vertex in each fore-aft bucket joins the samples.
+  {
+    grp.updateMatrixWorld(true);
+    const inv = new THREE.Matrix4().copy(grp.matrixWorld).invert();
+    const low = new Map(), q = new THREE.Vector3(), m = new THREE.Matrix4();
+    grp.traverse((o) => {
+      if (!o.isMesh || o.userData.noCollide) return;
+      m.multiplyMatrices(inv, o.matrixWorld);
+      const pa = o.geometry.attributes.position;
+      for (let i = 0; i < pa.count; i++) {
+        q.fromBufferAttribute(pa, i).applyMatrix4(m);
+        const k = Math.round(q.x / 15);
+        const cur = low.get(k);
+        if (!cur || q.y < cur.y) low.set(k, v3(q.x, q.y));
+      }
+    });
+    for (const pt of low.values()) bots.push(pt);
+  }
   const rot = (q, th) => v3(q.x * Math.cos(th) - q.y * Math.sin(th), q.x * Math.sin(th) + q.y * Math.cos(th));
 
   const solve = (th) => {
@@ -471,18 +521,24 @@ export function buildSeatpack(p, brand, main, accent, ctx) {
     }
     return { gx, gy, tyre, frame };
   };
-  let th = -deg(7.5 + vr.j(1.2));
-  let sol = solve(th);
-  // tail up further until the tyre is clear (a real pack gets strapped
-  // tighter and rides higher); stop at 16°
-  while ((sol.tyre < 18 || sol.frame < 8) && th > -deg(16)) {
-    th -= deg(1);
-    sol = solve(th);
+  // Tail-up tilt lifts the tail but drops the deep shoulder toward the tyre
+  // and the top tube, so more tilt is not always better: search the range and
+  // keep the preferred angle unless another clears better. Score = the worse
+  // of the two margins (tyre target 22 mm, frame 8 mm).
+  const pref = -deg(7.5 + vr.j(1.2));
+  const score = (x) => Math.min(x.tyre - 22, x.frame - 8);
+  let th = pref, sol = solve(th);
+  if (score(sol) < 0) {
+    for (let d = 2; d <= 20; d += 1) {
+      const t = -deg(d), x = solve(t);
+      if (score(x) > score(sol)) { th = t; sol = x; }
+    }
   }
   grp.rotation.z = th;
   grp.position.set(sol.gx, sol.gy, 0);
   grp.userData.noseX = grp.position.x;
   grp.userData.clearance = { tyre: Math.round(sol.tyre), frame: Math.round(sol.frame) };
+  grp.userData.wedge = true;
 
   // ---- the attachment: straps round the rails and the post --------------------------
   const toLocal = (pf) => {
