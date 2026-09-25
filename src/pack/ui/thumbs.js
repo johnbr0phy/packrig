@@ -107,10 +107,25 @@ export function thumbImg(it, cls = 'pkg-thumb') {
   img.decoding = 'async';
   img.width = img.height = 44;
   const key = thumbKey(it);
-  if (cache.get(key)) img.src = cache.get(key);
-  else thumbFor(it).then((u) => { if (u) img.src = u; });
+  if (cache.get(key)) { img.src = cache.get(key); return img; }
+  // Lazy: a 327-row locker must not queue 327 renders. Draw a row's model
+  // only once it scrolls near the view (clipping by the sheet counts).
+  if (!lazy) { thumbFor(it).then((u) => { if (u) img.src = u; }); return img; }
+  pendingImg.set(img, it);
+  lazy.observe(img);
   return img;
 }
+
+const pendingImg = new WeakMap();
+const lazy = typeof IntersectionObserver === 'function' ? new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (!e.isIntersecting) continue;
+    const img = e.target, it = pendingImg.get(img);
+    lazy.unobserve(img);
+    pendingImg.delete(img);
+    if (it) thumbFor(it).then((u) => { if (u) img.src = u; });
+  }
+}, { rootMargin: '240px 0px' }) : null;
 
 /** How many thumbnails are still to draw (tools wait for 0 before a screenshot). */
 export const thumbsPending = () => queue.length + (pumping ? 1 : 0);

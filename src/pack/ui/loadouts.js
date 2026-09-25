@@ -77,8 +77,15 @@ export function initLoadouts(app, hooks) {
   // ---- compare --------------------------------------------------------------------
   function openCompare(aId = P.active()?.id, bId = null) {
     const los = P.loadouts();
-    if (los.length < 2) { hooks.notify?.('Make a second loadout to compare against — Copy is the quickest.'); return; }
-    bId = bId || los.find((l) => l.id !== aId)?.id;
+    if (los.length < 2) { hooks.notify?.('Make a second loadout to compare against. Copy is the quickest.'); return; }
+    // the loadout this one was copied from, else the one it was copied into,
+    // else the fullest other one: never an empty stranger by default
+    const a = los.find((l) => l.id === aId);
+    const count = (l) => Object.values(l.place || {}).filter((c) => c && c !== 'home').length;
+    const others = los.filter((l) => l.id !== aId);
+    bId = bId || (a?.from && others.find((l) => l.id === a.from)?.id)
+      || others.find((l) => l.from === aId)?.id
+      || others.sort((x, y) => count(y) - count(x))[0]?.id;
     app.openSheet?.({ kind: 'catalog', title: 'Compare', onBack: () => open(), render: (body) => paintCompare(body, aId, bId) });
   }
 

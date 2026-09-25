@@ -293,7 +293,8 @@ export function unsetPlace(loadout, uid) { if (loadout?.place) delete loadout.pl
 export const listedUids = (loadout, locker) => locker.items.map((i) => i.uid).filter((u) => loadout?.place?.[u] !== undefined);
 
 export function duplicateLoadout(lo, name) {
-  return { ...JSON.parse(JSON.stringify(lo)), name: name ?? `${lo.name || 'Loadout'} copy` };
+  // `from` remembers the original, so Compare opens on the pair you'd expect
+  return { ...JSON.parse(JSON.stringify(lo)), name: name ?? `${lo.name || 'Loadout'} copy`, from: lo.id };
 }
 
 /**
