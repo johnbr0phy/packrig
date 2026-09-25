@@ -1,0 +1,71 @@
+{
+  "brand": "AGU",
+  "products": [
+    {
+      "line": null,
+      "name": "AGU Venture Seat-Pack",
+      "size": null,
+      "weight_g": 450,
+      "basis": "family-estimate",
+      "source": "https://agu.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10L seat pack (anchor 300-600 g for 9-16L). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "AGU Top-Tube Frame Bag Venture Extreme Waterproof",
+      "size": null,
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://agu.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.7L waterproof top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "AGU Tube Frame Bag Venture (S, 3L)",
+      "size": null,
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://agu.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 3L half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "AGU Handlebar Bag Venture 17L",
+      "size": null,
+      "weight_g": 500,
+      "basis": "family-estimate",
+      "source": "https://agu.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 17L handlebar roll bag with straps. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "AGU Essential Pannier Rack Bag (trunk)",
+      "size": null,
+      "weight_g": 600,
+      "basis": "family-estimate",
+      "source": "https://agu.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 12L rack trunk bag with stiffened body and rack straps. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "AGU Urban Essentials DWR Pannier 17L",
+      "size": null,
+      "weight_g": 800,
+      "basis": "family-estimate",
+      "source": "https://agu.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: single 17L urban pannier with hooks. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

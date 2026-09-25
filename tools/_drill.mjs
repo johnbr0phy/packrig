@@ -6,7 +6,7 @@
  */
 import puppeteer from 'puppeteer-core';
 const [,,URL,W='1440',H='900',MOB='desktop',SHOT='/tmp/drill.png'] = process.argv;
-const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--hide-scrollbars','--enable-unsafe-swiftshader']});
+const b=await puppeteer.launch({executablePath:(await import('./lib/chrome.mjs')).CHROME,headless:true,args:['--hide-scrollbars','--enable-unsafe-swiftshader']});
 const p=await b.newPage();
 const errs=[]; p.on('pageerror',e=>errs.push('PAGEERROR '+e.message));
 p.on('console',m=>{if(m.type()==='error'&&!/ERR_BLOCKED_BY_RESPONSE|net::ERR_/.test(m.text()))errs.push(m.text())});

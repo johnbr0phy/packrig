@@ -1,0 +1,71 @@
+{
+  "brand": "Alpkit",
+  "products": [
+    {
+      "line": "Koala",
+      "name": "Koala 7L Saddle Pack",
+      "size": "7L",
+      "weight_g": 300,
+      "basis": "family-estimate",
+      "source": "https://alpkit.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 7L saddle pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Airlok",
+      "name": "Airlok Dual 13L",
+      "size": "13L",
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "https://alpkit.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 13L double-ended dry bag only (no harness). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Possum",
+      "name": "Possum Frame Bag",
+      "size": "47cm (2.2L)",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://alpkit.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 2.2L half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Glider",
+      "name": "Glider Road Frame Bag",
+      "size": "48 (1.7L)",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://alpkit.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.7L road frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Stem Cell",
+      "name": "Stem Cell Cockpit Bag",
+      "size": "Medium (1L)",
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "https://alpkit.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L stem/cockpit bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Betonga",
+      "name": "Betonga Fork Cage Bag",
+      "size": "3L",
+      "weight_g": 100,
+      "basis": "family-estimate",
+      "source": "https://alpkit.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 3L cage bag only, no cage. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "brand": "Outer Shell Adventure",
+  "products": [
+    {
+      "line": "Seatpack",
+      "name": "Seatpack",
+      "size": "10.5L",
+      "weight_g": 400,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10.5L seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Seatpack",
+      "name": "Seatpack",
+      "size": "16L",
+      "weight_g": 460,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 16L seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Saddlebag",
+      "name": "Rolltop Saddlebag",
+      "size": "0.8-2.1L",
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 0.8-2.1L roll-top saddlebag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Saddlebag",
+      "name": "Mini Saddlebag",
+      "size": "0.33L",
+      "weight_g": 60,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.33L mini saddlebag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bar Bags",
+      "name": "Drawcord Handlebar Bag",
+      "size": "2.6-4.9L",
+      "weight_g": 250,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: drawcord handlebar bag with stiffened body. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bar Bags",
+      "name": "Mini Bar Bag",
+      "size": "1L",
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L mini bar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bar Bags",
+      "name": "Mega Bar Bag",
+      "size": "10.6L (18.5L expanded)",
+      "weight_g": 450,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10.6L expandable bar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Harness System",
+      "name": "Handlebar Harness",
+      "size": "One Size",
+      "weight_g": 300,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: harness only, no dry bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Harness System",
+      "name": "Oval Dry Bag",
+      "size": "5L",
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 5L dry bag only. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Harness System",
+      "name": "Oval Dry Bag",
+      "size": "10L",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10L dry bag only. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Stem Caddy",
+      "name": "Stem Caddy",
+      "size": "1.2-1.7L",
+      "weight_g": 140,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.2-1.7L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Top Tube Bag",
+      "name": "Top Tube Bag",
+      "size": "0.9L",
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.9L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Half Frame Bag",
+      "name": "Half Frame Bag",
+      "size": "Small",
+      "weight_g": 160,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: small half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Half Frame Bag",
+      "name": "Half Frame Bag",
+      "size": "Medium",
+      "weight_g": 190,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: medium half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Half Frame Bag",
+      "name": "Half Frame Bag",
+      "size": "Large",
+      "weight_g": 210,
+      "basis": "family-estimate",
+      "source": "https://www.outershell.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: large half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

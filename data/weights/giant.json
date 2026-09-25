@@ -1,0 +1,71 @@
+{
+  "brand": "Giant",
+  "products": [
+    {
+      "line": "Scout",
+      "name": "Scout Saddle Bag",
+      "size": "9L",
+      "weight_g": 390,
+      "basis": "family-estimate",
+      "source": "https://www.giant-bicycles.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 9L seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Scout",
+      "name": "Scout Burrito Bar Bag",
+      "size": "2.3L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://www.giant-bicycles.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2.3L burrito bar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Scout",
+      "name": "Scout Top Tube Bag",
+      "size": "1L",
+      "weight_g": 140,
+      "basis": "family-estimate",
+      "source": "https://www.giant-bicycles.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "H2Pro",
+      "name": "H2Pro Frame Bag",
+      "size": "4L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://www.giant-bicycles.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 4L half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Transporter",
+      "name": "Transporter MIK Pannier Bag 30L",
+      "size": "30L (single)",
+      "weight_g": 900,
+      "basis": "family-estimate",
+      "source": "https://www.giant-bicycles.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one pannier from a 30L pair (15L single) with MIK mount plate. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Transit",
+      "name": "Transit MIK Trunk Bag 11L",
+      "size": "11L",
+      "weight_g": 650,
+      "basis": "family-estimate",
+      "source": "https://www.giant-bicycles.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 11L trunk bag with MIK mount plate. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

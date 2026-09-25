@@ -1,0 +1,49 @@
+{
+ "brand": "Straight Cut Design",
+ "products": [
+  {
+   "line": null,
+   "name": "Straight Cut Custom Top Tube Bag (Large)",
+   "size": null,
+   "weight_g": 140,
+   "basis": "family-estimate",
+   "source": "https://straightcutdesign.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Custom product; estimated from top tube bag anchor for ~1.5 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Straight Cut Bagel Bar Bag",
+   "size": null,
+   "weight_g": 160,
+   "basis": "family-estimate",
+   "source": "https://straightcutdesign.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small ~2.2 L bar bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Straight Cut Custom Dropper Seatpost Saddlebag",
+   "size": null,
+   "weight_g": 280,
+   "basis": "family-estimate",
+   "source": "https://straightcutdesign.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Custom product; estimated from dropper-compatible saddlebags of ~4.5 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Straight Cut Custom Sidekick",
+   "size": null,
+   "weight_g": 90,
+   "basis": "family-estimate",
+   "source": "https://straightcutdesign.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Custom product; estimated from small (~1.2 L) stem/side bags, below the stem bag anchor. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

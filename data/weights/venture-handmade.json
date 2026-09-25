@@ -1,0 +1,71 @@
+{
+ "brand": "Venture Handmade",
+ "products": [
+  {
+   "line": "Bravo",
+   "name": "Bravo Seat Bag",
+   "size": "One Size (4.5-7L)",
+   "weight_g": 280,
+   "basis": "family-estimate",
+   "source": "https://www.venturehandmade.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~5-7 L seat bags, below the 9-16 L seat pack anchor. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Charlie",
+   "name": "Charlie Seat Bag",
+   "size": "One Size (6-10L)",
+   "weight_g": 350,
+   "basis": "family-estimate",
+   "source": "https://www.venturehandmade.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the dry-bag seat pack anchor (9-16 L 300-600 g) for a ~10 L bag. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Delta",
+   "name": "Delta Handlebar Bag",
+   "size": "One Size (10.5L max)",
+   "weight_g": 380,
+   "basis": "family-estimate",
+   "source": "https://www.venturehandmade.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the harness bar-roll anchor (350-600 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Kilo",
+   "name": "Kilo Handlebar Bag",
+   "size": "One Size (12.5L max)",
+   "weight_g": 430,
+   "basis": "family-estimate",
+   "source": "https://www.venturehandmade.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled from the Delta estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Cache",
+   "name": "Cache Tank Bag",
+   "size": "One Size (1L)",
+   "weight_g": 100,
+   "basis": "family-estimate",
+   "source": "https://www.venturehandmade.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from top tube bag anchor (0.5-1 L ~90-170 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Sierra",
+   "name": "Sierra SL Pannier",
+   "size": "One Size (10L each, 20L pair)",
+   "weight_g": 250,
+   "basis": "family-estimate",
+   "source": "https://www.venturehandmade.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from ultralight 10 L panniers, well below the PVC anchor. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

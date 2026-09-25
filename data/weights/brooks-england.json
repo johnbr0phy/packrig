@@ -1,0 +1,236 @@
+{
+ "brand": "Brooks England",
+ "products": [
+  {
+   "line": "Scape",
+   "name": "Seat Bag",
+   "size": "8L",
+   "weight_g": 380,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from roll-top seat packs of ~8 L (below the 9-16 L 300-600 g anchor's midpoint). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Saddle Roll Bag",
+   "size": "1L",
+   "weight_g": 120,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small saddle rolls of ~1 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Saddle Pocket Bag",
+   "size": "0.7L",
+   "weight_g": 90,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small saddle pouches of ~0.7 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Handlebar Roll",
+   "size": "9-11L",
+   "weight_g": 350,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from roll-style handlebar bags of ~10 L without a harness frame. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Handlebar Compact Bag",
+   "size": "10-12L",
+   "weight_g": 500,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~10-12 L handlebar bags with stiffening/mount. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Handlebar Case",
+   "size": "8L",
+   "weight_g": 450,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~8 L structured handlebar bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Handlebar Pouch",
+   "size": "3L",
+   "weight_g": 250,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~3 L handlebar pouches with mount straps. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Feed Pouch",
+   "size": "1L",
+   "weight_g": 110,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from stem bag anchor (100-200 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Top Tube Bag",
+   "size": "0.9L",
+   "weight_g": 130,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from top tube bag anchor (0.5-1 L ~90-170 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Top Tube Bag Long",
+   "size": "1.5L",
+   "weight_g": 160,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled from the 0.9 L Scape top tube bag estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Top Tube Bag with Bolts",
+   "size": "0.9L",
+   "weight_g": 125,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Bolt-on version assumed slightly lighter than the strapped version. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Pannier",
+   "size": "Large",
+   "weight_g": 950,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from the 20 L waterproof pannier anchor (~900-1000 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Scape",
+   "name": "Pannier",
+   "size": "Small",
+   "weight_g": 750,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Scaled down from the Large Scape pannier estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Classic",
+   "name": "Challenge Saddle Bag",
+   "size": "0.5L",
+   "weight_g": 200,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from Brooks leather/canvas saddle bag anchor (400-1200 g) scaled down for a 0.5 L tool bag. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Classic",
+   "name": "Challenge Saddle Bag Large",
+   "size": "1.5L",
+   "weight_g": 280,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled up from the 0.5 L Challenge estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Classic",
+   "name": "D-Shaped Saddle Bag",
+   "size": "0.75L",
+   "weight_g": 220,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small leather saddle bags of ~0.75 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Trekking",
+   "name": "Isle of Wight Saddle Bag",
+   "size": "2L",
+   "weight_g": 400,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the Brooks leather/canvas saddle bag anchor (400-1200 g), low end for 2 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Trekking",
+   "name": "Rambler Handlebar Bag",
+   "size": "10L",
+   "weight_g": 900,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Bag with its bar mount/frame. Estimated from canvas randonneur bags of ~10 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Trekking",
+   "name": "Haul Pannier",
+   "size": "22L",
+   "weight_g": 1100,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from canvas/leather 22 L panniers, above the PVC 20 L anchor. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Trekking",
+   "name": "Half Haul Pannier",
+   "size": "12L",
+   "weight_g": 800,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Scaled down from the Haul Pannier estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Commuting",
+   "name": "Brick Lane Pannier",
+   "size": "15L",
+   "weight_g": 900,
+   "basis": "family-estimate",
+   "source": "https://www.brooksengland.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from commuter panniers of ~15 L with canvas/leather trim. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

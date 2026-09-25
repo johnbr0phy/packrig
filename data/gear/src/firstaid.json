@@ -1,0 +1,255 @@
+[
+  {
+    "id": "first-aid-kit",
+    "name": "First aid kit",
+    "cat": "firstaid",
+    "sub": "first aid kit",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 227,
+    "packed_cm": [
+      20.0,
+      13.0,
+      5.0
+    ],
+    "packed_l": 1.3,
+    "compress": 0.2,
+    "archetype": "pouch",
+    "color": "#c8322f",
+    "rigid": false,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner's spot: centre of the bike, findable in a hurry, never buried under camp kit"
+      },
+      {
+        "at": "framebag_full",
+        "why": "frame bag, on top so it comes out first"
+      },
+      {
+        "at": "seatpack",
+        "why": "top of the seat pack if the frame bag is full - never at the bottom"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 8.0 oz"
+      },
+      {
+        "url": "https://adventuremedicalkits.com/products/ultralight-watertight-medical-kit-7",
+        "what": "AMK .7: 5.8 oz, 10 x 7.5 x 2 in"
+      }
+    ],
+    "note": "Owner's item: 8.0 oz (227 g) is his figure, a personalised kit a bit heavier than AMK .7 (165 g). Packed size estimated between AMK .5 and .7 bags.",
+    "aliases": [
+      "first aid kit",
+      "first aid",
+      "firstaid",
+      "med kit",
+      "medical kit",
+      "fak"
+    ]
+  },
+  {
+    "id": "amk-ulw-7",
+    "name": "AMK Ultralight/Watertight .7",
+    "cat": "firstaid",
+    "sub": "first aid kit",
+    "generic": false,
+    "brand": "Adventure Medical Kits",
+    "model": "Ultralight/Watertight .7",
+    "weight_g": 165,
+    "packed_cm": [
+      25.4,
+      19.0,
+      5.1
+    ],
+    "packed_l": 2.461,
+    "compress": 0.25,
+    "archetype": "pouch",
+    "color": "#d4412f",
+    "rigid": false,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner's spot: centre of the bike, findable in a hurry, never buried under camp kit"
+      },
+      {
+        "at": "framebag_full",
+        "why": "frame bag, on top so it comes out first"
+      },
+      {
+        "at": "seatpack",
+        "why": "top of the seat pack if the frame bag is full - never at the bottom"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cleverhiker.com/more-gear/adventure-medical-kits-ultralight-watertight-7-first-aid-review/",
+        "what": "5.8 oz, 10 x 7.5 x 2 in"
+      }
+    ],
+    "note": "1-2 people, 1-4 days. Bag is flat and flexible; often repacked into a smaller pouch.",
+    "aliases": [
+      "amk .7",
+      "ultralight watertight .7",
+      "adventure medical kits",
+      "first aid kit"
+    ]
+  },
+  {
+    "id": "amk-ulw-5",
+    "name": "AMK Ultralight/Watertight .5",
+    "cat": "firstaid",
+    "sub": "first aid kit",
+    "generic": false,
+    "brand": "Adventure Medical Kits",
+    "model": "Ultralight/Watertight .5",
+    "weight_g": 99,
+    "packed_cm": [
+      17.8,
+      12.7,
+      3.8
+    ],
+    "packed_l": 0.859,
+    "compress": 0.25,
+    "archetype": "pouch",
+    "color": "#d4412f",
+    "rigid": false,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "small enough for the half frame bag or top tube bag"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag on a race setup"
+      },
+      {
+        "at": "seatpack",
+        "why": "top of the seat pack"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cleverhiker.com/more-gear/adventure-medical-kits-ultralight-watertight-7-first-aid-review/",
+        "what": "AMK .5: 3.5 oz, 7 x 5 x 1.5 in"
+      }
+    ],
+    "note": "1 person, 1-2 days.",
+    "aliases": [
+      "amk .5",
+      "ultralight watertight .5",
+      "adventure medical kits",
+      "first aid kit"
+    ]
+  },
+  {
+    "id": "sol-bivvy",
+    "name": "SOL Emergency Bivvy",
+    "cat": "firstaid",
+    "sub": "emergency shelter",
+    "generic": false,
+    "brand": "SOL",
+    "model": "Emergency Bivvy",
+    "weight_g": 108,
+    "packed_cm": [
+      9.0,
+      8.3,
+      8.3
+    ],
+    "packed_l": 0.62,
+    "compress": 0.3,
+    "archetype": "stuffsack",
+    "color": "#e3752d",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "with the first aid kit so it comes out with it"
+      },
+      {
+        "at": "seatpack",
+        "why": "top of the seat pack"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag on a no-sleep-kit race setup"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.packstack.io/reviews/safety/sol-survive-outdoors-longer-emergency-bivvy-with-rescue-whistle",
+        "what": "3.8 oz, 3.25 x 3.25 x 3.54 in packed"
+      }
+    ],
+    "note": "Race-mandatory item on many ultras. Hard to repack once opened.",
+    "aliases": [
+      "emergency bivvy",
+      "emergency bivy",
+      "sol bivvy",
+      "survival bag",
+      "bivvy bag"
+    ]
+  },
+  {
+    "id": "sol-blanket",
+    "name": "SOL Emergency Blanket",
+    "cat": "firstaid",
+    "sub": "emergency blanket",
+    "generic": false,
+    "brand": "SOL",
+    "model": "Emergency Blanket",
+    "weight_g": 82,
+    "packed_cm": [
+      10.0,
+      7.0,
+      2.0
+    ],
+    "packed_l": 0.14,
+    "compress": 0.2,
+    "archetype": "pouch",
+    "color": "#c9c9c9",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "with the first aid kit"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.garagegrowngear.com/products/ultralight-emergency-blanket-by-sol",
+        "what": "56 x 84 in, 2.9 oz / 82 g"
+      }
+    ],
+    "note": "Folded size estimated (not in reachable sources).",
+    "aliases": [
+      "space blanket",
+      "emergency blanket",
+      "foil blanket",
+      "mylar blanket"
+    ]
+  }
+]

@@ -1,0 +1,565 @@
+{
+  "brand": "Revelate Designs",
+  "products": [
+    {
+      "line": "Spinelock",
+      "name": "Spinelock",
+      "size": "10L",
+      "weight_g": 638,
+      "basis": "retailer",
+      "source": "https://www.bike24.com/p2363468.html",
+      "quote": "The Spinelock 10L weighs 22.5 oz / 638 grams.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Spinelock",
+      "name": "Spinelock",
+      "size": "16L",
+      "weight_g": 680,
+      "basis": "retailer",
+      "source": "https://www.rei.com/product/171759/revelate-designs-spinelock-16l-seat-bag",
+      "quote": "The Revelate Designs Spinelock 16L weighs 680 grams (24 ounces).",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Terrapin",
+      "name": "Terrapin System",
+      "size": "8L",
+      "weight_g": 482,
+      "basis": "retailer",
+      "source": "https://www.campfirecycling.com/product/revelate-designs-terrapin-8-liter-system-dry-bag.html",
+      "quote": "The Terrapin holster weighs 369g and the drybag weighs 113g.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Harness+drybag system: 369 + 113 = 482 g. Another retailer lists 340 g + 99 g."
+    },
+    {
+      "line": "Terrapin",
+      "name": "Terrapin System",
+      "size": "14L",
+      "weight_g": 567,
+      "basis": "retailer",
+      "source": "https://www.cyclewerks.co.nz/product/revelate-designs-terrapin-system-14l",
+      "quote": "The Terrapin weighs 15 oz/425 g, and the drybag weighs 5 oz/142 g.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Harness+drybag system: 425 + 142 = 567 g."
+    },
+    {
+      "line": "Shrew",
+      "name": "Shrew",
+      "size": "2.25L",
+      "weight_g": 142,
+      "basis": "retailer",
+      "source": "https://www.universalcycles.com/shopping/product_details.php?id=109786",
+      "quote": "The standard Shrew weighs 5 oz / 142 g",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Shrew",
+      "name": "Ultra Shrew",
+      "size": "2.25L",
+      "weight_g": 135,
+      "basis": "family-estimate",
+      "source": "https://revelatedesigns.com/product/ultra-shrew/",
+      "quote": "The Ultra Shrew weighs under 5 ounces and offers 2.25 L of capacity",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Maker states under 5 oz (142 g); 135 g is an estimate just below that bound."
+    },
+    {
+      "line": "Stoat",
+      "name": "Stoat Seat Bag",
+      "size": "0.8L",
+      "weight_g": 99,
+      "basis": "retailer",
+      "source": "https://www.modernbike.com/revelate-designs-stoat-seat-bag-0.8l-black",
+      "quote": "99 g (according to Modern Bike and Universal Cycles)",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Other listings: 3.5 oz, ~88 g."
+    },
+    {
+      "line": "Sweetroll",
+      "name": "Sweetroll",
+      "size": "11L",
+      "weight_g": 439,
+      "basis": "retailer",
+      "source": "https://www.campfirecycling.com/product/revelate-designs-sweet-roll-p-3330.html",
+      "quote": "The Revelate Sweetroll 11L weighs 439 grams (15.5 oz).",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Sweetroll",
+      "name": "Sweetroll",
+      "size": "15L",
+      "weight_g": 468,
+      "basis": "retailer",
+      "source": "https://www.modernbike.com/revelate-designs-sweetroll-bag-15l-black",
+      "quote": "the Revelate Designs Sweetroll 15L weighs 16.5 oz (468 g).",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Saltyroll",
+      "name": "Saltyroll",
+      "size": "12L",
+      "weight_g": 185,
+      "basis": "retailer",
+      "source": "https://offcourse.bike/product/revelate-designs-saltyroll/",
+      "quote": "the Revelate Designs Saltyroll weighs 185 grams (or 6.5 ounces).",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Drybag only (the product is the drybag; harness sold separately). One source lists 175 g."
+    },
+    {
+      "line": "Pronghorn",
+      "name": "Pronghorn",
+      "size": "SM",
+      "weight_g": 213,
+      "basis": "review",
+      "source": "https://bikepacking.com/gear/revelate-pronghorn-review/",
+      "quote": "Small - 213 g; Medium - 232 g (without optional pocket clips)",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Another source gives a range of 170-200 g for Small."
+    },
+    {
+      "line": "Pronghorn",
+      "name": "Pronghorn",
+      "size": "MD",
+      "weight_g": 232,
+      "basis": "review",
+      "source": "https://bikepacking.com/gear/revelate-pronghorn-review/",
+      "quote": "Small - 213 g; Medium - 232 g (without optional pocket clips)",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Another source gives a range of 200-230 g for Medium."
+    },
+    {
+      "line": "Pronghorn",
+      "name": "Pronghorn",
+      "size": "LG",
+      "weight_g": 255,
+      "basis": "size-interpolated",
+      "source": "https://revelatedesigns.com/product/pronghorn/",
+      "quote": "Small – 170-200g; Medium – 200-230g; Large – 230-255g.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. No single figure for Large; took the upper end of the published range, consistent with S/M measuring at or above the top of their ranges."
+    },
+    {
+      "line": "Harness",
+      "name": "Hammerhead Harness",
+      "size": "One Size",
+      "weight_g": 337,
+      "basis": "review",
+      "source": "https://theradavist.com/revelate-designs-launches-the-hammerhead-harness",
+      "quote": "the weight without accessory mount is 11.9 oz",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. 11.9 oz = 337 g, without the optional accessory mount (14.5 oz / ~410 g with it). Harness only, no drybag."
+    },
+    {
+      "line": "Egress",
+      "name": "Egress Pocket",
+      "size": "2.8L",
+      "weight_g": 284,
+      "basis": "review",
+      "source": "https://bikepacking.com/news/2025-revelate-designs-egress-pocket/",
+      "quote": "weighs 284 grams (10 ounces) with all straps and padding",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. 213 g without extra straps and with the liner removed."
+    },
+    {
+      "line": "Scrambler",
+      "name": "Scrambler Pocket",
+      "size": "3.5L",
+      "weight_g": 136,
+      "basis": "review",
+      "source": "https://theradavist.com/revelate-designs-launches-the-hammerhead-harness",
+      "quote": "the Revelate Scrambler Pocket weighs 4.8 oz.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. 4.8 oz = 136 g."
+    },
+    {
+      "line": "Campamocha",
+      "name": "Campamocha",
+      "size": "2.3L",
+      "weight_g": 241,
+      "basis": "review",
+      "source": "https://bikepacking.com/news/revelate-campamocha-intro/",
+      "quote": "the Revelate Campamocha handlebar bag weighs 8.5 oz or 241 grams.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Speedbag",
+      "name": "Speedbag",
+      "size": "1L",
+      "weight_g": 94,
+      "basis": "review",
+      "source": "https://bikepacking.com/gear/revelate-speedbag-review/",
+      "quote": "The Revelate Speedbag weighs 94 grams with straps.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Pitchfork",
+      "name": "Pitchfork Aerobar System",
+      "size": "One Size",
+      "weight_g": 170,
+      "basis": "retailer",
+      "source": "https://offcourse.bike/product/revelate-pitchfork-aerobar-system/",
+      "quote": "the Revelate Pitchfork Aerobar System weighs 170g.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Summary says consistent across multiple sources (6 oz)."
+    },
+    {
+      "line": "Mag-Tank",
+      "name": "Mag-Tank",
+      "size": "0.5L",
+      "weight_g": 187,
+      "basis": "review",
+      "source": "https://bikerumor.com/revelate-reimagines-the-mag-tank-introduces-mag-tank-fasttrack-and-extended-play-top-tube-bags/",
+      "quote": "the Mag-Tank weighs a claimed 187 grams (6.6 oz.)",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Claimed (maker) figure reported by Bikerumor for the redesigned Mag-Tank."
+    },
+    {
+      "line": "Mag-Tank",
+      "name": "Mag-Tank FastTrack",
+      "size": "0.5L",
+      "weight_g": 208,
+      "basis": "review",
+      "source": "https://bikepacking.com/gear/new-revelate-designs-mag-tank-fasttrack/",
+      "quote": "The Mag-Tank FastTrack weighs 208 grams.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Mag-Tank",
+      "name": "Mag-Tank 2000",
+      "size": "1.4L",
+      "weight_g": 148,
+      "basis": "retailer",
+      "source": "https://www.universalcycles.com/shopping/product_details.php?id=110102",
+      "quote": "the Revelate Mag-Tank 2000 weighs 148 grams.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Some retailers list 5.2 oz / 147 g."
+    },
+    {
+      "line": "Mag-Tank",
+      "name": "Legacy Mag-Tank",
+      "size": "0.9L",
+      "weight_g": 135,
+      "basis": "family-estimate",
+      "source": "https://bikerumor.com/revelate-reimagines-the-mag-tank-introduces-mag-tank-fasttrack-and-extended-play-top-tube-bags/",
+      "quote": "older Legacy versions had different weights listed (around 128-148 grams depending on the specific model year)",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Only a range was seen; 135 g is a point estimate within 128-148 g."
+    },
+    {
+      "line": "Jerrycan",
+      "name": "Jerrycan",
+      "size": "Regular",
+      "weight_g": 74,
+      "basis": "retailer",
+      "source": "https://www.bike-packing.de/en/revelate-designs-jerrycan-top-tube-bag",
+      "quote": "the Revelate Jerrycan weighs 74 grams (2.6 oz) for the Regular model.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Jerrycan",
+      "name": "Jerrycan",
+      "size": "Bent",
+      "weight_g": 74,
+      "basis": "family-estimate",
+      "source": "https://www.bike-packing.de/en/revelate-designs-jerrycan-top-tube-bag",
+      "quote": "the Revelate Jerrycan weighs 74 grams (2.6 oz) for the Regular model.",
+      "note": "No source found before the session web-search budget ran out. Bent is the same bag with a different shape; the Regular figure is used."
+    },
+    {
+      "line": "Gas Tank",
+      "name": "Gas Tank",
+      "size": "1.1L",
+      "weight_g": 125,
+      "basis": "retailer",
+      "source": "https://www.treefortbikes.com/Revelate-Designs-Gas-Tank-Top-Tube-Bag-Black",
+      "quote": "125 grams (according to Tree Fort Bikes)",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. Other listings: 119 g (Universal Cycles), 3.5 oz / 99 g (Steed Cycles)."
+    },
+    {
+      "line": "Extended Play",
+      "name": "Extended Play",
+      "size": "14in",
+      "weight_g": 240,
+      "basis": "review",
+      "source": "https://bikerumor.com/revelate-reimagines-the-mag-tank-introduces-mag-tank-fasttrack-and-extended-play-top-tube-bags/",
+      "quote": "The 14\" version weighs 240 grams with 1.5 liters of storage capacity",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Extended Play",
+      "name": "Extended Play",
+      "size": "18in",
+      "weight_g": 296,
+      "basis": "review",
+      "source": "https://bikerumor.com/revelate-reimagines-the-mag-tank-introduces-mag-tank-fasttrack-and-extended-play-top-tube-bags/",
+      "quote": "the 18\" version weighs 296 grams with 2.0 liters of storage.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Feedbag",
+      "name": "Mountain Feedbag",
+      "size": "1L",
+      "weight_g": 105,
+      "basis": "retailer",
+      "source": "https://www.modernbike.com/revelate-designs-mountain-feed-bag---black",
+      "quote": "The most commonly cited weight is 105 grams (3.7 ounces)",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. One review reports 128 g with straps for a newer version."
+    },
+    {
+      "line": "Ranger",
+      "name": "Ranger Frame Bag",
+      "size": "SM",
+      "weight_g": 340,
+      "basis": "retailer",
+      "source": "https://www.universalcycles.com/shopping/product_details.php?id=110202",
+      "quote": "Small - 340g, Medium - 369g, Large - 425g, X Large - 482g.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. 12 oz."
+    },
+    {
+      "line": "Ranger",
+      "name": "Ranger Frame Bag",
+      "size": "MD",
+      "weight_g": 369,
+      "basis": "retailer",
+      "source": "https://www.universalcycles.com/shopping/product_details.php?id=110202",
+      "quote": "Small - 340g, Medium - 369g, Large - 425g, X Large - 482g.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. 13 oz."
+    },
+    {
+      "line": "Ranger",
+      "name": "Ranger Frame Bag",
+      "size": "LG",
+      "weight_g": 425,
+      "basis": "retailer",
+      "source": "https://www.universalcycles.com/shopping/product_details.php?id=110202",
+      "quote": "Small - 340g, Medium - 369g, Large - 425g, X Large - 482g.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. 15 oz."
+    },
+    {
+      "line": "Ranger",
+      "name": "Ranger Frame Bag",
+      "size": "XL",
+      "weight_g": 482,
+      "basis": "retailer",
+      "source": "https://www.universalcycles.com/shopping/product_details.php?id=110202",
+      "quote": "Small - 340g, Medium - 369g, Large - 425g, X Large - 482g.",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. 17 oz."
+    },
+    {
+      "line": "Ripio",
+      "name": "Ripio Frame Bag",
+      "size": "SM",
+      "weight_g": 227,
+      "basis": "retailer",
+      "source": "https://www.modernbike.com/revelate-designs-ripio-frame-bag-medium-black",
+      "quote": "Small (SM): 227 g",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. SUSPECT: a 170 g jump to MD looks too large; could not re-check before the search budget ran out."
+    },
+    {
+      "line": "Ripio",
+      "name": "Ripio Frame Bag",
+      "size": "MD",
+      "weight_g": 397,
+      "basis": "retailer",
+      "source": "https://www.modernbike.com/revelate-designs-ripio-frame-bag-medium-black",
+      "quote": "Medium (MD): 397 g",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Ripio",
+      "name": "Ripio Frame Bag",
+      "size": "LG",
+      "weight_g": 454,
+      "basis": "retailer",
+      "source": "https://www.modernbike.com/revelate-designs-ripio-frame-bag-large-black",
+      "quote": "Large (LG): 454 g",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed."
+    },
+    {
+      "line": "Ripio",
+      "name": "Ripio Frame Bag",
+      "size": "XL",
+      "weight_g": 511,
+      "basis": "size-interpolated",
+      "source": "https://www.modernbike.com/revelate-designs-ripio-frame-bag-large-black",
+      "quote": "Large (LG): 454 g",
+      "note": "Figure read from the web-search result summary for the listed pages; exact page carrying it not individually confirmed. No XL figure seen; extrapolated by the MD to LG step (+57 g)."
+    },
+    {
+      "line": "Rifter",
+      "name": "Rifter Frame Bag",
+      "size": "SM",
+      "weight_g": 280,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Scaled from the Ranger frame bag (340 g for 6 L, about 57 g/L) to 4.5 L."
+    },
+    {
+      "line": "Rifter",
+      "name": "Rifter Frame Bag",
+      "size": "MD",
+      "weight_g": 315,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Scaled from the Ranger frame bag to 5.5 L."
+    },
+    {
+      "line": "Rifter",
+      "name": "Rifter Frame Bag",
+      "size": "LG",
+      "weight_g": 365,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Scaled from the Ranger frame bag to 7 L."
+    },
+    {
+      "line": "Rifter",
+      "name": "Rifter Frame Bag",
+      "size": "XL",
+      "weight_g": 415,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Scaled from the Ranger frame bag to 8.5 L."
+    },
+    {
+      "line": "Tangle",
+      "name": "Tangle Frame Bag",
+      "size": "XS",
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Half-frame bag; scaled below the Ranger/Ripio full-frame figures per litre, plus fixed zip and strap weight."
+    },
+    {
+      "line": "Tangle",
+      "name": "Tangle Frame Bag",
+      "size": "SM",
+      "weight_g": 190,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Half-frame bag; see XS note."
+    },
+    {
+      "line": "Tangle",
+      "name": "Tangle Frame Bag",
+      "size": "MD",
+      "weight_g": 215,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Half-frame bag; see XS note."
+    },
+    {
+      "line": "Tangle",
+      "name": "Tangle Frame Bag",
+      "size": "LG",
+      "weight_g": 255,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Half-frame bag; see XS note."
+    },
+    {
+      "line": "Cranny",
+      "name": "Cranny Frame Bag",
+      "size": "0.6L",
+      "weight_g": 80,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Small half-frame corner bag; similar size to the Jerrycan (74 g), plus extra straps."
+    },
+    {
+      "line": "Nook",
+      "name": "Nook Frame Bag",
+      "size": "1.2L",
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Small half-frame bag; between the Jerrycan (74 g) and Gas Tank (125 g) by size."
+    },
+    {
+      "line": "Joey",
+      "name": "Joey Downtube Bag",
+      "size": "1L",
+      "weight_g": 90,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Small strap-on bag similar to the Mountain Feedbag (105 g) and Jerrycan (74 g)."
+    },
+    {
+      "line": "Joey",
+      "name": "Joey Downtube Bag",
+      "size": "2L",
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Scaled up from the 1 L Joey estimate."
+    },
+    {
+      "line": "Joey",
+      "name": "Ultra Joey Downtube Bag",
+      "size": "2L",
+      "weight_g": 100,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Ultra (lighter fabric) version of the 2 L Joey. The Ultra Shrew is about 5% lighter than the Shrew; this estimate assumes a larger saving."
+    },
+    {
+      "line": "Polecat",
+      "name": "Polecat",
+      "size": "3.5L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Fork bag with its own mounting straps; similar to the Egress/Campamocha class (240-285 g) but simpler. Single bag."
+    },
+    {
+      "line": "Rohn",
+      "name": "Rohn Rack Bag",
+      "size": "37L max",
+      "weight_g": 900,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Large expandable rack trunk; no figure found. Rough estimate for a 37 L waterproof rack bag with mounting hardware."
+    },
+    {
+      "line": "Portage",
+      "name": "Portage Panniers",
+      "size": "10L",
+      "weight_g": 450,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Sold as a pair, halved. Per-bag estimate for a 10 L waterproof roll-top pannier with rack hooks."
+    },
+    {
+      "line": "Portage",
+      "name": "Portage Panniers",
+      "size": "14L",
+      "weight_g": 520,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Sold as a pair, halved. Per-bag estimate, 14 L."
+    },
+    {
+      "line": "Portage",
+      "name": "Portage Panniers",
+      "size": "18L",
+      "weight_g": 590,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Sold as a pair, halved. Per-bag estimate, 18 L."
+    },
+    {
+      "line": "Nano",
+      "name": "Nano Panniers",
+      "size": "11L each",
+      "weight_g": 300,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "No source found before the session web-search budget ran out. Sold as a pair, halved. Lightweight pannier; per-bag estimate below the Portage estimates."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "brand": "SILCA",
+  "products": [
+    {
+      "line": "Mattone",
+      "name": "Mattone Seat Pack",
+      "size": "0.5L",
+      "weight_g": 100,
+      "basis": "family-estimate",
+      "source": "https://silca.cc",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: small 0.5L seat pack with structured shell and strap/BOA-type closure. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Mattone",
+      "name": "Mattone Grande",
+      "size": "0.74L",
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "https://silca.cc",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: slightly larger Mattone. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Mattone",
+      "name": "Mattone Ultimate Seat Pack",
+      "size": "0.4L",
+      "weight_g": 80,
+      "basis": "family-estimate",
+      "source": "https://silca.cc",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: lighter, smaller Mattone variant. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Seat Roll",
+      "name": "Seat Roll Asymmetrico",
+      "size": "One Size",
+      "weight_g": 80,
+      "basis": "family-estimate",
+      "source": "https://silca.cc",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: small seat roll. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Grinta",
+      "name": "Grinta Roll Top Bag",
+      "size": "2-5L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://silca.cc",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2-5L roll-top seat bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Grinta",
+      "name": "Grinta Handlebar Bag",
+      "size": "One Size",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://silca.cc",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: ~2.8L handlebar bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+[
+  {
+    "id": "wallet",
+    "name": "Wallet",
+    "cat": "misc",
+    "sub": "wallet",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 113,
+    "packed_cm": [
+      11.0,
+      8.5,
+      1.5
+    ],
+    "packed_l": 0.14,
+    "compress": 0.1,
+    "archetype": "pouch",
+    "color": "#5b3f2e",
+    "rigid": false,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "pocket",
+        "why": "owner keeps it in the hip pack: stays on him when the bike is left outside a shop"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag, zipped away"
+      },
+      {
+        "at": "body",
+        "why": "jersey pocket in a zip bag"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 4.0 oz, carried in the hip sack"
+      }
+    ],
+    "note": "Owner's item: 4.0 oz (113 g) is his figure. Size estimated for a bifold with cards and cash.",
+    "aliases": [
+      "wallet",
+      "purse",
+      "cards",
+      "cash"
+    ]
+  },
+  {
+    "id": "hip-sack",
+    "name": "Hip pack",
+    "cat": "misc",
+    "sub": "hip pack",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 150,
+    "packed_cm": [
+      25.0,
+      12.0,
+      6.0
+    ],
+    "packed_l": 1.8,
+    "compress": 0.6,
+    "archetype": "pouch",
+    "color": "#2e3b45",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": true,
+    "places": [
+      {
+        "at": "body",
+        "why": "worn: holds wallet, UltraPod and other valuables so they leave the bike with the rider"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: wallet and Pedco UltraPod listed as 'Hip sack'"
+      }
+    ],
+    "note": "Owner's container. 150 g is the brief's typical figure for a small hip pack; not sourced to a specific product. Size estimated.",
+    "aliases": [
+      "hip sack",
+      "hip pack",
+      "bum bag",
+      "fanny pack",
+      "waist pack",
+      "belt bag"
+    ]
+  },
+  {
+    "id": "foldup-backpack",
+    "name": "Foldup backpack",
+    "cat": "misc",
+    "sub": "packable daypack",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 68,
+    "packed_cm": [
+      8.0,
+      6.0,
+      6.0
+    ],
+    "packed_l": 0.288,
+    "compress": 0.5,
+    "archetype": "stuffsack",
+    "color": "#3b6f8f",
+    "rigid": false,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "owner keeps it in the front pocket so it is out fast for a town or hike detour"
+      },
+      {
+        "at": "seatpack",
+        "why": "anywhere flat - it packs to tennis-ball size"
+      },
+      {
+        "at": "framebag_half",
+        "why": "bottom of the frame bag"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 2.4 oz"
+      },
+      {
+        "url": "https://seatosummit.com/products/ultra-sil-day-pack",
+        "what": "Ultra-Sil Day Pack 20 L: ~2.5 oz, tennis-ball size"
+      }
+    ],
+    "note": "Owner's item: 2.4 oz (68 g) is his figure, same class as the Sea to Summit Ultra-Sil Day Pack. Packed size from 'tennis-ball size'. Used for resupply runs and side hikes.",
+    "aliases": [
+      "foldup backpack",
+      "packable backpack",
+      "daypack",
+      "day pack",
+      "stuff pack",
+      "backpack"
+    ]
+  },
+  {
+    "id": "s2s-ultrasil-day",
+    "name": "Sea to Summit Ultra-Sil Day Pack",
+    "cat": "misc",
+    "sub": "packable daypack",
+    "generic": false,
+    "brand": "Sea to Summit",
+    "model": "Ultra-Sil Day Pack 20 L",
+    "weight_g": 70,
+    "packed_cm": [
+      8.0,
+      6.0,
+      6.0
+    ],
+    "packed_l": 0.288,
+    "compress": 0.5,
+    "archetype": "stuffsack",
+    "color": "#e0662a",
+    "rigid": false,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "owner keeps it in the front pocket so it is out fast for a town or hike detour"
+      },
+      {
+        "at": "seatpack",
+        "why": "anywhere flat - it packs to tennis-ball size"
+      },
+      {
+        "at": "framebag_half",
+        "why": "bottom of the frame bag"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.trailspace.com/gear/sea-to-summit/ultra-sil-day-pack/",
+        "what": "2.5 oz, 20 L"
+      },
+      {
+        "url": "https://seatosummit.com/products/ultra-sil-day-pack",
+        "what": "packs to tennis-ball size"
+      }
+    ],
+    "note": "20 L, 30D siliconised Cordura, attached stuff sack. Packed size from 'tennis-ball size'.",
+    "aliases": [
+      "ultra-sil day pack",
+      "ultrasil",
+      "sea to summit day pack",
+      "packable backpack",
+      "daypack"
+    ]
+  },
+  {
+    "id": "zip-lock",
+    "name": "Zip-tie lock",
+    "cat": "misc",
+    "sub": "lock",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 28,
+    "packed_cm": [
+      9.0,
+      4.0,
+      2.0
+    ],
+    "packed_l": 0.072,
+    "compress": 0.1,
+    "archetype": "cable_coil",
+    "color": "#1c1c1c",
+    "rigid": false,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner's spot: left side of the half frame bag, out in seconds at a store stop"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 'Zip lock lock' 1.0 oz"
+      }
+    ],
+    "note": "Owner's item: 1.0 oz (28 g) is his figure. Reusable zip-tie style lock (Hiplok Z-Lok class) - deters opportunists at a shop stop, not a real lock.",
+    "aliases": [
+      "zip lock lock",
+      "zip lock",
+      "z lok",
+      "z-lok",
+      "hiplok",
+      "zip tie lock",
+      "lock"
+    ]
+  }
+]

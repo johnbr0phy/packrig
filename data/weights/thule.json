@@ -1,0 +1,60 @@
+{
+ "brand": "Thule",
+ "products": [
+  {
+   "line": "Shield",
+   "name": "Thule Shield Pannier 13L",
+   "size": "13L (pair)",
+   "weight_g": 730,
+   "basis": "family-estimate",
+   "source": "https://www.thule.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag of the pair. Estimated from 13 L waterproof panniers with rigid-back hardware. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Shield",
+   "name": "Thule Shield Pannier 22L",
+   "size": "22L (single)",
+   "weight_g": 1000,
+   "basis": "family-estimate",
+   "source": "https://www.thule.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from the PVC 20 L pannier anchor (~900-1000 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Shield",
+   "name": "Thule Shield Pannier 25L",
+   "size": "25L (pair)",
+   "weight_g": 1000,
+   "basis": "family-estimate",
+   "source": "https://www.thule.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag of the pair. Estimated from the PVC 20 L pannier anchor scaled to 25 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Chasm",
+   "name": "Thule Chasm Handlebar Bag 2L",
+   "size": "2L",
+   "weight_g": 330,
+   "basis": "family-estimate",
+   "source": "https://www.thule.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Bag with bar mount. Estimated from ~2 L structured handlebar bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Paramount",
+   "name": "Thule Paramount Hybrid Pannier 26L",
+   "size": "26L",
+   "weight_g": 1200,
+   "basis": "family-estimate",
+   "source": "https://www.thule.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from convertible 26 L pannier/backpacks with harness straps. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

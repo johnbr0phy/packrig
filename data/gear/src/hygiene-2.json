@@ -1,0 +1,391 @@
+[
+ {
+  "id": "sanitizer-30",
+  "name": "Hand sanitizer 30 ml",
+  "cat": "hygiene",
+  "sub": "hand sanitizer",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 40,
+  "packed_cm": [
+   9,
+   4,
+   2.5
+  ],
+  "packed_l": 0.07,
+  "compress": 0,
+  "archetype": "tube_bottle",
+  "color": "#9ad0e6",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "before every snack and after every roadside poo"
+   },
+   {
+    "at": "barpocket",
+    "why": "within reach of the bars"
+   }
+  ],
+  "consumable": true,
+  "note": "30 ml gel plus bottle; ~40 g estimated. Size estimated.",
+  "aliases": [
+   "hand sanitizer",
+   "hand sanitiser",
+   "sanitizer",
+   "purell",
+   "hand gel",
+   "alcohol gel"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.purell.com",
+    "what": "comparable product (30 ml travel gel bottle), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "lip-balm-spf",
+  "name": "Lip balm SPF",
+  "cat": "hygiene",
+  "sub": "lip balm",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 7,
+  "packed_cm": [
+   7,
+   2,
+   2
+  ],
+  "packed_l": 0.02,
+  "compress": 0,
+  "archetype": "tube_bottle",
+  "color": "#e8e0c8",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "used many times a day in sun and wind"
+   },
+   {
+    "at": "pocket",
+    "why": "jersey or hip pack pocket"
+   }
+  ],
+  "consumable": true,
+  "note": "Generic SPF lip stick; ~7 g with the tube, estimated.",
+  "aliases": [
+   "lip balm",
+   "lipbalm",
+   "chapstick",
+   "lip salve",
+   "spf lip balm",
+   "lip sunscreen"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.blistex.com",
+    "what": "comparable product (4.25 g lip stick), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "toilet-paper",
+  "name": "Toilet paper (half roll, bagged)",
+  "cat": "hygiene",
+  "sub": "toilet paper",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 60,
+  "packed_cm": [
+   11,
+   11,
+   6
+  ],
+  "packed_l": 0.58,
+  "compress": 0.6,
+  "archetype": "stuffsack",
+  "color": "#f4f4f4",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "with the trowel, reachable without unpacking camp"
+   },
+   {
+    "at": "toptube_rear",
+    "why": "rear top tube bag"
+   }
+  ],
+  "consumable": true,
+  "note": "Half a roll squashed flat in a zip bag, core removed; weight and size estimated.",
+  "aliases": [
+   "toilet paper",
+   "loo roll",
+   "tp",
+   "toilet roll",
+   "bog roll"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": null,
+    "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify"
+   }
+  ]
+ },
+ {
+  "id": "deodorant",
+  "name": "Deodorant (travel)",
+  "cat": "hygiene",
+  "sub": "deodorant",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 30,
+  "packed_cm": [
+   9,
+   3.5,
+   3.5
+  ],
+  "packed_l": 0.09,
+  "compress": 0,
+  "archetype": "tube_bottle",
+  "color": "#6d8fb0",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "wash kit"
+   },
+   {
+    "at": "framebag_half",
+    "why": "wash kit in the frame bag"
+   }
+  ],
+  "note": "Generic travel stick or roll-on; ~30 g estimated.",
+  "aliases": [
+   "deodorant",
+   "deo",
+   "antiperspirant",
+   "roll on"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.dove.com",
+    "what": "comparable product (travel-size stick), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "razor",
+  "name": "Disposable razor",
+  "cat": "hygiene",
+  "sub": "razor",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 12,
+  "packed_cm": [
+   13,
+   4,
+   2
+  ],
+  "packed_l": 0.08,
+  "compress": 0,
+  "archetype": "utensil",
+  "color": "#3d7ac2",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "wash kit"
+   },
+   {
+    "at": "framebag_half",
+    "why": "wash kit"
+   }
+  ],
+  "note": "Generic disposable razor with cap; ~12 g estimated.",
+  "aliases": [
+   "razor",
+   "shaver",
+   "disposable razor"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.gillette.com",
+    "what": "comparable product (disposable razor), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "contacts-kit",
+  "name": "Contact lens kit",
+  "cat": "hygiene",
+  "sub": "contact lenses",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 90,
+  "packed_cm": [
+   12,
+   6,
+   4
+  ],
+  "packed_l": 0.23,
+  "compress": 0.1,
+  "archetype": "pouch",
+  "color": "#8fbfdf",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "wash kit, out at camp only"
+   },
+   {
+    "at": "framebag_half",
+    "why": "wash kit if camp is dusty"
+   }
+  ],
+  "note": "Case, spare lenses and a 60 ml solution bottle; ~90 g estimated.",
+  "aliases": [
+   "contact lenses",
+   "contacts",
+   "lens case",
+   "contact lens solution",
+   "lens kit"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.bausch.com",
+    "what": "comparable product (60 ml travel solution + case), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "menstrual-cup",
+  "name": "Menstrual cup (in pouch)",
+  "cat": "hygiene",
+  "sub": "menstrual",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 20,
+  "packed_cm": [
+   8,
+   6,
+   5
+  ],
+  "packed_l": 0.19,
+  "compress": 0.3,
+  "archetype": "pouch",
+  "color": "#c07a9a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "wash kit"
+   },
+   {
+    "at": "framebag_half",
+    "why": "reachable during the day"
+   }
+  ],
+  "note": "Generic silicone cup (~10-15 g) in its cotton pouch; ~20 g total estimated.",
+  "aliases": [
+   "menstrual cup",
+   "mooncup",
+   "diva cup",
+   "divacup",
+   "period cup"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.diva.com",
+    "what": "comparable product (silicone cup + cotton pouch), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "bens-100",
+  "name": "Ben's 100 Max DEET insect repellent",
+  "cat": "hygiene",
+  "sub": "insect repellent",
+  "generic": false,
+  "brand": "Ben's",
+  "model": "100 Max (1.25 oz pump)",
+  "weight_g": 50,
+  "packed_cm": [
+   10,
+   3.5,
+   3.5
+  ],
+  "packed_l": 0.1,
+  "compress": 0,
+  "archetype": "tube_bottle",
+  "color": "#2d6b2d",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "reachable when you stop in a cloud of mozzies"
+   },
+   {
+    "at": "framebag_half",
+    "why": "with the camp kit"
+   }
+  ],
+  "consumable": true,
+  "note": "1.25 fl oz (37 ml) pump; ~50 g with bottle estimated. 100% DEET damages some plastics and synthetic fabrics.",
+  "aliases": [
+   "bens",
+   "bens 100",
+   "ben's 100",
+   "deet",
+   "bug spray",
+   "insect repellent",
+   "mosquito repellent"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.tendercorp.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ }
+]

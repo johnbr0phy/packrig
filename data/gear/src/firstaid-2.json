@@ -1,0 +1,489 @@
+[
+ {
+  "id": "compeed-blister",
+  "name": "Compeed blister plasters",
+  "cat": "firstaid",
+  "sub": "blister kit",
+  "generic": false,
+  "brand": "Compeed",
+  "model": "Blister plasters (mixed)",
+  "weight_g": 15,
+  "packed_cm": [
+   10,
+   7,
+   1.5
+  ],
+  "packed_l": 0.08,
+  "compress": 0,
+  "archetype": "pouch",
+  "color": "#d9cbb5",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "first aid kit"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag if saddle sores or hot spots are already a thing"
+   }
+  ],
+  "note": "A small pack of hydrocolloid plasters; weight and size estimated from the retail box.",
+  "aliases": [
+   "compeed",
+   "blister plasters",
+   "blister kit",
+   "blister pads",
+   "hydrocolloid"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.compeed.com",
+    "what": "weight estimated from a small pack, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "ibuprofen",
+  "name": "Ibuprofen (1 strip)",
+  "cat": "firstaid",
+  "sub": "painkiller",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 8,
+  "packed_cm": [
+   10,
+   5,
+   1
+  ],
+  "packed_l": 0.04,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#e8e8e8",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "first aid kit"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag so it is there mid-ride"
+   }
+  ],
+  "consumable": true,
+  "note": "One blister strip of 16 x 200 mg tablets; weight estimated.",
+  "aliases": [
+   "ibuprofen",
+   "advil",
+   "nurofen",
+   "painkillers",
+   "pain killers",
+   "vitamin i"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": null,
+    "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify"
+   }
+  ]
+ },
+ {
+  "id": "antihistamine",
+  "name": "Antihistamine (1 strip)",
+  "cat": "firstaid",
+  "sub": "antihistamine",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 4,
+  "packed_cm": [
+   8,
+   4,
+   0.5
+  ],
+  "packed_l": 0.01,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#e8e8e8",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "first aid kit"
+   },
+   {
+    "at": "toptube",
+    "why": "close at hand if you react to stings"
+   }
+  ],
+  "consumable": true,
+  "note": "One strip of cetirizine/loratadine tablets; weight estimated.",
+  "aliases": [
+   "antihistamine",
+   "antihistamines",
+   "cetirizine",
+   "loratadine",
+   "benadryl",
+   "hayfever tablets",
+   "allergy tablets"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": null,
+    "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify"
+   }
+  ]
+ },
+ {
+  "id": "whistle",
+  "name": "Safety whistle",
+  "cat": "firstaid",
+  "sub": "whistle",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 8,
+  "packed_cm": [
+   6,
+   2,
+   1.5
+  ],
+  "packed_l": 0.01,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#e8612c",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "body",
+    "why": "on a zip pull or the hip pack strap"
+   },
+   {
+    "at": "barpocket",
+    "why": "clipped to the bar bag"
+   }
+  ],
+  "note": "Generic pealess whistle; ~8 g estimated. Many bag buckles have one built in.",
+  "aliases": [
+   "whistle",
+   "safety whistle",
+   "fox 40",
+   "emergency whistle"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.fox40world.com",
+    "what": "comparable product (Fox 40 pealess whistle), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "tick-tool",
+  "name": "Tick removal tool",
+  "cat": "firstaid",
+  "sub": "tick tool",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 3,
+  "packed_cm": [
+   5,
+   2,
+   0.5
+  ],
+  "packed_l": 0.01,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#3a6fb0",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "first aid kit"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag in tick country"
+   }
+  ],
+  "note": "Generic tick hook/twister pair; ~3 g estimated. Maker site root not confirmed.",
+  "aliases": [
+   "tick tool",
+   "tick remover",
+   "tick twister",
+   "tick hook",
+   "o'tom"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.otom.com",
+    "what": "comparable product (O'Tom Tick Twister), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "nuun-tube",
+  "name": "Nuun electrolyte tablets (tube)",
+  "cat": "firstaid",
+  "sub": "electrolytes",
+  "generic": false,
+  "brand": "Nuun",
+  "model": "Sport (10-tablet tube)",
+  "weight_g": 65,
+  "packed_cm": [
+   11,
+   3,
+   3
+  ],
+  "packed_l": 0.08,
+  "compress": 0,
+  "archetype": "tube_bottle",
+  "color": "#f2a900",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "dropped in the bottle at every refill; needs to be handy"
+   },
+   {
+    "at": "framebag_half",
+    "why": "with the food if the top tube bag is full"
+   }
+  ],
+  "consumable": true,
+  "note": "Tube of 10 tablets, ~5.5 g each plus tube; ~65 g total estimated. Tube is ~3 cm diameter.",
+  "aliases": [
+   "nuun",
+   "electrolytes",
+   "electrolyte tabs",
+   "hydration tablets",
+   "salt tabs",
+   "nuun tabs"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://nuunlife.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "bandage-roll",
+  "name": "Crepe bandage roll",
+  "cat": "firstaid",
+  "sub": "bandage",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 30,
+  "packed_cm": [
+   8,
+   4,
+   4
+  ],
+  "packed_l": 0.1,
+  "compress": 0.2,
+  "archetype": "pouch",
+  "color": "#efe6d4",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "first aid kit"
+   },
+   {
+    "at": "seatpack",
+    "why": "with the first aid kit if carried there"
+   }
+  ],
+  "note": "Generic 7.5 cm conforming/crepe roll; weight and size estimated.",
+  "aliases": [
+   "bandage",
+   "crepe bandage",
+   "bandage roll",
+   "elastic bandage",
+   "conforming bandage"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": null,
+    "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify"
+   }
+  ]
+ },
+ {
+  "id": "sports-tape",
+  "name": "Sports tape roll",
+  "cat": "firstaid",
+  "sub": "tape",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 40,
+  "packed_cm": [
+   5,
+   5,
+   3
+  ],
+  "packed_l": 0.06,
+  "compress": 0,
+  "archetype": "cable_coil",
+  "color": "#f4f0e6",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "first aid kit"
+   },
+   {
+    "at": "toptube",
+    "why": "for hot spots and taping hands mid-ride"
+   }
+  ],
+  "note": "Generic 2.5-3.8 cm zinc oxide roll; weight estimated. Many riders wrap a few metres round a card instead.",
+  "aliases": [
+   "sports tape",
+   "zinc oxide tape",
+   "leukotape",
+   "strapping tape",
+   "athletic tape",
+   "k tape"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.bsnmedical.com",
+    "what": "comparable product (zinc oxide / Leukotape roll), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "sam-splint",
+  "name": "SAM Splint 36\"",
+  "cat": "firstaid",
+  "sub": "splint",
+  "generic": false,
+  "brand": "SAM Medical",
+  "model": "SAM Splint 36\"",
+  "weight_g": 113,
+  "packed_cm": [
+   11,
+   10,
+   6
+  ],
+  "packed_l": 0.53,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#f07c18",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_full",
+    "why": "rolled or folded flat against the frame bag wall"
+   },
+   {
+    "at": "seatpack",
+    "why": "rolled round the sleep kit core"
+   }
+  ],
+  "note": "Widely published as 4 oz (113 g). Size is the rolled splint, estimated.",
+  "aliases": [
+   "sam splint",
+   "splint",
+   "sam",
+   "emergency splint"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.sammedical.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "antiseptic-wipe",
+  "name": "Antiseptic wipes (10)",
+  "cat": "firstaid",
+  "sub": "wipes",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 15,
+  "packed_cm": [
+   7,
+   5,
+   2
+  ],
+  "packed_l": 0.06,
+  "compress": 0.1,
+  "archetype": "pouch",
+  "color": "#e8e8e8",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "first aid kit"
+   },
+   {
+    "at": "toptube",
+    "why": "for gravel rash mid-ride"
+   }
+  ],
+  "consumable": true,
+  "note": "Ten individually wrapped alcohol/chlorhexidine wipes; weight and size estimated.",
+  "aliases": [
+   "antiseptic wipes",
+   "alcohol wipes",
+   "sterile wipes",
+   "cleansing wipes",
+   "prep pads"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": null,
+    "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify"
+   }
+  ]
+ }
+]

@@ -7,7 +7,7 @@
 import puppeteer from 'puppeteer-core';
 
 const b = await puppeteer.launch({
-  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  executablePath: (await import('./lib/chrome.mjs')).CHROME,
   headless: true,
 });
 const p = await b.newPage();

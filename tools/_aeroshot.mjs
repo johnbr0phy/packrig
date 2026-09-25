@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer-core';
-const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-swiftshader','--hide-scrollbars']});
+const b=await puppeteer.launch({executablePath:(await import('./lib/chrome.mjs')).CHROME,headless:true,args:['--enable-unsafe-swiftshader','--hide-scrollbars']});
 const p=await b.newPage(); await p.setViewport({width:1440,height:900,deviceScaleFactor:2});
 const errs=[]; p.on('pageerror',e=>errs.push(e.message));
 await p.goto(process.argv[2],{waitUntil:'domcontentloaded',timeout:60000});

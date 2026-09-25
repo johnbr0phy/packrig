@@ -1,0 +1,60 @@
+{
+  "brand": "Carradice",
+  "products": [
+    {
+      "line": "Originals",
+      "name": "Nelson Longflap Saddlebag",
+      "size": "18L",
+      "weight_g": 950,
+      "basis": "family-estimate",
+      "source": "https://www.carradice.co.uk",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: waxed cotton duck longflap saddlebag, mid-size (anchor 600-1200 g); no support/QR included. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Originals",
+      "name": "Barley Saddlebag",
+      "size": "9L",
+      "weight_g": 650,
+      "basis": "family-estimate",
+      "source": "https://www.carradice.co.uk",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: smallest Carradice traditional saddlebag in this set. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Originals",
+      "name": "Camper Longflap Saddlebag",
+      "size": "24L",
+      "weight_g": 1150,
+      "basis": "family-estimate",
+      "source": "https://www.carradice.co.uk",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: large waxed-canvas longflap saddlebag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Super C",
+      "name": "Super C SQR Slim",
+      "size": "16L",
+      "weight_g": 1300,
+      "basis": "family-estimate",
+      "source": "https://www.carradice.co.uk",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: Super C saddlebag including SQR quick-release block/mount. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Super C",
+      "name": "Super C Rear Panniers",
+      "size": "27L each (54L pair)",
+      "weight_g": 950,
+      "basis": "family-estimate",
+      "source": "https://www.carradice.co.uk",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one Super C rear pannier (pair ~1.9 kg); Cordura-type with hooks. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

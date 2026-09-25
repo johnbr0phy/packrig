@@ -1,0 +1,49 @@
+{
+  "brand": "Rapha",
+  "products": [
+    {
+      "line": null,
+      "name": "Rapha Explore Seat Pack 10L",
+      "size": null,
+      "weight_g": 380,
+      "basis": "family-estimate",
+      "source": "https://www.rapha.cc",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10L seat pack (anchor 300-600 g). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Rapha Explore Handlebar Pack 10L",
+      "size": null,
+      "weight_g": 350,
+      "basis": "family-estimate",
+      "source": "https://www.rapha.cc",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10L bar roll with harness straps. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "4 tapered wide x 10 high; JSON had wid/hgt swapped)",
+      "size": null,
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://www.rapha.cc",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2L top tube bag. Worklist name field appears garbled; copied as-is. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Rapha Explore Stem Bag",
+      "size": null,
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "https://www.rapha.cc",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

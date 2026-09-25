@@ -1,0 +1,1794 @@
+[
+ {
+  "brand": "Apidura",
+  "slug": "apidura",
+  "products": [
+   {
+    "line": "Expedition",
+    "name": "Saddle Pack",
+    "size": "9L",
+    "slot": "seatpack",
+    "liters": 9,
+    "src": "https://www.apidura.com/shop/expedition-saddle-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Saddle Pack",
+    "size": "13L",
+    "slot": "seatpack",
+    "liters": 13,
+    "src": "https://www.apidura.com/shop/expedition-saddle-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Saddle Pack",
+    "size": "16L",
+    "slot": "seatpack",
+    "liters": 16,
+    "src": "https://www.apidura.com/shop/expedition-saddle-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Handlebar Pack",
+    "size": "9L",
+    "slot": "barroll",
+    "liters": 9,
+    "src": "https://www.apidura.com/shop/expedition-handlebar-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Handlebar Pack",
+    "size": "14L",
+    "slot": "barroll",
+    "liters": 14,
+    "src": "https://www.apidura.com/shop/expedition-handlebar-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Front Accessory Pack",
+    "size": "3.5L",
+    "slot": "barpocket",
+    "liters": 3.5,
+    "src": "https://www.apidura.com/shop/expedition-front-accessory-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Frame Pack",
+    "size": "2.8L",
+    "slot": "framebag_half",
+    "liters": 2.8,
+    "src": "https://www.apidura.com/shop/expedition-frame-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Frame Pack",
+    "size": "3.8L",
+    "slot": "framebag_half",
+    "liters": 3.8,
+    "src": "https://www.apidura.com/shop/expedition-frame-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Frame Pack",
+    "size": "4.3L",
+    "slot": "framebag_half",
+    "liters": 4.3,
+    "src": "https://www.apidura.com/shop/expedition-frame-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Frame Pack",
+    "size": "5.7L",
+    "slot": "framebag_half",
+    "liters": 5.7,
+    "src": "https://www.apidura.com/shop/expedition-frame-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Full Frame Pack",
+    "size": "4.6L",
+    "slot": "framebag_full",
+    "liters": 4.6,
+    "src": "https://www.apidura.com/shop/expedition-full-frame-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Full Frame Pack",
+    "size": "6.8L",
+    "slot": "framebag_full",
+    "liters": 6.8,
+    "src": "https://www.apidura.com/shop/expedition-full-frame-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Full Frame Pack",
+    "size": "8L",
+    "slot": "framebag_full",
+    "liters": 8,
+    "src": "https://www.apidura.com/shop/expedition-full-frame-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Full Frame Pack",
+    "size": "10L",
+    "slot": "framebag_full",
+    "liters": 10,
+    "src": "https://www.apidura.com/shop/expedition-full-frame-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Top Tube Pack",
+    "size": "0.6L",
+    "slot": "toptube",
+    "liters": 0.6,
+    "src": "https://www.apidura.com/shop/expedition-top-tube-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Top Tube Pack",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/expedition-top-tube-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Bolt-On Top Tube Pack",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/expedition-bolt-on-top-tube-pack-1l/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Stem Pack",
+    "size": "1.3L",
+    "slot": "stembag",
+    "liters": 1.3,
+    "src": "https://www.apidura.com/shop/expedition-stem-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Downtube Pack",
+    "size": "1.5L",
+    "slot": "downtube",
+    "liters": 1.5,
+    "src": "https://www.apidura.com/shop/expedition-downtube-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Cargo Cage Pack",
+    "size": "1.5L",
+    "slot": "forkbag",
+    "liters": 1.5,
+    "src": "https://www.apidura.com/shop/expedition-cargo-cage-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Cargo Cage Pack",
+    "size": "3.5L",
+    "slot": "forkbag",
+    "liters": 3.5,
+    "src": "https://www.apidura.com/shop/expedition-cargo-cage-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Tool Pack",
+    "size": "1L",
+    "slot": "saddlebag",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/expedition-tool-pack-1l/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Front Rack Pack",
+    "size": "20L",
+    "slot": "randobag",
+    "liters": 20,
+    "src": "https://www.apidura.com/shop/expedition-front-rack-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "Front Rack Pack",
+    "size": "30L",
+    "slot": "randobag",
+    "liters": 30,
+    "src": "https://www.apidura.com/shop/expedition-front-rack-pack/"
+   },
+   {
+    "line": "Expedition",
+    "name": "E-Bike Charger Pack",
+    "size": "1.6L",
+    "slot": "downtube",
+    "liters": 1.6,
+    "src": "https://www.apidura.com/shop/expedition-ebike-charger-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Saddle Pack",
+    "size": "4.5L",
+    "slot": "seatpack",
+    "liters": 4.5,
+    "src": "https://www.apidura.com/shop/backcountry-saddle-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Saddle Pack",
+    "size": "6L",
+    "slot": "seatpack",
+    "liters": 6,
+    "src": "https://www.apidura.com/shop/backcountry-saddle-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Saddle Pack",
+    "size": "10L",
+    "slot": "seatpack",
+    "liters": 10,
+    "src": "https://www.apidura.com/shop/backcountry-saddle-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Handlebar Pack",
+    "size": "7L",
+    "slot": "barroll",
+    "liters": 7,
+    "src": "https://www.apidura.com/shop/backcountry-handlebar-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Handlebar Pack",
+    "size": "11L",
+    "slot": "barroll",
+    "liters": 11,
+    "src": "https://www.apidura.com/shop/backcountry-handlebar-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Frame Pack",
+    "size": "1L",
+    "slot": "framebag_half",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/backcountry-frame-pack-1l/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Frame Pack",
+    "size": "2L",
+    "slot": "framebag_half",
+    "liters": 2,
+    "src": "https://www.apidura.com/shop/backcountry-frame-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Full Frame Pack",
+    "size": "2.5L",
+    "slot": "framebag_full",
+    "liters": 2.5,
+    "src": "https://www.apidura.com/shop/backcountry-full-frame-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Full Frame Pack",
+    "size": "4L",
+    "slot": "framebag_full",
+    "liters": 4,
+    "src": "https://www.apidura.com/shop/backcountry-full-frame-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Full Frame Pack",
+    "size": "6L",
+    "slot": "framebag_full",
+    "liters": 6,
+    "src": "https://www.apidura.com/shop/backcountry-full-frame-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Top Tube Pack",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/backcountry-top-tube-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Long Top Tube Pack",
+    "size": "1.8L",
+    "slot": "toptube",
+    "liters": 1.8,
+    "src": "https://www.apidura.com/shop/backcountry-long-top-tube-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Rear Top Tube Pack",
+    "size": "1L",
+    "slot": "toptube_rear",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/backcountry-rear-top-tube-pack/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Food Pouch",
+    "size": "0.8L",
+    "slot": "stembag",
+    "liters": 0.8,
+    "src": "https://www.apidura.com/shop/backcountry-food-pouch/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Food Pouch",
+    "size": "1.2L",
+    "slot": "stembag",
+    "liters": 1.2,
+    "src": "https://www.apidura.com/shop/backcountry-food-pouch/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Food Pouch Plus",
+    "size": "1.2L Plus",
+    "slot": "stembag",
+    "liters": 1.2,
+    "src": "https://www.apidura.com/shop/backcountry-food-pouch/"
+   },
+   {
+    "line": "Backcountry",
+    "name": "Downtube Pack",
+    "size": "1.8L",
+    "slot": "downtube",
+    "liters": 1.8,
+    "src": "https://www.apidura.com/shop/backcountry-downtube-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Saddle Pack",
+    "size": "3L",
+    "slot": "seatpack",
+    "liters": 3,
+    "src": "https://www.apidura.com/shop/racing-saddle-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Saddle Pack",
+    "size": "5L",
+    "slot": "seatpack",
+    "liters": 5,
+    "src": "https://www.apidura.com/shop/racing-saddle-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Saddle Pack",
+    "size": "7L",
+    "slot": "seatpack",
+    "liters": 7,
+    "src": "https://www.apidura.com/shop/racing-saddle-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Handlebar Pack",
+    "size": "2L",
+    "slot": "barbag",
+    "liters": 2,
+    "src": "https://www.apidura.com/shop/racing-handlebar-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Aerobar Pack",
+    "size": "2.5L",
+    "slot": "barbag",
+    "liters": 2.5,
+    "src": "https://www.apidura.com/shop/racing-aerobar-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Frame Pack",
+    "size": "1L",
+    "slot": "framebag_half",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/racing-frame-pack-1l/"
+   },
+   {
+    "line": "Racing",
+    "name": "Frame Pack",
+    "size": "2.4L",
+    "slot": "framebag_half",
+    "liters": 2.4,
+    "src": "https://www.apidura.com/shop/racing-frame-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Frame Pack",
+    "size": "4L",
+    "slot": "framebag_half",
+    "liters": 4,
+    "src": "https://www.apidura.com/shop/racing-frame-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Top Tube Pack",
+    "size": "0.5L",
+    "slot": "toptube",
+    "liters": 0.5,
+    "src": "https://www.apidura.com/shop/racing-top-tube-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Top Tube Pack",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/racing-top-tube-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Bolt-On Top Tube Pack",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/racing-bolt-on-top-tube-pack/"
+   },
+   {
+    "line": "Racing",
+    "name": "Long Top Tube Pack",
+    "size": "2L",
+    "slot": "toptube",
+    "liters": 2,
+    "src": "https://www.apidura.com/shop/racing-long-top-tube-pack/"
+   },
+   {
+    "line": "Aero",
+    "name": "Top Tube Module",
+    "size": "0.4L",
+    "slot": "toptube",
+    "liters": 0.4,
+    "src": "https://www.apidura.com/shop/aero-top-tube-module/"
+   },
+   {
+    "line": "Aero",
+    "name": "Bolt-On Top Tube Module",
+    "size": "0.4L",
+    "slot": "toptube",
+    "liters": 0.4,
+    "src": "https://www.apidura.com/shop/aero-bolt-on-top-tube-module/"
+   },
+   {
+    "line": "Aero",
+    "name": "Bolt-On Long Top Tube Module",
+    "size": "0.8L",
+    "slot": "toptube",
+    "liters": 0.8,
+    "src": "https://www.apidura.com/shop/aero-bolt-on-long-top-tube-module/"
+   },
+   {
+    "line": "City",
+    "name": "Handlebar Pack",
+    "size": "2L",
+    "slot": "barbag",
+    "liters": 2,
+    "src": "https://www.apidura.com/shop/city-handlebar-pack/"
+   },
+   {
+    "line": "Canyon Collab",
+    "name": "Handlebar Pack",
+    "size": "2L",
+    "slot": "barbag",
+    "liters": 2,
+    "src": "https://www.apidura.com/shop/apidura-x-canyon-handlebar-pack/"
+   },
+   {
+    "line": "Canyon Collab",
+    "name": "Saddle Pack",
+    "size": "5L",
+    "slot": "seatpack",
+    "liters": 5,
+    "src": "https://www.apidura.com/shop/apidura-x-canyon-saddle-pack/"
+   },
+   {
+    "line": "Canyon Collab",
+    "name": "Frame Pack",
+    "size": "2.4L",
+    "slot": "framebag_half",
+    "liters": 2.4,
+    "src": "https://www.apidura.com/shop/apidura-x-canyon-frame-pack/"
+   },
+   {
+    "line": "Canyon Collab",
+    "name": "Frame Pack",
+    "size": "4.5L",
+    "slot": "framebag_half",
+    "liters": 4.5,
+    "src": "https://www.apidura.com/shop/apidura-x-canyon-frame-pack/"
+   },
+   {
+    "line": "Canyon Collab",
+    "name": "Bolt-On Top Tube Pack",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/apidura-x-canyon-bolt-on-top-tube-pack/"
+   },
+   {
+    "line": "MAAP Collab",
+    "name": "Handlebar Pack",
+    "size": "9L",
+    "slot": "barroll",
+    "liters": 9,
+    "src": "https://www.apidura.com/shop/maap-x-apidura-handlebar-pack-9l-v2/"
+   },
+   {
+    "line": "MAAP Collab",
+    "name": "Saddle Pack",
+    "size": "7L",
+    "slot": "seatpack",
+    "liters": 7,
+    "src": "https://www.apidura.com/shop/maap-x-apidura-saddle-pack-7l-v2/"
+   },
+   {
+    "line": "MAAP Collab",
+    "name": "Frame Pack",
+    "size": "1L",
+    "slot": "framebag_half",
+    "liters": 1,
+    "src": "https://www.apidura.com/shop/maap-x-apidura-frame-pack-1l-v2/"
+   },
+   {
+    "line": "MAAP Collab",
+    "name": "Frame Pack",
+    "size": "4L",
+    "slot": "framebag_half",
+    "liters": 4,
+    "src": "https://www.apidura.com/shop/maap-x-apidura-frame-pack-4l-v2/"
+   },
+   {
+    "line": "Bombtrack Collab",
+    "name": "Frame Pack",
+    "size": "2.4L",
+    "slot": "framebag_half",
+    "liters": 2.4,
+    "src": "https://www.apidura.com/shop/apidura-bombtrack-frame-pack-2-4l/"
+   }
+  ]
+ },
+ {
+  "brand": "Topeak",
+  "slug": "topeak",
+  "products": [
+   {
+    "line": "Loader",
+    "name": "BackLoader",
+    "size": "6L",
+    "slot": "seatpack",
+    "liters": 6,
+    "src": "https://www.topeak.com/global/en/product/969-BACKLOADER"
+   },
+   {
+    "line": "Loader",
+    "name": "BackLoader",
+    "size": "10L",
+    "slot": "seatpack",
+    "liters": 10,
+    "src": "https://www.topeak.com/global/en/product/969-BACKLOADER"
+   },
+   {
+    "line": "Loader",
+    "name": "BackLoader",
+    "size": "15L",
+    "slot": "seatpack",
+    "liters": 15,
+    "src": "https://www.topeak.com/global/en/product/969-BACKLOADER"
+   },
+   {
+    "line": "Loader",
+    "name": "BackLoader X",
+    "size": "10L",
+    "slot": "seatpack",
+    "liters": 10,
+    "src": "https://www.topeak.com/global/en/product/1423-BACKLOADER-X"
+   },
+   {
+    "line": "Loader",
+    "name": "BackLoader X",
+    "size": "15L",
+    "slot": "seatpack",
+    "liters": 15,
+    "src": "https://www.topeak.com/global/en/product/1423-BACKLOADER-X"
+   },
+   {
+    "line": "DynaPack",
+    "name": "DynaPack DX",
+    "size": "9.7L",
+    "slot": "seatpack",
+    "liters": 9.7,
+    "src": "https://www.topeak.com/global/en/product/1631-DYNAPACK-DX"
+   },
+   {
+    "line": "Loader",
+    "name": "FrontLoader",
+    "size": "12L",
+    "slot": "barroll",
+    "liters": 12,
+    "src": "https://www.topeak.com/global/en/product/1290-FRONTLOADER"
+   },
+   {
+    "line": "Loader",
+    "name": "BarLoader",
+    "size": "6.5L",
+    "slot": "barbag",
+    "liters": 6.5,
+    "src": "https://www.topeak.com/global/en/product/1301-BARLOADER"
+   },
+   {
+    "line": "Tubular",
+    "name": "Tubular BarBag",
+    "size": "3.8L",
+    "slot": "barbag",
+    "liters": 3.8,
+    "src": "https://www.topeak.com/global/en/product/1550-TUBULAR-BARBAG"
+   },
+   {
+    "line": "Tubular",
+    "name": "Tubular BarBag Slim",
+    "size": "1.5L",
+    "slot": "barbag",
+    "liters": 1.5,
+    "src": "https://www.topeak.com/global/en/product/1621-TUBULAR-BARBAG-slim"
+   },
+   {
+    "line": "Loader",
+    "name": "MidLoader",
+    "size": "3L",
+    "slot": "framebag_half",
+    "liters": 3,
+    "src": "https://www.topeak.com/global/en/product/967-MIDLOADER"
+   },
+   {
+    "line": "Loader",
+    "name": "MidLoader",
+    "size": "4.5L",
+    "slot": "framebag_half",
+    "liters": 4.5,
+    "src": "https://www.topeak.com/global/en/product/967-MIDLOADER"
+   },
+   {
+    "line": "Loader",
+    "name": "MidLoader",
+    "size": "6L",
+    "slot": "framebag_half",
+    "liters": 6,
+    "src": "https://www.topeak.com/global/en/product/967-MIDLOADER"
+   },
+   {
+    "line": "Loader",
+    "name": "MidLoader DryBag",
+    "size": "S 2L",
+    "slot": "framebag_half",
+    "liters": 2,
+    "src": "https://www.topeak.com/global/en/product/1842-MIDLOADER-DRYBAG"
+   },
+   {
+    "line": "Loader",
+    "name": "MidLoader DryBag",
+    "size": "M 3L",
+    "slot": "framebag_half",
+    "liters": 3,
+    "src": "https://www.topeak.com/global/en/product/1842-MIDLOADER-DRYBAG"
+   },
+   {
+    "line": "Loader",
+    "name": "MidLoader DryBag",
+    "size": "L 4.5L",
+    "slot": "framebag_half",
+    "liters": 4.5,
+    "src": "https://www.topeak.com/global/en/product/1842-MIDLOADER-DRYBAG"
+   },
+   {
+    "line": "Loader",
+    "name": "TopLoader",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.topeak.com/global/en/product/966-TOPLOADER"
+   },
+   {
+    "line": "Loader",
+    "name": "TopLoader DryBag",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.topeak.com/global/en/product/1711-TOPLOADER-DRYBAG"
+   },
+   {
+    "line": "Loader",
+    "name": "TopLoader DryShell",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.topeak.com/global/en/product/1843-TOPLOADER-DRYSHELL"
+   },
+   {
+    "line": "FastFuel",
+    "name": "FastFuel Bag Bolt-On",
+    "size": "0.5L",
+    "slot": "toptube",
+    "liters": 0.5,
+    "src": "https://www.topeak.com/global/en/product/1551-FASTFUEL-BAG-bolt-on"
+   },
+   {
+    "line": "FastFuel",
+    "name": "FastFuel DryBag II",
+    "size": "0.8L",
+    "slot": "toptube",
+    "liters": 0.8,
+    "src": "https://www.topeak.com/global/en/product/1712-FASTFUEL-DRYBAG-II"
+   },
+   {
+    "line": "Loader",
+    "name": "FreeLoader",
+    "size": "1L",
+    "slot": "stembag",
+    "liters": 1,
+    "src": "https://www.topeak.com/global/en/product/1300-FREELOADER"
+   },
+   {
+    "line": "DryBag",
+    "name": "Fork DryBag",
+    "size": "4L",
+    "slot": "forkbag",
+    "liters": 4,
+    "src": "https://www.topeak.com/global/en/product/1746-FORK-DRYBAG-4L"
+   },
+   {
+    "line": "DryBag",
+    "name": "QR Fork DryBag Bolt-On",
+    "size": "5.8L",
+    "slot": "forkbag",
+    "liters": 5.8,
+    "src": "https://www.topeak.com/global/en/product/1744-QR-FORK-DRYBAG-5.8L-Bolt-on"
+   },
+   {
+    "line": "Wedge",
+    "name": "Aero Wedge Pack (strap)",
+    "size": "Micro",
+    "slot": "saddlebag",
+    "liters": 0.41,
+    "src": "https://www.topeak.com/global/en/product/129-AERO-WEDGE-PACK"
+   },
+   {
+    "line": "Wedge",
+    "name": "Aero Wedge Pack (strap)",
+    "size": "Small",
+    "slot": "saddlebag",
+    "liters": 0.66,
+    "src": "https://www.topeak.com/global/en/product/129-AERO-WEDGE-PACK"
+   },
+   {
+    "line": "Wedge",
+    "name": "Aero Wedge Pack (strap)",
+    "size": "Medium",
+    "slot": "saddlebag",
+    "liters": 1.31,
+    "src": "https://www.topeak.com/global/en/product/129-AERO-WEDGE-PACK"
+   },
+   {
+    "line": "Wedge",
+    "name": "Aero Wedge Pack (strap)",
+    "size": "Large",
+    "slot": "saddlebag",
+    "liters": 1.97,
+    "src": "https://www.topeak.com/global/en/product/129-AERO-WEDGE-PACK"
+   },
+   {
+    "line": "Wedge",
+    "name": "Wedge DryBag",
+    "size": "S",
+    "slot": "saddlebag",
+    "liters": 0.6,
+    "src": "https://www.topeak.com/global/en/product/328-WEDGE-DRYBAG"
+   },
+   {
+    "line": "Wedge",
+    "name": "Wedge DryBag",
+    "size": "M",
+    "slot": "saddlebag",
+    "liters": 1,
+    "src": "https://www.topeak.com/global/en/product/328-WEDGE-DRYBAG"
+   },
+   {
+    "line": "Wedge",
+    "name": "Wedge DryBag",
+    "size": "L",
+    "slot": "saddlebag",
+    "liters": 1.5,
+    "src": "https://www.topeak.com/global/en/product/329-WEDGE-DRYBAG"
+   },
+   {
+    "line": "Burrito",
+    "name": "Burrito Pack",
+    "size": "std",
+    "slot": "saddlebag",
+    "liters": null,
+    "src": "https://www.topeak.com/global/en/product/1283-BURRITO-PACK"
+   },
+   {
+    "line": "DryBag",
+    "name": "Pannier DryBag",
+    "size": "16L",
+    "slot": "pannier",
+    "liters": 16,
+    "src": "https://www.topeak.com/global/en/product/1327-PANNIER-DRYBAG"
+   },
+   {
+    "line": "DryBag",
+    "name": "Pannier DryBag",
+    "size": "24L",
+    "slot": "pannier",
+    "liters": 24,
+    "src": "https://www.topeak.com/global/en/product/1327-PANNIER-DRYBAG"
+   },
+   {
+    "line": "MTX 2.0",
+    "name": "MTX TrunkBag DX",
+    "size": "12.3L",
+    "slot": "trunk",
+    "liters": 12.3,
+    "src": "https://www.topeak.com/global/en/product/1686-MTX-TRUNKBAG-DX-(MTX-2.0)"
+   },
+   {
+    "line": "DryBag",
+    "name": "RackLoader DryBag",
+    "size": "12L",
+    "slot": "trunk",
+    "liters": 12,
+    "src": "https://www.topeak.com/global/en/product/1845-RACKLOADER-DRYBAG"
+   }
+  ]
+ },
+ {
+  "brand": "Miss Grape",
+  "slug": "miss-grape",
+  "products": [
+   {
+    "line": "Cluster",
+    "name": "Cluster 2 Waterproof",
+    "size": "2L",
+    "slot": "seatpack",
+    "liters": 2,
+    "src": "https://missgrape.net/en/road/seat-bags-road/cluster-2-waterproof/"
+   },
+   {
+    "line": "Cluster",
+    "name": "Cluster 7 Waterproof",
+    "size": "7L",
+    "slot": "seatpack",
+    "liters": 7,
+    "src": "https://missgrape.net/en/road/seat-bags/cluster-7-waterproof/"
+   },
+   {
+    "line": "Cluster",
+    "name": "Cluster 13 Waterproof",
+    "size": "13L",
+    "slot": "seatpack",
+    "liters": 13,
+    "src": "https://missgrape.net/en/adventure-series/seat-bags/cluster-13-waterproof/"
+   },
+   {
+    "line": "Cluster",
+    "name": "Cluster 20 Waterproof",
+    "size": "20 (18.6L)",
+    "slot": "seatpack",
+    "liters": 18.6,
+    "src": "https://missgrape.net/en/adventure-series/seat-bags/cluster-20-waterproof/"
+   },
+   {
+    "line": "Tendril",
+    "name": "Tendril 4.10 Waterproof",
+    "size": "4-10L",
+    "slot": "barroll",
+    "liters": 10,
+    "src": "https://missgrape.net/en/road/handlebar-bags/tendril-4-10-waterproof/"
+   },
+   {
+    "line": "Tendril",
+    "name": "Tendril 10.7 Waterproof",
+    "size": "10-17L",
+    "slot": "barroll",
+    "liters": 17,
+    "src": "https://missgrape.net/en/adventure-series/handlebar-bags/tendril-10-7-waterproof/"
+   },
+   {
+    "line": "Internode",
+    "name": "Internode 2 Waterproof",
+    "size": "2L",
+    "slot": "framebag_half",
+    "liters": 2,
+    "src": "https://missgrape.net/en/road/frame-bags/internode-2-waterproof/"
+   },
+   {
+    "line": "Internode",
+    "name": "Internode 3 Waterproof",
+    "size": "3L",
+    "slot": "framebag_half",
+    "liters": 3,
+    "src": "https://missgrape.net/en/road/frame-bags/internode-3-waterproof/"
+   },
+   {
+    "line": "Internode",
+    "name": "Internode 4 Waterproof",
+    "size": "4L",
+    "slot": "framebag_half",
+    "liters": 4,
+    "src": "https://missgrape.net/en/adventures/frame-bags/internode-4-waterproof/"
+   },
+   {
+    "line": "Internode",
+    "name": "Internode 5 Waterproof",
+    "size": "5L",
+    "slot": "framebag_half",
+    "liters": 5,
+    "src": "https://missgrape.net/en/adventures/frame-bags/internode-5-waterproof/"
+   },
+   {
+    "line": "Internode",
+    "name": "Internode 6 Waterproof",
+    "size": "6L",
+    "slot": "framebag_half",
+    "liters": 6,
+    "src": "https://missgrape.net/en/adventures/frame-bags/internode-6-waterproof/"
+   },
+   {
+    "line": "Node",
+    "name": "Node Rd",
+    "size": "Road",
+    "slot": "toptube",
+    "liters": null,
+    "src": "https://missgrape.net/en/road/top-tube-bags/node/"
+   },
+   {
+    "line": "Node",
+    "name": "Node 2H Rd",
+    "size": "Road bolt-on",
+    "slot": "toptube",
+    "liters": null,
+    "src": "https://missgrape.net/en/road/top-tube-bags/node-2h/"
+   },
+   {
+    "line": "Node",
+    "name": "Big Node",
+    "size": "1.8L",
+    "slot": "toptube",
+    "liters": 1.8,
+    "src": "https://missgrape.net/en/road/top-tube-bags/big-node-road/"
+   },
+   {
+    "line": "Node",
+    "name": "Big Node 2H",
+    "size": "1.8L bolt-on",
+    "slot": "toptube",
+    "liters": 1.8,
+    "src": "https://missgrape.net/en/road/top-tube-bags/big-node-2h-road/"
+   },
+   {
+    "line": "Node",
+    "name": "Node Adventure",
+    "size": "Adventure",
+    "slot": "toptube",
+    "liters": null,
+    "src": "https://missgrape.net/en/adventure-series/top-tube-bags/node/"
+   },
+   {
+    "line": "Node",
+    "name": "Node 2H Adventure",
+    "size": "Adventure bolt-on",
+    "slot": "toptube",
+    "liters": null,
+    "src": "https://missgrape.net/en/adventure-series/top-tube-bags/node-2h/"
+   },
+   {
+    "line": "Bud",
+    "name": "Bud",
+    "size": "1L",
+    "slot": "stembag",
+    "liters": 1,
+    "src": "https://missgrape.net/en/adventure-series/handlebar-bags/bud/"
+   },
+   {
+    "line": "Moon",
+    "name": "Moon",
+    "size": "2L",
+    "slot": "barbag",
+    "liters": 2,
+    "src": "https://missgrape.net/en/commuting/handlebar-bags/moon/"
+   },
+   {
+    "line": "Moon",
+    "name": "Moon IC",
+    "size": "2.3L",
+    "slot": "barbag",
+    "liters": 2.3,
+    "src": "https://missgrape.net/en/product/commuting/handlebar-bags-commuting/moon-ic/"
+   },
+   {
+    "line": "Trunk",
+    "name": "Trunk 6 Waterproof",
+    "size": "6L",
+    "slot": "forkbag",
+    "liters": 6,
+    "src": "https://missgrape.net/en/fork-bags/trunk-6-waterproof/"
+   },
+   {
+    "line": "Trunk",
+    "name": "Trunk 6 Aero Bar Waterproof",
+    "size": "6L",
+    "slot": "barroll",
+    "liters": 6,
+    "src": "https://missgrape.net/en/adventure/aero-bar-bags/trunk-6-aero-bar-waterproof/"
+   }
+  ]
+ },
+ {
+  "brand": "Road Runner Bags",
+  "slug": "road-runner-bags",
+  "products": [
+   {
+    "line": "Jammer",
+    "name": "Jammer Handlebar Bag",
+    "size": "7L",
+    "slot": "barbag",
+    "liters": 7,
+    "src": "https://roadrunnerbags.us/products/the-jammer-bag"
+   },
+   {
+    "line": "Jammer",
+    "name": "Middle Earth Jammer Handlebar Bag",
+    "size": "13L",
+    "slot": "barbag",
+    "liters": 13,
+    "src": "https://roadrunnerbags.us/products/middle-earth-jammer-handlebar-bag"
+   },
+   {
+    "line": "Jammer",
+    "name": "Jumbo Jammer Handlebar Bag",
+    "size": "17L",
+    "slot": "barbag",
+    "liters": 17,
+    "src": "https://roadrunnerbags.us/products/jumbo-jammer-bag"
+   },
+   {
+    "line": "Burrito",
+    "name": "Burrito Bag",
+    "size": "1.3L",
+    "slot": "barroll",
+    "liters": 1.3,
+    "src": "https://roadrunnerbags.us/products/burrito-handlebar-bag"
+   },
+   {
+    "line": "Burrito",
+    "name": "Burrito Supreme",
+    "size": "2.6L",
+    "slot": "barroll",
+    "liters": 2.6,
+    "src": "https://roadrunnerbags.us/products/burrito-supreme-handle-bar-bag"
+   },
+   {
+    "line": "Burrito",
+    "name": "California Burrito",
+    "size": "3.3L",
+    "slot": "barroll",
+    "liters": 3.3,
+    "src": "https://roadrunnerbags.us/products/california-burrito-handlebar-bag"
+   },
+   {
+    "line": "Burrito",
+    "name": "West Coast Burrito",
+    "size": "5L",
+    "slot": "barroll",
+    "liters": 5,
+    "src": "https://roadrunnerbags.us/products/west-coast-burrito-handlebar-bag"
+   },
+   {
+    "line": "Pilot",
+    "name": "Auto-Pilot Stem Bag",
+    "size": "1.75L",
+    "slot": "stembag",
+    "liters": 1.75,
+    "src": "https://roadrunnerbags.us/products/auto-pilot"
+   },
+   {
+    "line": "Pilot",
+    "name": "Co-Pilot Stem Bag",
+    "size": "0.88L",
+    "slot": "stembag",
+    "liters": 0.88,
+    "src": "https://roadrunnerbags.us/products/co-pilot-bar-bag"
+   },
+   {
+    "line": "Point N Shooter",
+    "name": "Large Point N Shooter Stem Bag",
+    "size": "1.75L",
+    "slot": "stembag",
+    "liters": 1.75,
+    "src": "https://roadrunnerbags.us/products/point-n-shooter-l"
+   },
+   {
+    "line": "Bluff",
+    "name": "Bluff Top Tube Bag",
+    "size": "1.5L",
+    "slot": "toptube",
+    "liters": 1.5,
+    "src": "https://roadrunnerbags.us/products/bluff-top-tube-bag"
+   },
+   {
+    "line": "Wedge",
+    "name": "Wedge Half Frame Bag",
+    "size": "2.5L",
+    "slot": "framebag_half",
+    "liters": 2.5,
+    "src": "https://roadrunnerbags.us/products/wedge"
+   },
+   {
+    "line": "Sleeper",
+    "name": "Sleeper Bikepacking Saddle Bag",
+    "size": "6L",
+    "slot": "seatpack",
+    "liters": 6,
+    "src": "https://roadrunnerbags.us/products/bikepacking-saddle-bag"
+   },
+   {
+    "line": "Drafter",
+    "name": "Drafter Saddle Bag",
+    "size": "0.75L",
+    "slot": "saddlebag",
+    "liters": 0.75,
+    "src": "https://roadrunnerbags.us/products/drafter-saddle-bag"
+   },
+   {
+    "line": "Tool Roll",
+    "name": "Tool Saddle Roll",
+    "size": "One Size",
+    "slot": "saddlebag",
+    "liters": 0.8,
+    "src": "https://roadrunnerbags.us/products/tool-saddle-roll"
+   },
+   {
+    "line": "Buoy",
+    "name": "Buoy Bag",
+    "size": "7.75L",
+    "slot": "forkbag",
+    "liters": 7.75,
+    "src": "https://roadrunnerbags.us/products/buoy-bag"
+   },
+   {
+    "line": "Buoy",
+    "name": "Micro Buoy Bag",
+    "size": "4.5L",
+    "slot": "forkbag",
+    "liters": 4.5,
+    "src": "https://roadrunnerbags.us/products/micro-buoy-bag"
+   },
+   {
+    "line": "Anywhere",
+    "name": "Anywhere Bikepacking Pannier",
+    "size": "15L",
+    "slot": "pannier",
+    "liters": 15,
+    "src": "https://roadrunnerbags.us/products/bikepacking-pannier"
+   }
+  ]
+ },
+ {
+  "brand": "Swift Industries",
+  "slug": "swift-industries",
+  "products": [
+   {
+    "line": "Zeitgeist",
+    "name": "Zeitgeist Pack",
+    "size": "12L",
+    "slot": "barbag",
+    "liters": 12,
+    "src": "https://builtbyswift.com/products/zeitgeist-pack"
+   },
+   {
+    "line": "Catalyst",
+    "name": "Catalyst Pack",
+    "size": "7.5L",
+    "slot": "barbag",
+    "liters": 7.5,
+    "src": "https://builtbyswift.com/products/catalyst-pack"
+   },
+   {
+    "line": "Bandito",
+    "name": "Bandito Bicycle Bag",
+    "size": "3.2L",
+    "slot": "barroll",
+    "liters": 3.2,
+    "src": "https://builtbyswift.com/products/bandito-handlebar-and-saddle-bag"
+   },
+   {
+    "line": "Hold Fast",
+    "name": "Hold Fast Half Frame Bag",
+    "size": "2.75L",
+    "slot": "framebag_half",
+    "liters": 2.75,
+    "src": "https://builtbyswift.com/products/hold-fast-half-frame-bag"
+   },
+   {
+    "line": "Hold Fast",
+    "name": "Hold Fast Half Frame Bag",
+    "size": "3.25L",
+    "slot": "framebag_half",
+    "liters": 3.25,
+    "src": "https://builtbyswift.com/products/hold-fast-half-frame-bag"
+   },
+   {
+    "line": "Hold Fast",
+    "name": "Hold Fast Half Frame Bag",
+    "size": "4L",
+    "slot": "framebag_half",
+    "liters": 4,
+    "src": "https://builtbyswift.com/products/hold-fast-half-frame-bag"
+   },
+   {
+    "line": "Giddy Up",
+    "name": "Giddy Up Wedge Frame Bag",
+    "size": "3.3L",
+    "slot": "framebag_half",
+    "liters": 3.3,
+    "src": "https://builtbyswift.com/products/giddy-up-wedge-frame-bag"
+   },
+   {
+    "line": "Gemini",
+    "name": "Gemini Cargo Pack",
+    "size": "4L",
+    "slot": "forkbag",
+    "liters": 4,
+    "src": "https://builtbyswift.com/products/gemini-cargo-pack"
+   },
+   {
+    "line": "Gibby",
+    "name": "Gibby Stem Bag",
+    "size": "1.75L",
+    "slot": "stembag",
+    "liters": 1.75,
+    "src": "https://builtbyswift.com/products/gibby-stem-bag"
+   },
+   {
+    "line": "Sidekick",
+    "name": "Sidekick Stem Pouch",
+    "size": "1L",
+    "slot": "stembag",
+    "liters": 1,
+    "src": "https://builtbyswift.com/products/sidekick-stem-pouch"
+   },
+   {
+    "line": "Kestrel",
+    "name": "Kestrel Handlebar Bag",
+    "size": "2.5L",
+    "slot": "barbag",
+    "liters": 2.5,
+    "src": "https://builtbyswift.com/products/kestrel-handlebar-bag"
+   },
+   {
+    "line": "Capstone",
+    "name": "Capstone Handlebar Bag",
+    "size": "4L",
+    "slot": "randobag",
+    "liters": 4,
+    "src": "https://builtbyswift.com/products/capstone-handlebar-bag"
+   },
+   {
+    "line": "Olliepack",
+    "name": "Olliepack Seat Bag",
+    "size": "6L",
+    "slot": "seatpack",
+    "liters": 6,
+    "src": "https://builtbyswift.com/products/olliepack-seat-bag"
+   },
+   {
+    "line": "Moxie",
+    "name": "Moxie Top Tube Bag",
+    "size": "0.6L",
+    "slot": "toptube",
+    "liters": 0.6,
+    "src": "https://builtbyswift.com/products/moxie-top-tube-bag-si600"
+   }
+  ]
+ },
+ {
+  "brand": "AGU",
+  "slug": "agu",
+  "products": [
+   {
+    "line": null,
+    "name": "AGU Venture Seat-Pack",
+    "size": null,
+    "slot": "seatpack",
+    "liters": 10,
+    "src": "https://agu.com/en/seatpack-venture"
+   },
+   {
+    "line": null,
+    "name": "AGU Top-Tube Frame Bag Venture Extreme Waterproof",
+    "size": null,
+    "slot": "toptube",
+    "liters": 0.7,
+    "src": "https://agu.com/eu/41503401-000"
+   },
+   {
+    "line": null,
+    "name": "AGU Tube Frame Bag Venture (S, 3L)",
+    "size": null,
+    "slot": "framebag_half",
+    "liters": 3,
+    "src": "https://agu.com/eu/venture-tube-frame-bag"
+   },
+   {
+    "line": null,
+    "name": "AGU Handlebar Bag Venture 17L",
+    "size": null,
+    "slot": "barroll",
+    "liters": 17,
+    "src": "https://agu.com/en/handlebar-bag-venture-415032"
+   },
+   {
+    "line": null,
+    "name": "AGU Essential Pannier Rack Bag (trunk)",
+    "size": null,
+    "slot": "pannier",
+    "liters": 12,
+    "src": "https://www.tradeinn.com/bikeinn/en/agu-essential-klickfix-12l-panniers/138066081/p"
+   },
+   {
+    "line": null,
+    "name": "AGU Urban Essentials DWR Pannier 17L",
+    "size": null,
+    "slot": "pannier",
+    "liters": 17,
+    "src": "https://agu.com/eu/dwr-single-bike-bag-urban-black-41497604-000"
+   }
+  ]
+ },
+ {
+  "brand": "SILCA",
+  "slug": "silca",
+  "products": [
+   {
+    "line": "Mattone",
+    "name": "Mattone Seat Pack",
+    "size": "0.5L",
+    "slot": "seatpack",
+    "liters": 0.5,
+    "src": "https://silca.cc/collections/bags/products/mattone-seat-pack"
+   },
+   {
+    "line": "Mattone",
+    "name": "Mattone Grande",
+    "size": "0.74L",
+    "slot": "seatpack",
+    "liters": 0.74,
+    "src": "https://silca.cc/collections/bags/products/mattone-grande"
+   },
+   {
+    "line": "Mattone",
+    "name": "Mattone Ultimate Seat Pack",
+    "size": "0.4L",
+    "slot": "seatpack",
+    "liters": 0.4,
+    "src": "https://silca.cc/collections/bags/products/mattone-ultimate-seat-pack"
+   },
+   {
+    "line": "Seat Roll",
+    "name": "Seat Roll Asymmetrico",
+    "size": "One Size",
+    "slot": "seatpack",
+    "liters": 0.5,
+    "src": "https://silca.cc/collections/bags/products/seat-roll-asymmetrico"
+   },
+   {
+    "line": "Grinta",
+    "name": "Grinta Roll Top Bag",
+    "size": "2-5L",
+    "slot": "seatpack",
+    "liters": 2.9,
+    "src": "https://silca.cc/collections/bags/products/grinta-roll-top-bag"
+   },
+   {
+    "line": "Grinta",
+    "name": "Grinta Handlebar Bag",
+    "size": "One Size",
+    "slot": "barbag",
+    "liters": 2.8,
+    "src": "https://silca.cc/collections/bags/products/grinta-handlebar-bag"
+   }
+  ]
+ },
+ {
+  "brand": "Nuke Sunrise Bike Bags",
+  "slug": "nuke-sunrise-bike-bags",
+  "products": [
+   {
+    "line": "Silo",
+    "name": "Silo",
+    "size": "One Size",
+    "slot": "stembag",
+    "liters": 1.2,
+    "src": "https://www.nukesunrise.com/store/p73/silo.html"
+   },
+   {
+    "line": "Silo",
+    "name": "Giant Silo",
+    "size": "Giant",
+    "slot": "stembag",
+    "liters": 2.4,
+    "src": "https://www.nukesunrise.com/store/p33/giantsilo.html"
+   },
+   {
+    "line": "Titan",
+    "name": "Titan Tank",
+    "size": "One Size",
+    "slot": "toptube",
+    "liters": 1.3,
+    "src": "https://www.nukesunrise.com/store/p54/titan-top-tube-tank.html"
+   },
+   {
+    "line": "Titan",
+    "name": "MegaTitan",
+    "size": "Mega",
+    "slot": "toptube",
+    "liters": 2.4,
+    "src": "https://www.nukesunrise.com/store/p71/megatitan.html"
+   },
+   {
+    "line": "Wing Tank",
+    "name": "Wing Tank",
+    "size": "One Size (3.5L)",
+    "slot": "forkbag",
+    "liters": 3.5,
+    "src": "https://www.nukesunrise.com/store/p51/wingtank.html"
+   },
+   {
+    "line": "Mini-Panniers",
+    "name": "Mini-Pannier",
+    "size": "One Size (6L each)",
+    "slot": "pannier",
+    "liters": 6,
+    "src": "https://www.nukesunrise.com/store/p69/panniers.html"
+   }
+  ]
+ },
+ {
+  "brand": "EVOC",
+  "slug": "evoc",
+  "products": [
+   {
+    "line": null,
+    "name": "Handlebar Pack Boa WP 5",
+    "size": null,
+    "slot": "barbag",
+    "liters": 5,
+    "src": "https://evocsports.com/products/handlebar-pack-boa-wp-5"
+   },
+   {
+    "line": null,
+    "name": "Seat Pack Boa WP 6",
+    "size": null,
+    "slot": "seatpack",
+    "liters": 6,
+    "src": "https://evocsports.com/products/seat-pack-boa-wp-6"
+   },
+   {
+    "line": null,
+    "name": "EVOC Multi Frame Pack WP",
+    "size": null,
+    "slot": "framebag_half",
+    "liters": 1.2,
+    "src": "https://evocsports.com/products/multi-frame-pack-wp"
+   },
+   {
+    "line": null,
+    "name": "EVOC Top Tube Pack WP",
+    "size": null,
+    "slot": "toptube",
+    "liters": 0.8,
+    "src": "https://evocsports.com/products/top-tube-pack-wp"
+   },
+   {
+    "line": null,
+    "name": "Downtube Pack WP 1.2",
+    "size": null,
+    "slot": "downtube",
+    "liters": 1.2,
+    "src": "https://evocsports.us/products/downtube-pack-wp-frame-bag"
+   }
+  ]
+ },
+ {
+  "brand": "Lezyne",
+  "slug": "lezyne",
+  "products": [
+   {
+    "line": null,
+    "name": "Lezyne M-Caddy",
+    "size": null,
+    "slot": "saddlebag",
+    "liters": 0.5,
+    "src": "https://ride.lezyne.com/products/1-sb-caddy-v1m04"
+   },
+   {
+    "line": null,
+    "name": "Lezyne Caddy Sack M",
+    "size": null,
+    "slot": "downtube",
+    "liters": 0.7,
+    "src": "https://ride.lezyne.com/products/1-cs-caddy-v2m04"
+   },
+   {
+    "line": null,
+    "name": "Lezyne XL-Caddy",
+    "size": null,
+    "slot": "seatpack",
+    "liters": 7.5,
+    "src": "https://ride.lezyne.com/products/1-sb-caddy-v2xl04"
+   },
+   {
+    "line": null,
+    "name": "Lezyne Bar Caddy",
+    "size": null,
+    "slot": "barroll",
+    "liters": 7,
+    "src": "https://ride.lezyne.com/products/1-sb-bcaddy-v104"
+   },
+   {
+    "line": null,
+    "name": "Lezyne Energy Caddy XL",
+    "size": null,
+    "slot": "toptube",
+    "liters": 0.8,
+    "src": "https://ride.lezyne.com/products/1-ec-xlcaddy-v104"
+   }
+  ]
+ },
+ {
+  "brand": "Carradice",
+  "slug": "carradice",
+  "products": [
+   {
+    "line": "Originals",
+    "name": "Nelson Longflap Saddlebag",
+    "size": "18L",
+    "slot": "saddlebag",
+    "liters": 18,
+    "src": "https://www.carradice.co.uk/products/originals-nelson-saddlebag"
+   },
+   {
+    "line": "Originals",
+    "name": "Barley Saddlebag",
+    "size": "9L",
+    "slot": "saddlebag",
+    "liters": 9,
+    "src": "https://www.carradice.co.uk/products/originals-barley-saddlebag"
+   },
+   {
+    "line": "Originals",
+    "name": "Camper Longflap Saddlebag",
+    "size": "24L",
+    "slot": "saddlebag",
+    "liters": 24,
+    "src": "https://www.carradice.co.uk/products/originals-camper-longflap-saddlebag"
+   },
+   {
+    "line": "Super C",
+    "name": "Super C SQR Slim",
+    "size": "16L",
+    "slot": "saddlebag",
+    "liters": 16,
+    "src": "https://www.carradice.co.uk/products/super-c-seatpost-qr-slim-saddlebag"
+   },
+   {
+    "line": "Super C",
+    "name": "Super C Rear Panniers",
+    "size": "27L each (54L pair)",
+    "slot": "pannier",
+    "liters": 27,
+    "src": "https://www.carradice.co.uk/products/super-c-rear-panniers-pair"
+   }
+  ]
+ },
+ {
+  "brand": "Andrew The Maker",
+  "slug": "andrew-the-maker",
+  "products": [
+   {
+    "line": "ATM",
+    "name": "ATM Top Tube Bag",
+    "size": "One Size",
+    "slot": "toptube",
+    "liters": 1.6,
+    "src": "https://www.andrewthemaker.com/shop/toptubebag"
+   },
+   {
+    "line": "BarBar",
+    "name": "BarBar Bag (10\")",
+    "size": "10 inch",
+    "slot": "barbag",
+    "liters": 2.1,
+    "src": "https://www.andrewthemaker.com/shop/barbar-bag"
+   },
+   {
+    "line": "Many Things Sack",
+    "name": "Many Things Sack v1.2",
+    "size": "Standard (sold as a pair)",
+    "slot": "forkbag",
+    "liters": 3.4,
+    "src": "https://www.andrewthemaker.com/shop/many-things-sack"
+   },
+   {
+    "line": "Granny's Pantry",
+    "name": "Granny's Pantry",
+    "size": "One Size",
+    "slot": "barbag",
+    "liters": 5,
+    "src": "https://www.andrewthemaker.com/shop/grannys-pantry"
+   },
+   {
+    "line": "ATM",
+    "name": "Rear TT Sack",
+    "size": "One Size",
+    "slot": "toptube_rear",
+    "liters": 1,
+    "src": "https://www.andrewthemaker.com/shop/rear-top-tube-sack"
+   }
+  ]
+ },
+ {
+  "brand": "Bags by Bird",
+  "slug": "bags-by-bird",
+  "products": [
+   {
+    "line": null,
+    "name": "Goldback 12.5W",
+    "size": null,
+    "slot": "seatpack",
+    "liters": 27,
+    "src": "https://www.bagsxbird.com/product-page/goldback-12-5wide"
+   },
+   {
+    "line": null,
+    "name": "Tail Grab Handlebar Bag",
+    "size": null,
+    "slot": "barbag",
+    "liters": 4.3,
+    "src": "https://www.bagsxbird.com/product-page/tail-grab"
+   },
+   {
+    "line": null,
+    "name": "Side Bustle Pannier",
+    "size": null,
+    "slot": "pannier",
+    "liters": 11,
+    "src": "https://www.bagsxbird.com/product-page/side-bustle-pannier"
+   },
+   {
+    "line": null,
+    "name": "Piccolo 11W",
+    "size": null,
+    "slot": "saddlebag",
+    "liters": 18,
+    "src": "https://www.bagsxbird.com/product-page/piccolo-11w"
+   }
+  ]
+ },
+ {
+  "brand": "Rogue Panda Designs",
+  "slug": "rogue-panda-designs",
+  "products": [
+   {
+    "line": null,
+    "name": "Gila Dry Bag (Large, Flat Bar)",
+    "size": null,
+    "slot": "forkbag",
+    "liters": 18,
+    "src": "https://roguepanda.com/products/gila-dry-bag"
+   },
+   {
+    "line": null,
+    "name": "Alamo Top Tube Bag (Gordito Grande)",
+    "size": null,
+    "slot": "toptube",
+    "liters": 1.75,
+    "src": "https://roguepanda.com/products/alamo-top-tube-bag"
+   },
+   {
+    "line": null,
+    "name": "Ripsey Seat Bag V2",
+    "size": null,
+    "slot": "seatpack",
+    "liters": 8,
+    "src": "https://roguepanda.com/products/ripsey-seat-bag"
+   },
+   {
+    "line": null,
+    "name": "Bismarck Bottle Bucket",
+    "size": null,
+    "slot": "stembag",
+    "liters": 1,
+    "src": null
+   }
+  ]
+ },
+ {
+  "brand": "Rapha",
+  "slug": "rapha",
+  "products": [
+   {
+    "line": null,
+    "name": "Rapha Explore Seat Pack 10L",
+    "size": null,
+    "slot": "seatpack",
+    "liters": 10,
+    "src": null
+   },
+   {
+    "line": null,
+    "name": "Rapha Explore Handlebar Pack 10L",
+    "size": null,
+    "slot": "barroll",
+    "liters": 10,
+    "src": null
+   },
+   {
+    "line": null,
+    "name": "4 tapered wide x 10 high; JSON had wid/hgt swapped)",
+    "size": null,
+    "slot": "toptube",
+    "liters": 2,
+    "src": "https://www.rapha.cc/us/en/product/explore-top-tube-bag---long/BME01XXVLA"
+   },
+   {
+    "line": null,
+    "name": "Rapha Explore Stem Bag",
+    "size": null,
+    "slot": "stembag",
+    "liters": 1,
+    "src": "https://www.rapha.cc/us/en/product/explore-stem-bag/BMH01XXVLA"
+   }
+  ]
+ },
+ {
+  "brand": "Randi Jo Fabrications",
+  "slug": "randi-jo-fabrications",
+  "products": [
+   {
+    "line": "Bartender",
+    "name": "Bartender",
+    "size": "One Size",
+    "slot": "stembag",
+    "liters": 2.8,
+    "src": "https://randijofab.com/products/bartender-1"
+   },
+   {
+    "line": "Bartender",
+    "name": "Bartender Plus",
+    "size": "One Size (with pockets)",
+    "slot": "stembag",
+    "liters": 2.8,
+    "src": "https://randijofab.com/products/copy-of-bartender-plus-1"
+   },
+   {
+    "line": "Lil' Jo",
+    "name": "Joey Pouch",
+    "size": "One Size (2.79L)",
+    "slot": "stembag",
+    "liters": 2.79,
+    "src": "https://randijofab.com/products/handlebar-bag"
+   },
+   {
+    "line": "Jeff 'n Joan's",
+    "name": "Jeff 'n Joan's Bag",
+    "size": "One Size (3L rolled, 5L expanded)",
+    "slot": "barbag",
+    "liters": 5,
+    "src": "https://randijofab.com/products/jeffs-joans-bar-bag"
+   }
+  ]
+ }
+]

@@ -1,114 +1,149 @@
-// Stem bag builder (mm-local, parented to the stemL/stemR anchors).
+// Stem bag builder (mm-local, parented to the stemL / stemR anchors).
+//
+// ---- AXIS MAPPING (BUILDER-BRIEF Rule 2) ----------------------------------
+// The stemL / stemR anchors are unrotated children of the frame group
+// (bike.js anchor() passes ry = 0), so bag-local axes ARE frame axes:
+//   +x FORWARD, +y UP, ±z ACROSS (`side` = +1 for stemR, −1 for stemL)
+// Catalogue axes are per PRODUCT in this slot, not per slot: Apidura's Stem
+// Pack writes len→x wid→z, the Backcountry pouches len→z wid→x, Swift's Gibby
+// len→−y wid→+x hgt→z. So each of len/wid/hgt is claimed by the first world
+// axis its own `mount.axes` names (hgt, len, wid in that order); anything the
+// record leaves unsaid falls back to hgt = drop, len = across, wid = fore-aft,
+// with the published `dia` standing in where that would reuse a dimension:
+//   drop    → local −y   the closed height, collar or lid included
+//   across  → local  z
+//   depth   → local  x
+// That per-product mapping was already right before this rework; the body was
+// the fault.
+//
+// ---- WHAT IT IS (owner) -----------------------------------------------------
+// Wrong before: "Stem bags come out as upright boxes with lids, like
+// lunchboxes, when they should be soft cylinders with a drawcord top and mesh
+// pockets. They also collide with the top tube bag and with each other."
+//   body      a soft upright cylinder: a superellipse section (round / oval /
+//             D flat INBOARD against the stem / flat back, from the record's
+//             crossSection), a barrel that slumps a little below its middle and
+//             rounds under at the base — no box, no crease, no lid slab
+//   top       drawcord (33 of 38 records): a gathered collar of a second tone,
+//             cinched to a puckered mouth, with a cord round it and a toggle
+//             cord-lock hanging on the outboard front. Flap records (Apidura
+//             Stem Pack, Wizard Works Voila) get a soft domed fold-over lid with
+//             its strap and buckle; roll-tops (Road Runner Auto-Pilot, Rockgeist
+//             Honeybox) a pinched lip rolled across the top
+//   pockets   mesh pockets that stand proud of the body at their elastic mouths
+//             and change the outline: from the record where it names them,
+//             none where it says "single main compartment", and outboard +
+//             front where it says nothing (the owner's description of the class)
+//   straps    straps.js ribbons only: loops round the bar, one round the stem,
+//             one down to the head tube / fork crown
+//
+// ---- PLACEMENT (derived from the bike, Rule 1) ----------------------------------
+//   mouth     at bar-centre height (points.barCenter), front face 1 mm behind
+//             the back of the bar
+//   across    the inboard face frameEdgeR[2] + 16 mm off the centre plane —
+//             clear of the headset cups (frameEdgeR[2] + 2.5), and of the top
+//             tube bag's nose, which sits between the two stem bags
+//   straps    stem loop on points.steererTop → barCenter, head loop on
+//             points.headTop → headBottom, bar loops on the bar; the L and R
+//             bags take different stations on the stem and head tube so their
+//             straps never sit on top of each other. All re-aimed by
+//             userData.reseat if the resolver moves the bag.
+// The one literal is BAR_R: bike.js draws the bar tops at r = 11.9 and ctx
+// does not publish it.
 
 import * as THREE from 'three';
-import { v3 } from '../../lib.js';
-import { bungeeLattice, cordMat, meshPanelMat, pocketBlock, reflectiveStrip } from '../features.js';
-import { rollTop, seamCurve, seamRing } from '../hardware.js';
+import { v3, tubeAlong } from '../../lib.js';
+import { cordMat, meshPanelMat, reflectiveStrip } from '../features.js';
 import { axesOf, featuresOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
-import { loftBody, sectionFor } from '../loft.js';
-import { fabricMaterial, hardware, patch, shadowify, soft, webbing } from '../materials.js';
+import { deformScale } from '../deform.js';
+import { fabricMaterial, hardware, patch, seamMat, shadowify, soft, webbing } from '../materials.js';
+import { buckle, meshOf, ribbonLoop, strapRun } from '../straps.js';
 
-// ---------------------------------------------------------------------------
-// AXIS MAPPING (BUILDER-BRIEF Rule 2), checked against Apidura's own dimensioned
-// drawings in assets/products/apidura/full/*/dimensions-*.png and against their
-// on-bike photographs.
-//
-// WORLD/LOCAL AXES. The stemL/stemR anchors are unrotated children of the frame
-// group (bike.js `anchor()` passes ry = 0), so bag-local axes are frame axes:
-//   +x = FORWARD   (bike.js: frontAxle.x = wheelbase + rearAxle.x, so front is +x)
-//   +y = UP        (the bag hangs down from the bar)
-//   ±z = ACROSS    (`side` = +1 for stemR, −1 for stemL)
-// Nothing here is placed by a literal: the bar, the head tube and the anchor all
-// come out of `ctx.points` / `ctx.anchors` / `ctx.frameEdgeR`.
-//
-// CATALOGUE AXES ARE PER PRODUCT, NOT PER SLOT. This builder used to assume
-// `len` runs across the bike and `wid` fore-aft for all 38 products in the slot.
-// The records disagree product by product — Apidura's Expedition Stem Pack says
-// len→x wid→z, the Backcountry pouches say len→z wid→x, and Swift's Gibby says
-// len→−y — so the mapping now comes from each record's own mount.axes through
-// axesOf(). The Stem Pack was the visible casualty: 10 cm of across-bike width
-// was being drawn fore-aft and 7 cm of depth drawn across, a 90° transposition
-// that made it ~40% too deep and too narrow.
-//
-// HOW THE BAG HANGS. Apidura's side elevations put the handlebar (drawn as a
-// circle) immediately FORWARD of the bag's top, with the velcro strap looping
-// round it, and the fork strap running down to the steerer; the long diagonal
-// chamfer is on the opposite side, i.e. the lower REAR corner — which is what
-// "tapered to clear the knee" means, since the knee comes up from behind. So
-// the body's front face is planted on the back of the bar and the chamfer eats
-// the lower rear. The record's `mount.contactFaces: ["rear"]` is backwards for
-// the three Backcountry pouches; the record has been corrected.
-// ---------------------------------------------------------------------------
-
-// Bar tops: bike.js draws them with tubeAlong(..., 11.9, ...) straight along z
-// out to 0.6 × barWidth/2 = 132mm, so at the stem anchors (z = ±80) the bar is
-// still a plain cylinder of radius ~12 running along z. The steerer above the
-// headset is tubeBetween(headTop, steererTop, 14, 14).
 const BAR_R = 12;
+const SKIN = 1.2;          // the soft pass's reach outside the drawn section
+const clamp = (x, a, b) => Math.min(Math.max(x, a), b);
+const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+const se = (c, n) => Math.sign(c) * Math.abs(c) ** (2 / n);
 
-// A coloured shockcord pull is the loudest single detail on most bags in this
-// slot, and the colour comes from the BRAND RECORD, not from a lookup table.
-// This used to be `const CORD_HIGHLIGHT = { Apidura: 0xf2d21c }` — one maker's
-// yellow hard-coded into a file that draws 38 bags for 20-odd brands.
-//
-// `brand.palette[3]` is the accent slot in all 48 brand records (Apidura
-// #e2572b, Ortlieb #c1121f, Restrap #f4661b, Tailfin #d0021b); indices 0-2 are
-// the dark, mid and panel tones. Where a record is shorter than four entries
-// there is no accent and cordMat()'s neutral cord stands.
-const brandAccent = (brand) => (Array.isArray(brand?.palette) && brand.palette.length > 3
-  ? brand.palette[3] : null);
-
-// How far INSIDE the published box the fabric section is drawn. soft() displaces
-// the shell outward along its normals by `amp` (1.2–1.8 mm here) and the welded
-// seams stand a little proud of that, so a section drawn ON the published box
-// measures over it. 1.6 mm is that stuffing, not a design allowance — the v2
-// value of 4 mm was, and on a 60 mm axis it alone was a 13% under-read.
-const SKIN = 1.6;
-
-/** Flat webbing between two local points, oriented by the run itself. */
-function strapRun(mat, a, b, w, thick = 2.6) {
-  const d = b.clone().sub(a);
-  const len = d.length();
-  if (len < 0.5) return null;
-  const m = new THREE.Mesh(new THREE.BoxGeometry(w, len, thick), mat);
-  m.quaternion.setFromUnitVectors(v3(0, 1, 0), d.clone().normalize());
-  m.position.copy(a).addScaledVector(d, 0.5);
-  return m;
-}
+const brandAccent = (brand) => (Array.isArray(brand?.palette) && brand.palette.length > 3 ? brand.palette[3] : null);
 
 /**
- * A webbing band wrapping a bike tube. `axis` is the tube's own direction in
- * bag-local space, so the same helper serves the bar (running along z) and the
- * head tube (running down the head angle in the xy plane).
- *
- * Marked noCollide for the same reason frameStraps() does: a strap that wraps
- * its mount is meant to intersect it, and the clearance audit must not read
- * that as a bag buried in the bike.
+ * Closed loft of M-point rings with fan caps at both ends; `pt(i, j)` → [x,y,z].
+ * Winding fixed by signed volume.
  */
-function tubeWrap(wm, { at, tubeR, axis, width = 16 }) {
-  const loop = new THREE.Mesh(new THREE.TorusGeometry(tubeR + 3, 2.2, 6, 22), wm);
-  loop.scale.z = Math.max(width / 4.4, 1);
-  loop.quaternion.setFromUnitVectors(v3(0, 0, 1), axis.clone().normalize());
-  loop.position.copy(at);
-  loop.userData.noCollide = true;
-  return loop;
+function ringLoft(N, M, pt, uvOf, { capStart = true, capEnd = true } = {}) {
+  const pos = [], uv = [], idx = [];
+  const at = (i, j) => i * M + (((j % M) + M) % M);
+  for (let i = 0; i <= N; i++) for (let j = 0; j < M; j++) { pos.push(...pt(i, j)); uv.push(...uvOf(i, j)); }
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) idx.push(at(i, j), at(i, j + 1), at(i + 1, j + 1), at(i, j), at(i + 1, j + 1), at(i + 1, j));
+  }
+  const cap = (i, first) => {
+    let cx = 0, cy = 0, cz = 0;
+    for (let j = 0; j < M; j++) { const k = at(i, j) * 3; cx += pos[k]; cy += pos[k + 1]; cz += pos[k + 2]; }
+    const c = pos.length / 3;
+    pos.push(cx / M, cy / M, cz / M);
+    uv.push(0.5, 0.5);
+    for (let j = 0; j < M; j++) {
+      if (first) idx.push(c, at(i, j + 1), at(i, j)); else idx.push(c, at(i, j), at(i, j + 1));
+    }
+  };
+  if (capStart) cap(0, true);
+  if (capEnd) cap(N, false);
+  // orientation from the side wall alone (caps may be missing): outward = away
+  // from the ring centroid
+  let score = 0;
+  for (let i = 0; i < N; i += Math.max(1, N >> 3)) {
+    let cx = 0, cz = 0;
+    for (let j = 0; j < M; j++) { cx += pos[at(i, j) * 3]; cz += pos[at(i, j) * 3 + 2]; }
+    cx /= M; cz /= M;
+    for (let j = 0; j < M; j += 4) {
+      const a = at(i, j) * 3, b = at(i, j + 1) * 3, c = at(i + 1, j + 1) * 3;
+      const ux = pos[b] - pos[a], uy = pos[b + 1] - pos[a + 1], uz = pos[b + 2] - pos[a + 2];
+      const wx = pos[c] - pos[a], wy = pos[c + 1] - pos[a + 1], wz = pos[c + 2] - pos[a + 2];
+      const nx = uy * wz - uz * wy, nz = ux * wy - uy * wx;
+      score += nx * (pos[a] - cx) + nz * (pos[a + 2] - cz);
+    }
+  }
+  if (score < 0) for (let k = 0; k < idx.length; k += 3) { const t = idx[k + 1]; idx[k + 1] = idx[k + 2]; idx[k + 2] = t; }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  geo.setIndex(idx);
+  geo.computeVertexNormals();
+  return { geo, at };
+}
+
+/** Racetrack strap: round the far side of a tube, back along both sides to a face. */
+function tubeLoop(C, A, faceP, rT, half, width = 20) {
+  const toFace = faceP.clone().sub(C);
+  const u = toFace.clone().addScaledVector(A, -toFace.dot(A));
+  const d = u.length();
+  if (d < rT + 1) return null;
+  u.normalize();
+  const along = toFace.dot(A);               // the face may sit above/below the wrap
+  const vv = new THREE.Vector3().crossVectors(A, u).normalize();
+  const pts = [];
+  for (let q = 0; q <= 16; q++) {
+    const th = -Math.PI / 2 + (Math.PI * q) / 16;
+    pts.push(C.clone().addScaledVector(u, -Math.cos(th) * rT).addScaledVector(vv, Math.sin(th) * rT));
+  }
+  const at = (f, s) => C.clone().addScaledVector(u, d * f).addScaledVector(A, along * f).addScaledVector(vv, s);
+  pts.push(at(0.5, (rT + half) / 2), at(1, half), at(1, -half), at(0.5, -(rT + half) / 2));
+  return ribbonLoop(pts, A, at(0.5, 0), { width, lift: 0.3, thick: 1.6 });
 }
 
 export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
-  // soft | semi | rigid, from the model records — see stiffnessOf().
   const stiff = stiffnessOf(p);
+  const K = deformScale(stiff);
   const geom = geomOf(p);
   const ax = axesOf(p);
+  const ft = (p && p.features) || {};
 
-  // ---- which catalogue dimension runs along which world axis ---------------
-  // Each of len/wid/hgt is claimed by the first world axis its record names, in
-  // a fixed order so the result is stable; anything the record leaves unsaid
-  // falls back to this slot's historic default (hgt = drop, len = across,
-  // wid = fore-aft), with the published `dia` standing in where that default
-  // would have to reuse a dimension already spoken for.
+  // ---- which catalogue dimension runs along which world axis -----------------
   const claimed = new Set();
   const world = (k) => {
     const a = ax[k];
@@ -125,475 +160,347 @@ export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   const depth = pick('x') ?? (claimed.has('wid') ? p.mm.dia : p.mm.wid);
 
   const h = Math.min(drop, 300);
-  const halfZ = Math.max(Math.min(across, 140) / 2 - SKIN, 12);
+  const noiseAmp = vr.range(1.1, 1.6);
+  const bulge = 0.05 * K;                    // the barrel's slump below its middle
+  const halfZ = Math.max((Math.min(across, 150) / 2 - SKIN - noiseAmp * 0.5 * K) / (1 + bulge), 12);
+  const mouthHX = Math.max((Math.min(depth, 150) / 2 - SKIN - noiseAmp * 0.5 * K) / (1 + bulge), 10);
 
-  // ---- fore-aft depth: mouth and base --------------------------------------
-  // v2 read Apidura's published DIAMETER as a second fore-aft figure: their
-  // drawing carries 9 cm at the top and 6 cm at the bottom of one elevation, so
-  // it drew the mouth 9 cm DEEP and the base 6 cm. That is what made the three
-  // food pouches 24–44% too fat fore-aft (0.8L measured x = 86.4 mm against a
-  // published 6 cm), and it contradicts two things the same record says: the
-  // spec sheet reads "9 cm wide x 16 cm tall x 6 cm DEEP", and `mount.axes`
-  // puts `len` (9) across the bike and `wid` (6) fore-aft. Both published plan
-  // figures are therefore honoured as written — 9 across, 6 deep — and the
-  // 6/9 = 0.7 taper is what it always was on the drawing: the diagonal chamfer
-  // off the lower rear corner, which is drawn below. `dia` is Apidura's
-  // marketing figure for the same across-bike width and is no longer read here.
-  const taper = geom.taperRatio ?? vr.range(0.72, 0.86);
-  const mouthHX = Math.max(Math.min(depth, 150) / 2 - SKIN, 10);
-  const baseHX = Math.max(Math.min(depth * taper, 150) / 2 - SKIN, 6);
-  const kBase = baseHX / mouthHX;
-
-  // ---- how the mouth closes, and what that costs the body's height ---------
-  // The published height is the CLOSED bag, collar or flap included — the 0.8L
-  // record says so outright: "The published 16 cm matches the collar-up state
-  // ... cinched right down it loses roughly the 4 cm pale-grey collar". So the
-  // closure is measured out of `h`, not stacked on top of it.
+  // ---- closure, measured out of the published height ------------------------------
   const closure = String(p?.closure?.type || feats.closure || '').toLowerCase();
   const isFlap = /flap/.test(closure);
   const isRoll = /roll/.test(closure);
-  // A fifth of the height is what the collar measures in Apidura's studio shots
-  // and what the critique called it; the drawing shows it cinched flatter.
-  const collarH = isFlap || isRoll ? 0 : Math.min(Math.max(h * 0.2, 20), h * 0.3);
-  const lidH = isFlap ? 9 : isRoll ? Math.min(Math.max(halfZ * 0.6, 14), h * 0.25) : 0;
-  const topRise = collarH + lidH;
-  const bh = h - topRise;                 // the body proper, mouth at local y = 0
+  const collarH = isFlap ? 0 : isRoll ? clamp(h * 0.12, 14, 24) : clamp(h * 0.2, 20, h * 0.3);
+  const lidH = isFlap ? clamp(Math.min(mouthHX, halfZ) * 0.45, 10, 20) : 0;
+  const rollR = isRoll ? clamp(Math.min(mouthHX, halfZ) * 0.22, 6, 10) : 0;
+  const bh = h - collarH - lidH - rollR * 2 * 0.8;          // the body, mouth at y = 0
 
-  // ---- where the bike is ---------------------------------------------------
-  const anchorPos = ctx?.anchors?.[side > 0 ? 'stemR' : 'stemL']?.position ?? v3(0, 0, side * 80);
-  const bar = ctx?.points?.barCenter;
-  const barX = (bar?.x ?? anchorPos.x + 48) - anchorPos.x;
-  const barY = (bar?.y ?? anchorPos.y + 16) - anchorPos.y;
+  // ---- section ----------------------------------------------------------------------
+  // Quadrant exponents: 2 is a circle, 5 a flat panel with a round corner.
+  // d_shape → flat INBOARD (the face against the stem); flat_back → flat at
+  // the rear; rounded_rect → a soft square; round / oval → round.
+  const xs = String(geom.crossSection || (geom.form === 'cylinder' ? 'round' : 'rounded_rect'));
+  const nRound = xs === 'rounded_rect' ? 3.2 : 2.1;
+  const nFlat = 5;
+  const quadN = (front, inboard) => {
+    if (xs === 'd_shape' && inboard) return nFlat;
+    if (xs === 'flat_back' && !front) return nFlat;
+    return nRound + (stiff === 'rigid' ? 1 : 0);
+  };
+  /** unit section point for angle th (0 = +x front, +π/2 = outboard) */
+  const secUnit = (th) => {
+    const c = Math.cos(th), s = Math.sin(th);
+    const n = quadN(c >= 0, s < 0);
+    return [se(c, n), se(s, n) * side];        // z already turned to this bag's side
+  };
 
-  // A stem bag hangs BESIDE the stem, off the frame's centre plane. This builder
-  // used to take no bike reference at all and simply hung off the anchor, so a
-  // fat bag's inner face reached back across the centreline: the Randi Jo
-  // Bartender Plus (65mm half-width on an 80mm anchor) sat 8.5mm inside the top
-  // tube and grazed the down tube, and the drop bar passed straight through it.
-  // Push out only as far as this bag's own half-width requires, never inboard.
-  // The obstacle is the head tube, not the top tube: bike.js draws it at
-  // frameEdgeR[2] (24mm) with headset cups 2.5mm proud of that. Straps, cinch
-  // and patch also carry the bag ~10mm past the fabric, so clear from the
-  // hardware envelope rather than from the half-width.
-  const anchorZ = Math.abs(anchorPos.z || 80);
-  const headR = (ctx?.frameEdgeR?.[2] ?? 24) + 2.5;
-  const CLEAR = 8;
-  const outward = Math.max(headR + halfZ + 10 + CLEAR - anchorZ, 0);
+  // ---- taper: the knee chamfer ------------------------------------------------------
+  // A taper in the record ("tapered to clear the knee") comes off the lower
+  // REAR only: the front face is what the bar and the strap hold.
+  const taper = clamp(geom.taperRatio ?? 1, 0.55, 1);
+  const tCham = taper < 0.98 ? clamp(1 - ((1 - taper) * mouthHX * 2 * 1.73) / bh, 0.35, 0.9) : 0;
+  const kRear = (t) => (t >= tCham ? 1 : taper + (1 - taper) * (t / Math.max(tCham, 1e-3)));
 
-  // Group origin = the centre of the MOUTH section, at bar height, with the
-  // body's front face planted on the back of the bar. Everything below is
-  // therefore in a space where the bar centreline sits at (mouthHX + BAR_R, 0).
-  grp.position.set(barX - BAR_R - mouthHX, barY, side * outward);
-  const barLX = mouthHX + BAR_R;
-  const frameToLocal = (pt) => v3(
-    pt.x - anchorPos.x - grp.position.x,
-    pt.y - anchorPos.y - grp.position.y,
-    (pt.z ?? 0) - anchorPos.z - grp.position.z
-  );
+  // ---- body -------------------------------------------------------------------------
+  const N = 40, M = 48;
+  const rB = Math.min(mouthHX, halfZ) * 0.42;                // the rounded base edge
+  const yOf = (i) => {                                         // denser near the base
+    const f = i / N;
+    return -bh + bh * (f < 0.3 ? 0.3 * (1 - Math.cos((Math.PI / 2) * (f / 0.3))) : f);
+  };
+  const bodyPt = (i, j) => {
+    const y = yOf(i);
+    const t = (y + bh) / bh;                                   // 0 base → 1 mouth
+    const th = (2 * Math.PI * j) / M;
+    const [ux, uz] = secUnit(th);
+    const barrel = 1 + bulge * Math.sin(Math.PI * clamp(t * 1.15, 0, 1)) - 0.02 * smooth(0.85, 1, t);
+    let r = 1;
+    const hb = y + bh;
+    if (hb < rB) r = 0.18 + 0.82 * Math.sqrt(Math.max(1 - ((rB - hb) / rB) ** 2, 0));
+    const kx = ux < 0 ? kRear(t) : 1;
+    return [mouthHX * ux * kx * barrel * r, y, halfZ * uz * barrel * r];
+  };
+  const loft = ringLoft(N, M, bodyPt, (i, j) => [j / M * (mouthHX + halfZ) * 6.3 / 150, (yOf(i) + bh) / 150], { capEnd: true });
 
-  // ---- body ----------------------------------------------------------------
-  // A sewn feed bag loses its taper as a single diagonal cut across the lower
-  // REAR corner — that chamfer is the defining line of the Apidura silhouette
-  // and we drew none of it. A turned cylinder tapers evenly instead. `t` runs
-  // 0 at the base to 1 at the mouth.
-  //
-  // measuredProfile(p) is deliberately NOT used here. data/diagram-profiles.json
-  // does hold a trace for three of these four bags, but the tracer swallowed the
-  // hanging fork strap and the cord tails below the bag: the 0.8L's first twelve
-  // stations sit at ~0.09 (that is the cord, not the pouch) and the Stem Pack's
-  // curve has three runs of hard zeros through its middle. Driving the section
-  // off it would spike the base into a thread. The drawings' own dimensioned
-  // numbers are used instead, which is the same evidence without the tracing.
-  const section = sectionFor(geom.crossSection, 'rounded_rect');
-  const chamfered = (section !== 'round' && section !== 'oval')
-    || /knee|taper/i.test(String(feats.shape || ''));
-  // Slope measured off the drawings: the diagonal runs ~30° off vertical on
-  // both the 0.8L (30mm of depth lost over 52mm of height) and the Stem Pack
-  // (17.5mm over 30mm), so the chamfer's height follows from how much depth the
-  // taper has to remove rather than being a second invented constant.
-  const chamHeight = Math.min((mouthHX - baseHX) * 2 * 1.73, bh * 0.55);
-  const tCham = Math.max(1 - chamHeight / bh, 0.35);
-  const kx = (t) => (t >= tCham ? 1 : kBase + (1 - kBase) * (t / tCham));
-  // The front elevation of both drawings is a PARALLEL-SIDED RECTANGLE: the
-  // chamfer is one diagonal cut across the lower rear corner and it takes
-  // nothing off the across-bike width. v4 said that in this comment and then
-  // passed a third of the fore-aft loss through anyway, which pinched the base
-  // on both axes at once — and a section that shrinks on every axis toward one
-  // end is a cone, however square its corners are. That is the "round-bellied
-  // revolve": the taper, not the cross-section. Only the small amount the side
-  // panels actually draw in as they wrap the base seam is kept.
-  const kz = (t) => 1 - (1 - kx(t)) * 0.1;
-
-  const loft = loftBody({
-    len: bh, rings: 30, shape: section,
-    sectionAt: (t) => {
-      const a = mouthHX * kx(t);
-      // One-sided cut: the front face stays a straight vertical plane at
-      // +mouthHX (it is what the bar and the fork strap hold), and every
-      // millimetre the taper removes comes off the rear.
-      return { a, b: halfZ * kz(t), cu: chamfered ? mouthHX - a : 0 };
-    },
-  });
-  // `d_shape` in loft.js is flat on −z and round on +z — flat INBOARD, which is
-  // what the records mean, but only on the right-hand bag. Mirror the left one
-  // in z (and reverse the winding, or it lights from the inside).
-  if (side < 0) {
-    const pos = loft.geo.attributes.position;
-    for (let i = 0; i < pos.count; i++) pos.setZ(i, -pos.getZ(i));
-    const idx = loft.geo.index.array;
-    for (let i = 0; i < idx.length; i += 3) { const t = idx[i + 1]; idx[i + 1] = idx[i + 2]; idx[i + 2] = t; }
-    loft.geo.index.needsUpdate = true;
-  }
-
-  // Two-tone. Every one of these records describes a dark harness and trim over
-  // a lighter body panel, and where the catalogue authors two colours in the
-  // colourway (`hex` + `accentHex`, resolved by identity.js colorwayFor) they
-  // are used as authored and nothing here is derived.
-  //
-  // THE BODY IS NEVER RECOLOURED. v4 lifted it 0.62 of the way from the
-  // colourway's #1c1c1e to the brand's mid grey to manufacture a two-tone the
-  // catalogue had not given — the same class of fault as the top tube pack's
-  // line-name branch, and it had a second cost: at that albedo (~#5f6266) the
-  // `tpu` laminate in materials.js reads as polished metal, which is the
-  // "mirror-polished chrome" report. The black top tube packs in the same run
-  // and on the same material do not, because a near-black albedo hides a
-  // specular lobe it cannot brighten. Keeping the body at the colourway's own
-  // colour is both the honest reading of the data and most of that fix.
+  // two-tone: a body panel and a darker (or authored accent) harness/trim
   const oneTone = main.color.getHex() === accent.color.getHex();
-  const tone = (k, target, from = main.color) => fabricMaterial(brand.fabricKey,
-    from.clone().lerp(new THREE.Color(target), k));
-  // The brand's mid panel tone, index 2 in every brand record. Neutral grey
-  // where a record is shorter than three entries.
+  const tone = (k, target, from = main.color) => fabricMaterial(brand.fabricKey, from.clone().lerp(new THREE.Color(target), k));
   const midHex = brand?.palette?.[2] ?? 0x8f9295;
-  const bodyMat = main;
-  // The harness band is what the body reads AGAINST. With two authored colours
-  // it is the accent; with one it is the same cloth darkened, which is what a
-  // black Hypalon harness on a black shell actually looks like — a shading
-  // difference, not an invented colour, and it cannot brighten the shell.
-  const trimMat = oneTone ? tone(0.26, 0x000000) : accent;
-  // "A PALE GREY gathered drawcord collar", the loudest feature on the product.
-  // It is a genuinely different piece of cloth, so it does get its own colour —
-  // the SECOND tone, taken to the brand's mid panel grey where the colourway
-  // names only one hex, and lifted a little off the accent where it names two.
-  // Deliberately stopped at the brand's mid tone rather than driven on toward
-  // white: the run before this took it to ~#bcbfc1 and it came back described
-  // as chrome.
-  const collarMat = oneTone ? tone(1, midHex) : tone(0.32, 0xd6d9db, accent.color);
+  const trimMat = oneTone ? tone(0.3, 0x000000) : accent;
+  // the gathered collar is usually the same cloth, a shade lighter where it is
+  // a lighter-weight fabric; only a nudge toward the brand's mid tone
+  const collarMat = oneTone ? tone(0.2, midHex) : tone(0.3, 0xd6d9db, accent.color);
 
-  const body = soft(loft.geo, bodyMat, {
-    amp: vr.range(1.2, 1.8), freq: vr.range(0.04, 0.052), seed: vr.seed % 929,
-    stiffness: stiff,
+  const body = soft(loft.geo, main, {
+    amp: noiseAmp, freq: vr.range(0.04, 0.052), seed: vr.seed % 929, stiffness: stiff,
     aoDir: v3(0, -1, 0), aoK: 0.8, aoSpan: 0.5,
   });
-  body.position.y = -bh;              // loft runs base→mouth; the mouth is at y = 0
   grp.add(body);
-
-  // Welded panel joins down every corner of the recorded section. Without them
-  // a d_shape reads as a turned barrel however square the section is — the
-  // owner's word for the v2 bodies was "round-bellied revolve". `seamCurve` is
-  // noCollide, so this is silhouette only and costs the size gate nothing.
-  // Mirrored in z alongside the shell above for the left-hand bag.
-  for (const line of loft.seams) {
-    const sp = line.filter((_, i) => i % 3 === 0).map((q) => {
-      const n = v3(q.x - (chamfered ? mouthHX - mouthHX * kx(q.y / bh) : 0), 0, q.z);
-      if (n.lengthSq() > 1e-6) n.normalize().multiplyScalar(1.6);
-      return v3(q.x + n.x, q.y - bh, (side < 0 ? -q.z : q.z) + (side < 0 ? -n.z : n.z));
-    });
-    // 1.3mm of piping, up from 0.85. A welded corner on a laminated case is a
-    // visible bead; at 0.85mm on a 100mm-wide bag it was a scratch, and the
-    // corner lines are the only thing separating a sewn case from a barrel.
-    if (sp.length > 2) grp.add(seamCurve(bodyMat, sp, 1.3));
-  }
+  const bpos = loft.geo.attributes.position, bnor = loft.geo.attributes.normal;
+  const surf = (i, j, lift = 0) => {
+    const k = loft.at(i, j);
+    return v3(bpos.getX(k) + bnor.getX(k) * lift, bpos.getY(k) + bnor.getY(k) * lift, bpos.getZ(k) + bnor.getZ(k) * lift);
+  };
+  const ringAtY = (y) => { let b = 0, bd = Infinity; for (let i = 0; i <= N; i++) { const d = Math.abs(yOf(i) - y); if (d < bd) { bd = d; b = i; } } return b; };
+  /** angle index of a direction: 0 front, M/4 outboard, M/2 rear, 3M/4 inboard */
+  const jDir = (name) => ({ front: 0, out: M / 4, rear: M / 2, in: (3 * M) / 4 })[name];
 
   const wm = webbing();
   const hwm = hardware();
-  const out = side;                                  // +1 outboard is +z, −1 is −z
-  const outZ = (f = 1) => out * halfZ * f;
   const cordHex = brandAccent(brand);
-  const cordHi = cordHex != null
-    ? new THREE.MeshStandardMaterial({ color: new THREE.Color(cordHex), roughness: 0.45 })
-    : cordMat();
+  const cordHi = cordHex != null ? new THREE.MeshStandardMaterial({ color: new THREE.Color(cordHex), roughness: 0.45 }) : cordMat();
+  const noCol = (m) => { m.userData.noCollide = true; return m; };
+  const strapGeos = [], hwGeos = [], seamGeos = [];
 
-  // ---- the harness band ----------------------------------------------------
-  // The straps do not sew into the shell; they sew into a reinforced band that
-  // wraps the top of the bag, and in the studio photographs that band is the
-  // black against which the grey body reads. Without it the two tones have no
-  // boundary and the bag is one colour again.
-  const bandH = Math.max(bh * 0.13, 16);
-  const band = loftBody({
-    len: bandH, rings: 3, shape: section,
-    sectionAt: (t) => {
-      const bt = 1 - (bandH / bh) * (1 - t);
-      return { a: mouthHX * kx(bt) + 1.4, b: halfZ * kz(bt) + 1.4, cu: chamfered ? mouthHX - mouthHX * kx(bt) : 0 };
-    },
-  });
-  const bandMesh = new THREE.Mesh(band.geo, trimMat);
-  bandMesh.position.y = -bandH;
-  grp.add(bandMesh);
+  // the base seam and the mouth hem: the welds that say "sewn pouch"
+  for (const y of [-bh + rB * 0.9, -2]) {
+    const i = ringAtY(y);
+    const pts = [];
+    for (let j = 0; j < M; j += 2) pts.push(surf(i, j, 0.5));
+    seamGeos.push(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 64, y > -3 ? 1.5 : 1, 5, true));
+  }
 
-  // ---- closure -------------------------------------------------------------
+  // ---- closure ----------------------------------------------------------------------
+  /** the mouth ring's own section at scale k and height y (for collar / lid lofts) */
+  const mouthPt = (k, y, th, lift = 0) => {
+    const [ux, uz] = secUnit(th);
+    return [(mouthHX * 0.98 + lift) * ux * k, y, (halfZ * 0.98 + lift) * uz * k];
+  };
   if (!isFlap && !isRoll) {
-    // DRAWCORD COLLAR. 33 of the 38 products in this slot close with one, and
-    // it was drawn on none of them: the pouch domed shut and had no opening at
-    // all. On Apidura's it is a pale grey gathered tube standing a fifth of the
-    // bag's height proud of the black body — the single loudest feature of the
-    // product. Height from the record's own note: "cinched right down it loses
-    // roughly the 4 cm pale-grey collar" on a 16 cm bag.
-    const collar = loftBody({
-      len: collarH, rings: 14, shape: section, capEnd: false,
-      sectionAt: (t) => {
-        // Gathers in as the cord pulls. 0.2 barely closed at all, so the collar
-        // read as a straight extension of the bag in a lighter shade rather
-        // than as a mouth cinched shut; a drawn cord takes a third out of the
-        // section by the time it reaches the lip. More rings so the pleats the
-        // noise pass below puts on it have somewhere to sit.
-        const k = 1 - 0.33 * t ** 1.4;
-        return { a: mouthHX * k, b: halfZ * k, cu: 0 };
-      },
-    });
-    // High-frequency, low-amplitude noise is what reads as gathered fabric;
-    // the collar is loose cloth whatever the body's structure class says.
-    const cm = soft(collar.geo, collarMat, {
-      amp: 2.2, freq: 0.16, seed: (vr.seed % 617) + 11,
-      aoDir: v3(0, -1, 0), aoK: 0.86, aoSpan: 0.7,
-    });
+    // DRAWCORD. A gathered collar in the second tone, cinched to a puckered
+    // mouth: rises to collarH, then dips back in to the gathered hole.
+    const NC = 16;
+    const cy = (i) => { const f = i / NC; return f < 0.78 ? collarH * (f / 0.78) : collarH * (1 - 0.18 * ((f - 0.78) / 0.22)); };
+    const ck = (i) => { const f = i / NC; return f < 0.78 ? 1 - 0.4 * (f / 0.78) ** 1.3 : 0.6 - 0.42 * ((f - 0.78) / 0.22); };
+    const collar = ringLoft(NC, M, (i, j) => mouthPt(ck(i), cy(i) - 1, (2 * Math.PI * j) / M), (i, j) => [j / M * 4, i / NC], { capStart: false });
+    const cm = soft(collar.geo, collarMat, { amp: 2.2, freq: 0.16, seed: (vr.seed % 617) + 11, aoDir: v3(0, -1, 0), aoK: 0.86, aoSpan: 0.7 });
     grp.add(cm);
-    // The seam where the pale collar is welded to the dark body. The critique
-    // that the 1.2L "still has no collar" was made against a render where the
-    // two tones met with no line between them, so the gather read as a lighter
-    // patch of the same bag rather than as a separate tube of cloth.
-    const hem = seamRing(trimMat, mouthHX * 1.005, 1.5);
-    hem.scale.set(1, (halfZ * 1.005) / (mouthHX * 1.005), 1);
-    hem.rotation.x = Math.PI / 2;
-    grp.add(hem);
-    // the cord itself, running round the gathered mouth
-    const cord = new THREE.Mesh(new THREE.TorusGeometry(mouthHX * 0.9, 1.7, 5, 30), cordMat());
-    cord.rotation.x = Math.PI / 2;
-    cord.scale.y = (halfZ * 0.9) / (mouthHX * 0.9);
-    cord.position.y = collarH * 0.62;
-    grp.add(cord);
-    // two stacked barrel locks on the outboard face, and the pull loop below
-    for (const yf of [0.06, 0.26]) {
-      const lock = new THREE.Mesh(new THREE.BoxGeometry(9, 11, 8), hwm);
-      lock.position.set(mouthHX * 0.34, -bh * yf, outZ(1.02));
-      grp.add(lock);
-    }
-    // The yellow pull hangs FLAT on the outboard face — in every studio shot it
-    // lies against the panel. Standing it in the yz plane, which is what
-    // rotation.y did, put a 16mm ring out sideways past the widest point of the
-    // bag and was worth ~11% of the 0.8L's across-bike size error on its own.
-    const pull = new THREE.Mesh(new THREE.TorusGeometry(bh * 0.09, 1.9, 5, 26), cordHi);
-    pull.position.set(mouthHX * 0.34, -bh * 0.22, outZ(1.03));
-    grp.add(pull);
+    // the cord in its channel, near the top of the collar
+    const cordY = collarH * 0.8;
+    const ring = [];
+    for (let j = 0; j < 32; j++) { const q = mouthPt(0.63, cordY, (2 * Math.PI * j) / 32, 2.4); ring.push(v3(...q)); }
+    grp.add(noCol(tubeAlong(ring, 1.5, cordMat(), { closed: true, segments: 64, radialSegments: 5 })));
+    // the toggle: two cord tails out of the channel, through a barrel lock
+    // hanging on the outboard-front of the collar, and a coloured pull
+    // (secUnit already turns +θ outboard on either side)
+    const exitTh = Math.PI * 0.28;
+    const e = v3(...mouthPt(0.66, cordY, exitTh, 2.6));
+    const out = v3(Math.cos(exitTh) * 0.6, 0, side * Math.sin(exitTh) * 0.8).normalize();
+    const lock = e.clone().addScaledVector(out, 7).add(v3(0, -16, 0));
+    grp.add(noCol(tubeAlong([e, e.clone().addScaledVector(out, 5).add(v3(0, -5, 0)), lock], 1.3, cordMat(), { segments: 12, radialSegments: 5 })));
+    const toggle = new THREE.Mesh(new THREE.CylinderGeometry(4.6, 5.2, 14, 12), hwm);
+    toggle.position.copy(lock);
+    grp.add(noCol(toggle));
+    const pull = new THREE.Mesh(new THREE.TorusGeometry(5.5, 1.6, 5, 16), cordHi);
+    pull.position.copy(lock).add(v3(0, -13, 0));
+    pull.lookAt(pull.position.clone().add(out));
+    grp.add(noCol(pull));
   }
-
-  if (isRoll) {
-    // Two products in this slot roll shut rather than cinching (Road Runner's
-    // Auto-Pilot, Rockgeist's Honeybox). rollTop stacks toward its own +z, so it
-    // is turned to stack upward out of the mouth.
-    const rt = rollTop(trimMat, hwm, {
-      r: halfZ, depth: 8, rings: p?.closure?.rolls || 3, back: false,
-    });
-    // rollTop is built in its own XY plane and stacks toward +z, with the
-    // flattened lip along its x. Turning it up (+z → +y) and then a quarter turn
-    // about y lays that lip ACROSS the bike, which is the axis a top-opening
-    // roll flattens along.
-    rt.rotation.x = -Math.PI / 2;
-    const rtHolder = new THREE.Group();
-    rtHolder.rotation.y = Math.PI / 2;
-    rtHolder.add(rt);
-    grp.add(rtHolder);
-  }
-
   if (isFlap) {
-    // FOLD-OVER FLAP LID. Apidura's Expedition Stem Pack drawing shows a lid
-    // that wraps the whole mouth and drops a skirt over the top third of the
-    // front face, held by a Fidlock disc at the centre of that face with a
-    // yellow shockcord running down to it in a V. Ours had a 7mm slab and a
-    // floating tab.
-    const drop = bh * 0.3;
-    const lid = new THREE.Mesh(new THREE.BoxGeometry(mouthHX * 2 + 5, 9, halfZ * 2 + 5), trimMat);
-    lid.position.y = 3;
-    grp.add(lid);
-    const skirt = new THREE.Mesh(new THREE.BoxGeometry(mouthHX * 2 * 0.98, drop, 7), trimMat);
-    skirt.position.set(0, -drop / 2, outZ(1.02));
-    grp.add(skirt);
-    const disc = new THREE.Mesh(new THREE.CylinderGeometry(11, 11, 4, 20), hwm);
-    disc.rotation.x = Math.PI / 2;
-    disc.position.set(0, -drop * 0.78, outZ(1.1));
-    grp.add(disc);
-    // the shockcord V, from the two lower corners of the skirt into the disc,
-    // then a loop hanging below it — the coloured catch you lift the lid by
-    for (const sx of [-1, 1]) {
-      const leg = strapRun(cordHi, v3(sx * mouthHX * 0.6, -drop * 0.1, outZ(1.06)),
-        v3(0, -drop * 0.78, outZ(1.1)), 3.4, 3.4);
-      if (leg) grp.add(leg);
+    // A soft fold-over lid: a dome over the mouth in the trim tone, its skirt
+    // dropping over the top of the outboard face, a strap down to a buckle.
+    const NL = 10;
+    const lid = ringLoft(NL, M, (i, j) => {
+      const f = i / NL;
+      const k = Math.sqrt(Math.max(1 - f * f, 0)) * 1.04 + 0.02;
+      return mouthPt(k, -3 + lidH * f, (2 * Math.PI * j) / M, 1.6);
+    }, (i, j) => [j / M * 4, i / NL], { capStart: false });
+    grp.add(soft(lid.geo, trimMat, { amp: 1.2, freq: 0.08, seed: (vr.seed % 311) + 3, stiffness: stiff }));
+    const dropY = bh * 0.3;
+    // skirt: a curved shell over the outboard sector, sewn at the lid edge
+    const NS = 8, MS = 16;
+    const sk = [], idx = [];
+    const i0 = ringAtY(-3), i1 = ringAtY(-dropY);
+    for (let r = 0; r <= NS; r++) {
+      const i = Math.round(i0 + (i1 - i0) * (r / NS));
+      for (let c = 0; c <= MS; c++) {
+        const j = Math.round(M / 4 - M * 0.14 + (M * 0.28 * c) / MS);
+        const q = surf(i, j, 2.2);
+        sk.push(q.x, q.y, q.z);
+      }
     }
-    // The catch loop hangs flat on the panel like the pull on the pouches. Stood
-    // on edge it reached 19mm past the widest point of a bag whose across-bike
-    // size was already being measured 31% over.
-    const catchLoop = new THREE.Mesh(new THREE.TorusGeometry(drop * 0.26, 2, 5, 24), cordHi);
-    catchLoop.position.set(0, -drop * 1.02, outZ(1.04));
-    grp.add(catchLoop);
-  }
-
-  // ---- attachment ----------------------------------------------------------
-  // NOTHING held the previous bag onto the bike: it hung behind the bar tops
-  // touching air. Every record in this slot specifies straps over the bar and
-  // one stability strap down to the fork or head tube, so both are drawn, and
-  // both are placed off the bike rather than off the bag.
-  const barLoops = 2;
-  for (let i = 0; i < barLoops; i++) {
-    const z = (i - (barLoops - 1) / 2) * halfZ * 0.9;
-    grp.add(tubeWrap(wm, { at: v3(barLX, 0, z), tubeR: BAR_R, axis: v3(0, 0, 1), width: 17 }));
-    // the Hypalon tab it is sewn to, on the bag's front face
-    const tab = new THREE.Mesh(new THREE.BoxGeometry(4, bandH * 0.9, 19), trimMat);
-    tab.position.set(mouthHX + 1, -bandH * 0.5, z);
-    grp.add(tab);
-  }
-
-  // The stability strap: down to the head tube, at the height the bag's base
-  // actually reaches. Walk the head-tube axis (bike.points headTop → headBottom)
-  // rather than guessing a point, and wrap it on its own direction.
-  const hTop = ctx?.points?.headTop;
-  const hBot = ctx?.points?.headBottom;
-  if (hTop && hBot) {
-    const a = frameToLocal(hTop);
-    const b = frameToLocal(hBot);
-    const yAt = -bh + Math.min(bh * 0.1, 14);
-    const t = Math.min(Math.max((yAt - a.y) / (b.y - a.y || 1), 0), 1);
-    const at = a.clone().lerp(b, t);
-    const axis = v3(b.x - a.x, b.y - a.y, 0).normalize();
-    const tubeR = (ctx?.frameEdgeR?.[2] ?? 24) + 2;
-    grp.add(tubeWrap(wm, { at, tubeR, axis, width: 15 }));
-    // The run from the bag's base out to that wrap, with its buckle on it.
-    //
-    // noCollide, for the same reason tubeWrap() above is: this webbing crosses
-    // the ~90mm of air between the bag and the frame centre plane BY DESIGN, and
-    // tools/bagshot.mjs measures the "body" bbox over everything not so marked.
-    // Unmarked, it was the single largest size fault in this slot — it alone put
-    // the 0.8L's across-bike box at 117mm against a published 90 (+30%) and the
-    // Stem Pack's at 131 against 100 (+31%), on bags whose fabric measures 82
-    // and 92. It is also what read as "down tube 3.4mm" in the clearance list on
-    // a bag that never comes near the down tube.
-    const from = v3(mouthHX - baseHX, yAt, out * halfZ * kz(0.05) * 0.4);
-    const toward = at.clone().addScaledVector(v3(0, 0, at.z > from.z ? -1 : 1), tubeR + 3);
-    const run = strapRun(wm, from, toward, 15);
-    if (run) { run.userData.noCollide = true; grp.add(run); }
-    const buckle = new THREE.Mesh(new THREE.BoxGeometry(17, 12, 8), hwm);
-    buckle.quaternion.setFromUnitVectors(v3(0, 1, 0), toward.clone().sub(from).normalize());
-    buckle.position.copy(from).lerp(toward, 0.55);
-    buckle.userData.noCollide = true;
-    grp.add(buckle);
-  }
-
-  // ---- panels, pockets and trim -------------------------------------------
-  // The seam where the base panel is welded on is exactly where the chamfer
-  // starts, so one ring draws both the weld and the fold line. A bag with no
-  // taper has no fold, and the weld sits down at the base instead.
-  const tSeam = kBase < 0.98 ? tCham : 0.08;
-  const sr = seamRing(bodyMat, mouthHX * kx(tSeam) * 0.99, 1.2);
-  sr.scale.set(1, (halfZ * kz(tSeam)) / (mouthHX * kx(tSeam)), 1);
-  sr.rotation.x = Math.PI / 2;
-  sr.position.set(chamfered ? mouthHX - mouthHX * kx(tSeam) : 0, -bh * (1 - tSeam), 0);
-  grp.add(sr);
-
-  // The "Plus" exists for one reason: an external mesh wrapper pocket around
-  // the lower half of the body, which we did not draw, leaving it identical to
-  // the standard 1.2L bar its label. The catalogue carries pockets two ways —
-  // a structured array on some products and free text on others — and the Plus
-  // has only the text, so read both.
-  const pocketText = typeof p?.features?.pockets === 'string' ? p.features.pockets : '';
-  const wrapper = /mesh/i.test(pocketText) && /external|wrapper/i.test(pocketText);
-  if (wrapper) {
-    const top = 0.46;                      // the wrapper's height, off the drawings
-    // 5.5mm proud, up from 3.5. The Plus is the standard bag plus this sleeve,
-    // so the sleeve IS the difference between the two products, and at 3.5mm of
-    // near-black mesh over a near-black shell there was no difference to see:
-    // the two rendered as the same bag. What separates them has to be visible in
-    // silhouette, which means the sleeve has to stand off the shell far enough
-    // to break the outline. It costs ~4mm on each plan axis, on a bag currently
-    // measuring +2% across and +3% fore-aft.
-    const PROUD = 5.5;
-    const sleeve = loftBody({
-      len: bh * top, rings: 8, shape: section, capStart: false, capEnd: false,
-      sectionAt: (t) => {
-        const bt = t * top;
-        return { a: mouthHX * kx(bt) + PROUD, b: halfZ * kz(bt) + PROUD, cu: chamfered ? mouthHX - mouthHX * kx(bt) : 0 };
-      },
-    });
-    const mesh = new THREE.Mesh(sleeve.geo, meshPanelMat());
-    mesh.position.y = -bh;
-    grp.add(mesh);
-    // The bound elastic top edge, the line that says "this is a pocket mouth"
-    // rather than "this panel is a slightly different black".
-    const hem = seamRing(collarMat, mouthHX * kx(top) + PROUD, 3);
-    hem.scale.set(1, (halfZ * kz(top) + PROUD) / (mouthHX * kx(top) + PROUD), 1);
-    hem.rotation.x = Math.PI / 2;
-    hem.position.set(mouthHX - mouthHX * kx(top), -bh * (1 - top), 0);
-    grp.add(hem);
-    // The record says "external mesh POCKETS", plural, and one unbroken sleeve
-    // of dark mesh over a dark body has no line in it. Bound vertical dividers
-    // off the sleeve's own corner seams split it into the separate pockets the
-    // product is named for — pushed OUT along their own radial direction, as
-    // the body seams above are, or the piping sits inside the mesh surface it
-    // is meant to divide and is invisible for the second round running.
-    // seamCurve is noCollide, so this costs no size.
-    for (const line of sleeve.seams) {
-      const sp = line.filter((_, i) => i % 2 === 0).map((q) => {
-        const n = v3(q.x - (chamfered ? mouthHX - mouthHX * kx((q.y / bh) * top) : 0), 0, q.z);
-        if (n.lengthSq() > 1e-6) n.normalize().multiplyScalar(1.5);
-        return v3(q.x + n.x, q.y - bh, (side < 0 ? -q.z : q.z) + (side < 0 ? -n.z : n.z));
-      });
-      if (sp.length > 2) grp.add(seamCurve(trimMat, sp, 1.6));
+    for (let r = 0; r < NS; r++) for (let c = 0; c < MS; c++) {
+      const k = r * (MS + 1) + c;
+      idx.push(k, k + 1, k + MS + 2, k, k + MS + 2, k + MS + 1);
     }
+    const sg = new THREE.BufferGeometry();
+    sg.setAttribute('position', new THREE.Float32BufferAttribute(sk, 3));
+    sg.setIndex(idx);
+    sg.computeVertexNormals();
+    const skMat = trimMat.clone();
+    skMat.side = THREE.DoubleSide;
+    grp.add(noCol(new THREE.Mesh(sg, skMat)));
+    const jo = jDir('out');
+    const top = v3(...mouthPt(0.5, lidH - 3, Math.PI / 2, 2));
+    const edge = surf(i1, jo, 3.4);
+    const low = surf(ringAtY(-dropY - 18), jo, 1.2);
+    strapGeos.push(ribbonLoop([top, v3(...mouthPt(1.02, 0, Math.PI / 2, 3)), edge, low], v3(1, 0, 0), v3(0, -dropY * 0.5, 0), { width: 16, lift: 0.4, closed: false }));
+    hwGeos.push(...buckle(edge, v3(0, -1, 0), v3(0, 0, side), { width: 14 }));
+  }
+  if (isRoll) {
+    // pinched flat and rolled: the mouth narrows fore-aft to a lip, and the lip
+    // rolls into a bar lying across the top with a strap down over it
+    const NC = 8;
+    const collar = ringLoft(NC, M, (i, j) => {
+      const f = i / NC;
+      const th = (2 * Math.PI * j) / M;
+      const [ux, uz] = secUnit(th);
+      return [mouthHX * 0.98 * ux * (1 - 0.8 * f), collarH * f, halfZ * 0.98 * uz * (1 + 0.04 * f)];
+    }, (i, j) => [j / M * 4, i / NC], { capStart: false });
+    grp.add(soft(collar.geo, main, { amp: 1.2, freq: 0.1, seed: (vr.seed % 211) + 5, stiffness: stiff }));
+    const roll = new THREE.Mesh(new THREE.CylinderGeometry(rollR, rollR, halfZ * 2.02, 18), trimMat);
+    roll.rotation.x = Math.PI / 2;
+    roll.scale.set(1, 1, 0.8);
+    roll.position.set(0, collarH + rollR * 0.7, 0);
+    grp.add(roll);
+    const pts = [];
+    for (let q = 0; q <= 10; q++) {
+      const a = Math.PI * (q / 10);
+      pts.push(v3(Math.cos(a) * (rollR + 1.4), collarH + rollR * 0.7 + Math.sin(a) * (rollR * 0.8 + 1.4), 0));
+    }
+    pts.unshift(v3(mouthHX + 1.5, -18, 0));
+    pts.push(v3(-mouthHX - 1.5, -18, 0));
+    strapGeos.push(ribbonLoop(pts, v3(0, 0, 1), v3(0, collarH * 0.5, 0), { width: 16, lift: 0.3, closed: false }));
+    hwGeos.push(...buckle(v3(mouthHX + 2, -10, 0), v3(0, -1, 0), v3(1, 0, 0), { width: 14 }));
   }
 
-  // Everything applied to the outboard face is built facing its own +z, so the
-  // left-hand bag turns it to face −z. One expression, used by all of them.
-  const faceOut = out > 0 ? 0 : Math.PI;
-
-  // Structured pockets, where a record gives them: a flat applied pocket on the
-  // outboard face. `pocketArc` is for lathe bodies and would land on +z whatever
-  // side the bag is on, so the block is placed and turned explicitly.
-  feats.pockets.forEach((pk, i) => {
-    const kind = pk.type || 'zip';
-    const g = pocketBlock(bodyMat, hwm, {
-      w: Math.min(mouthHX * 1.5, 70), h: bh * 0.34,
-      proud: kind === 'slip' ? 3.5 : kind === 'mesh' ? 4 : 5,
-      mesh: kind === 'mesh', stretch: kind === 'stretch',
-    });
-    g.position.set(-mouthHX * 0.1, -bh * (0.44 + i * 0.24), outZ(1.02));
-    g.rotation.y = faceOut;
-    grp.add(g);
-  });
-
-  if (feats.cord) {
-    // A criss-cross bungee across the outboard face. bungeeArc() samples onto a
-    // cylinder and would float off a panelled body.
-    const lat = bungeeLattice(hwm, { w: mouthHX * 1.5, h: bh * 0.42, n: 3 });
-    lat.position.set(-mouthHX * 0.1, -bh * 0.5, outZ(1.04));
-    lat.rotation.y = faceOut;
-    grp.add(lat);
+  // ---- mesh pockets --------------------------------------------------------------------
+  const pkArr = Array.isArray(ft.pockets) ? ft.pockets : [];
+  const pkText = typeof ft.pockets === 'string' ? ft.pockets : '';
+  let pockets;
+  if (pkArr.length) {
+    pockets = [];
+    for (const x of pkArr) {
+      if (!/mesh|open|stretch|slip/i.test(x.type || '') || /inside|internal/i.test(x.face || '')) continue;
+      const face = /front/i.test(x.face || '') ? 'front' : /rear|back/i.test(x.face || '') ? 'rear' : 'out';
+      pockets.push(pockets.includes(face) ? (face === 'out' ? 'front' : face === 'front' ? 'rear' : 'out') : face);
+    }
+  } else if (pkText) {
+    pockets = /external|outer|mesh pocket/i.test(pkText) ? ['out', 'front'] : [];
+  } else {
+    // silent record: the class as the owner describes it — but not on a
+    // flat slab or a flap/roll-top pack, which are other constructions
+    pockets = !isFlap && !isRoll && geom.form !== 'slab' ? ['out', 'front'] : [];
   }
+  const pocketTop = -bh * 0.42, pocketBot = -bh + rB * 0.8;
+  const meshMat = meshPanelMat();
+  meshMat.side = THREE.DoubleSide;
+  const hemGeos = [];
+  for (const face of [...new Set(pockets)].slice(0, 3)) {
+    const jc = jDir(face);
+    const jw = Math.round(M * (face === 'out' ? 0.15 : 0.12));
+    const iTop = ringAtY(pocketTop), iBot = ringAtY(pocketBot);
+    const pos = [], idx = [];
+    const rows = iTop - iBot, cols = jw * 2;
+    const hem = [];
+    for (let r = 0; r <= rows; r++) {
+      const i = iBot + r, f = r / Math.max(rows, 1);
+      for (let c = 0; c <= cols; c++) {
+        const j = (jc - jw + c + M) % M;
+        const u = c / cols;
+        // sewn at the base and both sides, standing proud at the elastic mouth
+        const off = 0.8 + (5.5 + 1.5 * K) * Math.sin(Math.PI * u) ** 0.45 * f ** 1.3;
+        const q = surf(i, j, off);
+        pos.push(q.x, q.y, q.z);
+        if (r === rows) hem.push(q.clone().add(v3(0, 1, 0)));
+      }
+    }
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const k = r * (cols + 1) + c;
+      idx.push(k, k + 1, k + cols + 2, k, k + cols + 2, k + cols + 1);
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setIndex(idx);
+    g.computeVertexNormals();
+    grp.add(noCol(new THREE.Mesh(g, meshMat)));
+    // the bound elastic mouth
+    if (hem.length > 2) hemGeos.push(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(hem), 32, 1.7, 5, false));
+  }
+  if (hemGeos.length) grp.add(meshOf(hemGeos, collarMat));
 
   if (feats.reflective) {
-    // "two short reflective slots on the outboard face" — Apidura's own words.
-    for (const yf of [0.58, 0.68]) {
-      const rs = reflectiveStrip(Math.min(mouthHX * 1.1, 44), 6);
-      rs.position.set(-mouthHX * 0.1, -bh * yf, outZ(1.03));
-      rs.rotation.y = faceOut;
-      grp.add(rs);
-    }
+    const i = ringAtY(-bh * 0.28);
+    const rs = reflectiveStrip(Math.min(mouthHX * 0.9, 36), 6);
+    rs.position.copy(surf(i, jDir('out'), 0.8));
+    rs.rotation.y = side > 0 ? 0 : Math.PI;
+    grp.add(rs);
   }
 
-  // The logo sits on the outboard face, low and forward, where every on-bike
-  // photograph puts it. It used to be offset by the FORE-AFT half-extent along
-  // z, so it floated off a bag that was wider than it was deep and sank into one
-  // that was deeper than it was wide.
-  patch(grp, brand, mouthHX * 0.1, -bh * vr.range(0.4, 0.5), outZ(1.04),
-    Math.min(mouthHX * 1.4, 58), faceOut);
+  // the maker's mark on the outboard face, above the pockets
+  {
+    const i = ringAtY(-bh * 0.24);
+    const q = surf(i, jDir('out'), 1.0);
+    const pw = Math.min(mouthHX * 1.3, 54);
+    patch(grp, brand, q.x, q.y + pw * 0.06, q.z, pw, side > 0 ? 0 : Math.PI);
+  }
 
-  grp.userData.radius = Math.max(mouthHX, halfZ);
+  // ---- placement -------------------------------------------------------------------------
+  const anchorPos = ctx?.anchors?.[side > 0 ? 'stemR' : 'stemL']?.position ?? v3(0, 0, side * 80);
+  const P = ctx.points;
+  const bar = P.barCenter;
+  const headR = ctx?.frameEdgeR?.[2] ?? 24;
+  const innerZ = headR + 16;                          // inboard face off the centre plane
+  const bodyInboard = halfZ * (1 + bulge) + 1;
+  const zCentre = innerZ + bodyInboard;
+  grp.position.set(
+    bar.x - anchorPos.x - BAR_R - 1 - mouthHX * (1 + bulge * 0.5),
+    bar.y - anchorPos.y,
+    side * zCentre - anchorPos.z,
+  );
+
+  // ---- attachment straps, aimed at the bike ------------------------------------------------
+  const txt = [ft.attachment, ft.mount, ft.straps].filter((s) => typeof s === 'string').join(' + ');
+  const WORD = { one: 1, two: 2, three: 3 };
+  const barClause = txt.split('+').find((c) => /bar/i.test(c)) || '';
+  const nm = /\b(\d|one|two|three)\b/i.exec(barClause);
+  const nBar = clamp(nm ? (WORD[nm[1].toLowerCase()] ?? +nm[1]) : 2, 1, 3);
+  const toHead = !txt || /fork|head ?tube|crown|stabil|steerer/i.test(txt) || !/only/i.test(txt);
+  const strapMesh = meshOf([new THREE.BufferGeometry()], wm);
+  grp.add(strapMesh);
+  const fixedStraps = strapGeos.slice();
+  const rebuild = (toLocal, toLocalDir) => {
+    const geos = fixedStraps.slice();
+    // bar loops: round the bar tops, down onto the bag's front face
+    const barL = toLocal(v3(bar.x, bar.y, 0));
+    const barA = toLocalDir(v3(0, 0, 1)).normalize();
+    for (let k = 0; k < nBar; k++) {
+      const z = nBar === 1 ? 0 : (-0.5 + k / (nBar - 1)) * halfZ * 1.1;
+      const C = barL.clone().addScaledVector(barA, z - barL.clone().dot(barA));
+      const face = v3(mouthHX * 0.9, -22, z);
+      const g = tubeLoop(C, barA, face, BAR_R + 0.4, 6, 18);
+      if (g) geos.push(g);
+    }
+    // the stem loop: round the stem, to the bag's inboard face near the top
+    const sA = toLocalDir(P.barCenter.clone().sub(P.steererTop)).normalize();
+    const sC = toLocal(P.steererTop.clone().lerp(P.barCenter, side > 0 ? 0.36 : 0.6));
+    const inb = surf(ringAtY(-bh * 0.12), jDir('in'), 0);
+    const inFace = v3(sC.x, inb.y, inb.z);
+    const sg = tubeLoop(sC, sA, inFace, 15.6, 8, 18);
+    if (sg) geos.push(sg);
+    // the stability strap: down to the head tube / fork crown, at the height
+    // the bag's base reaches, offset per side so the pair never overlap
+    if (toHead && P.headTop && P.headBottom) {
+      const hA = toLocalDir(P.headBottom.clone().sub(P.headTop)).normalize();
+      const baseY = -bh + Math.min(bh * 0.14, 18);
+      const hTop = toLocal(P.headTop), hBot = toLocal(P.headBottom);
+      const f = clamp((baseY - hTop.y) / (hBot.y - hTop.y || -1) + (side > 0 ? 0 : 0.12), 0.1, 0.92);
+      const hC = hTop.clone().lerp(hBot, f);
+      const lowIn = surf(ringAtY(baseY), jDir('in'), 0);
+      const g = tubeLoop(hC, hA, v3(lowIn.x * 0.3, lowIn.y, lowIn.z), headR + 0.6, 7, 18);
+      if (g) geos.push(g);
+    }
+    const fresh = meshOf(geos, wm);
+    strapMesh.geometry.dispose();
+    strapMesh.geometry = fresh.geometry;
+  };
+  {
+    const o = anchorPos.clone().add(grp.position);
+    rebuild((q) => v3(q.x - o.x, q.y - o.y, (q.z || 0) - o.z), (d) => d.clone());
+  }
+  grp.userData.reseat = rebuild;
+  if (hwGeos.length) grp.add(meshOf(hwGeos, hwm));
+  if (seamGeos.length) grp.add(meshOf(seamGeos, seamMat(main)));
+
+  grp.userData.radius = Math.max(mouthHX, halfZ) * (1 + bulge);
   return shadowify(grp);
 }

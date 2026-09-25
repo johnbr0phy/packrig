@@ -1,7 +1,7 @@
 /** Phase 2 smoke — REDESIGN.md §15 steps 2 and 3. */
 import puppeteer from 'puppeteer-core';
 const [,, URL, W='1440', H='900', MOB='desktop', SHOT='/tmp/p2.png'] = process.argv;
-const b = await puppeteer.launch({ executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless:true, args:['--hide-scrollbars','--enable-unsafe-swiftshader']});
+const b = await puppeteer.launch({ executablePath:(await import('./lib/chrome.mjs')).CHROME, headless:true, args:['--hide-scrollbars','--enable-unsafe-swiftshader']});
 const p = await b.newPage();
 // Hotlinked maker photos are blocked by some CDNs' Cross-Origin-Resource-Policy.
 // That predates this work and is what the hero fallback exists for — count them,

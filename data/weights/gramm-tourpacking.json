@@ -1,0 +1,93 @@
+{
+ "brand": "Gramm Tourpacking",
+ "products": [
+  {
+   "line": "Diamond Bag",
+   "name": "Diamond Bag 7.5 L",
+   "size": "7.5L",
+   "weight_g": 400,
+   "basis": "family-estimate",
+   "source": "https://www.gramm-tourpacking.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~7.5 L structured handlebar bags with an internal frame. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Diamond Bag",
+   "name": "Tall Diamond Bag 11 L",
+   "size": "Tall (11L)",
+   "weight_g": 480,
+   "basis": "family-estimate",
+   "source": "https://www.gramm-tourpacking.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled from the 7.5 L Diamond Bag estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Grill Bag",
+   "name": "Grill Bag 12 L",
+   "size": "12L",
+   "weight_g": 550,
+   "basis": "family-estimate",
+   "source": "https://www.gramm-tourpacking.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~12 L structured handlebar bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Seat Bag",
+   "name": "Custom Seat Bag 10 L",
+   "size": "Custom (10L)",
+   "weight_g": 380,
+   "basis": "family-estimate",
+   "source": "https://www.gramm-tourpacking.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Custom product; estimated from the dry-bag seat pack anchor (9-16 L 300-600 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Seat Bag",
+   "name": "Mini Seat Bag 2-3 L",
+   "size": "Mini (2-3L)",
+   "weight_g": 170,
+   "basis": "family-estimate",
+   "source": "https://www.gramm-tourpacking.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small 2-3 L seat bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Seat Bag",
+   "name": "Multi-Tool Seat Bag",
+   "size": "One Size (0.5L)",
+   "weight_g": 70,
+   "basis": "family-estimate",
+   "source": "https://www.gramm-tourpacking.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from very small (0.5 L) tool bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Hip Handlebar Bag",
+   "name": "Hip Handlebar Bag 2.5 L",
+   "size": "One Size (2.5L)",
+   "weight_g": 180,
+   "basis": "family-estimate",
+   "source": "https://www.gramm-tourpacking.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~2.5 L handlebar bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Candy Bag",
+   "name": "Candy Bag",
+   "size": "One Size (0.5L)",
+   "weight_g": 70,
+   "basis": "family-estimate",
+   "source": "https://www.gramm-tourpacking.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small (0.5 L) snack/stem pouches, below the 100-200 g stem bag anchor. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

@@ -1,40 +1,51 @@
-// Downtube bag builder — mm-local, parented to the `downtube` anchor.
+// Downtube bag builder (mm-local, parented to the `downtube` anchor).
 //
-// AXIS MAPPING (BUILDER-BRIEF Rule 2). Checked against `mount.axes` in
-// data/models/apidura.json ("len: along_downtube, wid: z, hgt: y") and against
-// Apidura's own drawing,
-// assets/products/apidura/full/expedition-downtube-pack/dimensions-1.svg,
-// which carries exactly the two views this slot needs and whose path
-// coordinates can be read exactly (14.10 svg units per cm):
+// ---- WHAT IT IS (owner) ----------------------------------------------------
+// "A downtube bag is a slim wedge under the tube." Long, slim, tapered,
+// strapped under the down tube with thin straps (straps.js ribbons, <= 25 mm,
+// 1.5 mm thick, each one round bag AND tube), >= 15 mm from the front tyre.
+// Placement (HANDOVER): the FRONT edge is anchored, as far toward the head
+// tube as the tyre allows, and the bag extends back toward the bottom
+// bracket from there.
 //
-//   p.mm.len -> ALONG the down tube. t = 0 is the bottom-bracket end (the
-//               closed, chamfered one), t = 1 the head-tube end (the roll).
-//               MIN 21 / MAX 27 cm on the drawing: the roll shortens THIS axis,
-//               which is why the records now carry `render.len_cm`.
-//   p.mm.hgt -> the down tube's outward perpendicular — how far the bag hangs
-//               off the tube. 6.5 cm on the drawing's side view. This is a
-//               DIAGONAL in world space (the reference frame's down tube lies
-//               at 46.35 degrees), so the record's `hgt: "y"` is wrong and
-//               MODEL-SPEC has no `perp_downtube` to replace it with — see the
-//               note under "the bag's own numbers" and the round-5 report.
-//   p.mm.wid -> across the bike, world z. 8 cm on the drawing's top view.
+// ---- AXIS MAPPING (BUILDER-BRIEF Rule 2) -----------------------------------
+// Checked 25 Sep against `mount.axes` for all 12 records in this slot:
+//   p.mm.len -> ALONG the down tube (`along_downtube` on 11 of 12). t = 0 is
+//               the bottom-bracket end (closed, chamfered where the record
+//               says so), t = 1 the head-tube end (the roll).
+//   p.mm.hgt -> the down tube's outward perpendicular: how far the bag hangs
+//               off the tube. Apidura writes `perp_downtube`; Revelate, Tailfin
+//               write `y`, EVOC `x`, Restrap `-y`. All mean the same thing on a
+//               bag lying along a 46 degree tube, and all are read as perp.
+//   p.mm.wid -> across the bike, world z (`z` on every record).
+// Suspect records: Rockgeist's Bolt-on Stake Bag writes `len: along_forkleg`
+// and attaches to three-pack bolts (it is a fork/down tube bolt-on bag filed
+// here; drawn along the down tube); Lezyne Caddy Sack M has no `mount` block.
 //
 // Everything is built in one frame, `rig`, whose axes ARE those three:
 //   x = perpendicular distance from the down tube centreline (away from frame,
-//       i.e. DOWNWARD off the tube — the drawing's side view has this axis
-//       pointing down the page, tube side at the top)
+//       i.e. DOWNWARD off the tube)
 //   y = distance along that centreline from its bottom-bracket end
 //   z = across the bike
 // The centreline and its radius come from ctx.framePoly / ctx.frameEdgeR, the
-// bottom bracket is the frame origin, and the tyre from ctx.points — no
+// bottom bracket is the frame origin, and the tyre from ctx.points; no
 // placement number in this file is measured off a screenshot.
+//
+// ---- SILHOUETTE ----------------------------------------------------------
+// A wedge in side view: the back panel flat on the tube, the depth growing
+// from the BB end (`taperRatio` of the full depth where the record has one,
+// else a narrow vr.range) to full depth three quarters of the way to the head
+// tube, then pinching into a flattened rolled lip across the bike. The prow
+// cut and the drive-side plan sweep at the BB end are the Apidura drawing's,
+// applied only where the record says the shape is chamfered/asymmetric.
 
 import * as THREE from 'three';
 import { v3 } from '../../lib.js';
-import { rollTop, seamCurve } from '../hardware.js';
+import { seamCurve } from '../hardware.js';
 import { featuresOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
 import { loftBody, measuredProfile, sectionFor, sectionUnit } from '../loft.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
+import { buckle, meshOf, ribbonLoop, strapRun } from '../straps.js';
 
 const norm2 = (x, y) => { const d = Math.hypot(x, y) || 1; return [x / d, y / d]; };
 const clamp01 = (t) => (t < 0 ? 0 : t > 1 ? 1 : t);
@@ -99,41 +110,6 @@ function hull2(pts) {
   return [...half(s), ...half(s.slice().reverse())];
 }
 
-/**
- * A closed band around an arbitrary convex outline: the outline as the band's
- * inner edge, the same outline pushed out along its own vertex normals as the
- * outer edge, extruded `width` along +z.
- *
- * This is what lets ONE strap encircle the bag AND the down tube as a single
- * loop, which is how the real one is fastened — the down tube passes through
- * the loop, which is why the loop stands proud of the bag's tube-side face in
- * studio-2.jpg with the bag stood on end.
- */
-function bandMesh(outline, mat, { thick = 2.4, width = 34, lift = 1 }) {
-  const n = outline.length;
-  // `lift` holds the webbing off the surfaces it wraps. It has to beat soft()'s
-  // noise amplitude or the fabric pokes through the strap.
-  const offset = (d) => outline.map((p, i) => {
-    const a = outline[(i - 1 + n) % n], b = outline[(i + 1) % n];
-    const nA = norm2(p[1] - a[1], a[0] - p[0]);      // outward normal of edge a->p
-    const nB = norm2(b[1] - p[1], p[0] - b[0]);      // outward normal of edge p->b
-    const m = norm2(nA[0] + nB[0], nA[1] + nB[1]);
-    const k = d / Math.max(0.35, m[0] * nA[0] + m[1] * nA[1]);
-    return [p[0] + m[0] * k, p[1] + m[1] * k];
-  });
-  const inner = offset(lift), outer = offset(lift + thick);
-  const shape = new THREE.Shape(outer.map(([x, y]) => new THREE.Vector2(x, y)));
-  shape.holes = [new THREE.Path(inner.slice().reverse().map(([x, y]) => new THREE.Vector2(x, y)))];
-  const geo = new THREE.ExtrudeGeometry(shape, { depth: width, bevelEnabled: false, curveSegments: 1 });
-  geo.translate(0, 0, -width / 2);
-  const m = new THREE.Mesh(geo, mat);
-  // The band closes around the down tube on purpose; it is not the bag's shell.
-  m.userData.noCollide = true;
-  // extrude runs along local +z; -90 about x turns that into the rig's +y
-  m.rotation.x = -Math.PI / 2;
-  return m;
-}
-
 export function buildDowntube(p, brand, main, accent, ctx) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
@@ -168,7 +144,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   //   data/models/apidura.json  render.hgt_cm = 6.5
   //   catalog.js:74             p.mm.hgt = 6.5 * 10 = 65
   //   here                      aH = min(65, 150) / 2 = 32.5
-  //   loftBody sectionAt        a = aH * kA(t), and kA is 1 at the tail
+  //   loftBody sectionAt        a = secA(t), which is aH at full depth
   // so the lofted body is 65.0mm across its own perpendicular. Measured on the
   // built geometry (three.js, no renderer, straight out of loftBody + the
   // channel and rake passes below) the rig-local perp extent of the three
@@ -267,10 +243,34 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // pinched sections and the prow comes out as a funnel. The cut IS the tail
   // treatment.
   const meas = usableProfile(p);
-  const END_KEEP = 0.78;
-  const endEase = (t) => END_KEEP + (1 - END_KEEP) * Math.min(1, (1 - t) / 0.10) ** 0.6;
-  const kA = meas ? (t) => meas(t) : (t) => endEase(t);
-  const kB = meas ? (t) => meas(t) : (t) => endEase(t);
+  // The WEDGE (owner: "a slim wedge under the tube"): full depth at the BB
+  // end, where the space between the down tube and the front wheel is widest,
+  // thinning toward the head tube, where the tyre comes up under the tube. The
+  // depth ratio at the nose is the record's taper where it has one; a record
+  // measuring no taper (the Joeys, 1.0) still gets a slight one, because the
+  // owner's description of the slot wins over a cylinder template. Which end
+  // is thin is decided by the bike, not by the record's nose/tail labels.
+  const rolled = p.closure?.type === 'rolltop';
+  const WEDGE_T0 = 0.22;
+  const dNose = Math.min(Math.max(geom.taperRatio ?? vr.range(0.72, 0.8), 0.62), 0.84);
+  const wedge = meas ? (t) => meas(t) : (t) => 1 - (1 - dNose) * clamp01((t - WEDGE_T0) / (1 - WEDGE_T0));
+  // The mouth: over the last NECK of the length the depth pinches to the roll
+  // and the section recentres, so the rolled lip sits across the middle of
+  // the end, not against the tube. A zipped bag gets a short rounded end.
+  const NECK = rolled ? 0.14 : 0;
+  const rollR = rolled ? Math.max(5, Math.min(aH * 0.42, 15)) : 0;
+  const smooth01 = (u) => { const c = clamp01(u); return c * c * (3 - 2 * c); };
+  const neckS = (t) => (NECK ? smooth01((t - (1 - NECK)) / NECK) : 0);
+  const secA = (t) => {
+    let a = aH * wedge(t);
+    if (NECK) a += (rollR * 0.95 - a) * neckS(t);
+    else a *= 1 - 0.2 * smooth01((t - 0.9) / 0.1);
+    return a;
+  };
+  const secB = (t) => bH * (NECK ? 1 + 0.04 * neckS(t) : 1 - 0.12 * smooth01((t - 0.9) / 0.1));
+  // back pinned flat on the tube (-aH) until the neck, then released
+  const secCu = (t) => -(aH - secA(t)) * (1 - neckS(t));
+  const outerAt = (t) => secCu(t) + secA(t);
 
   const loft = loftBody({
     len, rings: 34, shape: xs,
@@ -279,7 +279,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
       // symmetrically lifted its back off the tube at both ends, which is half
       // of the daylight the review measured (11-15px of bare background along
       // the joint); pin every station's back edge to -aH instead.
-      a: aH * kA(t), b: bH * kB(t), cu: -aH * (1 - kA(t)),
+      a: secA(t), b: secB(t), cu: secCu(t),
     }),
   });
 
@@ -323,7 +323,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
       // the drawing shows. bike.js puts the chainring web at z = +50, so +z is
       // the side that has to give.
       if (chamfered && z > 0) {
-        const lim = bH * kB(t) * planAt(t);
+        const lim = secB(t) * planAt(t);
         if (z > lim) pos.setZ(i, lim);
       }
     }
@@ -362,7 +362,9 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // solved against the bag's ACTUAL outer face at each station, not against its
   // bounding depth: the nose is a roll and pinches to about half.
   const axle = ctx.points.frontAxle;
-  const tyreR = ctx.points.tireR + ctx.geo.tireWidth / 2 + 20;
+  // 17 mm: the owner's 15 plus a margin for the drawn tyre, and no more, since
+  // every millimetre spent here pushes a long pack back into the crank.
+  const tyreR = ctx.points.tireR + ctx.geo.tireWidth / 2 + 17;
   const enterAt = (w) => {
     const A = v3(foot.x + perp.x * w - axle.x, foot.y + perp.y * w - axle.y, 0);
     const h = A.dot(dTube);
@@ -370,18 +372,27 @@ export function buildDowntube(p, brand, main, accent, ctx) {
     return disc > 0 ? -h - Math.sqrt(disc) : Infinity;
   };
   let sTyre = Infinity;
-  for (let i = 0; i <= 12; i++) {
-    const t = 0.4 + 0.6 * (i / 12);                    // only the nose half can reach it
-    sTyre = Math.min(sTyre, enterAt(Pc - aH + 2 * aH * kA(t)) - t * len);
+  for (let i = 0; i <= 20; i++) {
+    const t = i / 20;                                  // every station: the tail is the deep end
+    sTyre = Math.min(sTyre, enterAt(Pc + outerAt(t)) - t * len);
   }
-  // The tyre wins where the two fight — a tail inside the chainring's tip
-  // circle is contact with something this slot MOUNTS to and is allowed 8mm,
-  // a tyre is never allowed anything. Floored at the tube's own BB end: a pack
-  // too long to fit in the window between them (see report — several are, on
-  // this frame) is the resolver's problem, and its escape route for this slot
-  // is already back down the tube. Reversing it through the bottom bracket here
-  // would only move the clash somewhere the resolver cannot see.
-  const sTail = Math.max(0, Math.min(sRing, sTyre));
+  // FRONT-ANCHORED (owner / HANDOVER): the head-tube end goes as far forward
+  // as the tyre allows (sTyre is the tail station that puts the nose exactly
+  // on the tyre's 20 mm envelope), never past the tube's own head end, and the
+  // bag extends back toward the BB from there. A pack too long for the window
+  // reaches toward the crank; the tyre is never traded for it. Floored at the
+  // tube's BB end, where the resolver's escape route takes over.
+  // A pack too long or too deep for the window between the chainring and the
+  // tyre keeps the tyre rule and runs its tail back past the tube's BB end,
+  // beside the shell: the crank is a part this slot is allowed to touch, the
+  // tyre never is. Those products are reported as not fitting this frame.
+  const tubeLen = v3(dtHeadP.x - dtFootP.x, dtHeadP.y - dtFootP.y, 0).length();
+  const headEnd = tubeLen - ctx.frameEdgeR[2] - len;       // nose short of the head tube
+  const sTail = Math.min(sTyre, headEnd);
+  grp.userData.dtFit = { sTyre: +sTyre.toFixed(1), sRing: +sRing.toFixed(1), headEnd: +headEnd.toFixed(1), len, aH, Pc: +Pc.toFixed(1) };
+  // how far the tail sits inside the chainring's clearance circle (0 = clear)
+  grp.userData.ringShortMm = Math.max(0, sRing - sTail);
+
 
   // ---- assemble in tube coordinates --------------------------------------
   const anchorP = ctx.anchors.downtube.position;
@@ -465,7 +476,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
       len: len * SLEEVE_T, rings: 24, shape: xs, capStart: false, capEnd: false,
       sectionAt: (u) => {
         const t = u * SLEEVE_T;
-        return { a: aH * kA(t) - 1.0, b: bH * kB(t) + 1.0, cu: -aH * (1 - kA(t)) + 3.0 };
+        return { a: secA(t) - 1.0, b: secB(t) + 1.0, cu: secCu(t) + 3.0 };
       },
     });
     const pos = sleeve.geo.attributes.position;
@@ -497,7 +508,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
       // and the sleeve stops short of the drive-side cut rather than hanging
       // in the air where the body has been sliced away
       if (chamfered && z > 0) {
-        const lim = bH * kB(clamp01(y / len)) * planAt(clamp01(y / len)) + 1.0;
+        const lim = secB(clamp01(y / len)) * planAt(clamp01(y / len)) + 1.0;
         if (z > lim) pos.setZ(i, lim);
       }
     }
@@ -508,44 +519,54 @@ export function buildDowntube(p, brand, main, accent, ctx) {
     bag.add(new THREE.Mesh(sleeve.geo, sm));
   }
 
-  // ---- the strap ---------------------------------------------------------
-  // One strap: "there is one connection point on the bag, and you have two on
-  // the bike in the 3D model." Width tracks the bag's own girth — the 1.8L
-  // record quotes a 4cm strap on a 9.5cm-wide bag.
-  const strapW = Math.max(24, Math.min(44, bH * 0.84));
-  // A little under half way along, from the drawing: the band crosses the body
-  // well tailward of the roll so the roll can still be turned down over it.
-  const tStrap = sleeved ? 0.36 : 0.45;
+  // ---- the straps ----------------------------------------------------------
+  // Thin webbing (straps.js), each one a single loop round the bag AND the
+  // tube, which is how a velcro down tube strap holds: the tube passes through
+  // the loop. How many: a record whose attachment names ONE strap (Apidura's
+  // "stability strap") gets one, with its Hypalon backing panel; everything
+  // else gets two, clear of the prow and of the roll.
+  const attach = String(p.features?.attachment || '');
+  const oneStrap = /\bstrap\b/i.test(attach) && !/\bstraps\b/i.test(attach);
+  const hypalon = /hypalon/i.test(attach);
+  const strapW = Math.max(16, Math.min(25, bH * 0.6));
+  const tStraps = oneStrap ? [sleeved ? 0.36 : 0.45] : [0.3, 0.66];
+  const tStrap = tStraps[0];
   const { pts: unit } = sectionUnit(xs, { detail: 5 });
-  const secAt = (t) => unit.map(([u, v]) => [u * (aH * kA(t)) - aH * (1 - kA(t)), v * (bH * kB(t))]);
-  const secPts = secAt(tStrap);
+  const secAt = (t) => unit.map(([u, v]) => [u * secA(t) + secCu(t), v * secB(t)]);
   // Everything that lies ON the bag has to clear whatever is already there. On
   // the Backcountry that is the sleeve, which stands 1mm proud on the flanks
-  // and 2mm on the outer face; without this the strap panel, the band and the
-  // logo were all buried inside it or co-planar with it.
+  // and 2mm on the outer face.
   const over = sleeved ? 2.2 : 0;
-
-  // The Hypalon backing panel the velcro is stitched to, around the bag's girth
-  // only, then the band itself around bag AND tube together.
-  const backing = bandMesh(hull2(secPts), hyp, { thick: 1.7, width: strapW * 1.5, lift: 0.8 + over });
-  backing.position.set(0, tStrap * len, 0);
-  bag.add(backing);
-
+  const bodyLift = 1.6 + over;               // soft()'s stuffing, plus the sleeve
   const ring = [];
   for (let i = 0; i < 26; i++) {
     const th = (i / 26) * Math.PI * 2;
-    ring.push([Math.cos(th) * dtR, Math.sin(th) * dtR]);
+    ring.push([Math.cos(th) * (dtR + 0.4), Math.sin(th) * (dtR + 0.4)]);
   }
-  const band = bandMesh(hull2([...secPts.map(([x, z]) => [x + Pc, z]), ...ring]), wm,
-    { thick: 2.6, width: strapW, lift: 2.6 + over });
-  band.position.set(0, sTail + tStrap * len, 0);
-  rig.add(band);
-
-  // Where the velcro overlaps, on the frame side of the tube (on-bike-1.jpg).
-  const tab = new THREE.Mesh(new THREE.BoxGeometry(3, strapW * 0.92, dtR * 1.15), wm);
-  tab.position.set(-(dtR + 6), sTail + tStrap * len, 0);
-  tab.userData.noCollide = true;
-  rig.add(tab);
+  const strapGeos = [], panelGeos = [], hwGeos = [];
+  for (const t of tStraps) {
+    const y = sTail + t * len;
+    // push the section outward by the stuffing so the band sits ON the fabric
+    const sec = secAt(t).map(([x, z]) => {
+      const cx = secCu(t), dx = x - cx, r = Math.hypot(dx, z) || 1;
+      return [cx + dx * (r + bodyLift) / r, z * (r + bodyLift) / r];
+    });
+    const loop = hull2([...sec.map(([x, z]) => [x + Pc, z]), ...ring]);
+    strapGeos.push(ribbonLoop(loop.map(([x, z]) => v3(x, y, z)), v3(0, 1, 0), v3(Pc * 0.5, y, 0),
+      { width: strapW, lift: 0.4, thick: 1.5 }));
+    // velcro overlap on the frame side of the tube: a second flat layer
+    hwGeos.push(strapRun(v3(-(dtR + 2.2), y, -dtR * 0.55), v3(-(dtR + 2.2), y, dtR * 0.55), v3(-1, 0, 0),
+      { width: strapW * 0.92, thick: 1.5 }));
+    if (hypalon && oneStrap) {
+      // the Hypalon panel the velcro is stitched to, round the bag's girth only
+      const panel = hull2(sec).map(([x, z]) => v3(x + Pc, y, z));
+      panelGeos.push(ribbonLoop(panel, v3(0, 1, 0), v3(Pc + secCu(t), y, 0),
+        { width: strapW * 1.5, lift: 0.1, thick: 1.1 }));
+    }
+  }
+  rig.add(meshOf(strapGeos, wm));
+  rig.add(meshOf(hwGeos, wm));
+  if (panelGeos.length) rig.add(meshOf(panelGeos, hyp));
 
   // ---- the Hypalon chevron on the flank ----------------------------------
   // Apidura's signature, and the biggest single thing on the side of all three
@@ -558,7 +579,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // Not on the Backcountry: there the chevron is a WINDOW cut in the sleeve,
   // not a panel welded on top of it, and Hypalon-coloured arms lying on a
   // Hypalon sleeve are both invisible and co-planar with it.
-  if (!sleeved) {
+  if (!sleeved && hypalon) {
     const yS = tStrap * len;
     // …and the rearward arm has to stop above the cut end, or it hangs off the
     // prow into the space the cut was made to clear.
@@ -567,7 +588,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
     const xA = -aH * 0.30;                              // apex, up toward the tube
     const xE = aH * 0.92;                               // out at the outer face
     for (const s of [-1, 1]) {
-      const zF = s * (bH * kB(tStrap) + 1.2);
+      const zF = s * (secB(tStrap) + 1.2);
       for (const dir of [-1, 1]) {
         const dx = xE - xA, dy = dir * armY;
         const arm = new THREE.Mesh(new THREE.BoxGeometry(armT, Math.hypot(dx, dy), 2.6), hyp);
@@ -584,28 +605,57 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // is most of why three different bags read as the same sausage. On the
   // Backcountry the roll is ABOVE the sleeve and is the body colour, not the
   // Hypalon (studio-1.jpg); on the other two it is the trim.
-  if (p.closure?.type === 'rolltop') {
-    const kN = kA(1);
-    const rN = Math.max(aH * kN, 4);
-    const rolls = p.closure.rolls || 3;
-    const foldH = Math.max(rN * 0.3, 5);
-    const roll = rollTop(sleeved ? shell : hyp, hwm, {
-      r: rN, depth: rN * 0.9, rings: rolls,
-      widthScale: (bH * kB(1)) / rN, back: false,
-    });
-    // rollTop is built in ITS xy plane stacking toward +z, x being the lip's
-    // width: send x across the bike and z up the tube. Its buckle sits at
-    // NEGATIVE local y, so local y has to point back at the tube for the
-    // buckle to end up on the outer face — mapped the other way round the tab
-    // hangs 10mm inside the down tube.
-    roll.quaternion.setFromRotationMatrix(
-      new THREE.Matrix4().makeBasis(v3(0, 0, -1), v3(-1, 0, 0), v3(0, 1, 0)));
-    // …and it is seated INSIDE `len`. `len` is render.len_cm, the maker's MIN —
-    // the length WITH the roll turned down — so a roll stacked on top of a
-    // full-length body overshoots the published figure by its own stack height.
-    const stack = rN * 0.9 * 0.16 + foldH * rolls * 0.66 + foldH * 0.6;
-    roll.position.set(-aH * (1 - kN), len - stack, 0);
-    bag.add(roll);
+  if (rolled) {
+    // A flattened roll of fabric lying ACROSS the end, the mouth pinched flat
+    // by the neck above and rolled over itself; its ends pinched thinner than
+    // its middle. Seated inside `len`, which is the rolled length.
+    const lipLen = secB(1) * 2 * 1.02;
+    const rg = new THREE.CylinderGeometry(rollR, rollR, lipLen, 20, 8);
+    {
+      const pos = rg.attributes.position;
+      for (let i = 0; i < pos.count; i++) {
+        const yy = pos.getY(i) / (lipLen / 2);
+        const k = 1 - 0.26 * Math.max(0, Math.abs(yy) - 0.7) / 0.3;
+        pos.setX(i, pos.getX(i) * k);
+        pos.setZ(i, pos.getZ(i) * k);
+      }
+    }
+    rg.rotateX(Math.PI / 2);                     // cylinder axis -> z, across the bike
+    rg.scale(1, 0.8, 1);                         // folded flat along the bag
+    const rcX = secCu(1), rcY = len - rollR * 0.8;
+    rg.translate(rcX, rcY, 0);
+    rg.computeVertexNormals();
+    const rollMat = sleeved ? shell : main;
+    bag.add(soft(rg, rollMat, { amp: 0.5, freq: 0.08, seed: (vr.seed % 97) + 5, stiffness: stiff }));
+    const crease = new THREE.MeshStandardMaterial({ color: rollMat.color.clone().multiplyScalar(0.55), roughness: 0.95 });
+    const cg = [];
+    for (const [dx, dy] of [[rollR * 0.62, rollR * 0.35], [-rollR * 0.55, rollR * 0.45]]) {
+      const c = new THREE.BoxGeometry(1.1, 1.1, lipLen * 0.9);
+      c.translate(rcX + dx, rcY + dy, 0);
+      cg.push(c);
+    }
+    bag.add(meshOf(cg, crease));
+    // One strap over the roll: up the outer face, round the end of the roll,
+    // tucked under toward the tube; its buckle on the outer face.
+    const rStrap = [], rHw = [];
+    const tA = 1 - NECK - 0.1;
+    const path = [];
+    for (let i = 0; i <= 7; i++) {               // up the outer face and down the neck
+      const t = tA + (1 - tA) * (i / 7);
+      if (t * len > rcY) break;
+      path.push(v3(outerAt(t) + 1.8, t * len, 0));
+    }
+    const rr = rollR + 1.6;
+    for (let i = 0; i <= 10; i++) {
+      const a = (i / 10) * Math.PI * 1.05;       // outer side -> over the end -> tube side
+      path.push(v3(rcX + Math.cos(a) * rr, rcY + Math.sin(a) * rr * 0.8, 0));
+    }
+    const sw = Math.min(16, secB(1));
+    rStrap.push(ribbonLoop(path, v3(0, 0, 1), v3(rcX, rcY - rollR * 2, 0), { width: sw, lift: 0.2, closed: false }));
+    const by = (1 - NECK - 0.05) * len;
+    rHw.push(...buckle(v3(outerAt(by / len) + 2, by, 0), v3(0, 1, 0), v3(1, 0, 0), { width: sw }));
+    bag.add(meshOf(rStrap, wm));
+    bag.add(meshOf(rHw, hwm));
   }
 
   // Logo on the flank, reading ALONG the bag as it does on the real one — the
@@ -616,7 +666,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   const yA = rakeMax + len * 0.04, yB = tStrap * len - len * 0.05;
   const logoLen = Math.max(Math.min(len * 0.30, (yB - yA) * 0.9), len * 0.12);
   const tLogo = clamp01((yA + yB) / 2 / len);
-  const tag = patch(bag, brand, aH * 0.1, tLogo * len, bH * kB(tLogo) + 1.4 + over, logoLen, 0);
+  const tag = patch(bag, brand, secCu(tLogo) + secA(tLogo) * 0.1, tLogo * len, secB(tLogo) + 1.4 + over, logoLen, 0);
   tag.rotation.z = -Math.PI / 2;
 
   // ---- nothing in this slot may be inside the down tube -------------------
@@ -634,6 +684,52 @@ export function buildDowntube(p, brand, main, accent, ctx) {
     const toRig = rig.matrixWorld.clone().invert();
     const lim = dtR - SQUISH;
     const q = new THREE.Vector3();
+    // ...and nothing through the cables. The rear brake hose runs under the
+    // down tube (src/bike.js routes it 6 mm off the tube, non-drive side), and
+    // a strap pulled tight lays the fabric OVER it, so the fabric is pushed
+    // off every thin tube (a TubeGeometry path under 4 mm radius) found on the
+    // frame, to HOSE_GAP off its surface. Found by scanning the bike, so a
+    // re-routed hose moves the dent with it.
+    const HOSE_GAP = 4.5;
+    const hoses = [];      // thin tubes and BB cylinders, as polylines + radius
+    ctx.frameGroup?.children?.forEach((o) => {
+      const par = o.isMesh && o.geometry?.parameters;
+      if (!par?.path || !(par.radius < 4) || o.userData?.part) return;
+      o.updateMatrix();
+      const pts = par.path.getSpacedPoints(96).map((v) =>
+        v.clone().applyMatrix4(o.matrix).sub(anchorP).applyMatrix4(toRig));
+      hoses.push({ pts, r: par.radius + HOSE_GAP });
+    });
+    // The same for the bottom-bracket shell and spindle (cylinders round the
+    // BB): a pack too long for this frame tucks its tail against the shell
+    // rather than through it.
+    ctx.frameGroup?.children?.forEach((o) => {
+      const par = o.isMesh && o.geometry?.type === 'CylinderGeometry' && o.geometry.parameters;
+      if (!par || par.height < 40 || par.radiusTop > 60) return;
+      o.updateMatrix();
+      const c = new THREE.Vector3().applyMatrix4(o.matrix);
+      if (Math.hypot(c.x - foot.x, c.y - foot.y) > 150) return;
+      const ends = [new THREE.Vector3(0, par.height / 2, 0), new THREE.Vector3(0, -par.height / 2, 0)]
+        .map((v) => v.applyMatrix4(o.matrix).sub(anchorP).applyMatrix4(toRig));
+      hoses.push({ pts: ends, r: Math.max(par.radiusTop, par.radiusBottom) + 1.5 });
+    });
+    const seg = new THREE.Line3(), near = new THREE.Vector3();
+    const offHoses = (v) => {
+      let hit = false;
+      for (const h of hoses) {
+        for (let j = 0; j < h.pts.length - 1; j++) {
+          seg.set(h.pts[j], h.pts[j + 1]);
+          seg.closestPointToPoint(v, true, near);
+          const d = near.distanceTo(v);
+          if (d < h.r) {
+            if (d < 1e-3) continue;
+            v.sub(near).multiplyScalar(h.r / d).add(near);
+            hit = true;
+          }
+        }
+      }
+      return hit;
+    };
     rig.traverse((o) => {
       if (!o.isMesh || !o.geometry?.attributes?.position) return;
       for (let n = o; n && n !== rig; n = n.parent) if (n.userData?.noCollide) return;
@@ -643,10 +739,14 @@ export function buildDowntube(p, brand, main, accent, ctx) {
       let moved = false;
       for (let i = 0; i < pos.count; i++) {
         q.fromBufferAttribute(pos, i).applyMatrix4(M);
+        let hit = offHoses(q);
         const d = Math.hypot(q.x, q.z);
-        if (d >= lim || d < 1e-3) continue;
-        const k = lim / d;
-        q.x *= k; q.z *= k;
+        if (d < lim && d >= 1e-3) {
+          const k = lim / d;
+          q.x *= k; q.z *= k;
+          hit = true;
+        }
+        if (!hit) continue;
         q.applyMatrix4(Mi);
         pos.setXYZ(i, q.x, q.y, q.z);
         moved = true;

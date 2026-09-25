@@ -46,7 +46,7 @@ const staged = (node) => {
   return node;
 };
 
-export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoadouts } = {}) {
+export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoadouts, onPack } = {}) {
   seq = 0;
   const wrap = el('div', 'pr-start');
 
@@ -72,7 +72,7 @@ export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoad
   const mountCount = Object.keys(SLOTS).length;
 
   const list = el('ul', 'pr-menu');
-  // Three doors, same size. "Surprise me" used to hide inside the builder,
+  // Four doors, same size. "Surprise me" used to hide inside the builder,
   // next to Add a bag — a starting idea dressed as a workshop tool. It lives
   // here now, with Build and Loadouts, because that is when you want it.
   const ENTRIES = [
@@ -87,16 +87,25 @@ export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoad
       desc: `A bare frame and ${mountCount} mounts.`,
       run: onBuild,
     },
+    // Packing, for the person who has a bike, a sleeping bag and no idea
+    // whether a stove fits in a frame bag. Second, not first: the product is
+    // still the bike, and "Build a rig" is still where the owner starts.
     {
       n: '02',
+      name: 'Pack my kit',
+      desc: 'Tap what you’re bringing. See where it goes.',
+      run: onPack,
+    },
+    {
+      n: '03',
       name: 'Surprise me',
       desc: 'A loaded bike, picked for you.',
       run: onSurprise,
     },
     {
-      n: '03',
+      n: '04',
       name: 'Loadouts',
-      desc: 'Eight rigs, already built.',
+      desc: 'Rigs already built, one packed to the last spork.',
       run: onLoadouts,
     },
   ];

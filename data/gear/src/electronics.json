@@ -1,0 +1,2466 @@
+[
+  {
+    "id": "iphone-14-pro",
+    "name": "iPhone 14 Pro",
+    "cat": "electronics",
+    "sub": "phone",
+    "generic": false,
+    "brand": "Apple",
+    "model": "iPhone 14 Pro",
+    "weight_g": 206,
+    "packed_cm": [
+      14.75,
+      7.15,
+      0.785
+    ],
+    "packed_l": 0.083,
+    "compress": 0.0,
+    "archetype": "phone",
+    "color": "#4a4852",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "bar-mounted (Quad Lock / SP Connect) so it doubles as navigation and camera without stopping"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag when not navigating: reachable, protected, and a short cable run to the power bank"
+      },
+      {
+        "at": "pocket",
+        "why": "jersey or hip pocket off the bike, and on rough descents where a bar mount risks the phone"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://support.apple.com/en-us/111849",
+        "what": "weight 206 g, 147.5 x 71.5 x 7.85 mm"
+      }
+    ],
+    "note": "Owner's item. Apple spec 206 g; owner's sheet: 6.0 oz (170 g) - spec used. Case not included (add ~30-40 g).",
+    "aliases": [
+      "iphone 14 pro",
+      "iphone",
+      "phone",
+      "iphone 14"
+    ]
+  },
+  {
+    "id": "iphone-15",
+    "name": "iPhone 15",
+    "cat": "electronics",
+    "sub": "phone",
+    "generic": false,
+    "brand": "Apple",
+    "model": "iPhone 15",
+    "weight_g": 171,
+    "packed_cm": [
+      14.76,
+      7.16,
+      0.78
+    ],
+    "packed_l": 0.082,
+    "compress": 0.0,
+    "archetype": "phone",
+    "color": "#3d4a5a",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "bar-mounted (Quad Lock / SP Connect) so it doubles as navigation and camera without stopping"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag when not navigating: reachable, protected, and a short cable run to the power bank"
+      },
+      {
+        "at": "pocket",
+        "why": "jersey or hip pocket off the bike, and on rough descents where a bar mount risks the phone"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://support.apple.com/en-us/111831",
+        "what": "weight 171 g, 147.6 x 71.6 x 7.8 mm"
+      }
+    ],
+    "note": "Case not included.",
+    "aliases": [
+      "iphone 15",
+      "iphone",
+      "phone"
+    ]
+  },
+  {
+    "id": "iphone-16-pm",
+    "name": "iPhone 16 Pro Max",
+    "cat": "electronics",
+    "sub": "phone",
+    "generic": false,
+    "brand": "Apple",
+    "model": "iPhone 16 Pro Max",
+    "weight_g": 227,
+    "packed_cm": [
+      16.3,
+      7.76,
+      0.825
+    ],
+    "packed_l": 0.104,
+    "compress": 0.0,
+    "archetype": "phone",
+    "color": "#5a5650",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "bar-mounted (Quad Lock / SP Connect) so it doubles as navigation and camera without stopping"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag when not navigating: reachable, protected, and a short cable run to the power bank"
+      },
+      {
+        "at": "pocket",
+        "why": "jersey or hip pocket off the bike, and on rough descents where a bar mount risks the phone"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://support.apple.com/en-us/121032",
+        "what": "weight 227 g, 163.0 x 77.6 x 8.25 mm"
+      }
+    ],
+    "note": "Case not included. Big phone: check it fits the top tube bag before relying on that slot.",
+    "aliases": [
+      "iphone 16 pro max",
+      "iphone pro max",
+      "phone"
+    ]
+  },
+  {
+    "id": "pixel-8",
+    "name": "Google Pixel 8",
+    "cat": "electronics",
+    "sub": "phone",
+    "generic": false,
+    "brand": "Google",
+    "model": "Pixel 8",
+    "weight_g": 187,
+    "packed_cm": [
+      15.05,
+      7.08,
+      0.89
+    ],
+    "packed_l": 0.095,
+    "compress": 0.0,
+    "archetype": "phone",
+    "color": "#2e3a33",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "bar-mounted (Quad Lock / SP Connect) so it doubles as navigation and camera without stopping"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag when not navigating: reachable, protected, and a short cable run to the power bank"
+      },
+      {
+        "at": "pocket",
+        "why": "jersey or hip pocket off the bike, and on rough descents where a bar mount risks the phone"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://store.google.com/ca/product/pixel_8_specs?hl=en-GB",
+        "what": "weight 187 g, 150.5 x 70.8 x 8.9 mm"
+      }
+    ],
+    "note": "Case not included.",
+    "aliases": [
+      "pixel",
+      "pixel 8",
+      "google pixel",
+      "phone",
+      "android"
+    ]
+  },
+  {
+    "id": "phone",
+    "name": "Smartphone",
+    "cat": "electronics",
+    "sub": "phone",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 190,
+    "packed_cm": [
+      15.0,
+      7.2,
+      0.85
+    ],
+    "packed_l": 0.092,
+    "compress": 0.0,
+    "archetype": "phone",
+    "color": "#2b2b2e",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "bar-mounted (Quad Lock / SP Connect) so it doubles as navigation and camera without stopping"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag when not navigating: reachable, protected, and a short cable run to the power bank"
+      },
+      {
+        "at": "pocket",
+        "why": "jersey or hip pocket off the bike, and on rough descents where a bar mount risks the phone"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://support.apple.com/en-us/111831",
+        "what": "iPhone 15 171 g"
+      },
+      {
+        "url": "https://store.google.com/ca/product/pixel_8_specs?hl=en-GB",
+        "what": "Pixel 8 187 g"
+      },
+      {
+        "url": "https://support.apple.com/en-us/111849",
+        "what": "iPhone 14 Pro 206 g"
+      }
+    ],
+    "note": "Generic 6-inch phone, typical of iPhone 15 (171 g), Pixel 8 (187 g), iPhone 14 Pro (206 g). Case not included.",
+    "aliases": [
+      "phone",
+      "smartphone",
+      "cell phone",
+      "mobile",
+      "cellphone"
+    ]
+  },
+  {
+    "id": "edge-530",
+    "name": "Garmin Edge 530",
+    "cat": "electronics",
+    "sub": "gps",
+    "generic": false,
+    "brand": "Garmin",
+    "model": "Edge 530",
+    "weight_g": 76,
+    "packed_cm": [
+      8.2,
+      5.0,
+      2.0
+    ],
+    "packed_l": 0.082,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#1f1f1f",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "out-front bar mount: eyes-up navigation, and the mount is where it lives the whole trip"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag on its cable to the power bank for overnight charging"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www8.garmin.com/manuals/webhelp/edge530/EN-US/GUID-F48A61D7-BA27-4E47-A406-98F52C88A976.html",
+        "what": "75.8 g, 50 x 82 x 20 mm"
+      }
+    ],
+    "note": "Mount not included.",
+    "aliases": [
+      "edge 530",
+      "garmin 530",
+      "gps",
+      "bike computer",
+      "garmin"
+    ]
+  },
+  {
+    "id": "edge-840",
+    "name": "Garmin Edge 840",
+    "cat": "electronics",
+    "sub": "gps",
+    "generic": false,
+    "brand": "Garmin",
+    "model": "Edge 840",
+    "weight_g": 85,
+    "packed_cm": [
+      8.51,
+      5.78,
+      1.96
+    ],
+    "packed_l": 0.096,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#1f1f1f",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "out-front bar mount: eyes-up navigation, and the mount is where it lives the whole trip"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag on its cable to the power bank for overnight charging"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.bikeradar.com/advice/buyers-guides/garmin-edge-1040-vs-840-vs-540",
+        "what": "84.9 g, 85.1 x 57.8 x 19.6 mm"
+      }
+    ],
+    "note": "Solar version ~4 g heavier. Mount not included.",
+    "aliases": [
+      "edge 840",
+      "garmin 840",
+      "gps",
+      "bike computer",
+      "garmin"
+    ]
+  },
+  {
+    "id": "edge-1040",
+    "name": "Garmin Edge 1040",
+    "cat": "electronics",
+    "sub": "gps",
+    "generic": false,
+    "brand": "Garmin",
+    "model": "Edge 1040",
+    "weight_g": 126,
+    "packed_cm": [
+      11.76,
+      5.93,
+      2.0
+    ],
+    "packed_l": 0.139,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#1f1f1f",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "out-front bar mount: eyes-up navigation, and the mount is where it lives the whole trip"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag on its cable to the power bank for overnight charging"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.bikeradar.com/advice/buyers-guides/garmin-edge-1040-vs-840-vs-540",
+        "what": "126 g, 117.6 x 59.3 x 20 mm"
+      }
+    ],
+    "note": "Solar version ~7 g heavier. Long battery life makes it a popular ultra-race choice. Mount not included.",
+    "aliases": [
+      "edge 1040",
+      "garmin 1040",
+      "gps",
+      "bike computer",
+      "garmin"
+    ]
+  },
+  {
+    "id": "wahoo-bolt-v2",
+    "name": "Wahoo Elemnt Bolt v2",
+    "cat": "electronics",
+    "sub": "gps",
+    "generic": false,
+    "brand": "Wahoo",
+    "model": "ELEMNT BOLT v2",
+    "weight_g": 68,
+    "packed_cm": [
+      7.7,
+      4.7,
+      2.1
+    ],
+    "packed_l": 0.076,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#2a2a2a",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "out-front bar mount: eyes-up navigation, and the mount is where it lives the whole trip"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag on its cable to the power bank for overnight charging"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cyclistshub.com/wahoo-elemnt-bolt-v2-vs-elemnt-roam/",
+        "what": "68 g, 7.7 x 4.7 x 2.1 cm"
+      }
+    ],
+    "note": "Mount not included.",
+    "aliases": [
+      "bolt",
+      "elemnt bolt",
+      "wahoo bolt",
+      "wahoo",
+      "gps",
+      "bike computer"
+    ]
+  },
+  {
+    "id": "wahoo-roam-v2",
+    "name": "Wahoo Elemnt Roam v2",
+    "cat": "electronics",
+    "sub": "gps",
+    "generic": false,
+    "brand": "Wahoo",
+    "model": "ELEMNT ROAM v2",
+    "weight_g": 93,
+    "packed_cm": [
+      9.2,
+      5.8,
+      2.1
+    ],
+    "packed_l": 0.112,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#2a2a2a",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "out-front bar mount: eyes-up navigation, and the mount is where it lives the whole trip"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag on its cable to the power bank for overnight charging"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cyclistshub.com/wahoo-elemnt-bolt-v2-vs-elemnt-roam/",
+        "what": "Bolt v2 is ~25 g lighter than Roam v2 -> ~93 g"
+      },
+      {
+        "url": "https://support.wahoofitness.com/hc/en-us/articles/7872367410962-ELEMNT-ROAM-v2-2022-Product-Information",
+        "what": "product page"
+      }
+    ],
+    "note": "Weight derived (Bolt v2 68 g + 25 g). Case dimensions not published in what was reachable: estimated from the 2.7-inch screen and Edge 840 depth.",
+    "aliases": [
+      "roam",
+      "elemnt roam",
+      "wahoo roam",
+      "wahoo",
+      "gps",
+      "bike computer"
+    ]
+  },
+  {
+    "id": "inreach-mini-2",
+    "name": "Garmin inReach Mini 2",
+    "cat": "electronics",
+    "sub": "satellite messenger",
+    "generic": false,
+    "brand": "Garmin",
+    "model": "inReach Mini 2",
+    "weight_g": 100,
+    "packed_cm": [
+      9.9,
+      5.1,
+      2.6
+    ],
+    "packed_l": 0.131,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#e8e8e2",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "reachable for SOS and messages while riding, antenna near the top of the bike"
+      },
+      {
+        "at": "body",
+        "why": "clipped to a shoulder strap or hip pack so it stays with you if you are separated from the bike"
+      },
+      {
+        "at": "barbag",
+        "why": "clipped outside the bar bag, facing the sky for tracking"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www8.garmin.com/manuals/webhelp/GUID-802DEF62-EBB2-463C-8C51-C58FB29F89E3/EN-US/GUID-5D201E16-5AA1-4AB7-8BAA-9C5786B518FE.html",
+        "what": "100 g, 51 x 99 x 26 mm"
+      }
+    ],
+    "note": "Standard Tour Divide / HT550 tracker. Needs a clear view of the sky to track.",
+    "aliases": [
+      "inreach",
+      "inreach mini",
+      "garmin inreach",
+      "satellite messenger",
+      "sat messenger",
+      "tracker",
+      "plb"
+    ]
+  },
+  {
+    "id": "zoleo",
+    "name": "ZOLEO satellite communicator",
+    "cat": "electronics",
+    "sub": "satellite messenger",
+    "generic": false,
+    "brand": "ZOLEO",
+    "model": "Satellite Communicator",
+    "weight_g": 150,
+    "packed_cm": [
+      9.1,
+      6.6,
+      2.7
+    ],
+    "packed_l": 0.162,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#2b2d2f",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "reachable for SOS and messages while riding, antenna near the top of the bike"
+      },
+      {
+        "at": "body",
+        "why": "clipped to a shoulder strap or hip pack so it stays with you if you are separated from the bike"
+      },
+      {
+        "at": "barbag",
+        "why": "clipped outside the bar bag, facing the sky for tracking"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://support.zoleo.com/hc/en-us/articles/42175074969364-ZOLEO-Features-and-Technical-Specs",
+        "what": "~150 g, 9.1 x 6.6 x 2.7 cm"
+      }
+    ],
+    "note": "Iridium messenger that pairs with the phone; no screen.",
+    "aliases": [
+      "zoleo",
+      "satellite messenger",
+      "sat messenger"
+    ]
+  },
+  {
+    "id": "battery-pack",
+    "name": "Battery Pack (20,000 mAh)",
+    "cat": "electronics",
+    "sub": "power bank",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 456,
+    "packed_cm": [
+      15.8,
+      7.4,
+      1.9
+    ],
+    "packed_l": 0.222,
+    "compress": 0.0,
+    "archetype": "power_bank",
+    "color": "#1d1d1f",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "low and central in the frame bag, the heaviest small thing you carry; cable runs up to the GPS/phone"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag with the cable to the GPS so you can charge on the move"
+      },
+      {
+        "at": "framebag_full",
+        "why": "bottom of a full frame bag, near the bottom bracket"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 16.1 oz"
+      },
+      {
+        "url": "https://service.anker.com/product-description/a085g000004x2BDAAY",
+        "what": "Anker 325 20K: 6.22 x 2.93 x 0.76 in, 12.1 oz"
+      },
+      {
+        "url": "https://www.packstack.io/reviews/electronics/anker-powercore-20000",
+        "what": "Anker 20K measured 369 g"
+      }
+    ],
+    "note": "Owner's item: 20,000 mAh class; 16.1 oz (456 g) is his figure. Plain 20K packs run 343-369 g (Anker 325); heavier 20K packs with fast charging reach ~450-540 g. Size from Anker 325.",
+    "aliases": [
+      "battery pack",
+      "battery",
+      "power bank",
+      "powerbank",
+      "charger",
+      "battery 20000",
+      "20k power bank"
+    ]
+  },
+  {
+    "id": "anker-325-20k",
+    "name": "Anker 325 Power Bank (PowerCore 20K)",
+    "cat": "electronics",
+    "sub": "power bank",
+    "generic": false,
+    "brand": "Anker",
+    "model": "325 PowerCore 20K",
+    "weight_g": 343,
+    "packed_cm": [
+      15.8,
+      7.4,
+      1.9
+    ],
+    "packed_l": 0.222,
+    "compress": 0.0,
+    "archetype": "power_bank",
+    "color": "#1d1d1f",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "low and central in the frame bag, the heaviest small thing you carry; cable runs up to the GPS/phone"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag with the cable to the GPS so you can charge on the move"
+      },
+      {
+        "at": "framebag_full",
+        "why": "bottom of a full frame bag, near the bottom bracket"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://service.anker.com/product-description/a085g000004x2BDAAY",
+        "what": "6.22 x 2.93 x 0.76 in, 12.1 oz"
+      },
+      {
+        "url": "https://www.packstack.io/reviews/electronics/anker-powercore-20000",
+        "what": "measured 369 g"
+      }
+    ],
+    "note": "Maker 343 g; Packstack measured 369 g.",
+    "aliases": [
+      "anker 20000",
+      "anker powercore 20000",
+      "anker 325",
+      "power bank",
+      "battery",
+      "battery pack"
+    ]
+  },
+  {
+    "id": "nitecore-nb10000",
+    "name": "Nitecore NB10000 Gen 2",
+    "cat": "electronics",
+    "sub": "power bank",
+    "generic": false,
+    "brand": "Nitecore",
+    "model": "NB10000 Gen 2",
+    "weight_g": 150,
+    "packed_cm": [
+      12.19,
+      5.9,
+      1.06
+    ],
+    "packed_l": 0.076,
+    "compress": 0.0,
+    "archetype": "power_bank",
+    "color": "#2a2a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "low and central in the frame bag, the heaviest small thing you carry; cable runs up to the GPS/phone"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag with the cable to the GPS so you can charge on the move"
+      },
+      {
+        "at": "framebag_full",
+        "why": "bottom of a full frame bag, near the bottom bracket"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nitecore.com/product/nb10000",
+        "what": "150 g, 121.9 x 59 x 10.6 mm"
+      }
+    ],
+    "note": "The ultralight favourite: carbon-fibre shell, phone-sized, slips into a top tube bag.",
+    "aliases": [
+      "nitecore",
+      "nb10000",
+      "nitecore nb10000",
+      "power bank",
+      "battery",
+      "battery pack",
+      "10000 mah"
+    ]
+  },
+  {
+    "id": "anker-313-10k",
+    "name": "Anker 313 Power Bank (PowerCore 10K)",
+    "cat": "electronics",
+    "sub": "power bank",
+    "generic": false,
+    "brand": "Anker",
+    "model": "313 PowerCore 10K",
+    "weight_g": 212,
+    "packed_cm": [
+      9.2,
+      6.0,
+      2.2
+    ],
+    "packed_l": 0.121,
+    "compress": 0.0,
+    "archetype": "power_bank",
+    "color": "#1d1d1f",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "low and central in the frame bag, the heaviest small thing you carry; cable runs up to the GPS/phone"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag with the cable to the GPS so you can charge on the move"
+      },
+      {
+        "at": "framebag_full",
+        "why": "bottom of a full frame bag, near the bottom bracket"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://gearjunkie.com/technology/anker-313-power-bank-powercore-10k-review",
+        "what": "7.5 oz; reviewer measured 8.4 oz"
+      }
+    ],
+    "note": "Maker 7.5 oz (212 g). Dimensions not in reachable sources: estimated as a stubby brick of the same capacity as the NB10000 (shorter, thicker).",
+    "aliases": [
+      "anker 10000",
+      "anker 313",
+      "powercore 10000",
+      "power bank",
+      "battery",
+      "battery pack"
+    ]
+  },
+  {
+    "id": "power-bank-10k",
+    "name": "Power bank 10,000 mAh",
+    "cat": "electronics",
+    "sub": "power bank",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 180,
+    "packed_cm": [
+      12.0,
+      6.0,
+      1.6
+    ],
+    "packed_l": 0.115,
+    "compress": 0.0,
+    "archetype": "power_bank",
+    "color": "#262626",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "low and central in the frame bag, the heaviest small thing you carry; cable runs up to the GPS/phone"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag with the cable to the GPS so you can charge on the move"
+      },
+      {
+        "at": "framebag_full",
+        "why": "bottom of a full frame bag, near the bottom bracket"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nitecore.com/product/nb10000",
+        "what": "Nitecore NB10000 150 g"
+      },
+      {
+        "url": "https://gearjunkie.com/technology/anker-313-power-bank-powercore-10k-review",
+        "what": "Anker 313 212 g"
+      }
+    ],
+    "note": "Generic 10K bank, typical of Nitecore NB10000 (150 g) and Anker 313 (212 g). Size between the two.",
+    "aliases": [
+      "power bank",
+      "battery",
+      "battery pack",
+      "10000 mah",
+      "10k power bank"
+    ]
+  },
+  {
+    "id": "power-bank-5k",
+    "name": "Power bank 5,000 mAh",
+    "cat": "electronics",
+    "sub": "power bank",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 115,
+    "packed_cm": [
+      9.5,
+      6.5,
+      1.4
+    ],
+    "packed_l": 0.086,
+    "compress": 0.0,
+    "archetype": "power_bank",
+    "color": "#2a2a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "small enough to live in the top tube bag and top up the phone mid-ride"
+      },
+      {
+        "at": "pocket",
+        "why": "jersey pocket on a day ride"
+      },
+      {
+        "at": "framebag_half",
+        "why": "with the other electronics"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.digitalcameraworld.com/reviews/anker-nano-621-225w-power-bank-with-built-in-usb-c-connector-review",
+        "what": "Anker Nano 621 5K 100 g"
+      },
+      {
+        "url": "https://www.anker.com/products/a1665-5k-ultra-slim-qi2-power-bank",
+        "what": "Anker Nano 5K MagGo Slim 122 g"
+      }
+    ],
+    "note": "Generic 5K bank, typical of Anker Nano 621 (100 g), Nano MagGo Slim (122 g), 621 MagGo (129 g). Size estimated from a phone-back MagSafe pack.",
+    "aliases": [
+      "power bank",
+      "battery",
+      "5000 mah",
+      "5k power bank",
+      "small battery"
+    ]
+  },
+  {
+    "id": "sinewave-beacon",
+    "name": "Sinewave Beacon dynamo light + USB",
+    "cat": "electronics",
+    "sub": "dynamo charger",
+    "generic": false,
+    "brand": "Sinewave Cycles",
+    "model": "Beacon",
+    "weight_g": 115,
+    "packed_cm": [
+      8.0,
+      4.0,
+      4.0
+    ],
+    "packed_l": 0.128,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#1a1a1a",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "bolted to the fork crown or bar mount and wired to the hub dynamo"
+      },
+      {
+        "at": "toptube",
+        "why": "the USB lead runs back to a cache battery in the top tube bag"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cyclingabout.com/sinewave-cycles-beacon-dynamo-light/",
+        "what": "115 g incl. 91 cm dynamo cable"
+      }
+    ],
+    "note": "Dynamo headlight with built-in USB charger. Body size estimated from photos-class comparables (not published in reachable sources).",
+    "aliases": [
+      "dynamo",
+      "dynamo charger",
+      "dynamo usb",
+      "sinewave",
+      "beacon",
+      "usb charger"
+    ]
+  },
+  {
+    "id": "exp-joystick",
+    "name": "Exposure Joystick",
+    "cat": "electronics",
+    "sub": "front light",
+    "generic": false,
+    "brand": "Exposure",
+    "model": "Joystick",
+    "weight_g": 105,
+    "packed_cm": [
+      10.5,
+      3.0,
+      3.0
+    ],
+    "packed_l": 0.095,
+    "compress": 0.0,
+    "archetype": "headlamp",
+    "color": "#2b2b2b",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "on the bars or helmet; stays mounted for the trip"
+      },
+      {
+        "at": "barbag",
+        "why": "off the bike in daylight: in the bar bag pocket to keep it dry and charged"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://road.cc/content/review/254821-exposure-joystick-mk13",
+        "what": "Joystick ~105 g"
+      }
+    ],
+    "note": "Self-contained helmet/bar torch. Cylinder size estimated from the class (not in reachable sources); headlamp archetype is the closest light shape.",
+    "aliases": [
+      "exposure",
+      "joystick",
+      "front light",
+      "bike light",
+      "light"
+    ]
+  },
+  {
+    "id": "lezyne-md-800",
+    "name": "Lezyne Micro Drive 800+",
+    "cat": "electronics",
+    "sub": "front light",
+    "generic": false,
+    "brand": "Lezyne",
+    "model": "Micro Drive 800+",
+    "weight_g": 135,
+    "packed_cm": [
+      10.5,
+      3.5,
+      3.2
+    ],
+    "packed_l": 0.118,
+    "compress": 0.0,
+    "archetype": "headlamp",
+    "color": "#1f1f1f",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "on the bars or helmet; stays mounted for the trip"
+      },
+      {
+        "at": "barbag",
+        "why": "off the bike in daylight: in the bar bag pocket to keep it dry and charged"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.bikeradar.com/reviews/accessories/lights/front-light/lezyne-micro-drive-800",
+        "what": "135 g"
+      }
+    ],
+    "note": "Size estimated from the class; headlamp archetype is the closest light shape.",
+    "aliases": [
+      "lezyne",
+      "micro drive",
+      "front light",
+      "bike light",
+      "light"
+    ]
+  },
+  {
+    "id": "garmin-varia-515",
+    "name": "Garmin Varia RTL515",
+    "cat": "electronics",
+    "sub": "rear light",
+    "generic": false,
+    "brand": "Garmin",
+    "model": "Varia RTL515",
+    "weight_g": 71,
+    "packed_cm": [
+      9.86,
+      3.96,
+      1.97
+    ],
+    "packed_l": 0.077,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#1a1a1a",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "seatpost or seat-pack loop; clear of the bag so it is not buried"
+      },
+      {
+        "at": "seatpack",
+        "why": "clipped to the rear of the seat pack daisy chain"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.garmin.com/en-US/p/698001/",
+        "what": "71 g, 98.6 x 19.7 x 39.6 mm"
+      }
+    ],
+    "note": "Radar + tail light; seatpost mount. Big seat packs can block it, check line of sight.",
+    "aliases": [
+      "varia",
+      "radar",
+      "garmin varia",
+      "rear light",
+      "tail light"
+    ]
+  },
+  {
+    "id": "lezyne-ktv-rear",
+    "name": "Lezyne KTV Drive rear light",
+    "cat": "electronics",
+    "sub": "rear light",
+    "generic": false,
+    "brand": "Lezyne",
+    "model": "KTV Drive Rear",
+    "weight_g": 50,
+    "packed_cm": [
+      5.0,
+      3.5,
+      2.5
+    ],
+    "packed_l": 0.044,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#1a1a1a",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "seatpost or seat-pack loop; clear of the bag so it is not buried"
+      },
+      {
+        "at": "seatpack",
+        "why": "clipped to the rear of the seat pack daisy chain"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.jensonusa.com/Lezyne-KTV-Drive-Rear-Light",
+        "what": "50 g (some list 54 g)"
+      }
+    ],
+    "note": "Size estimated from the class.",
+    "aliases": [
+      "lezyne ktv",
+      "rear light",
+      "tail light",
+      "light",
+      "red light"
+    ]
+  },
+  {
+    "id": "exposure-tracer",
+    "name": "Exposure TraceR Mk3",
+    "cat": "electronics",
+    "sub": "rear light",
+    "generic": false,
+    "brand": "Exposure",
+    "model": "TraceR Mk3",
+    "weight_g": 35,
+    "packed_cm": [
+      6.0,
+      2.5,
+      2.5
+    ],
+    "packed_l": 0.037,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#202020",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "seatpost or seat-pack loop; clear of the bag so it is not buried"
+      },
+      {
+        "at": "seatpack",
+        "why": "clipped to the rear of the seat pack daisy chain"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cyclingweekly.com/reviews/lights-reflectives/exposure-trace-and-tracer-lightset",
+        "what": "TraceR ~35 g (older versions 44-78 g)"
+      }
+    ],
+    "note": "Size estimated from the class.",
+    "aliases": [
+      "tracer",
+      "exposure tracer",
+      "rear light",
+      "tail light"
+    ]
+  },
+  {
+    "id": "headlamp",
+    "name": "Headlamp",
+    "cat": "electronics",
+    "sub": "headlamp",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 113,
+    "packed_cm": [
+      7.0,
+      5.5,
+      4.5
+    ],
+    "packed_l": 0.173,
+    "compress": 0.0,
+    "archetype": "headlamp",
+    "color": "#2f3b44",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "front pocket of the bar roll / accessory pocket: reachable at dusk without unpacking"
+      },
+      {
+        "at": "stem",
+        "why": "stem bag: grab it when the light fades or a mechanical happens at night"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag, with the other things you want before camp is set up"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 4.0 oz, carried in the front pocket"
+      },
+      {
+        "url": "https://www.cleverhiker.com/backpacking/petzl-actik-core-headlamp-review/",
+        "what": "Actik Core 75-88 g"
+      }
+    ],
+    "note": "Owner's item, model unknown: 4.0 oz (113 g) is his figure; heavier than today's rechargeables (Actik Core 88 g, BioLite 425 78 g), typical of an AAA-battery lamp. Size estimated from the Actik class.",
+    "aliases": [
+      "headlamp",
+      "head lamp",
+      "head torch",
+      "headtorch",
+      "torch"
+    ]
+  },
+  {
+    "id": "petzl-bindi",
+    "name": "Petzl Bindi",
+    "cat": "electronics",
+    "sub": "headlamp",
+    "generic": false,
+    "brand": "Petzl",
+    "model": "Bindi",
+    "weight_g": 35,
+    "packed_cm": [
+      5.0,
+      3.5,
+      3.0
+    ],
+    "packed_l": 0.052,
+    "compress": 0.0,
+    "archetype": "headlamp",
+    "color": "#e1e1dc",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "front pocket of the bar roll / accessory pocket: reachable at dusk without unpacking"
+      },
+      {
+        "at": "stem",
+        "why": "stem bag: grab it when the light fades or a mechanical happens at night"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag, with the other things you want before camp is set up"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://sectionhiker.com/petzl-bindi-rechargeable-headlamp-review/",
+        "what": "35 g (1.2 oz)"
+      }
+    ],
+    "note": "Cord-band ultralight lamp; fine for camp, weak for night riding. Coiled size estimated.",
+    "aliases": [
+      "bindi",
+      "petzl bindi",
+      "headlamp",
+      "head torch"
+    ]
+  },
+  {
+    "id": "petzl-actik-core",
+    "name": "Petzl Actik Core",
+    "cat": "electronics",
+    "sub": "headlamp",
+    "generic": false,
+    "brand": "Petzl",
+    "model": "Actik Core",
+    "weight_g": 88,
+    "packed_cm": [
+      7.0,
+      5.0,
+      4.0
+    ],
+    "packed_l": 0.14,
+    "compress": 0.0,
+    "archetype": "headlamp",
+    "color": "#30343a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "front pocket of the bar roll / accessory pocket: reachable at dusk without unpacking"
+      },
+      {
+        "at": "stem",
+        "why": "stem bag: grab it when the light fades or a mechanical happens at night"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag, with the other things you want before camp is set up"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.enwild.com/petzl-actik-core-2025.html",
+        "what": "current model 88 g"
+      },
+      {
+        "url": "https://www.cleverhiker.com/backpacking/petzl-actik-core-headlamp-review/",
+        "what": "earlier model 75 g"
+      }
+    ],
+    "note": "Current model 88 g; older version 75 g. Folded size estimated.",
+    "aliases": [
+      "actik",
+      "actik core",
+      "petzl",
+      "headlamp",
+      "head torch"
+    ]
+  },
+  {
+    "id": "nitecore-nu25",
+    "name": "Nitecore NU25 UL",
+    "cat": "electronics",
+    "sub": "headlamp",
+    "generic": false,
+    "brand": "Nitecore",
+    "model": "NU25 UL",
+    "weight_g": 45,
+    "packed_cm": [
+      6.0,
+      3.7,
+      2.5
+    ],
+    "packed_l": 0.056,
+    "compress": 0.0,
+    "archetype": "headlamp",
+    "color": "#1e1e1e",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "front pocket of the bar roll / accessory pocket: reachable at dusk without unpacking"
+      },
+      {
+        "at": "stem",
+        "why": "stem bag: grab it when the light fades or a mechanical happens at night"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag, with the other things you want before camp is set up"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://dutchwaregear.com/product/nitecore-nu25-ul/",
+        "what": "45 g, 2.37 x 1.45 x 0.98 in"
+      }
+    ],
+    "note": "Lamp body size; the elastic cord adds a little bulk.",
+    "aliases": [
+      "nu25",
+      "nitecore nu25",
+      "nitecore headlamp",
+      "headlamp",
+      "head torch"
+    ]
+  },
+  {
+    "id": "biolite-hl-425",
+    "name": "BioLite HeadLamp 425",
+    "cat": "electronics",
+    "sub": "headlamp",
+    "generic": false,
+    "brand": "BioLite",
+    "model": "HeadLamp 425",
+    "weight_g": 78,
+    "packed_cm": [
+      7.0,
+      5.5,
+      4.0
+    ],
+    "packed_l": 0.154,
+    "compress": 0.0,
+    "archetype": "headlamp",
+    "color": "#2f5e6e",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "front pocket of the bar roll / accessory pocket: reachable at dusk without unpacking"
+      },
+      {
+        "at": "stem",
+        "why": "stem bag: grab it when the light fades or a mechanical happens at night"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag, with the other things you want before camp is set up"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.advnture.com/reviews/biolite-headlamp-425",
+        "what": "78 g"
+      }
+    ],
+    "note": "Folded size estimated.",
+    "aliases": [
+      "biolite",
+      "biolite 425",
+      "headlamp 425",
+      "headlamp",
+      "head torch"
+    ]
+  },
+  {
+    "id": "gopro-7",
+    "name": "GoPro HERO7 Black",
+    "cat": "electronics",
+    "sub": "action camera",
+    "generic": false,
+    "brand": "GoPro",
+    "model": "HERO7 Black",
+    "weight_g": 116,
+    "packed_cm": [
+      6.23,
+      4.49,
+      3.3
+    ],
+    "packed_l": 0.092,
+    "compress": 0.0,
+    "archetype": "action_camera",
+    "color": "#1b1b1b",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "owner runs it on the bike: bar mount for riding footage"
+      },
+      {
+        "at": "toptube",
+        "why": "in the top tube bag between shots"
+      },
+      {
+        "at": "body",
+        "why": "chest or helmet mount"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.dpreview.com/products/gopro/actioncams/gopro_hero7_black/specifications",
+        "what": "116 g, 62.3 x 44.9 x 33.0 mm"
+      }
+    ],
+    "note": "Owner's item; owner's sheet 4.1 oz (116 g) agrees with spec. Weight incl. battery.",
+    "aliases": [
+      "gopro 7",
+      "go pro 7",
+      "gopro hero 7",
+      "hero7",
+      "gopro",
+      "action camera"
+    ]
+  },
+  {
+    "id": "gopro-6",
+    "name": "GoPro HERO6 Black",
+    "cat": "electronics",
+    "sub": "action camera",
+    "generic": false,
+    "brand": "GoPro",
+    "model": "HERO6 Black",
+    "weight_g": 117,
+    "packed_cm": [
+      6.23,
+      4.49,
+      3.3
+    ],
+    "packed_l": 0.092,
+    "compress": 0.0,
+    "archetype": "action_camera",
+    "color": "#1b1b1b",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "body",
+        "why": "owner wears it: chest or helmet mount"
+      },
+      {
+        "at": "frame",
+        "why": "bar mount"
+      },
+      {
+        "at": "toptube",
+        "why": "stowed between shots"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.bhphotovideo.com/c/product/1354531-REG/gopro_chdhx_601_hero6_black.html",
+        "what": "117 g, 2.6 x 1.8 x 1.4 in"
+      }
+    ],
+    "note": "Owner's item; owner's sheet 4.1 oz (116 g). Same body as HERO7.",
+    "aliases": [
+      "gopro 6",
+      "go pro 6",
+      "gopro hero 6",
+      "hero6",
+      "gopro",
+      "action camera"
+    ]
+  },
+  {
+    "id": "gopro-11",
+    "name": "GoPro HERO11 Black",
+    "cat": "electronics",
+    "sub": "action camera",
+    "generic": false,
+    "brand": "GoPro",
+    "model": "HERO11 Black",
+    "weight_g": 154,
+    "packed_cm": [
+      7.18,
+      5.08,
+      3.36
+    ],
+    "packed_l": 0.123,
+    "compress": 0.0,
+    "archetype": "action_camera",
+    "color": "#1b1b1b",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "bar or fork mount for riding footage"
+      },
+      {
+        "at": "body",
+        "why": "chest or helmet mount"
+      },
+      {
+        "at": "toptube",
+        "why": "stowed in the top tube bag between shots"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://community.gopro.com/s/article/HERO11-Black-Camera-Size-And-Weight?language=en_US",
+        "what": "154 g, 71.8 x 50.8 x 33.6 mm"
+      }
+    ],
+    "note": "Weight incl. battery; mount fingers built in.",
+    "aliases": [
+      "gopro 11",
+      "hero11",
+      "gopro",
+      "action camera"
+    ]
+  },
+  {
+    "id": "gopro-12",
+    "name": "GoPro HERO12 Black",
+    "cat": "electronics",
+    "sub": "action camera",
+    "generic": false,
+    "brand": "GoPro",
+    "model": "HERO12 Black",
+    "weight_g": 154,
+    "packed_cm": [
+      7.18,
+      5.08,
+      3.36
+    ],
+    "packed_l": 0.123,
+    "compress": 0.0,
+    "archetype": "action_camera",
+    "color": "#1b1b1b",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "bar or fork mount for riding footage"
+      },
+      {
+        "at": "body",
+        "why": "chest or helmet mount"
+      },
+      {
+        "at": "toptube",
+        "why": "stowed in the top tube bag between shots"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://community.gopro.com/s/article/HERO12-Black-Camera-Size-And-Weight?language=en_US",
+        "what": "154 g, 71.8 x 50.8 x 33.6 mm"
+      }
+    ],
+    "note": "Weight incl. battery; mount fingers built in.",
+    "aliases": [
+      "gopro 12",
+      "hero12",
+      "gopro",
+      "action camera"
+    ]
+  },
+  {
+    "id": "insta360-x4",
+    "name": "Insta360 X4",
+    "cat": "electronics",
+    "sub": "action camera",
+    "generic": false,
+    "brand": "Insta360",
+    "model": "X4",
+    "weight_g": 203,
+    "packed_cm": [
+      12.36,
+      4.6,
+      3.76
+    ],
+    "packed_l": 0.214,
+    "compress": 0.0,
+    "archetype": "action_camera",
+    "color": "#1a1a1a",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "on an invisible selfie stick or bar mount"
+      },
+      {
+        "at": "toptube",
+        "why": "stowed between shots, lenses protected"
+      },
+      {
+        "at": "barbag",
+        "why": "in the bar bag with the selfie stick"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://onlinemanual.insta360.com/x4/en-us/specs/hardware",
+        "what": "203 g, 123.6 x 46 x 37.6 mm"
+      }
+    ],
+    "note": "360 camera; exposed lenses scratch easily, carry the lens caps.",
+    "aliases": [
+      "insta360",
+      "insta 360",
+      "x4",
+      "360 camera",
+      "action camera"
+    ]
+  },
+  {
+    "id": "gopro-battery",
+    "name": "GoPro battery (HERO5-8)",
+    "cat": "electronics",
+    "sub": "camera battery",
+    "generic": false,
+    "brand": "GoPro",
+    "model": "Rechargeable Battery 1220 mAh (AABAT-001)",
+    "weight_g": 23,
+    "packed_cm": [
+      4.0,
+      3.4,
+      1.1
+    ],
+    "packed_l": 0.015,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#2a2a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "owner keeps the spare in the front pocket for a quick swap"
+      },
+      {
+        "at": "toptube",
+        "why": "with the camera"
+      },
+      {
+        "at": "pocket",
+        "why": "warm in a pocket in the cold"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.walmart.com/ip/GoPro-Rechargeable-Battery-HERO7-Black-HERO6-Black-HERO5-Black-HERO-2018/188832563",
+        "what": "0.05 lb"
+      },
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      }
+    ],
+    "note": "Owner's item (spare). Retail listing 0.05 lb (~23 g); owner's sheet: 1.0 oz (28 g). Size estimated from the battery form factor.",
+    "aliases": [
+      "gopro battery",
+      "go pro battery",
+      "go pro battery 2",
+      "spare battery",
+      "camera battery"
+    ]
+  },
+  {
+    "id": "gopro-charger",
+    "name": "GoPro dual battery charger",
+    "cat": "electronics",
+    "sub": "charger",
+    "generic": false,
+    "brand": "GoPro",
+    "model": "Dual Battery Charger",
+    "weight_g": 28,
+    "packed_cm": [
+      7.0,
+      5.0,
+      2.2
+    ],
+    "packed_l": 0.077,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#303030",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner keeps it with the cables in the half frame bag"
+      },
+      {
+        "at": "toptube",
+        "why": "with the power bank so both batteries charge overnight"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      },
+      {
+        "url": "https://www.microcenter.com/product/653042/gopro-dual-battery-charger-batteries-(hero10-black-hero9-black)",
+        "what": "retail 6.64 oz incl. two batteries + packaging"
+      }
+    ],
+    "note": "Owner's item. 1.0 oz (28 g) is his figure; the only published weight (188 g) includes two batteries and packaging so is not comparable. Size estimated.",
+    "aliases": [
+      "gopro charger",
+      "go pro double battery recharger",
+      "dual battery charger",
+      "battery charger",
+      "charger"
+    ]
+  },
+  {
+    "id": "cable-iphone",
+    "name": "iPhone cable (USB-C to Lightning)",
+    "cat": "electronics",
+    "sub": "cable",
+    "generic": true,
+    "brand": null,
+    "model": "USB-C to Lightning",
+    "weight_g": 28,
+    "packed_cm": [
+      8.0,
+      6.0,
+      2.0
+    ],
+    "packed_l": 0.096,
+    "compress": 0.1,
+    "archetype": "cable_coil",
+    "color": "#e8e8e8",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner keeps all cables together in the half frame bag"
+      },
+      {
+        "at": "toptube",
+        "why": "one short cable lives in the top tube bag, plugged between power bank and phone/GPS"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      }
+    ],
+    "note": "Owner's item; 1.0 oz is his figure. Coil size estimated for a 1 m cable.",
+    "aliases": [
+      "iphone cable",
+      "phone cable",
+      "charging cable",
+      "cable"
+    ]
+  },
+  {
+    "id": "cable-lightning",
+    "name": "Lightning USB cable",
+    "cat": "electronics",
+    "sub": "cable",
+    "generic": true,
+    "brand": null,
+    "model": "USB-A to Lightning",
+    "weight_g": 28,
+    "packed_cm": [
+      8.0,
+      6.0,
+      2.0
+    ],
+    "packed_l": 0.096,
+    "compress": 0.1,
+    "archetype": "cable_coil",
+    "color": "#e8e8e8",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner keeps all cables together in the half frame bag"
+      },
+      {
+        "at": "toptube",
+        "why": "one short cable lives in the top tube bag, plugged between power bank and phone/GPS"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      }
+    ],
+    "note": "Owner's item; 1.0 oz is his figure. Coil size estimated for a 1 m cable.",
+    "aliases": [
+      "lightning usb cable",
+      "lightning cable",
+      "lightning",
+      "cable"
+    ]
+  },
+  {
+    "id": "cable-microusb",
+    "name": "Micro USB cable",
+    "cat": "electronics",
+    "sub": "cable",
+    "generic": true,
+    "brand": null,
+    "model": "USB-A to micro-USB",
+    "weight_g": 28,
+    "packed_cm": [
+      8.0,
+      6.0,
+      2.0
+    ],
+    "packed_l": 0.096,
+    "compress": 0.1,
+    "archetype": "cable_coil",
+    "color": "#1e1e1e",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner keeps all cables together in the half frame bag"
+      },
+      {
+        "at": "toptube",
+        "why": "one short cable lives in the top tube bag, plugged between power bank and phone/GPS"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      }
+    ],
+    "note": "Owner's item; 1.0 oz is his figure. Coil size estimated.",
+    "aliases": [
+      "micro usb cable",
+      "micro usb",
+      "microusb",
+      "cable"
+    ]
+  },
+  {
+    "id": "cable-gopro",
+    "name": "GoPro cable (USB-C)",
+    "cat": "electronics",
+    "sub": "cable",
+    "generic": true,
+    "brand": null,
+    "model": "USB-A to USB-C",
+    "weight_g": 28,
+    "packed_cm": [
+      8.0,
+      6.0,
+      2.0
+    ],
+    "packed_l": 0.096,
+    "compress": 0.1,
+    "archetype": "cable_coil",
+    "color": "#1e1e1e",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner keeps all cables together in the half frame bag"
+      },
+      {
+        "at": "toptube",
+        "why": "one short cable lives in the top tube bag, plugged between power bank and phone/GPS"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      }
+    ],
+    "note": "Owner's item; 1.0 oz is his figure. HERO5 and later charge over USB-C.",
+    "aliases": [
+      "go pro cable",
+      "gopro cable",
+      "camera cable",
+      "cable"
+    ]
+  },
+  {
+    "id": "cable-usbc",
+    "name": "USB-C cable",
+    "cat": "electronics",
+    "sub": "cable",
+    "generic": true,
+    "brand": null,
+    "model": "USB-C to USB-C",
+    "weight_g": 28,
+    "packed_cm": [
+      8.0,
+      6.0,
+      2.0
+    ],
+    "packed_l": 0.096,
+    "compress": 0.1,
+    "archetype": "cable_coil",
+    "color": "#e8e8e8",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner keeps all cables together in the half frame bag"
+      },
+      {
+        "at": "toptube",
+        "why": "one short cable lives in the top tube bag, plugged between power bank and phone/GPS"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner weighs each of his charging cables at 1.0 oz"
+      }
+    ],
+    "note": "Generic 1 m cable; weight taken from the owner's own cables (1.0 oz each). Coil size estimated.",
+    "aliases": [
+      "usb-c cable",
+      "usb c cable",
+      "type c cable",
+      "charging cable",
+      "cable"
+    ]
+  },
+  {
+    "id": "watch-charger",
+    "name": "Apple Watch charger",
+    "cat": "electronics",
+    "sub": "charger",
+    "generic": true,
+    "brand": null,
+    "model": "Apple Watch magnetic charging cable",
+    "weight_g": 28,
+    "packed_cm": [
+      8.0,
+      6.0,
+      2.0
+    ],
+    "packed_l": 0.096,
+    "compress": 0.1,
+    "archetype": "cable_coil",
+    "color": "#e8e8e8",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner keeps all cables together in the half frame bag"
+      },
+      {
+        "at": "toptube",
+        "why": "one short cable lives in the top tube bag, plugged between power bank and phone/GPS"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      }
+    ],
+    "note": "Owner's item; 1.0 oz is his figure. Puck on a coiled cable.",
+    "aliases": [
+      "apple watch charger",
+      "watch charger",
+      "watch cable",
+      "charger"
+    ]
+  },
+  {
+    "id": "usb-plug",
+    "name": "USB wall plug (1-port)",
+    "cat": "electronics",
+    "sub": "wall charger",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 28,
+    "packed_cm": [
+      3.5,
+      3.0,
+      2.8
+    ],
+    "packed_l": 0.029,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#f2f2f2",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "with the cables; only needed at a café, hotel or campground outlet"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag on town days"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      },
+      {
+        "url": "https://www.walmart.com/ip/Anker-20W-USB-C-Fast-Charger-with-Foldable-Plug-PowerPort-III-20W-Cube-Charger-2-Pack-Cable-Not-Included/922971649",
+        "what": "Anker 20W cube 38 g"
+      }
+    ],
+    "note": "Owner's item: 1.0 oz (28 g) is his figure, typical of a small 5-12 W cube; a 20 W fast charger (Anker PowerPort III 20W) is 38 g. Size estimated from a cube charger.",
+    "aliases": [
+      "usb wall plug",
+      "wall plug",
+      "usb plug",
+      "wall charger",
+      "charger",
+      "plug"
+    ]
+  },
+  {
+    "id": "usb-plug-2port",
+    "name": "USB wall charger (2-port)",
+    "cat": "electronics",
+    "sub": "wall charger",
+    "generic": false,
+    "brand": "Anker",
+    "model": "PowerPort PD 2 (32 W)",
+    "weight_g": 100,
+    "packed_cm": [
+      6.5,
+      4.3,
+      3.0
+    ],
+    "packed_l": 0.084,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#1d1d1f",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "with the cables; only needed at a café, hotel or campground outlet"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag on town days"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.walmart.com/ip/Anker-32W-2-Port-Charger-with-20W-USB-C-Power-Adapter-PowerPort-PD-2-with-Foldable-Plug-Black/739942407",
+        "what": "100 g"
+      }
+    ],
+    "note": "Charges phone and power bank at once from one outlet - worth it on short resupply stops. Size estimated.",
+    "aliases": [
+      "2 port charger",
+      "dual usb charger",
+      "wall charger",
+      "charger",
+      "usb plug"
+    ]
+  },
+  {
+    "id": "apple-watch",
+    "name": "Apple Watch",
+    "cat": "electronics",
+    "sub": "watch",
+    "generic": false,
+    "brand": "Apple",
+    "model": "Apple Watch Series 9 45 mm aluminium",
+    "weight_g": 39,
+    "packed_cm": [
+      4.5,
+      3.8,
+      1.07
+    ],
+    "packed_l": 0.018,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#2c2c2e",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": true,
+    "places": [
+      {
+        "at": "body",
+        "why": "worn on the wrist"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://support.apple.com/en-us/111833",
+        "what": "45 mm aluminium case 38.7 g"
+      },
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      }
+    ],
+    "note": "Owner's item (model not stated; Series 9 45 mm used as reference). Case only 38.7 g; a sport band adds ~25-30 g. Owner's sheet: 1.0 oz.",
+    "aliases": [
+      "apple watch",
+      "watch",
+      "smartwatch"
+    ]
+  },
+  {
+    "id": "airpods-pro-2",
+    "name": "AirPods Pro 2",
+    "cat": "electronics",
+    "sub": "earbuds",
+    "generic": false,
+    "brand": "Apple",
+    "model": "AirPods Pro (2nd gen)",
+    "weight_g": 61,
+    "packed_cm": [
+      6.06,
+      4.52,
+      2.17
+    ],
+    "packed_l": 0.059,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#f4f4f4",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "top tube bag for town and camp"
+      },
+      {
+        "at": "framebag_half",
+        "why": "with the electronics kit"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.dimensions.com/element/apple-airpods-pro-2nd-gen-2022",
+        "what": "case 50.8 g, 45.2 x 60.6 x 21.7 mm"
+      }
+    ],
+    "note": "Case 50.8 g plus two buds (~5 g each per Apple spec, not re-read this run).",
+    "aliases": [
+      "airpods",
+      "airpods pro",
+      "earbuds",
+      "headphones",
+      "earphones"
+    ]
+  },
+  {
+    "id": "kindle-pw",
+    "name": "Kindle Paperwhite",
+    "cat": "electronics",
+    "sub": "e-reader",
+    "generic": false,
+    "brand": "Amazon",
+    "model": "Kindle Paperwhite (12th gen, 2024)",
+    "weight_g": 211,
+    "packed_cm": [
+      17.67,
+      12.76,
+      0.78
+    ],
+    "packed_l": 0.176,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#1c1c1c",
+    "rigid": true,
+    "fragile": true,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "flat against the frame bag wall where it cannot be bent"
+      },
+      {
+        "at": "barroll",
+        "why": "slid flat inside the bar roll with the sleeping kit"
+      },
+      {
+        "at": "seatpack",
+        "why": "flat against the stiff side of the seat pack"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.the-ebook-reader.com/2024/10/16/new-12th-gen-kindle-paperwhite-specs-and-features-summary/",
+        "what": "211 g, 176.7 x 127.6 x 7.8 mm"
+      }
+    ],
+    "note": "Screen cracks if bent; carry flat.",
+    "aliases": [
+      "kindle",
+      "e-reader",
+      "ereader",
+      "paperwhite",
+      "kindle paperwhite"
+    ]
+  },
+  {
+    "id": "pedco-ultrapod",
+    "name": "Pedco UltraPod",
+    "cat": "electronics",
+    "sub": "tripod",
+    "generic": false,
+    "brand": "Pedco",
+    "model": "UltraPod 3",
+    "weight_g": 91,
+    "packed_cm": [
+      17.8,
+      5.1,
+      5.1
+    ],
+    "packed_l": 0.463,
+    "compress": 0.0,
+    "archetype": "pole_bundle",
+    "color": "#1a1a1a",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "pocket",
+        "why": "owner carries it in his hip pack, ready for a self-timer shot"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag"
+      },
+      {
+        "at": "outside",
+        "why": "velcro strap around a bag strap"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.walmart.com/ip/pedco-ultrapod-3-lightweight-travel-tripod-for-camera-and-phone-black/2531809258",
+        "what": "UltraPod 3: 3.2 oz, 7 x 2 x 2 in folded"
+      },
+      {
+        "url": "https://www.bhphotovideo.com/c/product/239957-REG/Ultrapod_PD01020_1_Black.html",
+        "what": "UltraPod I: 2 oz, 4 in folded"
+      }
+    ],
+    "note": "Owner's item; owner's sheet: 2.9 oz (82 g), between UltraPod I (2 oz) and UltraPod 3 (3.2 oz / 91 g, spec used).",
+    "aliases": [
+      "pedco ultra pod",
+      "ultrapod",
+      "pedco",
+      "tripod",
+      "mini tripod",
+      "gorillapod"
+    ]
+  },
+  {
+    "id": "sony-rx100-vii",
+    "name": "Sony RX100 VII",
+    "cat": "electronics",
+    "sub": "camera",
+    "generic": false,
+    "brand": "Sony",
+    "model": "Cyber-shot DSC-RX100 VII",
+    "weight_g": 302,
+    "packed_cm": [
+      10.16,
+      5.81,
+      4.28
+    ],
+    "packed_l": 0.253,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#1c1c1c",
+    "rigid": true,
+    "fragile": true,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "top tube bag or a stem bag: reachable for a shot without stopping long"
+      },
+      {
+        "at": "stem",
+        "why": "padded stem bag"
+      },
+      {
+        "at": "pocket",
+        "why": "hip pack"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.sony.com.sg/electronics/cyber-shot-compact-cameras/dsc-rx100m7/specifications",
+        "what": "302 g incl. battery+card, 101.6 x 58.1 x 42.8 mm"
+      }
+    ],
+    "note": "Compact 1-inch camera.",
+    "aliases": [
+      "camera",
+      "compact camera",
+      "rx100",
+      "sony rx100",
+      "point and shoot"
+    ]
+  }
+]

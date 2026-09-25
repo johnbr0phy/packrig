@@ -1,0 +1,71 @@
+{
+  "brand": "Nuke Sunrise Bike Bags",
+  "products": [
+    {
+      "line": "Silo",
+      "name": "Silo",
+      "size": "One Size",
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.nukesunrise.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.2L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Silo",
+      "name": "Giant Silo",
+      "size": "Giant",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://www.nukesunrise.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 2.4L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Titan",
+      "name": "Titan Tank",
+      "size": "One Size",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://www.nukesunrise.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.3L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Titan",
+      "name": "MegaTitan",
+      "size": "Mega",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://www.nukesunrise.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2.4L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Wing Tank",
+      "name": "Wing Tank",
+      "size": "One Size (3.5L)",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://www.nukesunrise.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 3.5L fork bag, one bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Mini-Panniers",
+      "name": "Mini-Pannier",
+      "size": "One Size (6L each)",
+      "weight_g": 250,
+      "basis": "family-estimate",
+      "source": "https://www.nukesunrise.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 6L mini-pannier, one bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

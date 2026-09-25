@@ -1,0 +1,489 @@
+[
+ {
+  "id": "voile-20",
+  "name": "Voile strap 20\"",
+  "cat": "repair",
+  "sub": "strap",
+  "generic": false,
+  "brand": "Voile",
+  "model": "Standard Series 20\"",
+  "weight_g": 32,
+  "packed_cm": [
+   18,
+   4,
+   2
+  ],
+  "packed_l": 0.12,
+  "compress": 0.2,
+  "archetype": "cable_coil",
+  "color": "#e8612c",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "frame",
+    "why": "wrapped around the seatpost or top tube, always there"
+   },
+   {
+    "at": "outside",
+    "why": "holding a bar roll or extra bottle on"
+   },
+   {
+    "at": "framebag_half",
+    "why": "loose in the frame bag"
+   }
+  ],
+  "note": "20\" (51 cm) standard strap; about 1.1 oz recalled. Coiled size estimated.",
+  "aliases": [
+   "voile",
+   "voile strap",
+   "ski strap",
+   "rubber strap",
+   "voile straps"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.voilestraps.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "park-tb2",
+  "name": "Park Tool TB-2 tyre boot",
+  "cat": "repair",
+  "sub": "tyre boot",
+  "generic": false,
+  "brand": "Park Tool",
+  "model": "TB-2",
+  "weight_g": 4,
+  "packed_cm": [
+   8,
+   5,
+   1
+  ],
+  "packed_l": 0.03,
+  "compress": 0,
+  "archetype": "pouch",
+  "color": "#1b4fa0",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "in the repair pouch"
+   },
+   {
+    "at": "toptube",
+    "why": "tucked in the top tube bag with the plugs"
+   }
+  ],
+  "note": "Card of three adhesive boots; Park does not make much of the weight, a few grams. Size is the card.",
+  "aliases": [
+   "tyre boot",
+   "tire boot",
+   "tb-2",
+   "tb2",
+   "boot",
+   "emergency tire boot"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.parktool.com",
+    "what": "weight estimated from the 3-boot card, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "duct-tape-mini",
+  "name": "Duct tape mini roll",
+  "cat": "repair",
+  "sub": "tape",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 30,
+  "packed_cm": [
+   5,
+   5,
+   2
+  ],
+  "packed_l": 0.04,
+  "compress": 0.1,
+  "archetype": "cable_coil",
+  "color": "#9a9a9a",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "repair pouch"
+   },
+   {
+    "at": "frame",
+    "why": "wrapped around the pump or seatpost instead of a roll"
+   }
+  ],
+  "note": "Generic flattened mini roll, a couple of metres; ~30 g estimated. Size estimated.",
+  "aliases": [
+   "duct tape",
+   "gaffer tape",
+   "gorilla tape",
+   "tape roll",
+   "duck tape"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.gorillatough.com",
+    "what": "comparable product (mini duct tape roll) weight, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "valve-core-tool",
+  "name": "Valve core tool",
+  "cat": "repair",
+  "sub": "valve tool",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 5,
+  "packed_cm": [
+   5,
+   2,
+   1
+  ],
+  "packed_l": 0.01,
+  "compress": 0,
+  "archetype": "multitool",
+  "color": "#b83232",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "repair pouch with the spare valve"
+   },
+   {
+    "at": "toptube",
+    "why": "small parts in the top tube bag"
+   }
+  ],
+  "note": "Generic small valve core remover, a few grams. Size estimated.",
+  "aliases": [
+   "valve core tool",
+   "valve core remover",
+   "core tool",
+   "vc-1"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.parktool.com",
+    "what": "comparable product (Park VC-1 valve core tool), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "zip-ties-10",
+  "name": "Zip ties (10)",
+  "cat": "repair",
+  "sub": "zip ties",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 10,
+  "packed_cm": [
+   20,
+   2,
+   1
+  ],
+  "packed_l": 0.03,
+  "compress": 0.1,
+  "archetype": "cable_coil",
+  "color": "#111111",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "repair pouch"
+   },
+   {
+    "at": "frame",
+    "why": "a few pre-looped around the frame, ready"
+   }
+  ],
+  "note": "Ten ~200 mm ties; about 1 g each. Size estimated.",
+  "aliases": [
+   "zip ties",
+   "zipties",
+   "cable ties",
+   "zip-ties",
+   "tie wraps"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.hellermanntyton.com",
+    "what": "comparable product (~200 mm cable ties, ~1 g each), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "rag",
+  "name": "Rag",
+  "cat": "repair",
+  "sub": "rag",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 20,
+  "packed_cm": [
+   15,
+   10,
+   2
+  ],
+  "packed_l": 0.24,
+  "compress": 0.6,
+  "archetype": "clothing_rolled",
+  "color": "#8c7b6b",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "repair pouch, for chain and sealant mess"
+   },
+   {
+    "at": "seatpack",
+    "why": "outer pocket of the seat pack"
+   }
+  ],
+  "note": "Generic cut-down cotton or microfibre rag. Weight and size estimated.",
+  "aliases": [
+   "rag",
+   "shop rag",
+   "cloth",
+   "chain rag"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": null,
+    "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify"
+   }
+  ]
+ },
+ {
+  "id": "chain-segment",
+  "name": "Spare chain segment (~10 links)",
+  "cat": "repair",
+  "sub": "spare chain",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 22,
+  "packed_cm": [
+   7,
+   3,
+   1
+  ],
+  "packed_l": 0.02,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#6a6a6a",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "repair pouch, in a small bag against grease"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag with the quick links"
+   }
+  ],
+  "note": "A short length of chain matched to the drivetrain for a broken-link repair; pairs with the quick links. Size estimated folded.",
+  "aliases": [
+   "spare chain",
+   "chain links",
+   "chain segment",
+   "spare links",
+   "bit of chain"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.shimano.com",
+    "what": "estimate from a full ~116-link 11/12-speed chain at ~250 g (~2.2 g/link), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "tubeless-valve",
+  "name": "Spare tubeless valve (pair)",
+  "cat": "repair",
+  "sub": "valve",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 8,
+  "packed_cm": [
+   6,
+   3,
+   1
+  ],
+  "packed_l": 0.01,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#c0c0c0",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "repair pouch"
+   },
+   {
+    "at": "toptube",
+    "why": "small parts in the top tube bag"
+   }
+  ],
+  "note": "Two alloy presta tubeless valves; ~4 g each estimated. Size estimated.",
+  "aliases": [
+   "tubeless valve",
+   "spare valve",
+   "presta valve",
+   "valve stem",
+   "tubeless valves"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.stansnotubes.com",
+    "what": "comparable product (alloy tubeless presta valve), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "sealant-syringe",
+  "name": "Tubeless sealant syringe",
+  "cat": "repair",
+  "sub": "sealant injector",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 20,
+  "packed_cm": [
+   14,
+   3,
+   3
+  ],
+  "packed_l": 0.1,
+  "compress": 0,
+  "archetype": "tube_bottle",
+  "color": "#e8e8e8",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "repair pouch with the sealant bottle"
+   },
+   {
+    "at": "seatpack",
+    "why": "with the spares if the frame bag is full"
+   }
+  ],
+  "note": "Generic plastic sealant syringe with hose to fit a de-cored valve; ~20 g estimated. Size estimated.",
+  "aliases": [
+   "sealant syringe",
+   "sealant injector",
+   "syringe",
+   "tubeless injector"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.stansnotubes.com",
+    "what": "comparable product (Stan's sealant injector), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "repair-pouch",
+  "name": "Repair kit pouch",
+  "cat": "repair",
+  "sub": "pouch",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 30,
+  "packed_cm": [
+   18,
+   11,
+   5
+  ],
+  "packed_l": 0.79,
+  "compress": 0.5,
+  "archetype": "pouch",
+  "color": "#3d3d3d",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "the classic spot: low, central, reachable at the roadside"
+   },
+   {
+    "at": "seatpack",
+    "why": "bottom of the seat pack if the frame bag is used for water"
+   },
+   {
+    "at": "toptube_rear",
+    "why": "in a rear top tube bag"
+   }
+  ],
+  "note": "Generic empty zip pouch that holds the small repair bits; the contents are separate items. Weight and size estimated.",
+  "aliases": [
+   "repair kit",
+   "repair pouch",
+   "tool pouch",
+   "tool roll",
+   "spares bag",
+   "repair bag"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.seatosummit.com",
+    "what": "comparable product (small zip accessory pouch), recalled without fetching; verify"
+   }
+  ]
+ }
+]

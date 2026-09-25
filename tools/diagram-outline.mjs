@@ -36,7 +36,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 const root = new URL('../', import.meta.url).pathname;
-const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const CHROME = (await import('./lib/chrome.mjs')).CHROME;
 const argv = process.argv.slice(2);
 const arg = (k, d = null) => {
   const i = argv.indexOf(`--${k}`);

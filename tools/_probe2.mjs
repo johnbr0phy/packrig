@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer-core';
 const url = process.argv[2];
-const b = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
+const b = await puppeteer.launch({ executablePath: (await import('./lib/chrome.mjs')).CHROME, headless: true });
 const p = await b.newPage();
 p.on('console', m => console.log('[console]', m.type(), m.text()));
 p.on('pageerror', e => console.log('[pageerror]', e.message));

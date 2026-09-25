@@ -1,0 +1,49 @@
+{
+  "brand": "Fjällräven",
+  "products": [
+    {
+      "line": null,
+      "name": "Hoja Top Tube Bag",
+      "size": null,
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://www.fjallraven.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 0.8L top tube bag, heavier fabric. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Hoja Handlebar Rolltop",
+      "size": null,
+      "weight_g": 450,
+      "basis": "family-estimate",
+      "source": "https://www.fjallraven.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 13L handlebar roll-top. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Hoja Seatbag Harness + Hoja Seatbag Drybag 16L",
+      "size": null,
+      "weight_g": 600,
+      "basis": "family-estimate",
+      "source": "https://www.fjallraven.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: seat harness plus 16L dry bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Hoja Snack Bag",
+      "size": null,
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "https://www.fjallraven.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.8L snack/stem bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

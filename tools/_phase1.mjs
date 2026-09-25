@@ -12,7 +12,7 @@ const H = Number(process.argv[4] || 900);
 const MOBILE = process.argv[5] === 'mobile';
 
 const b = await puppeteer.launch({
-  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  executablePath: (await import('./lib/chrome.mjs')).CHROME,
   headless: true, args: ['--hide-scrollbars', '--enable-unsafe-swiftshader'],
 });
 const p = await b.newPage();

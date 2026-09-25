@@ -20,9 +20,12 @@ import { applyRendererProfile, applyViewOffset, fitToBox, measureProfile } from 
 import { initScrim } from './ui/scrim.js';
 import { initSurfaces } from './ui/surfaces.js';
 import { initSheets } from './ui/sheet.js';
+import { initPack } from './pack/index.js';
+import { attachLockerSync } from './pack/remote.js';
 
 const params = new URLSearchParams(location.search);
 const SHOT_MODE = params.has('shot');
+const STILL = params.has('still');
 // `?review=1` embeds the scene in the eval harness: no app chrome, but live
 // orbit controls and a postMessage API for swapping the bag and hiding the
 // bicycle. See src/review.js.
@@ -107,10 +110,27 @@ controls.minDistance = 1.2;
 controls.maxDistance = 9;
 controls.maxPolarAngle = Math.PI / 2 - 0.02;
 controls.autoRotate = false;
-controls.autoRotateSpeed = 0.9;
+controls.autoRotateSpeed = STILL ? 0 : 0.9;   // `?still`: the start menu's idle orbit holds for screenshots
 
 // ---- Environments ------------------------------------------------------
 const envs = new Environments(scene, renderer);
+
+/*
+ * The kicker: a soft light from behind whatever the camera is looking at,
+ * re-aimed every frame. It puts a bright edge on every silhouette from every
+ * angle, which is what lets a black bag against a dark frame read as a shape.
+ * Product photographers do exactly this with a strip light behind the subject.
+ * No shadows: it is an edge, not a second sun.
+ */
+const kicker = new THREE.DirectionalLight(0xe6eeff, params.has('kick') ? +params.get('kick') : 1.6);
+kicker.castShadow = false;
+scene.add(kicker, kicker.target);
+const _kick = new THREE.Vector3();
+function aimKicker() {
+  _kick.subVectors(controls.target, camera.position).setY(0).normalize();
+  kicker.target.position.copy(controls.target);
+  kicker.position.copy(controls.target).addScaledVector(_kick, 4).add(new THREE.Vector3(0, 3.2, 0));
+}
 
 // ---- App state + bag system -------------------------------------------
 const app = {
@@ -184,6 +204,7 @@ window.__SLOTS = SLOTS;   // tools/audit-exclusions.mjs reads the exclusion tabl
 // tools/measure-loadouts.mjs mounts each curated rig and reads the tunnel's
 // numbers back, to bake them into data/loadouts.json as build output.
 app.__applyRig = (rig) => applyRig(app, rig);
+app.__applyRigAs = (rig, source) => applyRig(app, rig, { source });
 app.__aeroReadout = () => app.aero?.readout?.() || null;
 
 // ---- Boot --------------------------------------------------------------
@@ -200,20 +221,24 @@ applyCam(params.get('cam') || 'hero');
 // this browser, and `auth.enabled` is false so nothing offers to sign in.
 app.auth = createAuth();
 app.rigs = createRigStore(app, app.auth);
+// Packing: the locker, loadouts and what is in each bag. Before any shared
+// link is applied, because a v2 link carries a packing list to show.
+initPack(app);
+attachLockerSync(app);
 if (app.auth.enabled) app.auth.hydrate();
 
 // A shared rig arrives in the URL. `?r=` is the durable form — it names the
 // maker and model of every bag, so it still resolves the same bike after the
 // catalogue is re-sorted. `?kit=` is the old positional form and is still read,
 // because it is the only one in anyone's history.
-const shared = rigFromParams(params, catalog);
+const shared = await rigFromParams(params, catalog);
 const kitParam = params.get('kit');
 if (shared) {
   // Somebody has been handed a specific bike to look at. Dropping them on the
   // root menu instead would make them find it again, so ui.js reads this and
   // skips the menu when it is set.
   app.__cameWithRig = true;
-  const { missing } = applyRig(app, shared, { clear: false });
+  const { missing } = applyRig(app, shared, { clear: false, source: 'link' });
   if (missing.length) console.warn('[packrig] shared link references bags no longer in the catalogue:', missing);
 } else if (kitParam === 'rand') {
   app.__cameWithRig = true;      // the screenshot harness drives these
@@ -358,9 +383,13 @@ renderer.setAnimationLoop((t) => {
   prevT = t;
   app.focus?.tick(dt);
   app.aero?.tick(dt);
+  app.pack?.tick();
   controls.update();
+  aimKicker();
   app.reframe?.tick();
-  envs.tick(t * 0.001);
+  // `?still` holds the environment's clock at zero so screenshots of the same
+  // state are the same pixels (tools/screens.mjs checks exactly that)
+  envs.tick(STILL ? 0 : t * 0.001);
   composer.render();
   // AFTER the draw: scrim.js samples the real framebuffer, so it needs a frame
   // to exist. Sampling a re-render into an offscreen target instead gave a

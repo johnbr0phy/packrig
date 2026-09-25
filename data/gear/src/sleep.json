@@ -1,0 +1,1486 @@
+[
+ {
+  "id": "sleeping-bag",
+  "name": "Sleeping Bag",
+  "cat": "sleep",
+  "sub": "down bag",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 680,
+  "packed_cm": [
+   30.5,
+   17.8,
+   17.8
+  ],
+  "packed_l": 7.59,
+  "compress": 0.6,
+  "archetype": "sleeping_bag",
+  "color": "#2f4f6f",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "light and bulky and only needed at camp; stuff it deep in the seat pack where it fills space and keeps weight off the bars"
+   },
+   {
+    "at": "barroll",
+    "why": "in a dry bag inside the bar roll when the seat pack is short (dropper post, small frame); keep it waterproofed up front"
+   },
+   {
+    "at": "pannier",
+    "why": "on a touring rig, bottom of a rear pannier inside a dry bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://backpackers.com/outdoor-gear/reviews/enlightened-equipment-revelation-20-review/",
+    "what": "comparable down quilt 630 g in 7x12 in sack"
+   },
+   {
+    "url": "https://www.garagegrowngear.com/products/ultralite-by-western-mountaineering",
+    "what": "comparable down bag 7x13 in stuff sack"
+   }
+  ],
+  "note": "Owner's item: 24.0 oz is his measured weight. Generic ~3-season down bag in a compression/stuff sack; packed size estimated from EE Revelation 20 (7x12 in sack) and WM UltraLite (7x13 in). packed_l computed as cylinder",
+  "aliases": [
+   "sleeping bag",
+   "bag",
+   "down bag",
+   "sleeping bag in compression sack",
+   "sleepingbag"
+  ]
+ },
+ {
+  "id": "quilt-summer",
+  "name": "Summer quilt",
+  "cat": "sleep",
+  "sub": "quilt",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 450,
+  "packed_cm": [
+   22.9,
+   15.2,
+   15.2
+  ],
+  "packed_l": 4.16,
+  "compress": 0.6,
+  "archetype": "sleeping_bag",
+  "color": "#4a5a3a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "light and bulky and only needed at camp; stuff it deep in the seat pack where it fills space and keeps weight off the bars"
+   },
+   {
+    "at": "barroll",
+    "why": "in a dry bag inside the bar roll when the seat pack is short (dropper post, small frame); keep it waterproofed up front"
+   },
+   {
+    "at": "pannier",
+    "why": "on a touring rig, bottom of a rear pannier inside a dry bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://sectionhiker.com/sea-to-summit-spark-1-sleeping-bag-review-40-degree/",
+    "what": "Spark 1 40F: 340 g, ~1.5 L stuffed"
+   },
+   {
+    "url": "https://thetrek.co/review-enlightened-equipment-enigma/",
+    "what": "Enigma compressed volume guidance"
+   }
+  ],
+  "note": "Generic 40F/5C down quilt, typical of EE Enigma 40, Sea to Summit Spark 40F class (340-500 g); packed size estimated from Spark 1 and a 5 L quilt sack. packed_l computed as cylinder",
+  "aliases": [
+   "summer quilt",
+   "quilt",
+   "light quilt",
+   "40 degree quilt",
+   "summer bag"
+  ]
+ },
+ {
+  "id": "quilt-3s",
+  "name": "3-season quilt",
+  "cat": "sleep",
+  "sub": "quilt",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 650,
+  "packed_cm": [
+   30.5,
+   17.8,
+   17.8
+  ],
+  "packed_l": 7.59,
+  "compress": 0.6,
+  "archetype": "sleeping_bag",
+  "color": "#3b4a5c",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "light and bulky and only needed at camp; stuff it deep in the seat pack where it fills space and keeps weight off the bars"
+   },
+   {
+    "at": "barroll",
+    "why": "in a dry bag inside the bar roll when the seat pack is short (dropper post, small frame); keep it waterproofed up front"
+   },
+   {
+    "at": "pannier",
+    "why": "on a touring rig, bottom of a rear pannier inside a dry bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://backpackers.com/outdoor-gear/reviews/enlightened-equipment-revelation-20-review/",
+    "what": "596 g quilt, 630 g with sack and straps"
+   },
+   {
+    "url": "https://ulgearblog.com/sleep-systems/enlightened-equipment-revelation-20-stock-quilt-review",
+    "what": "weight and 7x12 in stuff sack"
+   }
+  ],
+  "note": "Generic 20F/-7C down quilt, typical of EE Revelation 20 (630 g) and similar cottage quilts. packed_l computed as cylinder",
+  "aliases": [
+   "quilt",
+   "3 season quilt",
+   "down quilt",
+   "20 degree quilt",
+   "top quilt"
+  ]
+ },
+ {
+  "id": "bag-down-cold",
+  "name": "Cold-weather down bag",
+  "cat": "sleep",
+  "sub": "down bag",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 1000,
+  "packed_cm": [
+   40,
+   26,
+   26
+  ],
+  "packed_l": 21.24,
+  "compress": 0.6,
+  "archetype": "sleeping_bag",
+  "color": "#8a2a2a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "too big for most seat packs once winter-rated; a 15-20 L bar roll takes it with the mat"
+   },
+   {
+    "at": "seatpack",
+    "why": "a 14-17 L seat pack holds it if little else goes in there"
+   },
+   {
+    "at": "pannier",
+    "why": "fork or rear pannier in a dry bag on a touring build"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rei.com/product/249429/rab-neutrino-600-sleeping-bag",
+    "what": "Neutrino 600 regular 998 g"
+   },
+   {
+    "url": "https://ascentoutdoors.com/products/rab-neutrino-600-down-sleeping-bag-10f",
+    "what": "pack size 40x26 cm"
+   }
+  ],
+  "note": "Generic 10F/-12C down bag for shoulder-season and winter, typical of Rab Neutrino 600. packed_l computed as cylinder",
+  "aliases": [
+   "winter bag",
+   "winter sleeping bag",
+   "cold bag",
+   "down bag",
+   "4 season bag"
+  ]
+ },
+ {
+  "id": "bag-synth",
+  "name": "Synthetic sleeping bag",
+  "cat": "sleep",
+  "sub": "synthetic bag",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 990,
+  "packed_cm": [
+   35.6,
+   21.6,
+   21.6
+  ],
+  "packed_l": 8.4,
+  "compress": 0.45,
+  "archetype": "sleeping_bag",
+  "color": "#b5412c",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "too big for most seat packs once winter-rated; a 15-20 L bar roll takes it with the mat"
+   },
+   {
+    "at": "seatpack",
+    "why": "a 14-17 L seat pack holds it if little else goes in there"
+   },
+   {
+    "at": "pannier",
+    "why": "fork or rear pannier in a dry bag on a touring build"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rei.com/product/C02473/mountain-hardwear-lamina-30f-1c-sleeping-bag",
+    "what": "Lamina 30 regular 2 lb 2.9 oz, compressed 8.4 L"
+   }
+  ],
+  "note": "Generic 30F/-1C synthetic bag, typical of Mountain Hardwear Lamina 30; packed_l is the published compressed volume, packed_cm estimated to match it. packed_l from published volume",
+  "aliases": [
+   "synthetic bag",
+   "synthetic sleeping bag",
+   "sleeping bag",
+   "bag"
+  ]
+ },
+ {
+  "id": "ee-revelation-20",
+  "name": "Enlightened Equipment Revelation 20",
+  "cat": "sleep",
+  "sub": "quilt",
+  "generic": false,
+  "brand": "Enlightened Equipment",
+  "model": "Revelation 20F",
+  "weight_g": 630,
+  "packed_cm": [
+   30.5,
+   17.8,
+   17.8
+  ],
+  "packed_l": 7.59,
+  "compress": 0.6,
+  "archetype": "sleeping_bag",
+  "color": "#2e3b4e",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "light and bulky and only needed at camp; stuff it deep in the seat pack where it fills space and keeps weight off the bars"
+   },
+   {
+    "at": "barroll",
+    "why": "in a dry bag inside the bar roll when the seat pack is short (dropper post, small frame); keep it waterproofed up front"
+   },
+   {
+    "at": "pannier",
+    "why": "on a touring rig, bottom of a rear pannier inside a dry bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://backpackers.com/outdoor-gear/reviews/enlightened-equipment-revelation-20-review/",
+    "what": "weight 630 g with sack"
+   },
+   {
+    "url": "https://ulgearblog.com/sleep-systems/enlightened-equipment-revelation-20-stock-quilt-review",
+    "what": "7x12 in stuff sack"
+   }
+  ],
+  "note": "Regular/regular 850 FP stock quilt. packed_l computed as cylinder",
+  "aliases": [
+   "revelation",
+   "ee revelation",
+   "revelation 20",
+   "enlightened equipment quilt",
+   "quilt"
+  ]
+ },
+ {
+  "id": "wm-ultralite-20",
+  "name": "Western Mountaineering UltraLite",
+  "cat": "sleep",
+  "sub": "down bag",
+  "generic": false,
+  "brand": "Western Mountaineering",
+  "model": "UltraLite 20F",
+  "weight_g": 822,
+  "packed_cm": [
+   33,
+   17.8,
+   17.8
+  ],
+  "packed_l": 8.21,
+  "compress": 0.6,
+  "archetype": "sleeping_bag",
+  "color": "#23407a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "light and bulky and only needed at camp; stuff it deep in the seat pack where it fills space and keeps weight off the bars"
+   },
+   {
+    "at": "barroll",
+    "why": "in a dry bag inside the bar roll when the seat pack is short (dropper post, small frame); keep it waterproofed up front"
+   },
+   {
+    "at": "pannier",
+    "why": "on a touring rig, bottom of a rear pannier inside a dry bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.garagegrowngear.com/products/ultralite-by-western-mountaineering",
+    "what": "weight 1 lb 13 oz, stuff sack 7x13 in"
+   }
+  ],
+  "note": "6 ft size, 850+ FP. packed_l computed as cylinder",
+  "aliases": [
+   "ultralite",
+   "wm ultralite",
+   "western mountaineering",
+   "sleeping bag"
+  ]
+ },
+ {
+  "id": "me-helium-400",
+  "name": "Mountain Equipment Helium 400",
+  "cat": "sleep",
+  "sub": "down bag",
+  "generic": false,
+  "brand": "Mountain Equipment",
+  "model": "Helium 400",
+  "weight_g": 820,
+  "packed_cm": [
+   24,
+   21,
+   20
+  ],
+  "packed_l": 10.08,
+  "compress": 0.6,
+  "archetype": "sleeping_bag",
+  "color": "#c0392b",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "light and bulky and only needed at camp; stuff it deep in the seat pack where it fills space and keeps weight off the bars"
+   },
+   {
+    "at": "barroll",
+    "why": "in a dry bag inside the bar roll when the seat pack is short (dropper post, small frame); keep it waterproofed up front"
+   },
+   {
+    "at": "pannier",
+    "why": "on a touring rig, bottom of a rear pannier inside a dry bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://us.mountain-equipment.com/pages/size-guide-helium-400",
+    "what": "820 g, packed 24x21x20 cm"
+   }
+  ],
+  "note": "Regular, -9C limit. packed_l computed as box",
+  "aliases": [
+   "helium 400",
+   "helium",
+   "me helium",
+   "sleeping bag"
+  ]
+ },
+ {
+  "id": "rab-neutrino-600",
+  "name": "Rab Neutrino 600",
+  "cat": "sleep",
+  "sub": "down bag",
+  "generic": false,
+  "brand": "Rab",
+  "model": "Neutrino 600",
+  "weight_g": 998,
+  "packed_cm": [
+   40,
+   26,
+   26
+  ],
+  "packed_l": 21.24,
+  "compress": 0.6,
+  "archetype": "sleeping_bag",
+  "color": "#1f5a8a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "too big for most seat packs once winter-rated; a 15-20 L bar roll takes it with the mat"
+   },
+   {
+    "at": "seatpack",
+    "why": "a 14-17 L seat pack holds it if little else goes in there"
+   },
+   {
+    "at": "pannier",
+    "why": "fork or rear pannier in a dry bag on a touring build"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rei.com/product/249429/rab-neutrino-600-sleeping-bag",
+    "what": "regular 998 g"
+   },
+   {
+    "url": "https://ascentoutdoors.com/products/rab-neutrino-600-down-sleeping-bag-10f",
+    "what": "pack size 40x26 cm"
+   }
+  ],
+  "note": "Regular; winter / high mountain. packed_l computed as cylinder",
+  "aliases": [
+   "neutrino 600",
+   "neutrino",
+   "rab bag",
+   "winter bag"
+  ]
+ },
+ {
+  "id": "mh-lamina-30",
+  "name": "Mountain Hardwear Lamina 30",
+  "cat": "sleep",
+  "sub": "synthetic bag",
+  "generic": false,
+  "brand": "Mountain Hardwear",
+  "model": "Lamina 30F/-1C",
+  "weight_g": 989,
+  "packed_cm": [
+   35.6,
+   21.6,
+   21.6
+  ],
+  "packed_l": 8.4,
+  "compress": 0.45,
+  "archetype": "sleeping_bag",
+  "color": "#d35400",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "too big for most seat packs once winter-rated; a 15-20 L bar roll takes it with the mat"
+   },
+   {
+    "at": "seatpack",
+    "why": "a 14-17 L seat pack holds it if little else goes in there"
+   },
+   {
+    "at": "pannier",
+    "why": "fork or rear pannier in a dry bag on a touring build"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rei.com/product/C02473/mountain-hardwear-lamina-30f-1c-sleeping-bag",
+    "what": "regular 2 lb 2.9 oz, compressed 8.4 L"
+   }
+  ],
+  "note": "Regular. packed_cm estimated to match the published 8.4 L. packed_l from published volume",
+  "aliases": [
+   "lamina",
+   "lamina 30",
+   "synthetic bag",
+   "sleeping bag"
+  ]
+ },
+ {
+  "id": "s2s-spark-1",
+  "name": "Sea to Summit Spark 40F",
+  "cat": "sleep",
+  "sub": "down bag",
+  "generic": false,
+  "brand": "Sea to Summit",
+  "model": "Spark SpI 40F",
+  "weight_g": 340,
+  "packed_cm": [
+   15,
+   11.3,
+   11.3
+  ],
+  "packed_l": 1.5,
+  "compress": 0.6,
+  "archetype": "sleeping_bag",
+  "color": "#5b6b73",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "tiny enough for a bar bag or bar roll with the shelter; frees the seat pack"
+   },
+   {
+    "at": "seatpack",
+    "why": "light and bulky and only needed at camp; stuff it deep in the seat pack where it fills space and keeps weight off the bars"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://sectionhiker.com/sea-to-summit-spark-1-sleeping-bag-review-40-degree/",
+    "what": "340 g, ~1.5 L stuffed"
+   },
+   {
+    "url": "https://bikepacking.com/gear/sea-to-summit-spark-sp-i-review/",
+    "what": "bikepacking review"
+   }
+  ],
+  "note": "Summer bag. packed size estimated from stated ~1.5 L. packed_l computed as cylinder",
+  "aliases": [
+   "spark",
+   "spark 1",
+   "spark sp1",
+   "sea to summit spark",
+   "summer bag"
+  ]
+ },
+ {
+  "id": "neoair-xlite",
+  "name": "Therm-a-Rest NeoAir XLite",
+  "cat": "sleep",
+  "sub": "inflatable mat",
+  "generic": false,
+  "brand": "Therm-a-Rest",
+  "model": "NeoAir XLite",
+  "weight_g": 454,
+  "packed_cm": [
+   22.9,
+   10.4,
+   10.4
+  ],
+  "packed_l": 1.95,
+  "compress": 0.15,
+  "archetype": "mat_rolled",
+  "color": "#e8b92f",
+  "rigid": false,
+  "fragile": true,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_full",
+    "why": "rolls small and dense; frame bag keeps it central and away from thorns and brush"
+   },
+   {
+    "at": "barroll",
+    "why": "rolled in with the tent or bag, the bar roll shields it from punctures"
+   },
+   {
+    "at": "seatpack",
+    "why": "slides along the side of the seat pack with the sleeping bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.halfwayanywhere.com/gear/review/therm-a-rest-neoair-xlite-review/",
+    "what": "regular 12 oz, packed 9x4.1 in"
+   },
+   {
+    "url": "https://www.outdoorgearlab.com/reviews/camping-and-hiking/sleeping-pad/therm-a-rest-neoair-xlite",
+    "what": "specs"
+   }
+  ],
+  "note": "Owner's item: 16 oz is his figure (a regular is published at 12 oz; 16 oz fits a Large or pad plus stuff sack/pump sack). Packed size is the regular's; puncture-prone so keep it away from thorns and sharp gear. packed_l computed as cylinder",
+  "aliases": [
+   "neoair",
+   "xlite",
+   "neoair xlite",
+   "thermarest",
+   "thermarest xlite",
+   "sleeping pad",
+   "sleeping mat",
+   "mat",
+   "pad"
+  ]
+ },
+ {
+  "id": "tar-xlite-nxt",
+  "name": "Therm-a-Rest NeoAir XLite NXT",
+  "cat": "sleep",
+  "sub": "inflatable mat",
+  "generic": false,
+  "brand": "Therm-a-Rest",
+  "model": "NeoAir XLite NXT Regular",
+  "weight_g": 354,
+  "packed_cm": [
+   22.9,
+   10.4,
+   10.4
+  ],
+  "packed_l": 1.95,
+  "compress": 0.15,
+  "archetype": "mat_rolled",
+  "color": "#e3a82b",
+  "rigid": false,
+  "fragile": true,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_full",
+    "why": "rolls small and dense; frame bag keeps it central and away from thorns and brush"
+   },
+   {
+    "at": "barroll",
+    "why": "rolled in with the tent or bag, the bar roll shields it from punctures"
+   },
+   {
+    "at": "seatpack",
+    "why": "slides along the side of the seat pack with the sleeping bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.switchbacktravel.com/reviews/therm-a-rest-neoair-xlite-nxt",
+    "what": "12.5 oz (354 g), 9x4.1 in packed"
+   },
+   {
+    "url": "https://cascadedesigns.com/products/neoair-xlite-nxt-sleeping-pad",
+    "what": "maker page"
+   }
+  ],
+  "note": "Regular 72x20 in, R 4.5. packed_l computed as cylinder",
+  "aliases": [
+   "xlite nxt",
+   "neoair xlite nxt",
+   "nxt",
+   "thermarest",
+   "sleeping pad",
+   "mat"
+  ]
+ },
+ {
+  "id": "nemo-tensor-as",
+  "name": "NEMO Tensor All-Season",
+  "cat": "sleep",
+  "sub": "inflatable mat",
+  "generic": false,
+  "brand": "NEMO",
+  "model": "Tensor All-Season Regular",
+  "weight_g": 440,
+  "packed_cm": [
+   25.4,
+   10.2,
+   10.2
+  ],
+  "packed_l": 2.08,
+  "compress": 0.15,
+  "archetype": "mat_rolled",
+  "color": "#1f6f8b",
+  "rigid": false,
+  "fragile": true,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_full",
+    "why": "rolls small and dense; frame bag keeps it central and away from thorns and brush"
+   },
+   {
+    "at": "barroll",
+    "why": "rolled in with the tent or bag, the bar roll shields it from punctures"
+   },
+   {
+    "at": "seatpack",
+    "why": "slides along the side of the seat pack with the sleeping bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cleverhiker.com/backpacking/nemo-tensor-all-season-review/",
+    "what": "regular 16 oz (440 g), packed 10x4 in"
+   }
+  ],
+  "note": "R 5.4, rectangular regular. packed_l computed as cylinder",
+  "aliases": [
+   "tensor",
+   "nemo tensor",
+   "tensor all season",
+   "sleeping pad",
+   "mat"
+  ]
+ },
+ {
+  "id": "tar-uberlite",
+  "name": "Therm-a-Rest NeoAir UberLite",
+  "cat": "sleep",
+  "sub": "inflatable mat",
+  "generic": false,
+  "brand": "Therm-a-Rest",
+  "model": "NeoAir UberLite Regular",
+  "weight_g": 250,
+  "packed_cm": [
+   15.2,
+   9.1,
+   9.1
+  ],
+  "packed_l": 0.99,
+  "compress": 0.15,
+  "archetype": "mat_rolled",
+  "color": "#6e7b85",
+  "rigid": false,
+  "fragile": true,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_full",
+    "why": "rolls small and dense; frame bag keeps it central and away from thorns and brush"
+   },
+   {
+    "at": "barroll",
+    "why": "rolled in with the tent or bag, the bar roll shields it from punctures"
+   },
+   {
+    "at": "seatpack",
+    "why": "slides along the side of the seat pack with the sleeping bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.halfwayanywhere.com/gear/review/thermarest-neoair-uberlite-review/",
+    "what": "regular 8.8 oz / 250 g, 6x3.6 in"
+   }
+  ],
+  "note": "R 2.3 summer pad, thin 15D fabric. packed_l computed as cylinder",
+  "aliases": [
+   "uberlite",
+   "neoair uberlite",
+   "thermarest uberlite",
+   "sleeping pad",
+   "mat"
+  ]
+ },
+ {
+  "id": "s2s-ether-xt",
+  "name": "Sea to Summit Ether Light XT Insulated",
+  "cat": "sleep",
+  "sub": "inflatable mat",
+  "generic": false,
+  "brand": "Sea to Summit",
+  "model": "Ether Light XT Insulated Regular",
+  "weight_g": 490,
+  "packed_cm": [
+   24,
+   11,
+   11
+  ],
+  "packed_l": 2.28,
+  "compress": 0.15,
+  "archetype": "mat_rolled",
+  "color": "#3d7ea6",
+  "rigid": false,
+  "fragile": true,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_full",
+    "why": "rolls small and dense; frame bag keeps it central and away from thorns and brush"
+   },
+   {
+    "at": "barroll",
+    "why": "rolled in with the tent or bag, the bar roll shields it from punctures"
+   },
+   {
+    "at": "seatpack",
+    "why": "slides along the side of the seat pack with the sleeping bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://seatosummit.com/pages/ether-light-xt-insulated-sleeping-pad",
+    "what": "490 g, 11x24 cm"
+   }
+  ],
+  "note": "10 cm thick. packed_l computed as cylinder",
+  "aliases": [
+   "ether light",
+   "ether light xt",
+   "sea to summit mat",
+   "sleeping pad",
+   "mat"
+  ]
+ },
+ {
+  "id": "klymit-static-v",
+  "name": "Klymit Static V",
+  "cat": "sleep",
+  "sub": "inflatable mat",
+  "generic": false,
+  "brand": "Klymit",
+  "model": "Static V",
+  "weight_g": 530,
+  "packed_cm": [
+   20.3,
+   7.6,
+   7.6
+  ],
+  "packed_l": 0.92,
+  "compress": 0.15,
+  "archetype": "mat_rolled",
+  "color": "#2e7d32",
+  "rigid": false,
+  "fragile": true,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_full",
+    "why": "rolls small and dense; frame bag keeps it central and away from thorns and brush"
+   },
+   {
+    "at": "barroll",
+    "why": "rolled in with the tent or bag, the bar roll shields it from punctures"
+   },
+   {
+    "at": "seatpack",
+    "why": "slides along the side of the seat pack with the sleeping bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.theinertia.com/gear/klymit-static-v-sleeping-pad-review/",
+    "what": "18.7 oz, packed 8x3 in"
+   }
+  ],
+  "note": "Budget uninsulated pad; published packed size is tight, most riders get it to roughly a 1 L bottle. packed_l computed as cylinder",
+  "aliases": [
+   "static v",
+   "klymit",
+   "sleeping pad",
+   "mat"
+  ]
+ },
+ {
+  "id": "mat-inflate",
+  "name": "Inflatable sleeping mat",
+  "cat": "sleep",
+  "sub": "inflatable mat",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 450,
+  "packed_cm": [
+   24.1,
+   10.9,
+   10.9
+  ],
+  "packed_l": 2.25,
+  "compress": 0.15,
+  "archetype": "mat_rolled",
+  "color": "#c8a13a",
+  "rigid": false,
+  "fragile": true,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_full",
+    "why": "rolls small and dense; frame bag keeps it central and away from thorns and brush"
+   },
+   {
+    "at": "barroll",
+    "why": "rolled in with the tent or bag, the bar roll shields it from punctures"
+   },
+   {
+    "at": "seatpack",
+    "why": "slides along the side of the seat pack with the sleeping bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.switchbacktravel.com/reviews/therm-a-rest-neoair-xlite-nxt",
+    "what": "XLite NXT 354 g, 9x4.1 in"
+   },
+   {
+    "url": "https://www.cleverhiker.com/backpacking/nemo-tensor-all-season-review/",
+    "what": "Tensor 440 g, 10x4 in"
+   },
+   {
+    "url": "https://seatosummit.com/pages/ether-light-xt-insulated-sleeping-pad",
+    "what": "Ether Light XT 490 g, 11x24 cm"
+   }
+  ],
+  "note": "Generic 3-season insulated air pad, typical of NeoAir XLite NXT, NEMO Tensor, S2S Ether Light XT. packed_l computed as cylinder",
+  "aliases": [
+   "sleeping mat",
+   "sleeping pad",
+   "air mat",
+   "air pad",
+   "inflatable mat",
+   "mat",
+   "pad",
+   "thermarest"
+  ]
+ },
+ {
+  "id": "mat-foam",
+  "name": "Foam sleeping mat",
+  "cat": "sleep",
+  "sub": "foam mat",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 410,
+  "packed_cm": [
+   51,
+   14,
+   13
+  ],
+  "packed_l": 9.28,
+  "compress": 0.1,
+  "archetype": "mat_folded",
+  "color": "#d4c33a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "outside",
+    "why": "too bulky to go inside; strap it on top of the bar roll or seat pack, or under the saddle rails"
+   },
+   {
+    "at": "barroll",
+    "why": "the accordion folds can wrap the outside of a bar roll, adding protection to what is inside"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://featheredfriends.com/products/therm-a-rest-z-lite-sol-sleeping-pad",
+    "what": "Z Lite Sol 14 oz, 51x13x14 cm"
+   },
+   {
+    "url": "https://www.halfwayanywhere.com/gear/review/nemo-switchback-ultralight-sleeping-pad/",
+    "what": "Switchback 14.5 oz, 51x13x14 cm"
+   }
+  ],
+  "note": "Generic closed-cell accordion mat, typical of Therm-a-Rest Z Lite Sol and NEMO Switchback; puncture-proof. packed_l computed as box",
+  "aliases": [
+   "foam mat",
+   "foam pad",
+   "closed cell foam",
+   "ccf",
+   "z lite",
+   "karrimat",
+   "roll mat",
+   "sit mat"
+  ]
+ },
+ {
+  "id": "tar-zlite-sol",
+  "name": "Therm-a-Rest Z Lite Sol",
+  "cat": "sleep",
+  "sub": "foam mat",
+  "generic": false,
+  "brand": "Therm-a-Rest",
+  "model": "Z Lite Sol Regular",
+  "weight_g": 397,
+  "packed_cm": [
+   51,
+   14,
+   13
+  ],
+  "packed_l": 9.28,
+  "compress": 0.1,
+  "archetype": "mat_folded",
+  "color": "#e2c83a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "outside",
+    "why": "too bulky to go inside; strap it on top of the bar roll or seat pack, or under the saddle rails"
+   },
+   {
+    "at": "barroll",
+    "why": "the accordion folds can wrap the outside of a bar roll, adding protection to what is inside"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://featheredfriends.com/products/therm-a-rest-z-lite-sol-sleeping-pad",
+    "what": "regular 14 oz, 51x13x14 cm"
+   }
+  ],
+  "note": "R 2.0. packed_l computed as box",
+  "aliases": [
+   "z lite",
+   "z-lite",
+   "zlite sol",
+   "z lite sol",
+   "foam pad"
+  ]
+ },
+ {
+  "id": "nemo-switchback",
+  "name": "NEMO Switchback",
+  "cat": "sleep",
+  "sub": "foam mat",
+  "generic": false,
+  "brand": "NEMO",
+  "model": "Switchback Regular",
+  "weight_g": 411,
+  "packed_cm": [
+   51,
+   14,
+   13
+  ],
+  "packed_l": 9.28,
+  "compress": 0.1,
+  "archetype": "mat_folded",
+  "color": "#c94f2c",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "outside",
+    "why": "too bulky to go inside; strap it on top of the bar roll or seat pack, or under the saddle rails"
+   },
+   {
+    "at": "barroll",
+    "why": "the accordion folds can wrap the outside of a bar roll, adding protection to what is inside"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.halfwayanywhere.com/gear/review/nemo-switchback-ultralight-sleeping-pad/",
+    "what": "regular 14.5 oz / 411 g, 51x13x14 cm"
+   }
+  ],
+  "note": "packed_l computed as box",
+  "aliases": [
+   "switchback",
+   "nemo switchback",
+   "foam pad"
+  ]
+ },
+ {
+  "id": "tar-comp-pillow",
+  "name": "Therm-a-Rest Compressible Pillow",
+  "cat": "sleep",
+  "sub": "pillow",
+  "generic": false,
+  "brand": "Therm-a-Rest",
+  "model": "Compressible Pillow",
+  "weight_g": 286,
+  "packed_cm": [
+   30.5,
+   12.7,
+   12.7
+  ],
+  "packed_l": 3.86,
+  "compress": 0.7,
+  "archetype": "stuffsack",
+  "color": "#3c6e8f",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "soft and camp-only; pushes into gaps around the sleeping bag"
+   },
+   {
+    "at": "barroll",
+    "why": "rides with the rest of the sleep kit in the bar roll"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.trailspace.com/gear/therm-a-rest/compressible-pillow/",
+    "what": "small 7 oz, packed 11x4 in"
+   },
+   {
+    "url": "https://www.rei.com/product/719843/therm-a-rest-compressible-pillow",
+    "what": "sizes"
+   }
+  ],
+  "note": "Owner's item: 10.1 oz is his figure, which matches the medium/large sizes; packed size scaled up from the small's 11x4 in. packed_l computed as cylinder Compress raised to 0.7 on review: it is shredded foam sold as \"compressible\" and squashes to a fraction of its lofted size (DECISIONS §8).",
+  "aliases": [
+   "compressible pillow",
+   "thermarest pillow",
+   "foam pillow",
+   "pillow"
+  ]
+ },
+ {
+  "id": "pillow-inflate",
+  "name": "Inflatable pillow",
+  "cat": "sleep",
+  "sub": "pillow",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 68,
+  "packed_cm": [
+   8,
+   7,
+   6.5
+  ],
+  "packed_l": 0.36,
+  "compress": 0.3,
+  "archetype": "stuffsack",
+  "color": "#2a9d8f",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "soft and camp-only; pushes into gaps around the sleeping bag"
+   },
+   {
+    "at": "barroll",
+    "why": "rides with the rest of the sleep kit in the bar roll"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://seatosummit.com/products/aeros-pillow-ultra-light",
+    "what": "Aeros UL regular 57 g, 7x6.5 cm packed"
+   }
+  ],
+  "note": "Owner's item: 2.4 oz is his figure. Typical of Sea to Summit Aeros Ultralight; packed size from Aeros UL, length estimated. packed_l computed as box",
+  "aliases": [
+   "inflatable pillow",
+   "air pillow",
+   "blow up pillow",
+   "pillow"
+  ]
+ },
+ {
+  "id": "s2s-aeros-ul",
+  "name": "Sea to Summit Aeros Ultralight Pillow",
+  "cat": "sleep",
+  "sub": "pillow",
+  "generic": false,
+  "brand": "Sea to Summit",
+  "model": "Aeros Ultralight Regular",
+  "weight_g": 57,
+  "packed_cm": [
+   8,
+   7,
+   6.5
+  ],
+  "packed_l": 0.36,
+  "compress": 0.3,
+  "archetype": "stuffsack",
+  "color": "#48b5b0",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "soft and camp-only; pushes into gaps around the sleeping bag"
+   },
+   {
+    "at": "barroll",
+    "why": "rides with the rest of the sleep kit in the bar roll"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://seatosummit.com/products/aeros-pillow-ultra-light",
+    "what": "regular 57 g, 7x6.5 cm packed"
+   }
+  ],
+  "note": "packed length estimated. packed_l computed as box",
+  "aliases": [
+   "aeros",
+   "aeros ultralight",
+   "aeros pillow",
+   "pillow"
+  ]
+ },
+ {
+  "id": "bivy-bag",
+  "name": "Bivy bag",
+  "cat": "sleep",
+  "sub": "bivy",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 400,
+  "packed_cm": [
+   33,
+   9,
+   9
+  ],
+  "packed_l": 2.1,
+  "compress": 0.35,
+  "archetype": "stuffsack",
+  "color": "#4b5320",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "rolled with the sleeping bag and mat in the bar roll so the whole sleep system comes out in one go"
+   },
+   {
+    "at": "seatpack",
+    "why": "packs like a stuff sack; fill gaps in the seat pack"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.livefortheoutdoors.com/camping/tents/outdoor-research-helium-bivy-review/",
+    "what": "OR Helium 448 g, 31x9 cm"
+   },
+   {
+    "url": "https://www.surviveoutdoorslonger.com/products/escape-bivvy",
+    "what": "SOL Escape 8.5 oz"
+   }
+  ],
+  "note": "Generic waterproof-breathable bivy sack, typical of OR Helium Bivy and lighter hoopless bags. packed_l computed as cylinder",
+  "aliases": [
+   "bivy",
+   "bivvy",
+   "bivy bag",
+   "bivvy bag",
+   "bivy sack"
+  ]
+ },
+ {
+  "id": "or-helium-bivy",
+  "name": "Outdoor Research Helium Bivy",
+  "cat": "sleep",
+  "sub": "bivy",
+  "generic": false,
+  "brand": "Outdoor Research",
+  "model": "Helium Bivy",
+  "weight_g": 448,
+  "packed_cm": [
+   31,
+   9,
+   9
+  ],
+  "packed_l": 1.97,
+  "compress": 0.35,
+  "archetype": "stuffsack",
+  "color": "#5a6b3c",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "rolled with the sleeping bag and mat in the bar roll so the whole sleep system comes out in one go"
+   },
+   {
+    "at": "seatpack",
+    "why": "packs like a stuff sack; fill gaps in the seat pack"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.livefortheoutdoors.com/camping/tents/outdoor-research-helium-bivy-review/",
+    "what": "15.8 oz / 448 g, 31x9 cm packed"
+   }
+  ],
+  "note": "Single hoop at the head; the hoop wire rolls inside. packed_l computed as cylinder",
+  "aliases": [
+   "helium bivy",
+   "or bivy",
+   "bivy",
+   "bivvy"
+  ]
+ },
+ {
+  "id": "sol-escape-bivy",
+  "name": "SOL Escape Bivvy",
+  "cat": "sleep",
+  "sub": "emergency bivy",
+  "generic": false,
+  "brand": "SOL",
+  "model": "Escape Bivvy",
+  "weight_g": 241,
+  "packed_cm": [
+   15,
+   10,
+   10
+  ],
+  "packed_l": 1.5,
+  "compress": 0.3,
+  "archetype": "stuffsack",
+  "color": "#e8761c",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "emergency kit: tucked in the seat pack"
+   },
+   {
+    "at": "framebag_full",
+    "why": "small enough to live permanently in the frame bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://nrs.com/product/27471/sol-escape-bivvy-sack",
+    "what": "8.5 oz, packed 6x4 in"
+   }
+  ],
+  "note": "Breathable emergency bivy used as bag cover or on its own in summer; packed depth estimated. packed_l computed as box",
+  "aliases": [
+   "escape bivvy",
+   "sol bivy",
+   "emergency bivy",
+   "emergency bivvy",
+   "space blanket bivy"
+  ]
+ },
+ {
+  "id": "liner-silk",
+  "name": "Silk sleeping bag liner",
+  "cat": "sleep",
+  "sub": "liner",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 136,
+  "packed_cm": [
+   13,
+   10,
+   6
+  ],
+  "packed_l": 0.78,
+  "compress": 0.4,
+  "archetype": "stuffsack",
+  "color": "#b89b72",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "stuffed into the sleeping bag sack or in the gaps around it"
+   },
+   {
+    "at": "barroll",
+    "why": "with the rest of the sleep kit if the seat pack is full"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://store.philmontscoutranch.org/sea-to-summit-premium-silk-sleeping-bag-liner/",
+    "what": "mummy 4.8-5.5 oz, packed 4.5x4x2 to 5x4x3.5 in"
+   }
+  ],
+  "note": "Typical of Sea to Summit Premium Silk mummy liner. packed_l computed as box",
+  "aliases": [
+   "liner",
+   "silk liner",
+   "sleeping bag liner",
+   "bag liner"
+  ]
+ },
+ {
+  "id": "s2s-reactor",
+  "name": "Sea to Summit Reactor liner",
+  "cat": "sleep",
+  "sub": "liner",
+  "generic": false,
+  "brand": "Sea to Summit",
+  "model": "Reactor",
+  "weight_g": 284,
+  "packed_cm": [
+   15,
+   11,
+   7
+  ],
+  "packed_l": 1.16,
+  "compress": 0.45,
+  "archetype": "stuffsack",
+  "color": "#b22222",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "stuffed into the sleeping bag sack or in the gaps around it"
+   },
+   {
+    "at": "barroll",
+    "why": "with the rest of the sleep kit if the seat pack is full"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.advnture.com/reviews/sea-to-summit-reactor-sleeping-bag-liner",
+    "what": "regular 284 g, 15x7x11 cm"
+   }
+  ],
+  "note": "Thermolite insulated liner; adds a few degrees. packed_l computed as box",
+  "aliases": [
+   "reactor",
+   "reactor liner",
+   "thermal liner",
+   "liner"
+  ]
+ }
+]

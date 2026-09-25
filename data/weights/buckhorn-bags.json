@@ -1,0 +1,60 @@
+{
+  "brand": "Buckhorn Bags",
+  "products": [
+    {
+      "line": null,
+      "name": "Buckhorn Halfie Frame Bag",
+      "size": null,
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://www.buckhornbags.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: half frame bag (custom US maker X-Pac anchor). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Buckhorn 8in Top Tube Bag",
+      "size": null,
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.buckhornbags.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.1L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Buckhorn Custom Rattler Stem Bag",
+      "size": null,
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.buckhornbags.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.2L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Buckhorn Waxed Canvas Panniers",
+      "size": null,
+      "weight_g": 600,
+      "basis": "family-estimate",
+      "source": "https://www.buckhornbags.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one 11L waxed canvas pannier. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Barrel XL",
+      "size": null,
+      "weight_g": 250,
+      "basis": "family-estimate",
+      "source": "https://www.buckhornbags.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2.8L barrel bar bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

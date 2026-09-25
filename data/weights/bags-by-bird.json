@@ -1,0 +1,49 @@
+{
+  "brand": "Bags by Bird",
+  "products": [
+    {
+      "line": null,
+      "name": "Goldback 12.5W",
+      "size": null,
+      "weight_g": 1000,
+      "basis": "family-estimate",
+      "source": "https://www.bagsxbird.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: large waxed-canvas saddlebag (~27L); upper end of 600-1200 g range. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Tail Grab Handlebar Bag",
+      "size": null,
+      "weight_g": 400,
+      "basis": "family-estimate",
+      "source": "https://www.bagsxbird.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 4.3L canvas handlebar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Side Bustle Pannier",
+      "size": null,
+      "weight_g": 500,
+      "basis": "family-estimate",
+      "source": "https://www.bagsxbird.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 11L canvas pannier, one bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Piccolo 11W",
+      "size": null,
+      "weight_g": 750,
+      "basis": "family-estimate",
+      "source": "https://www.bagsxbird.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 18L waxed-canvas saddlebag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

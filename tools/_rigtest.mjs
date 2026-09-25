@@ -5,7 +5,7 @@
  */
 import puppeteer from 'puppeteer-core';
 const URL = process.argv[2] || 'http://localhost:8735/';
-const b = await puppeteer.launch({ executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless:true });
+const b = await puppeteer.launch({ executablePath:(await import('./lib/chrome.mjs')).CHROME, headless:true });
 const p = await b.newPage();
 await p.setViewport({ width:1500, height:950 });
 const errs=[]; p.on('pageerror',e=>errs.push(e.stack||e.message));

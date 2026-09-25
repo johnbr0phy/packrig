@@ -1,0 +1,60 @@
+{
+  "brand": "Salsa (EXP Series)",
+  "products": [
+    {
+      "line": null,
+      "name": "EXP Series Saguaro Seat Bag",
+      "size": null,
+      "weight_g": 500,
+      "basis": "family-estimate",
+      "source": "https://www.salsacycles.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: ~14L seat bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Old Man Mountain Manzanita Cradle with Bag",
+      "size": null,
+      "weight_g": 800,
+      "basis": "family-estimate",
+      "source": "https://www.salsacycles.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: bar cradle plus bag; Old Man Mountain product listed under Salsa brand in worklist; root is Salsa site. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "EXP Series Cholla Half-Frame Bag",
+      "size": null,
+      "weight_g": 190,
+      "basis": "family-estimate",
+      "source": "https://www.salsacycles.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 2.1L half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "EXP-R Series Trillium Top Tube Bag",
+      "size": null,
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://www.salsacycles.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.67L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "EXP Series Agave Pannier",
+      "size": null,
+      "weight_g": 600,
+      "basis": "family-estimate",
+      "source": "https://www.salsacycles.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 12.5L pannier, one bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

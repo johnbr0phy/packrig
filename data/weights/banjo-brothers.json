@@ -1,0 +1,60 @@
+{
+  "brand": "Banjo Brothers",
+  "products": [
+    {
+      "line": "Waterproof",
+      "name": "Waterproof Cycling Pannier",
+      "size": "16.4L (single)",
+      "weight_g": 900,
+      "basis": "family-estimate",
+      "source": "https://www.banjobrothers.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one 16.4L waterproof pannier with hooks. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Deluxe",
+      "name": "Deluxe Seat Bag, Medium",
+      "size": "Medium (1.2L)",
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "https://www.banjobrothers.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.2L seat bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Handlebar Bag",
+      "name": "Handlebar Bag, Small",
+      "size": "Small (2L)",
+      "weight_g": 400,
+      "basis": "family-estimate",
+      "source": "https://www.banjobrothers.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2L handlebar bag including quick-release bar mount. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Top Tube Bag",
+      "name": "Top Tube Bag, Large",
+      "size": "Large (1.1L)",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://www.banjobrothers.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.1L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Rack Top Bag",
+      "name": "Rack Top Bag",
+      "size": "8.4L",
+      "weight_g": 600,
+      "basis": "family-estimate",
+      "source": "https://www.banjobrothers.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 8.4L rack top bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "brand": "Andrew The Maker",
+  "products": [
+    {
+      "line": "ATM",
+      "name": "ATM Top Tube Bag",
+      "size": "One Size",
+      "weight_g": 160,
+      "basis": "family-estimate",
+      "source": "https://www.andrewthemaker.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.6L top tube bag (custom US maker). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "BarBar",
+      "name": "BarBar Bag (10\")",
+      "size": "10 inch",
+      "weight_g": 250,
+      "basis": "family-estimate",
+      "source": "https://www.andrewthemaker.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10-inch bar bag with stiffening. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Many Things Sack",
+      "name": "Many Things Sack v1.2",
+      "size": "Standard (sold as a pair)",
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "https://www.andrewthemaker.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one fork/cargo sack (sold as a pair). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Granny's Pantry",
+      "name": "Granny's Pantry",
+      "size": "One Size",
+      "weight_g": 280,
+      "basis": "family-estimate",
+      "source": "https://www.andrewthemaker.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 5L bar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "ATM",
+      "name": "Rear TT Sack",
+      "size": "One Size",
+      "weight_g": 100,
+      "basis": "family-estimate",
+      "source": "https://www.andrewthemaker.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L rear top tube sack. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

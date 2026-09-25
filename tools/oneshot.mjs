@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer-core';
 const browser = await puppeteer.launch({
-  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  executablePath: (await import('./lib/chrome.mjs')).CHROME,
   headless: true, args: ['--hide-scrollbars', '--force-device-scale-factor=2', '--window-size=1440,900'],
 });
 const page = await browser.newPage();

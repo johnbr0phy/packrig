@@ -1,0 +1,71 @@
+{
+  "brand": "Arkel",
+  "products": [
+    {
+      "line": null,
+      "name": "Rollpacker Rear 20L",
+      "size": null,
+      "weight_g": 1000,
+      "basis": "family-estimate",
+      "source": "https://arkel.ca",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 20L seat pack with rigid seatpost/saddle-rail support (rigid holders weigh more). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Arkel Handlebar Bag (Large)",
+      "size": null,
+      "weight_g": 900,
+      "basis": "family-estimate",
+      "source": "https://arkel.ca",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: large handlebar bag including quick-release bar mount. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Orca 2 45",
+      "size": null,
+      "weight_g": 1300,
+      "basis": "family-estimate",
+      "source": "https://arkel.ca",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one 45L waterproof pannier (pair value halved). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Arkel GT-54 Classic Touring Panniers",
+      "size": null,
+      "weight_g": 1450,
+      "basis": "family-estimate",
+      "source": "https://arkel.ca",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one classic touring pannier from a 54L pair, Cordura with external pockets. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Dolphin 24L",
+      "size": null,
+      "weight_g": 1000,
+      "basis": "family-estimate",
+      "source": "https://arkel.ca",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one 24L waterproof pannier (Ortlieb-style anchor ~900-1000 g per 20L). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Arkel TailRider Trunk Bag",
+      "size": null,
+      "weight_g": 750,
+      "basis": "family-estimate",
+      "source": "https://arkel.ca",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 11L rack trunk bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

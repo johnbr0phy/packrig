@@ -1,0 +1,236 @@
+{
+  "brand": "Oveja Negra",
+  "products": [
+    {
+      "line": "Snack Pack",
+      "name": "Snack Pack",
+      "size": "Small",
+      "weight_g": 90,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: small top tube snack pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Snack Pack",
+      "name": "Snack Pack",
+      "size": "Small Angle",
+      "weight_g": 90,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: small angled snack pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Snack Pack",
+      "name": "Snack Pack",
+      "size": "Large",
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: large snack pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Snack Pack",
+      "name": "Snack Pack",
+      "size": "XL",
+      "weight_g": 140,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: XL snack pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Snack Pack",
+      "name": "BOLT-ON Snack Pack",
+      "size": "One Size",
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: bolt-on snack pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Chuckbucket",
+      "name": "Chuckbucket Handlebar Snack Bag",
+      "size": "One Size",
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L stem/snack bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Lunchbox",
+      "name": "Lunchbox Handlebar Bag",
+      "size": "One Size",
+      "weight_g": 260,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 3L handlebar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "925",
+      "name": "925 Handlebar Bag",
+      "size": "One Size",
+      "weight_g": 350,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 5L handlebar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Lil' Smokey",
+      "name": "Lil' Smokey Handlebar Bag",
+      "size": "One Size",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 1L handlebar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Front End Loader",
+      "name": "Front End Loader Dry Bag Mount",
+      "size": "fits 8-20L dry bags",
+      "weight_g": 350,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: dry-bag mount/harness only; dry bag not included. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "1/2 Pack",
+      "name": "1/2 Pack 2.0 Frame Bag",
+      "size": "S",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: small half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "1/2 Pack",
+      "name": "1/2 Pack 2.0 Frame Bag",
+      "size": "M",
+      "weight_g": 195,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: medium half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "1/2 Pack",
+      "name": "1/2 Pack 2.0 Frame Bag",
+      "size": "L",
+      "weight_g": 215,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: large half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "1/2 Pack",
+      "name": "1/2 Pack 2.0 Frame Bag",
+      "size": "XL",
+      "weight_g": 235,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: XL half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bodega",
+      "name": "Bodega Full Frame Bag",
+      "size": "S",
+      "weight_g": 230,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: small full frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bodega",
+      "name": "Bodega Full Frame Bag",
+      "size": "M",
+      "weight_g": 260,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: medium full frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bodega",
+      "name": "Bodega Full Frame Bag",
+      "size": "L",
+      "weight_g": 290,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: large full frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bodega",
+      "name": "Bodega Full Frame Bag",
+      "size": "XL",
+      "weight_g": 320,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: XL full frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Gearjammer",
+      "name": "Gearjammer Seat Bag",
+      "size": "Large (6-12L)",
+      "weight_g": 400,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 6-12L seat bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Gearslammer",
+      "name": "Gearslammer Seat Bag",
+      "size": "One Size (2-4L)",
+      "weight_g": 220,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2-4L seat bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bootlegger",
+      "name": "Bootlegger Fork Bag (Direct Mount)",
+      "size": "One Size",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://www.ovejanegrabikepacking.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: direct-mount fork bag, one bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

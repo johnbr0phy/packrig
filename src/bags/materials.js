@@ -8,14 +8,37 @@ import { deformScale, shadeAO, stuffed } from './deform.js';
 
 // ---- fabric materials ----------------------------------------------------
 export const texCache = {};
+/**
+ * Black is not a hole. Real black Cordura, X-Pac and TPU reflect 3–4% of the
+ * light that hits them; #1c1c1e — the colour most of this catalogue is — is
+ * ~1.2% in linear light, so under ACES every black bag rendered as a
+ * silhouette with no shape in it ("a black blob", the owner's words). Lift
+ * the darkest colourways to a physical floor, keeping their hue.
+ */
+// `?floor=` overrides it, for A/B renders (tools/light-ab.mjs)
+const ALBEDO_FLOOR = (() => { try { const v = new URLSearchParams(location.search).get('floor'); return v != null ? +v : 0.026; } catch { return 0.026; } })();
+export function liftDark(color) {
+  const lum = 0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b;
+  if (lum < ALBEDO_FLOOR) {
+    const add = ALBEDO_FLOOR - lum;
+    color.r += add; color.g += add; color.b += add * 1.08;   // a hair cool, like dyed nylon
+  }
+  return color;
+}
+
+const ENV_FABRIC = (() => { try { const v = new URLSearchParams(location.search).get('envfab'); return v != null ? +v : 0.55; } catch { return 0.55; } })();
+
 export function fabricMaterial(fabricKey, colorHex) {
-  const color = new THREE.Color(colorHex);
+  const color = liftDark(new THREE.Color(colorHex));
   if (!texCache.cordura) {
     texCache.cordura = fabricTexture({ xpac: false, scale: 7 });
     texCache.xpac = fabricTexture({ xpac: true, scale: 5 });
   }
   const m = fabricMaterialInner(fabricKey, color);
-  m.envMapIntensity = 0.32; // fabric barely mirrors the HDRI
+  // Fabric does not mirror the sky, but it is lit by it: at 0.32 a dark bag
+  // in shade got almost no fill and read flat. 0.6 keeps a colourway's hue
+  // honest while giving a black bag its folds back.
+  m.envMapIntensity = ENV_FABRIC;
   m.metalness = 0;
   return m;
 }

@@ -1,0 +1,529 @@
+[
+  {
+    "id": "bug-spray",
+    "name": "Mosquito spray",
+    "cat": "hygiene",
+    "sub": "insect repellent",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 142,
+    "packed_cm": [
+      13.0,
+      4.5,
+      4.5
+    ],
+    "packed_l": 0.263,
+    "compress": 0.0,
+    "archetype": "tube_bottle",
+    "color": "#e9e4d6",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner keeps it in the half frame bag: reachable at any stop when the bugs find you"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag in bad bug country"
+      },
+      {
+        "at": "barpocket",
+        "why": "bar-roll front pocket"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 5.0 oz"
+      },
+      {
+        "url": "https://www.rei.com/product/785883/sawyer-picaridin-insect-repellent-3-oz",
+        "what": "Sawyer Picaridin 3 oz pump ships at 4.19 oz"
+      }
+    ],
+    "note": "Owner's item: 5.0 oz (142 g) is his figure, typical of a ~4 fl oz pump bottle (Sawyer 3 oz pump is 4.19 oz / 119 g gross). Size estimated from a 3-4 oz pump bottle.",
+    "aliases": [
+      "mosquito spray",
+      "bug spray",
+      "insect repellent",
+      "repellent",
+      "deet",
+      "picaridin",
+      "bug dope"
+    ]
+  },
+  {
+    "id": "sawyer-picaridin",
+    "name": "Sawyer Picaridin 3 oz spray",
+    "cat": "hygiene",
+    "sub": "insect repellent",
+    "generic": false,
+    "brand": "Sawyer",
+    "model": "Picaridin 20% 3 oz pump",
+    "weight_g": 119,
+    "packed_cm": [
+      12.5,
+      4.3,
+      4.3
+    ],
+    "packed_l": 0.231,
+    "compress": 0.0,
+    "archetype": "tube_bottle",
+    "color": "#f0e9d2",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "reachable at any stop"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag in bad bug country"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.rei.com/product/785883/sawyer-picaridin-insect-repellent-3-oz",
+        "what": "4.19 oz"
+      }
+    ],
+    "note": "Listed weight 4.19 oz (119 g) including bottle. Picaridin does not melt synthetics like DEET does. Size estimated.",
+    "aliases": [
+      "sawyer",
+      "picaridin",
+      "bug spray",
+      "insect repellent"
+    ]
+  },
+  {
+    "id": "sunscreen",
+    "name": "Sunscreen",
+    "cat": "hygiene",
+    "sub": "sunscreen",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 85,
+    "packed_cm": [
+      13.0,
+      4.5,
+      2.5
+    ],
+    "packed_l": 0.146,
+    "compress": 0.0,
+    "archetype": "tube_bottle",
+    "color": "#f5f1e6",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner's spot: reachable for a reapply at lunch"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag for desert routes where you reapply every couple of hours"
+      },
+      {
+        "at": "barpocket",
+        "why": "bar-roll front pocket"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 3.0 oz"
+      }
+    ],
+    "note": "Owner's item: 3.0 oz (85 g) is his figure, a ~2-3 fl oz travel tube. Size estimated for that tube.",
+    "aliases": [
+      "sunscreen",
+      "sun cream",
+      "suncream",
+      "sunblock",
+      "spf"
+    ]
+  },
+  {
+    "id": "wet-wipes",
+    "name": "Wet wipes",
+    "cat": "hygiene",
+    "sub": "wipes",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 74,
+    "packed_cm": [
+      14.0,
+      8.0,
+      2.5
+    ],
+    "packed_l": 0.28,
+    "compress": 0.2,
+    "archetype": "pouch",
+    "color": "#e7f0f2",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner's spot: with the toilet kit, reachable at any stop"
+      },
+      {
+        "at": "seatpack",
+        "why": "with the wash kit and camp things; not needed until evening"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 2.6 oz"
+      }
+    ],
+    "note": "Owner's item: 2.6 oz (74 g) is his figure, a small resealable travel pack. Size estimated. Pack out used wipes.",
+    "aliases": [
+      "wet wipes",
+      "wipes",
+      "baby wipes",
+      "wet ones"
+    ]
+  },
+  {
+    "id": "toothbrush-kit",
+    "name": "Toothbrush + toothpaste",
+    "cat": "hygiene",
+    "sub": "wash kit",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 57,
+    "packed_cm": [
+      15.0,
+      4.0,
+      3.0
+    ],
+    "packed_l": 0.18,
+    "compress": 0.1,
+    "archetype": "pouch",
+    "color": "#7fb0c9",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "owner keeps it in the front pocket with the evening things"
+      },
+      {
+        "at": "seatpack",
+        "why": "with the wash kit and camp things; not needed until evening"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 2.0 oz"
+      }
+    ],
+    "note": "Owner's item: 2.0 oz (57 g) is his figure for a travel brush and small tube. Size estimated.",
+    "aliases": [
+      "tooth brush + tooth paste",
+      "toothbrush",
+      "toothpaste",
+      "tooth brush",
+      "dental kit"
+    ]
+  },
+  {
+    "id": "soap-bar",
+    "name": "Bar of soap",
+    "cat": "hygiene",
+    "sub": "soap",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 28,
+    "packed_cm": [
+      6.0,
+      4.0,
+      2.0
+    ],
+    "packed_l": 0.048,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#efe6cf",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "owner's spot, with the wash things"
+      },
+      {
+        "at": "seatpack",
+        "why": "with the wash kit and camp things; not needed until evening"
+      }
+    ],
+    "sources": [
+      {
+        "url": "data/seed/megafuck.tsv",
+        "what": "owner's sheet: 1.0 oz"
+      }
+    ],
+    "note": "Owner's item: 1.0 oz (28 g) is his figure, a part-used or hotel bar in a bag. Size estimated.",
+    "aliases": [
+      "bar of soap",
+      "soap",
+      "soap bar"
+    ]
+  },
+  {
+    "id": "dr-bronners-2oz",
+    "name": "Dr. Bronner's castile soap 2 oz",
+    "cat": "hygiene",
+    "sub": "soap",
+    "generic": false,
+    "brand": "Dr. Bronner's",
+    "model": "Pure-Castile Liquid Soap 2 oz",
+    "weight_g": 70,
+    "packed_cm": [
+      10.0,
+      4.0,
+      4.0
+    ],
+    "packed_l": 0.16,
+    "compress": 0.0,
+    "archetype": "tube_bottle",
+    "color": "#e6e1c8",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "seatpack",
+        "why": "with the wash kit and camp things; not needed until evening"
+      },
+      {
+        "at": "framebag_half",
+        "why": "with the kitchen kit: it also washes the pot"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.amazon.com/Dr-Bronners-Liquid-Travel-Sized/dp/B00119Q8RI",
+        "what": "2 fl oz travel bottle"
+      }
+    ],
+    "note": "Weight estimated from volume: 2 fl oz (59 ml) of soap ~60 g + bottle ~10 g; not published. Size estimated for the travel bottle.",
+    "aliases": [
+      "dr bronners",
+      "dr. bronner's",
+      "castile soap",
+      "liquid soap",
+      "camp soap"
+    ]
+  },
+  {
+    "id": "deuce-trowel",
+    "name": "TheTentLab Deuce #2 trowel",
+    "cat": "hygiene",
+    "sub": "trowel",
+    "generic": false,
+    "brand": "TheTentLab",
+    "model": "DirtSaw Deuce #2",
+    "weight_g": 17,
+    "packed_cm": [
+      20.0,
+      5.5,
+      1.5
+    ],
+    "packed_l": 0.165,
+    "compress": 0.0,
+    "archetype": "utensil",
+    "color": "#e2742b",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "with the toilet paper, reachable when you need it quickly"
+      },
+      {
+        "at": "seatpack",
+        "why": "slid down the side of the seat pack"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.thetentlab.com/Deuce/DeuceofSpadespage.html",
+        "what": "0.6 oz"
+      }
+    ],
+    "note": "0.6 oz (17 g), 7075 aluminium. Blade size estimated (not in reachable sources). Utensil archetype is the closest flat-blade shape.",
+    "aliases": [
+      "trowel",
+      "deuce",
+      "deuce of spades",
+      "poop trowel",
+      "cat hole trowel",
+      "toilet trowel"
+    ]
+  },
+  {
+    "id": "towel-drylite-m",
+    "name": "Sea to Summit DryLite towel (M)",
+    "cat": "hygiene",
+    "sub": "towel",
+    "generic": false,
+    "brand": "Sea to Summit",
+    "model": "DryLite Towel Medium",
+    "weight_g": 99,
+    "packed_cm": [
+      13.3,
+      13.3,
+      3.2
+    ],
+    "packed_l": 0.566,
+    "compress": 0.4,
+    "archetype": "pouch",
+    "color": "#3c6e8f",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "seatpack",
+        "why": "with the wash kit and camp things; not needed until evening"
+      },
+      {
+        "at": "barroll",
+        "why": "inside the bar roll with the sleeping kit"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.amazon.com/Sea-to-Summit-Drylite-Towel/dp/B000OPPAQK",
+        "what": "3.5 oz, packed 5.25 x 5.25 x 1.25 in, 20 x 39 in open"
+      }
+    ],
+    "note": "Medium 50 x 100 cm. Weight and packed size from retail listing.",
+    "aliases": [
+      "towel",
+      "quick dry towel",
+      "pack towel",
+      "microfibre towel",
+      "drylite"
+    ]
+  },
+  {
+    "id": "chamois-cream",
+    "name": "Chamois cream (travel tube)",
+    "cat": "hygiene",
+    "sub": "chamois cream",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 85,
+    "packed_cm": [
+      14.0,
+      4.5,
+      2.5
+    ],
+    "packed_l": 0.158,
+    "compress": 0.0,
+    "archetype": "tube_bottle",
+    "color": "#d9e3e8",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "reachable at a morning or midday stop"
+      },
+      {
+        "at": "toptube",
+        "why": "top tube bag on long days when you reapply"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.velochampion.cc/products/chamois-cream-75ml",
+        "what": "75 ml travel size"
+      },
+      {
+        "url": "https://veloskin.cc/products/chamois-cream-travel-sachets",
+        "what": "10 ml sachets"
+      }
+    ],
+    "note": "Generic 75 ml travel tube; weight estimated from volume (~75 g cream + ~10 g tube). Sachets (10 ml each) are the lighter option for short trips.",
+    "aliases": [
+      "chamois cream",
+      "chamois butter",
+      "chamois butt'r",
+      "anti chafe",
+      "butt cream",
+      "assos cream"
+    ]
+  },
+  {
+    "id": "assos-chamois",
+    "name": "Assos Chamois Crème 200 ml",
+    "cat": "hygiene",
+    "sub": "chamois cream",
+    "generic": false,
+    "brand": "Assos",
+    "model": "Chamois Crème 200 ml",
+    "weight_g": 240,
+    "packed_cm": [
+      8.5,
+      8.5,
+      5.0
+    ],
+    "packed_l": 0.361,
+    "compress": 0.0,
+    "archetype": "box",
+    "color": "#f2f2f2",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "seatpack",
+        "why": "with the wash kit and camp things; not needed until evening"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.amazon.com/assos-Assos-Chamois-Cream-200ml/dp/B097LQT3JF",
+        "what": "200 ml jar, shipping weight 8.47 oz"
+      }
+    ],
+    "note": "Home-size jar; listed shipping weight 8.47 oz (240 g) used as upper bound. Decant into a travel tube for trips. Jar size estimated.",
+    "aliases": [
+      "assos",
+      "assos chamois cream",
+      "chamois cream"
+    ]
+  }
+]

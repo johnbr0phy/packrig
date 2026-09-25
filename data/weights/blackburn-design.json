@@ -1,0 +1,181 @@
+{
+ "brand": "Blackburn Design",
+ "products": [
+  {
+   "line": "Outpost",
+   "name": "Frame Bag",
+   "size": "Small",
+   "weight_g": 200,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from half frame bag anchor (150-300 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Outpost",
+   "name": "Frame Bag",
+   "size": "Medium",
+   "weight_g": 230,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled across the Outpost Frame Bag run. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Outpost",
+   "name": "Frame Bag",
+   "size": "Large",
+   "weight_g": 270,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled across the Outpost Frame Bag run. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Outpost",
+   "name": "Corner Bag",
+   "size": "std",
+   "weight_g": 100,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small corner frame bags of ~0.7 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Outpost",
+   "name": "Top Tube Bag",
+   "size": "std",
+   "weight_g": 130,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from top tube bag anchor (0.5-1 L ~90-170 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Outpost Elite",
+   "name": "Cargo Bag",
+   "size": "std",
+   "weight_g": 220,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Bag only, cargo cage not counted. Estimated from ~6.5 L dry bags with a stiffener/strap set. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Outpost",
+   "name": "Carryall Bag",
+   "size": "std",
+   "weight_g": 110,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from stem bag anchor (100-200 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Grid",
+   "name": "Grid SL Frame Bag",
+   "size": "SL",
+   "weight_g": 110,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from slim ~1.5 L frame bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Grid",
+   "name": "Grid Handlebar Bag",
+   "size": "std",
+   "weight_g": 200,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small ~2.5 L handlebar bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Grid",
+   "name": "Grid Seat Bag",
+   "size": "Medium",
+   "weight_g": 100,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small under-saddle bags of ~0.5 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Grid",
+   "name": "Grid Seat Bag",
+   "size": "Large",
+   "weight_g": 125,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled from the Grid Seat Bag Medium estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Local",
+   "name": "Trunk Bag",
+   "size": "std",
+   "weight_g": 600,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~11 L rack trunk bags with a stiffened base. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Local",
+   "name": "Saddle Bag",
+   "size": "std",
+   "weight_g": 110,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small under-saddle bags of ~0.6 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Local",
+   "name": "Local Plus Top Tube Bag",
+   "size": "std",
+   "weight_g": 120,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from top tube bag anchor (0.5-1 L ~90-170 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Local",
+   "name": "Grocery Pannier",
+   "size": "16L",
+   "weight_g": 700,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from ~16 L commuter panniers, below the 20 L PVC anchor. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Local",
+   "name": "Rear Pannier",
+   "size": "std",
+   "weight_g": 800,
+   "basis": "family-estimate",
+   "source": "https://www.bellhelmets.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from ~18 L panniers, below the 20 L PVC anchor. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

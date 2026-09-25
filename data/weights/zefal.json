@@ -1,0 +1,71 @@
+{
+ "brand": "Zefal",
+ "products": [
+  {
+   "line": null,
+   "name": "Zefal Z Light Pack S",
+   "size": null,
+   "weight_g": 75,
+   "basis": "family-estimate",
+   "source": "https://www.zefal.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small (0.5 L) under-saddle bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Zefal Z Adventure R17",
+   "size": null,
+   "weight_g": 560,
+   "basis": "family-estimate",
+   "source": "https://www.zefal.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the dry-bag seat pack anchor (9-16 L 300-600 g), top end for 17 L with its holder. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Zefal Z Frame Pack",
+   "size": null,
+   "weight_g": 150,
+   "basis": "family-estimate",
+   "source": "https://www.zefal.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small (~1.3 L) frame bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Zefal Z Traveler S20",
+   "size": null,
+   "weight_g": 900,
+   "basis": "family-estimate",
+   "source": "https://www.zefal.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from the PVC 20 L pannier anchor (~900-1000 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Zefal Z Adventure Dry Bag 6L",
+   "size": null,
+   "weight_g": 120,
+   "basis": "family-estimate",
+   "source": "https://www.zefal.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Dry bag only, no cage/mount. Estimated from 6 L dry bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Zefal Z Traveler 60",
+   "size": null,
+   "weight_g": 1300,
+   "basis": "family-estimate",
+   "source": "https://www.zefal.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated as a rack-top trunk bag with fold-out side pockets; the \"60\" in the name suggests more capacity than the 20 L recorded, so weight is uncertain. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

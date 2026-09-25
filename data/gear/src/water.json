@@ -1,0 +1,966 @@
+[
+  {
+    "id": "bidon-500",
+    "name": "Bidon 500 ml",
+    "cat": "water",
+    "sub": "bidon",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 54,
+    "packed_cm": [
+      19,
+      7.3,
+      7.3
+    ],
+    "packed_l": 0.8,
+    "compress": 0.05,
+    "archetype": "bottle",
+    "color": "#e8e8e8",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "in a bottle cage on the seat tube or down tube: the obvious place, and it is reachable while riding"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork-mounted cage; water is dense so the lower and closer to the axle the better"
+      },
+      {
+        "at": "downtube",
+        "why": "under the down tube in a third cage: low weight, but gets road spray, so better for reserve water"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.elite-it.com",
+        "what": "comparable Elite Fly 550 ml ~54 g empty; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic 500-550 ml cycling bottle, empty weight. Weight from my recollection of the Elite Fly 550; height approximate. packed_l is the bottle cylinder.",
+    "aliases": [
+      "bidon 500",
+      "500ml bottle",
+      "small bidon",
+      "small bottle",
+      "500 ml bidon"
+    ]
+  },
+  {
+    "id": "bidon-620",
+    "name": "Bidon 620 ml",
+    "cat": "water",
+    "sub": "bidon",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 80,
+    "packed_cm": [
+      21.5,
+      7.4,
+      7.4
+    ],
+    "packed_l": 0.92,
+    "compress": 0.05,
+    "archetype": "bottle",
+    "color": "#e8e8e8",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "in a bottle cage on the seat tube or down tube: the obvious place, and it is reachable while riding"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork-mounted cage; water is dense so the lower and closer to the axle the better"
+      },
+      {
+        "at": "downtube",
+        "why": "under the down tube in a third cage: low weight, but gets road spray, so better for reserve water"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.camelbak.com",
+        "what": "comparable CamelBak Podium 21 oz; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic 620 ml (21 oz) bottle, empty. Low confidence on weight: ~80 g estimated for a CamelBak Podium-style valve bottle; plain bottles are lighter. Height approximate.",
+    "aliases": [
+      "bidon 620",
+      "620ml bottle",
+      "21oz bottle",
+      "podium 21"
+    ]
+  },
+  {
+    "id": "bidon-750",
+    "name": "Water bottle",
+    "cat": "water",
+    "sub": "bidon",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 113,
+    "packed_cm": [
+      23.5,
+      7.4,
+      7.4
+    ],
+    "packed_l": 1.01,
+    "compress": 0.05,
+    "archetype": "bottle",
+    "color": "#e8e8e8",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "in a bottle cage on the seat tube or down tube: the obvious place, and it is reachable while riding"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork-mounted cage; water is dense so the lower and closer to the axle the better"
+      },
+      {
+        "at": "downtube",
+        "why": "under the down tube in a third cage: low weight, but gets road spray, so better for reserve water"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 4.0 oz (113 g) is his figure for a 750 ml bottle; plain 750 ml bidons are ~60-90 g (Elite Fly 750 ~62 g), so his may be insulated or have a valve cap. Standard 7.4 cm bidon diameter.",
+    "aliases": [
+      "water bottle",
+      "bottle",
+      "bidon",
+      "bidon 750",
+      "750ml bottle",
+      "water bottles"
+    ]
+  },
+  {
+    "id": "elite-fly-750",
+    "name": "Elite Fly 750 ml bottle",
+    "cat": "water",
+    "sub": "bidon",
+    "generic": false,
+    "brand": "Elite",
+    "model": "Fly 750",
+    "weight_g": 62,
+    "packed_cm": [
+      23.5,
+      7.3,
+      7.3
+    ],
+    "packed_l": 0.98,
+    "compress": 0.05,
+    "archetype": "bottle",
+    "color": "#2a2a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "in a bottle cage on the seat tube or down tube: the obvious place, and it is reachable while riding"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork-mounted cage; water is dense so the lower and closer to the axle the better"
+      },
+      {
+        "at": "downtube",
+        "why": "under the down tube in a third cage: low weight, but gets road spray, so better for reserve water"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.elite-it.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Very light plain bidon; ~62 g empty is my recollection. Height approximate. Verify.",
+    "aliases": [
+      "elite fly",
+      "elite fly 750",
+      "fly bottle"
+    ]
+  },
+  {
+    "id": "bidon-950",
+    "name": "Bidon 950 ml",
+    "cat": "water",
+    "sub": "bidon",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 76,
+    "packed_cm": [
+      27.5,
+      7.4,
+      7.4
+    ],
+    "packed_l": 1.18,
+    "compress": 0.05,
+    "archetype": "bottle",
+    "color": "#e8e8e8",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "in a bottle cage on the seat tube or down tube: the obvious place, and it is reachable while riding"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork-mounted cage; water is dense so the lower and closer to the axle the better"
+      },
+      {
+        "at": "downtube",
+        "why": "under the down tube in a third cage: low weight, but gets road spray, so better for reserve water"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.elite-it.com",
+        "what": "comparable Elite Fly 950 ml ~76 g; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic 950 ml tall bottle, empty. Weight from my recollection of the Elite Fly 950. Too tall for some small frames and side-entry cages; fine in fork cages.",
+    "aliases": [
+      "bidon 950",
+      "950ml bottle",
+      "big bidon",
+      "large bottle",
+      "1l bidon"
+    ]
+  },
+  {
+    "id": "soft-flask-500",
+    "name": "Soft flask 500 ml",
+    "cat": "water",
+    "sub": "soft flask",
+    "generic": false,
+    "brand": "Salomon / HydraPak",
+    "model": "Soft Flask 500 ml",
+    "weight_g": 35,
+    "packed_cm": [
+      20,
+      8,
+      1.5
+    ],
+    "packed_l": 0.24,
+    "compress": 0.8,
+    "archetype": "bottle",
+    "color": "#3a8ac8",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "barpocket",
+        "why": "in a bar pocket or stem bag where you can drink on the move"
+      },
+      {
+        "at": "pocket",
+        "why": "jersey or hip-pack pocket"
+      },
+      {
+        "at": "framebag_full",
+        "why": "squeezed into a gap in the frame bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.hydrapak.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Collapsible TPU flask; ~35 g empty is my recollection for the 500 ml size. packed_cm is empty and flat; full it is ~20 x 8 x 5 cm. Verify.",
+    "aliases": [
+      "soft flask",
+      "softflask",
+      "salomon soft flask",
+      "hydrapak softflask",
+      "flask"
+    ]
+  },
+  {
+    "id": "crux-15",
+    "name": "CamelBak Crux 1.5 L reservoir",
+    "cat": "water",
+    "sub": "bladder",
+    "generic": false,
+    "brand": "CamelBak",
+    "model": "Crux 1.5L",
+    "weight_g": 190,
+    "packed_cm": [
+      25,
+      10,
+      5
+    ],
+    "packed_l": 1.25,
+    "compress": 0.6,
+    "archetype": "bladder",
+    "color": "#2a6aa8",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "flat against the frame bag wall with the hose out of the top: water low and central"
+      },
+      {
+        "at": "body",
+        "why": "in a hydration pack"
+      },
+      {
+        "at": "seatpack",
+        "why": "as reserve water, rolled in the seat pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.camelbak.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Low confidence: ~190 g with tube is estimated from my recollection of the Crux 3 L; packed_cm is empty and loosely rolled. Verify.",
+    "aliases": [
+      "crux 1.5",
+      "camelbak 1.5",
+      "bladder 1.5",
+      "hydration bladder",
+      "reservoir"
+    ]
+  },
+  {
+    "id": "crux-3",
+    "name": "CamelBak Crux 3 L reservoir",
+    "cat": "water",
+    "sub": "bladder",
+    "generic": false,
+    "brand": "CamelBak",
+    "model": "Crux 3L",
+    "weight_g": 230,
+    "packed_cm": [
+      30,
+      10,
+      6
+    ],
+    "packed_l": 1.8,
+    "compress": 0.6,
+    "archetype": "bladder",
+    "color": "#2a6aa8",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "standing in a full frame bag with the hose out: 3 kg of water in the best place on the bike"
+      },
+      {
+        "at": "body",
+        "why": "in a hydration pack"
+      },
+      {
+        "at": "seatpack",
+        "why": "as reserve water for a dry section"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.camelbak.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Low confidence: ~230 g with tube is my recollection; packed_cm is empty and loosely rolled. Verify.",
+    "aliases": [
+      "crux 3",
+      "camelbak 3l",
+      "camelbak",
+      "bladder",
+      "3l bladder",
+      "hydration bladder"
+    ]
+  },
+  {
+    "id": "hp-seeker-2",
+    "name": "HydraPak Seeker 2 L",
+    "cat": "water",
+    "sub": "soft bottle",
+    "generic": false,
+    "brand": "HydraPak",
+    "model": "Seeker 2L",
+    "weight_g": 88,
+    "packed_cm": [
+      18,
+      10,
+      3
+    ],
+    "packed_l": 0.54,
+    "compress": 0.8,
+    "archetype": "bladder",
+    "color": "#3a9ab8",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "filled for a dry camp, standing low in the frame bag"
+      },
+      {
+        "at": "fork",
+        "why": "full, in a fork cage dry bag"
+      },
+      {
+        "at": "seatpack",
+        "why": "empty and rolled in the seat pack until needed"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.hydrapak.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Collapsible storage bottle for carrying extra water to camp; ~88 g is my recollection. packed_cm is empty and rolled. Verify.",
+    "aliases": [
+      "seeker 2l",
+      "hydrapak seeker",
+      "seeker",
+      "water bag",
+      "water storage"
+    ]
+  },
+  {
+    "id": "hp-seeker-3",
+    "name": "HydraPak Seeker 3 L",
+    "cat": "water",
+    "sub": "soft bottle",
+    "generic": false,
+    "brand": "HydraPak",
+    "model": "Seeker 3L",
+    "weight_g": 105,
+    "packed_cm": [
+      20,
+      10,
+      3
+    ],
+    "packed_l": 0.6,
+    "compress": 0.8,
+    "archetype": "bladder",
+    "color": "#3a9ab8",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "filled for a dry camp, low in the frame bag"
+      },
+      {
+        "at": "fork",
+        "why": "full, in a fork cage dry bag"
+      },
+      {
+        "at": "seatpack",
+        "why": "empty and rolled until needed"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.hydrapak.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "~105 g is my recollection; packed_cm is empty and rolled. Verify.",
+    "aliases": [
+      "seeker 3l",
+      "hydrapak seeker 3",
+      "water bag 3l"
+    ]
+  },
+  {
+    "id": "platy-1l",
+    "name": "Platypus 1 L SoftBottle",
+    "cat": "water",
+    "sub": "soft bottle",
+    "generic": false,
+    "brand": "Platypus",
+    "model": "SoftBottle 1.0L",
+    "weight_g": 25,
+    "packed_cm": [
+      15,
+      8,
+      1
+    ],
+    "packed_l": 0.12,
+    "compress": 0.8,
+    "archetype": "bottle",
+    "color": "#8ab8d8",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "full, flat against the frame bag wall"
+      },
+      {
+        "at": "barpocket",
+        "why": "in a bar pocket"
+      },
+      {
+        "at": "seatpack",
+        "why": "empty and folded as spare capacity"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.platypusbrand.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "~25 g empty is my recollection; packed_cm is empty and folded (full it is ~28 x 16 x 5 cm). Threads fit a Sawyer filter. Verify.",
+    "aliases": [
+      "platypus",
+      "platy",
+      "platypus 1l",
+      "softbottle",
+      "soft bottle"
+    ]
+  },
+  {
+    "id": "smartwater-1l",
+    "name": "Smartwater 1 L bottle",
+    "cat": "water",
+    "sub": "bottle",
+    "generic": false,
+    "brand": "Smartwater",
+    "model": "1 L bottle",
+    "weight_g": 37,
+    "packed_cm": [
+      27,
+      8,
+      8
+    ],
+    "packed_l": 1.36,
+    "compress": 0.3,
+    "archetype": "bottle",
+    "color": "#d8e8f0",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "fork",
+        "why": "in a fork-mounted cage; water is dense so the lower and closer to the axle the better"
+      },
+      {
+        "at": "frame",
+        "why": "in a bottle cage on the seat tube or down tube: the obvious place, and it is reachable while riding"
+      },
+      {
+        "at": "outside",
+        "why": "strapped on the seat pack as reserve"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Empty 1 L Smartwater bottle, a thru-hiker favourite; ~37 g is a commonly reported figure, not a maker spec. Dimensions estimated. Sawyer filters screw on to it.",
+    "aliases": [
+      "smartwater",
+      "smart water",
+      "smartwater bottle",
+      "plastic bottle",
+      "1l bottle"
+    ]
+  },
+  {
+    "id": "sawyer-squeeze",
+    "name": "Sawyer Squeeze filter",
+    "cat": "water",
+    "sub": "filter",
+    "generic": false,
+    "brand": "Sawyer",
+    "model": "Squeeze",
+    "weight_g": 85,
+    "packed_cm": [
+      14,
+      5,
+      5
+    ],
+    "packed_l": 0.27,
+    "compress": 0,
+    "archetype": "tube_bottle",
+    "color": "#2a6ab8",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "in the top tube bag so a refill does not mean unpacking"
+      },
+      {
+        "at": "framebag_half",
+        "why": "in the frame bag"
+      },
+      {
+        "at": "barpocket",
+        "why": "in a bar pocket"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.sawyer.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "85 g (3 oz) filter alone (recalled maker figure); size approximate. Do not let it freeze.",
+    "aliases": [
+      "sawyer squeeze",
+      "squeeze",
+      "sawyer filter",
+      "sawyer"
+    ]
+  },
+  {
+    "id": "water-filter",
+    "name": "Water filter",
+    "cat": "water",
+    "sub": "filter",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 57,
+    "packed_cm": [
+      13,
+      4,
+      4
+    ],
+    "packed_l": 0.16,
+    "compress": 0,
+    "archetype": "tube_bottle",
+    "color": "#2a6ab8",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "in the top tube bag so a refill does not mean unpacking"
+      },
+      {
+        "at": "framebag_half",
+        "why": "in the frame bag"
+      },
+      {
+        "at": "barpocket",
+        "why": "in a bar pocket"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 2.0 oz (57 g) is his figure, which matches the Sawyer Mini class. Size assumed from that class. Do not let it freeze.",
+    "aliases": [
+      "water filter",
+      "filter",
+      "sawyer mini",
+      "squeeze mini",
+      "sawyer"
+    ]
+  },
+  {
+    "id": "sawyer-mini",
+    "name": "Sawyer Mini filter",
+    "cat": "water",
+    "sub": "filter",
+    "generic": false,
+    "brand": "Sawyer",
+    "model": "Mini",
+    "weight_g": 57,
+    "packed_cm": [
+      13,
+      4,
+      4
+    ],
+    "packed_l": 0.16,
+    "compress": 0,
+    "archetype": "tube_bottle",
+    "color": "#3a8ad8",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "top tube bag, ready for a refill"
+      },
+      {
+        "at": "framebag_half",
+        "why": "in the frame bag"
+      },
+      {
+        "at": "barpocket",
+        "why": "in a bar pocket"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.sawyer.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "57 g (2 oz) as I recall; slower flow than the Squeeze. Size approximate.",
+    "aliases": [
+      "sawyer mini",
+      "mini filter"
+    ]
+  },
+  {
+    "id": "befree-1l",
+    "name": "Katadyn BeFree 1 L",
+    "cat": "water",
+    "sub": "filter bottle",
+    "generic": false,
+    "brand": "Katadyn",
+    "model": "BeFree 1.0L",
+    "weight_g": 63,
+    "packed_cm": [
+      14,
+      8,
+      5
+    ],
+    "packed_l": 0.56,
+    "compress": 0.6,
+    "archetype": "bottle",
+    "color": "#3aa0c8",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "rolled in the top tube bag for quick refills"
+      },
+      {
+        "at": "barpocket",
+        "why": "in a bar pocket"
+      },
+      {
+        "at": "framebag_half",
+        "why": "in the frame bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.katadyn.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Soft flask with a screw-on hollow-fibre filter; ~63 g is my recollection. packed_cm is empty and rolled around the filter. Verify.",
+    "aliases": [
+      "befree",
+      "be free",
+      "katadyn befree",
+      "katadyn",
+      "filter bottle"
+    ]
+  },
+  {
+    "id": "purif-tabs",
+    "name": "Water purification tablets",
+    "cat": "water",
+    "sub": "chemical treatment",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 10,
+    "packed_cm": [
+      9,
+      6,
+      1
+    ],
+    "packed_l": 0.05,
+    "compress": 0.3,
+    "archetype": "pouch",
+    "color": "#e0e0e0",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "in the top tube bag with the filter"
+      },
+      {
+        "at": "framebag_half",
+        "why": "with the first aid kit"
+      },
+      {
+        "at": "pocket",
+        "why": "a strip in the wallet as a backup"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.aquatabs.com",
+        "what": "Aquatabs / Aquamira tablet packs; weight estimated, not a maker figure"
+      }
+    ],
+    "note": "Generic blister strip of chlorine dioxide or NaDCC tablets (Aquamira, Aquatabs), about 20-30 tablets. Weight is an estimate. A light backup to a filter, and the only one of the two that deals with viruses.",
+    "aliases": [
+      "aquatabs",
+      "aquamira",
+      "water tablets",
+      "purification tablets",
+      "chlorine tablets",
+      "water purification"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "steripen-ultra",
+    "name": "SteriPEN Ultra",
+    "cat": "water",
+    "sub": "UV purifier",
+    "generic": false,
+    "brand": "SteriPEN",
+    "model": "Ultra",
+    "weight_g": 140,
+    "packed_cm": [
+      19,
+      4.5,
+      3.5
+    ],
+    "packed_l": 0.3,
+    "compress": 0,
+    "archetype": "tube_bottle",
+    "color": "#2a2a2a",
+    "rigid": true,
+    "fragile": true,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "in the top tube bag, padded"
+      },
+      {
+        "at": "framebag_half",
+        "why": "in the frame bag"
+      },
+      {
+        "at": "barbag",
+        "why": "in a bar bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.katadyn.com",
+        "what": "SteriPEN brand (Katadyn group); weight recalled without fetching; verify"
+      }
+    ],
+    "note": "USB-rechargeable UV purifier with a glass lamp, hence fragile; ~140 g as I recall. Dimensions approximate. Verify.",
+    "aliases": [
+      "steripen",
+      "steri pen",
+      "uv pen",
+      "steripen ultra"
+    ]
+  },
+  {
+    "id": "water-1l",
+    "name": "Water (1 litre)",
+    "cat": "water",
+    "sub": "water",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 1000,
+    "packed_cm": [
+      27,
+      8,
+      8
+    ],
+    "packed_l": 1,
+    "compress": 0,
+    "archetype": "bottle",
+    "color": "#6ab0e0",
+    "rigid": true,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "frame",
+        "why": "in a bottle cage on the seat tube or down tube: the obvious place, and it is reachable while riding"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork-mounted cage; water is dense so the lower and closer to the axle the better"
+      },
+      {
+        "at": "framebag_full",
+        "why": "a full frame bag can hold a bladder or soft bottles low and central when cages run out"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Consumable: one litre of water is 1000 g. Add one per litre carried and put it in a bottle, bidon or bladder. packed_cm matches a 1 L bottle (Smartwater class); packed_l is the water itself.",
+    "aliases": [
+      "water",
+      "water 1l",
+      "1l water",
+      "litre of water",
+      "liter of water",
+      "water (1 litre)"
+    ],
+    "consumable": true
+  }
+]

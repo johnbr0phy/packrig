@@ -23,6 +23,7 @@
 
 import { SLOTS, productSlotFor } from './bags/slots.js';
 import { productsForSlot } from './catalog.js';
+import { encodeRigV2, decodeRigV2 } from './pack/share.js';
 
 const norm = (s) => String(s ?? '').trim();
 /** Keys are compared loosely: reviewers tidy "(3.4L)" to "(3.5L)" and so on. */
@@ -41,7 +42,7 @@ const looseKey = (k) => k.split('|').map(loose).join('|');
  * written to localStorage, sent to the database and encoded into a URL — one
  * definition, so the three can never drift apart.
  */
-export function captureRig(app, { name = '' } = {}) {
+export function captureRig(app, { name = '', withPack = true } = {}) {
   const bags = Object.entries(app.bags.equipped).map(([slot, e]) => ({
     slot,
     brand: norm(e.brand?.name),
@@ -50,7 +51,7 @@ export function captureRig(app, { name = '' } = {}) {
     size: norm(e.product?.size),
     cw: e.colorwayIndex || 0,
   }));
-  return {
+  const rig = {
     v: 1,
     name,
     env: app.state?.env || 'mountain',
@@ -58,6 +59,14 @@ export function captureRig(app, { name = '' } = {}) {
     size: app.state?.size || app.bike?.size || 'M',
     bags,
   };
+  // v2 only when there is a packing list to carry. A rig with no gear stays
+  // byte-for-byte the v1 object it always was, so nothing that compares,
+  // dirty-checks or hashes rigs changes behaviour.
+  if (withPack) {
+    const pack = app.pack?.packForRig?.();
+    if (pack && (pack.items?.length || pack.bike_g)) { rig.v = 2; rig.pack = pack; }
+  }
+  return rig;
 }
 
 /** Total capacity, for showing a rig in a list without mounting it. */
@@ -98,12 +107,17 @@ export function findProduct(catalog, b) {
  *   that quietly comes back with five bags instead of six is how someone
  *   concludes the app lost their work.
  */
-export function applyRig(app, rig, { clear = true } = {}) {
+export function applyRig(app, rig, { clear = true, source = null } = {}) {
   if (!rig) return { fitted: 0, missing: [] };
-  if (clear) for (const slot of Object.keys(app.bags.equipped)) app.bags.remove(slot);
-  if (rig.size && app.setSize) app.setSize(rig.size);
+  // Somebody else's rig (a link, the gallery) must not be written into MY
+  // active loadout just because its bags went on the bike to be looked at.
+  const quiet = !!source && source !== 'mine';
+  if (quiet) app.pack?.setApplying?.(true);
   const missing = [];
   let fitted = 0;
+  try {
+  if (clear) for (const slot of Object.keys(app.bags.equipped)) app.bags.remove(slot);
+  if (rig.size && app.setSize) app.setSize(rig.size);
   for (const b of rig.bags || []) {
     const hit = findProduct(app.catalog, b);
     if (!hit) { missing.push(b); continue; }
@@ -124,8 +138,12 @@ export function applyRig(app, rig, { clear = true } = {}) {
     app.bags.equip(b.slot, hit.brand, hit.product, b.cw || 0);
     fitted++;
   }
+  } finally { if (quiet) app.pack?.setApplying?.(false); }
   if (rig.paint && app.setPaint) app.setPaint(rig.paint);
   if (rig.env && app.setEnv) app.setEnv(rig.env);
+  // A v2 rig carries its packing list. Showing it never writes to my locker;
+  // `source` says whose it is (see src/pack/index.js).
+  if (rig.pack && app.pack && source) app.pack.showRigPack(rig, { from: source });
   return { fitted, missing };
 }
 
@@ -177,17 +195,33 @@ export function decodeRig(str) {
   }
 }
 
-/** The shareable URL for the bike as it stands right now. */
+/** The shareable URL for the bike as it stands right now (bags only, v1). */
 export function rigURL(app, base = `${location.origin}${location.pathname}`) {
-  return `${base}?r=${encodeRig(captureRig(app))}`;
+  return `${base}?r=${encodeRig(captureRig(app, { withPack: false }))}`;
+}
+
+/**
+ * The shareable URL including the packing list, when there is one. v2 links
+ * are deflated (`?r=2.…`) so sixty items still fit comfortably in a message.
+ */
+export async function rigURLWithPack(app, base = `${location.origin}${location.pathname}`) {
+  const rig = captureRig(app);
+  if (rig.v !== 2) return `${base}?r=${encodeRig(rig)}`;
+  return `${base}?r=${await encodeRigV2(rig)}`;
+}
+
+/** Link for any rig object (gallery rows, saved rigs). */
+export async function linkForRig(rig, base = `${location.origin}${location.pathname}`) {
+  return rig?.pack ? `${base}?r=${await encodeRigV2(rig)}` : `${base}?r=${encodeRig(rig)}`;
 }
 
 /**
  * Read a rig out of a URL. Handles both `?r=` and the legacy index-based
  * `?kit=`, which is still the only format in anyone's history.
  */
-export function rigFromParams(params, catalog) {
+export async function rigFromParams(params, catalog) {
   const r = params.get('r');
+  if (r && r.startsWith('2.')) return decodeRigV2(r);
   if (r) return decodeRig(r);
 
   const kit = params.get('kit');

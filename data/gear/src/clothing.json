@@ -1,0 +1,1827 @@
+[
+ {
+  "id": "montbell-anorak",
+  "name": "Montbell EX Light Down Anorak",
+  "cat": "clothing",
+  "sub": "down jacket",
+  "generic": false,
+  "brand": "Montbell",
+  "model": "EX Light Down Anorak",
+  "weight_g": 215,
+  "packed_cm": [
+   18.0,
+   11.0,
+   10.0
+  ],
+  "packed_l": 1.55,
+  "compress": 0.6,
+  "archetype": "stuffsack",
+  "color": "#2c3e50",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "camp insulation; stuff it in the seat pack with the sleep kit, near the top so it comes out first at a cold stop"
+   },
+   {
+    "at": "barroll",
+    "why": "inside the bar roll dry bag if the seat pack is full; it is light and adds bulk where weight hurts least"
+   },
+   {
+    "at": "fork",
+    "why": "in a fork cage dry bag with other soft camp layers"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.adventurealan.com/product/montbell-ex-light-down-anorak/",
+    "what": "weight 215 g / 7.6 oz, 900FP down, 7D shell"
+   },
+   {
+    "url": "https://sectionhiker.com/montbell-ex-light-down-anorak-hoody-review-2/",
+    "what": "model reference"
+   }
+  ],
+  "note": "Owner's item (sheet 7.6 oz). 7.6 oz matches Montbell's published 215 g for the EX Light Down Anorak exactly, so that is the model identified. Packed size estimated from its stuff sack (comparable 900FP down pullovers pack to ~1.5 L).",
+  "aliases": [
+   "montbell anorak",
+   "mont bell anorak",
+   "ex light anorak",
+   "down anorak",
+   "down jacket",
+   "puffy",
+   "down pullover"
+  ]
+ },
+ {
+  "id": "shakedry",
+  "name": "Gore-Tex Shakedry jacket",
+  "cat": "clothing",
+  "sub": "rain jacket",
+  "generic": false,
+  "brand": "Gore Wear",
+  "model": "R7 Gore-Tex Shakedry Jacket",
+  "weight_g": 117,
+  "packed_cm": [
+   15.0,
+   10.0,
+   5.0
+  ],
+  "packed_l": 0.75,
+  "compress": 0.5,
+  "archetype": "clothing_folded",
+  "color": "#111418",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "rain jacket goes in the outer pocket or top of the bar roll so it comes out in seconds without unpacking"
+   },
+   {
+    "at": "pocket",
+    "why": "it is so small it rides in a jersey or hip pack pocket on a threatening day"
+   },
+   {
+    "at": "toptube",
+    "why": "fits a large top tube bag, always within reach"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.pinkbike.com/news/gore-r7-shakedry-jacket-review.html",
+    "what": "R7 Shakedry 117 g, size L"
+   },
+   {
+    "url": "https://road.cc/content/review/gore-race-shakedry-jacket-293081",
+    "what": "Race Shakedry 174 g; fits a jersey pocket"
+   }
+  ],
+  "note": "Owner's sheet: 3.9 oz (111 g). Catalogue weight is the Gore R7 Shakedry (117 g, L), the closest published Shakedry cycling jacket. Packed size estimated: reviews say it fits a jersey pocket with room to spare.",
+  "aliases": [
+   "shakedry",
+   "gore shakedry",
+   "gore tex shakedry jacket",
+   "rain jacket",
+   "waterproof",
+   "waterproof jacket",
+   "shell",
+   "rain shell"
+  ]
+ },
+ {
+  "id": "shakedry-race",
+  "name": "Gore Race Shakedry jacket",
+  "cat": "clothing",
+  "sub": "rain jacket",
+  "generic": false,
+  "brand": "Gore Wear",
+  "model": "Race Shakedry Jacket",
+  "weight_g": 174,
+  "packed_cm": [
+   16.0,
+   11.0,
+   6.0
+  ],
+  "packed_l": 1.06,
+  "compress": 0.5,
+  "archetype": "clothing_folded",
+  "color": "#1b1d20",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "top or outer pocket of the bar roll: first thing out when it rains"
+   },
+   {
+    "at": "pocket",
+    "why": "fits a jersey pocket with room to spare"
+   },
+   {
+    "at": "toptube",
+    "why": "large top tube bags take it"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://road.cc/content/review/gore-race-shakedry-jacket-293081",
+    "what": "weight 174 g; fits most jersey pockets"
+   }
+  ],
+  "note": "Packed size estimated from the review's jersey-pocket description.",
+  "aliases": [
+   "gore race shakedry",
+   "shakedry",
+   "rain jacket",
+   "waterproof",
+   "shell"
+  ]
+ },
+ {
+  "id": "shakedry-c5",
+  "name": "Gore C5 Shakedry 1985 Viz",
+  "cat": "clothing",
+  "sub": "rain jacket",
+  "generic": false,
+  "brand": "Gore Wear",
+  "model": "C5 Gore-Tex Shakedry 1985 Viz",
+  "weight_g": 127,
+  "packed_cm": [
+   15.0,
+   10.0,
+   5.0
+  ],
+  "packed_l": 0.75,
+  "compress": 0.5,
+  "archetype": "clothing_folded",
+  "color": "#c6d83a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "on top of the bar roll or in its accessory pocket for fast access"
+   },
+   {
+    "at": "pocket",
+    "why": "packs small enough for a jersey pocket"
+   },
+   {
+    "at": "toptube",
+    "why": "fits a large top tube bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://road.cc/content/review/239293-gore-c5-gore-tex-shakedry-1985-viz-jacket",
+    "what": "weight 127 g, size M"
+   },
+   {
+    "url": "https://velo.outsideonline.com/road/road-gear/gore-tex-shakedry-shootout-who-makes-the-best-waterproof-cycling-jacket/",
+    "what": "Shakedry shootout; C5 ~139 g in L"
+   }
+  ],
+  "note": "Hi-viz version. Packed size estimated from comparable Shakedry jackets.",
+  "aliases": [
+   "gore c5 shakedry",
+   "shakedry viz",
+   "rain jacket",
+   "waterproof",
+   "shell",
+   "hi viz jacket"
+  ]
+ },
+ {
+  "id": "rain-trousers",
+  "name": "Waterproof trousers",
+  "cat": "clothing",
+  "sub": "rain trousers",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 198,
+  "packed_cm": [
+   20.0,
+   12.0,
+   6.0
+  ],
+  "packed_l": 1.13,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#23272b",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "fork",
+    "why": "owner's pick: a fork cage dry bag holds rain gear that is only needed in sustained rain"
+   },
+   {
+    "at": "barroll",
+    "why": "near the top of the bar roll with the rain jacket, so both come out together"
+   },
+   {
+    "at": "seatpack",
+    "why": "top of the seat pack under the compression straps if there is no fork cargo"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cleverhiker.com/apparel/outdoor-research-helium-rain-pants-review/",
+    "what": "comparable OR Helium rain pants 5.8 oz"
+   },
+   {
+    "url": "https://www.outdoorgearlab.com/reviews/clothing-mens/rain-pants-men/outdoor-research-helium-pant",
+    "what": "comparable model reference"
+   }
+  ],
+  "note": "Owner's item: 7.0 oz (198 g) is his figure; generic lightweight 2.5-layer rain pants, in line with OR Helium (164 g). Packed size estimated from comparable pants rolled into their pocket/stuff sack.",
+  "aliases": [
+   "waterproof trousers",
+   "rain trousers",
+   "rain pants",
+   "waterproof pants",
+   "overtrousers",
+   "rain gear"
+  ]
+ },
+ {
+  "id": "or-helium-pant",
+  "name": "Outdoor Research Helium rain pants",
+  "cat": "clothing",
+  "sub": "rain trousers",
+  "generic": false,
+  "brand": "Outdoor Research",
+  "model": "Helium Rain Pants",
+  "weight_g": 164,
+  "packed_cm": [
+   18.0,
+   12.0,
+   6.0
+  ],
+  "packed_l": 1.02,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#2b2f33",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "with the rain jacket near the top of the bar roll"
+   },
+   {
+    "at": "fork",
+    "why": "fork cage dry bag with other wet-weather kit"
+   },
+   {
+    "at": "seatpack",
+    "why": "top of the seat pack, reachable without unpacking"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cleverhiker.com/apparel/outdoor-research-helium-rain-pants-review/",
+    "what": "weight 5.8 oz men's"
+   }
+  ],
+  "note": "Packed size estimated (packs into a small stuff sack).",
+  "aliases": [
+   "helium pants",
+   "or helium",
+   "rain pants",
+   "rain trousers",
+   "waterproof trousers"
+  ]
+ },
+ {
+  "id": "cycling-shorts",
+  "name": "Cycling shorts",
+  "cat": "clothing",
+  "sub": "bib shorts",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 198,
+  "packed_cm": [
+   22.0,
+   15.0,
+   4.0
+  ],
+  "packed_l": 1.32,
+  "compress": 0.4,
+  "archetype": "clothing_folded",
+  "color": "#1a1a1a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn every riding day"
+   },
+   {
+    "at": "seatpack",
+    "why": "a spare pair (if carried) goes deep in the seat pack with camp clothes"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cyclingnews.com/reviews/rapha-pro-team-powerweave-bibshorts-review/",
+    "what": "comparable Rapha Pro Team Powerweave bibs 170 g (S)"
+   }
+  ],
+  "note": "Owner's item: 7.0 oz (198 g) is his figure; generic padded shorts/bibs. Real bibs run ~170-200 g. Packed size estimated.",
+  "aliases": [
+   "cycling shorts",
+   "bibs",
+   "bib shorts",
+   "bike shorts",
+   "padded shorts",
+   "chamois"
+  ]
+ },
+ {
+  "id": "bib-rapha-pt",
+  "name": "Rapha Pro Team bib shorts",
+  "cat": "clothing",
+  "sub": "bib shorts",
+  "generic": false,
+  "brand": "Rapha",
+  "model": "Pro Team Powerweave Bib Shorts",
+  "weight_g": 170,
+  "packed_cm": [
+   22.0,
+   15.0,
+   4.0
+  ],
+  "packed_l": 1.32,
+  "compress": 0.4,
+  "archetype": "clothing_folded",
+  "color": "#1c1f2a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn"
+   },
+   {
+    "at": "seatpack",
+    "why": "a spare pair lives deep in the seat pack"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cyclingnews.com/reviews/rapha-pro-team-powerweave-bibshorts-review/",
+    "what": "weight 170 g, size S"
+   }
+  ],
+  "note": "Packed size estimated (folded bibs).",
+  "aliases": [
+   "rapha bibs",
+   "pro team bibs",
+   "bib shorts",
+   "bibs",
+   "cycling shorts"
+  ]
+ },
+ {
+  "id": "capilene-air",
+  "name": "Patagonia Capilene Air crew",
+  "cat": "clothing",
+  "sub": "base layer",
+  "generic": false,
+  "brand": "Patagonia",
+  "model": "Capilene Air Crew",
+  "weight_g": 190,
+  "packed_cm": [
+   22.0,
+   15.0,
+   6.0
+  ],
+  "packed_l": 1.98,
+  "compress": 0.5,
+  "archetype": "clothing_folded",
+  "color": "#5b6b73",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "owner's pick: the warm layer rides up front in the bar roll, reachable at a cold stop"
+   },
+   {
+    "at": "seatpack",
+    "why": "with the sleep clothes in the seat pack if it is a camp-only layer"
+   },
+   {
+    "at": "body",
+    "why": "worn under the jersey on cold mornings"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://geartrade.com/products/patagonia-capilene-air-crew-mens-1052493",
+    "what": "men's 6.7 oz (190 g), women's 5.6 oz; merino/poly blend"
+   }
+  ],
+  "note": "Owner's sheet: 6.5 oz. Catalogue weight is Patagonia's published 190 g (men's). Lofty zigzag knit, compresses well. Packed size estimated.",
+  "aliases": [
+   "capilene air",
+   "patagonia capilene air",
+   "base layer",
+   "baselayer",
+   "merino top",
+   "thermal top",
+   "long sleeve base layer"
+  ]
+ },
+ {
+  "id": "overshoes",
+  "name": "Waterproof overshoes",
+  "cat": "clothing",
+  "sub": "overshoes",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 170,
+  "packed_cm": [
+   18.0,
+   12.0,
+   5.0
+  ],
+  "packed_l": 0.85,
+  "compress": 0.4,
+  "archetype": "clothing_rolled",
+  "color": "#1b1b1b",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "fork",
+    "why": "owner's pick: rain kit that is only needed in sustained rain lives in the fork cage bag"
+   },
+   {
+    "at": "barroll",
+    "why": "with the rain jacket near the top of the bar roll"
+   },
+   {
+    "at": "framebag_half",
+    "why": "flat pair slides into a half frame bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.tradeinn.com/bikeinn/en/castelli-unlimited-overshoes/140307799/p",
+    "what": "comparable Castelli Unlimited overshoes 190 g"
+   }
+  ],
+  "note": "Owner's item: 6.0 oz (170 g) is his figure; generic waterproof overshoes (Castelli Unlimited 190 g is comparable). Packed size estimated.",
+  "aliases": [
+   "overshoes",
+   "shoe covers",
+   "waterproof overshoes",
+   "booties",
+   "toe covers"
+  ]
+ },
+ {
+  "id": "castelli-unltd",
+  "name": "Castelli Unlimited overshoes",
+  "cat": "clothing",
+  "sub": "overshoes",
+  "generic": false,
+  "brand": "Castelli",
+  "model": "Unlimited Shoecover",
+  "weight_g": 190,
+  "packed_cm": [
+   18.0,
+   12.0,
+   5.0
+  ],
+  "packed_l": 0.85,
+  "compress": 0.4,
+  "archetype": "clothing_rolled",
+  "color": "#141414",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "near the top of the bar roll with rain gear"
+   },
+   {
+    "at": "fork",
+    "why": "fork cage dry bag with the wet-weather kit"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.tradeinn.com/bikeinn/en/castelli-unlimited-overshoes/140307799/p",
+    "what": "weight 190 g"
+   }
+  ],
+  "note": "Packed size estimated.",
+  "aliases": [
+   "castelli overshoes",
+   "overshoes",
+   "shoe covers"
+  ]
+ },
+ {
+  "id": "casual-shorts",
+  "name": "Casual shorts",
+  "cat": "clothing",
+  "sub": "camp shorts",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 142,
+  "packed_cm": [
+   22.0,
+   15.0,
+   3.0
+  ],
+  "packed_l": 0.99,
+  "compress": 0.5,
+  "archetype": "clothing_folded",
+  "color": "#6d6a5c",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "camp clothes go deep in the seat pack: never needed while riding"
+   },
+   {
+    "at": "fork",
+    "why": "fork cage dry bag with the other camp clothes"
+   }
+  ],
+  "sources": [
+   {
+    "url": "data/seed/megafuck.tsv",
+    "what": "owner's measured weight 5.0 oz"
+   }
+  ],
+  "note": "Owner's item; generic with no specific product, so his 5.0 oz (142 g) is used. Packed size estimated.",
+  "aliases": [
+   "casual shorts",
+   "camp shorts",
+   "shorts",
+   "town shorts",
+   "baggies"
+  ]
+ },
+ {
+  "id": "glasses-case",
+  "name": "Glasses / sunglasses in case",
+  "cat": "clothing",
+  "sub": "eyewear",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 142,
+  "packed_cm": [
+   16.0,
+   7.0,
+   5.0
+  ],
+  "packed_l": 0.56,
+  "compress": 0.0,
+  "archetype": "box",
+  "color": "#2e2e2e",
+  "rigid": true,
+  "fragile": true,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "owner's pick: top tube bag, swap between clear and dark lenses without stopping for long"
+   },
+   {
+    "at": "framebag_half",
+    "why": "rigid case sits flat in the frame bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cyclingnews.com/reviews/oakley-sutro-lite-sunglasses-review/",
+    "what": "comparable sport sunglasses 32 g (glasses alone)"
+   },
+   {
+    "url": "data/seed/megafuck.tsv",
+    "what": "owner's measured weight 5.0 oz incl. case"
+   }
+  ],
+  "note": "Owner's item; glasses + hard case, generic, so his 5.0 oz (142 g) is used. Case dimensions estimated from a typical hard sunglasses case.",
+  "aliases": [
+   "glasses",
+   "eye glasses",
+   "sunglasses",
+   "glasses case",
+   "sunglasses case",
+   "specs"
+  ]
+ },
+ {
+  "id": "sutro-lite",
+  "name": "Oakley Sutro Lite sunglasses",
+  "cat": "clothing",
+  "sub": "sunglasses",
+  "generic": false,
+  "brand": "Oakley",
+  "model": "Sutro Lite",
+  "weight_g": 32,
+  "packed_cm": [
+   15.0,
+   6.0,
+   5.0
+  ],
+  "packed_l": 0.45,
+  "compress": 0.0,
+  "archetype": "box",
+  "color": "#1f1f1f",
+  "rigid": true,
+  "fragile": true,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn while riding"
+   },
+   {
+    "at": "toptube",
+    "why": "in their bag in the top tube bag after dark"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cyclingnews.com/reviews/oakley-sutro-lite-sunglasses-review/",
+    "what": "weight 31.5-32 g"
+   }
+  ],
+  "note": "Packed size is the glasses folded, estimated.",
+  "aliases": [
+   "sunglasses",
+   "oakley",
+   "sutro lite",
+   "shades",
+   "cycling glasses"
+  ]
+ },
+ {
+  "id": "tee-bike",
+  "name": "On-bike T-shirt",
+  "cat": "clothing",
+  "sub": "jersey",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 113,
+  "packed_cm": [
+   22.0,
+   15.0,
+   3.0
+  ],
+  "packed_l": 0.99,
+  "compress": 0.4,
+  "archetype": "clothing_folded",
+  "color": "#3f6f8f",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn every riding day"
+   },
+   {
+    "at": "seatpack",
+    "why": "if swapped mid-trip, the spare goes with the camp clothes"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rapha.cc/us/en/product/BET02XXBCB",
+    "what": "comparable technical riding T-shirt (Rapha Explore Technical T-shirt)"
+   },
+   {
+    "url": "data/seed/megafuck.tsv",
+    "what": "owner's measured weight 4.0 oz"
+   }
+  ],
+  "note": "Owner's item; generic technical tee worn as a jersey, so his 4.0 oz (113 g) is used (no weight published for the comparable). Packed size estimated.",
+  "aliases": [
+   "on bike t-shirt",
+   "t-shirt",
+   "tee",
+   "jersey",
+   "riding shirt",
+   "bike shirt",
+   "technical tee"
+  ]
+ },
+ {
+  "id": "tee-camp",
+  "name": "Camp T-shirt",
+  "cat": "clothing",
+  "sub": "camp shirt",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 113,
+  "packed_cm": [
+   22.0,
+   15.0,
+   3.0
+  ],
+  "packed_l": 0.99,
+  "compress": 0.4,
+  "archetype": "clothing_folded",
+  "color": "#8a8f7a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "camp clothes deep in the seat pack, dry and out of the way"
+   },
+   {
+    "at": "fork",
+    "why": "owner's pick: fork cage dry bag with the other camp clothes"
+   }
+  ],
+  "sources": [
+   {
+    "url": "data/seed/megafuck.tsv",
+    "what": "owner's measured weight 4.0 oz"
+   }
+  ],
+  "note": "Owner's item; generic, his 4.0 oz (113 g) used. Packed size estimated.",
+  "aliases": [
+   "camp t-shirt",
+   "camp shirt",
+   "t-shirt",
+   "tee",
+   "sleep shirt",
+   "clean shirt"
+  ]
+ },
+ {
+  "id": "socks-hiking",
+  "name": "Hiking socks",
+  "cat": "clothing",
+  "sub": "socks",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 113,
+  "packed_cm": [
+   14.0,
+   9.0,
+   5.0
+  ],
+  "packed_l": 0.49,
+  "compress": 0.4,
+  "archetype": "clothing_rolled",
+  "color": "#6b5b4b",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "dry camp socks live with the sleep clothes; keep them dry at all costs"
+   },
+   {
+    "at": "fork",
+    "why": "owner's pick: fork cage dry bag with camp clothes"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://darntough.com/products/womens-merino-wool-hiker-micro-crew-cushioned-midweight-hiking-socks",
+    "what": "comparable Darn Tough Hiker Micro Crew 3.24 oz (women's M)"
+   }
+  ],
+  "note": "Owner's item: 4.0 oz (113 g) is his figure; generic midweight merino socks (men's sizes run heavier than the 92 g women's M Darn Tough). Rolled pair, size estimated.",
+  "aliases": [
+   "hiking socks",
+   "socks",
+   "wool socks",
+   "camp socks",
+   "merino socks"
+  ]
+ },
+ {
+  "id": "socks-dt",
+  "name": "Darn Tough Hiker Micro Crew",
+  "cat": "clothing",
+  "sub": "socks",
+  "generic": false,
+  "brand": "Darn Tough",
+  "model": "Hiker Micro Crew Midweight",
+  "weight_g": 92,
+  "packed_cm": [
+   14.0,
+   9.0,
+   5.0
+  ],
+  "packed_l": 0.49,
+  "compress": 0.4,
+  "archetype": "clothing_rolled",
+  "color": "#4a5a4a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn while riding"
+   },
+   {
+    "at": "seatpack",
+    "why": "a dry spare pair with the camp clothes"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://darntough.com/products/womens-merino-wool-hiker-micro-crew-cushioned-midweight-hiking-socks",
+    "what": "3.2448 oz, women's M"
+   }
+  ],
+  "note": "Weight is women's M; men's sizes slightly heavier. Rolled pair, size estimated.",
+  "aliases": [
+   "darn tough",
+   "socks",
+   "hiking socks",
+   "merino socks",
+   "cycling socks"
+  ]
+ },
+ {
+  "id": "boxers",
+  "name": "Boxer shorts",
+  "cat": "clothing",
+  "sub": "underwear",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 85,
+  "packed_cm": [
+   15.0,
+   12.0,
+   3.0
+  ],
+  "packed_l": 0.42,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#2b3a55",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "clean underwear with the camp clothes, deep in the seat pack"
+   },
+   {
+    "at": "fork",
+    "why": "owner's pick: fork cage dry bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "data/seed/megafuck.tsv",
+    "what": "owner's measured weight 3.0 oz"
+   }
+  ],
+  "note": "Owner's item; generic, his 3.0 oz (85 g) used. Packed size estimated.",
+  "aliases": [
+   "boxer shorts",
+   "boxers",
+   "underwear",
+   "boxer briefs",
+   "pants",
+   "undies"
+  ]
+ },
+ {
+  "id": "gloves-short",
+  "name": "Cycling gloves, fingerless",
+  "cat": "clothing",
+  "sub": "gloves",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 57,
+  "packed_cm": [
+   18.0,
+   9.0,
+   3.0
+  ],
+  "packed_l": 0.38,
+  "compress": 0.3,
+  "archetype": "clothing_rolled",
+  "color": "#2a2a2a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn while riding"
+   },
+   {
+    "at": "framebag_half",
+    "why": "owner's pick: the pair not in use lives flat in the frame bag side pocket"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rei.com/product/875427/giro-dnd-bike-gloves-mens",
+    "what": "comparable glove type (Giro DND); no weight published"
+   },
+   {
+    "url": "data/seed/megafuck.tsv",
+    "what": "owner's measured weight 2.0 oz"
+   }
+  ],
+  "note": "Owner's item; generic, his 2.0 oz (57 g) used, no comparable published weight found. Packed size estimated.",
+  "aliases": [
+   "fingerless gloves",
+   "cycling gloves",
+   "mitts",
+   "track mitts",
+   "gloves",
+   "short finger gloves"
+  ]
+ },
+ {
+  "id": "gloves-full",
+  "name": "Cycling gloves, full finger",
+  "cat": "clothing",
+  "sub": "gloves",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 57,
+  "packed_cm": [
+   20.0,
+   9.0,
+   3.0
+  ],
+  "packed_l": 0.42,
+  "compress": 0.3,
+  "archetype": "clothing_rolled",
+  "color": "#2d2d2d",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn while riding"
+   },
+   {
+    "at": "framebag_half",
+    "why": "owner's pick: the spare pair lives flat in the frame bag"
+   },
+   {
+    "at": "toptube",
+    "why": "in the top tube bag for a cold descent"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.giro.com/product/dnd-glove/350020000200000009.html",
+    "what": "comparable full-finger glove (Giro DND); no weight published"
+   },
+   {
+    "url": "data/seed/megafuck.tsv",
+    "what": "owner's measured weight 2.0 oz"
+   }
+  ],
+  "note": "Owner's item; generic, his 2.0 oz (57 g) used. Packed size estimated.",
+  "aliases": [
+   "full finger gloves",
+   "long finger gloves",
+   "cycling gloves",
+   "gloves",
+   "mtb gloves"
+  ]
+ },
+ {
+  "id": "buff",
+  "name": "Buff",
+  "cat": "clothing",
+  "sub": "neck gaiter",
+  "generic": false,
+  "brand": "Buff",
+  "model": "Original EcoStretch",
+  "weight_g": 45,
+  "packed_cm": [
+   12.0,
+   8.0,
+   3.0
+  ],
+  "packed_l": 0.23,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#3c6e71",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "pocket",
+    "why": "neck tube for sun, dust or a chilly descent: keep it in a jersey pocket"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag, reachable while riding"
+   },
+   {
+    "at": "seatpack",
+    "why": "owner's pick: with the camp clothes as a sleeping hat"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.baselineequipment.com/buff-original-ecostretch-neckwear",
+    "what": "weight 45 g"
+   }
+  ],
+  "note": "Owner's sheet: 1.0 oz. Catalogue weight is the Buff Original EcoStretch published 45 g. Packed size estimated.",
+  "aliases": [
+   "buff",
+   "neck gaiter",
+   "neck tube",
+   "snood",
+   "headband",
+   "bandana"
+  ]
+ },
+ {
+  "id": "camp-shoes",
+  "name": "Camp shoes",
+  "cat": "clothing",
+  "sub": "camp shoes",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 227,
+  "packed_cm": [
+   27.0,
+   11.0,
+   6.0
+  ],
+  "packed_l": 1.78,
+  "compress": 0.1,
+  "archetype": "shoes",
+  "color": "#4a4a4a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "owner's pick: strapped on top of the seat pack under the compression straps, so they don't eat bag volume"
+   },
+   {
+    "at": "outside",
+    "why": "lashed under the bar roll straps or a cargo cage"
+   },
+   {
+    "at": "barroll",
+    "why": "flattened sandals slide into the bar roll alongside the tent"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cleverhiker.com/footwear/mens-xero-shoes-z-trail-ev-review/",
+    "what": "comparable sandal 5.4 oz each (men's 9)"
+   },
+   {
+    "url": "https://backpackinglight.com/forums/topic/4270/",
+    "what": "Crocs ~12 oz/pair (size 10)"
+   }
+  ],
+  "note": "Owner's item: 8.0 oz (227 g) is his figure; generic light camp shoes/sandals (flip-flop to minimal sandal class; Crocs ~340 g and Xero Z-Trail ~306 g per pair are heavier). Pair nested, size estimated.",
+  "aliases": [
+   "camp shoes",
+   "sandals",
+   "flip flops",
+   "camp sandals",
+   "crocs",
+   "slides"
+  ]
+ },
+ {
+  "id": "crocs",
+  "name": "Crocs Classic Clog",
+  "cat": "clothing",
+  "sub": "camp shoes",
+  "generic": false,
+  "brand": "Crocs",
+  "model": "Classic Clog",
+  "weight_g": 340,
+  "packed_cm": [
+   29.0,
+   12.0,
+   12.0
+  ],
+  "packed_l": 4.18,
+  "compress": 0.1,
+  "archetype": "shoes",
+  "color": "#3a5a40",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "outside",
+    "why": "strapped to the outside of the seat pack or bar roll: bulky but light and waterproof"
+   },
+   {
+    "at": "seatpack",
+    "why": "under the seat pack compression straps"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.crocs.com/c/classic-styles/classic-clogs/m10",
+    "what": "6 oz per shoe (M9/W11)"
+   },
+   {
+    "url": "https://backpackinglight.com/forums/topic/4270/",
+    "what": "size 10 ~12 oz per pair"
+   }
+  ],
+  "note": "Pair ~12 oz (340 g). Packed size estimated (pair nested). Too bulky to go inside a bag.",
+  "aliases": [
+   "crocs",
+   "clogs",
+   "camp shoes",
+   "croc"
+  ]
+ },
+ {
+  "id": "xero-ztrail",
+  "name": "Xero Z-Trail EV sandals",
+  "cat": "clothing",
+  "sub": "camp shoes",
+  "generic": false,
+  "brand": "Xero Shoes",
+  "model": "Z-Trail EV",
+  "weight_g": 306,
+  "packed_cm": [
+   27.0,
+   11.0,
+   5.0
+  ],
+  "packed_l": 1.49,
+  "compress": 0.2,
+  "archetype": "shoes",
+  "color": "#303030",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "flat sandals slip under the seat pack straps or inside against the back"
+   },
+   {
+    "at": "barroll",
+    "why": "flat pair slides alongside the tent in the bar roll"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cleverhiker.com/footwear/mens-xero-shoes-z-trail-ev-review/",
+    "what": "5.4 oz each, men's 9"
+   },
+   {
+    "url": "https://xeroshoes.com/products/ztrail-men",
+    "what": "maker page"
+   }
+  ],
+  "note": "Pair = 2 x 5.4 oz (men's 9). Packed size estimated.",
+  "aliases": [
+   "xero",
+   "z-trail",
+   "sandals",
+   "camp sandals",
+   "camp shoes"
+  ]
+ },
+ {
+  "id": "wallet",
+  "name": "Wallet",
+  "cat": "misc",
+  "sub": "wallet",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 113,
+  "packed_cm": [
+   11.0,
+   9.0,
+   2.0
+  ],
+  "packed_l": 0.2,
+  "compress": 0.1,
+  "archetype": "pouch",
+  "color": "#6b4f3a",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "pocket",
+    "why": "owner's pick: hip pack/jersey pocket, never left on the bike at a shop stop"
+   },
+   {
+    "at": "toptube",
+    "why": "in a top tube bag, zipped, when riding without a hip pack"
+   }
+  ],
+  "sources": [
+   {
+    "url": "data/seed/megafuck.tsv",
+    "what": "owner's measured weight 4.0 oz"
+   }
+  ],
+  "note": "Owner's item (sheet lists it under clothing). Generic, his 4.0 oz (113 g) used. Size estimated.",
+  "aliases": [
+   "wallet",
+   "cards",
+   "money",
+   "purse",
+   "billfold"
+  ]
+ },
+ {
+  "id": "helmet-aether",
+  "name": "Giro Aether MIPS helmet",
+  "cat": "clothing",
+  "sub": "helmet",
+  "generic": false,
+  "brand": "Giro",
+  "model": "Aether Spherical",
+  "weight_g": 280,
+  "packed_cm": [
+   27.0,
+   20.0,
+   16.0
+  ],
+  "packed_l": 8.64,
+  "compress": 0.0,
+  "archetype": "box",
+  "color": "#e8e8e8",
+  "rigid": true,
+  "fragile": true,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn while riding"
+   },
+   {
+    "at": "outside",
+    "why": "clipped to the bars or seat pack at camp"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.excelsports.com/giro-aether-spherical-helmet",
+    "what": "280 g size M (CPSC); ~260 g CE"
+   }
+  ],
+  "note": "Packed size estimated from typical road helmet dimensions. No helmet archetype in section 4; box used.",
+  "aliases": [
+   "helmet",
+   "bike helmet",
+   "lid",
+   "giro aether",
+   "cycling helmet"
+  ]
+ },
+ {
+  "id": "shoes-rx6",
+  "name": "Shimano RX6 gravel shoes",
+  "cat": "clothing",
+  "sub": "cycling shoes",
+  "generic": false,
+  "brand": "Shimano",
+  "model": "SH-RX600",
+  "weight_g": 576,
+  "packed_cm": [
+   29.0,
+   11.0,
+   10.0
+  ],
+  "packed_l": 3.19,
+  "compress": 0.1,
+  "archetype": "shoes",
+  "color": "#2c2f33",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn while riding"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://road.cc/content/review/shimano-rx6-shoes-309719",
+    "what": "576 g per pair, EU 43 (reviews range 536-621 g/pair)"
+   }
+  ],
+  "note": "Weight per pair in EU 43. Packed size estimated (one shoe; the pair is worn).",
+  "aliases": [
+   "cycling shoes",
+   "bike shoes",
+   "spd shoes",
+   "gravel shoes",
+   "shimano rx6",
+   "clipless shoes"
+  ]
+ },
+ {
+  "id": "arm-warmers",
+  "name": "Rapha Thermal arm warmers",
+  "cat": "clothing",
+  "sub": "arm warmers",
+  "generic": false,
+  "brand": "Rapha",
+  "model": "Thermal Arm Warmers",
+  "weight_g": 55,
+  "packed_cm": [
+   14.0,
+   8.0,
+   4.0
+  ],
+  "packed_l": 0.35,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#1d1d1d",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "pocket",
+    "why": "rolled into a jersey pocket once the morning warms up"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag, easy to pull out on the move"
+   },
+   {
+    "at": "barpocket",
+    "why": "in a bar roll accessory pocket"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://mikesbikes.com/products/rapha-thermal-arm-warmers",
+    "what": "weight 55 g"
+   }
+  ],
+  "note": "Packed size estimated (rolled pair).",
+  "aliases": [
+   "arm warmers",
+   "arm sleeves",
+   "armwarmers",
+   "sleeves"
+  ]
+ },
+ {
+  "id": "leg-warmers",
+  "name": "Assos leg warmers",
+  "cat": "clothing",
+  "sub": "leg warmers",
+  "generic": false,
+  "brand": "Assos",
+  "model": "Leg Warmers",
+  "weight_g": 38,
+  "packed_cm": [
+   18.0,
+   9.0,
+   5.0
+  ],
+  "packed_l": 0.64,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#141414",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "rolled into the top tube bag for easy morning/evening use"
+   },
+   {
+    "at": "barroll",
+    "why": "near the top of the bar roll"
+   },
+   {
+    "at": "pocket",
+    "why": "jersey pocket once shed"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cyclingnews.com/features/best-leg-warmers-for-cycling/",
+    "what": "Assos leg warmers 38 g as listed"
+   }
+  ],
+  "note": "Weight as listed by Cyclingnews; looks light for a full pair of leg warmers (typical thermal pairs are heavier), so treat with caution. Packed size estimated.",
+  "aliases": [
+   "leg warmers",
+   "legwarmers",
+   "knee warmers",
+   "leg sleeves"
+  ]
+ },
+ {
+  "id": "micro-puff",
+  "name": "Patagonia Micro Puff Hoody",
+  "cat": "clothing",
+  "sub": "synthetic jacket",
+  "generic": false,
+  "brand": "Patagonia",
+  "model": "Micro Puff Hoody",
+  "weight_g": 264,
+  "packed_cm": [
+   20.0,
+   13.0,
+   10.0
+  ],
+  "packed_l": 2.04,
+  "compress": 0.55,
+  "archetype": "stuffsack",
+  "color": "#3b4d61",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "the warm layer rides in the bar roll or its pocket so it comes out at every stop; synthetic tolerates damp"
+   },
+   {
+    "at": "seatpack",
+    "why": "top of the seat pack, first thing out at camp"
+   },
+   {
+    "at": "fork",
+    "why": "fork cage dry bag with other soft layers"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.switchbacktravel.com/reviews/patagonia-micro-puff-hoody",
+    "what": "9.3 oz / 264 g"
+   },
+   {
+    "url": "https://bikepacking.com/gear/patagonia-micro-puff-hoody-review/",
+    "what": "bikepacking review; stuffs into its pocket"
+   }
+  ],
+  "note": "Stuffs into its own pocket, about the size of a 24 oz bottle; packed dims estimated from that.",
+  "aliases": [
+   "micro puff",
+   "patagonia micro puff",
+   "synthetic puffy",
+   "puffy",
+   "insulated jacket",
+   "synthetic jacket"
+  ]
+ },
+ {
+  "id": "plasma-1000",
+  "name": "Montbell Plasma 1000 down jacket",
+  "cat": "clothing",
+  "sub": "down jacket",
+  "generic": false,
+  "brand": "Montbell",
+  "model": "Plasma 1000 Down Jacket",
+  "weight_g": 136,
+  "packed_cm": [
+   15.0,
+   10.0,
+   9.0
+  ],
+  "packed_l": 1.06,
+  "compress": 0.6,
+  "archetype": "stuffsack",
+  "color": "#b03a2e",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "with the sleep kit; tiny when stuffed"
+   },
+   {
+    "at": "barroll",
+    "why": "tucked into the bar roll for quick access at stops"
+   },
+   {
+    "at": "framebag_full",
+    "why": "stuffed small, fits the frame bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.montbell.com/us/en/products/detail/2301381",
+    "what": "maker page"
+   },
+   {
+    "url": "https://www.trailspace.com/gear/montbell/plasma-1000-down-jacket/",
+    "what": "4.8 oz advertised"
+   }
+  ],
+  "note": "4.8 oz advertised; one L measured 5.5 oz with stuff sack. Packed size estimated.",
+  "aliases": [
+   "plasma 1000",
+   "montbell plasma",
+   "down jacket",
+   "puffy",
+   "ultralight down jacket"
+  ]
+ },
+ {
+  "id": "r1-air-qz",
+  "name": "Patagonia R1 Air quarter-zip",
+  "cat": "clothing",
+  "sub": "fleece",
+  "generic": false,
+  "brand": "Patagonia",
+  "model": "R1 Air Zip-Neck",
+  "weight_g": 275,
+  "packed_cm": [
+   24.0,
+   16.0,
+   8.0
+  ],
+  "packed_l": 3.07,
+  "compress": 0.45,
+  "archetype": "clothing_folded",
+  "color": "#4f6d5a",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "mid layer for climbs in the cold: top of the bar roll"
+   },
+   {
+    "at": "seatpack",
+    "why": "on top of the seat pack contents"
+   },
+   {
+    "at": "body",
+    "why": "often worn on cold mornings"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cleverhiker.com/backpacking/patagonia-r1-air-fleece-jacket-review/",
+    "what": "quarter-zip 9.7 oz"
+   }
+  ],
+  "note": "Packed size estimated (rolled fleece).",
+  "aliases": [
+   "r1 air",
+   "patagonia r1",
+   "fleece",
+   "grid fleece",
+   "mid layer",
+   "midlayer"
+  ]
+ },
+ {
+  "id": "r1-air-hoody",
+  "name": "Patagonia R1 Air full-zip hoody",
+  "cat": "clothing",
+  "sub": "fleece",
+  "generic": false,
+  "brand": "Patagonia",
+  "model": "R1 Air Full-Zip Hoody",
+  "weight_g": 354,
+  "packed_cm": [
+   26.0,
+   18.0,
+   9.0
+  ],
+  "packed_l": 4.21,
+  "compress": 0.45,
+  "archetype": "clothing_folded",
+  "color": "#3d5566",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "camp warmth, top of the seat pack"
+   },
+   {
+    "at": "barroll",
+    "why": "in the bar roll dry bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.switchbacktravel.com/reviews/patagonia-r1-air-full-zip-hoody",
+    "what": "men's M 12.5 oz"
+   }
+  ],
+  "note": "Packed size estimated.",
+  "aliases": [
+   "r1 air hoody",
+   "fleece hoody",
+   "fleece",
+   "hoodie",
+   "mid layer"
+  ]
+ },
+ {
+  "id": "houdini",
+  "name": "Patagonia Houdini wind jacket",
+  "cat": "clothing",
+  "sub": "wind shell",
+  "generic": false,
+  "brand": "Patagonia",
+  "model": "Houdini Jacket",
+  "weight_g": 105,
+  "packed_cm": [
+   10.0,
+   9.0,
+   7.0
+  ],
+  "packed_l": 0.49,
+  "compress": 0.5,
+  "archetype": "stuffsack",
+  "color": "#2f6690",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "pocket",
+    "why": "packs to apple size in its own chest pocket; lives in a jersey pocket"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag for descents"
+   },
+   {
+    "at": "barpocket",
+    "why": "bar roll accessory pocket"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cleverhiker.com/apparel/patagonia-houdini-jacket-review/",
+    "what": "3.7 oz, packs into chest pocket, apple-sized"
+   }
+  ],
+  "note": "Packed dims estimated from 'size of an apple'.",
+  "aliases": [
+   "houdini",
+   "wind jacket",
+   "windbreaker",
+   "wind shell",
+   "gilet",
+   "windproof"
+  ]
+ },
+ {
+  "id": "mld-rain-mitts",
+  "name": "MLD eVent rain mitts",
+  "cat": "clothing",
+  "sub": "rain mitts",
+  "generic": false,
+  "brand": "Mountain Laurel Designs",
+  "model": "eVent Rain Mitts",
+  "weight_g": 27,
+  "packed_cm": [
+   12.0,
+   8.0,
+   2.0
+  ],
+  "packed_l": 0.19,
+  "compress": 0.5,
+  "archetype": "clothing_folded",
+  "color": "#3a3a3a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "go on over gloves when rain sets in; keep them where you can grab them"
+   },
+   {
+    "at": "barroll",
+    "why": "with the rain jacket at the top of the bar roll"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://mountainlaureldesigns.com/product/event-rain-mitts/",
+    "what": "S 25 g / M 27 g / L 29 g"
+   }
+  ],
+  "note": "Size M. Packed size estimated.",
+  "aliases": [
+   "rain mitts",
+   "overmitts",
+   "waterproof mitts",
+   "rain gloves",
+   "mitt shells"
+  ]
+ }
+]

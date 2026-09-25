@@ -65,7 +65,7 @@ function specRow(key, value, { ok = false, warn = false } = {}) {
   return r;
 }
 
-export function initBagSheet(app, { openCatalogue, sync, notify } = {}) {
+export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onClose } = {}) {
   /**
    * Draw the sheet for whatever is currently in `uiSlot`. Called again after a
    * colourway change so the swatch ring and the hero move together — cheaper
@@ -83,6 +83,13 @@ export function initBagSheet(app, { openCatalogue, sync, notify } = {}) {
     body.replaceChildren();
 
     const pk = el('div', 'bagsheet');
+
+    // ---- inside ------------------------------------------------------------
+    // Packing: what is in this bag, first, because "what's in there?" is the
+    // question. Only when there is gear in play; otherwise the sheet is the
+    // product sheet it always was.
+    const inside = insideFor?.(uiSlot, pk);
+    if (inside) pk.append(inside);
 
     // ---- hero --------------------------------------------------------------
     const hero = el('div', 'bs-hero');
@@ -166,6 +173,9 @@ export function initBagSheet(app, { openCatalogue, sync, notify } = {}) {
     const rows = [
       specRow('Capacity', litersOf(product)),
       specRow('Dimensions', dimsText(product)),
+      // Weight, honestly: a figure the maker, a retailer or a review published
+      // reads plain; an estimate says so.
+      product?.weight_g ? specRow('Weight', `${product.weight_g} g${['maker', 'retailer', 'review', 'size-interpolated'].includes(product.weight_basis) ? '' : ' est.'}`) : null,
       specRow('Size', size && !sizeIsVolume(product) ? size : null),
       specRow('Closure', f.closure),
       specRow('Shape', f.shape),
@@ -239,6 +249,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify } = {}) {
         kind: 'detail',
         title: SLOTS[uiSlot]?.label || 'Bag',
         render: (body, h) => paint(body, uiSlot, h),
+        onClose: () => onClose?.(),
       });
       return handle;
     },

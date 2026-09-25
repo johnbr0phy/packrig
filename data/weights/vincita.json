@@ -1,0 +1,71 @@
+{
+ "brand": "Vincita",
+ "products": [
+  {
+   "line": "Strada",
+   "name": "Strada Bikepacking Handlebar Bag",
+   "size": "8.9L",
+   "weight_g": 350,
+   "basis": "family-estimate",
+   "source": "https://vincita.cc",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~9 L handlebar bags with harness straps. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Strada",
+   "name": "Strada Bikepacking Saddle Bag",
+   "size": "9L",
+   "weight_g": 350,
+   "basis": "family-estimate",
+   "source": "https://vincita.cc",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the dry-bag seat pack anchor (9-16 L 300-600 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Strada",
+   "name": "Strada Bikepacking Frame Bag",
+   "size": "2.6L",
+   "weight_g": 170,
+   "basis": "family-estimate",
+   "source": "https://vincita.cc",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the half frame bag anchor (150-300 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Strada",
+   "name": "Strada Bikepacking Top Tube Bag",
+   "size": "0.8L",
+   "weight_g": 110,
+   "basis": "family-estimate",
+   "source": "https://vincita.cc",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from top tube bag anchor (0.5-1 L ~90-170 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Everywhere",
+   "name": "Everywhere Saddle Bag L",
+   "size": "L (10L)",
+   "weight_g": 400,
+   "basis": "family-estimate",
+   "source": "https://vincita.cc",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the dry-bag seat pack anchor (9-16 L 300-600 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Everywhere",
+   "name": "Everywhere Handlebar Bag",
+   "size": "5L",
+   "weight_g": 250,
+   "basis": "family-estimate",
+   "source": "https://vincita.cc",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~5 L handlebar bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

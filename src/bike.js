@@ -1040,7 +1040,10 @@ function buildRearRack(P, M, g) {
 function buildFrontRack(P, M) {
   const rack = new THREE.Group();
   rack.name = 'frontRack';
-  const topY = P.frontAxle.y + 360;
+  // deck clears the tyre like the rear rack does: P.tireR is the tyre's tube
+  // centre, so the crown is ~tireR + 22 on a 45 mm tyre. The old fixed 360
+  // left ~4 mm, and a rando bag's base sat ~9 mm off the tread
+  const topY = P.frontAxle.y + Math.max(360, P.tireR + 45);
   for (const side of [1, -1]) {
     const z = side * 55;
     rack.add(tubeBetween(v3(P.frontAxle.x, P.frontAxle.y + 8, side * 52), v3(P.frontAxle.x - 15, topY, z), 4.5, 4.5, M.aluDark, 10));

@@ -1,0 +1,82 @@
+{
+  "brand": "Two Wheel Gear",
+  "products": [
+    {
+      "line": "Alpha",
+      "name": "Alpha Handlebar Bag",
+      "size": "6L",
+      "weight_g": 650,
+      "basis": "family-estimate",
+      "source": "https://twowheelgear.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 6L handlebar bag including quick-release bar mount. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Dayliner",
+      "name": "Dayliner Handlebar & Trunk Box Bag",
+      "size": "20L",
+      "weight_g": 1100,
+      "basis": "family-estimate",
+      "source": "https://twowheelgear.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 20L box-style bag with rigid structure and mount. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Commute",
+      "name": "Commute Top Tube Bag",
+      "size": "1L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://twowheelgear.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 1L top tube bag, heavier commuter build. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Commute",
+      "name": "Commute Seat Pack",
+      "size": "1.5L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://twowheelgear.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 1.5L seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Pannier Backpack Convertible",
+      "name": "Pannier Backpack Convertible 2.1 PLUS",
+      "size": "30L",
+      "weight_g": 1400,
+      "basis": "family-estimate",
+      "source": "https://twowheelgear.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 30L convertible pannier/backpack with harness and hooks. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Pannier Backpack Convertible",
+      "name": "Pannier Backpack Convertible 2.0 LITE",
+      "size": "22L",
+      "weight_g": 1100,
+      "basis": "family-estimate",
+      "source": "https://twowheelgear.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 22L lighter convertible pannier/backpack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Inverter",
+      "name": "Inverter Pannier Backpack Convertible",
+      "size": "24L",
+      "weight_g": 1200,
+      "basis": "family-estimate",
+      "source": "https://twowheelgear.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 24L convertible pannier/backpack. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}
