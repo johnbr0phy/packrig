@@ -19,7 +19,7 @@
 import puppeteer from 'puppeteer-core';
 
 const BASE = 'http://localhost:8735';
-const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const CHROME = (await import('./lib/chrome.mjs')).CHROME;
 const argv = process.argv.slice(2);
 const KITS = +(argv[argv.indexOf('--kits') + 1] || 400) || 400;
 

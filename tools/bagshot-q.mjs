@@ -35,6 +35,11 @@ const alive = (pid) => { try { process.kill(pid, 0); return true; } catch { retu
 /** Free + inactive pages, in MB. Inactive counts: macOS reclaims it on demand. */
 function freeMB() {
   try {
+    // Linux: MemAvailable already counts reclaimable cache
+    if (existsSync('/proc/meminfo')) {
+      const kb = +(readFileSync('/proc/meminfo', 'utf8').match(/MemAvailable:\s+(\d+)/)?.[1] || 0);
+      if (kb) return Math.round(kb / 1024);
+    }
     const out = execSync('vm_stat', { encoding: 'utf8' });
     const size = +(out.match(/page size of (\d+)/)?.[1] || 4096);
     const pages = (k) => +(out.match(new RegExp(`Pages ${k}:\\s+(\\d+)`))?.[1] || 0);

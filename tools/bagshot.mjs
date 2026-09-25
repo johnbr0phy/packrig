@@ -18,7 +18,7 @@ import puppeteer from 'puppeteer-core';
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 
 const BASE = 'http://localhost:8735';
-const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const CHROME = (await import('./lib/chrome.mjs')).CHROME;
 const root = new URL('../', import.meta.url).pathname;
 
 // ---- args ----------------------------------------------------------------

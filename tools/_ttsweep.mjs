@@ -10,7 +10,7 @@
  * absolute minimum, and compares it with the crown line through both anchors.
  */
 import puppeteer from 'puppeteer-core';
-const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--enable-unsafe-swiftshader']});
+const b=await puppeteer.launch({executablePath:(await import('./lib/chrome.mjs')).CHROME,headless:true,args:['--enable-unsafe-swiftshader']});
 const p=await b.newPage(); await p.setViewport({width:1000,height:700});
 await p.goto(process.argv[2],{waitUntil:'domcontentloaded',timeout:60000});
 await p.waitForFunction('window.__READY_DONE === true',{timeout:60000}).catch(()=>{});

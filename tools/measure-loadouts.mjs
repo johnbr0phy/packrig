@@ -27,7 +27,7 @@ const OUT = join(root, 'data/loadouts.json');
 const loadouts = JSON.parse(readFileSync(OUT, 'utf8'));
 
 const b = await puppeteer.launch({
-  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  executablePath: (await import('./lib/chrome.mjs')).CHROME,
   headless: true,
   args: ['--enable-unsafe-swiftshader', '--disable-dev-shm-usage'],
 });

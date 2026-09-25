@@ -8,6 +8,9 @@ import { dirname } from 'node:path';
 const root = new URL('../', import.meta.url).pathname;
 const args = process.argv.slice(2);
 const dry = args.includes('--dry');
+// --no-rewrite: restore the local photo cache (assets/products is gitignored)
+// without pointing brands.json at files the live site cannot serve.
+const noRewrite = args.includes('--no-rewrite');
 const pi = args.indexOf('--per');
 const PER = pi >= 0 ? parseInt(args[pi + 1], 10) || 4 : 4;   // images kept per product
 
@@ -66,13 +69,13 @@ await Promise.all(Array.from({ length: CONC }, worker));
 process.stdout.write('\r');
 
 // rewrite the catalogue to point at what actually landed
-for (const j of jobs) {
+for (const j of noRewrite ? [] : jobs) {
   const got = j.local.filter((f) => !f.dead && existsSync(root + f.path));
   if (!got.length) continue;
   j.p.images_remote = j.remote;
   j.p.images = got.map((f) => f.path);
 }
-writeFileSync(root + 'data/brands.json', JSON.stringify(brands, null, 1));
+if (!noRewrite) writeFileSync(root + 'data/brands.json', JSON.stringify(brands, null, 1));
 if (failures.length) writeFileSync(root + 'data/image-failures.json', JSON.stringify(failures, null, 1));
 console.log(`downloaded ${ok}, already had ${skip}, failed ${fail}`);
 console.log(`on disk: ${(bytes / 1024 / 1024).toFixed(1)} MB in assets/products/`);

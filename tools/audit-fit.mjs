@@ -16,7 +16,7 @@ brands.forEach((b, bi) => b.products.forEach((p, pi) => {
 // Same WebGL-context leak as the shooter: past a couple of hundred loads Chrome
 // starts refusing contexts and every later job fails. Recycle the browser.
 const launch = () => puppeteer.launch({
-  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
+  executablePath: (await import('./lib/chrome.mjs')).CHROME, headless: true });
 let browser = await launch();
 let page = await browser.newPage();
 const out = [];

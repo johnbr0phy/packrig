@@ -29,7 +29,7 @@ const list = limit ? jobs.slice(0, limit) : jobs;
 console.log(`shooting ${list.length} products`);
 
 const launch = () => puppeteer.launch({
-  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  executablePath: (await import('./lib/chrome.mjs')).CHROME,
   headless: true, args: ['--hide-scrollbars', '--force-device-scale-factor=2', '--window-size=1100,800'],
 });
 const newPage = async (b) => {

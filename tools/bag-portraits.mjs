@@ -30,7 +30,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const CHROME = (await import('./lib/chrome.mjs')).CHROME;
 /*
  * `?shot=1` is not optional. It sets `preserveDrawingBuffer` on the renderer,
  * and without it a screenshot of the WebGL canvas returns whatever frame the

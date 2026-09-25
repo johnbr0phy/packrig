@@ -1,0 +1,1800 @@
+[
+ {
+  "brand": "Revelate Designs",
+  "slug": "revelate-designs",
+  "products": [
+   {
+    "line": "Spinelock",
+    "name": "Spinelock",
+    "size": "10L",
+    "slot": "seatpack",
+    "liters": 10,
+    "src": "https://revelatedesigns.com/product/spinelock10/"
+   },
+   {
+    "line": "Spinelock",
+    "name": "Spinelock",
+    "size": "16L",
+    "slot": "seatpack",
+    "liters": 16,
+    "src": "https://revelatedesigns.com/product/spinelock16/"
+   },
+   {
+    "line": "Terrapin",
+    "name": "Terrapin System",
+    "size": "8L",
+    "slot": "seatpack",
+    "liters": 8,
+    "src": "https://revelatedesigns.com/product/terrapin8l/"
+   },
+   {
+    "line": "Terrapin",
+    "name": "Terrapin System",
+    "size": "14L",
+    "slot": "seatpack",
+    "liters": 14,
+    "src": "https://revelatedesigns.com/product/terrapinsystem14l/"
+   },
+   {
+    "line": "Shrew",
+    "name": "Shrew",
+    "size": "2.25L",
+    "slot": "saddlebag",
+    "liters": 2.25,
+    "src": "https://revelatedesigns.com/product/shrew/"
+   },
+   {
+    "line": "Shrew",
+    "name": "Ultra Shrew",
+    "size": "2.25L",
+    "slot": "saddlebag",
+    "liters": 2.25,
+    "src": "https://revelatedesigns.com/product/ultra-shrew/"
+   },
+   {
+    "line": "Stoat",
+    "name": "Stoat Seat Bag",
+    "size": "0.8L",
+    "slot": "saddlebag",
+    "liters": 0.8,
+    "src": "https://revelatedesigns.com/product/stoat/"
+   },
+   {
+    "line": "Sweetroll",
+    "name": "Sweetroll",
+    "size": "11L",
+    "slot": "barroll",
+    "liters": 11,
+    "src": "https://revelatedesigns.com/product/sweetroll/"
+   },
+   {
+    "line": "Sweetroll",
+    "name": "Sweetroll",
+    "size": "15L",
+    "slot": "barroll",
+    "liters": 15,
+    "src": "https://revelatedesigns.com/product/sweetroll/"
+   },
+   {
+    "line": "Saltyroll",
+    "name": "Saltyroll",
+    "size": "12L",
+    "slot": "barroll",
+    "liters": 12,
+    "src": "https://revelatedesigns.com/product/saltyroll/"
+   },
+   {
+    "line": "Pronghorn",
+    "name": "Pronghorn",
+    "size": "SM",
+    "slot": "barroll",
+    "liters": 7.5,
+    "src": "https://revelatedesigns.com/product/pronghorn/"
+   },
+   {
+    "line": "Pronghorn",
+    "name": "Pronghorn",
+    "size": "MD",
+    "slot": "barroll",
+    "liters": 11,
+    "src": "https://revelatedesigns.com/product/pronghorn/"
+   },
+   {
+    "line": "Pronghorn",
+    "name": "Pronghorn",
+    "size": "LG",
+    "slot": "barroll",
+    "liters": 23,
+    "src": "https://revelatedesigns.com/product/pronghorn/"
+   },
+   {
+    "line": "Harness",
+    "name": "Hammerhead Harness",
+    "size": "One Size",
+    "slot": "barroll",
+    "liters": 0,
+    "src": "https://revelatedesigns.com/product/hammerhead-harness/"
+   },
+   {
+    "line": "Egress",
+    "name": "Egress Pocket",
+    "size": "2.8L",
+    "slot": "barbag",
+    "liters": 2.8,
+    "src": "https://revelatedesigns.com/product/egress-pocket/"
+   },
+   {
+    "line": "Scrambler",
+    "name": "Scrambler Pocket",
+    "size": "3.5L",
+    "slot": "barpocket",
+    "liters": 3.5,
+    "src": "https://revelatedesigns.com/product/scrambler-pocket/"
+   },
+   {
+    "line": "Campamocha",
+    "name": "Campamocha",
+    "size": "2.3L",
+    "slot": "barbag",
+    "liters": 2.3,
+    "src": "https://revelatedesigns.com/product/campamocha/"
+   },
+   {
+    "line": "Speedbag",
+    "name": "Speedbag",
+    "size": "1L",
+    "slot": "barbag",
+    "liters": 1,
+    "src": "https://revelatedesigns.com/product/speedbag/"
+   },
+   {
+    "line": "Pitchfork",
+    "name": "Pitchfork Aerobar System",
+    "size": "One Size",
+    "slot": "barbag",
+    "liters": 8,
+    "src": "https://revelatedesigns.com/product/pitchfork/"
+   },
+   {
+    "line": "Mag-Tank",
+    "name": "Mag-Tank",
+    "size": "0.5L",
+    "slot": "toptube",
+    "liters": 0.9,
+    "src": "https://revelatedesigns.com/product/mag-tank/"
+   },
+   {
+    "line": "Mag-Tank",
+    "name": "Mag-Tank FastTrack",
+    "size": "0.5L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://revelatedesigns.com/product/mag-tank-fasttrack/"
+   },
+   {
+    "line": "Mag-Tank",
+    "name": "Mag-Tank 2000",
+    "size": "1.4L",
+    "slot": "toptube",
+    "liters": 1.4,
+    "src": "https://revelatedesigns.com/product/magtank2000/"
+   },
+   {
+    "line": "Mag-Tank",
+    "name": "Legacy Mag-Tank",
+    "size": "0.9L",
+    "slot": "toptube",
+    "liters": 0.9,
+    "src": "https://revelatedesigns.com/product/magtank/"
+   },
+   {
+    "line": "Jerrycan",
+    "name": "Jerrycan",
+    "size": "Regular",
+    "slot": "toptube_rear",
+    "liters": 0.6,
+    "src": "https://revelatedesigns.com/product/jerrycan/"
+   },
+   {
+    "line": "Jerrycan",
+    "name": "Jerrycan",
+    "size": "Bent",
+    "slot": "toptube_rear",
+    "liters": 0.6,
+    "src": "https://revelatedesigns.com/product/jerrycan/"
+   },
+   {
+    "line": "Gas Tank",
+    "name": "Gas Tank",
+    "size": "1.1L",
+    "slot": "toptube",
+    "liters": 1.1,
+    "src": "https://revelatedesigns.com/product/gastank/"
+   },
+   {
+    "line": "Extended Play",
+    "name": "Extended Play",
+    "size": "14in",
+    "slot": "toptube",
+    "liters": 1.5,
+    "src": "https://revelatedesigns.com/product/extended-play/"
+   },
+   {
+    "line": "Extended Play",
+    "name": "Extended Play",
+    "size": "18in",
+    "slot": "toptube",
+    "liters": 2,
+    "src": "https://revelatedesigns.com/product/extended-play/"
+   },
+   {
+    "line": "Feedbag",
+    "name": "Mountain Feedbag",
+    "size": "1L",
+    "slot": "stembag",
+    "liters": 1,
+    "src": "https://revelatedesigns.com/product/mountainfeedbag/"
+   },
+   {
+    "line": "Ranger",
+    "name": "Ranger Frame Bag",
+    "size": "SM",
+    "slot": "framebag_full",
+    "liters": 6,
+    "src": "https://revelatedesigns.com/product/ranger/"
+   },
+   {
+    "line": "Ranger",
+    "name": "Ranger Frame Bag",
+    "size": "MD",
+    "slot": "framebag_full",
+    "liters": 7.3,
+    "src": "https://revelatedesigns.com/product/ranger/"
+   },
+   {
+    "line": "Ranger",
+    "name": "Ranger Frame Bag",
+    "size": "LG",
+    "slot": "framebag_full",
+    "liters": 8.6,
+    "src": "https://revelatedesigns.com/product/ranger/"
+   },
+   {
+    "line": "Ranger",
+    "name": "Ranger Frame Bag",
+    "size": "XL",
+    "slot": "framebag_full",
+    "liters": 10,
+    "src": "https://revelatedesigns.com/product/ranger/"
+   },
+   {
+    "line": "Ripio",
+    "name": "Ripio Frame Bag",
+    "size": "SM",
+    "slot": "framebag_full",
+    "liters": 5,
+    "src": "https://revelatedesigns.com/product/ripio/"
+   },
+   {
+    "line": "Ripio",
+    "name": "Ripio Frame Bag",
+    "size": "MD",
+    "slot": "framebag_full",
+    "liters": 6.3,
+    "src": "https://revelatedesigns.com/product/ripio/"
+   },
+   {
+    "line": "Ripio",
+    "name": "Ripio Frame Bag",
+    "size": "LG",
+    "slot": "framebag_full",
+    "liters": 7.7,
+    "src": "https://revelatedesigns.com/product/ripio/"
+   },
+   {
+    "line": "Ripio",
+    "name": "Ripio Frame Bag",
+    "size": "XL",
+    "slot": "framebag_full",
+    "liters": 9,
+    "src": "https://revelatedesigns.com/product/ripio/"
+   },
+   {
+    "line": "Rifter",
+    "name": "Rifter Frame Bag",
+    "size": "SM",
+    "slot": "framebag_full",
+    "liters": 4.5,
+    "src": "https://revelatedesigns.com/product/rifter/"
+   },
+   {
+    "line": "Rifter",
+    "name": "Rifter Frame Bag",
+    "size": "MD",
+    "slot": "framebag_full",
+    "liters": 5.5,
+    "src": "https://revelatedesigns.com/product/rifter/"
+   },
+   {
+    "line": "Rifter",
+    "name": "Rifter Frame Bag",
+    "size": "LG",
+    "slot": "framebag_full",
+    "liters": 7,
+    "src": "https://revelatedesigns.com/product/rifter/"
+   },
+   {
+    "line": "Rifter",
+    "name": "Rifter Frame Bag",
+    "size": "XL",
+    "slot": "framebag_full",
+    "liters": 8.5,
+    "src": "https://revelatedesigns.com/product/rifter/"
+   },
+   {
+    "line": "Tangle",
+    "name": "Tangle Frame Bag",
+    "size": "XS",
+    "slot": "framebag_half",
+    "liters": 3,
+    "src": "https://revelatedesigns.com/product/tangleframebag/"
+   },
+   {
+    "line": "Tangle",
+    "name": "Tangle Frame Bag",
+    "size": "SM",
+    "slot": "framebag_half",
+    "liters": 3.5,
+    "src": "https://revelatedesigns.com/product/tangleframebag/"
+   },
+   {
+    "line": "Tangle",
+    "name": "Tangle Frame Bag",
+    "size": "MD",
+    "slot": "framebag_half",
+    "liters": 4,
+    "src": "https://revelatedesigns.com/product/tangleframebag/"
+   },
+   {
+    "line": "Tangle",
+    "name": "Tangle Frame Bag",
+    "size": "LG",
+    "slot": "framebag_half",
+    "liters": 6,
+    "src": "https://revelatedesigns.com/product/tangleframebag/"
+   },
+   {
+    "line": "Cranny",
+    "name": "Cranny Frame Bag",
+    "size": "0.6L",
+    "slot": "framebag_half",
+    "liters": 0.6,
+    "src": "https://revelatedesigns.com/product/cranny/"
+   },
+   {
+    "line": "Nook",
+    "name": "Nook Frame Bag",
+    "size": "1.2L",
+    "slot": "framebag_half",
+    "liters": 1.2,
+    "src": "https://revelatedesigns.com/product/nook/"
+   },
+   {
+    "line": "Joey",
+    "name": "Joey Downtube Bag",
+    "size": "1L",
+    "slot": "downtube",
+    "liters": 1,
+    "src": "https://revelatedesigns.com/product/joey-downtube-bag/"
+   },
+   {
+    "line": "Joey",
+    "name": "Joey Downtube Bag",
+    "size": "2L",
+    "slot": "downtube",
+    "liters": 2,
+    "src": "https://revelatedesigns.com/product/joey-downtube-bag/"
+   },
+   {
+    "line": "Joey",
+    "name": "Ultra Joey Downtube Bag",
+    "size": "2L",
+    "slot": "downtube",
+    "liters": 2,
+    "src": "https://revelatedesigns.com/product/ultra-joey-downtube-bag/"
+   },
+   {
+    "line": "Polecat",
+    "name": "Polecat",
+    "size": "3.5L",
+    "slot": "forkbag",
+    "liters": 3.5,
+    "src": "https://revelatedesigns.com/product/polecat/"
+   },
+   {
+    "line": "Rohn",
+    "name": "Rohn Rack Bag",
+    "size": "37L max",
+    "slot": "trunk",
+    "liters": 37,
+    "src": "https://revelatedesigns.com/product/rohn-rack-bag/"
+   },
+   {
+    "line": "Portage",
+    "name": "Portage Panniers",
+    "size": "10L",
+    "slot": "pannier",
+    "liters": 10,
+    "src": "https://revelatedesigns.com/product/portage-panniers/"
+   },
+   {
+    "line": "Portage",
+    "name": "Portage Panniers",
+    "size": "14L",
+    "slot": "pannier",
+    "liters": 14,
+    "src": "https://revelatedesigns.com/product/portage-panniers/"
+   },
+   {
+    "line": "Portage",
+    "name": "Portage Panniers",
+    "size": "18L",
+    "slot": "pannier",
+    "liters": 18,
+    "src": "https://revelatedesigns.com/product/portage-panniers/"
+   },
+   {
+    "line": "Nano",
+    "name": "Nano Panniers",
+    "size": "11L each",
+    "slot": "pannier",
+    "liters": 11,
+    "src": "https://revelatedesigns.com/product/nanopanniers/"
+   }
+  ]
+ },
+ {
+  "brand": "Restrap",
+  "slug": "restrap",
+  "products": [
+   {
+    "line": "Adventure",
+    "name": "Saddle Bag",
+    "size": "8L",
+    "slot": "seatpack",
+    "liters": 8,
+    "src": "https://restrap.com/products/saddle-bag-holster-dry-bag-8-litres-black-black"
+   },
+   {
+    "line": "Adventure",
+    "name": "Saddle Bag",
+    "size": "14L",
+    "slot": "seatpack",
+    "liters": 14,
+    "src": "https://restrap.com/products/saddle-bag-14-litres"
+   },
+   {
+    "line": "Adventure",
+    "name": "Saddle Bag",
+    "size": "18L",
+    "slot": "seatpack",
+    "liters": 18,
+    "src": "https://restrap.com/products/saddle-bag-18-litres"
+   },
+   {
+    "line": "Race",
+    "name": "Race Saddle Bag",
+    "size": "7L",
+    "slot": "seatpack",
+    "liters": 7,
+    "src": "https://restrap.com/products/race-saddle-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Saddle Pack",
+    "size": "2.5L",
+    "slot": "saddlebag",
+    "liters": 2.5,
+    "src": "https://restrap.com/products/saddle-pack-2-5l"
+   },
+   {
+    "line": "Adventure",
+    "name": "Saddle Pack",
+    "size": "4.5L",
+    "slot": "seatpack",
+    "liters": 4.5,
+    "src": "https://restrap.com/products/saddle-pack-4-5l"
+   },
+   {
+    "line": "Adventure",
+    "name": "Bar Pack",
+    "size": "10L",
+    "slot": "barbag",
+    "liters": 10,
+    "src": "https://restrap.com/products/bar-pack"
+   },
+   {
+    "line": "Adventure",
+    "name": "Holster Bar Bag",
+    "size": "14L",
+    "slot": "barroll",
+    "liters": 14,
+    "src": "https://restrap.com/products/holster-bar-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Holster Bar Bag Plus",
+    "size": "18L",
+    "slot": "barroll",
+    "liters": 18,
+    "src": "https://restrap.com/products/holster-bar-bag-plus"
+   },
+   {
+    "line": "Race",
+    "name": "Race Bar Bag - Drop Bar",
+    "size": "7L",
+    "slot": "barroll",
+    "liters": 7,
+    "src": "https://restrap.com/products/race-bar-bag-drop-bar"
+   },
+   {
+    "line": "Race",
+    "name": "Race Bar Bag - Flat Bar",
+    "size": "7L",
+    "slot": "barroll",
+    "liters": 7,
+    "src": "https://restrap.com/products/race-bar-bag-flat-bar"
+   },
+   {
+    "line": "Race",
+    "name": "Race Bar Bag - Aero",
+    "size": "7L",
+    "slot": "barroll",
+    "liters": 7,
+    "src": "https://restrap.com/products/race-aero-bar-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Canister Bag",
+    "size": "1.5L",
+    "slot": "barbag",
+    "liters": 1.5,
+    "src": "https://restrap.com/products/canister-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Rolltop Canister Bag",
+    "size": "4L",
+    "slot": "barbag",
+    "liters": 4,
+    "src": "https://restrap.com/products/rolltop-canister-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Frame Bag",
+    "size": "Small",
+    "slot": "framebag_half",
+    "liters": 2.5,
+    "src": "https://restrap.com/products/frame-bag-small"
+   },
+   {
+    "line": "Adventure",
+    "name": "Frame Bag",
+    "size": "Medium",
+    "slot": "framebag_half",
+    "liters": 3.5,
+    "src": "https://restrap.com/products/frame-bag-medium"
+   },
+   {
+    "line": "Adventure",
+    "name": "Frame Bag",
+    "size": "Large",
+    "slot": "framebag_half",
+    "liters": 4.5,
+    "src": "https://restrap.com/products/frame-bag-large"
+   },
+   {
+    "line": "Adventure",
+    "name": "Full Frame Bag",
+    "size": "Small",
+    "slot": "framebag_full",
+    "liters": 6,
+    "src": "https://restrap.com/products/full-frame-bag-small"
+   },
+   {
+    "line": "Adventure",
+    "name": "Full Frame Bag",
+    "size": "Medium",
+    "slot": "framebag_full",
+    "liters": 7.5,
+    "src": "https://restrap.com/products/full-frame-bag-medium"
+   },
+   {
+    "line": "Adventure",
+    "name": "Full Frame Bag",
+    "size": "Large",
+    "slot": "framebag_full",
+    "liters": 9,
+    "src": "https://restrap.com/products/full-frame-bag-large"
+   },
+   {
+    "line": "Adventure",
+    "name": "Top Tube Bag",
+    "size": "0.8L",
+    "slot": "toptube",
+    "liters": 0.8,
+    "src": "https://restrap.com/products/top-tube-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Bolt-on Top Tube Bag",
+    "size": "0.8L",
+    "slot": "toptube",
+    "liters": 0.8,
+    "src": "https://restrap.com/products/bolt-on-top-tube-bag"
+   },
+   {
+    "line": "Race",
+    "name": "Race Top Tube Bag - Short",
+    "size": "1.2L",
+    "slot": "toptube",
+    "liters": 1.2,
+    "src": "https://restrap.com/products/race-top-tube-bag-short"
+   },
+   {
+    "line": "Race",
+    "name": "Race Top Tube Bag - Long",
+    "size": "2L",
+    "slot": "toptube",
+    "liters": 2,
+    "src": "https://restrap.com/products/race-top-tube-bag-long"
+   },
+   {
+    "line": "Race",
+    "name": "Aero Race Top Tube Bag",
+    "size": "0.6L",
+    "slot": "toptube",
+    "liters": 0.6,
+    "src": "https://restrap.com/products/aero-race-top-tube-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Rear Top Tube Bag",
+    "size": "0.8L",
+    "slot": "toptube_rear",
+    "liters": 0.8,
+    "src": "https://restrap.com/products/rear-top-tube-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Stem Bag",
+    "size": "1.1L",
+    "slot": "stembag",
+    "liters": 1.1,
+    "src": "https://restrap.com/products/stem-bag"
+   },
+   {
+    "line": "Race",
+    "name": "Race Stem Bag",
+    "size": "1.1L",
+    "slot": "stembag",
+    "liters": 1.1,
+    "src": "https://restrap.com/products/race-stem-bag"
+   },
+   {
+    "line": "City",
+    "name": "City Stem Bag",
+    "size": "1L",
+    "slot": "stembag",
+    "liters": 1,
+    "src": "https://restrap.com/products/city-stem-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Fork Bag",
+    "size": "5L",
+    "slot": "forkbag",
+    "liters": 5,
+    "src": "https://restrap.com/products/fork-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Downtube Bag",
+    "size": "1.2L",
+    "slot": "downtube",
+    "liters": 1.2,
+    "src": "https://restrap.com/products/downtube-bag"
+   },
+   {
+    "line": "Adventure",
+    "name": "Pannier",
+    "size": "Small (13L)",
+    "slot": "pannier",
+    "liters": 13,
+    "src": "https://restrap.com/products/small-pannier"
+   },
+   {
+    "line": "Adventure",
+    "name": "Pannier",
+    "size": "Large (22L)",
+    "slot": "pannier",
+    "liters": 22,
+    "src": "https://restrap.com/products/restrap-large-pannier"
+   },
+   {
+    "line": "Switch",
+    "name": "Switch Pannier",
+    "size": "5L",
+    "slot": "pannier",
+    "liters": 5,
+    "src": "https://restrap.com/products/switch-pannier-5-litres"
+   },
+   {
+    "line": "Switch",
+    "name": "Switch Pannier",
+    "size": "10L",
+    "slot": "pannier",
+    "liters": 10,
+    "src": "https://restrap.com/products/switch-pannier-10-litres-1"
+   },
+   {
+    "line": "Switch",
+    "name": "Switch Top Bag",
+    "size": "15L",
+    "slot": "trunk",
+    "liters": 15,
+    "src": "https://restrap.com/products/switch-top-bag-15l"
+   }
+  ]
+ },
+ {
+  "brand": "Wizard Works",
+  "slug": "wizard-works",
+  "products": [
+   {
+    "line": "Presto",
+    "name": "Lil Presto Barrel Bag",
+    "size": "Small (1.8L)",
+    "slot": "barbag",
+    "liters": 1.8,
+    "src": "https://www.wizard.works/shop/lil-presto-barrel-bag/"
+   },
+   {
+    "line": "Presto",
+    "name": "Lil Presto Barrel Bag",
+    "size": "Large (3.5L)",
+    "slot": "barbag",
+    "liters": 3.4,
+    "src": "https://www.wizard.works/shop/lil-presto-barrel-bag/"
+   },
+   {
+    "line": "Voila",
+    "name": "Voila Stem Bag",
+    "size": "Medium",
+    "slot": "stembag",
+    "liters": 0.9,
+    "src": "https://www.wizard.works/shop/voila-stem-bag/"
+   },
+   {
+    "line": "Voila",
+    "name": "Voila Stem Bag",
+    "size": "Large",
+    "slot": "stembag",
+    "liters": 1.65,
+    "src": "https://www.wizard.works/shop/voila-stem-bag/"
+   },
+   {
+    "line": "Go-Go",
+    "name": "Go-Go Top Tube Bag",
+    "size": "Small (0.8L)",
+    "slot": "toptube",
+    "liters": 0.8,
+    "src": "https://www.wizard.works/shop/go-go-top-tube-bag/"
+   },
+   {
+    "line": "Go-Go",
+    "name": "Go-Go Top Tube Bag",
+    "size": "Medium (1L)",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.wizard.works/shop/go-go-top-tube-bag/"
+   },
+   {
+    "line": "Go-Go",
+    "name": "Go-Go Long Top Tube Bag",
+    "size": "Long (1.5L)",
+    "slot": "toptube",
+    "liters": 1.5,
+    "src": "https://www.wizard.works/shop/go-go-long-top-tube-bag/"
+   },
+   {
+    "line": "Houdini",
+    "name": "Teeny Houdini Saddle Bag",
+    "size": "One Size (0.5L)",
+    "slot": "saddlebag",
+    "liters": 0.5,
+    "src": "https://www.wizard.works/shop/teeny-houdini-saddle-bag/"
+   },
+   {
+    "line": "Badjelly",
+    "name": "Badjelly Bar + Saddle Bag",
+    "size": "Small (10L)",
+    "slot": "barbag",
+    "liters": 10,
+    "src": "https://www.wizard.works/shop/badjelly-bar-saddle-bag/"
+   },
+   {
+    "line": "Badjelly",
+    "name": "Badjelly Bar + Saddle Bag",
+    "size": "Medium (15L)",
+    "slot": "barbag",
+    "liters": 15,
+    "src": "https://www.wizard.works/shop/badjelly-bar-saddle-bag/"
+   },
+   {
+    "line": "Badjelly",
+    "name": "Badjelly Bar + Saddle Bag",
+    "size": "Large (19L)",
+    "slot": "barbag",
+    "liters": 19,
+    "src": "https://www.wizard.works/shop/badjelly-bar-saddle-bag/"
+   },
+   {
+    "line": "Forres",
+    "name": "Forres Full Frame Bag",
+    "size": "Small",
+    "slot": "framebag_full",
+    "liters": 5,
+    "src": "https://www.wizard.works/shop/forres-full-frame-bag/"
+   },
+   {
+    "line": "Forres",
+    "name": "Forres Full Frame Bag",
+    "size": "Medium",
+    "slot": "framebag_full",
+    "liters": 6.5,
+    "src": "https://www.wizard.works/shop/forres-full-frame-bag/"
+   },
+   {
+    "line": "Forres",
+    "name": "Forres Full Frame Bag",
+    "size": "Large",
+    "slot": "framebag_full",
+    "liters": 7.8,
+    "src": "https://www.wizard.works/shop/forres-full-frame-bag/"
+   },
+   {
+    "line": "Forres",
+    "name": "Forres Full Frame Bag",
+    "size": "XL",
+    "slot": "framebag_full",
+    "liters": 9.5,
+    "src": "https://www.wizard.works/shop/forres-full-frame-bag/"
+   },
+   {
+    "line": "Osyth",
+    "name": "Osyth Frame Bag",
+    "size": "Small",
+    "slot": "framebag_half",
+    "liters": 1.9,
+    "src": "https://www.wizard.works/shop/osyth-frame-bag/"
+   },
+   {
+    "line": "Osyth",
+    "name": "Osyth Frame Bag",
+    "size": "Medium",
+    "slot": "framebag_half",
+    "liters": 2.5,
+    "src": "https://www.wizard.works/shop/osyth-frame-bag/"
+   },
+   {
+    "line": "Osyth",
+    "name": "Osyth Frame Bag",
+    "size": "Large",
+    "slot": "framebag_half",
+    "liters": 3.5,
+    "src": "https://www.wizard.works/shop/osyth-frame-bag/"
+   },
+   {
+    "line": "Osyth",
+    "name": "Osyth Frame Bag",
+    "size": "XL",
+    "slot": "framebag_half",
+    "liters": 4.5,
+    "src": "https://www.wizard.works/shop/osyth-frame-bag/"
+   },
+   {
+    "line": "Figwit",
+    "name": "Figwit Cargo Cage Bag",
+    "size": "One Size (4L)",
+    "slot": "forkbag",
+    "liters": 4,
+    "src": "https://www.wizard.works/shop/figwit-cargo-cage-bag/"
+   },
+   {
+    "line": "Figwit",
+    "name": "Figwit Cage Bag",
+    "size": "One Size",
+    "slot": "forkbag",
+    "liters": 2.5,
+    "src": "https://www.wizard.works/shop/figwit-cage-bag/"
+   },
+   {
+    "line": "Snagla",
+    "name": "Snagla Hip-Pack + Bar Bag",
+    "size": "One Size (3.5L)",
+    "slot": "barbag",
+    "liters": 3.5,
+    "src": "https://www.wizard.works/shop/snagla-hip-pack-bar-bag/"
+   }
+  ]
+ },
+ {
+  "brand": "Oveja Negra",
+  "slug": "oveja-negra",
+  "products": [
+   {
+    "line": "Snack Pack",
+    "name": "Snack Pack",
+    "size": "Small",
+    "slot": "toptube_rear",
+    "liters": 0.6,
+    "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-top-tube-bag-small"
+   },
+   {
+    "line": "Snack Pack",
+    "name": "Snack Pack",
+    "size": "Small Angle",
+    "slot": "toptube_rear",
+    "liters": 0.6,
+    "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-small-angle"
+   },
+   {
+    "line": "Snack Pack",
+    "name": "Snack Pack",
+    "size": "Large",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-top-tube-bags-large-xl"
+   },
+   {
+    "line": "Snack Pack",
+    "name": "Snack Pack",
+    "size": "XL",
+    "slot": "toptube",
+    "liters": 1.38,
+    "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-top-tube-bags-large-xl"
+   },
+   {
+    "line": "Snack Pack",
+    "name": "BOLT-ON Snack Pack",
+    "size": "One Size",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.ovejanegrabikepacking.com/products/snack-pack-bolt-on"
+   },
+   {
+    "line": "Chuckbucket",
+    "name": "Chuckbucket Handlebar Snack Bag",
+    "size": "One Size",
+    "slot": "stembag",
+    "liters": 1,
+    "src": "https://www.ovejanegrabikepacking.com/products/chuckbucket-handlebar-bag"
+   },
+   {
+    "line": "Lunchbox",
+    "name": "Lunchbox Handlebar Bag",
+    "size": "One Size",
+    "slot": "barbag",
+    "liters": 3,
+    "src": "https://www.ovejanegrabikepacking.com/products/lunchbox-handlebar-bag"
+   },
+   {
+    "line": "925",
+    "name": "925 Handlebar Bag",
+    "size": "One Size",
+    "slot": "barbag",
+    "liters": 5,
+    "src": "https://www.ovejanegrabikepacking.com/products/925-handlebar-bag-black"
+   },
+   {
+    "line": "Lil' Smokey",
+    "name": "Lil' Smokey Handlebar Bag",
+    "size": "One Size",
+    "slot": "barbag",
+    "liters": 1,
+    "src": "https://www.ovejanegrabikepacking.com/products/little-smokey"
+   },
+   {
+    "line": "Front End Loader",
+    "name": "Front End Loader Dry Bag Mount",
+    "size": "fits 8-20L dry bags",
+    "slot": "barroll",
+    "liters": 20,
+    "src": "https://www.ovejanegrabikepacking.com/products/front-end-loader"
+   },
+   {
+    "line": "1/2 Pack",
+    "name": "1/2 Pack 2.0 Frame Bag",
+    "size": "S",
+    "slot": "framebag_half",
+    "liters": 3,
+    "src": "https://www.ovejanegrabikepacking.com/products/1-2-pack-2-0-frame-bag"
+   },
+   {
+    "line": "1/2 Pack",
+    "name": "1/2 Pack 2.0 Frame Bag",
+    "size": "M",
+    "slot": "framebag_half",
+    "liters": 3.3,
+    "src": "https://www.ovejanegrabikepacking.com/products/1-2-pack-2-0-frame-bag"
+   },
+   {
+    "line": "1/2 Pack",
+    "name": "1/2 Pack 2.0 Frame Bag",
+    "size": "L",
+    "slot": "framebag_half",
+    "liters": 4,
+    "src": "https://www.ovejanegrabikepacking.com/products/1-2-pack-2-0-frame-bag"
+   },
+   {
+    "line": "1/2 Pack",
+    "name": "1/2 Pack 2.0 Frame Bag",
+    "size": "XL",
+    "slot": "framebag_half",
+    "liters": 4.4,
+    "src": "https://www.ovejanegrabikepacking.com/products/1-2-pack-2-0-frame-bag"
+   },
+   {
+    "line": "Bodega",
+    "name": "Bodega Full Frame Bag",
+    "size": "S",
+    "slot": "framebag_full",
+    "liters": 5,
+    "src": "https://www.ovejanegrabikepacking.com/products/full-frame-bags"
+   },
+   {
+    "line": "Bodega",
+    "name": "Bodega Full Frame Bag",
+    "size": "M",
+    "slot": "framebag_full",
+    "liters": 6,
+    "src": "https://www.ovejanegrabikepacking.com/products/full-frame-bags"
+   },
+   {
+    "line": "Bodega",
+    "name": "Bodega Full Frame Bag",
+    "size": "L",
+    "slot": "framebag_full",
+    "liters": 7,
+    "src": "https://www.ovejanegrabikepacking.com/products/full-frame-bags"
+   },
+   {
+    "line": "Bodega",
+    "name": "Bodega Full Frame Bag",
+    "size": "XL",
+    "slot": "framebag_full",
+    "liters": 8,
+    "src": "https://www.ovejanegrabikepacking.com/products/full-frame-bags"
+   },
+   {
+    "line": "Gearjammer",
+    "name": "Gearjammer Seat Bag",
+    "size": "Large (6-12L)",
+    "slot": "seatpack",
+    "liters": 12,
+    "src": "https://www.ovejanegrabikepacking.com/products/gearjammer-seat-bag"
+   },
+   {
+    "line": "Gearslammer",
+    "name": "Gearslammer Seat Bag",
+    "size": "One Size (2-4L)",
+    "slot": "seatpack",
+    "liters": 4,
+    "src": "https://www.ovejanegrabikepacking.com/products/gearslammer-seat-bag"
+   },
+   {
+    "line": "Bootlegger",
+    "name": "Bootlegger Fork Bag (Direct Mount)",
+    "size": "One Size",
+    "slot": "forkbag",
+    "liters": 2,
+    "src": "https://www.ovejanegrabikepacking.com/products/bootlegger-fork-bag"
+   }
+  ]
+ },
+ {
+  "brand": "Outer Shell Adventure",
+  "slug": "outer-shell-adventure",
+  "products": [
+   {
+    "line": "Seatpack",
+    "name": "Seatpack",
+    "size": "10.5L",
+    "slot": "seatpack",
+    "liters": 10.5,
+    "src": "https://www.outershell.com/products/seatpack"
+   },
+   {
+    "line": "Seatpack",
+    "name": "Seatpack",
+    "size": "16L",
+    "slot": "seatpack",
+    "liters": 16,
+    "src": "https://www.outershell.com/products/seatpack"
+   },
+   {
+    "line": "Saddlebag",
+    "name": "Rolltop Saddlebag",
+    "size": "0.8-2.1L",
+    "slot": "saddlebag",
+    "liters": 2.1,
+    "src": "https://www.outershell.com/products/rolltop-saddlebag"
+   },
+   {
+    "line": "Saddlebag",
+    "name": "Mini Saddlebag",
+    "size": "0.33L",
+    "slot": "saddlebag",
+    "liters": 0.33,
+    "src": "https://www.outershell.com/products/mini-saddlebag"
+   },
+   {
+    "line": "Bar Bags",
+    "name": "Drawcord Handlebar Bag",
+    "size": "2.6-4.9L",
+    "slot": "barbag",
+    "liters": 2.6,
+    "src": "https://www.outershell.com/products/handlebar-bag"
+   },
+   {
+    "line": "Bar Bags",
+    "name": "Mini Bar Bag",
+    "size": "1L",
+    "slot": "barbag",
+    "liters": 1,
+    "src": "https://www.outershell.com/products/mini-bar-bag"
+   },
+   {
+    "line": "Bar Bags",
+    "name": "Mega Bar Bag",
+    "size": "10.6L (18.5L expanded)",
+    "slot": "barbag",
+    "liters": 10.6,
+    "src": "https://www.outershell.com/products/mega-bar-bag"
+   },
+   {
+    "line": "Harness System",
+    "name": "Handlebar Harness",
+    "size": "One Size",
+    "slot": "barroll",
+    "liters": 0,
+    "src": "https://www.outershell.com/products/stuff-sack-harness"
+   },
+   {
+    "line": "Harness System",
+    "name": "Oval Dry Bag",
+    "size": "5L",
+    "slot": "barroll",
+    "liters": 5,
+    "src": "https://www.outershell.com/products/oval-dry-bag"
+   },
+   {
+    "line": "Harness System",
+    "name": "Oval Dry Bag",
+    "size": "10L",
+    "slot": "barroll",
+    "liters": 10,
+    "src": "https://www.outershell.com/products/oval-dry-bag"
+   },
+   {
+    "line": "Stem Caddy",
+    "name": "Stem Caddy",
+    "size": "1.2-1.7L",
+    "slot": "stembag",
+    "liters": 1.2,
+    "src": "https://www.outershell.com/products/stem-caddy"
+   },
+   {
+    "line": "Top Tube Bag",
+    "name": "Top Tube Bag",
+    "size": "0.9L",
+    "slot": "toptube",
+    "liters": 0.9,
+    "src": "https://www.outershell.com/products/top-tube-bag"
+   },
+   {
+    "line": "Half Frame Bag",
+    "name": "Half Frame Bag",
+    "size": "Small",
+    "slot": "framebag_half",
+    "liters": 1.9,
+    "src": "https://www.outershell.com/products/half-framebag"
+   },
+   {
+    "line": "Half Frame Bag",
+    "name": "Half Frame Bag",
+    "size": "Medium",
+    "slot": "framebag_half",
+    "liters": 3.1,
+    "src": "https://www.outershell.com/products/half-framebag"
+   },
+   {
+    "line": "Half Frame Bag",
+    "name": "Half Frame Bag",
+    "size": "Large",
+    "slot": "framebag_half",
+    "liters": 3.5,
+    "src": "https://www.outershell.com/products/half-framebag"
+   }
+  ]
+ },
+ {
+  "brand": "Two Wheel Gear",
+  "slug": "two-wheel-gear",
+  "products": [
+   {
+    "line": "Alpha",
+    "name": "Alpha Handlebar Bag",
+    "size": "6L",
+    "slot": "barbag",
+    "liters": 6,
+    "src": "https://twowheelgear.com/products/alpha-handlebar-bag"
+   },
+   {
+    "line": "Dayliner",
+    "name": "Dayliner Handlebar & Trunk Box Bag",
+    "size": "20L",
+    "slot": "barbag",
+    "liters": 20,
+    "src": "https://twowheelgear.com/products/dayliner-box-bag"
+   },
+   {
+    "line": "Commute",
+    "name": "Commute Top Tube Bag",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://twowheelgear.com/products/commute-top-tube-bag"
+   },
+   {
+    "line": "Commute",
+    "name": "Commute Seat Pack",
+    "size": "1.5L",
+    "slot": "seatpack",
+    "liters": 1.5,
+    "src": "https://twowheelgear.com/products/commute-seat-pack"
+   },
+   {
+    "line": "Pannier Backpack Convertible",
+    "name": "Pannier Backpack Convertible 2.1 PLUS",
+    "size": "30L",
+    "slot": "pannier",
+    "liters": 30,
+    "src": "https://twowheelgear.com/products/pannier-backpack-convertible-plus"
+   },
+   {
+    "line": "Pannier Backpack Convertible",
+    "name": "Pannier Backpack Convertible 2.0 LITE",
+    "size": "22L",
+    "slot": "pannier",
+    "liters": 22,
+    "src": "https://twowheelgear.com/products/pannier-backpack-convertible-lite"
+   },
+   {
+    "line": "Inverter",
+    "name": "Inverter Pannier Backpack Convertible",
+    "size": "24L",
+    "slot": "pannier",
+    "liters": 24,
+    "src": "https://twowheelgear.com/products/inverter-pannier-backpack"
+   }
+  ]
+ },
+ {
+  "brand": "Arkel",
+  "slug": "arkel",
+  "products": [
+   {
+    "line": null,
+    "name": "Rollpacker Rear 20L",
+    "size": null,
+    "slot": "seatpack",
+    "liters": 20,
+    "src": "https://arkel.ca/products/rollpacker-bikepacking-bag"
+   },
+   {
+    "line": null,
+    "name": "Arkel Handlebar Bag (Large)",
+    "size": null,
+    "slot": "barbag",
+    "liters": 9,
+    "src": "https://arkel.ca/products/handlebar-bag"
+   },
+   {
+    "line": null,
+    "name": "Orca 2 45",
+    "size": null,
+    "slot": "pannier",
+    "liters": 45,
+    "src": "https://arkel.ca/products/orca-panniers"
+   },
+   {
+    "line": null,
+    "name": "Arkel GT-54 Classic Touring Panniers",
+    "size": null,
+    "slot": "pannier",
+    "liters": 27,
+    "src": "https://arkel.ca/products/gt-54-classic-touring-panniers"
+   },
+   {
+    "line": null,
+    "name": "Dolphin 24L",
+    "size": null,
+    "slot": "pannier",
+    "liters": 24,
+    "src": "https://arkel.ca/products/dolphin-24l-waterproof-pannier"
+   },
+   {
+    "line": null,
+    "name": "Arkel TailRider Trunk Bag",
+    "size": null,
+    "slot": "trunk",
+    "liters": 11,
+    "src": "https://arkel.ca/products/tailrider-trunk-bag"
+   }
+  ]
+ },
+ {
+  "brand": "Alpkit",
+  "slug": "alpkit",
+  "products": [
+   {
+    "line": "Koala",
+    "name": "Koala 7L Saddle Pack",
+    "size": "7L",
+    "slot": "seatpack",
+    "liters": 7,
+    "src": "https://alpkit.com/products/koala-7-litre-saddle-bag"
+   },
+   {
+    "line": "Airlok",
+    "name": "Airlok Dual 13L",
+    "size": "13L",
+    "slot": "barroll",
+    "liters": 13,
+    "src": "https://alpkit.com/products/airlok-xtra-dual-13-litre"
+   },
+   {
+    "line": "Possum",
+    "name": "Possum Frame Bag",
+    "size": "47cm (2.2L)",
+    "slot": "framebag_half",
+    "liters": 2.2,
+    "src": "https://alpkit.com/products/possum"
+   },
+   {
+    "line": "Glider",
+    "name": "Glider Road Frame Bag",
+    "size": "48 (1.7L)",
+    "slot": "framebag_half",
+    "liters": 1.7,
+    "src": "https://alpkit.com/products/glider"
+   },
+   {
+    "line": "Stem Cell",
+    "name": "Stem Cell Cockpit Bag",
+    "size": "Medium (1L)",
+    "slot": "stembag",
+    "liters": 1,
+    "src": "https://alpkit.com/products/stem-cell-2023"
+   },
+   {
+    "line": "Betonga",
+    "name": "Betonga Fork Cage Bag",
+    "size": "3L",
+    "slot": "forkbag",
+    "liters": 3,
+    "src": "https://alpkit.com/products/betonga-fork-bag"
+   }
+  ]
+ },
+ {
+  "brand": "Giant",
+  "slug": "giant",
+  "products": [
+   {
+    "line": "Scout",
+    "name": "Scout Saddle Bag",
+    "size": "9L",
+    "slot": "seatpack",
+    "liters": 9,
+    "src": "https://www.giant-bicycles.com/int/scout-saddle-bag-2024"
+   },
+   {
+    "line": "Scout",
+    "name": "Scout Burrito Bar Bag",
+    "size": "2.3L",
+    "slot": "barbag",
+    "liters": 2.3,
+    "src": "https://www.giant-bicycles.com/us/scout-burrito-bar-bag-2024"
+   },
+   {
+    "line": "Scout",
+    "name": "Scout Top Tube Bag",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.giant-bicycles.com/int/scout-top-tube-bag-2024"
+   },
+   {
+    "line": "H2Pro",
+    "name": "H2Pro Frame Bag",
+    "size": "4L",
+    "slot": "framebag_half",
+    "liters": 4,
+    "src": "https://www.giant-bicycles.com/int/h2pro-frame-bag-2021"
+   },
+   {
+    "line": "Transporter",
+    "name": "Transporter MIK Pannier Bag 30L",
+    "size": "30L (single)",
+    "slot": "pannier",
+    "liters": 15,
+    "src": "https://www.giant-bicycles.com/int/transporter-mik-pannier-bag-30l"
+   },
+   {
+    "line": "Transit",
+    "name": "Transit MIK Trunk Bag 11L",
+    "size": "11L",
+    "slot": "trunk",
+    "liters": 11,
+    "src": "https://www.giant-bicycles.com/int/transit-mik-trunk-bag-11l"
+   }
+  ]
+ },
+ {
+  "brand": "Salsa (EXP Series)",
+  "slug": "salsa-exp-series",
+  "products": [
+   {
+    "line": null,
+    "name": "EXP Series Saguaro Seat Bag",
+    "size": null,
+    "slot": "seatpack",
+    "liters": 14,
+    "src": "https://www.salsacycles.com/products/exp-series-saguaro-seat-bag"
+   },
+   {
+    "line": null,
+    "name": "Old Man Mountain Manzanita Cradle with Bag",
+    "size": null,
+    "slot": "barbag",
+    "liters": 11,
+    "src": "https://www.salsacycles.com/products/old-man-mountain-manzanita-cradle-and-bag"
+   },
+   {
+    "line": null,
+    "name": "EXP Series Cholla Half-Frame Bag",
+    "size": null,
+    "slot": "framebag_half",
+    "liters": 2.1,
+    "src": "https://www.salsacycles.com/products/exp-series-cholla-half-frame-bag"
+   },
+   {
+    "line": null,
+    "name": "EXP-R Series Trillium Top Tube Bag",
+    "size": null,
+    "slot": "toptube",
+    "liters": 1.67,
+    "src": "https://www.salsacycles.com/products/exp-r-series-trillium-top-tube-bag"
+   },
+   {
+    "line": null,
+    "name": "EXP Series Agave Pannier",
+    "size": null,
+    "slot": "pannier",
+    "liters": 12.5,
+    "src": "https://www.campfirecycling.com/product/salsa-exp-series-agave-pannier.html"
+   }
+  ]
+ },
+ {
+  "brand": "VAUDE",
+  "slug": "vaude",
+  "products": [
+   {
+    "line": null,
+    "name": "VAUDE Aqua Back Plus",
+    "size": null,
+    "slot": "pannier",
+    "liters": 25.5,
+    "src": "https://www.vaude.com/int/en/45849-aqua-back-plus-bike-bags-recycled-main-material.html"
+   },
+   {
+    "line": null,
+    "name": "VAUDE Trailsaddle Compact L",
+    "size": null,
+    "slot": "saddlebag",
+    "liters": 10.5,
+    "src": "https://www.vaude.com/int/en/48370-trailsaddle-compact-l-10-5-liter-bicycle-saddle-bag.html"
+   },
+   {
+    "line": null,
+    "name": "VAUDE Trailfront Cage",
+    "size": null,
+    "slot": "barroll",
+    "liters": 10,
+    "src": "https://www.vaude.com/int/en/48363-trailfront-cage-10-liter-bicycle-handlebar-bag.html"
+   },
+   {
+    "line": null,
+    "name": "VAUDE Trailtop Tube",
+    "size": null,
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.vaude.com/int/en/48365-trailtop-tube-1-liter-screw-on-top-tube-bag.html"
+   },
+   {
+    "line": null,
+    "name": "VAUDE Trailfork",
+    "size": null,
+    "slot": "forkbag",
+    "liters": 4,
+    "src": "https://www.vaude.com/int/en/48366-trailfork-4-liter-bicycle-fork-bag.html"
+   }
+  ]
+ },
+ {
+  "brand": "Buckhorn Bags",
+  "slug": "buckhorn-bags",
+  "products": [
+   {
+    "line": null,
+    "name": "Buckhorn Halfie Frame Bag",
+    "size": null,
+    "slot": "framebag_half",
+    "liters": 2.5,
+    "src": null
+   },
+   {
+    "line": null,
+    "name": "Buckhorn 8in Top Tube Bag",
+    "size": null,
+    "slot": "toptube",
+    "liters": 1.1,
+    "src": "https://www.buckhornbags.com/shop/p/8-top-tube-bags"
+   },
+   {
+    "line": null,
+    "name": "Buckhorn Custom Rattler Stem Bag",
+    "size": null,
+    "slot": "stembag",
+    "liters": 1.2,
+    "src": null
+   },
+   {
+    "line": null,
+    "name": "Buckhorn Waxed Canvas Panniers",
+    "size": null,
+    "slot": "pannier",
+    "liters": 11,
+    "src": "https://www.buckhornbags.com/shop/p/waxed-canvas-panniers"
+   },
+   {
+    "line": null,
+    "name": "Barrel XL",
+    "size": null,
+    "slot": "barbag",
+    "liters": 2.8,
+    "src": "https://www.buckhornbags.com/shop/p/barrell-xl"
+   }
+  ]
+ },
+ {
+  "brand": "Banjo Brothers",
+  "slug": "banjo-brothers",
+  "products": [
+   {
+    "line": "Waterproof",
+    "name": "Waterproof Cycling Pannier",
+    "size": "16.4L (single)",
+    "slot": "pannier",
+    "liters": 16.4,
+    "src": "https://www.banjobrothers.com/products/banjo-brothers-waterproof-cycling-pannier"
+   },
+   {
+    "line": "Deluxe",
+    "name": "Deluxe Seat Bag, Medium",
+    "size": "Medium (1.2L)",
+    "slot": "seatpack",
+    "liters": 1.2,
+    "src": "https://www.banjobrothers.com/products/deluxe-seat-bag-medium"
+   },
+   {
+    "line": "Handlebar Bag",
+    "name": "Handlebar Bag, Small",
+    "size": "Small (2L)",
+    "slot": "barbag",
+    "liters": 2,
+    "src": "https://www.banjobrothers.com/products/handlebar-bag-small"
+   },
+   {
+    "line": "Top Tube Bag",
+    "name": "Top Tube Bag, Large",
+    "size": "Large (1.1L)",
+    "slot": "toptube",
+    "liters": 1.1,
+    "src": "https://www.banjobrothers.com/products/top-tube-bag-large"
+   },
+   {
+    "line": "Rack Top Bag",
+    "name": "Rack Top Bag",
+    "size": "8.4L",
+    "slot": "trunk",
+    "liters": 8.4,
+    "src": "https://www.banjobrothers.com/products/banjo-brothers-rack-top-bag"
+   }
+  ]
+ },
+ {
+  "brand": "Atelier Velocidade",
+  "slug": "atelier-velocidade",
+  "products": [
+   {
+    "line": "Volcano",
+    "name": "Volcano",
+    "size": "One Size",
+    "slot": "seatpack",
+    "liters": 8,
+    "src": "https://www.ateliervelocidade.com/en/products/volcano"
+   },
+   {
+    "line": "Bivouac",
+    "name": "Bivouac",
+    "size": "One Size (7.5L)",
+    "slot": "saddlebag",
+    "liters": 7.5,
+    "src": "https://www.ateliervelocidade.com/en/products/bivouac"
+   },
+   {
+    "line": "Beluga",
+    "name": "Beluga",
+    "size": "One Size (4.5L)",
+    "slot": "barbag",
+    "liters": 4.5,
+    "src": "https://www.ateliervelocidade.com/en/products/beluga"
+   },
+   {
+    "line": "Avalanche",
+    "name": "Avalanche",
+    "size": "One Size",
+    "slot": "framebag_half",
+    "liters": 2,
+    "src": "https://www.ateliervelocidade.com/en/products/avalanche"
+   },
+   {
+    "line": "Funambule",
+    "name": "Funambule",
+    "size": "One Size",
+    "slot": "toptube",
+    "liters": 1.2,
+    "src": "https://www.ateliervelocidade.com/en/products/funambule"
+   }
+  ]
+ },
+ {
+  "brand": "Fjällräven",
+  "slug": "fjallraven",
+  "products": [
+   {
+    "line": null,
+    "name": "Hoja Top Tube Bag",
+    "size": null,
+    "slot": "toptube",
+    "liters": 0.8,
+    "src": "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-top-tube-bag/"
+   },
+   {
+    "line": null,
+    "name": "Hoja Handlebar Rolltop",
+    "size": null,
+    "slot": "barbag",
+    "liters": 13,
+    "src": "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-handlebar-rolltop/"
+   },
+   {
+    "line": null,
+    "name": "Hoja Seatbag Harness + Hoja Seatbag Drybag 16L",
+    "size": null,
+    "slot": "seatpack",
+    "liters": 16,
+    "src": "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-seatbag-drybag-16l/"
+   },
+   {
+    "line": null,
+    "name": "Hoja Snack Bag",
+    "size": null,
+    "slot": "stembag",
+    "liters": 0.8,
+    "src": "https://www.fjallraven.com/uk/en-gb/bags-gear/accessories/backpack-bag-accessories/hoja-snack-bag/"
+   }
+  ]
+ },
+ {
+  "brand": "Altura",
+  "slug": "altura",
+  "products": [
+   {
+    "line": "Vortex",
+    "name": "Vortex Waterproof 12L Cycling Seat Pack",
+    "size": "12L",
+    "slot": "seatpack",
+    "liters": 12,
+    "src": "https://www.altura.co.uk/products/altura-vortex-12l-waterproof-seatpack"
+   },
+   {
+    "line": "Vortex",
+    "name": "Vortex Waterproof 11L Cycling Handlebar Bag",
+    "size": "11L",
+    "slot": "barroll",
+    "liters": 11,
+    "src": "https://www.altura.co.uk/products/altura-vortex-11l-waterproof-handlebar-bag"
+   },
+   {
+    "line": "Vortex",
+    "name": "Vortex Bolt-On Waterproof Cycling Top Tube Pack",
+    "size": "1L",
+    "slot": "toptube",
+    "liters": 1,
+    "src": "https://www.altura.co.uk/products/altura-vortex-1l-waterproof-bolt-on-top-tube-pack"
+   },
+   {
+    "line": "Vortex",
+    "name": "Ultralite Vortex Waterproof Cycling Pannier",
+    "size": "15L (single)",
+    "slot": "pannier",
+    "liters": 15,
+    "src": "https://www.altura.co.uk/products/altura-ultralite-vortex-waterproof-cycling-pannier"
+   }
+  ]
+ },
+ {
+  "brand": "Fairweather",
+  "slug": "fairweather",
+  "products": [
+   {
+    "line": "Handlebar Bag",
+    "name": "Handlebar Bag ADV",
+    "size": "One Size (19L)",
+    "slot": "barbag",
+    "liters": 19,
+    "src": "https://bluelug.com/en/contents/fairweather/handlebar-bag-adv.php"
+   },
+   {
+    "line": "Seat Bag",
+    "name": "Seat Bag",
+    "size": "One Size (3-6L)",
+    "slot": "seatpack",
+    "liters": 6,
+    "src": "https://bluelug.com/en/contents/fairweather/seat-bag.php"
+   },
+   {
+    "line": "Road Bar Bag",
+    "name": "Road Bar Bag",
+    "size": "One Size (1.7L)",
+    "slot": "barbag",
+    "liters": 1.7,
+    "src": "https://bluelug.com/en/contents/fairweather/road-bar-bag.php"
+   },
+   {
+    "line": "Stem Bag",
+    "name": "Stem Bag+",
+    "size": "Plus (1.9L)",
+    "slot": "stembag",
+    "liters": 1.9,
+    "src": "https://bluelug.com/en/contents/fairweather/stem-bag-plus.php"
+   }
+  ]
+ }
+]

@@ -20,7 +20,7 @@ import puppeteer from 'puppeteer-core';
 
 const [, , URL, W = '390', H = '700'] = process.argv;
 const b = await puppeteer.launch({
-  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  executablePath: (await import('./lib/chrome.mjs')).CHROME,
   headless: true, args: ['--hide-scrollbars', '--enable-unsafe-swiftshader'],
 });
 const p = await b.newPage();

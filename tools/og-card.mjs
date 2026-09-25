@@ -52,7 +52,7 @@ const CAM = { azDeg: 12, dist: 4.45, height: 1.05, targetY: 0.68, slide: -0.45 }
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const browser = await puppeteer.launch({
-  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  executablePath: (await import('./lib/chrome.mjs')).CHROME,
   headless: true,
   args: ['--enable-unsafe-swiftshader', '--disable-dev-shm-usage', '--hide-scrollbars'],
 });

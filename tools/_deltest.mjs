@@ -1,7 +1,7 @@
 /** Deleting a saved rig, and undoing it. */
 import puppeteer from 'puppeteer-core';
 const [,,URL,W='1440',H='900'] = process.argv;
-const b=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--hide-scrollbars','--enable-unsafe-swiftshader']});
+const b=await puppeteer.launch({executablePath:(await import('./lib/chrome.mjs')).CHROME,headless:true,args:['--hide-scrollbars','--enable-unsafe-swiftshader']});
 const p=await b.newPage();
 const errs=[]; p.on('pageerror',e=>errs.push('PAGEERROR '+e.message));
 await p.setViewport({width:+W,height:+H});

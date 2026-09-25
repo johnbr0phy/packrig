@@ -7,7 +7,7 @@
 import puppeteer from 'puppeteer-core';
 const APP = 'http://localhost:8735/';
 const API = 'http://localhost:8799';
-const b = await puppeteer.launch({ executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless:true });
+const b = await puppeteer.launch({ executablePath:(await import('./lib/chrome.mjs')).CHROME, headless:true });
 const wait = (ms) => new Promise(r => setTimeout(r, ms));
 const errs = [];
 
