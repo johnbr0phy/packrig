@@ -1,599 +1,516 @@
 // Half frame bag builder (mm-local, parented to the framebag anchor).
 //
-// AXIS MAPPING (BUILDER-BRIEF Rule 2) — checked against `mount.axes` on all 16
-// Apidura records in this slot, every one of which reads
-// { len: "along_toptube", wid: "z", hgt: "y" }:
+// ---- WHAT IT IS (the owner's words win) -------------------------------------
+// "A half frame bag hugs the top tube and leaves the bottles free." It hangs
+// from the top tube, may touch the head tube / down tube at its nose or the
+// seat tube at its tail, and its lower edge stays up in the triangle so the
+// bottle cages below it still work (reference/club-trek-loaded.png: a long
+// slim wedge under the top tube, both bidons below it; club-klunker-framebag:
+// a trapezoid under the top tube, the seat-tube bottle free beneath).
 //
-//   p.mm.len -> ALONG the top tube, running seat-tube end -> head-tube end.
-//   p.mm.hgt -> perpendicular to the top tube, DOWNWARD into the main triangle,
-//               and it is the bag's DEEPEST height — Apidura's "mid" figure —
-//               not either end face. Racing 1L publishes "20.5 cm long; 7 cm
-//               front and 13.5 cm mid heights; 3.5 cm rear": len 20.5, hgt 13.5,
-//               and the 7/3.5 pair is the taper, see THE SILHOUETTE below.
-//   p.mm.wid -> world z, the extrusion depth.
+// ---- AXIS MAPPING (BUILDER-BRIEF Rule 2) ------------------------------------
+// Checked against mount.axes on all 78 catalogue records. 73 read
+// { len: along_toptube (or ±x), wid: z, hgt: y / −y }:
+//   p.mm.len → along the top tube (the top edge)
+//   p.mm.hgt → the DEEPEST height, square to the top tube, down into the triangle
+//   p.mm.wid → world z, the finished thickness
+// Exceptions, read from the record rather than guessed:
+//   hgt: along_seattube (Swift Giddy Up, Road Runner Wedge, Vincita Strada) —
+//        the deep face lies on the SEAT tube, so the bag is anchored there and
+//        its taper is read deep-at-the-seat-tube (the records' nose=1/tail=0.15
+//        is written the other way round from the slot's convention, see below).
+//   len: ±y (Atelier Velocidade Avalanche) — a seat-tube corner pouch whose
+//        long side runs DOWN the seat tube: len and hgt swap.
+//   "Corner Bag" (Blackburn) — a triangle in the seat-tube/top-tube corner.
+//   wid: x (Two Wheel Gear Mamquam, not in the catalogue) — a typo for z.
+// The previous mapping was the same for the 73; the exceptions were drawn as
+// head-tube kites.
 //
-// Everything positional comes from ctx.framePoly (the tube CENTRELINES) and
-// framePanelPoly(ctx) (the same walk offset out to each tube's surface). There
-// is no literal position and no literal angle in here: in particular the
-// lower-front edge takes its angle from the bike's own down tube.
+// ---- TAPER CONVENTION -------------------------------------------------------
+// geometry.taper.nose = head-tube end face / hgt, .tail = seat-tube end face /
+// hgt (identity.js). Three shapes fall out of the pair:
+//   kite         nose < 0.9 and tail < 0.95 (Apidura): shallow at both ends,
+//                deepest where the lower-front edge, lying ON the down tube, has
+//                got `hgt` deep — the frame supplies the belly position.
+//   deep front   nose ≥ 0.9 (Revelate Tangle, Blackburn, Tailfin, Restrap):
+//                full depth at the head tube, lower edge rising to the tail.
+//   deep rear    tail ≥ 0.95 (Giant H2Pro, Buckhorn, Zefal, the seat-tube wedges)
+// The outline is then CLIPPED to the triangle (each tube's surface, frameEdgeR),
+// so a deep nose follows the head tube and down tube instead of passing through
+// them. That clip is what fixes the −8 to −20 mm seat/down-tube penetrations.
 //
-// THE SILHOUETTE. Until 9 Aug this builder drew a slab whose bottom ran in one
-// straight line, deepest at the seat-tube end and shallowest at the head tube.
-// Every Apidura dimension drawing shows the opposite — a downward-pointing kite,
-// shallow at BOTH ends, with the deepest belly between 40% and 75% of the
-// length and a straight lower-front edge lying along the down tube:
-//
-//   product              len   seat-end face   belly   head-end face
-//   racing 1L           20.5        7.0         13.5        3.5
-//   racing 4L           42          7.0         14.0        5.0
-//   canyon collab 4.5L  42          8.0         14.5        6.5
-//   expedition 5.7L     49         15.0         18.0        7.5
-//   aero module L       31.5       (10.3)       16.5        6.5
-//
-// (all cm, off the maker's dimensions-*.png; the aero seat-end face is measured
-// off the drawing because Apidura publishes the bounding height for that one.)
-// Those three numbers per bag are now in each record as hgt + geometry.taper —
-// see THE TAPER CONVENTION below.
-//
-// The belly POSITION is not in the records and must not be: it falls out of the
-// frame. The lower-front edge is the edge that lies on the down tube, so it
-// descends at the top-tube-to-down-tube angle, and the belly is simply where it
-// has got `hgt` deep. Measured off the built geometry on this frame's 39.2
-// degrees, against the drawings: racing 1L 43% of the length (drawn 40%),
-// racing 4L 72% (71%), expedition 2.8L 66% (26/38.5 = 68%), expedition 5.7L 68%
-// (36/49 = 73%), canyon 4.5L 74% (~70%), aero L 51% (53%). That is the whole
-// shape, from one angle taken off the bike.
-//
-// The one family it does not fit is the Backcountry, whose drawing puts the
-// belly at 35-40% on a lower-front edge of only ~27 degrees — shallower than any
-// frame's down tube, so that bag simply is not drawn touching it. We give it 57%
-// / 62%. Left as is rather than adding a per-product belly fraction: there is no
-// merged field to carry one (see strapPlan below for the same problem).
+// ---- PLACEMENT (every value derived from the bike, Rule 1) ------------------
+//   top edge   ctx.framePoly top-tube edge offset by frameEdgeR[1] − BITE
+//   nose       against the head tube (the default), or the tail against the
+//              seat tube for the seat-tube wedges and corner bags
+//   straps     flat velcro bands round the tube (straps.js tubeWrap at the
+//              tube's own centreline and radius) with short tabs onto the
+//              faces; counts from the model records. A strap to the down, seat
+//              or head tube is drawn only where the bag touches that tube or
+//              the record's strap can reach it (≤ 100 mm, Revelate's figure for
+//              the Tangle) — never a ladder across a gap.
 
 import * as THREE from 'three';
 import { v3 } from '../../lib.js';
 import { deformScale, shapeBulge } from '../deform.js';
-import { addPockets, cordMat, reflectiveStrip, zipperRun } from '../features.js';
-import { TUBE_R, frameStraps, seamStrip } from '../hardware.js';
+import { addPockets, reflectiveStrip, zipperRun } from '../features.js';
+import { seamStrip } from '../hardware.js';
 import { featuresOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
-import { crossSpan, framePanelPoly, subdivideXY } from '../panels.js';
+import { crossSpan, subdivideXY } from '../panels.js';
+import { buckle, meshOf, strapRun } from '../straps.js';
+import {
+  BITE, bulgePeak, clipHalfPlane, edgeOutward, frameLocal, lineSpan, offsetEdges,
+  recordOf, roundCorners, velcroStrap,
+} from './framefull.js';
 
 /**
- * THE TAPER CONVENTION for framebag_half, stated once so the next reader can
- * check a record against a drawing without guessing.
- *
- *   geometry.taper.nose = head-tube end face depth / hgt   (the bike's FRONT)
- *   geometry.taper.tail = seat-tube end face depth / hgt
- *
- * Both are fractions of the PUBLISHED hgt and both describe the FINISHED bag,
- * so both take the bevel deduction the belly takes — see THE KITE below.
- *
- * identity.js documents that reviewers do not agree which end of a bag is its
- * "nose", and this slot was one of the casualties: Apidura's own spec sheets
- * call the SEAT-tube end "front" and the HEAD-tube end "rear", and the records
- * had copied those labels straight through, so every bag in the slot was drawn
- * back to front. All 16 records were rewritten to the convention above on
- * 10 Aug. `geomOf(p).taperRatio` is min/max and cannot tell the two ends apart,
- * so read the pair directly — that is what this helper is for.
+ * Straps and zips from data/models/<brand>.json (apply-models.mjs does not
+ * merge them): "TDSH zips" — straps round the Top, Down, Seat, Head tubes,
+ * then the zip runs. Generated from the records 25 Sep.
  */
-function endFractions(p, vr) {
-  const t = (p && p.geometry && p.geometry.taper) || {};
-  const ok = (v) => (Number.isFinite(v) && v > 0.05 && v <= 1 ? v : null);
-  return {
-    // Fallbacks are the Apidura family's own spread, not a wild guess: across
-    // the 16 drawings the head-tube face runs 0.21-0.42 of the belly and the
-    // seat-tube face 0.50-0.85. A product whose record is silent still varies
-    // deterministically (BUILDER-BRIEF §1).
-    nose: ok(t.nose) ?? vr.range(0.24, 0.40),
-    tail: ok(t.tail) ?? vr.range(0.52, 0.72),
-  };
-}
+const HALF_RECORDS = {
+  'Apidura|Expedition|Frame Pack': '3100 side_full',
+  'Apidura|Backcountry|Frame Pack|1L': '2100 side_full',
+  'Apidura|Backcountry|Frame Pack|2L': '2200 side_full',
+  'Apidura|Racing|Frame Pack|1L': '2100 side_full',
+  'Apidura|Racing|Frame Pack|2.4L': '2200 side_full',
+  'Apidura|Racing|Frame Pack|4L': '3200 side_full',
+  'Apidura|Canyon Collab|Frame Pack|2.4L': '2200 side_full',
+  'Apidura|Canyon Collab|Frame Pack|4.5L': '3200 side_full',
+  'Apidura|MAAP Collab|Frame Pack|1L': '2100 side_full',
+  'Apidura|MAAP Collab|Frame Pack|4L': '3200 side_full',
+  'Apidura|Bombtrack Collab|Frame Pack': '2210 side_full',
+  'Ortlieb|Frame-Pack|Frame-Pack Toptube': '3210 side_full',
+  'Ortlieb|Frame-Pack|Frame-Pack RC Toptube': '3210',
+  'Revelate Designs|Tangle|Tangle Frame Bag|XS': '2012 side_full',
+  'Revelate Designs|Tangle|Tangle Frame Bag|SM': '2012 side_full',
+  'Revelate Designs|Tangle|Tangle Frame Bag|MD': '3012 side_full',
+  'Revelate Designs|Tangle|Tangle Frame Bag|LG': '3012 side_full',
+  'Revelate Designs|Cranny|Cranny Frame Bag': '2100 horseshoe_top',
+  'Revelate Designs|Nook|Nook Frame Bag': '2100 horseshoe_top',
+  'Restrap|Adventure|Frame Bag|Small': '2200 top_side',
+  'Restrap|Adventure|Frame Bag|Medium': '3210 top_side',
+  'Restrap|Adventure|Frame Bag|Large': '3220 top_side',
+  'Tailfin|Frame Bags|Half Frame Bag': '3100 top_side',
+  'Tailfin|Frame Bags|Wedge Frame Bag|1.9L': '2100 top_side',
+  'Tailfin|Frame Bags|Wedge Frame Bag|2.7L': '2100 top_side',
+  'Tailfin|Frame Bags|Wedge Frame Bag|3.5L': '3100 top_side',
+  'Salsa (EXP Series)||EXP Series Cholla Half-Frame Bag': '1000 top_side',
+  'Blackburn Design|Outpost|Frame Bag': '4310 top_centre',
+  'Blackburn Design|Outpost|Corner Bag': '0000 perimeter',
+  'Blackburn Design|Grid|Grid SL Frame Bag': '3100 top_centre',
+  'Topeak|Loader|MidLoader': '3110 side_full,side_full',
+  'Topeak|Loader|MidLoader DryBag': '3110 side_full',
+  'Swift Industries|Hold Fast|Hold Fast Half Frame Bag': '3100 top_centre',
+  'Swift Industries|Giddy Up|Giddy Up Wedge Frame Bag': '3210 top_centre',
+  'Road Runner Bags|Wedge|Wedge Half Frame Bag': '3200 top_side',
+  'Outer Shell Adventure|Half Frame Bag|Half Frame Bag': '2200 top_centre',
+  'Wizard Works|Osyth|Osyth Frame Bag': '2000 top_centre',
+  'Oveja Negra|1/2 Pack|1/2 Pack 2.0 Frame Bag': '4111 side_full,side_full',
+  'Miss Grape|Internode|Internode 2 Waterproof': '2010 top_side',
+  'Miss Grape|Internode|Internode 3 Waterproof': '3010 top_side',
+  'Miss Grape|Internode|Internode 4 Waterproof': '4010 top_side',
+  'Miss Grape|Internode|Internode 5 Waterproof': '4010 top_side',
+  'Miss Grape|Internode|Internode 6 Waterproof': '4002 top_side',
+  'EVOC||EVOC Multi Frame Pack WP': '3000 front_panel',
+  'Zefal||Zefal Z Frame Pack': '2000 top_side',
+  'AGU||AGU Tube Frame Bag Venture (S, 3L)': '4000 top_side',
+  'Buckhorn Bags||Buckhorn Halfie Frame Bag': '4000 top_centre',
+  'Alpkit|Possum|Possum Frame Bag': '3000 top_side',
+  'Alpkit|Glider|Glider Road Frame Bag': '3000 top_side',
+  'Green Guru Gear|Upshift|Upshift Frame Bag': '3200 top_side',
+  'Vincita|Strada|Strada Bikepacking Frame Bag': '2100 perimeter',
+  'Giant|H2Pro|H2Pro Frame Bag': '3100 horseshoe_top',
+  'Atelier Velocidade|Avalanche|Avalanche': '0020 top_side',
+};
+
+/** How far a strap can reach from the bag to a tube it does not touch (mm). */
+const REACH = 100;
 
 /**
- * How many straps wrap each tube.
- *
- * The model records carry an exact `straps` array — Apidura's records name the
- * tube for every one of them — but tools/apply-models.mjs merges only dims,
- * render, fits, geometry, axes, closure and structure, so `p.straps` does not
- * reach the browser today. Read it anyway, so the day that merge lands this
- * builder is already right, and fall back to a rule fitted to what those 16
- * records actually say:
- *   - top tube: 2 under 36 cm, 3 at or above it. Exact on all 16.
- *   - down tube: 2 on a soft pack over 24 cm, otherwise 1. Also exact on all
- *     16, and not a coincidence — the structured packs (Expedition's fibreglass
- *     rails, the Aero module's HDPE frame) are held by one big cam strap
- *     because the shell itself resists swinging; the soft ones need two.
- *   - seat tube: only the Bombtrack collab has one and nothing else in the
- *     merged data distinguishes it, so the fallback is 0 and that bag will not
- *     get its rear-end-cap strap until `straps` is merged.
- *   - head tube: the three elastic cords are unique to the Aero Frame Module,
- *     which is also the only `rigid` product in the slot.
+ * How far down its tube a bottle may be slid to make room (B-RAD rail). The
+ * bike's own adjustBottles() allows 140; the bag is drawn to leave the bottle
+ * free at 100 or less, so there is always travel to spare.
  */
-function strapPlan(p, runLen, stiff) {
-  const rows = Array.isArray(p && p.straps) ? p.straps : null;
-  if (rows) {
-    const n = (...names) => rows
-      .filter((s) => names.includes(String(s && s.wrapsAround)))
-      .reduce((a, s) => a + (Number.isFinite(s.count) ? s.count : 1), 0);
-    return {
-      topTube: n('top_tube', 'toptube'),
-      downTube: n('downtube', 'down_tube'),
-      seatTube: n('seat_tube', 'seattube'),
-      headTube: n('head_tube', 'headtube'),
-    };
-  }
-  return {
-    topTube: runLen < 360 ? 2 : 3,
-    downTube: stiff === 'soft' && runLen >= 240 ? 2 : 1,
-    seatTube: 0,
-    headTube: stiff === 'rigid' ? 3 : 0,
-  };
-}
-
-/**
- * The largest dome `shapeBulge` will actually deliver on THIS outline, 0..1.
- *
- * The width solve below has to run backwards from the finished surface to the
- * extrusion depth, so it needs to know how far the faces will move. Two things
- * make that a property of the shape rather than a constant: shapeBulge fades to
- * nothing within `reach` of the outline, so a shallow bag never reaches full
- * dome anywhere, and it pinches back at every seam. Sampling the returned
- * function on a grid inside the polygon is exact to the grid, and the function
- * is smooth over tens of millimetres, so a ~5mm grid is plenty.
- */
-function peakBulge(poly, seams, reach) {
-  const w = shapeBulge(poly, 1, seams, reach);
-  const xs = poly.map((q) => q.x), ys = poly.map((q) => q.y);
-  const x0 = Math.min(...xs), x1 = Math.max(...xs);
-  const y0 = Math.min(...ys), y1 = Math.max(...ys);
-  const inside = (x, y) => {
-    let hit = false;
-    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
-      const a = poly[i], b = poly[j];
-      if ((a.y > y) !== (b.y > y) && x < ((b.x - a.x) * (y - a.y)) / (b.y - a.y) + a.x) hit = !hit;
-    }
-    return hit;
-  };
-  const nx = Math.max(8, Math.min(72, Math.round((x1 - x0) / 5)));
-  const ny = Math.max(8, Math.min(72, Math.round((y1 - y0) / 5)));
-  let best = 0;
-  for (let i = 1; i < nx; i++) {
-    const x = x0 + ((x1 - x0) * i) / nx;
-    for (let j = 1; j < ny; j++) {
-      const y = y0 + ((y1 - y0) * j) / ny;
-      if (inside(x, y)) best = Math.max(best, w(x, y));
-    }
-  }
-  return best;
-}
-
-/**
- * The moulded hexagonal grab tab and its cord, hanging off the zip slider.
- *
- * Apidura put one on every zip in this slot and the round-2 critics called its
- * absence out by name; it is drawn here rather than in `zipperRun` because that
- * helper is shared with slots whose zips have a plain webbing tab.
- * `dimensions-1.png` hangs it below the zip line on the down-tube blade, tab
- * first and then a cord loop in the accent colour.
- */
-function grabTab(grp, hwm, accent, at, down, z) {
-  const tab = new THREE.Mesh(new THREE.CylinderGeometry(7.4, 7.4, 3.2, 6), hwm);
-  tab.rotation.x = Math.PI / 2;                 // hex faces point along z
-  tab.rotation.z = Math.atan2(down.y, down.x) + Math.PI / 2;
-  // 12mm down puts the hexagon on the END of the pull zipperRun already draws,
-  // which is how the moulded tab is fitted, and the cord loop hangs below it.
-  tab.position.copy(at).addScaledVector(down, 12).setZ(z + 1.6);
-  const cord = new THREE.Mesh(new THREE.TorusGeometry(5.4, 1.35, 5, 16), accent);
-  cord.position.copy(at).addScaledVector(down, 21.5).setZ(z + 1.6);
-  for (const o of [tab, cord]) { o.userData.noCollide = true; grp.add(o); }
-}
-
-/** Polygon -> Shape with a per-vertex corner radius. Soft goods have no corners. */
-function roundedShape(pts, radii) {
-  const n = pts.length;
-  const s = new THREE.Shape();
-  const toward = (i, j) => pts[j].clone().sub(pts[i]);
-  const rAt = (i) => {
-    const a = toward(i, (i - 1 + n) % n).length(), b = toward(i, (i + 1) % n).length();
-    return Math.max(0, Math.min(radii[i] || 0, a * 0.45, b * 0.45));
-  };
-  const at = (i, j) => {
-    const d = toward(i, j);
-    const l = d.length();
-    return l < 1e-4 ? pts[i].clone() : pts[i].clone().addScaledVector(d.multiplyScalar(1 / l), rAt(i));
-  };
-  const start = at(0, 1);
-  s.moveTo(start.x, start.y);
-  for (let i = 1; i <= n; i++) {
-    const k = i % n;
-    const a = at(k, (k - 1 + n) % n), b = at(k, (k + 1) % n);
-    s.lineTo(a.x, a.y);
-    if (rAt(k) > 0.05) s.quadraticCurveTo(pts[k].x, pts[k].y, b.x, b.y);
-  }
-  return s;
-}
-
-/**
- * A strap that runs from a point on the bag out to a FRAME TUBE and wraps it.
- *
- * This replaces the `frameStraps` call the down-tube strap used to make. That
- * helper lifts a closed band off the bag's own edge by `tubeR` along a normal,
- * which is right for the top tube — the bag's top edge IS on the top tube — and
- * wrong for every other tube, because a half frame pack's lower edge is nowhere
- * near the down tube on a 56 cm frame. The result was a closed loop of webbing
- * hanging in mid-air attached to nothing, on all 16 products. Apidura's own
- * down-tube straps are long adjustable nylon webbing precisely because the gap
- * they cross depends on the frame, so draw the tail and land the band on the
- * tube centreline the bike gives us.
- *
- * `tubeA`/`tubeB` are the tube's real centreline ends in bag-local mm.
- */
-function tubeStrap(grp, wm, hwm, { from, tubeA, tubeB, tubeR, width = 22, buckle = true }) {
-  const axis = tubeB.clone().sub(tubeA);
-  const len2 = axis.lengthSq();
-  if (len2 < 1) return;
-  const t = Math.max(0, Math.min(1, from.clone().sub(tubeA).dot(axis) / len2));
-  const at = tubeA.clone().addScaledVector(axis, t);       // nearest point on the tube
-  const gap = from.clone().sub(at);
-  const span = gap.length();
-  if (span < 1) return;
-  const dir = gap.clone().multiplyScalar(1 / span);
-  const band = new THREE.Group();
-  // Same flattened torus frameStraps uses, so a bag's down-tube band reads as
-  // the same piece of webbing as the bands over its top tube.
-  const loop = new THREE.Mesh(new THREE.TorusGeometry(tubeR + 4, 2.6, 6, 24), wm);
-  loop.scale.z = width / 5.2;
-  loop.quaternion.setFromUnitVectors(v3(0, 0, 1), axis.clone().normalize());
-  loop.position.copy(at);
-  band.add(loop);
-  const reach = span - tubeR - 2;
-  if (reach > 3) {
-    const strip = new THREE.Mesh(new THREE.BoxGeometry(reach, 2.4, width), wm);
-    strip.position.copy(at).addScaledVector(dir, tubeR + 2 + reach / 2);
-    strip.rotation.z = Math.atan2(dir.y, dir.x);
-    band.add(strip);
-    if (buckle) {
-      const bk = new THREE.Mesh(new THREE.BoxGeometry(13, 7.5, width * 0.8), hwm);
-      bk.position.copy(at).addScaledVector(dir, tubeR + 2 + Math.min(reach * 0.5, 30));
-      bk.rotation.z = strip.rotation.z;
-      band.add(bk);
-    }
-  }
-  // The band is meant to be inside the tube it wraps; exempt it from the
-  // clearance test exactly as frameStraps does for the top-tube bands.
-  band.traverse((o) => { o.userData.noCollide = true; });
-  grp.add(band);
-}
+const BOTTLE_SLIDE = -100;
 
 export function buildFrameHalf(p, brand, main, accent, ctx) {
   const grp = new THREE.Group();
-  const anchor = ctx.anchors.framebag.position;
-  const panel = framePanelPoly(ctx);
-  // framePoly is walked [BB, top of seat tube, top tube at head, down tube at
-  // head] with edge i running point i -> i+1; framePanelPoly offsets each edge
-  // out to that tube's surface and keeps the same order.
-  const [pBB, pSeatTop, pHeadTop, pHeadBot] = panel;
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
   const geom = geomOf(p);
-  // soft | semi | rigid, from the model records — see stiffnessOf().
   const stiff = stiffnessOf(p);
-  const local = (pt) => v3(pt.x - anchor.x, pt.y - anchor.y, 0);
+  const rec = recordOf(HALF_RECORDS, brand, p);
+  const axes = p.axes || {};
 
-  // ---- the frame's own directions -----------------------------------------
-  const ttDir = pHeadTop.clone().sub(pSeatTop).normalize();     // seat end -> head end
-  const ttLen = pSeatTop.distanceTo(pHeadTop);
-  const down = v3(ttDir.y, -ttDir.x, 0);                        // into the triangle
-  if (down.y > 0) down.negate();
-  // The down tube, head end -> BB, taken off the OFFSET panel edge: a bag whose
-  // lower-front edge lies on this line is touching the tube, not buried in it.
-  const dtBack = pBB.clone().sub(pHeadBot).normalize();
-  const dtDrop = dtBack.dot(down);          // depth gained per mm along the down tube
-  const dtRun = -dtBack.dot(ttDir);         // and how far back that mm carries us
-  // Inward normals of the two edges the bag can run into, for the guards below.
-  const dtIn = v3(dtBack.y, -dtBack.x, 0);
-  if (dtIn.dot(pHeadTop.clone().sub(pHeadBot)) < 0) dtIn.negate();
-  const stIn = v3(pSeatTop.y - pBB.y, pBB.x - pSeatTop.x, 0).normalize();
-  if (stIn.dot(pHeadTop.clone().sub(pBB)) < 0) stIn.negate();
+  // ---- which bag is this ---------------------------------------------------------
+  const lenVertical = /^[-+]?y$/.test(String(axes.len || ''));
+  const alongST = /seat/.test(String(axes.hgt || ''));
+  const corner = /corner/i.test(p.name || '') || lenVertical;
+  let len = p.mm.len, hgt = p.mm.hgt;
+  if (lenVertical) [len, hgt] = [hgt, len];
+  const t = (p.geometry && p.geometry.taper) || {};
+  const ok = (v) => (Number.isFinite(v) && v > 0.03 && v <= 1 ? v : null);
+  let nose = ok(t.nose) ?? vr.range(0.24, 0.4);
+  let tail = ok(t.tail) ?? vr.range(0.52, 0.72);
+  // the seat-tube wedges' records put the 1 on the end that is deep, which is
+  // the seat-tube end: read it that way round
+  if ((alongST || corner) && nose > tail) [nose, tail] = [tail, nose];
+  if (corner && !ok(t.nose)) { nose = 0.15; tail = 1; }
+  const rearAnchored = alongST || corner || (tail >= 0.95 && nose < 0.8)
+    || (rec && rec.st > 0 && rec.dt === 0 && rec.ht === 0);
 
-  // ---- the top edge --------------------------------------------------------
-  // Honour the catalogue length. Spanning 4%->96% of the top tube regardless of
-  // p.mm.len made a 205mm Racing pack the same object as a 490mm Expedition.
-  // Real half packs are pushed hard into the head-tube corner: 8mm off the
-  // panel's head-tube edge leaves the nose ~6mm clear of the tube itself.
-  const ends = endFractions(p, vr);
-  const runLen = Math.min(p.mm.len, ttLen - 36);
-  // Declared here rather than with the kite below because the top edge needs it
-  // too: it is the extrusion bevel, and it moves BOTH the top edge and the depth.
-  const bevel = 6;
-  // The panel's top edge is the inner face of the top tube. The extrusion
-  // bevel grows the outline back toward the tube by `bevel`, so start the
-  // kite that far into the triangle or the finished edge notches the silver.
-  // (An earlier try dropped by one bevel while the panel still tucked UNDER
-  // the tube — net zero, still a bite. The panel now sits on the surface.)
-  const noseTop = pHeadTop.clone().addScaledVector(ttDir, -8).addScaledVector(down, bevel + 4);
-  const rearTop = noseTop.clone().addScaledVector(ttDir, -runLen);
+  // ---- the triangle ----------------------------------------------------------------
+  const F = frameLocal(ctx);
+  const { cl, R } = F;
+  const BEVEL = 5;
+  // pre-bevel boundary: every tube's surface, less the bevel, plus the bite
+  const tri = offsetEdges(cl, R.map((r) => r - BITE + BEVEL));
+  const ttA = tri[1], ttB = tri[2];
+  const ttDir = ttB.clone().sub(ttA).normalize();
+  const ttLen = ttA.distanceTo(ttB);
+  const upN = edgeOutward(tri, 1);
+  const down = upN.clone().negate();
+  const outs = [0, 1, 2, 3].map((i) => edgeOutward(tri, i));
 
-  // ---- the kite ------------------------------------------------------------
-  // The extrusion bevel below rounds the outline outward by `bevel` on every
-  // side, so the drawn shape has to start that much shallower or the finished
-  // belly sits a bevel below the published depth. Length is left alone: both
-  // ends of a real pack are genuinely rounded off.
-  //
-  // THE END FACES TAKE THE SAME DEDUCTION, and until 10 Aug they did not: they
-  // were `frac * (hgt - bevel)`, which finishes at `frac*hgt + bevel*(1-frac)`.
-  // On a deep seat-tube face that is a millimetre, but on the Expedition 2.8L's
-  // 2.5cm head-tube face it is +4mm on 25 — the face renders 16% over, and the
-  // round-2 critics read the whole head-tube end as too fat. Deduct it once, on
-  // the published figure, exactly as the belly does.
-  //
-  // CORRECTED 12 Aug: the deduction was ONE bevel and it has to be TWO. The
-  // bevel expands the outline outward on every side, so a vertical extent gains
-  // one at the top and one at the bottom — `2 * bevel`, which is exactly what
-  // the WIDTH solve ninety lines below already deducts (`wantW - 2 * bevel`)
-  // for the same geometric reason on the other axis. The height axis only ever
-  // deducted one, so every bag in the slot finished a bevel deep.
-  //
-  // Measured before this change, across all 103 products the slot draws for 35
-  // brands: median +15mm on the published depth, near-constant in millimetres
-  // rather than proportional, which is the signature of an additive term and
-  // not of a scale error. Tailfin's nine ran +16 to +19mm on bags from 118 to
-  // 201mm deep. Six of the twelve is this; the top-edge shift above is the
-  // other six.
-  const cap = Math.min(p.mm.hgt, 300);
-  let h = Math.max(24, cap - 2 * bevel);
-  // Held as FRACTIONS of h so the down-tube guard below stays closed-form.
-  const fNose = Math.min(Math.max(ends.nose * cap - 2 * bevel, 5) / h, 0.90);
-  const fTail = Math.min(Math.max(ends.tail * cap - 2 * bevel, 6) / h, 0.96);
-  // Guard, not a fudge: nothing here may reach past the down tube. Both bottom
-  // corners sit `frac * h` along `down` from a point on the top tube, and the
-  // clearance to the down-tube edge falls off linearly in h, so the ceiling is
-  // closed-form. On this frame it never binds — the tightest product (Expedition
-  // 5.7L) still has 1.8x the headroom it uses — but it is what stops the next
-  // dimension correction, or a smaller frame, from burying a pack in the tube.
-  const drop = -down.dot(dtIn);
-  if (drop > 0.05) {
-    const room = (topPt, frac) => (topPt.clone().sub(pHeadBot).dot(dtIn) - 6) / (frac * drop);
-    h = Math.max(24, Math.min(h, room(noseTop, fNose), room(rearTop, fTail)));
+  // ---- the outline ------------------------------------------------------------------
+  // Pre-bevel sizes: the bevel grows every side by BEVEL.
+  const run = Math.max(Math.min(len - 2 * BEVEL, ttLen - 4), 60);
+  const h = Math.max(Math.min(hgt, 320) - 2 * BEVEL, 30);
+  const noseTop = rearAnchored ? ttA.clone().addScaledVector(ttDir, run) : ttB.clone();
+  const rearTop = noseTop.clone().addScaledVector(ttDir, -run);
+  const at = (s, d) => rearTop.clone().addScaledVector(ttDir, s).addScaledVector(down, d);
+  // Depth from the top edge down to the down tube at station s (linear in s).
+  const dtDepth = (s) => {
+    const q = at(s, 0);
+    const den = down.dot(outs[3]);
+    return den > 1e-3 ? (tri[3].clone().sub(q).dot(outs[3])) / den : Infinity;
+  };
+  const faceN = Math.max(nose * h - 2 * BEVEL * (1 - nose), 6);   // end faces take the bevel once
+  const faceT = Math.max(tail * h - 2 * BEVEL * (1 - tail), 6);
+  let pts;
+  if (nose >= 0.9) {
+    pts = [at(0, 0), at(run, 0), at(run, h), at(0, faceT)];
+  } else if (tail >= 0.95) {
+    pts = [at(0, 0), at(run, 0), at(run, faceN), at(0, h)];
+  } else {
+    // kite: the belly is where the down tube, running back from the nose, has
+    // got h deep (Apidura's drawings, reproduced within 5% across the range)
+    const d0 = dtDepth(0), d1 = dtDepth(run);
+    let sb = Number.isFinite(d0) && Math.abs(d1 - d0) > 1 ? run * (h - d0) / (d1 - d0) : run * 0.6;
+    if (Number.isFinite(geom.belly)) sb = run * geom.belly;
+    sb = Math.min(Math.max(sb, run * 0.3), run * 0.9);
+    pts = [at(0, 0), at(run, 0), at(run, faceN), at(sb, h), at(0, faceT)];
   }
-  const noseD = h * fNose, tailD = h * fTail;
-  const noseBot = noseTop.clone().addScaledVector(down, noseD);
-  const rearBot = rearTop.clone().addScaledVector(down, tailD);
-  // Guard: the seat tube leans FORWARD as it descends, so on a long pack the
-  // bottom-rear corner reaches it well before the top edge does — the Expedition
-  // 5.7L's would sit 25mm inside it. Slide that ONE corner forward rather than
-  // shortening the bag: p.mm.len is the published top-edge length and stays
-  // exact, and a rear face that leans forward at the bottom is what the maker's
-  // own dimensions-4.png draws on the longest pack in the range.
+  // Clip to the triangle: seat tube, head tube, down tube. (The top edge is ON
+  // the top tube already.)
+  for (const i of [0, 2, 3]) pts = clipHalfPlane(pts, tri[i], outs[i]);
+  if (pts.length < 3) pts = [at(0, 0), at(run, 0), at(run * 0.5, Math.min(h, 40))];
+  // "Leaves the bottles free": the bottom edge stays above each bottle that sits
+  // under it, with that bottle slid BOTTLE_SLIDE down its rail. The bottles are
+  // the bike's own (ctx.bottleMounts), measured, not assumed. The bike tests a
+  // clash box-against-box, so the bag's lowest point has to clear the top of
+  // the bottle's box wherever the two overlap fore-aft.
+  const floors = bottleFloors(ctx);
+  let floorY = -Infinity;
   {
-    const reach = ttDir.dot(stIn);
-    const near = rearBot.clone().sub(pSeatTop).dot(stIn);
-    if (reach > 0.05 && near < 6) {
-      rearBot.addScaledVector(ttDir, Math.min((6 - near) / reach, runLen * 0.4));
+    const xs = pts.map((q) => q.x);
+    const x0 = Math.min(...xs) - BEVEL - 30, x1 = Math.max(...xs) + BEVEL + 30;
+    for (const f of floors) if (f.x1 > x0 && f.x0 < x1) floorY = Math.max(floorY, f.y);
+    if (Number.isFinite(floorY)) {
+      const cut = clipHalfPlane(pts, v3(0, floorY + BEVEL + 4, 0), v3(0, -1, 0));
+      if (cut.length >= 3) pts = cut;
     }
   }
-  // The lower-front edge runs from the nose corner PARALLEL TO THE DOWN TUBE;
-  // the belly is where it has reached full depth. Clamp it so it can never run
-  // out behind the rear face — a bag shorter than (hgt - nose)/tan(TT^DT) is
-  // then a plain forward-deepening wedge, which is what such a bag would be.
-  const wantRun = dtDrop > 0.05 ? (h - noseD) / dtDrop : 0;
-  const maxRun = dtRun > 0.05 ? Math.max(0, (runLen - 14) / dtRun) : 0;
-  const bellyRun = Math.min(wantRun, maxRun);
-  // WHERE THE BELLY SITS. The header above says this "is not in the records and
-  // must not be: it falls out of the frame", and for Apidura that is measurably
-  // true — the derivation below reproduces all six of their drawings to within
-  // 5%. It is true because an Apidura half pack's lower-front edge LIES ON the
-  // down tube, so the deepest point is simply where that edge has got `hgt`
-  // deep, and the frame supplies the angle.
-  //
-  // Tailfin's do not lie on the down tube. Their nine two-view drawings show a
-  // tall blunt REAR face at the seat tube, a lower edge falling only ~9 degrees
-  // forward, the deepest point at 0.82 of the length, then a steep ~40 degree
-  // climb to a shallow front face — and only the forward 15-20% of that lower
-  // edge touches the tube at all, which is what keeps the bottle cages usable.
-  // Derive the belly from the frame for that bag and you get the wrong object.
-  //
-  // So the rule stands with one amendment: derive it, UNLESS the record has
-  // measured it. `geometry.belly` is a fraction of the length from the
-  // SEAT-TUBE end. Absent on every product but Tailfin's nine, so the Apidura
-  // derivation is untouched — this widens the vocabulary rather than replacing
-  // the rule, which is the difference between a fix and a brand leak.
-  const bellyFrac = Number.isFinite(geom.belly) ? geom.belly : null;
-  const belly = bellyFrac === null
-    ? noseBot.clone().addScaledVector(dtBack, bellyRun)
-    // Measured: the deepest point sits `bellyFrac` along the top edge and the
-    // full depth `h` below it. Clamped inside the two bottom corners so the
-    // outline stays convex-walkable however the record is written.
-    : rearTop.clone()
-        .addScaledVector(ttDir, runLen * Math.min(Math.max(bellyFrac, 0.06), 0.94))
-        .addScaledVector(down, h);
+  const soften = stiff === 'rigid' ? 0.4 : geom.shoulder === 'rounded' ? 1.4 : 0.9;
+  const poly = roundCorners(pts, (i, ang) => (ang < 0.8 ? 16 : ang < 1.7 ? 11 : 8) * soften, 4);
+  const local = poly.map((q) => ({ x: q.x, y: q.y }));
+  const shape = new THREE.Shape();
+  poly.forEach((q, i) => (i === 0 ? shape.moveTo(q.x, q.y) : shape.lineTo(q.x, q.y)));
+  // the depth actually drawn (after the clip), square to the top edge
+  const drawnH = Math.max(...poly.map((q) => q.clone().sub(rearTop).dot(down)));
 
-  // Walk the outline: forward along the top tube, down the nose face, back along
-  // the down-tube edge to the belly, back along the lower-rear edge, up the
-  // rear face.
-  const pts = [rearTop, noseTop, noseBot, belly, rearBot];
-  const L = pts.map(local);
-  // `shoulder` is 'squared' on the Expedition/Racing/Aero and 'rounded' on the
-  // Backcountry, and a rigid shell keeps its creases.
-  const soften = stiff === 'rigid' ? 0.35 : geom.shoulder === 'rounded' ? 1.25 : 0.85;
-  const fil = (r) => Math.max(1.5, r * soften);
-  // Corner radii, read off the maker's dimension drawings. `roundedShape` caps
-  // every radius at 0.45 of the shorter adjacent edge, so asking for half the
-  // end face at BOTH of its corners — which is what the old
-  // `min(noseD*0.5, 22)` did on a small nose — leaves no flat between the two
-  // arcs at all. That is the "big blank rounded corner where the drawings
-  // specify a small squared end face" the round-2 critics saw on all 16.
-  // dimensions-1.png (Expedition 2.8L) draws that 2.5cm face with a generous
-  // radius where it meets the top tube and a tight one where the down-tube
-  // blade runs into it; keep at least half the face flat.
-  const shape = roundedShape(L, [
-    fil(9),                                  // top edge into the seat-tube face
-    fil(Math.min(11, noseD * 0.30)),         // top edge into the head-tube face
-    fil(Math.min(9, noseD * 0.22)),          // head-tube face into the blade
-    fil(Math.min(11, h * 0.09)),             // the belly: a crease, not a bowl
-    fil(Math.min(22, tailD * 0.45)),         // the rear-bottom corner
-  ]);
-
-  const poly = L.map((pt) => ({ x: pt.x, y: pt.y }));
-  const mid = poly.reduce((a, q) => ({ x: a.x + q.x / poly.length, y: a.y + q.y / poly.length }), { x: 0, y: 0 });
-  // How far each face domes, as a fraction of the extrusion depth. Drawn from
-  // `vr` HERE, before the seam jitter, only to keep every product's established
-  // random stream in the order it has always had — reordering the draws would
-  // reshuffle the cosmetic variation on all 16 bags for nothing.
-  const bulgeFrac = vr.range(0.2, 0.28);
-  // Panel seams run vertically, at thirds along the top tube.
-  const seamAt = (f) => local(rearTop.clone().addScaledVector(ttDir, runLen * f)).x;
-  const hA = seamAt(0.34) + vr.j(14), hB = seamAt(0.68) + vr.j(14);
-  const seams = [{ axis: 'x', at: hA }, { axis: 'x', at: hB }];
-
-  // The published width is the FINISHED width of the bag, but two things push
-  // the faces outward after extrusion: the bevel on each side, and the pillow
-  // bulge that domes each flat face. Extruding to the published figure and then
-  // adding both made every frame pack 60-75% too wide — the single largest
-  // dimensional error in the catalogue. Solve backwards: pick the extrusion
-  // depth that lands the finished surface on the published number.
-  //
-  // The dome that solve has to cancel is NOT `bulgeAmt`. soft() scales every
-  // displacement by deformScale(structure) — 0.4 on a semi shell, ZERO on a
-  // rigid one — and shapeBulge only reaches its full amount deep inside the
-  // outline. Cancelling the full amount regardless left the two rigid Aero
-  // modules 18% under their published 4.5cm (measured 37mm of 45) and the four
-  // semi Expeditions 7-9% under, while the soft packs, which do get the whole
-  // dome, came out 4-11% over. One factor, `k * peak`, explains all sixteen.
-  const wantW = Math.min(p.mm.wid, 130);
+  // ---- thickness ------------------------------------------------------------------------
+  const wantW = Math.min(Math.max(p.mm.wid, 28), 130);
+  const bevelT = Math.min(6, wantW * 0.14);
   const k = deformScale(stiff);
-  const peak = peakBulge(poly, seams, 48);
-  const gain = 2 * bulgeFrac * k * peak;           // finished mm per mm of depth
-  let depth = Math.max((wantW - 2 * bevel) / (1 + gain), 8);
-  // shapeBulge is capped at 18mm, so on a very wide bag the solve is linear.
-  if (depth * bulgeFrac > 18) depth = Math.max(wantW - 2 * bevel - 36 * k * peak, 8);
-  const bulgeAmt = Math.min(depth * bulgeFrac, 18);
-  const bulgeAt = shapeBulge(poly, bulgeAmt, seams, 48);
-  // Where the finished skin actually is, at a point on the drive-side face.
-  // Everything that sits ON the bag goes through this: a fixed offset floats
-  // hardware off a domed face and buries it in a flat one.
-  const skin = (x, y, proud = 0) => depth / 2 + bevel + bulgeAt(x, y) * k + proud;
+  const noiseAmp = vr.range(1.2, 1.8);
+  const pillow = Math.min(wantW * 0.08, 5);
+  const seamAt = (f) => rearTop.clone().addScaledVector(ttDir, run * f).x;
+  const hA = seamAt(0.34) + vr.j(10), hB = seamAt(0.68) + vr.j(10);
+  const seams = [{ axis: 'x', at: hA }, { axis: 'x', at: hB }];
+  const bulgeW = shapeBulge(local, 1, seams, 44);
+  const peak = Math.max(bulgePeak(local, bulgeW), 0.05);
+  const depth = Math.max(wantW - 2 * bevelT - 2 * pillow * peak * k - 0.3 * noiseAmp * k, 8);
+  const bulgeAt = (x, y) => bulgeW(x, y) * pillow;
+  const skin = (x, y, proud = 0) => depth / 2 + bevelT + bulgeAt(x, y) * k + proud;
 
   const geo = new THREE.ExtrudeGeometry(shape, {
-    depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 3, curveSegments: 4, steps: 1,
+    depth, bevelEnabled: true, bevelThickness: bevelT, bevelSize: BEVEL,
+    bevelSegments: 3, curveSegments: 4, steps: 1,
   });
   geo.translate(0, 0, -depth / 2);
-  grp.add(soft(subdivideXY(geo, 30), main, {
-    amp: vr.range(2.4, 3.6), freq: vr.range(0.018, 0.026), seed: vr.seed % 953, flatAxis: 'z',
-    stiffness: stiff,
-    bulge: bulgeAt,
-    aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.78, aoSpan: 0.5,
+  grp.add(soft(subdivideXY(geo, 28), main, {
+    amp: noiseAmp, freq: vr.range(0.018, 0.026), seed: vr.seed % 953, flatAxis: 'z',
+    stiffness: stiff, bulge: bulgeAt,
+    aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.5,
   }));
 
-  // ---- closure -------------------------------------------------------------
-  // Every record in the slot says one full-length welded zip on the drive side,
-  // and it is the most prominent single feature in every Apidura drawing and
-  // photograph. It was already being built — at `depth/2 - 5`, which is five
-  // millimetres INSIDE the extrusion core with the finished skin another bevel
-  // and dome further out again, so it rendered inside the bag and not one of
-  // the sixteen showed a zip. That is what `skin()` above is for.
-  //
-  // The line is off dimensions-1.png (Expedition 2.8L) and dimensions-2.png
-  // (Racing 4L): parallel to the top edge, about a third of the belly depth
-  // down, running from just inside the seat-tube end to the point where the
-  // down-tube blade rises to meet it — so it STOPS short of the head-tube face
-  // rather than running to it. zipperRun puts its slider at 0.78 of a->b, which
-  // on that run lands at 0.72 of the pack, exactly where both drawings hang the
-  // hexagonal grab tab.
-  const zipD = Math.min(h * 0.34, tailD * 0.72);
-  const bladeF = zipD <= noseD
-    ? 0.95
-    : 1 - ((bellyRun * dtRun) / runLen) * ((zipD - noseD) / Math.max(h - noseD, 1));
-  const zipAt = (f) => local(rearTop.clone().addScaledVector(ttDir, runLen * f).addScaledVector(down, zipD));
-  const za = zipAt(0.045), zb = zipAt(Math.max(0.35, Math.min(bladeF, 0.95) - 0.03));
-  // zipperRun draws a straight tape, so it has to clear the HIGHEST point of
-  // the dome under it or it submerges mid-run — the panel between the seams
-  // stands a couple of millimetres proud of both ends of the line.
-  let zipZ = 0;
-  for (let i = 0; i <= 10; i++) {
-    const q = za.clone().lerp(zb, i / 10);
-    zipZ = Math.max(zipZ, skin(q.x, q.y, 1.2));
+  // ---- closure and zips ---------------------------------------------------------------
+  const hwm = hardware();
+  const topO = rearTop.clone().addScaledVector(upN, BEVEL);     // finished top edge
+  const zipRun = (below, side = 1, trimA = 18, trimB = 18) => {
+    const o = topO.clone().addScaledVector(down, below);
+    const s = lineSpan(local, o, ttDir);
+    if (!s || s.hi - s.lo < trimA + trimB + 30) return null;
+    const a = o.clone().addScaledVector(ttDir, s.lo + trimA);
+    const b = o.clone().addScaledVector(ttDir, s.hi - trimB);
+    let z = 0;
+    for (let i = 0; i <= 10; i++) { const q = a.clone().lerp(b, i / 10); z = Math.max(z, skin(q.x, q.y, 1.1)); }
+    a.z = side * z; b.z = side * z;
+    return [a, b];
+  };
+  const closure = p.closure?.type || 'zip_straight';
+  const zips = rec?.zips?.length ? rec.zips.slice() : closure === 'rolltop' ? [] : ['side_full'];
+  const apidura = /apidura/i.test(brand?.name || '');
+  let sideCount = 0;
+  for (const z of zips) {
+    if (z === 'side_full') {
+      // one full-length welded zip on the drive side, about a third of the
+      // way down; a second runs the non-drive side
+      const zr = zipRun(Math.min(drawnH * 0.34, 60), sideCount === 0 ? 1 : -1, 12, 20);
+      if (zr) {
+        grp.add(zipperRun(zr[0], zr[1], hwm, { accentMat: accent }));
+        if (apidura && sideCount === 0) grabTab(grp, hwm, accent, zr[0].clone().lerp(zr[1], 0.78), down, zr[0].z);
+      }
+      sideCount++;
+    } else if (z === 'top_side' || z === 'top_centre') {
+      const zr = zipRun(Math.min(13, drawnH * 0.2), 1, 14, 14);
+      if (zr) grp.add(zipperRun(zr[0], zr[1], hwm, { accentMat: accent }));
+    } else if (z === 'horseshoe_top' || z === 'perimeter') {
+      // top run with a leg down each end face
+      const zr = zipRun(Math.min(14, drawnH * 0.2), 1, 16, 16);
+      if (zr) {
+        grp.add(zipperRun(zr[0], zr[1], hwm, { accentMat: accent }));
+        for (const e of [zr[0], zr[1]]) {
+          const sp = lineSpan(local, e, down);
+          const legLen = sp ? Math.min(sp.hi - 18, drawnH * 0.6) : 0;
+          if (legLen > 20) {
+            const b = e.clone().addScaledVector(down, legLen);
+            b.z = skin(b.x, b.y, 1.1);
+            grp.add(trackOnly(e, b, accent));
+          }
+        }
+      }
+    } else if (z === 'front_panel') {
+      const o = topO.clone().addScaledVector(ttDir, run - 30);
+      const sp = lineSpan(local, o, down);
+      if (sp && sp.hi > 50) {
+        const a = o.clone().addScaledVector(down, 14), b = o.clone().addScaledVector(down, sp.hi - 16);
+        a.z = skin(a.x, a.y, 1.1); b.z = skin(b.x, b.y, 1.1);
+        grp.add(zipperRun(a, b, hwm, { accentMat: accent }));
+      }
+    }
   }
-  za.setZ(zipZ);
-  zb.setZ(zipZ);
-  grp.add(zipperRun(za, zb, hardware(), { accentMat: accent }));
-  grabTab(grp, hardware(), accent, za.clone().lerp(zb, 0.78), down, zipZ);
+  if (closure === 'rolltop') {
+    // Ortlieb RC Toptube: the top edge rolled twice and laid against the drive
+    // face under the tube, a buckle strap over the roll at each end
+    const zr = zipRun(Math.min(22, drawnH * 0.3), 1, 22, 22);
+    if (zr) {
+      const dir = zr[1].clone().sub(zr[0]);
+      const rr = Math.min(Math.max(wantW * 0.15, 6.5), 10);
+      const lip = new THREE.Mesh(new THREE.CapsuleGeometry(rr, Math.max(dir.length() - 2 * rr, 10), 6, 14), main);
+      lip.scale.set(1, 1, 0.62);
+      lip.rotation.z = Math.atan2(dir.y, dir.x) - Math.PI / 2;
+      const c = zr[0].clone().lerp(zr[1], 0.5);
+      lip.position.set(c.x, c.y, zr[0].z + rr * 0.3);
+      lip.userData.noCollide = true;
+      grp.add(lip);
+      const sg = [], hw = [];
+      for (const f of [0.12, 0.88]) {
+        const q = zr[0].clone().lerp(zr[1], f);
+        const top = q.clone().addScaledVector(upN, Math.min(rr + 6, 16));
+        const over = q.clone().setZ(q.z + rr * 0.95);
+        const bot = q.clone().addScaledVector(down, rr + 26);
+        top.z = skin(top.x, top.y, 0.2); bot.z = skin(bot.x, bot.y, 0.2);
+        sg.push(strapRun(top, over, v3(0, 0, 1), { width: 16 }), strapRun(over, bot, v3(0, 0, 1), { width: 16 }));
+        const bk = q.clone().addScaledVector(down, rr + 14);
+        bk.z = skin(bk.x, bk.y, 0.4);
+        hw.push(...buckle(bk, down, v3(0, 0, 1), { width: 14 }));
+      }
+      grp.add(meshOf(sg, webbing()));
+      grp.add(meshOf(hw, hwm));
+    }
+  }
 
+  // ---- seams, graphics, pockets -------------------------------------------------------------
   for (const s of [1, -1]) {
     for (const sx of [hA, hB]) {
-      const v = crossSpan(poly, sx, 'x');
-      if (!v) continue;
-      const sm = seamStrip(main, 2.6, Math.max(v.hi - v.lo - 16, 18), 2.4);
+      const v = crossSpan(local, sx, 'x');
+      if (!v || v.hi - v.lo < 30) continue;
+      const sm = seamStrip(main, 2.4, v.hi - v.lo - 14, 2.2);
       const my = (v.lo + v.hi) / 2;
-      sm.position.set(sx, my, s * skin(sx, my, 0.6));
+      sm.position.set(sx, my, s * skin(sx, my, 0.4));
+      sm.userData.noCollide = true;
       grp.add(sm);
     }
   }
+  const mid = poly.reduce((a, q) => a.add(q.clone()), new THREE.Vector3()).multiplyScalar(1 / poly.length);
   if (feats.reflective) {
-    // On the lower-rear panel, which on the real bags is the flat area below
-    // the zip and behind the belly.
-    const rp = local(rearTop.clone().addScaledVector(ttDir, runLen * 0.42).addScaledVector(down, h * 0.62));
-    for (const s of [1, -1]) {
-      const rs = reflectiveStrip(Math.min(runLen * 0.34, 130), 9);
-      rs.position.set(rp.x, rp.y, s * skin(rp.x, rp.y, 0.8));
-      grp.add(rs);
+    const rp = rearTop.clone().addScaledVector(ttDir, run * 0.42).addScaledVector(down, drawnH * 0.62);
+    if (lineSpan(local, rp, ttDir)) {
+      for (const s of [1, -1]) {
+        const rs = reflectiveStrip(Math.min(run * 0.3, 120), 8);
+        rs.position.set(rp.x, rp.y, s * skin(rp.x, rp.y, 0.8));
+        rs.rotation.z = Math.atan2(ttDir.y, ttDir.x);
+        rs.traverse((o) => { o.userData.noCollide = true; });
+        grp.add(rs);
+      }
     }
   }
-  addPockets(grp, feats, main, hardware(), {
+  addPockets(grp, feats, main, hwm, {
     side: (make, i) => {
-      const s2 = i % 2 === 0 ? 1 : -1;
-      const g = make(Math.min(runLen * 0.55, 150), Math.min(h * 0.5, 80));
-      const px = mid.x + vr.j(16), py = mid.y - i * 10;
-      g.position.set(px, py, s2 * skin(px, py, 0.6));
+      const s2 = i % 2 === 0 ? -1 : 1;
+      const g = make(Math.min(run * 0.5, 150), Math.min(drawnH * 0.45, 70));
+      g.position.set(mid.x, mid.y, s2 * skin(mid.x, mid.y, 0.2));
+      g.rotation.z = Math.atan2(ttDir.y, ttDir.x);
       if (s2 < 0) g.rotation.y = Math.PI;
+      g.traverse((o) => { o.userData.noCollide = true; });
     },
   });
 
-  // ---- attachment ----------------------------------------------------------
-  const plan = strapPlan(p, runLen, stiff);
-  // Top tube: the bag's own top edge lies on the tube, so frameStraps' lift is
-  // the right model here. Give it the true edge perpendicular — the default
-  // (0,1,0) is world-up and the top tube is 7 degrees off horizontal.
-  frameStraps(grp, webbing(), hardware(), {
-    edge: [L[0].clone(), L[1].clone()],
-    count: plan.topTube, tubeR: TUBE_R.topTube, depth, normal: down.clone().negate(),
-  });
-  // The tubes these next straps have to reach, as the bike itself reports them:
-  // frameEdgeR[i] is the radius of the tube along framePoly[i] -> framePoly[i+1].
-  // TUBE_R is only the fallback for a ctx that has no radii (framePanelPoly
-  // handles the same case), because a strap sized off the wrong radius either
-  // floats around the tube or sinks into it.
-  const R = ctx.frameEdgeR || [TUBE_R.seatTube, TUBE_R.topTube, 24, TUBE_R.downTube];
-  const tube = (i) => ({ tubeA: local(ctx.framePoly[i]), tubeB: local(ctx.framePoly[(i + 1) % 4]), tubeR: R[i] });
-  // Down tube: hung off the lower-FRONT edge (noseBot -> belly), which is the
-  // edge that faces it. Two straps sit near each end of that edge, which is
-  // where the drawings and the on-bike photos put them.
-  for (let i = 0; i < plan.downTube; i++) {
-    const f = plan.downTube === 1 ? 0.5 : 0.15 + (0.7 * i) / (plan.downTube - 1);
-    tubeStrap(grp, webbing(), hardware(), { from: L[2].clone().lerp(L[3], f), ...tube(3) });
+  // ---- straps ---------------------------------------------------------------------------------
+  const nTT = rec ? rec.tt : run < 360 ? 2 : 3;
+  const counts = {
+    tt: corner && rec && rec.tt + rec.dt + rec.st + rec.ht === 0 ? 2 : nTT,
+    dt: rec ? rec.dt : 1,
+    st: rec ? rec.st : corner ? 1 : 0,
+    ht: rec ? rec.ht : stiff === 'rigid' ? 3 : 0,
+  };
+  if (corner && rec && rec.tt + rec.dt + rec.st + rec.ht === 0) counts.st = 1;
+  const fin = offsetEdges(poly, poly.map(() => -BEVEL));        // the finished outline
+  const faceHalf = (q) => skin(q.x, q.y, 0.2);
+  const geos = [];
+  // top tube: spread along the bag's own top edge
+  for (let i = 0; i < counts.tt; i++) {
+    const f = counts.tt === 1 ? 0.5 : 0.1 + (0.8 * i) / (counts.tt - 1);
+    geos.push(...velcroStrap(F, 1, 0, faceHalf, { tab: 20, bagAt: topO.clone().addScaledVector(ttDir, run * f) }));
   }
-  // Seat tube: off the rear end cap (Bombtrack collab).
-  for (let i = 0; i < plan.seatTube; i++) {
-    const f = plan.seatTube === 1 ? 0.5 : 0.3 + (0.4 * i) / (plan.seatTube - 1);
-    tubeStrap(grp, webbing(), hardware(), { from: L[0].clone().lerp(L[4], f), ...tube(0) });
+  // down, seat and head tubes: at the stretch of the outline that touches the
+  // tube, or — for a strap the record gives a reach — from the nearest point
+  for (const [edge, n] of [[3, counts.dt], [0, counts.st], [2, counts.ht]]) {
+    if (!n) continue;
+    const c = contactOn(fin, cl, R, edge);
+    if (!c) continue;
+    for (let i = 0; i < n; i++) {
+      const f = n === 1 ? 0.5 : 0.2 + (0.6 * i) / (n - 1);
+      const bagAt = c.a.clone().lerp(c.b, f);
+      // a band round the down tube below the bottle floor would put the strap
+      // in the bottle's way; slide it up the contact, or leave it off
+      if (edge !== 1 && Number.isFinite(floorY)) {
+        const t = cl[edge], u = cl[(edge + 1) % cl.length];
+        const dir = u.clone().sub(t).normalize();
+        const cy = t.y + dir.y * bagAt.clone().sub(t).dot(dir);
+        if (cy - R[edge] - 2 < floorY) continue;
+      }
+      geos.push(...velcroStrap(F, edge, 0, faceHalf, { tab: 18, bagAt, width: edge === 2 && stiff === 'rigid' ? 6 : 20 }));
+    }
   }
-  // Head tube: the Aero Frame Module's three thin ELASTIC bands, not webbing —
-  // the record calls them the giveaway detail of that product.
-  for (let i = 0; i < plan.headTube; i++) {
-    const f = 0.18 + (0.64 * i) / Math.max(1, plan.headTube - 1);
-    tubeStrap(grp, cordMat(), hardware(), {
-      from: L[1].clone().lerp(L[2], f), ...tube(2), width: 5, buckle: false,
-    });
-  }
+  grp.add(meshOf(geos, webbing()));
 
-  const patchW = Math.max(38, Math.min(56, runLen * 0.16, h * 0.34));
-  // Apidura print the wordmark high and forward, just behind the head-tube end
-  // and ABOVE the zip — on-bike-4.jpg puts it on the top panel, and the zip line
-  // now occupies the depth this used to sit at.
-  const lp = local(rearTop.clone().addScaledVector(ttDir, runLen * 0.74).addScaledVector(down, zipD * 0.45));
-  const patchZ = skin(lp.x, lp.y, 1.4);
-  patch(grp, brand, lp.x, lp.y, patchZ, patchW, 0);
-  patch(grp, brand, lp.x, lp.y, -patchZ, patchW, Math.PI);
+  // Brand mark high and forward, above the zip
+  const patchW = Math.max(36, Math.min(56, run * 0.16, drawnH * 0.36));
+  const lp = rearTop.clone().addScaledVector(ttDir, run * (rearAnchored ? 0.3 : 0.72)).addScaledVector(down, Math.min(drawnH * 0.2, 28) + BEVEL);
+  if (lineSpan(local, lp, ttDir)) {
+    const pz = skin(lp.x, lp.y, 1.4);
+    patch(grp, brand, lp.x, lp.y, pz, patchW, 0);
+    patch(grp, brand, lp.x, lp.y, -pz, patchW, Math.PI);
+  }
   return shadowify(grp);
+}
+
+/**
+ * The stretch of the finished outline that touches frame tube `edge`, as
+ * {a, b} end points; or, where nothing touches, the single nearest point if a
+ * strap can reach it (REACH); else null.
+ */
+function contactOn(fin, cl, R, edge) {
+  const a = cl[edge], b = cl[(edge + 1) % cl.length];
+  const dir = b.clone().sub(a);
+  const L = dir.length();
+  dir.normalize();
+  const r = R[edge];
+  const gapOf = (q) => {
+    const t = Math.min(Math.max(q.clone().sub(a).dot(dir), 0), L);
+    return q.distanceTo(a.clone().addScaledVector(dir, t)) - r;
+  };
+  let best = null, bestGap = Infinity;
+  const touching = [];
+  for (const q of fin) {
+    const g = gapOf(q);
+    if (g < 3) touching.push(q);
+    if (g < bestGap) { bestGap = g; best = q; }
+  }
+  if (touching.length) {
+    const proj = touching.map((q) => [q.clone().sub(a).dot(dir), q]).sort((x, y) => x[0] - y[0]);
+    return { a: proj[0][1].clone(), b: proj[proj.length - 1][1].clone() };
+  }
+  if (best && bestGap <= REACH) return { a: best.clone(), b: best.clone() };
+  return null;
+}
+
+/**
+ * Each bottle's box, in bag-local mm, with the bottle slid BOTTLE_SLIDE down
+ * its tube: [{x0, x1, y}] where y is the top of the box. Read off the bike's
+ * own bottle meshes (ctx.bottleMounts), so a different frame size or cage
+ * position moves the floor with it. Empty when the bike has no bottles.
+ */
+const _floorCache = new WeakMap();
+function bottleFloors(ctx) {
+  const mounts = ctx.bottleMounts;
+  if (!mounts) return [];
+  if (_floorCache.has(mounts)) return _floorCache.get(mounts);
+  const a = ctx.anchors.framebag.position;
+  const out = [];
+  for (const m of Object.values(mounts)) {
+    const g = m.group;
+    if (!g || !m.base || !m.dir) continue;
+    g.updateMatrixWorld(true);
+    const inv = new THREE.Matrix4().copy(g.matrixWorld).invert();
+    const box = new THREE.Box3();
+    g.traverse((o) => {
+      if (!o.isMesh) return;
+      if (!o.geometry.boundingBox) o.geometry.computeBoundingBox();
+      box.union(o.geometry.boundingBox.clone().applyMatrix4(new THREE.Matrix4().multiplyMatrices(inv, o.matrixWorld)));
+    });
+    if (box.isEmpty()) continue;
+    const at = m.base.clone().addScaledVector(m.dir, BOTTLE_SLIDE);
+    box.applyMatrix4(new THREE.Matrix4().compose(at, g.quaternion, g.scale));
+    out.push({ x0: box.min.x - a.x, x1: box.max.x - a.x, y: box.max.y - a.y });
+  }
+  _floorCache.set(mounts, out);
+  return out;
+}
+
+/** A zip track without its own slider — the legs of a horseshoe. */
+function trackOnly(a, b, accent) {
+  const dir = b.clone().sub(a);
+  const g = new THREE.Mesh(new THREE.BoxGeometry(dir.length(), 3.4, 1.6), accent || webbing());
+  g.position.copy(a).addScaledVector(dir, 0.5);
+  g.rotation.z = Math.atan2(dir.y, dir.x);
+  g.userData.noCollide = true;
+  return g;
+}
+
+/** Apidura's moulded hexagonal grab tab and cord, hanging off the zip slider. */
+function grabTab(grp, hwm, accent, at, down, z) {
+  const tab = new THREE.Mesh(new THREE.CylinderGeometry(7.4, 7.4, 3.2, 6), hwm);
+  tab.rotation.x = Math.PI / 2;
+  tab.rotation.z = Math.atan2(down.y, down.x) + Math.PI / 2;
+  tab.position.copy(at).addScaledVector(down, 12).setZ(z + 1.6);
+  const cord = new THREE.Mesh(new THREE.BoxGeometry(3, 12, 1.6), accent);
+  cord.position.copy(at).addScaledVector(down, 22).setZ(z + 1.6);
+  cord.rotation.z = Math.atan2(down.y, down.x) + Math.PI / 2;
+  for (const o of [tab, cord]) { o.userData.noCollide = true; grp.add(o); }
 }

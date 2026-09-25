@@ -1,589 +1,528 @@
 // Full frame bag builder (mm-local, parented to the framebag anchor).
 //
-// AXIS MAPPING — every record in this slot writes
-// `mount.axes = { len: along_toptube, wid: z, hgt: y }`, and that is what this
-// builder draws:
-//   p.mm.len  the TOP edge, laid along the top tube from the HEAD-TUBE corner
-//             backwards. Apidura dimension their drawings exactly that way —
-//             the Expedition 8L's "46 cm" spans the top edge, its "47 cm" the
-//             down-tube edge, and only its "34.5 cm" the rear edge.
-//   p.mm.hgt  the REAR edge, parallel to the seat tube.
-//   p.mm.wid  world z, the extrusion depth.
-// Every point is derived from framePanelPoly(ctx) — which is ctx.framePoly
-// offset by ctx.frameEdgeR — or from ctx.anchors.framebag. Nothing here is
-// measured off a screenshot.
+// ---- WHAT IT IS (the owner's words win over every record and trace) --------
+// "A full frame bag is a thin flat panel, five to eight centimetres wide, that
+// fills the main triangle exactly and follows the tubes." So the outline is
+// the main triangle itself — ctx.framePoly offset by each tube's own radius
+// (ctx.frameEdgeR) — with its corners eased, not a pack of published size
+// parked in one corner. The previous builder drew each bag at its catalogue
+// len × hgt anchored at the head tube; on any bag cut for a smaller frame
+// (the full kit's Expedition 4.6L among them) that left the rear edge short
+// of the seat tube and a ladder of bridging straps across the gap, which is
+// the "floating" bag the owner saw.
+//
+// ---- AXIS MAPPING (BUILDER-BRIEF Rule 2) ------------------------------------
+// Every record in this slot writes mount.axes { len: along_toptube (or ±x),
+// wid: z, hgt: y (or −y) } — checked across all 50 catalogue products:
+//   p.mm.len  the top edge, along the top tube             → frame-derived
+//   p.mm.hgt  the rear edge, down the seat tube            → frame-derived
+//   p.mm.wid  world z, the panel's thickness               → drawn as published
+// len and hgt are therefore the SIZE the maker sells for a frame like this;
+// they are reported, not drawn (fit.js greys a bag that is small for the
+// triangle). wid is the one dimension that is the bag's own, and the width
+// solve below finishes the body at exactly p.mm.wid.
+// The previous mapping (len = top edge, hgt = rear edge) was correct as an
+// axis mapping; what was wrong was drawing it at that size inside a bigger
+// triangle.
+//
+// ---- PLACEMENT (every value derived from the bike, Rule 1) ------------------
+//   outline      ctx.framePoly (tube centrelines: BB, seat-top, head-top,
+//                head-bottom) offset inward by frameEdgeR[i] − BITE: the
+//                finished edge bites BITE mm into each tube at z = 0, so the
+//                panel touches all four tubes and never passes through them.
+//   bevel        the extrusion bevel grows the outline by BEVEL_S, so the
+//                pre-bevel outline is pulled in by exactly that.
+//   BB corner    cut flat square to the corner bisector (the "6–9 cm flat at
+//                the bottom bracket" on Apidura's drawings) — clears the BB
+//                shell and the crank.
+//   corners      eased with a radius from the record's shoulder.
+//   straps       a flat velcro band round the tube itself (straps.js tubeWrap
+//                on the framePoly edge at frameEdgeR), with two short tabs
+//                down onto the panel faces. Counts from the model records.
+// Nothing here is an offset measured off a screenshot.
+//
+// ---- EVIDENCE ---------------------------------------------------------------
+// Maker photos are not reachable from this sandbox. Used: data/models/*.json
+// (straps with counts and tubes, zips, closure, shoulder, taper — the parts
+// apply-models.mjs does not merge are tabulated in FULL_RECORDS below),
+// reference/club-*.png, and knowledge of the Apidura Expedition/Backcountry,
+// Revelate Ranger/Ripio/Rifter, Ortlieb Frame-Pack (RC), Rockgeist 52Hz,
+// Restrap, Oveja Negra Bodega and Wizard Works Forres.
 
 import * as THREE from 'three';
 import { v3 } from '../../lib.js';
 import { deformScale, shapeBulge } from '../deform.js';
-import { addPockets, daisyChain, zipperRun } from '../features.js';
-import { TUBE_R, frameStraps, rollTop, seamStrip } from '../hardware.js';
+import { addPockets, zipperRun } from '../features.js';
+import { TUBE_R, seamStrip } from '../hardware.js';
 import { featuresOf, geomOf, stiffnessOf, variantOf } from '../identity.js';
 import { hardware, patch, shadowify, soft, webbing } from '../materials.js';
-import { clipHalfPlane, framePanelPoly, subdivideXY } from '../panels.js';
+import { subdivideXY } from '../panels.js';
+import { buckle, meshOf, strapRun, tubeWrap } from '../straps.js';
 
 // Apidura print the Expedition's zip-pull cords, its size tag and the
-// Backcountry's chevron graphic in one hi-vis yellow (sampled off
-// assets/products/apidura/full/expedition-full-frame-pack/feature-2.jpg).
-// data/brands.json carries a single black hex per colourway and
-// apply-models.mjs does not merge the records' `zips[].pull` prose, so a
-// product with no accent colour of its own falls back to this rather than to a
-// black pull on a black bag — which is most of why all seven Apidura packs
-// rendered as the same flat plate.
+// Backcountry's chevron graphic in one hi-vis yellow. A product with no accent
+// colour of its own falls back to this rather than a black pull on a black bag.
 const HIVIS = 0xe8c21e;
+
+/** How far the finished panel edge sits INSIDE each tube's surface at z = 0. */
+export const BITE = 1.2;
+
+/**
+ * Straps and zips from data/models/<brand>.json. tools/apply-models.mjs does
+ * not merge `straps` or `zips` into data/brands.json, so they are tabulated
+ * here (generated from the records, 25 Sep): "TDSH zips" — straps round the
+ * Top, Down, Seat and Head tubes, then the zip runs in the record's own
+ * vocabulary (top_side, top_centre, side_full, perimeter, front_panel).
+ * Keyed brand|line|name[|size]; the size-specific key wins.
+ */
+const FULL_RECORDS = {
+  'Apidura|Expedition|Full Frame Pack': '3320 side_full,side_full',
+  'Apidura|Backcountry|Full Frame Pack|2.5L': '2320 side_full,side_full',
+  'Apidura|Backcountry|Full Frame Pack|4L': '3320 side_full,side_full',
+  'Apidura|Backcountry|Full Frame Pack|6L': '3320 side_full,side_full',
+  'Ortlieb|Frame-Pack|Frame-Pack': '3210 side_full',
+  'Ortlieb|Frame-Pack|Frame-Pack RC': '3210',
+  'Revelate Designs|Ranger|Ranger Frame Bag': '3211 top_side,side_full',
+  'Revelate Designs|Ripio|Ripio Frame Bag': '3210 top_side,side_full,front_panel',
+  'Revelate Designs|Rifter|Rifter Frame Bag': '3210 top_side,side_full',
+  'Restrap|Adventure|Full Frame Bag|Small': '2220 top_side,side_full',
+  'Restrap|Adventure|Full Frame Bag|Medium': '3220 top_side,side_full',
+  'Restrap|Adventure|Full Frame Bag|Large': '3320 top_side,side_full',
+  'Wizard Works|Forres|Forres Full Frame Bag': '5000 top_centre,perimeter',
+  'Oveja Negra|Bodega|Bodega Full Frame Bag|S': '4221 side_full,side_full',
+  'Oveja Negra|Bodega|Bodega Full Frame Bag|M': '4221 side_full,side_full',
+  'Oveja Negra|Bodega|Bodega Full Frame Bag|L': '4221 side_full,side_full,side_full',
+  'Oveja Negra|Bodega|Bodega Full Frame Bag|XL': '4221 side_full,side_full,side_full',
+  'Rockgeist|52Hz|Gravel 52Hz Waterproof Framebag': '2210',
+  'Rockgeist|52Hz|Mountain 52Hz Waterproof Framebag': '2210',
+  'Rockgeist|52Hz|Trail 52Hz Waterproof Framebag': '2210',
+  'Rockgeist|52Hz|Off-Road Tour 52Hz Waterproof Framebag': '2210',
+};
+
+/**
+ * Look a product up in a records table like FULL_RECORDS. Returns
+ * { tt, dt, st, ht, zips[] }, or null where the record is silent.
+ */
+export function recordOf(table, brand, p) {
+  const base = `${brand?.name || ''}|${p.line || ''}|${p.name || ''}`;
+  const row = table[`${base}|${p.size || ''}`] ?? table[base];
+  if (!row) return null;
+  const [n, z = ''] = row.split(' ');
+  return {
+    tt: +n[0], dt: +n[1], st: +n[2], ht: +n[3],
+    zips: z ? z.split(',') : [],
+  };
+}
 
 export function buildFrameFull(p, brand, main, accent, ctx) {
   const grp = new THREE.Group();
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
   const geom = geomOf(p);
-  // soft | semi | rigid, from the model records — see stiffnessOf().
   const stiff = stiffnessOf(p);
-  const full = framePanelPoly(ctx);
-
-  // ---- outline ------------------------------------------------------------
-  // The pack is drawn at ITS OWN published size and then placed in the corner.
-  // Apidura dimension the drawing as a closed FIVE-sided outline and every
-  // figure in the record is one of those five edges — Expedition 4.6L: 38.5 cm
-  // top / 26.5 cm seat-tube side / 39.5 cm down-tube diagonal / 6 cm flat at
-  // the bottom bracket / 2.5 cm at the HEAD-TUBE end (dimensions-1.png; the
-  // Backcountry's dimensions-2.png reads 38 / 22 / 38 / 9 / 5 the same way, and
-  // our `dims_raw` mislabels that last one "rear" — the arrow is at the head
-  // end on both drawings).
-  //
-  // v2 built the panel by clipping the frame triangle: top edge = p.mm.len,
-  // rear edge = p.mm.hgt, then a cut SQUARE ACROSS THE DOWN TUBE through the
-  // bottom of the rear edge. That last cut is the whole of the 26-56% height
-  // overshoot. On a triangle deeper than the pack was cut for — ours is: the
-  // bottom of a 26.5 cm rear edge lands 87 mm clear of the down tube — the
-  // panel kept running DOWN the down tube past the end of its own rear edge and
-  // filled the wedge above the bottom bracket. Measured y extent of the shell
-  // went 358 / 399 / 428 / 460 / 281 / 340 / 398 mm against published heights of
-  // 265 / 310 / 345 / 390 / 180 / 220 / 290.
-  //
-  // So the bottom edge is what the drawing says it is: one straight line from
-  // the head-tube corner to the bottom of the rear edge, chamfered by the
-  // published flat. Where that line then stands clear of the down tube, so does
-  // the real pack — a 2.5L in this triangle is a small bag in a big frame — and
-  // the down-tube straps bridge the gap (bridgeStrap below), which is what they
-  // do on the bike.
-  const ttA = full[1], ttB = full[2];                          // top tube: seat end → head end
-  const ttDir = ttB.clone().sub(ttA).normalize();
-  const stDown = full[0].clone().sub(full[1]).normalize();     // seat tube: top → BB
-  const dtDir = full[3].clone().sub(full[0]).normalize();      // down tube: BB → head
-  const mid0 = full.reduce((a, q) => a.add(q.clone()), new THREE.Vector3()).multiplyScalar(1 / full.length);
-  const upN = v3(-ttDir.y, ttDir.x, 0);                        // square to the top tube, outward
-  if (upN.dot(mid0.clone().sub(ttA)) > 0) upN.negate();
-  const rearN = v3(stDown.y, -stDown.x, 0);                    // square to the seat tube, rearward
-  if (rearN.dot(ttDir) > 0) rearN.negate();
-  const dtN = v3(-dtDir.y, dtDir.x, 0);                        // square to the down tube, outward
-  if (dtN.dot(mid0.clone().sub(full[0])) > 0) dtN.negate();
-  const htN = v3(-(full[3].y - full[2].y), full[3].x - full[2].x, 0).normalize();
-  if (htN.dot(mid0.clone().sub(full[2])) > 0) htN.negate();
-  // The Backcountry is recorded as "generously rounded corners, visibly softer
-  // than the Expedition"; the Expedition's are "truncated, not sharp points".
-  // Same outline, two corner treatments, so the two ranges stop being one
-  // object drawn twice.
+  const rec = recordOf(FULL_RECORDS, brand, p);
   const rounded = geom.shoulder === 'rounded';
 
-  // How far the extrusion bevel grows the outline outward in xy. It is a
-  // clearance number as much as a styling one — see the head-tube clip below —
-  // so it is fixed while the z half of the bevel varies with the shell.
-  // 7 put the fabric 8mm inside the top tube, which is exactly the depth the
-  // contact gate calls a clash (CONTACT_DEPTH_MM); at 5 the same edge reads
-  // -6mm — still touching, with margin — and the panel loses 4mm of height it
-  // never had any claim to.
-  const bevelS = 5;
-  const runLen = Math.min(p.mm.len, ttA.distanceTo(ttB));
-  const pTop = ttB.clone().addScaledVector(ttDir, -runLen);
-  // The rear edge: the published height, straight down parallel to the seat
-  // tube, clamped so a pack cut for a bigger frame cannot cross the down tube.
-  const drop = Math.min(p.mm.hgt, rayReach(full, pTop, stDown));
-  const rBot = pTop.clone().addScaledVector(stDown, drop);
-  const hCorner = full[3];                                     // head tube ∩ down tube
-  const botDir = hCorner.clone().sub(rBot);
-  const botLen = botDir.length();
-  botDir.normalize();
-  const botN = v3(-botDir.y, botDir.x, 0);                     // square to the bottom edge, outward
-  if (botN.dot(mid0.clone().sub(rBot)) > 0) botN.negate();
-  // The flat at the bottom-bracket end: 6 - 8.5 cm across the Expedition sizes
-  // and 8 - 9 cm across the Backcountry's, i.e. roughly a quarter of the rear
-  // edge, a little more on the softer range. It is drawn as a corner cut that
-  // takes most of its bite out of the BOTTOM edge, because the drawings put the
-  // rear-edge dimension (26.5 cm) between the top corner and the START of the
-  // flat — so the rear edge has to keep its published length.
-  const flat = Math.min(rounded ? drop * 0.3 : drop * 0.23, 95, botLen * 0.4);
-  let poly = botLen > 60 ? [
-    pTop,                                                      // top edge, seat end
-    ttB,                                                       // top edge, head end
-    hCorner,                                                   // head-tube edge, 2.5 - 7.5 cm
-    rBot.clone().addScaledVector(botDir, flat * 0.9),          // down-tube diagonal
-    rBot.clone().addScaledVector(stDown, -flat * 0.35),        // flat at the BB, then up the rear edge
-  ].map((q) => q.clone())
-    // degenerate catalogue dims (a pack shorter than it is deep): fall back to
-    // the frame clip rather than fold the outline inside out
-    : clipHalfPlane(full, pTop, rearN);
-  // Never let the outline cross the down tube — the offset line already carries
-  // that tube's radius, so this is a no-op on anything cut for a smaller frame.
-  // Held 1mm proud of it: the head-tube corner sits exactly ON that line and a
-  // clip through a vertex is a coin toss between keeping it and re-inserting it
-  // as an intersection.
-  poly = clipHalfPlane(poly, full[0].clone().addScaledVector(dtN, 1), dtN);
-  // Hold the forward edge off the head tube. framePanelPoly() offsets that edge
-  // by the tube radius +3, but the extrusion bevel then grows the outline back
-  // outward — and the head tube is the one boundary of the triangle a frame bag
-  // does NOT strap to (mount.attachesTo is top tube / downtube / seat tube), so
-  // anything inside it is a clash rather than a mount.
-  poly = clipHalfPlane(poly, full[2].clone().addScaledVector(htN, -(bevelS + 3)), htN);
-  // Same story on the top tube: without this the bevel grows 5 mm of fabric
-  // through the silver and the tube reads as notched. Pull the pre-bevel
-  // edge down by the bevel PLUS a couple of millimetres so the finished
-  // lip sits under the tube, not inside it.
-  poly = clipHalfPlane(poly, ttA.clone().addScaledVector(upN, -(bevelS + 4)), upN);
-  if (poly.length < 3) poly = full;
-  // The Backcountry's radii are the softest thing about it: on
-  // backcountry-full-frame-pack/dimensions-2.png the seat-tube corner sweeps
-  // through something like a fifth of the rear edge. v2 gave both ranges the
-  // same hard chamfer at 30/11mm and the critics could not tell them apart.
-  poly = roundPoly(poly, rounded ? Math.min(52, drop * 0.24) : 10, rounded ? 6 : 1);
+  // ---- the triangle, in bag-local mm ----------------------------------------
+  const F = frameLocal(ctx);
+  const { cl, R } = F;                        // centrelines [BB, seatTop, headTop, headBot]; R[i] on edge i
+  // Pre-bevel outline: each tube's surface, pulled in by the bevel and pushed
+  // out by the bite. Edge order: 0 seat tube, 1 top tube, 2 head tube, 3 down tube.
+  const BEVEL_S = 4;
+  const tri = offsetEdges(cl, R.map((r) => r - BITE + BEVEL_S));
+  const ttDir = tri[2].clone().sub(tri[1]).normalize();          // seat end → head end
+  const upN = edgeOutward(tri, 1);                                // square to the top tube, out
+  const rearN = edgeOutward(tri, 0);                              // square to the seat tube, out
+  const dtN = edgeOutward(tri, 3);                                // square to the down tube, out
 
-  const anchor = ctx.anchors.framebag.position;
-  const toLocal = (q) => v3(q.x - anchor.x, q.y - anchor.y, 0);
-  const lv = poly.map(toLocal);
-  const local = lv.map((q) => ({ x: q.x, y: q.y }));
+  // BB corner: a flat square to the bisector. Apidura publish 6 cm (4.6L) to
+  // 9 cm (Backcountry) across it; the rounded range takes the wider flat.
+  const flatW = rounded ? 84 : vr.range(58, 70);
+  let poly = cutCorner(tri, 0, flatW);
+  // Ease every corner. Seat-top and head corners are where the seat cluster and
+  // head tube lugs are; the rounded range (Backcountry, Ortlieb, Rifter) is
+  // visibly softer all round.
+  const soft1 = rounded ? 1.7 : 1;
+  poly = roundCorners(poly, (i, ang) => {
+    // tighter corners get a larger radius so the fabric does not go into a
+    // lug; ang is the interior angle in radians
+    const base = ang < 1.2 ? 20 : ang < 1.9 ? 14 : 9;
+    return base * soft1;
+  }, rounded ? 6 : 3);
+
+  const local = poly.map((q) => ({ x: q.x, y: q.y }));
   const shape = new THREE.Shape();
-  lv.forEach((pt, i) => (i === 0 ? shape.moveTo(pt.x, pt.y) : shape.lineTo(pt.x, pt.y)));
+  poly.forEach((q, i) => (i === 0 ? shape.moveTo(q.x, q.y) : shape.lineTo(q.x, q.y)));
 
-  const mid = lv.reduce((acc, q) => acc.add(q.clone()), new THREE.Vector3()).multiplyScalar(1 / lv.length);
-  const bx = local.reduce((m, q) => Math.max(m, Math.abs(q.x - mid.x)), 0);
-  const by = local.reduce((m, q) => Math.max(m, Math.abs(q.y - mid.y)), 0);
-  // how far the panel falls below its own top edge, measured square to it —
-  // the zips are dimensioned off the top edge, not off the bounding box
-  const topL = toLocal(ttB);
-  const topR = toLocal(pTop);
-  const panelDrop = local.reduce((m, q) => Math.max(m, -(q.x - topL.x) * upN.x - (q.y - topL.y) * upN.y), 1);
-  /**
-   * A point on the drive-side face, given as a fraction ALONG the top edge
-   * (0 = seat-tube end, 1 = head-tube end) and a fraction DOWN the fabric that
-   * is actually there at that station. A triangular panel is 300mm deep at one
-   * end and 30mm at the other, so anything placed at a fixed offset below the
-   * top edge — which is how every graphic on this bag used to be placed — walks
-   * off the bottom of the bag as the panel narrows.
-   */
-  const onFace = (f, dFrac) => {
-    const o = topR.clone().lerp(topL, Math.min(Math.max(f, 0), 1));
-    const s = lineSpan(local, o, upN);
-    if (!s) return o;
-    return o.addScaledVector(upN, s.hi - (s.hi - s.lo) * Math.min(Math.max(dFrac, 0.08), 0.92));
-  };
-
-  // ---- closure ------------------------------------------------------------
-  // `p.closure.type` is the controlled-vocabulary field apply-models.mjs
-  // merges; `features.closure` is free prose no builder can switch on, which is
-  // why every bag in this slot used to get one generic line along the top edge
-  // and the rolltop branch below never fired.
-  const prose = String(feats.closure || '');
-  const closure = p.closure?.type || (/roll[- ]?top|roll closure/i.test(prose) ? 'rolltop' : 'zip_straight');
-  // Two independent full-length zips, upper and lower, is an Expedition trait
-  // the record states in prose ("upper and lower access") and the drawing shows
-  // twice over. Until apply-models.mjs merges the records' `zips` array this
-  // sentence is the only machine-readable trace of a second zip we have.
-  const twoRuns = /upper and lower|two zip|second zip|dual (?:zip )?(?:opening|access)/i.test(prose);
-  // 38mm and 153mm below the top edge on the Expedition 8L drawing
-  // (dimensions-3.png, 3.26 px/mm); 22mm on the Backcountry (dimensions-2.png).
-  const zipUp = Math.min(rounded ? 22 : 38, panelDrop * 0.12);
-  const zipLo = Math.min(153, panelDrop * 0.45);
-
-  // Pinch the pillow along the zip lines: a stuffed panel creases where it is
-  // sewn, and these are the only seams across the face. shapeBulge() only takes
-  // axis-aligned seams, so a run that follows a top tube sloping 7° is matched
-  // by a horizontal pinch at its mean height — close enough at this amplitude,
-  // and noted in the report as the reason to give shapeBulge an oriented seam.
-  const seams = [];
-  if (closure !== 'rolltop') {
-    seams.push({ axis: 'y', at: topL.y - zipUp });
-    if (twoRuns || rounded) seams.push({ axis: 'y', at: topL.y - zipLo });
-  }
-
-  // ---- width --------------------------------------------------------------
-  // Bevel, pillow bulge and surface noise all push the faces outward, so the
-  // extrusion has to start narrower than the published width by exactly what
-  // they will add back. v2 solved that with two passes of
-  //     depth ← wantW − 2·bevel − 2·(depth·bulgeFrac)
-  // which is not a contraction: it oscillates. Two steps from 51 landed on 38.3
-  // where the fixed point is 34.5, and the finished 65mm bag measured 70.2mm.
-  // The whole slot came back +8 to +22% on width off that one loop.
-  //
-  // The bulge is also not worth its full amplitude: shapeBulge() rolls it off
-  // toward every edge and pinches it back at the zip seams, so a deep panel
-  // reaches ~0.95 of it and a shallow one — Lezyne's Frame Caddy is 45cm long
-  // and 14cm tall, with both zip seams crossing what interior it has — barely
-  // half. Sampling the unit bulge over the actual outline is what makes one
-  // solve right for a 50-litre triangle and a 14cm caddy at the same time.
-  const noiseAmp = vr.range(2.6, 3.8);
-  // a 6cm bag cannot spend 22mm of its width on bevel: cap it against wantW
-  const bevel = Math.min(rounded ? 11 : 7, Math.max(3, p.mm.wid * 0.17));
-  const wantW = Math.min(p.mm.wid, 140);
-  const bulgeFrac = rounded ? vr.range(0.26, 0.34) : vr.range(0.2, 0.28);
-  const bulgeW = shapeBulge(local, 1, seams);
-  // soft() scales BOTH the bulge and the noise by deformScale(), so a semi-rigid
-  // frame bag — every Lezyne, EVOC and Rapha in this slot — puts back only 40%
-  // of what a soft one does and has to be extruded that much thicker to finish
-  // at the same published width. A rigid shell puts back nothing at all.
+  // ---- thickness --------------------------------------------------------------
+  // The published width is the finished width. Bevel, pillow and noise all push
+  // the faces outward, so the extrusion starts narrower by what they add back.
+  // "Slight pillow in the middle only": the dome fades to nothing within
+  // PILLOW_REACH of every edge, so the panel stays flat where it meets the tubes.
+  const wantW = Math.min(Math.max(p.mm.wid, 28), 130);
+  const bevelT = Math.min(rounded ? 9 : 6, wantW * 0.14);
   const kDef = deformScale(stiff);
-  const peakW = Math.max(bulgePeak(local, bulgeW), 0.05) * kDef;
-  // The noise sits on top of the bulge, but its peak almost never lands on the
-  // bulge's, so budgeting for the full amplitude undershoots. A quarter of it is
-  // what measures level across the seven Apidura sizes.
-  const core = Math.max(wantW - 2 * bevel - 0.25 * noiseAmp * kDef, 8);
-  let depth = core / (1 + 2 * peakW * bulgeFrac);
-  if (depth * bulgeFrac > 20) depth = Math.max(core - 40 * peakW, 8);   // bulge clamps at 20mm
-  const bulgeAmt = Math.min(depth * bulgeFrac, 20);
-  // linear in `amount`, so this is the same function shapeBulge would return
-  const bulgeFn = (x, y) => bulgeW(x, y) * bulgeAmt;
+  const noiseAmp = vr.range(1.2, 1.8);
+  const PILLOW_REACH = 85;
+  const pillow = Math.min(wantW * 0.07, 4.5);
+  const bulgeW = shapeBulge(local, 1, [], PILLOW_REACH);
+  const peak = Math.max(bulgePeak(local, bulgeW), 0.05);
+  // Taper along the top tube from the record (nose = head-tube end, tail =
+  // seat-tube end): Revelate thin the Ranger to 55% at the seat tube.
+  const tNose = Number.isFinite(p.geometry?.taper?.nose) ? p.geometry.taper.nose : 1;
+  const tTail = Number.isFinite(p.geometry?.taper?.tail) ? p.geometry.taper.tail : 1;
+  const tMax = Math.max(tNose, tTail, 0.05);
+  const xs = local.map((q) => q.x * ttDir.x + q.y * ttDir.y);
+  const s0 = Math.min(...xs), s1 = Math.max(...xs);
+  const taperAt = (x, y) => {
+    const t = Math.min(Math.max(((x * ttDir.x + y * ttDir.y) - s0) / Math.max(s1 - s0, 1), 0), 1);
+    return (tTail + (tNose - tTail) * t) / tMax;
+  };
+  const depth = Math.max(wantW - 2 * bevelT - 2 * pillow * peak * kDef - 0.3 * noiseAmp * kDef, 8);
+  const bulgeFn = (x, y) => bulgeW(x, y) * pillow;
   const geo = new THREE.ExtrudeGeometry(shape, {
-    depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevelS,
-    // a faceted chamfer on the squared range, a rolled edge on the rounded one
-    bevelSegments: rounded ? 7 : 2, curveSegments: 4, steps: 1,
+    depth, bevelEnabled: true, bevelThickness: bevelT, bevelSize: BEVEL_S,
+    bevelSegments: rounded ? 5 : 3, curveSegments: 4, steps: 1,
   });
   geo.translate(0, 0, -depth / 2);
-  // Apidura quote a tapered width — "6.5 – 6 cm", thickest at the head-tube pod
-  // — and every frame bag is deepest where the triangle is deepest. Scaling z
-  // along the top-tube axis gives that without bolting on a separate pod.
-  taperDepth(geo, toLocal(pTop), ttDir, Math.max(runLen, 1), 0.92);
+  if (tNose !== tTail) {
+    const pos = geo.attributes.position;
+    for (let i = 0; i < pos.count; i++) {
+      // scale the core, keep the bevel: the fabric edge stays rounded at the thin end
+      const z = pos.getZ(i), core = depth / 2;
+      const k = taperAt(pos.getX(i), pos.getY(i));
+      const zz = Math.abs(z) <= core ? z * k : Math.sign(z) * (core * k + (Math.abs(z) - core));
+      pos.setZ(i, zz);
+    }
+    pos.needsUpdate = true;
+    geo.computeVertexNormals();
+  }
+  const faceZ = (x, y, proud = 1.2) => (depth / 2) * taperAt(x, y) + bevelT + bulgeFn(x, y) * kDef + proud;
 
-  // Height of the drive-side face at (x,y), so applied trim tracks the pillow
-  // instead of hovering over it or sinking into it. kDef is the same factor
-  // soft() applies, so a rigid shell's trim sits on a flat face.
-  const faceZ = (x, y, proud = 3) => depth / 2 + bevel + bulgeFn(x, y) * kDef + proud;
-
-  // Every critic in round 2 read all seven of these as "glossy moulded plastic
-  // rather than matte coated fabric", and the cause is in the data, not here:
-  // data/brands.json records Apidura's fabric as "TPU laminate (shiny welded)",
-  // which materials.js maps to a CLEARCOATED laminate (roughness 0.72,
-  // clearcoat 0.08) — while the same brand entry's own aesthetic line reads
-  // "matte seam-welded technical fabric". brands.json and materials.js are both
-  // shared files, so the shell is knocked back to matte on a local clone here
-  // and the real fix is written up in the report.
+  // Matte coated fabric, not a clear-coated plastic: brands.json maps Apidura's
+  // fabric to a clearcoated laminate while its own aesthetic line reads matte.
   const shell = main.clone();
   shell.roughness = Math.min(1, (main.roughness ?? 0.8) + 0.14);
   shell.clearcoat = 0;
   shell.envMapIntensity = 0.14;
-  shell.bumpScale = (main.bumpScale ?? 0.5) * 1.8;
-  // tessellate the flat faces so the panels can actually bulge
-  const body = soft(subdivideXY(geo, 34), shell, {
+  const body = soft(subdivideXY(geo, 30), shell, {
     amp: noiseAmp, freq: vr.range(0.017, 0.024), seed: vr.seed % 967, flatAxis: 'z',
-    stiffness: stiff,
-    bulge: bulgeFn,
-    aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.78, aoSpan: 0.5,
+    stiffness: stiff, bulge: bulgeFn,
+    aoDir: new THREE.Vector3(0, -1, 0), aoK: 0.8, aoSpan: 0.5,
   });
   grp.add(body);
 
-  const wmF = webbing();
-  const hwmF = hardware();
-  // A zip pull is the one bright thing on an otherwise black frame bag. Use the
-  // product's own accent where the colourway gives it one; otherwise hi-vis.
-  const hasAccent = accent?.color && main?.color && accent.color.getHex() !== main.color.getHex();
+  // ---- where the finished edges are -------------------------------------------
+  // Finished outline = pre-bevel outline grown by BEVEL_S. Every applied part is
+  // placed against these lines, so it lands on fabric that is there.
+  const fin = offsetEdges(poly, poly.map(() => -BEVEL_S));
+  const topLine = { o: tri[1].clone().addScaledVector(upN, BEVEL_S), d: ttDir };
+  const drop = Math.max(...local.map((q) => -((q.x - topLine.o.x) * upN.x + (q.y - topLine.o.y) * upN.y)));
   const hiVis = new THREE.MeshStandardMaterial({
-    color: hasAccent ? accent.color.getHex() : HIVIS, roughness: 0.5, metalness: 0.05,
+    color: accent?.color && main?.color && accent.color.getHex() !== main.color.getHex() ? accent.color.getHex() : HIVIS,
+    roughness: 0.5, metalness: 0.05,
   });
+  const hwm = hardware();
 
-  // ---- zips ---------------------------------------------------------------
-  // Placed by walking a line parallel to the top edge and trimming it to the
-  // outline, so a zip stops where the down-tube edge cuts in instead of running
-  // off the bag. Endpoints are ordered rear → head, because zipperRun() puts
-  // its slider at 78% of the run and every drawing shows the slider parked at
-  // the head-tube end.
-  const zipAt = (o, dir, trimA, trimB, z = null) => {
-    const s = lineSpan(local, o, dir);
+  // ---- closure and zips ---------------------------------------------------------
+  const closure = p.closure?.type || 'zip_straight';
+  const zips = rec?.zips?.length ? rec.zips.slice() : closure === 'rolltop' ? [] : ['side_full'];
+  const hasTopZip = zips.some((z) => /^top_/.test(z));
+  const zipRun = (below, side = 1, trimA = 30, trimB = 30) => {
+    // a run parallel to the top edge `below` mm under it, trimmed to the outline
+    const o = topLine.o.clone().addScaledVector(upN, -below);
+    const s = lineSpan(local, o, ttDir);
     if (!s || s.hi - s.lo < trimA + trimB + 40) return null;
-    const a = o.clone().addScaledVector(dir, s.lo + trimA);
-    const b = o.clone().addScaledVector(dir, s.hi - trimB);
-    a.z = z ?? faceZ(a.x, a.y);
-    b.z = z ?? faceZ(b.x, b.y);
+    const a = o.clone().addScaledVector(ttDir, s.lo + trimA);
+    const b = o.clone().addScaledVector(ttDir, s.hi - trimB);
+    let z = 0;
+    for (let i = 0; i <= 12; i++) {
+      const q = a.clone().lerp(b, i / 12);
+      z = Math.max(z, faceZ(q.x, q.y, 1.0));
+    }
+    a.z = side * z; b.z = side * z;
     return [a, b];
   };
-  // A 460mm run drawn with zipperRun()'s 2mm default tape disappears at bike
-  // scale; the real thing is a welded slot about 15mm across with a 5mm coil.
-  const ZIP = { accentMat: accent, tape: 3.4 };
-  const addPull = (run, f) => {
-    const at = run[0].clone().lerp(run[1], f);
-    const g = hexPull(hiVis, hwmF);
-    g.position.set(at.x, at.y, at.z + 1.5);
-    grp.add(g);
-  };
-  // `pulls` are fractions along the run; zipperRun() parks its own slider at
-  // 0.78, which is where the drawings show it — at the head-tube end.
-  const addZip = (run, pulls = [0.78]) => {
+  const addZip = (run, pull = true) => {
     if (!run) return;
-    // The zip on these bags sits in a welded slot: a band of shell fabric a
-    // shade darker, with the coil running down it. Without it a black tape on a
-    // black panel leaves nothing but the teeth, which is how seven bags came
-    // back from the critics with "no zip anywhere on the face".
+    // the welded slot the coil runs in: a band of shell fabric a shade darker
     const dir = run[1].clone().sub(run[0]);
     const c = run[0].clone().addScaledVector(dir, 0.5);
-    const band = seamStrip(main, dir.length() + 16, 14, 2.4);
-    band.position.set(c.x, c.y, faceZ(c.x, c.y, 1.1));
+    const band = seamStrip(main, dir.length() + 14, 12, 2.2);
+    band.position.set(c.x, c.y, run[0].z - Math.sign(run[0].z) * 0.6);
     band.rotation.z = Math.atan2(dir.y, dir.x);
+    band.userData.noCollide = true;
     grp.add(band);
-    grp.add(zipperRun(run[0], run[1], hwmF, ZIP));
-    for (const f of pulls) addPull(run, f);
+    grp.add(zipperRun(run[0], run[1], hwm, { accentMat: accent, tape: 3.2 }));
+    if (pull) {
+      const g = hexPull(hiVis, hwm);
+      const at = run[0].clone().lerp(run[1], 0.78);
+      g.position.set(at.x, at.y, at.z + Math.sign(at.z) * 1.5);
+      grp.add(g);
+    }
   };
-  const topLine = topL.clone().addScaledVector(upN, -zipUp);
-  if (closure === 'rolltop') {
-    // rollTop() is written for a round mouth of radius r: it sizes the folds
-    // from r and, with `back`, closes the mouth with a disc of radius r. A frame
-    // bag's mouth is a long slot the width of the top edge and only as deep as
-    // the bag, so drive the fold height off the DEPTH and stretch the lip to the
-    // edge — passing r = half the top edge drew a 470mm porthole standing out
-    // of the drive side, which is what the Ortlieb RC pair were rendering.
-    //
-    // The roll used to be parked ON the top-tube line and nudged 6 mm world-up,
-    // so the folded lip sat inside the silver. It belongs in the triangle,
-    // under the tube, same as the panel.
-    const a = toLocal(pTop), b = toLocal(ttB);
-    const span = a.distanceTo(b);
-    const r = Math.max(Math.min(depth * 0.7, 20), 14);
-    const foldH = Math.max(r * 0.3, 5);
-    const stack = 14 * 0.16 + foldH * 0.66;
-    const mouth = rollTop(main, hwmF, {
-      r, depth: 14, rings: 2, back: false,
-      widthScale: Math.max(span / (1.68 * r), 0.4),
-    });
-    mouth.rotation.x = -Math.PI / 2;
-    mouth.rotation.z = Math.atan2(ttDir.y, ttDir.x);
-    const mid = a.clone().lerp(b, 0.5);
-    mid.z = 0;
-    mouth.position.copy(mid).addScaledVector(upN, -(stack + foldH + 8));
-    grp.add(mouth);
-  } else if (closure === 'zip_two_way' || closure === 'zip_horseshoe') {
-    // Backcountry: ONE long two-way run just under the top edge that turns the
-    // corner and drops down the seat-tube edge — a slider and a pull at each
-    // end of the top run, which is what "two-way" means on this bag. The
-    // vertical leg starts 47mm in from the rear edge and runs 70% of the rear
-    // edge's height (backcountry-full-frame-pack/dimensions-2.png, 4.07 px/mm).
-    const head = zipAt(topLine, ttDir, Math.min(47, panelDrop * 0.18), Math.min(56, runLen * 0.14));
-    if (head) {
-      addZip(head, [0.78, 0.08]);
-      const dn = head[0].clone().addScaledVector(stDown, drop * 0.7);
-      dn.z = faceZ(dn.x, dn.y);
-      addZip([dn, head[0]]);          // slider ends up at the top of the leg, as drawn
-      if (closure === 'zip_horseshoe') {
-        const fw = head[1].clone().addScaledVector(stDown, drop * 0.4);
-        fw.z = faceZ(fw.x, fw.y);
-        addZip([head[1], fw], []);
+  // The upper zip sits in the band just under the top tube; Apidura's drawing
+  // puts it 38mm below the top edge on the 8L, Revelate's top_side runs right
+  // along the top edge.
+  const TOP_ZIP = 16;
+  let driveSide = 0;             // how many side_full runs already on the drive face
+  for (const z of zips) {
+    if (z === 'top_side' || z === 'top_centre') {
+      addZip(zipRun(TOP_ZIP, 1, 26, 26));
+    } else if (z === 'side_full') {
+      if (hasTopZip) {
+        // Revelate/Restrap: the side_full is the flat full-length pocket on the
+        // NON-drive side, about 40% down.
+        addZip(zipRun(Math.min(drop * 0.4, 150), -1, 40, 40));
+      } else {
+        const below = driveSide === 0 ? Math.min(34, drop * 0.14) : driveSide === 1 ? Math.min(drop * 0.42, 155) : Math.min(drop * 0.4, 150);
+        addZip(zipRun(below, driveSide < 2 ? 1 : -1, driveSide === 0 ? 28 : 44, driveSide === 0 ? 34 : 30));
+        driveSide++;
+      }
+    } else if (z === 'perimeter') {
+      // horseshoe on the drive side: along the top, down the rear edge and
+      // along the down-tube edge, 26mm in from the finished outline
+      const inset = offsetEdges(fin, fin.map(() => 26));
+      const legs = perimeterLegs(inset, ttDir, rearN, dtN);
+      legs.forEach((leg, i) => {
+        const a = leg[0].clone(), b = leg[1].clone();
+        a.z = faceZ(a.x, a.y, 1.0); b.z = faceZ(b.x, b.y, 1.0);
+        if (i === 0) addZip([a, b]);
+        else grp.add(zipperRun(a, b, hwm, { accentMat: accent, tape: 3.2 }));
+      });
+    } else if (z === 'front_panel') {
+      // a short vertical pocket zip just behind the head tube
+      const o = tri[2].clone().addScaledVector(ttDir, -44);
+      const s = lineSpan(local, o, v3(-upN.x, -upN.y, 0));
+      if (s && s.hi - s.lo > 80) {
+        const a = o.clone().addScaledVector(v3(-upN.x, -upN.y, 0), s.lo + 28);
+        const b = o.clone().addScaledVector(v3(-upN.x, -upN.y, 0), Math.min(s.hi - 30, s.lo + 28 + 160));
+        a.z = faceZ(a.x, a.y, 1.0); b.z = faceZ(b.x, b.y, 1.0);
+        grp.add(zipperRun(b, a, hwm, { accentMat: accent, tape: 2.6 }));
       }
     }
-  } else {
-    // Expedition: two full-width horizontal zips at the same angle as the top
-    // edge, each with its slider and hanging pull at the head-tube end.
-    addZip(zipAt(topLine, ttDir, 28, 37));
-    if (twoRuns) addZip(zipAt(topL.clone().addScaledVector(upN, -zipLo), ttDir, 43, 30));
+  }
+  // Two-way closure (Backcountry): the top run turns the corner and drops down
+  // the seat-tube edge, 70% of the way.
+  if (closure === 'zip_two_way' && !zips.includes('perimeter')) {
+    const top = zipRun(Math.min(24, drop * 0.12), 1, 40, 40);
+    if (top) {
+      const rearDrop = lineSpan(local, top[0], v3(-upN.x, -upN.y, 0));
+      const leg = rearDrop ? Math.min(rearDrop.hi * 0.7, 260) : 0;
+      if (leg > 40) {
+        const b = top[0].clone().addScaledVector(v3(-upN.x, -upN.y, 0), leg);
+        b.z = faceZ(b.x, b.y, 1.0);
+        grp.add(zipperRun(b, top[0], hwm, { accentMat: accent, tape: 3.2 }));
+      }
+    }
+  }
+  if (closure === 'rolltop') {
+    // Ortlieb Frame-Pack RC, Rockgeist 52Hz: the opening is the top edge, rolled
+    // twice and laid against the drive face under the top tube, held by the
+    // top-tube velcro. Drawn as the rolled lip (a flattened roll the length of
+    // the opening) with a buckle strap over it at each end.
+    const run = zipRun(26, 1, 34, 34);
+    if (run) {
+      const dir = run[1].clone().sub(run[0]);
+      const len = dir.length();
+      const rr = Math.min(Math.max(wantW * 0.16, 7), 11);
+      const lip = new THREE.Mesh(new THREE.CapsuleGeometry(rr, Math.max(len - 2 * rr, 10), 6, 14), main);
+      lip.scale.set(1, 1, 0.62);
+      lip.rotation.z = Math.atan2(dir.y, dir.x) - Math.PI / 2;
+      const c = run[0].clone().lerp(run[1], 0.5);
+      lip.position.set(c.x, c.y, run[0].z + rr * 0.3);
+      lip.userData.noCollide = true;
+      grp.add(lip);
+      const strapGeos = [], hw = [];
+      const down = v3(-upN.x, -upN.y, 0);
+      for (const f of [0.12, 0.88]) {
+        const at = run[0].clone().lerp(run[1], f);
+        const top = at.clone().addScaledVector(upN, Math.min(rr + 8, 20));
+        const over = at.clone().setZ(at.z + rr * 0.95);
+        const bot = at.clone().addScaledVector(down, rr + 30);
+        top.z = faceZ(top.x, top.y, 0.2);
+        bot.z = faceZ(bot.x, bot.y, 0.2);
+        strapGeos.push(strapRun(top, over, v3(0, 0, 1), { width: 18 }));
+        strapGeos.push(strapRun(over, bot, v3(0, 0, 1), { width: 18 }));
+        const bk = at.clone().addScaledVector(down, rr + 16);
+        bk.z = faceZ(bk.x, bk.y, 0.4);
+        hw.push(...buckle(bk, down, v3(0, 0, 1), { width: 16 }));
+      }
+      grp.add(meshOf(strapGeos, webbing()));
+      grp.add(meshOf(hw, hwm));
+    }
   }
 
-  // ---- panels, seams and graphics -----------------------------------------
-  // Where the record describes a two-tone shell — "a grey lower drive-side
-  // panel inside a black perimeter" — draw it. A contrasting lower panel is the
-  // whole visual identity of the Backcountry and of every multi-panel maker in
-  // this slot, and one flat colour throws it away.
-  const inset = bevel + 16;
-  if (rounded) {
-    // On the Backcountry the two tones are BOTH dark — a charcoal centre panel
-    // inside a black welded perimeter (on-bike-1.jpg, on-bike-4.jpg). v2 lerped
-    // 26% toward white and the critics got "a near-white bottom wedge"; and it
-    // was clipped only on three sides, so it ran out to the panel edge at the
-    // top and read as a colour change rather than a panel. Keep it dark, and
-    // hold it off every edge by the same welded margin.
+  // ---- panels and graphics --------------------------------------------------------
+  if (rounded && /apidura/i.test(brand?.name || '')) {
+    // Backcountry: a charcoal centre panel inside a black welded perimeter
     const panelMat = main.clone();
-    panelMat.color = main.color.clone().lerp(new THREE.Color(0xffffff), 0.09);
-    let lowPoly = clipHalfPlane(lv, topL.clone().addScaledVector(upN, -panelDrop * 0.3), upN);
-    lowPoly = clipHalfPlane(lowPoly, toLocal(rBot).addScaledVector(botN, -inset), botN);
-    lowPoly = clipHalfPlane(lowPoly, toLocal(pTop).addScaledVector(rearN, -inset), rearN);
-    lowPoly = clipHalfPlane(lowPoly, toLocal(hCorner).addScaledVector(htN, -inset), htN);
-    if (lowPoly.length >= 3) grp.add(facePanel(lowPoly, panelMat, faceZ));
-  } else {
-    // Welded base-panel seam, parallel to the pack's OWN bottom edge (which is
-    // no longer the down tube) — the skirt seam the Expedition drawing shows
-    // running above the bottom edge at the bottom-bracket end.
-    const off = Math.min(90, panelDrop * 0.3);
-    const o = toLocal(rBot).addScaledVector(botN, -off);
-    const s = lineSpan(local, o, botDir);
-    if (s && s.hi - s.lo > 60) {
-      for (const sgn of [1, -1]) {
-        const sm = seamStrip(main, s.hi - s.lo - 24, 3.0, 2.8);
-        const c = o.clone().addScaledVector(botDir, (s.lo + s.hi) / 2);
-        sm.position.set(c.x, c.y, sgn * faceZ(c.x, c.y, 0.6));
-        sm.rotation.z = Math.atan2(botDir.y, botDir.x);
-        grp.add(sm);
-      }
-    }
+    panelMat.color = main.color.clone().lerp(new THREE.Color(0xffffff), 0.035);
+    panelMat.roughness = Math.min(1, (main.roughness ?? 0.8) + 0.14);
+    panelMat.clearcoat = 0;
+    panelMat.envMapIntensity = 0.14;
+    const inner = offsetEdges(fin, fin.map(() => bevelT + 22));
+    let low = clipHalfPlane(inner, topLine.o.clone().addScaledVector(upN, -drop * 0.3), upN);
+    // held proud of the surface noise, which faceZ() does not include
+    if (low.length >= 3) grp.add(facePanel(low, panelMat, (x, y, pr) => faceZ(x, y, pr + noiseAmp * kDef + 0.4)));
   }
-  if (feats.reflective) {
-    // Neither range carries a white bar anywhere, and v2 drew one on both faces
-    // of every Expedition — the "phantom white slab" all seven critics reported.
-    // Apidura print in one hi-vis yellow, in two specific and DIFFERENT places:
-    //   Backcountry — a double chevron high on the panel and forward, about
-    //     0.6 of the way to the head tube (on-bike-1.jpg, on-bike-4.jpg).
-    //   Expedition — a small "EXPEDITION 8L" size tag low and BACK, about 0.14
-    //     from the seat-tube end, diagonally opposite the brand mark
-    //     (on-bike-1.jpg, on-bike-4.jpg).
-    // Both are on the drive side only; the non-drive side of both bags is plain.
+  // A point on the face, as fractions along the top edge (0 seat end → 1 head
+  // end) and down the fabric that is actually there at that station.
+  const onFace = (f, dFrac) => {
+    const o = topLine.o.clone().addScaledVector(ttDir, s0 + (s1 - s0) * Math.min(Math.max(f, 0), 1) - (topLine.o.x * ttDir.x + topLine.o.y * ttDir.y));
+    const s = lineSpan(local, o, upN);
+    if (!s) return o;
+    return o.addScaledVector(upN, s.hi - (s.hi - s.lo) * Math.min(Math.max(dFrac, 0.08), 0.92));
+  };
+  if (feats.reflective && /apidura/i.test(brand?.name || '')) {
     if (rounded) {
-      const c = onFace(0.62, 0.34);
-      grp.add(chevrons(hiVis, {
-        w: Math.min(84, runLen * 0.15), at: c, z: faceZ(c.x, c.y, 1.6), rows: 2,
-        rot: Math.atan2(ttDir.y, ttDir.x) + 0.5,
-      }));
+      const c = onFace(0.62, 0.3);
+      grp.add(chevrons(hiVis, { w: 70, at: c, z: faceZ(c.x, c.y, 1.6), rotZ: Math.atan2(ttDir.y, ttDir.x) + 0.5 }));
     } else {
-      const c = onFace(0.14, 0.46);
-      grp.add(printTag(hiVis, { w: Math.min(62, runLen * 0.14), at: c, z: faceZ(c.x, c.y, 1.4) }));
+      const c = onFace(0.14, 0.5);
+      grp.add(printTag(hiVis, { w: 58, at: c, z: faceZ(c.x, c.y, 1.4) }));
     }
   }
-  if (feats.daisyChains) {
-    // Centre it on the fabric actually there at that height. The old fixed
-    // offset put it 55% of the way down the bounding box, which on a triangular
-    // panel is past the bottom edge and inside the down tube.
-    const o = v3(mid.x, mid.y - by * 0.3, 0);
-    const s = lineSpan(local, o, ttDir);
-    const c = s ? o.clone().addScaledVector(ttDir, (s.lo + s.hi) / 2) : o;
-    const dcn = daisyChain(wmF, { len: Math.min(150, s ? (s.hi - s.lo) * 0.55 : bx), rows: 2, band: 15 });
-    dcn.position.set(c.x, c.y, faceZ(c.x, c.y, 1.2));
-    dcn.rotation.z = Math.atan2(ttDir.y, ttDir.x);
-    grp.add(dcn);
-  }
-  addPockets(grp, feats, main, hwmF, {
+  addPockets(grp, feats, main, hwm, {
     side: (make, i) => {
-      const s2 = i % 2 === 0 ? 1 : -1;
-      const g = make(Math.min(170, bx * 1.2), Math.min(90, by * 0.8));
-      const px = mid.x + vr.j(bx * 0.1) - bx * 0.14, py = mid.y + by * 0.18 - i * 12;
-      g.position.set(px, py, s2 * faceZ(px, py, 1.2));
+      const s2 = i % 2 === 0 ? -1 : 1;           // first pocket on the non-drive side
+      const c = onFace(0.45, 0.62);
+      const g = make(Math.min(170, (s1 - s0) * 0.34), Math.min(90, drop * 0.28));
+      g.position.set(c.x, c.y, s2 * faceZ(c.x, c.y, 0.2));
+      g.rotation.z = Math.atan2(ttDir.y, ttDir.x);
       if (s2 < 0) g.rotation.y = Math.PI;
+      g.traverse((o) => { o.userData.noCollide = true; });
     },
   });
 
-  // ---- straps -------------------------------------------------------------
-  // Apidura count eight on the Expedition Full — three over the top tube, three
-  // under the DOWN TUBE and two round the SEAT TUBE (mount.notes on every
-  // record) — and the drawings space them at roughly one per 150mm of tube
-  // contact, which is also what drops the 2.5L Backcountry to two on the top
-  // tube. We used to draw three bands on the top tube and nothing anywhere
-  // else, so the pack read as a decal hung off one tube.
-  const straps = feats.straps || {};
-  // One count for both tubes: the maker quotes the same number top and bottom
-  // (3/3 on every Expedition size).
-  const nBand = Math.max(2, Math.min(4, Math.round(Math.max(runLen, botLen) / 150)));
-  frameStraps(grp, wmF, hwmF, {
-    edge: [toLocal(pTop), toLocal(ttB)], count: straps.topTube ?? nBand,
-    tubeR: TUBE_R.topTube, depth, normal: upN,
-  });
-  // Down tube: now that the pack is its published size, its bottom edge meets
-  // the down tube at the head-tube corner and stands progressively clear of it
-  // toward the bottom bracket — 43mm at the far corner on a pack cut for this
-  // frame, 123mm on the 4L Backcountry, which is a small bag in a big triangle.
-  // frameStraps() assumes the fabric already reaches the tube and would leave
-  // the bands wrapping thin air, so each one bridges its own gap instead.
-  const dtA = ctx.framePoly[0], dtDirC = ctx.framePoly[3].clone().sub(dtA).normalize();
-  const projDT = (q) => dtA.clone().addScaledVector(dtDirC, q.clone().sub(dtA).dot(dtDirC));
-  if (botLen > 60) {
-    const nDt = straps.downTube ?? nBand;
-    for (let i = 0; i < nDt; i++) {
-      const f = nDt === 1 ? 0.5 : 0.16 + (0.68 * i) / (nDt - 1);
-      const onEdge = rBot.clone().addScaledVector(botDir, botLen * f);
-      // A nylon cam strap reaches further than the seat tube's Hypalon velcro,
-      // but not indefinitely: past this the bag genuinely does not attach to the
-      // down tube on this frame and drawing a band anyway is the "strap floating
-      // beside the bag" fault.
-      if (onEdge.distanceTo(projDT(onEdge)) - TUBE_R.downTube > 150) continue;
-      grp.add(bridgeStrap(wmF, hwmF, {
-        from: toLocal(onEdge), to: toLocal(projDT(onEdge)), axis: dtDirC,
-        tubeR: TUBE_R.downTube, width: 22,
-      }));
+  // ---- straps ---------------------------------------------------------------------
+  // The record's count on each tube, spread along the edge that touches it. A
+  // product with no record gets one per ~150mm of top tube (Apidura's spacing)
+  // and two on each of the other tubes.
+  const ttRun = cl[1].distanceTo(cl[2]);
+  const n = {
+    tt: rec ? rec.tt : Math.max(2, Math.min(4, Math.round(ttRun / 150))),
+    dt: rec ? rec.dt : 2,
+    st: rec ? rec.st : 2,
+    ht: rec ? rec.ht : 0,
+  };
+  const strapGeos = [];
+  const faceHalf = (q) => faceZ(q.x, q.y, 0.2);
+  const spread = (edge, count, lo, hi) => {
+    for (let i = 0; i < count; i++) {
+      const f = count === 1 ? (lo + hi) / 2 : lo + ((hi - lo) * i) / (count - 1);
+      strapGeos.push(...velcroStrap(F, edge, f, faceHalf, { tab: 24 }));
     }
-  }
-  // Seat tube: the rear edge is parallel to the tube, so the gap is constant.
-  // A Hypalon velcro strap is ~120mm of reach; past that a pack cut for a
-  // smaller frame genuinely cannot be strapped to the seat tube, and drawing
-  // one anyway is the "strap floating beside the bag" fault in the brief. Of
-  // the seven Apidura packs only the 2.5L falls outside that on this frame.
-  const stA = ctx.framePoly[1], stDirC = ctx.framePoly[0].clone().sub(stA).normalize();
-  const projST = (q) => stA.clone().addScaledVector(stDirC, q.clone().sub(stA).dot(stDirC));
-  const stGap = pTop.distanceTo(projST(pTop)) - TUBE_R.seatTube;
-  if (stGap < 120) {
-    const nSt = straps.seatTube ?? 2;
-    for (let i = 0; i < nSt; i++) {
-      const f = 0.28 + 0.44 * (nSt === 1 ? 0.5 : i / (nSt - 1));
-      const onEdge = pTop.clone().addScaledVector(stDown, drop * f);
-      grp.add(bridgeStrap(wmF, hwmF, {
-        from: toLocal(onEdge), to: toLocal(projST(onEdge)), axis: stDirC,
-        tubeR: TUBE_R.seatTube, width: 22,
-      }));
-    }
-  }
+  };
+  spread(1, n.tt, 0.14, 0.86);
+  spread(3, n.dt, 0.3, 0.8);           // clear of the BB flat and the head lug
+  spread(0, n.st, 0.3, 0.72);
+  spread(2, n.ht, 0.5, 0.5);
+  grp.add(meshOf(strapGeos, webbing()));
 
-  // Brand mark. Apidura put the bee in opposite corners on the two ranges, and
-  // v2 put it low-centre on both: on the Expedition it sits HIGH and FORWARD,
-  // just under the upper zip about three quarters of the way to the head tube
-  // (on-bike-1.jpg, on-bike-4.jpg); on the Backcountry it is small and low at
-  // the SEAT-TUBE end, below the vertical zip leg (on-bike-4.jpg). Placed
-  // through onFace() so it lands on fabric that is actually there — the old
-  // fixed offset down the bounding box is what smeared the 2.5L's bee across
-  // the edge of the shell.
-  const patchW = Math.max(46, Math.min(72, runLen * 0.15));
-  const pc = rounded ? onFace(0.13, 0.84) : onFace(0.76, 0.3);
+  // Brand mark: Apidura's Expedition bee sits high and forward, the
+  // Backcountry's small and low at the seat end; everyone else high-centre.
+  const patchW = Math.max(46, Math.min(72, (s1 - s0) * 0.14));
+  const pc = rounded && /apidura/i.test(brand?.name || '') ? onFace(0.13, 0.84) : onFace(0.72, hasTopZip ? 0.22 : 0.3);
   patch(grp, brand, pc.x, pc.y, faceZ(pc.x, pc.y, 2.2), patchW, 0);
   patch(grp, brand, pc.x, pc.y, -faceZ(pc.x, pc.y, 2.2), patchW, Math.PI);
   return shadowify(grp);
 }
 
-// ---- outline maths -------------------------------------------------------
+// ---- frame geometry, shared with framehalf.js ------------------------------------
 
-/** Farthest hit of the ray o + t·d (t ≥ 0) against a closed polygon. */
-function rayReach(poly, o, d) {
-  let best = 0;
-  for (let i = 0; i < poly.length; i++) {
-    const a = poly[i], b = poly[(i + 1) % poly.length];
-    const ex = b.x - a.x, ey = b.y - a.y;
-    const den = d.x * ey - d.y * ex;
-    if (Math.abs(den) < 1e-9) continue;
-    const t = ((a.x - o.x) * ey - (a.y - o.y) * ex) / den;
-    const u = ((a.x - o.x) * d.y - (a.y - o.y) * d.x) / den;
-    if (u >= -1e-6 && u <= 1 + 1e-6 && t > best) best = t;
-  }
-  return best;
+/** ctx.framePoly and frameEdgeR in bag-local mm (anchor at the origin, z = 0). */
+export function frameLocal(ctx) {
+  const a = ctx.anchors.framebag.position;
+  const cl = ctx.framePoly.map((q) => v3(q.x - a.x, q.y - a.y, 0));
+  const R = ctx.frameEdgeR || [TUBE_R.seatTube, TUBE_R.topTube, 24, TUBE_R.downTube];
+  return { cl, R };
+}
+
+/** Unit normal of edge i (points[i] → points[i+1]) pointing OUT of the polygon. */
+export function edgeOutward(points, i) {
+  const n = points.length;
+  const a = points[i], b = points[(i + 1) % n];
+  const c = points.reduce((s, q) => s.add(q.clone()), new THREE.Vector3()).multiplyScalar(1 / n);
+  const d = b.clone().sub(a).normalize();
+  const o = v3(-d.y, d.x, 0);
+  if (o.dot(c.clone().sub(a)) > 0) o.negate();
+  return o;
 }
 
 /**
- * Highest value a unit shapeBulge() reaches inside a polygon, by sampling. The
- * bulge is what a stuffed panel adds to its own thickness, and it depends on
- * the SHAPE — a long shallow panel with two zip seams across it never gets near
- * full amplitude — so the width solve has to measure it rather than assume it.
+ * Offset each edge along its own inward normal by insets[i] (negative grows
+ * the polygon), then re-intersect neighbours. Same construction as panels.js
+ * offsetPolyEdges (not exported there).
  */
-function bulgePeak(poly, fn, n = 26) {
-  let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
-  for (const q of poly) {
-    x0 = Math.min(x0, q.x); x1 = Math.max(x1, q.x);
-    y0 = Math.min(y0, q.y); y1 = Math.max(y1, q.y);
+export function offsetEdges(points, insets) {
+  const n = points.length;
+  const lines = points.map((p, i) => {
+    const q = points[(i + 1) % n];
+    const d = q.clone().sub(p).setZ(0).normalize();
+    const out = edgeOutward(points, i);
+    return { p: p.clone().addScaledVector(out, -(insets[i] ?? 0)), d };
+  });
+  const res = [];
+  for (let i = 0; i < n; i++) {
+    const A = lines[(i - 1 + n) % n], B = lines[i];
+    const den = A.d.x * B.d.y - A.d.y * B.d.x;
+    if (Math.abs(den) < 1e-6) { res.push(B.p.clone()); continue; }
+    const t = ((B.p.x - A.p.x) * B.d.y - (B.p.y - A.p.y) * B.d.x) / den;
+    res.push(A.p.clone().addScaledVector(A.d, t));
   }
-  const inside = (x, y) => {
-    let hit = false;
-    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
-      const a = poly[i], b = poly[j];
-      if ((a.y > y) !== (b.y > y) && x < ((b.x - a.x) * (y - a.y)) / (b.y - a.y) + a.x) hit = !hit;
-    }
-    return hit;
-  };
-  let best = 0;
-  for (let i = 1; i < n; i++) {
-    for (let j = 1; j < n; j++) {
-      const x = x0 + ((x1 - x0) * i) / n, y = y0 + ((y1 - y0) * j) / n;
-      if (inside(x, y)) best = Math.max(best, fn(x, y));
-    }
-  }
-  return best;
+  return res;
 }
 
-/** Where the infinite line o + t·d enters and leaves a polygon, as {lo,hi}. */
-function lineSpan(poly, o, d) {
+/** Replace vertex i with a flat `w` wide, square to that corner's bisector. */
+function cutCorner(poly, i, w) {
+  const n = poly.length;
+  const q = poly[i], a = poly[(i - 1 + n) % n], b = poly[(i + 1) % n];
+  const da = a.clone().sub(q).normalize(), db = b.clone().sub(q).normalize();
+  const half = Math.acos(Math.min(Math.max(da.dot(db), -1), 1)) / 2;
+  const along = Math.min(w / 2 / Math.max(Math.sin(half), 0.2), q.distanceTo(a) * 0.4, q.distanceTo(b) * 0.4);
+  const out = poly.slice();
+  out.splice(i, 1, q.clone().addScaledVector(da, along), q.clone().addScaledVector(db, along));
+  return out;
+}
+
+/**
+ * Ease every corner with a quadratic sweep; radiusAt(i, interiorAngle) picks the
+ * radius, capped at 0.45 of the shorter adjacent edge.
+ */
+export function roundCorners(poly, radiusAt, segs = 4) {
+  const n = poly.length, out = [];
+  for (let i = 0; i < n; i++) {
+    const q = poly[i], a = poly[(i - 1 + n) % n], b = poly[(i + 1) % n];
+    const da = a.clone().sub(q), db = b.clone().sub(q);
+    const ang = Math.acos(Math.min(Math.max(da.clone().normalize().dot(db.clone().normalize()), -1), 1));
+    const rr = Math.min(radiusAt(i, ang), da.length() * 0.45, db.length() * 0.45);
+    if (rr < 1 || ang > 2.9) { out.push(q.clone()); continue; }
+    const s = q.clone().addScaledVector(da.normalize(), rr);
+    const e = q.clone().addScaledVector(db.normalize(), rr);
+    for (let k = 0; k <= segs; k++) {
+      const t = k / segs;
+      out.push(s.clone().multiplyScalar((1 - t) ** 2).addScaledVector(q, 2 * (1 - t) * t).addScaledVector(e, t * t));
+    }
+  }
+  return out;
+}
+
+/** Sutherland–Hodgman against one half-plane; keeps the side where (q−p0)·n ≤ 0. */
+export function clipHalfPlane(poly, p0, n) {
+  const out = [];
+  const d = (q) => (q.x - p0.x) * n.x + (q.y - p0.y) * n.y;
+  for (let i = 0; i < poly.length; i++) {
+    const A = poly[i], B = poly[(i + 1) % poly.length];
+    const dA = d(A), dB = d(B);
+    if (dA <= 0) out.push(A.clone());
+    if ((dA < 0 && dB > 0) || (dA > 0 && dB < 0)) out.push(A.clone().lerp(B, dA / (dA - dB)));
+  }
+  return out;
+}
+
+/** Where the infinite line o + t·d enters and leaves a polygon, as {lo, hi}. */
+export function lineSpan(poly, o, d) {
   let lo = Infinity, hi = -Infinity;
   for (let i = 0; i < poly.length; i++) {
     const a = poly[i], b = poly[(i + 1) % poly.length];
@@ -599,56 +538,122 @@ function lineSpan(poly, o, d) {
   return hi > lo ? { lo, hi } : null;
 }
 
-/**
- * Corner treatment for the outline. `segs = 1` cuts a flat chamfer (the
- * Expedition's "corners are all truncated, not sharp points"); more segments
- * sweep a quadratic through the corner for the Backcountry's rounded shell.
- */
-function roundPoly(poly, r, segs) {
-  if (r <= 0.5) return poly;
-  const n = poly.length, out = [];
-  for (let i = 0; i < n; i++) {
-    const q = poly[i], a = poly[(i - 1 + n) % n], b = poly[(i + 1) % n];
-    const da = a.clone().sub(q), db = b.clone().sub(q);
-    const rr = Math.min(r, da.length() * 0.45, db.length() * 0.45);
-    if (rr < 1) { out.push(q.clone()); continue; }
-    const s = q.clone().addScaledVector(da.normalize(), rr);
-    const e = q.clone().addScaledVector(db.normalize(), rr);
-    for (let k = 0; k <= segs; k++) {
-      const t = k / segs;
-      out.push(s.clone().multiplyScalar((1 - t) ** 2)
-        .addScaledVector(q, 2 * (1 - t) * t)
-        .addScaledVector(e, t * t));
+/** Highest value a unit bulge reaches inside a polygon, by sampling. */
+export function bulgePeak(poly, fn, n = 26) {
+  const xs = poly.map((q) => q.x), ys = poly.map((q) => q.y);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  let best = 0;
+  for (let i = 1; i < n; i++) {
+    for (let j = 1; j < n; j++) {
+      const x = x0 + ((x1 - x0) * i) / n, y = y0 + ((y1 - y0) * j) / n;
+      if (insidePoly(poly, x, y)) best = Math.max(best, fn(x, y));
     }
   }
-  return out;
+  return best;
 }
 
-/** Scale the extrusion depth from `tail` at the origin end to 1 at the far end. */
-function taperDepth(geo, origin, dir, len, tail) {
-  const pos = geo.attributes.position;
-  for (let i = 0; i < pos.count; i++) {
-    const t = ((pos.getX(i) - origin.x) * dir.x + (pos.getY(i) - origin.y) * dir.y) / len;
-    pos.setZ(i, pos.getZ(i) * (tail + (1 - tail) * Math.min(Math.max(t, 0), 1)));
+export function insidePoly(poly, x, y) {
+  let hit = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const a = poly[i], b = poly[j];
+    if ((a.y > y) !== (b.y > y) && x < ((b.x - a.x) * (y - a.y)) / (b.y - a.y) + a.x) hit = !hit;
   }
-  pos.needsUpdate = true;
-  geo.computeVertexNormals();
+  return hit;
 }
-
-// ---- applied trim --------------------------------------------------------
 
 /**
- * A contrasting panel welded onto the drive-side face. Tessellated and pushed
- * out to the face height at every vertex: a flat plate laid on a pillowed panel
- * hovers over it in the middle and sinks through it at the edges, and a 300mm
- * panel doing both at once reads as a tear rather than a seam.
+ * One velcro strap round frame tube `edge` (0 seat, 1 top, 2 head, 3 down) at
+ * fraction `f` along its centreline: a flat band hugging the tube (tubeWrap at
+ * the tube's own radius) and two short tabs running from the sides of the tube
+ * down onto the bag's two faces, which is how the strap reads as holding the
+ * bag rather than decorating the tube.
+ *
+ *   bagAt   optional point on the bag's edge the strap is sewn to; defaults to
+ *           the panel edge square below the tube at that station.
+ *   faceHalf(q)  half-thickness of the bag at q (to land the tabs ON the faces)
+ *   tab     how far the tab runs onto the face past the edge
+ *
+ * Returns geometries for meshOf(). Nothing here enters the clearance test.
  */
+export function velcroStrap(F, edge, f, faceHalf, { tab = 24, width = 20, bagAt = null } = {}) {
+  const { cl, R } = F;
+  const a = cl[edge], b = cl[(edge + 1) % cl.length];
+  const axis = b.clone().sub(a).normalize();
+  const r = R[edge];
+  const inward = edgeOutward(cl, edge).negate();
+  let c = a.clone().lerp(b, f);
+  let into = inward.clone();
+  let edgePt;
+  if (bagAt) {
+    // the nearest point on the tube to where the strap is sewn
+    const t = Math.min(Math.max(bagAt.clone().sub(a).dot(axis) / a.distanceTo(b), 0.02), 0.98);
+    c = a.clone().lerp(b, t);
+    const g = bagAt.clone().setZ(0).sub(c);
+    if (g.length() > 1) into = g.normalize();
+    edgePt = bagAt.clone().setZ(0);
+  } else {
+    edgePt = c.clone().addScaledVector(inward, r - BITE);
+  }
+  const geos = [tubeWrap(c, axis, r + 0.3, { width, thick: 1.5, seg: 32 })];
+  const Z = v3(0, 0, 1);
+  // The tab flares from the side of the tube to the shoulder of the bag (where
+  // the face reaches full thickness, a bevel in from the edge), then lies flat
+  // on the face.
+  const knee = edgePt.clone().addScaledVector(into, 7);
+  const land = edgePt.clone().addScaledVector(into, tab);
+  const hk = Math.max(faceHalf(knee), r * 0.6);
+  const hz = Math.max(faceHalf(land), r * 0.6);
+  const seg = (from, to, s) => {
+    const d = to.clone().sub(from).normalize();
+    const nrm = Z.clone().multiplyScalar(s);
+    nrm.addScaledVector(d, -nrm.dot(d)).normalize();
+    geos.push(strapRun(from, to, nrm, { width, thick: 1.5 }));
+  };
+  for (const s of [1, -1]) {
+    const from = c.clone().addScaledVector(Z, s * (r + 0.9));
+    const k = knee.clone().addScaledVector(Z, s * (hk + 0.4));
+    seg(from, k, s);
+    if (tab > 9) seg(k, land.clone().addScaledVector(Z, s * (hz + 0.4)), s);
+  }
+  return geos;
+}
+
+/**
+ * The three legs of a horseshoe zip on an inset outline: along the top edge,
+ * down the rear edge, forward along the down-tube edge. Each leg is the
+ * stretch of the outline whose outward normal points most along one of the
+ * three directions.
+ */
+function perimeterLegs(poly, ttDir, rearN, dtN) {
+  const n = poly.length;
+  const up = v3(-ttDir.y, ttDir.x, 0);
+  const pick = (dir) => {
+    let best = null, bl = 0;
+    for (let i = 0; i < n; i++) {
+      const a = poly[i], b = poly[(i + 1) % n];
+      const out = edgeOutward(poly, i);
+      if (out.dot(dir) < 0.85) continue;
+      const l = a.distanceTo(b);
+      if (l > bl) { bl = l; best = [a.clone(), b.clone()]; }
+    }
+    return best;
+  };
+  const topUp = up.y > 0 ? up : up.clone().negate();
+  return [pick(topUp), pick(rearN), pick(dtN)].filter(Boolean).map((l) => {
+    // order each leg rear → front so the slider parks toward the head tube
+    return l[0].dot(ttDir) > l[1].dot(ttDir) ? [l[1], l[0]] : l;
+  });
+}
+
+// ---- applied trim -------------------------------------------------------------
+
+/** A contrasting panel welded onto the drive face, following the pillow. */
 function facePanel(poly, mat, faceZ) {
   const shape = new THREE.Shape();
   poly.forEach((q, i) => (i === 0 ? shape.moveTo(q.x, q.y) : shape.lineTo(q.x, q.y)));
   const geo = subdivideXY(new THREE.ShapeGeometry(shape, 6), 30);
   const pos = geo.attributes.position;
-  for (let i = 0; i < pos.count; i++) pos.setZ(i, faceZ(pos.getX(i), pos.getY(i), 0.6));
+  for (let i = 0; i < pos.count; i++) pos.setZ(i, faceZ(pos.getX(i), pos.getY(i), 0.5));
   pos.needsUpdate = true;
   geo.computeVertexNormals();
   const m = new THREE.Mesh(geo, mat);
@@ -656,17 +661,13 @@ function facePanel(poly, mat, faceZ) {
   return m;
 }
 
-/**
- * The pull hanging off a zip slider: a cord loop with a moulded hexagonal grab.
- * Built in the XY plane so it hangs down the drive-side face.
- */
-function hexPull(cordMat, hwm, { drop = 26 } = {}) {
+/** The pull hanging off a zip slider: a cord loop with a moulded hexagonal grab. */
+export function hexPull(cordMat, hwm, { drop = 24 } = {}) {
   const g = new THREE.Group();
-  const loop = new THREE.Mesh(new THREE.TorusGeometry(drop * 0.3, 2.2, 5, 18), cordMat);
-  loop.scale.y = 1.5;
-  loop.position.y = -drop * 0.42;
-  g.add(loop);
-  const grab = new THREE.Mesh(new THREE.CylinderGeometry(8.5, 8.5, 3.6, 6), hwm);
+  const cord = new THREE.Mesh(new THREE.BoxGeometry(3, drop * 0.8, 1.6), cordMat);
+  cord.position.y = -drop * 0.42;
+  g.add(cord);
+  const grab = new THREE.Mesh(new THREE.CylinderGeometry(7.5, 7.5, 3.2, 6), hwm);
   grab.rotation.x = Math.PI / 2;
   grab.position.y = -drop;
   g.add(grab);
@@ -674,78 +675,33 @@ function hexPull(cordMat, hwm, { drop = 26 } = {}) {
   return g;
 }
 
-/**
- * The Backcountry's yellow chevron mark, pointing up at the head tube. TWO
- * chevrons, not three, and a fifth of the size v2 drew: on on-bike-4.jpg it
- * spans about an eighth of the bag's length, high on the panel.
- */
-function chevrons(mat, { w, at, z, rows = 2, rot = 0 }) {
+/** The Backcountry's two yellow chevrons, pointing at the head tube. */
+function chevrons(mat, { w, at, z, rotZ = 0 }) {
   const g = new THREE.Group();
   const bar = w * 0.62, th = Math.max(5, w * 0.13);
-  for (let r = 0; r < rows; r++) {
+  for (let r = 0; r < 2; r++) {
     for (const s of [1, -1]) {
-      const m = new THREE.Mesh(new THREE.BoxGeometry(bar, th, 2.2), mat);
+      const m = new THREE.Mesh(new THREE.BoxGeometry(bar, th, 1.6), mat);
       m.position.set(-r * (th * 2.1) - bar * 0.34, (s * bar) / 4, 0);
       m.rotation.z = (-s * Math.PI) / 5;
       g.add(m);
     }
   }
-  g.rotation.z = rot;
+  g.rotation.z = rotZ;
   g.position.set(at.x, at.y, z);
   g.traverse((o) => { o.userData.noCollide = true; });
   return g;
 }
 
-/**
- * The Expedition's printed size tag — "EXPEDITION 8L" in hi-vis, a short rule
- * with a bar over it. At bike scale the lettering is a few pixels, so what has
- * to be right is the mark's size, colour and place: it is small, it is yellow,
- * and it is low at the seat-tube end. v2 drew a 150mm WHITE reflective bar
- * there instead, on both faces, and every critic called it out.
- */
+/** The Expedition's printed size tag: small, hi-vis, low at the seat-tube end. */
 function printTag(mat, { w, at, z }) {
   const g = new THREE.Group();
   const h = Math.max(3, w * 0.075);
-  const top = new THREE.Mesh(new THREE.BoxGeometry(w * 0.62, h, 1.8), mat);
+  const top = new THREE.Mesh(new THREE.BoxGeometry(w * 0.62, h, 1.4), mat);
   top.position.set(-w * 0.19, h * 2.1, 0);
   g.add(top);
-  const rule = new THREE.Mesh(new THREE.BoxGeometry(w, h * 0.6, 1.8), mat);
-  g.add(rule);
+  g.add(new THREE.Mesh(new THREE.BoxGeometry(w, h * 0.6, 1.4), mat));
   g.position.set(at.x, at.y, z);
-  g.traverse((o) => { o.userData.noCollide = true; });
-  return g;
-}
-
-/**
- * A strap that bridges the gap from the panel edge to a tube and closes round
- * it. hardware.js's wrapStrap() puts its loop on the world X axis — right for a
- * saddle rail or a bar, wrong for the seat tube — and frameStraps() assumes the
- * fabric already reaches the tube, so neither can draw this one.
- */
-function bridgeStrap(wm, hwm, { from, to, axis, tubeR, width = 22, thick = 3 }) {
-  const g = new THREE.Group();
-  const dir = to.clone().sub(from);
-  const span = dir.length();
-  // Only the part of the webbing OUTSIDE the tube is worth drawing; the rest is
-  // buried in it. A panel edge already resting on the tube gets the loop alone,
-  // which is what the top-tube bands look like.
-  const free = span - tubeR;
-  if (free > 5) {
-    const u = dir.clone().normalize();
-    // webbing lies IN the frame plane, so it reads `width` tall from the side
-    const riser = new THREE.Mesh(new THREE.BoxGeometry(free, width, thick), wm);
-    riser.position.copy(from).addScaledVector(u, free / 2);
-    riser.rotation.z = Math.atan2(dir.y, dir.x);
-    g.add(riser);
-  }
-  const loop = new THREE.Mesh(new THREE.TorusGeometry(tubeR + 4, 2.6, 6, 24), wm);
-  loop.scale.z = width / 5.2;
-  loop.quaternion.setFromUnitVectors(v3(0, 0, 1), axis.clone().normalize());
-  loop.position.copy(to);
-  g.add(loop);
-  const tab = new THREE.Mesh(new THREE.BoxGeometry(11, 5.5, 16), hwm);
-  tab.position.copy(to).addScaledVector(dir.clone().normalize(), -(tubeR + 5));
-  g.add(tab);
   g.traverse((o) => { o.userData.noCollide = true; });
   return g;
 }

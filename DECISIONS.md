@@ -387,3 +387,16 @@ the rest is:
   overrides the catalogue sum — it includes his cages and harness.
 - **Build-loadouts was already broken** by the 635-bag cut (two curated rigs
   named removed products). Fixed by substitution, noted in LOG.md.
+- **Full frame bags fill the triangle, not the catalogue size.** The owner's
+  rule ("fills the main triangle exactly") wins over the published length and
+  height: 44 of 50 full bags now draw >10% larger than spec on the demo frame
+  (a custom bag is made for the frame). Packing capacity still uses the rated
+  litres, so the fill meter stays honest.
+- **Half frame bags give way to bottles.** Keeping both bottles free cuts 20
+  deep half bags by 12 to 53% in drawn height. A finer bottle check in
+  `system.js adjustBottles` (it compares whole boxes) would let them go deeper.
+- **Top tube nose stops 9 to 15 mm off the steerer** because the resolver's
+  head collider is a fixed 28 mm radius for every slice. Left as is: tight
+  but clean; noted for a system.js pass.
+- **Record straps/pockets/zips are not merged into brands.json** by
+  apply-models. Builders that need them (frame bags) carry a generated table.
