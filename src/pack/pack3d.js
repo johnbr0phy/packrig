@@ -236,10 +236,19 @@ export function createPack3D(app) {
           // wedge's lowest point is its shoulder, far below the tail
           const tailX = (rear ? bb.min.x + Math.max(dims[0] * 0.5, (bb.max.x - bb.min.x) * 0.18) : cx) + n * 20;
           const under = surfaceY(eq.mesh, F, tailX, cz, 1) ?? bb.min.y;
-          node.position.set(tailX, under - dims[1] / 2 - 16, (dims[2] / 2 + 4) * (n % 2 ? -1 : 1));
+          // rotated a quarter turn about z, so the item's long side hangs vertical
+          const hang = dims[0] / 2;
+          const z = (dims[2] / 2 + 4) * (n % 2 ? -1 : 1);
+          node.position.set(tailX, under - 22 - hang, z);
           node.rotation.set(0.2, 0, Math.PI / 2);
-          const clip = new THREE.Mesh(new THREE.TorusGeometry(6, 1.3, 5, 14), new THREE.MeshStandardMaterial({ color: 0x9a9da2, metalness: 0.8, roughness: 0.3 }));
-          clip.position.set(node.position.x, under - 6, node.position.z);
+          const metal = new THREE.MeshStandardMaterial({ color: 0x9a9da2, metalness: 0.8, roughness: 0.3 });
+          const clip = new THREE.Mesh(new THREE.TorusGeometry(6, 1.3, 5, 14), metal);
+          clip.position.set(tailX, under - 16, z);
+          // a short cord from the bag's underside to the carabiner so it reads as hung, not floating
+          const cord = new THREE.Mesh(new THREE.CylinderGeometry(1.2, 1.2, 12, 6), new THREE.MeshStandardMaterial({ color: 0x2a2d31, roughness: 0.9 }));
+          cord.position.set(tailX, under - 6, z);
+          cord.userData.packItem = true;
+          outside.add(cord);
           clip.userData.packItem = true;
           outside.add(clip);
         }
