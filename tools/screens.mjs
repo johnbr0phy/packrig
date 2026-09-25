@@ -101,6 +101,19 @@ async function shoot(id, state, device, setup, suffix = '') {
     for (let i = 0; i < 600 && thumbsPending(); i++) await new Promise((r) => setTimeout(r, 100));
     await new Promise((r) => setTimeout(r, 300));
   }).catch((e) => errs.push('thumbs: ' + e.message));
+  // the camera eases (damping, focus glides): shoot once it has stopped, or
+  // two runs catch it a sub-pixel apart and every edge differs
+  await p.evaluate(async () => {
+    const key = () => [...app.camera.position.toArray(), ...(app.controls?.target?.toArray() || [])].map((v) => v.toFixed(4)).join();
+    let last = key(), still = 0;
+    for (let i = 0; i < 150 && still < 4; i++) {
+      await new Promise((r) => setTimeout(r, 120));
+      const k = key();
+      still = k === last ? still + 1 : 0;
+      last = k;
+    }
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+  }).catch((e) => errs.push('settle: ' + e.message));
   const scroll = await p.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   const file = `${OUT}${id}-${device}-${state}${suffix}.png`;
   const buf = await p.screenshot({ path: file });
