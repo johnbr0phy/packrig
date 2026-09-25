@@ -1,6 +1,8 @@
 // node tools/_eval.mjs "<query>" "<async js expression returning JSON-able>"
 import puppeteer from 'puppeteer-core';
 import { CHROME } from './lib/chrome.mjs';
+import { takeRenderLock } from './lib/renderlock.mjs';
+await takeRenderLock('_eval');
 const [q, js] = process.argv.slice(2);
 const b = await puppeteer.launch({ executablePath: CHROME, headless: true });
 const p = await b.newPage();
