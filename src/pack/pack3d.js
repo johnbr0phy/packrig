@@ -17,7 +17,10 @@ import { buildItem } from './kit3d.js';
 
 const EASE = (t) => 1 - Math.pow(1 - t, 3);
 const D_OPEN = 320, D_MOVE = 420;
-const SHELL_OPACITY = 0.2;
+// 0.2 read as "items floating in air" once several bags were open at once
+// (the gallery view opens them all); 0.34 keeps the contents clear and the
+// bag still reads as a bag round them
+const SHELL_OPACITY = 0.34;
 
 export function createPack3D(app) {
   const bags = new Map();        // slot → { group, items: Map(uid → node), shell }
