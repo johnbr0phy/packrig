@@ -279,18 +279,15 @@ export function createPack3D(app) {
     F.add(outside);
   }
 
-  /** Height of the bag body's surface at (x, z) in frame coords: dir -1 = top (ray down), 1 = underside (ray up). */
+  /** Height of the bag body's surface at (x, z) in frame coords: dir -1 = top (ray from above, cast down), 1 = underside (ray from below, cast up). */
   const ray = new THREE.Raycaster();
   function surfaceY(bag, F, x, z, dir) {
     const body = [];
     bag.traverse((o) => { if (o.isMesh && !o.userData.noCollide && !o.userData.packItem) body.push(o); });
     if (!body.length) return null;
-    // builders deform positions after three has cached a bounding sphere; a
-    // stale sphere culls the ray before any triangle is tested
-    for (const m of body) { m.geometry.computeBoundingSphere(); m.geometry.boundingBox = null; }
     bag.updateMatrixWorld(true);
     const o = new THREE.Vector3(x, dir < 0 ? 5000 : -5000, z).applyMatrix4(F.matrixWorld);
-    const d = new THREE.Vector3(0, -dir, 0).transformDirection(F.matrixWorld);
+    const d = new THREE.Vector3(0, dir, 0).transformDirection(F.matrixWorld);   // from below cast up, from above cast down
     ray.set(o, d);
     const hit = ray.intersectObjects(body, false)[0];
     if (!hit) return null;
