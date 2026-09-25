@@ -1,0 +1,1372 @@
+[
+  {
+    "id": "tent-ymg-1p",
+    "name": "Tent - YMG 1P Cirriform",
+    "cat": "shelter",
+    "sub": "trekking-pole tent",
+    "generic": false,
+    "brand": "Yama Mountain Gear (YMG)",
+    "model": "Cirriform 1P",
+    "weight_g": 590,
+    "packed_cm": [
+      28,
+      14,
+      13
+    ],
+    "packed_l": 4,
+    "compress": 0.45,
+    "archetype": "tent_bundle",
+    "color": "#6b7f5a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "tent body in its sack across the bars in the bar roll; bulky, light enough to steer with, and the first thing out at camp"
+      },
+      {
+        "at": "fork",
+        "why": "in a cargo cage on the fork with two straps; splits the tent off the bars and keeps weight low"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "owner",
+    "sources": [
+      {
+        "url": "https://www.yamamountaingear.com",
+        "what": "maker of the Cirriform; weight is the owner's own figure, not a maker spec"
+      }
+    ],
+    "note": "Owner's item: 20.8 oz (590 g) is his figure. The owner's sheet describes the YMG Cirriform as a UK-made 1-person shelter; my recollection is that YMG is Yama Mountain Gear of Virginia, USA, so the origin needs checking. It is a trekking-pole-pitched single-person shelter, so no dedicated poles are in this weight (see tent-poles). Packed size estimated from comparable 1P trekking-pole shelters (Six Moon Lunar Solo, Zpacks Plex Solo); packed_l as cylinder.",
+    "aliases": [
+      "tent - ymg 1p cirriform",
+      "ymg cirriform",
+      "cirriform",
+      "ymg 1p",
+      "tent",
+      "ymg tent",
+      "yama cirriform"
+    ]
+  },
+  {
+    "id": "tent-1p",
+    "name": "One-person tent",
+    "cat": "shelter",
+    "sub": "freestanding tent",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 1100,
+    "packed_cm": [
+      45,
+      15,
+      15
+    ],
+    "packed_l": 7.95,
+    "compress": 0.35,
+    "archetype": "tent_bundle",
+    "color": "#8a6d3b",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "across the bars in the bar roll; long pole segments are the limit, so check the roll takes the sack length"
+      },
+      {
+        "at": "fork",
+        "why": "in a cargo cage on the fork with two straps; splits the tent off the bars and keeps weight low"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.bigagnes.com",
+        "what": "comparable Big Agnes 1P tents ~1.0-1.2 kg packed; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic double-wall 1P tent with its own poles, typical of the Big Agnes Copper Spur UL1 / MSR Hubba Hubba 1 class (about 1.0-1.3 kg packed). Standard pole segments make the sack ~45 cm long; bikepack versions pack shorter. packed_l as cylinder.",
+    "aliases": [
+      "1p tent",
+      "one person tent",
+      "solo tent",
+      "tent 1p",
+      "1 person tent"
+    ]
+  },
+  {
+    "id": "tent-2p",
+    "name": "Two-person tent",
+    "cat": "shelter",
+    "sub": "freestanding tent",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 1500,
+    "packed_cm": [
+      50,
+      16,
+      16
+    ],
+    "packed_l": 10.05,
+    "compress": 0.35,
+    "archetype": "tent_bundle",
+    "color": "#7a5230",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "across the bars in the bar roll, poles split out if the sack is too long for a drop bar"
+      },
+      {
+        "at": "fork",
+        "why": "body and fly split across two fork cages to share the weight low"
+      },
+      {
+        "at": "pannier",
+        "why": "on a touring rig, strapped on the rear rack or top of a pannier"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.msrgear.com",
+        "what": "comparable MSR/Big Agnes 2P tents ~1.3-1.7 kg packed; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic lightweight double-wall 2P tent (Copper Spur UL2 / Hubba Hubba 2 class). Weight and size are a class estimate, not a single product. Split body, fly and poles between riders when sharing. packed_l as cylinder.",
+    "aliases": [
+      "2p tent",
+      "two person tent",
+      "tent 2p",
+      "2 person tent",
+      "tent for two"
+    ]
+  },
+  {
+    "id": "ba-cs-ul1-bp",
+    "name": "Big Agnes Copper Spur HV UL1 Bikepack",
+    "cat": "shelter",
+    "sub": "freestanding tent",
+    "generic": false,
+    "brand": "Big Agnes",
+    "model": "Copper Spur HV UL1 Bikepack",
+    "weight_g": 1190,
+    "packed_cm": [
+      36,
+      16,
+      15
+    ],
+    "packed_l": 6.79,
+    "compress": 0.35,
+    "archetype": "tent_bundle",
+    "color": "#c9a23a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "made for it: the Bikepack sack has short poles and straps to hang straight under the bars"
+      },
+      {
+        "at": "fork",
+        "why": "in a cargo cage on the fork with two straps; splits the tent off the bars and keeps weight low"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.bigagnes.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Bikepack version: shorter pole segments and a handlebar-ready waterproof sack. Weight is my recollection of the packed weight (roughly 1.1-1.2 kg; trail weight lower); packed length ~36 cm is an estimate from the short poles. Verify both.",
+    "aliases": [
+      "copper spur ul1 bikepack",
+      "copper spur hv ul1",
+      "big agnes copper spur ul1",
+      "copper spur 1",
+      "cs ul1 bikepack"
+    ]
+  },
+  {
+    "id": "ba-cs-ul2-bp",
+    "name": "Big Agnes Copper Spur HV UL2 Bikepack",
+    "cat": "shelter",
+    "sub": "freestanding tent",
+    "generic": false,
+    "brand": "Big Agnes",
+    "model": "Copper Spur HV UL2 Bikepack",
+    "weight_g": 1500,
+    "packed_cm": [
+      38,
+      17,
+      17
+    ],
+    "packed_l": 8.63,
+    "compress": 0.35,
+    "archetype": "tent_bundle",
+    "color": "#c9a23a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "the Bikepack sack straps under the bars; at 1.5 kg it is about the limit for a bar roll"
+      },
+      {
+        "at": "fork",
+        "why": "split fly and body across two fork cages to keep the steering light"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.bigagnes.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Bikepack version of the UL2. Weight is my recollection of the packed weight (~1.4-1.5 kg); packed dimensions estimated from the UL1 Bikepack scaled up. Verify.",
+    "aliases": [
+      "copper spur ul2 bikepack",
+      "copper spur hv ul2",
+      "big agnes copper spur ul2",
+      "copper spur 2",
+      "cs ul2 bikepack"
+    ]
+  },
+  {
+    "id": "ba-fc-ul1-bp",
+    "name": "Big Agnes Fly Creek HV UL1 Bikepack",
+    "cat": "shelter",
+    "sub": "semi-freestanding tent",
+    "generic": false,
+    "brand": "Big Agnes",
+    "model": "Fly Creek HV UL1 Bikepack",
+    "weight_g": 1000,
+    "packed_cm": [
+      34,
+      15,
+      14
+    ],
+    "packed_l": 5.61,
+    "compress": 0.35,
+    "archetype": "tent_bundle",
+    "color": "#b89a3a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "short-pole Bikepack sack hangs under the bars"
+      },
+      {
+        "at": "fork",
+        "why": "in a cargo cage on the fork with two straps; splits the tent off the bars and keeps weight low"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.bigagnes.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Lighter semi-freestanding sibling of the Copper Spur, with a front entry. Weight ~1.0 kg packed is my recollection (trail weight under 1 kg); packed size estimated from the Copper Spur UL1 Bikepack. Verify.",
+    "aliases": [
+      "fly creek ul1 bikepack",
+      "fly creek hv ul1",
+      "big agnes fly creek",
+      "fly creek 1",
+      "fly creek"
+    ]
+  },
+  {
+    "id": "nemo-hornet-e1",
+    "name": "Nemo Hornet Elite Osmo 1P",
+    "cat": "shelter",
+    "sub": "semi-freestanding tent",
+    "generic": false,
+    "brand": "Nemo",
+    "model": "Hornet Elite OSMO 1P",
+    "weight_g": 850,
+    "packed_cm": [
+      46,
+      12,
+      11
+    ],
+    "packed_l": 4.77,
+    "compress": 0.35,
+    "archetype": "tent_bundle",
+    "color": "#9aa53a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "across the bars in the bar roll; long pole segments are the limit, so check the roll takes the sack length"
+      },
+      {
+        "at": "outside",
+        "why": "poles strapped along the top tube and the body in the bar roll or seat pack when the sack is too long"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.nemoequipment.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Very light semi-freestanding tent. Weight is my recollection of the packed weight (~0.8-0.9 kg; minimum trail weight lower). Not a bikepack edition: pole segments are long, so the packed length (~46 cm) is an estimate and the thing to check against your bars. Verify.",
+    "aliases": [
+      "nemo hornet elite",
+      "hornet elite osmo",
+      "nemo hornet",
+      "hornet 1p",
+      "hornet elite 1p"
+    ]
+  },
+  {
+    "id": "msr-hubba-1",
+    "name": "MSR Hubba Hubba 1",
+    "cat": "shelter",
+    "sub": "freestanding tent",
+    "generic": false,
+    "brand": "MSR",
+    "model": "Hubba Hubba 1",
+    "weight_g": 1260,
+    "packed_cm": [
+      46,
+      15,
+      15
+    ],
+    "packed_l": 8.13,
+    "compress": 0.35,
+    "archetype": "tent_bundle",
+    "color": "#5a6b7a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "across the bars in the bar roll; long pole segments are the limit, so check the roll takes the sack length"
+      },
+      {
+        "at": "fork",
+        "why": "in a cargo cage on the fork with two straps; splits the tent off the bars and keeps weight low"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.msrgear.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Recalled figures: packed weight ~1.26 kg, packed ~46 x 15 cm (minimum trail weight ~1.06 kg). MSR also sells a Hubba Hubba Bikepack 1 with shorter poles; this entry is the standard tent. Verify.",
+    "aliases": [
+      "msr hubba hubba",
+      "hubba hubba 1",
+      "hubba 1",
+      "msr hubba",
+      "hubba hubba nx 1"
+    ]
+  },
+  {
+    "id": "durston-xmid-1",
+    "name": "Durston X-Mid 1",
+    "cat": "shelter",
+    "sub": "trekking-pole tent",
+    "generic": false,
+    "brand": "Durston Gear",
+    "model": "X-Mid 1",
+    "weight_g": 800,
+    "packed_cm": [
+      30,
+      14,
+      12
+    ],
+    "packed_l": 3.96,
+    "compress": 0.45,
+    "archetype": "tent_bundle",
+    "color": "#7d8a4a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "tent body in its sack across the bars in the bar roll; bulky, light enough to steer with, and the first thing out at camp"
+      },
+      {
+        "at": "fork",
+        "why": "in a cargo cage on the fork with two straps; splits the tent off the bars and keeps weight low"
+      },
+      {
+        "at": "seatpack",
+        "why": "with no poles the sack is short and soft; it packs well into the seat pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://durstongear.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Double-wall trekking-pole shelter: pitches on two poles (~120 cm) that are NOT included, so add trekking poles or shelter poles (see bd-distance-cz, tent-poles). Weight ~800 g is my recollection for the polyester version including stakes/guylines as sold; packed size estimated. Verify.",
+    "aliases": [
+      "x-mid 1",
+      "xmid 1",
+      "durston x-mid",
+      "x-mid",
+      "xmid"
+    ]
+  },
+  {
+    "id": "zpacks-plex-solo",
+    "name": "Zpacks Plex Solo",
+    "cat": "shelter",
+    "sub": "trekking-pole tent",
+    "generic": false,
+    "brand": "Zpacks",
+    "model": "Plex Solo",
+    "weight_g": 400,
+    "packed_cm": [
+      24,
+      13,
+      12
+    ],
+    "packed_l": 2.94,
+    "compress": 0.45,
+    "archetype": "tent_bundle",
+    "color": "#8fa3a8",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "tent body in its sack across the bars in the bar roll; bulky, light enough to steer with, and the first thing out at camp"
+      },
+      {
+        "at": "fork",
+        "why": "in a cargo cage on the fork with two straps; splits the tent off the bars and keeps weight low"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://zpacks.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Dyneema single-wall shelter pitched on one trekking pole (not included). Weight ~400 g (about 14 oz) is my recollection, stakes extra; packed size estimated from the sack Zpacks supplies. Verify.",
+    "aliases": [
+      "plex solo",
+      "zpacks plex",
+      "zpacks plex solo",
+      "dcf tent",
+      "plexsolo"
+    ]
+  },
+  {
+    "id": "smd-lunar-solo",
+    "name": "Six Moon Designs Lunar Solo",
+    "cat": "shelter",
+    "sub": "trekking-pole tent",
+    "generic": false,
+    "brand": "Six Moon Designs",
+    "model": "Lunar Solo",
+    "weight_g": 740,
+    "packed_cm": [
+      30,
+      13,
+      12
+    ],
+    "packed_l": 3.68,
+    "compress": 0.45,
+    "archetype": "tent_bundle",
+    "color": "#6f7d8c",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "tent body in its sack across the bars in the bar roll; bulky, light enough to steer with, and the first thing out at camp"
+      },
+      {
+        "at": "fork",
+        "why": "in a cargo cage on the fork with two straps; splits the tent off the bars and keeps weight low"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.sixmoondesigns.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Single-wall silpoly shelter on one trekking pole (not included). Weight ~740 g (about 26 oz) is my recollection; packed size estimated from similar solo trekking-pole shelters. Verify.",
+    "aliases": [
+      "lunar solo",
+      "six moon lunar solo",
+      "smd lunar solo",
+      "six moon designs"
+    ]
+  },
+  {
+    "id": "tt-notch-li",
+    "name": "Tarptent Notch Li",
+    "cat": "shelter",
+    "sub": "trekking-pole tent",
+    "generic": false,
+    "brand": "Tarptent",
+    "model": "Notch Li",
+    "weight_g": 530,
+    "packed_cm": [
+      33,
+      11,
+      11
+    ],
+    "packed_l": 3.14,
+    "compress": 0.45,
+    "archetype": "tent_bundle",
+    "color": "#a8b0a0",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "tent body in its sack across the bars in the bar roll; bulky, light enough to steer with, and the first thing out at camp"
+      },
+      {
+        "at": "fork",
+        "why": "in a cargo cage on the fork with two straps; splits the tent off the bars and keeps weight low"
+      },
+      {
+        "at": "seatpack",
+        "why": "deep in the seat pack when the bars are full; a short bikepack-length sack fits a 10-14 L pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.tarptent.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Dyneema double-wall shelter on two trekking poles (not included); short end struts set the packed length. Weight ~530 g is my recollection; packed size estimated from the strut length. Verify.",
+    "aliases": [
+      "notch li",
+      "tarptent notch",
+      "notch",
+      "tarptent notch li"
+    ]
+  },
+  {
+    "id": "tarp-flat",
+    "name": "Flat tarp 3x3 m",
+    "cat": "shelter",
+    "sub": "tarp",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 450,
+    "packed_cm": [
+      20,
+      12,
+      10
+    ],
+    "packed_l": 2.4,
+    "compress": 0.55,
+    "archetype": "stuffsack",
+    "color": "#556b3a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "soft and light: rolls into the bar roll with the sleep kit"
+      },
+      {
+        "at": "seatpack",
+        "why": "squashes into the seat pack around harder items"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork cage dry bag with pegs and cord"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic 3 x 3 m silnylon flat tarp with tie-outs. Weight is an estimate: 9 m2 of typical ~40-45 g/m2 silnylon plus webbing and loops, not a specific product. Pitch on poles, trees or the bike; pair with a bivvy bag and groundsheet.",
+    "aliases": [
+      "tarp",
+      "flat tarp",
+      "3x3 tarp",
+      "silnylon tarp",
+      "basha"
+    ]
+  },
+  {
+    "id": "s2s-escapist",
+    "name": "Sea to Summit Escapist Tarp",
+    "cat": "shelter",
+    "sub": "tarp",
+    "generic": false,
+    "brand": "Sea to Summit",
+    "model": "Escapist Tarp (medium)",
+    "weight_g": 310,
+    "packed_cm": [
+      18,
+      10,
+      9
+    ],
+    "packed_l": 1.62,
+    "compress": 0.55,
+    "archetype": "stuffsack",
+    "color": "#3f5a4a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "rolls in with the sleep kit in the bar roll"
+      },
+      {
+        "at": "seatpack",
+        "why": "soft filler for the seat pack"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork cage dry bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://seatosummit.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Low confidence: ~310 g for the medium size (about 2.5 x 2.5 m) is my recollection and the large is heavier; packed size estimated. Check which size the owner has and verify.",
+    "aliases": [
+      "escapist tarp",
+      "sea to summit tarp",
+      "escapist",
+      "s2s tarp"
+    ]
+  },
+  {
+    "id": "alpkit-hunka-xl",
+    "name": "Alpkit Hunka XL bivvy bag",
+    "cat": "shelter",
+    "sub": "bivvy bag",
+    "generic": false,
+    "brand": "Alpkit",
+    "model": "Hunka XL",
+    "weight_g": 540,
+    "packed_cm": [
+      20,
+      13,
+      12
+    ],
+    "packed_l": 2.45,
+    "compress": 0.55,
+    "archetype": "stuffsack",
+    "color": "#3c4a3a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "in the bar roll with the sleeping bag, or put the sleeping bag inside it"
+      },
+      {
+        "at": "seatpack",
+        "why": "soft filler in the seat pack"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork cage dry bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://alpkit.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Roomy waterproof-breathable bivvy bag (XL fits a winter bag and a mat inside). ~540 g is my recollection (standard Hunka lighter); packed size estimated. Verify.",
+    "aliases": [
+      "hunka xl",
+      "alpkit hunka",
+      "hunka",
+      "bivvy",
+      "bivvy bag",
+      "bivy"
+    ]
+  },
+  {
+    "id": "eno-singlenest",
+    "name": "ENO SingleNest hammock",
+    "cat": "shelter",
+    "sub": "hammock",
+    "generic": false,
+    "brand": "ENO",
+    "model": "SingleNest",
+    "weight_g": 454,
+    "packed_cm": [
+      15,
+      12,
+      11
+    ],
+    "packed_l": 1.98,
+    "compress": 0.5,
+    "archetype": "stuffsack",
+    "color": "#2f7a8a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "packs into its own pouch; rides in the bar roll"
+      },
+      {
+        "at": "seatpack",
+        "why": "soft filler in the seat pack"
+      },
+      {
+        "at": "framebag_full",
+        "why": "fits a full frame bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.eaglesnestoutfittersinc.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Recalled ~454 g (16 oz) for the hammock with carabiners; tree straps (Atlas ~300 g) and any bug net or tarp are extra. For an integrated shelter (Hennessy Hyperlite class) budget roughly 1 kg with fly. Packed size estimated from the attached stuff pouch.",
+    "aliases": [
+      "hammock",
+      "eno hammock",
+      "singlenest",
+      "eno singlenest",
+      "hennessy hammock"
+    ]
+  },
+  {
+    "id": "polycryo",
+    "name": "Polycryo groundsheet",
+    "cat": "shelter",
+    "sub": "groundsheet",
+    "generic": false,
+    "brand": "Gossamer Gear",
+    "model": "Polycryo Ground Cloth",
+    "weight_g": 45,
+    "packed_cm": [
+      20,
+      10,
+      2
+    ],
+    "packed_l": 0.4,
+    "compress": 0.6,
+    "archetype": "stuffsack",
+    "color": "#dfe4e6",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "folded flat against the tent body in the bar roll"
+      },
+      {
+        "at": "framebag_full",
+        "why": "slides flat down the side of a frame bag"
+      },
+      {
+        "at": "seatpack",
+        "why": "folded flat in the seat pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.gossamergear.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Thin polyolefin (window-film) groundsheet, 1-person size. ~45 g is my recollection; folded size estimated. Also sold as window insulation film and cut to size.",
+    "aliases": [
+      "polycryo",
+      "groundsheet",
+      "ground sheet",
+      "footprint",
+      "ground cloth",
+      "tyvek"
+    ]
+  },
+  {
+    "id": "tent-poles",
+    "name": "Tent poles",
+    "cat": "shelter",
+    "sub": "shelter poles",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 85,
+    "packed_cm": [
+      40,
+      4,
+      3
+    ],
+    "packed_l": 0.48,
+    "compress": 0.02,
+    "archetype": "pole_bundle",
+    "color": "#4a4a4a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "pole bundle along the top of the frame bag, where the long rigid shape fits the frame triangle"
+      },
+      {
+        "at": "outside",
+        "why": "strapped along the top tube or under the bar roll when they are longer than the frame bag"
+      },
+      {
+        "at": "barroll",
+        "why": "rolled inside the bar roll with the tent body, keeping the shelter together in one place"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 3.0 oz (85 g) is his figure. At that weight this is a carbon shelter pole or two rather than an aluminium tent-pole set (an aluminium set for a 1P tent is typically 300-450 g). Packed length is an estimate for a short-segment pole; measure yours.",
+    "aliases": [
+      "tent poles",
+      "poles",
+      "tent pole",
+      "shelter poles",
+      "pole"
+    ]
+  },
+  {
+    "id": "bd-distance-cz",
+    "name": "Black Diamond Distance Carbon Z poles",
+    "cat": "shelter",
+    "sub": "trekking poles",
+    "generic": false,
+    "brand": "Black Diamond",
+    "model": "Distance Carbon Z",
+    "weight_g": 290,
+    "packed_cm": [
+      37,
+      6,
+      4
+    ],
+    "packed_l": 0.89,
+    "compress": 0.02,
+    "archetype": "pole_bundle",
+    "color": "#1f1f1f",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "pole bundle along the top of the frame bag, where the long rigid shape fits the frame triangle"
+      },
+      {
+        "at": "outside",
+        "why": "strapped along the top tube or down the fork legs; folded Z-poles are short enough"
+      },
+      {
+        "at": "barroll",
+        "why": "rolled inside the bar roll with the tent body, keeping the shelter together in one place"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.blackdiamondequipment.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Pair of folding carbon trekking poles, used to pitch trekking-pole shelters (X-Mid, Plex Solo, Notch). ~290 g per pair (about 120 cm size) is my recollection; folded length ~37 cm for that size. For a dedicated single shelter pole (Zpacks, Fibraplex carbon) budget well under 100 g, which I cannot give precisely.",
+    "aliases": [
+      "trekking poles",
+      "carbon poles",
+      "distance carbon z",
+      "black diamond poles",
+      "z poles",
+      "hiking poles"
+    ]
+  },
+  {
+    "id": "tent-pegs",
+    "name": "Tent pegs",
+    "cat": "shelter",
+    "sub": "pegs",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 102,
+    "packed_cm": [
+      19,
+      5,
+      3
+    ],
+    "packed_l": 0.28,
+    "compress": 0.02,
+    "archetype": "pole_bundle",
+    "color": "#c23a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "peg bag at the bottom of the frame bag: dense, and sharp points stay away from inflatable mats"
+      },
+      {
+        "at": "barroll",
+        "why": "inside the tent sack in the bar roll so the shelter is all in one place"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork cage with the tent"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 3.6 oz (102 g) is his figure. Consistent with 6-8 aluminium Y-stakes in a bag (MSR Groundhog class). Size estimated for 19 cm stakes.",
+    "aliases": [
+      "tent pegs",
+      "pegs",
+      "stakes",
+      "tent stakes",
+      "peg bag"
+    ]
+  },
+  {
+    "id": "msr-groundhog-6",
+    "name": "MSR Groundhog stakes (6)",
+    "cat": "shelter",
+    "sub": "pegs",
+    "generic": false,
+    "brand": "MSR",
+    "model": "Groundhog (6-pack)",
+    "weight_g": 80,
+    "packed_cm": [
+      19,
+      5,
+      3
+    ],
+    "packed_l": 0.28,
+    "compress": 0.02,
+    "archetype": "pole_bundle",
+    "color": "#c23a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "bottom of the frame bag; dense, and the points stay away from the mat"
+      },
+      {
+        "at": "barroll",
+        "why": "in the tent sack"
+      },
+      {
+        "at": "fork",
+        "why": "with the tent in a fork cage"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.msrgear.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "7-series aluminium Y-stakes, ~13 g each as I recall, 18.8 cm long; 6 plus a sack ~80 g. Verify.",
+    "aliases": [
+      "msr groundhog",
+      "groundhog stakes",
+      "groundhogs",
+      "y stakes",
+      "msr stakes"
+    ]
+  },
+  {
+    "id": "ti-shepherd-8",
+    "name": "Titanium shepherd hooks (8)",
+    "cat": "shelter",
+    "sub": "pegs",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 52,
+    "packed_cm": [
+      17,
+      4,
+      2
+    ],
+    "packed_l": 0.14,
+    "compress": 0.02,
+    "archetype": "pole_bundle",
+    "color": "#9a9a9a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "tiny and dense: bottom of the frame bag"
+      },
+      {
+        "at": "toptube_rear",
+        "why": "rear top tube bag"
+      },
+      {
+        "at": "barroll",
+        "why": "in the tent sack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.toaks.com",
+        "what": "comparable Toaks/Vargo 16 cm titanium shepherd hooks ~6-7 g each; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic set of 8 titanium shepherd-hook stakes (~16 cm, ~6.5 g each). Weight estimated from that per-stake figure; poor hold in soft ground.",
+    "aliases": [
+      "shepherd hooks",
+      "titanium stakes",
+      "ti pegs",
+      "ti stakes",
+      "titanium pegs"
+    ]
+  },
+  {
+    "id": "guyline-kit",
+    "name": "Guyline kit",
+    "cat": "shelter",
+    "sub": "cord",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 25,
+    "packed_cm": [
+      10,
+      6,
+      3
+    ],
+    "packed_l": 0.18,
+    "compress": 0.5,
+    "archetype": "cable_coil",
+    "color": "#e0c020",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "barroll",
+        "why": "in the tent sack so the lines are with the shelter"
+      },
+      {
+        "at": "framebag_half",
+        "why": "small bag in the frame bag"
+      },
+      {
+        "at": "toptube_rear",
+        "why": "rear top tube bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic: about 8 m of 2 mm reflective dyneema-core cord (roughly 2 g/m) with four line tensioners. Weight is an estimate from those parts, not a product spec.",
+    "aliases": [
+      "guylines",
+      "guy lines",
+      "guyline",
+      "guy ropes",
+      "cord"
+    ]
+  },
+  {
+    "id": "chair",
+    "name": "Chair",
+    "cat": "shelter",
+    "sub": "camp chair",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 510,
+    "packed_cm": [
+      35,
+      10,
+      9
+    ],
+    "packed_l": 2.47,
+    "compress": 0.05,
+    "archetype": "chair",
+    "color": "#2a2a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "outside",
+        "why": "strapped under or on top of the seat pack or bar roll; the pole bundle is long and rigid"
+      },
+      {
+        "at": "framebag_full",
+        "why": "along the top of a large frame bag if it fits"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork cage like a tent pole bundle"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 18.0 oz (510 g) is his figure. Helinox Chair Zero class: shock-corded pole frame and seat in a stuff sack; packed size estimated from that class.",
+    "aliases": [
+      "chair",
+      "camp chair",
+      "folding chair",
+      "helinox",
+      "chair zero"
+    ]
+  },
+  {
+    "id": "helinox-chair0",
+    "name": "Helinox Chair Zero",
+    "cat": "shelter",
+    "sub": "camp chair",
+    "generic": false,
+    "brand": "Helinox",
+    "model": "Chair Zero",
+    "weight_g": 510,
+    "packed_cm": [
+      35,
+      10,
+      9
+    ],
+    "packed_l": 2.47,
+    "compress": 0.05,
+    "archetype": "chair",
+    "color": "#1f1f1f",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "outside",
+        "why": "strapped on top of the seat pack or under the bar roll"
+      },
+      {
+        "at": "framebag_full",
+        "why": "along the top of a large frame bag"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork cage"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://helinox.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "~510 g is my recollection of the current listing (older listings about 490 g); packed ~35 x 10 cm. Verify.",
+    "aliases": [
+      "helinox chair zero",
+      "chair zero",
+      "helinox",
+      "helinox chair"
+    ]
+  },
+  {
+    "id": "paracord",
+    "name": "Paracord bear line",
+    "cat": "shelter",
+    "sub": "cord",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 85,
+    "packed_cm": [
+      12,
+      8,
+      4
+    ],
+    "packed_l": 0.38,
+    "compress": 0.3,
+    "archetype": "cable_coil",
+    "color": "#556b2f",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "coiled at the bottom of the frame bag; the food bag goes up it at night"
+      },
+      {
+        "at": "seatpack",
+        "why": "wrapped around the food bag or in the seat pack"
+      },
+      {
+        "at": "toptube_rear",
+        "why": "rear top tube bag"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 3.0 oz (85 g) is his figure, which fits about 15 m of 550 paracord for hanging a food bag. Coil size estimated.",
+    "aliases": [
+      "paracord",
+      "bear line",
+      "bear bag line",
+      "rope",
+      "paracord bear line",
+      "cord"
+    ]
+  },
+  {
+    "id": "clothes-line",
+    "name": "Clothes line",
+    "cat": "shelter",
+    "sub": "cord",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 14,
+    "packed_cm": [
+      8,
+      5,
+      2
+    ],
+    "packed_l": 0.08,
+    "compress": 0.3,
+    "archetype": "cable_coil",
+    "color": "#d9d9d9",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube_rear",
+        "why": "rear top tube bag or any small pocket"
+      },
+      {
+        "at": "framebag_half",
+        "why": "a corner of the frame bag"
+      },
+      {
+        "at": "barroll",
+        "why": "in the tent sack"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 0.5 oz (14 g) is his figure; a few metres of thin cord or a braided travel line. Size estimated.",
+    "aliases": [
+      "clothes line",
+      "clothesline",
+      "washing line",
+      "line"
+    ]
+  }
+]

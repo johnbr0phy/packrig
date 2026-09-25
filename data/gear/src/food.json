@@ -1,0 +1,506 @@
+[
+  {
+    "id": "food-day",
+    "name": "One day of food",
+    "cat": "food",
+    "sub": "daily ration",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 800,
+    "packed_cm": [
+      28,
+      16,
+      12
+    ],
+    "packed_l": 5.38,
+    "compress": 0.3,
+    "archetype": "stuffsack",
+    "color": "#c87a2a",
+    "rigid": false,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "food bag in the frame bag: dense, central, and reachable at any stop"
+      },
+      {
+        "at": "seatpack",
+        "why": "camp food (dinner, breakfast) can go deeper in the seat pack; it is only needed at night"
+      },
+      {
+        "at": "toptube",
+        "why": "ride food in the top tube bag so you can eat on the move"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic: about 3,000 kcal at ~3.75 kcal/g, the calorie-dense end of a bikepacking day (nuts, bars, wraps, a freeze-dried dinner). Weight and volume are an estimate; a hungrier or less dense day runs to 1 kg. Add one per day between resupplies.",
+    "aliases": [
+      "food",
+      "one day of food",
+      "food for a day",
+      "day of food",
+      "daily food",
+      "food bag",
+      "food day"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "snack-bag",
+    "name": "Snack bag",
+    "cat": "food",
+    "sub": "snacks",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 300,
+    "packed_cm": [
+      20,
+      14,
+      8
+    ],
+    "packed_l": 2.24,
+    "compress": 0.3,
+    "archetype": "stuffsack",
+    "color": "#d89a3a",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "ride food in the top tube bag so you can eat on the move"
+      },
+      {
+        "at": "stem",
+        "why": "a stem bag holds snacks within reach while riding"
+      },
+      {
+        "at": "framebag_full",
+        "why": "food bag in the frame bag: dense, central, and reachable at any stop"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic ride snacks (bars, sweets, crisps) for a few hours. Weight is a round figure; volume estimated.",
+    "aliases": [
+      "snacks",
+      "snack bag",
+      "ride food",
+      "snack"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "fd-meal",
+    "name": "Freeze-dried meal",
+    "cat": "food",
+    "sub": "dinner",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 140,
+    "packed_cm": [
+      22,
+      16,
+      5
+    ],
+    "packed_l": 1.76,
+    "compress": 0.3,
+    "archetype": "pouch",
+    "color": "#a83a2a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "food bag in the frame bag: dense, central, and reachable at any stop"
+      },
+      {
+        "at": "seatpack",
+        "why": "camp food (dinner, breakfast) can go deeper in the seat pack; it is only needed at night"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork cage dry bag with the cook kit"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.mountainhouse.com",
+        "what": "comparable Mountain House / Firepot single meals ~130-150 g dry; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic single-serve freeze-dried dinner (Mountain House, Firepot, Summit to Eat class), ~130-150 g dry, ~500-700 kcal. Pouch size estimated; squeeze the air out to save volume.",
+    "aliases": [
+      "freeze dried meal",
+      "freeze-dried meal",
+      "dehydrated meal",
+      "mountain house",
+      "firepot",
+      "dinner"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "oats-bag",
+    "name": "Porridge oats bag",
+    "cat": "food",
+    "sub": "breakfast",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 300,
+    "packed_cm": [
+      18,
+      12,
+      6
+    ],
+    "packed_l": 1.3,
+    "compress": 0.3,
+    "archetype": "pouch",
+    "color": "#d8c8a0",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "food bag in the frame bag: dense, central, and reachable at any stop"
+      },
+      {
+        "at": "seatpack",
+        "why": "camp food (dinner, breakfast) can go deeper in the seat pack; it is only needed at night"
+      },
+      {
+        "at": "fork",
+        "why": "with the cook kit in a fork cage"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic zip bag of oats (with milk powder and sugar), about four 75 g breakfasts. Weight and size are an estimate.",
+    "aliases": [
+      "oats",
+      "porridge",
+      "porridge oats",
+      "oatmeal",
+      "breakfast"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "tortillas",
+    "name": "Tortillas pack",
+    "cat": "food",
+    "sub": "bread",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 490,
+    "packed_cm": [
+      26,
+      26,
+      3
+    ],
+    "packed_l": 2.03,
+    "compress": 0.1,
+    "archetype": "pouch",
+    "color": "#e8d8a8",
+    "rigid": false,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "flat against the side of the frame bag"
+      },
+      {
+        "at": "seatpack",
+        "why": "flat around the other contents of the seat pack"
+      },
+      {
+        "at": "barroll",
+        "why": "flat on top of the bar roll contents"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic pack of 8 large wheat tortillas (about 60 g each); weight estimated from typical supermarket packs. Flat and tough, they fill odd gaps.",
+    "aliases": [
+      "tortillas",
+      "wraps",
+      "tortilla",
+      "tortilla wraps",
+      "flatbread"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "pb-squeeze",
+    "name": "Peanut butter squeeze packs (4)",
+    "cat": "food",
+    "sub": "spread",
+    "generic": false,
+    "brand": "Justin's",
+    "model": "Peanut butter squeeze pack",
+    "weight_g": 130,
+    "packed_cm": [
+      12,
+      8,
+      3
+    ],
+    "packed_l": 0.29,
+    "compress": 0.2,
+    "archetype": "pouch",
+    "color": "#a8702a",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "ride food in the top tube bag so you can eat on the move"
+      },
+      {
+        "at": "framebag_full",
+        "why": "food bag in the frame bag: dense, central, and reachable at any stop"
+      },
+      {
+        "at": "pocket",
+        "why": "a jersey or hip-pack pocket for what you will eat in the next hour"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://justins.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Four single-serve squeeze packs at ~32 g (1.15 oz) each as I recall, ~190 kcal each; weight rounded up for the wrappers. Verify.",
+    "aliases": [
+      "peanut butter",
+      "pb packs",
+      "peanut butter squeeze",
+      "nut butter",
+      "justins"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "coffee-sachets",
+    "name": "Instant coffee sachets (10)",
+    "cat": "food",
+    "sub": "drink",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 25,
+    "packed_cm": [
+      12,
+      8,
+      2
+    ],
+    "packed_l": 0.19,
+    "compress": 0.3,
+    "archetype": "pouch",
+    "color": "#5a3a2a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "food bag in the frame bag: dense, central, and reachable at any stop"
+      },
+      {
+        "at": "seatpack",
+        "why": "inside the pot with the stove"
+      },
+      {
+        "at": "toptube",
+        "why": "ride food in the top tube bag so you can eat on the move"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic 10 instant coffee stick sachets at ~2 g each, in a small zip bag. Weight is an estimate (Starbucks VIA-style sticks are a little heavier).",
+    "aliases": [
+      "coffee",
+      "instant coffee",
+      "coffee sachets",
+      "via",
+      "coffee sticks"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "gels-6",
+    "name": "Energy gels (6)",
+    "cat": "food",
+    "sub": "gels",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 192,
+    "packed_cm": [
+      11,
+      6,
+      5
+    ],
+    "packed_l": 0.33,
+    "compress": 0.2,
+    "archetype": "tube_bottle",
+    "color": "#e05a2a",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "ride food in the top tube bag so you can eat on the move"
+      },
+      {
+        "at": "pocket",
+        "why": "a jersey or hip-pack pocket for what you will eat in the next hour"
+      },
+      {
+        "at": "stem",
+        "why": "a stem bag holds snacks within reach while riding"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://guenergy.com",
+        "what": "comparable GU Energy Gel 32 g sachet; recalled without fetching; verify"
+      }
+    ],
+    "note": "Six 32 g gel sachets (GU class, ~100 kcal each). Isotonic 60 ml gels (SiS GO) are nearly twice the weight. Stack size estimated.",
+    "aliases": [
+      "gels",
+      "energy gels",
+      "gel",
+      "gu",
+      "gu gels"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "trail-mix",
+    "name": "Dried fruit and nuts bag",
+    "cat": "food",
+    "sub": "snacks",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 300,
+    "packed_cm": [
+      18,
+      12,
+      6
+    ],
+    "packed_l": 1.3,
+    "compress": 0.3,
+    "archetype": "stuffsack",
+    "color": "#8a5a3a",
+    "rigid": false,
+    "fragile": false,
+    "access": "ride",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "ride food in the top tube bag so you can eat on the move"
+      },
+      {
+        "at": "framebag_full",
+        "why": "food bag in the frame bag: dense, central, and reachable at any stop"
+      },
+      {
+        "at": "stem",
+        "why": "a stem bag holds snacks within reach while riding"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic 300 g zip bag of trail mix (nuts, raisins, apricots, chocolate); roughly 1,400-1,600 kcal. Volume estimated.",
+    "aliases": [
+      "trail mix",
+      "nuts",
+      "dried fruit",
+      "fruit and nuts",
+      "scroggin",
+      "gorp"
+    ],
+    "consumable": true
+  },
+  {
+    "id": "emerg-bar",
+    "name": "Emergency ration bar",
+    "cat": "food",
+    "sub": "emergency",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 68,
+    "packed_cm": [
+      13,
+      5,
+      2
+    ],
+    "packed_l": 0.13,
+    "compress": 0.05,
+    "archetype": "box",
+    "color": "#6a8a3a",
+    "rigid": true,
+    "fragile": false,
+    "access": "day",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "at the bottom of the frame bag, left untouched until it is needed"
+      },
+      {
+        "at": "toptube_rear",
+        "why": "rear top tube bag"
+      },
+      {
+        "at": "seatpack",
+        "why": "with the first aid kit"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.clifbar.com",
+        "what": "comparable Clif Bar 68 g; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic dense bar kept back for when you run out (Clif Bar class, 68 g, ~250 kcal). A lifeboat-style ration block (Datrex, SOS) is heavier: 2,400-3,600 kcal in 500-750 g.",
+    "aliases": [
+      "emergency bar",
+      "emergency food",
+      "ration bar",
+      "energy bar",
+      "bar",
+      "clif bar"
+    ],
+    "consumable": true
+  }
+]

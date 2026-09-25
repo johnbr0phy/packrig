@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Kit contact sheet</title>
+<style>
+  html,body{margin:0;background:#e9e7e2;font:13px/1.3 Inter,system-ui,sans-serif;color:#222}
+  #wrap{position:relative}
+  canvas{display:block}
+  .lbl{position:absolute;transform:translateX(-50%);text-align:center;white-space:nowrap;font-size:12px}
+  .lbl b{display:block;font-weight:600}
+  .lbl span{color:#666;font-size:11px}
+  h1{position:absolute;left:24px;top:10px;margin:0;font-size:16px}
+</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body><div id="wrap"><h1 id="title"></h1></div>
+<script type="module">
+import * as THREE from 'three';
+import { buildItem, KIT_ARCHETYPES } from '/src/pack/kit3d.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const q = new URLSearchParams(location.search);
+const mode = q.get('mode') || 'arch';
+const cat = q.get('cat');
+const PX = +(q.get('px') || 0.9);             // pixels per mm — the same for every item on the sheet
+const W = +(q.get('w') || 1800);
+const gear = await fetch('/data/gear.json').then((r) => r.json());
+
+// the two references every sheet carries
+const REF = [
+  { name: '1 L bottle', archetype: 'bottle', dims: [285, 82, 82], color: '#cfe3ea', ref: true },
+  { name: 'iPhone 14 Pro', archetype: 'phone', dims: [147.5, 71.5, 7.9], color: '#4a4d52', ref: true },
+];
+let list;
+if (mode === 'arch') {
+  // one representative per archetype: the median-sized catalogue item of it
+  list = KIT_ARCHETYPES.map((a) => {
+    const its = gear.filter((g) => g.archetype === a).sort((x, y) => x.packed_l - y.packed_l);
+    const g = its[Math.floor(its.length / 2)];
+    return g ? { name: g.name, archetype: a, dims: g.packed_cm.map((c) => c * 10), color: g.color, id: g.id, sub: a }
+      : { name: a, archetype: a, dims: [120, 80, 50], color: '#6a7480', sub: a + ' (no item yet)' };
+  });
+} else {
+  list = gear.filter((g) => !cat || g.cat === cat).map((g) => ({ name: g.name, archetype: g.archetype, dims: g.packed_cm.map((c) => c * 10), color: g.color, id: g.id, sub: `${g.weight_g} g · ${g.packed_l} L` }));
+}
+list = [...REF, ...list];
+document.getElementById('title').textContent = (mode === 'arch' ? 'Archetypes' : `Items${cat ? ' · ' + cat : ''}`) + ` — true scale, ${PX} px/mm`;
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.setPixelRatio(1);
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#e9e7e2');
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8478, 1.6));
+const sun = new THREE.DirectionalLight(0xffffff, 2.2); sun.position.set(-1, 2, 3); scene.add(sun);
+const fill = new THREE.DirectionalLight(0xffffff, 0.7); fill.position.set(2, -0.5, 1); scene.add(fill);
+
+// lay out left→right in rows, each item viewed three-quarter from above,
+// every one at the same px/mm so size is directly comparable
+const pad = 26, labelH = 34;
+let x = pad, y = 48, rowH = 0;
+const placed = [];
+for (const it of list) {
+  const g = buildItem(it.archetype, { dims: it.dims, color: it.color, seed: it.id || it.name });
+  g.rotation.set(-0.5, 0.45, 0);
+  const bb = new THREE.Box3().setFromObject(g);
+  const s = bb.getSize(new THREE.Vector3());
+  const w = s.x * PX, h = s.y * PX;
+  if (x + w + pad > W) { x = pad; y += rowH + labelH + pad; rowH = 0; }
+  placed.push({ it, g, cx: x + w / 2, cy: y + h / 2, w, h, bb });
+  x += Math.max(w, 110) + pad;
+  rowH = Math.max(rowH, h);
+}
+const H = y + rowH + labelH + pad;
+renderer.setSize(W, H);
+document.getElementById('wrap').prepend(renderer.domElement);
+const cam = new THREE.OrthographicCamera(0, W / PX, 0, -H / PX, -5000, 5000);
+cam.position.z = 1000;
+for (const p of placed) {
+  const c = p.bb.getCenter(new THREE.Vector3());
+  p.g.position.set(p.cx / PX - c.x, -p.cy / PX - c.y, 0);
+  scene.add(p.g);
+  const l = document.createElement('div');
+  l.className = 'lbl';
+  l.style.left = `${p.cx}px`; l.style.top = `${p.cy + p.h / 2 + 4}px`;
+  l.innerHTML = `<b></b><span></span>`;
+  l.querySelector('b').textContent = p.it.name.length > 26 ? p.it.name.slice(0, 25) + '…' : p.it.name;
+  l.querySelector('span').textContent = p.it.ref ? 'reference' : (p.it.sub || '');
+  document.getElementById('wrap').append(l);
+}
+renderer.render(scene, cam);
+window.__DONE = true;
+</script></body></html>

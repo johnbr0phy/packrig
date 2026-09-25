@@ -131,7 +131,7 @@
     "why": "clipped inside the top tube bag"
    }
   ],
-  "note": "House/car key plus a ring; weight estimated. Source URL is not meaningful for this item.",
+  "note": "House/car key plus a ring; weight estimated.",
   "aliases": [
    "keys",
    "house keys",
@@ -141,8 +141,8 @@
   "basis": "recall",
   "sources": [
    {
-    "url": "https://www.icao.int",
-    "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify (source row is a placeholder: there is no maker for this)"
+    "url": null,
+    "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify"
    }
   ]
  },

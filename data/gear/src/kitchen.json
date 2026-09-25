@@ -1,0 +1,1700 @@
+[
+  {
+    "id": "stove",
+    "name": "Stove",
+    "cat": "kitchen",
+    "sub": "canister stove",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 28,
+    "packed_cm": [
+      6,
+      4,
+      3
+    ],
+    "packed_l": 0.07,
+    "compress": 0.02,
+    "archetype": "stove",
+    "color": "#7a7a7a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "seatpack",
+        "why": "nested inside the pot wherever the pot goes"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 1.0 oz (28 g) is his figure, which matches the BRS-3000T class of tiny titanium screw-on canister stove. Folded size estimated from that class.",
+    "aliases": [
+      "stove",
+      "gas stove",
+      "canister stove",
+      "burner",
+      "brs stove"
+    ]
+  },
+  {
+    "id": "brs-3000t",
+    "name": "BRS-3000T stove",
+    "cat": "kitchen",
+    "sub": "canister stove",
+    "generic": false,
+    "brand": "BRS",
+    "model": "BRS-3000T",
+    "weight_g": 25,
+    "packed_cm": [
+      6,
+      4,
+      3
+    ],
+    "packed_l": 0.07,
+    "compress": 0.02,
+    "archetype": "stove",
+    "color": "#8a8a8a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "seatpack",
+        "why": "nested inside the pot wherever the pot goes"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "25 g is the widely quoted maker figure (recalled). I cannot name the maker's site with confidence, so no source URL; folded size estimated. Cheap and very light, but weak in wind and pot supports are small.",
+    "aliases": [
+      "brs 3000t",
+      "brs-3000t",
+      "brs stove",
+      "brs"
+    ]
+  },
+  {
+    "id": "msr-pr2",
+    "name": "MSR PocketRocket 2",
+    "cat": "kitchen",
+    "sub": "canister stove",
+    "generic": false,
+    "brand": "MSR",
+    "model": "PocketRocket 2",
+    "weight_g": 73,
+    "packed_cm": [
+      8,
+      5,
+      5
+    ],
+    "packed_l": 0.2,
+    "compress": 0.02,
+    "archetype": "stove",
+    "color": "#a33a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "seatpack",
+        "why": "nested inside the pot wherever the pot goes"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.msrgear.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "73 g stove alone (recalled maker figure); the plastic case adds a little. Folded size approximate.",
+    "aliases": [
+      "pocketrocket 2",
+      "pocket rocket 2",
+      "msr pocketrocket",
+      "pocket rocket",
+      "pr2"
+    ]
+  },
+  {
+    "id": "msr-pr-deluxe",
+    "name": "MSR PocketRocket Deluxe",
+    "cat": "kitchen",
+    "sub": "canister stove",
+    "generic": false,
+    "brand": "MSR",
+    "model": "PocketRocket Deluxe",
+    "weight_g": 83,
+    "packed_cm": [
+      8.5,
+      5.5,
+      5
+    ],
+    "packed_l": 0.23,
+    "compress": 0.02,
+    "archetype": "stove",
+    "color": "#a33a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "seatpack",
+        "why": "nested inside the pot wherever the pot goes"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.msrgear.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Regulated with a push-button igniter. ~83 g is my recollection; folded size approximate. Verify.",
+    "aliases": [
+      "pocketrocket deluxe",
+      "pocket rocket deluxe",
+      "msr deluxe",
+      "pr deluxe"
+    ]
+  },
+  {
+    "id": "soto-amicus",
+    "name": "Soto Amicus",
+    "cat": "kitchen",
+    "sub": "canister stove",
+    "generic": false,
+    "brand": "Soto",
+    "model": "Amicus",
+    "weight_g": 81,
+    "packed_cm": [
+      8,
+      5,
+      4
+    ],
+    "packed_l": 0.16,
+    "compress": 0.02,
+    "archetype": "stove",
+    "color": "#c26a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "seatpack",
+        "why": "nested inside the pot wherever the pot goes"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://sotooutdoors.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "~81 g with igniter is my recollection; folded size approximate. Verify.",
+    "aliases": [
+      "soto amicus",
+      "amicus"
+    ]
+  },
+  {
+    "id": "soto-windmaster",
+    "name": "Soto WindMaster",
+    "cat": "kitchen",
+    "sub": "canister stove",
+    "generic": false,
+    "brand": "Soto",
+    "model": "WindMaster",
+    "weight_g": 87,
+    "packed_cm": [
+      8,
+      5,
+      4
+    ],
+    "packed_l": 0.16,
+    "compress": 0.02,
+    "archetype": "stove",
+    "color": "#c26a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "seatpack",
+        "why": "nested inside the pot wherever the pot goes"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://sotooutdoors.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Recalled: ~67 g burner plus the 4Flex pot support, ~87 g together. Good in wind. Folded size approximate. Verify.",
+    "aliases": [
+      "soto windmaster",
+      "windmaster",
+      "wind master"
+    ]
+  },
+  {
+    "id": "jetboil-flash",
+    "name": "Jetboil Flash",
+    "cat": "kitchen",
+    "sub": "integrated stove system",
+    "generic": false,
+    "brand": "Jetboil",
+    "model": "Flash",
+    "weight_g": 371,
+    "packed_cm": [
+      18,
+      10.4,
+      10.4
+    ],
+    "packed_l": 1.53,
+    "compress": 0,
+    "archetype": "pot",
+    "color": "#e0702a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "seatpack",
+        "why": "upright at the seat post end of the seat pack; it is a stiff cylinder"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.jetboil.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Integrated 1 L cup, burner and lid, ~371 g (13.1 oz) and ~10.4 x 18 cm packed as I recall. A 100 g canister fits inside. Verify.",
+    "aliases": [
+      "jetboil flash",
+      "jetboil",
+      "jet boil"
+    ]
+  },
+  {
+    "id": "jetboil-stash",
+    "name": "Jetboil Stash",
+    "cat": "kitchen",
+    "sub": "integrated stove system",
+    "generic": false,
+    "brand": "Jetboil",
+    "model": "Stash",
+    "weight_g": 200,
+    "packed_cm": [
+      12,
+      12,
+      10.5
+    ],
+    "packed_l": 1.19,
+    "compress": 0,
+    "archetype": "pot",
+    "color": "#7a7a7a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "outside",
+        "why": "a pot with the kit inside can dangle off the seat pack straps or ride in a mesh on the bar roll"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.jetboil.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "0.8 L aluminium pot with nesting burner, ~200 g as I recall; a 100 g canister and the burner fit inside. Packed size estimated. Verify.",
+    "aliases": [
+      "jetboil stash",
+      "stash"
+    ]
+  },
+  {
+    "id": "toaks-alc",
+    "name": "Toaks titanium alcohol stove",
+    "cat": "kitchen",
+    "sub": "alcohol stove",
+    "generic": false,
+    "brand": "Toaks",
+    "model": "Titanium Alcohol Stove",
+    "weight_g": 20,
+    "packed_cm": [
+      7,
+      7,
+      4
+    ],
+    "packed_l": 0.15,
+    "compress": 0,
+    "archetype": "stove",
+    "color": "#9a9a9a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "seatpack",
+        "why": "inside the pot"
+      },
+      {
+        "at": "framebag_half",
+        "why": "small and dense; sits at the bottom of a half frame bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.toaks.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "~20 g is my recollection; size approximate. Needs a pot stand and windscreen, and fuel in a leak-proof bottle (not included). Verify.",
+    "aliases": [
+      "alcohol stove",
+      "meths stove",
+      "spirit stove",
+      "toaks alcohol stove",
+      "trangia"
+    ]
+  },
+  {
+    "id": "trangia-burner",
+    "name": "Trangia spirit burner",
+    "cat": "kitchen",
+    "sub": "alcohol stove",
+    "generic": false,
+    "brand": "Trangia",
+    "model": "Spirit burner",
+    "weight_g": 110,
+    "packed_cm": [
+      7.5,
+      7.5,
+      4.5
+    ],
+    "packed_l": 0.2,
+    "compress": 0,
+    "archetype": "stove",
+    "color": "#b8863a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "seatpack",
+        "why": "inside the pot"
+      },
+      {
+        "at": "framebag_half",
+        "why": "small and dense; sits at the bottom of a half frame bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.trangia.se",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Brass burner with screw cap and simmer ring, ~110 g as I recall; can carry fuel sealed inside. The Trangia Mini set (burner, stand, pot, pan) is heavier. Verify.",
+    "aliases": [
+      "trangia",
+      "trangia burner",
+      "spirit burner",
+      "trangia mini",
+      "meths burner"
+    ]
+  },
+  {
+    "id": "esbit-pocket",
+    "name": "Esbit pocket stove",
+    "cat": "kitchen",
+    "sub": "solid fuel stove",
+    "generic": false,
+    "brand": "Esbit",
+    "model": "Pocket Stove",
+    "weight_g": 85,
+    "packed_cm": [
+      10,
+      7.5,
+      2.2
+    ],
+    "packed_l": 0.17,
+    "compress": 0,
+    "archetype": "box",
+    "color": "#6a6a6a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "framebag_half",
+        "why": "small and dense; sits at the bottom of a half frame bag"
+      },
+      {
+        "at": "seatpack",
+        "why": "flat against the pot in the seat pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.esbit.de",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Folding steel stove that stores fuel tablets inside; ~85 g empty as I recall (tablets ~14 g each). Titanium Esbit-style stands are ~10-15 g. Verify.",
+    "aliases": [
+      "esbit",
+      "esbit stove",
+      "hexi stove",
+      "solid fuel stove",
+      "hexamine"
+    ]
+  },
+  {
+    "id": "gas-100",
+    "name": "Gas canister",
+    "cat": "kitchen",
+    "sub": "gas canister 100 g",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 195,
+    "packed_cm": [
+      9,
+      9,
+      6.5
+    ],
+    "packed_l": 0.41,
+    "compress": 0,
+    "archetype": "canister",
+    "color": "#3a6ea5",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "seatpack",
+        "why": "inside the pot in the seat pack; keep it near the seat post end"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.msrgear.com",
+        "what": "comparable 100-110 g canisters ~190-200 g full; recalled without fetching; verify"
+      }
+    ],
+    "note": "Owner's sheet: 3.5 oz (99 g), which is about an EMPTY 100 g canister (or just the gas). A full 100 g canister weighs ~190-200 g, and that is what weight_g carries. Size ~9 cm diameter x 6.5 cm tall (fits inside a 750 ml pot).",
+    "aliases": [
+      "gas canister",
+      "gas",
+      "gas can",
+      "canister",
+      "100g gas",
+      "isobutane",
+      "fuel"
+    ]
+  },
+  {
+    "id": "gas-230",
+    "name": "Gas canister 230 g",
+    "cat": "kitchen",
+    "sub": "gas canister 230 g",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 360,
+    "packed_cm": [
+      11,
+      11,
+      9
+    ],
+    "packed_l": 0.86,
+    "compress": 0,
+    "archetype": "canister",
+    "color": "#3a6ea5",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "seatpack",
+        "why": "upright at the seat post end of the seat pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.msrgear.com",
+        "what": "comparable 227-230 g canisters ~360 g full; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic 230 g (8 oz) screw-thread canister, ~360 g full; ~11 cm diameter x 9 cm tall. Does not fit in most 750 ml pots.",
+    "aliases": [
+      "230g gas",
+      "gas 230",
+      "medium gas canister",
+      "250g gas"
+    ]
+  },
+  {
+    "id": "gas-450",
+    "name": "Gas canister 450 g",
+    "cat": "kitchen",
+    "sub": "gas canister 450 g",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 640,
+    "packed_cm": [
+      15,
+      15,
+      9.5
+    ],
+    "packed_l": 1.68,
+    "compress": 0,
+    "archetype": "canister",
+    "color": "#3a6ea5",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "pannier",
+        "why": "on a touring rig, low in a front pannier"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.msrgear.com",
+        "what": "comparable 450 g canisters ~640 g full; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic 450 g (16 oz) canister, ~640 g full; ~15 cm diameter x 9.5 cm tall. For group cooking or long cold trips; awkward in a frame bag.",
+    "aliases": [
+      "450g gas",
+      "gas 450",
+      "large gas canister",
+      "500g gas"
+    ]
+  },
+  {
+    "id": "pot-ti",
+    "name": "Pot",
+    "cat": "kitchen",
+    "sub": "titanium pot",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 213,
+    "packed_cm": [
+      12,
+      12,
+      11
+    ],
+    "packed_l": 1.24,
+    "compress": 0,
+    "archetype": "pot",
+    "color": "#8f8f8f",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "outside",
+        "why": "a pot with the kit inside can dangle off the seat pack straps or ride in a mesh on the bar roll"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 7.5 oz (213 g) is his figure with the lid listed separately. That is heavy for a solo titanium pot (a 750 ml Ti pot is ~100 g), so it is more likely a ~1.1-1.3 L pot, or it was weighed with the stove and gas nested inside. Size assumes a ~1.1 L pot; verify.",
+    "aliases": [
+      "pot",
+      "ti pot",
+      "titanium pot",
+      "cook pot",
+      "pan"
+    ]
+  },
+  {
+    "id": "pot-lid",
+    "name": "Lid",
+    "cat": "kitchen",
+    "sub": "pot lid",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 17,
+    "packed_cm": [
+      12,
+      12,
+      1.5
+    ],
+    "packed_l": 0.22,
+    "compress": 0,
+    "archetype": "box",
+    "color": "#8f8f8f",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "on the pot with the cook kit in the frame bag"
+      },
+      {
+        "at": "fork",
+        "why": "on the pot in the fork cage"
+      },
+      {
+        "at": "seatpack",
+        "why": "on the pot in the seat pack"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 0.6 oz (17 g) is his figure; titanium or aluminium lid. Diameter assumed to match his pot.",
+    "aliases": [
+      "lid",
+      "pot lid",
+      "ti lid"
+    ]
+  },
+  {
+    "id": "toaks-550",
+    "name": "Toaks Titanium 550 ml pot",
+    "cat": "kitchen",
+    "sub": "titanium pot",
+    "generic": false,
+    "brand": "Toaks",
+    "model": "Titanium 550ml Pot",
+    "weight_g": 72,
+    "packed_cm": [
+      11,
+      8,
+      8
+    ],
+    "packed_l": 0.55,
+    "compress": 0,
+    "archetype": "pot",
+    "color": "#9a9a9a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "outside",
+        "why": "a pot with the kit inside can dangle off the seat pack straps or ride in a mesh on the bar roll"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.toaks.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Narrow mug-pot for boiling water for one; ~72 g with lid as I recall. Dimensions approximate. Verify.",
+    "aliases": [
+      "toaks 550",
+      "toaks 550ml",
+      "550 pot",
+      "ti 550"
+    ]
+  },
+  {
+    "id": "toaks-750",
+    "name": "Toaks Titanium 750 ml pot",
+    "cat": "kitchen",
+    "sub": "titanium pot",
+    "generic": false,
+    "brand": "Toaks",
+    "model": "Titanium 750ml Pot",
+    "weight_g": 103,
+    "packed_cm": [
+      10.8,
+      9.6,
+      9.6
+    ],
+    "packed_l": 0.78,
+    "compress": 0,
+    "archetype": "pot",
+    "color": "#9a9a9a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "outside",
+        "why": "a pot with the kit inside can dangle off the seat pack straps or ride in a mesh on the bar roll"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.toaks.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "The classic solo pot: 103 g with lid (recalled). Holds a 100 g canister plus a small stove. Dimensions approximate.",
+    "aliases": [
+      "toaks 750",
+      "toaks 750ml",
+      "750 pot",
+      "ti 750",
+      "titanium 750"
+    ]
+  },
+  {
+    "id": "toaks-900",
+    "name": "Toaks Titanium 900 ml pot",
+    "cat": "kitchen",
+    "sub": "titanium pot",
+    "generic": false,
+    "brand": "Toaks",
+    "model": "Titanium 900ml Pot (D115)",
+    "weight_g": 116,
+    "packed_cm": [
+      11.5,
+      11.5,
+      10
+    ],
+    "packed_l": 1.04,
+    "compress": 0,
+    "archetype": "pot",
+    "color": "#9a9a9a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "outside",
+        "why": "a pot with the kit inside can dangle off the seat pack straps or ride in a mesh on the bar roll"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.toaks.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Wider 115 mm pot, better for cooking than boiling; ~116 g with lid is my recollection. Verify.",
+    "aliases": [
+      "toaks 900",
+      "toaks 900ml",
+      "900 pot",
+      "ti 900"
+    ]
+  },
+  {
+    "id": "evernew-1300",
+    "name": "Evernew Titanium 1.3 L pot",
+    "cat": "kitchen",
+    "sub": "titanium pot",
+    "generic": false,
+    "brand": "Evernew",
+    "model": "Titanium Pot 1.3L",
+    "weight_g": 145,
+    "packed_cm": [
+      14,
+      14,
+      10.5
+    ],
+    "packed_l": 1.62,
+    "compress": 0,
+    "archetype": "pot",
+    "color": "#8a8a8a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "outside",
+        "why": "a pot with the kit inside can dangle off the seat pack straps or ride in a mesh on the bar roll"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.evernew.co.jp",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Low confidence: ~145 g with lid is my recollection and depends on the version (non-stick is heavier); ~14 cm diameter. Good for two or real cooking. Verify.",
+    "aliases": [
+      "evernew 1.3",
+      "evernew pot",
+      "evernew 1300",
+      "1.3l pot"
+    ]
+  },
+  {
+    "id": "pot-alu-1l",
+    "name": "Aluminium pot 1 L",
+    "cat": "kitchen",
+    "sub": "aluminium pot",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 150,
+    "packed_cm": [
+      12,
+      12,
+      10
+    ],
+    "packed_l": 1.13,
+    "compress": 0,
+    "archetype": "pot",
+    "color": "#b0b0b0",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      },
+      {
+        "at": "outside",
+        "why": "a pot with the kit inside can dangle off the seat pack straps or ride in a mesh on the bar roll"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.msrgear.com",
+        "what": "comparable hard-anodised aluminium 1 L pots ~130-180 g; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic hard-anodised aluminium 1 L pot with lid; weight and size are a class estimate. Cheaper than titanium, heats more evenly.",
+    "aliases": [
+      "aluminium pot",
+      "aluminum pot",
+      "alu pot",
+      "1l pot",
+      "pot 1l"
+    ]
+  },
+  {
+    "id": "snowpeak-450",
+    "name": "Snow Peak Titanium 450 mug",
+    "cat": "kitchen",
+    "sub": "mug",
+    "generic": false,
+    "brand": "Snow Peak",
+    "model": "Titanium Single Wall Cup 450",
+    "weight_g": 68,
+    "packed_cm": [
+      9.5,
+      8.5,
+      8.5
+    ],
+    "packed_l": 0.54,
+    "compress": 0,
+    "archetype": "mug",
+    "color": "#a0a0a0",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "stove, gas and pot nest together low and central in the frame bag, the best spot for dense weight"
+      },
+      {
+        "at": "outside",
+        "why": "clipped by its handle to the seat pack straps"
+      },
+      {
+        "at": "seatpack",
+        "why": "nested over the stove or canister"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.snowpeak.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "~68 g, no lid, as I recall; can double as a tiny pot. Dimensions approximate. Verify.",
+    "aliases": [
+      "snow peak mug",
+      "ti mug",
+      "titanium mug",
+      "mug",
+      "snowpeak 450",
+      "cup"
+    ]
+  },
+  {
+    "id": "s2s-x-mug",
+    "name": "Sea to Summit X-Mug",
+    "cat": "kitchen",
+    "sub": "mug",
+    "generic": false,
+    "brand": "Sea to Summit",
+    "model": "X-Mug",
+    "weight_g": 80,
+    "packed_cm": [
+      12,
+      12,
+      3.5
+    ],
+    "packed_l": 0.4,
+    "compress": 0.05,
+    "archetype": "mug",
+    "color": "#3a7ab8",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "collapses flat; slides into the frame bag"
+      },
+      {
+        "at": "barpocket",
+        "why": "flat in a bar pocket for coffee stops"
+      },
+      {
+        "at": "seatpack",
+        "why": "flat against the side of the seat pack"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://seatosummit.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Collapsible silicone mug with a rigid rim, 480 ml; ~80 g and ~3.5 cm collapsed as I recall. Verify.",
+    "aliases": [
+      "x-mug",
+      "xmug",
+      "collapsible mug",
+      "sea to summit mug",
+      "silicone mug"
+    ]
+  },
+  {
+    "id": "spork-ti",
+    "name": "Ti Spork",
+    "cat": "kitchen",
+    "sub": "utensil",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 28,
+    "packed_cm": [
+      17,
+      4,
+      1
+    ],
+    "packed_l": 0.07,
+    "compress": 0,
+    "archetype": "utensil",
+    "color": "#a0a0a0",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "in the food bag or pot so it is with the food"
+      },
+      {
+        "at": "toptube",
+        "why": "small enough for the top tube bag so it comes out at a lunch stop without unpacking"
+      },
+      {
+        "at": "seatpack",
+        "why": "inside the pot"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 1.0 oz (28 g) is his figure; a plain titanium spork is ~15-20 g, so his may be a heavier model or scale rounding. Standard-length size assumed.",
+    "aliases": [
+      "ti spork",
+      "spork",
+      "titanium spork",
+      "spoon"
+    ]
+  },
+  {
+    "id": "toaks-spork-l",
+    "name": "Toaks titanium long-handle spork",
+    "cat": "kitchen",
+    "sub": "utensil",
+    "generic": false,
+    "brand": "Toaks",
+    "model": "Titanium Long Handle Spork",
+    "weight_g": 19,
+    "packed_cm": [
+      22,
+      4,
+      1
+    ],
+    "packed_l": 0.09,
+    "compress": 0,
+    "archetype": "utensil",
+    "color": "#a0a0a0",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "in the food bag; long enough to reach the bottom of freeze-dried pouches"
+      },
+      {
+        "at": "toptube",
+        "why": "small enough for the top tube bag so it comes out at a lunch stop without unpacking"
+      },
+      {
+        "at": "seatpack",
+        "why": "inside the pot"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.toaks.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "~18-20 g and ~22 cm as I recall; the long handle is for eating from meal pouches. Verify.",
+    "aliases": [
+      "toaks spork",
+      "long spork",
+      "long handle spoon",
+      "toaks spoon"
+    ]
+  },
+  {
+    "id": "s2s-alpha-spork",
+    "name": "Sea to Summit Alpha Light spork",
+    "cat": "kitchen",
+    "sub": "utensil",
+    "generic": false,
+    "brand": "Sea to Summit",
+    "model": "Alpha Light Spork",
+    "weight_g": 12,
+    "packed_cm": [
+      17,
+      4,
+      1
+    ],
+    "packed_l": 0.07,
+    "compress": 0,
+    "archetype": "utensil",
+    "color": "#5a8a3a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "in the food bag"
+      },
+      {
+        "at": "toptube",
+        "why": "small enough for the top tube bag so it comes out at a lunch stop without unpacking"
+      },
+      {
+        "at": "seatpack",
+        "why": "inside the pot"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://seatosummit.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Anodised aluminium spork; ~12 g is my recollection (long version heavier). Verify.",
+    "aliases": [
+      "alpha light spork",
+      "alphalight spork",
+      "sea to summit spork",
+      "alu spork"
+    ]
+  },
+  {
+    "id": "lighter",
+    "name": "Lighter",
+    "cat": "kitchen",
+    "sub": "lighter",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 28,
+    "packed_cm": [
+      8,
+      2.5,
+      1.5
+    ],
+    "packed_l": 0.03,
+    "compress": 0,
+    "archetype": "lighter",
+    "color": "#d23a2a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "inside the pot with the stove so it is never forgotten"
+      },
+      {
+        "at": "toptube",
+        "why": "small enough for the top tube bag so it comes out at a lunch stop without unpacking"
+      },
+      {
+        "at": "pocket",
+        "why": "a spare in a pocket"
+      }
+    ],
+    "basis": "owner",
+    "sources": [],
+    "note": "Owner's item: 1.0 oz (28 g) is his figure; a full-size disposable lighter is ~20-25 g. Size of a standard Bic.",
+    "aliases": [
+      "lighter",
+      "bic",
+      "bic lighter",
+      "cigarette lighter"
+    ]
+  },
+  {
+    "id": "bic-mini",
+    "name": "Mini Bic lighter",
+    "cat": "kitchen",
+    "sub": "lighter",
+    "generic": false,
+    "brand": "BIC",
+    "model": "Mini (J25)",
+    "weight_g": 11,
+    "packed_cm": [
+      6.3,
+      2.5,
+      1.3
+    ],
+    "packed_l": 0.02,
+    "compress": 0,
+    "archetype": "lighter",
+    "color": "#e0a020",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "inside the pot with the stove"
+      },
+      {
+        "at": "toptube",
+        "why": "small enough for the top tube bag so it comes out at a lunch stop without unpacking"
+      },
+      {
+        "at": "pocket",
+        "why": "a spare in a pocket"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.bicworld.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "~11 g and ~6.3 cm as I recall. Verify.",
+    "aliases": [
+      "mini bic",
+      "bic mini",
+      "mini lighter",
+      "small lighter"
+    ]
+  },
+  {
+    "id": "ferro-rod",
+    "name": "Ferro rod",
+    "cat": "kitchen",
+    "sub": "fire starter",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 28,
+    "packed_cm": [
+      9,
+      2,
+      1.5
+    ],
+    "packed_l": 0.03,
+    "compress": 0,
+    "archetype": "lighter",
+    "color": "#3a3a3a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_half",
+        "why": "in the cook kit as the back-up ignition"
+      },
+      {
+        "at": "toptube",
+        "why": "small enough for the top tube bag so it comes out at a lunch stop without unpacking"
+      },
+      {
+        "at": "seatpack",
+        "why": "inside the pot"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.lightmyfire.com",
+        "what": "comparable Light My Fire FireSteel Scout class ~25-30 g; recalled without fetching; verify"
+      }
+    ],
+    "note": "Generic small ferrocerium rod with striker (Light My Fire FireSteel Scout class). Weight and size are a class estimate. Backup for a stove without an igniter.",
+    "aliases": [
+      "ferro rod",
+      "firesteel",
+      "fire steel",
+      "flint",
+      "ferro"
+    ]
+  },
+  {
+    "id": "windscreen",
+    "name": "Stove windscreen",
+    "cat": "kitchen",
+    "sub": "windscreen",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 30,
+    "packed_cm": [
+      20,
+      12,
+      1
+    ],
+    "packed_l": 0.24,
+    "compress": 0.1,
+    "archetype": "box",
+    "color": "#c0c0c0",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "flat against the side of the frame bag"
+      },
+      {
+        "at": "seatpack",
+        "why": "rolled around the pot"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic folded aluminium foil/flashing windscreen for a canister or alcohol stove. Weight and size are an estimate for a thin foil panel, not a product spec. Keep it loose around canister stoves so the gas does not overheat.",
+    "aliases": [
+      "windscreen",
+      "wind screen",
+      "windshield",
+      "wind shield",
+      "foil windscreen"
+    ]
+  },
+  {
+    "id": "pot-cosy",
+    "name": "Pot cosy (Reflectix)",
+    "cat": "kitchen",
+    "sub": "pot cosy",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 25,
+    "packed_cm": [
+      12,
+      12,
+      10
+    ],
+    "packed_l": 1.13,
+    "compress": 0.3,
+    "archetype": "pouch",
+    "color": "#c8c8d0",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "as a sleeve around the pot in the cook kit"
+      },
+      {
+        "at": "seatpack",
+        "why": "around the pot in the seat pack"
+      },
+      {
+        "at": "fork",
+        "why": "the whole cook kit in a fork cage dry bag keeps it low and out of the main bags"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Home-made Reflectix (bubble foil) sleeve and lid for a ~750 ml-1 L pot. Weight is an estimate; packed size is the pot it wraps, so it adds little volume if it travels on the pot.",
+    "aliases": [
+      "pot cosy",
+      "pot cozy",
+      "cosy",
+      "cozy",
+      "reflectix"
+    ]
+  },
+  {
+    "id": "talenti-jar",
+    "name": "Cold-soak jar (Talenti)",
+    "cat": "kitchen",
+    "sub": "cold soak jar",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 50,
+    "packed_cm": [
+      11,
+      9.5,
+      9.5
+    ],
+    "packed_l": 0.78,
+    "compress": 0,
+    "archetype": "mug",
+    "color": "#e8e0d0",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "in the food bag: soaking lunch or dinner as you ride"
+      },
+      {
+        "at": "toptube_rear",
+        "why": "in a big top tube bag"
+      },
+      {
+        "at": "fork",
+        "why": "in a fork cage dry bag"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Empty 1-pint Talenti gelato jar used for cold soaking; ~50 g is a commonly reported figure (not a maker spec). Dimensions estimated. Screw lid can leak if overfilled.",
+    "aliases": [
+      "talenti jar",
+      "cold soak jar",
+      "cold soak",
+      "jar",
+      "soak jar"
+    ]
+  },
+  {
+    "id": "opinel-6",
+    "name": "Opinel No.6 knife",
+    "cat": "kitchen",
+    "sub": "knife",
+    "generic": false,
+    "brand": "Opinel",
+    "model": "No.6",
+    "weight_g": 27,
+    "packed_cm": [
+      9,
+      2,
+      1.5
+    ],
+    "packed_l": 0.03,
+    "compress": 0,
+    "archetype": "multitool",
+    "color": "#b88a4a",
+    "rigid": true,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "toptube",
+        "why": "small enough for the top tube bag so it comes out at a lunch stop without unpacking"
+      },
+      {
+        "at": "framebag_half",
+        "why": "with the cook kit"
+      },
+      {
+        "at": "pocket",
+        "why": "pocket knife for lunch stops"
+      }
+    ],
+    "basis": "recall",
+    "sources": [
+      {
+        "url": "https://www.opinel.com",
+        "what": "weight and packed size from maker spec, recalled without fetching; verify"
+      }
+    ],
+    "note": "Low confidence: ~27 g is my recollection for the No.6 (stainless blade, beech handle); closed ~9 cm. Verify.",
+    "aliases": [
+      "opinel",
+      "opinel 6",
+      "knife",
+      "pocket knife",
+      "small knife"
+    ]
+  },
+  {
+    "id": "spice-kit",
+    "name": "Spice and salt kit",
+    "cat": "kitchen",
+    "sub": "condiments",
+    "generic": true,
+    "brand": null,
+    "model": null,
+    "weight_g": 30,
+    "packed_cm": [
+      10,
+      6,
+      3
+    ],
+    "packed_l": 0.18,
+    "compress": 0.2,
+    "archetype": "pouch",
+    "color": "#b04a2a",
+    "rigid": false,
+    "fragile": false,
+    "access": "camp",
+    "worn": false,
+    "places": [
+      {
+        "at": "framebag_full",
+        "why": "in the food bag"
+      },
+      {
+        "at": "seatpack",
+        "why": "inside the pot"
+      },
+      {
+        "at": "toptube",
+        "why": "small enough for the top tube bag so it comes out at a lunch stop without unpacking"
+      }
+    ],
+    "basis": "recall",
+    "sources": [],
+    "note": "Generic: two or three mini dropper bottles or straws of salt, pepper, chilli and olive oil in a small zip bag. Weight is an estimate.",
+    "aliases": [
+      "spice kit",
+      "spices",
+      "salt and pepper",
+      "condiments",
+      "salt"
+    ],
+    "consumable": true
+  }
+]

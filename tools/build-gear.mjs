@@ -59,7 +59,7 @@ for (const it of all) {
   if (box > 0.1 && (l > box * 1.15 || l < box * 0.3)) problems.push(`${where}: packed_l ${l} vs box ${box.toFixed(2)} L`);
   const places = (it.places || []).filter((p) => PLACES.has(p.at));
   if ((it.places || []).length !== places.length) problems.push(`${where}: unknown place(s) ${(it.places || []).map((p) => p.at).filter((a) => !PLACES.has(a)).join(',')}`);
-  if (!it.sources?.length) problems.push(`${where}: no source`);
+  if (!it.sources?.length && !['owner', 'recall'].includes(it.basis)) problems.push(`${where}: no source`);
   const basis = it.basis || (it.sources?.some((s) => /^https?:/.test(s.url || '')) ? 'sourced' : 'owner');
   const compress = Math.min(Math.max(Number(it.compress) || 0, 0), 0.9);
   out.push({

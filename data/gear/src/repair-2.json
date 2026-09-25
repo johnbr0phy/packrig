@@ -285,7 +285,7 @@
   "basis": "recall",
   "sources": [
    {
-    "url": "https://www.parktool.com",
+    "url": null,
     "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify"
    }
   ]
