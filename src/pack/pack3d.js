@@ -18,9 +18,10 @@ import { buildItem } from './kit3d.js';
 const EASE = (t) => 1 - Math.pow(1 - t, 3);
 const D_OPEN = 320, D_MOVE = 420;
 // 0.2 read as "items floating in air" once several bags were open at once
-// (the gallery view opens them all); 0.34 keeps the contents clear and the
-// bag still reads as a bag round them
-const SHELL_OPACITY = 0.34;
+// (the gallery view opens them all). Opacity alone can't fix a black bag on a
+// dark ground, so the shell is also frosted pale while open (see setShell)
+const SHELL_OPACITY = 0.28;
+const FROST = new THREE.Color(0xd9dde2);
 
 export function createPack3D(app) {
   const bags = new Map();        // slot → { group, items: Map(uid → node), shell }
@@ -49,6 +50,10 @@ export function createPack3D(app) {
           c.transparent = true;
           c.depthWrite = false;
           c.opacity = 1;
+          // frosted: a black bag at low opacity over a dark ground vanishes,
+          // leaving the contents looking unsupported; a pale shell reads as a
+          // volume round them. The original material comes back on close.
+          if (c.color) c.userData.frost = [c.color.clone(), c.color.clone().lerp(FROST, 0.6)];
           return c;
         });
         rec.swap.push({ o, orig, fade: Array.isArray(orig) ? fade : fade[0] });
@@ -61,6 +66,8 @@ export function createPack3D(app) {
         for (const m of Array.isArray(s.fade) ? s.fade : [s.fade]) {
           const from = open ? 1 : SHELL_OPACITY;
           m.opacity = from + (target - from) * k;
+          const f = m.userData.frost;
+          if (f) m.color.copy(f[0]).lerp(f[1], open ? k : 1 - k);
         }
       }
     }, () => {
