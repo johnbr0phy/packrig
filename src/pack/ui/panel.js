@@ -135,7 +135,10 @@ export function initGearPanel(app, hooks) {
     }
 
     // ---- warnings -------------------------------------------------------------------
-    const warn = st.warnings.filter((w) => w.kind !== 'buried' || true);
+    // the panel carries the warnings worth acting on; "packed tight" lives in
+    // the bag's own sheet, where it is information rather than a to-do
+    const KNEE = ['toptube', 'toptube_rear', 'framebag_full', 'framebag_half', 'stemL', 'stemR'];
+    const warn = st.warnings.filter((w) => w.kind !== 'tight' && (w.kind !== 'bulge' || KNEE.includes(w.slot)));
     if (warn.length) {
       const wl = el('div', 'pkg-warns');
       for (const w of warn.slice(0, 4)) wl.append(warningRow(st, w));
@@ -197,6 +200,13 @@ export function initGearPanel(app, hooks) {
         }));
       }
     }
+    // the link carries this packing list; "this is what's in my bags"
+    const share = btn('btn quiet pkg-share', 'Share this setup', async () => {
+      const ok = await hooks.share?.();
+      share.textContent = ok ? 'Link copied' : 'Copy failed';
+      setTimeout(() => { share.textContent = 'Share this setup'; }, 1800);
+    });
+    acts.append(share);
     section.append(acts);
   }
 
@@ -283,6 +293,9 @@ export function initGearPanel(app, hooks) {
       if (alt) act = btn('pkg-link', `Put it in the ${lc(placeWords(alt))}`, () => P.place(w.uid, alt));
     } else if (w.kind === 'buried') {
       text = `The phone is in the ${lc(SLOT_WORD[w.slot])}; you’ll stop to dig it out.`;
+    } else if (w.kind === 'bulge') {
+      const names = w.uids.map((u) => st.resolved.get(u)?.name).filter(Boolean);
+      text = `${names.slice(0, 2).join(' and ')}${names.length > 2 ? ` and ${names.length - 2} more` : ''} make${names.length === 1 ? 's' : ''} the ${lc(SLOT_WORD[w.slot])} bulge; it may rub your knees.`;
     } else if (w.kind === 'fragile-out') {
       text = `${r.name} is hanging off the ${lc(SLOT_WORD[w.slot])}.`;
     } else return row;

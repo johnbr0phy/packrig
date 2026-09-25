@@ -21,6 +21,7 @@ import { initScrim } from './ui/scrim.js';
 import { initSurfaces } from './ui/surfaces.js';
 import { initSheets } from './ui/sheet.js';
 import { initPack } from './pack/index.js';
+import { attachLockerSync } from './pack/remote.js';
 
 const params = new URLSearchParams(location.search);
 const SHOT_MODE = params.has('shot');
@@ -112,6 +113,23 @@ controls.autoRotateSpeed = 0.9;
 
 // ---- Environments ------------------------------------------------------
 const envs = new Environments(scene, renderer);
+
+/*
+ * The kicker: a soft light from behind whatever the camera is looking at,
+ * re-aimed every frame. It puts a bright edge on every silhouette from every
+ * angle, which is what lets a black bag against a dark frame read as a shape.
+ * Product photographers do exactly this with a strip light behind the subject.
+ * No shadows: it is an edge, not a second sun.
+ */
+const kicker = new THREE.DirectionalLight(0xe6eeff, params.has('kick') ? +params.get('kick') : 1.6);
+kicker.castShadow = false;
+scene.add(kicker, kicker.target);
+const _kick = new THREE.Vector3();
+function aimKicker() {
+  _kick.subVectors(controls.target, camera.position).setY(0).normalize();
+  kicker.target.position.copy(controls.target);
+  kicker.position.copy(controls.target).addScaledVector(_kick, 4).add(new THREE.Vector3(0, 3.2, 0));
+}
 
 // ---- App state + bag system -------------------------------------------
 const app = {
@@ -205,6 +223,7 @@ app.rigs = createRigStore(app, app.auth);
 // Packing: the locker, loadouts and what is in each bag. Before any shared
 // link is applied, because a v2 link carries a packing list to show.
 initPack(app);
+attachLockerSync(app);
 if (app.auth.enabled) app.auth.hydrate();
 
 // A shared rig arrives in the URL. `?r=` is the durable form — it names the
@@ -365,6 +384,7 @@ renderer.setAnimationLoop((t) => {
   app.aero?.tick(dt);
   app.pack?.tick();
   controls.update();
+  aimKicker();
   app.reframe?.tick();
   envs.tick(t * 0.001);
   composer.render();

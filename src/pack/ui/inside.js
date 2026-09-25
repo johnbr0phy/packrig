@@ -81,6 +81,8 @@ export function renderInside(app, slot, hooks) {
     box.append(w);
   }
   for (const wv of r?.warnings || []) {
+    if (wv.kind === 'tight') { box.append(el('p', 'pkg-why', 'Packed tight — it all goes in, with some shoving.')); continue; }
+    if (wv.kind === 'bulge') { box.append(el('p', 'pkg-why', `${wv.uids.map((u) => st.resolved.get(u)?.name).filter(Boolean).join(', ')} make${wv.uids.length === 1 ? 's' : ''} it bulge.`)); continue; }
     if (wv.kind !== 'load') continue;
     box.append(el('div', 'pkg-warn', `${fmtWeight(wv.kg * 1000, P.lib.unit)} is over the ${fmtWeight(wv.limit * 1000, P.lib.unit)} most ${SLOT_WORD[slot].toLowerCase().replace(/, (left|right)$/, '')}s are rated for.`));
   }

@@ -117,7 +117,7 @@ const items = ['sleeping-bag', 'montbell-anorak', 'casual-shorts', 'buff', 'gas-
   .map((g, i) => resolveItem({ uid: `u${i}`, ref: g.id }, gear));
 const res = solveBag(cav, items, { slot: 'seatpack' });
 console.log(`  ${res.placed.length} placed, ${res.overflow.length} overflow, fill ${(res.fill.frac * 100).toFixed(0)}%`);
-ok(res.fill.frac <= 0.921, 'never over the usable volume');
+ok(res.fill.frac <= 1.0001, 'never over the rated volume');
 ok(res.placed.every((p) => p.center[0] >= 0 && p.center[0] <= 480), 'everything inside the bag length');
 
 // a wedge that is NARROW at the mount: the canister must go further in, not fail
@@ -138,7 +138,7 @@ ok(res.placed.every((p) => p.center[0] >= 0 && p.center[0] <= 480), 'everything 
   ok(r3.overflow[0]?.reason === 'length', 'poles longer than the bag are refused, with the reason');
   const big = ['sleeping-bag', 'tent-1p', 'puffy-synth', 'rain-jacket'].map((id, i) => resolveItem({ uid: `b${i}`, ref: id }, gear));
   const r4 = solveBag({ ...cav2, litres: 5 }, big, { slot: 'seatpack' });
-  ok(r4.overflow.some((o) => o.reason === 'volume') && r4.fill.frac <= 0.921, `a 5 L bag says no politely (${r4.overflow.length} refused, ${Math.round(r4.fill.frac * 100)}%)`);
+  ok(r4.overflow.some((o) => o.reason === 'volume') && r4.fill.frac <= 1.0001, `a 5 L bag says no politely (${r4.overflow.length} refused, ${Math.round(r4.fill.frac * 100)}%)`);
 }
 
 console.log(fails ? `\n${fails} FAILED` : '\nall passed');

@@ -31,6 +31,13 @@ export function initPackUI(app, { panel, notify, selectBag }) {
     openExample: () => openExample(),
     afterPack: (res) => showPacked(res),
     afterImport: () => showPacked(),
+    share: async () => {
+      try {
+        const url = await app.__rigURLWithPack();
+        await navigator.clipboard.writeText(url);
+        return true;
+      } catch { return false; }
+    },
   });
   const gear = initGearPanel(app, { ...hooks, panel });
 

@@ -318,3 +318,72 @@ split between the axles; left/right and high/low are shown as offsets.
 ## 8. Running log of calls made mid-run
 
 (appended as the run goes)
+
+### 8.1 Research budget (25 Sep)
+
+The session's WebSearch cap is **200 calls, shared by every agent**, and six
+parallel researchers spent it in about ten minutes. What that bought, and what
+the rest is:
+
+- **Gear catalogue, 327 items.** 151 sourced from search results with the URL
+  kept, 30 the owner's own figures (`basis: owner`), 146 recalled maker specs
+  (`basis: recall`, source = maker site root, note says "verify"). The item
+  sheet in the app says which: "Maker or retailer page", "The owner's own
+  scale", or "Maker spec, not re-checked".
+- **Bag weights, all 635.** 108 sourced (maker 40, retailer 44, review 19,
+  size-interpolated 5; Apidura, Revelate and Ortlieb), 1 recall, 526
+  family-estimates (named anchor or sibling size in `weight_note`). The bag
+  sheet and the Gear totals mark estimates `est.`.
+- I did not spin up fresh sessions to get more search budget: the cap looks
+  deliberate, and routing around a spending limit is the user's call.
+  `tools/apply-weights.mjs` re-merges the moment better numbers land in
+  `data/weights/`.
+
+### 8.2 Calls made while building
+
+- **"Not packed" still counts in the sheet's gear total** (§5.2). The export
+  reproduces his SUM exactly; the app's all-up leaves home items at home.
+  His "1004" is 1004.1 shown to the whole ounce.
+- **"Worn" includes the hip pack.** Anything on the body (worn, pockets, hip
+  pack) is what the rider carries, not the bike: 16.1 oz worn + 6.9 oz hip
+  pack = 23.0 oz off the bike on his list.
+- **The rated litres are the capacity.** A roll-top can be stuffed to its
+  rating, so the fill meter runs to 100% of the maker's litres. Past 95% it
+  says "packed tight"; it only refuses when the volume genuinely isn't there.
+- **Soft bags stretch, hard ones don't.** A rigid item may exceed a bag's
+  drawn section by 50% (soft), 25% (semi) or 5% (rigid shell, from
+  `stiffnessOf`). Fitting only by stretching is allowed and reported as a
+  bulge — on a frame, top tube or stem bag that means knee rub. Length never
+  stretches: poles longer than the bag are refused, in centimetres.
+- **Rigid things pack in shelves from the floor up**, lanes across, outward
+  from the mount; if my shelving runs out before the volume does, the item
+  goes in loose on top and the bag is marked tight. The first version laid
+  items end to end and refused a third of the owner's real frame bag.
+- **A two-sided frame bag** = a side pocket (the "(Left)" items, a third to a
+  half of the width) plus the main compartment at full width, sharing the
+  bag's litres. Not two halves: that refused a gas canister he really carries.
+- **The Therm-a-Rest Compressible Pillow** compresses 0.7, not 0.5 — it is
+  shredded foam sold on exactly that property. Changed on review with a note.
+- **Carriers are luggage**: a rear rack (650 g), front rack (480 g) and a
+  fork cage per fork bag that doesn't include one (110 g) are added to "Bags".
+- **Default bike weight 11.0 kg** (a steel drop-bar gravel bike of the class
+  modelled); editable per loadout, and the sheet's "Bike" row sets it.
+- **Load ratings** (warnings only): fork cage 1.5 kg, stem 1 kg, top tube
+  1.5 kg, seat pack 5 kg, bar roll 5 kg, frame bag 5 kg, pannier 10 kg, trunk
+  8 kg — typical published limits (Salsa Anything cage 3 kg is the HD
+  exception; the warning says "most are rated for").
+- **A first-timer's bare bike gets "First overnighter"**: Apidura Expedition
+  saddle pack 13 L, handlebar pack 14 L, half frame pack 4.3 L, top tube pack.
+  Four bags is what nearly every first overnighter uses.
+- **Lighting for black bags**: fabric albedo floor at 2.6% linear (real black
+  nylon reflects 3–4%; #1c1c1e is 1.2%), fabric env response 0.32 → 0.55, and
+  a camera-relative "kicker" light from behind the subject (1.6), no shadows.
+  A/B renders in `shots/ui/ab_*.png`; a stronger setting turned black into
+  grey plastic and was rejected.
+- **Megafuck's bags** are real products that hold what his columns hold:
+  Apidura Expedition saddle pack 16 L, handlebar pack 14 L, front accessory
+  pack, frame pack 5.7 L (half), top tube pack 1 L; Andrew The Maker Rear TT
+  Sack; a Many Things Sack on each fork leg. His sheet's bag weight (304 oz)
+  overrides the catalogue sum — it includes his cages and harness.
+- **Build-loadouts was already broken** by the 635-bag cut (two curated rigs
+  named removed products). Fixed by substitution, noted in LOG.md.

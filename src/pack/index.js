@@ -25,6 +25,7 @@ import {
 import { solveBag, splitSides, LOAD_LIMIT_KG } from './solver.js';
 import { computeTotals, computeBalance } from './totals.js';
 import { measureCavity } from './cavity.js';
+import { stiffnessOf } from '../bags/identity.js';
 import { createPack3D } from './pack3d.js';
 import { suggestLayout } from './suggest.js';
 import { importSheet, exportSheet } from './sheet.js';
@@ -109,6 +110,12 @@ export function initPack(app) {
     return cav;
   }
 
+  /** How far a bag's fabric stretches around a hard thing: a moulded shell not at all. */
+  function bulgeOf(slot) {
+    const s2 = stiffnessOf(app.bags.equipped[slot]?.product);
+    return s2 === 'rigid' ? 1.05 : s2 === 'semi' ? 1.25 : 1.5;
+  }
+
   function bagsWeight() {
     let g = 0;
     const list = [];
@@ -149,9 +156,18 @@ export function initPack(app) {
       if (!cav) continue;
       const sided = list.some((x) => x.side);
       if (sided && /^framebag/.test(slot)) {
-        const halves = splitSides(cav);
-        const L = solveBag(halves.L, list.filter((x) => x.side === 'L').map((x) => x.it), { slot: null });
-        const R = solveBag(halves.R, list.filter((x) => x.side !== 'L').map((x) => x.it), { slot: null });
+        // One bag with two sides: the left takes what is put on the left (up
+        // to half the bag), and everything else gets whatever it leaves —
+        // not a fixed half each, which refused kit a real bag holds.
+        // the left is a side pocket: as wide as its share of the kit, a third
+        // to a half of the bag
+        const lItems = list.filter((x) => x.side === 'L').map((x) => x.it);
+        const lShare = lItems.reduce((a, i) => a + i.litres, 0) / Math.max(list.reduce((a, x) => a + x.it.litres, 0), 0.01);
+        const halves = splitSides(cav, Math.min(Math.max(lShare, 0.3), 0.5));
+        const L = solveBag({ ...halves.L, litres: cav.litres / 2 }, lItems, { slot: null, bulge: bulgeOf(slot) });
+        // the main compartment keeps the bag's full width: a side pocket is a
+        // flat sleeve on its face, not half the bag
+        const R = solveBag({ ...cav, litres: Math.max(cav.litres - L.fill.usedL, 0.01) }, list.filter((x) => x.side !== 'L').map((x) => x.it), { slot: null, bulge: bulgeOf(slot) });
         const merged = {
           placed: [...L.placed, ...R.placed], overflow: [...L.overflow, ...R.overflow],
           warnings: [], sides: { L: L.fill, R: R.fill },
@@ -165,7 +181,7 @@ export function initPack(app) {
         if (Math.abs(L.fill.kg - R.fill.kg) > 1.2) merged.warnings.push({ kind: 'sides', L: L.fill.kg, R: R.fill.kg });
         results[slot] = { cav: { ...cav }, halves, ...merged };
       } else {
-        results[slot] = { cav, ...solveBag(cav, list.map((x) => x.it), { slot }) };
+        results[slot] = { cav, ...solveBag(cav, list.map((x) => x.it), { slot, bulge: bulgeOf(slot) }) };
       }
     }
     // empty bags still have a fill (0) and a rating, for the meters

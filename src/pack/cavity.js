@@ -19,8 +19,8 @@
 import * as THREE from 'three';
 
 const N_STATIONS = 14;
-const FABRIC_MM = 5;       // shell + lining the contents never reach
-const INSET = 0.06;        // stuffed corners are rounder than the shell
+const FABRIC_MM = 2.5;     // shell + lining the contents never reach
+const INSET = 0.03;        // stuffed corners are rounder than the shell
 
 /**
  * Where on the long axis the load is held, per slot family.

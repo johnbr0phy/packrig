@@ -303,6 +303,12 @@ export function initMenu(app, { onBuild } = {}) {
         rigs: rigCount(app),
         onBuild: startBuild,
         onSurprise: startSurprise,
+        // Packing's front door: close the menu onto the bare bike, Gear view,
+        // and ask what they are bringing. The first-timer's path.
+        onPack: () => {
+          close();
+          setTimeout(() => { app.packUI?.setMode('gear'); app.packUI?.openQuick(); }, 60);
+        },
         onRigs: () => go('rigs'),
         onLoadouts: () => go('loadouts'),
       }));

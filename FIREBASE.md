@@ -73,6 +73,10 @@ service cloud.firestore {
                     && request.resource.data.uid == resource.data.uid;
       allow delete: if request.auth != null && request.auth.uid == resource.data.uid;
     }
+    // Your gear locker and loadouts: one document, yours alone.
+    match /lockers/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
   }
 }
 ```

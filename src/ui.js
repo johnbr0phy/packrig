@@ -1,6 +1,6 @@
 import { SLOTS, productSlotFor, colorwayFor } from './bags.js';
 import { initAccount } from './ui/account.js';
-import { applyRig, captureRig, rigURL } from './rig.js';
+import { applyRig, captureRig, rigURL, rigURLWithPack } from './rig.js';
 import { productsForSlot } from './catalog.js';
 import { PAINTS, FRAME_SIZES } from './bike.js';
 import { judgeFit, willFit } from './bags/fit.js';
@@ -98,6 +98,8 @@ export function initUI(app) {
   app.account = account;
   app.openRigs = (m) => (m === 'list' ? app.menu?.open('rigs') : account.open('signin'));
   app.__rigURL = () => kitURL();
+  // with the packing list, when there is one (v2, deflated)
+  app.__rigURLWithPack = () => rigURLWithPack(app);
 
   // remember the opening camera framing so "reset view" has somewhere to go
   const homeView = {
@@ -1438,7 +1440,9 @@ export function initUI(app) {
 
   let shareTimer = null;
   async function shareKit(btn, label) {
-    const ok = await copyText(kitURL());
+    // The link carries the packing list when there is one: "this is what's in
+    // my bags" is the whole reason anyone sends it.
+    const ok = await copyText(await rigURLWithPack(app).catch(() => kitURL()));
     label.textContent = ok ? 'Copied!' : 'Copy failed';
     btn.classList.toggle('done', ok);
     clearTimeout(shareTimer);
