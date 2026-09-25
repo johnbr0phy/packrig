@@ -89,6 +89,35 @@ pack, because the owner's list of what looked wrong was right.
 - `slot-sheet.py`, `kit-sheet.mjs`: contact sheets.
 - Headless Chrome now works on Linux (the tools assumed a Mac).
 
+## How I know it works
+
+- **Your sheet, round trip, in a real browser** (`tools/pack-e2e.mjs`): 67/67
+  items land where the sheet says, every weight exact, totals gear 302.1 oz,
+  bike 398, bags 304, all-up 1004.1. Export re-imports identically. The v2
+  share link (1,821 characters) opens signed out in a fresh browser with the
+  same list and the same bags; "copy to my locker" flags all 67 as not owned.
+  Old `?r=` v1 and `?kit=` links still open. No page errors.
+- **First-timer, by real taps** (`tools/firsttimer.mjs`): a fresh signed-out
+  visitor packs a tent, a mat, a stove and a rain jacket in **6 taps** on both
+  phone and desktop. Every item lands in a bag (tent and jacket in the bar
+  roll, mat, stove and lighter in the half frame bag, gas in the seat pack),
+  none left at home, no won't-fit.
+- **Every screen, desktop and phone** (`tools/screens.mjs --twice`): 17
+  screens, 42 shots, no page errors, no sideways scroll, and the same input
+  gives the same pixels: at most 50 of ~1.3 million differ between runs
+  (thin spoke edges in software GL; the tool allows 100 and reports the count).
+  Getting there meant seeding the ground and fabric noise, holding the idle
+  orbit under `?still`, and waiting for the camera and lazy thumbnails.
+- **Bags**: a clearance sweep of every product in every slot, zero clashes
+  (table above). Before/after contact sheets per slot.
+- **Against the reference photo** (`shots/reference-compare.png`): with the
+  bags closed, the loaded Megafuck reads like the loaded Trek in `reference/`:
+  slim half frame bag under the top tube, top tube bag at the stem, bar roll
+  with its pocket, cargo on the fork, bottles free. Two differences I'd fix
+  next: the photo's mug clips to the seat pack's side, ours hangs under the
+  tail; and with every bag open the shells were too faint to read (now
+  frosted pale while open, which helps; the side-on frame bag is still faint).
+
 ## What didn't work, honestly
 
 - Maker websites and photo CDNs are blocked from this environment, and the
@@ -101,12 +130,24 @@ pack, because the owner's list of what looked wrong was right.
   were the real test.
 - Software GL is slow (a minute a product with shots), which capped how many
   products per slot I could render.
+- I got the dangling-item fix wrong twice (a reversed ray, then a wrong
+  theory about bounding spheres) before the numbers showed the real cause.
+  LOG.md #12 and #16 say so.
+- Seat packs deeper than this frame allows fought me longest: more tilt made
+  the deep shoulder worse, and shortening the roll didn't help. The answer
+  was searching tilt both ways and drawing the pack cinched flatter.
 
 ## What I'd do next
 
 - Re-source the `recall` gear and `family-estimate` bag weights when search
   and maker sites are reachable; the fields are there to flip.
 - Put maker photos next to renders in the slot sheets.
+- Hang dangling things off the seat pack's side straps, as riders do.
+- Merge the records' straps / mounts / zips into the catalogue in
+  `tools/apply-models.mjs`; four builders carry their own tables for now.
+- A tighter bottle check in `system.js` so deep half frame bags can go deeper,
+  and a head-tube collider sized per slice so top tube bags reach the steerer.
+- Fix the suspect records the builders flagged (DECISIONS.md, LOG.md).
 - A "trip" layer: food and water per day that scales with days out.
 - Let loadouts share across devices when signed in (lockers sync already;
   loadouts ride along, but conflict handling is last-write-wins).
