@@ -285,6 +285,10 @@ export function createPack3D(app) {
     const body = [];
     bag.traverse((o) => { if (o.isMesh && !o.userData.noCollide && !o.userData.packItem) body.push(o); });
     if (!body.length) return null;
+    // builders deform positions after three has cached a bounding sphere; a
+    // stale sphere culls the ray before any triangle is tested
+    for (const m of body) { m.geometry.computeBoundingSphere(); m.geometry.boundingBox = null; }
+    bag.updateMatrixWorld(true);
     const o = new THREE.Vector3(x, dir < 0 ? 5000 : -5000, z).applyMatrix4(F.matrixWorld);
     const d = new THREE.Vector3(0, -dir, 0).transformDirection(F.matrixWorld);
     ray.set(o, d);
