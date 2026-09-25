@@ -1,0 +1,247 @@
+{
+  "brand": "Wizard Works",
+  "products": [
+    {
+      "line": "Presto",
+      "name": "Lil Presto Barrel Bag",
+      "size": "Small (1.8L)",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.8L barrel bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Presto",
+      "name": "Lil Presto Barrel Bag",
+      "size": "Large (3.5L)",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 3.5L barrel bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Voila",
+      "name": "Voila Stem Bag",
+      "size": "Medium",
+      "weight_g": 100,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: medium stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Voila",
+      "name": "Voila Stem Bag",
+      "size": "Large",
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: large stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Go-Go",
+      "name": "Go-Go Top Tube Bag",
+      "size": "Small (0.8L)",
+      "weight_g": 90,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.8L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Go-Go",
+      "name": "Go-Go Top Tube Bag",
+      "size": "Medium (1L)",
+      "weight_g": 100,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Go-Go",
+      "name": "Go-Go Long Top Tube Bag",
+      "size": "Long (1.5L)",
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.5L long top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Houdini",
+      "name": "Teeny Houdini Saddle Bag",
+      "size": "One Size (0.5L)",
+      "weight_g": 70,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.5L small saddle bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Badjelly",
+      "name": "Badjelly Bar + Saddle Bag",
+      "size": "Small (10L)",
+      "weight_g": 300,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10L convertible bar/saddle bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Badjelly",
+      "name": "Badjelly Bar + Saddle Bag",
+      "size": "Medium (15L)",
+      "weight_g": 350,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 15L convertible bar/saddle bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Badjelly",
+      "name": "Badjelly Bar + Saddle Bag",
+      "size": "Large (19L)",
+      "weight_g": 400,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 19L convertible bar/saddle bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Forres",
+      "name": "Forres Full Frame Bag",
+      "size": "Small",
+      "weight_g": 230,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: small full frame bag (X-Pac anchor). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Forres",
+      "name": "Forres Full Frame Bag",
+      "size": "Medium",
+      "weight_g": 260,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: medium full frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Forres",
+      "name": "Forres Full Frame Bag",
+      "size": "Large",
+      "weight_g": 290,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: large full frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Forres",
+      "name": "Forres Full Frame Bag",
+      "size": "XL",
+      "weight_g": 330,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: XL full frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Osyth",
+      "name": "Osyth Frame Bag",
+      "size": "Small",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: small half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Osyth",
+      "name": "Osyth Frame Bag",
+      "size": "Medium",
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: medium half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Osyth",
+      "name": "Osyth Frame Bag",
+      "size": "Large",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: large half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Osyth",
+      "name": "Osyth Frame Bag",
+      "size": "XL",
+      "weight_g": 230,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: XL half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Figwit",
+      "name": "Figwit Cargo Cage Bag",
+      "size": "One Size (4L)",
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 4L cargo cage bag only, no cage. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Figwit",
+      "name": "Figwit Cage Bag",
+      "size": "One Size",
+      "weight_g": 100,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2.5L cage bag only, no cage. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Snagla",
+      "name": "Snagla Hip-Pack + Bar Bag",
+      "size": "One Size (3.5L)",
+      "weight_g": 250,
+      "basis": "family-estimate",
+      "source": "https://www.wizard.works",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 3.5L convertible hip-pack/bar bag with strap. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

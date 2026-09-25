@@ -1,0 +1,970 @@
+[
+ {
+  "id": "passport",
+  "name": "Passport",
+  "cat": "misc",
+  "sub": "documents",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 40,
+  "packed_cm": [
+   12.5,
+   8.8,
+   0.5
+  ],
+  "packed_l": 0.04,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#3a2d5c",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "pocket",
+    "why": "in a zip bag in the hip pack, stays with you off the bike"
+   },
+   {
+    "at": "toptube",
+    "why": "zipped in the top tube bag"
+   },
+   {
+    "at": "framebag_half",
+    "why": "inside a zip bag in the frame bag"
+   }
+  ],
+  "note": "Booklet size is the ICAO ID-3 standard; weight ~35-45 g estimated.",
+  "aliases": [
+   "passport",
+   "id",
+   "travel documents",
+   "papers"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.icao.int",
+    "what": "size from ICAO ID-3 booklet format (125 x 88 mm); weight estimated, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "cards-cash",
+  "name": "Cards + cash (sleeve)",
+  "cat": "misc",
+  "sub": "wallet",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 25,
+  "packed_cm": [
+   10,
+   7,
+   0.8
+  ],
+  "packed_l": 0.04,
+  "compress": 0,
+  "archetype": "pouch",
+  "color": "#6b4a2e",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "pocket",
+    "why": "on you, not on the bike"
+   },
+   {
+    "at": "toptube",
+    "why": "zipped in the top tube bag"
+   }
+  ],
+  "note": "A minimalist alternative to the \"wallet\" item: two cards, a few notes in a sleeve or zip bag. Weight estimated.",
+  "aliases": [
+   "cards",
+   "cash",
+   "money",
+   "card holder",
+   "card sleeve",
+   "cards and cash"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.bellroy.com",
+    "what": "comparable product (minimal card sleeve), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "keys",
+  "name": "Keys",
+  "cat": "misc",
+  "sub": "keys",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 40,
+  "packed_cm": [
+   8,
+   4,
+   2
+  ],
+  "packed_l": 0.05,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#b8a060",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "pocket",
+    "why": "hip pack or jersey pocket, clipped in"
+   },
+   {
+    "at": "toptube",
+    "why": "clipped inside the top tube bag"
+   }
+  ],
+  "note": "House/car key plus a ring; weight estimated. Source URL is not meaningful for this item.",
+  "aliases": [
+   "keys",
+   "house keys",
+   "car keys",
+   "key"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.icao.int",
+    "what": "no maker spec; weight estimated from typical items of this kind, recalled; verify (source row is a placeholder: there is no maker for this)"
+   }
+  ]
+ },
+ {
+  "id": "otto-hexband",
+  "name": "Ottolock Hexband",
+  "cat": "misc",
+  "sub": "lock",
+  "generic": false,
+  "brand": "Otto DesignWorks",
+  "model": "Hexband 18\"",
+  "weight_g": 200,
+  "packed_cm": [
+   12,
+   9,
+   4
+  ],
+  "packed_l": 0.35,
+  "compress": 0.1,
+  "archetype": "cable_coil",
+  "color": "#e8612c",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "frame",
+    "why": "wrapped round the seatpost or top tube"
+   },
+   {
+    "at": "framebag_half",
+    "why": "coiled in the frame bag"
+   },
+   {
+    "at": "toptube",
+    "why": "if it fits a large top tube bag"
+   }
+  ],
+  "note": "18\" band; recalled around 200 g, not confident; verify. Coiled size estimated.",
+  "aliases": [
+   "ottolock",
+   "otto lock",
+   "hexband",
+   "otto hexband",
+   "band lock"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.ottodesignworks.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "cable-lock",
+  "name": "Light cable lock",
+  "cat": "misc",
+  "sub": "lock",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 120,
+  "packed_cm": [
+   12,
+   12,
+   3
+  ],
+  "packed_l": 0.35,
+  "compress": 0.1,
+  "archetype": "cable_coil",
+  "color": "#222222",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "coiled flat in the frame bag"
+   },
+   {
+    "at": "frame",
+    "why": "looped round the seatpost"
+   }
+  ],
+  "note": "Generic ~4 mm, 1.2-1.8 m coiled combination cable; ~120 g estimated. Deterrent only.",
+  "aliases": [
+   "cable lock",
+   "bike lock",
+   "lock",
+   "coil lock",
+   "combination lock"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.kryptonitelock.com",
+    "what": "comparable product (thin coil cable with combination), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "s2s-sack-5l",
+  "name": "Sea to Summit Ultra-Sil stuff sack 5 L",
+  "cat": "misc",
+  "sub": "stuff sack",
+  "generic": false,
+  "brand": "Sea to Summit",
+  "model": "Ultra-Sil Stuff Sack 5L",
+  "weight_g": 24,
+  "packed_cm": [
+   8,
+   6,
+   2
+  ],
+  "packed_l": 0.08,
+  "compress": 0.8,
+  "archetype": "stuffsack",
+  "color": "#e0b43a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "organises clothes in the seat pack"
+   },
+   {
+    "at": "barroll",
+    "why": "inside the bar roll"
+   }
+  ],
+  "note": "Empty weight ~24 g recalled; 5 L when full. Packed size is the empty sack, estimated.",
+  "aliases": [
+   "stuff sack",
+   "stuff sack 5l",
+   "ultra-sil",
+   "ultrasil",
+   "5l stuff sack"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.seatosummit.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "s2s-sack-10l",
+  "name": "Sea to Summit Ultra-Sil stuff sack 10 L",
+  "cat": "misc",
+  "sub": "stuff sack",
+  "generic": false,
+  "brand": "Sea to Summit",
+  "model": "Ultra-Sil Stuff Sack 10L",
+  "weight_g": 31,
+  "packed_cm": [
+   9,
+   7,
+   2
+  ],
+  "packed_l": 0.1,
+  "compress": 0.8,
+  "archetype": "stuffsack",
+  "color": "#2f6db0",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "clothes or quilt sack"
+   },
+   {
+    "at": "barroll",
+    "why": "sleep kit sack inside the harness"
+   }
+  ],
+  "note": "Empty weight ~31 g recalled; 10 L when full. Packed size is the empty sack, estimated.",
+  "aliases": [
+   "stuff sack",
+   "stuff sack 10l",
+   "ultra-sil",
+   "ultrasil",
+   "10l stuff sack"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.seatosummit.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "s2s-drybag-8l",
+  "name": "Sea to Summit Ultra-Sil dry bag 8 L",
+  "cat": "misc",
+  "sub": "dry bag",
+  "generic": false,
+  "brand": "Sea to Summit",
+  "model": "Ultra-Sil Dry Bag 8L",
+  "weight_g": 40,
+  "packed_cm": [
+   10,
+   7,
+   2
+  ],
+  "packed_l": 0.11,
+  "compress": 0.8,
+  "archetype": "stuffsack",
+  "color": "#d6452f",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "waterproof liner for the sleep kit"
+   },
+   {
+    "at": "fork",
+    "why": "in a fork cage"
+   },
+   {
+    "at": "seatpack",
+    "why": "inside a non-waterproof seat pack"
+   }
+  ],
+  "note": "Empty weight ~40 g recalled; 8 L when full. Packed size is the empty bag, estimated.",
+  "aliases": [
+   "dry bag",
+   "drybag",
+   "dry sack",
+   "8l dry bag",
+   "ultra-sil dry bag"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.seatosummit.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "bungee",
+  "name": "Bungee cord",
+  "cat": "misc",
+  "sub": "strap",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 40,
+  "packed_cm": [
+   12,
+   8,
+   2
+  ],
+  "packed_l": 0.15,
+  "compress": 0.2,
+  "archetype": "cable_coil",
+  "color": "#1f1f1f",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "outside",
+    "why": "lashing a jacket or food bag on top of the seat pack"
+   },
+   {
+    "at": "framebag_half",
+    "why": "coiled in the frame bag"
+   }
+  ],
+  "note": "Generic ~60 cm hooked bungee; ~40 g estimated.",
+  "aliases": [
+   "bungee",
+   "bungee cord",
+   "bungy",
+   "shock cord",
+   "octopus strap"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.keeper.com",
+    "what": "comparable product (~60 cm hooked bungee), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "head-net",
+  "name": "Mosquito head net",
+  "cat": "misc",
+  "sub": "head net",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 25,
+  "packed_cm": [
+   10,
+   7,
+   3
+  ],
+  "packed_l": 0.17,
+  "compress": 0.7,
+  "archetype": "stuffsack",
+  "color": "#2a2a2a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barpocket",
+    "why": "fast to grab when the bugs arrive at a stop"
+   },
+   {
+    "at": "framebag_half",
+    "why": "with the camp small kit"
+   }
+  ],
+  "note": "Generic fine-mesh head net in its pouch; ~25 g estimated.",
+  "aliases": [
+   "head net",
+   "bug net",
+   "mosquito net",
+   "midge net",
+   "headnet"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.seatosummit.com",
+    "what": "comparable product (Sea to Summit Mosquito Head Net), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "notebook-pen",
+  "name": "Notebook + pen",
+  "cat": "misc",
+  "sub": "stationery",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 60,
+  "packed_cm": [
+   14,
+   9,
+   1.2
+  ],
+  "packed_l": 0.12,
+  "compress": 0,
+  "archetype": "box",
+  "color": "#e8d9a0",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag side"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag if it is a daily journal"
+   }
+  ],
+  "note": "Pocket notebook with a short pen; ~60 g estimated.",
+  "aliases": [
+   "notebook",
+   "pen",
+   "journal",
+   "notepad",
+   "notebook and pen"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.riteintherain.com",
+    "what": "comparable product (pocket waterproof notebook + pen), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "paper-map",
+  "name": "Paper map",
+  "cat": "misc",
+  "sub": "map",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 80,
+  "packed_cm": [
+   25,
+   13,
+   1
+  ],
+  "packed_l": 0.26,
+  "compress": 0.1,
+  "archetype": "box",
+  "color": "#d9e6c8",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_full",
+    "why": "folded flat against the frame bag wall"
+   },
+   {
+    "at": "barbag",
+    "why": "map window of a bar bag"
+   }
+  ],
+  "note": "Folded sheet map; ~80 g estimated, less if cut down.",
+  "aliases": [
+   "map",
+   "paper map",
+   "os map",
+   "road map",
+   "maps"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.ordnancesurvey.co.uk",
+    "what": "comparable product (folded 1:50k sheet), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "reading-glasses",
+  "name": "Reading glasses (soft case)",
+  "cat": "misc",
+  "sub": "eyewear",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 30,
+  "packed_cm": [
+   15,
+   6,
+   2
+  ],
+  "packed_l": 0.14,
+  "compress": 0.1,
+  "archetype": "box",
+  "color": "#6b4a3a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "with the phone and small kit"
+   },
+   {
+    "at": "toptube",
+    "why": "for reading the GPS and map"
+   }
+  ],
+  "note": "Generic readers in a soft pouch; ~30 g estimated.",
+  "aliases": [
+   "reading glasses",
+   "readers",
+   "glasses",
+   "specs"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.foster-grant.com",
+    "what": "comparable product (folding readers + pouch), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "ursack-major",
+  "name": "Ursack Major",
+  "cat": "misc",
+  "sub": "bear bag",
+  "generic": false,
+  "brand": "Ursack",
+  "model": "Major",
+  "weight_g": 220,
+  "packed_cm": [
+   20,
+   12,
+   5
+  ],
+  "packed_l": 0.96,
+  "compress": 0.5,
+  "archetype": "stuffsack",
+  "color": "#e8e4d8",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "food goes in it at camp; empty it packs flat"
+   },
+   {
+    "at": "fork",
+    "why": "as the food bag in a fork cage"
+   }
+  ],
+  "note": "Recalled ~7.7 oz (220 g); 10.6 L capacity. Packed size is the empty sack, estimated.",
+  "aliases": [
+   "ursack",
+   "ursack major",
+   "bear bag",
+   "bear sack",
+   "food bag"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.ursack.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "bear-spray",
+  "name": "Bear spray",
+  "cat": "misc",
+  "sub": "bear spray",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 400,
+  "packed_cm": [
+   20,
+   6,
+   6
+  ],
+  "packed_l": 0.58,
+  "compress": 0,
+  "archetype": "tube_bottle",
+  "color": "#e0301e",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "frame",
+    "why": "in a holster on the bars or top tube, reachable in seconds"
+   },
+   {
+    "at": "body",
+    "why": "on a hip belt holster"
+   }
+  ],
+  "note": "Generic full-size canister; gross weight ~350-460 g depending on brand. Never packed inside a bag.",
+  "aliases": [
+   "bear spray",
+   "counter assault",
+   "bear mace",
+   "udap",
+   "frontiersman"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.counterassault.com",
+    "what": "comparable product (~8-10 oz net canister), gross weight estimated, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "euro-liteflex",
+  "name": "Euroschirm Swing Liteflex umbrella",
+  "cat": "misc",
+  "sub": "umbrella",
+  "generic": false,
+  "brand": "Euroschirm",
+  "model": "Swing Liteflex",
+  "weight_g": 180,
+  "packed_cm": [
+   62,
+   5,
+   5
+  ],
+  "packed_l": 1.24,
+  "compress": 0,
+  "archetype": "pole_bundle",
+  "color": "#c0c0c0",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "outside",
+    "why": "strapped along the top tube or down tube"
+   },
+   {
+    "at": "framebag_full",
+    "why": "along the top of a full frame bag if long enough"
+   }
+  ],
+  "note": "Recalled ~180 g; closed length ~60+ cm estimated. Hands-free kit variants exist.",
+  "aliases": [
+   "umbrella",
+   "trekking umbrella",
+   "euroschirm",
+   "liteflex",
+   "swing liteflex"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.euroschirm.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "earplugs",
+  "name": "Earplugs (in case)",
+  "cat": "misc",
+  "sub": "earplugs",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 5,
+  "packed_cm": [
+   5,
+   3,
+   2
+  ],
+  "packed_l": 0.02,
+  "compress": 0.1,
+  "archetype": "box",
+  "color": "#f2a900",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "with the sleep kit"
+   },
+   {
+    "at": "framebag_half",
+    "why": "small kit"
+   }
+  ],
+  "note": "Pair of foam plugs in a small case; weight estimated.",
+  "aliases": [
+   "earplugs",
+   "ear plugs",
+   "foam plugs"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.3m.com",
+    "what": "comparable product (foam earplugs + case), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "eye-mask",
+  "name": "Eye mask",
+  "cat": "misc",
+  "sub": "eye mask",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 15,
+  "packed_cm": [
+   19,
+   8,
+   1
+  ],
+  "packed_l": 0.12,
+  "compress": 0.6,
+  "archetype": "clothing_folded",
+  "color": "#1c1c1c",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "with the sleep kit"
+   },
+   {
+    "at": "barroll",
+    "why": "inside the sleep kit"
+   }
+  ],
+  "note": "Generic fabric sleep mask; ~15 g estimated.",
+  "aliases": [
+   "eye mask",
+   "sleep mask",
+   "eyeshade",
+   "blindfold"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.seatosummit.com",
+    "what": "comparable product (lightweight sleep mask), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "ziploc-bags",
+  "name": "Zip-lock bags (x3)",
+  "cat": "misc",
+  "sub": "bags",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 20,
+  "packed_cm": [
+   15,
+   10,
+   1
+  ],
+  "packed_l": 0.12,
+  "compress": 0.9,
+  "archetype": "stuffsack",
+  "color": "#e8f0f4",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "waterproofing for phone, passport, money"
+   },
+   {
+    "at": "seatpack",
+    "why": "spares for food and rubbish"
+   }
+  ],
+  "note": "Three gallon/quart freezer bags; weight estimated. Near-zero volume when empty.",
+  "aliases": [
+   "ziploc",
+   "ziplock",
+   "zip lock bags",
+   "freezer bags",
+   "plastic bags",
+   "zip bags"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.ziploc.com",
+    "what": "comparable product (freezer bags, ~6 g each), recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "trash-bag",
+  "name": "Trash bag",
+  "cat": "misc",
+  "sub": "bags",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 20,
+  "packed_cm": [
+   10,
+   8,
+   1
+  ],
+  "packed_l": 0.06,
+  "compress": 0.9,
+  "archetype": "stuffsack",
+  "color": "#2a2a2a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "folded flat; doubles as a pack liner"
+   },
+   {
+    "at": "framebag_half",
+    "why": "with the food, for the day's wrappers"
+   }
+  ],
+  "note": "Generic bin/trash bag; ~20 g estimated. A compactor bag is heavier (~55 g).",
+  "aliases": [
+   "trash bag",
+   "bin bag",
+   "rubbish bag",
+   "garbage bag",
+   "bin liner"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.glad.com",
+    "what": "comparable product (bin bag), recalled without fetching; verify"
+   }
+  ]
+ }
+]

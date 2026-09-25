@@ -1,0 +1,395 @@
+{
+  "brand": "Ortlieb",
+  "products": [
+    {
+      "line": "Seat-Pack",
+      "name": "Seat-Pack",
+      "size": "11L",
+      "weight_g": 345,
+      "basis": "retailer",
+      "source": "https://bikable.com/accessories/bags/ortlieb-seat-pack-bag-11-l",
+      "quote": "Weight: 345 g",
+      "note": "Figures conflict: a search limited to ortlieb.com returned both \"260 g / 10.2 oz\" and \"320 g / 11.5 oz\" for 11 L, probably from different model generations. Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Seat-Pack",
+      "name": "Seat-Pack",
+      "size": "16.5L",
+      "weight_g": 430,
+      "basis": "retailer",
+      "source": "https://www.bike24.com/p2408777.html",
+      "quote": "the Ortlieb Seat-Pack 16.5L weighs 430g (15.2oz)",
+      "note": "Figures conflict: a search limited to ortlieb.com also returned \"300 g / 11.8 oz\" and \"456 g / 16.1 oz\" for 16.5 L. Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Seat-Pack",
+      "name": "Seat-Pack QR",
+      "size": "7.5L",
+      "weight_g": 490,
+      "basis": "maker",
+      "source": "https://us.ortlieb.com/products/seat-pack-qr",
+      "quote": "The Seat-Pack QR weighs 17.3 – 22.0 oz",
+      "note": "Took the low end of the range (17.3 oz) for the small size. A retailer (All4cycling) also lists \"weight of 490 g\"."
+    },
+    {
+      "line": "Seat-Pack",
+      "name": "Seat-Pack QR",
+      "size": "13L",
+      "weight_g": 624,
+      "basis": "maker",
+      "source": "https://us.ortlieb.com/products/seat-pack-qr",
+      "quote": "The Seat-Pack QR weighs 17.3 – 22.0 oz",
+      "note": "Took the high end of the range (22.0 oz) for the large size. Retailer searches returned 625 g."
+    },
+    {
+      "line": "Frame-Pack",
+      "name": "Frame-Pack",
+      "size": "4L",
+      "weight_g": 200,
+      "basis": "maker",
+      "source": "https://us.ortlieb.com/products/frame-pack",
+      "quote": "The 4 L Frame-Pack weighs 200g (7.1 oz), and the 6 L Frame-Pack weighs 250g (8.8 oz).",
+      "note": "Search was limited to ortlieb.com."
+    },
+    {
+      "line": "Frame-Pack",
+      "name": "Frame-Pack",
+      "size": "6L",
+      "weight_g": 250,
+      "basis": "maker",
+      "source": "https://us.ortlieb.com/products/frame-pack",
+      "quote": "The 4 L Frame-Pack weighs 200g (7.1 oz), and the 6 L Frame-Pack weighs 250g (8.8 oz).",
+      "note": "Search was limited to ortlieb.com."
+    },
+    {
+      "line": "Frame-Pack",
+      "name": "Frame-Pack RC",
+      "size": "4L",
+      "weight_g": 200,
+      "basis": "size-interpolated",
+      "source": "https://www.alltricks.com/F-41498-bagagerie/P-1952578-ortlieb_frame_pack_rc_6l_frame_bag_black_matt",
+      "quote": "the Ortlieb Frame-Pack RC 6L weighs 250 g",
+      "note": "No 4 L figure was found. Scaled from the RC 6 L (250 g) using the zip Frame-Pack ratio of 4 L to 6 L (200/250)."
+    },
+    {
+      "line": "Frame-Pack",
+      "name": "Frame-Pack RC",
+      "size": "6L",
+      "weight_g": 250,
+      "basis": "retailer",
+      "source": "https://www.alltricks.com/F-41498-bagagerie/P-1952578-ortlieb_frame_pack_rc_6l_frame_bag_black_matt",
+      "quote": "the Ortlieb Frame-Pack RC 6L weighs 250 g",
+      "note": "The summary says this figure is \"consistently reported across multiple retailers\"."
+    },
+    {
+      "line": "Frame-Pack",
+      "name": "Frame-Pack Toptube",
+      "size": "3L",
+      "weight_g": 170,
+      "basis": "size-interpolated",
+      "source": "https://www.rei.com/product/188217/ortlieb-top-tube-frame-pack-4-liters",
+      "quote": "The 4L version weighs 190 grams.",
+      "note": "No 3 L figure was found. Estimated below the 4 L (190 g), in line with the RC Toptube (170 g)."
+    },
+    {
+      "line": "Frame-Pack",
+      "name": "Frame-Pack Toptube",
+      "size": "4L",
+      "weight_g": 190,
+      "basis": "retailer",
+      "source": "https://www.rei.com/product/188217/ortlieb-top-tube-frame-pack-4-liters",
+      "quote": "The 4L version weighs 190 grams.",
+      "note": "Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Frame-Pack",
+      "name": "Frame-Pack RC Toptube",
+      "size": "3L",
+      "weight_g": 170,
+      "basis": "retailer",
+      "source": "https://www.campfirecycling.com/product/ortlieb-frame-pack-toptube-rc.html",
+      "quote": "The weight of the Ortlieb Frame-Pack RC Toptube is 170 g.",
+      "note": "The sources did not agree on which volume 170 g belongs to (3 L or 4 L). Assigned here to 3 L."
+    },
+    {
+      "line": "Frame-Pack",
+      "name": "Frame-Pack RC Toptube",
+      "size": "4L",
+      "weight_g": 190,
+      "basis": "size-interpolated",
+      "source": "https://www.campfirecycling.com/product/ortlieb-frame-pack-toptube-rc.html",
+      "quote": "The weight of the Ortlieb Frame-Pack RC Toptube is 170 g.",
+      "note": "No separate 4 L figure was found. Set equal to the zip Frame-Pack Toptube 4 L (190 g)."
+    },
+    {
+      "line": "Handlebar-Pack",
+      "name": "Handlebar-Pack",
+      "size": "9L",
+      "weight_g": 375,
+      "basis": "retailer",
+      "source": "https://www.bike24.com/p2408743.html",
+      "quote": "The 9L model weighs 375 grams and the 15L model weighs 417 grams.",
+      "note": "Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Handlebar-Pack",
+      "name": "Handlebar-Pack",
+      "size": "15L",
+      "weight_g": 417,
+      "basis": "retailer",
+      "source": "https://www.bike24.com/p2408743.html",
+      "quote": "The 9L model weighs 375 grams and the 15L model weighs 417 grams.",
+      "note": "Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Handlebar-Pack",
+      "name": "Handlebar-Pack QR",
+      "size": "11L",
+      "weight_g": 530,
+      "basis": "maker",
+      "source": "https://us.ortlieb.com/products/handlebar-pack-qr",
+      "quote": "The official Ortlieb specification and most retailers list the weight as 530 grams",
+      "note": "Reviews measured 551 g and 556 g. Weight includes the QR mount."
+    },
+    {
+      "line": "Handlebar-Pack",
+      "name": "Handlebar-Pack Plus",
+      "size": "11L",
+      "weight_g": 500,
+      "basis": "retailer",
+      "source": "https://www.bike24.com/p2680662.html",
+      "quote": "The Ortlieb Handlebar-Pack Plus 11L weighs 500 grams. Most sources consistently report this weight, though one retailer lists it as 530 grams.",
+      "note": "Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Handlebar-Pack",
+      "name": "Handlebar-Pack Flex",
+      "size": "9L",
+      "weight_g": 410,
+      "basis": "retailer",
+      "source": "https://www.alltricks.com/F-41498-bagagerie/P-3221398-ortlieb_handlebar_pack_flex_9l_handlebar_bag_black_matt",
+      "quote": "9L model: 410 g",
+      "note": "Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Handlebar-Pack",
+      "name": "Handlebar-Pack Flex",
+      "size": "15L",
+      "weight_g": 460,
+      "basis": "retailer",
+      "source": "https://www.alltricks.com/F-41498-bagagerie/P-3221398-ortlieb_handlebar_pack_flex_9l_handlebar_bag_black_matt",
+      "quote": "15L model: 460 g",
+      "note": "Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Fuel-Pack",
+      "name": "Fuel-Pack",
+      "size": "1L",
+      "weight_g": 160,
+      "basis": "retailer",
+      "source": "https://www.campfirecycling.com/product/ortlieb-fuel-pack.html",
+      "quote": "The Ortlieb Fuel-Pack 1L weighs 160 grams.",
+      "note": "Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Toptube",
+      "name": "Toptube-Bag",
+      "size": "1.5L",
+      "weight_g": 250,
+      "basis": "retailer",
+      "source": "https://www.treefortbikes.com/Ortlieb-Toptube-Bag-15L",
+      "quote": "the Ortlieb Toptube-Bag 1.5L weighs approximately 250 grams",
+      "note": "Seems heavy next to the Fuel-Pack (160 g), so treat as low confidence. Figure read from the web-search result summary; the search tool does not say which of the listed pages the number came from, so the page linked here is a likely source, not a confirmed one."
+    },
+    {
+      "line": "Fork-Pack",
+      "name": "Fork-Pack",
+      "size": "4.1L",
+      "weight_g": 290,
+      "basis": "maker",
+      "source": "https://us.ortlieb.com/products/fork-pack",
+      "quote": "The Fork-Pack weighs as little as 290 grams including the adapter (for the 4.1 L size, 315 grams in the 5.8 L size).",
+      "note": "One bag, including the adapter. Search was limited to ortlieb.com."
+    },
+    {
+      "line": "Fork-Pack",
+      "name": "Fork-Pack",
+      "size": "5.8L",
+      "weight_g": 315,
+      "basis": "maker",
+      "source": "https://us.ortlieb.com/products/fork-pack",
+      "quote": "The Fork-Pack weighs as little as 290 grams including the adapter (for the 4.1 L size, 315 grams in the 5.8 L size).",
+      "note": "One bag, including the adapter. Search was limited to ortlieb.com."
+    },
+    {
+      "line": "Gravel-Pack",
+      "name": "Gravel-Pack",
+      "size": "Pair (14.5L/bag)",
+      "weight_g": 680,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Recalled pair weight is about 1,360 g, so about 680 g for one bag (pair halved). Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Gravel-Pack",
+      "name": "Gravel-Pack Single",
+      "size": "14.5L",
+      "weight_g": 680,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Same bag as one side of the Gravel-Pack pair. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Back-Roller",
+      "name": "Back-Roller",
+      "size": "20L",
+      "weight_g": 950,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Recalled pair weight for the Back-Roller Classic is about 1,900 g, so about 950 g for one bag (pair halved). Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Back-Roller",
+      "name": "Back-Roller Plus",
+      "size": "23L",
+      "weight_g": 825,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Recalled pair weight is about 1,650 g, so about 825 g for one bag (pair halved). Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Back-Roller",
+      "name": "Back-Roller Core",
+      "size": "20L",
+      "weight_g": 950,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Assumed similar to the Back-Roller Classic 20 L (about 950 g per bag). Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Back-Roller",
+      "name": "Back-Roller XL",
+      "size": "Pair (35L/bag)",
+      "weight_g": 1200,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "One 35 L bag. Recalled pair weight is about 2,400 g (pair halved); this is a rough figure. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Sport-Roller",
+      "name": "Sport-Roller",
+      "size": "14.5L",
+      "weight_g": 750,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Recalled pair weight for the Sport-Roller Classic is about 1,500 g, so about 750 g for one bag (pair halved). Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Sport-Roller",
+      "name": "Sport-Roller Core",
+      "size": "14.5L",
+      "weight_g": 750,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Assumed similar to the Sport-Roller Classic (about 750 g per bag). Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Sport-Packer",
+      "name": "Sport-Packer",
+      "size": "15L",
+      "weight_g": 850,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Recalled pair weight for the Sport-Packer Classic is about 1,700 g, so about 850 g for one bag (pair halved). Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Bike-Packer",
+      "name": "Bike-Packer",
+      "size": "20L",
+      "weight_g": 1000,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Recalled weight for the Bike-Packer Classic is about 1,000 g per bag. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Bike-Packer",
+      "name": "Bike-Packer Plus",
+      "size": "21L",
+      "weight_g": 900,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Recalled weight for the Bike-Packer Plus is about 900 g per bag. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Saddle-Bag",
+      "name": "Saddle-Bag",
+      "size": "1.6L",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Recalled weight for the Saddle-Bag Two 1.6 L is about 150 g. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Saddle-Bag",
+      "name": "Saddle-Bag",
+      "size": "4.1L",
+      "weight_g": 220,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Scaled up from the 1.6 L size. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Micro-Bag",
+      "name": "Micro-Bag",
+      "size": "0.5L",
+      "weight_g": 90,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Small roll-closure seat bag, estimated at about 90 g. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Micro-Bag",
+      "name": "Micro-Bag",
+      "size": "0.8L",
+      "weight_g": 100,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Small roll-closure seat bag, estimated at about 100 g. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Trunk-Bag",
+      "name": "Trunk-Bag",
+      "size": "10L",
+      "weight_g": 600,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Rigid rack-top bag, estimated at about 600 g. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    },
+    {
+      "line": "Trunk-Bag",
+      "name": "Trunk-Bag RC",
+      "size": "12L",
+      "weight_g": 650,
+      "basis": "family-estimate",
+      "source": "",
+      "quote": "",
+      "note": "Roll-closure rack-top bag, estimated at about 650 g. Web search budget ran out before this product was searched. The estimate comes from recollection of Ortlieb catalogue figures and was not checked against any source."
+    }
+  ]
+}

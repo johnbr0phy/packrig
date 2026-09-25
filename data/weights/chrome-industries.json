@@ -1,0 +1,60 @@
+{
+ "brand": "Chrome Industries",
+ "products": [
+  {
+   "line": null,
+   "name": "Holman Handlebar Bag",
+   "size": null,
+   "weight_g": 300,
+   "basis": "family-estimate",
+   "source": "https://www.chromeindustries.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~3 L handlebar bags in heavy-duty fabric. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Holman Top Tube Bag",
+   "size": null,
+   "weight_g": 150,
+   "basis": "family-estimate",
+   "source": "https://www.chromeindustries.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from top tube bag anchor, upper end for heavy-duty fabric. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Urban Ex Pannier 2.0",
+   "size": null,
+   "weight_g": 1100,
+   "basis": "family-estimate",
+   "source": "https://www.chromeindustries.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from heavy tarp-construction 21 L panniers, above the PVC 20 L anchor. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Holman Pannier",
+   "size": null,
+   "weight_g": 1000,
+   "basis": "family-estimate",
+   "source": "https://www.chromeindustries.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from the PVC 20 L pannier anchor (~900-1000 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Doubletrack Saddle Roll",
+   "size": null,
+   "weight_g": 150,
+   "basis": "family-estimate",
+   "source": "https://www.chromeindustries.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small (~1 L) saddle rolls in heavy-duty fabric. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

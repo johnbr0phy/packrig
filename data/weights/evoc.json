@@ -1,0 +1,60 @@
+{
+  "brand": "EVOC",
+  "products": [
+    {
+      "line": null,
+      "name": "Handlebar Pack Boa WP 5",
+      "size": null,
+      "weight_g": 540,
+      "basis": "family-estimate",
+      "source": "https://www.evocsports.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 5L waterproof handlebar pack with BOA-tensioned rigid holder. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Seat Pack Boa WP 6",
+      "size": null,
+      "weight_g": 480,
+      "basis": "family-estimate",
+      "source": "https://www.evocsports.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 6L waterproof seat pack with BOA-tensioned holder; heavier than plain dry-bag packs of same size. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "EVOC Multi Frame Pack WP",
+      "size": null,
+      "weight_g": 160,
+      "basis": "family-estimate",
+      "source": "https://www.evocsports.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: small waterproof frame pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "EVOC Top Tube Pack WP",
+      "size": null,
+      "weight_g": 140,
+      "basis": "family-estimate",
+      "source": "https://www.evocsports.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.8L waterproof top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Downtube Pack WP 1.2",
+      "size": null,
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "https://www.evocsports.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 1.2L downtube pack. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

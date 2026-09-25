@@ -1,0 +1,38 @@
+{
+ "brand": "Cedaero",
+ "products": [
+  {
+   "line": null,
+   "name": "Cedaero Switchback Seat Pack",
+   "size": null,
+   "weight_g": 90,
+   "basis": "family-estimate",
+   "source": "https://cedaero.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small (~1 L) under-saddle bags in lightweight laminate fabric. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Cedaero Tank Top Pack",
+   "size": null,
+   "weight_g": 80,
+   "basis": "family-estimate",
+   "source": "https://cedaero.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from top tube bag anchor, low end for lightweight laminate fabric. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "Cedaero Fork Lift Pack",
+   "size": null,
+   "weight_g": 150,
+   "basis": "family-estimate",
+   "source": "https://cedaero.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Bag only, no fork cage counted. Estimated from ~3.3 L fork bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

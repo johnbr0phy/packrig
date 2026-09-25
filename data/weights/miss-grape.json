@@ -1,0 +1,247 @@
+{
+  "brand": "Miss Grape",
+  "products": [
+    {
+      "line": "Cluster",
+      "name": "Cluster 2 Waterproof",
+      "size": "2L",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2L seat pack, small version of the Cluster line. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Cluster",
+      "name": "Cluster 7 Waterproof",
+      "size": "7L",
+      "weight_g": 300,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 7L waterproof seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Cluster",
+      "name": "Cluster 13 Waterproof",
+      "size": "13L",
+      "weight_g": 420,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 13L waterproof seat pack (anchor 300-600 g for 9-16L). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Cluster",
+      "name": "Cluster 20 Waterproof",
+      "size": "20 (18.6L)",
+      "weight_g": 520,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: largest Cluster seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Tendril",
+      "name": "Tendril 4.10 Waterproof",
+      "size": "4-10L",
+      "weight_g": 350,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: waterproof bar roll/harness, smaller size. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Tendril",
+      "name": "Tendril 10.7 Waterproof",
+      "size": "10-17L",
+      "weight_g": 450,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: larger waterproof bar roll. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Internode",
+      "name": "Internode 2 Waterproof",
+      "size": "2L",
+      "weight_g": 140,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 2L waterproof half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Internode",
+      "name": "Internode 3 Waterproof",
+      "size": "3L",
+      "weight_g": 160,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: interpolated Internode size. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Internode",
+      "name": "Internode 4 Waterproof",
+      "size": "4L",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: interpolated Internode size. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Internode",
+      "name": "Internode 5 Waterproof",
+      "size": "5L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: interpolated Internode size. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Internode",
+      "name": "Internode 6 Waterproof",
+      "size": "6L",
+      "weight_g": 220,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: largest Internode. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Node",
+      "name": "Node Rd",
+      "size": "Road",
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: road top tube bag, strap mount. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Node",
+      "name": "Node 2H Rd",
+      "size": "Road bolt-on",
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: road top tube bag, bolt-on. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Node",
+      "name": "Big Node",
+      "size": "1.8L",
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.8L top tube bag, strap mount. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Node",
+      "name": "Big Node 2H",
+      "size": "1.8L bolt-on",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.8L top tube bag, bolt-on. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Node",
+      "name": "Node Adventure",
+      "size": "Adventure",
+      "weight_g": 140,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: adventure-size top tube bag, strap mount. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Node",
+      "name": "Node 2H Adventure",
+      "size": "Adventure bolt-on",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: adventure-size top tube bag, bolt-on. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bud",
+      "name": "Bud",
+      "size": "1L",
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Moon",
+      "name": "Moon",
+      "size": "2L",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2L bar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Moon",
+      "name": "Moon IC",
+      "size": "2.3L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2.3L bar bag, slightly larger than Moon. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Trunk",
+      "name": "Trunk 6 Waterproof",
+      "size": "6L",
+      "weight_g": 220,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 6L waterproof fork/cargo bag, one bag, cage not included. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Trunk",
+      "name": "Trunk 6 Aero Bar Waterproof",
+      "size": "6L",
+      "weight_g": 250,
+      "basis": "family-estimate",
+      "source": "https://missgrape.net",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: Trunk 6 with aero-bar mounting straps. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

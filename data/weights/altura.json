@@ -1,0 +1,49 @@
+{
+  "brand": "Altura",
+  "products": [
+    {
+      "line": "Vortex",
+      "name": "Vortex Waterproof 12L Cycling Seat Pack",
+      "size": "12L",
+      "weight_g": 420,
+      "basis": "family-estimate",
+      "source": "https://www.altura.co.uk",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 12L waterproof seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Vortex",
+      "name": "Vortex Waterproof 11L Cycling Handlebar Bag",
+      "size": "11L",
+      "weight_g": 460,
+      "basis": "family-estimate",
+      "source": "https://www.altura.co.uk",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 11L waterproof handlebar bag with straps. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Vortex",
+      "name": "Vortex Bolt-On Waterproof Cycling Top Tube Pack",
+      "size": "1L",
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.altura.co.uk",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L bolt-on top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Vortex",
+      "name": "Ultralite Vortex Waterproof Cycling Pannier",
+      "size": "15L (single)",
+      "weight_g": 500,
+      "basis": "family-estimate",
+      "source": "https://www.altura.co.uk",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one lightweight 15L pannier. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

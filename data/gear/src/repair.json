@@ -1,0 +1,1772 @@
+[
+ {
+  "id": "hand-pump",
+  "name": "Hand pump",
+  "cat": "repair",
+  "sub": "mini pump",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 170,
+  "packed_cm": [
+   24.0,
+   4.0,
+   3.0
+  ],
+  "packed_l": 0.23,
+  "compress": 0.0,
+  "archetype": "pump",
+  "color": "#2b2b2b",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "frame",
+    "why": "owner's pick: bolted beside a bottle cage so it never takes bag space"
+   },
+   {
+    "at": "framebag_full",
+    "why": "along the top of a full frame bag"
+   },
+   {
+    "at": "pocket",
+    "why": "short mini pumps ride in a jersey pocket"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.outdoorgearlab.com/reviews/biking/frame-pump/topeak-road-morph-g",
+    "what": "comparable Topeak Road Morph G 220 g, 35 cm"
+   },
+   {
+    "url": "https://road.cc/content/review/lezyne-pocket-drive-mini-pump-279581",
+    "what": "comparable Lezyne Pocket Drive 79 g, 14 cm"
+   }
+  ],
+  "note": "Owner's item: 6.0 oz (170 g) is his figure; generic mid-size hand pump, between the Lezyne Pocket Drive (79 g) and Road Morph G (220 g). Length/diameter estimated for that class.",
+  "aliases": [
+   "hand pump",
+   "pump",
+   "mini pump",
+   "bike pump",
+   "frame pump"
+  ]
+ },
+ {
+  "id": "lezyne-pocket",
+  "name": "Lezyne Pocket Drive mini pump",
+  "cat": "repair",
+  "sub": "mini pump",
+  "generic": false,
+  "brand": "Lezyne",
+  "model": "Pocket Drive",
+  "weight_g": 79,
+  "packed_cm": [
+   14.0,
+   2.5,
+   2.5
+  ],
+  "packed_l": 0.07,
+  "compress": 0.0,
+  "archetype": "pump",
+  "color": "#1a1a1a",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "frame",
+    "why": "on the included bracket next to a bottle cage"
+   },
+   {
+    "at": "toptube",
+    "why": "short enough for a top tube bag"
+   },
+   {
+    "at": "pocket",
+    "why": "jersey pocket"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://road.cc/content/review/lezyne-pocket-drive-mini-pump-279581",
+    "what": "79 g, 140 mm"
+   }
+  ],
+  "note": "Diameter estimated.",
+  "aliases": [
+   "lezyne pocket drive",
+   "mini pump",
+   "pump",
+   "hand pump"
+  ]
+ },
+ {
+  "id": "road-morph-g",
+  "name": "Topeak Road Morph G pump",
+  "cat": "repair",
+  "sub": "frame pump",
+  "generic": false,
+  "brand": "Topeak",
+  "model": "Road Morph G",
+  "weight_g": 220,
+  "packed_cm": [
+   35.0,
+   4.0,
+   3.5
+  ],
+  "packed_l": 0.38,
+  "compress": 0.0,
+  "archetype": "pump",
+  "color": "#1c1c1c",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "frame",
+    "why": "on its frame bracket beside a bottle cage; too long for most bags"
+   },
+   {
+    "at": "framebag_full",
+    "why": "along the top tube inside a full frame bag"
+   },
+   {
+    "at": "outside",
+    "why": "strapped along the top of the seat pack or bar roll"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.outdoorgearlab.com/reviews/biking/frame-pump/topeak-road-morph-g",
+    "what": "220 g, 35 cm"
+   },
+   {
+    "url": "https://www.topeak.com/global/en/product/246-ROAD-MORPH-G",
+    "what": "maker page"
+   }
+  ],
+  "note": "Diameter estimated. Floor-pump-style foot peg and hose inflate big tyres far faster than a mini pump.",
+  "aliases": [
+   "road morph",
+   "topeak road morph",
+   "frame pump",
+   "pump",
+   "mini pump with gauge"
+  ]
+ },
+ {
+  "id": "leatherman-skel",
+  "name": "Leatherman Skeletool",
+  "cat": "repair",
+  "sub": "multitool",
+  "generic": false,
+  "brand": "Leatherman",
+  "model": "Skeletool",
+  "weight_g": 142,
+  "packed_cm": [
+   10.0,
+   3.5,
+   2.0
+  ],
+  "packed_l": 0.07,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#6e7378",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube_rear",
+    "why": "owner's pick: top tube sack with the other tools, grabbed at camp and at the roadside"
+   },
+   {
+    "at": "framebag_half",
+    "why": "dense tool, low in the frame bag"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag if it is a daily-use knife"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.leatherman.com/products/skeletool",
+    "what": "5 oz"
+   }
+  ],
+  "note": "Owner's sheet 5.0 oz matches Leatherman's published weight. Closed length ~4 in, width/thickness estimated.",
+  "aliases": [
+   "leatherman skeletool",
+   "skeletool",
+   "leatherman",
+   "knife",
+   "pliers",
+   "multi tool"
+  ]
+ },
+ {
+  "id": "leatherman-wave",
+  "name": "Leatherman Wave+",
+  "cat": "repair",
+  "sub": "multitool",
+  "generic": false,
+  "brand": "Leatherman",
+  "model": "Wave+",
+  "weight_g": 241,
+  "packed_cm": [
+   10.2,
+   3.5,
+   2.5
+  ],
+  "packed_l": 0.09,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#8a8f94",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "heavy tool, low in the frame bag"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag if used daily"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.leatherman.com/products/wave",
+    "what": "8.5 oz, 4 in closed"
+   }
+  ],
+  "note": "Width/thickness estimated.",
+  "aliases": [
+   "leatherman wave",
+   "wave plus",
+   "leatherman",
+   "pliers",
+   "multi tool",
+   "knife"
+  ]
+ },
+ {
+  "id": "tubolito-650b",
+  "name": "Tubolito Tubo MTB 27.5",
+  "cat": "repair",
+  "sub": "spare tube",
+  "generic": false,
+  "brand": "Tubolito",
+  "model": "Tubo-MTB 27.5",
+  "weight_g": 90,
+  "packed_cm": [
+   12.0,
+   6.0,
+   4.0
+  ],
+  "packed_l": 0.23,
+  "compress": 0.3,
+  "archetype": "inner_tube",
+  "color": "#e0692a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube_rear",
+    "why": "owner's pick: top tube sack with the flat kit"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag with levers and patches"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.tubolito.com/product/tubo-mtb/",
+    "what": "Tubo-MTB 78-92 g depending on size"
+   },
+   {
+    "url": "https://mbaction.com/mountain-bike-action-product-test-tubolito-tubo-mtb-tube/",
+    "what": "model reference"
+   }
+  ],
+  "note": "Owner's sheet says 4.7 oz (133 g) each (he carries two). Catalogue uses Tubolito's published Tubo-MTB range (78-92 g), 27.5 taken as ~90 g. TPU tubes fold far smaller than butyl; packed size estimated.",
+  "aliases": [
+   "tubolito",
+   "tubolito 650b",
+   "tpu tube",
+   "spare tube",
+   "inner tube",
+   "tube 650b",
+   "27.5 tube"
+  ]
+ },
+ {
+  "id": "tubolito-s-mtb",
+  "name": "Tubolito S-Tubo MTB",
+  "cat": "repair",
+  "sub": "spare tube",
+  "generic": false,
+  "brand": "Tubolito",
+  "model": "S-Tubo-MTB",
+  "weight_g": 39,
+  "packed_cm": [
+   9.0,
+   5.0,
+   3.0
+  ],
+  "packed_l": 0.11,
+  "compress": 0.3,
+  "archetype": "inner_tube",
+  "color": "#e36b2c",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag"
+   },
+   {
+    "at": "pocket",
+    "why": "small enough for a jersey pocket"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.tubolito.com/product/s-tubo-mtb/",
+    "what": "39 g; emergency-only spare"
+   }
+  ],
+  "note": "Emergency spare, not for everyday use. Packed size estimated.",
+  "aliases": [
+   "s-tubo",
+   "tubolito s-tubo",
+   "tpu tube",
+   "emergency tube",
+   "spare tube"
+  ]
+ },
+ {
+  "id": "tube-700c",
+  "name": "Butyl tube 700c (Schwalbe SV19)",
+  "cat": "repair",
+  "sub": "spare tube",
+  "generic": false,
+  "brand": "Schwalbe",
+  "model": "SV19",
+  "weight_g": 220,
+  "packed_cm": [
+   14.0,
+   8.0,
+   5.0
+  ],
+  "packed_l": 0.44,
+  "compress": 0.2,
+  "archetype": "inner_tube",
+  "color": "#222222",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag with levers; heavy enough to want it low"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "seatpack",
+    "why": "bottom of the seat pack if the frame bag is full (in its box, or taped)"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rivbike.com/products/inner-tube-650b-x-50-62-27-5-x-2-0-2-4-700c-x-40-62-schwalbe-sv19-1",
+    "what": "SV19 fits 650B x 50-62 / 700c x 40-62"
+   },
+   {
+    "url": "https://www.bikebug.com/schwalbe-sv19-presta-inner-tube-27-5-29-x-1-75-2-35-p-9606.html",
+    "what": "SV19 220 g"
+   }
+  ],
+  "note": "Schwalbe SV19 is one tube size for 650B x 50-62, 700c x 40-62 and 29 x 1.75-2.4. Packed size estimated for a folded, rubber-banded butyl tube.",
+  "aliases": [
+   "700c tube",
+   "700 tube",
+   "tube 700c",
+   "gravel tube",
+   "inner tube",
+   "spare tube",
+   "butyl tube",
+   "tube",
+   "schwalbe sv19"
+  ]
+ },
+ {
+  "id": "tube-650b",
+  "name": "Butyl tube 650b (Schwalbe SV19)",
+  "cat": "repair",
+  "sub": "spare tube",
+  "generic": false,
+  "brand": "Schwalbe",
+  "model": "SV19",
+  "weight_g": 220,
+  "packed_cm": [
+   14.0,
+   8.0,
+   5.0
+  ],
+  "packed_l": 0.44,
+  "compress": 0.2,
+  "archetype": "inner_tube",
+  "color": "#232323",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag with levers; heavy enough to want it low"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "seatpack",
+    "why": "bottom of the seat pack if the frame bag is full (in its box, or taped)"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rivbike.com/products/inner-tube-650b-x-50-62-27-5-x-2-0-2-4-700c-x-40-62-schwalbe-sv19-1",
+    "what": "SV19 fits 650B x 50-62 / 700c x 40-62"
+   },
+   {
+    "url": "https://www.bikebug.com/schwalbe-sv19-presta-inner-tube-27-5-29-x-1-75-2-35-p-9606.html",
+    "what": "SV19 220 g"
+   }
+  ],
+  "note": "Schwalbe SV19 is one tube size for 650B x 50-62, 700c x 40-62 and 29 x 1.75-2.4. Packed size estimated for a folded, rubber-banded butyl tube.",
+  "aliases": [
+   "650b tube",
+   "27.5 tube",
+   "tube 650b",
+   "inner tube",
+   "spare tube",
+   "butyl tube",
+   "tube",
+   "schwalbe sv19"
+  ]
+ },
+ {
+  "id": "tube-29er",
+  "name": "Butyl tube 29er (Schwalbe SV19)",
+  "cat": "repair",
+  "sub": "spare tube",
+  "generic": false,
+  "brand": "Schwalbe",
+  "model": "SV19",
+  "weight_g": 220,
+  "packed_cm": [
+   14.0,
+   8.0,
+   5.0
+  ],
+  "packed_l": 0.44,
+  "compress": 0.2,
+  "archetype": "inner_tube",
+  "color": "#212121",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag with levers; heavy enough to want it low"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "seatpack",
+    "why": "bottom of the seat pack if the frame bag is full (in its box, or taped)"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rivbike.com/products/inner-tube-650b-x-50-62-27-5-x-2-0-2-4-700c-x-40-62-schwalbe-sv19-1",
+    "what": "SV19 fits 650B x 50-62 / 700c x 40-62"
+   },
+   {
+    "url": "https://www.bikebug.com/schwalbe-sv19-presta-inner-tube-27-5-29-x-1-75-2-35-p-9606.html",
+    "what": "SV19 220 g"
+   }
+  ],
+  "note": "Schwalbe SV19 is one tube size for 650B x 50-62, 700c x 40-62 and 29 x 1.75-2.4. Packed size estimated for a folded, rubber-banded butyl tube.",
+  "aliases": [
+   "29er tube",
+   "29 tube",
+   "tube 29",
+   "inner tube",
+   "spare tube",
+   "butyl tube",
+   "tube",
+   "schwalbe sv19"
+  ]
+ },
+ {
+  "id": "tube-sv19a",
+  "name": "Schwalbe SV19A Extralight tube",
+  "cat": "repair",
+  "sub": "spare tube",
+  "generic": false,
+  "brand": "Schwalbe",
+  "model": "SV19A Extralight",
+  "weight_g": 135,
+  "packed_cm": [
+   13.0,
+   7.0,
+   4.0
+  ],
+  "packed_l": 0.29,
+  "compress": 0.2,
+  "archetype": "inner_tube",
+  "color": "#262626",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag with levers"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rivbike.com/products/schwalbe-sv19a-extralight-large-inner-tube-700c-x-38-60-29er-x-1-50-2-35-or-650b-x-54-60-27-5-x-2-125-2-36",
+    "what": "extralight 700c/29er/650b, 135 g"
+   }
+  ],
+  "note": "Packed size estimated.",
+  "aliases": [
+   "extralight tube",
+   "light tube",
+   "sv19a",
+   "spare tube",
+   "inner tube",
+   "700c tube",
+   "29er tube"
+  ]
+ },
+ {
+  "id": "bike-tool",
+  "name": "Bike multitool",
+  "cat": "repair",
+  "sub": "multitool",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 57,
+  "packed_cm": [
+   8.0,
+   4.0,
+   1.8
+  ],
+  "packed_l": 0.06,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#3a3a3a",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube_rear",
+    "why": "owner's pick: top tube sack with the flat kit"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "framebag_half",
+    "why": "low in the frame bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://road.cc/content/review/203261-topeak-mini-9-multi-tool",
+    "what": "comparable Topeak Mini 9, 92 g"
+   }
+  ],
+  "note": "Owner's item: 2.0 oz (57 g) is his figure; generic compact hex/Torx tool (lighter than the 92 g Topeak Mini 9). Size estimated.",
+  "aliases": [
+   "bike tool",
+   "multitool",
+   "multi tool",
+   "allen keys",
+   "hex keys",
+   "mini tool"
+  ]
+ },
+ {
+  "id": "topeak-mini9",
+  "name": "Topeak Mini 9",
+  "cat": "repair",
+  "sub": "multitool",
+  "generic": false,
+  "brand": "Topeak",
+  "model": "Mini 9",
+  "weight_g": 92,
+  "packed_cm": [
+   7.5,
+   4.0,
+   2.0
+  ],
+  "packed_l": 0.06,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#9aa0a6",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "framebag_half",
+    "why": "low in the frame bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://road.cc/content/review/203261-topeak-mini-9-multi-tool",
+    "what": "92 g"
+   }
+  ],
+  "note": "Dimensions estimated.",
+  "aliases": [
+   "topeak mini 9",
+   "multitool",
+   "mini tool",
+   "bike tool"
+  ]
+ },
+ {
+  "id": "crank-m19",
+  "name": "Crankbrothers M19",
+  "cat": "repair",
+  "sub": "multitool",
+  "generic": false,
+  "brand": "Crankbrothers",
+  "model": "M19",
+  "weight_g": 175,
+  "packed_cm": [
+   8.9,
+   4.5,
+   1.9
+  ],
+  "packed_l": 0.08,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#b8292f",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "framebag_half",
+    "why": "heavy tool, low in the frame bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://bikepacking.com/gear/crankbrothers-m19-review/",
+    "what": "bikepacking long-term review"
+   },
+   {
+    "url": "https://www.rosebikes.com/p/crankbrothers-m19-multitool-mini-tool-441683",
+    "what": "175 g without case; 89 x 45 x 19 mm"
+   }
+  ],
+  "note": "Case adds ~40 g. Includes a chain breaker and spoke keys.",
+  "aliases": [
+   "m19",
+   "crankbrothers m19",
+   "multitool",
+   "multi tool",
+   "bike tool",
+   "chain tool"
+  ]
+ },
+ {
+  "id": "chain-tool",
+  "name": "Park Tool CT-5 mini chain tool",
+  "cat": "repair",
+  "sub": "chain tool",
+  "generic": false,
+  "brand": "Park Tool",
+  "model": "CT-5 Mini Chain Brute",
+  "weight_g": 77,
+  "packed_cm": [
+   8.0,
+   4.0,
+   2.0
+  ],
+  "packed_l": 0.06,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#1f4fa3",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "low in the frame bag with the other heavy tools"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag if the multitool has no chain breaker"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.parktool.com/en-int/product/mini-chain-brute-chain-tool-ct-5",
+    "what": "maker page"
+   },
+   {
+    "url": "https://www.vitalmtb.com/product/guide/Tools-Tool-Kits,77/Park-Tool/Park-CT-5-Mini-Chain-Brute,5557",
+    "what": "77 g / 2.7 oz"
+   }
+  ],
+  "note": "Dimensions estimated.",
+  "aliases": [
+   "chain tool",
+   "chain breaker",
+   "park ct-5",
+   "chain brute"
+  ]
+ },
+ {
+  "id": "quick-links",
+  "name": "KMC MissingLink (2 pairs)",
+  "cat": "repair",
+  "sub": "quick link",
+  "generic": false,
+  "brand": "KMC",
+  "model": "MissingLink",
+  "weight_g": 4,
+  "packed_cm": [
+   5.0,
+   3.0,
+   1.0
+  ],
+  "packed_l": 0.01,
+  "compress": 0.0,
+  "archetype": "box",
+  "color": "#c9a227",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "tiny: tape them to the multitool or keep in the top tube bag"
+   },
+   {
+    "at": "framebag_half",
+    "why": "in the repair pouch in the frame bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://kmcchain.us/products/missing-link-10",
+    "what": "2 g per pair"
+   }
+  ],
+  "note": "Two pairs as usually carried (2 g/pair). Size is the card/bag, estimated.",
+  "aliases": [
+   "quick link",
+   "quick links",
+   "missing link",
+   "chain link",
+   "power link",
+   "spare link"
+  ]
+ },
+ {
+  "id": "tyre-levers",
+  "name": "Plastic tyre levers (x2)",
+  "cat": "repair",
+  "sub": "tyre levers",
+  "generic": false,
+  "brand": "Park Tool",
+  "model": "TL-1.2",
+  "weight_g": 25,
+  "packed_cm": [
+   12.0,
+   2.5,
+   1.0
+  ],
+  "packed_l": 0.03,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#1f4fa3",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "owner's pick: flat in the frame bag side pocket"
+   },
+   {
+    "at": "toptube",
+    "why": "with the tube in the top tube bag, the flat kit in one place"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.parktool.com/en-us/product/tire-lever-set-tl-1-2",
+    "what": "maker page"
+   },
+   {
+    "url": "https://www.excelsports.com/park-tool-tl-1-2-tire-lever-set",
+    "what": "set of 3 = 37 g"
+   }
+  ],
+  "note": "Owner's sheet: 1.0 oz for two. Catalogue weight is two of Park's TL-1.2 set (37 g / 3 levers = ~12.3 g each). Size estimated.",
+  "aliases": [
+   "tire levers",
+   "tyre levers",
+   "plastic tire removal tool",
+   "tire lever",
+   "levers",
+   "tire removal tool"
+  ]
+ },
+ {
+  "id": "park-tl12",
+  "name": "Park Tool TL-1.2 tyre levers (3)",
+  "cat": "repair",
+  "sub": "tyre levers",
+  "generic": false,
+  "brand": "Park Tool",
+  "model": "TL-1.2",
+  "weight_g": 37,
+  "packed_cm": [
+   12.0,
+   2.5,
+   1.5
+  ],
+  "packed_l": 0.04,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#2356b0",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag"
+   },
+   {
+    "at": "toptube",
+    "why": "with the flat kit"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.excelsports.com/park-tool-tl-1-2-tire-lever-set",
+    "what": "37 g / 1.3 oz for the set of 3"
+   }
+  ],
+  "note": "Size estimated.",
+  "aliases": [
+   "park levers",
+   "tl-1.2",
+   "tire levers",
+   "tyre levers"
+  ]
+ },
+ {
+  "id": "electrical-tape",
+  "name": "Electrical tape",
+  "cat": "repair",
+  "sub": "tape",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 28,
+  "packed_cm": [
+   5.0,
+   5.0,
+   1.9
+  ],
+  "packed_l": 0.04,
+  "compress": 0.0,
+  "archetype": "cable_coil",
+  "color": "#111111",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "owner's pick: in the repair pouch in the frame bag"
+   },
+   {
+    "at": "outside",
+    "why": "a few wraps around the pump or seatpost carry it without bag space"
+   }
+  ],
+  "sources": [
+   {
+    "url": "data/seed/megafuck.tsv",
+    "what": "owner's measured weight 1.0 oz"
+   }
+  ],
+  "note": "Owner's item; generic partial roll, his 1.0 oz (28 g) used. Size estimated (small roll).",
+  "aliases": [
+   "electrical tape",
+   "electric tape",
+   "insulating tape",
+   "tape",
+   "pvc tape"
+  ]
+ },
+ {
+  "id": "zip-lock",
+  "name": "Zip-tie lock (Hiplok Z Lok)",
+  "cat": "misc",
+  "sub": "lock",
+  "generic": false,
+  "brand": "Hiplok",
+  "model": "Z Lok",
+  "weight_g": 18,
+  "packed_cm": [
+   12.0,
+   4.0,
+   2.0
+  ],
+  "packed_l": 0.08,
+  "compress": 0.0,
+  "archetype": "cable_coil",
+  "color": "#e6e6e6",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "owner's pick: frame bag side pocket, out at every shop stop"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag for quick café stops"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.mbr.co.uk/reviews/locks/hiplok-z-lok",
+    "what": "18 g, 40 cm"
+   },
+   {
+    "url": "https://hiplok.com/products/zlok1",
+    "what": "maker page, <20 g"
+   }
+  ],
+  "note": "Owner's sheet: \"Zip lock lock\" 1.0 oz. Catalogue weight is Hiplok's published ~18 g per lock. Coiled size estimated.",
+  "aliases": [
+   "zip lock lock",
+   "zip lock",
+   "z lok",
+   "hiplok",
+   "zip tie lock",
+   "security tie",
+   "lock"
+  ]
+ },
+ {
+  "id": "patch-kit",
+  "name": "Patch kit (Park GP-2)",
+  "cat": "repair",
+  "sub": "patch kit",
+  "generic": false,
+  "brand": "Park Tool",
+  "model": "GP-2 Super Patch Kit",
+  "weight_g": 5,
+  "packed_cm": [
+   5.0,
+   4.0,
+   0.8
+  ],
+  "packed_l": 0.02,
+  "compress": 0.0,
+  "archetype": "box",
+  "color": "#f2c14e",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube_rear",
+    "why": "owner's pick: top tube sack with the tubes"
+   },
+   {
+    "at": "toptube",
+    "why": "top tube bag: flat repair kit you need at the roadside without unpacking anything"
+   },
+   {
+    "at": "framebag_half",
+    "why": "in the repair pouch"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.parktool.com/en-int/product/super-patch-kit-gp-2",
+    "what": "GP-2 box 5 g, 6 patches + sandpaper"
+   }
+  ],
+  "note": "Owner's sheet: 0.5 oz (14 g); his may include a bigger case. Catalogue weight is the GP-2 kit (5 g). Box size estimated.",
+  "aliases": [
+   "patch kit",
+   "patches",
+   "glueless patches",
+   "puncture kit",
+   "repair kit",
+   "super patch"
+  ]
+ },
+ {
+  "id": "dynaplug-pro",
+  "name": "Dynaplug Racer Pro",
+  "cat": "repair",
+  "sub": "tubeless plugs",
+  "generic": false,
+  "brand": "Dynaplug",
+  "model": "Racer Pro",
+  "weight_g": 26,
+  "packed_cm": [
+   10.0,
+   2.0,
+   2.0
+  ],
+  "packed_l": 0.04,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#c0392b",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "first line of defence for tubeless: must be reachable in seconds"
+   },
+   {
+    "at": "pocket",
+    "why": "pen-sized, lives in a jersey pocket"
+   },
+   {
+    "at": "framebag_half",
+    "why": "in the repair pouch"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://shop.dynaplug.com/products/dynaplug%C2%AE-racer-pro",
+    "what": "26 g loaded"
+   }
+  ],
+  "note": "Size estimated (pen-like tool).",
+  "aliases": [
+   "dynaplug",
+   "tubeless plugs",
+   "plug kit",
+   "tire plugs",
+   "bacon strips",
+   "tubeless repair"
+  ]
+ },
+ {
+  "id": "dynaplug-micro",
+  "name": "Dynaplug Micro Racer",
+  "cat": "repair",
+  "sub": "tubeless plugs",
+  "generic": false,
+  "brand": "Dynaplug",
+  "model": "Micro Racer",
+  "weight_g": 15,
+  "packed_cm": [
+   6.0,
+   2.0,
+   2.0
+  ],
+  "packed_l": 0.02,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#2c3e50",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "reachable in seconds"
+   },
+   {
+    "at": "pocket",
+    "why": "jersey pocket"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://shop.dynaplug.com/products/dynaplug%C2%AE-micro-racer",
+    "what": "15 g; ~half the size of the Racer Pro"
+   }
+  ],
+  "note": "Size estimated from 'nearly half the size of the Racer Pro'.",
+  "aliases": [
+   "dynaplug micro",
+   "tubeless plugs",
+   "plug kit",
+   "tire plugs"
+  ]
+ },
+ {
+  "id": "sealant-2oz",
+  "name": "Stan's NoTubes sealant, 2 oz bottle",
+  "cat": "repair",
+  "sub": "sealant",
+  "generic": false,
+  "brand": "Stan's NoTubes",
+  "model": "Tire Sealant 2 oz",
+  "weight_g": 70,
+  "packed_cm": [
+   10.0,
+   4.0,
+   4.0
+  ],
+  "packed_l": 0.13,
+  "compress": 0.0,
+  "archetype": "tube_bottle",
+  "color": "#f4f4f4",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "upright-ish in the frame bag; bag it in case it leaks"
+   },
+   {
+    "at": "seatpack",
+    "why": "in the seat pack in a zip bag for top-ups every week or so"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.rei.com/product/732606/stans-notubes-sealant-bottle-2-oz",
+    "what": "2 oz (59 ml) single-tyre bottle"
+   }
+  ],
+  "note": "No bottle weight published: 70 g is derived from 59 ml of water-based latex sealant (~60 g) plus a small squeeze bottle. Size estimated.",
+  "aliases": [
+   "sealant",
+   "stans",
+   "stan's",
+   "tubeless sealant",
+   "tire sealant",
+   "orange seal"
+  ]
+ },
+ {
+  "id": "co2-airchuck",
+  "name": "Genuine Innovations AirChuck CO2 head",
+  "cat": "repair",
+  "sub": "co2 inflator",
+  "generic": false,
+  "brand": "Genuine Innovations",
+  "model": "AirChuck",
+  "weight_g": 16,
+  "packed_cm": [
+   5.0,
+   2.5,
+   2.0
+  ],
+  "packed_l": 0.03,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#1a1a1a",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "with the cartridges and flat kit"
+   },
+   {
+    "at": "pocket",
+    "why": "jersey pocket for fast race-style fixes"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.genuineinnovations.com/products/air-chuck-co2-bike-tire-inflator",
+    "what": "maker page"
+   },
+   {
+    "url": "https://www.amazon.com/Genuine-Innovations-G2673-Chuck-Inflator/dp/B003BMDI9E",
+    "what": "16 g"
+   }
+  ],
+  "note": "Size estimated.",
+  "aliases": [
+   "co2",
+   "co2 inflator",
+   "co2 head",
+   "air chuck",
+   "inflator"
+  ]
+ },
+ {
+  "id": "co2-hammerhead",
+  "name": "Genuine Innovations HammerHead CO2 head",
+  "cat": "repair",
+  "sub": "co2 inflator",
+  "generic": false,
+  "brand": "Genuine Innovations",
+  "model": "HammerHead",
+  "weight_g": 26,
+  "packed_cm": [
+   6.0,
+   3.0,
+   2.0
+  ],
+  "packed_l": 0.04,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#222222",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "with the cartridges and flat kit"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.amazon.com/Genuine-Innovations-G20314-Hammerhead-Inflator/dp/B01JH2KJFW",
+    "what": "26 g"
+   }
+  ],
+  "note": "Controllable-flow head. Size estimated.",
+  "aliases": [
+   "hammerhead",
+   "co2 inflator",
+   "co2 head",
+   "inflator"
+  ]
+ },
+ {
+  "id": "co2-16g",
+  "name": "CO2 cartridge 16 g threaded",
+  "cat": "repair",
+  "sub": "co2 cartridge",
+  "generic": false,
+  "brand": "Genuine Innovations",
+  "model": "16 g threaded cartridge",
+  "weight_g": 54,
+  "packed_cm": [
+   8.3,
+   2.2,
+   2.2
+  ],
+  "packed_l": 0.03,
+  "compress": 0.0,
+  "archetype": "tube_bottle",
+  "color": "#b0b4b8",
+  "rigid": true,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "toptube",
+    "why": "with the inflator head: the pair is only useful together"
+   },
+   {
+    "at": "framebag_half",
+    "why": "in the repair pouch"
+   },
+   {
+    "at": "pocket",
+    "why": "jersey pocket"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.genuineinnovations.com/collections/bicycle-tire-co2-cartridges/products/16-gram-threaded-co2-cartridges",
+    "what": "54 g each"
+   }
+  ],
+  "note": "Dimensions are the standard 16 g cartridge (~83 x 22 mm), estimated. One cartridge ~ one road/gravel tyre; not enough for a 29x2.4 MTB tyre.",
+  "aliases": [
+   "co2 cartridge",
+   "co2",
+   "canister co2",
+   "16g co2",
+   "gas cartridge bike"
+  ]
+ },
+ {
+  "id": "hanger-udh",
+  "name": "Spare derailleur hanger (SRAM UDH)",
+  "cat": "repair",
+  "sub": "derailleur hanger",
+  "generic": false,
+  "brand": "Wolf Tooth",
+  "model": "Universal Derailleur Hanger",
+  "weight_g": 32,
+  "packed_cm": [
+   6.0,
+   4.0,
+   1.5
+  ],
+  "packed_l": 0.04,
+  "compress": 0.0,
+  "archetype": "box",
+  "color": "#a8a9ad",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "in the repair pouch; it is a trip-ender if you don't have one"
+   },
+   {
+    "at": "toptube",
+    "why": "small, in the bottom of the top tube bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.wolftoothcomponents.com/products/universal-derailleur-hanger-udh",
+    "what": "claimed 32 g"
+   }
+  ],
+  "note": "Size estimated. Carry the hanger that fits your frame; UDH shown as the most common modern one.",
+  "aliases": [
+   "derailleur hanger",
+   "hanger",
+   "mech hanger",
+   "udh",
+   "spare hanger"
+  ]
+ },
+ {
+  "id": "brake-pads",
+  "name": "Spare disc brake pads (pair)",
+  "cat": "repair",
+  "sub": "brake pads",
+  "generic": false,
+  "brand": "Shimano",
+  "model": "B03S resin",
+  "weight_g": 25,
+  "packed_cm": [
+   5.0,
+   4.0,
+   1.5
+  ],
+  "packed_l": 0.03,
+  "compress": 0.0,
+  "archetype": "box",
+  "color": "#5a5a5a",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "repair pouch in the frame bag; wet grit can eat a pair in a day"
+   },
+   {
+    "at": "seatpack",
+    "why": "bottom of the seat pack in the spares bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://handsonbike.blogspot.com/2021/10/shimano-hydraulic-disc-brake-pads-resin.html",
+    "what": "B03S resin pair ~25 g incl. spring and pin; finned road pads 17 g"
+   }
+  ],
+  "note": "Carry the pad shape your caliper takes. Size estimated.",
+  "aliases": [
+   "brake pads",
+   "disc pads",
+   "spare pads",
+   "pads",
+   "brake pad"
+  ]
+ },
+ {
+  "id": "chain-lube",
+  "name": "Chain lube, 15 ml",
+  "cat": "repair",
+  "sub": "lube",
+  "generic": false,
+  "brand": "Squirt",
+  "model": "Chain Lube 15 ml",
+  "weight_g": 25,
+  "packed_cm": [
+   8.0,
+   3.0,
+   2.5
+  ],
+  "packed_l": 0.05,
+  "compress": 0.0,
+  "archetype": "tube_bottle",
+  "color": "#f5f5f0",
+  "rigid": true,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "in a zip bag in the frame bag; lube the chain at camp every day or two"
+   },
+   {
+    "at": "seatpack",
+    "why": "with the spares in the seat pack"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://squirtcycling.us/products/squirt-chain-lube-15ml",
+    "what": "15 ml (0.5 oz) carry size"
+   }
+  ],
+  "note": "No weight published: 25 g is derived from 15 ml of wax emulsion (~15 g) plus the dropper bottle. Size estimated.",
+  "aliases": [
+   "chain lube",
+   "lube",
+   "chain oil",
+   "squirt",
+   "wet lube",
+   "dry lube"
+  ]
+ },
+ {
+  "id": "spoke-key",
+  "name": "Park Tool SW-7.2 spoke wrench",
+  "cat": "repair",
+  "sub": "spoke key",
+  "generic": false,
+  "brand": "Park Tool",
+  "model": "SW-7.2",
+  "weight_g": 41,
+  "packed_cm": [
+   6.0,
+   6.0,
+   0.6
+  ],
+  "packed_l": 0.02,
+  "compress": 0.0,
+  "archetype": "multitool",
+  "color": "#1f4fa3",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "in the repair pouch"
+   },
+   {
+    "at": "seatpack",
+    "why": "in the spares bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.vitalmtb.com/product/guide/tools-tool-kits/park-tool/triple-spoke-wrench-sw-7-2-34561",
+    "what": "40.8 g"
+   }
+  ],
+  "note": "Size estimated (triangular wrench).",
+  "aliases": [
+   "spoke key",
+   "spoke wrench",
+   "nipple wrench"
+  ]
+ },
+ {
+  "id": "fiberfix-spoke",
+  "name": "FiberFix emergency spoke",
+  "cat": "repair",
+  "sub": "spare spoke",
+  "generic": false,
+  "brand": "FiberFix",
+  "model": "Emergency Spoke Kit",
+  "weight_g": 15,
+  "packed_cm": [
+   8.0,
+   1.5,
+   1.5
+  ],
+  "packed_l": 0.01,
+  "compress": 0.0,
+  "archetype": "tube_bottle",
+  "color": "#e8e2d0",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "in the repair pouch"
+   },
+   {
+    "at": "toptube",
+    "why": "tiny: bottom of the top tube bag"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://vikapproved.wordpress.com/2015/07/11/fiberfix-emergency-spoke-review/",
+    "what": "about 15 g, chapstick-sized"
+   },
+   {
+    "url": "https://roguepanda.com/products/fiberfix-emergency-spoke",
+    "what": "maker page; retailers list 4 g for the cord alone"
+   }
+  ],
+  "note": "Kevlar-cord emergency spoke, fits any length. 15 g (review, with tube case) used; retailers list 4 g.",
+  "aliases": [
+   "spare spoke",
+   "spokes",
+   "fiberfix",
+   "emergency spoke",
+   "kevlar spoke"
+  ]
+ },
+ {
+  "id": "gear-cable",
+  "name": "Spare gear cable",
+  "cat": "repair",
+  "sub": "cable",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 18,
+  "packed_cm": [
+   15.0,
+   15.0,
+   0.5
+  ],
+  "packed_l": 0.09,
+  "compress": 0.0,
+  "archetype": "cable_coil",
+  "color": "#c0c0c0",
+  "rigid": true,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "framebag_half",
+    "why": "coiled flat in the frame bag"
+   },
+   {
+    "at": "seatpack",
+    "why": "coiled against the back of the seat pack"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.cahabacycles.com/products/jagwire-sport-shift-cable-1-1-x-2300mm-slick-stainless-steel-for-sram-shimano",
+    "what": "typical inner: 1.1 x 2300 mm stainless"
+   }
+  ],
+  "note": "No weight published: 18 g derived from a 1.1 mm x 2300 mm stainless wire (steel ~7.9 g/cm3 gives ~17 g) plus the head. Coil size estimated.",
+  "aliases": [
+   "gear cable",
+   "shift cable",
+   "derailleur cable",
+   "spare cable",
+   "inner cable"
+  ]
+ },
+ {
+  "id": "tyre-gone-rs",
+  "name": "Folding spare tyre (Schwalbe G-One RS 700x40)",
+  "cat": "repair",
+  "sub": "spare tyre",
+  "generic": false,
+  "brand": "Schwalbe",
+  "model": "G-One RS 700x40",
+  "weight_g": 445,
+  "packed_cm": [
+   22.0,
+   22.0,
+   6.0
+  ],
+  "packed_l": 2.28,
+  "compress": 0.1,
+  "archetype": "inner_tube",
+  "color": "#1c1c1c",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "folded flat against the back of the seat pack: only for remote routes"
+   },
+   {
+    "at": "outside",
+    "why": "folded in a figure-8 and strapped under the seat pack or down tube"
+   },
+   {
+    "at": "pannier",
+    "why": "on a touring rig, flat along the back of a pannier"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://mikesbikes.com/products/schwalbe-g-one-rs-tire-700x40",
+    "what": "445 g, folding"
+   }
+  ],
+  "note": "Folded size estimated (a folding tyre folds to ~22 cm square). No tyre archetype in section 4; inner_tube used.",
+  "aliases": [
+   "spare tyre",
+   "spare tire",
+   "folding tyre",
+   "folding tire",
+   "tyre",
+   "tire",
+   "g-one"
+  ]
+ },
+ {
+  "id": "tyre-gone-ar",
+  "name": "Folding spare tyre (Schwalbe G-One Allround 700x40)",
+  "cat": "repair",
+  "sub": "spare tyre",
+  "generic": false,
+  "brand": "Schwalbe",
+  "model": "G-One Allround 700x40",
+  "weight_g": 485,
+  "packed_cm": [
+   22.0,
+   22.0,
+   6.0
+  ],
+  "packed_l": 2.28,
+  "compress": 0.1,
+  "archetype": "inner_tube",
+  "color": "#1e1e1e",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "folded flat against the back of the seat pack"
+   },
+   {
+    "at": "outside",
+    "why": "strapped under the seat pack or along the down tube"
+   }
+  ],
+  "sources": [
+   {
+    "url": "https://www.bicyclerollingresistance.com/cx-gravel-reviews/schwalbe-g-one-allround",
+    "what": "model reference"
+   },
+   {
+    "url": "https://mikesbikes.com/products/schwalbe-g-one-rs-tire-700x40",
+    "what": "G-One family weights (Allround 485 g as summarised)"
+   }
+  ],
+  "note": "485 g as summarised from search results for the 700x40 Allround. Folded size estimated.",
+  "aliases": [
+   "spare tyre",
+   "spare tire",
+   "folding tyre",
+   "g-one allround",
+   "tyre",
+   "tire"
+  ]
+ }
+]

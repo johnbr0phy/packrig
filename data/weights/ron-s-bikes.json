@@ -1,0 +1,49 @@
+{
+ "brand": "Ron's Bikes",
+ "products": [
+  {
+   "line": "Fabio's Chest",
+   "name": "Fabio's Chest LARGE",
+   "size": "Large",
+   "weight_g": 650,
+   "basis": "family-estimate",
+   "source": "https://ronsbikes.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from large (~19 L) front bags with stiffening. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Fabio's Chest",
+   "name": "Fabio's Chest SMALL",
+   "size": "Small",
+   "weight_g": 550,
+   "basis": "family-estimate",
+   "source": "https://ronsbikes.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled from the Fabio's Chest Large estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Fabio's Chest",
+   "name": "Fabio's Chest MINI",
+   "size": "Mini (11L)",
+   "weight_g": 450,
+   "basis": "family-estimate",
+   "source": "https://ronsbikes.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled from the Fabio's Chest Large estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Fabio's",
+   "name": "Fabio's Clap Trap",
+   "size": "One Size (3.7L)",
+   "weight_g": 200,
+   "basis": "family-estimate",
+   "source": "https://ronsbikes.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from ~3.7 L handlebar bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

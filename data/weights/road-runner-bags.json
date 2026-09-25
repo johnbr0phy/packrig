@@ -1,0 +1,203 @@
+{
+  "brand": "Road Runner Bags",
+  "products": [
+    {
+      "line": "Jammer",
+      "name": "Jammer Handlebar Bag",
+      "size": "7L",
+      "weight_g": 350,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 7L drawcord bar bag with stiffened body. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Jammer",
+      "name": "Middle Earth Jammer Handlebar Bag",
+      "size": "13L",
+      "weight_g": 450,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 13L version of the Jammer. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Jammer",
+      "name": "Jumbo Jammer Handlebar Bag",
+      "size": "17L",
+      "weight_g": 520,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 17L version of the Jammer. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Burrito",
+      "name": "Burrito Bag",
+      "size": "1.3L",
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.3L small bar roll. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Burrito",
+      "name": "Burrito Supreme",
+      "size": "2.6L",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 2.6L bar roll. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Burrito",
+      "name": "California Burrito",
+      "size": "3.3L",
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 3.3L bar roll. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Burrito",
+      "name": "West Coast Burrito",
+      "size": "5L",
+      "weight_g": 210,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 5L bar roll. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Pilot",
+      "name": "Auto-Pilot Stem Bag",
+      "size": "1.75L",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.75L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Pilot",
+      "name": "Co-Pilot Stem Bag",
+      "size": "0.88L",
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.88L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Point N Shooter",
+      "name": "Large Point N Shooter Stem Bag",
+      "size": "1.75L",
+      "weight_g": 140,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.75L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bluff",
+      "name": "Bluff Top Tube Bag",
+      "size": "1.5L",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.5L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Wedge",
+      "name": "Wedge Half Frame Bag",
+      "size": "2.5L",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 2.5L half frame bag (US maker X-Pac/Cordura). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Sleeper",
+      "name": "Sleeper Bikepacking Saddle Bag",
+      "size": "6L",
+      "weight_g": 300,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 6L bikepacking saddle bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Drafter",
+      "name": "Drafter Saddle Bag",
+      "size": "0.75L",
+      "weight_g": 90,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.75L small saddle bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Tool Roll",
+      "name": "Tool Saddle Roll",
+      "size": "One Size",
+      "weight_g": 90,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: tool saddle roll. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Buoy",
+      "name": "Buoy Bag",
+      "size": "7.75L",
+      "weight_g": 250,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 7.75L fork/cage bag, one bag, no cage. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Buoy",
+      "name": "Micro Buoy Bag",
+      "size": "4.5L",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 4.5L fork/cage bag, one bag, no cage. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Anywhere",
+      "name": "Anywhere Bikepacking Pannier",
+      "size": "15L",
+      "weight_g": 500,
+      "basis": "family-estimate",
+      "source": "https://roadrunnerbags.us",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 15L soft bikepacking pannier, one bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

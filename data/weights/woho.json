@@ -1,0 +1,60 @@
+{
+ "brand": "WOHO",
+ "products": [
+  {
+   "line": null,
+   "name": "XTouring Handlebar Harness + Dry Bag 15L",
+   "size": null,
+   "weight_g": 560,
+   "basis": "family-estimate",
+   "source": "https://www.wohobike.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Harness + 15 L dry bag. Estimated from the harness bar-roll anchor (350-600 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "XTouring Saddle Bag Dry L",
+   "size": null,
+   "weight_g": 520,
+   "basis": "family-estimate",
+   "source": "https://www.wohobike.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the dry-bag seat pack anchor (9-16 L 300-600 g), upper end for 18 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "XTouring UL Pannier Dry",
+   "size": null,
+   "weight_g": 430,
+   "basis": "family-estimate",
+   "source": "https://www.wohobike.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "One bag. Estimated from ultralight 18 L dry panniers, well below the PVC 20 L anchor. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "XTouring Top Tube Bag",
+   "size": null,
+   "weight_g": 130,
+   "basis": "family-estimate",
+   "source": "https://www.wohobike.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from top tube bag anchor (0.5-1 L ~90-170 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": null,
+   "name": "XTouring Dry Bag 15L",
+   "size": null,
+   "weight_g": 200,
+   "basis": "family-estimate",
+   "source": "https://www.wohobike.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Dry bag only, no cage/mount. Estimated from 15 L dry bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "brand": "Green Guru Gear",
+ "products": [
+  {
+   "line": "Hauler",
+   "name": "Hauler Bike Pack Saddle Bag",
+   "size": "16.2L",
+   "weight_g": 600,
+   "basis": "family-estimate",
+   "source": "https://www.greengurugear.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the dry-bag seat pack anchor (9-16 L 300-600 g), upper end given recycled-tube construction. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Clutch",
+   "name": "Clutch Saddle Bag",
+   "size": "0.8L",
+   "weight_g": 100,
+   "basis": "family-estimate",
+   "source": "https://www.greengurugear.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from small (~0.8 L) under-saddle bags. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Upshift",
+   "name": "Upshift Frame Bag",
+   "size": "2.7L",
+   "weight_g": 180,
+   "basis": "family-estimate",
+   "source": "https://www.greengurugear.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from the half frame bag anchor (150-300 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Tanker",
+   "name": "Tanker Top Tube Bag",
+   "size": "One Size",
+   "weight_g": 200,
+   "basis": "family-estimate",
+   "source": "https://www.greengurugear.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from top tube bags of ~1.8 L, heavier recycled-material construction. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Cotton Mouth",
+   "name": "Cotton Mouth Snack/Water Feedbag",
+   "size": "2.3L",
+   "weight_g": 150,
+   "basis": "family-estimate",
+   "source": "https://www.greengurugear.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from stem bag anchor (100-200 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

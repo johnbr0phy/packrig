@@ -1,0 +1,159 @@
+{
+  "brand": "Swift Industries",
+  "products": [
+    {
+      "line": "Zeitgeist",
+      "name": "Zeitgeist Pack",
+      "size": "12L",
+      "weight_g": 500,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 12L porteur/rando bar bag with stiffened body. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Catalyst",
+      "name": "Catalyst Pack",
+      "size": "7.5L",
+      "weight_g": 400,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 7.5L version of the same style. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bandito",
+      "name": "Bandito Bicycle Bag",
+      "size": "3.2L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 3.2L bar roll. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Hold Fast",
+      "name": "Hold Fast Half Frame Bag",
+      "size": "2.75L",
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: small half frame bag (US maker, Cordura/X-Pac). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Hold Fast",
+      "name": "Hold Fast Half Frame Bag",
+      "size": "3.25L",
+      "weight_g": 190,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: medium Hold Fast. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Hold Fast",
+      "name": "Hold Fast Half Frame Bag",
+      "size": "4L",
+      "weight_g": 220,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: large Hold Fast. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Giddy Up",
+      "name": "Giddy Up Wedge Frame Bag",
+      "size": "3.3L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 3.3L wedge frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Gemini",
+      "name": "Gemini Cargo Pack",
+      "size": "4L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 4L cargo cage bag, one bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Gibby",
+      "name": "Gibby Stem Bag",
+      "size": "1.75L",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.75L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Sidekick",
+      "name": "Sidekick Stem Pouch",
+      "size": "1L",
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L stem pouch. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Kestrel",
+      "name": "Kestrel Handlebar Bag",
+      "size": "2.5L",
+      "weight_g": 180,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 2.5L handlebar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Capstone",
+      "name": "Capstone Handlebar Bag",
+      "size": "4L",
+      "weight_g": 450,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 4L rando bag with stiffened body; decaleur/rack not included. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Olliepack",
+      "name": "Olliepack Seat Bag",
+      "size": "6L",
+      "weight_g": 280,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 6L seat bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Moxie",
+      "name": "Moxie Top Tube Bag",
+      "size": "0.6L",
+      "weight_g": 90,
+      "basis": "family-estimate",
+      "source": "https://builtbyswift.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.6L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

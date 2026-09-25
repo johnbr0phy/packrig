@@ -1,0 +1,60 @@
+{
+ "brand": "JPaks",
+ "products": [
+  {
+   "line": "SnakPak",
+   "name": "Standard SnakPak 9.5\"",
+   "size": "Standard (9.5 inch)",
+   "weight_g": 115,
+   "basis": "family-estimate",
+   "source": "https://jpaks.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from top tube bag anchor; ~1.4 L X-Pac-class bag. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "SnakPak",
+   "name": "LargeFarva SnakPak 15\"",
+   "size": "LargeFarva (15 inch)",
+   "weight_g": 170,
+   "basis": "family-estimate",
+   "source": "https://jpaks.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Scaled from the Standard SnakPak estimate. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "DropperPak",
+   "name": "DropperPak V.2",
+   "size": "One Size",
+   "weight_g": 330,
+   "basis": "family-estimate",
+   "source": "https://jpaks.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Estimated from dropper-compatible seat packs of ~8 L. Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "RukSak",
+   "name": "RukSak V.2",
+   "size": "One Size",
+   "weight_g": 110,
+   "basis": "family-estimate",
+   "source": "https://jpaks.com",
+   "quote": null,
+   "confidence": "medium",
+   "note": "Estimated from stem bag anchor (100-200 g). Written from general knowledge without web access; not checked against the maker's published figure."
+  },
+  {
+   "line": "Refugi",
+   "name": "Refugi Harness",
+   "size": "One Size (harness only)",
+   "weight_g": 230,
+   "basis": "family-estimate",
+   "source": "https://jpaks.com",
+   "quote": null,
+   "confidence": "low",
+   "note": "Harness only. Estimated as the harness bar-roll anchor (350-600 g) minus a typical dry bag. Written from general knowledge without web access; not checked against the maker's published figure."
+  }
+ ]
+}

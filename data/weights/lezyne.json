@@ -1,0 +1,60 @@
+{
+  "brand": "Lezyne",
+  "products": [
+    {
+      "line": null,
+      "name": "Lezyne M-Caddy",
+      "size": null,
+      "weight_g": 80,
+      "basis": "family-estimate",
+      "source": "https://ride.lezyne.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: small 0.5L saddle bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Lezyne Caddy Sack M",
+      "size": null,
+      "weight_g": 80,
+      "basis": "family-estimate",
+      "source": "https://ride.lezyne.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 0.7L caddy sack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Lezyne XL-Caddy",
+      "size": null,
+      "weight_g": 400,
+      "basis": "family-estimate",
+      "source": "https://ride.lezyne.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 7.5L seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Lezyne Bar Caddy",
+      "size": null,
+      "weight_g": 300,
+      "basis": "family-estimate",
+      "source": "https://ride.lezyne.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 7L bar roll with straps. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Lezyne Energy Caddy XL",
+      "size": null,
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://ride.lezyne.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 0.8L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

@@ -1,0 +1,892 @@
+[
+ {
+  "id": "down-booties",
+  "name": "Down booties",
+  "cat": "clothing",
+  "sub": "camp booties",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 110,
+  "packed_cm": [
+   20,
+   14,
+   9
+  ],
+  "packed_l": 2.02,
+  "compress": 0.7,
+  "archetype": "stuffsack",
+  "color": "#2f4a6b",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "bulky but light; lives with the quilt so it only comes out at camp"
+   },
+   {
+    "at": "barroll",
+    "why": "rolled inside the sleep kit on the bars"
+   }
+  ],
+  "note": "Generic 800+ fill ultralight down booties; typical pairs weigh roughly 80-170 g. 110 g is a mid-range estimate. Packed size estimated in their stuff sack.",
+  "aliases": [
+   "down booties",
+   "down socks",
+   "tent booties",
+   "down slippers"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.westernmountaineering.com",
+    "what": "comparable product (WM Flash down booties) weight range, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "beanie",
+  "name": "Merino beanie",
+  "cat": "clothing",
+  "sub": "hat",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 50,
+  "packed_cm": [
+   18,
+   12,
+   3
+  ],
+  "packed_l": 0.52,
+  "compress": 0.6,
+  "archetype": "clothing_rolled",
+  "color": "#3a3a3a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "barpocket",
+    "why": "reached for the moment you stop at dusk; a bar pocket keeps it handy"
+   },
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag with other small warm layers"
+   },
+   {
+    "at": "seatpack",
+    "why": "with the sleep clothes if it is only a camp hat"
+   }
+  ],
+  "note": "Generic lightweight merino beanie, 40-60 g typical. Packed size estimated folded flat.",
+  "aliases": [
+   "beanie",
+   "hat",
+   "wooly hat",
+   "woolly hat",
+   "toque",
+   "warm hat",
+   "merino hat"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.smartwool.com",
+    "what": "comparable product (lightweight merino beanie) weight, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "ib-oasis-leggin",
+  "name": "Icebreaker 200 Oasis leggings",
+  "cat": "clothing",
+  "sub": "base layer bottoms",
+  "generic": false,
+  "brand": "Icebreaker",
+  "model": "200 Oasis Leggings",
+  "weight_g": 190,
+  "packed_cm": [
+   22,
+   15,
+   4
+  ],
+  "packed_l": 1.06,
+  "compress": 0.6,
+  "archetype": "clothing_rolled",
+  "color": "#1c1c1c",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "sleep clothes: packed with the quilt, only needed at camp"
+   },
+   {
+    "at": "barroll",
+    "why": "inside the bar roll with the sleep system"
+   }
+  ],
+  "note": "Men's M recalled at about 190 g; women's is lighter. Packed size estimated rolled.",
+  "aliases": [
+   "long johns",
+   "merino leggings",
+   "leggings",
+   "base layer bottoms",
+   "thermal leggings",
+   "icebreaker leggings",
+   "oasis leggings"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.icebreaker.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "mtb-baggies",
+  "name": "Baggy MTB shorts",
+  "cat": "clothing",
+  "sub": "baggy shorts",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 250,
+  "packed_cm": [
+   26,
+   20,
+   3
+  ],
+  "packed_l": 1.25,
+  "compress": 0.5,
+  "archetype": "clothing_folded",
+  "color": "#4a5240",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn over liner shorts while riding"
+   },
+   {
+    "at": "seatpack",
+    "why": "if carried as camp/town shorts, flat in the seat pack"
+   }
+  ],
+  "note": "Generic lightweight MTB over-shorts without liner, typically 200-300 g. Packed size estimated folded.",
+  "aliases": [
+   "baggies",
+   "baggy shorts",
+   "mtb shorts",
+   "mountain bike shorts",
+   "trail shorts",
+   "over shorts"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.patagonia.com",
+    "what": "comparable product (lightweight trail shorts, e.g. Dirt Craft) weight range, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "liner-shorts",
+  "name": "Padded liner shorts",
+  "cat": "clothing",
+  "sub": "liner shorts",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 120,
+  "packed_cm": [
+   22,
+   16,
+   3
+  ],
+  "packed_l": 0.84,
+  "compress": 0.4,
+  "archetype": "clothing_rolled",
+  "color": "#161616",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn while riding under baggies"
+   },
+   {
+    "at": "seatpack",
+    "why": "the spare pair, drying on the outside of the seat pack in sun"
+   }
+  ],
+  "note": "Generic padded chamois liner, typically 100-150 g. Packed size estimated.",
+  "aliases": [
+   "liner shorts",
+   "liners",
+   "padded liner",
+   "chamois liner",
+   "padded undershorts",
+   "bike undies"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.patagonia.com",
+    "what": "comparable product (padded liner shorts) weight range, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "cycling-cap",
+  "name": "Cycling cap",
+  "cat": "clothing",
+  "sub": "cap",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 35,
+  "packed_cm": [
+   20,
+   14,
+   2
+  ],
+  "packed_l": 0.45,
+  "compress": 0.5,
+  "archetype": "clothing_folded",
+  "color": "#c8c2b0",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn under the helmet for sun and rain"
+   },
+   {
+    "at": "barpocket",
+    "why": "stuffed in a bar pocket when it gets too hot"
+   }
+  ],
+  "note": "Generic cotton cycling cap, typically 30-40 g. Packed size is folded flat, estimated.",
+  "aliases": [
+   "cycling cap",
+   "casquette",
+   "cap",
+   "bike cap",
+   "cotton cap"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.rapha.cc",
+    "what": "comparable product (cotton cycling cap) weight, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "merino-jersey",
+  "name": "Merino short-sleeve jersey",
+  "cat": "clothing",
+  "sub": "jersey",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 170,
+  "packed_cm": [
+   26,
+   20,
+   3
+  ],
+  "packed_l": 1.25,
+  "compress": 0.5,
+  "archetype": "clothing_folded",
+  "color": "#35566b",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn while riding; merino goes days without stinking"
+   },
+   {
+    "at": "seatpack",
+    "why": "the spare, flat in the seat pack"
+   }
+  ],
+  "note": "Generic merino or merino-blend short-sleeve jersey, typically 140-200 g. Packed size estimated folded.",
+  "aliases": [
+   "merino jersey",
+   "wool jersey",
+   "jersey",
+   "merino tee",
+   "merino shirt"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.icebreaker.com",
+    "what": "comparable product (150-200 gsm merino tee/jersey) weight range, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "ib-oasis-ls",
+  "name": "Icebreaker 200 Oasis long-sleeve crew",
+  "cat": "clothing",
+  "sub": "base layer",
+  "generic": false,
+  "brand": "Icebreaker",
+  "model": "200 Oasis LS Crewe",
+  "weight_g": 220,
+  "packed_cm": [
+   26,
+   20,
+   4
+  ],
+  "packed_l": 1.66,
+  "compress": 0.55,
+  "archetype": "clothing_folded",
+  "color": "#2b3440",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "warm layer for camp and sleep; with the quilt"
+   },
+   {
+    "at": "framebag_full",
+    "why": "folded flat in the frame bag when the mornings are cold"
+   },
+   {
+    "at": "body",
+    "why": "worn on cold starts"
+   }
+  ],
+  "note": "Men's M recalled at about 220 g. Packed size estimated folded.",
+  "aliases": [
+   "merino base layer",
+   "long sleeve base layer",
+   "base layer",
+   "thermal top",
+   "icebreaker 200",
+   "oasis crew",
+   "merino long sleeve"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.icebreaker.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "or-echo-hoody",
+  "name": "Outdoor Research Echo Hoodie",
+  "cat": "clothing",
+  "sub": "sun hoody",
+  "generic": false,
+  "brand": "Outdoor Research",
+  "model": "Echo Hoodie",
+  "weight_g": 140,
+  "packed_cm": [
+   24,
+   18,
+   3
+  ],
+  "packed_l": 1.04,
+  "compress": 0.6,
+  "archetype": "clothing_folded",
+  "color": "#d9d4c3",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn all day in desert sun instead of sunscreen on arms and neck"
+   },
+   {
+    "at": "barroll",
+    "why": "stuffed under the bar roll straps when shade arrives"
+   }
+  ],
+  "note": "Men's M recalled at roughly 140 g (about 5 oz). Packed size estimated folded.",
+  "aliases": [
+   "sun hoody",
+   "sun hoodie",
+   "sun shirt",
+   "echo hoody",
+   "echo hoodie",
+   "upf hoody"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.outdoorresearch.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "wind-vest",
+  "name": "Packable wind vest",
+  "cat": "clothing",
+  "sub": "gilet",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 80,
+  "packed_cm": [
+   14,
+   10,
+   5
+  ],
+  "packed_l": 0.56,
+  "compress": 0.7,
+  "archetype": "stuffsack",
+  "color": "#e0b43a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "barpocket",
+    "why": "on and off all day on descents; must be one-hand reachable"
+   },
+   {
+    "at": "toptube",
+    "why": "packs to a fist, fits in a big top tube bag"
+   },
+   {
+    "at": "pocket",
+    "why": "jersey pocket like a road rider"
+   }
+  ],
+  "note": "Generic packable wind gilet, typically 60-110 g. Packed size estimated stuffed into itself.",
+  "aliases": [
+   "gilet",
+   "wind vest",
+   "vest",
+   "windproof vest",
+   "wind gilet",
+   "body warmer"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.rapha.cc",
+    "what": "comparable product (packable road gilet) weight range, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "gloves-insul",
+  "name": "Insulated winter gloves",
+  "cat": "clothing",
+  "sub": "insulated gloves",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 130,
+  "packed_cm": [
+   22,
+   12,
+   5
+  ],
+  "packed_l": 1.06,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#202020",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "barpocket",
+    "why": "first thing you want at a cold summit; keep them at the bars"
+   },
+   {
+    "at": "framebag_half",
+    "why": "flat in the frame bag side"
+   }
+  ],
+  "note": "Generic insulated/softshell winter glove pair, typically 100-180 g. Packed size estimated.",
+  "aliases": [
+   "winter gloves",
+   "insulated gloves",
+   "warm gloves",
+   "thermal gloves",
+   "cold weather gloves"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.rab.equipment",
+    "what": "comparable product (lightweight insulated glove) weight range, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "sealskinz-sock",
+  "name": "Sealskinz waterproof socks",
+  "cat": "clothing",
+  "sub": "waterproof socks",
+  "generic": false,
+  "brand": "Sealskinz",
+  "model": "Waterproof All Weather Mid Length Sock",
+  "weight_g": 100,
+  "packed_cm": [
+   20,
+   11,
+   4
+  ],
+  "packed_l": 0.7,
+  "compress": 0.4,
+  "archetype": "clothing_rolled",
+  "color": "#1f2a2a",
+  "rigid": false,
+  "fragile": false,
+  "access": "day",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "with the rain kit, near the top"
+   },
+   {
+    "at": "seatpack",
+    "why": "rolled into the seat pack wet-weather layer"
+   },
+   {
+    "at": "body",
+    "why": "worn through rain days and river crossings"
+   }
+  ],
+  "note": "Pair, mid length, roughly 100 g recalled. Packed size estimated rolled.",
+  "aliases": [
+   "sealskinz",
+   "waterproof socks",
+   "seal skinz",
+   "wp socks",
+   "dry socks"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.sealskinz.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "chaco-z1",
+  "name": "Chaco Z/1 Classic sandals",
+  "cat": "clothing",
+  "sub": "sandals",
+  "generic": false,
+  "brand": "Chaco",
+  "model": "Z/1 Classic",
+  "weight_g": 800,
+  "packed_cm": [
+   29,
+   11,
+   7
+  ],
+  "packed_l": 1.79,
+  "compress": 0.1,
+  "archetype": "shoes",
+  "color": "#2e2e2e",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "outside",
+    "why": "strapped under the seat pack or bar roll straps; heavy and dirty"
+   },
+   {
+    "at": "fork",
+    "why": "in a fork cage wrapped in a bag"
+   }
+  ],
+  "note": "Pair, men's size ~9; weight recalled around 800 g and varies a lot by size. A heavy choice for bikepacking. Packed size is soles stacked, estimated.",
+  "aliases": [
+   "chacos",
+   "chaco sandals",
+   "chaco z1",
+   "sandals",
+   "hiking sandals"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.chacos.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "teva-original",
+  "name": "Teva Original Universal sandals",
+  "cat": "clothing",
+  "sub": "sandals",
+  "generic": false,
+  "brand": "Teva",
+  "model": "Original Universal",
+  "weight_g": 400,
+  "packed_cm": [
+   28,
+   11,
+   5
+  ],
+  "packed_l": 1.23,
+  "compress": 0.2,
+  "archetype": "shoes",
+  "color": "#394d3a",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "outside",
+    "why": "flat under the seat pack straps; dries in the wind"
+   },
+   {
+    "at": "framebag_full",
+    "why": "stacked flat against the frame bag wall"
+   }
+  ],
+  "note": "Pair, men's size ~9; recalled roughly 400 g, not confident; verify. Packed size is soles stacked, estimated.",
+  "aliases": [
+   "teva",
+   "tevas",
+   "sandals",
+   "camp sandals",
+   "strap sandals"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.teva.com",
+    "what": "weight from maker spec, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "socks-sleep",
+  "name": "Sleeping socks",
+  "cat": "clothing",
+  "sub": "socks",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 90,
+  "packed_cm": [
+   18,
+   10,
+   5
+  ],
+  "packed_l": 0.72,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#8a7a66",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "kept dry with the quilt; never ridden in"
+   },
+   {
+    "at": "barroll",
+    "why": "inside the sleep kit"
+   }
+  ],
+  "note": "Generic thick wool crew socks reserved for sleeping, typically 70-110 g a pair. Packed size estimated.",
+  "aliases": [
+   "sleep socks",
+   "sleeping socks",
+   "bed socks",
+   "camp socks",
+   "thick socks"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.darntough.com",
+    "what": "comparable product (cushioned wool crew sock) weight, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "merino-briefs",
+  "name": "Merino underwear",
+  "cat": "clothing",
+  "sub": "underwear",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 60,
+  "packed_cm": [
+   16,
+   10,
+   3
+  ],
+  "packed_l": 0.38,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#3b3b44",
+  "rigid": false,
+  "fragile": false,
+  "access": "camp",
+  "worn": false,
+  "places": [
+   {
+    "at": "seatpack",
+    "why": "with the camp clothes"
+   },
+   {
+    "at": "body",
+    "why": "worn off the bike; not under a chamois"
+   }
+  ],
+  "note": "Generic merino briefs/boxer briefs, typically 40-80 g. Complements the cotton \"boxers\" item. Packed size estimated.",
+  "aliases": [
+   "underwear",
+   "undies",
+   "pants",
+   "briefs",
+   "boxer briefs",
+   "knickers",
+   "merino underwear"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.icebreaker.com",
+    "what": "comparable product (merino boxer brief) weight range, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "sports-bra",
+  "name": "Sports bra",
+  "cat": "clothing",
+  "sub": "sports bra",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 80,
+  "packed_cm": [
+   18,
+   12,
+   3
+  ],
+  "packed_l": 0.52,
+  "compress": 0.5,
+  "archetype": "clothing_rolled",
+  "color": "#4a3a4a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": true,
+  "places": [
+   {
+    "at": "body",
+    "why": "worn while riding"
+   },
+   {
+    "at": "seatpack",
+    "why": "the spare with the camp clothes"
+   }
+  ],
+  "note": "Generic sports bra, typically 60-120 g. Packed size estimated.",
+  "aliases": [
+   "sports bra",
+   "bra",
+   "crop top",
+   "running bra"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.patagonia.com",
+    "what": "comparable product (synthetic/merino sports bra) weight range, recalled without fetching; verify"
+   }
+  ]
+ },
+ {
+  "id": "rain-poncho",
+  "name": "Rain cape / poncho",
+  "cat": "clothing",
+  "sub": "rain cape",
+  "generic": true,
+  "brand": null,
+  "model": null,
+  "weight_g": 250,
+  "packed_cm": [
+   20,
+   14,
+   6
+  ],
+  "packed_l": 1.34,
+  "compress": 0.6,
+  "archetype": "stuffsack",
+  "color": "#2f5d3a",
+  "rigid": false,
+  "fragile": false,
+  "access": "ride",
+  "worn": false,
+  "places": [
+   {
+    "at": "barroll",
+    "why": "top of the bar roll so it comes out before you are soaked"
+   },
+   {
+    "at": "seatpack",
+    "why": "with the rain kit"
+   }
+  ],
+  "note": "Generic silnylon poncho or cycling cape, typically 200-350 g; heavier PU/PVC capes can reach 500 g. Packed size estimated.",
+  "aliases": [
+   "poncho",
+   "rain poncho",
+   "cape",
+   "rain cape",
+   "cycling cape"
+  ],
+  "basis": "recall",
+  "sources": [
+   {
+    "url": "https://www.seatosummit.com",
+    "what": "comparable product (silnylon tarp-poncho) weight range, recalled without fetching; verify"
+   }
+  ]
+ }
+]

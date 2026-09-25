@@ -1,0 +1,60 @@
+{
+  "brand": "Atelier Velocidade",
+  "products": [
+    {
+      "line": "Volcano",
+      "name": "Volcano",
+      "size": "One Size",
+      "weight_g": 350,
+      "basis": "family-estimate",
+      "source": "https://www.ateliervelocidade.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 8L seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Bivouac",
+      "name": "Bivouac",
+      "size": "One Size (7.5L)",
+      "weight_g": 350,
+      "basis": "family-estimate",
+      "source": "https://www.ateliervelocidade.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 7.5L saddle bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Beluga",
+      "name": "Beluga",
+      "size": "One Size (4.5L)",
+      "weight_g": 300,
+      "basis": "family-estimate",
+      "source": "https://www.ateliervelocidade.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 4.5L bar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Avalanche",
+      "name": "Avalanche",
+      "size": "One Size",
+      "weight_g": 170,
+      "basis": "family-estimate",
+      "source": "https://www.ateliervelocidade.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 2L half frame bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Funambule",
+      "name": "Funambule",
+      "size": "One Size",
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.ateliervelocidade.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.2L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

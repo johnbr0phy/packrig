@@ -1,0 +1,49 @@
+{
+  "brand": "Rogue Panda Designs",
+  "products": [
+    {
+      "line": null,
+      "name": "Gila Dry Bag (Large, Flat Bar)",
+      "size": null,
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://roguepanda.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: large fork dry bag, one bag, no cage. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Alamo Top Tube Bag (Gordito Grande)",
+      "size": null,
+      "weight_g": 160,
+      "basis": "family-estimate",
+      "source": "https://roguepanda.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.75L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Ripsey Seat Bag V2",
+      "size": null,
+      "weight_g": 330,
+      "basis": "family-estimate",
+      "source": "https://roguepanda.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 8L seat bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "Bismarck Bottle Bucket",
+      "size": null,
+      "weight_g": 80,
+      "basis": "family-estimate",
+      "source": "https://roguepanda.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: bottle bucket stem bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

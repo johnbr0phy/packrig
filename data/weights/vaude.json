@@ -1,0 +1,60 @@
+{
+  "brand": "VAUDE",
+  "products": [
+    {
+      "line": null,
+      "name": "VAUDE Aqua Back Plus",
+      "size": null,
+      "weight_g": 1050,
+      "basis": "family-estimate",
+      "source": "https://www.vaude.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: one Aqua Back Plus pannier (single); PVC-style roll-top with pocket (~900-1000 g per 20L anchor). Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "VAUDE Trailsaddle Compact L",
+      "size": null,
+      "weight_g": 450,
+      "basis": "family-estimate",
+      "source": "https://www.vaude.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10.5L seat pack. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "VAUDE Trailfront Cage",
+      "size": null,
+      "weight_g": 300,
+      "basis": "family-estimate",
+      "source": "https://www.vaude.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 10L bar cage/holder for dry bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "VAUDE Trailtop Tube",
+      "size": null,
+      "weight_g": 130,
+      "basis": "family-estimate",
+      "source": "https://www.vaude.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1L top tube bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": null,
+      "name": "VAUDE Trailfork",
+      "size": null,
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://www.vaude.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 4L fork bag, one bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}

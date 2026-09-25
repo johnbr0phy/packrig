@@ -1,0 +1,685 @@
+{
+  "brand": "Apidura",
+  "products": [
+    {
+      "line": "Expedition",
+      "name": "Saddle Pack",
+      "size": "9L",
+      "weight_g": 379,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-saddle-pack/",
+      "quote": "9L: 379g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Saddle Pack",
+      "size": "13L",
+      "weight_g": 439,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-saddle-pack/",
+      "quote": "13L: 439g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Saddle Pack",
+      "size": "16L",
+      "weight_g": 462,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-saddle-pack/",
+      "quote": "16L: 462g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Handlebar Pack",
+      "size": "9L",
+      "weight_g": 250,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-handlebar-pack/",
+      "quote": "The 9L version weighs 250g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Handlebar Pack",
+      "size": "14L",
+      "weight_g": 275,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-handlebar-pack/",
+      "quote": "the 14L version weighs 275g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Front Accessory Pack",
+      "size": "3.5L",
+      "weight_g": 233,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-front-accessory-pack/",
+      "quote": "the Apidura Expedition Front Accessory Pack 3.5L weighs 233g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Frame Pack",
+      "size": "2.8L",
+      "weight_g": 210,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-frame-pack/",
+      "quote": "2.8L: 210g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Frame Pack",
+      "size": "3.8L",
+      "weight_g": 244,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-frame-pack/",
+      "quote": "3.8L: 244g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Frame Pack",
+      "size": "4.3L",
+      "weight_g": 263,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-frame-pack/",
+      "quote": "4.3L: 263g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Frame Pack",
+      "size": "5.7L",
+      "weight_g": 282,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-frame-pack/",
+      "quote": "5.7L: 282g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Full Frame Pack",
+      "size": "4.6L",
+      "weight_g": 358,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+      "quote": "4.6L: 358g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Full Frame Pack",
+      "size": "6.8L",
+      "weight_g": 422,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+      "quote": "6.8L: 422g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Full Frame Pack",
+      "size": "8L",
+      "weight_g": 448,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+      "quote": "8L: 448g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Full Frame Pack",
+      "size": "10L",
+      "weight_g": 497,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-full-frame-pack/",
+      "quote": "10L: 497g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Top Tube Pack",
+      "size": "0.6L",
+      "weight_g": 103,
+      "basis": "retailer",
+      "source": "https://ultralightoutdoorgear.co.uk/expedition-top-tube-pack-0-6l/",
+      "quote": "the Apidura Expedition Top Tube Pack in 0.6L weighs 103g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). Another result gave 104g. Odd that 0.6L (103g) > 1L (90g); possibly different generations."
+    },
+    {
+      "line": "Expedition",
+      "name": "Top Tube Pack",
+      "size": "1L",
+      "weight_g": 90,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-top-tube-pack/",
+      "quote": "1L: 90 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). Least sure: lighter than the 0.6L figure."
+    },
+    {
+      "line": "Expedition",
+      "name": "Bolt-On Top Tube Pack",
+      "size": "1L",
+      "weight_g": 110,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-bolt-on-top-tube-pack-1l/",
+      "quote": "Bolt-On Expedition Top Tube Pack: 1L: 110 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Stem Pack",
+      "size": "1.3L",
+      "weight_g": 120,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-stem-pack/",
+      "quote": "the Apidura Expedition Stem Pack 1.3L weighs 120 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Downtube Pack",
+      "size": "1.5L",
+      "weight_g": 111,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-downtube-pack/",
+      "quote": "the official Apidura website and other retailers consistently cite the 111g figure",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). One other source said 80g."
+    },
+    {
+      "line": "Expedition",
+      "name": "Cargo Cage Pack",
+      "size": "1.5L",
+      "weight_g": 75,
+      "basis": "family-estimate",
+      "source": "https://revive.apidura.com/product/expedition-cargo-cage-pack-1-3l/",
+      "quote": "The 1.3L model weighs only 50g (70g with 2 straps)",
+      "note": "No published figure found for the 1.5L; previous 1.3L is 50g bag / 70g with straps, 1.5L with straps estimated at 75g."
+    },
+    {
+      "line": "Expedition",
+      "name": "Cargo Cage Pack",
+      "size": "3.5L",
+      "weight_g": 120,
+      "basis": "family-estimate",
+      "source": "https://bikepacking.com/gear/apidura-expedition-fork-pack-review/",
+      "quote": "the Expedition Fork Pack weighs 120g",
+      "note": "No published figure found for the 3.5L; predecessor Expedition Fork Pack quoted at 120g, used as estimate. Bag only, cage excluded."
+    },
+    {
+      "line": "Expedition",
+      "name": "Tool Pack",
+      "size": "1L",
+      "weight_g": 95,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-tool-pack-1l/",
+      "quote": "The Apidura Expedition Tool Pack 1L weighs 95 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Front Rack Pack",
+      "size": "20L",
+      "weight_g": 740,
+      "basis": "review",
+      "source": "https://bikepacking.com/gear/apidura-expedition-rack-pack-review/",
+      "quote": "The 20L and 30L bags weigh 740 grams and 900 grams, respectively",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "Front Rack Pack",
+      "size": "30L",
+      "weight_g": 900,
+      "basis": "review",
+      "source": "https://bikepacking.com/gear/apidura-expedition-rack-pack-review/",
+      "quote": "The 20L and 30L bags weigh 740 grams and 900 grams, respectively",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Expedition",
+      "name": "E-Bike Charger Pack",
+      "size": "1.6L",
+      "weight_g": 120,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/expedition-ebike-charger-pack/",
+      "quote": "the Apidura E-Bike Charger Pack 1.6L weighs 120g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Saddle Pack",
+      "size": "4.5L",
+      "weight_g": 235,
+      "basis": "retailer",
+      "source": "https://www.sigmasports.com/item/Apidura/Backcountry-Saddle-Pack-45L/SLAG",
+      "quote": "4.5L: 235 grams (though another source lists 233 g)",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Saddle Pack",
+      "size": "6L",
+      "weight_g": 290,
+      "basis": "retailer",
+      "source": "https://www.merlincycles.com/apidura-backcountry-saddle-pack-6-litre-337045.html",
+      "quote": "290g according to Merlin Cycles",
+      "note": "Conflicting figures: 250g (Ultralight Outdoor Gear), 375g (attributed to Apidura, but that matches the 10L). 290g sits between 4.5L 235g and 10L 377g, so it was chosen."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Saddle Pack",
+      "size": "10L",
+      "weight_g": 377,
+      "basis": "retailer",
+      "source": "https://www.sigmasports.com/item/Apidura/Backcountry-Saddle-Pack-10L/ZDY6",
+      "quote": "the Apidura Backcountry Saddle Pack 10L weighs 377g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). One source said 375g."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Handlebar Pack",
+      "size": "7L",
+      "weight_g": 230,
+      "basis": "family-estimate",
+      "source": "https://www.mtbiker.shop/shop/backpacks-and-bags/bags-and-carriers/handlebar-bags/apidura-backcountry-handlebar-satchet-11-l-black-p172115.html",
+      "quote": "Backcountry Handlebar Pack 11L has a weight of 270 grams",
+      "note": "No published 7L figure found; 11L is 270g, and Expedition steps 9L to 14L add 25g, so 7L is estimated at 230g."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Handlebar Pack",
+      "size": "11L",
+      "weight_g": 270,
+      "basis": "retailer",
+      "source": "https://www.mtbiker.shop/shop/backpacks-and-bags/bags-and-carriers/handlebar-bags/apidura-backcountry-handlebar-satchet-11-l-black-p172115.html",
+      "quote": "the Apidura Backcountry Handlebar Pack 11L has a weight of 270 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Frame Pack",
+      "size": "1L",
+      "weight_g": 100,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/backcountry-frame-pack-1l/",
+      "quote": "The 1L model weighs 100g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Frame Pack",
+      "size": "2L",
+      "weight_g": 150,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/backcountry-frame-pack/",
+      "quote": "the 2L model weighs 150g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Full Frame Pack",
+      "size": "2.5L",
+      "weight_g": 215,
+      "basis": "retailer",
+      "source": "https://www.treefortbikes.com/Apidura-Backcountry-Full-Frame-Pack-Small",
+      "quote": "2.5L: 215g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Full Frame Pack",
+      "size": "4L",
+      "weight_g": 277,
+      "basis": "retailer",
+      "source": "https://www.treefortbikes.com/Apidura-Backcountry-Full-Frame-Pack-Medium",
+      "quote": "4L: 277g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Full Frame Pack",
+      "size": "6L",
+      "weight_g": 315,
+      "basis": "retailer",
+      "source": "https://www.biketiresdirect.com/product/apidura-backcountry-full-frame-pack?v=BKKK002",
+      "quote": "6L: 315g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Top Tube Pack",
+      "size": "1L",
+      "weight_g": 100,
+      "basis": "retailer",
+      "source": "https://www.biketiresdirect.com/product/apidura-backcountry-top-tube-pack?v=reg0000",
+      "quote": "the Regular (1L) weighs 100g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). A review (Cycling UK) gave 74g."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Long Top Tube Pack",
+      "size": "1.8L",
+      "weight_g": 200,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/backcountry-long-top-tube-pack/",
+      "quote": "Backcountry Long Top Tube Pack 1.8L: Weighs 200 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Rear Top Tube Pack",
+      "size": "1L",
+      "weight_g": 125,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/backcountry-rear-top-tube-pack/",
+      "quote": "The Backcountry Rear Top Tube Pack weighs 125 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Food Pouch",
+      "size": "0.8L",
+      "weight_g": 55,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/backcountry-food-pouch/",
+      "quote": "The 0.8L model weighs 55g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Food Pouch",
+      "size": "1.2L",
+      "weight_g": 60,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/backcountry-food-pouch/",
+      "quote": "the 1.2L model weighs 60g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Food Pouch Plus",
+      "size": "1.2L Plus",
+      "weight_g": 80,
+      "basis": "retailer",
+      "source": "https://www.sigmasports.com/item/Apidura/Backcountry-Food-Pouch-Plus-12L-Plus/IP9Z",
+      "quote": "the 1.2L Plus model weighs 80g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Backcountry",
+      "name": "Downtube Pack",
+      "size": "1.8L",
+      "weight_g": 105,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/backcountry-downtube-pack/",
+      "quote": "the Apidura Backcountry Downtube Pack 1.8L weighs 105 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Racing",
+      "name": "Saddle Pack",
+      "size": "3L",
+      "weight_g": 170,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/racing-saddle-pack/",
+      "quote": "3L version: 170 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Racing",
+      "name": "Saddle Pack",
+      "size": "5L",
+      "weight_g": 200,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/racing-saddle-pack/",
+      "quote": "5L version: 200 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Racing",
+      "name": "Saddle Pack",
+      "size": "7L",
+      "weight_g": 210,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/racing-saddle-pack/",
+      "quote": "7L version: 210 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Racing",
+      "name": "Handlebar Pack",
+      "size": "2L",
+      "weight_g": 190,
+      "basis": "review",
+      "source": "https://bikerumor.com/apidura-racing-handlebar-pack-first-look-review/",
+      "quote": "The weight is claimed to be 190g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). One retailer listed 160g."
+    },
+    {
+      "line": "Racing",
+      "name": "Aerobar Pack",
+      "size": "2.5L",
+      "weight_g": 150,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/racing-aerobar-pack/",
+      "quote": "Apidura Racing Aerobar Pack 2.5L: The weight is 150g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Racing",
+      "name": "Frame Pack",
+      "size": "1L",
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "https://www.apidura.com/shop/racing-frame-pack-1l/",
+      "quote": "The overall weight is less than 205g",
+      "note": "Only figure seen is \"less than 205g\" (attributed to both 1L and 4L, so it is really the 4L ceiling). Estimate for 1L: similar to the Backcountry Frame Pack 1L at 100g, plus about 10g."
+    },
+    {
+      "line": "Racing",
+      "name": "Frame Pack",
+      "size": "2.4L",
+      "weight_g": 155,
+      "basis": "family-estimate",
+      "source": "https://www.sigmasports.com/item/Apidura/Racing-Frame-Pack-4L/NCI1",
+      "quote": "4L model: Overall weight less than 205 grams",
+      "note": "No published figure for 2.4L; estimate between the estimated 1L (110g) and 4L (205g), close to Backcountry Frame Pack 2L at 150g."
+    },
+    {
+      "line": "Racing",
+      "name": "Frame Pack",
+      "size": "4L",
+      "weight_g": 205,
+      "basis": "retailer",
+      "source": "https://www.sigmasports.com/item/Apidura/Racing-Frame-Pack-4L/NCI1",
+      "quote": "4L model: Overall weight less than 205 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). Quoted as an upper bound."
+    },
+    {
+      "line": "Racing",
+      "name": "Top Tube Pack",
+      "size": "0.5L",
+      "weight_g": 75,
+      "basis": "family-estimate",
+      "source": "https://bikepacking.com/news/apidura-racing-top-tube-pack/",
+      "quote": "It sheds 30g off the original, which would make it approximately 75 grams",
+      "note": "No 0.5L figure; the smaller Racing Top Tube Pack (0.5-0.7L) is described as 30g lighter than the 105g 1L."
+    },
+    {
+      "line": "Racing",
+      "name": "Top Tube Pack",
+      "size": "1L",
+      "weight_g": 105,
+      "basis": "review",
+      "source": "https://velo.outsideonline.com/road/road-racing/first-ride-apidura-racing-top-tube-pack/?scope=anon",
+      "quote": "Manufacturer's claimed weight: 105 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Racing",
+      "name": "Bolt-On Top Tube Pack",
+      "size": "1L",
+      "weight_g": 100,
+      "basis": "review",
+      "source": "https://bikerumor.com/apidura-racing-bolts-on-top-tube-pack-fuels-lightweight-bikepacking-wars-w-compact-options/",
+      "quote": "The bolt-on pack is said to weigh just 100g",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Racing",
+      "name": "Long Top Tube Pack",
+      "size": "2L",
+      "weight_g": 200,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/racing-long-top-tube-pack/",
+      "quote": "the Apidura Racing Long Top Tube Pack 2L weighs 200 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). road.cc news quoted a claimed 210g."
+    },
+    {
+      "line": "Aero",
+      "name": "Top Tube Module",
+      "size": "0.4L",
+      "weight_g": 100,
+      "basis": "review",
+      "source": "https://granfondo-cycling.com/apidura-aero-system-review/",
+      "quote": "The Aero Top Tube Module with straps has a weight of 99.6 grams (including straps)",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). Rounded from 99.6g."
+    },
+    {
+      "line": "Aero",
+      "name": "Bolt-On Top Tube Module",
+      "size": "0.4L",
+      "weight_g": 95,
+      "basis": "review",
+      "source": "https://bikerumor.com/apidura-launches-two-new-bolt-on-versions-of-its-aero-top-tube-modules/",
+      "quote": "The standard-size Aero Bolt-On Module weighs a claimed 95 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). Claimed maker weight, reported by press."
+    },
+    {
+      "line": "Aero",
+      "name": "Bolt-On Long Top Tube Module",
+      "size": "0.8L",
+      "weight_g": 120,
+      "basis": "review",
+      "source": "https://bikerumor.com/apidura-launches-two-new-bolt-on-versions-of-its-aero-top-tube-modules/",
+      "quote": "The Long version weighs a claimed 120 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked). Claimed maker weight, reported by press."
+    },
+    {
+      "line": "City",
+      "name": "Handlebar Pack",
+      "size": "2L",
+      "weight_g": 200,
+      "basis": "maker",
+      "source": "https://www.apidura.com/shop/city-handlebar-pack/",
+      "quote": "The Apidura City Handlebar Pack 2L weighs 200 grams",
+      "note": "Figure read from web-search result summary over a result set that included this page; not verified on the page itself (WebFetch blocked)."
+    },
+    {
+      "line": "Canyon Collab",
+      "name": "Handlebar Pack",
+      "size": "2L",
+      "weight_g": 190,
+      "basis": "family-estimate",
+      "source": "https://www.apidura.com/shop/racing-handlebar-pack/",
+      "quote": "The weight is claimed to be 190g",
+      "note": "No published weight; the collab is derived from the Racing series, so Racing Handlebar Pack 2L (190g) is used."
+    },
+    {
+      "line": "Canyon Collab",
+      "name": "Saddle Pack",
+      "size": "5L",
+      "weight_g": 200,
+      "basis": "family-estimate",
+      "source": "https://www.apidura.com/shop/racing-saddle-pack/",
+      "quote": "5L version: 200 grams",
+      "note": "No published weight; the collab is derived from the Racing series, so Racing Saddle Pack 5L (200g) is used."
+    },
+    {
+      "line": "Canyon Collab",
+      "name": "Frame Pack",
+      "size": "2.4L",
+      "weight_g": 155,
+      "basis": "family-estimate",
+      "source": "https://www.sigmasports.com/item/Apidura/Racing-Frame-Pack-4L/NCI1",
+      "quote": "4L model: Overall weight less than 205 grams",
+      "note": "No published weight; matched to the Racing Frame Pack 2.4L estimate (155g)."
+    },
+    {
+      "line": "Canyon Collab",
+      "name": "Frame Pack",
+      "size": "4.5L",
+      "weight_g": 215,
+      "basis": "family-estimate",
+      "source": "https://www.sigmasports.com/item/Apidura/Racing-Frame-Pack-4L/NCI1",
+      "quote": "4L model: Overall weight less than 205 grams",
+      "note": "No published weight; Racing Frame Pack 4L is 205g, +10g for 4.5L."
+    },
+    {
+      "line": "Canyon Collab",
+      "name": "Bolt-On Top Tube Pack",
+      "size": "1L",
+      "weight_g": 100,
+      "basis": "family-estimate",
+      "source": "https://bikerumor.com/apidura-racing-bolts-on-top-tube-pack-fuels-lightweight-bikepacking-wars-w-compact-options/",
+      "quote": "The bolt-on pack is said to weigh just 100g",
+      "note": "No published weight; the Racing Bolt-On Top Tube Pack 1L (100g) is used."
+    },
+    {
+      "line": "MAAP Collab",
+      "name": "Handlebar Pack",
+      "size": "9L",
+      "weight_g": 250,
+      "basis": "family-estimate",
+      "source": "https://www.apidura.com/shop/expedition-handlebar-pack/",
+      "quote": "The 9L version weighs 250g",
+      "note": "No published weight; assumed same as the Expedition Handlebar Pack 9L (250g). Base line unconfirmed."
+    },
+    {
+      "line": "MAAP Collab",
+      "name": "Saddle Pack",
+      "size": "7L",
+      "weight_g": 210,
+      "basis": "family-estimate",
+      "source": "https://www.apidura.com/shop/racing-saddle-pack/",
+      "quote": "7L version: 210 grams",
+      "note": "No published weight; assumed same as the Racing Saddle Pack 7L (210g). Base line unconfirmed."
+    },
+    {
+      "line": "MAAP Collab",
+      "name": "Frame Pack",
+      "size": "1L",
+      "weight_g": 110,
+      "basis": "family-estimate",
+      "source": "https://www.apidura.com/shop/backcountry-frame-pack-1l/",
+      "quote": "The 1L model weighs 100g",
+      "note": "No published weight; same estimate as the Racing Frame Pack 1L (110g)."
+    },
+    {
+      "line": "MAAP Collab",
+      "name": "Frame Pack",
+      "size": "4L",
+      "weight_g": 205,
+      "basis": "family-estimate",
+      "source": "https://www.sigmasports.com/item/Apidura/Racing-Frame-Pack-4L/NCI1",
+      "quote": "4L model: Overall weight less than 205 grams",
+      "note": "No published weight; assumed same as the Racing Frame Pack 4L (205g)."
+    },
+    {
+      "line": "Bombtrack Collab",
+      "name": "Frame Pack",
+      "size": "2.4L",
+      "weight_g": 155,
+      "basis": "family-estimate",
+      "source": "https://www.sigmasports.com/item/Apidura/Racing-Frame-Pack-4L/NCI1",
+      "quote": "4L model: Overall weight less than 205 grams",
+      "note": "No published weight; same estimate as the Racing Frame Pack 2.4L (155g)."
+    }
+  ]
+}

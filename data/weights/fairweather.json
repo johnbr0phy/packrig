@@ -1,0 +1,49 @@
+{
+  "brand": "Fairweather",
+  "products": [
+    {
+      "line": "Handlebar Bag",
+      "name": "Handlebar Bag ADV",
+      "size": "One Size (19L)",
+      "weight_g": 500,
+      "basis": "family-estimate",
+      "source": "https://bluelug.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: large 19L handlebar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Seat Bag",
+      "name": "Seat Bag",
+      "size": "One Size (3-6L)",
+      "weight_g": 350,
+      "basis": "family-estimate",
+      "source": "https://bluelug.com",
+      "quote": null,
+      "confidence": "low",
+      "note": "Estimate: 3-6L seat bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Road Bar Bag",
+      "name": "Road Bar Bag",
+      "size": "One Size (1.7L)",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://bluelug.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.7L road bar bag. Written from model knowledge without web access; not checked against the maker page."
+    },
+    {
+      "line": "Stem Bag",
+      "name": "Stem Bag+",
+      "size": "Plus (1.9L)",
+      "weight_g": 150,
+      "basis": "family-estimate",
+      "source": "https://bluelug.com",
+      "quote": null,
+      "confidence": "medium",
+      "note": "Estimate: 1.9L stem bag. Written from model knowledge without web access; not checked against the maker page."
+    }
+  ]
+}
