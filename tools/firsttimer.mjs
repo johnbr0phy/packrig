@@ -47,7 +47,9 @@ for (const [device, vp] of Object.entries(DEVICES)) {
   await tap('button, a, [role=button]', 'Pack my kit');
   for (const w of WANT) await tap('.pkg-tile', w);
   await tap('.bs-btn.is-primary', `Pack these ${WANT.length}`);
-  await new Promise((r) => setTimeout(r, 2500));
+  // packing fetches the starter bags first on a bare bike: wait for the result
+  await p.waitForFunction(() => app.pack.state.locker.items.length >= 4 && Object.keys(app.bags.equipped).length > 0, { timeout: 60000 }).catch(() => {});
+  await new Promise((r) => setTimeout(r, 1500));
   const res = await p.evaluate(() => {
     const st = app.pack.state;
     const placed = st.locker.items.map((i) => [st.resolved.get(i.uid)?.name, st.loadout.place[i.uid] || 'home']);
@@ -55,7 +57,7 @@ for (const [device, vp] of Object.entries(DEVICES)) {
     return { placed, wont, bags: Object.keys(app.bags.equipped) };
   });
   const home = res.placed.filter(([, at]) => at === 'home');
-  const ok = !home.length && !res.wont && !errs.length;
+  const ok = res.placed.length >= WANT.length && !home.length && !res.wont && !errs.length;
   if (!ok) fails++;
   console.log(`${ok ? '✓' : '✗'} ${device}: ${taps} taps, ${((Date.now() - t0) / 1000).toFixed(1)} s wall (software GL)`);
   for (const [n, at] of res.placed) console.log(`    ${n} → ${at}`);
