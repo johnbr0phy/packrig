@@ -42,7 +42,7 @@ this browser's kit.
 | S19 | Share | Share | | packed | A sheet: the link, Copy, what is included |
 | S20 | Account | Log in | | sign-in | A sheet beside the bike; the scene is never dimmed |
 | S21 | Wind tunnel | the watts chip | | yes | Named, reachable from the rig; numbers defended |
-| S22 | Settings | header, More | | yes | Size, frame and bidon colour, view tools, all labelled |
+| S22 | Settings | header, More; More > Bike | | menu; bike sheet | Size, frame and bidon colour, view tools, all labelled |
 | S23 | Units | kg / lb | | lb | Every number flips together |
 | S24 | Suggest a layout | Pack the N at home | | yes | Heavy low and central; nothing overflows; Undo |
 

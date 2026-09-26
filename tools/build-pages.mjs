@@ -116,31 +116,20 @@ for (const f of ['profiles.json', 'diagram-profiles.json', 'portraits.json']) {
 mkdirSync(join(docs, 'assets/fonts'), { recursive: true });
 copyFileSync(join(root, 'assets/fonts/InterVariable.woff2'), join(docs, 'assets/fonts/InterVariable.woff2'));
 copyFileSync(join(root, 'assets/fonts/Inter-LICENSE.txt'), join(docs, 'assets/fonts/Inter-LICENSE.txt'));
-{
-  const tokens = readFileSync(join(root, 'src/ui/tokens.css'), 'utf8');
-  const rewritten = tokens.replace('../../assets/fonts/', './assets/fonts/');
-  if (rewritten === tokens) throw new Error('tokens.css: expected @font-face url ../../assets/fonts/ to rewrite');
-  writeFileSync(join(docs, 'tokens.css'), rewritten);
+// The stylesheets are whatever index.html links, in its order, so the deploy
+// cannot drift from the dev entry. tokens.css carries the font path.
+const SHEETS = [...readFileSync(join(root, 'index.html'), 'utf8').matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map((m) => m[1]);
+const sheetName = (href) => href.split('/').pop();
+if (new Set(SHEETS.map(sheetName)).size !== SHEETS.length) throw new Error('two stylesheets share a file name');
+for (const href of SHEETS) {
+  let css = readFileSync(join(root, href), 'utf8');
+  if (href.endsWith('tokens.css')) {
+    const rewritten = css.replace('../../assets/fonts/', './assets/fonts/');
+    if (rewritten === css) throw new Error('tokens.css: expected @font-face url ../../assets/fonts/ to rewrite');
+    css = rewritten;
+  }
+  writeFileSync(join(docs, sheetName(href)), css);
 }
-copyFileSync(join(root, 'src/ui/sheet.css'), join(docs, 'sheet.css'));
-
-copyFileSync(join(root, 'src/ui.css'), join(docs, 'ui.css'));
-// `src/rigs.css` is gone with rigsui.js, the account is a dialogue in
-// ui/v2/builder.css and saved rigs are a menu view.
-// The wind tunnel's HUD styles live in their own file. index.html below must
-// link BOTH, the panel renders unstyled if this is copied and not linked, or
-// missing entirely if neither, and nothing in the bundle would complain.
-copyFileSync(join(root, 'src/aero/aero.css'), join(docs, 'aero.css'));
-// Last in the cascade, so it re-skins everything the others set.
-copyFileSync(join(root, 'src/ui/theme.css'), join(docs, 'theme.css'));
-// ...and after even that, the v2 menu layer, which is a self-contained dark
-// surface and has to win over the light re-skin for everything under `.pr`.
-copyFileSync(join(root, 'src/ui/v2/menu.css'), join(docs, 'menu.css'));
-copyFileSync(join(root, 'src/ui/v2/builder.css'), join(docs, 'builder.css'));
-// Packing: its stylesheet (last, on the same tokens) and the gear catalogue
-// the locker fetches from ./data/gear.json. Both are needed: without the CSS
-// the Gear tab renders unstyled, without the JSON the locker is empty.
-copyFileSync(join(root, 'src/pack/pack.css'), join(docs, 'pack.css'));
 copyFileSync(join(root, 'data/gear.json'), join(docs, 'data/gear.json'));
 
 // The link-preview image the meta tags below point at. Built by
@@ -155,7 +144,7 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAzMiAzMic+PHJlY3Qgd2lkdGg9JzMyJyBoZWlnaHQ9JzMyJyByeD0nNycgZmlsbD0nIzEyMTIxMicvPjxnIHN0cm9rZT0nI0ZGN0E0NScgc3Ryb2tlLXdpZHRoPScyLjYnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTYgMTJoMTNhMy4yIDMuMiAwIDEgMC0zLjItMy4yJy8+PHBhdGggZD0nTTYgMThoMTZhMy4yIDMuMiAwIDEgMS0zLjIgMy4yJy8+PHBhdGggZD0nTTYgMjRoOScvPjwvZz48L3N2Zz4=" />
-<title>Packrig, Bikepacking Bag Configurator</title>
+<title>Packrig: bikepacking bag configurator</title>
 <meta name="description" content="Build a bikepacking rig in 3D from a catalogue of 635 real bags across 50 makers that fit Checkpoint-class S/M/L." />
 <!-- The link preview: what X, Slack, iMessage and LinkedIn show when the URL
      is pasted. The image is built by tools/og-card.mjs from a real measured rig
@@ -164,28 +153,21 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Packrig" />
 <meta property="og:url" content="https://johnbr0phy.github.io/packrig/" />
-<meta property="og:title" content="Packrig, 635 real bikepacking bags, one wind tunnel" />
-<meta property="og:description" content="Build a bikepacking rig in 3D from bags that actually exist, 635 of them, across 50 makers, then put it in the wind tunnel and find out what they cost you in watts." />
+<meta property="og:title" content="Packrig: 635 real bikepacking bags, one wind tunnel" />
+<meta property="og:description" content="Build a bikepacking rig in 3D from bags that actually exist (635 of them, across 50 makers), then put it in the wind tunnel and find out what they cost you in watts." />
 <meta property="og:image" content="https://johnbr0phy.github.io/packrig/og.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="A loaded bikepacking bike in Packrig's wind tunnel, airflow streamlining past it, beside its measured numbers: CdA 0.458 m², 180 W to hold 28 km/h, +28 W for the bags." />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Packrig, 635 real bikepacking bags, one wind tunnel" />
-<meta name="twitter:description" content="Build a bikepacking rig in 3D from bags that actually exist, 635 of them, across 50 makers, then put it in the wind tunnel and find out what they cost you in watts." />
+<meta name="twitter:title" content="Packrig: 635 real bikepacking bags, one wind tunnel" />
+<meta name="twitter:description" content="Build a bikepacking rig in 3D from bags that actually exist (635 of them, across 50 makers), then put it in the wind tunnel and find out what they cost you in watts." />
 <meta name="twitter:image" content="https://johnbr0phy.github.io/packrig/og.png" />
 <meta name="twitter:image:alt" content="A loaded bikepacking bike in Packrig's wind tunnel, airflow streamlining past it, beside its measured numbers: CdA 0.458 m², 180 W to hold 28 km/h, +28 W for the bags." />
 <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="tokens.css" />
-<link rel="stylesheet" href="ui.css" />
-<link rel="stylesheet" href="sheet.css" />
-<link rel="stylesheet" href="aero.css" />
-<link rel="stylesheet" href="theme.css" />
-<link rel="stylesheet" href="menu.css" />
-<link rel="stylesheet" href="builder.css" />
-<link rel="stylesheet" href="pack.css" />
-<style>html,body{height:100%;margin:0;background:#121212;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
+${SHEETS.map((h) => `<link rel="stylesheet" href="${sheetName(h)}" />`).join('\n')}
+<style>html,body{height:100%;margin:0;background:#0E1013;overflow:hidden}#app{position:fixed;inset:0}#scene{display:block;width:100%;height:100%}</style>
 </head>
 <body>
 <div id="app">

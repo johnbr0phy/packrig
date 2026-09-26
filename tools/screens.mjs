@@ -67,6 +67,7 @@ const SCREENS = [
   ['S20-account', 'full', `await __builder(); await __bags('first-overnighter'); await __w(300); app.account.open('signin'); await __w(1200);`],
   ['S21-tunnel', 'full', `await __builder(); await __bags('first-overnighter'); await __w(300); await app.openWindTunnel(); await __w(6000);`],
   ['S22-settings', 'full', `await __builder(); await __bags('first-overnighter'); await __w(300); await __settings(); await __w(1200);`],
+  ['S22-settings', 'bike', `await __builder(); await __bags('first-overnighter'); await __w(300); app.openBikeSheet(); await __w(1200);`],
   ['S23-units', 'full', `await __mine(); app.pack.setUnit('imperial'); await __w(2200);`],
   ['S24-suggest', 'full', `await __builder(); await __bags('first-overnighter'); await __gearMode(); await app.pack.gearReady; for (const id of ['tent-1p','sleeping-bag','mat-inflate','stove','gas-100','toaks-750','rain-jacket','puffy-synth','food-day','first-aid-kit','headlamp']) app.pack.add({ ref: id }, 'home'); await __w(300); await __suggest(); await __w(2500);`],
 ];
