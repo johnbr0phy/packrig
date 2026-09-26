@@ -21,9 +21,10 @@ import { CHROME } from './lib/chrome.mjs';
 import { takeRenderLock } from './lib/renderlock.mjs';
 
 const root = new URL('../', import.meta.url).pathname;
-const OUT = root + 'shots/screens/';
-mkdirSync(OUT, { recursive: true });
 const argv = process.argv.slice(2);
+const OUT = root + (argv.includes('--out') ? argv[argv.indexOf('--out') + 1].replace(/\/?$/, '/') : 'shots/screens/');
+mkdirSync(OUT, { recursive: true });
+const onlyDevice = argv.includes('--device') ? argv[argv.indexOf('--device') + 1] : null;
 const only = argv.includes('--only') ? argv[argv.indexOf('--only') + 1].split(',') : null;
 const twice = argv.includes('--twice');
 const SHEET = readFileSync(root + 'data/seed/megafuck.tsv', 'utf8') + '\nGear\t\t302.1\nBike\t\t398\nBags\t\t304\nAll up\t\t1004\n';
@@ -33,51 +34,41 @@ const DEVICES = {
   phone: { width: 393, height: 852, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
 };
 
-// In-page helpers, injected once per page
-const HELPERS = `
-  window.__w = (ms) => new Promise((r) => setTimeout(r, ms));
-  window.__builder = async () => { app.menu?.close?.(); await __w(350); };
-  window.__bags = async (id) => {
-    const lo = (await fetch('./data/loadouts.json').then((r) => r.json())).find((l) => l.id === id);
-    app.__applyRig({ ...lo.rig, pack: undefined });
-  };
-  window.__mine = async () => {           // the owner's list, in MY locker
-    await __builder();
-    await __bags('megafuck');
-    await app.pack.gearReady;
-    await app.pack.importText(window.__SHEET, { name: 'Megafuck' });
-    app.packUI.setMode('gear');
-  };
-  window.__click = (sel, text) => {
-    const n = [...document.querySelectorAll(sel)].find((x) => !text || x.textContent.includes(text));
-    if (!n) throw new Error('no ' + sel + ' ' + (text || ''));
-    n.click();
-  };
-`;
+const HELPERS = readFileSync(root + 'tools/lib/screen-helpers.js', 'utf8');
 
-// id, state, setup (runs in the page), note
+// The shot list: [id, state, setup]. IDs are SCREENS.md's. `setup` runs in
+// the page after boot, against whatever API the app has at the time: the
+// setups are versioned with the app, so the "before" run used the old ones.
 const SCREENS = [
-  ['S01', 'full', `await __w(600);`],
-  ['S02', 'empty', `await __builder(); app.packUI.setMode('gear'); await app.packUI.openQuick(); await __w(1500);`],
-  ['S02', 'full', `await __builder(); app.packUI.setMode('gear'); await app.packUI.openQuick(); await __w(800); for (const l of ['Tent','Sleeping mat','Stove & gas','Rain jacket']) __click('.pkg-tile', l); await __w(1200);`],
-  ['S03', 'empty', `await __builder(); await __bags('first-overnighter'); app.packUI.setMode('gear'); await __w(800);`],
-  ['S03', 'full', `await __mine(); await __w(2500);`],
-  ['S04', 'empty', `await __builder(); await __bags('first-overnighter'); app.packUI.setMode('gear'); await __w(400); app.ui.setSelected('seatpack'); app.focus?.setSelected?.('seatpack'); await __w(1500);`],
-  ['S04', 'full', `await __mine(); await __w(500); app.ui.setSelected('seatpack'); app.focus?.setSelected?.('seatpack'); await __w(2500);`],
-  ['S05', 'full', `await __builder(); await __bags('first-overnighter'); app.packUI.setMode('gear'); await app.pack.gearReady; const it = app.pack.add({ name: 'Tent poles', g: 400, a: 'pole_bundle', d: [55, 5, 5] }, 'toptube'); await __w(300); app.ui.setSelected('toptube'); app.focus?.setSelected?.('toptube'); await __w(2000);`],
-  ['S06', 'full', `await __mine(); await __w(400); const u = app.pack.state.locker.items.find((i) => i.name === 'Sleeping Bag').uid; app.packUI.gear && document.querySelector('.pkg-item[data-uid="' + u + '"]').click(); await __w(1800);`],
-  ['S07', 'empty', `await __builder(); await __bags('first-overnighter'); app.packUI.setMode('gear'); await app.packUI.openLocker(); await __w(2500);`],
-  ['S07', 'full', `await __mine(); await __w(300); await app.packUI.openLocker({ query: 'stove' }); await __w(2500);`],
-  ['S08', 'full', `await __builder(); app.packUI.setMode('gear'); await app.packUI.openLocker(); await __w(600); __click('.pkg-lfoot .pkg-btn', 'Add your own'); await __w(800);`],
-  ['S09', 'full', `await __mine(); app.pack.duplicate(); app.pack.rename(app.pack.active().id, 'Cuba'); await __w(300); __click('.pkg-loadout'); await __w(1500);`],
-  ['S10', 'full', `await __mine(); app.pack.duplicate(); app.pack.rename(app.pack.active().id, 'Cuba'); const st = app.pack.state; for (const n of ['Chair', 'Tent - YMG 1P Cirriform', 'Therm-a-Rest Compressible Pillow']) app.pack.place(st.locker.items.find((i) => i.name === n).uid, 'home'); await __w(300); __click('.pkg-loadout'); await __w(700); __click('.pkg-los .pkg-btn', 'Compare'); await __w(1500);`],
-  ['S11', 'empty', `await __builder(); app.packUI.setMode('gear'); app.packUI.openImport(); await __w(1200);`],
-  ['S11', 'full', `await __builder(); app.packUI.setMode('gear'); app.packUI.openImport(); await __w(600); const ta = document.querySelector('.pkg-ta'); ta.value = window.__SHEET; ta.dispatchEvent(new Event('input')); await __w(1800);`],
-  ['S12', 'full', `await __builder(); await app.packUI.openExample(); await __w(3000);`],
-  ['S13', 'full', `await __builder(); await __bags('first-overnighter'); app.packUI.setMode('gear'); await app.pack.gearReady; for (const id of ['tent-1p','sleeping-bag','mat-inflate','stove','gas-100','toaks-750','rain-jacket','puffy-synth','food-day','first-aid-kit','headlamp']) app.pack.add({ ref: id }, 'home'); await __w(300); __click('.pkg-suggest'); await __w(2500);`],
-  ['S14', 'full', `await __builder(); await __bags('megafuck'); app.packUI.setMode('gear'); await app.pack.gearReady; for (const id of ['tent-2p','gas-450','pot-alu-1l']) app.pack.add({ ref: id }, 'forkR'); await __w(2200);`],
-  ['S15', 'full', `await __mine(); app.pack.setUnit('imperial'); await __w(2200);`],
-  ['S17', 'full', `await __w(400); app.menu.go('loadouts'); await __w(2500);`],
+  ['S01-start', 'full', `await __w(600);`],
+  ['S02-setup', 'full', `app.menu.go('setup'); await __w(1200);`],
+  ['S03-gallery', 'full', `await __w(300); app.menu.go('loadouts'); await __w(2500);`],
+  ['S04-builder', 'empty', `await __builder(); await __w(900);`],
+  ['S05-mounts', 'empty', `await __builder(); await __mounts(); await __w(1500);`],
+  ['S06-catalogue', 'full', `await __builder(); await __catalogue('seatpack'); await __w(2500);`],
+  ['S07-product', 'full', `await __builder(); await __bags('first-overnighter'); await __w(300); await __product('seatpack'); await __w(2500);`],
+  ['S08-rig', 'full', `await __builder(); await __bags('first-overnighter'); await __w(1500);`],
+  ['S08-rig', 'packed', `await __mine(); await __w(2500);`],
+  ['S09-inside', 'empty', `await __builder(); await __bags('first-overnighter'); await __gearMode(); await __w(400); await __inside('seatpack'); await __w(1500);`],
+  ['S09-inside', 'full', `await __mine(); await __w(500); await __inside('seatpack'); await __w(2500);`],
+  ['S10-wontfit', 'full', `await __builder(); await __bags('first-overnighter'); await __gearMode(); await app.pack.gearReady; app.pack.add({ name: 'Tent poles', g: 400, a: 'pole_bundle', d: [55, 5, 5] }, 'toptube'); await __w(300); await __inside('toptube'); await __w(2000);`],
+  ['S11-kit', 'empty', `await __builder(); await __bags('first-overnighter'); await __gearMode(); await app.packUI.openLocker(); await __w(2500);`],
+  ['S11-kit', 'full', `await __mine(); await __w(300); await app.packUI.openLocker({ query: 'stove' }); await __w(2500);`],
+  ['S12-custom', 'full', `await __builder(); await __gearMode(); await app.packUI.openLocker(); await __w(600); __click('button', 'Add your own'); await __w(800);`],
+  ['S13-quick', 'empty', `await __builder(); await __gearMode(); await app.packUI.openQuick(); await __w(1500);`],
+  ['S13-quick', 'full', `await __builder(); await __gearMode(); await app.packUI.openQuick(); await __w(800); for (const l of ['Tent','Sleeping mat','Stove & gas','Rain jacket']) __click('.pkg-tile', l); await __w(1200);`],
+  ['S14-item', 'full', `await __mine(); await __w(400); await __item('Sleeping Bag'); await __w(1800);`],
+  ['S15-trips', 'full', `await __mine(); app.pack.duplicate(); app.pack.rename(app.pack.active().id, 'Cuba'); await __w(300); await __trips(); await __w(1500);`],
+  ['S16-compare', 'full', `await __mine(); app.pack.duplicate(); app.pack.rename(app.pack.active().id, 'Cuba'); const st = app.pack.state; for (const n of ['Chair', 'Tent - YMG 1P Cirriform', 'Therm-a-Rest Compressible Pillow']) app.pack.place(st.locker.items.find((i) => i.name === n).uid, 'home'); await __w(300); await __compare(); await __w(1500);`],
+  ['S17-import', 'empty', `await __builder(); await __gearMode(); app.packUI.openImport(); await __w(1200);`],
+  ['S17-import', 'full', `await __builder(); await __gearMode(); app.packUI.openImport(); await __w(600); const ta = document.querySelector('textarea'); ta.value = window.__SHEET; ta.dispatchEvent(new Event('input')); await __w(1800);`],
+  ['S18-shared', 'full', `await __builder(); await app.packUI.openExample(); await __w(3000);`],
+  ['S19-share', 'full', `await __mine(); await __w(300); await __share(); await __w(1200);`],
+  ['S20-account', 'full', `await __builder(); await __bags('first-overnighter'); await __w(300); app.account.open('signin'); await __w(1200);`],
+  ['S21-tunnel', 'full', `await __builder(); await __bags('first-overnighter'); await __w(300); await app.openWindTunnel(); await __w(6000);`],
+  ['S22-settings', 'full', `await __builder(); await __bags('first-overnighter'); await __w(300); await __settings(); await __w(1200);`],
+  ['S23-units', 'full', `await __mine(); app.pack.setUnit('imperial'); await __w(2200);`],
+  ['S24-suggest', 'full', `await __builder(); await __bags('first-overnighter'); await __gearMode(); await app.pack.gearReady; for (const id of ['tent-1p','sleeping-bag','mat-inflate','stove','gas-100','toaks-750','rain-jacket','puffy-synth','food-day','first-aid-kit','headlamp']) app.pack.add({ ref: id }, 'home'); await __w(300); await __suggest(); await __w(2500);`],
 ];
 
 await takeRenderLock('screens');
@@ -114,6 +105,61 @@ function diffCount(a, b) {
   }
   return n;
 }
+
+// What each shot measures, beyond pixels (UX-WRITEUP's numbers come from here):
+//   bike      vertical extent of the bike's visible silhouette / viewport height,
+//             clipped to the space above any bottom sheet
+//   fonts     every computed font size carrying visible text, with counts
+//   small     touch targets under 44x44 (phone) that are visible
+//   unlabelled  buttons with no text and no aria-label
+const AUDIT = `(() => {
+  const W = innerWidth, H = innerHeight, THREE = window.__THREE;
+  let occ = H;
+  for (const n of document.querySelectorAll('#ui-root *')) {
+    const cs = getComputedStyle(n);
+    if (cs.position !== 'fixed' && cs.position !== 'absolute') continue;
+    if (cs.visibility === 'hidden' || +cs.opacity < 0.5 || n.offsetParent === null && cs.position !== 'fixed') continue;
+    const r = n.getBoundingClientRect();
+    if (r.width > W * 0.8 && r.bottom >= H - 2 && r.top > H * 0.2 && r.height > 40 && getComputedStyle(n).backgroundColor !== 'rgba(0, 0, 0, 0)') occ = Math.min(occ, r.top);
+  }
+  let y0 = Infinity, y1 = -Infinity, x0 = Infinity, x1 = -Infinity;
+  const v = new THREE.Vector3();
+  app.camera.updateMatrixWorld();
+  app.bike.group.traverse((o) => {
+    if (!o.isMesh || !o.visible || !o.geometry?.attributes?.position) return;
+    let vis = true; for (let q = o; q; q = q.parent) if (!q.visible) { vis = false; break; }
+    if (!vis) return;
+    const pos = o.geometry.attributes.position, step = Math.max(1, Math.floor(pos.count / 300));
+    for (let i = 0; i < pos.count; i += step) {
+      v.fromBufferAttribute(pos, i).applyMatrix4(o.matrixWorld).project(app.camera);
+      if (v.z > 1) continue;
+      const x = (v.x + 1) / 2 * W, y = (1 - v.y) / 2 * H;
+      if (x < 0 || x > W) continue;
+      y0 = Math.min(y0, y); y1 = Math.max(y1, y); x0 = Math.min(x0, x); x1 = Math.max(x1, x);
+    }
+  });
+  const top = Math.max(0, y0), bot = Math.min(occ, y1);
+  const bike = { frac: +(Math.max(0, bot - top) / H).toFixed(3), clippedX: x0 < 0 || x1 > W, sheetTop: Math.round(occ) };
+  const fonts = {};
+  const walk = document.createTreeWalker(document.getElementById('ui-root'), NodeFilter.SHOW_TEXT);
+  for (let t; (t = walk.nextNode());) {
+    if (!t.textContent.trim()) continue;
+    const e = t.parentElement; if (!e || !e.offsetParent && getComputedStyle(e).position !== 'fixed') continue;
+    const r = e.getBoundingClientRect(); if (r.width < 1 || r.bottom < 0 || r.top > H || r.right < 0 || r.left > W) continue;
+    const cs = getComputedStyle(e); if (cs.visibility === 'hidden' || +cs.opacity === 0) continue;
+    fonts[cs.fontSize] = (fonts[cs.fontSize] || 0) + 1;
+  }
+  const small = [], unlabelled = [];
+  for (const b of document.querySelectorAll('#ui-root button, #ui-root a[href], #ui-root [role=button], #ui-root input, #ui-root select')) {
+    const r = b.getBoundingClientRect();
+    if (r.width < 1 || r.height < 1 || r.bottom < 0 || r.top > H || r.right < 0 || r.left > W) continue;
+    const cs = getComputedStyle(b); if (cs.visibility === 'hidden' || +cs.opacity === 0 || b.closest('[inert]')) continue;
+    const name = (b.getAttribute('aria-label') || b.textContent || b.title || '').trim();
+    if (!(b.getAttribute('aria-label') || b.textContent.trim() || b.labels?.length || b.placeholder)) unlabelled.push(b.className || b.tagName);
+    if (r.width < 44 || r.height < 44) small.push(\`\${(name || b.className).slice(0, 24)} \${Math.round(r.width)}x\${Math.round(r.height)}\`);
+  }
+  return { bike, fonts, small: small.length, smallList: small.slice(0, 12), unlabelled };
+})()`;
 
 const report = [];
 let fails = 0;
@@ -157,18 +203,19 @@ async function shoot(id, state, device, setup, suffix = '') {
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
   }).catch((e) => errs.push('settle: ' + e.message));
   const scroll = await p.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  const audit = await p.evaluate(AUDIT).catch((e) => ({ error: e.message }));
   const file = `${OUT}${id}-${device}-${state}${suffix}.png`;
   const buf = await p.screenshot({ path: file });
   const px = pixelsOf(p, buf);
   await ctx.close();
-  return { file, errs, scroll, px };
+  return { file, errs, scroll, px, audit };
 }
 
 for (const [id, state, setup] of SCREENS) {
-  if (only && !only.includes(id)) continue;
-  for (const device of Object.keys(DEVICES)) {
+  if (only && !only.some((o) => id === o || id.startsWith(o + '-') || `${id}-${state}` === o)) continue;
+  for (const device of Object.keys(DEVICES).filter((d) => !onlyDevice || d === onlyDevice)) {
     const r = await shoot(id, state, device, setup);
-    const row = { id, state, device, file: r.file.replace(root, ''), errs: r.errs, scroll: r.scroll };
+    const row = { id, state, device, file: r.file.replace(root, ''), errs: r.errs, scroll: r.scroll, audit: r.audit };
     if (twice) {
       const r2 = await shoot(id, state, device, setup, '-2');
       // decoded pixels, not bytes: software GL rasterises a few dozen sub-pixel
@@ -185,6 +232,6 @@ for (const [id, state, setup] of SCREENS) {
   }
 }
 await b.close();
-writeFileSync(OUT + 'report.json', JSON.stringify(report, null, 1));
+writeFileSync(OUT + (only || onlyDevice ? 'report-partial.json' : 'report.json'), JSON.stringify(report, null, 1));
 console.log(fails ? `\n${fails} problems` : '\nall clean');
 process.exit(fails ? 1 : 0);

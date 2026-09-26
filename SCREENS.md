@@ -1,35 +1,68 @@
-# Screens — the shot list
+# Screens: the shot list
 
-Every screen and state of the packing work, numbered like a film's shot list.
-Each is shot on **desktop (1440×900)** and **phone (393×852, DPR 2, touch)**,
-**empty** and **full** where the distinction exists, by
-`node tools/screens.mjs` into `shots/screens/<id>-<device>-<state>.png`.
-The tool fails on any page error, on horizontal page scroll, and if the
-same input twice gives different pixels (it shoots every screen twice and
-compares).
+Every surface in the app, numbered like a film's shot list. Each is shot on
+**phone (393 x 852, DPR 2, touch)** and **desktop (1440 x 900)**, empty and
+full where the distinction exists, by
 
-"Full" means the owner's Megafuck loadout (67 items, 8 bags) unless noted.
+    node tools/screens.mjs [--only S08,S09] [--device phone] [--out shots/after] [--twice]
 
-| # | Screen | Reached by | Empty state | Full state | Done when |
+into `<out>/<id>-<device>-<state>.png`, with `report.json` beside them. The
+tool fails on any page error, on horizontal page scroll, and with `--twice`
+if the same input gives different pixels. Each shot also records an audit
+(see "What every shot measures" below).
+
+How each screen is reached lives in one file, `tools/lib/screen-helpers.js`,
+so a UI change moves the helpers, not forty setups. The task scripts
+(`tools/firsttimer.mjs`, `tools/tasks.mjs`) reach the same screens by real
+taps instead.
+
+"Packed" means the owner's Megafuck trip (67 items, 8 bags) imported into
+this browser's kit.
+
+| # | Screen | Reached by | Empty | Full | Done when |
 |---|---|---|---|---|---|
-| S01 | Start | landing | — | "Pack for a trip" row present | A first-timer sees a way in that isn't about bags |
-| S02 | Quick pack — "What are you bringing?" | S01, or S03 empty | nothing ticked; button says "Pick what you're bringing" | 4 ticked; "Pack these 4" | Tiles are the items' own renders; 44px+ targets; one button |
-| S03 | Gear view (left column) | Bags ⇄ Gear | "Nothing packed yet" + 3 doors | owner's list grouped by bag with meters | All-up leads; split = gear/bags/bike/worn/food; balance bar; groups front-to-back; no subtitle without data |
-| S04 | Bag open (bag sheet + translucent bag) | tap a bag (scene or list) | "Empty." + Put something in | Seat pack with sleeping bag etc. | Shell translucent; items inside at true scale; meter = litres used / rated |
-| S05 | Won't fit | put tent poles in a stem bag | — | kind sentence + "Move it" | Says why in cm or litres; offers the place it would fit |
-| S06 | Item | tap an item | — | Owner's sleeping bag | Every placement one tap; weight editable; source shown |
-| S07 | Locker (gear sheet) | Add gear | catalogue by category | "Yours" + catalogue | Search, category chips, one-tap + that packs it; "Add your own"; paste |
-| S08 | Custom item | Locker → Add your own | form | — | name + weight + kind; guessed size |
-| S09 | Loadouts | loadout name ▾ | one loadout | Megafuck + copy + Cuba | switch, rename inline, copy, delete with undo, compare, paste, copy as sheet, download |
-| S10 | Compare | Loadouts → Compare | needs 2 (toast) | Megafuck vs Cuba | totals side by side with deltas; "What moved" list |
-| S11 | Paste a spreadsheet | Loadouts / empty Gear | blank | owner's sheet pasted, preview with reconciliation | reads matrix + flat forms, totals rows, says what it matched |
-| S12 | Someone else's rig | a v2 link / gallery rig | rig without a pack | owner's shared link | banner, "not yours" flags, Copy to my locker |
-| S13 | Suggest a layout | Gear → Suggest | — | toast with Undo | packs heavy low and central; nothing overflows |
-| S14 | Warnings | Gear | — | fork cage over rating | a sentence, never an alarm colour on the whole panel |
-| S15 | Units | kg ⇄ lb | — | lb | every number in the app flips together |
-| S16 | Drag to bag (desktop) | drag a row onto a bag | — | ghost "→ Seat pack" | bag lights; drop opens it; won't-fit toast offers the fix |
-| S17 | Loadouts gallery card | Start → Loadouts | — | Megafuck card | the packed example is one of the curated rigs |
+| S01 | Start | landing | | yes | Headline and four ways in; the bike is lit and uncovered |
+| S02 | Set up a rig | Start, Build a rig | | yes | Name, size, two colours, one button |
+| S03 | Gallery (Examples) | Start, Examples | | yes | The example rigs on the bike, with their numbers |
+| S04 | Builder, empty | Build a rig | yes | | The bike, pulsing rings on its mounts, one line: "Tap where a bag goes" |
+| S05 | Mount picker | Add a bag | yes | | Rings on the bike; the list is a fallback for keyboards and screen readers |
+| S06 | Catalogue | a ring, or Replace it | | yes | Big rows with image, maker, name, litres, weight, price if known, fit badge; chips; fit first |
+| S07 | Product sheet | tap a fitted bag (no kit) | | yes | Whole bag and its surroundings in view; image never blank; Replace / Remove / Buy |
+| S08 | Rig | the builder with bags | bags only | packed | Bags listed with fill and contents; numbers never wrap; watts chip; one Save |
+| S09 | See inside | tap a bag | empty bag | packed seat pack | Contents first, then the product; Add gear; warnings on their rows |
+| S10 | Won't fit | tent poles in a top tube bag | | yes | The sentence on the row, in cm, with the move |
+| S11 | My kit | Add gear | catalogue | kit + search | Search, category chips, one-tap add that packs it |
+| S12 | Your own item | My kit, Add your own | | form | Name, weight, kind |
+| S13 | Quick pick | Pack my kit | nothing ticked | four ticked | Tiles are the items' renders; the button never covers a tile |
+| S14 | Item | tap an item | | the owner's sleeping bag | Every place is one tap; weight editable; source shown |
+| S15 | Trips | trip name | | Megafuck + Cuba | Switch, rename, copy, delete with undo, compare, spreadsheet in and out |
+| S16 | Compare | Trips, Compare | | Megafuck vs Cuba | Totals with deltas, what moved |
+| S17 | Import | Trips, Paste a spreadsheet | blank | owner's sheet pasted | Reads the matrix, reconciles totals, says what it matched |
+| S18 | Someone else's rig | See a packed bike, or a shared link | | yes | Whose it is, what isn't yours, Copy to my kit |
+| S19 | Share | Share | | packed | A sheet: the link, Copy, what is included |
+| S20 | Account | Log in | | sign-in | A sheet beside the bike; the scene is never dimmed |
+| S21 | Wind tunnel | the watts chip | | yes | Named, reachable from the rig; numbers defended |
+| S22 | Settings | header, More | | yes | Size, frame and bidon colour, view tools, all labelled |
+| S23 | Units | kg / lb | | lb | Every number flips together |
+| S24 | Suggest a layout | Pack the N at home | | yes | Heavy low and central; nothing overflows; Undo |
 
-Phone specifics: the left column is the bottom slab (tuck with the chevron to
-see the bike); every sheet is a bottom sheet; there is no drag — S06's
-"Where it goes" is the path, and it is also the keyboard path on desktop.
+Phone specifics: every surface is the one bottom sheet with three heights
+(peek, half, full) and one close control. The camera frames the bike into
+whatever the sheet leaves. There is no drag and drop on a phone; an item's
+sheet is the tap-to-move path, and it is also the keyboard path on desktop.
+
+## What every shot measures
+
+`report.json` carries, per shot:
+
+- `bike.frac`: vertical extent of the bike's visible silhouette divided by the
+  viewport height, clipped to the space above any bottom sheet. Targets on
+  the phone: 0.45 with no sheet open (peek), 0.35 with a sheet at half.
+- `fonts`: every computed font size that carries visible text, with counts.
+  Target: nothing under 11px, body not under 13px, no half pixels.
+- `small`: visible touch targets under 44 x 44 (the phone numbers are the
+  ones that count).
+- `unlabelled`: buttons with no text and no `aria-label`. Target: none.
+
+Contrast over every environment is checked separately by
+`tools/contrast.mjs`.

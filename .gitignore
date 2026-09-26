@@ -1,5 +1,10 @@
 node_modules/
-shots/
+shots/*
+!shots/before/
+!shots/after/
+!shots/compare/
+!shots/tasks/
+shots/tasks/*/*.png
 assets/products/
 assets/hdri/
 .DS_Store
