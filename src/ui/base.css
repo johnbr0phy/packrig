@@ -52,10 +52,10 @@ ul { padding: 0; list-style: none; }
    sets --scrim-k from what the scene is doing under the panel) */
 .scrim-well {
   position: fixed; pointer-events: none; border-radius: var(--r-panel);
-  background: rgba(0, 0, 0, calc(0.30 * var(--scrim-k)));
+  background: rgba(var(--scrim-rgb), calc(0.30 * var(--scrim-k)));
   filter: blur(26px); transform: scale(1.03);
 }
-.scrim-well.free { background: rgba(0, 0, 0, calc(0.18 * var(--scrim-k))); filter: blur(40px); transform: scale(1.14); }
+.scrim-well.free { background: rgba(var(--scrim-rgb), calc(0.18 * var(--scrim-k))); filter: blur(40px); transform: scale(1.14); }
 
 /* ---- focus: white ring with a dark halo, legible on any ground -------------- */
 :focus { outline: none; }

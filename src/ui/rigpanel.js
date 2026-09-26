@@ -298,7 +298,29 @@ export function initRigPanel(app, hooks) {
     return box;
   }
 
+  /** Where keyboard focus was in the panel, so a repaint can put it back. */
+  function focusKey() {
+    const a = document.activeElement;
+    if (!a || !panel.contains(a) || a === nameIn) return null;
+    if (a.dataset.slot) return `.rg-bag[data-slot="${CSS.escape(a.dataset.slot)}"]`;
+    if (a.dataset.uid) return `[data-uid="${CSS.escape(a.dataset.uid)}"]`;
+    const t = a.textContent.trim().slice(0, 40);
+    return t ? { cls: a.className, t } : null;
+  }
+  function refocus(k) {
+    if (!k) return;
+    const n = typeof k === 'string' ? panel.querySelector(k)
+      : [...panel.querySelectorAll('button')].find((b) => b.className === k.cls && b.textContent.trim().startsWith(k.t));
+    n?.focus({ preventScroll: true });
+  }
+
   function paint() {
+    const k = focusKey();
+    paintInner();
+    refocus(k);
+  }
+
+  function paintInner() {
     const st = P?.state;
     if (!st) return;
     const bagSlots = SLOT_ORDER.filter((s) => app.bags.equipped[s]);

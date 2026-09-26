@@ -50,6 +50,9 @@ export function createPack3D(app) {
           c.transparent = true;
           c.depthWrite = false;
           c.opacity = 1;
+          // both faces: the far wall of the bag behind its contents is what
+          // makes a see-through shell read as a volume rather than a smear
+          c.side = THREE.DoubleSide;
           // frosted: a black bag at low opacity over a dark ground vanishes,
           // leaving the contents looking unsupported; a pale shell reads as a
           // volume round them. The original material comes back on close.
@@ -59,12 +62,16 @@ export function createPack3D(app) {
         rec.swap.push({ o, orig, fade: Array.isArray(orig) ? fade : fade[0] });
       });
     }
-    const target = open ? SHELL_OPACITY : 1;
+    // a frame bag is seen edge-on and is thin: at the common opacity it
+    // disappears into the frame triangle, so it gets a denser frost
+    const thin = /framebag|toptube|downtube|stem/.test(bag.name || '');
+    const shellOp = thin ? 0.42 : SHELL_OPACITY;
+    const target = open ? shellOp : 1;
     for (const s of rec.swap) s.o.material = s.fade;
     tween(D_OPEN, (k) => {
       for (const s of rec.swap) {
         for (const m of Array.isArray(s.fade) ? s.fade : [s.fade]) {
-          const from = open ? 1 : SHELL_OPACITY;
+          const from = open ? 1 : shellOp;
           m.opacity = from + (target - from) * k;
           const f = m.userData.frost;
           if (f) m.color.copy(f[0]).lerp(f[1], open ? k : 1 - k);

@@ -18,13 +18,17 @@
   z-index: 30; pointer-events: none;
 }
 .topbar > * { pointer-events: auto; }
+.wordmark, .tb-btn {
+  background: var(--e1-bg); backdrop-filter: var(--glass-filter-1); -webkit-backdrop-filter: var(--glass-filter-1);
+  border: 1px solid var(--e1-brd);
+}
 .wordmark {
   display: inline-flex; align-items: center; gap: var(--s-2);
-  min-height: var(--target); padding: 0 var(--s-2); margin-left: calc(-1 * var(--s-2));
-  border-radius: var(--r-control);
+  min-height: var(--target); padding: 0 var(--s-3); margin-left: calc(-1 * var(--s-2));
+  border-radius: var(--r-pill);
   font-size: var(--fs-title3); font-weight: 700; letter-spacing: 0.1em; color: var(--ink-1);
 }
-.wordmark:hover { background: var(--fill-1); }
+.wordmark:hover { background: var(--e4-bg); }
 .wordmark svg { color: var(--accent); }
 .tb-right { display: flex; align-items: center; gap: var(--s-2); }
 .tb-btn {
@@ -34,7 +38,7 @@
   font-size: var(--fs-caption); font-weight: 600;
   transition: background var(--d-micro) var(--ease-out);
 }
-.tb-btn:hover, .tb-btn[aria-expanded="true"] { background: var(--fill-3); }
+.tb-btn:hover, .tb-btn[aria-expanded="true"] { background: var(--e4-bg); }
 .tb-face { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--fill-2); overflow: hidden; font-size: var(--fs-label); font-weight: 700; }
 .tb-face img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -166,7 +170,7 @@
 }
 .mount-ring::before {
   content: ''; width: 20px; height: 20px; border-radius: 50%;
-  border: 2px solid var(--ink-1); background: rgba(0, 0, 0, 0.35);
+  border: 2px solid var(--ink-1); background: var(--shade-soft);
   box-shadow: 0 0 0 2px var(--shade);
   animation: ring-pulse 1600ms var(--ease-inout) infinite;
 }

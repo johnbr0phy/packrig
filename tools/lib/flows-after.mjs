@@ -98,4 +98,31 @@ export const FLOWS = {
       return { ok: r.mine && r.n > 60, summary: `${r.n} items in my kit` };
     },
   },
+  // Keyboard only: Tab, Enter, Escape. Build, a ring, fit a bag, open it.
+  keyboard: {
+    devices: ['desktop'],
+    async run(c) {
+      // the focused control (not the page) says this, in its text or its label
+      const txt = () => ((a) => { const e = document.activeElement; if (!e || e === document.body || e.id === 'scene') return false; return e.textContent.trim().startsWith(a) || (e.getAttribute('aria-label') || '').startsWith(a) || (e.matches('button') && e.textContent.includes(a)); });
+      await c.tabTo(txt(), 'Build a rig', 'Build a rig');
+      const ring = await c.focusVisible();
+      await c.key('Enter');
+      await c.sleep(800);
+      await c.tabTo(txt(), 'Seat pack:', 'the seat pack ring');
+      await c.key('Enter');
+      await c.sleep(1500);
+      await c.tabTo(() => document.activeElement?.classList.contains('cat-row') && !document.activeElement.classList.contains('is-unfit'), null, 'a seat pack');
+      await c.key('Enter', 'fit it');
+      await c.sleep(800);
+      await c.key('Escape', 'done adding');
+      await c.sleep(800);
+      await c.tabTo(() => document.activeElement?.classList.contains('rg-bag'), null, 'the seat pack row');
+      await c.key('Enter', 'open it');
+      await c.sleep(1200);
+      const r = await c.eval(() => ({ bags: Object.keys(app.bags.equipped), open: app.sheets.isOpen, title: document.getElementById('sheet-title')?.textContent, focus: document.activeElement?.className }));
+      await c.key('Escape', 'close it');
+      const back = await c.eval(() => document.activeElement?.className || '');
+      return { ok: r.bags.includes('seatpack') && r.open && ring, summary: `${r.bags.join(', ')}; sheet "${r.title}" opened with focus on .${r.focus}; after Escape focus is on .${back}; focus ring visible: ${ring}` };
+    },
+  },
 };

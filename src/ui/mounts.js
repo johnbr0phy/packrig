@@ -71,6 +71,7 @@ export function initMounts(app, { onPick } = {}) {
       const b = document.createElement('button');
       b.type = 'button';
       b.className = 'mount-ring';
+      b.dataset.slot = slot;
       const n = countFor(slot);
       b.setAttribute('aria-label', `${place.label}: ${n} bags`);
       const tip = document.createElement('span');
@@ -135,6 +136,9 @@ export function initMounts(app, { onPick } = {}) {
   }
 
   function show(next) {
+    // same mode: keep the rings (rebuilding would drop keyboard focus)
+    if (next === mode && (mode === 'off' || rings.size)) return;
+    if (next !== 'off' && mode !== 'off' && rings.size) { mode = next; return; }
     mode = next;
     layer.hidden = mode === 'off';
     if (mode !== 'off') build();

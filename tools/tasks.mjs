@@ -42,6 +42,7 @@ for (const [name, flow] of Object.entries(FLOWS)) {
   if (only && !only.includes(name)) continue;
   for (const [device, vp] of Object.entries(DEVICES)) {
     if (onlyDevice && device !== onlyDevice) continue;
+    if (flow.devices && !flow.devices.includes(device)) continue;
     const ctx = await b.createBrowserContext();
     const p = await ctx.newPage();
     const errs = [];
@@ -87,7 +88,20 @@ for (const [name, flow] of Object.entries(FLOWS)) {
         steps.push(`${taps}. ${note || 'type'}`);
         await new Promise((r) => setTimeout(r, 350));
       },
-      async key(k) { await p.keyboard.press(k); },
+      async key(k, note) { await p.keyboard.press(k); taps++; steps.push(`${taps}. key ${k}${note ? ` (${note})` : ''}`); await new Promise((r) => setTimeout(r, 250)); },
+      /** Press Tab until the focused element matches; each press counts. */
+      async tabTo(test, arg, note, max = 60) {
+        if (await p.evaluate(test, arg)) { steps.push(`${taps}. already on ${note}`); return true; }
+        for (let i = 0; i < max; i++) {
+          await p.keyboard.press('Tab');
+          taps++;
+          await new Promise((r) => setTimeout(r, 60));
+          const ok = await p.evaluate(test, arg);
+          if (ok) { steps.push(`${taps}. Tab to ${note}`); return true; }
+        }
+        throw new Error(`Tab never reached ${note}`);
+      },
+      focusVisible: () => p.evaluate(() => { const a = document.activeElement; if (!a || a === document.body) return false; const cs = getComputedStyle(a); return cs.outlineStyle !== 'none' && parseFloat(cs.outlineWidth) > 0; }),
       hesitate(why) { hes.push(why); },
       async wait(fn, arg, timeout = 60000) { return p.waitForFunction(fn, { timeout, polling: 250 }, arg); },
       async eval(fn, arg) { return p.evaluate(fn, arg); },

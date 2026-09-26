@@ -25,10 +25,10 @@
 .pr-veil {
   position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(90deg,
-    rgba(10, 11, 13, 0.88) 0,
-    rgba(10, 11, 13, 0.86) calc(var(--pr-gut) + var(--pr-col)),
-    rgba(10, 11, 13, 0.40) calc(var(--pr-gut) + var(--pr-col) + 120px),
-    rgba(10, 11, 13, 0) calc(var(--pr-gut) + var(--pr-col) + 260px));
+    rgba(var(--veil-rgb), 0.88) 0,
+    rgba(var(--veil-rgb), 0.86) calc(var(--pr-gut) + var(--pr-col)),
+    rgba(var(--veil-rgb), 0.40) calc(var(--pr-gut) + var(--pr-col) + 120px),
+    rgba(var(--veil-rgb), 0) calc(var(--pr-gut) + var(--pr-col) + 260px));
 }
 
 /* ---- head ---------------------------------------------------------------------- */
@@ -49,14 +49,18 @@
   min-height: var(--target); padding: 0 var(--s-3); border-radius: var(--r-pill);
   font-size: var(--fs-caption); font-weight: 600; color: var(--ink-2);
 }
-.pr-tab:hover { color: var(--ink-1); background: var(--fill-1); }
-.pr-tab.is-on { color: var(--ink-1); background: var(--fill-2); }
+.pr-tab { color: var(--ink-1); }
+.pr-tab:hover, .pr-tab.is-on { background: var(--e4-bg); }
+.pr-login, .pr-close, .pr-tab {
+  background: var(--e1-bg); backdrop-filter: var(--glass-filter-1); -webkit-backdrop-filter: var(--glass-filter-1);
+  border: 1px solid var(--e1-brd);
+}
 .pr-login, .pr-close {
   display: inline-flex; align-items: center; gap: var(--s-2);
   min-height: var(--target); padding: 0 var(--s-3); border-radius: var(--r-pill);
   font-size: var(--fs-caption); font-weight: 600; color: var(--ink-1);
 }
-.pr-login:hover, .pr-close:hover { background: var(--fill-2); }
+.pr-login:hover, .pr-close:hover { background: var(--e4-bg); }
 .pr-stage:focus, .pr-stage:focus-visible { outline: none; box-shadow: none; }
 .pr-face { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--fill-2); overflow: hidden; font-size: var(--fs-label); font-weight: 700; }
 .pr-face img { width: 100%; height: 100%; object-fit: cover; }
@@ -174,7 +178,7 @@
 /* ---- phone: the bike above, a glass slab below ------------------------------------------------ */
 @media (max-width: 560px), (pointer: coarse) and (max-height: 480px) {
   .pr { --pr-gut: var(--s-4); }
-  .pr-veil { background: linear-gradient(180deg, rgba(10, 11, 13, 0.55) 0, rgba(10, 11, 13, 0) 96px); }
+  .pr-veil { background: linear-gradient(180deg, rgba(var(--veil-rgb), 0.55) 0, rgba(var(--veil-rgb), 0) 96px); }
   .pr-head { height: 56px; padding: 0 var(--s-2) 0 var(--s-2); }
   .pr-tabs { display: none; }
   .pr-login { margin-left: auto; }

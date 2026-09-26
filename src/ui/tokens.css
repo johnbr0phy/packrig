@@ -23,7 +23,7 @@
   /* ---- ink: white at an alpha, one polarity for every scene -------------- */
   --ink-1: rgba(255, 255, 255, 0.96);   /* titles, primary values */
   --ink-2: rgba(255, 255, 255, 0.74);   /* body, secondary values */
-  --ink-3: rgba(255, 255, 255, 0.56);   /* labels, units, metadata (text >= 12px) */
+  --ink-3: rgba(255, 255, 255, 0.60);   /* labels, units, metadata (text >= 11px) */
   --ink-4: rgba(255, 255, 255, 0.28);   /* dividers, disabled: never text */
   --ink-on-accent: #24120A;
   --ink-on-plate: #16181C;
@@ -39,6 +39,7 @@
   --ok: #4FCB8B;
   --warn: #F2B23C;
   --bad: #FF6B5C;
+  --ok-soft: rgba(79, 203, 139, 0.12);
   --warn-soft: rgba(242, 178, 60, 0.12);
   --bad-soft: rgba(255, 107, 92, 0.12);
 
@@ -51,11 +52,11 @@
      and `brightness` below 1 keep a desert or a forest from tinting the
      panel. Legibility comes from darkening what is sampled (the scrim),
      never from colouring the panel. ---------------------------------------- */
-  --glass-filter-1: blur(16px) saturate(70%) brightness(0.8);
-  --glass-filter-2: blur(28px) saturate(55%) brightness(0.62);
-  --glass-filter-3: blur(36px) saturate(45%) brightness(0.55);
-  --e1-bg: rgba(14, 15, 17, 0.56);
-  --e2-bg: rgba(14, 15, 17, 0.60);
+  --glass-filter-1: blur(16px) saturate(60%) brightness(0.6);
+  --glass-filter-2: blur(28px) saturate(50%) brightness(0.5);
+  --glass-filter-3: blur(36px) saturate(45%) brightness(0.48);
+  --e1-bg: rgba(14, 15, 17, 0.62);
+  --e2-bg: rgba(14, 15, 17, 0.64);
   --e3-bg: rgba(14, 15, 17, 0.66);
   --e4-bg: rgba(24, 26, 30, 0.96);      /* popovers sit on glass, not scene */
   --e1-brd: rgba(255, 255, 255, 0.10);
@@ -73,6 +74,10 @@
   --fill-3: rgba(255, 255, 255, 0.15);  /* pressed, active segment */
   --hairline: rgba(255, 255, 255, 0.09);
   --shade: rgba(0, 0, 0, 0.55);         /* focus halo, ring backing */
+  --shade-soft: rgba(0, 0, 0, 0.35);    /* inside a mount ring */
+  --scrim-rgb: 0, 0, 0;                 /* the scrim well, alpha from --scrim-k */
+  --veil-rgb: 10, 11, 13;               /* the start screen's readability ramp */
+  --edge: rgba(255, 255, 255, 0.18);    /* a swatch's rim */
 
   /* the scrim well: JS writes --scrim-k from scene luminance (scrim.js) */
   --scrim-k: 1.30;
@@ -140,32 +145,4 @@
     --d-micro: 0ms; --d-control: 0ms; --d-sheet: 0ms; --d-sheet-out: 0ms;
     --d-camera: 0ms; --d-scene: 0ms;
   }
-}
-
-/* ---- migration aliases -------------------------------------------------------
-   Names the legacy stylesheets still read, mapped onto the ramp above so the
-   half-pixel sizes are gone everywhere at once. Deleted with the last legacy
-   stylesheet. */
-:root {
-  --t-display: 650 var(--fs-display)/var(--lh-tight) var(--font);
-  --t-title1: 650 var(--fs-title1)/var(--lh-tight) var(--font);
-  --t-title2: 650 var(--fs-title2)/var(--lh-snug) var(--font);
-  --t-title3: 600 var(--fs-title3)/var(--lh-snug) var(--font);
-  --t-body: 400 var(--fs-body)/var(--lh-body) var(--font);
-  --t-body-s: 550 var(--fs-body)/1.45 var(--font);
-  --t-caption: 400 var(--fs-caption)/1.45 var(--font);
-  --t-micro: 500 var(--fs-caption)/1.35 var(--font);
-  --t-label: 650 var(--fs-label)/1.2 var(--font);
-  --t-data: 550 var(--fs-title3)/1.2 var(--font);
-  --t-data-s: 550 var(--fs-caption)/1.2 var(--font);
-  --tr-display: -0.02em; --tr-title1: -0.01em; --tr-title2: -0.01em; --tr-title3: 0;
-  --tr-body: 0; --tr-body-s: 0; --tr-caption: 0; --tr-micro: 0; --tr-data: 0; --tr-data-s: 0;
-  --d-press: 90ms;
-  --font-num: var(--font);
-  --r-swatch: 6px;
-  --r-dock: 28px;
-  --e1-blur: var(--glass-filter-1);
-  --e2-blur: var(--glass-filter-2);
-  --e3-blur: var(--glass-filter-3);
-  --e4-blur: blur(24px);
 }

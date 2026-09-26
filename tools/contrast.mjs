@@ -92,6 +92,9 @@ for (const env of ENVS) {
           const range = document.createRange(); range.selectNodeContents(t);
           const r = range.getBoundingClientRect();
           if (r.width < 2 || r.height < 2 || r.bottom < 0 || r.top > innerHeight || r.right < 0 || r.left > innerWidth) continue;
+          // clipped by a scroller or covered by something: not visible, not measured
+          const top = document.elementFromPoint(Math.min(innerWidth - 1, Math.max(0, r.left + r.width / 2)), Math.min(innerHeight - 1, Math.max(0, r.top + r.height / 2)));
+          if (!top || !(top === e || e.contains(top) || top.contains(e))) continue;
           // effective opacity up the tree
           let op = 1; for (let q = e; q && q !== document.body; q = q.parentElement) op *= +getComputedStyle(q).opacity;
           const m = /rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/.exec(cs.color);

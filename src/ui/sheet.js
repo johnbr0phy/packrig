@@ -121,6 +121,8 @@ export function initSheets(app, { root } = {}) {
   function open({ kind = 'detail', title = '', render, onClose, onBack = null, detent } = {}) {
     const first = !active;
     if (first) lastFocus = document.activeElement;
+    // replacing the contents under a keyboard user: keep them in the sheet
+    const hadFocus = !first && sheet.contains(document.activeElement);
     const prevClose = active?.onClose;
     active = { kind, onClose };
     if (!first && prevClose) try { prevClose({ replaced: true }); } catch { /* */ }
@@ -145,6 +147,9 @@ export function initSheets(app, { root } = {}) {
     app.surfaces?.followFor(420);
     document.addEventListener('keydown', onKey, true);
     if (lastFocus && lastFocus !== document.body && first) closeBtn.focus({ preventScroll: true });
+    else if (hadFocus || (!first && document.activeElement === document.body && lastFocus && lastFocus !== document.body)) {
+      (body.querySelector('.cat-row, button, input, [tabindex="0"]') || closeBtn).focus({ preventScroll: true });
+    }
     return handle();
   }
 
@@ -168,7 +173,15 @@ export function initSheets(app, { root } = {}) {
       onClose?.({});
     };
     if (ms > 0) setTimeout(done, ms); else done();
-    if (lastFocus?.isConnected) lastFocus.focus({ preventScroll: true });
+    // focus goes back where it came from; if that control has gone (a ring
+    // for a place just filled, a row repainted), to the row it became
+    let back = lastFocus;
+    if (back && back !== document.body && !back.isConnected) {
+      const slot = back.dataset?.slot;
+      back = (slot && document.querySelector(`.panel .rg-bag[data-slot="${CSS.escape(slot)}"]`))
+        || document.querySelector('.panel .rg-bag, .panel .rg-name');
+    }
+    if (back?.isConnected && back !== document.body) back.focus({ preventScroll: true });
     lastFocus = null;
   }
 
