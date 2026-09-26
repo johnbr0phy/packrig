@@ -10,10 +10,9 @@ const ACCENT = 0xe8a848;
 // "~1.5s" for the orchestrated whole.
 const CAM_DURATION = 1.2;
 const FX_DURATION = 1.5;
-// `?still` (screenshots): the smoke runs a fixed two seconds of 60 Hz steps once
-// the tunnel is in, then holds, so the same state is the same pixels
+// `?still` (screenshots): the tunnel does not advance the smoke; smoke.js holds
+// it at a fixed number of steps past its seed, so the same state is the same pixels
 const STILL = typeof location !== 'undefined' && new URLSearchParams(location.search).has('still');
-const STILL_STEPS = 120;
 
 const TUNNEL_BG = new THREE.Color(0x9aa0a6);
 const TUNNEL_FOG_COLOR = new THREE.Color(0x9aa0a6);
@@ -511,10 +510,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
         this._mix = clamp01(this._mix + this._dir * (dt / FX_DURATION));
         this._camMix = clamp01(this._camMix + this._dir * (dt / CAM_DURATION));
         this._apply(easeInOutCubic(this._camMix), easeInOutCubic(this._mix));
-        if (this._dir === 1 && this._mix >= 1) {
-          this._dir = 0; this._finishEnter();
-          if (STILL) for (let i = 0; i < STILL_STEPS; i++) smoke?.tick(1 / 60);
-        }
+        if (this._dir === 1 && this._mix >= 1) { this._dir = 0; this._finishEnter(); }
         else if (this._dir === -1 && this._mix <= 0) { this._dir = 0; this._finishExit(); }
       }
       if (this._mix > 0 && !STILL) smoke?.tick(dt);
