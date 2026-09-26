@@ -178,6 +178,8 @@ async function shoot(id, state, device, setup, suffix = '') {
   await p.waitForFunction('window.__READY_DONE', { timeout: 120000 });
   await p.evaluate(`window.__SHEET = ${JSON.stringify(SHEET)};` + HELPERS);
   await p.addStyleTag({ content: '*{caret-color:transparent!important}' });   // a blinking caret is not a difference
+  // pulsing rings and spinners: shoot the resting frame, not wherever the loop is
+  await p.addStyleTag({ content: '*,*::before,*::after{animation-duration:0s!important;animation-iteration-count:1!important;animation-delay:0s!important}' });
   try { await p.evaluate(`(async () => { ${setup} })()`); } catch (e) { errs.push('setup: ' + e.message); }
   // thumbnails draw a few per frame; wait for the queue so two runs match
   await p.evaluate(async () => {
