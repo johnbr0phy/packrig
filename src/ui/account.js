@@ -30,7 +30,7 @@ const el = (t, c, txt) => {
 };
 
 export function initAccount(app, { auth, store, host, onChange } = {}) {
-  let scrim = null;
+  let handle = null;
   let card = null;
   let mode = 'signin';          // signin | signup | reset | account
   let busy = false;
@@ -42,6 +42,8 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
   let onReady = null;
   let onCancel = null;
 
+  const setTitle = (t) => { document.getElementById('sheet-title') && (document.getElementById('sheet-title').textContent = t); };
+
   function takeHooks() {
     const ready = onReady, cancel = onCancel;
     onReady = onCancel = null;
@@ -50,26 +52,16 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
   }
 
   function close() {
-    if (!scrim) return;
-    scrim.classList.remove('on');
-    const dead = scrim;
-    scrim = null;
+    if (!card) return;
+    const h = handle;
     card = null;
+    handle = null;
     notice = null;
-    document.removeEventListener('keydown', onKey, true);
-    setTimeout(() => dead.remove(), 200);
-    lastFocus?.focus?.({ preventScroll: true });
-    lastFocus = null;
+    h?.close();
     const { cancel } = takeHooks();
     if (!auth?.signedIn) cancel?.();
   }
 
-  function onKey(e) {
-    if (e.key !== 'Escape' || !scrim) return;
-    e.preventDefault();
-    e.stopPropagation();
-    close();
-  }
 
   async function guard(fn) {
     if (busy) return;
@@ -87,19 +79,19 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
 
   // ---- the signed-in state -------------------------------------------------
   function renderAccount() {
-    card.append(el('h2', 'ac-title', 'Your account'));
+    setTitle('Your account');
     card.append(el('p', 'ac-who', auth.email || 'Signed in'));
     // The one sentence that earns its space: it says what the account is FOR,
     // which is the only thing about it anybody needs to know.
     card.append(el('p', 'ac-note', 'Your rigs are on this account and follow you between devices.'));
     if (notice) card.append(el('div', `ac-notice is-${notice.kind}`, notice.text));
 
-    const mine = el('button', 'ac-btn is-primary', 'My rigs');
+    const mine = el('button', 'btn primary wide', 'My rigs');
     mine.type = 'button';
     mine.onclick = () => { close(); app.menu?.open('rigs'); };
     card.append(mine);
 
-    const out = el('button', 'ac-btn', 'Sign out');
+    const out = el('button', 'btn wide', 'Sign out');
     out.type = 'button';
     out.onclick = () => guard(async () => {
       await auth.signOut();
@@ -114,8 +106,7 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
     const signup = mode === 'signup';
     const reset = mode === 'reset';
 
-    card.append(el('h2', 'ac-title',
-      reset ? 'Reset your password' : signup ? 'Create an account' : 'Log in'));
+    setTitle(reset ? 'Reset your password' : signup ? 'Create an account' : 'Log in');
     card.append(el('p', 'ac-note', reset
       ? 'We will email you a link to set a new one.'
       : (reasonNote || 'So your rigs follow you between devices.')));
@@ -126,7 +117,7 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
     // the one with nothing to type. The email form keeps the keyboard order
     // below it.
     if (!reset && auth.signInWithGoogle) {
-      const g = el('button', 'ac-btn is-google');
+      const g = el('button', 'btn wide ac-google');
       g.type = 'button';
       // Google's mark, inline: the strict-CSP artifact build blocks every
       // external image.
@@ -148,14 +139,14 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
     }
 
     const form = el('form', 'ac-form');
-    const email = el('input', 'ac-input');
+    const email = el('input', 'input');
     email.type = 'email'; email.required = true; email.autocomplete = 'email';
     email.placeholder = 'you@example.com';
     form.append(labelled('Email', email));
 
     let pass = null;
     if (!reset) {
-      pass = el('input', 'ac-input');
+      pass = el('input', 'input');
       pass.type = 'password'; pass.required = true;
       pass.autocomplete = signup ? 'new-password' : 'current-password';
       pass.minLength = 8;
@@ -163,7 +154,7 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
       form.append(labelled('Password', pass));
     }
 
-    const submit = el('button', 'ac-btn is-primary',
+    const submit = el('button', 'btn primary wide',
       reset ? 'Send reset link' : signup ? 'Create account' : 'Log in');
     submit.type = 'submit';
     form.append(submit);
@@ -195,13 +186,13 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
 
     const alt = el('div', 'ac-alt');
     if (!reset) {
-      const swap = el('button', 'ac-link', signup ? 'I already have an account' : 'Create an account');
+      const swap = el('button', 'btn sm ghost', signup ? 'I already have an account' : 'Create an account');
       swap.type = 'button';
       swap.onclick = () => { mode = signup ? 'signin' : 'signup'; notice = null; render(); };
       alt.append(swap);
     }
     if (!signup) {
-      const forgot = el('button', 'ac-link', reset ? 'Back to log in' : 'Forgot your password?');
+      const forgot = el('button', 'btn sm ghost', reset ? 'Back to log in' : 'Forgot your password?');
       forgot.type = 'button';
       forgot.onclick = () => { mode = reset ? 'signin' : 'reset'; notice = null; render(); };
       alt.append(forgot);
@@ -233,15 +224,6 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
     card.replaceChildren();
     card.classList.toggle('is-busy', busy);
 
-    const x = el('button', 'ac-close');
-    x.type = 'button';
-    x.title = 'Close';
-    x.setAttribute('aria-label', 'Close');
-    x.innerHTML = '<svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">'
-      + '<path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.6" '
-      + 'stroke-linecap="round"/></svg>';
-    x.onclick = () => close();
-    card.append(x);
 
     if (mode === 'account' && auth?.signedIn) renderAccount();
     else renderAuth();
@@ -268,23 +250,25 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
       mode = next || (auth.signedIn ? 'account' : 'signin');
     }
     if (mode === 'account' && !auth?.signedIn) mode = 'signin';
-    if (scrim) { render(); return; }
-    lastFocus = document.activeElement;
-    scrim = el('div', 'ac-scrim');
-    card = el('div', 'ac-card');
-    card.setAttribute('role', 'dialog');
-    card.setAttribute('aria-modal', 'true');
-    card.setAttribute('aria-label', 'Account');
-    scrim.append(card);
-    // Pressing the surround is the other way out of a dialogue, and it must
-    // not fire on a drag that STARTED inside the card and ended outside it.
-    scrim.onmousedown = (e) => { if (e.target === scrim) close(); };
-    (host || document.getElementById('ui-root')).append(scrim);
-    document.addEventListener('keydown', onKey, true);
-    void scrim.offsetWidth;
-    scrim.classList.add('on');
-    render();
+    // A sheet beside the bike, like every other surface: never a modal over
+    // a dimmed scene. Closing it without signing in runs onCancel.
+    handle = app.openSheet?.({
+      kind: 'detail',
+      title: 'Account',
+      detent: 'full',
+      render: (body) => {
+        card = el('div', 'ac-card');
+        body.append(card);
+        render();
+      },
+      onClose: (o) => {
+        if (o?.replaced || !card) { card = null; handle = null; return; }
+        card = null; handle = null; notice = null;
+        const { cancel } = takeHooks();
+        if (!auth?.signedIn) cancel?.();
+      },
+    });
   }
 
-  return { open, close, get isOpen() { return !!scrim; } };
+  return { open, close, get isOpen() { return !!card; } };
 }

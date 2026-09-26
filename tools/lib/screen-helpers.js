@@ -45,7 +45,7 @@ window.__frac = () => {
   if (sh && W <= 560) occ = Math.min(occ, sh.getBoundingClientRect().top);
   let y0 = Infinity, y1 = -Infinity, x0 = Infinity, x1 = -Infinity; const v = new T.Vector3();
   app.bike.group.traverse((o) => {
-    if (!o.isMesh || !o.geometry?.attributes?.position || o.material?.depthWrite === false) return;
+    if (!o.isMesh || !o.geometry?.attributes?.position || (o.material?.depthWrite === false && o.material?.isMeshBasicMaterial)) return;
     for (let q = o; q; q = q.parent) if (!q.visible) return;
     const pos = o.geometry.attributes.position, step = Math.max(1, Math.floor(pos.count / 300));
     for (let i = 0; i < pos.count; i += step) {

@@ -124,7 +124,7 @@ export function initMounts(app, { onPick } = {}) {
     }
     for (const { r, x: fx, y: fy, z } of pts) {
       const x = Math.round(fx), y = Math.round(fy);
-      const out = z > 1 || x < free.left - 12 || x > free.right + 12 || y < free.top - 12 || y > free.bottom + 12;
+      const out = z > 1 || x < free.left - 12 || x > free.right + 12 || y < free.top || y > free.bottom + 12;
       r.el.hidden = out;
       if (x !== r.x || y !== r.y) { r.el.style.transform = `translate(${x}px, ${y}px)`; r.x = x; r.y = y; }
     }

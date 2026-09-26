@@ -415,9 +415,12 @@ export function initRigPanel(app, hooks) {
     };
     let packBtn = null;
     const homeUids = notPacked.map((i) => i.uid);
-    if (st.mine && homeUids.length) {
+    // a spreadsheet names bags this bike does not have: offer to fit them
+    const missing = [...new Set(st.warnings.filter((w) => w.kind === 'nobag').map((w) => w.slot))];
+    if (st.mine && (homeUids.length || missing.length)) {
       packBtn = el('div', 'rg-row');
-      packBtn.append(button('btn sm', homeUids.length === 1 ? 'Pack it' : `Pack these ${homeUids.length}`, () => hooks.packHome?.(homeUids)));
+      if (missing.length) packBtn.append(button('btn sm primary', `Fit the ${missing.length} bag${missing.length === 1 ? '' : 's'} your list uses`, () => hooks.fitMissing?.(missing)));
+      else packBtn.append(button('btn sm', homeUids.length === 1 ? 'Pack it' : `Pack these ${homeUids.length}`, () => hooks.packHome?.(homeUids)));
     }
     group('Not packed', notPacked, packBtn);
     group('On the frame', frame);

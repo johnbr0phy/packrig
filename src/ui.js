@@ -32,6 +32,7 @@ import { initMounts, PLACES, BUILD_ORDER, placeOf } from './ui/mounts.js';
 import { initWatts } from './ui/watts.js';
 import { bagImg } from './ui/bagthumbs.js';
 import { device } from './mobile.js';
+import { fmtWeight } from './pack/units.js';
 
 const el = (tag, cls, text) => {
   const e = document.createElement(tag);
@@ -294,6 +295,7 @@ export function initUI(app) {
     quickHas: (q) => packUI.quickHas(q),
     quickToggle: (q) => packUI.quickToggle(q),
     packHome: (uids) => packUI.packUids(uids),
+    fitMissing: (slots) => fitMissing(slots),
     copyView: () => packUI.copyView(),
     drag: packUI.drag,
   });
@@ -420,7 +422,7 @@ export function initUI(app) {
     const facts = el('span', 'cat-facts num');
     const L = litersOf(product);
     if (L && L !== '—') facts.append(el('span', null, L));
-    if (product.weight_g) facts.append(el('span', null, `${product.weight_g} g${['maker', 'retailer', 'review', 'size-interpolated'].includes(product.weight_basis) ? '' : ' est.'}`));
+    if (product.weight_g) facts.append(el('span', null, `${fmtWeight(product.weight_g, app.pack?.lib?.unit)}${['maker', 'retailer', 'review', 'size-interpolated'].includes(product.weight_basis) ? '' : ' est.'}`));
     t.append(facts);
     row.append(t);
     const badge = unfit ? el('span', 'fit-badge bad', 'Won’t fit') : small ? el('span', 'fit-badge warn', 'Tight') : el('span', 'fit-badge ok', 'Fits');
@@ -452,8 +454,39 @@ export function initUI(app) {
     if (!replacing && add) mounts.show('add');
     catalogue.open(slot, {
       onBack,
+      // adding on a phone: half height, so the bike and its rings stay in view
+      detent: add ? 'half' : 'full',
       onClose: () => { adding = false; mounts.show(Object.keys(app.bags.equipped).length ? 'off' : 'empty'); mounts.setActive(null); },
     });
+  }
+
+  /**
+   * A pasted list says "Seat post bag", "Fork right"... and the bike has none
+   * of them. Fit one bag per place: the one the example rigs use there if
+   * there is one, else the best-fitting bag of middling size.
+   */
+  async function fitMissing(slots) {
+    const los = await fetch('./data/loadouts.json').then((r) => r.json()).catch(() => []);
+    const fitted = [];
+    for (const slot of slots) {
+      if (app.bags.equipped[slot] || !SLOTS[slot]) continue;
+      let pick = null;
+      for (const lo of los) {
+        const b = lo.rig?.bags?.find((x) => x.slot === slot);
+        if (!b) continue;
+        const brand = app.catalog.find((x) => x.name === b.brand);
+        const product = brand?.products.find((p) => p.name === b.name && (p.line || '') === (b.line || '') && (p.size || '') === (b.size || ''));
+        if (product && willFit(slot, product, app.bike)) { pick = { brand, product }; break; }
+      }
+      if (!pick) {
+        const opts = productsForSlot(app.catalog, productSlotFor(slot)).filter((o) => willFit(slot, o.product, app.bike) && !fitReason(slot, o));
+        opts.sort((a, b) => (Number(a.product.liters) || 0) - (Number(b.product.liters) || 0));
+        pick = opts[Math.floor(opts.length / 2)] || null;
+      }
+      if (pick) { app.bags.equip(slot, pick.brand, pick.product); fitted.push(slot); }
+    }
+    sync();
+    notify(fitted.length ? `Fitted ${fitted.length} bag${fitted.length === 1 ? '' : 's'}. Tap one to change it.` : 'No bag fits those places on this frame.');
   }
 
   // ---- share: the link, a copy button, and what it carries --------------------------------------------------

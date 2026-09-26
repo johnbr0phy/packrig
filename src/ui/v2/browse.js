@@ -204,7 +204,7 @@ export function initBrowse(app, {
     nodes = { wrap, spec, railWrap };
 
     spec.append(el('p', 'pr-loading',
-      kind === 'rigs' ? 'Finding your rigs…' : 'Loading loadouts…'));
+      kind === 'rigs' ? 'Finding your rigs…' : 'Loading examples…'));
 
     (kind === 'rigs' ? loadMine() : loadLoadouts())
       .then((list) => {
@@ -225,7 +225,7 @@ export function initBrowse(app, {
   function paintEmpty() {
     nodes.spec.replaceChildren();
     const e = el('div', 'pr-empty');
-    e.append(el('h2', 'pr-title', kind === 'rigs' ? 'No saved rigs yet' : 'No loadouts'));
+    e.append(el('h2', 'pr-title', kind === 'rigs' ? 'No saved rigs yet' : 'No examples'));
     if (kind !== 'rigs') {
       e.append(el('p', 'pr-note',
         'The curated rigs did not load. The builder still works — everything in the catalogue is there.'));

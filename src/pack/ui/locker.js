@@ -22,7 +22,7 @@ export function initLocker(app, hooks) {
   async function open({ cat: c = null, query = '' } = {}) {
     cat = c; q = query;
     await P.gearReady;
-    handle = app.openSheet?.({ kind: 'catalog', title: 'Gear', render: (body) => render(body) });
+    handle = app.openSheet?.({ kind: 'catalog', title: 'My kit', render: (body) => render(body) });
     // focus the search on desktop; on a phone that would throw the keyboard up
     if (matchMedia('(pointer: fine)').matches) setTimeout(() => handle?.body.querySelector('.pkg-search')?.focus(), 60);
   }
@@ -44,7 +44,7 @@ export function initLocker(app, hooks) {
   function render(body) {
     body.replaceChildren();
     const wrap = el('div', 'pkg-locker');
-    const search = el('input', 'pkg-search');
+    const search = el('input', 'input pkg-search');
     search.type = 'search';
     search.placeholder = `Search ${P.gear.items.length} things`;
     search.setAttribute('aria-label', 'Search gear');
@@ -53,7 +53,7 @@ export function initLocker(app, hooks) {
     chips.setAttribute('role', 'tablist');
     const all = [{ id: null, label: 'All' }, ...CATS];
     for (const c of all) {
-      const b = btn('pkg-chip' + (cat === c.id ? ' on' : ''), c.label, () => { cat = c.id; paintList(); for (const x of chips.children) x.classList.toggle('on', x.textContent === c.label); });
+      const b = btn('chip' + (cat === c.id ? ' on' : ''), c.label, () => { cat = c.id; paintList(); for (const x of chips.children) x.classList.toggle('on', x.textContent === c.label); });
       b.setAttribute('aria-pressed', String(cat === c.id));
       chips.append(b);
     }
@@ -61,8 +61,8 @@ export function initLocker(app, hooks) {
     wrap.append(search, chips, list);
     const foot = el('div', 'pkg-lfoot');
     foot.append(
-      btn('pkg-btn', 'Add your own', () => openCustom(body)),
-      btn('pkg-btn', 'Paste a spreadsheet', () => hooks.openImport?.()),
+      btn('btn sm', 'Add your own', () => openCustom(body)),
+      btn('btn sm', 'Paste a spreadsheet', () => hooks.openImport?.()),
     );
     wrap.append(foot);
     body.append(wrap);
@@ -94,10 +94,10 @@ export function initLocker(app, hooks) {
           const tx = el('button', 'pkg-lrow-t');
           tx.type = 'button';
           tx.onclick = () => hooks.openItem?.(it.uid);
-          tx.append(el('span', 'pkg-item-n', r.name), el('span', 'pkg-item-s', code && code !== 'home' ? placeWords(code) : code === 'home' ? 'Staying home' : 'Not on this loadout'));
+          tx.append(el('span', 'pkg-item-n', r.name), el('span', 'pkg-item-s', code && code !== 'home' ? placeWords(code) : code === 'home' ? 'Staying home' : 'Not on this trip'));
           row.append(tx, el('span', 'pkg-item-w num', fmtWeight(r.g, P.lib.unit)));
           if (!code || code === 'home') {
-            row.append(btn('pkg-add-btn', 'Pack', () => {
+            row.append(btn('btn sm pkg-add-btn', 'Pack', () => {
               P.place(it.uid, 'home');
               const res = P.suggest({ only: [it.uid] });
               const c = res?.place?.[it.uid];
@@ -119,14 +119,14 @@ export function initLocker(app, hooks) {
         const sub = [g.brand && !g.generic ? g.brand : null, fmtLitres(g.packed_l)].filter(Boolean).join(' · ');
         tx.append(el('span', 'pkg-item-n', g.generic || !g.brand ? g.name : g.name), el('span', 'pkg-item-s', sub));
         row.append(tx, el('span', 'pkg-item-w num', fmtWeight(g.weight_g, P.lib.unit)));
-        const add = btn('pkg-add-btn', '+', () => { addAndPack({ ref: g.id }); paintList(); }, { label: `Add ${g.name}` });
+        const add = btn('btn sm pkg-add-btn', '+', () => { addAndPack({ ref: g.id }); paintList(); }, { label: `Add ${g.name}` });
         row.append(add);
         list.append(row);
       }
       if (!mine.length && !hits.length) {
         const none = el('div', 'pkg-note');
         none.append(document.createTextNode(`Nothing called “${q}”. `));
-        none.append(btn('pkg-link', `Add “${q}” as your own`, () => openCustom(body, q)));
+        none.append(btn('btn sm ghost', `Add “${q}” as your own`, () => openCustom(body, q)));
         list.append(none);
       }
     }
@@ -145,24 +145,24 @@ export function initLocker(app, hooks) {
       addAndPack({ name: n, g: Math.round(g * 10) / 10, ...(kindSel.value ? { a: kindSel.value } : {}) });
       box.remove();
     };
-    const nameI = el('input', 'pkg-in');
+    const nameI = el('input', 'input');
     nameI.placeholder = 'What is it?';
     nameI.value = name;
     nameI.setAttribute('aria-label', 'Name');
-    const wI = el('input', 'pkg-in num');
+    const wI = el('input', 'input num');
     wI.inputMode = 'decimal';
     wI.placeholder = 'Weight';
     wI.setAttribute('aria-label', 'Weight');
-    const unitSel = el('select', 'pkg-in');
+    const unitSel = el('select', 'input');
     for (const u of P.lib.unit === 'imperial' ? ['oz', 'g'] : ['g', 'oz']) unitSel.append(new Option(u, u));
     unitSel.setAttribute('aria-label', 'Unit');
-    const kindSel = el('select', 'pkg-in');
+    const kindSel = el('select', 'input');
     kindSel.setAttribute('aria-label', 'What kind of thing');
     kindSel.append(new Option('Guess from the name', ''));
     for (const [v, l] of [['stuffsack', 'Soft bag of stuff'], ['clothing_folded', 'Jacket or top'], ['clothing_rolled', 'Small clothing'], ['box', 'Hard box'], ['pouch', 'Pouch'], ['bottle', 'Bottle'], ['pole_bundle', 'Long and thin'], ['tent_bundle', 'Tent or shelter'], ['sleeping_bag', 'Sleeping bag'], ['multitool', 'Tool']]) kindSel.append(new Option(l, v));
     const row = el('div', 'pkg-custom-r');
     row.append(wI, unitSel);
-    const go = el('button', 'pkg-btn is-primary', 'Add and pack');
+    const go = el('button', 'btn primary', 'Add and pack');
     go.type = 'submit';
     box.append(el('div', 'pkg-lhead', 'Your own thing'), nameI, row, kindSel, go);
     body.querySelector('.pkg-locker')?.prepend(box);

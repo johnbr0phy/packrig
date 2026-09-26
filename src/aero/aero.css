@@ -1,350 +1,145 @@
-/* ==== Wind tunnel HUD — right-side glass panel ==============================
-   Mirrors the left "on your bike" panel's rhythm and reuses ui.css's tokens
-   (--ink, --ink-dim, --ink-faint, --accent, --glass-*, --radius, --panel-w).
-   No new colours are introduced. ============================================ */
+/* ===========================================================================
+   The wind tunnel's panel. It takes the rig panel's place (one surface at a
+   time): the left column on a desktop, the bottom sheet on a phone, where it
+   opens at a peek of the two numbers that matter and expands on a tap.
+   Tokens only.
+   =========================================================================== */
+
+#ui-root.aero-open > .panel, #ui-root.aero-open > .mounts, #ui-root.aero-open > .coach { visibility: hidden; }
 
 .aero-panel {
-  position: absolute;
-  top: 92px;
-  right: var(--gutter);
-  width: calc(var(--panel-w) + 24px); /* one instrument wider than the kit list — the waterfall needs the room */
-  max-height: calc(100vh - 220px);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  position: fixed; z-index: 25;
+  top: var(--topbar-h); left: var(--gutter); bottom: var(--gutter); width: var(--panel-w);
+  display: flex; flex-direction: column; overflow: hidden;
+  border-radius: var(--r-panel);
+  background: var(--e3-bg); backdrop-filter: var(--glass-filter-3); -webkit-backdrop-filter: var(--glass-filter-3);
+  border: 1px solid var(--e3-brd); box-shadow: var(--e3-shd);
+  color: var(--ink-1);
+  animation: aero-in var(--d-sheet) var(--ease-out) both;
 }
+@keyframes aero-in { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
 
-/* ---- header -------------------------------------------------------------- */
-.aero-head {
-  padding: 15px 10px 12px 18px;
-  display: flex; align-items: center; justify-content: space-between; gap: 8px;
-  flex: none;
-}
-.aero-title {
-  font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
-  color: rgba(255, 255, 255, 0.62);
-}
-.aero-close {
-  flex: none; width: 30px; height: 30px; border-radius: 9px; cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.10); background: rgba(255, 255, 255, 0.04);
-  color: var(--ink-dim); font-size: 13px; line-height: 1;
-  transition: background 0.15s, color 0.15s;
-}
-.aero-close:hover { background: rgba(255, 255, 255, 0.12); color: var(--ink); }
+.aero-head { flex: none; display: flex; align-items: center; justify-content: space-between; gap: var(--s-2); min-height: 60px; padding: var(--s-3) var(--s-3) var(--s-2) var(--s-5); }
+.aero-title { font-size: var(--fs-title2); font-weight: 650; letter-spacing: var(--tr-title); }
+.aero-close { display: inline-flex; align-items: center; gap: var(--s-1); min-height: var(--target); padding: 0 var(--s-3); border-radius: var(--r-pill); background: var(--fill-1); color: var(--ink-2); font-size: var(--fs-caption); font-weight: 600; }
+.aero-close:hover { background: var(--fill-2); color: var(--ink-1); }
+.aero-min { display: none; }
 
-/* ---- scrollable body ------------------------------------------------------ */
-.aero-body {
-  overflow-y: auto; scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
-}
-.aero-body::-webkit-scrollbar { width: 6px; }
-.aero-body::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.16); border-radius: 3px; }
-.aero-body::-webkit-scrollbar-track { background: transparent; }
-
-.aero-sec { padding: 16px 18px; }
-.aero-sec + .aero-sec { border-top: 1px solid rgba(255, 255, 255, 0.09); }
-
-.aero-sec-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--ink-faint); margin-bottom: 10px;
-}
-.aero-sec-row { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+.aero-body { flex: 1; min-height: 0; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--ink-4) transparent; }
+.aero-sec { padding: var(--s-4) var(--s-5); }
+.aero-sec + .aero-sec { border-top: 1px solid var(--hairline); }
+.aero-sec-label, .aero-assum summary { font-size: var(--fs-label); font-weight: 650; letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--ink-3); margin-bottom: var(--s-3); }
+.aero-sec-row { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--s-2); }
 .aero-sec-row .aero-sec-label { margin-bottom: 0; }
 
-/* ---- 1. CdA headline ------------------------------------------------------ */
-.cda-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
-.cda-primary { display: flex; align-items: baseline; gap: 4px; }
-.cda-value {
-  font-size: 38px; font-weight: 800; letter-spacing: -0.01em; color: #fff;
-  font-variant-numeric: tabular-nums; line-height: 1;
-}
-.cda-unit { font-size: 14px; font-weight: 600; color: var(--ink-dim); }
-.cda-secondary { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex: none; }
-.cda-yaw-value {
-  font-size: 15px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums;
-}
-.cda-yaw-unit { font-size: 11px; font-weight: 600; color: var(--ink-dim); margin-left: 2px; }
-.cda-yaw-tag {
-  font-size: 9.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.cda-explainer { margin-top: 10px; font-size: 11.5px; line-height: 1.5; color: var(--ink-dim); }
+/* the grade */
+.aero-grade { display: flex; align-items: center; gap: var(--s-3); }
+.grade-badge { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--r-control); background: var(--fill-2); }
+.grade-letter { font-size: var(--fs-title2); font-weight: 750; color: var(--ink-1); }
+.grade-name { font-size: var(--fs-body); font-weight: 650; }
+.grade-blurb { font-size: var(--fs-caption); color: var(--ink-2); margin-top: 2px; line-height: var(--lh-snug); }
 
-/* ---- 2. watts at speed ----------------------------------------------------- */
-.watts-row { display: flex; align-items: baseline; gap: 5px; flex-wrap: wrap; }
-.watts-value { font-size: 28px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; line-height: 1; }
-.watts-unit { font-size: 13px; font-weight: 600; color: var(--ink-dim); }
-.watts-caption { font-size: 12px; color: var(--ink-dim); margin-left: 3px; }
-.watts-speed-echo { font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+/* CdA */
+.cda-row { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s-3); }
+.cda-primary { display: flex; align-items: baseline; gap: var(--s-1); }
+.cda-value { font-size: var(--fs-display); font-weight: 650; letter-spacing: var(--tr-display); line-height: 1; font-variant-numeric: tabular-nums; }
+.cda-unit, .cda-yaw-unit, .watts-unit, .delta-unit { font-size: var(--fs-caption); font-weight: 600; color: var(--ink-3); margin-left: 2px; }
+.cda-secondary { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.cda-yaw-value { font-size: var(--fs-title3); font-weight: 650; font-variant-numeric: tabular-nums; }
+.cda-yaw-tag { font-size: var(--fs-label); font-weight: 650; letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--ink-3); }
+.cda-explainer { margin-top: var(--s-2); font-size: var(--fs-caption); line-height: var(--lh-snug); color: var(--ink-2); }
 
-.aero-slider-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
-.slider-readout {
-  flex: none; min-width: 56px; text-align: right;
-  font-size: 12px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums;
-}
+/* watts */
+.watts-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--s-1); }
+.watts-value { font-size: var(--fs-display); font-weight: 650; letter-spacing: var(--tr-display); line-height: 1; font-variant-numeric: tabular-nums; }
+.watts-caption { font-size: var(--fs-caption); color: var(--ink-2); margin-left: var(--s-1); }
+.watts-speed-echo { font-variant-numeric: tabular-nums; color: var(--ink-1); font-weight: 600; }
+.aero-slider-row { display: flex; align-items: center; gap: var(--s-3); margin-top: var(--s-3); }
+.slider-readout { font-size: var(--fs-caption); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.aero-slider { flex: 1; -webkit-appearance: none; appearance: none; height: 4px; border-radius: 2px; background: var(--fill-3); outline: none; }
+.aero-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--ink-1); box-shadow: 0 0 0 3px var(--shade); cursor: grab; }
+.aero-slider::-moz-range-thumb { width: 20px; height: 20px; border: 0; border-radius: 50%; background: var(--ink-1); }
+.aero-slider:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--shade), 0 0 0 5px var(--ink-1); }
 
-/* one slider look, shared by speed and yaw */
-.aero-slider {
-  flex: 1; -webkit-appearance: none; appearance: none;
-  height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.14);
-  outline: none; cursor: pointer; margin: 8px 0;
-}
-.aero-slider::-webkit-slider-thumb {
-  -webkit-appearance: none; appearance: none;
-  width: 15px; height: 15px; border-radius: 50%;
-  background: var(--accent); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  cursor: pointer; transition: transform 0.12s;
-}
-.aero-slider::-webkit-slider-thumb:hover { transform: scale(1.12); }
-.aero-slider::-moz-range-thumb {
-  width: 15px; height: 15px; border-radius: 50%; border: none;
-  background: var(--accent); cursor: pointer;
-}
-.aero-slider::-moz-range-track { height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); }
-.aero-slider:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px rgba(232, 168, 72, 0.4); }
+/* cost of the bags */
+.delta-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3); }
+.delta-item { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.delta-value { font-size: var(--fs-title2); font-weight: 650; font-variant-numeric: tabular-nums; }
+.delta-label { font-size: var(--fs-caption); color: var(--ink-3); line-height: var(--lh-snug); }
 
-/* ---- 3. delta vs. bare bike ------------------------------------------------ */
-.delta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.delta-item { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.delta-value {
-  font-size: 19px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; line-height: 1.1;
-}
-.delta-unit { font-size: 11px; font-weight: 600; color: var(--ink-dim); margin-left: 2px; }
-.delta-label { font-size: 10.5px; color: var(--ink-faint); line-height: 1.3; }
-
-/* ---- 4. waterfall ----------------------------------------------------------
-   The feature's centrepiece — ranked, biggest offender first. Label sits on
-   its own line above a full-width bar (rather than squeezed into a fixed-
-   width column beside it) because the bag's name is the whole point of this
-   chart — it must never lose the fight for space and get truncated. */
-.wf-list { display: flex; flex-direction: column; gap: 10px; }
-.wf-row {
-  padding: 5px 6px; border-radius: 8px; cursor: default;
-  transition: background 0.15s;
-}
-.wf-row:hover, .wf-row.hl { background: rgba(255, 255, 255, 0.07); }
-.wf-top { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; }
-.wf-label-wrap { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
-.wf-label {
-  font-size: 11.5px; color: var(--ink); font-weight: 600; line-height: 1.3;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
-}
-.wf-tag {
-  display: none; flex: none; font-size: 8.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.wf-row.baseline .wf-label { color: var(--ink-dim); font-weight: 500; }
+/* where the watts go */
+.wf-list { display: flex; flex-direction: column; gap: var(--s-2); }
+.wf-row { padding: var(--s-2); margin: 0 calc(-1 * var(--s-2)); border-radius: var(--r-control); transition: background var(--d-micro) var(--ease-out); }
+.wf-row:hover, .wf-row.hl { background: var(--fill-1); }
+.wf-top { display: flex; align-items: baseline; gap: var(--s-2); margin-bottom: var(--s-1); }
+.wf-label-wrap { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: var(--s-2); flex-wrap: wrap; }
+.wf-label { font-size: var(--fs-caption); font-weight: 600; }
+.wf-tag { display: none; font-size: var(--fs-label); font-weight: 650; letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--ink-3); }
+.wf-row.baseline .wf-label { color: var(--ink-2); font-weight: 500; }
 .wf-row.baseline .wf-tag, .wf-row.sheltered .wf-tag { display: inline; }
-.wf-value {
-  flex: none; font-size: 11px; font-weight: 700; color: var(--ink);
-  font-variant-numeric: tabular-nums;
-}
+.wf-value { font-size: var(--fs-caption); font-weight: 650; font-variant-numeric: tabular-nums; }
 .wf-row.top .wf-value { color: var(--accent); }
-.wf-track { height: 7px; border-radius: 999px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
-.wf-fill {
-  height: 100%; border-radius: 999px; background: rgba(255, 255, 255, 0.36);
-  transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
+.wf-track { height: 6px; border-radius: 3px; background: var(--fill-1); overflow: hidden; }
+.wf-fill { height: 100%; border-radius: inherit; background: var(--ink-2); transition: width var(--d-sheet) var(--ease-out); }
 .wf-row.top .wf-fill { background: var(--accent); }
-.wf-row.baseline .wf-fill { background: rgba(255, 255, 255, 0.16); }
+.wf-row.baseline .wf-fill { background: var(--fill-3); }
+.wf-row-note, .wf-fairing-note { font-size: var(--fs-caption); color: var(--ink-3); margin-top: var(--s-1); line-height: var(--lh-snug); }
 
-/* a bag hidden in another part's wake — near-zero is a real reading here,
-   so it earns an explanation rather than sitting as a bare, suspicious "0 W" */
-.wf-row-note {
-  margin-top: 5px; font-size: 10.5px; line-height: 1.4;
-  color: var(--ink-faint); font-style: italic;
-}
+/* yaw */
+.yaw-cda-row { display: flex; align-items: baseline; justify-content: space-between; margin-top: var(--s-2); }
+.yaw-cda-label { font-size: var(--fs-caption); color: var(--ink-2); }
+.yaw-cda-value { font-size: var(--fs-caption); font-weight: 650; font-variant-numeric: tabular-nums; }
+.yaw-hint { font-size: var(--fs-caption); color: var(--ink-3); line-height: var(--lh-snug); margin-top: var(--s-2); }
 
-/* the frame-bag fairing credit — genuinely good news, so it earns the
-   faintest touch of accent tint (the same --accent-soft the rest of the app
-   already uses for hover states), not a new colour */
-.wf-fairing-note {
-  margin-top: 10px; font-size: 11px; line-height: 1.5; color: var(--ink-dim);
-  padding: 9px 10px; border-radius: 9px;
-  background: var(--accent-soft); border: 1px solid rgba(232, 168, 72, 0.22);
-}
-
-/* ---- 5. grade --------------------------------------------------------------
-   Present with confidence, not as the main event — small badge, no traffic-
-   light colour coding (this app has one accent, used sparingly). */
-.aero-grade { display: flex; align-items: center; gap: 14px; }
-.grade-badge {
-  flex: none; width: 44px; height: 44px; border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12);
-}
-.grade-letter { font-size: 17px; font-weight: 800; color: var(--accent); }
-.grade-copy { min-width: 0; }
-.grade-name { font-size: 13.5px; font-weight: 700; color: #fff; }
-.grade-blurb { font-size: 11px; color: var(--ink-dim); margin-top: 2px; line-height: 1.4; }
-
-/* ---- 6. yaw ----------------------------------------------------------------- */
-.yaw-cda-row { display: flex; align-items: baseline; justify-content: space-between; margin-top: 8px; }
-.yaw-cda-label { font-size: 11px; color: var(--ink-dim); }
-.yaw-cda-value { font-size: 12.5px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
-.yaw-hint { font-size: 11px; color: var(--ink-faint); line-height: 1.5; margin-top: 10px; }
-
-/* ---- 7. how this is calculated ---------------------------------------------
-   Deliberately present, deliberately quiet — a disclosure, not a disclaimer. */
-.aero-assum summary {
-  cursor: pointer; list-style: none;
-  display: flex; align-items: center; justify-content: space-between;
-  font-size: 11.5px; font-weight: 600; color: var(--ink-dim);
-  transition: color 0.15s;
-}
+/* the assumptions: say what the number rests on */
+.aero-assum summary { display: flex; justify-content: space-between; align-items: center; min-height: var(--target); margin: 0; cursor: pointer; list-style: none; }
 .aero-assum summary::-webkit-details-marker { display: none; }
-.aero-assum summary::marker { content: ''; }
-.aero-assum summary:hover { color: var(--ink); }
-.assum-chevron { color: var(--ink-faint); font-size: 12px; transition: transform 0.2s; }
+.aero-assum summary:hover { color: var(--ink-1); }
+.assum-chevron { transition: transform var(--d-control) var(--ease-out); }
 .aero-assum[open] .assum-chevron { transform: rotate(180deg); }
-.assum-disclaimer {
-  margin-top: 12px; font-size: 11px; line-height: 1.55; color: var(--ink-dim);
-  padding: 9px 10px; border-radius: 9px;
-  background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08);
-}
-.assum-list { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
-.assum-item { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font-size: 11px; }
-.a-label { color: var(--ink-dim); }
-.a-value { color: var(--ink); font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
-.a-note { grid-column: 1 / -1; color: var(--ink-faint); font-size: 10.5px; line-height: 1.4; }
+.assum-disclaimer { font-size: var(--fs-caption); color: var(--ink-2); line-height: var(--lh-snug); }
+.assum-list { margin-top: var(--s-2); display: flex; flex-direction: column; gap: var(--s-2); }
+.assum-item { display: grid; grid-template-columns: 1fr auto; gap: 2px var(--s-2); font-size: var(--fs-caption); }
+.a-label { color: var(--ink-2); }
+.a-value { font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.a-note { grid-column: 1 / -1; color: var(--ink-3); line-height: var(--lh-snug); }
 
-/* ---- 8. exit ------------------------------------------------------------- */
-.aero-foot { padding: 14px 18px 18px; flex: none; }
-.aero-exit-btn {
-  width: 100%; height: 38px; border-radius: 10px; cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.14); background: rgba(255, 255, 255, 0.06);
-  color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 0.03em;
-  transition: background 0.15s, border-color 0.15s;
-}
-.aero-exit-btn:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.24); }
-
-/* ---- mobile peek summary ---------------------------------------------------
-   Built unconditionally by panel.js; hidden here by default so desktop never
-   sees it. Only the phone breakpoint below turns it back on. */
+.aero-foot { display: none; }
 .aero-peek { display: none; }
 
-/* ---- motion --------------------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  .wf-fill { transition: none; }
-  .aero-slider::-webkit-slider-thumb { transition: none; }
-
-}
-
-/* ---- responsive ------------------------------------------------------------
-   ui.css defines no breakpoints of its own (the left panel is a fixed 320px
-   at rest), so these are scoped entirely to this panel: shrink and tighten
-   before the two panels can touch. */
-@media (max-width: 1180px) {
-  .aero-panel { width: 300px; }
-
-}
-@media (max-width: 940px) {
-  .aero-panel { width: 262px; top: 84px; max-height: calc(100vh - 200px); }
-  .aero-sec { padding: 13px 14px; }
-  .cda-value { font-size: 32px; }
-  .watts-value { font-size: 24px; }
-  .delta-value { font-size: 16px; }
-
-}
-
-/* ---- phone: bottom sheet ----------------------------------------------------
-   MOBILE.md's contract: full width minus a 12px gutter, rounded top corners
-   only, max-height 55vh, internally scrollable, sitting above the bottom bar.
-   The bike keeps the upper half of the screen — this is the one mode where
-   watching the smoke matters more than reading the numbers, so it opens
-   collapsed to a two-line peek (kit cost + biggest offender) rather than the
-   full CdA-led desktop layout. --bar-h/--bar-bottom are ui.css's own tokens,
-   read live so this tracks whatever ui-mobile sets them to on phone, not a
-   value re-guessed here.
-   Width alone doesn't catch a landscape phone (852x393 is "tablet" width per
-   MOBILE.md's table but is unambiguously a phone) — the short + coarse
-   clause exists specifically for that case. */
-@media (max-width: 560px), ((pointer: coarse) and (max-height: 480px)) {
+/* ---- phone: the bottom sheet, opening at a peek -------------------------------------------- */
+@media (max-width: 560px), (pointer: coarse) and (max-height: 480px) {
   .aero-panel {
-    top: auto;
-    /* max() with env(safe-area-inset-*), matching ui.css's own phone idiom
-       for the kit sheet — a notch or rounded corner eats into the 12px
-       gutter otherwise */
-    left: max(var(--gutter, 12px), env(safe-area-inset-left));
-    right: max(var(--gutter, 12px), env(safe-area-inset-right));
-    bottom: calc(var(--bar-h, 56px) + max(var(--bar-bottom, 28px), env(safe-area-inset-bottom)) + 10px);
-    width: auto;
-    max-height: 55vh;
-    border-radius: var(--radius) var(--radius) 0 0;
+    top: auto; left: 0; right: 0; bottom: 0; width: auto; max-height: 62vh;
+    border-radius: var(--r-panel) var(--r-panel) 0 0; border-bottom: 0;
+    animation-name: aero-up;
   }
-
-  /* ---- peek/expand ------------------------------------------------------
-     Collapsed (peek) is the entry state: header + this bar only, nothing
-     else. Expanding reveals the full .aero-body (everything from CdA down
-     through assumptions) up to the 55vh cap, scrollable. */
-  .aero-peek {
-    display: flex; flex-direction: column; gap: 9px;
-    padding: 8px 16px 14px; min-height: 44px; cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .peek-handle {
-    align-self: center; width: 36px; height: 4px; border-radius: 999px;
-    background: rgba(255, 255, 255, 0.22); flex: none;
-  }
-  .peek-row { display: flex; align-items: center; gap: 10px; }
-  .peek-cost { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 5px; flex: none; }
-  .peek-cost-value {
-    font-size: 22px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; line-height: 1;
-  }
-  .peek-cost-unit { font-size: 12px; font-weight: 600; color: var(--ink-dim); }
-  .peek-cost-label { flex-basis: 100%; font-size: 10px; color: var(--ink-faint); line-height: 1.3; }
-  .peek-offender {
-    flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-end;
-    gap: 2px; text-align: right; padding-left: 8px; border-left: 1px solid rgba(255, 255, 255, 0.09);
-  }
-  .peek-offender-name {
-    font-size: 11.5px; font-weight: 600; color: var(--ink);
-    max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  }
-  .peek-offender-watts { font-size: 13px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
-  .peek-chevron { flex: none; color: var(--ink-faint); font-size: 13px; transition: transform 0.2s; }
-  .aero-panel.expanded .peek-chevron { transform: rotate(180deg); }
-
-  /* everything below the peek row is the "below the fold" material — the
-     full CdA readout, waterfall, yaw slider and assumptions block */
-  .aero-body { display: none; }
+  @keyframes aero-up { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .aero-head { order: 1; min-height: 52px; padding: 0 var(--s-2) 0 var(--s-4); }
+  .aero-peek { order: 0; display: flex; flex-direction: column; gap: var(--s-2); padding: 0 var(--s-4) var(--s-3); cursor: pointer; }
+  .aero-peek { order: 2; }
+  .aero-body { order: 3; display: none; }
   .aero-panel.expanded .aero-body { display: block; }
-  .aero-foot { display: none; }
-  .aero-panel.expanded .aero-foot { display: block; }
-
-  /* Pin header/peek/footer to their content size and let only .aero-body
-     absorb the shrink. Without this, expanding on a short viewport (55vh of
-     393px landscape is ~216px, nowhere near enough for every section) makes
-     the flex column shrink EVERY child including this one — .aero-peek has
-     no scroll affordance of its own, so its wrapped two-line label just
-     overflowed down into the CdA section sitting right underneath it. Only
-     .aero-body gets `overflow-y: auto` (see the base rule above), so it's
-     the only child that can safely give up space. */
-  .aero-head, .aero-peek, .aero-foot { flex: none; }
+  .peek-handle { position: absolute; top: 8px; left: 50%; width: 40px; height: 5px; transform: translateX(-50%); border-radius: 3px; background: var(--ink-4); }
+  .peek-grade { display: flex; align-items: baseline; gap: var(--s-2); }
+  .peek-grade-letter { font-size: var(--fs-title3); font-weight: 750; }
+  .peek-grade-name { font-size: var(--fs-body); font-weight: 600; }
+  .peek-grade-blurb { display: none; }
+  .peek-row { display: flex; align-items: center; gap: var(--s-3); }
+  .peek-cost { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 var(--s-1); flex: none; }
+  .peek-cost-value { font-size: var(--fs-display); font-weight: 650; line-height: 1; font-variant-numeric: tabular-nums; }
+  .peek-cost-unit { font-size: var(--fs-caption); font-weight: 600; color: var(--ink-3); }
+  .peek-cost-label { flex-basis: 100%; font-size: var(--fs-caption); color: var(--ink-3); }
+  .peek-offender { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right; }
+  .peek-offender-name { font-size: var(--fs-caption); font-weight: 600; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .peek-offender-watts { font-size: var(--fs-body); font-weight: 650; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .peek-chevron { flex: none; color: var(--ink-3); transition: transform var(--d-control) var(--ease-out); }
+  .aero-panel.expanded .peek-chevron { transform: rotate(180deg); }
+  .aero-panel.expanded { display: flex; }
   .aero-panel.expanded .aero-body { flex: 1 1 auto; min-height: 0; }
-
 }
 
-/* ---- touch: 44px minimum slider targets --------------------------------
-   `(pointer: coarse)` on its own (not gated to phone width) per MOBILE.md —
-   a tablet in landscape is still a thumb, not a cursor. The visible dot
-   stays the same size as desktop's; only the invisible hit area grows, via
-   a radial-gradient fill rather than box-shadow so the drop-shadow below
-   traces the dot's own alpha instead of casting a shadow across the whole
-   44px circle. */
 @media (pointer: coarse) {
-  .aero-slider { height: 8px; margin: 20px 0; touch-action: none; }
-  .aero-slider::-webkit-slider-thumb {
-    width: 44px; height: 44px;
-    background: radial-gradient(circle, var(--accent) 0 7px, transparent 7px);
-    box-shadow: none;
-    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
-  }
-  .aero-slider::-moz-range-thumb {
-    width: 44px; height: 44px; border: none;
-    background: radial-gradient(circle, var(--accent) 0 7px, transparent 7px);
-    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
-  }
-  .aero-slider-row { margin-top: 16px; }
-
+  .aero-slider { height: 6px; margin: var(--s-4) 0; touch-action: none; }
+  .aero-slider::-webkit-slider-thumb { width: var(--target); height: var(--target); background: radial-gradient(circle, var(--ink-1) 0 9px, transparent 10px); box-shadow: none; }
 }

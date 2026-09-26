@@ -122,7 +122,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     icon('down', { size: 18, cls: 'nav-min-dn' }),
     icon('up', { size: 18, cls: 'nav-min-up' }),
   );
-  head.append(closeBtn, minBtn);
+  head.append(closeBtn);
   root.append(head);
 
   // ---- mobile peek summary --------------------------------------------
@@ -152,7 +152,8 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   const peekOffenderWatts = elt('span', 'peek-offender-watts', '');
   const peekOffender = el('div', 'peek-offender');
   peekOffender.append(peekOffenderName, peekOffenderWatts);
-  const peekChevron = elt('span', 'peek-chevron', '⌄');
+  const peekChevron = el('span', 'peek-chevron');
+  peekChevron.append(icon('up', { size: 18 }));
   peekRow.append(peekCost, peekOffender, peekChevron);
   peekBar.append(peekHandle, peekGrade, peekBlurb, peekRow);
   root.append(peekBar);

@@ -83,7 +83,7 @@ export function initPack(app) {
   function ensureActive() {
     let lo = activeLoadout();
     if (!lo) {
-      lo = { ...emptyLoadout('My loadout'), id: uidL() };
+      lo = { ...emptyLoadout('My trip'), id: uidL() };
       lib.loadouts.push(lo);
       lib.active = lo.id;
     }
@@ -363,7 +363,7 @@ export function initPack(app) {
       applyBikeOf(lo);
       save(); recompute();
     },
-    newLoadout(name = 'New loadout', { fromCurrent = true } = {}) {
+    newLoadout(name = 'New trip', { fromCurrent = true } = {}) {
       const src = activeLoadout();
       const lo = fromCurrent && src ? { ...duplicateLoadout(src, name), id: uidL() } : { ...emptyLoadout(name), id: uidL(), rig: { v: 1, bags: bagsOfBike() } };
       lib.loadouts.push(lo);
@@ -441,7 +441,7 @@ export function initPack(app) {
     },
 
     // ---- sheets -------------------------------------------------------------------
-    async importText(text, { name = 'Imported loadout', asNew = true } = {}) {
+    async importText(text, { name = 'Imported trip', asNew = true } = {}) {
       await gearReady;
       const res = importSheet(text, { gear, name });
       // merge the imported items into my locker; the same thing twice is one thing

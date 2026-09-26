@@ -58,7 +58,7 @@ export function initFraming(app) {
     root.traverse((o) => {
       if (!o.isMesh || !o.geometry?.attributes?.position || o.userData?.marker) return;
       // ground decals (the contact shadow under each wheel) are not the bike
-      if (o.material?.depthWrite === false) return;
+      if ((o.material?.depthWrite === false && o.material?.isMeshBasicMaterial)) return;
       for (let q = o; q; q = q.parent) if (!q.visible) return;
       meshes.push(o);
     });

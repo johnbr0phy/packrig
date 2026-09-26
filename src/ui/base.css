@@ -29,7 +29,7 @@ h1, h2, h3, h4, p, ul { margin: 0; }
 ul { padding: 0; list-style: none; }
 
 /* numbers are typeset: tabular figures, unit one ink level down */
-.num { font-variant-numeric: tabular-nums slashed-zero; }
+.num { font-variant-numeric: tabular-nums; }
 .unit { color: var(--ink-3); font-weight: 450; }
 
 /* ---- type roles ------------------------------------------------------------- */

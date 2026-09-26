@@ -200,3 +200,20 @@
 #ui-root.menu-open > .panel, #ui-root.menu-open > .topbar, #ui-root.menu-open > .mounts,
 #ui-root.menu-open > .coach, #ui-root.menu-open > .sheet:not(.open) { visibility: hidden; }
 @media (min-width: 561px) { .panel.is-empty { bottom: auto; } }
+
+/* ---- the account sheet ------------------------------------------------------------ */
+.ac-card { display: flex; flex-direction: column; gap: var(--s-3); max-width: 420px; }
+.ac-card.is-busy { opacity: 0.7; pointer-events: none; }
+.ac-who { font-size: var(--fs-title3); font-weight: 600; }
+.ac-note { font-size: var(--fs-body); color: var(--ink-2); }
+.ac-notice { padding: var(--s-2) var(--s-3); border-radius: var(--r-control); font-size: var(--fs-caption); }
+.ac-notice.is-ok { background: var(--fill-2); color: var(--ok); }
+.ac-notice.is-bad { background: var(--bad-soft); color: var(--bad); }
+.ac-google { background: var(--plate); color: var(--ink-on-plate); }
+.ac-google:hover { background: var(--plate); opacity: 0.92; }
+.ac-google svg { flex: none; }
+.ac-or { text-align: center; font-size: var(--fs-caption); color: var(--ink-3); }
+.ac-form { display: flex; flex-direction: column; gap: var(--s-3); }
+.ac-field { display: flex; flex-direction: column; gap: var(--s-1); }
+.ac-field-label { font-size: var(--fs-label); font-weight: 650; letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--ink-3); }
+.ac-alt { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2); }

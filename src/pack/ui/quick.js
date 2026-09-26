@@ -62,8 +62,8 @@ export function initQuick(app, hooks) {
       grid.append(t);
     }
     wrap.append(grid);
-    const foot = el('div', 'bs-foot pkg-quick-foot');
-    const go = btn('bs-btn is-primary', '', () => pack(h));
+    const foot = el('div', 'sheet-foot-src');
+    const go = btn('btn primary wide', '', () => pack(h));
     const paintGo = () => {
       go.textContent = picked.size ? `Pack ${picked.size === 1 ? 'it' : `these ${picked.size}`}` : 'Pick what you’re bringing';
       go.disabled = !picked.size;

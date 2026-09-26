@@ -308,6 +308,10 @@ app.openWindTunnel = async () => {
       passes: { gtao, bloom },   // either may be null on a phone; tunnel.js no-ops
       measure: measureProfile(),
       onToggle(on) {
+        // the tunnel owns the camera while it is open
+        app.framing?.pause(on);
+        if (!on) setTimeout(() => app.framing?.frameBike(), 900);
+        app.sheets?.closeSheet();
         document.body.classList.toggle('aero-open', on);
         document.getElementById('ui-root')?.classList.toggle('aero-open', on);
         app.ui?.sync();
