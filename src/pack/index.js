@@ -64,6 +64,7 @@ export function initPack(app) {
   let applying = false;
   let state = null;
   let saveTimer = null;
+  let refitTimer = null;
 
   const gearReady = loadGear().then((g) => { gear = g; recompute(); return g; });
 
@@ -224,9 +225,13 @@ export function initPack(app) {
     }
     if (showing) {
       scene3d.showOutside(outside);
-      scene3d.showCoM(balance?.com || null);
+      // the centre of mass only means something once there is kit on the bike
+      scene3d.showCoM(totals.count ? balance?.com || null : null);
     }
     for (const fn of listeners) fn(state);
+    // things hanging off the bike change its outline: refit once they settle
+    clearTimeout(refitTimer);
+    refitTimer = setTimeout(() => { app.framing?.invalidate(); app.framing?.update(); }, 700);
     return state;
   }
 

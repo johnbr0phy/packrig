@@ -321,7 +321,7 @@ export function createPack3D(app) {
       const dot = new THREE.Mesh(new THREE.SphereGeometry(5.5, 16, 12), new THREE.MeshBasicMaterial({ color: 0xff7a45, depthTest: false, transparent: true }));
       const cross = new THREE.Mesh(new THREE.BoxGeometry(46, 1.6, 1.6), new THREE.MeshBasicMaterial({ color: 0xffffff, depthTest: false, transparent: true, opacity: 0.8 }));
       const cross2 = cross.clone(); cross2.rotation.z = Math.PI / 2;
-      for (const m of [ring, dot, cross, cross2]) { m.renderOrder = 999; m.userData.packItem = true; com.add(m); }
+      for (const m of [ring, dot, cross, cross2]) { m.renderOrder = 999; m.userData.packItem = true; m.userData.marker = true; com.add(m); }
     }
     if (com.parent !== F) F.add(com);
     com.visible = true;

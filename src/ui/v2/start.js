@@ -46,11 +46,10 @@ const staged = (node) => {
   return node;
 };
 
-export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoadouts, onPack } = {}) {
+export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoadouts, onPack, onExample } = {}) {
   seq = 0;
   const wrap = el('div', 'pr-start');
 
-  wrap.append(staged(el('p', 'pr-eyebrow', 'Bikepacking bag configurator')));
 
   // Three short lines rather than one long one: at display size the line
   // breaks are part of the composition, and a browser choosing them at 34px
@@ -77,38 +76,15 @@ export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoad
   // here now, with Build and Loadouts, because that is when you want it.
   const ENTRIES = [
     rigs > 0 ? {
-      n: '01',
-      name: 'My rigs',
-      desc: `${rigs} saved. Open one, or start another.`,
-      run: onRigs,
+      n: '01', name: 'My rigs', desc: `${rigs} saved. Open one, or start another.`, run: onRigs,
     } : {
-      n: '01',
-      name: 'Build a rig',
-      desc: `A bare frame and ${mountCount} mounts.`,
-      run: onBuild,
+      n: '01', name: 'Build a rig', desc: `A bare bike and ${mountCount} places for a bag.`, run: onBuild,
     },
-    // Packing, for the person who has a bike, a sleeping bag and no idea
-    // whether a stove fits in a frame bag. Second, not first: the product is
-    // still the bike, and "Build a rig" is still where the owner starts.
-    {
-      n: '02',
-      name: 'Pack my kit',
-      desc: 'Tap what you’re bringing. See where it goes.',
-      run: onPack,
-    },
-    {
-      n: '03',
-      name: 'Surprise me',
-      desc: 'A loaded bike, picked for you.',
-      run: onSurprise,
-    },
-    {
-      n: '04',
-      name: 'Loadouts',
-      desc: 'Rigs already built, one packed to the last spork.',
-      run: onLoadouts,
-    },
+    { n: '02', name: 'Pack my kit', desc: 'Tap what you’re bringing. See where it goes.', run: onPack },
+    { n: '03', name: 'See a packed bike', desc: 'One rider’s real list: 67 things in 8 bags.', run: onExample },
+    { n: '04', name: 'Examples', desc: 'Rigs already built. Try one on.', run: onLoadouts },
   ];
+
 
   for (const e of ENTRIES) {
     const li = el('li', 'pr-menu-li');

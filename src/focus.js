@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { device, fitDistance } from './mobile.js';
+import { device } from './mobile.js';
 
 /**
  * Pointer focus for equipped bags: hover gives a light "half select" lift,
@@ -89,60 +89,19 @@ export function initFocus(app, { camera, controls, renderer }) {
     return null;
   }
 
-  // ---- camera glide -------------------------------------------------------
-  let glide = null;
-  const tmp = new THREE.Vector3();
 
+  // The camera move itself belongs to src/ui/framing.js now, so a bag in
+  // focus is framed into the space the sheet leaves, with the bike around it,
+  // on the same curve as every other camera move.
   function focusOn(slot) {
-    const mesh = meshOf(slot);
-    if (!mesh) return;
-    const box = new THREE.Box3().setFromObject(mesh);
-    if (box.isEmpty()) return;
-    const centre = box.getCenter(new THREE.Vector3());
-    // frame the bag: pull the camera to a distance that fits its longest side
-    const span = box.getSize(tmp).length();
-    const dir = camera.position.clone().sub(controls.target).normalize();
-    // span * 2.1 was fitted to a landscape viewport. three's fov is VERTICAL,
-    // so a portrait phone has a far narrower field across than down, and that
-    // distance frames a seat pack with both ends outside the frame. Take
-    // whichever is further back; on any landscape aspect the fit is the smaller
-    // of the two and this is exactly the old number.
-    const want = Math.max(span * 2.1, fitDistance(camera, box, 1.15));
-    const dist = THREE.MathUtils.clamp(want, controls.minDistance, controls.maxDistance);
-    glide = {
-      t: 0,
-      fromT: controls.target.clone(), toT: centre,
-      fromP: camera.position.clone(), toP: centre.clone().addScaledVector(dir, dist),
-    };
+    if (app.framing) { app.framing.focusBag(slot); return; }
   }
 
   function clearFocus() {
-    // back to the whole bike
-    const box = new THREE.Box3().setFromObject(app.bike.group);
-    const centre = box.getCenter(new THREE.Vector3());
-    const dir = camera.position.clone().sub(controls.target).normalize();
-    // Same trap as focusOn: the flat 3.1 frames the whole bike on a landscape
-    // aspect and cuts it in half on a portrait one, so deselecting a bag on a
-    // phone used to glide back to a crop. max() leaves every landscape aspect
-    // on the original 3.1.
-    const dist = Math.max(3.1, fitDistance(camera, box));
-    glide = {
-      t: 0,
-      fromT: controls.target.clone(), toT: centre,
-      fromP: camera.position.clone(), toP: centre.clone().addScaledVector(dir, dist),
-    };
+    app.framing?.frameBike();
   }
 
-  /** Call once per frame. Returns true while a glide is running. */
-  function tick(dt) {
-    if (!glide) return false;
-    glide.t = Math.min(1, glide.t + dt / 0.45);
-    const e = 1 - (1 - glide.t) ** 3;            // ease-out cubic
-    controls.target.lerpVectors(glide.fromT, glide.toT, e);
-    camera.position.lerpVectors(glide.fromP, glide.toP, e);
-    if (glide.t >= 1) glide = null;
-    return true;
-  }
+  function tick() { return false; }
 
   // ---- input --------------------------------------------------------------
   // Distinguish a click from an orbit drag, or every camera move would select.
@@ -234,11 +193,11 @@ export function initFocus(app, { camera, controls, renderer }) {
       hovered = slot || null;
       repaint();
     },
-    setSelected(slot) {
+    setSelected(slot, { silent = false } = {}) {
       selected = slot || null;
       repaint();
       if (selected) focusOn(selected); else clearFocus();
-      app.ui?.setSelected?.(selected);
+      if (!silent) app.ui?.setSelected?.(selected);
     },
     get selected() { return selected; },
     focusOn,

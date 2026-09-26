@@ -329,6 +329,7 @@
   .pr-st { opacity: 1; transform: none; }
   .pr-stage.in .pr-st { transition: none; }
   .pr, .pr-veil { transition: none; }
+
 }
 
 /* ===========================================================================
@@ -645,6 +646,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .pr-spec.swap .pr-st { animation: none; opacity: 1; transform: none; }
+
 }
 
 .pr-counter {
@@ -936,22 +938,6 @@
 }
 
 /* ===========================================================================
-   THE BUILDER, WHILE THE MENU IS OPEN
-   Everything belonging to the level below goes away completely. A top bar
-   fading to 20% behind a menu is still a top bar you can see the ghost of.
-   =========================================================================== */
-#ui-root.menu-open .panel,
-#ui-root.menu-open .topbar,
-#ui-root.menu-open .viewtools,
-#ui-root.menu-open .hint,
-#ui-root.menu-open .toast,
-#ui-root.menu-open .sheet {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 180ms var(--pr-ease);
-}
-
-/* ===========================================================================
    WIDE
    The column is a MEASURE, not a fraction — it is capped at 404px so a line of
    the lede never runs past about 60 characters. That is right typographically
@@ -976,6 +962,7 @@
   .pr-chip-name { font-size: 14px; }
   .pr-mark { font-size: 15px; }
   .pr-tab { font-size: 14px; }
+
 }
 
 /* ===========================================================================
@@ -1081,8 +1068,8 @@
   .pr-actions .pr-btn { flex: 1; justify-content: center; text-align: center; }
   .pr-railwrap { padding: 8px var(--pr-gut) max(16px, env(safe-area-inset-bottom)); }
   .pr-step { display: none; }          /* swipe the strip; two arrows is desktop furniture */
-}
 
+}
 
 /* Touch, at any width: the strip is swiped, so the two step arrows are desktop
    furniture, and every hit target comes up to 44px. */
@@ -1093,6 +1080,7 @@
   .pr-swatch { width: 44px; height: 44px; }
   .pr-close { min-width: 44px; min-height: 44px; }
   .pr-size { min-height: 44px; }
+
 }
 
 /* Landscape phone: keep the desktop left column so the bike stays visible.
@@ -1129,6 +1117,7 @@
     background: linear-gradient(180deg, transparent, rgba(10, 11, 13, 0.96) 28%);
   }
   .pr-note, .pr-grade { display: none; }
+
 }
 
 /* The wind tunnel's verdict, under the figures it explains. The grade is a
@@ -1157,6 +1146,7 @@
 }
 @media (max-width: 900px) {
   .pr-grade { display: none; }
+
 }
 
 /* ===========================================================================
@@ -1226,6 +1216,7 @@
 
 @media (max-width: 560px) {
   .pr-min { display: inline-flex; }
+
 }
 
 .pr-login:hover { color: var(--pr-ink); border-color: rgba(244, 241, 236, 0.30); background: var(--pr-fill); }
@@ -1250,6 +1241,7 @@
   .pr-login.is-in .pr-login-l { display: none; }
   .pr-login .pr-face { width: 32px; height: 32px; }
   .pr-login .pr-face svg { width: 18px; height: 18px; }
+
 }
 
 /* ===========================================================================

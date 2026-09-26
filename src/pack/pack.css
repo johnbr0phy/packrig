@@ -1,33 +1,4 @@
-/* ===========================================================================
-   PACKING — inside the design system, not beside it.
-   Every value here is a token from tokens.css / builder.css: ink ladder, fills,
-   hairlines, the one accent (Ember) only on the primary action and state,
-   44px targets, tabular figures for every number. Loaded after builder.css.
-   =========================================================================== */
 
-/* ---- the column's two views ------------------------------------------------ */
-#ui-root .panel[data-mode="gear"] .bike-sec,
-#ui-root .panel[data-mode="gear"] .bags-sec,
-#ui-root .panel[data-mode="gear"] .panel-foot { display: none; }
-#ui-root .panel:not([data-mode="gear"]) .pkg-gear { display: none; }
-
-#ui-root .pkg-tabs {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
-  margin: 12px var(--col-gut, 24px) 4px; padding: 3px; border-radius: var(--r-control);
-  background: var(--fill-1); border: 1px solid var(--line-soft);
-}
-#ui-root .pkg-tab {
-  min-height: 38px; border: 0; border-radius: 8px; background: transparent;
-  color: var(--ink-2); font: var(--t-body-s); cursor: pointer;
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  transition: background var(--d-control) var(--ease-inout), color var(--d-control) var(--ease-inout);
-}
-#ui-root .pkg-tab.on { background: var(--fill-3); color: var(--ink-1); }
-#ui-root .pkg-tab:focus-visible { outline: 2px solid var(--ink-1); outline-offset: 1px; }
-#ui-root .pkg-tab-n { font: var(--t-micro); color: var(--ink-3); font-variant-numeric: tabular-nums; }
-
-#ui-root .pkg-gear { padding: 8px var(--col-gut, 24px) 16px; display: flex; flex-direction: column; gap: 14px; min-height: 0; overflow: auto; }
-#ui-root .num { font-variant-numeric: tabular-nums slashed-zero; }
 
 /* ---- head: loadout + all-up ---------------------------------------------------- */
 #ui-root .pkg-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
@@ -189,8 +160,6 @@ body.pkg-dragging #ui-root .pkg-group { outline: 1px dashed var(--line); }
 
 /* ---- bag sheet: inside ---------------------------------------------------------------------------------- */
 #ui-root .pkg-inside { display: flex; flex-direction: column; gap: 8px; padding: 0 var(--col-gut, 24px); }
-#ui-root .sheet .pkg-inside > .bs-label-row { padding-left: 0; padding-right: 0; }
-#ui-root .pkg-itemsheet .bs-foot { padding-left: 0; padding-right: 0; }
 #ui-root .pkg-fill { height: 6px; border-radius: 3px; background: var(--ink-4); overflow: hidden; }
 #ui-root .pkg-fill-f { display: block; height: 100%; background: var(--ink-1); opacity: .9; transition: width var(--d-sheet) var(--ease-out); }
 #ui-root .pkg-fill.is-full .pkg-fill-f { background: var(--warn); }
@@ -237,7 +206,6 @@ body.pkg-dragging #ui-root .pkg-group { outline: 1px dashed var(--line); }
 #ui-root .pkg-tile-img { width: 64px; height: 64px; object-fit: contain; }
 #ui-root .pkg-tile-l { font: var(--t-caption); text-align: center; }
 #ui-root .pkg-quick-foot { position: sticky; bottom: 0; padding: 12px 0 4px; background: linear-gradient(transparent, var(--e3-bg) 30%); }
-#ui-root .pkg-quick-foot .bs-btn { width: 100%; }
 
 /* ---- drag ghost ------------------------------------------------------------------------------------------------------ */
 .pkg-ghost {
@@ -249,10 +217,11 @@ body.pkg-dragging #ui-root .pkg-group { outline: 1px dashed var(--line); }
 body.pkg-dragging, body.pkg-dragging * { cursor: grabbing !important; user-select: none; }
 
 @media (max-width: 560px) {
-  #ui-root .pkg-tabs { margin-top: 8px; margin-bottom: 2px; }
   #ui-root .pkg-hero-n { font-size: 26px; }
   #ui-root .pkg-cmp-r { grid-template-columns: 1.1fr 1fr 1fr .9fr; }
+
 }
 @media (prefers-reduced-motion: reduce) {
   #ui-root .pkg-tile, #ui-root .pkg-meter-f, #ui-root .pkg-fill-f, #ui-root .pkg-bal-f { transition: none; }
+
 }

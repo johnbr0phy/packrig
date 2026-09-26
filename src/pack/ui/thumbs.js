@@ -51,15 +51,21 @@ function renderer() {
 export const thumbKey = (it) => `${it.archetype}|${it.dims.map((d) => Math.round(d)).join('x')}|${it.color || ''}|${it.ref || it.name}`;
 
 function drawOne(it) {
-  const { gl, scene, cam, canvas } = renderer();
   const node = buildItem(it.archetype, { dims: it.dims.map((c) => c * 10), color: it.color || '#6b7580', seed: it.ref || it.name });
   // the same three-quarter view for everything, so thumbnails read as a set
   node.rotation.set(-0.55, 0.62, 0.08);
+  return drawNode(node);
+}
+
+/** Draw any object, fitted and centred, into the shared canvas. */
+function drawNode(node, { pad = 0.56, size = SIZE } = {}) {
+  const { gl, scene, cam, canvas } = renderer();
+  if (canvas.width !== size) gl.setSize(size, size, false);
   scene.add(node);
   const bb = new THREE.Box3().setFromObject(node);
   const c = bb.getCenter(new THREE.Vector3());
   const s = bb.getSize(new THREE.Vector3());
-  const half = Math.max(s.x, s.y) * 0.56;
+  const half = Math.max(s.x, s.y) * pad;
   cam.left = c.x - half; cam.right = c.x + half; cam.top = c.y + half; cam.bottom = c.y - half;
   cam.position.set(c.x, c.y, 500);
   cam.updateProjectionMatrix();
@@ -78,7 +84,7 @@ function pump() {
     while (queue.length && performance.now() - t0 < 8) {
       const { key, it } = queue.shift();
       let url = null;
-      try { url = drawOne(it); } catch { url = null; }
+      try { url = it.__build ? drawBuilt(it.__build, it.__size) : drawOne(it); } catch (e) { url = null; }
       cache.set(key, url);
       for (const res of waiting.get(key) || []) res(url);
       waiting.delete(key);
@@ -87,6 +93,27 @@ function pump() {
   };
   requestAnimationFrame(step);
 }
+
+function drawBuilt(build, size = SIZE) {
+  const b = build();
+  if (!b) return null;
+  try { return drawNode(b.node, { pad: 0.54, size }); } finally { b.dispose?.(); }
+}
+
+/**
+ * Queue any render under a cache key: `build()` returns { node, dispose }.
+ * Bag thumbnails (src/ui/bagthumbs.js) share this canvas and this queue.
+ */
+export function queueThumb(key, build, { size = SIZE } = {}) {
+  if (cache.has(key)) return Promise.resolve(cache.get(key));
+  return new Promise((res) => {
+    if (!waiting.has(key)) { waiting.set(key, []); queue.push({ key, it: { __build: build, __size: size } }); }
+    waiting.get(key).push(res);
+    pump();
+  });
+}
+/** A finished render, null for a failed one, undefined if never drawn. */
+export const cachedThumb = (key) => cache.get(key);
 
 /** Promise of a data URL for a resolved item (or catalogue entry shaped like one). */
 export function thumbFor(it) {

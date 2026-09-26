@@ -25,26 +25,18 @@
 <meta name="twitter:description" content="Build a bikepacking rig in 3D from bags that actually exist — 702 of them, across 50 makers — then put it in the wind tunnel and find out what they cost you in watts." />
 <meta name="twitter:image" content="https://johnbr0phy.github.io/packrig/og.png" />
 <meta name="twitter:image:alt" content="A loaded bikepacking bike in Packrig's wind tunnel, airflow streamlining past it, beside its measured numbers: CdA 0.458 m², 180 W to hold 28 km/h, +28 W for the bags." />
-<!-- DESIGN-SYSTEM.md §12 step 1: tokens and the self-hosted font come first,
-     ui.css consumes them, and the new shell overrides last. Inter is local, so
-     there is no font CDN to preconnect to. -->
+<!-- One token file, then one stylesheet per surface, all on the tokens.
+     The legacy layers (ui.css .. pack.css) are being absorbed surface by
+     surface and deleted; the new sheets load after them until they are gone. -->
 <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="src/ui/tokens.css">
-<link rel="stylesheet" href="src/ui.css">
-<link rel="stylesheet" href="src/ui/sheet.css">
 <link rel="stylesheet" href="src/aero/aero.css">
-<!-- Last: theme.css re-skins everything above it. Colour, border, radius and
-     shadow only — no layout. -->
-<link rel="stylesheet" href="src/ui/theme.css">
-<!-- The v2 menu layer sits above theme.css: it is a self-contained dark
-     surface for the start screen, loadouts and gallery, and it must win over
-     the light re-skin for everything scoped under .pr -->
 <link rel="stylesheet" href="src/ui/v2/menu.css">
-<!-- ...and the builder on the same system, so the two layers stop being two
-     brands. Colour, border, radius and the docking geometry only. -->
-<link rel="stylesheet" href="src/ui/v2/builder.css">
-<!-- Packing, on the same tokens. -->
 <link rel="stylesheet" href="src/pack/pack.css">
+<link rel="stylesheet" href="src/ui/base.css">
+<link rel="stylesheet" href="src/ui/shell.css">
+<link rel="stylesheet" href="src/ui/rig.css">
+<link rel="stylesheet" href="src/ui/bags.css">
 <!-- firebase is bundled into vendor/ by tools/build-vendor.mjs — see that file
      for why it cannot be mapped straight at node_modules. -->
 <script type="importmap">

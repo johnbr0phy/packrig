@@ -97,5 +97,16 @@ export function initQuick(app, hooks) {
     hooks.afterPack?.(res);
   }
 
-  return { open };
+  /** Put one tile's things in my kit, at home for now; returns their uids. */
+  function addTile(q) {
+    const uids = [];
+    for (const id of q.ids) {
+      const have = P.lib.locker.items.filter((i) => i.ref === id && !uids.includes(i.uid));
+      if (have.length) { uids.push(have[0].uid); P.place(have[0].uid, 'home'); continue; }
+      uids.push(P.add({ ref: id }, 'home').uid);
+    }
+    return uids;
+  }
+
+  return { open, addTile };
 }

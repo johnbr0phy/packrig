@@ -126,7 +126,7 @@ const AUDIT = `(() => {
   const v = new THREE.Vector3();
   app.camera.updateMatrixWorld();
   app.bike.group.traverse((o) => {
-    if (!o.isMesh || !o.visible || !o.geometry?.attributes?.position) return;
+    if (!o.isMesh || !o.visible || !o.geometry?.attributes?.position || o.material?.depthWrite === false) return;
     let vis = true; for (let q = o; q; q = q.parent) if (!q.visible) { vis = false; break; }
     if (!vis) return;
     const pos = o.geometry.attributes.position, step = Math.max(1, Math.floor(pos.count / 300));

@@ -227,6 +227,7 @@
 @media (prefers-reduced-motion: reduce) {
   .wf-fill { transition: none; }
   .aero-slider::-webkit-slider-thumb { transition: none; }
+
 }
 
 /* ---- responsive ------------------------------------------------------------
@@ -235,6 +236,7 @@
    before the two panels can touch. */
 @media (max-width: 1180px) {
   .aero-panel { width: 300px; }
+
 }
 @media (max-width: 940px) {
   .aero-panel { width: 262px; top: 84px; max-height: calc(100vh - 200px); }
@@ -242,6 +244,7 @@
   .cda-value { font-size: 32px; }
   .watts-value { font-size: 24px; }
   .delta-value { font-size: 16px; }
+
 }
 
 /* ---- phone: bottom sheet ----------------------------------------------------
@@ -319,6 +322,7 @@
      the only child that can safely give up space. */
   .aero-head, .aero-peek, .aero-foot { flex: none; }
   .aero-panel.expanded .aero-body { flex: 1 1 auto; min-height: 0; }
+
 }
 
 /* ---- touch: 44px minimum slider targets --------------------------------
@@ -342,4 +346,5 @@
     filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
   }
   .aero-slider-row { margin-top: 16px; }
+
 }

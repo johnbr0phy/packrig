@@ -33,7 +33,6 @@ import { renderStart } from './start.js';
 import { renderSetup } from './setup.js';
 import { initBrowse } from './browse.js';
 import { captureRig, applyRig } from '../../rig.js';
-import { setSheetLift } from '../../mobile.js';
 import { paintFace } from '../face.js';
 
 const el = (tag, cls, text) => {
@@ -49,7 +48,7 @@ const VIEWS = [
   // Only once there is something in it — see `paintChrome`. A tab reading "My
   // rigs" that opens an empty page is a promise the app has not kept yet.
   { id: 'rigs',     label: 'My rigs', needsRigs: true },
-  { id: 'loadouts', label: 'Loadouts' },
+  { id: 'loadouts', label: 'Examples' },
 ];
 
 /** Do we have saved rigs? Synchronous by design — see rigstore's `knownCount`. */
@@ -113,43 +112,25 @@ export function initMenu(app, { onBuild } = {}) {
   closeBtn.title = 'Back to the bike (Esc)';
   closeBtn.onclick = () => close();
 
-  // Phone only (CSS hides it above 560). Lives on the bottom slab, top-right —
-  // a chevron, not a labelled header button. Close leaves; this just tucks
-  // the menu so you can look at the bike.
-  const minBtn = el('button', 'pr-min nav-min');
-  minBtn.type = 'button';
-  minBtn.append(
-    icon('down', { size: 18, cls: 'nav-min-dn' }),
-    icon('up', { size: 18, cls: 'nav-min-up' }),
-  );
-  minBtn.title = 'Hide the menu and look at the bike';
-  minBtn.setAttribute('aria-expanded', 'true');
-  minBtn.setAttribute('aria-label', 'See the bike');
+  // The menu is a column on the left (desktop) or a slab under the bike
+  // (phone). It tells the framer where it is, so the bike is fitted into the
+  // rest of the screen, and it turns, so the fit allows for every angle.
   let minimized = false;
   const phone = () => typeof matchMedia === 'function' && matchMedia('(max-width: 560px)').matches;
   const syncMenuLift = () => {
-    if (!phone()) return;
-    if (!open_) {
-      const peek = host.querySelector('.panel.collapsed, .sheet.is-min, .aero-panel.is-min');
-      setSheetLift(peek ? 0 : 0.22);
-    } else {
-      setSheetLift(minimized ? 0 : 0.22);
-    }
-    app.sheets?.resync?.();
+    app.framing?.setOrbitSafe(open_);
+    app.framing?.frameBike({ instant: false });
   };
-  function setMinimized(next) {
-    minimized = !!next && phone();
-    root.classList.toggle('is-min', minimized);
-    minBtn.title = minimized ? 'Show the menu' : 'Hide the menu and look at the bike';
-    minBtn.setAttribute('aria-expanded', String(!minimized));
-    minBtn.setAttribute('aria-label', minimized ? 'Show the menu' : 'See the bike');
-    syncMenuLift();
-  }
-  minBtn.onclick = () => setMinimized(!minimized);
-  function dockMin() {
+  function setMinimized() { minimized = false; }
+  function dockMin() {}
+  app.framing?.addChrome(() => {
+    if (!open_) return null;
     const slab = stage.querySelector('.pr-start, .pr-browse') || stage.firstElementChild;
-    if (slab) slab.append(minBtn);
-  }
+    if (!slab) return null;
+    const r = slab.getBoundingClientRect();
+    if (phone()) return { bottom: Math.max(r.top, innerHeight * 0.45) };
+    return { left: r.right };
+  });
 
   /*
    * Log in, top right, on the front page — where every site anyone has used
@@ -217,10 +198,13 @@ export function initMenu(app, { onBuild } = {}) {
   // A loadout waiting to be named. Null means this setup is a bare new bike.
   let pendingAdopt = null;
 
+  // Build a rig goes straight to the bike. Name, size and colours were a
+  // form in front of the first bag; they are one tap away in More > Bike,
+  // and the name is editable in place.
   const startBuild = () => {
     pendingAdopt = null;
     try { app.clearAll?.(); } catch { /* empty bike is the point */ }
-    go('setup');
+    close({ build: true, setup: { size: app.state?.size, paint: app.state?.paint } });
   };
   const startSurprise = () => { app.__enteredBuilder = true; close({ surprise: true }); };
 
@@ -306,8 +290,12 @@ export function initMenu(app, { onBuild } = {}) {
         // Packing's front door: close the menu onto the bare bike, Gear view,
         // and ask what they are bringing. The first-timer's path.
         onPack: () => {
-          close();
-          setTimeout(() => { app.packUI?.setMode('gear'); app.packUI?.openQuick(); }, 60);
+          close({ build: true, setup: { size: app.state?.size, paint: app.state?.paint } });
+          setTimeout(() => { app.packUI?.openQuick(); }, 60);
+        },
+        onExample: () => {
+          close({ build: true, setup: { size: app.state?.size, paint: app.state?.paint } });
+          setTimeout(() => { app.packUI?.openExample(); }, 60);
         },
         onRigs: () => go('rigs'),
         onLoadouts: () => go('loadouts'),
@@ -329,6 +317,8 @@ export function initMenu(app, { onBuild } = {}) {
     dockMin();
     paintChrome();
     animateIn();
+    // after layout, so the framer measures the column this view actually has
+    requestAnimationFrame(() => { if (open_) syncMenuLift(); });
     // Only when the menu was already open: on first paint the page has just
     // loaded and moving focus would fight the browser's own restoration.
     if (open_ && moved) stage.focus({ preventScroll: true });
@@ -354,7 +344,7 @@ export function initMenu(app, { onBuild } = {}) {
    */
   // `.toast` is deliberately NOT in here: the rigs view reports a delete or a
   // publish through it, and an inert toast is an undo button nobody can press.
-  const BEHIND = '.panel, .topbar, .viewtools, .hint, .sheet, .save-dock';
+  const BEHIND = '.panel, .topbar, .sheet, .mounts, .coach';
   function setBehindInert(on) {
     for (const n of host.querySelectorAll(BEHIND)) n.inert = on;
   }

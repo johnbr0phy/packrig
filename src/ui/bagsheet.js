@@ -23,6 +23,7 @@
 import { colorwayFor, SLOTS } from '../bags.js';
 import { buyLink, litersOf, modelTitle, sizeIsVolume, sizeOf } from './product.js';
 import { featuresOf } from '../bags/identity.js';
+import { bagImg } from './bagthumbs.js';
 
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
@@ -65,7 +66,7 @@ function specRow(key, value, { ok = false, warn = false } = {}) {
   return r;
 }
 
-export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onClose } = {}) {
+export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onClose, openLocker } = {}) {
   /**
    * Draw the sheet for whatever is currently in `uiSlot`. Called again after a
    * colourway change so the swatch ring and the hero move together — cheaper
@@ -83,42 +84,30 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
     body.replaceChildren();
 
     const pk = el('div', 'bagsheet');
+    // keep the scroll position when a colourway repaints in place
+    const keep = body.scrollTop;
+    queueMicrotask(() => { body.scrollTop = keep; });
 
-    // ---- inside ------------------------------------------------------------
-    // Packing: what is in this bag, first, because "what's in there?" is the
-    // question. Only when there is gear in play; otherwise the sheet is the
-    // product sheet it always was.
-    const inside = insideFor?.(uiSlot, pk);
+    // ---- inside: what is in it, first -----------------------------------------
+    const inside = insideFor?.(uiSlot);
     if (inside) pk.append(inside);
 
-    // ---- hero --------------------------------------------------------------
+    // ---- the product -----------------------------------------------------------
+    const prod = el('div', 'bs-product');
     const hero = el('div', 'bs-hero');
-    const shot = product?.images?.[0];
-    if (shot) {
-      const img = document.createElement('img');
-      img.alt = '';
-      img.decoding = 'async';
-      img.referrerPolicy = 'no-referrer';
-      img.src = shot;
-      // 201 of 702 products have no photograph, and a hotlinked one can also
-      // simply fail. §8.3: a fallback is required, not optional. This is the
-      // cheap one — the bag's own colourway on a plate. §5.3 wants a render of
-      // the mesh here, which is a bigger job and is not done yet.
-      img.onerror = () => { hero.classList.add('is-blank'); img.remove(); };
-      hero.append(img);
-      // Say so when the picture is our render rather than the maker's
-      // photograph. The whole spec table is built on being straight about where
-      // a number came from; the image deserves the same.
-      if (product.rendered) hero.append(el('span', 'bs-hero-tag', 'Rendered from measurements'));
-    } else {
-      hero.classList.add('is-blank');
-    }
+    const img = bagImg(app, brand, product, { cls: 'bs-hero-img', cw: cur.colorwayIndex || 0, lazy: false, size: 480 });
+    hero.append(img);
+    const setPhoto = () => hero.classList.toggle('is-photo', img.classList.contains('is-photo') && !img.classList.contains('is-model'));
+    img.addEventListener('load', setPhoto);
+    img.addEventListener('error', setPhoto);
+    setPhoto();
+    if (product.rendered) hero.append(el('span', 'bs-hero-tag', 'Rendered from measurements'));
     const cw = colorwayFor(brand, product, cur.colorwayIndex || 0);
-    hero.style.setProperty('--bs-body', hex(cw.main));
-    pk.append(hero);
+    prod.append(hero);
 
     // ---- identity ----------------------------------------------------------
     const id = el('div', 'bs-id');
+    const pkAppend = (n) => prod.append(n);
     id.append(el('div', 'bs-brand', [brand?.name, product?.line].filter(Boolean).join(' · ')));
     id.append(el('h3', 'bs-name', modelTitle(product, brand)));
     const size = sizeOf(product);
@@ -127,7 +116,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
       slotLabel,
       size && !sizeIsVolume(product) ? size : null,
     ].filter(Boolean).join(' · ')));
-    pk.append(id);
+    pkAppend(id);
 
     // ---- colourway ---------------------------------------------------------
     // The model layer for this was finished long before there was anywhere to
@@ -147,7 +136,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
       ways.forEach((w, i) => {
         const b = el('button', 'bs-way' + (i === active ? ' on' : ''));
         b.type = 'button';
-        b.style.background = hex(colorwayFor(brand, product, i).main);
+        b.style.backgroundColor = hex(colorwayFor(brand, product, i).main);
         b.title = w.name || `Colourway ${i + 1}`;
         b.setAttribute('aria-label', b.title);
         b.setAttribute('aria-pressed', String(i === active));
@@ -164,7 +153,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
     // vanishes on some bags and not others reads as a bug (§5.2). But a record
     // with no colourways AND no resolved name has nothing to put in it, and a
     // heading over blank space is worse than no heading.
-    if (ways.length > 1 || cwName) pk.append(cwWrap);
+    if (ways.length > 1 || cwName) pkAppend(cwWrap);
 
     // ---- specifications ----------------------------------------------------
     const f = featuresOf(product);
@@ -186,7 +175,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
         : dimsText(product) ? specRow('Dimensions', 'est.', { warn: true }) : null,
     ].filter(Boolean);
     rows.forEach((r) => specs.append(r));
-    if (rows.length) pk.append(specs);
+    if (rows.length) pkAppend(specs);
 
     // ---- features ----------------------------------------------------------
     const feats = [
@@ -203,21 +192,22 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
       const ul = el('ul', 'bs-feats');
       feats.slice(0, 8).forEach((t) => ul.append(el('li', null, t)));
       fb.append(ul);
-      pk.append(fb);
+      pkAppend(fb);
     }
 
+    pk.append(prod);
     body.append(pk);
 
     // ---- footer ------------------------------------------------------------
     // Sticky, and outside the scroll region — §5.1 says it never scrolls away.
-    const foot = el('div', 'bs-foot');
-    const top = el('div', 'bs-foot-row');
+    const foot = el('div', 'sheet-foot-src');
+    const top = el('div', 'row');
 
-    const replace = el('button', 'bs-btn is-primary', 'Replace it');
+    const replace = el('button', 'btn primary', 'Replace it');
     replace.type = 'button';
     replace.onclick = () => openCatalogue?.(uiSlot);
 
-    const remove = el('button', 'bs-btn is-bad', 'Remove it');
+    const remove = el('button', 'btn bad', 'Remove it');
     remove.type = 'button';
     remove.onclick = () => {
       // Capture enough to put it back. One tap with no confirm earns an undo.
@@ -233,7 +223,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
     top.append(replace, remove);
     foot.append(top);
 
-    const buy = buyLink(product, brand, `Buy at ${brand?.short || brand?.name || 'the maker'} ↗`, 'bs-btn is-buy');
+    const buy = buyLink(product, brand, `Buy at ${brand?.short || brand?.name || 'the maker'} ↗`, 'btn ghost wide');
     // Never a dead button (§5.1): no link on file becomes a line of text.
     foot.append(buy || el('p', 'bs-nolink', 'No maker link on file'));
 

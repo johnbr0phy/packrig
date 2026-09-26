@@ -20,6 +20,7 @@ import { applyRendererProfile, applyViewOffset, fitToBox, measureProfile } from 
 import { initScrim } from './ui/scrim.js';
 import { initSurfaces } from './ui/surfaces.js';
 import { initSheets } from './ui/sheet.js';
+import { initFraming } from './ui/framing.js';
 import { initPack } from './pack/index.js';
 import { attachLockerSync } from './pack/remote.js';
 
@@ -95,7 +96,13 @@ const CAMS = {
   rear:  { pos: [bikeCenter.x - 2.15, 1.0, 2.4], tgt: [bikeCenter.x, 0.53, 0] },
   front: { pos: [bikeCenter.x + 2.85, 0.92, 1.6], tgt: [bikeCenter.x, 0.54, 0] },
   hero:  { pos: [bikeCenter.x + 1.05, 0.88, 3.25], tgt: [bikeCenter.x, 0.53, 0] },
+  // A portrait phone is narrow and tall, and a bike is long and low. Side on,
+  // it fills the width and a quarter of the height. From the front quarter
+  // and a little above, the same bike presents nearly square, so it can be
+  // framed twice as big. framing.js sets the distance; this sets the angle.
+  phone: { pos: [bikeCenter.x + 2.5, 1.75, 1.9], tgt: [bikeCenter.x, 0.55, 0] },
 };
+const PORTRAIT_PHONE = () => window.innerWidth <= 560 && window.innerHeight > window.innerWidth;
 function applyCam(name) {
   const c = CAMS[name] || CAMS.hero;
   camera.position.set(...c.pos);
@@ -185,7 +192,8 @@ const app = {
       bike.setBottleColor('dt', bidon);
     }
     for (const e of kit) app.bags?.equip(e.slot, e.brand, e.product, e.cw);
-    frameBike();
+    app.watts?.reset?.();
+    frameBike({ instant: false });
     app.ui?.sync();
     app.scrim?.invalidate();
   },
@@ -215,7 +223,7 @@ const catalog = await loadCatalog();
 app.catalog = catalog;
 app.bags = new BagSystem(bike, catalog);
 await envs.set(app.state.env); // HDRI must be lit before first frame
-applyCam(params.get('cam') || 'hero');
+applyCam(params.get('cam') || (PORTRAIT_PHONE() ? 'phone' : 'hero'));
 
 // Accounts and saved rigs. Both work with no backend configured: rigs go to
 // this browser, and `auth.enabled` is false so nothing offers to sign in.
@@ -329,15 +337,16 @@ const DESKTOP_LAYOUT = window.matchMedia('(min-width: 901px) and (pointer: fine)
  * the bike and the fix looks like it did not work.
  */
 const _fitBox = new THREE.Box3();
-function frameBike() {
+function frameBike({ instant = true } = {}) {
   if (SHOT_MODE || REVIEW_MODE) return;   // review mode owns its own framing
-  applyViewOffset(camera);
-  _fitBox.setFromObject(app.bike.group);
-  if (!_fitBox.isEmpty()) fitToBox(camera, controls, _fitBox);
-  // applyViewOffset has just overwritten the camera's view offset with the
-  // no-sheet value. If a sheet is open, put the sheet's framing back, or a
-  // resize silently un-does the reframe and drops the bike behind the sheet.
-  app.sheets?.resync();
+  if (app.framing) {
+    app.framing.invalidate();
+    app.framing.update({ instant });
+  } else {
+    applyViewOffset(camera);
+    _fitBox.setFromObject(app.bike.group);
+    if (!_fitBox.isEmpty()) fitToBox(camera, controls, _fitBox);
+  }
   app.surfaces?.sync();
 }
 
@@ -346,6 +355,9 @@ if (REVIEW_MODE) {
   const { initReview } = await import('./review.js');
   app.review = initReview(app, { SLOTS, applyCam });
 } else if (!SHOT_MODE) {
+  // The camera's one owner (src/ui/framing.js): every surface below reports
+  // where it is, and the bike is fitted into what is left.
+  app.framing = initFraming(app);
   app.ui = initUI(app);
   // DESIGN-SYSTEM §12 steps 1-2, after initUI because both attach to surfaces
   // that initUI creates. Order matters: the wells must exist before scrim.js
@@ -354,7 +366,7 @@ if (REVIEW_MODE) {
   // Sheets FIRST: initSurfaces walks the DOM once and the sheet has to be in
   // it, or the one surface that most needs a scrim well never gets one. The
   // first smoke test found 4 wells where there should be 6.
-  app.sheets = initSheets(app, { applyBase: () => applyViewOffset(camera) });
+  app.sheets = initSheets(app);
   app.openSheet = app.sheets?.openSheet;
   app.surfaces = initSurfaces(document.getElementById('ui-root'));
   app.scrim = initScrim(app);
@@ -386,7 +398,8 @@ renderer.setAnimationLoop((t) => {
   app.pack?.tick();
   controls.update();
   aimKicker();
-  app.reframe?.tick();
+  app.framing?.tick();
+  app.ui?.tick?.();
   // `?still` holds the environment's clock at zero so screenshots of the same
   // state are the same pixels (tools/screens.mjs checks exactly that)
   envs.tick(STILL ? 0 : t * 0.001);
