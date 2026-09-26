@@ -1,0 +1,1776 @@
+[
+ {
+  "id": "S01-start",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S01-start-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.602,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 10,
+    "56px": 3,
+    "15px": 1,
+    "20px": 7,
+    "11px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 88,
+  "same": true
+ },
+ {
+  "id": "S01-start",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S01-start-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.308,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 5,
+    "13px": 9,
+    "40px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 3,
+  "same": true
+ },
+ {
+  "id": "S02-setup",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S02-setup-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.602,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 5,
+    "11px": 5,
+    "15px": 4
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 89,
+  "same": true
+ },
+ {
+  "id": "S02-setup",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S02-setup-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.308,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 4,
+    "11px": 5,
+    "24px": 1,
+    "15px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 3,
+  "same": true
+ },
+ {
+  "id": "S03-gallery",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S03-gallery-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.611,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 38,
+    "11px": 8,
+    "32px": 1,
+    "15px": 11,
+    "24px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 75,
+  "same": true
+ },
+ {
+  "id": "S03-gallery",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S03-gallery-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.331,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 18,
+    "11px": 6,
+    "24px": 4,
+    "15px": 4
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 2,
+  "same": true
+ },
+ {
+  "id": "S04-builder",
+  "state": "empty",
+  "device": "desktop",
+  "file": "shots/after-raw/S04-builder-desktop-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.657,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "20px": 2,
+    "13px": 4,
+    "16px": 1
+   },
+   "small": 2,
+   "smallList": [
+    "Choose from a list 138x36",
+    "Start from an example 163x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 19,
+  "same": true
+ },
+ {
+  "id": "S04-builder",
+  "state": "empty",
+  "device": "phone",
+  "file": "shots/after-raw/S04-builder-phone-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.495,
+    "clippedX": false,
+    "sheetTop": 658
+   },
+   "fonts": {
+    "16px": 2,
+    "20px": 1,
+    "13px": 4
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 6,
+  "same": true
+ },
+ {
+  "id": "S05-mounts",
+  "state": "empty",
+  "device": "desktop",
+  "file": "shots/after-raw/S05-mounts-desktop-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.629,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 17,
+    "20px": 1,
+    "15px": 14
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 95,
+  "same": true
+ },
+ {
+  "id": "S05-mounts",
+  "state": "empty",
+  "device": "phone",
+  "file": "shots/after-raw/S05-mounts-phone-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.419,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 10,
+    "20px": 1,
+    "15px": 7
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 2,
+  "same": true
+ },
+ {
+  "id": "S06-catalogue",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S06-catalogue-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.518,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 7,
+    "13px": 29,
+    "20px": 1,
+    "11px": 7
+   },
+   "small": 6,
+   "smallList": [
+    "Seat pack 88x36",
+    "Saddle bag 97x36",
+    "Brand 79x36",
+    "Capacity 98x36",
+    "Fabric 81x36",
+    "Sort: Best fit first. Ch 99x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 53,
+  "same": true
+ },
+ {
+  "id": "S06-catalogue",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S06-catalogue-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.419,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 3,
+    "13px": 17,
+    "20px": 1,
+    "11px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 12,
+  "same": true
+ },
+ {
+  "id": "S07-product",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S07-product-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.579,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 9,
+    "20px": 1,
+    "11px": 1,
+    "24px": 1,
+    "15px": 15
+   },
+   "small": 1,
+   "smallList": [
+    "+ Add gear 93x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 27,
+  "same": true
+ },
+ {
+  "id": "S07-product",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S07-product-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.305,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 6,
+    "20px": 1,
+    "11px": 1,
+    "15px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 4,
+  "same": true
+ },
+ {
+  "id": "S08-rig",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S08-rig-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.666,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "20px": 1,
+    "13px": 37,
+    "11px": 7,
+    "32px": 1,
+    "16px": 5
+   },
+   "small": 7,
+   "smallList": [
+    "Save 55x36",
+    "Share 80x36",
+    "Kilograms 40x26",
+    "Pounds 40x26",
+    "Wind tunnel: the bags co 167x36",
+    "Browse all gear 121x36",
+    "Paste a spreadsheet 152x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 84,
+  "same": true
+ },
+ {
+  "id": "S08-rig",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S08-rig-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.529,
+    "clippedX": false,
+    "sheetTop": 627
+   },
+   "fonts": {
+    "16px": 3,
+    "13px": 16,
+    "11px": 5,
+    "32px": 1
+   },
+   "small": 2,
+   "smallList": [
+    "Kilograms 44x36",
+    "Pounds 44x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 23,
+  "same": true
+ },
+ {
+  "id": "S08-rig",
+  "state": "packed",
+  "device": "desktop",
+  "file": "shots/after-raw/S08-rig-desktop-packed.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.689,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "20px": 1,
+    "13px": 35,
+    "11px": 6,
+    "32px": 1,
+    "16px": 6
+   },
+   "small": 6,
+   "smallList": [
+    "Save 55x36",
+    "Share 80x36",
+    "Kilograms 40x26",
+    "Pounds 40x26",
+    "Wind tunnel: the bags co 167x36",
+    "Trip: Megafuck. Change t 144x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 64,
+  "same": true
+ },
+ {
+  "id": "S08-rig",
+  "state": "packed",
+  "device": "phone",
+  "file": "shots/after-raw/S08-rig-phone-packed.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.514,
+    "clippedX": false,
+    "sheetTop": 627
+   },
+   "fonts": {
+    "16px": 3,
+    "13px": 16,
+    "11px": 5,
+    "32px": 1
+   },
+   "small": 2,
+   "smallList": [
+    "Kilograms 44x36",
+    "Pounds 44x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 42,
+  "same": true
+ },
+ {
+  "id": "S09-inside",
+  "state": "empty",
+  "device": "desktop",
+  "file": "shots/after-raw/S09-inside-desktop-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.579,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 9,
+    "20px": 1,
+    "11px": 1,
+    "24px": 1,
+    "15px": 15
+   },
+   "small": 1,
+   "smallList": [
+    "+ Add gear 93x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 11,
+  "same": true
+ },
+ {
+  "id": "S09-inside",
+  "state": "empty",
+  "device": "phone",
+  "file": "shots/after-raw/S09-inside-phone-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.305,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 6,
+    "20px": 1,
+    "11px": 1,
+    "15px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 3,
+  "same": true
+ },
+ {
+  "id": "S09-inside",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S09-inside-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.602,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 19,
+    "20px": 1,
+    "11px": 1,
+    "15px": 10,
+    "24px": 1
+   },
+   "small": 1,
+   "smallList": [
+    "+ Add gear 93x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 27,
+  "same": true
+ },
+ {
+  "id": "S09-inside",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S09-inside-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.307,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 16,
+    "20px": 1,
+    "11px": 1,
+    "15px": 9
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 2,
+  "same": true
+ },
+ {
+  "id": "S10-wontfit",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S10-wontfit-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.698,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 12,
+    "20px": 1,
+    "11px": 1,
+    "15px": 14,
+    "24px": 1
+   },
+   "small": 2,
+   "smallList": [
+    "Move Tent poles to half  59x36",
+    "+ Add gear 93x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 21,
+  "same": true
+ },
+ {
+  "id": "S10-wontfit",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S10-wontfit-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.463,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 9,
+    "20px": 1,
+    "11px": 1,
+    "15px": 4
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 6,
+  "same": true
+ },
+ {
+  "id": "S11-kit",
+  "state": "empty",
+  "device": "desktop",
+  "file": "shots/after-raw/S11-kit-desktop-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.528,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 48,
+    "20px": 1,
+    "11px": 1,
+    "15px": 11
+   },
+   "small": 23,
+   "smallList": [
+    "All 43x36",
+    "Sleep 62x36",
+    "Shelter 71x36",
+    "Kitchen 74x36",
+    "Water 63x36",
+    "Food 57x36",
+    "Clothing 79x36",
+    "Repair 66x36",
+    "Electronics 96x36",
+    "Hygiene 78x36",
+    "First aid 76x36",
+    "Everything else 124x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 45,
+  "same": true
+ },
+ {
+  "id": "S11-kit",
+  "state": "empty",
+  "device": "phone",
+  "file": "shots/after-raw/S11-kit-phone-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.06,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 39,
+    "20px": 1,
+    "11px": 1,
+    "15px": 10
+   },
+   "small": 1,
+   "smallList": [
+    "All 43x44"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 0,
+  "same": true
+ },
+ {
+  "id": "S11-kit",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S11-kit-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.547,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 44,
+    "20px": 1,
+    "11px": 2,
+    "15px": 11
+   },
+   "small": 22,
+   "smallList": [
+    "All 43x36",
+    "Sleep 62x36",
+    "Shelter 71x36",
+    "Kitchen 74x36",
+    "Water 63x36",
+    "Food 57x36",
+    "Clothing 79x36",
+    "Repair 66x36",
+    "Electronics 96x36",
+    "Hygiene 78x36",
+    "First aid 76x36",
+    "Everything else 124x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 24,
+  "same": true
+ },
+ {
+  "id": "S11-kit",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S11-kit-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.061,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 35,
+    "20px": 1,
+    "11px": 2,
+    "15px": 10
+   },
+   "small": 2,
+   "smallList": [
+    "All 43x44",
+    "StoveFront pocket 207x42"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 0,
+  "same": true
+ },
+ {
+  "id": "S12-custom",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S12-custom-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.518,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 33,
+    "20px": 1,
+    "11px": 2,
+    "15px": 7
+   },
+   "small": 18,
+   "smallList": [
+    "All 43x36",
+    "Sleep 62x36",
+    "Shelter 71x36",
+    "Kitchen 74x36",
+    "Water 63x36",
+    "Food 57x36",
+    "Clothing 79x36",
+    "Repair 66x36",
+    "Electronics 96x36",
+    "Hygiene 78x36",
+    "First aid 76x36",
+    "Everything else 124x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 46,
+  "same": true
+ },
+ {
+  "id": "S12-custom",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S12-custom-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.061,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 24,
+    "20px": 1,
+    "11px": 2,
+    "15px": 6
+   },
+   "small": 1,
+   "smallList": [
+    "All 43x44"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 0,
+  "same": true
+ },
+ {
+  "id": "S13-quick",
+  "state": "empty",
+  "device": "desktop",
+  "file": "shots/after-raw/S13-quick-desktop-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.629,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 23,
+    "20px": 1,
+    "15px": 1
+   },
+   "small": 2,
+   "smallList": [
+    "Browse all gear 121x36",
+    "Paste a spreadsheet 152x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 93,
+  "same": true
+ },
+ {
+  "id": "S13-quick",
+  "state": "empty",
+  "device": "phone",
+  "file": "shots/after-raw/S13-quick-phone-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.419,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 15,
+    "20px": 1,
+    "15px": 1
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 15,
+  "same": true
+ },
+ {
+  "id": "S13-quick",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S13-quick-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.629,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 23,
+    "20px": 1,
+    "15px": 1
+   },
+   "small": 2,
+   "smallList": [
+    "Browse all gear 121x36",
+    "Paste a spreadsheet 152x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 89,
+  "same": true
+ },
+ {
+  "id": "S13-quick",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S13-quick-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.419,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 15,
+    "20px": 1,
+    "15px": 1
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 12,
+  "same": true
+ },
+ {
+  "id": "S14-item",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S14-item-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.661,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 28,
+    "20px": 1,
+    "24px": 1,
+    "11px": 3,
+    "15px": 1
+   },
+   "small": 19,
+   "smallList": [
+    "Bar roll 71x36",
+    "Front pocket 105x36",
+    "Top tube bag 108x36",
+    "Half frame bag 119x36",
+    "Left side 80x36",
+    "Right side 88x36",
+    "Rear top tube bag 137x36",
+    "Fork, left 82x36",
+    "Fork, right 90x36",
+    "Seat pack 88x36",
+    "Strapped on bar roll 151x36",
+    "Strapped on fork, left 159x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 17,
+  "same": true
+ },
+ {
+  "id": "S14-item",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S14-item-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.418,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 10,
+    "20px": 1,
+    "24px": 1,
+    "11px": 1,
+    "15px": 1
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 4,
+  "same": true
+ },
+ {
+  "id": "S15-trips",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S15-trips-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.661,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 4,
+    "13px": 19,
+    "20px": 1,
+    "15px": 1
+   },
+   "small": 12,
+   "smallList": [
+    "Rename My trip 75x36",
+    "Duplicate My trip 57x36",
+    "Delete My trip 65x36",
+    "Rename Megafuck 75x36",
+    "Duplicate Megafuck 57x36",
+    "Delete Megafuck 65x36",
+    "Rename Cuba 75x36",
+    "Duplicate Cuba 57x36",
+    "Delete Cuba 65x36",
+    "Paste a spreadsheet 152x36",
+    "Copy as spreadsheet 157x36",
+    "Download .tsv 114x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 49,
+  "same": true
+ },
+ {
+  "id": "S15-trips",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S15-trips-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.418,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 4,
+    "13px": 15,
+    "20px": 1
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 3,
+  "same": true
+ },
+ {
+  "id": "S16-compare",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S16-compare-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.547,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 5,
+    "13px": 34,
+    "20px": 1,
+    "11px": 4,
+    "15px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 28,
+  "same": true
+ },
+ {
+  "id": "S16-compare",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S16-compare-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.061,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 5,
+    "13px": 34,
+    "20px": 1,
+    "11px": 4,
+    "15px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 0,
+  "same": true
+ },
+ {
+  "id": "S17-import",
+  "state": "empty",
+  "device": "desktop",
+  "file": "shots/after-raw/S17-import-desktop-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.518,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 4,
+    "20px": 1,
+    "15px": 1
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 65,
+  "same": true
+ },
+ {
+  "id": "S17-import",
+  "state": "empty",
+  "device": "phone",
+  "file": "shots/after-raw/S17-import-phone-empty.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.061,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 4,
+    "20px": 1,
+    "15px": 1
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 0,
+  "same": true
+ },
+ {
+  "id": "S17-import",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S17-import-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.518,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 7,
+    "20px": 1,
+    "15px": 1
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 39,
+  "same": true
+ },
+ {
+  "id": "S17-import",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S17-import-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.061,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 7,
+    "20px": 1,
+    "15px": 1
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 0,
+  "same": true
+ },
+ {
+  "id": "S18-shared",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S18-shared-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.689,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "20px": 1,
+    "13px": 34,
+    "11px": 6,
+    "32px": 1,
+    "16px": 6
+   },
+   "small": 7,
+   "smallList": [
+    "Save 55x36",
+    "Share 80x36",
+    "Kilograms 40x26",
+    "Pounds 40x26",
+    "Wind tunnel: the bags co 167x36",
+    "Copy to my kit 114x36",
+    "Back to mine 105x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 62,
+  "same": true
+ },
+ {
+  "id": "S18-shared",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S18-shared-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.418,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 4,
+    "13px": 22,
+    "11px": 6,
+    "32px": 1
+   },
+   "small": 2,
+   "smallList": [
+    "Kilograms 44x36",
+    "Pounds 44x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 8,
+  "same": true
+ },
+ {
+  "id": "S19-share",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S19-share-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.661,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 3,
+    "20px": 1,
+    "11px": 2,
+    "15px": 4
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 44,
+  "same": true
+ },
+ {
+  "id": "S19-share",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S19-share-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.418,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 3,
+    "20px": 1,
+    "11px": 2,
+    "15px": 4
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 3,
+  "same": true
+ },
+ {
+  "id": "S20-account",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S20-account-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.639,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 7,
+    "20px": 1,
+    "15px": 3,
+    "11px": 2
+   },
+   "small": 2,
+   "smallList": [
+    "Create an account 139x36",
+    "Forgot your password? 168x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 82,
+  "same": true
+ },
+ {
+  "id": "S20-account",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S20-account-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.06,
+    "clippedX": false,
+    "sheetTop": 852
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 7,
+    "20px": 1,
+    "15px": 3,
+    "11px": 2
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 0,
+  "same": true
+ },
+ {
+  "id": "S21-tunnel",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S21-tunnel-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.743,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 2,
+    "13px": 27,
+    "20px": 5,
+    "15px": 1,
+    "32px": 2,
+    "11px": 7
+   },
+   "small": 1,
+   "smallList": [
+    "Speed, kilometres per ho 342x4"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 0,
+  "same": true
+ },
+ {
+  "id": "S21-tunnel",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S21-tunnel-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.321,
+    "clippedX": false,
+    "sheetTop": 703
+   },
+   "fonts": {
+    "16px": 2,
+    "13px": 6,
+    "20px": 1,
+    "15px": 2,
+    "32px": 1
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 0,
+  "same": true
+ },
+ {
+  "id": "S22-settings",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S22-settings-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.666,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "20px": 1,
+    "13px": 40,
+    "11px": 7,
+    "32px": 1,
+    "16px": 5,
+    "15px": 7
+   },
+   "small": 9,
+   "smallList": [
+    "Save 55x36",
+    "Share 80x36",
+    "Kilograms 40x26",
+    "Pounds 40x26",
+    "Wind tunnel: the bags co 167x36",
+    "Browse all gear 121x36",
+    "Paste a spreadsheet 152x36",
+    "Kilograms 40x30",
+    "Pounds 40x30"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 19,
+  "same": true
+ },
+ {
+  "id": "S22-settings",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S22-settings-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.529,
+    "clippedX": false,
+    "sheetTop": 627
+   },
+   "fonts": {
+    "16px": 3,
+    "13px": 19,
+    "11px": 5,
+    "32px": 1,
+    "15px": 7
+   },
+   "small": 4,
+   "smallList": [
+    "Kilograms 44x36",
+    "Pounds 44x36",
+    "Kilograms 44x40",
+    "Pounds 44x40"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 10,
+  "same": true
+ },
+ {
+  "id": "S22-settings",
+  "state": "bike",
+  "device": "desktop",
+  "file": "shots/after-raw/S22-settings-desktop-bike.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.639,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 6,
+    "20px": 1,
+    "11px": 3,
+    "15px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 18,
+  "same": true
+ },
+ {
+  "id": "S22-settings",
+  "state": "bike",
+  "device": "phone",
+  "file": "shots/after-raw/S22-settings-phone-bike.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.42,
+    "clippedX": false,
+    "sheetTop": 426
+   },
+   "fonts": {
+    "16px": 1,
+    "13px": 6,
+    "20px": 1,
+    "11px": 3,
+    "15px": 3
+   },
+   "small": 0,
+   "smallList": [],
+   "unlabelled": []
+  },
+  "diffPx": 4,
+  "same": true
+ },
+ {
+  "id": "S23-units",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S23-units-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.689,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "20px": 1,
+    "13px": 35,
+    "11px": 6,
+    "32px": 1,
+    "16px": 6
+   },
+   "small": 6,
+   "smallList": [
+    "Save 55x36",
+    "Share 80x36",
+    "Kilograms 40x26",
+    "Pounds 40x26",
+    "Wind tunnel: the bags co 167x36",
+    "Trip: Megafuck. Change t 144x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 61,
+  "same": true
+ },
+ {
+  "id": "S23-units",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S23-units-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.514,
+    "clippedX": false,
+    "sheetTop": 627
+   },
+   "fonts": {
+    "16px": 3,
+    "13px": 16,
+    "11px": 5,
+    "32px": 1
+   },
+   "small": 2,
+   "smallList": [
+    "Kilograms 44x36",
+    "Pounds 44x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 31,
+  "same": true
+ },
+ {
+  "id": "S24-suggest",
+  "state": "full",
+  "device": "desktop",
+  "file": "shots/after-raw/S24-suggest-desktop-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.665,
+    "clippedX": false,
+    "sheetTop": 900
+   },
+   "fonts": {
+    "20px": 1,
+    "13px": 32,
+    "11px": 7,
+    "32px": 1,
+    "16px": 6
+   },
+   "small": 8,
+   "smallList": [
+    "Save 55x36",
+    "Share 80x36",
+    "Kilograms 40x26",
+    "Pounds 40x26",
+    "Wind tunnel: the bags co 167x36",
+    "Trip: My trip. Change tr 125x36",
+    "Add a bag 111x36",
+    "Add gear 105x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 30,
+  "same": true
+ },
+ {
+  "id": "S24-suggest",
+  "state": "full",
+  "device": "phone",
+  "file": "shots/after-raw/S24-suggest-phone-full.png",
+  "errs": [],
+  "scroll": 0,
+  "audit": {
+   "bike": {
+    "frac": 0.531,
+    "clippedX": false,
+    "sheetTop": 627
+   },
+   "fonts": {
+    "16px": 3,
+    "13px": 16,
+    "11px": 5,
+    "32px": 1
+   },
+   "small": 2,
+   "smallList": [
+    "Kilograms 44x36",
+    "Pounds 44x36"
+   ],
+   "unlabelled": []
+  },
+  "diffPx": 10,
+  "same": true
+ }
+]
