@@ -1,27 +1,63 @@
 [
  {
-  "flow": "build",
+  "flow": "firsttimer",
   "device": "phone",
   "ok": true,
-  "taps": 10,
-  "hesitations": [],
+  "taps": 12,
+  "hesitations": [
+   "scroll to find \"Sleeping mat\"",
+   "scroll to find \"Stove & gas\"",
+   "scroll to find \"Rain jacket\""
+  ],
   "steps": [
    "1. Build a rig",
-   "2. the seat pack ring",
+   "2. the seat pack ring on the bike",
    "3. a seat pack",
    "4. a handlebar bag",
    "5. a frame bag",
-   "6. a top tube bag",
-   "7. Done",
-   "8. the rig name, to rename it",
-   "9. type a name",
-   "10. key Enter"
+   "6. Done",
+   "7. Tent",
+   "8. Sleeping mat",
+   "9. Stove & gas",
+   "10. Rain jacket",
+   "11. Share",
+   "12. Copy link"
   ],
   "result": {
    "ok": true,
-   "summary": "seatpack, barroll, framebag_half, toptube · \"Highland overnighter\""
+   "summary": "3 bags; One-person tent → barroll, Inflatable sleeping mat → framebag_half, Stove → framebag_half, Gas canister → seatpack, Lighter → framebag_half, Rain jacket → barroll; tiles say: Bar roll / Half frame bag / Half frame bag / Bar roll"
   },
   "why": "",
-  "seconds": 52
+  "seconds": 64
+ },
+ {
+  "flow": "firsttimer",
+  "device": "desktop",
+  "ok": true,
+  "taps": 12,
+  "hesitations": [
+   "scroll to find \"Stove & gas\"",
+   "scroll to find \"Rain jacket\""
+  ],
+  "steps": [
+   "1. Build a rig",
+   "2. the seat pack ring on the bike",
+   "3. a seat pack",
+   "4. a handlebar bag",
+   "5. a frame bag",
+   "6. Done",
+   "7. Tent",
+   "8. Sleeping mat",
+   "9. Stove & gas",
+   "10. Rain jacket",
+   "11. Share",
+   "12. Copy link"
+  ],
+  "result": {
+   "ok": true,
+   "summary": "3 bags; One-person tent → barroll, Inflatable sleeping mat → framebag_half, Stove → framebag_half, Gas canister → seatpack, Lighter → framebag_half, Rain jacket → barroll; tiles say: Bar roll / Half frame bag / Half frame bag / Bar roll"
+  },
+  "why": "",
+  "seconds": 126
  }
 ]
