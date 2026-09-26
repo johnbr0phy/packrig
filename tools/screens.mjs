@@ -98,13 +98,24 @@ function pixelsOf(_p, buf) {
   }
   return out;
 }
-function diffCount(a, b) {
+function diffCount(a, b, w) {
   if (!a || !b || a.length !== b.length) return -1;
-  let n = 0;
-  for (let i = 0; i < a.length; i += 4) {
-    if (Math.max(Math.abs(a[i] - b[i]), Math.abs(a[i + 1] - b[i + 1]), Math.abs(a[i + 2] - b[i + 2])) > 8) n++;
+  const n = a.length / 4, off = new Uint8Array(n);
+  for (let i = 0; i < n; i++) {
+    const j = i * 4;
+    if (Math.max(Math.abs(a[j] - b[j]), Math.abs(a[j + 1] - b[j + 1]), Math.abs(a[j + 2] - b[j + 2])) > 8) off[i] = 1;
   }
-  return n;
+  // software GL flips single pixels along spoke edges run to run; a real
+  // difference (text, a ring, a moved edge) is a clump, so count only pixels
+  // with a differing neighbour
+  let c = 0;
+  for (let i = 0; i < n; i++) {
+    if (!off[i]) continue;
+    const x = i % w;
+    if ((x > 0 && off[i - 1]) || (x < w - 1 && off[i + 1]) || off[i - w] || off[i + w]
+      || (x > 0 && (off[i - w - 1] || off[i + w - 1])) || (x < w - 1 && (off[i - w + 1] || off[i + w + 1]))) c++;
+  }
+  return c;
 }
 
 // What each shot measures, beyond pixels (UX-WRITEUP's numbers come from here):
@@ -213,7 +224,7 @@ async function shoot(id, state, device, setup, suffix = '') {
   const buf = await p.screenshot({ path: file });
   const px = pixelsOf(p, buf);
   await ctx.close();
-  return { file, errs, scroll, px, audit };
+  return { file, errs, scroll, px, w: buf.readUInt32BE(16), audit };
 }
 
 for (const [id, state, setup] of SCREENS) {
@@ -224,9 +235,9 @@ for (const [id, state, setup] of SCREENS) {
     if (twice) {
       const r2 = await shoot(id, state, device, setup, '-2');
       // decoded pixels, not bytes: software GL rasterises a few dozen sub-pixel
-      // spoke edges differently run to run; more than 100 pixels (~0.01%) off
+      // spoke edges differently run to run; more than 100 clumped pixels (~0.01%) off
       // by more than 8/255 is a real difference
-      const off = diffCount(r.px, r2.px);
+      const off = diffCount(r.px, r2.px, r.w);
       row.diffPx = off;
       row.same = off >= 0 && off <= 100;
       if (!row.same) { fails++; }
