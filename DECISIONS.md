@@ -559,3 +559,9 @@ for each call. `UX-WRITEUP.md` is the short version; `LOG.md` has what broke.
   width x 3.5 in depth) put the width against the cage: `axes` is now width
   fore-aft, depth across, in `data/models/andrew-the-maker.json` and the
   applied `data/brands.json`.
+- **Three more fork bags sit flat on the fork** (owner's go-ahead after the
+  Many Things Sack): Swift Industries Gemini Cargo Pack (maker: 5 in wide x
+  3 in deep), Restrap Fork Bag 5L (190 mm roll-top width) and VAUDE Trailfork
+  (18 x 11 cm; no maker figure in the record, so this one is by analogy:
+  the wider face against the cage). Each had its width across the bike;
+  `axes` now puts it fore-aft, in `data/models/` and `data/brands.json`.

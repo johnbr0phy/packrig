@@ -14579,8 +14579,8 @@
           "rolls": 3
         },
         "axes": {
-          "len": "z",
-          "wid": "x",
+          "len": "x",
+          "wid": "z",
           "hgt": "along_forkleg"
         },
         "weight_g": 300,
@@ -23815,8 +23815,8 @@
         },
         "axes": {
           "len": "along_forkleg",
-          "wid": "z",
-          "hgt": "+x"
+          "wid": "+x",
+          "hgt": "z"
         },
         "weight_g": 200,
         "weight_basis": "family-estimate",
@@ -38868,8 +38868,8 @@
         },
         "axes": {
           "len": "along_forkleg",
-          "wid": "z",
-          "hgt": "x"
+          "wid": "x",
+          "hgt": "z"
         },
         "weight_g": 200,
         "weight_basis": "family-estimate",

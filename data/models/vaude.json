@@ -555,8 +555,8 @@
    "mount": {
     "axes": {
      "len": "along_forkleg",
-     "wid": "z",
-     "hgt": "x"
+     "wid": "x",
+     "hgt": "z"
     },
     "attachesTo": [
      "fork_leg"

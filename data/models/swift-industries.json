@@ -219,7 +219,7 @@
     "fabric": "coated ripstop body with a reinforced ballistic-weight back panel where it contacts the cargo cage"
    },
    "mount": {
-    "axes": { "len": "along_forkleg", "wid": "z", "hgt": "+x" },
+    "axes": { "len": "along_forkleg", "wid": "+x", "hgt": "z" },
     "attachesTo": ["cargo_cage"],
     "contactFaces": ["girth", "flat_back"],
     "sag_deg": 0,
