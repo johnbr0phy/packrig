@@ -637,7 +637,9 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
     // next second, which is what air would do; only a real change, different
     // kit, a big jump, is worth the visible discontinuity of a re-seed.
     const moved = prev ? prev.dir.distanceTo(spec.dir) * spec.runLength : Infinity;
-    const reseed = !sameRig || moved > 0.25;
+    // (screenshots always re-seed: the picture must come from the final field,
+    // not from whichever field the threads happened to be stepped in first)
+    const reseed = STILL || !sameRig || moved > 0.25;
 
     // nozzle world positions, from the same table the geometry was built from
     const o = spec.origin, d = spec.dir, sd = spec.side;
