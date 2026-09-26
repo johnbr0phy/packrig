@@ -67,8 +67,9 @@ panel, and 1.43 ms (8 layouts) on the frame a bag opens. The frame budget is
 spent in WebGL, not the DOM.
 
 Engine checks green throughout: `pack-test`, `pack-e2e` (spreadsheet round
-trip, share links, v1 links), `firsttimer`, `screens --twice`,
-`_probe ?kit=full`. Every old share link and saved rig still opens; signed
+trip, share links, v1 links), `firsttimer`, `tasks`, `screens --twice` (one
+clean run of all 60 shots on the final code), `_probe ?kit=full`. The built
+site in `docs/` passes `tools/docs-check.mjs` on phone and desktop. Every old share link and saved rig still opens; signed
 out, everything but Save works, as before.
 
 ## What did not work
@@ -104,5 +105,10 @@ out, everything but Save works, as before.
    press to drag onto the bike would be faster for moving many things.
 3. **Real photos for every bag.** 3D thumbnails fill the gaps and read
    well, but a maker photo still sells better.
-4. **Test with five strangers.** The task scripts measure taps, not
+4. **A share link should carry measured bag weight.** The owner's
+   Megafuck trip says its bags weigh 8.62 kg (his sheet, racks and all);
+   the same rig through a share link shows the catalogue's 2.00 kg est.,
+   because the link carries the bags but not his number. That is the link
+   format, not the UI, so I left it and label it "est.".
+5. **Test with five strangers.** The task scripts measure taps, not
    confusion.

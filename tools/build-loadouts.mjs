@@ -145,7 +145,7 @@ const LOADOUTS = [
     name: 'Heavy Load',
     kicker: 'Ortlieb, fully loaded',
     note: 'Racks, rollers and welded seams. The touring answer to the same '
-        + 'question the soft bags ask, carry it all, and keep it dry.',
+        + 'question the soft bags ask: carry it all, and keep it dry.',
     tags: ['Ortlieb', 'Touring', 'Waterproof'],
     paint: 'Forest',
     env: 'lake',
