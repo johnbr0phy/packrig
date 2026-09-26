@@ -22,6 +22,11 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { disposeObject, tubeAlong } from '../lib.js';
 
 // ---- tuning ---------------------------------------------------------------
+// `?still` (screenshots): the atmosphere's puffs come from a fixed sequence,
+// restarted at every seed, so the same state is the same pixels
+const STILL = typeof location !== 'undefined' && new URLSearchParams(location.search).has('still');
+function seeded(a) { return () => { a = (a + 0x6d2b79f5) | 0; let x = Math.imul(a ^ (a >>> 15), 1 | a); x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x; return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; }
+let rand = Math.random;
 const STACKS = 9;          // vertical nozzle tubes across the rake
 // Ports up each tube. 28 was the first try and from the side, where all nine
 // stacks project on top of each other, the threads merged into a solid white
@@ -551,7 +556,8 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
       // lockstep, in unison it reads as a marching band, not as smoke.
       emitT[i] = emitInterval * ((i * 0.6180339887) % 1);
     }
-    for (let i = 0; i < PUFFS; i++) respawnPuff(i, Math.random());
+    if (STILL) rand = seeded(7);
+    for (let i = 0; i < PUFFS; i++) respawnPuff(i, rand());
   }
 
   /** One RK2 step. Returns the turbulence sampled at the start point. */
@@ -565,14 +571,14 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
   function respawnPuff(i, frac) {
     // scatter across the rake plane, then push a random way downstream so they
     // are not all born in a line
-    const y = spec.yLo + Math.random() * (spec.yHi - spec.yLo);
-    const z = (Math.random() * 2 - 1) * spec.halfW;
+    const y = spec.yLo + rand() * (spec.yHi - spec.yLo);
+    const z = (rand() * 2 - 1) * spec.halfW;
     const s = frac * spec.runLength;
     const o = spec.origin, d = spec.dir, sd = spec.side;
     puffPos[i * 3] = o.x + UP.x * y + sd.x * z + d.x * s;
     puffPos[i * 3 + 1] = o.y + UP.y * y + sd.y * z + d.y * s;
     puffPos[i * 3 + 2] = o.z + UP.z * y + sd.z * z + d.z * s;
-    puffSeed[i] = 0.6 + Math.random() * 0.9;
+    puffSeed[i] = 0.6 + rand() * 0.9;
   }
 
   // ---- rebuild ------------------------------------------------------------
