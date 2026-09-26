@@ -300,6 +300,13 @@ export function createAeroMeter({ renderer, bike, bags }) {
 
     // SLOTS order rather than equip order, so the parts list is stable as the
     // user swaps kit around.
+    // A bag can be built inside another (the front pocket rides in the bar
+    // roll's group): each mesh belongs to the nearest bag above it, once. Listed
+    // under both, enter() saved the first pass's id material as the pocket's
+    // own and leave() put it back, so the pocket vanished from the view.
+    const bagRoot = new Map();
+    for (const slot of Object.keys(SLOTS)) if (equipped[slot]?.mesh) bagRoot.set(equipped[slot].mesh, slot);
+    const ownerOf = (o) => { for (let q = o; q; q = q.parent) if (bagRoot.has(q)) return bagRoot.get(q); return null; };
     for (const slot of Object.keys(SLOTS)) {
       const rec = equipped[slot];
       if (!rec?.mesh) continue;
@@ -307,7 +314,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
       // bike at all. A bag that is merely SHIELDED by another bag still has
       // meshes here and stays in the list at 0 m², which is the attribution the
       // panel wants to show.
-      const meshes = walk(rec.mesh, []);
+      const meshes = walk(rec.mesh, []).filter((m) => ownerOf(m) === slot);
       addPart(slot, SLOTS[slot].label || slot, cdOf(rec.product, rec.brand, slot), BAG, meshes);
     }
 
