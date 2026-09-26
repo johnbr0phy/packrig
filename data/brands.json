@@ -45954,8 +45954,8 @@
           "type": "flap_buckle"
         },
         "axes": {
-          "len": "+x",
-          "wid": "z",
+          "len": "z",
+          "wid": "+x",
           "hgt": "along_forkleg"
         },
         "weight_g": 170,

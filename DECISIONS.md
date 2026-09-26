@@ -553,3 +553,9 @@ for each call. `UX-WRITEUP.md` is the short version; `LOG.md` has what broke.
   across the bike (nearest point 2.4 mm from its box, nothing inside it).
   The one builder change: `src/bags/builders/forkbag.js` reads the floor on
   the drive side for both legs.
+- **Andrew The Maker Many Things Sack sits flat on the fork.** Its record had
+  the 16.5 cm width across the bike and the 8.9 cm depth fore-aft, so the
+  bag stood side-on to the cage. The maker's figures (6.5 to 5.5 in tapered
+  width x 3.5 in depth) put the width against the cage: `axes` is now width
+  fore-aft, depth across, in `data/models/andrew-the-maker.json` and the
+  applied `data/brands.json`.
