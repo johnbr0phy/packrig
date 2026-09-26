@@ -11,7 +11,7 @@
  * CONVENTION. `buildItem(arch, { dims, color, seed })` returns a Group whose
  * content fits the box dims = [L, M, S] mm (sorted, L ≥ M ≥ S), centred on the
  * origin, with L along local x, M along y, S along z. Placement code rotates
- * and scales that box onto whatever box the solver hands it — so a phone, a
+ * and scales that box onto whatever box the solver hands it, so a phone, a
  * tent and a bag are all drawn at their true size in the same mm space as the
  * bags, and scale errors cannot happen per-item.
  *
@@ -487,7 +487,7 @@ A.default = A.pouch;
 // ---- helpers used by the axial icons -----------------------------------------
 /**
  * Round things (pot, canister, mug, stove) have two equal dimensions (the
- * diameter) and one odd one (the axis). Find the odd one out — it is not
+ * diameter) and one odd one (the axis). Find the odd one out, it is not
  * always the longest: a 100 g canister is wider than it is tall.
  */
 function axial([L, Mx, Sx]) {
@@ -526,7 +526,7 @@ export function buildItem(archetype, { dims, color = '#5a6470', seed = 0 } = {})
     (A[archetype] || A.default)(P, d, color, rng(sd), sd);
     proto = P.build();
     // Normalise to the box exactly: whatever the archetype drew, the item is
-    // its catalogue size — the one guarantee that makes scale errors
+    // its catalogue size, the one guarantee that makes scale errors
     // impossible (a phone the size of a tent was the failure named up front).
     const bb = new THREE.Box3().setFromObject(proto);
     const sz = bb.getSize(new THREE.Vector3());

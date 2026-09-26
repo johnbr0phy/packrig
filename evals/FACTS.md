@@ -1,4 +1,4 @@
-# Verified facts — the Apidura eval work
+# Verified facts, the Apidura eval work
 
 Every number here was produced by a tool in this repo and checked. **Nothing in
 this file is an estimate.** If you are writing about this work, take figures
@@ -13,13 +13,13 @@ Written 10 Aug 2026.
 
 - The catalogue is **702 products across 50 brands**, drawn by **13 builder
   programs** in `src/bags/builders/`. One edit to `seatpack.js` changes 78
-  products, so the builder — not the bag — is the unit of improvement.
+  products, so the builder, not the bag, is the unit of improvement.
 - **Apidura is 70 of those products**, chosen because every one has a photo and
   because the owner physically owns many of the bags.
 - Eight versions had already been run (`evals/runs/`, labelled `baseline`
   through `v8-glb`, all on 9 Aug). The bags were not visibly better.
 
-**Why they were not better — the diagnosis, with evidence:**
+**Why they were not better, the diagnosis, with evidence:**
 
 | Evidence | What it showed |
 |---|---|
@@ -41,8 +41,8 @@ measurement of size or outline, never of likeness.
 |---|---|---|
 | images held | **134** | **989** |
 | per product | 1–3 | 3–44, median 21 |
-| product pages scraped | — | **45**, covering all 70 SKUs |
-| download failures | — | **0** |
+| product pages scraped |, | **45**, covering all 70 SKUs |
+| download failures |, | **0** |
 
 By kind: 254 studio · 237 hardware close-ups · 194 lifestyle · 188 on-bike ·
 91 dimension diagrams · 25 clearance diagrams.
@@ -63,7 +63,7 @@ that has nothing.** Coverage has to be asserted, not assumed.
 
 ---
 
-## 3. The dimension diagrams — the find that mattered
+## 3. The dimension diagrams, the find that mattered
 
 Apidura publish, for nearly every product, a **two-view orthographic
 engineering drawing as SVG**: the bag from above and from the side, dimensioned,
@@ -109,7 +109,7 @@ swelling to 15 cm wide and 16 cm tall at a blunt rolled tail; 36 cm rolled
 down, 42 cm rolled out.
 
 **The owner was right; the written record was backwards.** The confusion is the
-flat stiffened tongue at the seatpost, which is broad in side view — so in a
+flat stiffened tongue at the seatpost, which is broad in side view, so in a
 studio photo the mounting end *looks* like the fat end. It is a mistake you
 would make from photographs and never from the drawing.
 
@@ -118,7 +118,7 @@ a critic agent that had not seen that analysis.
 
 ---
 
-## 5. Round 1 — the first real critic round
+## 5. Round 1, the first real critic round
 
 12 critic agents, fresh context, forbidden from reading `src/`. Each saw one
 builder's bags: our four renders, then the drawing, on-bike shots, hardware
@@ -140,7 +140,7 @@ Every builder had a median of 1 or 2.
 **Layer split:** 19 record wrong (A) · 41 builder wrong (B) · 10 no concept
 exists (C).
 
-**The common faults** — each is one sentence that moves a whole builder:
+**The common faults**, each is one sentence that moves a whole builder:
 
 1. **Seat packs (11):** all drawn back-to-front.
 2. **Top tube packs (14):** drawn as a wedge tapering to a knife edge; the real
@@ -148,24 +148,24 @@ exists (C).
    had straps drawn on it though its own record says `straps: []`.
 3. **Half frame packs (16):** slabs deepest at the seat tube; the drawings show
    a kite, shallow at both ends, belly two-thirds forward, lower edge on the
-   down tube — which is why the down-tube strap was "a loop floating in mid-air
+   down tube, which is why the down-tube strap was "a loop floating in mid-air
    attached to nothing".
 4. **Full frame packs (7):** **not one had a zip drawn on it.**
-5. **Bar rolls (5):** the bag was impaled on the handlebar — centred on the bar
+5. **Bar rolls (5):** the bag was impaled on the handlebar, centred on the bar
    axis instead of hanging below it, so the bar passed through and out the
    front face.
 6. **Down tube packs (3):** never touched the tube; tail ran through the bottom
    bracket into the cranks. Worst slot, median 1.
-7. **Fork/tool packs (3):** lathe-turned solids of revolution — "the cargo cage
+7. **Fork/tool packs (3):** lathe-turned solids of revolution, "the cargo cage
    packs read as water bottles and the tool pack as a traffic cone".
 
 ---
 
-## 6. Round 2 — 57 of 70 gaps closed
+## 6. Round 2, 57 of 70 gaps closed
 
 Ten fixer agents, one per builder, each restricted to its own file plus the
 records, and forbidden to render (ten Chrome instances would thrash the
-machine). Then a full re-render — **70 bags in 9m36s** — and six critics told
+machine). Then a full re-render, **70 bags in 9m36s**, and six critics told
 what round 1 had claimed and asked to **verify rather than trust it**.
 
 | | v1 | v2 |
@@ -191,7 +191,7 @@ what round 1 had claimed and asked to **verify rather than trust it**.
 
 **The two failures are the most useful results.**
 
-- **Bar rolls:** no longer impaled — that fault is closed 5 of 5 — but they now
+- **Bar rolls:** no longer impaled, that fault is closed 5 of 5, but they now
   **float 26–29 mm below the bar**, attached to nothing. The automated
   geometry gate caught it; a critic then confirmed it independently and
   correctly refused to score the fault as closed.
@@ -218,10 +218,10 @@ attached 65/70 · **size sane 30/70**. Against v1: **17 improved, 11 regressed,
 | File | What it does |
 |---|---|
 | `tools/harvest-apidura.mjs` | pulls every image from all 45 product pages, classified by kind |
-| `tools/raster-diagrams.mjs` | converts the 116 SVG diagrams to PNG — vision models cannot open SVG, so without this the best reference is listed and silently skipped |
+| `tools/raster-diagrams.mjs` | converts the 116 SVG diagrams to PNG, vision models cannot open SVG, so without this the best reference is listed and silently skipped |
 | `tools/diagram-outline.mjs` | measures the true outline off the engineering drawings; refuses when it disagrees with published dimensions |
 | `tools/eval-bundle.mjs` | assembles, per builder, the evidence pack a critic reads |
-| `tools/eval-critics.mjs` | aggregates verdicts — common faults first, then the layer split; deliberately prints **no single overall score** |
+| `tools/eval-critics.mjs` | aggregates verdicts, common faults first, then the layer split; deliberately prints **no single overall score** |
 | `tools/eval-auto.mjs` | the free programmatic gates: placement, clashes, tyre contact, attachment, size |
 | `tools/eval-review.mjs` | blind A/B for the human, in real spinnable 3D |
 

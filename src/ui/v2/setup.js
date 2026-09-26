@@ -1,7 +1,7 @@
 /**
  * The step between "Build a rig" and the bag list.
  *
- * Name, frame colour, bidon colour — chosen while the bike is still the
+ * Name, frame colour, bidon colour, chosen while the bike is still the
  * homepage's bike, then the builder opens already looking like yours.
  * Live: a swatch press paints the 3D bike immediately.
  *

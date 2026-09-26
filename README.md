@@ -1,4 +1,4 @@
-# Packrig — 3D Bikepacking Bag Configurator
+# Packrig, 3D Bikepacking Bag Configurator
 
 Attach real-brand bikepacking bags to an exactly-proportioned gravel bike, orbit it in
 3D, switch scenery, and hit **⚡ Surprise me** for instant loaded rigs.
@@ -11,7 +11,7 @@ node tools/serve.mjs          # serves on http://localhost:8735
 open http://localhost:8735
 ```
 
-No build step — plain ES modules with a local copy of three.js.
+No build step, plain ES modules with a local copy of three.js.
 
 ## What's inside
 
@@ -36,14 +36,14 @@ No build step — plain ES modules with a local copy of three.js.
 
 ## Dev tools
 
-- `node tools/shoot.mjs --set NAME` — captures a fixed set of angles × envs × kits into
+- `node tools/shoot.mjs --set NAME`, captures a fixed set of angles × envs × kits into
   `shots/NAME/` with headless Chrome (used by the adversarial review loop).
-- `data/brands.json` — merged brand/product catalog (see `data/brands-*.json` batches).
-- `reference/` — club photos used as the visual quality bar.
+- `data/brands.json`, merged brand/product catalog (see `data/brands-*.json` batches).
+- `reference/`, club photos used as the visual quality bar.
 
 ## Geometry reference
 
-`data/geometry-journeyer57.json` — a fully sourced real-bike geometry chart (Salsa
+`data/geometry-journeyer57.json`, a fully sourced real-bike geometry chart (Salsa
 Journeyer 700c, 57cm, plus standard component dimensions down to hub flange offsets and
 cassette cog planes), gathered by the research agent. The bike model in `src/bike.js`
 uses Trek Checkpoint-class size-56 numbers (wheelbase 1032, HTA 71.7°, BB drop 76,

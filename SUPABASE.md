@@ -1,7 +1,7 @@
 # Turning on accounts
 
 Packrig works without any of this. With no backend configured, rigs save to the
-browser and sharing is a self-contained link — that is the state the app ships
+browser and sharing is a self-contained link, that is the state the app ships
 in today, and it is fully usable. Everything below adds one thing: **your rigs
 follow you between devices and survive clearing your browser.**
 
@@ -14,8 +14,8 @@ Three steps, about ten minutes.
 1. <https://supabase.com> → new project. Any region near you; the free tier is
    more than enough for this.
 2. **Project Settings → API.** Copy two values:
-   - `Project URL` — looks like `https://abcdefgh.supabase.co`
-   - `anon` `public` key — a long JWT
+   - `Project URL`, looks like `https://abcdefgh.supabase.co`
+   - `anon` `public` key, a long JWT
 
 **Do not copy the `service_role` key.** It bypasses every access rule below.
 The `anon` key is designed to ship in a browser bundle; it identifies the
@@ -68,7 +68,7 @@ create index if not exists rigs_published_idx
 
 -- A second SELECT policy. Postgres ORs permissive policies together, so this
 -- adds "anyone may read published rigs" WITHOUT widening access to private
--- ones — those are still owner-only via the policy above.
+-- ones, those are still owner-only via the policy above.
 drop policy if exists "read published rigs" on public.rigs;
 create policy "read published rigs" on public.rigs for select using (published);
 
@@ -97,7 +97,7 @@ create trigger rigs_touch before update on public.rigs
 ```
 
 Check it took: **Table Editor → rigs** should show the table with a green
-*RLS enabled* badge. If that badge says RLS is disabled, stop and fix it — the
+*RLS enabled* badge. If that badge says RLS is disabled, stop and fix it, the
 table is world-readable until it is on.
 
 ---
@@ -118,7 +118,7 @@ node tools/build-pages.mjs
 ```
 
 **To try it before committing the keys**, paste this in the browser console on
-the live site and reload — no rebuild needed:
+the live site and reload, no rebuild needed:
 
 ```js
 localStorage.packrig_supabase = JSON.stringify({ url: 'https://…', key: 'eyJ…' })
@@ -133,14 +133,14 @@ localStorage.packrig_supabase = JSON.stringify({ url: 'https://…', key: 'eyJ�
 - **Sign in** appears only once the keys are set. Before that the panel says
   "Saved on this device" and never mentions accounts.
 - **Signing in moves this device's rigs onto the account**, once each. They are
-  not deleted locally — a shared computer should not eat the rigs of whoever
+  not deleted locally, a shared computer should not eat the rigs of whoever
   used it before you.
 
 ### Email confirmation is on by default
 
 A new account gets a confirmation email before it can sign in, and the app says
 so rather than pretending you are in. Supabase's built-in mailer is rate
-limited to a handful an hour, which is fine for you and not for real users — if
+limited to a handful an hour, which is fine for you and not for real users, if
 this ever goes wider, set a proper SMTP sender under
 **Authentication → Emails**. You can switch confirmation off entirely under
 **Authentication → Providers → Email** while testing.
@@ -150,7 +150,7 @@ this ever goes wider, set a proper SMTP sender under
 Two free-text fields become visible to strangers: the rig's name and the
 display name of whoever published it. They are capped at 60 and 40 characters
 and are always rendered with `textContent`, so nothing anyone types can inject
-markup — but nothing stops someone publishing a rude name.
+markup, but nothing stops someone publishing a rude name.
 
 There is no reporting or moderation queue, deliberately: building one before a
 single rig has been published would be inventing a problem. What you have
@@ -161,7 +161,7 @@ update public.rigs set published = false where id = '…';
 ```
 
 If the gallery ever gets real traffic, the things to add first are a report
-button and a rate limit on publishing — say, five per account per day.
+button and a rate limit on publishing, say, five per account per day.
 
 ### Password reset needs a redirect URL
 
@@ -177,7 +177,7 @@ to *Redirect URLs*, or the reset link will bounce.
 - **Sessions live in `localStorage`**, which is the normal trade for a static
   site with no server to set an httpOnly cookie. It means a successful XSS
   could steal a session. The mitigation is that the app injects no untrusted
-  HTML — every user-supplied string goes through `textContent`. If that ever
+  HTML, every user-supplied string goes through `textContent`. If that ever
   stops being true, revisit this.
 - **Sharing needs none of the above.** A share link carries the whole rig, so
   it works signed out, works for someone with no account, and cannot change

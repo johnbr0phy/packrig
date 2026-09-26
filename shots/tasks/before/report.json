@@ -1,0 +1,223 @@
+[
+ {
+  "flow": "firsttimer",
+  "device": "phone",
+  "ok": false,
+  "taps": 13,
+  "hesitations": [
+   "scroll to find \"Seat pack\"",
+   "scroll to find \"Half frame bag\"",
+   "\"What are you bringing?\" was covered by something else"
+  ],
+  "steps": [
+   "1. Build a rig",
+   "2. Start building",
+   "3. mount: Seat pack",
+   "4. a seat pack",
+   "5. back to the mount list",
+   "6. mount: Handlebar roll",
+   "7. a handlebar roll",
+   "8. back to the mount list",
+   "9. mount: Half frame bag",
+   "10. a half frame bag",
+   "11. close the catalogue",
+   "12. Gear",
+   "13. What are you bringing?"
+  ],
+  "result": null,
+  "why": "Waiting failed: 30000ms exceeded",
+  "seconds": 79
+ },
+ {
+  "flow": "firsttimer",
+  "device": "desktop",
+  "ok": true,
+  "taps": 19,
+  "hesitations": [
+   "scroll to find \"Seat pack\"",
+   "scroll to find \"Half frame bag\"",
+   "scroll to find \"Share this setup\""
+  ],
+  "steps": [
+   "1. Build a rig",
+   "2. Start building",
+   "3. mount: Seat pack",
+   "4. a seat pack",
+   "5. back to the mount list",
+   "6. mount: Handlebar roll",
+   "7. a handlebar roll",
+   "8. back to the mount list",
+   "9. mount: Half frame bag",
+   "10. a half frame bag",
+   "11. close the catalogue",
+   "12. Gear",
+   "13. What are you bringing?",
+   "14. Tent",
+   "15. Sleeping mat",
+   "16. Stove & gas",
+   "17. Rain jacket",
+   "18. Pack these",
+   "19. Share this setup"
+  ],
+  "result": {
+   "ok": true,
+   "summary": "One-person tent → barroll, Inflatable sleeping mat → framebag_half, Stove → framebag_half, Gas canister → seatpack, Lighter → framebag_half, Rain jacket → barroll"
+  },
+  "why": "",
+  "seconds": 132
+ },
+ {
+  "flow": "build",
+  "device": "phone",
+  "ok": true,
+  "taps": 16,
+  "hesitations": [
+   "scroll to find \"Seat pack\"",
+   "scroll to find \"Half frame bag\"",
+   "scroll to find \"Top tube bag\""
+  ],
+  "steps": [
+   "1. Build a rig",
+   "2. Start building",
+   "3. mount: Seat pack",
+   "4. a seat pack",
+   "5. back to the mount list",
+   "6. mount: Handlebar roll",
+   "7. a handlebar roll",
+   "8. back to the mount list",
+   "9. mount: Half frame bag",
+   "10. a half frame bag",
+   "11. back to the mount list",
+   "12. mount: Top tube bag",
+   "13. a top tube bag",
+   "14. close the catalogue",
+   "15. the rig name, to rename it",
+   "16. type a name"
+  ],
+  "result": {
+   "ok": true,
+   "summary": "seatpack, barroll, framebag_half, toptube · \"Highland overnighter\""
+  },
+  "why": "",
+  "seconds": 54
+ },
+ {
+  "flow": "build",
+  "device": "desktop",
+  "ok": true,
+  "taps": 16,
+  "hesitations": [
+   "scroll to find \"Seat pack\"",
+   "scroll to find \"Half frame bag\""
+  ],
+  "steps": [
+   "1. Build a rig",
+   "2. Start building",
+   "3. mount: Seat pack",
+   "4. a seat pack",
+   "5. back to the mount list",
+   "6. mount: Handlebar roll",
+   "7. a handlebar roll",
+   "8. back to the mount list",
+   "9. mount: Half frame bag",
+   "10. a half frame bag",
+   "11. back to the mount list",
+   "12. mount: Top tube bag",
+   "13. a top tube bag",
+   "14. close the catalogue",
+   "15. the rig name, to rename it",
+   "16. type a name"
+  ],
+  "result": {
+   "ok": true,
+   "summary": "seatpack, barroll, framebag_half, toptube · \"Highland overnighter\""
+  },
+  "why": "",
+  "seconds": 104
+ },
+ {
+  "flow": "import",
+  "device": "phone",
+  "ok": false,
+  "taps": 7,
+  "hesitations": [
+   "scroll to find \"Import\"",
+   "no bags on the bike: 55 of 67 things say their bag isn't there, and nothing offers to fit them"
+  ],
+  "steps": [
+   "1. Build a rig",
+   "2. Start building",
+   "3. close the mount list",
+   "4. Gear",
+   "5. Paste a spreadsheet",
+   "6. paste the spreadsheet",
+   "7. Import"
+  ],
+  "result": {
+   "ok": false,
+   "why": "heaviest bag not findable: the sheet's bags are not on the bike",
+   "summary": "67 items imported, 0 bags on the bike"
+  },
+  "why": "heaviest bag not findable: the sheet's bags are not on the bike",
+  "seconds": 26
+ },
+ {
+  "flow": "import",
+  "device": "desktop",
+  "ok": false,
+  "taps": 7,
+  "hesitations": [
+   "no bags on the bike: 55 of 67 things say their bag isn't there, and nothing offers to fit them"
+  ],
+  "steps": [
+   "1. Build a rig",
+   "2. Start building",
+   "3. close the mount list",
+   "4. Gear",
+   "5. Paste a spreadsheet",
+   "6. paste the spreadsheet",
+   "7. Import"
+  ],
+  "result": {
+   "ok": false,
+   "why": "heaviest bag not findable: the sheet's bags are not on the bike",
+   "summary": "67 items imported, 0 bags on the bike"
+  },
+  "why": "heaviest bag not findable: the sheet's bags are not on the bike",
+  "seconds": 69
+ },
+ {
+  "flow": "shared",
+  "device": "phone",
+  "ok": true,
+  "taps": 2,
+  "hesitations": [],
+  "steps": [
+   "1. Gear",
+   "2. Copy to my locker"
+  ],
+  "result": {
+   "ok": true,
+   "summary": "67 items in my kit"
+  },
+  "why": "",
+  "seconds": 16
+ },
+ {
+  "flow": "shared",
+  "device": "desktop",
+  "ok": true,
+  "taps": 2,
+  "hesitations": [],
+  "steps": [
+   "1. Gear",
+   "2. Copy to my locker"
+  ],
+  "result": {
+   "ok": true,
+   "summary": "67 items in my kit"
+  },
+  "why": "",
+  "seconds": 25
+ }
+]

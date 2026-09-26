@@ -24,11 +24,11 @@ const shot = (run, slug, cam = 'side') => b64(`evals/runs/${run}/shots/${slug}/$
 
 const SPECIMENS = [
   { slug: 'apidura-expedition-saddle-pack-9l', changed: true,
-    note: 'The bag John scored. Was a lathe-turned barrel; the record said <code>tapered_wedge</code> / <code>rounded_rect</code> all along. The depth profile also ran backwards — it swelled toward the tail where the record says it blades to a point.' },
+    note: 'The bag John scored. Was a lathe-turned barrel; the record said <code>tapered_wedge</code> / <code>rounded_rect</code> all along. The depth profile also ran backwards, it swelled toward the tail where the record says it blades to a point.' },
   { slug: 'apidura-backcountry-saddle-pack-6l', changed: true,
     note: 'Same builder, a product nobody looked at. This is the blast radius: one edit moved all 78 seat packs in the catalogue.' },
   { slug: 'apidura-expedition-downtube-pack-1-5l', changed: true,
-    note: 'Three bugs. Height and width were collapsed into a single capsule radius using the larger of the two, and the bag was centred <em>on</em> the down tube rather than slung under it — 23 mm inside the frame and 9 mm inside the front tyre.' },
+    note: 'Three bugs. Height and width were collapsed into a single capsule radius using the larger of the two, and the bag was centred <em>on</em> the down tube rather than slung under it, 23 mm inside the frame and 9 mm inside the front tyre.' },
   { slug: 'apidura-expedition-handlebar-pack-14l', changed: false,
     note: 'Untouched, and representative of what is left: bar rolls, bar bags, stem bags, fork bags and saddlebags are all still solids of revolution.' },
 ];
@@ -36,7 +36,7 @@ const SPECIMENS = [
 const esc = (s) => String(s).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
 
 function sizeLine(it, m) {
-  if (!m) return '—';
+  if (!m) return '–';
   const bb = m.bbox_body_mm || m.bbox_mm;
   const axes = it.record?.mount?.axes || {};
   const rd = it.record?.render || {};
@@ -82,7 +82,7 @@ const rows = SPECIMENS.map((s) => {
     </div>
     <div class="readout">
       <div class="dims"><span class="lab">rendered</span> ${sizeLine(it, RB[s.slug])} <span class="unit">cm, body only</span></div>
-      <div class="dims"><span class="lab">recorded</span> <code>${esc(it.record?.geometry?.form || '—')}</code> · <code>${esc(it.record?.geometry?.crossSection || '—')}</code></div>
+      <div class="dims"><span class="lab">recorded</span> <code>${esc(it.record?.geometry?.form || '–')}</code> · <code>${esc(it.record?.geometry?.crossSection || '–')}</code></div>
     </div>
     <p class="note">${s.note}</p>
   </article>`;
@@ -95,10 +95,10 @@ const GATES = [
 const gateRows = GATES.map(([k, a, b]) => {
   const d = b - a;
   return `<tr><th>${k}</th><td class="num">${a}<i>/70</i></td><td class="num">${b}<i>/70</i></td>
-   <td class="num delta ${d > 0 ? 'up' : d < 0 ? 'down' : 'flat'}">${d > 0 ? '+' : ''}${d || '—'}</td></tr>`;
+   <td class="num delta ${d > 0 ? 'up' : d < 0 ? 'down' : 'flat'}">${d > 0 ? '+' : ''}${d || '–'}</td></tr>`;
 }).join('');
 
-writeFileSync(out, `<title>Bag model review — baseline vs panels-v2</title>
+writeFileSync(out, `<title>Bag model review, baseline vs panels-v2</title>
 <style>
 :root{
   --ground:#EDEDE7; --surface:#F7F7F2; --sunk:#E3E4DC;
@@ -194,11 +194,11 @@ footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
 <div class="wrap">
   <p class="eyebrow">Packrig · eval run 2 · Apidura, 70 products</p>
   <h1>Every bag was round. Almost none of them are.</h1>
-  <p class="standfirst">The first human review of a single bag — the Apidura Expedition Saddle Pack — came back
+  <p class="standfirst">The first human review of a single bag, the Apidura Expedition Saddle Pack, came back
   <em>“it sort of looks like the bag but not really. It's not really cylindrical. It's not flat bits sewn together.”</em></p>
   <p class="standfirst">That one sentence held a catalogue-wide bug. Of the 699 product records carrying a
   <code>geometry.crossSection</code>, only <strong>97</strong> say <code>round</code>. The other 602 say
-  rounded&nbsp;rect, flat&nbsp;back, d&nbsp;shape, flat&nbsp;bottom, oval or teardrop — and every one of them was
+  rounded&nbsp;rect, flat&nbsp;back, d&nbsp;shape, flat&nbsp;bottom, oval or teardrop, and every one of them was
   being drawn with <code>LatheGeometry</code>, a solid of revolution. The field was recorded from the maker's own
   photographs and the geometry never read it.</p>
 
@@ -211,7 +211,7 @@ footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
       with straight panel runs, tight corners and piping down each seam. Two builders adopted it: the seat pack
       (78 products catalogue-wide) and the down tube pack (12). The remaining eleven are unchanged, which is why
       most of this run is byte-identical to the baseline.</p>
-      <p class="prose">Gate checks are programmatic and free — does the bag intersect the frame, does it clear
+      <p class="prose">Gate checks are programmatic and free, does the bag intersect the frame, does it clear
       the tyre, does it actually touch what it mounts to, is it the size its maker publishes. They run on all 70
       products every time.</p>
     </div>
@@ -229,7 +229,7 @@ ${rows}
   <div class="caveat">
     <p><strong>One regression, caused deliberately.</strong> Seat packs got the shape right and the size slightly
     wrong: mean height error moved from +7% to +26%. Making the bag deepest at the nose, as the record describes it,
-    overshoots the published 16 cm. Shape was the larger error, so the trade stands — but it needs tightening, and
+    overshoots the published 16 cm. Shape was the larger error, so the trade stands, but it needs tightening, and
     it is recorded here rather than averaged away.</p>
   </div>
 

@@ -10,7 +10,7 @@ import { deformScale, shadeAO, stuffed } from './deform.js';
 export const texCache = {};
 /**
  * Black is not a hole. Real black Cordura, X-Pac and TPU reflect 3–4% of the
- * light that hits them; #1c1c1e — the colour most of this catalogue is — is
+ * light that hits them; #1c1c1e, the colour most of this catalogue is, is
  * ~1.2% in linear light, so under ACES every black bag rendered as a
  * silhouette with no shape in it ("a black blob", the owner's words). Lift
  * the darkest colourways to a physical floor, keeping their hue.
@@ -48,13 +48,13 @@ function fabricMaterialInner(fabricKey, color) {
     // A welded TPU laminate is satin, not chrome, and this branch was the only
     // one of the four that could not tell the difference. It was the only
     // fabric with a clearcoat, the only one with NO sheen, and it carried less
-    // than half the bump relief of the other three (0.42 against 0.74–1.05) —
+    // than half the bump relief of the other three (0.42 against 0.74–1.05),
     // a smooth, weave-less, clear-coated shell, which is a moulded plastic or
     // metal part however soft the geometry underneath it is. That is what two
     // reviewers hit independently: Apidura's whole catalogue routes here (its
     // `fabric` string is "TPU laminate (shiny welded)"), and every Apidura bag
-    // whose panel is not near-black — the Backcountry food pouches, the
-    // Expedition Stem Pack, the City Handlebar Pack — came back described as
+    // whose panel is not near-black, the Backcountry food pouches, the
+    // Expedition Stem Pack, the City Handlebar Pack, came back described as
     // "mirror-polished metal" and "machined from aluminium". The black ones did
     // not, because a black albedo hides a specular lobe it cannot brighten.
     //
@@ -72,7 +72,7 @@ function fabricMaterialInner(fabricKey, color) {
         bumpMap: texCache.cordura, bumpScale: 0.7,
       });
     // Sheen is a broad white-ish lobe over the whole albedo. Pushed hard it lifts
-    // every colourway toward off-white and inverts the ordering — a #1c1c1c black
+    // every colourway toward off-white and inverts the ordering, a #1c1c1c black
     // rendered lighter than a #b0b4b7 grey. Keep it weak and tinted to the cloth.
     case 'xpac':
       return new THREE.MeshPhysicalMaterial({
@@ -120,13 +120,13 @@ export function seamMat(mat) {
 /**
  * Stuffed + occluded fabric panel in one call.
  *
- * `stiffness` — `soft` (default, and the behaviour every existing caller got
+ * `stiffness`, `soft` (default, and the behaviour every existing caller got
  * before this argument existed) | `semi` | `rigid`. It comes from the product's
  * `structure` field via `stiffnessOf(p)`; pass it and a moulded Topeak shell or
  * a Tailfin carbon-framed frame bag stops pillowing like a Cordura sack.
  *
  * A rigid product skips the displacement pass altogether rather than running it
- * with a zero amplitude — see DEFORM_SCALE in deform.js for why those differ.
+ * with a zero amplitude, see DEFORM_SCALE in deform.js for why those differ.
  * Baked occlusion still applies: a hard shell is still shaded underneath.
  */
 export function soft(geo, mat, opts = {}) {
@@ -134,7 +134,7 @@ export function soft(geo, mat, opts = {}) {
   const k = deformScale(stiffness);
   if (k > 0) {
     // Scale the bulge with the noise: a semi-rigid panel domes less between its
-    // seams for the same reason it takes less noise — there is a plate behind it.
+    // seams for the same reason it takes less noise, there is a plate behind it.
     const b = bulge && k !== 1 ? (...a) => bulge(...a) * k : bulge;
     stuffed(geo, { amp: amp * k, freq, seed, flatAxis, bulge: b });
   }

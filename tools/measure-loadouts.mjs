@@ -6,8 +6,8 @@
  * GPU measurement: it renders the rig from a dozen yaw angles into an
  * offscreen id-buffer and counts pixels. That is the right cost to pay when
  * somebody asks for it and the wrong one to pay to print a number on a card.
- * The eight loadouts are STATIC — they only change when tools/build-loadouts.mjs
- * changes — so their watts can be measured here and shipped as data.
+ * The eight loadouts are STATIC, they only change when tools/build-loadouts.mjs
+ * changes, so their watts can be measured here and shipped as data.
  *
  * What it produces, per loadout, added to `stats`:
  *   cda      m², head-on, with the fairing credit applied

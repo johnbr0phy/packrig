@@ -3,7 +3,7 @@
  *
  * `index.html` resolves modules through an import map, which only understands
  * specifiers it is told about. Since accounts landed, `src/config.js` and
- * friends `import 'firebase/app'`, and the map had no entry for it — so the
+ * friends `import 'firebase/app'`, and the map had no entry for it, so the
  * dev entry died on `Failed to resolve module specifier "firebase/app"` and
  * the only runnable build was the bundled one in `docs/`. Every UI iteration
  * was costing a full `build-pages.mjs`.
@@ -15,7 +15,7 @@
  * on the next `npm update`.
  *
  * So: bundle each entry point once, into `vendor/`, and map the three
- * specifiers at those files. Unminified — this is the debugging build, and a
+ * specifiers at those files. Unminified, this is the debugging build, and a
  * readable Firebase stack trace is the entire point of running unbundled.
  *
  *   node tools/build-vendor.mjs
@@ -42,4 +42,4 @@ for (const name of ENTRIES) {
   { cwd: root, stdio: ['ignore', 'ignore', 'inherit'] });
   console.log(`   vendor/firebase-${name}.js  ${(statSync(file).size / 1024).toFixed(0)}KB`);
 }
-console.log('· vendor built — the dev entry (index.html) can boot again');
+console.log('· vendor built, the dev entry (index.html) can boot again');

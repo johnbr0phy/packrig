@@ -1,7 +1,7 @@
 // Straps that look like webbing: thin, flat, and on the thing they hold.
 //
-// Every builder used to draw straps as tori — a 2.6 mm round tube scaled into
-// a band — which reads as a ring or a spring at any viewing distance: frame
+// Every builder used to draw straps as tori, a 2.6 mm round tube scaled into
+// a band, which reads as a ring or a spring at any viewing distance: frame
 // bags with "vertebrae", fork cages with coils. Real webbing is 20–25 mm wide
 // and 1.5 mm thick, lies flat against what it wraps and has a buckle. These
 // primitives draw exactly that, and nothing else in this project should draw
@@ -20,9 +20,9 @@ export const STRAP_W = 20;        // default webbing width, mm
  * circumference), offset outward by `lift` so it lies ON the surface, `width`
  * wide along `axis`. Flat, like webbing.
  *
- * @param pts    THREE.Vector3[] — the loop, in order (closed implicitly)
- * @param axis   THREE.Vector3   — the direction the strap's width runs
- * @param centre THREE.Vector3   — a point inside the loop, to find "outward"
+ * @param pts    THREE.Vector3[], the loop, in order (closed implicitly)
+ * @param axis   THREE.Vector3  , the direction the strap's width runs
+ * @param centre THREE.Vector3  , a point inside the loop, to find "outward"
  */
 export function ribbonLoop(pts, axis, centre, { width = STRAP_W, lift = 1.2, thick = STRAP_T, closed = true } = {}) {
   const n = pts.length;

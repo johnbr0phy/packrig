@@ -1,6 +1,6 @@
 /**
  * A stand-in for Supabase, so the account and gallery code can be tested
- * without a real project — and so a regression in it is caught here rather
+ * without a real project, and so a regression in it is caught here rather
  * than by a person discovering their rigs will not load.
  *
  * It implements only what src/auth.js and src/rigstore.js actually call, with

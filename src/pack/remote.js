@@ -4,7 +4,7 @@
  * One document per person, `lockers/{uid}`: { lib, updated_at }. The whole
  * library in one place because it is small (a few hundred items and a dozen
  * loadouts is ~40 KB, well under Firestore's 1 MB) and because it is only ever
- * read or written by its owner. The rule is three lines — see FIREBASE.md.
+ * read or written by its owner. The rule is three lines, see FIREBASE.md.
  *
  * Signed out nothing here runs: the locker lives in localStorage, exactly as
  * rigs did before accounts. On first sign-in the local library is merged

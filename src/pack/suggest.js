@@ -1,12 +1,12 @@
 /**
  * "Suggest a layout": pack a list of kit into the bags on the bike the way an
- * experienced rider would. Pure — resolved items and bag capacities in,
- * placement codes out — so it is testable in node and the UI can preview it
+ * experienced rider would. Pure, resolved items and bag capacities in,
+ * placement codes out, so it is testable in node and the UI can preview it
  * before committing.
  *
  * The rules, in order of how much they matter:
  *  1. Worn things are worn.
- *  2. Each item's catalogue `places` list is the first opinion — it encodes
+ *  2. Each item's catalogue `places` list is the first opinion, it encodes
  *     where riders actually put that thing and why.
  *  3. Heavy and dense goes low and central (frame bag, then fork cages and
  *     the down tube), never high on the bars or out on the seat pack tail.
@@ -37,7 +37,7 @@ const REACH_ORDER = ['toptube', 'stemR', 'stemL', 'barpocket', 'framebag_half', 
 
 /**
  * @param items  resolved items to place (uid, g, litres, compress, rigid, dims, worn, access, places, archetype)
- * @param bags   [{ slot, litres, maxLenMm? }] — the bags on the bike
+ * @param bags   [{ slot, litres, maxLenMm? }], the bags on the bike
  * @param keep   { uid: code } placements to leave alone (the person's own overrides)
  * @returns {{ place: {uid: code}, homeless: [{uid, why}] }}
  */

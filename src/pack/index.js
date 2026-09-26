@@ -1,10 +1,10 @@
 /**
  * Packing: the controller. One object, `app.pack`, owns
  *
- *   lib    — MY stuff, persisted: { locker, loadouts[], active, unit }
- *   view   — someone else's packing list I am looking at (a shared link or a
+ *   lib   , MY stuff, persisted: { locker, loadouts[], active, unit }
+ *   view  , someone else's packing list I am looking at (a shared link or a
  *            gallery rig), never written into my locker unless I copy it
- *   open   — which bags are open in the scene
+ *   open  , which bags are open in the scene
  *
  * and recomputes, whenever anything changes, one `state` everybody reads:
  * resolved items, per-bag solver results, totals, balance, warnings. The
@@ -64,6 +64,7 @@ export function initPack(app) {
   let applying = false;
   let state = null;
   let saveTimer = null;
+  let refitTimer = null;
 
   const gearReady = loadGear().then((g) => { gear = g; recompute(); return g; });
 
@@ -82,7 +83,7 @@ export function initPack(app) {
   function ensureActive() {
     let lo = activeLoadout();
     if (!lo) {
-      lo = { ...emptyLoadout('My loadout'), id: uidL() };
+      lo = { ...emptyLoadout('My trip'), id: uidL() };
       lib.loadouts.push(lo);
       lib.active = lo.id;
     }
@@ -157,7 +158,7 @@ export function initPack(app) {
       const sided = list.some((x) => x.side);
       if (sided && /^framebag/.test(slot)) {
         // One bag with two sides: the left takes what is put on the left (up
-        // to half the bag), and everything else gets whatever it leaves —
+        // to half the bag), and everything else gets whatever it leaves,
         // not a fixed half each, which refused kit a real bag holds.
         // the left is a side pocket: as wide as its share of the kit, a third
         // to a half of the bag
@@ -224,9 +225,18 @@ export function initPack(app) {
     }
     if (showing) {
       scene3d.showOutside(outside);
-      scene3d.showCoM(balance?.com || null);
+      // the centre of mass only means something once there is kit on the bike
+      scene3d.showCoM(totals.count ? balance?.com || null : null);
     }
     for (const fn of listeners) fn(state);
+    // things hanging off the bike change its outline: refit once they settle
+    // (and not mid-move: at a few frames a second a tween can outlast the wait)
+    clearTimeout(refitTimer);
+    const refit = () => {
+      if (scene3d.busy) { refitTimer = setTimeout(refit, 100); return; }
+      refitTimer = null; app.framing?.invalidate(); app.framing?.update();
+    };
+    refitTimer = setTimeout(refit, 700);
     return state;
   }
 
@@ -297,6 +307,8 @@ export function initPack(app) {
   let showing = false;     // is the packing layer visible (Gear mode)?
 
   const api = {
+    /** A refit of the camera is due (screens.mjs waits for it). */
+    get refitPending() { return !!refitTimer; },
     get state() { return state || recompute({ animate: false }); },
     get lib() { return lib; },
     get view() { return view; },
@@ -358,7 +370,7 @@ export function initPack(app) {
       applyBikeOf(lo);
       save(); recompute();
     },
-    newLoadout(name = 'New loadout', { fromCurrent = true } = {}) {
+    newLoadout(name = 'New trip', { fromCurrent = true } = {}) {
       const src = activeLoadout();
       const lo = fromCurrent && src ? { ...duplicateLoadout(src, name), id: uidL() } : { ...emptyLoadout(name), id: uidL(), rig: { v: 1, bags: bagsOfBike() } };
       lib.loadouts.push(lo);
@@ -436,7 +448,7 @@ export function initPack(app) {
     },
 
     // ---- sheets -------------------------------------------------------------------
-    async importText(text, { name = 'Imported loadout', asNew = true } = {}) {
+    async importText(text, { name = 'Imported trip', asNew = true } = {}) {
       await gearReady;
       const res = importSheet(text, { gear, name });
       // merge the imported items into my locker; the same thing twice is one thing

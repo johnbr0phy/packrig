@@ -9,7 +9,7 @@
  * the only thing that merges them, so it is the only place the rules live:
  * ids unique and link-safe, dimensions sorted and sane against the stated
  * volume, archetypes and places from the vocabulary in DECISIONS.md, and every
- * number traceable — a `basis` of sourced / owner / recall, never silent.
+ * number traceable, a `basis` of sourced / owner / recall, never silent.
  */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -82,7 +82,7 @@ console.log(`${out.length} items`, byCat, byBasis);
 if (fixes.length) console.log(`${fixes.length} fixes applied, e.g.`, fixes.slice(0, 5));
 if (problems.length) { console.log(`${problems.length} problems:`); for (const p of problems) console.log('  ' + p); }
 if (!check) {
-  // category order, then generic first, then name — the order the locker shows
+  // category order, then generic first, then name, the order the locker shows
   const order = Object.fromEntries(CATS.map((c, i) => [c.id, i]));
   out.sort((a, b) => (order[a.cat] - order[b.cat]) || (b.generic - a.generic) || a.name.localeCompare(b.name));
   writeFileSync(join(root, 'data/gear.json'), JSON.stringify(out));

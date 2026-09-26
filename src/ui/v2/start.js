@@ -2,8 +2,8 @@
  * The start screen.
  *
  * WHAT WAS WRONG WITH THE OLD ONE. A 600px white card, centred, with a heading,
- * a sentence and two stacked full-width buttons — one of them a saturated blue
- * fill — floating over a bike that had been faded to about 40% to make room for
+ * a sentence and two stacked full-width buttons, one of them a saturated blue
+ * fill, floating over a bike that had been faded to about 40% to make room for
  * it. Four separate mistakes in one composition: it covered the product, it
  * dimmed the product, it was the exact shape of every sign-up modal on the
  * internet, and it said nothing a person could not have guessed from the name.
@@ -11,8 +11,8 @@
  * WHAT THIS IS INSTEAD. No card and no box. A column of type down the left
  * third, over a gradient that never reaches the bike, and the bike itself
  * turning slowly at full brightness in the remaining two thirds. The entry
- * points are a numbered list with hairline rules — the shape of a contents
- * page, not a dialogue — and each one says what it actually gets you.
+ * points are a numbered list with hairline rules, the shape of a contents
+ * page, not a dialogue, and each one says what it actually gets you.
  *
  * The stat line at the bottom is doing real work: "702 bags from 50 makers"
  * is the single most persuasive fact about this app and it was nowhere on the
@@ -20,7 +20,7 @@
  *
  * THE FIRST ROW CHANGES ONCE YOU HAVE SAVED SOMETHING. "Build a rig" is the
  * right first line for somebody with an empty bike and the wrong one for
- * somebody coming back — what they want is the bike they built last week, and
+ * somebody coming back, what they want is the bike they built last week, and
  * it was reachable only by pressing their own email address inside the
  * builder. With rigs on file the row becomes "My rigs", and starting a new one
  * is a button on that page.
@@ -46,11 +46,10 @@ const staged = (node) => {
   return node;
 };
 
-export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoadouts, onPack } = {}) {
+export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoadouts, onPack, onExample } = {}) {
   seq = 0;
   const wrap = el('div', 'pr-start');
 
-  wrap.append(staged(el('p', 'pr-eyebrow', 'Bikepacking bag configurator')));
 
   // Three short lines rather than one long one: at display size the line
   // breaks are part of the composition, and a browser choosing them at 34px
@@ -67,54 +66,31 @@ export function renderStart(app, { rigs = 0, onBuild, onSurprise, onRigs, onLoad
     + 'from any angle, and find out what it holds.')));
 
   // One source for the number. The old copy said "fourteen mounting points"
-  // while the stat line below counted the real table and said eighteen — two
+  // while the stat line below counted the real table and said eighteen, two
   // numbers for one fact, forty pixels apart, and the prose was the wrong one.
   const mountCount = Object.keys(SLOTS).length;
 
   const list = el('ul', 'pr-menu');
   // Four doors, same size. "Surprise me" used to hide inside the builder,
-  // next to Add a bag — a starting idea dressed as a workshop tool. It lives
+  // next to Add a bag, a starting idea dressed as a workshop tool. It lives
   // here now, with Build and Loadouts, because that is when you want it.
   const ENTRIES = [
     rigs > 0 ? {
-      n: '01',
-      name: 'My rigs',
-      desc: `${rigs} saved. Open one, or start another.`,
-      run: onRigs,
+      n: '01', name: 'My rigs', desc: `${rigs} saved. Open one, or start another.`, run: onRigs,
     } : {
-      n: '01',
-      name: 'Build a rig',
-      desc: `A bare frame and ${mountCount} mounts.`,
-      run: onBuild,
+      n: '01', name: 'Build a rig', desc: `A bare bike and ${mountCount} places for a bag.`, run: onBuild,
     },
-    // Packing, for the person who has a bike, a sleeping bag and no idea
-    // whether a stove fits in a frame bag. Second, not first: the product is
-    // still the bike, and "Build a rig" is still where the owner starts.
-    {
-      n: '02',
-      name: 'Pack my kit',
-      desc: 'Tap what you’re bringing. See where it goes.',
-      run: onPack,
-    },
-    {
-      n: '03',
-      name: 'Surprise me',
-      desc: 'A loaded bike, picked for you.',
-      run: onSurprise,
-    },
-    {
-      n: '04',
-      name: 'Loadouts',
-      desc: 'Rigs already built, one packed to the last spork.',
-      run: onLoadouts,
-    },
+    { n: '02', name: 'Pack my kit', desc: 'Tap what you’re bringing. See where it goes.', run: onPack },
+    { n: '03', name: 'See a packed bike', desc: 'One rider’s real list: 67 things in 8 bags.', run: onExample },
+    { n: '04', name: 'Examples', desc: 'Rigs already built. Try one on.', run: onLoadouts },
   ];
+
 
   for (const e of ENTRIES) {
     const li = el('li', 'pr-menu-li');
     // No `is-primary`. The contents-page form deliberately gives the three
     // destinations equal billing, and the class it used to carry matched no
-    // rule in any stylesheet — dead markup dressed as hierarchy.
+    // rule in any stylesheet, dead markup dressed as hierarchy.
     const b = el('button', 'pr-item');
     b.type = 'button';
     b.append(el('span', 'pr-idx', e.n));

@@ -29,7 +29,7 @@ app. Firebase shows you a config object. That is what goes in step 5.
 - **Google** → enable, pick a support email, save.
 
 If either is off, the app reports it in plain words rather than failing
-mysteriously — `auth/operation-not-allowed` is mapped to a sentence in
+mysteriously, `auth/operation-not-allowed` is mapped to a sentence in
 `src/auth.js`.
 
 ## 3. Authorise the domains you will actually use
@@ -91,7 +91,7 @@ rigs.
 ### The one index you need
 
 The gallery sorts published rigs by date, which is a composite query. Firestore
-will refuse it once and put a **create the index** link in the browser console —
+will refuse it once and put a **create the index** link in the browser console,
 open that link, click create, wait a minute. Alternatively, **Firestore →
 Indexes → Composite → Add**: collection `rigs`, fields `published` (Ascending)
 then `published_at` (Descending).
@@ -119,7 +119,7 @@ node tools/build-pages.mjs
 ```
 
 **Every value there is public.** A Firebase web config identifies the project;
-it does not grant access to it. There is no private key in a web app — never
+it does not grant access to it. There is no private key in a web app, never
 paste a service-account JSON into this repo.
 
 ### Trying it without a rebuild
@@ -158,7 +158,7 @@ and nothing is lost.
 | "That sign-in method is switched off" | step 2 |
 | Gallery is empty but you published something | the composite index, step 4 |
 | "Missing or insufficient permissions" | rules not applied, or `uid` missing on old documents |
-| Nothing account-related appears at all | `src/config.js` is still blank — this is the intended off state |
+| Nothing account-related appears at all | `src/config.js` is still blank, this is the intended off state |
 
 ## Cost
 

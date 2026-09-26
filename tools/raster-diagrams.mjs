@@ -4,7 +4,7 @@
  *   node tools/raster-diagrams.mjs
  *
  * The dimension drawings are the most useful reference we have, and they are
- * the one kind of file a vision model cannot open — image tools take PNG and
+ * the one kind of file a vision model cannot open, image tools take PNG and
  * JPEG, not SVG. Left as-is they would be listed in every critic bundle and
  * silently skipped by every critic, which is the worst failure mode available:
  * the evidence appears to be present and is never actually looked at.
@@ -39,8 +39,8 @@ for (const j of jobs) {
     const src = readFileSync(j.svg, 'utf8');
     const vb = (src.match(/viewBox="([^"]+)"/) || [, '0 0 800 600'])[1].split(/\s+/).map(Number);
     const w = Math.round(vb[2] || 800), h = Math.round(vb[3] || 600);
-    // Navigate straight to the file. The obvious alternative — setContent with
-    // the SVG as a base64 <img> — spends ~30s per file waiting for a
+    // Navigate straight to the file. The obvious alternative, setContent with
+    // the SVG as a base64 <img>, spends ~30s per file waiting for a
     // networkidle that a data URL never signals, which turned a four-minute job
     // into a projected four hours. Chrome renders a standalone SVG document on
     // white already, so there is no transparency to paint over either.

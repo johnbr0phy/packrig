@@ -109,7 +109,7 @@ const shim = `
 })();
 `;
 
-const html = `<title>Packrig — Bikepacking Bag Configurator</title>
+const html = `<title>Packrig, Bikepacking Bag Configurator</title>
 <style>
 html, body { height: 100%; margin: 0; background: #121212; overflow: hidden; }
 #app { position: fixed; inset: 0; }

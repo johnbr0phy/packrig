@@ -1,13 +1,13 @@
-# Packrig Wind Tunnel — module contract
+# Packrig Wind Tunnel, module contract
 
 Every module in `src/aero/` is built against this file. If you need to change an
-interface here, say so in your report — do NOT change it unilaterally, five other
+interface here, say so in your report, do NOT change it unilaterally, five other
 modules are being written against it in parallel.
 
 ## Rule zero: own your own files
 
 Create only the files assigned to you. Do **not** edit `src/main.js`, `src/ui.js`,
-`src/bike.js`, `src/bags/**`, `index.html`, or any other existing file — integration
+`src/bike.js`, `src/bags/**`, `index.html`, or any other existing file, integration
 is done by the lead afterwards. If you need something from an existing module that
 isn't exposed, note it in your report rather than patching it.
 
@@ -37,7 +37,7 @@ Speeds are presented in km/h. Convert at the boundary, never in the middle.
 
 ## Module interfaces
 
-### `aero/measure.js` — the measurement engine
+### `aero/measure.js`, the measurement engine
 
 ```js
 export function createAeroMeter({ renderer, scene, bike, bags }) → AeroMeter
@@ -61,7 +61,7 @@ AeroResult = {
   // **`bottles` CAN BE NEGATIVE** and is the only part that can be. A full frame
   // bag stows the bidons out of the wind, and that is a real saving measured
   // against the bare-fixture baseline. Anything summing, sorting or bar-charting
-  // parts must expect a negative value — a `cda > 0` filter will silently drop
+  // parts must expect a negative value, a `cda > 0` filter will silently drop
   // it, which has already happened once in a debug printer.
   //
   // `mergeArea` is the bag-over-frame OVERLAP the merge credit is priced on
@@ -70,20 +70,20 @@ AeroResult = {
   // `racks` is CHARGED, not baselined: updateFixtures() raises the rear rack
   // only because a pannier or trunk was fitted, so it is part of the cost of
   // choosing that luggage, not part of the bike you started with. It names no
-  // uiSlot — do not ask focus.js to highlight it.
+  // uiSlot, do not ask focus.js to highlight it.
 }
 ```
 
-`cdaBaseline` is measured, not inferred — the engine renders the bodies alone in
+`cdaBaseline` is measured, not inferred, the engine renders the bodies alone in
 the same set of passes. Total is always baseline + bags, and a kit can never
 subtract drag; both are permanent assertions in `tools/aero-check.mjs`.
 
 `wakeArea` is how much of that part's silhouette sits in the rig's shadow (0 for
-bodies). **For a bag, `cda` is NOT `frontalArea * cd`** — the wake fraction is
+bodies). **For a bag, `cda` is NOT `frontalArea * cd`**, the wake fraction is
 discounted by `model.wakeDiscount`. It still is for bodies. That is precisely why
 `wakeArea` is published rather than left to be inferred.
 
-### `aero/model.js` — drag coefficients and power
+### `aero/model.js`, drag coefficients and power
 
 ```js
 export const RIDE_DEFAULTS = {
@@ -102,7 +102,7 @@ export const ASSUMPTIONS = [{ label, value, note }]   // drives the "how this
                                                       // is calculated" block
 ```
 
-### `aero/flow.js` — the flow field
+### `aero/flow.js`, the flow field
 
 ```js
 export function buildFlowField(bike, bags, { yawDeg = 0 } = {}) → FlowField
@@ -115,14 +115,14 @@ FlowField = {
 }
 ```
 
-### `aero/smoke.js` — streaklines
+### `aero/smoke.js`, streaklines
 
 ```js
 export function createSmoke({ flow, bounds }) → Smoke
 Smoke = { group: Object3D, tick(dt), rebuild(flow), setEnabled(b), dispose() }
 ```
 
-### `aero/rider.js` — the ghost rider
+### `aero/rider.js`, the ghost rider
 
 ```js
 export function createRider(bike) → Rider
@@ -130,14 +130,14 @@ Rider = { group: Object3D, setOpacity(a: number), dispose() }
 ```
 `group` is added to `bike.frameGroup`, so build it in **millimetres**.
 
-### `aero/tunnel.js` — mode enter/exit
+### `aero/tunnel.js`, mode enter/exit
 
 ```js
 export function createTunnel(app, { smoke, rider, meter, camera, controls,
                                     composer, passes }) → Tunnel
 Tunnel = { enter(), exit(), tick(dt), get active(): boolean }
 ```
-`passes` is `{ gtao, bloom }` from main.js's post chain — the tunnel drops the
+`passes` is `{ gtao, bloom }` from main.js's post chain, the tunnel drops the
 GTAO radius and lifts bloom, and must restore both on exit. Omitting it is safe:
 those adjustments no-op and everything else still works.
 
@@ -147,7 +147,7 @@ mesh faded to fully transparent still writes DEPTH unless you also clear
 GTAO's depth/normal read after it had visually vanished, baking a blotchy AO
 pattern into the flat tunnel floor. Any fade-based module here will hit this.
 
-### `aero/panel.js` — the HUD
+### `aero/panel.js`, the HUD
 
 ```js
 export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPart }) → Panel
@@ -165,7 +165,7 @@ Panel = {
   `--glass-bg`, `--glass-brd`, `--radius`, `--panel-w`). Use them; do not invent
   new colours. New CSS goes in `src/aero/aero.css`.
 - three r0.185. Import as `three` and `three/addons/…` (import map, no build step).
-- Dispose everything you create — `disposeObject` from `../lib.js` walks a tree.
+- Dispose everything you create, `disposeObject` from `../lib.js` walks a tree.
 - Never place geometry by a hard-coded offset. Derive from `bike.points` /
   `bike.geo`. This project's bug history is almost entirely hard-coded offsets and
   swapped axes; see `HANDOVER.md`.

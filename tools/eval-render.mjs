@@ -9,7 +9,7 @@
  *   node tools/eval-render.mjs --set apidura-v1 --label spec-v2
  *
  * Writes evals/runs/<stamp>-<label>/
- *   meta.json    what everything was when this was taken — git sha, catalogue
+ *   meta.json    what everything was when this was taken, git sha, catalogue
  *                sha, models sha, spec sha. A score is only comparable to
  *                another score taken with the same everything.
  *   items.json   the set's items PLUS the fidelity record as it stood, so the
@@ -54,7 +54,7 @@ const runDir = join(root, 'evals/runs', runId);
 mkdirSync(join(runDir, 'shots'), { recursive: true });
 
 // The catalogue is what bagshot actually renders from, and apply-models.mjs
-// merges the records into it — so a record edit only reaches a render after
+// merges the records into it, so a record edit only reaches a render after
 // that tool has run. Recording both shas is how a confusing "I fixed it and
 // nothing changed" gets diagnosed later.
 const meta = {
@@ -83,10 +83,10 @@ const meta = {
 writeFileSync(join(runDir, 'meta.json'), JSON.stringify(meta, null, 1));
 
 // Snapshot the record alongside the render. When v2 arrives, the UI can show
-// what changed in the DATA as well as what changed in the picture — which is
+// what changed in the DATA as well as what changed in the picture, which is
 // the difference between "the prompt improved the prose" and "the prompt
 // improved the model". (EVAL-PLAN.md §7 phase 4C, step 4)
-// The CASE LIST is frozen — same 70 products every run, forever, which is the
+// The CASE LIST is frozen, same 70 products every run, forever, which is the
 // whole point of a set. The RECORD attached to each case is not: it is a
 // snapshot, and it must be taken now, not when the set was frozen.
 //
@@ -128,7 +128,7 @@ if (!serving) {
   await new Promise((r) => setTimeout(r, 800));
 }
 
-console.log(`[eval-render] ${runId} — ${set.items.length} items`);
+console.log(`[eval-render] ${runId}, ${set.items.length} items`);
 const t0 = Date.now();
 const child = spawn(process.execPath, [
   join(root, 'tools/bagshot-q.mjs'),
@@ -142,7 +142,7 @@ const secs = Math.round((Date.now() - t0) / 1000);
 server?.kill();
 
 // Throughput decides how often a full run is affordable, and everything
-// downstream is planned around it — so it is recorded, not estimated.
+// downstream is planned around it, so it is recorded, not estimated.
 meta.finished_at = new Date().toISOString();
 meta.wall_clock_seconds = secs;
 meta.seconds_per_item = +(secs / set.items.length).toFixed(1);

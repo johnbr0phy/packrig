@@ -1,5 +1,5 @@
 /**
- * "What are you bringing?" — the first-timer's door.
+ * "What are you bringing?", the first-timer's door.
  *
  * Someone with a bike, a sleeping bag and a vague sense of dread should not
  * need to know what a harness system is. They tap the things they own, in
@@ -62,8 +62,11 @@ export function initQuick(app, hooks) {
       grid.append(t);
     }
     wrap.append(grid);
-    const foot = el('div', 'bs-foot pkg-quick-foot');
-    const go = btn('bs-btn is-primary', '', () => pack(h));
+    const more = el('div', 'pkg-row-actions');
+    more.append(btn('btn sm ghost', 'Browse all gear', () => hooks.openLocker?.()), btn('btn sm ghost', 'Paste a spreadsheet', () => hooks.openImport?.()));
+    wrap.append(more);
+    const foot = el('div', 'sheet-foot-src');
+    const go = btn('btn primary wide', '', () => pack(h));
     const paintGo = () => {
       go.textContent = picked.size ? `Pack ${picked.size === 1 ? 'it' : `these ${picked.size}`}` : 'Pick what you’re bringing';
       go.disabled = !picked.size;
@@ -97,5 +100,16 @@ export function initQuick(app, hooks) {
     hooks.afterPack?.(res);
   }
 
-  return { open };
+  /** Put one tile's things in my kit, at home for now; returns their uids. */
+  function addTile(q) {
+    const uids = [];
+    for (const id of q.ids) {
+      const have = P.lib.locker.items.filter((i) => i.ref === id && !uids.includes(i.uid));
+      if (have.length) { uids.push(have[0].uid); P.place(have[0].uid, 'home'); continue; }
+      uids.push(P.add({ ref: id }, 'home').uid);
+    }
+    return uids;
+  }
+
+  return { open, addTile };
 }

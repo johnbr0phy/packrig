@@ -9,7 +9,7 @@
  *      edit to seatpack.js moves 78 catalogue products, so "all eleven are
  *      wrong the same way" is worth more than eleven separate complaints.
  *   2. LAYER SPLIT. Whether the round's work is editing records (A), editing
- *      builders (B), or designing new concepts (C) — three different jobs, and
+ *      builders (B), or designing new concepts (C), three different jobs, and
  *      knowing the mix before starting is what stops a builder agent trying to
  *      draw something the vocabulary cannot express.
  *   3. Score distribution and the worst bags.
@@ -43,7 +43,7 @@ for (const f of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
 const bags = reports.flatMap((r) => (r.bags || []).map((b) => ({ ...b, slot: r.slot, critic: r.critic })));
 const med = (a) => { const s = [...a].sort((x, y) => x - y); return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2; };
 
-console.log(`\n=== CRITIC ROUND — ${run} ===`);
+console.log(`\n=== CRITIC ROUND, ${run} ===`);
 console.log(`${reports.length} critics, ${bags.length} bags judged\n`);
 
 console.log('--- COMMON FAULTS (the leverage) ---');
@@ -72,7 +72,7 @@ for (let s = 1; s <= 5; s++) {
 }
 
 console.log('\n--- WHERE THE WORK IS (layer) ---');
-const LAYER = { A: 'record is wrong — edit data/models', B: 'builder is wrong — edit src/bags/builders', C: 'no concept exists — design work' };
+const LAYER = { A: 'record is wrong, edit data/models', B: 'builder is wrong, edit src/bags/builders', C: 'no concept exists, design work' };
 for (const l of ['A', 'B', 'C']) {
   const n = bags.filter((b) => (b.layer || '').toUpperCase().startsWith(l)).length;
   console.log(`  ${l}  ${String(n).padStart(3)}  ${LAYER[l]}`);

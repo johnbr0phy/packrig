@@ -72,7 +72,7 @@ await bob.p.evaluate(() => document.querySelector('.rig-act.is-primary').click()
 await wait(1200);
 const bobBags = await bob.p.evaluate(() => Object.keys(window.app.bags.equipped).length);
 const aliceBags = await alice.p.evaluate(() => Object.keys(window.app.bags.equipped).length);
-console.log(`bob loaded ${bobBags} bags; alice built ${aliceBags} — match:`, bobBags === aliceBags);
+console.log(`bob loaded ${bobBags} bags; alice built ${aliceBags}, match:`, bobBags === aliceBags);
 
 // ---- the gallery must not leak who published --------------------------------
 const leak = await bob.p.evaluate(async (api) => {

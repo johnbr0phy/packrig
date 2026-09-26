@@ -1,6 +1,6 @@
 /**
  * Saved rigs as the top level of the left column: find one, open it, come back.
- * The flow the old UI made hard — rigs were behind your own email address in a
+ * The flow the old UI made hard, rigs were behind your own email address in a
  * sheet, and saving made a new copy every time.
  */
 import puppeteer from 'puppeteer-core';
@@ -38,7 +38,7 @@ await click('.rn-back');
 ok(await level()==='list', 'back goes up to the list');
 ok(await rows()===1, `the saved rig is in the list (${await rows()})`);
 ok(await p.evaluate(()=>/Highland overnighter/.test(document.querySelector('.rn-row')?.textContent||'')), 'under its own name, not an email address');
-ok(await p.evaluate(()=>{const b=document.querySelector('.save-btn');return !b||b.hidden}), 'no Save rig at the list level — there is no rig open to save');
+ok(await p.evaluate(()=>{const b=document.querySelector('.save-btn');return !b||b.hidden}), 'no Save rig at the list level, there is no rig open to save');
 
 // a second rig
 await click('.rn-new');

@@ -1,8 +1,8 @@
 /**
  * Measure a bag's shape from its product photograph.
  *
- * The builders were being tuned by hand — write a taper constant, render, look,
- * adjust — which is a loop with a person in the middle of every iteration and
+ * The builders were being tuned by hand, write a taper constant, render, look,
+ * adjust, which is a loop with a person in the middle of every iteration and
  * does not converge. This replaces the guessing with a measurement: segment the
  * maker's photo, find the bag's own long axis, and read its half-depth at 40
  * stations along it. The result is a normalised profile the builder sweeps
@@ -18,8 +18,8 @@
  * have, and puppeteer is already here. All the pixel work happens on a canvas.
  *
  * What it does NOT do yet: width (a top-down view), and telling nose from tail.
- * Orientation is resolved by the rule the owner gave — the narrow end is the
- * end that attaches — not by anything in the image.
+ * Orientation is resolved by the rule the owner gave, the narrow end is the
+ * end that attaches, not by anything in the image.
  */
 import puppeteer from 'puppeteer-core';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -119,7 +119,7 @@ function measureInPage(src, STATIONS) {
       }
       if (bestN < 400) { resolve({ ok: false, why: 'component too small' }); return; }
 
-      // Principal axis by image moments — product shots are rarely level, and a
+      // Principal axis by image moments, product shots are rarely level, and a
       // bag photographed nose-down measures as a wedge if you sample columns.
       let sx = 0, sy = 0, m = 0;
       for (let p = 0; p < W * H; p++) if (lab[p] === best) { sx += p % W; sy += (p / W) | 0; m++; }
@@ -251,7 +251,7 @@ for (const j of jobs) {
   // published dimensions do: a side elevation has aspect len/hgt, a front
   // len/wid or wid/hgt, a plan len/wid. Score every photo against every
   // canonical ratio and take the best fit, rejecting anything that matches
-  // nothing well — that is a three-quarter view, and measuring a profile off
+  // nothing well, that is a three-quarter view, and measuring a profile off
   // one reports a foreshortened bag as a short one.
   //
   // Two views is the whole game: the SIDE gives half-depth along the length,
@@ -266,7 +266,7 @@ for (const j of jobs) {
   };
   const TOL = 0.22;                          // within 22% of the expected ratio
   // When a bag's height and width are close, its side elevation and its plan
-  // have the SAME aspect ratio and no silhouette can separate them — a seat
+  // have the SAME aspect ratio and no silhouette can separate them, a seat
   // pack is 42x15x16, so side is 2.63 and plan is 2.80, six percent apart.
   // Guessing there produces a width profile measured off a side view, which is
   // a worse error than having no width profile at all. So: refuse.
@@ -292,8 +292,8 @@ for (const j of jobs) {
   pick.assumed = !bySide[0];
   // A studio shot faces whichever way the photographer put it, so the raw
   // profile runs in an arbitrary direction. Orient every one the same way using
-  // the rule the owner gave for these packs — "the thinner end is the part that
-  // attaches to the seat post" — so station 0 is always the mounting end.
+  // the rule the owner gave for these packs, "the thinner end is the part that
+  // attaches to the seat post", so station 0 is always the mounting end.
   // This is the one thing the image genuinely cannot tell us.
   const n5 = Math.max(2, Math.round(pick.profile.length * 0.15));
   const mean = (a) => a.reduce((x, y) => x + y, 0) / a.length;
@@ -329,8 +329,8 @@ for (const j of jobs) {
 await browser.close();
 if (has('write')) {
   writeFileSync(join(root, 'data/profiles.json'), JSON.stringify(out, null, 1));
-  console.log(`\nwrote data/profiles.json — ${Object.keys(out).length} profiles`);
+  console.log(`\nwrote data/profiles.json, ${Object.keys(out).length} profiles`);
 } else {
-  console.log('\n(dry run — pass --write to save data/profiles.json)');
+  console.log('\n(dry run, pass --write to save data/profiles.json)');
 }
 console.log(`measured ${measured} · refused ${refused}`);

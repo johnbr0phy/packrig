@@ -1,7 +1,7 @@
 // Wind tunnel: composition root.
 //
 // Owns the wiring between the six aero modules and the rest of the app. Nothing
-// here does physics, geometry or DOM — it decides WHEN things run and holds the
+// here does physics, geometry or DOM, it decides WHEN things run and holds the
 // small amount of state (ride settings, cached baseline) that spans modules.
 
 import { createAeroMeter } from './measure.js';
@@ -32,7 +32,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
 
   const ride = { ...RIDE_DEFAULTS };
   let yawDeg = 0;
-  let baselineCda = null;   // bare bike + rider, no bags — the reference
+  let baselineCda = null;   // bare bike + rider, no bags, the reference
   let result = null;
 
   const panel = createAeroPanel({
@@ -66,24 +66,24 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
 
   // The device profile decides these: a phone can afford a smaller buffer.
   // NOTE a shortened yaw sweep would change `cdaWeighted`, which the HUD
-  // presents as measured — so the profile keeps all five angles and only drops
+  // presents as measured, so the profile keeps all five angles and only drops
   // resolution, which does not move the number.
   const YAWS = measure?.yaws || [0, 5, 10, 15, 20];
   const RESOLUTION = measure?.resolution || 512;
 
   // The engine measures the bags-off rig itself, in the same passes, with the
   // racks and bottles in whatever state the current kit leaves them. Hiding the
-  // racks here instead would strip a pannier's own rack out of the baseline —
+  // racks here instead would strip a pannier's own rack out of the baseline,
   // the one part of fitting panniers a rider cannot take off.
 
   /**
    * A frame bag caps the open main triangle, so the FRAME sheds less drag than
-   * it did bare. measure.js cannot see that — it measures area and multiplies by
+   * it did bare. measure.js cannot see that, it measures area and multiplies by
    * a Cd, and a positive area times a positive Cd can never come out negative.
    * So the credit is applied here, once, to the reserved `bike` part.
    *
    * It is applied to the loaded measurement only. The baseline is measured with
-   * the bags hidden, which is a bike that genuinely has no fairing — crediting
+   * the bags hidden, which is a bike that genuinely has no fairing, crediting
    * it there would cancel the effect out and hide the result entirely.
    */
   function applyFairing(res) {
@@ -122,7 +122,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
     panel.update(result, { ...ride, yawDeg, baselineCda }, {
       ...comparison,
       // Added watts scale with v³, so an unnormalised grade would rate the same
-      // rig A at 20 km/h and D at 40 — a property of the slider, not the kit.
+      // rig A at 20 km/h and D at 40, a property of the slider, not the kit.
       grade: grade(comparison.addedW, { speedKph: ride.speedKph }),
       totalW: power({ cda: result.cdaHeadOn, ...ride }).totalW,
     });
@@ -130,7 +130,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
 
   function rebuildFlow() {
     // Pass the rider EXPLICITLY. setOpacity(0) leaves group.visible false, and
-    // enter() builds the field before the fade has started — so an implicit
+    // enter() builds the field before the fade has started, so an implicit
     // visibility-based pickup would leave the single biggest blocker on the
     // bike out of the flow until the next kit or yaw change. buildFlowField
     // counts an explicitly-passed rider regardless of visibility, for this.
@@ -140,7 +140,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
 
   /**
    * remeasure() is async and nothing awaits it, so a throw inside the engine
-   * would otherwise surface only as an unhandled rejection — invisible in the
+   * would otherwise surface only as an unhandled rejection, invisible in the
    * UI while the readout silently kept showing stale numbers. Fail loudly.
    */
   function measureNow() {
@@ -156,7 +156,7 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
   }
 
   // Panel mounting is tracked here rather than gated on tunnel.active, because
-  // `active` stays true for the whole exit crossfade — correct for the tunnel,
+  // `active` stays true for the whole exit crossfade, correct for the tunnel,
   // but as a guard it made the mode un-re-enterable until the fade finished.
   // tunnel.enter()/exit() already handle being called mid-transition.
   let open = false;

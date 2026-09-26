@@ -1,29 +1,29 @@
 /**
- * The menu system, v2 — the shell and the router.
+ * The menu system, v2, the shell and the router.
  *
  * WHAT THIS REPLACES. v1 had two unrelated surfaces: `ui/home.js`, a centred
  * white card with two buttons over a dimmed bike, and `ui/gallery.js`, a
  * top bar plus two arrows plus a floating name plate. They shared no layout,
  * no type ramp and no motion, and both of them put a rectangle in the middle
- * of the one thing the product is for — the bike.
+ * of the one thing the product is for, the bike.
  *
  * THE RULE THAT SHAPES ALL OF THIS: the scene is never covered and never
  * dimmed. Every menu here is a COLUMN down the left with a horizontal
  * readability gradient behind it. The bike sits in the right two thirds, lit,
- * turning, and at every level of the menu it is showing you something real —
+ * turning, and at every level of the menu it is showing you something real,
  * on the start screen it is a bike, in Loadouts it is the loadout you are
  * reading about, in the Gallery it is the rig whose manifest is on the left.
  * You are never looking at a picture of a menu.
  *
  * THREE LEVELS, ONE SHELL:
- *   start      the root — what this is, and the ways in
+ *   start      the root, what this is, and the ways in
  *   rigs       the bikes you have saved, once there are any
  *   loadouts   eight curated rigs, on the bike, with their manifests
  *
  * `loadouts` and `rigs` are the same view (`browse.js`) with different
  * sources, because they are the same act: look at a rig somebody built, read
- * what is on it, take it if you want it. There was a `gallery` — everyone
- * else's rigs — and it is out for now; see the head of browse.js.
+ * what is on it, take it if you want it. There was a `gallery`, everyone
+ * else's rigs, and it is out for now; see the head of browse.js.
  *
  *   initMenu(app, { onBuild }) -> { open, close, go, get view, get isOpen }
  */
@@ -33,7 +33,6 @@ import { renderStart } from './start.js';
 import { renderSetup } from './setup.js';
 import { initBrowse } from './browse.js';
 import { captureRig, applyRig } from '../../rig.js';
-import { setSheetLift } from '../../mobile.js';
 import { paintFace } from '../face.js';
 
 const el = (tag, cls, text) => {
@@ -46,13 +45,13 @@ const el = (tag, cls, text) => {
 /** Views, in the order the tab strip shows them. */
 const VIEWS = [
   { id: 'start',    label: 'Start' },
-  // Only once there is something in it — see `paintChrome`. A tab reading "My
+  // Only once there is something in it, see `paintChrome`. A tab reading "My
   // rigs" that opens an empty page is a promise the app has not kept yet.
   { id: 'rigs',     label: 'My rigs', needsRigs: true },
-  { id: 'loadouts', label: 'Loadouts' },
+  { id: 'loadouts', label: 'Examples' },
 ];
 
-/** Do we have saved rigs? Synchronous by design — see rigstore's `knownCount`. */
+/** Do we have saved rigs? Synchronous by design, see rigstore's `knownCount`. */
 const rigCount = (app) => {
   if (app.auth?.enabled && !app.auth.signedIn) return 0;
   return app.rigs?.knownCount || 0;
@@ -93,7 +92,7 @@ export function initMenu(app, { onBuild } = {}) {
   tabs.setAttribute('aria-label', 'Menu sections');
   const tabBtns = new Map();
   for (const v of VIEWS) {
-    // Start is the homepage. PACKRIG is the way back — a Start tab next to
+    // Start is the homepage. PACKRIG is the way back, a Start tab next to
     // Loadouts is a second door to the same room.
     if (v.id === 'start') continue;
     const b = el('button', 'pr-tab', v.label);
@@ -104,7 +103,7 @@ export function initMenu(app, { onBuild } = {}) {
   }
   head.append(tabs);
 
-  // Leaving the menu is a real destination — the bike as you left it — so it
+  // Leaving the menu is a real destination, the bike as you left it, so it
   // is a labelled control, not a bare ×. It only appears once there is
   // something to go back TO, which `paintChrome` decides.
   const closeBtn = el('button', 'pr-close');
@@ -113,46 +112,28 @@ export function initMenu(app, { onBuild } = {}) {
   closeBtn.title = 'Back to the bike (Esc)';
   closeBtn.onclick = () => close();
 
-  // Phone only (CSS hides it above 560). Lives on the bottom slab, top-right —
-  // a chevron, not a labelled header button. Close leaves; this just tucks
-  // the menu so you can look at the bike.
-  const minBtn = el('button', 'pr-min nav-min');
-  minBtn.type = 'button';
-  minBtn.append(
-    icon('down', { size: 18, cls: 'nav-min-dn' }),
-    icon('up', { size: 18, cls: 'nav-min-up' }),
-  );
-  minBtn.title = 'Hide the menu and look at the bike';
-  minBtn.setAttribute('aria-expanded', 'true');
-  minBtn.setAttribute('aria-label', 'See the bike');
+  // The menu is a column on the left (desktop) or a slab under the bike
+  // (phone). It tells the framer where it is, so the bike is fitted into the
+  // rest of the screen, and it turns, so the fit allows for every angle.
   let minimized = false;
   const phone = () => typeof matchMedia === 'function' && matchMedia('(max-width: 560px)').matches;
   const syncMenuLift = () => {
-    if (!phone()) return;
-    if (!open_) {
-      const peek = host.querySelector('.panel.collapsed, .sheet.is-min, .aero-panel.is-min');
-      setSheetLift(peek ? 0 : 0.22);
-    } else {
-      setSheetLift(minimized ? 0 : 0.22);
-    }
-    app.sheets?.resync?.();
+    app.framing?.setOrbitSafe(open_);
+    app.framing?.frameBike({ instant: false });
   };
-  function setMinimized(next) {
-    minimized = !!next && phone();
-    root.classList.toggle('is-min', minimized);
-    minBtn.title = minimized ? 'Show the menu' : 'Hide the menu and look at the bike';
-    minBtn.setAttribute('aria-expanded', String(!minimized));
-    minBtn.setAttribute('aria-label', minimized ? 'Show the menu' : 'See the bike');
-    syncMenuLift();
-  }
-  minBtn.onclick = () => setMinimized(!minimized);
-  function dockMin() {
+  function setMinimized() { minimized = false; }
+  function dockMin() {}
+  app.framing?.addChrome(() => {
+    if (!open_) return null;
     const slab = stage.querySelector('.pr-start, .pr-browse') || stage.firstElementChild;
-    if (slab) slab.append(minBtn);
-  }
+    if (!slab) return null;
+    const r = slab.getBoundingClientRect();
+    if (phone()) return { bottom: Math.max(r.top, innerHeight * 0.45) };
+    return { left: r.right };
+  });
 
   /*
-   * Log in, top right, on the front page — where every site anyone has used
+   * Log in, top right, on the front page, where every site anyone has used
    * puts it. It was reachable only from inside the builder, behind a button
    * that said "Sign in" and opened a panel of saved rigs, so the front door
    * was two screens in and led somewhere else.
@@ -209,7 +190,7 @@ export function initMenu(app, { onBuild } = {}) {
   let stash = null;
   let stashDirty = false;
   // Homepage is always the empty bike. keepScene used to leave a saved kit
-  // on the hero; that is gone — My rigs holds the copy.
+  // on the hero; that is gone, My rigs holds the copy.
   // False until the first render has happened, so the boot render does not
   // steal focus from the document.
   let moved = false;
@@ -217,10 +198,13 @@ export function initMenu(app, { onBuild } = {}) {
   // A loadout waiting to be named. Null means this setup is a bare new bike.
   let pendingAdopt = null;
 
+  // Build a rig goes straight to the bike. Name, size and colours were a
+  // form in front of the first bag; they are one tap away in More > Bike,
+  // and the name is editable in place.
   const startBuild = () => {
     pendingAdopt = null;
     try { app.clearAll?.(); } catch { /* empty bike is the point */ }
-    go('setup');
+    close({ build: true, setup: { size: app.state?.size, paint: app.state?.paint } });
   };
   const startSurprise = () => { app.__enteredBuilder = true; close({ surprise: true }); };
 
@@ -233,7 +217,7 @@ export function initMenu(app, { onBuild } = {}) {
     // Deleting or publishing changes the list under you; redraw the view.
     onRefresh: () => { if (open_) render(); },
     notify: (msg) => app.toast?.(msg),
-    // The bike you walked in with, for `Update from your build` — browsing
+    // The bike you walked in with, for `Update from your build`, browsing
     // mounts each rig, so the live bike is not it.
     getWorking: () => stash,
     onAdopt: (item) => {
@@ -250,6 +234,7 @@ export function initMenu(app, { onBuild } = {}) {
       go('setup');
     },
     onDirty: () => { stashDirty = true; },
+    onSurprise: () => startSurprise(),
   });
 
   function paintChrome() {
@@ -264,7 +249,7 @@ export function initMenu(app, { onBuild } = {}) {
     }
     paintLogin();
     // Start and setup are home. Close means "back to the builder" and only
-    // belongs on Loadouts / My rigs — even after Surprise me, even with bags
+    // belongs on Loadouts / My rigs, even after Surprise me, even with bags
     // still on the bike. A Close on the front page is a door to nowhere.
     closeBtn.hidden = view === 'start' || view === 'setup';
     root.dataset.view = view;
@@ -306,8 +291,12 @@ export function initMenu(app, { onBuild } = {}) {
         // Packing's front door: close the menu onto the bare bike, Gear view,
         // and ask what they are bringing. The first-timer's path.
         onPack: () => {
-          close();
-          setTimeout(() => { app.packUI?.setMode('gear'); app.packUI?.openQuick(); }, 60);
+          close({ build: true, setup: { size: app.state?.size, paint: app.state?.paint } });
+          setTimeout(() => { app.packUI?.openQuick(); }, 60);
+        },
+        onExample: () => {
+          close({ build: true, setup: { size: app.state?.size, paint: app.state?.paint } });
+          setTimeout(() => { app.packUI?.openExample(); }, 60);
         },
         onRigs: () => go('rigs'),
         onLoadouts: () => go('loadouts'),
@@ -329,6 +318,8 @@ export function initMenu(app, { onBuild } = {}) {
     dockMin();
     paintChrome();
     animateIn();
+    // after layout, so the framer measures the column this view actually has
+    requestAnimationFrame(() => { if (open_) syncMenuLift(); });
     // Only when the menu was already open: on first paint the page has just
     // loaded and moving focus would fight the browser's own restoration.
     if (open_ && moved) stage.focus({ preventScroll: true });
@@ -346,7 +337,7 @@ export function initMenu(app, { onBuild } = {}) {
    * The builder underneath is taken out of the page while the menu is over it.
    *
    * `opacity: 0` and `pointer-events: none` hide a panel from the eye and the
-   * mouse and leave every button in it in the tab order — so Tab walked
+   * mouse and leave every button in it in the tab order, so Tab walked
    * straight off the menu into invisible controls, and a screen reader read out
    * a builder that was not on screen. `inert` is the one thing that removes
    * both, and it is put on the individual surfaces rather than on `#ui-root`
@@ -354,7 +345,7 @@ export function initMenu(app, { onBuild } = {}) {
    */
   // `.toast` is deliberately NOT in here: the rigs view reports a delete or a
   // publish through it, and an inert toast is an undo button nobody can press.
-  const BEHIND = '.panel, .topbar, .viewtools, .hint, .sheet, .save-dock';
+  const BEHIND = '.panel, .topbar, .sheet, .mounts, .coach';
   function setBehindInert(on) {
     for (const n of host.querySelectorAll(BEHIND)) n.inert = on;
   }
@@ -387,7 +378,7 @@ export function initMenu(app, { onBuild } = {}) {
   function close({ adopted = null, build = false, surprise = false, setup = null } = {}) {
     if (!open_) return;
     // Backing out of the menu without taking anything puts your own bike back.
-    // Surprise me / a finished setup are taking something — the stash dies.
+    // Surprise me / a finished setup are taking something, the stash dies.
     if (!adopted && !surprise && !setup) restoreStash();
     open_ = false;
     browse.cancel();

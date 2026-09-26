@@ -1,7 +1,7 @@
 /**
  * One item: what it is, what it weighs, and where it goes.
  *
- * "Where it goes" is every placement the bike allows, as one row of choices —
+ * "Where it goes" is every placement the bike allows, as one row of choices,
  * the bags that are on the bike, strapped outside, hanging off, on the frame,
  * on you, at home. It is also the keyboard path for everything drag-and-drop
  * does on a desktop.
@@ -44,10 +44,10 @@ export function initItemSheet(app, hooks) {
     if (st.mine) {
       const cur = st.loadout.place[uid] ?? 'home';
       const sec = el('div', 'pkg-block');
-      sec.append(el('div', 'bs-label', 'Where it goes'));
+      sec.append(el('div', 'label', 'Where it goes'));
       const opts = el('div', 'pkg-places');
       const choice = (code, label) => {
-        const b = btn('pkg-place' + (code === cur ? ' on' : ''), label, () => {
+        const b = btn('chip pkg-place' + (code === cur ? ' on' : ''), label, () => {
           P.place(uid, code);
           const s = parsePlace(code).slot;
           if (s && parsePlace(code).loc === 'bag') P.openBag(s);
@@ -77,15 +77,15 @@ export function initItemSheet(app, hooks) {
     // ---- weight ----------------------------------------------------------------------
     if (st.mine) {
       const sec = el('div', 'pkg-block');
-      sec.append(el('div', 'bs-label', 'Your weight for it'));
+      sec.append(el('div', 'label', 'Your weight for it'));
       const f = el('form', 'pkg-wrow');
-      const inp = el('input', 'pkg-in num');
+      const inp = el('input', 'input num');
       inp.inputMode = 'decimal';
       const imp = P.lib.unit === 'imperial';
       inp.value = imp ? (Math.round(gToOz(r.g) * 10) / 10).toString() : Math.round(r.g).toString();
       inp.setAttribute('aria-label', `Weight in ${imp ? 'ounces' : 'grams'}`);
       f.append(inp, el('span', 'pkg-u', imp ? 'oz' : 'g'));
-      const save = el('button', 'pkg-btn', 'Save');
+      const save = el('button', 'btn sm', 'Save');
       save.type = 'submit';
       f.append(save);
       f.onsubmit = (e) => {
@@ -105,12 +105,12 @@ export function initItemSheet(app, hooks) {
     const c = it.ref ? P.gear?.get(it.ref) : null;
     if (c) {
       const sec = el('div', 'pkg-block');
-      sec.append(el('div', 'bs-label', 'Source'));
+      sec.append(el('div', 'label', 'Source'));
       const basis = c.basis === 'recall' ? 'Maker spec, not re-checked' : c.basis === 'owner' ? 'The owner’s own scale' : 'Maker or retailer page';
       const p = el('p', 'pkg-why', basis);
       const src = c.sources?.find((s) => /^https?:/.test(s.url || ''));
       if (src) {
-        const a = el('a', 'pkg-link', new URL(src.url).hostname.replace(/^www\./, ''));
+        const a = el('a', 'btn sm ghost', new URL(src.url).hostname.replace(/^www\./, ''));
         a.href = src.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
         p.append(document.createTextNode(' · '), a);
       }
@@ -120,9 +120,9 @@ export function initItemSheet(app, hooks) {
     }
 
     if (st.mine) {
-      const foot = el('div', 'bs-foot');
-      const row = el('div', 'bs-foot-row');
-      row.append(btn('bs-btn is-bad', 'Remove from my gear', () => {
+      const foot = el('div', 'sheet-foot-src');
+      const row = el('div', 'row');
+      row.append(btn('btn bad wide', 'Remove from my kit', () => {
         const snap = JSON.parse(JSON.stringify({ it, place: P.lib.loadouts.map((l) => [l.id, l.place[uid]]) }));
         P.remove(uid);
         h?.close();

@@ -12,7 +12,7 @@
  *     litres }                the maker's rated volume
  *
  * The rules are the ones an experienced rider packs by:
- *   1. rigid and heavy first, against the mount — the pot, the stove, the
+ *   1. rigid and heavy first, against the mount, the pot, the stove, the
  *      canister go where the bag is held, so they don't swing;
  *   2. then soft things, densest first, and they FILL: a sleeping bag takes
  *      the shape of whatever space is left, squashing up to its `compress`;
@@ -22,7 +22,7 @@
  * FILL IS VOLUME, NOT GEOMETRY. The meter reads litres against the maker's
  * rating. The picture is laid out in the cavity's own geometry, scaled so a
  * litre of kit takes the same share of the drawn space as it does of the
- * rating — so the meter and the picture cannot tell different stories.
+ * rating, so the meter and the picture cannot tell different stories.
  */
 
 // A bag's rated litres are its litres: a roll-top can be stuffed to its rating.
@@ -178,7 +178,7 @@ export function solveBag(cav, items, opts = {}) {
   // heaviest first, starting where the bag is held and working away; when a
   // layer is full the next goes on top. So: shelves stacked in v (up), each
   // shelf split into lanes across w, and each lane filled along u outward from
-  // the mount — both ways from the middle for a centre-mounted bar roll.
+  // the mount, both ways from the middle for a centre-mounted bar roll.
   //
   // A soft bag gives: fabric bulges around a canister in a half frame bag.
   // `bulge` is how far past its drawn section a soft bag may stretch (1.0 for
@@ -232,7 +232,7 @@ export function solveBag(cav, items, opts = {}) {
               lane = { w: wd, off, lo: null, hi: null, fresh: true };
             }
             // where along u: as close to the mount as the shape allows, or at
-            // the lane's growing edge — stepping on past any part of the bag
+            // the lane's growing edge, stepping on past any part of the bag
             // too pinched to take it (a canister skips a seat pack's nose)
             const cands = [];
             const STEP = Math.max(span / 60, 6);
@@ -277,13 +277,13 @@ export function solveBag(cav, items, opts = {}) {
     if (!spot) {
       // The volume says it goes in and nothing about it is too big for the
       // bag; only my tidy shelving ran out. That is a tightly packed bag, not
-      // an impossible one, so it goes in loose — on top, where there is most
-      // room — and the bag is flagged as tight. Only a thing longer or fatter
+      // an impossible one, so it goes in loose, on top, where there is most
+      // room, and the bag is flagged as tight. Only a thing longer or fatter
       // than the bag can ever be refused (checked at admission).
       let best = cav.stations[0];
       for (const st of cav.stations) if (area(st) > area(best)) best = st;
       const ua = Math.max(cav.u0, Math.min((best.u0 + best.u1) / 2 - L / 2, cav.u1 - L));
-      const top = Math.max(best.v0, Math.min(rigidTopByU.filter(([ra, rb]) => rb > ua && ra < ua + L).reduce((m, [, , v]) => Math.max(m, v), -Infinity), best.v1 - Sm));
+      const top = Math.max(best.v0, Math.min(rigidTopByU.filter(([ra, rb]) => rb > ua && ra < ua + L).reduce((m, [, v]) => Math.max(m, v), -Infinity), best.v1 - Sm));
       spot = { center: [ua + L / 2, top + Sm / 2, (best.w0 + best.w1) / 2], size: [L, Sm, Mm], loose: true };
       bulged.add(it.uid);
     }
@@ -356,7 +356,7 @@ export function solveBag(cav, items, opts = {}) {
     }
     if (!done) {
       // Volume admitted it but the rigid layout ate the length. Draw it where
-      // it will do least harm — squashed against the far end — rather than
+      // it will do least harm, squashed against the far end, rather than
       // lose it: the volume meter already says it fits, and it does.
       const st = cav.stations[cav.stations.length - 1];
       placed.push({

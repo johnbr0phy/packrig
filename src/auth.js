@@ -13,8 +13,8 @@
  * hand-rolled localStorage session this replaced: tokens are no longer sitting
  * in a store that any script on the page can read as plain JSON.
  *
- * POPUP vs REDIRECT for Google. Popup is the better desktop experience — you
- * keep your bike on screen — but iOS Safari and in-app browsers block or lose
+ * POPUP vs REDIRECT for Google. Popup is the better desktop experience, you
+ * keep your bike on screen, but iOS Safari and in-app browsers block or lose
  * popups, and this app gets used on a phone. So: try the popup, and fall back
  * to a full-page redirect on exactly the errors that mean "no popup for you".
  * `hydrate()` completes the redirect half on the way back in.
@@ -42,7 +42,7 @@ import {
 import { backend } from './config.js';
 
 /**
- * Firebase error codes are stable identifiers, not sentences — `auth/
+ * Firebase error codes are stable identifiers, not sentences, `auth/
  * wrong-password` is not something to put in front of a person. The default
  * `error.message` is worse than it looks: it appends the raw code in brackets.
  */
@@ -102,7 +102,7 @@ export function createAuth() {
   }
 
   const api = {
-    /** False when no config is present — the UI hides the account panel. */
+    /** False when no config is present, the UI hides the account panel. */
     get enabled() { return !!auth; },
     get user() { return user; },
     get signedIn() { return !!user; },
@@ -132,7 +132,7 @@ export function createAuth() {
     /**
      * Google. Resolves when signed in via popup; on a browser that refuses
      * popups it starts a full-page redirect and never resolves, because the
-     * page is being navigated away — callers must not show a spinner that
+     * page is being navigated away, callers must not show a spinner that
      * assumes a return.
      */
     async signInWithGoogle() {
@@ -159,7 +159,7 @@ export function createAuth() {
 
     /**
      * A current ID token, or null when signed out. Firestore's SDK attaches
-     * credentials itself, so nothing in this app needs this any more — it is
+     * credentials itself, so nothing in this app needs this any more, it is
      * kept because the store's interface predates the SDK and a future direct
      * REST call would want it.
      */

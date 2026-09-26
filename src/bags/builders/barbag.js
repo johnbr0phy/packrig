@@ -1,5 +1,5 @@
 // Handlebar bag builder (mm-local, parented to the barroll anchor), plus the
-// `barpocket` slot — the accessory pocket that clips to the FRONT of a roll.
+// `barpocket` slot, the accessory pocket that clips to the FRONT of a roll.
 //
 // ---- AXIS MAPPING (BUILDER-BRIEF Rule 2) ------------------------------------
 // Checked against `mount.axes` in the records (70 of the 74 barbag records):
@@ -8,7 +8,7 @@
 //   catalogue wid -> grp-local x   fore-aft, +x forward (the belly)
 //   catalogue hgt -> grp-local y   up
 //
-// Four records say `len` runs fore-aft — Apidura's Racing Aerobar Pack,
+// Four records say `len` runs fore-aft, Apidura's Racing Aerobar Pack,
 // Revelate's Speedbag and Pitchfork, Andrew The Maker's Granny's Pantry. They
 // are read off `axesOf(p)` and get len/wid swapped, as before this round; that
 // mapping was already right. The barpocket records (Apidura Expedition Front
@@ -32,7 +32,7 @@
 //    round the bar and down the back panel, the head-tube anti-sway strap.
 //    Upright cylinders and buckets (Speedbag, Dr. Jones) are lofted round, not
 //    boxed.
-//  * POCKETS (`barpocket`): `buildPocket` below — a slim lozenge that lies flat
+//  * POCKETS (`barpocket`): `buildPocket` below, a slim lozenge that lies flat
 //    on the front of the roll, concave behind to follow it, strapped to it.
 //
 // The historic "lid jutting forward as a shelf" (flap params pre-swapped and
@@ -67,14 +67,14 @@ const clamp01 = (t) => Math.min(Math.max(t, 0), 1);
  * Fabric twin of `mat` at a different value.
  *
  * The lid, the flap and the hem take `accent`, and for a product whose record
- * carries ONE colourway `accent` is the same object as `main` — which is true of
+ * carries ONE colourway `accent` is the same object as `main`, which is true of
  * every fold-over pack in this slot. The flap was therefore being drawn, 3.5mm
  * proud of the belly, in exactly the body's colour, and read as part of the box:
  * that is the round-4 critique's "the same parallel-sided box with NO FLAP" on
  * all three Apidura musettes. The flap is there; it was invisible.
  *
  * x5 is in LINEAR space, where THREE keeps colour, and lifts a #1c1c1e body to
- * about #454547 on screen — the value difference a laminated flap lying on a
+ * about #454547 on screen, the value difference a laminated flap lying on a
  * matte body actually shows. Same trick, same reason, as barroll.js `tonedMat`.
  */
 function tonedMat(mat, k) {
@@ -96,8 +96,8 @@ function panelMat(main, accent) {
  *
  * src/bike.js:688 builds them with `tubeAlong([...], 11.9, M.aluDark)` and
  * lib.js:36 takes that argument as a radius. `barMount().barR` is 16, so every
- * bar-facing number derived from it — the back panel's standoff, the bore of
- * the strap loops — sits 4.1 mm clear of the tube it is supposed to be pulled
+ * bar-facing number derived from it, the back panel's standoff, the bore of
+ * the strap loops, sits 4.1 mm clear of the tube it is supposed to be pulled
  * tight against. That is the whole of the visible daylight around the straps.
  * mount.js is shared, so this is corrected here and reported there.
  */
@@ -109,7 +109,7 @@ const BAR_TUBE_R = 11.9;
  * `p.closure.type` is the controlled vocabulary apply-models.mjs merges out of
  * the records; `features.closure` is free text a human wrote ("fold-over with
  * velcro strips, full-width access"). This builder used to switch on the free
- * text, and not one of the three Apidura musette strings ever equalled 'flap' —
+ * text, and not one of the three Apidura musette strings ever equalled 'flap',
  * so all three fell through to the plain slab lid and the fold-over flap that
  * dominates every photo of them was never drawn at all.
  *
@@ -147,7 +147,7 @@ function closureOf(p, feats) {
  * The exponent was calibrated against a drawing that happened to be Apidura's
  * (racing-handlebar-pack/dimensions-1.png at 40.8 px/cm: the widest section is
  * 896px at v=0.25 and the base 797px). `(1-v)**1.5` follows it within half a
- * percent — 0.947 of full width at mid-height against the drawing's 0.954 —
+ * percent, 0.947 of full width at mid-height against the drawing's 0.954,
  * and, unlike a table with a pinch in it, it leaves the rim at exactly the
  * published width.
  */
@@ -158,8 +158,8 @@ const waistK = (v) => (1 - clamp01(v)) ** 1.5;
  * side wall.
  *
  * Only applied where the record measured a narrowing base. A bucket does not
- * stand on a square-cut slab — every fold-over record in this slot says "both
- * lower corners are chamfered inwards" — and the critique's "shorter rounded
+ * stand on a square-cut slab, every fold-over record in this slot says "both
+ * lower corners are chamfered inwards", and the critique's "shorter rounded
  * base" is this. A record that measures parallel sides (taper 1.0, e.g. the
  * Expedition Front Accessory Pack) keeps its square bottom.
  */
@@ -179,7 +179,7 @@ const frontX = (v, d, baseFrac) => -d / 2 + d * (1 - (1 - baseFrac) * 0.5 * wais
  * applied; the drawing only settles the shape of the curve between the ends.
  *
  * This is structural, not padding, so it goes into the vertices rather than
- * through the `bulge` callback — BUILDER-BRIEF §1: a rigid product skips the
+ * through the `bulge` callback, BUILDER-BRIEF §1: a rigid product skips the
  * whole deform pass, and a taper expressed as a bulge would vanish with it.
  * Normals are deliberately NOT recomputed: RoundedBoxGeometry is non-indexed,
  * so computeVertexNormals() would facet every panel. `soft()` re-derives them
@@ -226,7 +226,7 @@ function taperBody(geo, { h, d, baseFrac, foreAft }) {
  * It is built from a PlaneGeometry grid and NOT from a RoundedBoxGeometry: the
  * addon collapses every interior vertex of a flat face onto the corner arcs
  * (RoundedBoxGeometry.js sets each position to `box * sign(position)`), so a
- * slab has no vertices between its corners — a per-row width cut and a per-row
+ * slab has no vertices between its corners, a per-row width cut and a per-row
  * bulge both flatten into one straight quad. That is worth knowing beyond this
  * file: it is also why the pillow `bulge` on a boxy body only ever acts in the
  * band the corner radius covers.
@@ -271,7 +271,7 @@ function topSheet({ w, d, h, bulge, proud, segW = 16, segD = 10 }) {
  * and down the front, its lower corners cut away so the leading edge is
  * narrower than the rim.
  *
- * Measured off racing-handlebar-pack/dimensions-1.png at 40.8 px/cm — the rim
+ * Measured off racing-handlebar-pack/dimensions-1.png at 40.8 px/cm, the rim
  * spans the full 23cm, the leading edge 13.9cm (0.60 of the rim), and it hangs
  * 8.2cm below the rim, 0.55 of the 15cm body. The head-on shots read a little
  * deeper (racing-handlebar-pack/on-bike-2.jpg and city-handlebar-pack/
@@ -295,11 +295,11 @@ function musetteFlap(grp, mat, hwm, { w, h, d, baseFrac, bulge, lightMount }) {
   grp.add(new THREE.Mesh(
     frontSheet({ w, drop, top, h, d, baseFrac, bulge, proud, hem, cut }), mat));
 
-  // the fold over the mouth itself — without it the bag reads as an open box
+  // the fold over the mouth itself, without it the bag reads as an open box
   // with a bib hung on the front
   grp.add(new THREE.Mesh(topSheet({ w, d, h, bulge, proud }), mat));
 
-  // doubled hem along the leading edge, the one hard line in the drawing —
+  // doubled hem along the leading edge, the one hard line in the drawing,
   // a strip of the hem's own width, so it needs no cut of its own
   const hemH = 5;
   grp.add(new THREE.Mesh(
@@ -317,7 +317,7 @@ function musetteFlap(grp, mat, hwm, { w, h, d, baseFrac, bulge, lightMount }) {
   };
   if (lightMount) {
     // Two horizontal light-mount loops on the flap's centreline, at 20% and 30%
-    // of the body height below the rim — the two dashes centred on the flap in
+    // of the body height below the rim, the two dashes centred on the flap in
     // racing-handlebar-pack/on-bike-2.jpg, which is the view that fixes their
     // height against the fold rather than against the flat pattern. Sized off
     // the flap they sit on (a third of its leading edge) rather than off the one
@@ -329,7 +329,7 @@ function musetteFlap(grp, mat, hwm, { w, h, d, baseFrac, bulge, lightMount }) {
     // No light mount: a pull tab centred on the leading edge, which is what a
     // fold-over closes with when there is nothing else on the flap. A THIRD of
     // the leading edge, not the literal 7.5 cm read off city-handlebar-pack/
-    // dimensions-1.png — every other maker's fold-over was inheriting that.
+    // dimensions-1.png, every other maker's fold-over was inheriting that.
     onFace(new THREE.Mesh(new RoundedBoxGeometry(3, 16, w * hem * 0.34, 2, 1.5), seamMat(mat)),
       h / 2 - drop + 12, 1);
   }
@@ -337,7 +337,7 @@ function musetteFlap(grp, mat, hwm, { w, h, d, baseFrac, bulge, lightMount }) {
 
 /**
  * straps.js `ribbonLoop` takes each vertex's tangent from its neighbours with
- * wrap-around, even for an open path — so the first and last vertex of an
+ * wrap-around, even for an open path, so the first and last vertex of an
  * open strap take their tangent across the gap and the band twists 90° over
  * its end segments. Pad each end with a vertex a hundredth of a millimetre
  * further on: the twist is then confined to a segment nobody can see.
@@ -350,7 +350,7 @@ function padOpen(pts) {
 /**
  * Is this product a ROLL lying across the bar? Then barroll.js draws it.
  * Cylinders, barrels and truncated cylinders whose length runs across and is
- * at least 1.25 × their diameter — plus anything whose record publishes a
+ * at least 1.25 × their diameter, plus anything whose record publishes a
  * `dia`, which is what a round barrel is.
  */
 function isRoll(p) {
@@ -364,7 +364,7 @@ function isRoll(p) {
 /**
  * The webbing a handlebar bag hangs from: a flat band round the bar tube and
  * a run down the back panel, where it threads through the bag's loops.
- * straps.js only — BUILDER-BRIEF §9.1: a torus scaled into a band reads as a
+ * straps.js only, BUILDER-BRIEF §9.1: a torus scaled into a band reads as a
  * ring. The count is the records' `attachment × 2`.
  */
 function barStraps(geos, hw, { w, d, barLocal, z0 = 0.26, top }) {
@@ -446,7 +446,7 @@ function topRollR(depth, p) {
  *
  * Placement is src/bags/system.js's: the pocket's origin goes to
  * (host box max x + this box's half depth, host centre − 10 % of its height).
- * That assumes the pocket is centred on its own origin — true of a box, false
+ * That assumes the pocket is centred on its own origin, true of a box, false
  * of anything concave behind, where the box's back is set by the curled top
  * and bottom and the middle of the back would float. So the whole pocket is
  * shifted inside its group until the CENTRE OF ITS BACK sits at −½ × its box
@@ -467,7 +467,7 @@ function buildPocket(p, brand, main, accent, ctx) {
   const h = Math.min(Math.max(p.mm.hgt, 100), 280);          // tall
   // The back's arc: a roll of this slot is 12–20 cm across, but a pocket
   // taller than the roll cannot wrap it tighter than its own height allows
-  // without curling over the top — so the arc eases out with the height.
+  // without curling over the top, so the arc eases out with the height.
   const Rb = Math.max(110, h * 0.72);
   // Below the middle the arc eases to half: the lower rim curling back under
   // the roll is what reaches toward the front tyre's crown.
@@ -502,7 +502,7 @@ function buildPocket(p, brand, main, accent, ctx) {
     aoDir: v3(0, -1, 0), aoK: 0.84, aoSpan: 0.45,
   });
   // The curled rim wraps BEHIND the host's front face, and src/bags/resolve.js
-  // grids a bag into axis-aligned boxes — so the concave pillow, measured as
+  // grids a bag into axis-aligned boxes, so the concave pillow, measured as
   // it is, overlaps its own host's front cell and the resolver drops the
   // pocket. The drawn pillow is therefore flagged noCollide, and what the
   // resolver, bagshot and the packing cavity measure is an ENVELOPE: the same
@@ -723,7 +723,7 @@ export function buildBarbag(p, brand, main, accent, ctx) {
     musetteFlap(grp, panel, hwm, { w, h, d, baseFrac, bulge, lightMount: !!p.features?.lightMount });
   } else if (closure === 'flap' && !round) {
     // A buckled flap: the SAME two sheets as the musette, laid on the body in
-    // place — over the mouth and down the belly — with two straps and buckles
+    // place, over the mouth and down the belly, with two straps and buckles
     // running down it. Nothing is a rotated slab, so nothing can be a shelf.
     const proud = 3.5, drop = h * 0.42;
     grp.add(new THREE.Mesh(frontSheet({ w: w * 0.98, drop, top: h / 2, h, d, baseFrac, bulge, proud, hem: 0.94, cut: 0.25 }), panel));
@@ -786,7 +786,7 @@ export function buildBarbag(p, brand, main, accent, ctx) {
     }
   }
   // (No horizontal seam strip: a straight box round a tapered body stood
-  // proud of the lower belly as a ledge — the shelf this file exists to avoid.)
+  // proud of the lower belly as a ledge, the shelf this file exists to avoid.)
 
   // ---- compression straps, flat on the belly ----------------------------------------
   const nStraps = closure === 'flap' || closure === 'musette' ? 0 : Math.min(feats.compressionStraps ?? 0, 3);
@@ -848,7 +848,7 @@ export function buildBarbag(p, brand, main, accent, ctx) {
   const wheelR = P.tireR + ctx.geo.tireWidth / 2;
   // The back panel lies ON the bar: every record in this slot carries
   // `mount.clearance.bar_mm: 0` and "back panel flat against the bar and the
-  // cables" — 2 mm off the tube the bike draws.
+  // cables", 2 mm off the tube the bike draws.
   // …but the brake hoses leave the bar just forward of it and run down past
   // the head tube (bike.js starts them 20 mm ahead of and 18 mm below the bar
   // centre, 2.6 mm thick); a back panel 2 mm off the tube sits on them. The
@@ -866,7 +866,7 @@ export function buildBarbag(p, brand, main, accent, ctx) {
   const bottomY = Math.max(wheelTop + 24 + sag, bc.y - h + 14);
   const org = v3(rearFace + d / 2, bottomY + h / 2, 0);
 
-  // the bar, in bag-local mm — what the straps wrap
+  // the bar, in bag-local mm, what the straps wrap
   barStraps(geos, hw, { w, d, barLocal: v3(bc.x - org.x, bc.y - org.y, 0), top: h / 2 });
 
   // The lower anti-sway strap to the head tube, for a bag that HANGS from the

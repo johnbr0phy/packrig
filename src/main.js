@@ -20,6 +20,7 @@ import { applyRendererProfile, applyViewOffset, fitToBox, measureProfile } from 
 import { initScrim } from './ui/scrim.js';
 import { initSurfaces } from './ui/surfaces.js';
 import { initSheets } from './ui/sheet.js';
+import { initFraming } from './ui/framing.js';
 import { initPack } from './pack/index.js';
 import { attachLockerSync } from './pack/remote.js';
 
@@ -35,7 +36,7 @@ const canvas = document.getElementById('scene');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: SHOT_MODE });
 // Decide the device profile BEFORE the post chain is built: `post` says which
 // passes to construct at all, and a GTAOPass that is merely disabled still
-// allocates its render targets — memory a phone has better uses for. On a
+// allocates its render targets, memory a phone has better uses for. On a
 // desktop pointer this returns today's exact settings.
 const profile = applyRendererProfile(renderer);
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -95,7 +96,13 @@ const CAMS = {
   rear:  { pos: [bikeCenter.x - 2.15, 1.0, 2.4], tgt: [bikeCenter.x, 0.53, 0] },
   front: { pos: [bikeCenter.x + 2.85, 0.92, 1.6], tgt: [bikeCenter.x, 0.54, 0] },
   hero:  { pos: [bikeCenter.x + 1.05, 0.88, 3.25], tgt: [bikeCenter.x, 0.53, 0] },
+  // A portrait phone is narrow and tall, and a bike is long and low. Side on,
+  // it fills the width and a quarter of the height. From the front quarter
+  // and a little above, the same bike presents nearly square, so it can be
+  // framed twice as big. framing.js sets the distance; this sets the angle.
+  phone: { pos: [bikeCenter.x + 2.5, 1.75, 1.9], tgt: [bikeCenter.x, 0.55, 0] },
 };
+const PORTRAIT_PHONE = () => window.innerWidth <= 560 && window.innerHeight > window.innerWidth;
 function applyCam(name) {
   const c = CAMS[name] || CAMS.hero;
   camera.position.set(...c.pos);
@@ -111,6 +118,29 @@ controls.maxDistance = 9;
 controls.maxPolarAngle = Math.PI / 2 - 0.02;
 controls.autoRotate = false;
 controls.autoRotateSpeed = STILL ? 0 : 0.9;   // `?still`: the start menu's idle orbit holds for screenshots
+
+// The bike from a keyboard: Tab reaches the canvas, arrows turn the bike,
+// + and - zoom, Home frames it again (DESIGN-SYSTEM.md 9.2).
+canvas.tabIndex = 0;
+canvas.setAttribute('role', 'application');
+canvas.setAttribute('aria-roledescription', '3D view');
+canvas.setAttribute('aria-label', 'The bike. Arrow keys turn it, plus and minus zoom, Home frames it.');
+canvas.addEventListener('keydown', (e) => {
+  const off = camera.position.clone().sub(controls.target);
+  const sph = new THREE.Spherical().setFromVector3(off);
+  const step = e.shiftKey ? 0.35 : 0.14;
+  if (e.key === 'ArrowLeft') sph.theta -= step;
+  else if (e.key === 'ArrowRight') sph.theta += step;
+  else if (e.key === 'ArrowUp') sph.phi = Math.max(0.15, sph.phi - step * 0.6);
+  else if (e.key === 'ArrowDown') sph.phi = Math.min(controls.maxPolarAngle, sph.phi + step * 0.6);
+  else if (e.key === '+' || e.key === '=') sph.radius = Math.max(controls.minDistance, sph.radius * 0.88);
+  else if (e.key === '-' || e.key === '_') sph.radius = Math.min(controls.maxDistance, sph.radius * 1.14);
+  else if (e.key === 'Home') { app.framing?.frameBike({ reset: true }); e.preventDefault(); return; }
+  else return;
+  e.preventDefault();
+  camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(sph));
+  controls.update();
+});
 
 // ---- Environments ------------------------------------------------------
 const envs = new Environments(scene, renderer);
@@ -185,7 +215,8 @@ const app = {
       bike.setBottleColor('dt', bidon);
     }
     for (const e of kit) app.bags?.equip(e.slot, e.brand, e.product, e.cw);
-    frameBike();
+    app.watts?.reset?.();
+    frameBike({ instant: false });
     app.ui?.sync();
     app.scrim?.invalidate();
   },
@@ -215,7 +246,7 @@ const catalog = await loadCatalog();
 app.catalog = catalog;
 app.bags = new BagSystem(bike, catalog);
 await envs.set(app.state.env); // HDRI must be lit before first frame
-applyCam(params.get('cam') || 'hero');
+applyCam(params.get('cam') || (PORTRAIT_PHONE() ? 'phone' : 'hero'));
 
 // Accounts and saved rigs. Both work with no backend configured: rigs go to
 // this browser, and `auth.enabled` is false so nothing offers to sign in.
@@ -227,7 +258,7 @@ initPack(app);
 attachLockerSync(app);
 if (app.auth.enabled) app.auth.hydrate();
 
-// A shared rig arrives in the URL. `?r=` is the durable form — it names the
+// A shared rig arrives in the URL. `?r=` is the durable form, it names the
 // maker and model of every bag, so it still resolves the same bike after the
 // catalogue is re-sorted. `?kit=` is the old positional form and is still read,
 // because it is the only one in anyone's history.
@@ -300,6 +331,10 @@ app.openWindTunnel = async () => {
       passes: { gtao, bloom },   // either may be null on a phone; tunnel.js no-ops
       measure: measureProfile(),
       onToggle(on) {
+        // the tunnel owns the camera while it is open
+        app.framing?.pause(on);
+        if (!on) setTimeout(() => app.framing?.frameBike(), 900);
+        app.sheets?.closeSheet();
         document.body.classList.toggle('aero-open', on);
         document.getElementById('ui-root')?.classList.toggle('aero-open', on);
         app.ui?.sync();
@@ -313,31 +348,32 @@ app.openWindTunnel = async () => {
 /**
  * The view offset shifts the bike right of the DESKTOP kit panel. On a phone
  * both panels are bottom sheets, there is nothing to the left to clear, and a
- * fixed 165px is over a third of a 393px viewport — it shoved the bike off the
+ * fixed 165px is over a third of a 393px viewport, it shoved the bike off the
  * right edge and left the render cropped to a rear wheel.
  *
  * This is the single owner of the offset. It is re-evaluated on resize and on
  * the media query itself changing, so a device rotation cannot leave a stale
- * offset behind. The query mirrors COMPACT in ui.js — keep them in step.
+ * offset behind. The query mirrors COMPACT in ui.js, keep them in step.
  */
 const DESKTOP_LAYOUT = window.matchMedia('(min-width: 901px) and (pointer: fine)');
 
 /**
  * Camera framing is owned by src/mobile.js. It knows the sheet lift, and it
- * raises `controls.maxDistance` alongside the fit — the default ceiling of 9 is
+ * raises `controls.maxDistance` alongside the fit, the default ceiling of 9 is
  * BELOW the portrait fit distance, so without that the clamp silently re-crops
  * the bike and the fix looks like it did not work.
  */
 const _fitBox = new THREE.Box3();
-function frameBike() {
+function frameBike({ instant = true } = {}) {
   if (SHOT_MODE || REVIEW_MODE) return;   // review mode owns its own framing
-  applyViewOffset(camera);
-  _fitBox.setFromObject(app.bike.group);
-  if (!_fitBox.isEmpty()) fitToBox(camera, controls, _fitBox);
-  // applyViewOffset has just overwritten the camera's view offset with the
-  // no-sheet value. If a sheet is open, put the sheet's framing back, or a
-  // resize silently un-does the reframe and drops the bike behind the sheet.
-  app.sheets?.resync();
+  if (app.framing) {
+    app.framing.invalidate();
+    app.framing.update({ instant });
+  } else {
+    applyViewOffset(camera);
+    _fitBox.setFromObject(app.bike.group);
+    if (!_fitBox.isEmpty()) fitToBox(camera, controls, _fitBox);
+  }
   app.surfaces?.sync();
 }
 
@@ -346,6 +382,9 @@ if (REVIEW_MODE) {
   const { initReview } = await import('./review.js');
   app.review = initReview(app, { SLOTS, applyCam });
 } else if (!SHOT_MODE) {
+  // The camera's one owner (src/ui/framing.js): every surface below reports
+  // where it is, and the bike is fitted into what is left.
+  app.framing = initFraming(app);
   app.ui = initUI(app);
   // DESIGN-SYSTEM §12 steps 1-2, after initUI because both attach to surfaces
   // that initUI creates. Order matters: the wells must exist before scrim.js
@@ -354,7 +393,7 @@ if (REVIEW_MODE) {
   // Sheets FIRST: initSurfaces walks the DOM once and the sheet has to be in
   // it, or the one surface that most needs a scrim well never gets one. The
   // first smoke test found 4 wells where there should be 6.
-  app.sheets = initSheets(app, { applyBase: () => applyViewOffset(camera) });
+  app.sheets = initSheets(app);
   app.openSheet = app.sheets?.openSheet;
   app.surfaces = initSurfaces(document.getElementById('ui-root'));
   app.scrim = initScrim(app);
@@ -386,7 +425,8 @@ renderer.setAnimationLoop((t) => {
   app.pack?.tick();
   controls.update();
   aimKicker();
-  app.reframe?.tick();
+  app.framing?.tick();
+  app.ui?.tick?.();
   // `?still` holds the environment's clock at zero so screenshots of the same
   // state are the same pixels (tools/screens.mjs checks exactly that)
   envs.tick(STILL ? 0 : t * 0.001);

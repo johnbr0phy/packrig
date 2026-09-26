@@ -66,7 +66,7 @@ const clamp01 = (t) => (t < 0 ? 0 : t > 1 ? 1 : t);
  * Those are not waists, they are holes: tools/diagram-outline.mjs traces the
  * maker's SVG and loses the outline wherever a dimension leader crosses it.
  * `measuredProfile` floors them at 0.06, so the loft's depth collapses to 6% of
- * the bag for three consecutive rings and springs back — which is precisely the
+ * the bag for three consecutive rings and springs back, which is precisely the
  * round-2 report of "a grey open-topped scoop gapes around the down tube with a
  * separate black lump sitting loose inside it and a mirrored APIDURA plate
  * visible in the cavity". The lump is the roll-top, positioned off the section
@@ -76,7 +76,7 @@ const clamp01 = (t) => (t < 0 ? 0 : t > 1 ? 1 : t);
  *
  * So: intact, and an orthographic elevation rather than a photograph. The
  * third curve (apidura-expedition-downtube-pack-1-5l) is a photo trace, smooth
- * but symmetric — 0.61 at one end, 0.53 at the other, peak dead centre — and a
+ * but symmetric, 0.61 at one end, 0.53 at the other, peak dead centre, and a
  * down tube pack is definitionally NOT symmetric: one end is a chamfer, the
  * other is a roll. A lit object at an unknown angle cannot supply an elevation,
  * and the record already fully determines this shape. All three are rejected
@@ -115,7 +115,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   const vr = variantOf(brand, p);
   const feats = featuresOf(p);
   const geom = geomOf(p);
-  // soft | semi | rigid, from the model records — see stiffnessOf().
+  // soft | semi | rigid, from the model records, see stiffnessOf().
   const stiff = stiffnessOf(p);
   const wm = webbing();
   const hwm = hardware();
@@ -151,14 +151,14 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // products is 65.0 / 70.0 / 90.0mm against published 65 / 70 / 90. Exact.
   //
   // What tools/eval-auto.mjs grades is not that. `axisOf` sends this record's
-  // `hgt: "y"` — and its `perp_downtube` too, via TUBE_AXIS at eval-auto.mjs:83
-  // — onto the y axis of the WORLD bounding box, and this bag lies on a tube at
+  // `hgt: "y"`, and its `perp_downtube` too, via TUBE_AXIS at eval-auto.mjs:83
+  //, onto the y axis of the WORLD bounding box, and this bag lies on a tube at
   // 46.35 degrees (framePoly gives a down tube vector of (420.9, 441.2)). A bag
   // of length L on that tube with depth D on its own perpendicular occupies
   //     bbox y = L*sin(46.35) + D*cos(46.35) = 0.724L + 0.690D
   //     bbox x = L*cos(46.35) + D*sin(46.35) = 0.690L + 0.724D
   // The measured 186.6mm of bbox y on the 1.5L is 0.724*208 + 0.690*65 = 195
-  // less what the end cuts take off the corners — it is the LENGTH, read onto
+  // less what the end cuts take off the corners, it is the LENGTH, read onto
   // the height axis. No geometry satisfies the +25% gate on that axis: a 210mm
   // bag on this tube stands 152mm in world y with no depth at all, already 134%
   // over the published 65. The same mirror image inflates `along_downtube -> x`
@@ -177,7 +177,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // The chainring-clearance cut. The record calls it "the defining silhouette
   // feature and must not be modelled as a square end", and it has TWO halves.
   // Both are now taken off the maker's own vector drawing rather than argued
-  // from chainring geometry — assets/products/apidura/full/
+  // from chainring geometry, assets/products/apidura/full/
   // expedition-downtube-pack/dimensions-1.svg, which is orthographic, carries
   // both views, and whose path coordinates can be read exactly. Its scale is
   // fixed by three independent dimension arrows that agree to 0.4%: 14.10 svg
@@ -214,7 +214,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
 
   // The second half is the drawing's TOP view (paths 22 and 29): the plan is
   // full width the whole way down the NON-drive side, and swept in on the drive
-  // side. That one-sidedness is what "asymmetric" means — a symmetric taper
+  // side. That one-sidedness is what "asymmetric" means, a symmetric taper
   // cannot clear a chainring that is only on one side of the bike.
   //
   // How deep the sweep goes is a per-product number and now comes from the
@@ -231,7 +231,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   const planAt = (t) => Math.min(1, planKeep + (1 - planKeep) * (t / PLAN_T));
 
   // Depth: CONSTANT end to end. The drawing's side elevation is two parallel
-  // straight lines from the prow to the roll — the 6.5cm holds the whole way —
+  // straight lines from the prow to the roll, the 6.5cm holds the whole way,
   // and rounds 2-4 all put the record's `taper` on this axis instead, which
   // pinched the body to 85% at the BB end and drew all three products 2.4 to
   // 3.4mm under their published depth. With it gone the measured rig-local perp
@@ -287,12 +287,12 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // The record's moulded V-channel: "the face against the downtube is flat with
   // a moulded V-channel pressed into it", and "the moulded channel in the back
   // panel is what keeps it from rotating". Carved into the geometry, not pushed
-  // in through soft()'s bulge — a semi/rigid pack skips the deform pass
+  // in through soft()'s bulge, a semi/rigid pack skips the deform pass
   // entirely (BUILDER-BRIEF §1) and would have sat beside the tube.
   // Capped at a third of the depth: the 1.5L is only 65mm deep in total.
   const chan = Math.min(dtR * 0.5, aH * 0.30);
   // A velcro band pulled tight flattens the back panel onto the tube, so the
-  // two touch with a whisker of fabric compression — no daylight, no burial.
+  // two touch with a whisker of fabric compression, no daylight, no burial.
   // v2 used 4mm, which was inside the 8mm bagshot allows but is a bag pressed
   // into a tube rather than sitting on it.
   const SQUISH = 2.5;
@@ -306,7 +306,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
       const z = pos.getZ(i);
       // The rake, first: it is a clamp against a plane, so it turns the loft's
       // flat start cap INTO the raked face rather than adding a second surface
-      // in front of it. Taken off the pre-channel x — the groove is 10mm deep
+      // in front of it. Taken off the pre-channel x, the groove is 10mm deep
       // on the back panel and would otherwise nibble the cut back at one edge.
       const need = rakeAt(x);
       if (y < need) { y = need; pos.setY(i, y); }
@@ -335,14 +335,14 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // "the closed, chamfered end sitting just clear of the chainring and crank
   // arm" (mount.notes). src/bike.js draws a 40-tooth ring on half-inch pitch
   // about the BB, so its tip circle is pitch / (2 sin(pi/N)) plus a tooth.
-  // RING_TEETH is a local const inside buildBike and cannot be imported — see
+  // RING_TEETH is a local const inside buildBike and cannot be imported, see
   // the report; this is the same expression, not a number off a screenshot.
   const ringR = 12.7 / (2 * Math.sin(Math.PI / 40)) + 6;
   // Solved against the PROW, not against a square end. `clearAt` is how far up
   // the tube a point sitting `w` off the centreline has to start, and it falls
   // away as w grows; `rakeAt` is how far up the tube that point already sits
   // inside the bag. The binding station is wherever the two are closest, so
-  // walk the section instead of testing one corner — with the prow apex 29% of
+  // walk the section instead of testing one corner, with the prow apex 29% of
   // the way down the face, neither corner is it.
   //
   // This is a 2D solve against the ring's tip circle at every z, which is
@@ -408,13 +408,13 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // ---- colour ------------------------------------------------------------
   // Apidura weld Hypalon panels onto a ripstop or hex-weave shell: a different
   // finish, and on two of the three products a different colour. The Backcountry
-  // is the odd one out — its colourway is listed "Black / Grey" with black as
+  // is the odd one out, its colourway is listed "Black / Grey" with black as
   // the primary, but the black is the SLEEVE and the grey is the body it wraps
   // ("a black Hypalon sleeve wraps the lower two thirds with a cut-out chevron
   // window showing the grey body, and the roll section above it is grey"), so
   // the two swap roles here. NOTE: today all three arrive black, because
   // data/brands.json still carries a stale one-entry "Black" colourway for each
-  // and tools/apply-models.mjs does not merge `colorways` at all — see report.
+  // and tools/apply-models.mjs does not merge `colorways` at all, see report.
   // The moment that lands, this mapping puts the right colour on each panel.
   // Does this bag have a Hypalon SLEEVE wrapping its lower body, with the roll
   // section above it in the other colour? That is a construction fact about the
@@ -433,7 +433,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // Hypalon is a shade glossier than the ripstop it is welded to, not a
   // different class of surface. A 0.45 drop put it at roughness 0.45 under the
   // lake environment, which blew the chevron arms and the strap backing out to
-  // a near-white specular on a bag that is black-on-black in studio-2.jpg —
+  // a near-white specular on a bag that is black-on-black in studio-2.jpg,
   // "a row of scratches" was the round-2 note and this is what replaced it.
   hyp.roughness = Math.max(0.45, (shell.roughness ?? 0.9) - 0.25);
   if (twoTone) hyp.color.copy(sleeved ? main.color : accent.color);
@@ -453,7 +453,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   });
   bag.add(body);
 
-  // Welded seam down both outer corners — visible as a crease the full length
+  // Welded seam down both outer corners, visible as a crease the full length
   // of the bag in studio-2.jpg, and the cheapest thing that stops a laminated
   // drybag reading as an extruded blob. Corner order out of loftBody is
   // (+u+v), (-u+v), (-u-v), (+u-v); 0 and 3 are the outboard pair.
@@ -461,7 +461,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
 
   // ---- the Backcountry's Hypalon sleeve ----------------------------------
   // "a black Hypalon sleeve wraps the lower two thirds with a cut-out chevron
-  // window showing the grey body" — studio-1.jpg: the sleeve's top edge is not
+  // window showing the grey body", studio-1.jpg: the sleeve's top edge is not
   // straight, it notches down over the middle of each flank. Built as its own
   // open shell rather than as a stripe painted on the body, so it reads as a
   // second layer with an edge.
@@ -470,7 +470,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
     // The sleeve stands 1mm proud on the flanks and 2mm on the outer face, and
     // its tube-side edge is tucked 4mm INSIDE the shell's back panel. Wrapping
     // it right round instead put two surfaces on the same plane against the
-    // tube — z-fighting, and the contact clamp below then pushed both onto
+    // tube, z-fighting, and the contact clamp below then pushed both onto
     // exactly the same radius, which welds the artefact in place.
     const sleeve = loftBody({
       len: len * SLEEVE_T, rings: 24, shape: xs, capStart: false, capEnd: false,
@@ -572,7 +572,7 @@ export function buildDowntube(p, brand, main, accent, ctx) {
   // Apidura's signature, and the biggest single thing on the side of all three
   // bags: studio-2.jpg (Expedition) and studio-1.jpg (charger) both show one
   // large arrow, not a row of thin ribs. On dimensions-1.png's side view it is
-  // the wide "A" under the strap — apex at the tube-side edge level with the
+  // the wide "A" under the strap, apex at the tube-side edge level with the
   // strap, arms splaying out to the outer face fore and aft of it. v2 drew four
   // 7mm sticks per flank, which at render scale is a row of scratches.
   //
@@ -658,9 +658,9 @@ export function buildDowntube(p, brand, main, accent, ctx) {
     bag.add(meshOf(rHw, hwm));
   }
 
-  // Logo on the flank, reading ALONG the bag as it does on the real one — the
+  // Logo on the flank, reading ALONG the bag as it does on the real one, the
   // patch plane is laid out long-axis-on-x, so it needs the quarter turn.
-  // Kept clear of the chevron, down at the BB end where studio-2.jpg has it —
+  // Kept clear of the chevron, down at the BB end where studio-2.jpg has it,
   // but ABOVE the cut. A fixed 0.42 * len patch at t = 0.15 started 30mm below
   // the cut on every one of these three and hung in the air off the tail.
   const yA = rakeMax + len * 0.04, yB = tStrap * len - len * 0.05;
@@ -671,8 +671,8 @@ export function buildDowntube(p, brand, main, accent, ctx) {
 
   // ---- nothing in this slot may be inside the down tube -------------------
   // Fabric cannot pass through a tube. v2 clamped the lofted body and nothing
-  // else, so the roll-top — placed off the section centre, and with the broken
-  // profile that centre was 26mm in — carried the e-bike charger pack 9.5mm
+  // else, so the roll-top, placed off the section centre, and with the broken
+  // profile that centre was 26mm in, carried the e-bike charger pack 9.5mm
   // into the tube on its own. Doing it over the whole rig, once, after every
   // part is placed and after soft() has perturbed the shell, makes the
   // guarantee structural instead of per-part: anything closer to the centreline

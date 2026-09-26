@@ -1,5 +1,5 @@
 /**
- * The scrim well's one number — DESIGN-SYSTEM.md §3.3, step 1 of §12.
+ * The scrim well's one number, DESIGN-SYSTEM.md §3.3, step 1 of §12.
  *
  * The problem it solves: panel alpha alone cannot serve both a night HDRI and
  * a noon desert. At 0.60 over night the panel vanishes; the same panel over
@@ -17,7 +17,7 @@
  * and sampled that. It was wrong, and instructively so: an offscreen render
  * skips tone mapping and the entire post chain, so what it measured was not
  * what the user sees. Desert noon came back at k=1.06 against the spec's 1.62,
- * barely distinguishable from mountain dawn at 1.07 — the mechanism appeared
+ * barely distinguishable from mountain dawn at 1.07, the mechanism appeared
  * to work while being nearly blind. Sampling the framebuffer costs a pipeline
  * stall, so it is throttled to one read per 500ms and reads ~1 KB.
  *
@@ -99,7 +99,7 @@ export function initScrim(app, { selector = '.scrim-sampled' } = {}) {
     const blocks = sampleBlocks();
     if (!blocks.length) return;                  // no panels on screen: leave k
 
-    // Read from the default framebuffer — the frame the user is looking at,
+    // Read from the default framebuffer, the frame the user is looking at,
     // tone-mapped and post-processed. Binding null is what makes that the
     // read source; the composer may have left one of its own targets bound.
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
@@ -147,7 +147,7 @@ export function initScrim(app, { selector = '.scrim-sampled' } = {}) {
     /** The HDRI changed, or a panel opened/closed: re-read now, not in 500ms. */
     invalidate() { dirty = true; lastSample = -1e9; },
     get k() { return current; },
-    /** Mean Rec.709 luminance of the last sample — check drift against §3.3. */
+    /** Mean Rec.709 luminance of the last sample, check drift against §3.3. */
     get L() { return lastL; },
     /** Sample regions, for eyeballing WHERE the reading came from. */
     get blocks() { return sampleBlocks(); },

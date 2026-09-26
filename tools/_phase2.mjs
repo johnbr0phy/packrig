@@ -1,10 +1,10 @@
-/** Phase 2 smoke — REDESIGN.md §15 steps 2 and 3. */
+/** Phase 2 smoke, REDESIGN.md §15 steps 2 and 3. */
 import puppeteer from 'puppeteer-core';
-const [,, URL, W='1440', H='900', MOB='desktop', SHOT='/tmp/p2.png'] = process.argv;
+const [, URL, W='1440', H='900', MOB='desktop', SHOT='/tmp/p2.png'] = process.argv;
 const b = await puppeteer.launch({ executablePath:(await import('./lib/chrome.mjs')).CHROME, headless:true, args:['--hide-scrollbars','--enable-unsafe-swiftshader']});
 const p = await b.newPage();
 // Hotlinked maker photos are blocked by some CDNs' Cross-Origin-Resource-Policy.
-// That predates this work and is what the hero fallback exists for — count them,
+// That predates this work and is what the hero fallback exists for, count them,
 // but do not fail the app's smoke test on somebody else's headers.
 const errs=[]; const imgBlocks=[];
 p.on('console',m=>{if(m.type()!=='error')return; const t=m.text();

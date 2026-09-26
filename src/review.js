@@ -2,7 +2,7 @@
 // rather than a set of stills.
 //
 // Loaded only when `?review=1` is present, so nothing here costs a normal visit
-// anything. The harness page owns the chrome — product photo, record, scores —
+// anything. The harness page owns the chrome, product photo, record, scores,
 // and drives this frame over postMessage. Swapping the bag in place matters:
 // reloading the iframe per product means re-parsing the catalogue and re-lighting
 // an HDRI for every one of 70 bags, which is the difference between stepping
@@ -36,7 +36,7 @@ export function initReview(app, { SLOTS, applyCam } = {}) {
 
   // The bags hang off the bike's own anchors, so `bike.group.visible = false`
   // takes the bag with it. Hide the bicycle's meshes individually instead, and
-  // remember what each one's visibility WAS — racks and mounts are already
+  // remember what each one's visibility WAS, racks and mounts are already
   // hidden and must stay that way when the bike comes back.
   let bikeOn = true;
   function setBikeVisible(on) {
@@ -85,7 +85,7 @@ export function initReview(app, { SLOTS, applyCam } = {}) {
 
   /**
    * Always frame the BAG. With the bicycle on, pull back far enough that the
-   * surrounding frame reads as context — the question being asked is "does it
+   * surrounding frame reads as context, the question being asked is "does it
    * hang like the real one", which needs the seatpost and the tyre in shot.
    * Framing the whole bicycle instead makes the bag 60 px tall and useless.
    */
@@ -101,7 +101,7 @@ export function initReview(app, { SLOTS, applyCam } = {}) {
     const product = brand?.products?.[+pi];
     if (!brand || !product) { post('loaded', { ok: false, why: 'no such product' }); return; }
     app.bags.clearAll();
-    // Catalogue slot names are not the UI slot names the system equips by —
+    // Catalogue slot names are not the UI slot names the system equips by,
     // mapping `pannier` alone once made every fork and stem bag read as dropped.
     const uiSlot = slot;
     app.bags.equip(uiSlot, brand, product, 0);

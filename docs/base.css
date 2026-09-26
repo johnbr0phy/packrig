@@ -1,0 +1,180 @@
+/* ===========================================================================
+   Base: the parts every surface shares. Type, buttons, chips, inputs, focus,
+   meters, thumbnails, the toast. Tokens only (src/ui/tokens.css).
+   =========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); }
+body {
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink-1);
+  font-feature-settings: 'cv05' 1, 'ss03' 1;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+#app { position: fixed; inset: 0; }
+#scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; outline: none; }
+#ui-root { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
+#ui-root > * { pointer-events: auto; }
+#ui-root > #scrim-layer, #ui-root > .mounts { pointer-events: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; padding: 0; }
+button:disabled { cursor: default; }
+[hidden] { display: none !important; }
+img { display: block; }
+h1, h2, h3, h4, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+
+/* numbers are typeset: tabular figures, unit one ink level down */
+.num { font-variant-numeric: tabular-nums; }
+.unit { color: var(--ink-3); font-weight: 450; }
+
+/* ---- type roles ------------------------------------------------------------- */
+.t-display { font-size: var(--fs-display); font-weight: 650; letter-spacing: var(--tr-display); line-height: var(--lh-tight); }
+.t-title1 { font-size: var(--fs-title1); font-weight: 650; letter-spacing: var(--tr-title); line-height: var(--lh-tight); }
+.t-title2 { font-size: var(--fs-title2); font-weight: 650; letter-spacing: var(--tr-title); line-height: var(--lh-snug); }
+.t-title3 { font-size: var(--fs-title3); font-weight: 600; line-height: var(--lh-snug); }
+.t-body { font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink-2); }
+.t-caption { font-size: var(--fs-caption); line-height: var(--lh-snug); color: var(--ink-3); }
+.t-label { font-size: var(--fs-label); font-weight: 650; letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--ink-3); line-height: 1.2; }
+
+/* ---- glass -------------------------------------------------------------------- */
+.glass-1, .glass-2, .glass-3 { isolation: isolate; }
+.glass-1 { background: var(--e1-bg); backdrop-filter: var(--glass-filter-1); -webkit-backdrop-filter: var(--glass-filter-1); border: 1px solid var(--e1-brd); box-shadow: var(--e1-shd); }
+.glass-2 { background: var(--e2-bg); backdrop-filter: var(--glass-filter-2); -webkit-backdrop-filter: var(--glass-filter-2); border: 1px solid var(--e2-brd); box-shadow: var(--e2-shd); }
+.glass-3 { background: var(--e3-bg); backdrop-filter: var(--glass-filter-3); -webkit-backdrop-filter: var(--glass-filter-3); border: 1px solid var(--e3-brd); box-shadow: var(--e3-shd); }
+.pop { background: var(--e4-bg); border: 1px solid var(--e4-brd); box-shadow: var(--e4-shd); border-radius: var(--r-card); }
+
+/* the scrim well: a dark, blurred copy of a panel's shape BEHIND it (scrim.js
+   sets --scrim-k from what the scene is doing under the panel) */
+.scrim-well {
+  position: fixed; pointer-events: none; border-radius: var(--r-panel);
+  background: rgba(var(--scrim-rgb), calc(0.30 * var(--scrim-k)));
+  filter: blur(26px); transform: scale(1.03);
+}
+.scrim-well.free { background: rgba(var(--scrim-rgb), calc(0.18 * var(--scrim-k))); filter: blur(40px); transform: scale(1.14); }
+
+/* ---- focus: white ring with a dark halo, legible on any ground -------------- */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--ink-1);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--shade);
+}
+#scene:focus-visible { outline-offset: -6px; }
+
+/* ---- buttons ----------------------------------------------------------------
+   .btn           quiet: a fill on glass
+   .btn.primary   the accent. At most one per surface.
+   .btn.ghost     text only, for tertiary actions
+   .btn.bad       destructive label, never an accent fill                        */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
+  min-height: var(--target); padding: 0 var(--s-4);
+  border-radius: var(--r-control);
+  background: var(--fill-2); color: var(--ink-1);
+  font-size: var(--fs-body); font-weight: 600; line-height: 1.2;
+  white-space: nowrap; text-decoration: none;
+  transition: background var(--d-micro) var(--ease-out), transform var(--d-micro) var(--ease-out);
+}
+.btn:hover { background: var(--fill-3); }
+.btn:active { transform: scale(0.975); }
+.btn:disabled, .btn.primary:disabled { opacity: 1; background: var(--fill-1); color: var(--ink-3); cursor: default; }
+.btn.primary { background: var(--accent); color: var(--ink-on-accent); }
+.btn.primary:hover { background: var(--accent-hi); }
+.btn.primary:active { background: var(--accent-lo); }
+.btn.ghost { background: transparent; color: var(--ink-2); }
+.btn.ghost:hover { background: var(--fill-1); color: var(--ink-1); }
+.btn.bad { color: var(--bad); }
+.btn.wide { width: 100%; }
+.btn.sm { min-height: 36px; padding: 0 var(--s-3); font-size: var(--fs-caption); }
+@media (pointer: coarse) { .btn.sm { min-height: var(--target); } }
+.btn .ic { flex: none; }
+
+/* icon + label, stacked or inline; the label is always visible */
+.icon-btn {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  min-height: var(--target); min-width: var(--target); padding: 0 var(--s-3);
+  border-radius: var(--r-control); color: var(--ink-2);
+  font-size: var(--fs-caption); font-weight: 600;
+  transition: background var(--d-micro) var(--ease-out), color var(--d-micro) var(--ease-out);
+}
+.icon-btn:hover { background: var(--fill-2); color: var(--ink-1); }
+.icon-btn.on { color: var(--ink-1); background: var(--fill-2); }
+
+/* ---- chips (filters, toggles) ---------------------------------------------- */
+.chip {
+  display: inline-flex; align-items: center; gap: var(--s-1);
+  min-height: 36px; padding: 0 var(--s-3);
+  border-radius: var(--r-pill); border: 1px solid var(--hairline);
+  background: var(--fill-1); color: var(--ink-2);
+  font-size: var(--fs-caption); font-weight: 600; white-space: nowrap;
+  transition: background var(--d-control) var(--ease-inout), color var(--d-control) var(--ease-inout);
+}
+.chip:hover { background: var(--fill-2); color: var(--ink-1); }
+.chip.on { background: var(--ink-1); color: var(--ink-on-plate); border-color: transparent; }
+.chip .n { color: inherit; opacity: 0.65; font-variant-numeric: tabular-nums; }
+@media (pointer: coarse) { .chip { min-height: var(--target); min-width: var(--target); justify-content: center; } }
+
+/* a two-way segmented switch (kg | lb) */
+.seg { display: inline-flex; padding: 2px; border-radius: var(--r-pill); background: var(--fill-1); border: 1px solid var(--hairline); }
+.seg button {
+  min-width: 40px; min-height: 30px; padding: 0 var(--s-3); border-radius: var(--r-pill);
+  font-size: var(--fs-caption); font-weight: 600; color: var(--ink-3);
+}
+.seg button.on { background: var(--fill-3); color: var(--ink-1); }
+@media (pointer: coarse) { .seg { padding: 0; } .seg button { min-height: var(--target); min-width: var(--target); } }
+
+/* ---- inputs ------------------------------------------------------------------- */
+.input {
+  width: 100%; min-height: var(--target); padding: 0 var(--s-3);
+  border-radius: var(--r-control); border: 1px solid var(--hairline);
+  background: var(--fill-1); color: var(--ink-1); font-size: var(--fs-body);
+}
+.input::placeholder { color: var(--ink-3); }
+.input:focus-visible { border-color: var(--ink-3); }
+textarea.input { padding: var(--s-3); min-height: 160px; resize: vertical; line-height: var(--lh-snug); font-size: var(--fs-caption); }
+
+/* ---- labels, rows, meters ------------------------------------------------------- */
+.label { font-size: var(--fs-label); font-weight: 650; letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--ink-3); }
+.meter { position: relative; height: 4px; border-radius: 2px; background: var(--fill-2); overflow: hidden; }
+.meter > i { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: var(--ink-1); opacity: 0.85; }
+.meter.tight > i { background: var(--warn); opacity: 1; }
+.meter.over > i { background: var(--bad); opacity: 1; }
+
+/* thumbnails: a photo on a white plate, or a render of the model on glass */
+.thumb { flex: none; width: 48px; height: 48px; border-radius: var(--r-thumb); background: var(--fill-1); object-fit: contain; }
+.thumb.is-photo { background: var(--plate); box-shadow: var(--plate-edge); }
+
+/* a line of meaning */
+.ok { color: var(--ok); }
+.warn { color: var(--warn); }
+.bad { color: var(--bad); }
+
+/* ---- the toast ------------------------------------------------------------------ */
+.toast {
+  position: fixed; left: 50%; bottom: calc(var(--s-6) + env(safe-area-inset-bottom));
+  transform: translate(-50%, 12px); opacity: 0;
+  display: flex; align-items: center; gap: var(--s-3);
+  max-width: min(560px, calc(100vw - 2 * var(--gutter)));
+  padding: var(--s-2) var(--s-2) var(--s-2) var(--s-4);
+  min-height: 48px; border-radius: var(--r-control);
+  background: var(--e4-bg); border: 1px solid var(--e4-brd); box-shadow: var(--e4-shd);
+  font-size: var(--fs-caption); color: var(--ink-1); z-index: 60;
+  transition: opacity var(--d-control) var(--ease-out), transform var(--d-control) var(--ease-out);
+}
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+.toast-txt { flex: 1; }
+.toast-act { flex: none; min-height: 36px; padding: 0 var(--s-3); border-radius: var(--r-chip); font-weight: 650; color: var(--accent); }
+.toast-act:hover { background: var(--fill-2); }
+.toast.lifted { bottom: calc(var(--toast-lift, 0px) + var(--s-3)); }
+
+/* ---- reduced motion: nothing is left half animated ------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+}
+/* an image still waiting for its picture shows its plate, never a broken icon */
+img:not([src]), img[src=""] { visibility: hidden; }

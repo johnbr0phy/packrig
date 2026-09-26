@@ -9,7 +9,7 @@
  *  - The centre of mass of bike + bags + gear is marked on the bike.
  *
  * Items are built only when a bag opens (and dropped when it closes); the
- * geometry is cached in kit3d.js, so reopening is free. Every move is eased —
+ * geometry is cached in kit3d.js, so reopening is free. Every move is eased,
  * opening, adding and the solver re-settling all slide rather than jump.
  */
 import * as THREE from 'three';
@@ -28,13 +28,14 @@ export function createPack3D(app) {
   let outside = new THREE.Group();
   outside.name = 'pack:outside';
   const tweens = new Set();
+  let starting = 0;               // item moves waiting on their stagger delay
   let com = null;
 
   // ---- shell translucency ------------------------------------------------------
   /**
    * Materials are shared across a bag's meshes (and fabric textures across
    * bags), so they are cloned per bag the first time it opens and swapped
-   * back when it closes — never mutated in place, or opening one bag would
+   * back when it closes, never mutated in place, or opening one bag would
    * fade every bag of the same brand.
    */
   function setShell(rec, open) {
@@ -50,6 +51,9 @@ export function createPack3D(app) {
           c.transparent = true;
           c.depthWrite = false;
           c.opacity = 1;
+          // both faces: the far wall of the bag behind its contents is what
+          // makes a see-through shell read as a volume rather than a smear
+          c.side = THREE.DoubleSide;
           // frosted: a black bag at low opacity over a dark ground vanishes,
           // leaving the contents looking unsupported; a pale shell reads as a
           // volume round them. The original material comes back on close.
@@ -59,12 +63,16 @@ export function createPack3D(app) {
         rec.swap.push({ o, orig, fade: Array.isArray(orig) ? fade : fade[0] });
       });
     }
-    const target = open ? SHELL_OPACITY : 1;
+    // a frame bag is seen edge-on and is thin: at the common opacity it
+    // disappears into the frame triangle, so it gets a denser frost
+    const thin = /framebag|toptube|downtube|stem/.test(bag.name || '');
+    const shellOp = thin ? 0.42 : SHELL_OPACITY;
+    const target = open ? shellOp : 1;
     for (const s of rec.swap) s.o.material = s.fade;
     tween(D_OPEN, (k) => {
       for (const s of rec.swap) {
         for (const m of Array.isArray(s.fade) ? s.fade : [s.fade]) {
-          const from = open ? 1 : SHELL_OPACITY;
+          const from = open ? 1 : shellOp;
           m.opacity = from + (target - from) * k;
           const f = m.userData.frost;
           if (f) m.color.copy(f[0]).lerp(f[1], open ? k : 1 - k);
@@ -163,12 +171,13 @@ export function createPack3D(app) {
       }
       const from = { p: node.position.clone(), q: node.quaternion.clone(), s: node.scale.clone() };
       const delay = Math.min(i++, 8) * 18;
-      setTimeout(() => tween(animate ? D_MOVE : 0, (k) => {
+      starting++;
+      setTimeout(() => { starting--; tween(animate ? D_MOVE : 0, (k) => {
         const e = EASE(k);
         node.position.lerpVectors(from.p, to.pos, e);
         node.quaternion.slerpQuaternions(from.q, to.q, e);
         node.scale.lerpVectors(from.s, to.scale, e);
-      }), animate ? delay : 0);
+      }); }, animate ? delay : 0);
     }
     for (const [uid, node] of rec.items) {
       if (keep.has(uid)) continue;
@@ -204,7 +213,7 @@ export function createPack3D(app) {
   /**
    * `list` = [{ uid, it (resolved), place (parsed) }]. Lashed items sit on top
    * of the bag's body at its far end; dangling ones hang below its tail;
-   * frame items go to a mount on the bike. Built fresh each call — there are
+   * frame items go to a mount on the bike. Built fresh each call, there are
    * only ever a handful.
    */
   function showOutside(list) {
@@ -321,7 +330,7 @@ export function createPack3D(app) {
       const dot = new THREE.Mesh(new THREE.SphereGeometry(5.5, 16, 12), new THREE.MeshBasicMaterial({ color: 0xff7a45, depthTest: false, transparent: true }));
       const cross = new THREE.Mesh(new THREE.BoxGeometry(46, 1.6, 1.6), new THREE.MeshBasicMaterial({ color: 0xffffff, depthTest: false, transparent: true, opacity: 0.8 }));
       const cross2 = cross.clone(); cross2.rotation.z = Math.PI / 2;
-      for (const m of [ring, dot, cross, cross2]) { m.renderOrder = 999; m.userData.packItem = true; com.add(m); }
+      for (const m of [ring, dot, cross, cross2]) { m.renderOrder = 999; m.userData.packItem = true; m.userData.marker = true; com.add(m); }
     }
     if (com.parent !== F) F.add(com);
     com.visible = true;
@@ -345,6 +354,8 @@ export function createPack3D(app) {
 
   return {
     showBag, closeBag, closeAll, showOutside, showCoM, tick, itemWorldPositions,
+    /** Something is still moving: the bike's outline is not final yet. */
+    get busy() { return tweens.size > 0 || starting > 0; },
     isOpen: (slot) => !!bags.get(slot)?.open,
     openSlots: () => [...bags.keys()],
     clearOutside() { outside.clear(); app.bike.frameGroup.remove(outside); },

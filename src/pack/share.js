@@ -53,7 +53,7 @@ export function packFromLoadout(locker, loadout, gearIndex) {
 
 /**
  * The other direction: a fresh locker + loadout from a rig's pack. Used to
- * show someone else's packing list, and — through `adoptPack` — to copy it.
+ * show someone else's packing list, and, through `adoptPack`, to copy it.
  */
 export function loadoutFromPack(pack, gearIndex, name = '') {
   const locker = emptyLocker();
@@ -64,7 +64,7 @@ export function loadoutFromPack(pack, gearIndex, name = '') {
     if (typeof p === 'string') fields = { ref: p };
     else if (Array.isArray(p)) fields = { ref: p[0], ...(p[1] != null ? { g: p[1] } : {}), ...(p[2] ? { name: p[2] } : {}) };
     else fields = { name: p.n, g: p.g, ...(p.c ? { cat: p.c } : {}), ...(p.a ? { a: p.a } : {}), ...(p.d ? { d: p.d } : {}), ...(p.col ? { col: p.col } : {}) };
-    // a ref this catalogue no longer has survives as a custom item — never dropped
+    // a ref this catalogue no longer has survives as a custom item, never dropped
     if (fields.ref && gearIndex && !gearIndex.get(fields.ref)) {
       fields = { name: fields.name || fields.ref, g: fields.g ?? 100 };
     }

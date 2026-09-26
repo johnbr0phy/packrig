@@ -14,7 +14,7 @@
 // handled explicitly, not by transposing silently: Lezyne's Bar Caddy publishes
 // len 16 < wid 25 (a roll shorter than it is deep is the record transposed; the
 // triple is rewritten whole below and reported), and Swift's Bandito writes
-// `along_forkleg` because it is a multi-position bag — in this slot it is a
+// `along_forkleg` because it is a multi-position bag, in this slot it is a
 // short roll across the bar.
 //
 // The grp origin is ON THE ROLL'S AXIS at mid-length, so `userData.radius`
@@ -34,7 +34,7 @@
 // bundle of fabric; a thin buckle strap runs from the front face round the
 // bundle's outboard side to the back face and holds it. No dome, no disc, no
 // cap. Zip-closed rolls (Road Runner Burrito, Straight Cut Bagel, Gramm Hip)
-// have sewn flat end panels with a piped edge instead — still not a dome.
+// have sewn flat end panels with a piped edge instead, still not a dome.
 //
 // ---- MOUNT SYSTEMS -------------------------------------------------------------
 // tools/apply-models.mjs does not carry the records' `straps`/`mount` blocks
@@ -43,7 +43,7 @@
 // straps and mount). Families:
 //   strap    webbing straight round bar and roll (Backcountry, Miss Grape …)
 //   spacer   the same, with foam/moulded spacer blocks between (Ortlieb, AGU,
-//            MAAP, Restrap Race) — the default, because the owner said so
+//            MAAP, Restrap Race), the default, because the owner said so
 //   bracket  a rigid clamp module holds the roll off the bar (BarSpace, Bar-Lock)
 //   cradle   a stiff backing panel curls round the back of the roll, spacers
 //            behind it (Topeak FrontLoader, WOHO, Sweetroll's stiffener)
@@ -55,7 +55,7 @@
 //   cage     a moulded cage round the back and underside (Tailfin Bar Cage, VAUDE)
 // Harness-only products (Revelate Hammerhead, Rockgeist BarJam, Oveja Negra
 // Front End Loader, Outer Shell Handlebar Harness, JPaks Refugi) draw the
-// harness and nothing else — the dry bag is sold separately.
+// harness and nothing else, the dry bag is sold separately.
 //
 // ---- PLACEMENT (Rule 1: every value derived from the bike) ------------------
 //   bar          ctx.points.barCenter; the tops are drawn at BAR_TUBE_R (bike.js
@@ -63,7 +63,7 @@
 //                DROP_TUBE_R (tubeAlong(hook, 13.8)) from |z| = barWidth/2.
 //   length       the published length, but never past the inside of the drops:
 //                a roll longer than that is rolled tighter (the extra fabric
-//                goes into the end bundles) — Apidura publish MIN 30 / MAX 54
+//                goes into the end bundles), Apidura publish MIN 30 / MAX 54
 //                for exactly this reason.
 //   x            rear of the roll (or its cradle) = bar front + the mount's own
 //                standoff (webbing, spacer block, bracket, harness arm).
@@ -100,7 +100,7 @@ const STANDOFF = { strap: 22, spacer: 28, bracket: 30, cradle: 24, holster: 22, 
 
 /**
  * What each product hangs from, read off data/models/<brand>.json (straps,
- * mount.notes, geometry.notes) — see the header for why it lives here.
+ * mount.notes, geometry.notes), see the header for why it lives here.
  */
 const KNOWN = [
   [/apidura.*expedition/i, { mount: 'bracket', head: true }],
@@ -143,7 +143,7 @@ function mountOf(p, brand) {
   const key = `${brand?.name || ''} ${p.line || ''} ${p.name || ''}`;
   for (const [re, v] of KNOWN) if (re.test(key)) return { ...v };
   // Unknown product: believe what its attachment text names, else the owner's
-  // default — spacers behind it.
+  // default, spacers behind it.
   const a = String(p.features?.attachment || '') + ' ' + String(p.features?.closure || '');
   if (/bar[-\s]?space|bar[-\s]?lock|bracket/i.test(a)) return { mount: 'bracket' };
   if (/cage/i.test(a)) return { mount: 'cage' };
@@ -154,7 +154,7 @@ function mountOf(p, brand) {
 
 /**
  * straps.js `ribbonLoop` takes each vertex's tangent from its neighbours with
- * wrap-around, even for an open path — so the first and last vertex of an
+ * wrap-around, even for an open path, so the first and last vertex of an
  * open strap take their tangent across the gap and the band twists 90° over
  * its end segments. Pad each end with a vertex a hundredth of a millimetre
  * further on: the twist is then confined to a segment nobody can see.
@@ -246,7 +246,7 @@ export function buildBarroll(p, brand, main, accent, ctx) {
 
   // End height and neck length from the record where it measured them:
   // `geometry.taper` on a roll is symmetric (nose == tail) and records the END
-  // height as a fraction of the middle — Apidura Backcountry 0.75, Brooks 0.7,
+  // height as a fraction of the middle, Apidura Backcountry 0.75, Brooks 0.7,
   // Venture 0.85, the straight tubes 1.0. identity.js `taperRatio` reports
   // min/max = 1 for those, so the raw block is read here.
   const tp = p.geometry?.taper;
@@ -313,11 +313,11 @@ export function buildBarroll(p, brand, main, accent, ctx) {
       const eSec = sec(tE);
       if (rolled && !(oneEnd && s < 0)) {
         // the bundle: a vertical roll of fabric standing across the end, flat
-        // at top and bottom where the turned edges are — a lathe with a short
+        // at top and bottom where the turned edges are, a lathe with a short
         // chamfer, not a sphere
         const hb = eSec.b * 2 * 0.94;
         // rolled fabric: full girth through the middle, the turned edges
-        // drawn in over the top and bottom fifth — not a post, not a dome
+        // drawn in over the top and bottom fifth, not a post, not a dome
         const prof = [];
         for (let k = 0; k <= 12; k++) {
           const y = -hb / 2 + (hb * k) / 12;
@@ -577,7 +577,7 @@ export function buildBarroll(p, brand, main, accent, ctx) {
           grp.add(sp);
         }
       }
-      // the strap: one piece of webbing round the bar and the roll together —
+      // the strap: one piece of webbing round the bar and the roll together,
       // the convex hull of the two, so it lies ON both and bridges the gap
       const pts = [];
       for (let i = 0; i < 20; i++) {

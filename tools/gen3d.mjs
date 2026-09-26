@@ -13,7 +13,7 @@
  * 10B) both run on a single consumer GPU and beat the commercial services on
  * published benchmarks. Paying $1/model for 702 products is ~$700; renting a
  * GPU to run the same class of model is tens of dollars. So the provider is a
- * seam, not a dependency — swap the endpoint, keep the pipeline.
+ * seam, not a dependency, swap the endpoint, keep the pipeline.
  *
  * Providers, in order of preference:
  *   local     a TRELLIS / Hunyuan3D server you control. Cheapest at 702 items.
@@ -42,8 +42,8 @@ const MANIFEST = join(root, 'data/generated.json');
 
 // ---- providers -----------------------------------------------------------
 // Each returns a Buffer of GLB bytes, or throws. `images` are data URLs; the
-// first is the primary view. Multi-view materially beats single-image — the
-// back and sides come from real photographs instead of being invented — so
+// first is the primary view. Multi-view materially beats single-image, the
+// back and sides come from real photographs instead of being invented, so
 // every provider is handed all the views we have.
 
 const providers = {

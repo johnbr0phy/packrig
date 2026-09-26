@@ -1,7 +1,7 @@
 /**
  * Score how closely the rendered bag's outline matches the product's own.
  *
- * Every other gate measures dimensional compliance — is the box the size the
+ * Every other gate measures dimensional compliance, is the box the size the
  * maker published. None of them can see SHAPE, which is the thing the human
  * review actually complains about and the thing the measured profiles exist to
  * fix. That made the harness structurally biased: the moment a builder started
@@ -10,15 +10,15 @@
  *
  *   node tools/eval-silhouette.mjs --run <stamp> [--vs <stamp>]
  *
- * The two profiles are measured the same way at both ends — principal axis of
+ * The two profiles are measured the same way at both ends, principal axis of
  * the silhouette, perpendicular half-extent at 40 stations, peak normalised,
- * mounting-end first — so they are directly comparable. The score is the
+ * mounting-end first, so they are directly comparable. The score is the
  * intersection over union of the two swept areas:
  *
  *     IoU = Σ min(render, photo) / Σ max(render, photo)
  *
  * 1.0 is identical. Because both are peak-normalised this is a pure SHAPE
- * score and says nothing about size — that is deliberate, size already has
+ * score and says nothing about size, that is deliberate, size already has
  * three gates of its own.
  *
  * Known blind spot: both are oriented by the same narrow-end-first rule, so a
@@ -42,7 +42,7 @@ const profiles = existsSync(join(root, 'data/profiles.json'))
 // Outlines measured off the maker's dimensioned engineering drawing beat ones
 // traced off a lit photograph at an unknown angle, so prefer them where they
 // exist (47 of the 70 Apidura products). Same shape of data, same orientation
-// convention — mounting-end-first — so they drop straight in.
+// convention, mounting-end-first, so they drop straight in.
 const diagrams = existsSync(join(root, 'data/diagram-profiles.json'))
   ? JSON.parse(readFileSync(join(root, 'data/diagram-profiles.json'))) : {};
 const truthFor = (slug) => diagrams[slug]?.profile || profiles[slug]?.profile || null;
@@ -80,15 +80,15 @@ writeFileSync(join(RUNS, runId, 'silhouette.json'), JSON.stringify({ run: runId,
 
 const scored = rows.filter((r) => r.iou != null);
 const mean = (a) => (a.length ? a.reduce((x, y) => x + y, 0) / a.length : null);
-const fmt = (v) => (v == null ? '   —' : v.toFixed(3));
+const fmt = (v) => (v == null ? '   , ' : v.toFixed(3));
 
-console.log(`\n${runId} — silhouette IoU against the product photograph`);
+console.log(`\n${runId}, silhouette IoU against the product photograph`);
 console.log(`  scored ${scored.length}/${rows.length}   mean ${fmt(mean(scored.map((r) => r.iou)))}`);
 
 console.log('\nBY BUILDER');
 for (const s of [...new Set(rows.map((r) => r.slot))].sort()) {
   const g = scored.filter((r) => r.slot === s);
-  if (!g.length) { console.log(`  ${s.padEnd(15)}   — (none measured)`); continue; }
+  if (!g.length) { console.log(`  ${s.padEnd(15)}  , (none measured)`); continue; }
   console.log(`  ${s.padEnd(15)} ${String(g.length).padStart(3)}  mean ${fmt(mean(g.map((r) => r.iou)))}  worst ${fmt(Math.min(...g.map((r) => r.iou)))}`);
 }
 

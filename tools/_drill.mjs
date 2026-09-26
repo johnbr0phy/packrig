@@ -1,6 +1,6 @@
 /**
- * Walks the catalogue all the way down — mount grid, brand list, brand detail,
- * model cards — and asserts each level actually fills the sheet. Phase 1 moved
+ * Walks the catalogue all the way down, mount grid, brand list, brand detail,
+ * model cards, and asserts each level actually fills the sheet. Phase 1 moved
  * these bodies into the shell and nothing tested below the first level, which
  * is how a catalogue that rendered one 40px card shipped.
  */

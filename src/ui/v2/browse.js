@@ -1,21 +1,21 @@
 /**
- * Browse — one view, two sources: the curated Loadouts and your own saved rigs.
+ * Browse, one view, two sources: the curated Loadouts and your own saved rigs.
  *
  * THERE WAS A THIRD. A public Gallery of everyone else's rigs, on this same
- * view. It is out, on the owner's call — "it adds too much complexity to the
- * pages" — and he is right about what it cost: a second remote query with its
+ * view. It is out, on the owner's call, "it adds too much complexity to the
+ * pages", and he is right about what it cost: a second remote query with its
  * own composite index, a fallback that quietly showed you your OWN rigs when
  * nothing had been published, a publish flow with a display-name prompt and a
  * consent line, and a third entry on a front page that should offer two things.
  * None of it earned that while the thing being published had nowhere worth
- * appearing. `rigstore.js` keeps `gallery()` and `setPublished()` — the
+ * appearing. `rigstore.js` keeps `gallery()` and `setPublished()`, the
  * documents already carry the field and FIREBASE.md already describes the
- * rules — but nothing calls them, and bringing it back is a UI job.
+ * rules, but nothing calls them, and bringing it back is a UI job.
  *
  * WHY ONE VIEW FOR THE TWO THAT REMAIN. Reading a curated loadout and reading
  * a bike you built last week are the same act: look at a built bike, find out
  * what is on it, decide whether you want it. v1 had two arrows and a name
- * plate — which told you a rig was called "Full tour" and had "7 bags ·
+ * plate, which told you a rig was called "Full tour" and had "7 bags ·
  * 75.0 L", and nothing whatever about what those seven bags WERE. That is a
  * slideshow, and a slideshow of a thing you cannot read is boring by the third
  * frame.
@@ -34,7 +34,7 @@
  *
  * THREE SOURCES NOW, NOT TWO. `rigs` is your own saved bikes, and it is the
  * same view for the same reason: a saved rig is a built bike you want to look
- * at and read. It differs only in what you can DO with one — it is yours, so
+ * at and read. It differs only in what you can DO with one, it is yours, so
  * the actions are update, share, publish and delete rather than "make it mine".
  *
  *   initBrowse(app, { onAdopt, onDirty }) -> { render(kind), onKey }
@@ -52,13 +52,13 @@ const el = (tag, cls, text) => {
   return n;
 };
 
-/** Prose and chips: "12 L", "5.8 L" — a trailing zero is noise in a sentence. */
+/** Prose and chips: "12 L", "5.8 L", a trailing zero is noise in a sentence. */
 const num = (v) => (Math.round(Number(v) * 10) / 10).toFixed(1).replace(/\.0$/, '');
-/** Columns: "12.0 L", "5.8 L" — the decimal point is the alignment. */
+/** Columns: "12.0 L", "5.8 L", the decimal point is the alignment. */
 const fixed1 = (v) => {
   const n = Number(v);
   // A harness carries dry bags sold separately: no capacity, rather than zero.
-  if (!Number.isFinite(n) || n === 0) return '—';
+  if (!Number.isFinite(n) || n === 0) return '–';
   return `${n.toFixed(1)} L`;
 };
 
@@ -110,7 +110,7 @@ function manifestOf(app, rig) {
   return rows;
 }
 
-/** "today" / "3 days ago" / a date — for a saved rig's own timestamp. */
+/** "today" / "3 days ago" / a date, for a saved rig's own timestamp. */
 function when(iso) {
   if (!iso) return '';
   const d = new Date(iso);
@@ -123,7 +123,7 @@ function when(iso) {
 }
 
 export function initBrowse(app, {
-  onAdopt, onDirty, isLive, onEmptyBuild, onNew, onRefresh, notify, getWorking,
+  onAdopt, onDirty, isLive, onEmptyBuild, onNew, onRefresh, notify, getWorking, onSurprise,
 } = {}) {
   // Per-kind cursor, so stepping out to the start screen and back into the
   // gallery puts you where you were rather than at rig one.
@@ -136,8 +136,8 @@ export function initBrowse(app, {
    * nothing unless that token is still current AND the menu is still open.
    *
    * Comparing the wrapper element was not enough. Closing the menu leaves
-   * `nodes.wrap` pointing at the very node the closure captured — detached,
-   * but still equal — so a request that resolved a second after the user
+   * `nodes.wrap` pointing at the very node the closure captured, detached,
+   * but still equal, so a request that resolved a second after the user
    * pressed Close passed the guard and mounted somebody else's rig onto the
    * bike they had just gone back to. Silently, with no menu on screen.
    */
@@ -204,12 +204,12 @@ export function initBrowse(app, {
     nodes = { wrap, spec, railWrap };
 
     spec.append(el('p', 'pr-loading',
-      kind === 'rigs' ? 'Finding your rigs…' : 'Loading loadouts…'));
+      kind === 'rigs' ? 'Finding your rigs…' : 'Loading examples…'));
 
     (kind === 'rigs' ? loadMine() : loadLoadouts())
       .then((list) => {
         // A late resolve for a view the user has already left must not paint
-        // over the view they are now looking at — and must never touch the bike.
+        // over the view they are now looking at, and must never touch the bike.
         if (mine !== token || !live() || nodes?.wrap !== wrap) return;
         items = list;
         if (!items.length) { paintEmpty(); return; }
@@ -225,10 +225,10 @@ export function initBrowse(app, {
   function paintEmpty() {
     nodes.spec.replaceChildren();
     const e = el('div', 'pr-empty');
-    e.append(el('h2', 'pr-title', kind === 'rigs' ? 'No saved rigs yet' : 'No loadouts'));
+    e.append(el('h2', 'pr-title', kind === 'rigs' ? 'No saved rigs yet' : 'No examples'));
     if (kind !== 'rigs') {
       e.append(el('p', 'pr-note',
-        'The curated rigs did not load. The builder still works — everything in the catalogue is there.'));
+        'The examples did not load. The builder still works, with every bag in the catalogue.'));
     }
     // An empty state without its verb is a dead end, and this is the screen most
     // likely to be somebody's first: one of three doors on the start screen
@@ -267,7 +267,7 @@ export function initBrowse(app, {
     /*
      * NOT a tablist. `role="tablist"` is a contract: roving tabindex, arrow
      * keys that MOVE FOCUS, Home/End. This strip's arrow keys change the rig
-     * globally without moving focus, and every chip stays in the tab order —
+     * globally without moving focus, and every chip stays in the tab order,
      * so declaring the role promised a keyboard behaviour that is not
      * implemented and left focus and `aria-selected` on different chips. They
      * are buttons in a list, which is what they behave like.
@@ -352,14 +352,14 @@ export function initBrowse(app, {
      * mounts each of these rigs in a browser, runs the wind tunnel's GPU
      * measurement over a yaw sweep, and bakes the result into loadouts.json.
      *
-     * It is here because litres alone cannot start an argument — "Aero, 8.7 L"
+     * It is here because litres alone cannot start an argument, "Aero, 8.7 L"
      * against "The Expedition, 53.6 L" is a statement about volume, and the
      * question anyone actually has is what the volume costs. +3 W against
      * +28 W is that question answered.
      */
     if (it.stats.addedW != null) {
       const f = fig(`+${it.stats.addedW}`, 'watts');
-      f.title = `${it.stats.grade} — measured in the wind tunnel at ${it.stats.watts} W to hold 28 km/h`;
+      f.title = `${it.stats.grade}, measured in the wind tunnel at ${it.stats.watts} W to hold 28 km/h`;
       stats.append(f);
     } else {
       stats.append(fig(String(it.stats.makers), it.stats.makers === 1 ? 'maker' : 'makers'));
@@ -373,7 +373,7 @@ export function initBrowse(app, {
       spec.append(staged(g));
     }
 
-    // The manifest — the reason to be on this screen.
+    // The manifest, the reason to be on this screen.
     const rows = manifestOf(app, it.rig);
     if (rows.length) {
       // A bare role="table" over anonymous spans is worse than no role at all:
@@ -394,7 +394,7 @@ export function initBrowse(app, {
         mid.append(el('span', 'pr-mmodel', r.model));
         tr.append(mid);
         // The capacity shares a baseline with the PRODUCT, not with the mount
-        // label above it — it is a property of the bag, and pairing it with the
+        // label above it, it is a property of the bag, and pairing it with the
         // mount read as though the handlebar roll itself held 14 litres.
         // Figure and unit are separate spans so the figures right-align as a
         // column and the repeated "L" recedes out of the way of comparing them.
@@ -420,6 +420,14 @@ export function initBrowse(app, {
     take.onclick = () => onAdopt?.(it);
     actions.append(take);
     if (kind === 'rigs') for (const b of ownActions(it)) actions.append(b);
+    else if (onSurprise) {
+      // a random rig, for anyone who would rather be handed one
+      const s2 = el('button', 'pr-btn');
+      s2.type = 'button';
+      s2.append(el('span', null, 'Surprise me'));
+      s2.onclick = () => onSurprise();
+      actions.append(s2);
+    }
     spec.append(staged(actions));
 
     // Re-run the stagger for the new rig only when it was a deliberate step;
@@ -437,7 +445,7 @@ export function initBrowse(app, {
    *
    * `Update` is the one that needs saying out loud. This view browses by
    * mounting each rig on the bike, so "the bike as it is now" is the rig you
-   * are reading — writing that back would be a no-op. What it means here is
+   * are reading, writing that back would be a no-op. What it means here is
    * the build you walked in with, which the menu stashed on the way in, and
    * the button only exists while there is one and it differs.
    */
@@ -479,7 +487,7 @@ export function initBrowse(app, {
 
     if (row.id) {
       // No dialogue. One press arms it, a second does it, and it disarms
-      // itself — the same pattern `Clear rig` uses in the builder.
+      // itself, the same pattern `Clear rig` uses in the builder.
       const del = act('Delete', 'is-bad', async () => {
         if (del.dataset.armed !== '1') {
           del.dataset.armed = '1';
@@ -507,7 +515,7 @@ export function initBrowse(app, {
   async function copyText(text) {
     try { await navigator.clipboard.writeText(text); return true; }
     catch {
-      // The clipboard API needs a secure context — fall back to a hidden field.
+      // The clipboard API needs a secure context, fall back to a hidden field.
       try {
         const ta = document.createElement('textarea');
         ta.value = text;

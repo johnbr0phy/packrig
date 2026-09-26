@@ -1,10 +1,10 @@
 /**
- * The catalogue — REDESIGN.md §9, phase 8.
+ * The catalogue, REDESIGN.md §9, phase 8.
  *
  * THE SCALE PROBLEM, stated honestly: 702 products across 14 mounts, the
  * largest slot holding 103 and the smallest 1. The old route was mount → brand
  * list → brand page → sizes: four taps before a bag was visible, and the first
- * two asked questions a newcomer cannot answer — which mount? which maker? —
+ * two asked questions a newcomer cannot answer, which mount? which maker?,
  * and then landed them on pages holding a single item.
  *
  * THE INFORMATION ARCHITECTURE IN ONE SENTENCE: the mount point is the primary
@@ -17,7 +17,7 @@
  * causes drop-off, and four is what this data actually supports:
  *
  *   Brand      multi-select, live counts, derived from the filtered set
- *   Capacity   single-select bands, re-banded per slot — a stem bag's "large"
+ *   Capacity   single-select bands, re-banded per slot, a stem bag's "large"
  *              and a pannier's "large" are two orders of magnitude apart
  *   Fabric     multi-select, off `brand.fabricKey`, already computed
  *   Fits       on by default; off reveals the rest with the reason shown
@@ -30,6 +30,7 @@
 
 import { productsForSlot } from '../catalog.js';
 import { productSlotFor, SLOTS } from '../bags.js';
+import { icon } from './v2/icons.js';
 
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
@@ -65,11 +66,11 @@ function bandsFor(items) {
 
 const litres = (p) => { const n = Number(p?.liters); return Number.isFinite(n) ? n : null; };
 
-export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {}) {
-  /** Facet state lives per slot for the session — §9. */
+export function initCatalogue(app, { openSheet, cardFor, fitReason, placeFor, onSwitchSlot, doneLabel, onDone } = {}) {
+  /** Facet state lives per slot for the session, §9. */
   const memory = new Map();
 
-  function open(uiSlot, { onBack = null } = {}) {
+  function open(uiSlot, { onBack = null, onClose = null, detent = null } = {}) {
     const catSlot = productSlotFor(uiSlot);
     const all = productsForSlot(app.catalog, catSlot);
     const label = SLOTS[uiSlot]?.label || 'Bag';
@@ -82,6 +83,8 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
       kind: 'catalog',
       title: label,
       onBack,
+      detent,
+      onClose: (o) => { if (!o?.replaced) onClose?.(); },
       render: (b, h) => { body = b; draw(h); },
     });
 
@@ -119,16 +122,34 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
     }
 
     function draw(h) {
-      const pk = el('div', 'picker cat');
+      const pk = el('div', 'cat');
       const rows = sorted(filtered());
+
+      // ---- mounts that share this spot: a bar roll, a bar bag, a rando bag ----
+      const place = placeFor?.(uiSlot);
+      if (place && place.slots.length > 1) {
+        const kinds = el('div', 'cat-kinds');
+        kinds.setAttribute('role', 'group');
+        kinds.setAttribute('aria-label', 'Kind of bag');
+        for (const s of place.slots) {
+          const b = el('button', 'chip' + (s === uiSlot ? ' on' : ''), place.labels[s]);
+          b.type = 'button';
+          b.setAttribute('aria-pressed', String(s === uiSlot));
+          b.onclick = () => { if (s !== uiSlot) onSwitchSlot?.(s); };
+          kinds.append(b);
+        }
+        pk.append(kinds);
+      }
 
       // ---- search ---------------------------------------------------------
       const search = el('div', 'cat-search');
+      search.append(icon('search', { size: 18 }));
       const input = document.createElement('input');
       input.type = 'search';
       input.placeholder = `Search ${all.length} ${label.toLowerCase()}${all.length === 1 ? '' : 's'}`;
       input.value = state.q;
-      input.className = 'cat-q';
+      input.className = 'input cat-q';
+      input.setAttribute('aria-label', `Search ${label.toLowerCase()}s`);
       let t = null;
       input.oninput = () => { clearTimeout(t); t = setTimeout(() => { state.q = input.value.trim(); redraw(h, true); }, 120); };
       search.append(input);
@@ -136,6 +157,14 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
 
       // ---- facets ---------------------------------------------------------
       const facets = el('div', 'cat-facets');
+      // on a phone the search box folds into a chip, so bags start higher
+      const sChip = el('button', 'chip cat-search-chip' + (state.q ? ' on' : ''));
+      sChip.type = 'button';
+      sChip.setAttribute('aria-label', 'Search');
+      sChip.append(icon('search', { size: 16 }), el('span', null, state.q ? `“${state.q}”` : 'Search'));
+      sChip.onclick = () => { search.classList.add('is-open'); input.focus(); };
+      facets.append(sChip);
+      if (state.q) search.classList.add('is-open');
 
       const byBrand = new Map();
       for (const e of filtered('brand')) byBrand.set(e.brand.name, (byBrand.get(e.brand.name) || 0) + 1);
@@ -164,16 +193,18 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
 
       const unfit = all.filter((e) => fitReason?.(uiSlot, e)).length;
       if (unfit) {
-        const fitBtn = el('button', 'cat-chip' + (state.fits ? ' on' : ''), state.fits ? 'Fits my frame ✓' : 'Showing all sizes');
+        const fitBtn = el('button', 'chip' + (state.fits ? ' on' : ''), state.fits ? 'Fits my frame' : 'Fits my frame');
+        fitBtn.setAttribute('aria-pressed', String(state.fits));
         fitBtn.type = 'button';
         fitBtn.title = state.fits ? `${unfit} hidden because they will not fit` : 'Hide the ones that will not fit';
         fitBtn.onclick = () => { state.fits = !state.fits; redraw(h); };
         facets.append(fitBtn);
       }
 
-      const sortBtn = el('button', 'cat-chip cat-sort', {
-        fit: 'Sort: Fit', capUp: 'Sort: Capacity ↑', capDown: 'Sort: Capacity ↓', brand: 'Sort: Brand A–Z',
+      const sortBtn = el('button', 'chip cat-sort', {
+        fit: 'Best fit first', capUp: 'Smallest first', capDown: 'Largest first', brand: 'Brand A to Z',
       }[state.sort]);
+      sortBtn.setAttribute('aria-label', `Sort: ${sortBtn.textContent}. Change sort`);
       sortBtn.type = 'button';
       sortBtn.onclick = () => {
         const order = ['fit', 'capDown', 'capUp', 'brand'];
@@ -189,7 +220,7 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
       line.append(el('span', null, `${rows.length} bag${rows.length === 1 ? '' : 's'} · ${nBrands} brand${nBrands === 1 ? '' : 's'}`));
       const any = state.brands.size || state.fabrics.size || state.band != null || state.q || !state.fits;
       if (any) {
-        const clear = el('button', 'cat-clear', 'Clear all');
+        const clear = el('button', 'btn sm ghost cat-clear', 'Clear all');
         clear.type = 'button';
         clear.onclick = () => {
           state.brands.clear(); state.fabrics.clear(); state.band = null; state.q = ''; state.fits = true;
@@ -214,7 +245,7 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
         empty.append(outs);
         pk.append(empty);
       } else {
-        const grid = el('div', 'cards');
+        const grid = el('div', 'cat-list');
         // 24 at a time, more as you reach the bottom: 103 cards each hot-linking
         // a photograph is not free, and nobody scrolls 103 before choosing.
         let shown = 0;
@@ -230,12 +261,14 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
         io.observe(sentinel);
       }
 
+      // one way out: while adding bags, Close reads Done
+      h?.setCloseLabel?.(doneLabel?.() || 'Close');
       body.replaceChildren(pk);
       h?.setTitle?.(label);
     }
 
     function relax(text, fn) {
-      const b = el('button', 'cat-relax', text);
+      const b = el('button', 'btn sm cat-relax', text);
       b.type = 'button';
       b.onclick = fn;
       return b;
@@ -252,24 +285,33 @@ export function initCatalogue(app, { openSheet, onPick, cardFor, fitReason } = {
 
     /** A chip that opens a list of options with live counts. */
     function popover(name, opts, toggle, activeCount, h) {
-      const chip = el('button', 'cat-chip' + (activeCount ? ' on' : ''),
+      const chip = el('button', 'chip' + (activeCount ? ' on' : ''),
         activeCount ? `${name} · ${activeCount}` : name);
+      chip.setAttribute('aria-haspopup', 'listbox');
+      chip.append(icon('down', { size: 14 }));
       chip.type = 'button';
       chip.onclick = (e) => {
         e.stopPropagation();
-        const open_ = chip.nextElementSibling?.classList.contains('cat-pop');
+        const open_ = chip.getAttribute('aria-expanded') === 'true';
         document.querySelectorAll('.cat-pop').forEach((n) => n.remove());
+        chip.parentElement.querySelectorAll('[aria-expanded]').forEach((c) => c.setAttribute('aria-expanded', 'false'));
         if (open_) return;
-        const pop = el('div', 'cat-pop');
+        chip.setAttribute('aria-expanded', 'true');
+        const pop = el('div', 'cat-pop pop');
         for (const o of opts) {
           const row = el('button', 'cat-opt' + (o.on ? ' on' : ''));
+          row.setAttribute('aria-pressed', String(!!o.on));
           row.type = 'button';
           row.append(el('span', 'cat-opt-l', o.label), el('span', 'cat-opt-n', String(o.n)));
           row.onclick = (ev) => { ev.stopPropagation(); toggle(o.key); };
           pop.append(row);
         }
-        chip.after(pop);
-        const away = () => { pop.remove(); document.removeEventListener('click', away); };
+        // under the chip row, not inside it: the row scrolls sideways on a
+        // phone and would clip a popover hung off a chip
+        chip.parentElement.after(pop);
+        pop.onkeydown = (ev) => { if (ev.key === 'Escape') { ev.stopPropagation(); away(); chip.focus(); } };
+        pop.querySelector('.cat-opt')?.focus({ preventScroll: true });
+        const away = () => { pop.remove(); chip.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', away); };
         setTimeout(() => document.addEventListener('click', away), 0);
       };
       return chip;

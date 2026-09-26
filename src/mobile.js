@@ -1,5 +1,5 @@
 /**
- * Device profile — the single place capability is decided.
+ * Device profile, the single place capability is decided.
  *
  * Everything else asks this module rather than sniffing a user agent. There is
  * no UA matching anywhere below, on purpose: a UA allowlist is wrong the day
@@ -8,12 +8,12 @@
  *
  * Three separate questions live here and they must not be conflated:
  *
- *   1. INPUT   — can the user hover? Decided once from `(pointer:)` /
+ *   1. INPUT  , can the user hover? Decided once from `(pointer:)` /
  *                `(hover:)`, because it is a property of the hardware.
- *   2. LAYOUT  — is this phone-sized right now? Live, because rotating a phone
+ *   2. LAYOUT , is this phone-sized right now? Live, because rotating a phone
  *                changes it and a frozen answer would call a phone in
  *                landscape a tablet forever.
- *   3. TIER    — how much GPU is there? Probed once from the real GL context,
+ *   3. TIER   , how much GPU is there? Probed once from the real GL context,
  *                and optionally corrected later by timing real frames.
  *
  * ---- What the measurements said -----------------------------------------
@@ -32,7 +32,7 @@
  * Isolated: GTAO 4.3 ms (6.8 ms at DPR 2), SMAA 0.7-1.2 ms, bloom 0.1-0.6 ms,
  * shadows 1.5-3 ms.
  *
- * So GTAO is the whole argument — it costs more than the base scene render and
+ * So GTAO is the whole argument, it costs more than the base scene render and
  * more than everything else in the chain put together, and at 393px wide its
  * contact darkening is a few pixels of shading nobody is looking for. It goes.
  *
@@ -47,7 +47,7 @@
  * Shadows stay. They cost about what GTAO costs, but they are the only thing
  * putting the bike ON the ground rather than floating above it, and dropping
  * them reads as a bug rather than as a lower setting. PCFShadowMap instead of
- * PCFSoftShadowMap was measured at 4.60 ms vs 4.59 ms — no gain at all — so the
+ * PCFSoftShadowMap was measured at 4.60 ms vs 4.59 ms, no gain at all, so the
  * filter is left alone rather than traded for nothing.
  */
 
@@ -86,7 +86,7 @@ const DPR_FOR_TIER = { low: 1.25, mid: 1.5, high: 1.75 };
  * rasteriser. Everything else is a capability number.
  *
  * `deviceMemory` is absent on Safari/iOS, so an undefined value must not score
- * zero — that would put every iPhone ever made in the bottom tier.
+ * zero, that would put every iPhone ever made in the bottom tier.
  */
 function probeTier(renderer) {
   let score = 0;
@@ -124,7 +124,7 @@ export const device = {
   get touch() { return coarse || (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0); },
   // Live, not frozen: rotation changes these.
   // Width alone calls a landscape phone a tablet: 852x393 is 852 wide. The
-  // second clause catches it — a coarse pointer with almost no height is a
+  // second clause catches it, a coarse pointer with almost no height is a
   // phone on its side, and it is the case where a bottom sheet leaves least
   // room, so it is the one that most needs the lift. aero.css and ui.css draw
   // the same line with `(pointer: coarse) and (max-height: 480px)`; keep all
@@ -132,7 +132,7 @@ export const device = {
   get phone() { return vw() <= PHONE_MAX || (coarse && vh() <= 480); },
   // "Desktop" is a wide viewport AND a real cursor. Width alone would hand the
   // desktop layout to an iPad in landscape, which MOBILE.md rules out
-  // explicitly. Mirrors DESKTOP_LAYOUT in main.js — keep the two in step.
+  // explicitly. Mirrors DESKTOP_LAYOUT in main.js, keep the two in step.
   get desktop() { return vw() > TABLET_MAX && hover; },
   get tablet() { return !device.phone && !device.desktop; },
   get portrait() { return vh() > vw(); },
@@ -146,15 +146,15 @@ export const device = {
 /**
  * Decide the renderer profile and apply the parts that live on the renderer.
  * Call once, right after the WebGLRenderer is constructed and BEFORE the
- * composer's passes are built — the caller needs `.post` to know which passes
+ * composer's passes are built, the caller needs `.post` to know which passes
  * to construct at all. Constructing a GTAOPass and then leaving it disabled
  * would still allocate its render targets, which is memory a phone has better
  * uses for.
  *
  * Returns { pixelRatio, post: { gtao, bloom, smaa }, tier }.
  *
- * On a desktop pointer this returns exactly today's settings — pixel ratio
- * min(dpr, 2) and all three passes — so the desktop build is bit-identical.
+ * On a desktop pointer this returns exactly today's settings, pixel ratio
+ * min(dpr, 2) and all three passes, so the desktop build is bit-identical.
  */
 export function applyRendererProfile(renderer) {
   _tier = probeTier(renderer);
@@ -242,8 +242,8 @@ export function watchPerformance(renderer, composer, { budgetMs = 22, samples = 
  * Options for aero/measure.js.
  *
  * THE MEASUREMENT IS NOT DEGRADED ON MOBILE, and that is a measured decision
- * rather than a cautious one. The obvious lever — drop the render target from
- * 512 to 256 on a phone — was tried and rejected:
+ * rather than a cautious one. The obvious lever, drop the render target from
+ * 512 to 256 on a phone, was tried and rejected:
  *
  *   resolution   measure() cost   total CdA      "Bottles stowed" row
  *   512 (today)      43.2 ms       0.48109        -0.000594
@@ -254,16 +254,16 @@ export function watchPerformance(renderer, composer, { budgetMs = 22, samples = 
  * Two things kill it. First, the saving is not there: the pass is bound by
  * fifteen synchronous readbacks and by drawing the rig, not by filling pixels,
  * so a 4x cut in pixels bought 17%. Second, the accuracy cost lands exactly
- * where it does the most damage. The total is robust — within 0.4% all the way
- * down to 128 — but `bottles` is a DIFFERENCE of two nearly-identical body
+ * where it does the most damage. The total is robust, within 0.4% all the way
+ * down to 128, but `bottles` is a DIFFERENCE of two nearly-identical body
  * passes, and quantising both of them destroys it: at 256 the one row in the
  * whole readout that is allowed to be negative, the frame bag swallowing both
  * bidons, turns into a small positive. A saving displayed as a penalty is not a
- * lower graphics setting, it is a wrong answer. Small bags go the same way —
+ * lower graphics setting, it is a wrong answer. Small bags go the same way,
  * a top tube bag at 0.0006 m² frontal moved 30-47% between 512 and 256.
  *
  * Shortening the yaw sweep was measured too. `weightedCda` interpolates over
- * whatever angles it is handed, so dropping to [0, 10, 20] does not break —
+ * whatever angles it is handed, so dropping to [0, 10, 20] does not break,
  * it costs +0.31% to +0.62% on `cdaWeighted` across four kits (0.38553 ->
  * 0.38793 on the seed-7 kit), and [0, 20] costs +3.3%. But it buys nothing that
  * matters: aero/index.js measures through `measureAsync`, which already spends
@@ -274,7 +274,7 @@ export function watchPerformance(renderer, composer, { budgetMs = 22, samples = 
  *
  * The signature stays device-shaped so the decision has one home if a real
  * phone ever proves the readbacks are bandwidth-bound rather than latency-bound
- * — which is the one way this could come out differently, since 15 readbacks at
+ *, which is the one way this could come out differently, since 15 readbacks at
  * 512² RGBA move 15 MB, and a tiled mobile GPU pays for that very differently
  * than an M1 does.
  */
@@ -300,7 +300,7 @@ export const DESKTOP_VIEW_OFFSET_X = -165;
  * bike is 0.51 in NDC ≈ 217px tall: it then spans y 130-347, which clears the
  * header (ends ≈110) and clears a fully expanded sheet (starts at 0.45h = 383).
  *
- * 0.10 was tried first and is wrong — it frames for a COLLAPSED sheet, and with
+ * 0.10 was tried first and is wrong, it frames for a COLLAPSED sheet, and with
  * the sheet open the bike is three quarters hidden behind it.
  *
  * This is the one number here that depends on what ui-mobile actually renders.
@@ -310,7 +310,7 @@ export const DESKTOP_VIEW_OFFSET_X = -165;
 let SHEET_LIFT = 0.22;
 
 /**
- * Retune the lift from outside — e.g. less lift when the sheet is collapsed.
+ * Retune the lift from outside, e.g. less lift when the sheet is collapsed.
  * The caller re-applies the offset itself; this only stores the number, so it
  * cannot surprise a frame that is mid-render.
  */
@@ -322,7 +322,7 @@ export function setSheetLift(fraction) {
  * Put the projection back where the visible part of the screen is.
  *
  * Desktop keeps the exact -165 it has always had. A phone has no side panel to
- * clear — the panels are bottom sheets — so a horizontal shift would only push
+ * clear, the panels are bottom sheets, so a horizontal shift would only push
  * the bike off-frame, which is precisely the bug. Instead the frame is lifted
  * so the bike sits above the sheet.
  */
@@ -337,7 +337,7 @@ export function applyViewOffset(camera) {
     camera.setViewOffset(w, h, 0, Math.round(h * SHEET_LIFT), w, h);
   } else {
     // Tablet keeps its panels beside the view rather than as sheets, so there
-    // is nothing below to clear and no lift is wanted — but the panel is
+    // is nothing below to clear and no lift is wanted, but the panel is
     // narrower than the desktop one by an amount only ui.css knows, so no
     // horizontal shift is guessed at either. Clearing matches what main.js
     // already does for every non-desktop layout.
@@ -350,8 +350,8 @@ export function applyViewOffset(camera) {
  * Distance at which `box` fits the camera's current aspect, with a margin.
  *
  * three's `fov` is VERTICAL, so a tall viewport has a brutally narrow
- * horizontal field: at 393x852 the 27° lens gives 12.6° across, and the bike —
- * 1.79 m long — spans 4.94 in NDC where 2.0 exactly fills the frame. Nearly
+ * horizontal field: at 393x852 the 27° lens gives 12.6° across, and the bike,
+ * 1.79 m long, spans 4.94 in NDC where 2.0 exactly fills the frame. Nearly
  * 60% of it is off-screen, which is the "cropped to a rear wheel" in MOBILE.md.
  */
 export function fitDistance(camera, box, margin = 1.08) {
@@ -367,7 +367,7 @@ export function fitDistance(camera, box, margin = 1.08) {
   // A view offset spends frame. Shifting the picture right by 165px to clear
   // the panel means the bike's half-width has only (w/2 - 165) to live in, so
   // fitting against the full frame and then shifting is how a fitted bike ends
-  // up clipped against the far edge — which is exactly what happened on a
+  // up clipped against the far edge, which is exactly what happened on a
   // portrait tablet, where the fit is width-bound to begin with. `camera.view`
   // is read rather than the offset being recomputed, so this cannot drift out
   // of step with whatever applyViewOffset actually set.
@@ -387,7 +387,7 @@ export function fitDistance(camera, box, margin = 1.08) {
 
 /**
  * Back the camera off far enough that the whole bike is in frame, keeping the
- * preset's ANGLE exactly — only the distance along the existing view direction
+ * preset's ANGLE exactly, only the distance along the existing view direction
  * changes, so no camera composition is re-authored.
  *
  * It never pulls the camera IN. That single rule is what makes this safe: on
@@ -396,7 +396,7 @@ export function fitDistance(camera, box, margin = 1.08) {
  * desktop behaviour is unchanged by construction. Only a tall viewport, where
  * the fit distance is 8.1 and the preset is 3.43, moves at all.
  *
- * `controls.maxDistance` has to come up with it — the default ceiling of 9 is
+ * `controls.maxDistance` has to come up with it, the default ceiling of 9 is
  * below the portrait fit once a margin is on it, so without this the clamp
  * silently re-crops the bike.
  */

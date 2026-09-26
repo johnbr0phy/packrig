@@ -3,7 +3,7 @@
  *
  *   node tools/eval-bundle.mjs --run <stamp>
  *
- * Writes evals/runs/<stamp>/bundles/<slot>.md — one file per builder, because
+ * Writes evals/runs/<stamp>/bundles/<slot>.md, one file per builder, because
  * the builder is the unit of fixing (one edit to seatpack.js moves 78 products)
  * and a critic that has seen all eleven seat packs can say "they are all wrong
  * the same way", which is the sentence that actually saves work.
@@ -15,10 +15,10 @@
  * Reference images are ORDERED, not dumped. The order encodes what each kind of
  * picture is good for:
  *
- *   dimensions   the maker's engineering drawing — the only orthographic,
+ *   dimensions   the maker's engineering drawing, the only orthographic,
  *                unlit, undistorted view. Judge SHAPE here and nowhere else.
  *   on-bike      the only evidence of orientation and what it straps to.
- *   feature      close-ups of buckles, tabs and strap ends — hardware detail.
+ *   feature      close-ups of buckles, tabs and strap ends, hardware detail.
  *   studio       overall proportion and colourway.
  *
  * Lifestyle shots are deliberately excluded: a loaded bag on a mountainside at
@@ -66,7 +66,7 @@ const written = [];
 
 for (const [slot, list] of bySlot) {
   const L = [];
-  L.push(`# ${slot} — ${list.length} Apidura products`);
+  L.push(`# ${slot}, ${list.length} Apidura products`);
   L.push('');
   L.push(`Run: \`${run}\`  ·  builder: \`src/bags/builders/${slot.replace('framebag_', 'frame').replace('_', '')}.js\``);
   L.push('');
@@ -88,7 +88,7 @@ for (const [slot, list] of bySlot) {
     const shots = existsSync(shotDir) ? readdirSync(shotDir).filter((f) => /\.(jpg|png)$/i.test(f)) : [];
     L.push(`**Our render** (judge these):`);
     for (const s of shots) L.push(`- ${join(RUNS, run, 'shots', slug, s)}`);
-    if (!shots.length) L.push(`- MISSING — no render produced`);
+    if (!shots.length) L.push(`- MISSING, no render produced`);
     L.push('');
 
     L.push(`**The maker's own images** (the bar):`);
@@ -110,12 +110,12 @@ for (const [slot, list] of bySlot) {
         }
       }
     } else {
-      L.push(`- NONE FOUND — flag this`);
+      L.push(`- NONE FOUND, flag this`);
     }
     L.push('');
 
     if (rec) {
-      L.push(`**What our record claims** (it may be wrong — say so if it is):`);
+      L.push(`**What our record claims** (it may be wrong, say so if it is):`);
       L.push('```json');
       L.push(JSON.stringify({
         dims_cm: rec.dims_cm, dims_state: rec.dims_state, capacity_l: rec.capacity_l,
@@ -128,7 +128,7 @@ for (const [slot, list] of bySlot) {
 
     const dp = diagProf[slug];
     if (dp) {
-      L.push(`**Outline measured from the drawing** — agreement with published dims `
+      L.push(`**Outline measured from the drawing**, agreement with published dims `
         + `${(dp.agreement.side * 100) | 0}%, drawn ${dp.drawn_state}`
         + `${dp.view_ambiguous ? ', VIEW AMBIGUOUS (may be the top view, not the side)' : ''}`);
       L.push('');

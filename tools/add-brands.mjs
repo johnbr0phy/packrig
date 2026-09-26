@@ -25,11 +25,11 @@ if (existsSync(dir)) {
       if (!b?.name || !Array.isArray(b.products)) { warnings.push(`${f}: brand missing name/products`); continue; }
       if (have.has(b.name.toLowerCase())) { skipped.push(b.name); continue; }
       const good = b.products.filter((p) => {
-        if (!VALID.has(p.slot)) { warnings.push(`${b.name}: "${p.name}" has invalid slot "${p.slot}" — dropped`); return false; }
-        if (!p.name) { warnings.push(`${b.name}: product with no name — dropped`); return false; }
+        if (!VALID.has(p.slot)) { warnings.push(`${b.name}: "${p.name}" has invalid slot "${p.slot}", dropped`); return false; }
+        if (!p.name) { warnings.push(`${b.name}: product with no name, dropped`); return false; }
         return true;
       });
-      if (!good.length) { warnings.push(`${b.name}: no valid products — brand skipped`); continue; }
+      if (!good.length) { warnings.push(`${b.name}: no valid products, brand skipped`); continue; }
       brands.push({
         name: b.name, origin: b.origin || '', aesthetic: b.aesthetic || '',
         palette: b.palette || [], fabric: b.fabric || '', products: good,

@@ -1,7 +1,7 @@
 // Verifies the aero measurement engine against primitives whose answer is
 // arithmetic, not judgement: a 1 m² plate must measure 1.000 m², a 0.5 m sphere
 // must measure pi/4, and a plate parked behind another plate must cost nothing.
-// None of these depend on a Cd being right — they check that the projection,
+// None of these depend on a Cd being right, they check that the projection,
 // the world-area-per-pixel scale, the yaw camera and the per-part attribution
 // are wired up correctly. Exits non-zero on any failure.
 //
@@ -41,7 +41,7 @@ window.__AERO_CHECK = { done: false, error: null, tests: [], info: null };
     const deps = { renderer: app.renderer, scene: app.scene };
 
     // A throwaway rig: any object with { group, wheels } satisfies the meter,
-    // and any { mesh } satisfies a bag record — cdOf falls back to the slot's
+    // and any { mesh } satisfies a bag record, cdOf falls back to the slot's
     // default Cd when the product is null, which is all these need.
     function onPrimitives(build, opts) {
       const group = new THREE.Group();
@@ -154,7 +154,7 @@ window.__AERO_CHECK = { done: false, error: null, tests: [], info: null };
     out.tests.push({ name: 'bag behind bag: shielding bag charged', got: part(r6, 'barroll').frontalArea, want: 1, tolPct: 1 });
 
     // 6b. A rider faded to invisible is still a body in the airflow. rider.js
-    //     clears depthWrite while the ghost is faded out (it has to — GTAO reads
+    //     clears depthWrite while the ghost is faded out (it has to, GTAO reads
     //     depth through an override material that ignores opacity), and that
     //     silently took the single largest contributor out of the measurement.
     //     Presentation state must never reach the physics.
@@ -167,7 +167,7 @@ window.__AERO_CHECK = { done: false, error: null, tests: [], info: null };
     }, { yaws: [0] });
     out.tests.push({ name: 'rider faded to 0 still measured', got: part(r6b, 'rider')?.frontalArea ?? 0, want: 1, tolPct: 1 });
 
-    // 6c. areaRatio must be pure geometry — the TOTAL silhouette ratio, taken
+    // 6c. areaRatio must be pure geometry, the TOTAL silhouette ratio, taken
     //     before the wake discount touches anything. Nothing about the totals
     //     would flag it if the discounted area were fed in instead, so this
     //     isolates it.
@@ -202,7 +202,7 @@ window.__AERO_CHECK = { done: false, error: null, tests: [], info: null };
       tolPct: 1,
     });
 
-    // 6d. The merge credit — the ONLY term in the whole engine that reduces a
+    // 6d. The merge credit, the ONLY term in the whole engine that reduces a
     //     total, so it gets pinned hard. The frame plate sits directly behind the
     //     bag, making the bag-over-frame overlap exactly the bag's own 0.25 m².
     const mergeRig = (slot) => onPrimitives((g, eq) => {
@@ -263,7 +263,7 @@ window.__AERO_CHECK = { done: false, error: null, tests: [], info: null };
     });
     // A full kit fits a full frame bag, which hides both bidons. The bare-state
     // body pass has to fire, or that saving is invisible the way the rack's cost
-    // was — the same bug with the sign flipped.
+    // was, the same bug with the sign flipped.
     out.tests.push({
       name: 'full kit: frame bag stows the bottles',
       got: (loaded.parts.find((p) => p.key === 'bottles')?.cda ?? 0) < 0 ? 1 : 0,

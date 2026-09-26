@@ -1,13 +1,13 @@
 /**
  * The free graders: pass/fail gates and signed dimension error, applied to a
- * run. No model, no human, no ambiguity — a gate failure is a bug, not a low
+ * run. No model, no human, no ambiguity, a gate failure is a bug, not a low
  * score, and is never offset by looking good. (EVAL-PLAN.md §4)
  *
  *   node tools/eval-auto.mjs                       # newest run
  *   node tools/eval-auto.mjs --run <stamp> --vs <stamp>
  *
  * Writes <run>/auto.json and prints pass rates per gate and per builder,
- * because the builder is the unit of improvement — one edit to seatpack.js
+ * because the builder is the unit of improvement, one edit to seatpack.js
  * moves 78 products, so a ranked list of individual bags is not actionable.
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
@@ -77,17 +77,17 @@ const SIZE_HI = 0.25, SIZE_LO = -0.10;
 /**
  * Which bbox axis a spec axis lands on. Null where the axis is a diagonal.
  *
- * MODEL-SPEC.md §`mount.axes` also allows TUBE-RELATIVE values —
+ * MODEL-SPEC.md §`mount.axes` also allows TUBE-RELATIVE values,
  * `along_toptube`, `along_downtube`, `along_seattube`, `along_forkleg`,
- * `perp_downtube` and so on — because a bag strapped under a sloping tube does
+ * `perp_downtube` and so on, because a bag strapped under a sloping tube does
  * not have its own axes on the world axes. 42 of the 70 Apidura records use
  * them, and this function used to return null for every one, so those axes were
  * SILENTLY NOT SIZE-CHECKED AT ALL. That is why the per-builder table printed
- * `—` for length on every frame pack and top tube pack: not "no error", but
+ * `–` for length on every frame pack and top tube pack: not "no error", but
  * "never measured".
  *
- * Resolving them to the nearest world axis is an approximation — a top tube
- * slopes a few degrees, a down tube far more — so it slightly overstates the
+ * Resolving them to the nearest world axis is an approximation, a top tube
+ * slopes a few degrees, a down tube far more, so it slightly overstates the
  * measured extent on the steepest tubes. That is a much smaller error than not
  * measuring, and it is disclosed here rather than hidden.
  */
@@ -97,7 +97,7 @@ const SIZE_HI = 0.25, SIZE_LO = -0.10;
 // 46 degrees, so the world-y extent is 0.724*length + 0.690*depth, and reading
 // that as the bag's height reported "+147% too tall" for FIVE rounds on bags
 // whose depth is in fact within 6% of published. Worse, the length axis was
-// not read at all, so the genuine fault — those bags are 22-33% too SHORT —
+// not read at all, so the genuine fault, those bags are 22-33% too SHORT,
 // stayed invisible the whole time.
 const TUBE_AXIS = {
   along_toptube: 'along', along_downtube: 'along', along_chainstay: 'along',
@@ -119,7 +119,7 @@ function grade(it, m) {
   const cl = m?.clearance || [];
 
   g.placed = !!m && !m.dropped && !m.err;
-  if (!g.placed) why.push(m?.err || 'dropped — resolver could not place it');
+  if (!g.placed) why.push(m?.err || 'dropped, resolver could not place it');
 
   if (g.placed) {
     const clash = cl.filter((c) => {
@@ -139,7 +139,7 @@ function grade(it, m) {
     const attach = (it.record?.mount?.attachesTo || []).length ? ok : ok;
     const near = cl.filter((c) => attach.includes(c.part)).map((c) => c.mm);
     // A front pocket clips to another BAG, and `clearance` only ever measures
-    // BIKE parts — so the nearest "mount" it can see is the handlebar it is
+    // BIKE parts, so the nearest "mount" it can see is the handlebar it is
     // deliberately nowhere near. Scoring that reported 151mm and called a
     // correctly fitted pocket floating. Null means UNSCORED, not passed: the
     // check is real, this instrument cannot make it, and saying so is better
@@ -150,7 +150,7 @@ function grade(it, m) {
     const mountsToBag = MOUNTS_TO_BAG.has(it.record?.slot || slot);
     g.attached = mountsToBag ? null
       : near.length ? Math.min(...near) <= attachMax(slot) : null;
-    if (g.attached === false) why.push(`floating — nearest mount ${Math.min(...near).toFixed(1)}mm`);
+    if (g.attached === false) why.push(`floating, nearest mount ${Math.min(...near).toFixed(1)}mm`);
 
     // Size, mapped through mount.axes, body-only where the run has it.
     // World-axis box for x/y/z labels; the bag's own axes for tube-relative
@@ -188,7 +188,7 @@ function grade(it, m) {
     // So compare the rendered outline with the one measured off the maker's
     // engineering drawing. Both are 40 stations, peak-normalised and oriented
     // mounting-end-first, so intersection-over-union is a pure shape score.
-    // Null where we have no drawing for the product (23 of 70) — an unscored
+    // Null where we have no drawing for the product (23 of 70), an unscored
     // item must not read as a pass.
     const truth = TRUTH[it.slug]?.profile;
     if (truth && Array.isArray(m.profile40)) {
@@ -221,9 +221,9 @@ const graded = items.map((it) => ({ slug: it.slug, slot: it.slot, ...grade(it, b
 writeFileSync(join(dir, 'auto.json'), JSON.stringify({ run: runId, gates: graded }, null, 1));
 
 const GATES = ['placed', 'no_clash', 'tyre', 'attached', 'size_sane', 'shape_ok'];
-const pct = (n, d) => (d ? Math.round(n / d * 100) + '%' : '  —');
+const pct = (n, d) => (d ? Math.round(n / d * 100) + '%' : '  , ');
 
-console.log(`\n${runId} — ${graded.length} items` + (graded[0]?.body_bbox ? '' : '  (no body-only bbox in this run; sizes include straps)'));
+console.log(`\n${runId}, ${graded.length} items` + (graded[0]?.body_bbox ? '' : '  (no body-only bbox in this run; sizes include straps)'));
 
 console.log('\nGATE PASS RATE');
 for (const k of GATES) {
@@ -239,11 +239,11 @@ for (const s of slots) {
   const rows = graded.filter((g) => g.slot === s);
   const cells = GATES.map((k) => {
     const rel = rows.filter((g) => g[k] !== null && g[k] !== undefined);
-    return (rel.length ? pct(rel.filter((g) => g[k]).length, rel.length) : '—').padStart(10);
+    return (rel.length ? pct(rel.filter((g) => g[k]).length, rel.length) : '–').padStart(10);
   }).join('');
   const mean = ['len', 'wid', 'hgt'].map((k) => {
     const v = rows.map((g) => g.err?.[k]).filter((x) => x != null);
-    return v.length ? ((v.reduce((a, b) => a + b, 0) / v.length) * 100).toFixed(0) + '%' : '—';
+    return v.length ? ((v.reduce((a, b) => a + b, 0) / v.length) * 100).toFixed(0) + '%' : '–';
   }).join(' / ');
   console.log('  ' + s.padEnd(15) + String(rows.length).padStart(3) + cells + '   ' + mean);
 }
@@ -267,6 +267,6 @@ if (vs) {
     const d = score(g) - score(q);
     if (d > 0) up.push(g.slug); else if (d < 0) down.push(`${g.slug} (${g.why.join(' · ')})`);
   }
-  console.log(`\nVS ${vs} — improved ${up.length} · regressed ${down.length} · unchanged ${graded.length - up.length - down.length}`);
+  console.log(`\nVS ${vs}, improved ${up.length} · regressed ${down.length} · unchanged ${graded.length - up.length - down.length}`);
   for (const d of down) console.log('  ✗ ' + d);
 }

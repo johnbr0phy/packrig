@@ -8,7 +8,7 @@
  *
  * For each product: equip it alone, render ONLY the bag as a white mask with an
  * orthographic camera (side-on for bags that run fore-aft, front-on for bags
- * that run across the bike — the view the maker's photo or drawing was taken
+ * that run across the bike, the view the maker's photo or drawing was taken
  * from), read the principal axis, and measure half-depth at 40 stations along
  * it, peak-normalised. That is exactly how tools/silhouette.mjs and
  * tools/diagram-outline.mjs measured the maker's outline, so the two profiles
@@ -197,10 +197,10 @@ for (const j of jobs) {
   row.profile = m.profile;
   writeFileSync(join(OUT, `${j.key}.png`), Buffer.from(m.png.split(',')[1], 'base64'));
   results.push(row);
-  console.log(`${row.score != null ? row.score.toFixed(3) : '  —  '}  ${row.vs ? row.vs.padEnd(8) : 'no truth'} ${j.name}${row.reversed ? '  (reversed)' : ''}`);
+  console.log(`${row.score != null ? row.score.toFixed(3) : ' ,  '}  ${row.vs ? row.vs.padEnd(8) : 'no truth'} ${j.name}${row.reversed ? '  (reversed)' : ''}`);
 }
 await browser.close();
 const scored = results.filter((r) => r.score != null);
 const mean = scored.length ? scored.reduce((a, r) => a + r.score, 0) / scored.length : null;
 writeFileSync(join(OUT, 'scores.json'), JSON.stringify({ at: new Date().toISOString(), mean, n: scored.length, results }, null, 1));
-console.log(`\n${scored.length} scored · mean ${mean?.toFixed(3) ?? '—'} → ${OUT}/scores.json`);
+console.log(`\n${scored.length} scored · mean ${mean?.toFixed(3) ?? '–'} → ${OUT}/scores.json`);

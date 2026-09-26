@@ -50,8 +50,8 @@ export async function loadCatalog() {
   /*
    * A render of every bag that ships no photograph.
    *
-   * 201 of 702 products have no image at all — small makers, discontinued
-   * models, and a long tail nobody photographed — and everywhere the app showed
+   * 201 of 702 products have no image at all, small makers, discontinued
+   * models, and a long tail nobody photographed, and everywhere the app showed
    * a bag it had to show a coloured plate instead. tools/bag-portraits.mjs
    * renders each of them from its own measured record, in the app's own
    * lighting, and this folds the result into `images` so every call site that
@@ -75,7 +75,7 @@ export async function loadCatalog() {
       if (!p.images?.length) {
         const shot = portraits[portraitKey(b.short, p)] || portraits[portraitKey(b.name, p)];
         // `rendered` so the UI can be honest about what it is showing when it
-        // matters — a spec sheet should not imply a photograph exists.
+        // matters, a spec sheet should not imply a photograph exists.
         if (shot) { p.images = [shot]; p.rendered = true; }
       }
       // ensure sane dims in mm
@@ -89,7 +89,7 @@ export async function loadCatalog() {
       // Any axis can be the variable one. `render.hgt_cm` covered roll-tops that
       // roll vertically, but a bar bag whose side-rolls open along the bar, or a
       // seat pack that rolls along its length, has the same problem on a
-      // different axis — and with nowhere to put the drawn figure, reviewers were
+      // different axis, and with nowhere to put the drawn figure, reviewers were
       // overwriting dims_cm and losing the published record. All three now.
       const drawLen = p.render?.len_cm ?? d.len;
       const drawWid = p.render?.wid_cm ?? d.wid;
@@ -101,7 +101,7 @@ export async function loadCatalog() {
         dia: (d.dia || Math.min(drawWid || 14, drawHgt || 14)) * 10,
       };
       // Measured shape, published scale. The profile is peak-normalised, so it
-      // says nothing about size — the builder still takes every dimension from
+      // says nothing about size, the builder still takes every dimension from
       // the catalogue and uses this only for the curve between them.
       const key = slugify([b.name, p.line, p.name, p.size].filter(Boolean).join(' '));
       const prof = diagrams[key] || profiles[key];
@@ -112,12 +112,12 @@ export async function loadCatalog() {
 }
 
 /**
- * Some bags only fit a specific platform — the Wizard Works x Brompton Leyline
+ * Some bags only fit a specific platform, the Wizard Works x Brompton Leyline
  * bolts to Brompton's proprietary front carrier block and cannot mount on a
  * drop-bar gravel frame at all. Offering it here is simply wrong.
  */
 // `fits` records what a bag needs in order to mount, and most values describe
-// hardware this frame HAS — `rack_only` is simply a pannier, and we draw a rack.
+// hardware this frame HAS, `rack_only` is simply a pannier, and we draw a rack.
 // The old rule was "anything not 'universal' cannot fit", which was safe while
 // exactly one product carried the field; the moment tools/apply-models.mjs
 // merged the reviewers' notes it silently hid 37 products instead of 1, 30 of

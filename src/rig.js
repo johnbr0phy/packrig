@@ -1,5 +1,5 @@
 /**
- * A rig — a whole bike setup — in a form that can be saved, shared and read
+ * A rig, a whole bike setup, in a form that can be saved, shared and read
  * back later, by this browser or by a stranger or by a database.
  *
  * WHY THIS EXISTS. The share link has always encoded a bag as
@@ -9,7 +9,7 @@
  * (both Bags by Bird "Better Half" entries gained a size, and a brand was
  * renamed in place), and it will happen again every time a brand is added.
  * When it does, every link anyone has ever shared silently resolves to
- * different bags — not an error, not a blank, just the wrong bike. That is the
+ * different bags, not an error, not a blank, just the wrong bike. That is the
  * worst possible failure for a share link, and it is invisible.
  *
  * So a rig identifies a bag the way a human would: by maker and model. The
@@ -39,7 +39,7 @@ const looseKey = (k) => k.split('|').map(loose).join('|');
 
 /**
  * The current state of the bike as a plain object. This is the shape that gets
- * written to localStorage, sent to the database and encoded into a URL — one
+ * written to localStorage, sent to the database and encoded into a URL, one
  * definition, so the three can never drift apart.
  */
 export function captureRig(app, { name = '', withPack = true } = {}) {
@@ -81,7 +81,7 @@ export const rigLitres = (rig, catalog) => {
 
 /**
  * Resolve one saved bag back to a live catalogue entry.
- * Exact match first, then a case/space-insensitive one — a saved rig should
+ * Exact match first, then a case/space-insensitive one, a saved rig should
  * survive a reviewer fixing the capitalisation of a product name.
  */
 export function findProduct(catalog, b) {
@@ -102,7 +102,7 @@ export function findProduct(catalog, b) {
 
 /**
  * Put a rig on the bike.
- * @returns {{fitted:number, missing:Array}} — `missing` is products that are no
+ * @returns {{fitted:number, missing:Array}}, `missing` is products that are no
  *   longer in the catalogue. They are REPORTED, never silently skipped: a rig
  *   that quietly comes back with five bags instead of six is how someone
  *   concludes the app lost their work.
@@ -123,7 +123,7 @@ export function applyRig(app, rig, { clear = true, source = null } = {}) {
     if (!hit) { missing.push(b); continue; }
     // A slot with `mountsTo` clips to another BAG, not to the bike, so it
     // cannot be fitted on its own. The eval harness renders exactly one product
-    // per shot, which meant a front pocket was always "dropped — resolver could
+    // per shot, which meant a front pocket was always "dropped, resolver could
     // not place it": correct behaviour reported as a fault, on every run.
     // Fit a host first, chosen from the same maker where possible so the pair
     // reads as one product family rather than an arbitrary pairing.

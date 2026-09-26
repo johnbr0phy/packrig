@@ -1,93 +1,97 @@
 /**
- * "Inside" — the top of the bag sheet once there is gear in play.
+ * Inside a bag: the top of its sheet.
  *
- * Tap a bag, it opens: the shell goes translucent in the scene and this block
- * lists what the solver put in it, with a fill meter computed from the same
- * numbers the picture was laid out from. When something won't go in, it says
- * so in a sentence and offers the place it would go.
+ * Contents first, because "what's in there?" is the question. Each row is a
+ * thing with its weight; a thing that won't go in says so ON ITS OWN ROW,
+ * in a sentence with centimetres or litres, and offers the place it would
+ * fit. Warnings that belong to the whole bag (load, bulge, tight) sit under
+ * the meter they explain, not stacked above the list.
  */
 import { btn, el, placeWords, SLOT_WORD } from './labels.js';
 import { thumbImg } from './thumbs.js';
 import { parsePlace } from '../model.js';
 import { fmtWeight, fmtLitres } from '../units.js';
 
+const lc = (s) => (s ? s[0].toLowerCase() + s.slice(1) : '');
+
 export function renderInside(app, slot, hooks) {
   const P = app.pack;
   const st = P.state;
   const r = st.results[slot];
-  const box = el('div', 'bs-block pkg-inside');
+  const unit = P.lib.unit;
+  const box = el('section', 'inside');
   const items = st.locker.items.filter((it) => {
     const code = st.loadout.place[it.uid];
-    return code && parsePlace(code).slot === slot;
+    return code && parsePlace(code).slot === slot && parsePlace(code).loc !== 'home';
   });
   const inBag = items.filter((it) => parsePlace(st.loadout.place[it.uid]).loc === 'bag');
   const outside = items.filter((it) => parsePlace(st.loadout.place[it.uid]).loc !== 'bag');
 
-  const head = el('div', 'bs-label-row');
-  head.append(el('span', 'bs-label', 'Inside'));
+  // ---- the meter ---------------------------------------------------------------
+  const head = el('div', 'inside-head');
+  head.append(el('h3', 'label', 'Inside'));
   if (r) {
-    const used = r.fill.usedL, rated = r.fill.ratedL;
-    head.append(el('span', 'bs-label-v num', `${Math.round(r.fill.frac * 100)}% · ${fmtLitres(used)} of ${fmtLitres(rated)} · ${fmtWeight(r.fill.kg * 1000, P.lib.unit)}`));
-  }
-  box.append(head);
-  if (r) {
-    const meter = el('div', 'pkg-fill');
+    const pct = Math.round(r.fill.frac * 100);
+    head.append(el('span', 'inside-sum num', `${pct}% · ${fmtLitres(r.fill.usedL)} of ${fmtLitres(r.fill.ratedL)} · ${fmtWeight(r.fill.kg * 1000, unit)}`));
+    box.append(head);
+    const meter = el('div', 'meter inside-meter' + (r.overflow.length ? ' over' : r.fill.frac >= 0.95 ? ' tight' : ''));
+    const f = el('i');
+    f.style.width = `${Math.min(r.fill.frac, 1) * 100}%`;
+    meter.append(f);
     meter.setAttribute('role', 'meter');
-    meter.setAttribute('aria-label', `${Math.round(r.fill.frac * 100)} percent full`);
-    meter.setAttribute('aria-valuenow', String(Math.round(r.fill.frac * 100)));
+    meter.setAttribute('aria-label', `${pct} percent full`);
+    meter.setAttribute('aria-valuenow', String(pct));
     meter.setAttribute('aria-valuemin', '0');
     meter.setAttribute('aria-valuemax', '100');
-    const f = el('span', 'pkg-fill-f');
-    f.style.width = `${Math.min(r.fill.frac, 1) * 100}%`;
-    meter.classList.toggle('is-full', r.fill.frac >= 0.9);
-    meter.append(f);
-    // the part soft things were squashed to get there, shown honestly
-    if (r.fill.squeeze > 0.05) meter.title = 'Soft things are compressed to fit';
     box.append(meter);
-    if (r.sides) {
-      box.append(el('div', 'pkg-sides num', `Left ${fmtWeight(r.sides.L.kg * 1000, P.lib.unit)} · Right ${fmtWeight(r.sides.R.kg * 1000, P.lib.unit)}`));
+    if (r.sides) box.append(el('p', 'inside-note num', `Left ${fmtWeight(r.sides.L.kg * 1000, unit)} · right ${fmtWeight(r.sides.R.kg * 1000, unit)}`));
+    for (const w of r.warnings || []) {
+      if (w.kind === 'tight') box.append(el('p', 'inside-note', 'Packed tight: it all goes in, with some shoving.'));
+      else if (w.kind === 'bulge') box.append(el('p', 'inside-note warn', `${w.uids.map((u) => st.resolved.get(u)?.name).filter(Boolean).join(', ')} make${w.uids.length === 1 ? 's' : ''} it bulge${['toptube', 'toptube_rear', 'framebag_full', 'framebag_half', 'stemL', 'stemR'].includes(slot) ? '; it may rub your knees' : ''}.`));
+      else if (w.kind === 'load') box.append(el('p', 'inside-note warn', `${fmtWeight(w.kg * 1000, unit)} is over the ${fmtWeight(w.limit * 1000, unit)} most ${lc(SLOT_WORD[slot]).replace(/, (left|right)$/, '')}s are rated for.`));
+      else if (w.kind === 'sides') box.append(el('p', 'inside-note warn', `${fmtWeight(Math.abs(w.L - w.R) * 1000, unit)} heavier on the ${w.L > w.R ? 'left' : 'right'}.`));
     }
+    const buried = st.warnings.find((w) => w.kind === 'buried' && w.slot === slot);
+    if (buried) box.append(el('p', 'inside-note warn', 'The phone is in here; you’ll stop to dig it out.'));
+  } else {
+    box.append(head);
   }
 
-  if (!items.length) {
-    box.append(el('p', 'pkg-why', st.mine ? 'Empty.' : 'Nothing in this one.'));
-  }
+  // ---- the contents ---------------------------------------------------------------
+  const list = el('div', 'inside-list');
+  if (!items.length) list.append(el('p', 'inside-empty', st.mine ? 'Empty' : 'Nothing in this one'));
   for (const it of [...inBag, ...outside]) {
     const rr = st.resolved.get(it.uid);
-    const row = btn('pkg-item', '', () => hooks.openItem?.(it.uid));
-    row.append(thumbImg(rr));
-    const t = el('span', 'pkg-item-t');
     const code = st.loadout.place[it.uid];
     const p = parsePlace(code);
     const over = r?.overflow.find((o) => o.uid === it.uid);
-    t.append(el('span', 'pkg-item-n', rr.name), el('span', 'pkg-item-s', over ? 'Doesn’t fit' : p.loc === 'lashed' ? 'Strapped outside' : p.loc === 'dangle' ? 'Hanging off' : p.side ? `${p.side === 'L' ? 'Left' : 'Right'} side` : fmtLitres(rr.litres)));
-    if (over) row.classList.add('is-over');
-    row.append(t, el('span', 'pkg-item-w num', fmtWeight(rr.g, P.lib.unit)));
+    const wrap = el('div', 'inside-row' + (over ? ' is-over' : ''));
+    const row = btn('rg-item', '', () => hooks.openItem?.(it.uid));
+    row.dataset.uid = it.uid;
+    row.append(thumbImg(rr, 'thumb rg-item-img'));
+    const t = el('span', 'rg-item-t');
+    t.append(el('span', 'rg-item-n', rr.name), el('span', 'rg-item-s', p.loc === 'lashed' ? 'Strapped outside' : p.loc === 'dangle' ? 'Hanging off' : p.side ? `${p.side === 'L' ? 'Left' : 'Right'} side` : fmtLitres(rr.litres)));
+    row.append(t, el('span', 'rg-item-w num', fmtWeight(rr.g, unit)));
+    row.setAttribute('aria-label', `${rr.name}, ${fmtWeight(rr.g, unit)}${over ? ', does not fit' : ''}`);
     hooks.drag?.source(row, it.uid);
-    box.append(row);
+    wrap.append(row);
+    if (over) {
+      const alt = P.alternativeFor(it.uid);
+      const why = over.reason === 'length'
+        ? `${Math.round(over.needMm / 10)} cm won’t fit this ${Math.round(over.haveMm / 10)} cm bag.`
+        : over.reason === 'shape' ? 'Wrong shape for this bag.'
+          : `Needs ${fmtLitres(over.needL)}; ${fmtLitres(over.freeL)} left.`;
+      const w = el('div', 'inside-warn');
+      w.append(el('span', 'bad', alt ? `${why} Move to the ${lc(placeWords(alt)).replace(/^on /, '')}?` : why));
+      if (alt && st.mine) w.append(btn('btn sm', 'Move', () => P.place(it.uid, alt), { label: `Move ${rr.name} to ${lc(placeWords(alt))}` }));
+      wrap.append(w);
+    }
+    list.append(wrap);
   }
-
-  // won't-fit, kindly, with somewhere better
-  for (const o of r?.overflow || []) {
-    const rr = st.resolved.get(o.uid);
-    const alt = P.alternativeFor(o.uid);
-    const w = el('div', 'pkg-warn');
-    const why = o.reason === 'length'
-      ? `${rr.name} is ${Math.round(o.needMm / 10)} cm long and this bag is ${Math.round(o.haveMm / 10)} cm inside.`
-      : o.reason === 'shape' ? `${rr.name} doesn’t fit this bag’s shape.`
-        : `${rr.name} needs ${fmtLitres(o.needL)}; there’s ${fmtLitres(o.freeL)} left.`;
-    w.append(el('span', 'pkg-warn-t', alt ? `${why} It would fit ${placeWords(alt).toLowerCase().replace(/^on /, 'on ')}.` : why));
-    if (alt && st.mine) w.append(btn('pkg-link', 'Move it', () => P.place(o.uid, alt)));
-    box.append(w);
-  }
-  for (const wv of r?.warnings || []) {
-    if (wv.kind === 'tight') { box.append(el('p', 'pkg-why', 'Packed tight — it all goes in, with some shoving.')); continue; }
-    if (wv.kind === 'bulge') { box.append(el('p', 'pkg-why', `${wv.uids.map((u) => st.resolved.get(u)?.name).filter(Boolean).join(', ')} make${wv.uids.length === 1 ? 's' : ''} it bulge.`)); continue; }
-    if (wv.kind !== 'load') continue;
-    box.append(el('div', 'pkg-warn', `${fmtWeight(wv.kg * 1000, P.lib.unit)} is over the ${fmtWeight(wv.limit * 1000, P.lib.unit)} most ${SLOT_WORD[slot].toLowerCase().replace(/, (left|right)$/, '')}s are rated for.`));
-  }
+  box.append(list);
   if (st.mine) {
-    const add = btn('pkg-btn pkg-putin', 'Put something in', () => hooks.openLocker?.());
+    const add = btn('btn sm inside-add', '', () => hooks.openLocker?.({ into: slot }));
+    add.append(document.createTextNode('+ Add gear'));
     box.append(add);
   }
   return box;

@@ -41,7 +41,7 @@ const want = {
   // Output controls, added for the eval harness. Defaults reproduce the
   // original behaviour exactly: shots/bag, PNG, 2x. An eval run keeps every
   // version forever, and a 4 MB PNG x 4 angles x 70 products is 1.1 GB per
-  // run — so eval-render.mjs asks for JPEG at 1.5x instead (~100 MB).
+  // run, so eval-render.mjs asks for JPEG at 1.5x instead (~100 MB).
   out: arg('out'),
   glb: has('glb'),
   slugs: arg('slugs'),
@@ -51,7 +51,7 @@ const want = {
 };
 const OUT_ROOT = want.out ? (want.out.endsWith('/') ? want.out : want.out + '/') : `${root}shots/bag/`;
 
-// Catalogue slot names are not UI slot names — mapping only `pannier` once made
+// Catalogue slot names are not UI slot names, mapping only `pannier` once made
 // every fork/stem bag read back as "dropped".
 const SLOT_UI = { pannier: 'pannierR', stembag: 'stemR', forkbag: 'forkR' };
 
@@ -97,7 +97,7 @@ function classify(slot, clearance) {
 
 const slugify = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-// An explicit slug list, one per line — how the eval harness asks for exactly
+// An explicit slug list, one per line, how the eval harness asks for exactly
 // the frozen set and nothing else, across any number of brands.
 const only = want.slugs
   ? new Set(readFileSync(want.slugs, 'utf8').split('\n').map((s) => s.trim()).filter(Boolean))
@@ -186,7 +186,7 @@ function measureInPage(uiSlot) {
   }
   // Everything below works in the FRAME group's own space, which is millimetres.
   // World space is metres (the frame group is scaled by 0.001), and the bike's
-  // landmark points are mm — mixing the two silently reports every distance
+  // landmark points are mm, mixing the two silently reports every distance
   // 1000x too small, which reads as "everything collides".
   bike.group.updateWorldMatrix(true, true);
   bike.frameGroup.updateWorldMatrix(true, true);
@@ -231,7 +231,7 @@ function measureInPage(uiSlot) {
       colliders.push({ kind: 'seg', name: nameFor(a, b, o.userData?.part), a: a.toArray(), b: b.toArray(), r });
       return;
     }
-    // Anything else — curved fork blades (TubeGeometry), the saddle, the bars —
+    // Anything else, curved fork blades (TubeGeometry), the saddle, the bars,
     // becomes a decimated point cloud. An AABB is useless here: a curved fork
     // blade's box spans the whole wheel and reads as a permanent collision.
     if (o.isInstancedMesh) return;                   // spokes; the tyre disc covers that volume
@@ -253,7 +253,7 @@ function measureInPage(uiSlot) {
 
   // Bag surface points, in frame-local mm, decimated so this stays fast.
   //
-  // Skip anything flagged `noCollide` — cargo-cage arms, rack hooks, bar
+  // Skip anything flagged `noCollide`, cargo-cage arms, rack hooks, bar
   // standoffs, the straps that wrap a tube. That hardware is SUPPOSED to reach
   // into the bike; it is how the bag attaches. src/bags/resolve.js:59 has always
   // excluded it, and this tool not doing so made every cargo-cage fork bag read
@@ -301,7 +301,7 @@ function measureInPage(uiSlot) {
   };
   // Surface-to-surface distance approximated by nearest sampled vertex. It
   // cannot go negative, so a cloud collider reports "touching" (~0) rather than
-  // a penetration depth — enough to see that a bag is inside a fork blade.
+  // a penetration depth, enough to see that a bag is inside a fork blade.
   const dCloud = (x, y, z, c) => {
     const q = c.pts;
     let best = Infinity;
@@ -336,7 +336,7 @@ function measureInPage(uiSlot) {
   // tools/silhouette.mjs measures the product photograph: principal axis of the
   // silhouette, then the perpendicular half-extent at 40 stations, peak
   // normalised. That makes the two directly comparable, so the harness can
-  // score the one thing every other gate is blind to — does this look like the
+  // score the one thing every other gate is blind to, does this look like the
   // shape in the photo. `pts` is already hardware-free, which matches the way
   // the photo measurement drops strap spikes.
   const NST = 40;
@@ -378,7 +378,7 @@ function measureInPage(uiSlot) {
     // profiles were oriented. That made the IoU score structurally unable to
     // see a bag drawn back to front: reversing the geometry also reverses
     // which end the rule picks, so the two profiles line up again and the
-    // score is unchanged. It is not a small blind spot — when v3 reversed the
+    // score is unchanged. It is not a small blind spot, when v3 reversed the
     // taper on all eleven seat packs, this metric rated them 0.862, the
     // highest of any slot in the catalogue, while a critic scored the same
     // bags 1 and 2 out of 5.
@@ -398,7 +398,7 @@ function measureInPage(uiSlot) {
   const box = localBox(bagRoot);
   const size = box.getSize(new THREE.Vector3());
 
-  // The same box over the BODY only — no straps, buckles or cage arms. Those
+  // The same box over the BODY only, no straps, buckles or cage arms. Those
   // stand off the bag by design and wrap the frame, so including them inflates
   // width by tens of percent on every slot at once, which reads as a builder
   // fault when it is the measurement. `pts` is already hardware-free.
@@ -412,7 +412,7 @@ function measureInPage(uiSlot) {
   // a box aligned to the bike's axes mixes the bag's length into its height:
   //     bbox y = L*sin(46.35) + D*cos(46.35) = 0.724L + 0.690D
   // A 208mm bag 65mm deep therefore measures ~187mm on the world y axis, and
-  // the size gate — which maps this record's `perp_downtube` height onto y —
+  // the size gate, which maps this record's `perp_downtube` height onto y,
   // called that "+147% too tall". It is not: measured in the bag's own frame
   // the three down tube packs are 65.0 / 70.0 / 90.0mm against published
   // 65 / 70 / 90. Exact. FIVE rounds of fixers hunted a height bug in the
@@ -478,7 +478,7 @@ function measureInPage(uiSlot) {
  * Export the equipped bag as a GLB, base64'd back to Node.
  *
  * A still cannot be rotated, and the live app can only ever show the CURRENT
- * code — so comparing two past versions in 3D needs the geometry of each one
+ * code, so comparing two past versions in 3D needs the geometry of each one
  * frozen at render time. This is that. Only the bag: the bike is identical in
  * every run and would triple the file for nothing.
  */
@@ -561,13 +561,13 @@ for (const j of list) {
   const label = `${j.brand} ${j.line} ${j.name} ${j.size}`.replace(/\s+/g, ' ').trim();
   if (res?.err || res?.dropped) {
     bad++;
-    console.log(`✗ ${label}\n    ${res.err || (res.unfitted ? 'DROPPED — resolver could not place it' : 'DROPPED')}`);
+    console.log(`✗ ${label}\n    ${res.err || (res.unfitted ? 'DROPPED, resolver could not place it' : 'DROPPED')}`);
     continue;
   }
   const { clash, contact, tight } = classify(j.slot, res.clearance);
   rec.clash = clash;
   const d = j.dims || {};
-  // The BODY — straps, buckles and cage arms reach past a bag by design and
+  // The BODY, straps, buckles and cage arms reach past a bag by design and
   // are excluded, as `noCollide` already says. Printing the all-mesh box made
   // a 54 cm seat pack read 61 cm because its post strap wraps the post.
   const bb = res.bbox_body_mm || res.bbox_mm;

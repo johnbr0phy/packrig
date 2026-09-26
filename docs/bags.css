@@ -1,0 +1,96 @@
+/* ===========================================================================
+   Bags: the catalogue (one mount's bags, filtered) and a bag's own sheet
+   (inside first, then the product). Tokens only.
+   =========================================================================== */
+
+/* ---- catalogue ------------------------------------------------------------------ */
+.cat { display: flex; flex-direction: column; gap: var(--s-3); }
+.cat-kinds { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.cat-search { position: relative; display: flex; align-items: center; }
+.cat-search svg { position: absolute; left: var(--s-3); color: var(--ink-3); pointer-events: none; }
+.cat-search .input { padding-left: 40px; }
+.cat-facets { position: relative; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.cat-facets .chip svg { margin-right: -2px; opacity: 0.7; }
+.cat-sort { margin-left: auto; }
+.cat-count { display: flex; align-items: center; justify-content: space-between; min-height: 36px; font-size: var(--fs-caption); color: var(--ink-3); }
+.cat-pop { max-height: 280px; overflow-y: auto; padding: var(--s-1); }
+.cat-opt { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); width: 100%; min-height: var(--target); padding: 0 var(--s-3); border-radius: var(--r-chip); font-size: var(--fs-body); text-align: left; }
+.cat-opt:hover { background: var(--fill-2); }
+.cat-opt.on { background: var(--fill-3); }
+.cat-opt.on .cat-opt-l::before { content: ''; display: inline-block; width: 6px; height: 6px; margin-right: var(--s-2); border-radius: 50%; background: var(--ink-1); vertical-align: middle; }
+.cat-opt-n { color: var(--ink-3); font-size: var(--fs-caption); font-variant-numeric: tabular-nums; }
+.cat-list { display: flex; flex-direction: column; gap: var(--s-2); }
+.cat-more { height: 1px; }
+.cat-row {
+  display: flex; align-items: center; gap: var(--s-3); width: 100%;
+  min-height: 84px; padding: var(--s-2) var(--s-3) var(--s-2) var(--s-2);
+  border-radius: var(--r-card); background: var(--fill-1); border: 1px solid transparent; text-align: left;
+  content-visibility: auto; contain-intrinsic-size: auto 84px;
+  transition: background var(--d-micro) var(--ease-out), border-color var(--d-micro) var(--ease-out);
+}
+.cat-row:hover { background: var(--fill-2); }
+.cat-row.on { border-color: var(--accent-ring); }
+.cat-row.is-unfit { opacity: 0.72; }
+.cat-img { width: 96px; height: 64px; border-radius: var(--r-thumb); }
+.cat-t { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.cat-brand { font-size: var(--fs-caption); color: var(--ink-3); }
+.cat-name { font-size: var(--fs-title3); font-weight: 600; line-height: var(--lh-snug); overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.cat-facts { display: flex; gap: var(--s-3); font-size: var(--fs-caption); color: var(--ink-2); }
+.cat-on { position: absolute; }
+.cat-row { position: relative; }
+.cat-row .cat-on { right: var(--s-3); bottom: var(--s-2); font-size: var(--fs-label); font-weight: 650; letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--accent); }
+.fit-badge {
+  flex: none; align-self: flex-start; margin-top: var(--s-1);
+  padding: 2px var(--s-2); border-radius: var(--r-pill);
+  font-size: var(--fs-label); font-weight: 650; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.fit-badge.ok { color: var(--ok); background: var(--ok-soft); }
+.fit-badge.warn { color: var(--warn); background: var(--warn-soft); }
+.fit-badge.bad { color: var(--bad); background: var(--bad-soft); }
+.cat-empty { display: flex; flex-direction: column; gap: var(--s-3); padding: var(--s-4) 0; }
+.cat-empty p { font-size: var(--fs-body); color: var(--ink-2); }
+.cat-outs { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+@media (max-width: 560px) {
+  .cat-img { width: 80px; height: 56px; }
+  .cat-sort { margin-left: 0; }
+}
+
+/* ---- a bag's sheet: inside first, then the product ------------------------------------ */
+.bagsheet { display: flex; flex-direction: column; gap: var(--s-5); }
+.bs-product { display: flex; flex-direction: column; gap: var(--s-3); padding-top: var(--s-4); border-top: 1px solid var(--hairline); }
+.bs-hero {
+  position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--r-card);
+  background: var(--fill-1); overflow: hidden; display: grid; place-items: center;
+}
+.bs-hero.is-photo { background: var(--plate); box-shadow: var(--plate-edge); }
+.bs-hero img { width: 100%; height: 100%; object-fit: contain; }
+.bs-hero-tag { position: absolute; left: var(--s-2); bottom: var(--s-2); padding: 2px var(--s-2); border-radius: var(--r-pill); background: var(--e1-bg); font-size: var(--fs-label); color: var(--ink-2); }
+.bs-brand { font-size: var(--fs-caption); color: var(--ink-3); }
+.bs-name { font-size: var(--fs-title1); font-weight: 650; letter-spacing: var(--tr-title); line-height: var(--lh-tight); }
+.bs-sub { font-size: var(--fs-caption); color: var(--ink-2); }
+.bs-block { display: flex; flex-direction: column; gap: var(--s-2); }
+.bs-label-row { display: flex; align-items: baseline; justify-content: space-between; }
+.bs-label-v { font-size: var(--fs-caption); color: var(--ink-2); }
+.bs-ways { display: flex; flex-wrap: wrap; gap: 0; }
+.bs-way { position: relative; width: var(--target); height: var(--target); border-radius: 50%; background-clip: content-box; padding: 8px; }
+.bs-way.on { box-shadow: inset 0 0 0 2px var(--ink-1); }
+.bs-spec { display: flex; justify-content: space-between; gap: var(--s-3); min-height: 40px; align-items: center; border-bottom: 1px solid var(--hairline); font-size: var(--fs-body); }
+.bs-spec-k { color: var(--ink-3); }
+.bs-spec-v { color: var(--ink-1); text-align: right; }
+.bs-spec-v.is-num { font-variant-numeric: tabular-nums; font-weight: 550; }
+.bs-spec-v.is-ok { color: var(--ok); }
+.bs-spec-v.is-warn { color: var(--warn); }
+.bs-feats { display: flex; flex-direction: column; gap: var(--s-1); font-size: var(--fs-body); color: var(--ink-2); padding-left: var(--s-4); list-style: disc; }
+.bs-nolink { font-size: var(--fs-caption); color: var(--ink-3); text-align: center; }
+.cat-search-chip { display: none; }
+@media (max-width: 560px), (pointer: coarse) and (max-height: 480px) {
+  .cat { gap: var(--s-2); }
+  .cat-search { display: none; }
+  .cat-search.is-open { display: flex; }
+  .cat-search-chip { display: inline-flex; }
+  .cat-kinds, .cat-facets { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--s-4)); padding: 2px var(--s-4); }
+  .cat-kinds::-webkit-scrollbar, .cat-facets::-webkit-scrollbar { display: none; }
+  .cat-kinds .chip, .cat-facets .chip { flex: none; }
+  .cat-facets { position: static; }
+  .cat-count { min-height: 24px; }
+}

@@ -29,7 +29,7 @@ const name = arg('freeze');
 if (!name) { console.error('need --freeze <set-name>'); process.exit(2); }
 
 // Slot names in data/brands.json are not the UI slot names the app equips by.
-// Kept identical to tools/bagshot.mjs — if these drift, every fork/stem bag
+// Kept identical to tools/bagshot.mjs, if these drift, every fork/stem bag
 // reads back as "dropped".
 const SLOT_UI = { pannier: 'pannierR', stembag: 'stemR', forkbag: 'forkR' };
 const slugify = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -64,7 +64,7 @@ brands.forEach((b, bi) => {
     if (!rec) skipped.noRecord++;
 
     // Reference photographs. brands.json carries ONE image per product; the
-    // record's evidence[] carries every photo the reviewer actually opened —
+    // record's evidence[] carries every photo the reviewer actually opened,
     // 1 vs 116 for Apidura. Always prefer the record. (EVAL-PLAN.md §9)
     const local = [], remote = [];
     for (const e of (rec?.evidence || [])) {
@@ -97,7 +97,7 @@ let chosen = items;
 if (holdout) {
   // Stratify by slot so every builder the working set exercises is also
   // represented by brands we are NOT looking at. Deterministic: sorted, then
-  // round-robin across slots — no RNG, so the split is reproducible forever.
+  // round-robin across slots, no RNG, so the split is reproducible forever.
   const bySlot = new Map();
   for (const it of [...items].sort((a, b) => a.slug.localeCompare(b.slug))) {
     if (!bySlot.has(it.slot)) bySlot.set(it.slot, []);
@@ -125,7 +125,7 @@ if (holdout) {
 // ---- write ---------------------------------------------------------------
 const out = join(root, 'evals/sets', name + '.json');
 if (existsSync(out) && !has('force')) {
-  console.error(`${out} already exists. A frozen set is frozen — make a v2 instead (EVAL-PLAN.md §1.1).`);
+  console.error(`${out} already exists. A frozen set is frozen, make a v2 instead (EVAL-PLAN.md §1.1).`);
   process.exit(3);
 }
 mkdirSync(join(root, 'evals/sets'), { recursive: true });

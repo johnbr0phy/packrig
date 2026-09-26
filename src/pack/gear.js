@@ -1,7 +1,7 @@
 /**
  * The gear catalogue: data/gear.json, indexed and searchable.
  *
- * Pure data + string matching — no DOM, no three.js — so the sheet importer
+ * Pure data + string matching, no DOM, no three.js, so the sheet importer
  * can use it in node for the round-trip tests.
  */
 

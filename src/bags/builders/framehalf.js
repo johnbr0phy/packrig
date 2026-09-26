@@ -15,14 +15,14 @@
 //   p.mm.hgt → the DEEPEST height, square to the top tube, down into the triangle
 //   p.mm.wid → world z, the finished thickness
 // Exceptions, read from the record rather than guessed:
-//   hgt: along_seattube (Swift Giddy Up, Road Runner Wedge, Vincita Strada) —
+//   hgt: along_seattube (Swift Giddy Up, Road Runner Wedge, Vincita Strada),
 //        the deep face lies on the SEAT tube, so the bag is anchored there and
 //        its taper is read deep-at-the-seat-tube (the records' nose=1/tail=0.15
 //        is written the other way round from the slot's convention, see below).
-//   len: ±y (Atelier Velocidade Avalanche) — a seat-tube corner pouch whose
+//   len: ±y (Atelier Velocidade Avalanche), a seat-tube corner pouch whose
 //        long side runs DOWN the seat tube: len and hgt swap.
-//   "Corner Bag" (Blackburn) — a triangle in the seat-tube/top-tube corner.
-//   wid: x (Two Wheel Gear Mamquam, not in the catalogue) — a typo for z.
+//   "Corner Bag" (Blackburn), a triangle in the seat-tube/top-tube corner.
+//   wid: x (Two Wheel Gear Mamquam, not in the catalogue), a typo for z.
 // The previous mapping was the same for the 73; the exceptions were drawn as
 // head-tube kites.
 //
@@ -31,7 +31,7 @@
 // hgt (identity.js). Three shapes fall out of the pair:
 //   kite         nose < 0.9 and tail < 0.95 (Apidura): shallow at both ends,
 //                deepest where the lower-front edge, lying ON the down tube, has
-//                got `hgt` deep — the frame supplies the belly position.
+//                got `hgt` deep, the frame supplies the belly position.
 //   deep front   nose ≥ 0.9 (Revelate Tangle, Blackburn, Tailfin, Restrap):
 //                full depth at the head tube, lower edge rising to the tail.
 //   deep rear    tail ≥ 0.95 (Giant H2Pro, Buckhorn, Zefal, the seat-tube wedges)
@@ -48,7 +48,7 @@
 //              faces; counts from the model records. A strap to the down, seat
 //              or head tube is drawn only where the bag touches that tube or
 //              the record's strap can reach it (≤ 100 mm, Revelate's figure for
-//              the Tangle) — never a ladder across a gap.
+//              the Tangle), never a ladder across a gap.
 
 import * as THREE from 'three';
 import { v3 } from '../../lib.js';
@@ -66,7 +66,7 @@ import {
 
 /**
  * Straps and zips from data/models/<brand>.json (apply-models.mjs does not
- * merge them): "TDSH zips" — straps round the Top, Down, Seat, Head tubes,
+ * merge them): "TDSH zips", straps round the Top, Down, Seat, Head tubes,
  * then the zip runs. Generated from the records 25 Sep.
  */
 const HALF_RECORDS = {
@@ -398,7 +398,7 @@ export function buildFrameHalf(p, brand, main, accent, ctx) {
     geos.push(...velcroStrap(F, 1, 0, faceHalf, { tab: 20, bagAt: topO.clone().addScaledVector(ttDir, run * f) }));
   }
   // down, seat and head tubes: at the stretch of the outline that touches the
-  // tube, or — for a strap the record gives a reach — from the nearest point
+  // tube, or, for a strap the record gives a reach, from the nearest point
   for (const [edge, n] of [[3, counts.dt], [0, counts.st], [2, counts.ht]]) {
     if (!n) continue;
     const c = contactOn(fin, cl, R, edge);
@@ -493,7 +493,7 @@ function bottleFloors(ctx) {
   return out;
 }
 
-/** A zip track without its own slider — the legs of a horseshoe. */
+/** A zip track without its own slider, the legs of a horseshoe. */
 function trackOnly(a, b, accent) {
   const dir = b.clone().sub(a);
   const g = new THREE.Mesh(new THREE.BoxGeometry(dir.length(), 3.4, 1.6), accent || webbing());
