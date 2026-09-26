@@ -52,9 +52,14 @@ a stylesheet you can actually reason about.
 | Open a shared link signed out and copy the kit, taps | 2 | 1 |
 | Stylesheets | 8 files, 6305 lines | 8 files, 1276 lines |
 | Distinct hex colours | 64 | 10 |
-| Distinct font sizes (px) | 35, 7 half-pixel | 9, none half-pixel |
+| Distinct font sizes declared in CSS (px) | 35, 7 half-pixel | 9, none half-pixel |
 | Text under its contrast floor, 5 environments x 2 devices x 4 scenes | not measured | 0 (worst 4.92:1) |
-AUDIT_ROWS
+| Bike height on a phone, no sheet or at peek (min over screens) | 25% | 50% (goal 45%) |
+| Bike height on a phone, sheet at half | 25% | 42% (goal 35%) |
+| Bike height with a bag open (the camera frames the bag on purpose) | 26% | 31% |
+| Phone touch targets under 44px (summed over screens) | 116 | 0 |
+| Buttons with no name | 19 | 0 |
+| Font sizes carrying text | 28, 4 under 11px | 9, none under 11px |
 
 Performance, phone profile, CPU throttled 4x, 67 things in 10 open bags: the
 UI costs 0.11 ms a frame idle, 0.23 ms while orbiting, 0.16 ms scrolling the

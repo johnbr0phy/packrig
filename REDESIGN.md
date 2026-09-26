@@ -16,7 +16,8 @@ from (type, colour, space, motion, icons, imagery, accessibility) are in
    went and whether it fits, and share it, in 12 taps.** (Measured:
    `tools/firsttimer.mjs`, 12 on a phone and on a desktop.)
 2. **The bike stays big.** At least 45% of a phone's height with the sheet at
-   its peek, 35% with a sheet at half.
+   its peek, 35% with a sheet at half. (Measured: 50% and 42%. A bag's own
+   sheet frames the bag instead; DECISIONS 9.6.)
 3. **One control per job, and every control says what it does.**
 4. **It says less.** (1.1)
 

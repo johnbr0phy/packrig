@@ -8,7 +8,10 @@ full where the distinction exists, by
 
 into `<out>/<id>-<device>-<state>.png`, with `report.json` beside them. The
 tool fails on any page error, on horizontal page scroll, and with `--twice`
-if the same input gives different pixels. Each shot also records an audit
+if the same input gives different pixels (more than 100 CSS pixels that
+differ by more than 8/255 and touch another differing pixel: a lone pixel on
+a spoke edge is software GL, not a change). Shots run with `?still`, a
+seeded `Math.random` and CSS animations frozen. Each shot also records an audit
 (see "What every shot measures" below).
 
 How each screen is reached lives in one file, `tools/lib/screen-helpers.js`,

@@ -427,7 +427,7 @@
    "bike": {
     "frac": 0.529,
     "clippedX": false,
-    "sheetTop": 627
+    "sheetTop": 623
    },
    "fonts": {
     "16px": 3,
@@ -435,14 +435,11 @@
     "11px": 5,
     "32px": 1
    },
-   "small": 2,
-   "smallList": [
-    "Kilograms 44x36",
-    "Pounds 44x36"
-   ],
+   "small": 0,
+   "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 23,
+  "diffPx": 16,
   "same": true
  },
  {
@@ -490,7 +487,7 @@
    "bike": {
     "frac": 0.514,
     "clippedX": false,
-    "sheetTop": 627
+    "sheetTop": 623
    },
    "fonts": {
     "16px": 3,
@@ -498,14 +495,11 @@
     "11px": 5,
     "32px": 1
    },
-   "small": 2,
-   "smallList": [
-    "Kilograms 44x36",
-    "Pounds 44x36"
-   ],
+   "small": 0,
+   "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 42,
+  "diffPx": 8,
   "same": true
  },
  {
@@ -740,10 +734,8 @@
     "11px": 1,
     "15px": 10
    },
-   "small": 1,
-   "smallList": [
-    "All 43x44"
-   ],
+   "small": 0,
+   "smallList": [],
    "unlabelled": []
   },
   "diffPx": 0,
@@ -809,11 +801,8 @@
     "11px": 2,
     "15px": 10
    },
-   "small": 2,
-   "smallList": [
-    "All 43x44",
-    "StoveFront pocket 207x42"
-   ],
+   "small": 0,
+   "smallList": [],
    "unlabelled": []
   },
   "diffPx": 0,
@@ -879,10 +868,8 @@
     "11px": 2,
     "15px": 6
    },
-   "small": 1,
-   "smallList": [
-    "All 43x44"
-   ],
+   "small": 0,
+   "smallList": [],
    "unlabelled": []
   },
   "diffPx": 0,
@@ -1343,14 +1330,11 @@
     "11px": 6,
     "32px": 1
    },
-   "small": 2,
-   "smallList": [
-    "Kilograms 44x36",
-    "Pounds 44x36"
-   ],
+   "small": 0,
+   "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 8,
+  "diffPx": 3,
   "same": true
  },
  {
@@ -1570,7 +1554,7 @@
    "bike": {
     "frac": 0.529,
     "clippedX": false,
-    "sheetTop": 627
+    "sheetTop": 623
    },
    "fonts": {
     "16px": 3,
@@ -1579,16 +1563,11 @@
     "32px": 1,
     "15px": 7
    },
-   "small": 4,
-   "smallList": [
-    "Kilograms 44x36",
-    "Pounds 44x36",
-    "Kilograms 44x40",
-    "Pounds 44x40"
-   ],
+   "small": 0,
+   "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 10,
+  "diffPx": 14,
   "same": true
  },
  {
@@ -1642,7 +1621,7 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 4,
+  "diffPx": 2,
   "same": true
  },
  {
@@ -1690,7 +1669,7 @@
    "bike": {
     "frac": 0.514,
     "clippedX": false,
-    "sheetTop": 627
+    "sheetTop": 623
    },
    "fonts": {
     "16px": 3,
@@ -1698,14 +1677,11 @@
     "11px": 5,
     "32px": 1
    },
-   "small": 2,
-   "smallList": [
-    "Kilograms 44x36",
-    "Pounds 44x36"
-   ],
+   "small": 0,
+   "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 31,
+  "diffPx": 8,
   "same": true
  },
  {
@@ -1755,7 +1731,7 @@
    "bike": {
     "frac": 0.531,
     "clippedX": false,
-    "sheetTop": 627
+    "sheetTop": 623
    },
    "fonts": {
     "16px": 3,
@@ -1763,14 +1739,11 @@
     "11px": 5,
     "32px": 1
    },
-   "small": 2,
-   "smallList": [
-    "Kilograms 44x36",
-    "Pounds 44x36"
-   ],
+   "small": 0,
+   "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 10,
+  "diffPx": 30,
   "same": true
  }
 ]
