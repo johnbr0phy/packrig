@@ -28,7 +28,9 @@ window.__catalogue = async (slot) => {
 window.__product = async (slot) => { app.ui.setSelected(slot); };
 window.__inside = window.__product;
 window.__item = async (name) => {
-  const u = app.pack.state.locker.items.find((i) => i.name === name).uid;
+  // two things can share a name; take the one this trip has packed
+  const all = app.pack.state.locker.items.filter((i) => i.name === name);
+  const u = (all.find((i) => app.pack.state.loadout.place[i.uid]) || all[0]).uid;
   // an item in a bag is reached through the bag: open it, then tap the row
   const slot = (app.pack.state.loadout.place[u] || '').split(':')[0];
   if (app.bags.equipped[slot]) app.ui.setSelected(slot);
