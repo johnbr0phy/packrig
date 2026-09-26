@@ -2,62 +2,15 @@
  {
   "flow": "firsttimer",
   "device": "phone",
-  "ok": true,
-  "taps": 12,
-  "hesitations": [
-   "scroll to find \"Sleeping mat\"",
-   "scroll to find \"Stove & gas\"",
-   "scroll to find \"Rain jacket\""
-  ],
+  "ok": false,
+  "taps": 2,
+  "hesitations": [],
   "steps": [
    "1. Build a rig",
-   "2. the seat pack ring on the bike",
-   "3. a seat pack",
-   "4. a handlebar bag",
-   "5. a frame bag",
-   "6. Done",
-   "7. Tent",
-   "8. Sleeping mat",
-   "9. Stove & gas",
-   "10. Rain jacket",
-   "11. Share",
-   "12. Copy link"
+   "2. the seat pack ring on the bike"
   ],
-  "result": {
-   "ok": true,
-   "summary": "3 bags; One-person tent → barroll, Inflatable sleeping mat → framebag_half, Stove → framebag_half, Gas canister → seatpack, Lighter → framebag_half, Rain jacket → barroll; tiles say: Bar roll / Half frame bag / Half frame bag / Bar roll"
-  },
-  "why": "",
-  "seconds": 53
- },
- {
-  "flow": "firsttimer",
-  "device": "desktop",
-  "ok": true,
-  "taps": 12,
-  "hesitations": [
-   "scroll to find \"Stove & gas\"",
-   "scroll to find \"Rain jacket\""
-  ],
-  "steps": [
-   "1. Build a rig",
-   "2. the seat pack ring on the bike",
-   "3. a seat pack",
-   "4. a handlebar bag",
-   "5. a frame bag",
-   "6. Done",
-   "7. Tent",
-   "8. Sleeping mat",
-   "9. Stove & gas",
-   "10. Rain jacket",
-   "11. Share",
-   "12. Copy link"
-  ],
-  "result": {
-   "ok": true,
-   "summary": "3 bags; One-person tent → barroll, Inflatable sleeping mat → framebag_half, Stove → framebag_half, Gas canister → seatpack, Lighter → framebag_half, Rain jacket → barroll; tiles say: Bar roll / Half frame bag / Half frame bag / Bar roll"
-  },
-  "why": "",
-  "seconds": 91
+  "result": null,
+  "why": "Node is either not clickable or not an Element",
+  "seconds": 16
  }
 ]
