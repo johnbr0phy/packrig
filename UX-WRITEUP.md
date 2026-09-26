@@ -47,7 +47,7 @@ a stylesheet you can actually reason about.
 |---|---|---|
 | First timer (pick a bike, 3 bags, 4 things, share), phone taps | did not finish (13, a button covered) | 12, finished |
 | First timer, desktop taps | 19 | 12 |
-| Build a rig from nothing, taps | 16 | 9 |
+| Build a rig from nothing (4 bags, rename it; the Enter that saves the name counts), taps | 17 | 10 |
 | Import the owner's sheet and find the heaviest bag, taps | did not finish (7) | 5 |
 | Open a shared link signed out and copy the kit, taps | 2 | 1 |
 | Stylesheets | 8 files, 6305 lines | 8 files, 1276 lines |
