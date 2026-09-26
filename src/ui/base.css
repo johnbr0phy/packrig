@@ -117,7 +117,7 @@ ul { padding: 0; list-style: none; }
 .chip:hover { background: var(--fill-2); color: var(--ink-1); }
 .chip.on { background: var(--ink-1); color: var(--ink-on-plate); border-color: transparent; }
 .chip .n { color: inherit; opacity: 0.65; font-variant-numeric: tabular-nums; }
-@media (pointer: coarse) { .chip { min-height: var(--target); } }
+@media (pointer: coarse) { .chip { min-height: var(--target); min-width: var(--target); justify-content: center; } }
 
 /* a two-way segmented switch (kg | lb) */
 .seg { display: inline-flex; padding: 2px; border-radius: var(--r-pill); background: var(--fill-1); border: 1px solid var(--hairline); }
@@ -126,7 +126,7 @@ ul { padding: 0; list-style: none; }
   font-size: var(--fs-caption); font-weight: 600; color: var(--ink-3);
 }
 .seg button.on { background: var(--fill-3); color: var(--ink-1); }
-@media (pointer: coarse) { .seg button { min-height: 40px; min-width: 44px; } }
+@media (pointer: coarse) { .seg { padding: 0; } .seg button { min-height: var(--target); min-width: var(--target); } }
 
 /* ---- inputs ------------------------------------------------------------------- */
 .input {

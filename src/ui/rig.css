@@ -26,7 +26,7 @@
 }
 .rg-nums-head { display: flex; align-items: center; justify-content: space-between; min-height: 28px; }
 .rg-nums-head .seg button { min-height: 26px; }
-@media (pointer: coarse) { .rg-nums-head .seg button { min-height: 36px; } }
+@media (pointer: coarse) { .rg-nums-head .seg button { min-height: var(--target); } }
 .rg-nums-main { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); }
 .rg-allup { font-size: var(--fs-display); font-weight: 650; letter-spacing: var(--tr-display); line-height: 1; white-space: nowrap; }
 .rg-allup .unit { font-size: var(--fs-title3); }

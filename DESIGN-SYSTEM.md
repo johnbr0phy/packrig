@@ -90,21 +90,21 @@ White at an alpha, one polarity for every scene.
 |---|---|---|
 | `--ink-1` | white 0.96 | titles, values |
 | `--ink-2` | white 0.74 | body, secondary values |
-| `--ink-3` | white 0.56 | labels, units, metadata (text at 11px and up) |
+| `--ink-3` | white 0.60 | labels, units, metadata (text at 11px and up) |
 | `--ink-4` | white 0.28 | dividers, handles; never text |
 | `--ink-on-accent` | `#24120A` | text on Ember |
 | `--ink-on-plate` | `#16181C` | text on a white chip or plate |
 
-`--ink-3` was 0.48; it is 0.56 so 13px metadata clears 4.5:1 over every
-environment (measured, section 9.1).
+`--ink-3` was 0.48; it is 0.60 so 11px labels and 13px metadata clear
+4.5:1 over every environment (measured, section 9.1).
 
 ### 3.2 Glass
 
 | Level | Background | Filter | Border | Used for |
 |---|---|---|---|---|
-| E1 | `rgba(14,15,17,0.56)` | `blur(16px) saturate(70%) brightness(0.8)` | white 0.10 | chips on the canvas, the coach mark |
-| E2 | `rgba(14,15,17,0.60)` | `blur(28px) saturate(55%) brightness(0.62)` | white 0.12 | the rig panel, example chips |
-| E3 | `rgba(14,15,17,0.66)` | `blur(36px) saturate(45%) brightness(0.55)` | white 0.14 | sheets, the phone start slab, the tunnel panel |
+| E1 | `rgba(14,15,17,0.62)` | `blur(16px) saturate(60%) brightness(0.6)` | white 0.10 | chips on the canvas, the coach mark |
+| E2 | `rgba(14,15,17,0.64)` | `blur(28px) saturate(50%) brightness(0.5)` | white 0.12 | the rig panel, example chips |
+| E3 | `rgba(14,15,17,0.66)` | `blur(36px) saturate(45%) brightness(0.48)` | white 0.14 | sheets, the phone start slab, the tunnel panel |
 | E4 | `rgba(24,26,30,0.96)` | none | white 0.16 | popovers, the More menu, the toast |
 
 **Why the filter and not the alpha.** The old glass sampled the scene through

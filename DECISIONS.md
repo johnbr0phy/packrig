@@ -527,17 +527,23 @@ for each call. `UX-WRITEUP.md` is the short version; `LOG.md` has what broke.
 ### 9.6 Visual system
 
 - **Glass is neutral.** The brown was the desert sampled through a blur with
-  `saturate(150%)`. The glass now samples through `saturate(45 to 70%)
-  brightness(0.55 to 0.8)`: the scene still shows through, its colour does
+  `saturate(150%)`. The glass now samples through `saturate(45 to 60%)
+  brightness(0.48 to 0.6)`: the scene still shows through, its colour does
   not. `DESIGN-SYSTEM.md` §3.2 changed to match.
 - **One type ramp of eight integer sizes**: 56 (40 on a phone), 32, 24, 20,
   16, 15, 13, 11. Body is 15 (13 for secondary), labels 11. No half pixels.
 - **No slashed zero.** In Inter it reads as a code font next to prose; the
   figures stay tabular.
-- **Ink-3 raised from 0.48 to 0.56 alpha** so 13 px metadata passes 4.5:1
+- **Ink-3 raised from 0.48 to 0.60 alpha** so 11 px labels pass 4.5:1
   over every environment (see the contrast check in LOG.md).
 - **The stylesheets are one per surface on one token file**: tokens, base,
   shell, rig, bags, pack, menu, aero. `ui.css`, `theme.css`, `sheet.css`,
   `builder.css` and the dead `rigs.css` are deleted; `menu.css` and
   `aero.css` were rewritten.
 - **Desktop and phone breakpoints stay MOBILE.md's**: 560 and 900.
+- **A bag's sheet frames the bag, not the bike.** The 35%-at-half target is
+  for the bike; with a bag open the camera fills the free area with the bag
+  and its surroundings (the bike is about 30% of the height, cut by the
+  sheet), because what is in the bag is the point of that screen.
+- **Someone else's rig opens at half**, not peek, so Copy to my kit is in
+  reach without a drag; the bike is 42% of the height there.

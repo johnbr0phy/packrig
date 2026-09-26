@@ -13,7 +13,7 @@
 .pkg-lhead { margin: var(--s-3) 0 var(--s-1); font-size: var(--fs-label); font-weight: 650; letter-spacing: var(--tr-label); text-transform: uppercase; color: var(--ink-3); }
 .pkg-lrow { display: flex; align-items: center; gap: var(--s-3); min-height: 60px; padding: var(--s-1) 0; border-bottom: 1px solid var(--hairline); }
 .pkg-lrow .pkg-thumb { width: 44px; height: 44px; border-radius: var(--r-thumb); background: var(--fill-1); object-fit: contain; flex: none; }
-.pkg-lrow-t { flex: 1; min-width: 0; display: flex; flex-direction: column; text-align: left; }
+.pkg-lrow-t { flex: 1; min-width: 0; min-height: var(--target); display: flex; flex-direction: column; justify-content: center; text-align: left; }
 .pkg-lrow-t:hover .pkg-item-n { text-decoration: underline; text-underline-offset: 3px; }
 .pkg-item-n { font-size: var(--fs-body); font-weight: 550; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pkg-item-s { font-size: var(--fs-caption); color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
