@@ -98,22 +98,25 @@ function pixelsOf(_p, buf) {
   }
   return out;
 }
-function diffCount(a, b, w) {
+function diffCount(a, b, w, dpr = 1) {
   if (!a || !b || a.length !== b.length) return -1;
-  const n = a.length / 4, off = new Uint8Array(n);
-  for (let i = 0; i < n; i++) {
-    const j = i * 4;
-    if (Math.max(Math.abs(a[j] - b[j]), Math.abs(a[j + 1] - b[j + 1]), Math.abs(a[j + 2] - b[j + 2])) > 8) off[i] = 1;
+  // judged in CSS pixels: one flipped CSS pixel is a dpr x dpr block
+  const h = a.length / 4 / w, cw = Math.floor(w / dpr), ch = Math.floor(h / dpr), off = new Uint8Array(cw * ch);
+  for (let y = 0; y < ch * dpr; y++) {
+    for (let x = 0; x < cw * dpr; x++) {
+      const j = (y * w + x) * 4;
+      if (Math.max(Math.abs(a[j] - b[j]), Math.abs(a[j + 1] - b[j + 1]), Math.abs(a[j + 2] - b[j + 2])) > 8) off[((y / dpr) | 0) * cw + ((x / dpr) | 0)] = 1;
+    }
   }
-  // software GL flips single pixels along spoke edges run to run; a real
-  // difference (text, a ring, a moved edge) is a clump, so count only pixels
-  // with a differing neighbour
+  // software GL flips single pixels along spoke and shell edges run to run;
+  // a real difference (text, a ring, a moved edge) is a clump, so count only
+  // CSS pixels with a differing neighbour
   let c = 0;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < off.length; i++) {
     if (!off[i]) continue;
-    const x = i % w;
-    if ((x > 0 && off[i - 1]) || (x < w - 1 && off[i + 1]) || off[i - w] || off[i + w]
-      || (x > 0 && (off[i - w - 1] || off[i + w - 1])) || (x < w - 1 && (off[i - w + 1] || off[i + w + 1]))) c++;
+    const x = i % cw;
+    if ((x > 0 && off[i - 1]) || (x < cw - 1 && off[i + 1]) || off[i - cw] || off[i + cw]
+      || (x > 0 && (off[i - cw - 1] || off[i + cw - 1])) || (x < cw - 1 && (off[i - cw + 1] || off[i + cw + 1]))) c++;
   }
   return c;
 }
@@ -237,7 +240,7 @@ for (const [id, state, setup] of SCREENS) {
       // decoded pixels, not bytes: software GL rasterises a few dozen sub-pixel
       // spoke edges differently run to run; more than 100 clumped pixels (~0.01%) off
       // by more than 8/255 is a real difference
-      const off = diffCount(r.px, r2.px, r.w);
+      const off = diffCount(r.px, r2.px, r.w, DEVICES[device].deviceScaleFactor || 1);
       row.diffPx = off;
       row.same = off >= 0 && off <= 100;
       if (!row.same) { fails++; }
