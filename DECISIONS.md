@@ -547,3 +547,9 @@ for each call. `UX-WRITEUP.md` is the short version; `LOG.md` has what broke.
   sheet), because what is in the bag is the point of that screen.
 - **Someone else's rig opens at half**, not peek, so Copy to my kit is in
   reach without a drag; the bike is 42% of the height there.
+- **Fork bags sit level (owner's call, after the pass).** The brake-side bag
+  used to stand 62 mm higher to clear the rotor and caliper from above. Both
+  now take the drive side's height; the brake-side bag clears the caliper
+  across the bike (nearest point 2.4 mm from its box, nothing inside it).
+  The one builder change: `src/bags/builders/forkbag.js` reads the floor on
+  the drive side for both legs.

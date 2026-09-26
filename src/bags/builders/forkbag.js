@@ -49,11 +49,12 @@
 //                  its TubeGeometry path and radius; bike.js literals are only
 //                  a fallback if that mesh is not found
 //   stack          blade surface -> plate (PLATE_T) -> CAGE_DEPTH gap -> fabric
-//   floor          everything else round the front hub on THIS side (hub,
-//                  flange, and on the brake side the rotor and caliper), found
-//                  by scanning ctx.frameGroup: fabric >= CLEAR above it, the
-//                  plate's lower bolt >= 6 mm above it. So the brake-side bag
-//                  stands higher than the drive-side one.
+//   floor          everything round the front hub on the DRIVE side (hub,
+//                  flange), found by scanning ctx.frameGroup: fabric >= CLEAR
+//                  above it, the plate's lower bolt >= 6 mm above it. Both
+//                  bags use it, so the pair sits level (the owner's call); the
+//                  brake-side bag clears the rotor and caliper across the
+//                  bike, not above them.
 //   base           a fifth of the leg above the axle, or the floor if higher
 //   top            under 90% of the leg (hands and bar ends), base lowered
 //                  toward the floor for a tall bag before the top overruns
@@ -294,7 +295,8 @@ export function buildForkbag(p, brand, main, accent, ctx, side) {
   // First pass for the lean: the whole blade chord.
   const chord = blade.at(0).clone().sub(blade.at(1)).normalize();
   const sinL = Math.abs(chord.x), cosL = Math.abs(chord.y);
-  const floorY = wheelFloor(ctx, side, axle);
+  // the drive side's floor for both legs: a pair of fork bags sits level
+  const floorY = wheelFloor(ctx, 1, axle);
   const minBase = Math.max(
     floorY + CLEAR + B0 * sinL + 4,                    // fabric's rear-bottom corner
     floorY + 6 + PLATE_DROP * cosL,                    // the plate's foot and lower bolt
