@@ -28,6 +28,7 @@ export function createPack3D(app) {
   let outside = new THREE.Group();
   outside.name = 'pack:outside';
   const tweens = new Set();
+  let starting = 0;               // item moves waiting on their stagger delay
   let com = null;
 
   // ---- shell translucency ------------------------------------------------------
@@ -170,12 +171,13 @@ export function createPack3D(app) {
       }
       const from = { p: node.position.clone(), q: node.quaternion.clone(), s: node.scale.clone() };
       const delay = Math.min(i++, 8) * 18;
-      setTimeout(() => tween(animate ? D_MOVE : 0, (k) => {
+      starting++;
+      setTimeout(() => { starting--; tween(animate ? D_MOVE : 0, (k) => {
         const e = EASE(k);
         node.position.lerpVectors(from.p, to.pos, e);
         node.quaternion.slerpQuaternions(from.q, to.q, e);
         node.scale.lerpVectors(from.s, to.scale, e);
-      }), animate ? delay : 0);
+      }); }, animate ? delay : 0);
     }
     for (const [uid, node] of rec.items) {
       if (keep.has(uid)) continue;
@@ -352,6 +354,8 @@ export function createPack3D(app) {
 
   return {
     showBag, closeBag, closeAll, showOutside, showCoM, tick, itemWorldPositions,
+    /** Something is still moving: the bike's outline is not final yet. */
+    get busy() { return tweens.size > 0 || starting > 0; },
     isOpen: (slot) => !!bags.get(slot)?.open,
     openSlots: () => [...bags.keys()],
     clearOutside() { outside.clear(); app.bike.frameGroup.remove(outside); },

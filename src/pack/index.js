@@ -230,8 +230,13 @@ export function initPack(app) {
     }
     for (const fn of listeners) fn(state);
     // things hanging off the bike change its outline: refit once they settle
+    // (and not mid-move: at a few frames a second a tween can outlast the wait)
     clearTimeout(refitTimer);
-    refitTimer = setTimeout(() => { refitTimer = null; app.framing?.invalidate(); app.framing?.update(); }, 700);
+    const refit = () => {
+      if (scene3d.busy) { refitTimer = setTimeout(refit, 100); return; }
+      refitTimer = null; app.framing?.invalidate(); app.framing?.update();
+    };
+    refitTimer = setTimeout(refit, 700);
     return state;
   }
 
