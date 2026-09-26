@@ -2,16 +2,33 @@
  {
   "flow": "firsttimer",
   "device": "phone",
-  "ok": false,
-  "taps": 2,
-  "hesitations": [],
+  "ok": true,
+  "taps": 12,
+  "hesitations": [
+   "scroll to find \"Sleeping mat\"",
+   "scroll to find \"Stove & gas\"",
+   "scroll to find \"Rain jacket\""
+  ],
   "steps": [
    "1. Build a rig",
-   "2. the seat pack ring on the bike"
+   "2. the seat pack ring on the bike",
+   "3. a seat pack",
+   "4. a handlebar bag",
+   "5. a frame bag",
+   "6. Done",
+   "7. Tent",
+   "8. Sleeping mat",
+   "9. Stove & gas",
+   "10. Rain jacket",
+   "11. Share",
+   "12. Copy link"
   ],
-  "result": null,
-  "why": "Node is either not clickable or not an Element",
-  "seconds": 16
+  "result": {
+   "ok": true,
+   "summary": "3 bags; One-person tent → barroll, Inflatable sleeping mat → framebag_half, Stove → framebag_half, Gas canister → seatpack, Lighter → framebag_half, Rain jacket → barroll; tiles say: Bar roll / Half frame bag / Half frame bag / Bar roll"
+  },
+  "why": "",
+  "seconds": 59
  },
  {
   "flow": "firsttimer",
@@ -41,7 +58,7 @@
    "summary": "3 bags; One-person tent → barroll, Inflatable sleeping mat → framebag_half, Stove → framebag_half, Gas canister → seatpack, Lighter → framebag_half, Rain jacket → barroll; tiles say: Bar roll / Half frame bag / Half frame bag / Bar roll"
   },
   "why": "",
-  "seconds": 96
+  "seconds": 108
  },
  {
   "flow": "build",
@@ -66,7 +83,7 @@
    "summary": "seatpack, barroll, framebag_half, toptube · \"Highland overnighter\""
   },
   "why": "",
-  "seconds": 45
+  "seconds": 49
  },
  {
   "flow": "build",
@@ -91,7 +108,7 @@
    "summary": "seatpack, barroll, framebag_half, toptube · \"Highland overnighter\""
   },
   "why": "",
-  "seconds": 72
+  "seconds": 93
  },
  {
   "flow": "import",
@@ -113,7 +130,7 @@
    "summary": "67 items, 8 bags; heaviest on screen: framebag_half (1800 g); solver says framebag_half"
   },
   "why": "",
-  "seconds": 24
+  "seconds": 27
  },
  {
   "flow": "import",
@@ -133,7 +150,7 @@
    "summary": "67 items, 8 bags; heaviest on screen: framebag_half (1800 g); solver says framebag_half"
   },
   "why": "",
-  "seconds": 47
+  "seconds": 48
  },
  {
   "flow": "shared",
@@ -165,7 +182,7 @@
    "summary": "67 items in my kit"
   },
   "why": "",
-  "seconds": 31
+  "seconds": 32
  },
  {
   "flow": "keyboard",
@@ -187,9 +204,9 @@
   ],
   "result": {
    "ok": true,
-   "summary": "seatpack; sheet \"Seat pack\" opened with focus on .sheet-close; after Escape focus is on .rg-bag sel; focus ring visible: true"
+   "summary": "seatpack; sheet \"Seat pack\" opened with focus on .sheet-close; after Escape focus is on .rg-bag; focus ring visible: true"
   },
   "why": "",
-  "seconds": 63
+  "seconds": 61
  }
 ]

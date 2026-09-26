@@ -89,10 +89,10 @@ out, everything but Save works, as before.
 
 ## Next
 
-1. **The first timer still scrolls.** Four of the phone's hesitations are
-   scrolling My kit to find tent, mat, stove and jacket. The quick tiles
-   cover them on an empty trip; the catalogue should rank the same twelve
-   first when searching is empty.
+1. **The first timer still scrolls.** All three of the phone's hesitations
+   are scrolling the rig panel to reach the mat, stove and jacket tiles
+   under the bags. On a short trip the tiles should come before the bags,
+   or the panel should open far enough to show a row of them.
 2. **Drag and drop on a phone.** The item sheet is the tap path; a long
    press to drag onto the bike would be faster for moving many things.
 3. **Real photos for every bag.** 3D thumbnails fill the gaps and read

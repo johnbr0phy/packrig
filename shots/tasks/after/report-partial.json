@@ -1,16 +1,27 @@
 [
  {
-  "flow": "firsttimer",
+  "flow": "build",
   "device": "phone",
-  "ok": false,
-  "taps": 2,
+  "ok": true,
+  "taps": 10,
   "hesitations": [],
   "steps": [
    "1. Build a rig",
-   "2. the seat pack ring on the bike"
+   "2. the seat pack ring",
+   "3. a seat pack",
+   "4. a handlebar bag",
+   "5. a frame bag",
+   "6. a top tube bag",
+   "7. Done",
+   "8. the rig name, to rename it",
+   "9. type a name",
+   "10. key Enter"
   ],
-  "result": null,
-  "why": "Node is either not clickable or not an Element",
-  "seconds": 16
+  "result": {
+   "ok": true,
+   "summary": "seatpack, barroll, framebag_half, toptube · \"Highland overnighter\""
+  },
+  "why": "",
+  "seconds": 52
  }
 ]

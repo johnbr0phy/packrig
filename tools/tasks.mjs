@@ -66,10 +66,23 @@ for (const [name, flow] of Object.entries(FLOWS)) {
         const moved = await h.evaluate((n) => { const a = n.getBoundingClientRect().top; n.scrollIntoView({ block: 'nearest' }); return Math.abs(n.getBoundingClientRect().top - a) > 4; });
         if (moved) { hes.push(`scroll to find "${text || sel}"`); await new Promise((r) => setTimeout(r, 300)); }
         // a finger lands on the middle of the control; if something else is on top, it hits that
-        // a person waits for a sheet to finish arriving: give it 2.5 s to be on top
+        // a person waits for a sheet to finish arriving: give it 5 s to be on top
         let hit = false;
-        for (let i = 0; i < 25 && !hit; i++) {
-          hit = await h.evaluate((n) => { const r = n.getBoundingClientRect(); const x = r.left + r.width / 2, y = r.top + r.height / 2; const top = document.elementFromPoint(x, y); return !top || n === top || n.contains(top); });
+        // (off screen is not on top: a sheet still sliding in holds its rows
+        // below the fold, and a finger cannot land there; nor does a finger
+        // tap a control that is still moving, so it must hold still for 100 ms)
+        let was = null;
+        for (let i = 0; i < 50 && !hit; i++) {
+          const at = await h.evaluate((n) => {
+            if (!n.isConnected) return null;
+            n.scrollIntoView({ block: 'nearest' });
+            const r = n.getBoundingClientRect(); const x = r.left + r.width / 2, y = r.top + r.height / 2;
+            if (x < 0 || y < 0 || x >= innerWidth || y >= innerHeight) return null;
+            const top = document.elementFromPoint(x, y);
+            return top && (n === top || n.contains(top)) ? `${Math.round(x)},${Math.round(y)}` : null;
+          });
+          hit = !!at && at === was;
+          was = at;
           if (!hit) await new Promise((r) => setTimeout(r, 100));
         }
         if (!hit) {
