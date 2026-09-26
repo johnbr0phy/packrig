@@ -3,7 +3,7 @@
   "id": "S01-start",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S01-start-desktop-full.png",
+  "file": "shots/final-raw/S01-start-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -24,14 +24,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 88,
+  "diffPx": 12,
   "same": true
  },
  {
   "id": "S01-start",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S01-start-phone-full.png",
+  "file": "shots/final-raw/S01-start-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -49,14 +49,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 3,
+  "diffPx": 2,
   "same": true
  },
  {
   "id": "S02-setup",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S02-setup-desktop-full.png",
+  "file": "shots/final-raw/S02-setup-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -69,20 +69,21 @@
     "16px": 1,
     "13px": 5,
     "11px": 5,
-    "15px": 4
+    "32px": 1,
+    "15px": 5
    },
    "small": 0,
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 89,
+  "diffPx": 47,
   "same": true
  },
  {
   "id": "S02-setup",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S02-setup-phone-full.png",
+  "file": "shots/final-raw/S02-setup-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -102,14 +103,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 3,
+  "diffPx": 2,
   "same": true
  },
  {
   "id": "S03-gallery",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S03-gallery-desktop-full.png",
+  "file": "shots/final-raw/S03-gallery-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -130,14 +131,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 75,
+  "diffPx": 30,
   "same": true
  },
  {
   "id": "S03-gallery",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S03-gallery-phone-full.png",
+  "file": "shots/final-raw/S03-gallery-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -157,14 +158,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 2,
+  "diffPx": 5,
   "same": true
  },
  {
   "id": "S04-builder",
   "state": "empty",
   "device": "desktop",
-  "file": "shots/after-raw/S04-builder-desktop-empty.png",
+  "file": "shots/final-raw/S04-builder-desktop-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -185,14 +186,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 19,
+  "diffPx": 35,
   "same": true
  },
  {
   "id": "S04-builder",
   "state": "empty",
   "device": "phone",
-  "file": "shots/after-raw/S04-builder-phone-empty.png",
+  "file": "shots/final-raw/S04-builder-phone-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -210,14 +211,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 6,
+  "diffPx": 12,
   "same": true
  },
  {
   "id": "S05-mounts",
   "state": "empty",
   "device": "desktop",
-  "file": "shots/after-raw/S05-mounts-desktop-empty.png",
+  "file": "shots/final-raw/S05-mounts-desktop-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -236,14 +237,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 95,
+  "diffPx": 8,
   "same": true
  },
  {
   "id": "S05-mounts",
   "state": "empty",
   "device": "phone",
-  "file": "shots/after-raw/S05-mounts-phone-empty.png",
+  "file": "shots/final-raw/S05-mounts-phone-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -269,7 +270,7 @@
   "id": "S06-catalogue",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S06-catalogue-desktop-full.png",
+  "file": "shots/final-raw/S06-catalogue-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -295,14 +296,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 53,
+  "diffPx": 17,
   "same": true
  },
  {
   "id": "S06-catalogue",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S06-catalogue-phone-full.png",
+  "file": "shots/final-raw/S06-catalogue-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -321,14 +322,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 12,
+  "diffPx": 7,
   "same": true
  },
  {
   "id": "S07-product",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S07-product-desktop-full.png",
+  "file": "shots/final-raw/S07-product-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -351,14 +352,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 27,
+  "diffPx": 5,
   "same": true
  },
  {
   "id": "S07-product",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S07-product-phone-full.png",
+  "file": "shots/final-raw/S07-product-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -378,14 +379,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 4,
+  "diffPx": 2,
   "same": true
  },
  {
   "id": "S08-rig",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S08-rig-desktop-full.png",
+  "file": "shots/final-raw/S08-rig-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -413,14 +414,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 84,
+  "diffPx": 42,
   "same": true
  },
  {
   "id": "S08-rig",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S08-rig-phone-full.png",
+  "file": "shots/final-raw/S08-rig-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -439,14 +440,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 16,
+  "diffPx": 6,
   "same": true
  },
  {
   "id": "S08-rig",
   "state": "packed",
   "device": "desktop",
-  "file": "shots/after-raw/S08-rig-desktop-packed.png",
+  "file": "shots/final-raw/S08-rig-desktop-packed.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -473,14 +474,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 64,
+  "diffPx": 37,
   "same": true
  },
  {
   "id": "S08-rig",
   "state": "packed",
   "device": "phone",
-  "file": "shots/after-raw/S08-rig-phone-packed.png",
+  "file": "shots/final-raw/S08-rig-phone-packed.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -506,7 +507,7 @@
   "id": "S09-inside",
   "state": "empty",
   "device": "desktop",
-  "file": "shots/after-raw/S09-inside-desktop-empty.png",
+  "file": "shots/final-raw/S09-inside-desktop-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -529,14 +530,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 11,
+  "diffPx": 6,
   "same": true
  },
  {
   "id": "S09-inside",
   "state": "empty",
   "device": "phone",
-  "file": "shots/after-raw/S09-inside-phone-empty.png",
+  "file": "shots/final-raw/S09-inside-phone-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -556,14 +557,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 3,
+  "diffPx": 0,
   "same": true
  },
  {
   "id": "S09-inside",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S09-inside-desktop-full.png",
+  "file": "shots/final-raw/S09-inside-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -586,14 +587,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 27,
+  "diffPx": 18,
   "same": true
  },
  {
   "id": "S09-inside",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S09-inside-phone-full.png",
+  "file": "shots/final-raw/S09-inside-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -620,7 +621,7 @@
   "id": "S10-wontfit",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S10-wontfit-desktop-full.png",
+  "file": "shots/final-raw/S10-wontfit-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -644,14 +645,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 21,
+  "diffPx": 5,
   "same": true
  },
  {
   "id": "S10-wontfit",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S10-wontfit-phone-full.png",
+  "file": "shots/final-raw/S10-wontfit-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -671,14 +672,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 6,
+  "diffPx": 0,
   "same": true
  },
  {
   "id": "S11-kit",
   "state": "empty",
   "device": "desktop",
-  "file": "shots/after-raw/S11-kit-desktop-empty.png",
+  "file": "shots/final-raw/S11-kit-desktop-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -711,14 +712,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 45,
+  "diffPx": 7,
   "same": true
  },
  {
   "id": "S11-kit",
   "state": "empty",
   "device": "phone",
-  "file": "shots/after-raw/S11-kit-phone-empty.png",
+  "file": "shots/final-raw/S11-kit-phone-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -745,7 +746,7 @@
   "id": "S11-kit",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S11-kit-desktop-full.png",
+  "file": "shots/final-raw/S11-kit-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -761,7 +762,7 @@
     "11px": 2,
     "15px": 11
    },
-   "small": 22,
+   "small": 21,
    "smallList": [
     "All 43x36",
     "Sleep 62x36",
@@ -778,14 +779,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 24,
+  "diffPx": 21,
   "same": true
  },
  {
   "id": "S11-kit",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S11-kit-phone-full.png",
+  "file": "shots/final-raw/S11-kit-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -812,7 +813,7 @@
   "id": "S12-custom",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S12-custom-desktop-full.png",
+  "file": "shots/final-raw/S12-custom-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -845,14 +846,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 46,
+  "diffPx": 9,
   "same": true
  },
  {
   "id": "S12-custom",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S12-custom-phone-full.png",
+  "file": "shots/final-raw/S12-custom-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -879,7 +880,7 @@
   "id": "S13-quick",
   "state": "empty",
   "device": "desktop",
-  "file": "shots/after-raw/S13-quick-desktop-empty.png",
+  "file": "shots/final-raw/S13-quick-desktop-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -901,14 +902,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 93,
+  "diffPx": 13,
   "same": true
  },
  {
   "id": "S13-quick",
   "state": "empty",
   "device": "phone",
-  "file": "shots/after-raw/S13-quick-phone-empty.png",
+  "file": "shots/final-raw/S13-quick-phone-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -927,14 +928,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 15,
+  "diffPx": 7,
   "same": true
  },
  {
   "id": "S13-quick",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S13-quick-desktop-full.png",
+  "file": "shots/final-raw/S13-quick-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -956,14 +957,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 89,
+  "diffPx": 12,
   "same": true
  },
  {
   "id": "S13-quick",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S13-quick-phone-full.png",
+  "file": "shots/final-raw/S13-quick-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -982,14 +983,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 12,
+  "diffPx": 9,
   "same": true
  },
  {
   "id": "S14-item",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S14-item-desktop-full.png",
+  "file": "shots/final-raw/S14-item-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1023,14 +1024,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 17,
+  "diffPx": 29,
   "same": true
  },
  {
   "id": "S14-item",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S14-item-phone-full.png",
+  "file": "shots/final-raw/S14-item-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1051,14 +1052,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 4,
+  "diffPx": 9,
   "same": true
  },
  {
   "id": "S15-trips",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S15-trips-desktop-full.png",
+  "file": "shots/final-raw/S15-trips-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1090,14 +1091,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 49,
+  "diffPx": 19,
   "same": true
  },
  {
   "id": "S15-trips",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S15-trips-phone-full.png",
+  "file": "shots/final-raw/S15-trips-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1115,14 +1116,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 3,
+  "diffPx": 0,
   "same": true
  },
  {
   "id": "S16-compare",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S16-compare-desktop-full.png",
+  "file": "shots/final-raw/S16-compare-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1142,14 +1143,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 28,
+  "diffPx": 16,
   "same": true
  },
  {
   "id": "S16-compare",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S16-compare-phone-full.png",
+  "file": "shots/final-raw/S16-compare-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1176,7 +1177,7 @@
   "id": "S17-import",
   "state": "empty",
   "device": "desktop",
-  "file": "shots/after-raw/S17-import-desktop-empty.png",
+  "file": "shots/final-raw/S17-import-desktop-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1195,14 +1196,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 65,
+  "diffPx": 17,
   "same": true
  },
  {
   "id": "S17-import",
   "state": "empty",
   "device": "phone",
-  "file": "shots/after-raw/S17-import-phone-empty.png",
+  "file": "shots/final-raw/S17-import-phone-empty.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1228,7 +1229,7 @@
   "id": "S17-import",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S17-import-desktop-full.png",
+  "file": "shots/final-raw/S17-import-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1247,14 +1248,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 39,
+  "diffPx": 18,
   "same": true
  },
  {
   "id": "S17-import",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S17-import-phone-full.png",
+  "file": "shots/final-raw/S17-import-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1280,7 +1281,7 @@
   "id": "S18-shared",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S18-shared-desktop-full.png",
+  "file": "shots/final-raw/S18-shared-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1308,14 +1309,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 62,
+  "diffPx": 31,
   "same": true
  },
  {
   "id": "S18-shared",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S18-shared-phone-full.png",
+  "file": "shots/final-raw/S18-shared-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1334,14 +1335,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 3,
+  "diffPx": 6,
   "same": true
  },
  {
   "id": "S19-share",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S19-share-desktop-full.png",
+  "file": "shots/final-raw/S19-share-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1361,14 +1362,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 44,
+  "diffPx": 45,
   "same": true
  },
  {
   "id": "S19-share",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S19-share-phone-full.png",
+  "file": "shots/final-raw/S19-share-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1388,14 +1389,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 3,
+  "diffPx": 2,
   "same": true
  },
  {
   "id": "S20-account",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S20-account-desktop-full.png",
+  "file": "shots/final-raw/S20-account-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1418,14 +1419,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 82,
+  "diffPx": 27,
   "same": true
  },
  {
   "id": "S20-account",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S20-account-phone-full.png",
+  "file": "shots/final-raw/S20-account-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1452,7 +1453,7 @@
   "id": "S21-tunnel",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S21-tunnel-desktop-full.png",
+  "file": "shots/final-raw/S21-tunnel-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1482,7 +1483,7 @@
   "id": "S21-tunnel",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S21-tunnel-phone-full.png",
+  "file": "shots/final-raw/S21-tunnel-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1509,7 +1510,7 @@
   "id": "S22-settings",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S22-settings-desktop-full.png",
+  "file": "shots/final-raw/S22-settings-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1540,14 +1541,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 19,
+  "diffPx": 22,
   "same": true
  },
  {
   "id": "S22-settings",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S22-settings-phone-full.png",
+  "file": "shots/final-raw/S22-settings-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1567,14 +1568,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 14,
+  "diffPx": 15,
   "same": true
  },
  {
   "id": "S22-settings",
   "state": "bike",
   "device": "desktop",
-  "file": "shots/after-raw/S22-settings-desktop-bike.png",
+  "file": "shots/final-raw/S22-settings-desktop-bike.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1601,7 +1602,7 @@
   "id": "S22-settings",
   "state": "bike",
   "device": "phone",
-  "file": "shots/after-raw/S22-settings-phone-bike.png",
+  "file": "shots/final-raw/S22-settings-phone-bike.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1621,14 +1622,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 2,
+  "diffPx": 8,
   "same": true
  },
  {
   "id": "S23-units",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S23-units-desktop-full.png",
+  "file": "shots/final-raw/S23-units-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1655,14 +1656,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 61,
+  "diffPx": 38,
   "same": true
  },
  {
   "id": "S23-units",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S23-units-phone-full.png",
+  "file": "shots/final-raw/S23-units-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1681,14 +1682,14 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 8,
+  "diffPx": 12,
   "same": true
  },
  {
   "id": "S24-suggest",
   "state": "full",
   "device": "desktop",
-  "file": "shots/after-raw/S24-suggest-desktop-full.png",
+  "file": "shots/final-raw/S24-suggest-desktop-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1717,14 +1718,14 @@
    ],
    "unlabelled": []
   },
-  "diffPx": 30,
+  "diffPx": 50,
   "same": true
  },
  {
   "id": "S24-suggest",
   "state": "full",
   "device": "phone",
-  "file": "shots/after-raw/S24-suggest-phone-full.png",
+  "file": "shots/final-raw/S24-suggest-phone-full.png",
   "errs": [],
   "scroll": 0,
   "audit": {
@@ -1743,7 +1744,7 @@
    "smallList": [],
    "unlabelled": []
   },
-  "diffPx": 30,
+  "diffPx": 16,
   "same": true
  }
 ]
