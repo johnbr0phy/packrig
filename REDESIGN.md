@@ -235,3 +235,5 @@ the cost and the worst offender.
 - `tools/perf.mjs`: 67 things and 10 open bags, CPU throttled 4x.
 - `tools/pack-test.mjs`, `tools/pack-e2e.mjs`, `tools/_probe.mjs "?kit=full"`:
   the engine, the spreadsheet round trip, share links old and new.
+- `tools/docs-check.mjs`: the built `docs/` site, phone and desktop, before
+  it ships.
