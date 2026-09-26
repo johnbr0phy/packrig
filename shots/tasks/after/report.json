@@ -2,34 +2,16 @@
  {
   "flow": "firsttimer",
   "device": "phone",
-  "ok": true,
-  "taps": 12,
-  "hesitations": [
-   "scroll to find \"Tent\"",
-   "scroll to find \"Sleeping mat\"",
-   "scroll to find \"Stove & gas\"",
-   "scroll to find \"Rain jacket\""
-  ],
+  "ok": false,
+  "taps": 2,
+  "hesitations": [],
   "steps": [
    "1. Build a rig",
-   "2. the seat pack ring on the bike",
-   "3. a seat pack",
-   "4. a handlebar bag",
-   "5. a frame bag",
-   "6. Done",
-   "7. Tent",
-   "8. Sleeping mat",
-   "9. Stove & gas",
-   "10. Rain jacket",
-   "11. Share",
-   "12. Copy link"
+   "2. the seat pack ring on the bike"
   ],
-  "result": {
-   "ok": true,
-   "summary": "3 bags; One-person tent → barroll, Inflatable sleeping mat → framebag_half, Stove → framebag_half, Gas canister → seatpack, Lighter → framebag_half, Rain jacket → barroll; tiles say: Bar roll / Half frame bag / Half frame bag / Bar roll"
-  },
-  "why": "",
-  "seconds": 51
+  "result": null,
+  "why": "Node is either not clickable or not an Element",
+  "seconds": 16
  },
  {
   "flow": "firsttimer",
@@ -59,13 +41,13 @@
    "summary": "3 bags; One-person tent → barroll, Inflatable sleeping mat → framebag_half, Stove → framebag_half, Gas canister → seatpack, Lighter → framebag_half, Rain jacket → barroll; tiles say: Bar roll / Half frame bag / Half frame bag / Bar roll"
   },
   "why": "",
-  "seconds": 92
+  "seconds": 96
  },
  {
   "flow": "build",
   "device": "phone",
   "ok": true,
-  "taps": 9,
+  "taps": 10,
   "hesitations": [],
   "steps": [
    "1. Build a rig",
@@ -76,20 +58,21 @@
    "6. a top tube bag",
    "7. Done",
    "8. the rig name, to rename it",
-   "9. type a name"
+   "9. type a name",
+   "10. key Enter"
   ],
   "result": {
    "ok": true,
    "summary": "seatpack, barroll, framebag_half, toptube · \"Highland overnighter\""
   },
   "why": "",
-  "seconds": 41
+  "seconds": 45
  },
  {
   "flow": "build",
   "device": "desktop",
   "ok": true,
-  "taps": 9,
+  "taps": 10,
   "hesitations": [],
   "steps": [
    "1. Build a rig",
@@ -100,14 +83,15 @@
    "6. a top tube bag",
    "7. Done",
    "8. the rig name, to rename it",
-   "9. type a name"
+   "9. type a name",
+   "10. key Enter"
   ],
   "result": {
    "ok": true,
    "summary": "seatpack, barroll, framebag_half, toptube · \"Highland overnighter\""
   },
   "why": "",
-  "seconds": 80
+  "seconds": 72
  },
  {
   "flow": "import",
@@ -129,16 +113,14 @@
    "summary": "67 items, 8 bags; heaviest on screen: framebag_half (1800 g); solver says framebag_half"
   },
   "why": "",
-  "seconds": 26
+  "seconds": 24
  },
  {
   "flow": "import",
   "device": "desktop",
   "ok": true,
   "taps": 5,
-  "hesitations": [
-   "scroll to find \"Paste a spreadsheet\""
-  ],
+  "hesitations": [],
   "steps": [
    "1. Pack my kit",
    "2. Paste a spreadsheet",
@@ -151,7 +133,7 @@
    "summary": "67 items, 8 bags; heaviest on screen: framebag_half (1800 g); solver says framebag_half"
   },
   "why": "",
-  "seconds": 46
+  "seconds": 47
  },
  {
   "flow": "shared",
@@ -167,7 +149,7 @@
    "summary": "67 items in my kit"
   },
   "why": "",
-  "seconds": 15
+  "seconds": 17
  },
  {
   "flow": "shared",
@@ -183,6 +165,31 @@
    "summary": "67 items in my kit"
   },
   "why": "",
-  "seconds": 30
+  "seconds": 31
+ },
+ {
+  "flow": "keyboard",
+  "device": "desktop",
+  "ok": true,
+  "taps": 27,
+  "hesitations": [],
+  "steps": [
+   "5. Tab to Build a rig",
+   "6. key Enter",
+   "14. Tab to the seat pack ring",
+   "15. key Enter",
+   "23. Tab to a seat pack",
+   "24. key Enter (fit it)",
+   "25. key Escape (done adding)",
+   "25. already on the seat pack row",
+   "26. key Enter (open it)",
+   "27. key Escape (close it)"
+  ],
+  "result": {
+   "ok": true,
+   "summary": "seatpack; sheet \"Seat pack\" opened with focus on .sheet-close; after Escape focus is on .rg-bag sel; focus ring visible: true"
+  },
+  "why": "",
+  "seconds": 63
  }
 ]
