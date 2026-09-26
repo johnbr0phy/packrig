@@ -67,6 +67,7 @@ export function renderInside(app, slot, hooks) {
     const over = r?.overflow.find((o) => o.uid === it.uid);
     const wrap = el('div', 'inside-row' + (over ? ' is-over' : ''));
     const row = btn('rg-item', '', () => hooks.openItem?.(it.uid));
+    row.dataset.uid = it.uid;
     row.append(thumbImg(rr, 'thumb rg-item-img'));
     const t = el('span', 'rg-item-t');
     t.append(el('span', 'rg-item-n', rr.name), el('span', 'rg-item-s', p.loc === 'lashed' ? 'Strapped outside' : p.loc === 'dangle' ? 'Hanging off' : p.side ? `${p.side === 'L' ? 'Left' : 'Right'} side` : fmtLitres(rr.litres)));
