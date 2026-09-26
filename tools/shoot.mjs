@@ -42,7 +42,7 @@ for (const shot of SHOTS) {
   const url = `${BASE}/?${shot.q}${shot.ui ? '' : '&shot=1'}`;
   await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
   await page.waitForFunction('window.__READY_DONE === true', { timeout: 15000 }).catch(() => {
-    console.warn('  (ready flag never set — capturing anyway)');
+    console.warn('  (ready flag never set, capturing anyway)');
   });
   await new Promise((r) => setTimeout(r, 700));
   await page.screenshot({ path: `${outDir}${shot.name}.png` });

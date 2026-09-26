@@ -14,7 +14,7 @@ export const RESOLVE = {
   framebag_half: { pri: 1, fixed: true },
   // A seat pack with no escape route gets DELETED the moment it clashes, which
   // is how whole Ortlieb sizes silently vanished. Let it ride up and forward
-  // toward the saddle first — that is what a real pack does when you cinch it.
+  // toward the saddle first, that is what a real pack does when you cinch it.
   seatpack:      { pri: 2, dirs: [[0, 1, 0], [1, 0, 0]], max: 70, minScale: 0.8, ignore: ['saddle', 'seatpost'] },
   saddlebag:     { pri: 3, dirs: [[1, 0, 0]], max: 30, minScale: 0.8, ignore: ['saddle', 'seatpost'] },
   // A handlebar bag MOUNTS TO the bar. Leaving 'bars' as an obstacle made the
@@ -37,7 +37,7 @@ export const RESOLVE = {
   stemL:         { pri: 12, dirs: [[0, 0, -1], [-1, 0, 0], [0, -1, 0]], max: 60, minScale: 0.8, ignore: ['bars', 'stem', 'head'] },
   stemR:         { pri: 12, dirs: [[0, 0, 1], [-1, 0, 0], [0, -1, 0]], max: 60, minScale: 0.8, ignore: ['bars', 'stem', 'head'] },
   // The downtube anchor sits near the front wheel, so the useful escape is
-  // BACK along the tube toward the BB — straight down just drives into the
+  // BACK along the tube toward the BB, straight down just drives into the
   // tyre. Without it the longest packs had nowhere to go and were deleted.
   downtube:      { pri: 14, dirs: [[-0.72, -0.69, 0], [0, -1, 0], [-0.31, 0.95, 0]], max: 90, minScale: 0.8 },
 };

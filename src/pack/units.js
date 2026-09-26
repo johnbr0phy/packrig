@@ -18,7 +18,7 @@ export const r2 = (x) => Math.round(x * 100) / 100;
  * 28 g, a loaded bike is 28.4 kg. Never "0.03 kg".
  */
 export function fmtWeight(g, unit = 'metric', { big = null } = {}) {
-  if (!Number.isFinite(g)) return '—';
+  if (!Number.isFinite(g)) return '–';
   if (unit === 'imperial') {
     const oz = gToOz(g);
     const useLb = big ?? oz >= 32;
@@ -37,4 +37,4 @@ export function weightParts(g, unit = 'metric', opts) {
   return i < 0 ? [s, ''] : [s.slice(0, i), s.slice(i + 1)];
 }
 
-export const fmtLitres = (l) => (Number.isFinite(l) ? `${l >= 10 ? Math.round(l) : r1(l)} L` : '—');
+export const fmtLitres = (l) => (Number.isFinite(l) ? `${l >= 10 ? Math.round(l) : r1(l)} L` : '–');

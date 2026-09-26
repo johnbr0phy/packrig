@@ -22,8 +22,8 @@ export const BUILDERS = {
   saddlebag: buildSaddlebag,
   barroll: buildBarroll,
   barbag: buildBarbag,
-  // A front pocket is a bar bag in construction — a small panelled box with a
-  // roll or flap — and differs only in what it hangs off, which SLOTS handles.
+  // A front pocket is a bar bag in construction, a small panelled box with a
+  // roll or flap, and differs only in what it hangs off, which SLOTS handles.
   // Reusing the bar bag builder is deliberate and temporary: these products
   // want their own thin, wide, buckle-topped form, and that is a builder of its
   // own once the mounting is proven.

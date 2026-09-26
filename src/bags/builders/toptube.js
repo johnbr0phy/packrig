@@ -4,10 +4,10 @@
 //
 // ---- AXIS MAPPING (BUILDER-BRIEF Rule 2) ----------------------------------
 // `mount.axes` on the records in both slots: len along_toptube (Tailfin writes
-// `x`, WOHO / Salsa / Wizard Works / Rogue Panda `-x` — the same axis, drawn
+// `x`, WOHO / Salsa / Wizard Works / Rogue Panda `-x`, the same axis, drawn
 // the other way), wid `z`, hgt perp_toptube (Blackburn, Swift, ATM and Nuke
 // write `-y`: the way their drawing measured height, NOT which side of the tube
-// the bag is on — all six are gas-tank packs that sit on it). Two Wheel Gear
+// the bag is on, all six are gas-tank packs that sit on it). Two Wheel Gear
 // writes wid `x`, which its own 22.9 x 5.1 x 11 cm box contradicts; ignored.
 // The group is rotated onto the top tube, so its local frame IS the tube's:
 //
@@ -22,7 +22,7 @@
 // ---- WHAT IT IS (owner) -----------------------------------------------------
 // "A top tube bag is a soft tapered wedge nesting over the tube with its nose
 // against the stem, and a Jerrycan-style bag does the same at the seat post
-// end." Wrong before: "Top tube bags look like hard plastic toolboxes" — a
+// end." Wrong before: "Top tube bags look like hard plastic toolboxes", a
 // subdivided box with 0.1-of-width fillets, flat faces and a dead-flat top.
 //
 //   soft          a lofted pillow: a superellipse section whose sides slump out
@@ -78,7 +78,7 @@ const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t
 /** superellipse coordinate: sign(c)·|c|^(2/n) */
 const se = (c, n) => Math.sign(c) * Math.abs(c) ** (2 / n);
 
-// bike.js: tubeBetween(headTop, steererTop, 14, 14) — the steerer and spacers.
+// bike.js: tubeBetween(headTop, steererTop, 14, 14), the steerer and spacers.
 // Not on ctx; the steerer strap needs it to wrap the right diameter.
 const STEERER_R = 14;
 const EMBED = 10;          // base plane below the tube crown: the skirts hug the tube
@@ -100,7 +100,7 @@ const EMBED = 10;          // base plane below the tube crown: the skirts hug th
  *
  * A raked end face (62°; a slab's 52°), a chamfer (30° on the short
  * trapezoid packs, 13° on the long tapered_wedge blades), then flat to the
- * tall end. `tail` is the record's taper ratio — the height the low end still
+ * tall end. `tail` is the record's taper ratio, the height the low end still
  * stands at. `topLine: 'continuous'` (Tailfin's teardrop range) is one fall.
  * Returns at(t), t = 0 at the low end, 1 at the tall end.
  */
@@ -146,7 +146,7 @@ function mountPlanOf(p, len) {
   // a bolt-on SKU, unless its own words offer straps as the alternative
   const bolted = (/\bbolt/i.test(first) && !/\bor\b[^+]*strap/i.test(first))
     || /bolt[- ]?on|with bolts|\b2H\b/i.test(name);
-  // a seat-post strap the bag actually ships with — not an alternative
+  // a seat-post strap the bag actually ships with, not an alternative
   // ("also runs on the seatpost", Nuke's Titan Tank, which is a front pack)
   const postClause = txt.split(/[+;,]/).find((c) => /seat ?post|seat tube/i.test(c) && !/\balso\b|\bor\b/i.test(c));
   const tubeClause = txt.split('+').find((c) => /top ?tube|frame strap/i.test(c)) || first;
@@ -210,7 +210,7 @@ export function buildToptubeRear(p, brand, main, accent, ctx, side) {
   return buildToptube(p, brand, main, accent, ctx, side, 'toptubeRear');
 }
 
-// NOTE: the builder call signature is (product, brand, main, accent, ctx, side) —
+// NOTE: the builder call signature is (product, brand, main, accent, ctx, side),
 // anchorName must come AFTER `side`, or it receives the side integer.
 export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'toptube') {
   const grp = new THREE.Group();
@@ -371,7 +371,7 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
 
   // ---- two-tone ---------------------------------------------------------------
   // The colourway's accent (identity.js colorwayFor: `accentHex`) paints the
-  // structural panels — base band and the tall end's face — per channel, so a
+  // structural panels, base band and the tall end's face, per channel, so a
   // grey body with a black harness and a black body with an orange nose both
   // come out as authored. A one-colour colourway leaves the body plain.
   const col = bodyGeo.attributes.color;
@@ -445,7 +445,7 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
     const t = aOf(i) / len;
     return surf(i, jAtY(i, s, H(t) - drop), 0.6);
   });
-  // `mirrored` — tall end at −x — decides which end the slider parks at
+  // `mirrored`, tall end at −x, decides which end the slider parks at
   const tallAtPlusX = !rear;
   const parkTall = (f) => (tallAtPlusX ? f : 1 - f);
   if (closure === 'magnetic' && geom.form === 'slab') {
@@ -486,7 +486,7 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
       grp.add(noCol(mg));
     }
   } else if (closure === 'zip_horseshoe') {
-    // Wizard Works Go-Go, Swift Moxie: the lid opens on three sides — along
+    // Wizard Works Go-Go, Swift Moxie: the lid opens on three sides, along
     // the drive-side shoulder and across both ends, hinged on the other side.
     const iA = ringAt(0.08), iB = ringAt(0.93);
     const sh = (i, s) => jAtY(i, s, H(aOf(i) / len) * 0.8);
@@ -520,7 +520,7 @@ export function buildToptube(p, brand, main, accent, ctx, side, anchorName = 'to
   }
   if (sideMesh || topMesh) {
     // An applied mesh pocket: a shell offset off the finished side, sewn at its
-    // base and ends, standing proud at its elastic mouth — it changes the outline.
+    // base and ends, standing proud at its elastic mouth, it changes the outline.
     for (const s of topMesh ? [0] : [1, -1]) {
       const is = tSpan(0.24, 0.78);
       const rows = 8;

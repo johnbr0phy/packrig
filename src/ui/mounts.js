@@ -99,6 +99,10 @@ export function initMounts(app, { onPick } = {}) {
     if (mode === 'off' || !rings.size) return;
     const W = innerWidth, H = innerHeight;
     const free = app.framing?.freeRect?.() || { left: 0, right: W, top: 0, bottom: H };
+    // a sheet over most of the bike: the rings would sit on the header
+    const bar = document.querySelector('.topbar')?.getBoundingClientRect().bottom || 0;
+    if (free.bottom - bar < 160) { for (const r of rings.values()) r.el.hidden = true; return; }
+    free.top = Math.max(free.top, bar + 8);
     const pts = [];
     for (const r of rings.values()) {
       const p = anchorWorld(r.slot);

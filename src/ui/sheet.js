@@ -75,7 +75,8 @@ export function initSheets(app, { root } = {}) {
   sheet.setAttribute('aria-labelledby', 'sheet-title');
   const closeBtn = el('button', 'sheet-close');
   closeBtn.type = 'button';
-  closeBtn.append(el('span', null, 'Close'), icon('close', { size: 16 }));
+  const closeLabel = el('span', null, 'Close');
+  closeBtn.append(closeLabel, icon('close', { size: 16 }));
   head.append(backBtn, titleEl, closeBtn);
   const body = el('div', 'sheet-body');
   const foot = el('div', 'sheet-foot');
@@ -126,6 +127,7 @@ export function initSheets(app, { root } = {}) {
     sheet.dataset.kind = kind;
     sheet.hidden = false;
     titleEl.textContent = title;
+    closeLabel.textContent = 'Close';
     backBtn.hidden = !onBack;
     backBtn.onclick = onBack || null;
     body.scrollTop = 0;
@@ -178,6 +180,8 @@ export function initSheets(app, { root } = {}) {
       kind: active?.kind || null,
       close,
       setTitle(s) { titleEl.textContent = s; },
+      /** "Done" when closing finishes a task (adding bags), "Close" otherwise. */
+      setCloseLabel(s) { closeLabel.textContent = s || 'Close'; },
       setFoot(node) { foot.replaceChildren(...(node ? [node] : [])); if (isPhone()) detents.refresh(); },
       detent(n) { if (isPhone()) detents.snap(n); },
     };
@@ -189,9 +193,8 @@ export function initSheets(app, { root } = {}) {
     if (!active) return null;
     if (isPhone()) return { bottom: detents.top() };
     if (device.desktop || window.innerWidth > 560) {
-      const r = sheet.getBoundingClientRect();
-      const w = parseFloat(getComputedStyle(sheet).width) || r.width;
-      return { left: r.left + w };
+      // layout box, not the animated one: mid-slide the rect is 16px short
+      return { left: sheet.offsetLeft + sheet.offsetWidth };
     }
     return null;
   });

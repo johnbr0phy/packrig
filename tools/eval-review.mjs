@@ -8,7 +8,7 @@
  * Blind pairwise, and nothing else. Scoring a bag 1-5 asks a reviewer to hold a
  * scale steady across seventy products; picking the better of two asks a
  * question people are reliably good at, and it is the question that actually
- * matters — is this version better than the last one.
+ * matters, is this version better than the last one.
  *
  * Both versions are real geometry, turnable and zoomable, because a still
  * cannot be rotated and the live app can only ever show the CURRENT code. Each
@@ -51,7 +51,7 @@ function build() {
   const runs = listRuns();
   // A per-bag geometry fingerprint, so the page can skip bags that cannot have
   // changed. Only four of thirteen builders have been touched, so most bags are
-  // identical between any two runs — and being asked to choose between two
+  // identical between any two runs, and being asked to choose between two
   // identical pictures seventy times is how you lose faith in the tool.
   //
   // Two parts, because profile40 only exists in runs taken after it was added:
@@ -113,7 +113,7 @@ http.createServer(async (req, res) => {
   if (u.pathname === '/img/ref') return serveFile(res, join(root, u.searchParams.get('p') || ''));
 
   // The rendered stills. Runs made before the GLB exporter existed have no
-  // geometry to turn, and the viewer falls back to these — so dropping this
+  // geometry to turn, and the viewer falls back to these, so dropping this
   // route silently emptied half of every comparison.
   if (u.pathname === '/img/shot') {
     const [run, slug, cam] = ['run', 'slug', 'cam'].map((k) => u.searchParams.get(k) || '');
@@ -125,7 +125,7 @@ http.createServer(async (req, res) => {
   // three.js for the two viewers. serveFile is already sandboxed to the repo.
   if (u.pathname.startsWith('/node_modules/')) return serveFile(res, join(root, u.pathname));
 
-  // The bag's geometry as it was in that run — the only way to turn a PAST
+  // The bag's geometry as it was in that run, the only way to turn a PAST
   // version around, since the live app can only ever show the current code.
   if (u.pathname === '/model') {
     const f = join(RUNS, u.searchParams.get('run') || '', 'shots', u.searchParams.get('slug') || '', 'bag.glb');
@@ -147,7 +147,7 @@ http.createServer(async (req, res) => {
   console.log(`which is better → http://localhost:${PORT}`);
   console.log(runs.length >= 2
     ? `${runs.length} runs · newest ${runs[runs.length - 1].meta.label}`
-    : 'need two runs — node tools/eval-render.mjs --set apidura-v1 --label something');
+    : 'need two runs, node tools/eval-render.mjs --set apidura-v1 --label something');
 });
 
 // ---- page ----------------------------------------------------------------
@@ -218,7 +218,7 @@ const PAGE = String.raw`<!doctype html>
 
 <header>
   <span class="count"><b id="idx">–</b> / <span id="tot">–</span></span>
-  <h1 id="title">—</h1>
+  <h1 id="title">, </h1>
   <span class="sp"></span>
   <span id="scope" class="hint"></span>
   <select id="runA" title="version A"></select>
@@ -387,7 +387,7 @@ function checkSame(){
   const ga = (S.runs.find((r) => r.id === A) || {}).geom;
   const gb = (S.runs.find((r) => r.id === B) || {}).geom;
   const same = sameGeom(ga, gb);
-  $('warn').textContent = same ? 'identical geometry — nothing to choose between' : '';
+  $('warn').textContent = same ? 'identical geometry, nothing to choose between' : '';
   $('warn').style.display = same ? 'inline' : 'none';
   for (const b of ['p1','p2','p3']) $(b).disabled = same;
 }
@@ -460,7 +460,7 @@ function drawTally(){
   const a = wins(A), b = wins(B);
   const lead = a === b ? 'level' : (a > b ? labelOf(A) : labelOf(B)) + ' leads';
   $('tally').innerHTML = '<b>' + esc(lead) + '</b> · ' + esc(labelOf(A)) + ' ' + a
-    + ' — ' + b + ' ' + esc(labelOf(B)) + (ties ? ' · ' + ties + ' same' : '')
+    + ', ' + b + ' ' + esc(labelOf(B)) + (ties ? ' · ' + ties + ' same' : '')
     + ' · ' + rel.length + '/' + list.length;
 }
 

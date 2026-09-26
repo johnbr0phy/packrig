@@ -29,7 +29,7 @@ for k, r in enumerate(rows):
         if r.get('reversed'): tp = list(reversed(tp))
         poly(tp, t.get('aspect'), 180, y + 20, 360, 120, (255, 122, 69), 3)
     poly(r['profile'], r.get('aspect'), 180, y + 20, 360, 120, (235, 235, 235), 2)
-    txt = f"{r['name'][:52]}   score {r.get('score', '—')}  iou {r.get('iou', '—')}  aspect {r.get('aspect')}/{r.get('truthAspect')}" + ('  REV' if r.get('reversed') else '')
+    txt = f"{r['name'][:52]}   score {r.get('score', '–')}  iou {r.get('iou', '–')}  aspect {r.get('aspect')}/{r.get('truthAspect')}" + ('  REV' if r.get('reversed') else '')
     dr.text((180, y + 4), txt, fill=(220, 220, 220))
 sheet.save(out)
 print(out, len(rows))

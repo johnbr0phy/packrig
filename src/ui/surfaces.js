@@ -1,12 +1,12 @@
 /**
- * Scrim wells for the surfaces that already exist — DESIGN-SYSTEM.md §3.3.
+ * Scrim wells for the surfaces that already exist, DESIGN-SYSTEM.md §3.3.
  *
  * WHY THIS IS NOT JUST A CHILD ELEMENT. §3.3's snippet puts `.scrim-well`
  * inside the panel at `z-index: -1`. That works only for a parent that does
  * not create a stacking context, and every glass surface here carries
  * `backdrop-filter`, which creates one. Inside such a parent the well is
  * clamped to its parent's stacking context and paints ABOVE the panel's own
- * background — so it tints the glass instead of darkening the scene, which is
+ * background, so it tints the glass instead of darkening the scene, which is
  * the exact failure the section is written to avoid. Worse, the panel's blur
  * would never sample it.
  *

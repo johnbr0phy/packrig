@@ -1,4 +1,4 @@
-/** The Save rig CTA — REDESIGN.md §6. */
+/** The Save rig CTA, REDESIGN.md §6. */
 import puppeteer from 'puppeteer-core';
 const [,,URL,W='1440',H='900',MOB='desktop'] = process.argv;
 const b=await puppeteer.launch({executablePath:(await import('./lib/chrome.mjs')).CHROME,headless:true,args:['--hide-scrollbars','--enable-unsafe-swiftshader']});

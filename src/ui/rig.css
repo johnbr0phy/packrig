@@ -104,17 +104,17 @@
 .rg-viewing-t { font-size: var(--fs-caption); color: var(--ink-2); }
 
 /* ---- what are you bringing: tiles that pack as you tap ------------------------------------------------ */
-.rg-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-2); }
+.rg-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-2); }
 @media (min-width: 901px) { .rg-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .rg-tile {
   position: relative; display: flex; flex-direction: column; align-items: center; gap: var(--s-1);
-  min-height: 96px; padding: var(--s-2) var(--s-1); border-radius: var(--r-card);
+  min-height: 84px; padding: var(--s-2) 2px; border-radius: var(--r-card);
   background: var(--fill-1); border: 1px solid var(--hairline); text-align: center;
   transition: background var(--d-micro) var(--ease-out), border-color var(--d-micro) var(--ease-out);
 }
 .rg-tile:hover { background: var(--fill-2); }
 .rg-tile.on { border-color: var(--ink-1); background: var(--fill-2); }
-.rg-tile-img { width: 48px; height: 48px; object-fit: contain; }
+.rg-tile-img { width: 40px; height: 40px; object-fit: contain; }
 .rg-tile-l { font-size: var(--fs-caption); font-weight: 600; line-height: 1.2; }
 .rg-tile-at { font-size: var(--fs-label); color: var(--ok); font-weight: 650; line-height: 1.2; }
 
@@ -167,3 +167,4 @@
   .rg-name { font-size: var(--fs-title3); white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: var(--lh-snug); }
   .rg-nums { padding: 0 var(--s-4) var(--s-3); }
 }
+.rg-callout { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-2); padding: var(--s-3); border-radius: var(--r-card); background: var(--fill-2); font-size: var(--fs-caption); color: var(--ink-1); }

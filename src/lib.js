@@ -46,7 +46,7 @@ export function v3(x, y, z = 0) {
   return new THREE.Vector3(x, y, z);
 }
 
-/** Canvas texture with text — used for brand patches / labels. */
+/** Canvas texture with text, used for brand patches / labels. */
 export function labelTexture(text, { bg = '#111111', fg = '#f5f2ea', w = 256, h = 128, font = 'bold 44px "Helvetica Neue", Arial, sans-serif', radius = 18, stroke = 'rgba(255,255,255,0.25)' } = {}) {
   const c = document.createElement('canvas');
   c.width = w; c.height = h;

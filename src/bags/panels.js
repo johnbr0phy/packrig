@@ -4,7 +4,7 @@
 import * as THREE from 'three';
 import { v3 } from '../lib.js';
 
-/** Where a seam line crosses the outline — keeps stitching inside the panel. */
+/** Where a seam line crosses the outline, keeps stitching inside the panel. */
 export function crossSpan(poly, at, axis) {
   const a = axis === 'x' ? 'x' : 'y', b = axis === 'x' ? 'y' : 'x';
   let lo = Infinity, hi = -Infinity;
@@ -29,8 +29,8 @@ function insetPoly(points, inset) {
 /**
  * Offset each EDGE along its own inward normal by its own amount, then
  * re-intersect to rebuild the corners. insetPoly moves vertices toward the
- * centroid instead, which gives a wildly uneven perpendicular clearance —
- * acute corners barely move, obtuse ones move a lot — so a frame bag ended up
+ * centroid instead, which gives a wildly uneven perpendicular clearance,
+ * acute corners barely move, obtuse ones move a lot, so a frame bag ended up
  * sunk into the down tube at one corner and floating off the seat tube at
  * another. `insets[i]` applies to the edge points[i] → points[i+1].
  */
@@ -117,7 +117,7 @@ export function subdivideXY(geo, target) {
   out.setAttribute('position', new THREE.Float32BufferAttribute(outP, 3));
   out.setAttribute('normal', new THREE.Float32BufferAttribute(outN, 3));
   // ExtrudeGeometry hands back UVs in raw millimetres, which tiles the weave
-  // thousands of times and greys it out — re-derive them at fabric scale.
+  // thousands of times and greys it out, re-derive them at fabric scale.
   for (let i = 0; i < outP.length / 3; i++) {
     outU[i * 2] = outP[i * 3] / 150;
     outU[i * 2 + 1] = outP[i * 3 + 1] / 150;

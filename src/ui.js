@@ -263,7 +263,7 @@ export function initUI(app) {
   });
   app.packUI = packUI;
 
-  const watts = initWatts(app, { onChange: () => panel?.sync(saveState()) });
+  const watts = initWatts(app, { onChange: () => panel?.updateWatts() });
   app.watts = watts;
 
   panel = initRigPanel(app, {
@@ -416,12 +416,12 @@ export function initUI(app) {
     const judged = judgeFit(uiSlot, product, app.bike);
     const small = !unfit && judged.status === 'small';
     const row = button('cat-row' + (cur?.product === product ? ' on' : '') + (unfit ? ' is-unfit' : ''), null, () => fitAndStay(uiSlot, entry, row));
-    row.append(bagImg(app, brand, product, { cls: 'thumb cat-img' }));
+    row.append(bagImg(app, brand, product, { cls: 'thumb cat-img', aspect: 3 / 2 }));
     const t = el('span', 'cat-t');
     t.append(el('span', 'cat-brand', brand.short || brand.name), el('span', 'cat-name', modelTitle(product, brand)));
     const facts = el('span', 'cat-facts num');
     const L = litersOf(product);
-    if (L && L !== '—') facts.append(el('span', null, L));
+    if (L && L !== '–') facts.append(el('span', null, L));
     if (product.weight_g) facts.append(el('span', null, `${fmtWeight(product.weight_g, app.pack?.lib?.unit)}${['maker', 'retailer', 'review', 'size-interpolated'].includes(product.weight_basis) ? '' : ' est.'}`));
     t.append(facts);
     row.append(t);
@@ -456,7 +456,15 @@ export function initUI(app) {
       onBack,
       // adding on a phone: half height, so the bike and its rings stay in view
       detent: add ? 'half' : 'full',
-      onClose: () => { adding = false; mounts.show(Object.keys(app.bags.equipped).length ? 'off' : 'empty'); mounts.setActive(null); },
+      onClose: () => {
+        adding = false;
+        mounts.show(Object.keys(app.bags.equipped).length ? 'off' : 'empty');
+        mounts.setActive(null);
+        // bags on, nothing packed yet: the next thing is "what are you bringing"
+        const st = app.pack?.state;
+        const empty = st && !st.locker.items.some((i) => st.loadout.place?.[i.uid] !== undefined);
+        if (empty && Object.keys(app.bags.equipped).length) panel.detent('half');
+      },
     });
   }
 

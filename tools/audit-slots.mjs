@@ -1,11 +1,11 @@
 // Slot-consistency audit. Two independent signals, because a wrong slot passes
-// every numeric check — the Carradice SQR Slim was `seatpack` while its own
+// every numeric check, the Carradice SQR Slim was `seatpack` while its own
 // siblings were `saddlebag`, and it rendered as a tapered roll instead of a box.
 import { readFileSync, writeFileSync } from 'node:fs';
 const root = new URL('../', import.meta.url).pathname;
 const brands = JSON.parse(readFileSync(root + 'data/brands.json'));
 
-// What the product's own NAME says it is. Order matters — most specific first.
+// What the product's own NAME says it is. Order matters, most specific first.
 const NAME_SLOT = [
   [/\bpannier|panniers\b/i, ['pannier']],
   [/\brack(-|\s)?(top|bag|trunk)|trunk bag\b/i, ['trunk']],
@@ -13,7 +13,7 @@ const NAME_SLOT = [
   [/\bframe (bag|pack)\b/i, ['framebag_full', 'framebag_half']],
   [/\btop ?tube\b/i, ['toptube', 'toptube_rear']],
   [/\bstem (bag|pack|pouch|caddy)|feed ?bag|food pouch|snack bag\b/i, ['stembag']],
-  // "Bar Cage Bag" is a BAR bag — don't let "cage" pull it to the fork
+  // "Bar Cage Bag" is a BAR bag, don't let "cage" pull it to the fork
   [/\bbar cage\b/i, ['barroll', 'barbag']],
   [/\bfork (bag|pack)|cargo cage|fork cage\b/i, ['forkbag']],
   [/\bdown ?tube\b/i, ['downtube']],
@@ -67,7 +67,7 @@ for (const b of brands) {
 const byKind = {};
 for (const i of issues) byKind[i.kind] = (byKind[i.kind] || 0) + 1;
 const total = brands.reduce((n, b) => n + b.products.length, 0);
-console.log(`${total} products — ${issues.length} slot issues`);
+console.log(`${total} products, ${issues.length} slot issues`);
 for (const [k, n] of Object.entries(byKind)) console.log(`  ${k.padEnd(16)} ${n}`);
 console.log();
 for (const i of issues) console.log(`  [${i.kind}] ${i.brand} | ${i.line} | ${i.name} ${i.size}\n      ${i.detail}`);

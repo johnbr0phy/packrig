@@ -6,7 +6,7 @@
  * follows you between devices and survives clearing your browser.
  *
  * EVERY VALUE HERE IS PUBLIC. A Firebase web config is designed to ship in a
- * client bundle — it names the project, it does not grant access to it. What
+ * client bundle, it names the project, it does not grant access to it. What
  * actually protects anyone's data is the Firestore security rules in
  * `FIREBASE.md`, which are not optional: with the default open rules, this
  * config would let anyone read and write every rig. There is no private key in
@@ -29,7 +29,7 @@ export const FIREBASE_CONFIG = {
 
 /**
  * A local override, so the config can be tried on a deployed build without a
- * rebuild — paste into the console and reload:
+ * rebuild, paste into the console and reload:
  *   localStorage.packrig_firebase = JSON.stringify({apiKey:'…', authDomain:'…', projectId:'…', appId:'…'})
  */
 function override() {

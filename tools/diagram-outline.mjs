@@ -16,13 +16,13 @@
  * Apidura publishes, for nearly every product, a two-view orthographic
  * engineering drawing as SVG: the bag from above and from the side, drawn flat,
  * dimensioned, no perspective, no lighting. That is not a better photograph, it
- * is a different kind of evidence — it is the drawing our 3D model is trying to
+ * is a different kind of evidence, it is the drawing our 3D model is trying to
  * reproduce. Measuring it is exact.
  *
- * HOW THE VIEWS ARE TOLD APART. Not by position — that would be an assumption
+ * HOW THE VIEWS ARE TOLD APART. Not by position, that would be an assumption
  * about Apidura's layout habits. Each view's own aspect ratio is compared with
  * the published numbers: the side view must read len:hgt and the plan view
- * len:wid. That assignment is therefore also a CHECK — if neither view matches
+ * len:wid. That assignment is therefore also a CHECK, if neither view matches
  * the published dimensions the drawing and the record disagree, and this
  * refuses rather than guessing. `agreement` in the output is that residual, and
  * it is the number to look at before trusting anything here.
@@ -55,13 +55,13 @@ const STATIONS = 40;
  *
  *   fill, no stroke     glyphs of the "15 cm" labels and the arrowheads
  *   stroke-width 2      dimension leader lines
- *   stroke-dasharray    the dashed roll-out extension — a state the bag can be
+ *   stroke-dasharray    the dashed roll-out extension, a state the bag can be
  *                       in, not its shape, so including it would inflate every
  *                       length by the roll
  *   stroke-width ≤ 1    the bag itself
  *
  * Hence: thin, solid, stroked classes only. Verified by rendering each class on
- * its own — the 2px class is nothing but dimension arrows, and the 0.5px class
+ * its own, the 2px class is nothing but dimension arrows, and the 0.5px class
  * is the bag with no arrows, no text and no dashes.
  */
 function keepClasses(svg) {
@@ -103,7 +103,7 @@ function filterSvg(svg) {
     if (cls.split(/\s+/).some((c) => keep.has(c))) els.push(m[0]);
   }
   if (els.length < 8) return null;
-  const [, , vw, vh] = viewBox.split(/\s+/).map(Number);
+  const [, vw, vh] = viewBox.split(/\s+/).map(Number);
   return {
     svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}">`
        + `<rect x="-9999" y="-9999" width="99999" height="99999" fill="#fff"/>`
@@ -116,7 +116,7 @@ function filterSvg(svg) {
 /**
  * Runs in the page. Splits the drawing into views and profiles each one.
  *
- * Line art, not a filled silhouette — so the OUTER boundary of a column is
+ * Line art, not a filled silhouette, so the OUTER boundary of a column is
  * simply its topmost and bottommost ink. Interior seams, straps and panel
  * edges all sit between those two and cannot disturb the outline. That is why
  * this needs no segmentation step at all, and it is the whole reason a drawing
@@ -189,7 +189,7 @@ function measureInPage(dataUrl, STATIONS) {
         // from above is mirror-symmetric about its long axis, so every
         // station's midpoint sits on one straight line; seen from the side it
         // has a flattish bottom and a domed top, so the midpoint climbs and
-        // falls. Proportion alone is blind here — a saddle pack is 15 cm wide
+        // falls. Proportion alone is blind here, a saddle pack is 15 cm wide
         // and 16 cm tall, so the two views differ by 6% and the aspect test is
         // a coin toss on the single most important slot in the catalogue.
         const cs = centres.filter((c) => c !== null);
@@ -266,7 +266,7 @@ for (const job of jobs) {
   const { len, wid, hgt } = job.prod.dims_cm;
   if (!(len > 0 && wid > 0 && hgt > 0)) { rows.push([job.slug, 'refused', 'no published dims']); refused++; continue; }
 
-  // Roll-top bags publish two lengths — "MIN 36 cm / MAX 42 cm" — and the
+  // Roll-top bags publish two lengths, "MIN 36 cm / MAX 42 cm", and the
   // SOLID outline we just measured is the rolled-down state, because the
   // rolled-out extension is drawn dashed and we dropped the dashed class.
   // Comparing a rolled-down drawing against the rolled-out number reads as a
@@ -295,7 +295,7 @@ for (const job of jobs) {
     }
   }
   // Two views whose published ratios are within 15% cannot be told apart by
-  // aspect — the saddle pack is 15 cm wide and 16 cm tall, so len:wid and
+  // aspect, the saddle pack is 15 cm wide and 16 cm tall, so len:wid and
   // len:hgt are 2.8 and 2.6. The measurement is still good; which of the two
   // it belongs to is a coin toss, and downstream must know that.
   const viewAmbiguous = Math.abs(want.side - want.plan) / Math.max(want.side, want.plan) < 0.15;
@@ -311,7 +311,7 @@ for (const job of jobs) {
   }
 
   // A drawing whose views match neither published ratio is either not this
-  // product or a record that is wrong. Either way, refuse — a wrong profile is
+  // product or a record that is wrong. Either way, refuse, a wrong profile is
   // worse than none, because a builder will sweep it.
   if (best.err > 0.25) { rows.push([job.slug, 'refused', `aspect ${best.v.aspect} vs published ${best.target.toFixed(2)}`]); refused++; continue; }
 
@@ -322,10 +322,10 @@ for (const job of jobs) {
   // Two cases where the aspect test cannot decide, and refusing would throw
   // away a good measurement:
   //
-  //   one view only — many drawings publish just the side elevation. There is
+  //   one view only, many drawings publish just the side elevation. There is
   //     no second band to be the plan view, and whichever label won by a hair
   //     is not evidence that the one view we have is the wrong one.
-  //   ambiguous ratios — when wid ≈ hgt the two targets are within a few per
+  //   ambiguous ratios, when wid ≈ hgt the two targets are within a few per
   //     cent (saddle pack: 2.8 and 2.6) and the winner is a coin toss.
   //
   // In both, take the best-matching view as the side profile and say so. The
@@ -342,7 +342,7 @@ for (const job of jobs) {
   // centreline wanders MORE is the side elevation (flat base, domed top); the
   // steadier one is the plan (mirror-symmetric about the long axis). Applied
   // only where the aspect test admitted defeat, so it can never override a
-  // confident match — and only when the two actually differ, since two equally
+  // confident match, and only when the two actually differ, since two equally
   // symmetric views mean it genuinely cannot be called.
   let resolvedBy = null;
   if (viewAmbiguous && planV && sideV !== planV) {
@@ -399,7 +399,7 @@ console.log(`\n${ok} measured, ${refused} refused`);
 
 if (has('write')) {
   writeFileSync(join(root, 'data/diagram-profiles.json'), JSON.stringify(out, null, 1));
-  console.log(`wrote data/diagram-profiles.json — ${Object.keys(out).length} profiles`);
+  console.log(`wrote data/diagram-profiles.json, ${Object.keys(out).length} profiles`);
 } else {
-  console.log('(dry run — pass --write to save)');
+  console.log('(dry run, pass --write to save)');
 }

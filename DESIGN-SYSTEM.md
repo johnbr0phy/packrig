@@ -1,11 +1,11 @@
 # Packrig Design System
 
-**Version 1.1 — the foundations reference**
+**Version 1.1, the foundations reference**
 Everything here is meant to be built from directly. Where a number is given, use that number.
 
 > **The plan lives in `REDESIGN.md`.** This file is now the *foundations*: type,
 > colour, spacing, motion, icons, imagery, accessibility, and the token block.
-> The components and the build order moved out — see §6, §10 and §12.
+> The components and the build order moved out, see §6, §10 and §12.
 
 Packrig's character: **outdoor, technical, calm, premium.** The bike is the hero.
 The UI is instrumentation around it, not a website on top of it.
@@ -14,12 +14,12 @@ The UI is instrumentation around it, not a website on top of it.
 
 ## 0. Where this came from
 
-Researched, then translated — no assets, wordmarks or typefaces are borrowed.
+Researched, then translated, no assets, wordmarks or typefaces are borrowed.
 
 | Source | What we took |
 |---|---|
-| Apple HIG — Materials & Vibrancy | Chrome *supports* content, never competes. One material ladder (ultraThin→thick), vibrancy tuned per material so ink stays legible over anything. 44pt hit targets. Concentric radii. Semantic colour tokens instead of raw hex at call sites. |
-| Apple Watch Studio / iPhone buy flow | The product stays full-size and centred while options change *beside* it. Options are shown as the thing itself (a real swatch, a real band), never as a dropdown of words. Change is instant and animated in place — no "apply" step. |
+| Apple HIG, Materials & Vibrancy | Chrome *supports* content, never competes. One material ladder (ultraThin→thick), vibrancy tuned per material so ink stays legible over anything. 44pt hit targets. Concentric radii. Semantic colour tokens instead of raw hex at call sites. |
+| Apple Watch Studio / iPhone buy flow | The product stays full-size and centred while options change *beside* it. Options are shown as the thing itself (a real swatch, a real band), never as a dropdown of words. Change is instant and animated in place, no "apply" step. |
 | Stripe | Depth from background tint, not heavy shadow. One typeface, hierarchy from weight + tracking. Tight negative tracking on display sizes (−0.02em at 48px). Tabular figures wherever numbers matter. Short token list, ruthlessly reused. `cubic-bezier(.25,1,.5,1)` at 300ms as the house curve. |
 | Spotify Encore | Dark-first surface ladder (#121212 / #181818 / #1f1f1f) where elevation = *lighter*, and shadows must be heavy (0.3–0.5 alpha) to register at all. The detail-view pattern: **big artwork → title → metadata rows → one loud primary action → dense list below.** Compact type (10–24px) with tight leading. |
 | Faceted-search research (NN/g and successors) | Filters cut task time 25–50%, but too many facets causes drop-off. Show result counts on every facet. One-click removal. Never present an unfiltered long tail. |
@@ -32,9 +32,9 @@ Researched, then translated — no assets, wordmarks or typefaces are borrowed.
 Seven constraints. Each is testable.
 
 1. **The bike is never crowded.** Chrome occupies ≤ 24% of viewport width at rest, ≤ 38% with the product sheet open, ≤ 52% in the catalogue. In every state the camera reframes (§6.7) so the bike's projected silhouette sits entirely inside the free area with ≥ 40px clearance.
-2. **One glass, one polarity.** Every surface is *dark* glass. Ink is never re-coloured per scene. Legibility over a bright desert is bought with a scrim behind the panel (§3.3), never by pushing panel alpha past `0.66` — past that it stops being glass and becomes a grey rectangle.
+2. **One glass, one polarity.** Every surface is *dark* glass. Ink is never re-coloured per scene. Legibility over a bright desert is bought with a scrim behind the panel (§3.3), never by pushing panel alpha past `0.66`, past that it stops being glass and becomes a grey rectangle.
 3. **One accent, two jobs.** Ember (`#FF7A45`) appears only as (a) the primary action fill and (b) the selection ring. Nothing else in the product is filled with a hue. Everything else is ink on glass.
-4. **One surface at a time.** At most one sheet is open. Opening a sheet collapses the rig panel to a rail. **No full-screen modal, no veil over the scene, ever** — a dimmed 3D scene is a broken 3D app.
+4. **One surface at a time.** At most one sheet is open. Opening a sheet collapses the rig panel to a rail. **No full-screen modal, no veil over the scene, ever**, a dimmed 3D scene is a broken 3D app.
 5. **Numbers are typeset.** Every litre, millimetre and gram is set in tabular figures with its unit one ink-level down. The spec table is the product's argument; treat it like a chart, not like body copy.
 6. **Motion explains geometry.** Things enter from the edge they belong to. Nothing fades in from nowhere. Panel and camera move on the *same* curve and duration so they read as one gesture.
 7. **If it can be pointed at, it is pointed at.** Mount points are chosen on the bike, not in a list. A control that duplicates something visible in the 3D scene gets deleted.
@@ -45,7 +45,7 @@ Seven constraints. Each is testable.
 
 **Inter Variable**, self-hosted, single variable `woff2`.
 
-Justification: SIL OFL (redistributable), one file covers 100–900 so weight becomes a free hierarchy axis, purpose-built for UI at 11–15px, and — decisive here — it ships genuine **tabular figures** (`tnum`) and a slashed zero, which a catalogue of capacities and millimetre dimensions needs. System stack is the fallback, not the plan; `-apple-system` gives SF on macOS and Segoe on Windows, which are two different rhythms, and Packrig's whole point is a controlled one.
+Justification: SIL OFL (redistributable), one file covers 100–900 so weight becomes a free hierarchy axis, purpose-built for UI at 11–15px, and, decisive here, it ships genuine **tabular figures** (`tnum`) and a slashed zero, which a catalogue of capacities and millimetre dimensions needs. System stack is the fallback, not the plan; `-apple-system` gives SF on macOS and Segoe on Windows, which are two different rhythms, and Packrig's whole point is a controlled one.
 
 ```css
 @font-face {
@@ -63,7 +63,7 @@ body { font-family: var(--font); font-feature-settings: 'cv05' 1, 'ss03' 1; }
 .num, td.num, .capacity, .dim { font-variant-numeric: tabular-nums slashed-zero; }
 ```
 
-Subset to Latin + `·×–—→↗°` and the punctuation actually used. Target ≤ 48 KB. No network requests at runtime.
+Subset to Latin + `·×–, →↗°` and the punctuation actually used. Target ≤ 48 KB. No network requests at runtime.
 
 ### 2.1 Type ramp
 
@@ -78,8 +78,8 @@ Subset to Latin + `·×–—→↗°` and the punctuation actually used. Target
 | Caption | `--t-caption` | 12.5px | 400 | 0 | 1.45 | Metadata, secondary rows |
 | Micro | `--t-micro` | 11px | 500 | 0.01em | 1.35 | Counts, helper text |
 | Label | `--t-label` | 10.5px | 650 | **0.13em** | 1 | Section labels (`SPECIFICATIONS`), uppercase |
-| Data | `--t-data` | 15px | 550 | −0.004em | 1.2 | Capacities, dimensions — always `tnum` |
-| Data small | `--t-data-s` | 12.5px | 550 | 0 | 1.2 | In-row numbers — always `tnum` |
+| Data | `--t-data` | 15px | 550 | −0.004em | 1.2 | Capacities, dimensions, always `tnum` |
+| Data small | `--t-data-s` | 12.5px | 550 | 0 | 1.2 | In-row numbers, always `tnum` |
 
 Rules:
 - **Two tracked-caps elements must never be adjacent.** Today the wordmark and its subtitle are both tracked caps; one goes (§10).
@@ -107,47 +107,47 @@ Ink is always white at an alpha. There is no light-mode ink. This is what makes 
 
 ### 3.2 The glass ladder
 
-Five levels. Elevation reads as *more blur and a lighter border*, following Encore's "up is lighter" — but the base tint stays dark so ink polarity never flips.
+Five levels. Elevation reads as *more blur and a lighter border*, following Encore's "up is lighter", but the base tint stays dark so ink polarity never flips.
 
 ```css
-/* E0 — the canvas. no surface. */
+/* E0, the canvas. no surface. */
 
-/* E1 — inline chip: 3D labels, tooltips, the hint pill */
+/* E1, inline chip: 3D labels, tooltips, the hint pill */
 --e1-bg:   rgba(16,18,21,0.52);
 --e1-blur: blur(16px) saturate(140%);
 --e1-brd:  rgba(255,255,255,0.10);
 --e1-shd:  0 2px 8px rgba(0,0,0,0.28);
 
-/* E2 — the dock, the rig panel, view tools */
+/* E2, the dock, the rig panel, view tools */
 --e2-bg:   rgba(16,18,21,0.60);
 --e2-blur: blur(28px) saturate(150%);
 --e2-brd:  rgba(255,255,255,0.13);
 --e2-shd:  0 6px 24px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.07);
 
-/* E3 — sheets (product detail, catalogue) */
+/* E3, sheets (product detail, catalogue) */
 --e3-bg:   rgba(14,16,19,0.66);      /* the ceiling. never higher. */
 --e3-blur: blur(40px) saturate(160%);
 --e3-brd:  rgba(255,255,255,0.16);
 --e3-shd:  0 16px 56px rgba(0,0,0,0.46), inset 0 1px 0 rgba(255,255,255,0.09);
 
-/* E4 — transient over a sheet: popovers, size dropdowns, confirms */
+/* E4, transient over a sheet: popovers, size dropdowns, confirms */
 --e4-bg:   rgba(22,25,29,0.86);      /* over glass, not over scene → can be opaque */
 --e4-blur: blur(24px) saturate(150%);
 --e4-brd:  rgba(255,255,255,0.18);
 --e4-shd:  0 20px 48px rgba(0,0,0,0.55);
 
-/* fills used INSIDE a glass surface — these are not elevation, they are texture */
+/* fills used INSIDE a glass surface, these are not elevation, they are texture */
 --fill-1: rgba(255,255,255,0.05);   /* card rest        */
 --fill-2: rgba(255,255,255,0.09);   /* card hover, quiet button */
 --fill-3: rgba(255,255,255,0.15);   /* pressed, active segment  */
 --hairline: rgba(255,255,255,0.09); /* row dividers     */
 ```
 
-### 3.3 Making it work over a desert *and* a night sky — the scrim well
+### 3.3 Making it work over a desert *and* a night sky, the scrim well
 
 Alpha alone cannot solve this. At `0.60` over a night HDRI the panel vanishes; over a noon desert the same panel reads as a grey smear (visible in the current build). The fix is to darken **the scene behind the panel**, not the panel itself.
 
-Every E2/E3 surface carries a **scrim well**: a non-interactive child element behind the surface's own background, holding a **blurred copy of the panel's own shape**. Blur still does its job — the glass stays glass — but the substrate it samples is now bounded.
+Every E2/E3 surface carries a **scrim well**: a non-interactive child element behind the surface's own background, holding a **blurred copy of the panel's own shape**. Blur still does its job, the glass stays glass, but the substrate it samples is now bounded.
 
 ```css
 .scrim-well {
@@ -159,7 +159,7 @@ Every E2/E3 surface carries a **scrim well**: a non-interactive child element be
 }
 ```
 
-**Use the blurred-shape form, not a radial gradient.** A radial gradient sized to a tall narrow element (the rail, the dock) paints a visible dark *oval* that does not follow the panel — the same grey-smudge failure as the current `.top-scrim`. A blurred copy of the shape hugs whatever the panel is, at any aspect ratio, for the same cost.
+**Use the blurred-shape form, not a radial gradient.** A radial gradient sized to a tall narrow element (the rail, the dock) paints a visible dark *oval* that does not follow the panel, the same grey-smudge failure as the current `.top-scrim`. A blurred copy of the shape hugs whatever the panel is, at any aspect ratio, for the same cost.
 
 `--scrim-k` is **one number, set on `:root`, driven by scene luminance.**
 
@@ -169,7 +169,7 @@ Every E2/E3 surface carries a **scrim well**: a non-interactive child element be
 
 Reference values: night sky `L≈0.06 → k≈0.87`; forest `L≈0.22 → k≈1.05`; mountain dawn `L≈0.44 → k≈1.31`; desert noon `L≈0.71 → k≈1.62`; snow `L≈0.88 → k≈1.81`.
 
-**The guarantee this buys:** composite luminance behind any text never exceeds `0.045` relative luminance (≈ L\*22). All ink contrast ratios in §9 are computed against that ceiling, so they hold in every scene. Verify by screenshotting `?env=desert` and `?env=snow` and sampling — do not assume.
+**The guarantee this buys:** composite luminance behind any text never exceeds `0.045` relative luminance (≈ L\*22). All ink contrast ratios in §9 are computed against that ceiling, so they hold in every scene. Verify by screenshotting `?env=desert` and `?env=snow` and sampling, do not assume.
 
 Text that floats on the canvas with no panel (wordmark, 3D labels) uses the same mechanism at `--scrim-k * 0.6` with a 140px radius.
 
@@ -214,7 +214,7 @@ See §8 for why the plate is pure white and not an off-white.
 
 ## 4. Spacing, radius, elevation
 
-### 4.1 Spacing — 4px base
+### 4.1 Spacing, 4px base
 
 | Token | px | Use |
 |---|---|---|
@@ -223,15 +223,15 @@ See §8 for why the plate is pure white and not an off-white.
 | `--s-3` | 12 | grid gap, list row gap |
 | `--s-4` | 16 | card padding, sheet inner rhythm |
 | `--s-5` | 20 | panel padding |
-| `--s-6` | 24 | **the gutter** — every panel is 24px from the viewport edge |
+| `--s-6` | 24 | **the gutter**, every panel is 24px from the viewport edge |
 | `--s-7` | 32 | between sections in a sheet |
 | `--s-8` | 40 | above a section label after content |
 | `--s-9` | 56 | sheet header → hero |
 | `--s-10` | 72 | empty-state breathing room |
 
-The current 30px gutter goes to 24 — it puts the panels on the same 4px lattice as their contents.
+The current 30px gutter goes to 24, it puts the panels on the same 4px lattice as their contents.
 
-### 4.2 Radius — concentric
+### 4.2 Radius, concentric
 
 ```css
 --r-panel:   20px;  /* sheets, rig panel      */
@@ -249,7 +249,7 @@ The current 30px gutter goes to 24 — it puts the panels on the same 4px lattic
 
 | Level | Surface | Shadow | Blur | When |
 |---|---|---|---|---|
-| E0 | — | — | — | The canvas |
+| E0 |, |, |, | The canvas |
 | E1 | `--e1-bg` | `--e1-shd` | 16px | 3D labels, tooltips, hint |
 | E2 | `--e2-bg` | `--e2-shd` | 28px | Dock, rig panel, view tools |
 | E3 | `--e3-bg` | `--e3-shd` | 40px | Sheets |
@@ -272,7 +272,7 @@ Only E2 and E3 get a scrim well. E1 gets the reduced well. E4 sits on glass and 
 --d-press:   90ms;  /* active/pressed                          */
 --d-control:180ms;  /* chip select, facet toggle, tab swap     */
 --d-sheet:  320ms;  /* sheet in                                */
---d-sheet-out:240ms;/* sheet out — exits are ~75% of entries    */
+--d-sheet-out:240ms;/* sheet out, exits are ~75% of entries    */
 --d-camera: 700ms;  /* camera reframe / preset move            */
 --d-scene:  600ms;  /* HDRI cross-fade                         */
 ```
@@ -293,15 +293,15 @@ Only E2 and E3 get a scrim well. E1 gets the reduced well. E4 sits on glass and 
 | 3D selection ring appear | `scale .82→1`, `opacity` | 260 | `--ease-pop` |
 | Non-selected bags dim | material exposure + saturation | 140 | `--ease-out` |
 | Bag added to bike | `scale .90→1` + 8mm drop | 380 | `--ease-pop` |
-| List stagger | per item delay | +18ms, capped at 8 items | — |
+| List stagger | per item delay | +18ms, capped at 8 items |, |
 
 **Same-tick rule:** sheet, rig-panel collapse, dock reposition and camera reframe all start on the same frame with `--d-sheet`/`--d-camera`. They are one gesture; if they stagger, the layout looks like it is arguing with itself.
 
-Never animate `blur()` or `backdrop-filter` — animate opacity of a pre-blurred layer instead. Never animate `width`/`height` on the sheet; animate `transform` and let layout be static.
+Never animate `blur()` or `backdrop-filter`, animate opacity of a pre-blurred layer instead. Never animate `width`/`height` on the sheet; animate `transform` and let layout be static.
 
 ---
 
-## 6. Components — moved
+## 6. Components, moved
 
 The component specifications (rig panel, bag sheet, catalogue, dock, 3D
 selection, camera reframing) now live in **`REDESIGN.md`** §4, §5, §9 and §10,
@@ -314,7 +314,7 @@ the bag sheet's fitted footer carries three actions, not two.
 
 - **16 icons, one inline SVG sprite**, 20×20 viewBox, 1.5px stroke, round cap, round join, `currentColor`, no fills.
 - Set: `close`, `back`, `plus`, `search`, `chevron-down`, `check`, `external`, `trash`, `swap`, `more`, `camera-home`, `orbit`, `share`, `link`, `shuffle`, `info`.
-- **All emoji and text glyphs are deleted** — `⟳ ⌂ ⚡ ⧉ ↗ ×` currently do icon work. They render differently on every platform, they cannot be stroke-matched, and they are the single loudest "unfinished" signal in the current UI. (`↗` may survive *inside* a text label as a typographic mark; it may not survive as a standalone button.)
+- **All emoji and text glyphs are deleted**, `⟳ ⌂ ⚡ ⧉ ↗ ×` currently do icon work. They render differently on every platform, they cannot be stroke-matched, and they are the single loudest "unfinished" signal in the current UI. (`↗` may survive *inside* a text label as a typographic mark; it may not survive as a standalone button.)
 - Icon colour is `--ink-2`, `--ink-1` on hover. Icons are never Ember.
 - Optical alignment: 20px icon in a 36px button, centred; nudge `back`/`plus` right by 0.5px if the glyph is visually left-heavy.
 
@@ -326,9 +326,9 @@ The data: **702 products, 501 with image URLs, 1,457 local files across 31 brand
 
 ### 8.1 Aspect ratio
 
-**3:2 everywhere** — sheet hero (432×230, `contain`), catalogue card (`aspect-ratio: 3/2`), rig-panel thumbnail (48×48) and rail thumbnail (40×40). This is the source aspect, so no maker photograph is ever cropped.
+**3:2 everywhere**, sheet hero (432×230, `contain`), catalogue card (`aspect-ratio: 3/2`), rig-panel thumbnail (48×48) and rail thumbnail (40×40). This is the source aspect, so no maker photograph is ever cropped.
 
-The small thumbnails use `object-fit: **contain**` on the white plate, not `cover`. A square centre-crop of a studio 3:2 shot reliably slices the ends off long bags — seat packs and bar rolls are the two most common shapes in the catalogue and both become unrecognisable slivers. Letterboxing wastes a little tile; cropping destroys the recognition the thumbnail exists to provide.
+The small thumbnails use `object-fit: **contain**` on the white plate, not `cover`. A square centre-crop of a studio 3:2 shot reliably slices the ends off long bags, seat packs and bar rolls are the two most common shapes in the catalogue and both become unrecognisable slivers. Letterboxing wastes a little tile; cropping destroys the recognition the thumbnail exists to provide.
 
 ### 8.2 Two treatments, chosen automatically
 
@@ -344,9 +344,9 @@ const studio = corners.every(p => luma(p) > 246 && saturation(p) < 0.06);
 | **Studio** | corners are white | `object-fit: contain` on a `#FFFFFF` plate, `--plate-edge` inset hairline, `--plate-veil` gradient on top |
 | **Lifestyle** | anything else | `object-fit: cover`, `object-position: center`, no plate, same hairline and veil |
 
-**Why the plate is pure white and not a softer off-white:** the photographs' own ground *is* pure white and fills the frame. An off-white plate would show as a visible seam in the letterbox bars. The glare problem that an off-white was trying to solve is instead fixed by `--plate-veil` — a barely-there darkening of the bottom 38% — which grounds the tile against the dark panel without introducing a second white.
+**Why the plate is pure white and not a softer off-white:** the photographs' own ground *is* pure white and fills the frame. An off-white plate would show as a visible seam in the letterbox bars. The glare problem that an off-white was trying to solve is instead fixed by `--plate-veil`, a barely-there darkening of the bottom 38%, which grounds the tile against the dark panel without introducing a second white.
 
-### 8.3 Fallback — required, not optional
+### 8.3 Fallback, required, not optional
 
 ~200 products have no photo. A broken `<img>`, an empty box, or the word "no image" are all unacceptable in a premium product. The fallback is a **generated silhouette plate**:
 
@@ -380,7 +380,7 @@ Because §3.3 caps composite luminance behind text at `0.045` relative luminance
 | `--ink-1` (0.96) | ≈ 17.6 : 1 | anything |
 | `--ink-2` (0.70) | ≈ 9.8 : 1 | anything |
 | `--ink-3` (0.48) | ≈ 5.1 : 1 | text ≥ 12px ✓ AA, ≥ 14px ✓ AAA-large |
-| `--ink-4` (0.28) | ≈ 2.3 : 1 | **non-text only** — dividers, disabled fills |
+| `--ink-4` (0.28) | ≈ 2.3 : 1 | **non-text only**, dividers, disabled fills |
 | `--accent` on `--fill-2` | ≈ 6.2 : 1 | icons, ring |
 | `--ink-on-accent` on `--accent` | ≈ 8.4 : 1 | primary button label |
 | `--warn` `#F2B23C` | ≈ 9.1 : 1 | fit warnings |
@@ -394,7 +394,7 @@ Because §3.3 caps composite luminance behind text at `0.045` relative luminance
 :focus-visible {
   outline: 2px solid #FFFFFF;
   outline-offset: 2px;
-  box-shadow: 0 0 0 5px rgba(0,0,0,0.55);   /* halo — survives any ground */
+  box-shadow: 0 0 0 5px rgba(0,0,0,0.55);   /* halo, survives any ground */
   border-radius: inherit;
 }
 ```
@@ -405,10 +405,10 @@ White ring plus a black halo works on the desert, the night sky and the glass al
 
 - Pointer-only dense controls: 32×32 minimum with ≥ 8px separation.
 - Anything touchable, or anything within 24px of a viewport edge: **44×44 minimum**. Swatches that are visually 20–28px get a transparent `::before` expanding the hit box to 44×44.
-- Sheet: focus moves to the close button on open, is trapped inside, `Esc` closes, and focus returns to the element that opened it. `role="dialog" aria-modal="false"` — it is deliberately non-modal; the scene stays live and reachable.
+- Sheet: focus moves to the close button on open, is trapped inside, `Esc` closes, and focus returns to the element that opened it. `role="dialog" aria-modal="false"`, it is deliberately non-modal; the scene stays live and reachable.
 - Facet popovers: `Esc` closes to the trigger. Arrow keys move within. `Enter`/`Space` toggle.
 - Catalogue grid: arrow keys move between cards in two dimensions, not just tab order.
-- Every swatch has an `aria-label` with its real name ("Frame colour: Slate green"). Colour is never the only carrier of meaning — selected swatches carry a ring *and* `aria-pressed`.
+- Every swatch has an `aria-label` with its real name ("Frame colour: Slate green"). Colour is never the only carrier of meaning, selected swatches carry a ring *and* `aria-pressed`.
 - Live region (`aria-live="polite"`) announces kit changes: "Added Zeitgeist Pack, 12 litres. Kit total 57.8 litres."
 
 ### 9.4 Reduced motion
@@ -427,13 +427,13 @@ Plus, in JS: auto-rotate defaults **off**; camera moves become instant cuts; sce
 
 ---
 
-## 10. What to delete — moved
+## 10. What to delete, moved
 
 **`REDESIGN.md`** §14, as the last phase of the build order.
 
 ---
 
-## 11. Token block — paste this at the top of the stylesheet
+## 11. Token block, paste this at the top of the stylesheet
 
 ```css
 :root {
@@ -470,7 +470,7 @@ Plus, in JS: auto-rotate defaults **off**; camera moves become instant cuts; sce
   --fill-3: rgba(255,255,255,0.15);
   --hairline: rgba(255,255,255,0.09);
 
-  /* scrim — JS writes --scrim-k, nothing else */
+  /* scrim, JS writes --scrim-k, nothing else */
   --scrim-k: 1.30;
 
   /* plate */
@@ -510,7 +510,7 @@ Plus, in JS: auto-rotate defaults **off**; camera moves become instant cuts; sce
 
 ---
 
-## 12. Build order — superseded
+## 12. Build order, superseded
 
 Superseded by **`REDESIGN.md`** §13, which orders this work together with the
 accounts, gallery and profile work it has to interleave with.

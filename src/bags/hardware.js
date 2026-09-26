@@ -34,7 +34,7 @@ export function strapAssembly(wm, hwm, { r, width = 20, ellipse = 1, angle = -Ma
   return g;
 }
 
-/** Flat webbing lying on a face, plus its buckle — for boxy bags. */
+/** Flat webbing lying on a face, plus its buckle, for boxy bags. */
 export function webbingRun(grp, wm, hwm, { from, to, width = 22, normal = 'z', proud = 0.8, buckleAt = 0.62 }) {
   const dir = to.clone().sub(from);
   const len = dir.length();
@@ -58,7 +58,7 @@ export function webbingRun(grp, wm, hwm, { from, to, width = 22, normal = 'z', p
 }
 
 /**
- * Roll-top closure. A rolled dry-bag mouth is NOT a set of concentric rings —
+ * Roll-top closure. A rolled dry-bag mouth is NOT a set of concentric rings,
  * the round section pinches flat into a lip roughly the bag's width but only a
  * few cm tall, that lip folds over itself two or three times, and a strap runs
  * over the fold. Built in the XY plane, stacking toward +z.
@@ -125,7 +125,7 @@ export function taperAndFlatten(geo, { len, shoulder, tailWid = 0.4, squash = 0.
 export const widAt = (t, tailWid = 0.4) => 1 + (tailWid - 1) * Math.min(Math.max(t, 0), 1) ** 0.85;
 
 /**
- * Webbing that wraps a bike tube and comes back — used where a strap has to
+ * Webbing that wraps a bike tube and comes back, used where a strap has to
  * visibly terminate ON something (saddle rail, bar) instead of in mid-air.
  */
 export function wrapStrap(wm, hwm, { from, to, tubeR, width = 14, thick = 3 }) {

@@ -5,7 +5,7 @@
  * spreadsheet, which is the real data model: rows are things owned once, and
  * every tab is a different arrangement of the same things. So:
  *
- *   Locker   { v, items: [Item] }               — everything I own, once
+ *   Locker   { v, items: [Item] }              , everything I own, once
  *   Item     { uid, ref?, name?, g?, cat?, a?, d?, l?, cmp?, col?, note? }
  *              `ref` is a gear-catalogue id; every other field overrides the
  *              catalogue (the owner's own scale beats a spec sheet). An item
@@ -24,7 +24,7 @@
  *   frame | frame:<mount>       bolted to the bike: bottle | bar | pump | top
  *   body | body:<in>            worn; or in a body container: hip | pocket | pack
  *
- * Nothing in this file touches three.js or the DOM, so it runs in node — the
+ * Nothing in this file touches three.js or the DOM, so it runs in node, the
  * round-trip tests in tools/pack-test.mjs import it directly.
  */
 
@@ -91,7 +91,7 @@ export const onBike = (code) => {
 // ---- catalogue + archetype guessing ----------------------------------------
 /**
  * Density fallbacks per archetype, g per litre of packed volume, plus a
- * default compressibility. Used ONLY for a custom item with no dimensions — so
+ * default compressibility. Used ONLY for a custom item with no dimensions, so
  * a pasted row "Chair, 18 oz" still arrives with a believable size instead of a
  * 1-litre cube. Each figure is the median of that archetype in data/gear.json
  * at the time of writing (see DECISIONS.md §8).
@@ -280,8 +280,8 @@ export const emptyLoadout = (name = '') => ({ name, place: {} });
 export function placeOf(loadout, uid) { return loadout?.place?.[uid] || 'home'; }
 
 /**
- * An explicit 'home' is kept: it means "on this list, staying home" — the
- * owner's "not packed" — which is different from an item this loadout never
+ * An explicit 'home' is kept: it means "on this list, staying home", the
+ * owner's "not packed", which is different from an item this loadout never
  * mentions. Both leave the item at home; only the first is a row of the tab.
  */
 export function setPlace(loadout, uid, code) {

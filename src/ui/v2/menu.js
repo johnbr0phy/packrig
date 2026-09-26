@@ -1,29 +1,29 @@
 /**
- * The menu system, v2 — the shell and the router.
+ * The menu system, v2, the shell and the router.
  *
  * WHAT THIS REPLACES. v1 had two unrelated surfaces: `ui/home.js`, a centred
  * white card with two buttons over a dimmed bike, and `ui/gallery.js`, a
  * top bar plus two arrows plus a floating name plate. They shared no layout,
  * no type ramp and no motion, and both of them put a rectangle in the middle
- * of the one thing the product is for — the bike.
+ * of the one thing the product is for, the bike.
  *
  * THE RULE THAT SHAPES ALL OF THIS: the scene is never covered and never
  * dimmed. Every menu here is a COLUMN down the left with a horizontal
  * readability gradient behind it. The bike sits in the right two thirds, lit,
- * turning, and at every level of the menu it is showing you something real —
+ * turning, and at every level of the menu it is showing you something real,
  * on the start screen it is a bike, in Loadouts it is the loadout you are
  * reading about, in the Gallery it is the rig whose manifest is on the left.
  * You are never looking at a picture of a menu.
  *
  * THREE LEVELS, ONE SHELL:
- *   start      the root — what this is, and the ways in
+ *   start      the root, what this is, and the ways in
  *   rigs       the bikes you have saved, once there are any
  *   loadouts   eight curated rigs, on the bike, with their manifests
  *
  * `loadouts` and `rigs` are the same view (`browse.js`) with different
  * sources, because they are the same act: look at a rig somebody built, read
- * what is on it, take it if you want it. There was a `gallery` — everyone
- * else's rigs — and it is out for now; see the head of browse.js.
+ * what is on it, take it if you want it. There was a `gallery`, everyone
+ * else's rigs, and it is out for now; see the head of browse.js.
  *
  *   initMenu(app, { onBuild }) -> { open, close, go, get view, get isOpen }
  */
@@ -45,13 +45,13 @@ const el = (tag, cls, text) => {
 /** Views, in the order the tab strip shows them. */
 const VIEWS = [
   { id: 'start',    label: 'Start' },
-  // Only once there is something in it — see `paintChrome`. A tab reading "My
+  // Only once there is something in it, see `paintChrome`. A tab reading "My
   // rigs" that opens an empty page is a promise the app has not kept yet.
   { id: 'rigs',     label: 'My rigs', needsRigs: true },
   { id: 'loadouts', label: 'Examples' },
 ];
 
-/** Do we have saved rigs? Synchronous by design — see rigstore's `knownCount`. */
+/** Do we have saved rigs? Synchronous by design, see rigstore's `knownCount`. */
 const rigCount = (app) => {
   if (app.auth?.enabled && !app.auth.signedIn) return 0;
   return app.rigs?.knownCount || 0;
@@ -92,7 +92,7 @@ export function initMenu(app, { onBuild } = {}) {
   tabs.setAttribute('aria-label', 'Menu sections');
   const tabBtns = new Map();
   for (const v of VIEWS) {
-    // Start is the homepage. PACKRIG is the way back — a Start tab next to
+    // Start is the homepage. PACKRIG is the way back, a Start tab next to
     // Loadouts is a second door to the same room.
     if (v.id === 'start') continue;
     const b = el('button', 'pr-tab', v.label);
@@ -103,7 +103,7 @@ export function initMenu(app, { onBuild } = {}) {
   }
   head.append(tabs);
 
-  // Leaving the menu is a real destination — the bike as you left it — so it
+  // Leaving the menu is a real destination, the bike as you left it, so it
   // is a labelled control, not a bare ×. It only appears once there is
   // something to go back TO, which `paintChrome` decides.
   const closeBtn = el('button', 'pr-close');
@@ -133,7 +133,7 @@ export function initMenu(app, { onBuild } = {}) {
   });
 
   /*
-   * Log in, top right, on the front page — where every site anyone has used
+   * Log in, top right, on the front page, where every site anyone has used
    * puts it. It was reachable only from inside the builder, behind a button
    * that said "Sign in" and opened a panel of saved rigs, so the front door
    * was two screens in and led somewhere else.
@@ -190,7 +190,7 @@ export function initMenu(app, { onBuild } = {}) {
   let stash = null;
   let stashDirty = false;
   // Homepage is always the empty bike. keepScene used to leave a saved kit
-  // on the hero; that is gone — My rigs holds the copy.
+  // on the hero; that is gone, My rigs holds the copy.
   // False until the first render has happened, so the boot render does not
   // steal focus from the document.
   let moved = false;
@@ -217,7 +217,7 @@ export function initMenu(app, { onBuild } = {}) {
     // Deleting or publishing changes the list under you; redraw the view.
     onRefresh: () => { if (open_) render(); },
     notify: (msg) => app.toast?.(msg),
-    // The bike you walked in with, for `Update from your build` — browsing
+    // The bike you walked in with, for `Update from your build`, browsing
     // mounts each rig, so the live bike is not it.
     getWorking: () => stash,
     onAdopt: (item) => {
@@ -234,6 +234,7 @@ export function initMenu(app, { onBuild } = {}) {
       go('setup');
     },
     onDirty: () => { stashDirty = true; },
+    onSurprise: () => startSurprise(),
   });
 
   function paintChrome() {
@@ -248,7 +249,7 @@ export function initMenu(app, { onBuild } = {}) {
     }
     paintLogin();
     // Start and setup are home. Close means "back to the builder" and only
-    // belongs on Loadouts / My rigs — even after Surprise me, even with bags
+    // belongs on Loadouts / My rigs, even after Surprise me, even with bags
     // still on the bike. A Close on the front page is a door to nowhere.
     closeBtn.hidden = view === 'start' || view === 'setup';
     root.dataset.view = view;
@@ -336,7 +337,7 @@ export function initMenu(app, { onBuild } = {}) {
    * The builder underneath is taken out of the page while the menu is over it.
    *
    * `opacity: 0` and `pointer-events: none` hide a panel from the eye and the
-   * mouse and leave every button in it in the tab order — so Tab walked
+   * mouse and leave every button in it in the tab order, so Tab walked
    * straight off the menu into invisible controls, and a screen reader read out
    * a builder that was not on screen. `inert` is the one thing that removes
    * both, and it is put on the individual surfaces rather than on `#ui-root`
@@ -377,7 +378,7 @@ export function initMenu(app, { onBuild } = {}) {
   function close({ adopted = null, build = false, surprise = false, setup = null } = {}) {
     if (!open_) return;
     // Backing out of the menu without taking anything puts your own bike back.
-    // Surprise me / a finished setup are taking something — the stash dies.
+    // Surprise me / a finished setup are taking something, the stash dies.
     if (!adopted && !surprise && !setup) restoreStash();
     open_ = false;
     browse.cancel();

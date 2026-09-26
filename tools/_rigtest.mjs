@@ -1,5 +1,5 @@
 /**
- * Saved rigs, end to end, with no backend configured — the state most people
+ * Saved rigs, end to end, with no backend configured, the state most people
  * will meet first. Proves: save, list, load-back, the durable share link, and
  * that an old positional ?kit= link still resolves to the same bike.
  */

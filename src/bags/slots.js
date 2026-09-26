@@ -5,7 +5,7 @@
 /** Mount slots. Each maps to a bike anchor and knows what it conflicts with. */
 export const SLOTS = {
   // A seat pack hangs off the rails and extends back OVER the rack deck, which
-  // is exactly where a trunk bag sits — the two occupy the same volume and no
+  // is exactly where a trunk bag sits, the two occupy the same volume and no
   // one runs both. `trunk` carries the mirror of this.
   seatpack:      { anchor: 'seatpack',  label: 'Seat pack',        excludes: ['saddlebag', 'trunk'] },
   saddlebag:     { anchor: 'seatpack',  label: 'Saddle bag',       excludes: ['seatpack', 'trunk'] },
@@ -15,7 +15,7 @@ export const SLOTS = {
   framebag_full: { anchor: 'framebag',  label: 'Full frame bag',   excludes: ['framebag_half'], hidesBottles: true },
   framebag_half: { anchor: 'framebag',  label: 'Half frame bag',   excludes: ['framebag_full'] },
   // A front pocket does NOT mount to the bike. It clips onto the FRONT FACE of
-  // whatever handlebar bag is already fitted — Revelate's Scrambler Pocket
+  // whatever handlebar bag is already fitted, Revelate's Scrambler Pocket
   // buckles to the roll's own straps, Apidura's Front Accessory Pack to the
   // Expedition Handlebar Pack. Every other slot in this file names a bike
   // anchor; this one names a HOST SLOT, and BagSystem parents it to that bag's

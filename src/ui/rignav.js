@@ -2,7 +2,7 @@
  * The rig you have open, as the head of the left column.
  *
  * Name on the left, save on the right. PACKRIG in the top bar is how you
- * leave — there is no second exit hiding behind a chevron.
+ * leave, there is no second exit hiding behind a chevron.
  *
  *   initRigNav(app, { onRename, onLevel }) -> { el, actions, enter, refresh, current }
  */

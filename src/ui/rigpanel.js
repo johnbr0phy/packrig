@@ -123,12 +123,12 @@ export function initRigPanel(app, hooks) {
     if (app.sheets?.isOpen || document.getElementById('ui-root').classList.contains('menu-open')) return null;
     if (panel.hidden) return null;
     if (isPhone()) return { bottom: detents.top() };
-    const r = panel.getBoundingClientRect();
-    return r.width ? { left: r.right } : null;
+    return panel.offsetWidth ? { left: panel.offsetLeft + panel.offsetWidth } : null;
   });
 
   // ---- render ----------------------------------------------------------------------------
   let hovered = null;
+  let wasViewing = false;
   let selected = null;
   const unit = () => P?.lib?.unit || 'metric';
   const W = (g, o) => fmtWeight(g, unit(), o);
@@ -277,7 +277,8 @@ export function initRigPanel(app, hooks) {
   function quickTiles(st) {
     const box = el('section', 'rg-sec rg-quick');
     const h = el('div', 'rg-sec-head');
-    h.append(el('h3', 'rg-sec-t', 'What are you bringing?'));
+    const any = st.locker.items.some((i) => st.loadout.place?.[i.uid] !== undefined);
+    h.append(el('h3', 'rg-sec-t', any ? 'Anything else?' : 'What are you bringing?'));
     box.append(h);
     const grid = el('div', 'rg-tiles');
     for (const q of QUICK.slice(0, 12)) {
@@ -307,7 +308,9 @@ export function initRigPanel(app, hooks) {
     paintNums(st, nBags);
     panel.classList.toggle('is-empty', !nBags && !unfit.length);
 
-    // someone else's rig
+    // someone else's rig: say whose, and open far enough to show it
+    if (!st.mine && !wasViewing && isPhone()) queueMicrotask(() => detents.snap('half'));
+    wasViewing = !st.mine;
     if (!st.mine) {
       const v = el('div', 'rg-viewing');
       const notMine = P.notOwned().length;
@@ -325,6 +328,18 @@ export function initRigPanel(app, hooks) {
       nums.hidden = false;
       nums.classList.add('is-empty');
       const e = el('div', 'rg-empty');
+      const lost = [...new Set(st.warnings.filter((w) => w.kind === 'nobag').map((w) => w.slot))];
+      if (st.mine && lost.length) {
+        // a list came in before any bags: fit what it names, in one tap
+        const n = st.warnings.filter((w) => w.kind === 'nobag').length;
+        e.append(el('p', 'rg-empty-t', `${n} things, ${lost.length} bags to put them in`));
+        const row = el('div', 'rg-row');
+        row.append(button('btn sm primary', `Fit the ${lost.length} bag${lost.length === 1 ? '' : 's'} your list uses`, () => hooks.fitMissing?.(lost)),
+          button('btn sm', 'Choose bags myself', () => hooks.openMountList?.()));
+        e.append(row);
+        nums.append(e);
+        return;
+      }
       e.append(el('p', 'rg-empty-t', 'Tap where a bag goes'));
       const row = el('div', 'rg-row');
       row.append(button('btn sm', 'Choose from a list', () => hooks.openMountList?.()),
@@ -345,6 +360,16 @@ export function initRigPanel(app, hooks) {
     }
     if (chips.childElementCount) body.append(chips);
 
+    // a pasted list names bags this bike does not have: say so first
+    const missing = [...new Set(st.warnings.filter((w) => w.kind === 'nobag').map((w) => w.slot))];
+    if (st.mine && missing.length) {
+      const c = el('div', 'rg-callout');
+      const n = st.warnings.filter((w) => w.kind === 'nobag').length;
+      c.append(el('p', null, `${n} thing${n === 1 ? '' : 's'} on your list go${n === 1 ? 'es' : ''} in ${missing.length} bag${missing.length === 1 ? '' : 's'} this bike doesn’t have.`));
+      c.append(button('btn sm primary', `Fit the ${missing.length} bag${missing.length === 1 ? '' : 's'} your list uses`, () => hooks.fitMissing?.(missing)));
+      body.append(c);
+    }
+
     // group items by where they are
     const itemsBySlot = new Map();
     const frame = [], worn = [], notPacked = [];
@@ -358,8 +383,10 @@ export function initRigPanel(app, hooks) {
       else notPacked.push(it);
     }
 
-    // first-timer: no kit yet, so ask
-    if (st.mine && !listed.length) body.append(quickTiles(st));
+    // first-timer: no kit yet, so ask first; while the list is short the
+    // tiles stay, under the bags, so the next thing is one tap away
+    const tiles = st.mine && listed.length < 12 ? quickTiles(st) : null;
+    if (tiles && !listed.length) body.append(tiles);
 
     // ---- bags -----------------------------------------------------------------------------
     const sec = el('section', 'rg-sec');
@@ -382,6 +409,8 @@ export function initRigPanel(app, hooks) {
     }
     sec.append(acts);
     body.append(sec);
+
+    if (tiles && listed.length) body.append(tiles);
 
     // ---- balance ----------------------------------------------------------------------------
     if (st.balance && listed.length) {
@@ -415,12 +444,9 @@ export function initRigPanel(app, hooks) {
     };
     let packBtn = null;
     const homeUids = notPacked.map((i) => i.uid);
-    // a spreadsheet names bags this bike does not have: offer to fit them
-    const missing = [...new Set(st.warnings.filter((w) => w.kind === 'nobag').map((w) => w.slot))];
-    if (st.mine && (homeUids.length || missing.length)) {
+    if (st.mine && homeUids.length && !missing.length) {
       packBtn = el('div', 'rg-row');
-      if (missing.length) packBtn.append(button('btn sm primary', `Fit the ${missing.length} bag${missing.length === 1 ? '' : 's'} your list uses`, () => hooks.fitMissing?.(missing)));
-      else packBtn.append(button('btn sm', homeUids.length === 1 ? 'Pack it' : `Pack these ${homeUids.length}`, () => hooks.packHome?.(homeUids)));
+      packBtn.append(button('btn sm', homeUids.length === 1 ? 'Pack it' : `Pack these ${homeUids.length}`, () => hooks.packHome?.(homeUids)));
     }
     group('Not packed', notPacked, packBtn);
     group('On the frame', frame);
@@ -470,6 +496,8 @@ export function initRigPanel(app, hooks) {
     get name() { return name; },
     set name(v) { name = v || ''; paintHead(); },
     detent(n) { if (isPhone()) detents.snap(n); },
+    /** The watts landed: swap the chip, leave everything else alone. */
+    updateWatts() { const old = nums.querySelector('.rg-watts'); if (old) old.replaceWith(wattsChip()); },
     get detentName() { return detents.name; },
     detentTop: () => (isPhone() ? detents.top() : null),
     refreshDetent() { if (isPhone()) detents.refresh(); },

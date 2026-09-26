@@ -1,10 +1,10 @@
 /**
  * Packing: the controller. One object, `app.pack`, owns
  *
- *   lib    — MY stuff, persisted: { locker, loadouts[], active, unit }
- *   view   — someone else's packing list I am looking at (a shared link or a
+ *   lib   , MY stuff, persisted: { locker, loadouts[], active, unit }
+ *   view  , someone else's packing list I am looking at (a shared link or a
  *            gallery rig), never written into my locker unless I copy it
- *   open   — which bags are open in the scene
+ *   open  , which bags are open in the scene
  *
  * and recomputes, whenever anything changes, one `state` everybody reads:
  * resolved items, per-bag solver results, totals, balance, warnings. The
@@ -158,7 +158,7 @@ export function initPack(app) {
       const sided = list.some((x) => x.side);
       if (sided && /^framebag/.test(slot)) {
         // One bag with two sides: the left takes what is put on the left (up
-        // to half the bag), and everything else gets whatever it leaves —
+        // to half the bag), and everything else gets whatever it leaves,
         // not a fixed half each, which refused kit a real bag holds.
         // the left is a side pocket: as wide as its share of the kit, a third
         // to a half of the bag
@@ -231,7 +231,7 @@ export function initPack(app) {
     for (const fn of listeners) fn(state);
     // things hanging off the bike change its outline: refit once they settle
     clearTimeout(refitTimer);
-    refitTimer = setTimeout(() => { app.framing?.invalidate(); app.framing?.update(); }, 700);
+    refitTimer = setTimeout(() => { refitTimer = null; app.framing?.invalidate(); app.framing?.update(); }, 700);
     return state;
   }
 
@@ -302,6 +302,8 @@ export function initPack(app) {
   let showing = false;     // is the packing layer visible (Gear mode)?
 
   const api = {
+    /** A refit of the camera is due (screens.mjs waits for it). */
+    get refitPending() { return !!refitTimer; },
     get state() { return state || recompute({ animate: false }); },
     get lib() { return lib; },
     get view() { return view; },

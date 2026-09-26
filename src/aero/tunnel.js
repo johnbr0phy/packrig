@@ -6,7 +6,7 @@ import { labelTexture, disposeObject } from '../lib.js';
 const ACCENT = 0xe8a848;
 
 // The camera fly lands slightly before the rest of the dissolve (lighting,
-// fog, fades, post) finishes — matches the brief: "~1.2s" for the camera,
+// fog, fades, post) finishes, matches the brief: "~1.2s" for the camera,
 // "~1.5s" for the orchestrated whole.
 const CAM_DURATION = 1.2;
 const FX_DURATION = 1.5;
@@ -16,14 +16,14 @@ const TUNNEL_FOG_COLOR = new THREE.Color(0x9aa0a6);
 const TUNNEL_FOG_DENSITY = 0.0015;
 // kept low, not zero: the HDRI is still what's lighting the bike's paint and
 // metal, but at full strength an outdoor (often warm/dusk) env map tints the
-// backdrop — the opposite of "restrained, technical, expensive-looking"
+// backdrop, the opposite of "restrained, technical, expensive-looking"
 const TUNNEL_ENV_INTENSITY = 0.12;
 const TUNNEL_HEMI_INTENSITY = 0.24;  // small neutral fill so key/rim aren't the only light
 const TUNNEL_HEMI_COLOR = new THREE.Color(0xd7dade);
-const TUNNEL_GTAO_RADIUS = 0.06;   // clean bright space — heavy AO reads as dirt
+const TUNNEL_GTAO_RADIUS = 0.06;   // clean bright space, heavy AO reads as dirt
 const BLOOM_LIFT = 0.05;           // so the smoke picks up a glow
 const KEY_INTENSITY = 3.6;
-const RIM_INTENSITY = 4.6;         // strong — this is what makes smoke read as volume
+const RIM_INTENSITY = 4.6;         // strong, this is what makes smoke read as volume
 
 function clamp01(x) {
   return Math.min(1, Math.max(0, x));
@@ -45,7 +45,7 @@ function collectMaterials(root) {
 
 // Records each material's own opacity as a baseline (so a material that's
 // meant to sit at 0.5 opacity still fades proportionally) and flips it
-// transparent so the fade can actually render. Also drops depthWrite —
+// transparent so the fade can actually render. Also drops depthWrite,
 // a "faded to invisible" mesh (the old terrain, with its noisy height field)
 // still writes real depth by default, which corrupts GTAO's depth/normal
 // read and shows up as blotchy ambient occlusion baked into the tunnel floor.
@@ -70,14 +70,14 @@ function restoreFade(snap) {
   }
 }
 
-// Re-arms an already-settled (opaque, depth-writing) fade for another pass —
-// used on the tunnel's own set, which — unlike the old world — ends an
+// Re-arms an already-settled (opaque, depth-writing) fade for another pass,
+// used on the tunnel's own set, which, unlike the old world, ends an
 // `enter()` fully opaque and needs to become fadable again before `exit()`.
 function makeFadable(snap) {
   for (const s of snap) { s.m.transparent = true; s.m.depthWrite = false; }
 }
 
-// Soft radial sheen for the backdrop — cool grey, darker at the edges, so a
+// Soft radial sheen for the backdrop, cool grey, darker at the edges, so a
 // smoked-glass rider and white smoke both separate from it.
 function backdropTexture() {
   const s = 512;
@@ -113,7 +113,7 @@ function buildFloor(floorLen, floorW) {
  * to the floor at `backX`, continuing as a flat vertical wall up to `wallH`.
  * Built as an explicit profile extruded across `width` rather than a
  * primitive, so the tangency (and therefore the seamless floor↔wall read)
- * is exact — see contract note on deriving geometry, never eyeballing it.
+ * is exact, see contract note on deriving geometry, never eyeballing it.
  */
 function buildCove(width, coveR, wallH, backX) {
   const halfW = width / 2;
@@ -162,7 +162,7 @@ function buildCove(width, coveR, wallH, backX) {
 
 /**
  * Centreline + yaw fan (±5/10/15/20°), radiating from the bike's own centre
- * toward the nose — the wind-facing end, where the sweep actually matters.
+ * toward the nose, the wind-facing end, where the sweep actually matters.
  * Every mesh is oriented via explicit quaternion composition (flatten, then
  * yaw about world Y) rather than Euler angles, since combining an X-tilt
  * with a Z-spin through `.rotation` is exactly the axis-order trap this
@@ -181,16 +181,16 @@ function buildMarkings(pivot, floorLen, wb, maxFanReach) {
   g.add(cl);
 
   // Near-white on a light floor all but disappeared under real lighting (see
-  // report) — dark graphite reads as a painted line against the floor at any
+  // report), dark graphite reads as a painted line against the floor at any
   // exposure, the way the centreline's amber already did.
   //
   // `maxFanReach` is already the exact, margin-included distance the fan can
   // extend along +X before it projects below the bottom of frame (solved in
-  // frameBike() from the camera's own basis vectors) — not `floorLen` (sized
+  // frameBike() from the camera's own basis vectors), not `floorLen` (sized
   // to cover the whole frustum, including corners nowhere near the bike) and
   // not raw camera distance either, both of which put the fan's own labels
   // outside the frame before this was solved for directly instead of
-  // guessed at — see report.
+  // guessed at, see report.
   const fanRadius = maxFanReach;
   const fanMat = new THREE.MeshBasicMaterial({ color: 0x2a2d31, toneMapped: false, transparent: true, opacity: 0.85 });
   for (const sign of [-1, 1]) {
@@ -214,7 +214,7 @@ function buildMarkings(pivot, floorLen, wb, maxFanReach) {
         new THREE.PlaneGeometry(lw, lh),
         new THREE.MeshBasicMaterial({ map: tex, transparent: true, toneMapped: false })
       );
-      // sits inside the line's own span, not past its tip — the tip can run
+      // sits inside the line's own span, not past its tip, the tip can run
       // off the edge of the visible floor depending on camera framing, and a
       // label that goes with it is a label nobody sees (see report)
       label.quaternion.copy(qFlat); // labels stay upright, unlike the line they mark
@@ -242,20 +242,20 @@ function buildSet(dims) {
 // signature; nothing here calls it today (see report: panel.js looks like the
 // natural owner of measure() calls, not the enter/exit choreography).
 // `passes` ({ gtao, bloom }) isn't in CONTRACT.md's createTunnel signature, but
-// index.js's composition root already passes it through — see report.
+// index.js's composition root already passes it through, see report.
 export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
   const { scene, camera, controls, bike, envs } = app;
   const gtao = passes?.gtao;
   const bloom = passes?.bloom;
 
   // wb/bikeCenter are still used for the markings' pivot and line-width scale
-  // (those want to look like real-world tape width regardless of framing) —
+  // (those want to look like real-world tape width regardless of framing),
   // everything about the set's actual FOOTPRINT now comes from frameBike().
   const P = bike.points;
   const wb = (P.frontAxle.x - P.rearAxle.x) * 0.001;
   const bikeCenter = new THREE.Vector3(((P.rearAxle.x + P.frontAxle.x) / 2) * 0.001, 0, 0);
 
-  // The set starts empty and is (re)built by frameBike() on every enter() —
+  // The set starts empty and is (re)built by frameBike() on every enter(),
   // see the long comment there for why a size fixed at module-load time is
   // wrong regardless of how generous the multiplier is.
   let setGroup = new THREE.Group();
@@ -276,10 +276,10 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
 
   /**
    * Fits a 3/4-front camera to the bike's CURRENT bounding box (frame, wheels,
-   * whatever bags happen to be mounted — bag meshes are parented inside
+   * whatever bags happen to be mounted, bag meshes are parented inside
    * bike.group, so Box3.setFromObject already sees them), repositions the
-   * key/rim rig off the resulting camera, and — this is the part that was
-   * missing — resizes the set itself from what the camera can actually see.
+   * key/rim rig off the resulting camera, and, this is the part that was
+   * missing, resizes the set itself from what the camera can actually see.
    *
    * The bug this replaced: the set was sized once from the bare bike's
    * wheelbase/height, but camera distance is a function of the CURRENT kit
@@ -287,7 +287,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
    * frustum). A bare or lightly-loaded bike never showed it. A five-bag kit
    * pulled the camera out far enough that the frustum reached past the
    * floor/cove edges, and everything beyond them rendered as empty
-   * background — a black slab, mis-diagnosed twice before landing here.
+   * background, a black slab, mis-diagnosed twice before landing here.
    * Fixed by solving the set's footprint from the frustum directly, at the
    * backdrop's depth, instead of from the bike.
    */
@@ -302,18 +302,18 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
     const CAM_MARGIN = window.innerWidth <= 560 ? 1.95 : 1.45;
 
     // On phone the HUD is a bottom sheet, not a side panel, so it eats
-    // vertical rather than horizontal room — and unlike the desktop side
+    // vertical rather than horizontal room, and unlike the desktop side
     // panel (cleared by main.js's -165px horizontal offset), nothing was
     // compensating for it here. Fitting the bike's height against the FULL
     // vFov meant only the "comfortable headroom" margin stood between the
     // rider's head and the top of frame; landscape's 55vh sheet eats over
-    // half the viewport, blowing straight through that margin (see report —
+    // half the viewport, blowing straight through that margin (see report,
     // portrait got lucky because 55vh of a *tall* viewport still leaves
     // plenty above, landscape did not).
     //
     // Measured, not guessed: aero.css's phone breakpoint isn't re-derived
     // here as a width/height media query (that's a second source of truth
-    // waiting to drift from the CSS) — instead this reads the sheet's own
+    // waiting to drift from the CSS), instead this reads the sheet's own
     // live rect. A bottom sheet is distinguished from the desktop/tablet
     // side panel purely by width: the sheet spans nearly the full viewport
     // (gutter aside), the side panel never does.
@@ -324,7 +324,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
     const visibleFrac = hasSheet
       ? clamp01(Math.max(60, sheetRect.top) / window.innerHeight)
       : 1;
-    // only the HEIGHT fit is affected — the sheet doesn't touch the sides
+    // only the HEIGHT fit is affected, the sheet doesn't touch the sides
     const heightVFov = hasSheet ? 2 * Math.atan(Math.tan(vFov / 2) * visibleFrac) : vFov;
     // shifts the render so a bike centred in `heightVFov` lands centred in
     // the visible band (0..sheetRect.top) instead of the full canvas
@@ -354,8 +354,8 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
     // `d` along +X from `bikeCenter` gives the exact reach, with `FRAME_SAFE`
     // pulling it in from the true edge for margin. (An earlier version
     // measured "nearest visible ground point" along the camera's own view
-    // ray instead of along +X — a different direction, off by nearly 40° at
-    // this azimuth — and the fan still ran off the bottom of frame.)
+    // ray instead of along +X, a different direction, off by nearly 40° at
+    // this azimuth, and the fan still ran off the bottom of frame.)
     const FRAME_SAFE = 0.82;
     const K = Math.tan(vFov / 2) * FRAME_SAFE;
     const relPivot = new THREE.Vector3().subVectors(bikeCenter, camPos);
@@ -366,13 +366,13 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
 
     key.position.copy(camPos).addScaledVector(rightDir, -rigScale * 1.6).add(new THREE.Vector3(0, rigScale * 1.8, 0));
     key.target.position.copy(center);
-    // continue PAST the target along the camera's own view direction — that's
+    // continue PAST the target along the camera's own view direction, that's
     // the far side of the bike from the camera, i.e. "behind" it
     rim.position.copy(center).addScaledVector(camDir, rigScale * 2.0).add(new THREE.Vector3(0, rigScale * 1.6, 0));
     rim.target.position.copy(center);
 
     // key light's shadow frustum: same kit-aware scale as everything else
-    // here, not the bare wheelbase — a wide kit sticking past the old ±wb
+    // here, not the bare wheelbase, a wide kit sticking past the old ±wb
     // bound produced the exact blocky shadow-map artifact fixed earlier,
     // just from the bag side instead of the terrain side.
     const ksc = key.shadow.camera;
@@ -382,7 +382,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
     ksc.updateProjectionMatrix();
 
     // ---- set footprint, solved from the frustum at the backdrop's depth,
-    // not from the bike. `halfFov` is a circular (not rectangular) bound —
+    // not from the bike. `halfFov` is a circular (not rectangular) bound,
     // safe at any camera azimuth without having to reason about how an
     // axis-aligned floor rectangle clips against an off-axis frustum.
     const backdropDepth = camDist * 2.1;
@@ -405,7 +405,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
     setFade = snapshotFade(collectMaterials(setGroup));
 
     // Lift the render into the visible band above the sheet. Desktop/tablet
-    // (hasSheet false) leaves camera.view completely untouched — main.js owns
+    // (hasSheet false) leaves camera.view completely untouched, main.js owns
     // that property there, keeps updating it live on resize while the tunnel
     // is open, and a save/restore on this side would fight those live
     // updates with a stale snapshot (see report on why tunnel.js gave up its
@@ -421,14 +421,14 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
   const tunnel = {
     _mix: 0,        // 0 = original scene, 1 = full tunnel (lighting/fades/post/rider)
     _camMix: 0,     // camera/controls track their own, slightly faster, clock
-    _dir: 0,        // +1 entering, -1 exiting, 0 idle — drives the visual crossfade only
-    _entered: false, // the logical on/off switch — flips the instant enter()/exit() is called
+    _dir: 0,        // +1 entering, -1 exiting, 0 idle, drives the visual crossfade only
+    _entered: false, // the logical on/off switch, flips the instant enter()/exit() is called
     _saved: null,
     _oldWorldFade: null,
     _hardSwapped: false,
     _viewOffsetTouched: false, // did frameBike() apply its own phone-sheet setViewOffset this session?
 
-    // `active` is the caller-facing on/off state, not "is a crossfade playing" —
+    // `active` is the caller-facing on/off state, not "is a crossfade playing",
     // it must flip the moment enter()/exit() is called so the mode is instantly
     // re-toggleable, independent of how long the visual dissolve takes.
     get active() {
@@ -466,15 +466,15 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
         hemiGround: envs.hemi.groundColor.clone(),
         skyVisible: envs.sky.visible,
         campVisible: envs.camp.visible,
-        // undefined until the caller passes `passes: { gtao, bloom }` — no-ops otherwise
+        // undefined until the caller passes `passes: { gtao, bloom }`, no-ops otherwise
         gtaoRadius: gtao ? gtao.gtaoMaterial.uniforms.radius.value : null,
         bloomStrength: bloom ? bloom.strength : null,
-        // Snapshotted before frameBike() can touch it, not assumed null —
+        // Snapshotted before frameBike() can touch it, not assumed null,
         // main.js owns this property and clears it on phone, but a rotation
         // crossing its own desktop/tablet media query can leave it set to
         // anything at the moment enter() happens to run. Only actually used
         // in _finishExit() if frameBike() went on to overwrite it (see
-        // `appliedViewOffset` below) — on desktop this is captured and then
+        // `appliedViewOffset` below), on desktop this is captured and then
         // never touched again, by design.
         viewOffset: (camera.view && camera.view.enabled)
           ? { fullWidth: camera.view.fullWidth, fullHeight: camera.view.fullHeight,
@@ -489,7 +489,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
 
       // re-fit every time: whatever's mounted now (or not) is what has to fit
       // (frameBike() may itself call camera.setViewOffset when a phone sheet
-      // is obstructing the view — see its own comment)
+      // is obstructing the view, see its own comment)
       const { camPos, camTgt, appliedViewOffset } = frameBike();
       this._tunnelCamPos = camPos;
       this._tunnelCamTgt = camTgt;
@@ -538,7 +538,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
 
       rider?.setOpacity(fxT);
 
-      // sky shader / campfire light have no alpha to fade (see report) — cut
+      // sky shader / campfire light have no alpha to fade (see report), cut
       // them at the crossfade's midpoint, where everything else is mid-churn
       const wantHard = fxT >= 0.5;
       if (wantHard !== this._hardSwapped) {
@@ -552,7 +552,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
       this._mix = 1; this._camMix = 1;
       controls.enabled = true;
       // settle the (now fully opaque) set back to normal depth-writing
-      // geometry — leaving depthWrite off forever would let it mis-sort
+      // geometry, leaving depthWrite off forever would let it mis-sort
       // against the smoke and its own markings
       restoreFade(setFade);
     },
@@ -586,7 +586,7 @@ export function createTunnel(app, { smoke, rider, meter, passes } = {}) {
       if (bloom) bloom.strength = this._saved.bloomStrength;
 
       // undo frameBike()'s phone-sheet setViewOffset, but ONLY if it actually
-      // ran — on desktop/tablet camera.view was never touched (see frameBike
+      // ran, on desktop/tablet camera.view was never touched (see frameBike
       // and _beginFresh comments), so it's left alone here too, still live
       // under main.js's own resize handling for the whole time the tunnel
       // was open. Restoring unconditionally would stomp a legitimate resize

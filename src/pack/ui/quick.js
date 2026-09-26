@@ -1,5 +1,5 @@
 /**
- * "What are you bringing?" — the first-timer's door.
+ * "What are you bringing?", the first-timer's door.
  *
  * Someone with a bike, a sleeping bag and a vague sense of dread should not
  * need to know what a harness system is. They tap the things they own, in
@@ -62,6 +62,9 @@ export function initQuick(app, hooks) {
       grid.append(t);
     }
     wrap.append(grid);
+    const more = el('div', 'pkg-row-actions');
+    more.append(btn('btn sm ghost', 'Browse all gear', () => hooks.openLocker?.()), btn('btn sm ghost', 'Paste a spreadsheet', () => hooks.openImport?.()));
+    wrap.append(more);
     const foot = el('div', 'sheet-foot-src');
     const go = btn('btn primary wide', '', () => pack(h));
     const paintGo = () => {

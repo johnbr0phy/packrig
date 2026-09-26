@@ -3,7 +3,7 @@
  *
  * Written after a shipped regression: `.sheet` set `display: flex`, which beats
  * the UA's `[hidden] { display: none }`, so a closed sheet sat invisibly over
- * the right third of the viewport and ate every click that landed on it —
+ * the right third of the viewport and ate every click that landed on it,
  * including the wind tunnel button. Nothing threw, nothing logged, the button
  * simply stopped working.
  *

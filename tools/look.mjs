@@ -24,7 +24,7 @@ await p.goto('http://localhost:8735/' + url, { waitUntil: 'load', timeout: 12000
 await p.waitForFunction('window.__READY_DONE', { timeout: 120000 });
 await p.evaluate(`window.__SHEET = ${JSON.stringify(readFileSync(root + 'data/seed/megafuck.tsv', 'utf8'))};` + readFileSync(root + 'tools/lib/screen-helpers.js', 'utf8'));
 try { const r = await p.evaluate(`(async () => { ${setup} })()`); if (r !== undefined) console.log('result', JSON.stringify(r)); } catch (e) { console.log('SETUP ERROR', e.message); }
-await p.evaluate(async () => { for (let i = 0; i < 80; i++) { const { thumbsPending } = await import('./src/pack/ui/thumbs.js'); if (!thumbsPending() && !app.framing?.animating) break; await new Promise((r) => setTimeout(r, 150)); } await new Promise((r) => setTimeout(r, 400)); }).catch(() => {});
+await p.evaluate(async () => { for (let i = 0; i < 80; i++) { const { thumbsPending } = await import('./src/pack/ui/thumbs.js'); if (!thumbsPending() && !app.framing?.animating && !app.pack?.refitPending && !app.watts?.pending) break; await new Promise((r) => setTimeout(r, 150)); } await new Promise((r) => setTimeout(r, 400)); }).catch(() => {});
 await p.screenshot({ path: out });
 console.log('wrote', out);
 await b.close();

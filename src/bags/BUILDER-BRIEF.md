@@ -11,21 +11,21 @@ Your job: make the bags this builder draws **look like the real products**, and
 
 ## 1. Read the evidence before you write a line of geometry
 
-1. `data/models/<brand>.json` — per-product fidelity records written by the brand
+1. `data/models/<brand>.json`, per-product fidelity records written by the brand
    review agents. These are the specification for what you draw: silhouette,
    closure, every zip, every strap, every pocket, and a `mount` block giving the
    axis mapping and required clearances. Read every record whose `slot` is yours.
-   The vocabulary is defined in `data/models/MODEL-SPEC.md` — read that too.
+   The vocabulary is defined in `data/models/MODEL-SPEC.md`, read that too.
 2. **The product photos**, in `assets/products/<brand-slug>/`. Open them. You are
    trying to reproduce a specific object; look at the object.
-3. `reference/club-trek-loaded.png` and `reference/club-klunker-framebag.png` —
+3. `reference/club-trek-loaded.png` and `reference/club-klunker-framebag.png`,
    real bikes, loaded, from the owner's club. This is the standard for how a
    loaded bike should read at a glance.
 
 If the model records for your slot are thin or missing, say so in your report
 rather than inventing details.
 
-### The records now reach your builder — read them from `p`, not from disk
+### The records now reach your builder, read them from `p`, not from disk
 
 As of 8 Aug `tools/apply-models.mjs` merges the machine-readable half of every
 `geometry` block into `data/brands.json`, so it arrives on the product object.
@@ -48,7 +48,7 @@ soft(geo, main, { amp, freq, seed, stiffness: stiff, ... });
 699 of 702 products carry a form and a cross-section; 386 carry a taper; 93 are
 classified `semi` or `rigid`. `soft()` already honours `stiffness`: `semi`
 takes 40% of the noise and bulge, `rigid` skips the displacement pass entirely
-so a moulded shell keeps its creases. Every builder passes it today — do not
+so a moulded shell keeps its creases. Every builder passes it today, do not
 remove that.
 
 **Two things to get right when you use this.**
@@ -61,7 +61,7 @@ remove that.
 2. **A `bulge` that positions the bag is not a bulge.** `toptube.js` used to
    hollow its underside through the `bulge` callback so the top tube nested
    into it. That channel is placement, and a rigid bag skips the whole deform
-   pass — five structured top tube bags would have sat on the tube instead of
+   pass, five structured top tube bags would have sat on the tube instead of
    over it. Carve anything structural into the geometry itself; keep `bulge`
    for padding.
 
@@ -69,7 +69,7 @@ remove that.
 
 ## 2. The two rules that have caused nearly every bug in this project
 
-### Rule 1 — never hard-code a position or a rotation
+### Rule 1, never hard-code a position or a rotation
 
 Six-plus separate visual bugs here were the same mistake: geometry placed by a
 literal offset, or spun onto an axis by a stray `rotation.z = Math.PI/2`,
@@ -80,9 +80,9 @@ the bar.
 
 Everything you position must come from `bike.points`, `bike.anchors`,
 `bike.framePoly` / `frameEdgeR`, or `bike.geo`. If you need a number the bike
-does not expose, derive it — do not measure it off a screenshot and paste it in.
+does not expose, derive it, do not measure it off a screenshot and paste it in.
 
-### Rule 2 — write down the axis mapping, then check it against a photo
+### Rule 2, write down the axis mapping, then check it against a photo
 
 `p.mm.len` / `wid` / `hgt` do **not** mean the same world axis in every slot.
 Three builders had this wrong, each with a completely different symptom:
@@ -105,7 +105,7 @@ forgetting the third.
 
 ## 3. The clearance contract
 
-Run this constantly — it is your test suite:
+Run this constantly, it is your test suite:
 
 ```
 node tools/bagshot-q.mjs --slot <yourslot>                 # every product in your slot
@@ -118,7 +118,7 @@ headless Chrome that peaks near 0.76 GB on a machine with 8 GB total. Other
 geometry agents are running at the same time; the `-q` wrapper takes a global
 lock so only one render happens at once and the rest queue. Calling `bagshot.mjs`
 directly is how the 7 Aug session put the box into swap and died. If it prints
-`waiting — pid N has been rendering …`, that is correct behaviour: wait.
+`waiting, pid N has been rendering …`, that is correct behaviour: wait.
 
 It renders each bag alone on the bike from four angles into
 `shots/bag/<slug>/`, and reports millimetre clearance to every part of the bike.
@@ -126,22 +126,22 @@ It renders each bag alone on the bike from four angles into
 that is the wrong shape.
 
 What it reports:
-- **CLASH** — the bag is inside something it does not mount to, or deeper than
+- **CLASH**, the bag is inside something it does not mount to, or deeper than
   8mm into something it does. Must be zero when you are done.
-- **mounts on** — light penetration into the thing the bag straps to. Expected
+- **mounts on**, light penetration into the thing the bag straps to. Expected
   and good: a seat pack that touches nothing is floating.
-- **tight** — under 10mm from something it does not mount to. Investigate each.
-- **ground** — height of the bag's lowest point above the ground.
-- **rendered vs spec** — the rendered bounding box next to the catalogue
+- **tight**, under 10mm from something it does not mount to. Investigate each.
+- **ground**, height of the bag's lowest point above the ground.
+- **rendered vs spec**, the rendered bounding box next to the catalogue
   dimensions. Straps and hardware legitimately add a little; a bag rendering
   6cm longer or 10cm taller than spec means the builder is inflating it.
 
 Never allowed, for any slot: contact with either tyre. Aim for **≥15mm** to a
 tyre under the bag's own droop, and remember a real tyre is not always the one we
-draw — leave room.
+draw, leave room.
 
 Also required: a bag must **touch what it mounts to**. A fork bag reading 39mm
-clear of the fork leg is as wrong as one buried in it — it is floating in space.
+clear of the fork leg is as wrong as one buried in it, it is floating in space.
 
 ---
 
@@ -150,31 +150,31 @@ clear of the fork leg is as wrong as one buried in it — it is floating in spac
 The current models are smooth blobs with a logo. The gap is almost entirely
 **hardware and surface**:
 
-- **Zips** — a real horseshoe zip wraps three sides of a lid; a straight run
+- **Zips**, a real horseshoe zip wraps three sides of a lid; a straight run
   crosses one face. The track, slider and pull tab all read at normal viewing
   distance. `hardware.js` has `zipperRun`; use it and route it along the path the
   photo shows, not a generic straight line.
-- **Straps** — count and place them exactly. A Restrap bag without its wide
+- **Straps**, count and place them exactly. A Restrap bag without its wide
   webbing and metal buckle is unrecognisable; a Brooks bag with nylon webbing
   instead of a leather billet through a brass buckle is the wrong product. Straps
   must visibly **wrap the thing they attach to** and be pulled tight against the
   bag, not float beside it.
-- **Pockets** — mesh side pockets, a zipped lid pocket, a stretch front panel.
+- **Pockets**, mesh side pockets, a zipped lid pocket, a stretch front panel.
   These change the silhouette, not just the texture.
-- **Panels and seams** — where the maker uses a contrasting panel, a reinforced
+- **Panels and seams**, where the maker uses a contrasting panel, a reinforced
   base, or a welded seam, show it. Multi-panel makers (Wizard Works, Oveja Negra,
   Rockgeist) lose their whole identity rendered in one flat colour.
-- **Silhouette** — the biggest single win. A seat pack is a hard wedge with a
+- **Silhouette**, the biggest single win. A seat pack is a hard wedge with a
   squared shoulder at the saddle and a blade tail; ours renders as a fat tube.
   A frame bag is a flat panel that fills the triangle, not a pillow.
-- **Structure** — some bags are genuinely rigid (Topeak's moulded shells,
+- **Structure**, some bags are genuinely rigid (Topeak's moulded shells,
   Tailfin's carbon, Ortlieb's stiffened back plate). They should not deform like
   a soft sack. `deform.js` controls this, and `stiffnessOf(p)` tells you which
-  bags they are — see §1.
+  bags they are, see §1.
 
 Use the per-product `features`/`geometry`/`straps`/`pockets` blocks so that two
 bags in the same slot never look alike. Variation must be driven by the data and
-by `variantOf()` (a stable per-product hash), never by `Math.random()` — rendering
+by `variantOf()` (a stable per-product hash), never by `Math.random()`, rendering
 has to stay deterministic or every screenshot comparison becomes useless.
 
 ---
@@ -183,7 +183,7 @@ has to stay deterministic or every screenshot comparison becomes useless.
 
 `p.mm` is millimetres, derived in `src/catalog.js` from `dims_cm`. The catalogue
 is being re-verified under a new rule: **unfurled plan dimensions, minimum
-height**. Expect your slot's numbers to change under you — build so the geometry
+height**. Expect your slot's numbers to change under you, build so the geometry
 is a function of `p.mm`, and re-run `bagshot` after `data/brands.json` updates.
 
 Do not clamp or fudge a dimension inside the builder to make something fit. If a
@@ -196,7 +196,7 @@ fitment finding: report it, and let the resolver in `resolve.js` handle placemen
 
 `hardware.js`, `features.js`, `materials.js`, `deform.js` and `identity.js` are
 shared with every other builder agent. You may **add** a new exported helper.
-Do not change the signature or behaviour of an existing one — that is how a fix
+Do not change the signature or behaviour of an existing one, that is how a fix
 in one builder silently breaks four others. If an existing helper is wrong, say
 so in your report instead of changing it.
 
@@ -233,7 +233,7 @@ so in your report instead of changing it.
    (a flat band following a section perimeter or any loop), `tubeWrap` (a band
    round a frame tube, rail, post or fork leg), `strapRun` (a flat strip lying
    on a face), `buckle`, and `meshOf` to merge them into one draw call. A torus
-   scaled into a band reads as a ring or a coil at any distance — that is the
+   scaled into a band reads as a ring or a coil at any distance, that is the
    "vertebrae" on every frame bag. 20–25 mm wide, 1.5 mm thick, on the surface.
 2. **Do not trust a traced outline's orientation.** `data/profiles.json` and
    `data/diagram-profiles.json` were oriented by the old "narrow end attaches"
@@ -247,7 +247,7 @@ so in your report instead of changing it.
    side or front outline against the traced maker outline; `tools/silsheet.py`
    draws the comparison). Only ~90 Apidura products have a traced outline;
    everything else is scored against its form's template or not at all. A high
-   IoU against a wrong trace is not a win — look at the sheet.
+   IoU against a wrong trace is not a win, look at the sheet.
 4. **Maker photos are unreachable in the cloud sandbox** (egress policy). The
    evidence you have is the per-product record in `data/models/<brand>.json`
    (written with the photo open), the traces, `reference/*.png`, and what you

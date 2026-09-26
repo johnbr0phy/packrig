@@ -18,7 +18,7 @@
  * WHY A FLAT COLLECTION rather than `users/{uid}/rigs`: the gallery has to read
  * across everybody, and a collection-group query would need its own index and
  * its own rule anyway. One collection with a `uid` field keeps the rules
- * readable, which matters more than the nesting — see FIREBASE.md, where the
+ * readable, which matters more than the nesting, see FIREBASE.md, where the
  * whole policy is nine lines.
  *
  * The exported surface is unchanged from the Supabase store this replaces, so
@@ -50,7 +50,7 @@ const writeLocal = (rows) => {
 
 /**
  * Firestore throws with a stable `code` and a message written for whoever set
- * the project up, not for whoever is saving a bike — the missing-index one is a
+ * the project up, not for whoever is saving a bike, the missing-index one is a
  * console URL three lines long, and it landed in the panel. So the code becomes
  * a sentence and the original goes to the console for whoever is debugging.
  *
@@ -64,7 +64,7 @@ const HUMAN = {
   'resource-exhausted': 'The rig store is over quota. Try again later.',
   // A composite index that nobody created. There is nothing the person looking
   // at the screen can do about it, so they get a plain sentence and the setup
-  // detail — with its create-it link — goes to the console.
+  // detail, with its create-it link, goes to the console.
   'failed-precondition': 'The rig store is not finished being set up. The details are in the browser console.',
 };
 
@@ -121,7 +121,7 @@ export function createRigStore(app, auth) {
   let known = readLocal().length;
   const note = (n) => { known = n; };
   // Saves now live on an account. Signed out, the local leftover pile is
-  // invisible — it still migrates up on sign-in, but it is not "your rigs".
+  // invisible, it still migrates up on sign-in, but it is not "your rigs".
   const guest = () => auth.enabled && !auth.signedIn;
 
   const api = {
@@ -134,12 +134,12 @@ export function createRigStore(app, auth) {
      * Whether a gallery would be possible at all.
      *
      * NOTHING READS THIS AT THE MOMENT. The gallery and the publish flow were
-     * taken out of the UI — see the head of ui/v2/browse.js — and this getter,
+     * taken out of the UI, see the head of ui/v2/browse.js, and this getter,
      * `setPublished` and `gallery` below are what is left of the data half:
      * the documents already carry `published`, FIREBASE.md already describes
      * the rules and the index, and re-adding the screens is then a UI job.
      * They are kept for that reason and for no other. Absent, it reads as `undefined` and the
-     * gallery quietly disappears with no error — which is how a feature gets
+     * gallery quietly disappears with no error, which is how a feature gets
      * built, shipped and never seen.
      */
     get galleryEnabled() { return !!db; },
@@ -157,7 +157,7 @@ export function createRigStore(app, auth) {
       }
       // Filter in Firestore, sort here. `where` + `orderBy` on different fields
       // is a composite query, and Firestore refuses it until somebody creates
-      // the index by hand — so your own rigs would be an error message on a
+      // the index by hand, so your own rigs would be an error message on a
       // fresh project. One person's saved builds are a handful of documents,
       // so sorting them in the browser costs nothing and removes a setup step.
       // The gallery below genuinely needs its index; this does not.
@@ -183,7 +183,7 @@ export function createRigStore(app, auth) {
         const rows = readLocal();
         const r = { id: uid(), name, rig, updated_at: now };
         rows.push(r);
-        if (!writeLocal(rows)) throw new Error('This browser will not let the app store anything — private mode?');
+        if (!writeLocal(rows)) throw new Error('This browser will not let the app store anything. Is it in a private window?');
         return { ...r, local: true };
       }
       return guarded('save that rig', async () => {
@@ -208,7 +208,7 @@ export function createRigStore(app, auth) {
         const rows = readLocal();
         const r = { id: uid(), name, rig, updated_at: now };
         rows.push(r);
-        if (!writeLocal(rows)) throw new Error('This browser will not let the app store anything — private mode?');
+        if (!writeLocal(rows)) throw new Error('This browser will not let the app store anything. Is it in a private window?');
         return { ...r, local: true };
       }
       return guarded('restore that rig', async () => {
@@ -220,7 +220,7 @@ export function createRigStore(app, auth) {
     },
 
     /**
-     * Overwrite a saved rig. Captures the live bike unless a rig is handed in —
+     * Overwrite a saved rig. Captures the live bike unless a rig is handed in,
      * the rigs view browses by MOUNTING each rig, so there the bike on screen
      * is the rig itself and "update" has to mean the build you came in with.
      */
@@ -274,7 +274,7 @@ export function createRigStore(app, auth) {
 
     /**
      * Send this device's rigs up to the account, once each. Called after a
-     * successful sign-in. Failures are swallowed on purpose — a sync problem
+     * successful sign-in. Failures are swallowed on purpose, a sync problem
      * must not stop somebody signing in, and the local copy is still there.
      */
     async migrateLocal() {
@@ -309,7 +309,7 @@ export function createRigStore(app, auth) {
      * is nothing for anyone else to read.
      */
     async setPublished(id, published, author) {
-      if (!remote()) throw new Error('Publishing needs an account — sign in first');
+      if (!remote()) throw new Error('Publishing needs an account. Log in first.');
       const patch = {
         published: !!published,
         published_at: published ? new Date().toISOString() : null,
@@ -323,7 +323,7 @@ export function createRigStore(app, auth) {
     },
 
     /**
-     * Everything anyone has published, newest first. Works signed out — that is
+     * Everything anyone has published, newest first. Works signed out, that is
      * the whole point of a gallery. No caller at present; see `galleryEnabled`.
      *
      * The rules in FIREBASE.md allow reading a document only when
@@ -351,7 +351,7 @@ export function createRigStore(app, auth) {
       }
     },
 
-    /** Only meaningful signed out — signed in, the account is the count. */
+    /** Only meaningful signed out, signed in, the account is the count. */
     localCount: () => readLocal().length,
   };
   return api;

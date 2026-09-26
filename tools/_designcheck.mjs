@@ -52,7 +52,7 @@ const font = await p.evaluate(async () => {
 
 const before = await read();
 
-// §3.3 — a much brighter HDRI must raise k.
+// §3.3, a much brighter HDRI must raise k.
 await p.evaluate(() => window.app.setEnv('desert'));
 await wait(2000);
 const desert = await read();
@@ -62,7 +62,7 @@ const night = await read();
 await p.evaluate(() => window.app.setEnv('mountain'));
 await wait(1600);
 
-// §6.2 / §6.7 — open a detail sheet.
+// §6.2 / §6.7, open a detail sheet.
 await p.evaluate(() => window.app.openSheet({
   kind: 'detail', title: 'Smoke test',
   render: (body) => { body.innerHTML = '<p class="t-body">body</p>'; },

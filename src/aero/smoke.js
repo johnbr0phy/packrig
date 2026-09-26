@@ -25,20 +25,20 @@ import { disposeObject, tubeAlong } from '../lib.js';
 const STACKS = 9;          // vertical nozzle tubes across the rake
 // Ports up each tube. 28 was the first try and from the side, where all nine
 // stacks project on top of each other, the threads merged into a solid white
-// slab — a smoke rake photograph is mostly black between the threads. 20 rows
+// slab, a smoke rake photograph is mostly black between the threads. 20 rows
 // leaves a clear gap between them at every camera distance the app uses.
 const ROWS = 20;           // → 180 streaklines
 const POINTS = 42;         // particles per streakline
 const SUBSTEP = 1 / 60;    // s; fixed integration step. RK2 within it, halved
-                           //    again for any particle in disturbed air — see
+                           //    again for any particle in disturbed air, see
                            //    the deviation test in tick().
 const MAX_SUBSTEPS = 2;    // never spiral on a stalled tab
 
 // How fast a thread accumulates visible damage. Tuned so that a thread through
 // the rider's wake alone lands around half-amber and still has headroom for the
-// bags to push it further — pegging at 1 makes every kit look identical.
+// bags to push it further, pegging at 1 makes every kit look identical.
 const TURB_GAIN = 4.5;
-const TURB_DECAY = 0.35;    // 1/s; it recovers, but slowly — a wrecked thread
+const TURB_DECAY = 0.35;    // 1/s; it recovers, but slowly, a wrecked thread
                            //      stays wrecked long enough to trace back to
                            //      the bag that wrecked it
 const BASE_ALPHA = 0.80;
@@ -52,7 +52,7 @@ const LIM = 200;
 
 // Clean air reads as fine DARK threads, not white ones. The tunnel set is a
 // bright white cove over a pale floor, so white-on-white vanished everywhere the
-// backdrop actually covered — the only place the smoke read was against a patch
+// backdrop actually covered, the only place the smoke read was against a patch
 // of uncovered background. Same contrast strategy the floor markings use, and it
 // is how a real smoke rake photographs against a lit screen.
 const CLEAN = new THREE.Color(0x232a31);
@@ -105,15 +105,15 @@ function rakeSpec(flow, bounds) {
 
   // Stand off far enough upwind that the machine is clear of the bike but
   // still inside the flow domain, measured against the bike's own footprint
-  // rather than a fixed distance — a long bike pushes the rake further out.
+  // rather than a fixed distance, a long bike pushes the rake further out.
   // Quantised to 0.25m. Both this and halfW below are measured against the
   // bike's silhouette as seen ALONG and ACROSS the wind, so both drift
-  // continuously as yaw turns — halfW by about 24mm per degree. That made every
+  // continuously as yaw turns, halfW by about 24mm per degree. That made every
   // tick of the yaw slider a different rig, and since the machine's nozzles and
   // the streakline spawn points must come from one spec, every tick rebuilt ~120
   // meshes and re-integrated 7,560 particles: 9-15ms per pointermove instead of
   // 0.6ms. Rounding up to a physical step means a real rig, of a few discrete
-  // sizes, that simply swings around the bike as the wind angle changes — which
+  // sizes, that simply swings around the bike as the wind angle changes, which
   // is also what a tunnel rig on a turntable actually does.
   const STEP = 0.25;
   const standoff = Math.ceil((support(half, dir) + 0.95) / STEP) * STEP;
@@ -124,7 +124,7 @@ function rakeSpec(flow, bounds) {
   // Nozzle field: tall enough to clear the bars and the saddle (and a rider,
   // whose height is already in `bounds` when one exists), wide enough that the
   // outermost threads pass well clear of the panniers, and low enough that the
-  // bottom of both tyres is in the flow — the wheels are a third of the drag
+  // bottom of both tyres is in the flow, the wheels are a third of the drag
   // and leaving them below the rake made the picture look like it started at
   // the hubs.
   const yLo = 0.1;
@@ -189,7 +189,7 @@ function machineMaterials() {
 /**
  * The smoke generator: a low powder-coated trolley with a fan grille facing
  * into the wind, a manifold across its nose and nine vertical nozzle stacks
- * rising off it. Chunky and slightly agricultural on purpose — it has to read
+ * rising off it. Chunky and slightly agricultural on purpose, it has to read
  * as equipment, not as UI.
  */
 function buildMachine(spec, M) {
@@ -255,7 +255,7 @@ function buildMachine(spec, M) {
   back.rotation.x = -Math.PI / 2;
   back.position.y = -0.034;
   fanGroup.add(back);
-  // blades — the only moving part
+  // blades, the only moving part
   const blades = new THREE.Group();
   blades.position.y = -0.005;
   fanGroup.add(blades);
@@ -381,7 +381,7 @@ function buildMachine(spec, M) {
 function smokeLineMaterial() {
   // LineBasicMaterial, to match the plain LineSegments draw path above. three
   // sets USE_COLOR_ALPHA itself when the colour attribute has itemSize 4, so
-  // per-particle alpha works with no shader patching — the hand-written
+  // per-particle alpha works with no shader patching, the hand-written
   // onBeforeCompile patch this replaced was a standing hazard: it and its
   // USE_COLOR_ALPHA define were a pair, and dropping either one silently
   // produced a GLSL type error or opaque threads.
@@ -483,16 +483,16 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
     //
     // The fat-line path renders a screen-filling black rectangle here and I
     // could not find why. Measured, so the next person does not repeat it:
-    // with `instanceCount` bisected down to ONE segment — a sane 26cm segment
-    // at (-4.671, 0.112, 0.584) — the artifact still covered 36% of the frame,
+    // with `instanceCount` bisected down to ONE segment, a sane 26cm segment
+    // at (-4.671, 0.112, 0.584), the artifact still covered 36% of the frame,
     // and the covered fraction was IDENTICAL (0.3601) at linewidth 0.05, 0.5,
     // 1.9 and 8, and at resolution 1000x700 through 20000x14000. It is
     // independent of every parameter that should control the quad. The program
     // links with no diagnostics and no shader error. Geometry is clean: 7,380
     // instances, min -4.602, max 1.894, no NaN.
     //
-    // The buffer layouts already match what LineSegments wants — posBuf is
-    // segs*6 = two vec3 per segment, colBuf is segs*8 = two vec4 — so this is a
+    // The buffer layouts already match what LineSegments wants, posBuf is
+    // segs*6 = two vec3 per segment, colBuf is segs*8 = two vec4, so this is a
     // swap of the draw path only. three enables USE_COLOR_ALPHA automatically
     // for a 4-component colour attribute, so the per-particle fade survives.
     // Cost: no linewidth control (GL lines are 1px on most drivers), which for
@@ -533,7 +533,7 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
   function seed() {
     // Fill every thread by integrating it all the way downstream once, so the
     // very first frame already shows finished streaklines. Growing them in
-    // would mean the first second of the tunnel — and every screenshot — is a
+    // would mean the first second of the tunnel, and every screenshot, is a
     // rake of stubs.
     for (let i = 0; i < N; i++) {
       const b = i * 3;
@@ -548,7 +548,7 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
         px[base + j] = x; py[base + j] = y; pz[base + j] = z; pt[base + j] = turb;
       }
       // Stagger emission by the golden ratio so the threads do not all step in
-      // lockstep — in unison it reads as a marching band, not as smoke.
+      // lockstep, in unison it reads as a marching band, not as smoke.
       emitT[i] = emitInterval * ((i * 0.6180339887) % 1);
     }
     for (let i = 0; i < PUFFS; i++) respawnPuff(i, Math.random());
@@ -578,7 +578,7 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
   // ---- rebuild ------------------------------------------------------------
   function rebuild(newFlow) {
     if (newFlow) field = newFlow;
-    // `bounds` is the BIKE's extent, not the flow domain — the rake is sized
+    // `bounds` is the BIKE's extent, not the flow domain, the rake is sized
     // and positioned from it. Intersecting with the field's own bike box means
     // a caller who hands over `flow.bounds` (five metres of domain, per the
     // contract's naming) still gets a rake the size of a bicycle.
@@ -594,7 +594,7 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
     //
     // The tolerance is 25mm, NOT exact equality. `rakeW` is derived from the
     // bike's silhouette measured ACROSS the wind, so it genuinely shifts by a
-    // few millimetres as yaw turns — with a 1e-4 test this never matched, every
+    // few millimetres as yaw turns, with a 1e-4 test this never matched, every
     // slider step took the full rebuild path, and the measured cost was 9-15ms
     // per step instead of 0.6ms. Only a real change of rig (different kit,
     // different bike) moves it further than this.
@@ -619,8 +619,8 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
 
     // How far the nozzles have moved. A small yaw nudge leaves the existing
     // threads in place and lets them sweep across into the new field over the
-    // next second, which is what air would do; only a real change — different
-    // kit, a big jump — is worth the visible discontinuity of a re-seed.
+    // next second, which is what air would do; only a real change, different
+    // kit, a big jump, is worth the visible discontinuity of a re-seed.
     const moved = prev ? prev.dir.distanceTo(spec.dir) * spec.runLength : Infinity;
     const reseed = !sameRig || moved > 0.25;
 
@@ -658,7 +658,7 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
     const uz = field.dir.z * field.speed;
     // Threshold on how far the local velocity has strayed from freestream.
     // Below it the field is effectively uniform and one RK2 step is exact;
-    // above it — near a bag, in a wake — the step is halved. Most threads spend
+    // above it, near a bag, in a wake, the step is halved. Most threads spend
     // most of their life in clean air, so this is close to free where nothing
     // is happening and accurate where the picture is actually being made.
     const devLim = field.speed * 0.12;
@@ -669,8 +669,8 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
         let x = px[k], y = py[k], z = pz[k];
         // Fast path: if neither end of this step is anywhere an obstacle or a
         // wake can reach, the field there IS the freestream and the whole step
-        // is a translation. Around half of every thread is in air like that —
-        // out past the rake's edges, or a couple of metres downwind — and
+        // is a translation. Around half of every thread is in air like that,
+        // out past the rake's edges, or a couple of metres downwind, and
         // skipping its two field samples is the single biggest saving in the
         // system, worth more than every micro-optimisation inside the sample.
         if (quiet && quiet(x, y, z) && quiet(x + dux, y + duy, z + duz)) {
@@ -751,7 +751,7 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
 
   /**
    * Pack the particle rings into the instanced line buffers. Both arrays are
-   * preallocated and written in place — building LineGeometry objects per frame
+   * preallocated and written in place, building LineGeometry objects per frame
    * would allocate ~600KB a frame and hand the GC a job it cannot win.
    */
   function writeGeometry() {
@@ -796,8 +796,8 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
         // The flow field can emit a non-finite point: an SDF gradient is 0/0 at
         // an obstacle's exact centre, and a particle landing there poisons its
         // thread. Collapse such a segment to a point rather than letting it
-        // stretch to infinity. A plain isFinite check is not enough — 1e30 is
-        // finite and still spans the scene — so bound it to the domain.
+        // stretch to infinity. A plain isFinite check is not enough, 1e30 is
+        // finite and still spans the scene, so bound it to the domain.
         // (`sane` is module-scope: this is the innermost loop of the frame and
         // it runs ~15,000 times, which is no place to build a closure.)
         const ok = sane(px[k0], py[k0], pz[k0]) && sane(px[k1], py[k1], pz[k1]);

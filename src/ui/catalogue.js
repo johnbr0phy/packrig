@@ -1,10 +1,10 @@
 /**
- * The catalogue — REDESIGN.md §9, phase 8.
+ * The catalogue, REDESIGN.md §9, phase 8.
  *
  * THE SCALE PROBLEM, stated honestly: 702 products across 14 mounts, the
  * largest slot holding 103 and the smallest 1. The old route was mount → brand
  * list → brand page → sizes: four taps before a bag was visible, and the first
- * two asked questions a newcomer cannot answer — which mount? which maker? —
+ * two asked questions a newcomer cannot answer, which mount? which maker?,
  * and then landed them on pages holding a single item.
  *
  * THE INFORMATION ARCHITECTURE IN ONE SENTENCE: the mount point is the primary
@@ -17,7 +17,7 @@
  * causes drop-off, and four is what this data actually supports:
  *
  *   Brand      multi-select, live counts, derived from the filtered set
- *   Capacity   single-select bands, re-banded per slot — a stem bag's "large"
+ *   Capacity   single-select bands, re-banded per slot, a stem bag's "large"
  *              and a pannier's "large" are two orders of magnitude apart
  *   Fabric     multi-select, off `brand.fabricKey`, already computed
  *   Fits       on by default; off reveals the rest with the reason shown
@@ -67,7 +67,7 @@ function bandsFor(items) {
 const litres = (p) => { const n = Number(p?.liters); return Number.isFinite(n) ? n : null; };
 
 export function initCatalogue(app, { openSheet, cardFor, fitReason, placeFor, onSwitchSlot, doneLabel, onDone } = {}) {
-  /** Facet state lives per slot for the session — §9. */
+  /** Facet state lives per slot for the session, §9. */
   const memory = new Map();
 
   function open(uiSlot, { onBack = null, onClose = null, detent = null } = {}) {
@@ -157,6 +157,14 @@ export function initCatalogue(app, { openSheet, cardFor, fitReason, placeFor, on
 
       // ---- facets ---------------------------------------------------------
       const facets = el('div', 'cat-facets');
+      // on a phone the search box folds into a chip, so bags start higher
+      const sChip = el('button', 'chip cat-search-chip' + (state.q ? ' on' : ''));
+      sChip.type = 'button';
+      sChip.setAttribute('aria-label', 'Search');
+      sChip.append(icon('search', { size: 16 }), el('span', null, state.q ? `“${state.q}”` : 'Search'));
+      sChip.onclick = () => { search.classList.add('is-open'); input.focus(); };
+      facets.append(sChip);
+      if (state.q) search.classList.add('is-open');
 
       const byBrand = new Map();
       for (const e of filtered('brand')) byBrand.set(e.brand.name, (byBrand.get(e.brand.name) || 0) + 1);
@@ -253,17 +261,9 @@ export function initCatalogue(app, { openSheet, cardFor, fitReason, placeFor, on
         io.observe(sentinel);
       }
 
-      const done = doneLabel?.();
-      if (done) {
-        const foot = el('div', 'sheet-foot-src');
-        const b = el('button', 'btn wide', done);
-        b.type = 'button';
-        b.onclick = () => onDone?.();
-        foot.append(b);
-        pk.append(foot);
-      }
+      // one way out: while adding bags, Close reads Done
+      h?.setCloseLabel?.(doneLabel?.() || 'Close');
       body.replaceChildren(pk);
-      if (!done) h?.setFoot?.(null);
       h?.setTitle?.(label);
     }
 
@@ -292,9 +292,11 @@ export function initCatalogue(app, { openSheet, cardFor, fitReason, placeFor, on
       chip.type = 'button';
       chip.onclick = (e) => {
         e.stopPropagation();
-        const open_ = chip.nextElementSibling?.classList.contains('cat-pop');
+        const open_ = chip.getAttribute('aria-expanded') === 'true';
         document.querySelectorAll('.cat-pop').forEach((n) => n.remove());
+        chip.parentElement.querySelectorAll('[aria-expanded]').forEach((c) => c.setAttribute('aria-expanded', 'false'));
         if (open_) return;
+        chip.setAttribute('aria-expanded', 'true');
         const pop = el('div', 'cat-pop pop');
         for (const o of opts) {
           const row = el('button', 'cat-opt' + (o.on ? ' on' : ''));
@@ -304,8 +306,12 @@ export function initCatalogue(app, { openSheet, cardFor, fitReason, placeFor, on
           row.onclick = (ev) => { ev.stopPropagation(); toggle(o.key); };
           pop.append(row);
         }
-        chip.after(pop);
-        const away = () => { pop.remove(); document.removeEventListener('click', away); };
+        // under the chip row, not inside it: the row scrolls sideways on a
+        // phone and would clip a popover hung off a chip
+        chip.parentElement.after(pop);
+        pop.onkeydown = (ev) => { if (ev.key === 'Escape') { ev.stopPropagation(); away(); chip.focus(); } };
+        pop.querySelector('.cat-opt')?.focus({ preventScroll: true });
+        const away = () => { pop.remove(); chip.setAttribute('aria-expanded', 'false'); document.removeEventListener('click', away); };
         setTimeout(() => document.addEventListener('click', away), 0);
       };
       return chip;

@@ -3,8 +3,8 @@
 // ---- WHAT IT IS (the owner's words win over every record and trace) --------
 // "A full frame bag is a thin flat panel, five to eight centimetres wide, that
 // fills the main triangle exactly and follows the tubes." So the outline is
-// the main triangle itself — ctx.framePoly offset by each tube's own radius
-// (ctx.frameEdgeR) — with its corners eased, not a pack of published size
+// the main triangle itself, ctx.framePoly offset by each tube's own radius
+// (ctx.frameEdgeR), with its corners eased, not a pack of published size
 // parked in one corner. The previous builder drew each bag at its catalogue
 // len × hgt anchored at the head tube; on any bag cut for a smaller frame
 // (the full kit's Expedition 4.6L among them) that left the rear edge short
@@ -13,7 +13,7 @@
 //
 // ---- AXIS MAPPING (BUILDER-BRIEF Rule 2) ------------------------------------
 // Every record in this slot writes mount.axes { len: along_toptube (or ±x),
-// wid: z, hgt: y (or −y) } — checked across all 50 catalogue products:
+// wid: z, hgt: y (or −y) }, checked across all 50 catalogue products:
 //   p.mm.len  the top edge, along the top tube             → frame-derived
 //   p.mm.hgt  the rear edge, down the seat tube            → frame-derived
 //   p.mm.wid  world z, the panel's thickness               → drawn as published
@@ -33,7 +33,7 @@
 //   bevel        the extrusion bevel grows the outline by BEVEL_S, so the
 //                pre-bevel outline is pulled in by exactly that.
 //   BB corner    cut flat square to the corner bisector (the "6–9 cm flat at
-//                the bottom bracket" on Apidura's drawings) — clears the BB
+//                the bottom bracket" on Apidura's drawings), clears the BB
 //                shell and the crank.
 //   corners      eased with a radius from the record's shoulder.
 //   straps       a flat velcro band round the tube itself (straps.js tubeWrap
@@ -43,7 +43,7 @@
 //
 // ---- EVIDENCE ---------------------------------------------------------------
 // Maker photos are not reachable from this sandbox. Used: data/models/*.json
-// (straps with counts and tubes, zips, closure, shoulder, taper — the parts
+// (straps with counts and tubes, zips, closure, shoulder, taper, the parts
 // apply-models.mjs does not merge are tabulated in FULL_RECORDS below),
 // reference/club-*.png, and knowledge of the Apidura Expedition/Backcountry,
 // Revelate Ranger/Ripio/Rifter, Ortlieb Frame-Pack (RC), Rockgeist 52Hz,
@@ -70,7 +70,7 @@ export const BITE = 1.2;
 /**
  * Straps and zips from data/models/<brand>.json. tools/apply-models.mjs does
  * not merge `straps` or `zips` into data/brands.json, so they are tabulated
- * here (generated from the records, 25 Sep): "TDSH zips" — straps round the
+ * here (generated from the records, 25 Sep): "TDSH zips", straps round the
  * Top, Down, Seat and Head tubes, then the zip runs in the record's own
  * vocabulary (top_side, top_centre, side_full, perimeter, front_panel).
  * Keyed brand|line|name[|size]; the size-specific key wins.

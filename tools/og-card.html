@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
   The social card. Rendered by tools/og-card.mjs, which injects the wind-tunnel
-  plate as a data URI into #plate and screenshots this page at 1200x630 — the
+  plate as a data URI into #plate and screenshots this page at 1200x630, the
   size X, Slack, iMessage and every other unfurler expects.
 
   Two skins, chosen with ?v=dark|light. Dark is what ships: it is the product's
@@ -26,7 +26,7 @@ body{font-family:'Inter',system-ui,sans-serif;font-feature-settings:'cv05' 1,'ss
 .dark{--ink:rgba(255,255,255,.97);--ink2:rgba(255,255,255,.66);--ink3:rgba(255,255,255,.44);--rule:rgba(255,255,255,.18);--amber:#FF8A4C}
 .dark .wash{position:absolute;inset:0;background:
   /* the bottom-left corner is the brightest part of the tunnel floor and the
-     amber label was sitting straight on it — this is what holds that corner */
+     amber label was sitting straight on it, this is what holds that corner */
   radial-gradient(118% 82% at -8% 112%,rgba(13,15,18,.96) 0%,rgba(13,15,18,.88) 34%,rgba(13,15,18,.42) 58%,rgba(13,15,18,0) 78%),
   linear-gradient(97deg,
   rgba(13,15,18,.97) 0%,rgba(13,15,18,.95) 34%,rgba(13,15,18,.74) 46%,rgba(13,15,18,.20) 58%,rgba(13,15,18,0) 68%)}

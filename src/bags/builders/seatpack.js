@@ -1,7 +1,7 @@
 // Seat pack builder (mm-local, parented to the seatpack anchor).
 //
 // ---- AXIS MAPPING (BUILDER-BRIEF Rule 2) ---------------------------------
-// Checked against `mount.axes` on the seat pack records — 76 of 78 say
+// Checked against `mount.axes` on the seat pack records, 76 of 78 say
 // { len: '-x', wid: 'z', hgt: 'y' } (Ortlieb writes hgt '-y', same axis):
 //
 //   p.mm.len → grp-local −x   front face at x = 0 against the post, the rolled
@@ -13,8 +13,8 @@
 // so the loft parameter t runs 0 at the post → 1 at the tail.
 //
 // ---- WHAT IT IS (owner's description, and the photo traces agree) ---------
-// A tapered WEDGE: a squared shoulder under the rails at the post — the pack
-// is deepest and widest right there — tapering in depth and width to a
+// A tapered WEDGE: a squared shoulder under the rails at the post, the pack
+// is deepest and widest right there, tapering in depth and width to a
 // flattened roll of fabric at the tail, which kicks gently upward. Not a hull
 // (deep in the middle), not a tube, not fat at the tail. The previous builder
 // swept Apidura's dimension-DRAWING outlines, which are traced sausages with
@@ -23,9 +23,9 @@
 // short nose, full depth almost at once, and a steady taper: this.
 //
 // Two families:
-//   wedge   — tapered_wedge, teardrop, truncated_cylinder, rounded_box, slab:
+//   wedge  , tapered_wedge, teardrop, truncated_cylinder, rounded_box, slab:
 //             one sewn or welded body, roll-top (or zip) at the tail
-//   holster — a stiff cradle strapped to post and rails, with a round dry bag
+//   holster, a stiff cradle strapped to post and rails, with a round dry bag
 //             slid into it from behind and rolled shut at the tail (Revelate
 //             Terrapin, Restrap, Topeak BackLoader X)
 //
@@ -49,7 +49,7 @@ const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t
 
 /**
  * A dry bag lying ACROSS the bike behind the saddle, on a rigid arm off the
- * seatpost: Arkel's Rollpacker Rear (closed width 38, height 24, depth 28 —
+ * seatpost: Arkel's Rollpacker Rear (closed width 38, height 24, depth 28,
  * Arkel's own figures). Its record is right that `wid` runs across; the old
  * builder drew that box literally and it read as a microwave. It is a fat
  * roll, closed at BOTH ends like a bar roll.
@@ -199,7 +199,7 @@ function buildSeatpackOnce(p, brand, main, accent, ctx) {
   // ---- lengths ------------------------------------------------------------------
   const noseT = holster ? 3 : 5;                    // stiffened nose panel
   // The roll is the body's own mouth rolled down, so it is sized off the
-  // depth the body has at its tail — not off the whole pack, which on a small
+  // depth the body has at its tail, not off the whole pack, which on a small
   // teardrop made the tail a thin spout with a pea on the end.
   const tailDepth = D0 * dTail;
   const lipH = closure === 'rolltop' ? clamp(tailDepth * 0.62, 14, 60) : 0;
@@ -254,7 +254,7 @@ function buildSeatpackOnce(p, brand, main, accent, ctx) {
   rolled.rotation.z = Math.PI / 2;      // loft +y → grp −x
   rolled.position.x = -noseT;
   rolled.add(shell);
-  // piping along the panel joins — lifted just proud so it reads as a seam
+  // piping along the panel joins, lifted just proud so it reads as a seam
   for (const line of loft.seams) {
     const pts = line.filter((_, i) => i % 2 === 0).map((q) => q.clone());
     if (pts.length > 2) {
@@ -346,7 +346,7 @@ function buildSeatpackOnce(p, brand, main, accent, ctx) {
       grp.add(seam);
     }
     // the closure strap: from the top of the body, over the roll, down its back
-    // and tucked under — the buckle sits on top where a thumb finds it
+    // and tucked under, the buckle sits on top where a thumb finds it
     const sx = xOf(0.8), topY = sectionAt(0.8).cu + sectionAt(0.8).a + bodyAmp * 0.6;
     const cx = roll.position.x, cy = roll.position.y, rr = rollR * 0.95 + 1.5;
     // over the top of the roll (a = 90°), round its back (0°), and tucked
@@ -395,7 +395,7 @@ function buildSeatpackOnce(p, brand, main, accent, ctx) {
       }
     }
   }
-  // mesh side pockets change the outline — a panel standing proud of each flank
+  // mesh side pockets change the outline, a panel standing proud of each flank
   const pockets = feats.pockets.filter((x) => /mesh|side|stretch/i.test(typeof x === 'string' ? x : JSON.stringify(x)));
   if (pockets.length && !holster) {
     for (const s of [1, -1]) {

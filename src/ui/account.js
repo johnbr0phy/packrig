@@ -3,14 +3,14 @@
  *
  * WHY THIS IS A DIALOGUE, when nothing else in this app is one. Every other
  * surface here is a column beside the bike, because every other surface is
- * ABOUT the bike — you are meant to keep looking at it. A sign-in is not about
+ * ABOUT the bike, you are meant to keep looking at it. A sign-in is not about
  * the bike. It is a short, modal errand with two fields and a Google button,
  * and the thing people know how to do with one is fill it in and get out. So
  * it is what the owner asked for in as many words: "a normal kind of login
  * window with email password and Google login".
  *
  * WHAT MOVED HERE. `rigsui.js` used to hold this form inside the same sheet
- * that held saved rigs, the gallery and the publish flow — so signing in and
+ * that held saved rigs, the gallery and the publish flow, so signing in and
  * finding last week's bike were the same surface, and pressing your own email
  * address in the top bar was how you reached your rigs. Rigs now live in the
  * menu (`ui/v2/menu.js` → the `rigs` view). This file is only the account:
@@ -25,7 +25,7 @@
 const el = (t, c, txt) => {
   const n = document.createElement(t);
   if (c) n.className = c;
-  if (txt != null) n.textContent = txt;     // never innerHTML — see the note above
+  if (txt != null) n.textContent = txt;     // never innerHTML, see the note above
   return n;
 };
 
@@ -130,7 +130,7 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
       g.append(document.createTextNode('Continue with Google'));
       g.onclick = () => guard(async () => {
         await auth.signInWithGoogle();
-        // On a browser that refused the popup this never runs — the page has
+        // On a browser that refused the popup this never runs, the page has
         // already gone to Google and `hydrate()` finishes the job on the way
         // back. Nothing here may assume a return.
         await afterSignIn();
@@ -173,7 +173,7 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
           const { needsConfirmation } = await auth.signUp(addr, pass.value);
           if (needsConfirmation) {
             mode = 'signin';
-            notice = { kind: 'ok', text: 'Account created — confirm the email we just sent, then log in.' };
+            notice = { kind: 'ok', text: 'Account created. Confirm the email we just sent, then log in.' };
             return;
           }
         } else {
@@ -208,14 +208,14 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
     const { ready } = takeHooks();
     if (ready) {
       // Save (or whatever asked) continues from here. Do not leave them on
-      // the "Your account" screen — they came to keep a bike, not to linger.
+      // the "Your account" screen, they came to keep a bike, not to linger.
       close();
       await ready();
       return;
     }
     mode = 'account';
     notice = pushed
-      ? { kind: 'ok', text: `Logged in — ${pushed} rig${pushed === 1 ? '' : 's'} from this device moved to your account.` }
+      ? { kind: 'ok', text: `Logged in. ${pushed} rig${pushed === 1 ? '' : 's'} from this device moved to your account.` }
       : null;
   }
 
@@ -233,7 +233,7 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
    * `open()` with no argument does the right thing from either state: the
    * account when there is one, the log-in form when there is not.
    *
-   * `opts.reason` replaces the default note — used when Save sent them here.
+   * `opts.reason` replaces the default note, used when Save sent them here.
    * `opts.onReady` runs after a successful sign-in / sign-up (and the
    * dialogue closes first). `opts.onCancel` runs if they close it unsigned.
    */
@@ -243,7 +243,7 @@ export function initAccount(app, { auth, store, host, onChange } = {}) {
     onCancel = typeof opts.onCancel === 'function' ? opts.onCancel : null;
     if (!auth?.enabled) {
       // Never swallow the click. If Firebase did not boot, say so in the
-      // same window — a hidden button plus a no-op click is how login vanished.
+      // same window, a hidden button plus a no-op click is how login vanished.
       mode = 'signin';
       notice = { kind: 'bad', text: 'Accounts are not available right now. Check you are online and refresh.' };
     } else {

@@ -1,8 +1,8 @@
 /**
  * Checks that no two mutually-exclusive slots are ever mounted at once.
  *
- * The exclusion table in src/bags/slots.js is enforced in exactly one place —
- * system.js equip() — so anything that mounts a bag by another route, or any
+ * The exclusion table in src/bags/slots.js is enforced in exactly one place,
+ * system.js equip(), so anything that mounts a bag by another route, or any
  * pair that was simply never declared, produces a bike wearing two bags in the
  * same volume. That is how a rack trunk ended up sitting inside a seat pack.
  *
@@ -33,7 +33,7 @@ await page.waitForFunction('window.__READY_DONE === true', { timeout: 30000 })
 
 const out = await page.evaluate((kits) => {
   const table = window.__SLOTS;
-  if (!table) return { fatal: 'window.__SLOTS is not exposed — src/main.js must set it, or this audit tests nothing' };
+  if (!table) return { fatal: 'window.__SLOTS is not exposed, src/main.js must set it, or this audit tests nothing' };
   const bags = window.app.bags;
 
   // Build the pair list from the table itself, so a new exclusion is covered
@@ -87,8 +87,8 @@ const out = await page.evaluate((kits) => {
   return { pairs: pairs.map((p) => p.join(' x ')), kitFails, orderFails, undeclared };
 }, KITS);
 
-if (out.fatal) { console.error('FAIL —', out.fatal); await browser.close(); process.exit(2); }
-if (!out.pairs.length) { console.error('FAIL — no exclusion pairs found; the audit would pass vacuously'); await browser.close(); process.exit(2); }
+if (out.fatal) { console.error('FAIL , ', out.fatal); await browser.close(); process.exit(2); }
+if (!out.pairs.length) { console.error('FAIL, no exclusion pairs found; the audit would pass vacuously'); await browser.close(); process.exit(2); }
 console.log(`exclusion pairs declared: ${out.pairs.length}`);
 for (const p of out.pairs) console.log(`   ${p}`);
 console.log(`\nrandom kits tested: ${KITS}`);
@@ -98,12 +98,12 @@ console.log(`  manual equip orders that left both mounted: ${out.orderFails.leng
 for (const f of out.orderFails.slice(0, 8)) console.log(`     ${f}`);
 
 if (out.undeclared.length) {
-  console.log(`\nSHARE AN ANCHOR BUT DECLARE NO EXCLUSION (${out.undeclared.length}) — check each:`);
+  console.log(`\nSHARE AN ANCHOR BUT DECLARE NO EXCLUSION (${out.undeclared.length}), check each:`);
   for (const u of out.undeclared) console.log(`   ${u}`);
 }
 if (errs.length) console.log('\npage errors:', [...new Set(errs)].slice(0, 5).join(' | '));
 
 await browser.close();
 const bad = out.kitFails.length + out.orderFails.length;
-console.log(`\n${bad ? `FAIL — ${bad} violation(s)` : 'PASS — no excluded pair ever mounted together'}`);
+console.log(`\n${bad ? `FAIL, ${bad} violation(s)` : 'PASS, no excluded pair ever mounted together'}`);
 process.exit(bad ? 1 : 0);

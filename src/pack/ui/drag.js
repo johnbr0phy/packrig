@@ -1,5 +1,5 @@
 /**
- * Drag an item onto a bag. Desktop pointers only — on a phone the same act is
+ * Drag an item onto a bag. Desktop pointers only, on a phone the same act is
  * two taps (item → where it goes), which is the keyboard path too.
  *
  * A row becomes draggable after 6 px of travel with the mouse, so a click is
@@ -57,7 +57,9 @@ export function initDrag(app, { notify } = {}) {
       drag.ghost = el('div', 'pkg-ghost', r?.name || 'Item');
       document.body.append(drag.ghost);
       document.body.classList.add('pkg-dragging');
+      showTargets();
     }
+    placeTargets();
     drag.ghost.style.transform = `translate(${e.clientX + 12}px, ${e.clientY + 10}px)`;
     let slot = pickBag(e.clientX, e.clientY);
     if (!slot) {
@@ -68,6 +70,8 @@ export function initDrag(app, { notify } = {}) {
       drag.over = slot;
       app.focus?.setHovered?.(slot);
       drag.ghost.dataset.to = slot ? `→ ${SLOT_WORD[slot]}` : '';
+      for (const c of chips) c.classList.toggle('on', c.dataset.slot === slot);
+      for (const [n, s2] of targets) if (n.isConnected) n.classList.toggle('drop-on', s2 === slot);
     }
     e.preventDefault();
   }, { passive: false });
@@ -78,6 +82,8 @@ export function initDrag(app, { notify } = {}) {
     if (!d?.live) return;
     d.ghost.remove();
     document.body.classList.remove('pkg-dragging');
+    hideTargets();
+    for (const [n] of targets) n.classList?.remove('drop-on');
     app.focus?.setHovered?.(null);
     // swallow the click the row would otherwise receive
     const stop = (ev) => { ev.stopPropagation(); ev.preventDefault(); removeEventListener('click', stop, true); };
@@ -91,10 +97,32 @@ export function initDrag(app, { notify } = {}) {
     const name = st.resolved.get(d.uid)?.name;
     if (over) {
       const alt = app.pack.alternativeFor(d.uid);
-      notify?.(`${name} won’t fit in the ${SLOT_WORD[d.over].toLowerCase()}${alt ? '' : ' — nor anywhere else right now'}.`, null,
+      notify?.(`${name} won’t fit in the ${SLOT_WORD[d.over].toLowerCase()}${alt ? '' : ', nor anywhere else right now'}.`, null,
         alt ? { label: 'Put it where it fits', run: () => app.pack.place(d.uid, alt) } : null);
     }
   });
+
+  // ---- drop targets on the bike: a labelled chip on every bag, lit when over it
+  let chips = [];
+  const v3 = new THREE.Vector3();
+  const box = new THREE.Box3();
+  function showTargets() {
+    hideTargets();
+    for (const [slot, e] of Object.entries(app.bags.equipped)) {
+      const c = el('div', 'drop-chip', SLOT_WORD[slot] || slot);
+      c.dataset.slot = slot;
+      c._mesh = e.mesh;
+      document.getElementById('ui-root').append(c);
+      chips.push(c);
+    }
+  }
+  function placeTargets() {
+    for (const c of chips) {
+      box.setFromObject(c._mesh).getCenter(v3).project(app.camera);
+      c.style.transform = `translate(${Math.round((v3.x + 1) / 2 * innerWidth)}px, ${Math.round((1 - v3.y) / 2 * innerHeight)}px) translate(-50%, -50%)`;
+    }
+  }
+  function hideTargets() { for (const c of chips) c.remove(); chips = []; }
 
   return { source, dropTarget };
 }

@@ -93,6 +93,8 @@
 .sheet-foot .row > * { flex: 1; }
 .sheet-grip { display: none; }
 
+.panel > .sheet-inner, .sheet > .sheet-inner { display: flex; flex-direction: column; min-height: 0; flex: 1; }
+
 /* ---- desktop: a column on the left ----------------------------------------------- */
 @media (min-width: 901px) {
   .panel, .sheet {
@@ -132,7 +134,7 @@
     will-change: transform;
   }
   .panel > .sheet-inner, .sheet > .sheet-inner {
-    display: flex; flex-direction: column; min-height: 0;
+    display: flex; flex-direction: column; min-height: 0; flex: none;
     height: calc(100% - var(--hide-settled, 0px));
   }
   .sheet { transform: translateY(calc(var(--sheet-full, 86vh) + 24px)); visibility: hidden;
@@ -153,7 +155,6 @@
   .sheet-body { padding: 0 var(--s-4) var(--s-5); }
   .sheet-foot { padding: var(--s-3) var(--s-4) calc(var(--s-3) + env(safe-area-inset-bottom)); }
 }
-.panel > .sheet-inner, .sheet > .sheet-inner { display: flex; flex-direction: column; min-height: 0; flex: 1; }
 
 /* ---- mount rings on the bike ----------------------------------------------------------- */
 .mounts { position: fixed; inset: 0; z-index: 10; }

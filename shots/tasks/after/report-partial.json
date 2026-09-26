@@ -1,0 +1,39 @@
+[
+ {
+  "flow": "import",
+  "device": "phone",
+  "ok": false,
+  "taps": 4,
+  "hesitations": [
+   "scroll to find \"Paste a spreadsheet\"",
+   "scroll to find \"Import\""
+  ],
+  "steps": [
+   "1. Pack my kit",
+   "2. Paste a spreadsheet",
+   "3. paste the spreadsheet",
+   "4. Import"
+  ],
+  "result": null,
+  "why": "Waiting failed: 30000ms exceeded",
+  "seconds": 52
+ },
+ {
+  "flow": "import",
+  "device": "desktop",
+  "ok": false,
+  "taps": 4,
+  "hesitations": [
+   "\"Paste a spreadsheet\" was covered by button.btn"
+  ],
+  "steps": [
+   "1. Pack my kit",
+   "2. Paste a spreadsheet",
+   "3. paste the spreadsheet",
+   "4. Import"
+  ],
+  "result": null,
+  "why": "Waiting failed: 30000ms exceeded",
+  "seconds": 91
+ }
+]

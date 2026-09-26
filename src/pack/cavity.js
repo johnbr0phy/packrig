@@ -24,11 +24,11 @@ const INSET = 0.03;        // stuffed corners are rounder than the shell
 
 /**
  * Where on the long axis the load is held, per slot family.
- *   origin — the mount is where the builder put the anchor (seat pack post,
+ *   origin, the mount is where the builder put the anchor (seat pack post,
  *            top tube stem end, down tube)
- *   centre — load the middle, soft things out to the ends (bar roll, frame bag,
+ *   centre, load the middle, soft things out to the ends (bar roll, frame bag,
  *            trunk)
- *   low    — for bags that stand upright, the bottom (fork cage, stem, pannier):
+ *   low   , for bags that stand upright, the bottom (fork cage, stem, pannier):
  *            heavy low is the rule that matters most there
  */
 const MOUNT_MODE = {
@@ -107,7 +107,7 @@ export function measureCavity(bag, slot, litres) {
     [s.v0, s.v1] = inset(s.v0, s.v1);
     [s.w0, s.w1] = inset(s.w0, s.w1);
   }
-  // the end slices are the rolled closure / the nose hardware — keep out
+  // the end slices are the rolled closure / the nose hardware, keep out
   const u0 = uMin + FABRIC_MM, u1 = uMax - FABRIC_MM;
   stations[0].u0 = u0;
   stations[stations.length - 1].u1 = u1;

@@ -11,7 +11,7 @@
  * shots/screens/<id>-<device>-<state>.png and shots/screens/report.json.
  *
  * Each shot is a fresh browser context (clean localStorage, signed out) with
- * `?still` so the scene's clock is held. One live page at a time — software GL
+ * `?still` so the scene's clock is held. One live page at a time, software GL
  * starves a second one.
  */
 import puppeteer from 'puppeteer-core';
@@ -186,7 +186,7 @@ async function shoot(id, state, device, setup, suffix = '') {
       const r = im.getBoundingClientRect();
       return r.width > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth;
     });
-    for (let i = 0; i < 600 && (thumbsPending() || emptyVisible() || app.watts?.pending || app.framing?.animating); i++) await new Promise((r) => setTimeout(r, 100));
+    for (let i = 0; i < 600 && (thumbsPending() || emptyVisible() || app.watts?.pending || app.framing?.animating || app.pack?.refitPending); i++) await new Promise((r) => setTimeout(r, 100));
     await new Promise((r) => setTimeout(r, 300));
   }).catch((e) => errs.push('thumbs: ' + e.message));
   // the camera eases (damping, focus glides): shoot once it has stopped, or

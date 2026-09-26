@@ -177,7 +177,7 @@ export function createBike({ paint = 'Slate', size = 'M' } = {}) {
     // LANDMARK its bounding-box centre is nearest, within 130mm. A curved blade
     // is a TubeGeometry whose bbox centre sits ~190mm from the front axle and
     // ~211mm from the head bottom, so it matches nothing and is reported as
-    // "unnamed part" — meaning the thing a fork bag is actually bolted to was
+    // "unnamed part", meaning the thing a fork bag is actually bolted to was
     // measured and then ignored by every clearance rule, while the collider the
     // harness DID call "fork leg" was a wheel spoke.
     const blade = tubeAlong([a, m1, m2, axle], 12, M.paint, { segments: 24 });
@@ -263,7 +263,7 @@ export function createBike({ paint = 'Slate', size = 'M' } = {}) {
       flange.position.z = side * 38;
       W.add(flange);
     }
-    // spokes — 32, 2-cross tangential lacing, alternating flanges
+    // spokes, 32, 2-cross tangential lacing, alternating flanges
     const spokeMat = new THREE.MeshStandardMaterial({ color: 0x83888d, metalness: 0.9, roughness: 0.4 });
     for (let i = 0; i < 32; i++) {
       const ang = (i / 32) * Math.PI * 2;
@@ -368,7 +368,7 @@ export function createBike({ paint = 'Slate', size = 'M' } = {}) {
     mesh.rotation.z = Math.atan2(b.y - a.y, b.x - a.x);
     return mesh;
   }
-  /** Same, but spanning two 3D points — the part keeps its faces toward ±Z. */
+  /** Same, but spanning two 3D points, the part keeps its faces toward ±Z. */
   const _t = new THREE.Vector3(), _b = new THREE.Vector3(), _y = new THREE.Vector3();
   function spanPart3(mesh, a, b, lateral = 0) {
     _t.subVectors(b, a).normalize();
@@ -729,7 +729,7 @@ export function createBike({ paint = 'Slate', size = 'M' } = {}) {
       p(g.barReach - 62, -g.barDrop - 2, half + 1),
     ];
     barGrp.add(tubeAlong(hook, 13.8, M.tape, { segments: 48 }));
-    // tubeAlong leaves an open cylinder, so the drop ended in a visible hole —
+    // tubeAlong leaves an open cylinder, so the drop ended in a visible hole,
     // cap it the way a real bar does, with an end plug.
     const plug = new THREE.Mesh(new THREE.SphereGeometry(13.6, 16, 10), M.aluDark);
     plug.position.copy(hook[hook.length - 1]);
@@ -1013,7 +1013,7 @@ export function createBike({ paint = 'Slate', size = 'M' } = {}) {
  * Rack deck height. A flat +300 put the deck 56mm BELOW the crown of a 45mm
  * tyre on 622 rims, so the deck's cross-tubes ran straight through the wheel
  * and every pannier hung 56mm too low. Clear the tyre envelope instead.
- * The rackTop anchor uses the same expression — they must not drift apart.
+ * The rackTop anchor uses the same expression, they must not drift apart.
  */
 function rearRackTopY(P, g) {
   return P.rearAxle.y + Math.max(300, P.tireR + g.tireWidth / 2 + 55);

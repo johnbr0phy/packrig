@@ -13,7 +13,7 @@ import { device } from './mobile.js';
  *
  * There is no hover, so the half-select stage does not exist: a tap selects
  * outright and a second tap on the same bag deselects. The hover listeners are
- * not attached at all rather than attached and ignored — a coarse pointer
+ * not attached at all rather than attached and ignored, a coarse pointer
  * still emits `pointermove`, so leaving them on would run a raycast against
  * every equipped bag on every frame of a drag, for a tint nobody can see.
  * `canvas.style.cursor` is likewise never written, because there is no cursor.
@@ -121,7 +121,7 @@ export function initFocus(app, { camera, controls, renderer }) {
   // Travel is accumulated as the MAXIMUM distance from the press point, not the
   // start-to-end distance. An orbit that swings around and comes back near
   // where it started measures as zero movement end-to-end, and would select a
-  // bag after spinning the whole bike round — much easier to do with a finger
+  // bag after spinning the whole bike round, much easier to do with a finger
   // than with a mouse.
   let downAt = null;
 
@@ -160,7 +160,7 @@ export function initFocus(app, { camera, controls, renderer }) {
 
   // The browser can take a gesture away mid-flight (a system edge swipe, a
   // scroll handoff). Without this the stale press point survives and the NEXT
-  // pointerup — belonging to a completely different gesture — is judged
+  // pointerup, belonging to a completely different gesture, is judged
   // against it.
   const abandon = () => { downAt = null; };
   canvas.addEventListener('pointercancel', abandon);

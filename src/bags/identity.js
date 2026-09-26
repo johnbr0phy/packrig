@@ -3,8 +3,8 @@
 
 // ---- per-product identity ------------------------------------------------
 // Two bags from the same catalogue slot should never be mistaken for each
-// other. Everything that varies — noise, taper, strap spacing, patch placement
-// — is driven off a hash of the product's identity, so it is stable across
+// other. Everything that varies, noise, taper, strap spacing, patch placement
+//, is driven off a hash of the product's identity, so it is stable across
 // reloads but different for every model and size.
 
 export function productSeed(brand, p) {
@@ -59,15 +59,15 @@ export function featuresOf(p) {
  * data lands, and every field is `null` when the record says nothing.
  *
  * This is the half of `data/models/*.json` the builders were missing. 697 of
- * 702 products carry a `geometry` block written from product photos — the
+ * 702 products carry a `geometry` block written from product photos, the
  * silhouette family, the cross-section, whether the shoulder is squared or
- * rounded, and a measured nose→tail taper — and until `apply-models.mjs`
+ * rounded, and a measured nose→tail taper, and until `apply-models.mjs`
  * started merging it, every builder invented all of it with `vr.range()`.
  * BUILDER-BRIEF §4: variation must be driven by the data.
  *
  * **A null is not a licence to guess wildly.** Fall back to the same narrow
  * `vr.range()` you would have used, so an unmeasured product still varies
- * deterministically — but where `taperRatio` exists, use it.
+ * deterministically, but where `taperRatio` exists, use it.
  */
 export function geomOf(p) {
   const g = (p && p.geometry) || {};
@@ -81,7 +81,7 @@ export function geomOf(p) {
     profile: t?.profile || null,
     /**
      * Where along its length the bag is DEEPEST, as a fraction from the
-     * mounting end. `null` where unmeasured, which is nearly everywhere — and
+     * mounting end. `null` where unmeasured, which is nearly everywhere, and
      * null means "derive it from the bike", not "assume the middle".
      *
      * Only framebag_half reads it today. See the note there: the belly falls
@@ -92,7 +92,7 @@ export function geomOf(p) {
     /**
      * How the bag's TOP LINE runs from its mounting end to its far end.
      * `null` where unmeasured, and null means "the slot's own default", not
-     * "flat" — read the slot's builder for what that default is and why.
+     * "flat", read the slot's builder for what that default is and why.
      *
      * Only toptube reads it today: 'stepped' is the rear-rake / chamfer /
      * dead-flat-front shape measured off five Apidura elevations, and
@@ -102,12 +102,12 @@ export function geomOf(p) {
     /**
      * The NARROW end as a fraction of the wide end, always in (0, 1]. Ratio,
      * never absolute, so it survives a dimension correction underneath it.
-     * 1 means no taper — a barrel — which is a real answer, not a missing one.
+     * 1 means no taper, a barrel, which is a real answer, not a missing one.
      *
      * Read it with `taperNarrowEnd`: reviewers do not agree on which end of a
      * bag is its "nose". Seat pack records overwhelmingly write nose 1.0 →
      * tail 0.33, but 13 of the 24 saddlebags and 4 seat packs write it the
-     * other way round — Ortlieb's Saddle-Bag is nose 0.45 → tail 1.0, meaning
+     * other way round, Ortlieb's Saddle-Bag is nose 0.45 → tail 1.0, meaning
      * the end under the saddle nose is the pinched one. An earlier version of
      * this helper returned `min(tail / nose, 1)`, which silently reported
      * "no taper" for every one of those.
@@ -121,7 +121,7 @@ export function geomOf(p) {
 
 /**
  * Which world direction each catalogue axis points, from the record's
- * `mount.axes`. `null` where unrecorded — 697 of 702 products have it.
+ * `mount.axes`. `null` where unrecorded, 697 of 702 products have it.
  *
  * BUILDER-BRIEF Rule 2: `p.mm.len`/`wid`/`hgt` do not mean the same world axis
  * in every slot, and three separate builders have shipped a 90-degree
@@ -147,7 +147,7 @@ export function axesOf(p) {
 }
 
 /**
- * `soft` | `semi` | `rigid` — how much the shell should deform.
+ * `soft` | `semi` | `rigid`, how much the shell should deform.
  *
  * Ortlieb's stiffened back plate, Tailfin's carbon space frame and Topeak's
  * moulded shells are not sacks, and rendering them with the same pillow bulge
@@ -167,7 +167,7 @@ export function colorwayFor(brand, product, index = 0) {
   if (Array.isArray(ways) && ways.length) {
     const cw = ways[((index % ways.length) + ways.length) % ways.length];
     if (cw && cw.main != null) return { main: cw.main, accent: cw.accent ?? cw.main, name: cw.name };
-    // verification records use { name, hex } — without this the ~1800 colourways
+    // verification records use { name, hex }, without this the ~1800 colourways
     // scraped from the makers' own pages are silently ignored
     if (cw && cw.hex != null) {
       const main = hexToInt(cw.hex);

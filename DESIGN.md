@@ -1,4 +1,4 @@
-# Packrig — 3D Bikepacking Bag Configurator
+# Packrig, 3D Bikepacking Bag Configurator
 
 ## Goal
 A stunningly beautiful, single-page Three.js app where you attach real-brand bikepacking

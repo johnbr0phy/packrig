@@ -1,5 +1,5 @@
 // Feature geometry: zips, drawcords, lids, pockets, bungees, daisy chains,
-// reflective trim — the parts a builder bolts onto a body, plus the shared
+// reflective trim, the parts a builder bolts onto a body, plus the shared
 // pocket pass.
 
 import * as THREE from 'three';
@@ -238,7 +238,7 @@ export function pocketBlock(mat, hwm, { w, h, proud = 5, mesh = false, stretch =
   return g;
 }
 
-/** Webbing ladder — two rows of raised loop bars. */
+/** Webbing ladder, two rows of raised loop bars. */
 export function daisyChain(wm, { len, rows = 2, band = 17 }) {
   const g = new THREE.Group();
   for (let r = 0; r < rows; r++) {

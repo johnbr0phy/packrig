@@ -4,7 +4,7 @@
  *
  * One tap adds a thing AND packs it: it goes into my locker and straight into
  * the best bag on the bike (the same rules as "Suggest a layout"), and the
- * toast says where, with Undo and Move. That is the whole first-timer loop —
+ * toast says where, with Undo and Move. That is the whole first-timer loop,
  * tap "Tent", see a tent go into the fork cage.
  */
 import { btn, el, placeWords } from './labels.js';

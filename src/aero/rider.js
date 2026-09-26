@@ -3,14 +3,14 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { v3, deg, tubeBetween, capsuleBetween, disposeObject } from '../lib.js';
 
 /**
- * Ghost rider — a smoked-glass mannequin posed on the bike, shown only in
+ * Ghost rider, a smoked-glass mannequin posed on the bike, shown only in
  * wind-tunnel mode.
  *
  * It is not decoration: a rider is 70-80% of the drag of a loaded bike, and a
  * seat pack / frame bag sits inside the rider's wake. The measurement pass
  * renders this group with an override material to get real occlusion, so the
  * SILHOUETTE is the product. Everything below is a real Mesh with real
- * geometry (one merged mesh, one draw call) — no sprites, no billboards.
+ * geometry (one merged mesh, one draw call), no sprites, no billboards.
  *
  * Everything is in MILLIMETRES: `group` is added to `bike.frameGroup`, which
  * carries the 0.001 scale. +X forward, +Y up, +Z drive side.
@@ -43,7 +43,7 @@ const SEG = {
   shoulderHalfZ: 0.098,// half biacromial, pulled in to the joint centres
 };
 
-// Girths — RADII, as fractions of H. Limbs are bodies of revolution; the torso
+// Girths, RADII, as fractions of H. Limbs are bodies of revolution; the torso
 // and the feet are ellipses, so they carry a separate lateral factor.
 const GIRTH = {
   pelvis: 0.046,
@@ -64,20 +64,20 @@ const JOINT_BALL = 0.92;
 
 // A cyclist's saddle height is ~0.883 × inseam (LeMond), and inseam is ~0.45 ×
 // stature. Rough on both hops, but it is the only link between the frame and
-// the body, so the entire figure hangs off it — a taller frame gets a taller
+// the body, so the entire figure hangs off it, a taller frame gets a taller
 // rider and the hands still land on the hoods.
 const SADDLE_HEIGHT_PER_INSEAM = 0.883;
 const INSEAM_PER_STATURE = 0.47;   // crotch height / stature, Drillis & Contini
 
 // The elbow a gravel rider actually holds on the hoods: nearly straight, not
-// locked. The torso angle is NOT chosen — it is whatever falls out of the IK
+// locked. The torso angle is NOT chosen, it is whatever falls out of the IK
 // once the elbow bend is fixed and the hands are pinned to the hoods.
 const ELBOW_ANGLE = deg(155);
 const TORSO_ANGLE_OK = [deg(33), deg(52)];   // sanity band, warn outside it
 
 // --- constants that mirror expressions inside bike.js -----------------------
 // bike.js does not publish these, so they are re-stated here with their source.
-// If any of them drifts, the rider drifts with it — see the report note asking
+// If any of them drifts, the rider drifts with it, see the report note asking
 // for `bike.hoods` / `bike.pedals` alongside the existing `bike.rails`.
 const SADDLE_SETBACK = 14;    // bike.js: saddleGrp.position.x = saddlePos.x - 14
 const SADDLE_TOP_OFF = 30;    // bike.js: saddleTopY = saddlePos.y + 30
@@ -96,7 +96,7 @@ const HOOD_RISE = 13;         // bike.js's hood capsule runs (34,12)→(92,14) w
 // and the "hand" is the wrist on the hood).
 //
 // Given a root, a target and two segment lengths, the joint lies on a circle;
-// `hint` picks the point on it — the direction the joint should bulge toward.
+// `hint` picks the point on it, the direction the joint should bulge toward.
 // The bones are never stretched: an out-of-reach target is clamped and reported
 // so the caller can fix the proportions instead of teleporting a limb.
 // ---------------------------------------------------------------------------
@@ -137,7 +137,7 @@ export function createRider(bike) {
   const R = (k) => GIRTH[k] * H;
 
   // ---- contact 1: the saddle ----------------------------------------------
-  // The shell's top face, then the sit bones on the wide part of it — a rider
+  // The shell's top face, then the sit bones on the wide part of it, a rider
   // on the hoods sits ~0.22 of the saddle length behind the shell's centre,
   // not on the widest point (that is the flat-bar/upright position).
   const saddleTopY = P.saddlePos.y + SADDLE_TOP_OFF + SADDLE_SHELL;
@@ -162,13 +162,13 @@ export function createRider(bike) {
     P.barCenter.y + HOOD_RISE,
     side * (geo.barWidth / 2 + 5)
   );
-  // The wrist is behind and above the grip — the hand lies along the hood.
+  // The wrist is behind and above the grip, the hand lies along the hood.
   const wristFor = (side) => hoodGrip(side).add(v3(-0.023 * H, 0.006 * H, 0));
 
   // ---- contact 3: the pedals ----------------------------------------------
   // The BB is the origin of the frame group, so the pedal is just the crank
   // vector. bike.js holds the cranks at -12°, i.e. drive side just below 3
-  // o'clock and non-drive just above 9 — already the asymmetric pose we want,
+  // o'clock and non-drive just above 9, already the asymmetric pose we want,
   // so read it rather than inventing a second one that disagrees with the
   // rendered crank arms.
   const crankAngleFor = (side) => CRANK_ANGLE + (side > 0 ? 0 : Math.PI);
@@ -180,8 +180,8 @@ export function createRider(bike) {
   // Shoe frame. The pedal spindle sits under the BALL of the foot, so every
   // other landmark is measured along the sole from there: heel at 0.66 of the
   // foot length back, toe 0.34 forward, ankle joint 0.47 back and standing off
-  // the sole. Foot pitch follows the stroke — toes down at the front of the
-  // circle, heel down at the back — which is one cosine of the crank angle.
+  // the sole. Foot pitch follows the stroke, toes down at the front of the
+  // circle, heel down at the back, which is one cosine of the crank angle.
   const footFrame = (side) => {
     const pitch = -deg(10) * Math.cos(crankAngleFor(side));
     const sole = v3(Math.cos(pitch), Math.sin(pitch), 0);
@@ -221,7 +221,7 @@ export function createRider(bike) {
     const hipJ = hipFor(side);
     const foot = footFrame(side);
     const ankle = foot.ankle;
-    // The knee tracks forward and very slightly inboard of the pedal — but only
+    // The knee tracks forward and very slightly inboard of the pedal, but only
     // slightly: at -0.16 the knee pulled inboard of BOTH the hip and the foot
     // and clipped the top tube by 2 mm. It has to stay between them.
     const legIK = solveTwoBone(hipJ, ankle, L('thigh'), L('shank'), v3(1, 0, -side * 0.06));
@@ -235,7 +235,7 @@ export function createRider(bike) {
     const sh = shoulderFor(side);
     const wrist = wristFor(side);
     // Elbows drop and flare outboard, which is also what keeps them clear of
-    // the bar tops — a hint pointing forward would drive them through the bar.
+    // the bar tops, a hint pointing forward would drive them through the bar.
     const armIK = solveTwoBone(sh, wrist, L('upperArm'), L('forearm'), v3(0, -1, side * 1));
     if (!armIK.reach) warnings.push(`${side > 0 ? 'drive' : 'non-drive'} arm short by ${armIK.gap.toFixed(0)}mm`);
     arms.push({
@@ -257,8 +257,8 @@ export function createRider(bike) {
 
   // ---- build ---------------------------------------------------------------
   const material = new THREE.MeshPhysicalMaterial({
-    // `color` FILTERS the transmitted light — three multiplies the refracted
-    // sample by it — so a dark base colour renders opaque black no matter how
+    // `color` FILTERS the transmitted light, three multiplies the refracted
+    // sample by it, so a dark base colour renders opaque black no matter how
     // high `transmission` is. That was the first pass's bug. The glass is kept
     // near-white here and the smoke comes from volume attenuation below, which
     // also makes thick parts (torso, thighs) read darker than thin ones.
@@ -288,7 +288,7 @@ export function createRider(bike) {
 
   // Explicit fresnel edge lift on top of the physical shading. `sheen` alone is
   // subtle and `transmission` can be swamped by the composer (GTAO/bloom) or by
-  // a background the same value as the body — this guarantees the silhouette is
+  // a background the same value as the body, this guarantees the silhouette is
   // outlined whatever is behind it, which is what makes it read as glass rather
   // than as a grey dummy. The uniform is driven by setOpacity so the rim fades
   // with the body.
@@ -331,7 +331,7 @@ export function createRider(bike) {
 
   // pelvis: one mass across the femoral heads, sitting into the saddle top
   // (this capsule's axis is Z, so its local Z is world −Y: PELVIS_SQUASH is the
-  // vertical scale the hip height above was derived from — keep them together)
+  // vertical scale the hip height above was derived from, keep them together)
   bake(capsuleBetween(hipFor(-1), hipFor(1), R('pelvis'), material, 6, 18),
     v3(0.95, 1, PELVIS_SQUASH));
   // Trunk in two tapers through a narrowed waist, elliptical throughout (wider
@@ -402,7 +402,7 @@ export function createRider(bike) {
   } else {
     // mergeGeometries returns null if attribute sets ever diverge; still ship a
     // real mesh per part rather than nothing.
-    warnings.push('mergeGeometries failed — falling back to one mesh per part');
+    warnings.push('mergeGeometries failed, falling back to one mesh per part');
     body = new THREE.Group();
     for (const g of geos) body.add(new THREE.Mesh(g, material));
   }
@@ -475,7 +475,7 @@ export function createRider(bike) {
      * shell that is still visibly bending the scene at a = 0.05. Ramping
      * `transmission` (and the rim sheen) with the fade takes the whole surface
      * out together. `transmission` starts non-zero so the shader is already
-     * compiled with the transmission branch — driving it is a uniform write,
+     * compiled with the transmission branch, driving it is a uniform write,
      * not a recompile.
      */
     setOpacity(a) {
@@ -485,7 +485,7 @@ export function createRider(bike) {
       material.sheen = 0.85 * v;
       rimU.value = 0.9 * v;
       // A mesh faded towards alpha 0 still writes depth, and GTAO reads
-      // depth/normals through an override material that ignores opacity — so a
+      // depth/normals through an override material that ignores opacity, so a
       // body you can no longer see goes on smearing an AO ghost across the
       // scene. That is the trap CONTRACT.md records against the old terrain, and
       // it is reproducible here: leave depthWrite on and the ghost is visible in

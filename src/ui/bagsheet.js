@@ -1,15 +1,15 @@
 /**
- * The bag sheet — REDESIGN.md §5, phase 2.
+ * The bag sheet, REDESIGN.md §5, phase 2.
  *
  * Tapping a bag opens it. From the rig panel, or on the bike itself. Before
- * this, tapping a bag on the model selected it, ringed it, zoomed the camera —
+ * this, tapping a bag on the model selected it, ringed it, zoomed the camera,
  * and then nothing. The selection was a dead end, which is the odd part,
  * because everything behind it already worked: `bags.setColorway()`,
  * `bags.remove()`, and a catalogue that already filters to one mount slot.
  * This file is mostly wiring what was already there to a surface.
  *
- * It is the FITTED state (§5). The catalogue state — the same shell, opened on
- * a bag that is not on the bike yet — is phase 8.
+ * It is the FITTED state (§5). The catalogue state, the same shell, opened on
+ * a bag that is not on the bike yet, is phase 8.
  *
  * The three actions are the sheet's whole reason for existing:
  *
@@ -48,7 +48,7 @@ function dimsText(p) {
  * than printing a dash, because a table of dashes is worse than a short table.
  */
 function specRow(key, value, { ok = false, warn = false } = {}) {
-  if (value == null || value === '' || value === '—') return null;
+  if (value == null || value === '' || value === '–') return null;
   const r = el('div', 'bs-spec');
   r.append(el('span', 'bs-spec-k', key));
   /*
@@ -69,12 +69,12 @@ function specRow(key, value, { ok = false, warn = false } = {}) {
 export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onClose, openLocker } = {}) {
   /**
    * Draw the sheet for whatever is currently in `uiSlot`. Called again after a
-   * colourway change so the swatch ring and the hero move together — cheaper
+   * colourway change so the swatch ring and the hero move together, cheaper
    * than diffing, and the body is a few dozen nodes.
    */
   function paint(body, uiSlot, handle) {
     const cur = app.bags.equipped[uiSlot];
-    // Removed from under us — a bag can go while its sheet is open if the rig
+    // Removed from under us, a bag can go while its sheet is open if the rig
     // is cleared or a shared link loads.
     if (!cur) { handle?.close(); return; }
 
@@ -95,7 +95,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
     // ---- the product -----------------------------------------------------------
     const prod = el('div', 'bs-product');
     const hero = el('div', 'bs-hero');
-    const img = bagImg(app, brand, product, { cls: 'bs-hero-img', cw: cur.colorwayIndex || 0, lazy: false, size: 480 });
+    const img = bagImg(app, brand, product, { cls: 'bs-hero-img', cw: cur.colorwayIndex || 0, lazy: false, size: 640, aspect: 16 / 9 });
     hero.append(img);
     const setPhoto = () => hero.classList.toggle('is-photo', img.classList.contains('is-photo') && !img.classList.contains('is-model'));
     img.addEventListener('load', setPhoto);
@@ -112,7 +112,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
     id.append(el('h3', 'bs-name', modelTitle(product, brand)));
     const size = sizeOf(product);
     id.append(el('div', 'bs-sub', [
-      litersOf(product) === '—' ? null : litersOf(product),
+      litersOf(product) === '–' ? null : litersOf(product),
       slotLabel,
       size && !sizeIsVolume(product) ? size : null,
     ].filter(Boolean).join(' · ')));
@@ -149,7 +149,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
       });
       cwWrap.append(row);
     }
-    // A single-colourway product keeps the row and loses the picker — a row that
+    // A single-colourway product keeps the row and loses the picker, a row that
     // vanishes on some bags and not others reads as a bug (§5.2). But a record
     // with no colourways AND no resolved name has nothing to put in it, and a
     // heading over blank space is worse than no heading.
@@ -199,7 +199,7 @@ export function initBagSheet(app, { openCatalogue, sync, notify, insideFor, onCl
     body.append(pk);
 
     // ---- footer ------------------------------------------------------------
-    // Sticky, and outside the scroll region — §5.1 says it never scrolls away.
+    // Sticky, and outside the scroll region, §5.1 says it never scrolls away.
     const foot = el('div', 'sheet-foot-src');
     const top = el('div', 'row');
 

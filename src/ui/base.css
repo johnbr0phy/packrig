@@ -82,7 +82,7 @@ ul { padding: 0; list-style: none; }
 }
 .btn:hover { background: var(--fill-3); }
 .btn:active { transform: scale(0.975); }
-.btn:disabled { opacity: 0.45; }
+.btn:disabled, .btn.primary:disabled { opacity: 1; background: var(--fill-1); color: var(--ink-3); cursor: default; }
 .btn.primary { background: var(--accent); color: var(--ink-on-accent); }
 .btn.primary:hover { background: var(--accent-hi); }
 .btn.primary:active { background: var(--accent-lo); }
@@ -176,3 +176,5 @@ textarea.input { padding: var(--s-3); min-height: 160px; resize: vertical; line-
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
 }
+/* an image still waiting for its picture shows its plate, never a broken icon */
+img:not([src]), img[src=""] { visibility: hidden; }

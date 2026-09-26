@@ -2,7 +2,7 @@
  * The little face in the account control.
  *
  * Google hands us a photo. Email sign-up does not, so that state is the
- * same person-glyph the rest of the app already draws — not a hollow status
+ * same person-glyph the rest of the app already draws, not a hollow status
  * dot pretending to be an identity.
  */
 import { icon } from './v2/icons.js';

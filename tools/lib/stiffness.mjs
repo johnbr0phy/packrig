@@ -1,5 +1,5 @@
 /**
- * Derive a machine-readable structure class — soft | semi | rigid — from a
+ * Derive a machine-readable structure class, soft | semi | rigid, from a
  * model record.
  *
  * WHY THIS IS A CLASSIFIER AND NOT A FIELD READ. `MODEL-SPEC.md` never gave
@@ -10,16 +10,16 @@
  *
  * The reason this is not a keyword grep: the single most common thing these
  * records say about rigidity is that the *hardware* is rigid and the *bag* is
- * not. Thule's Shield pannier — "This rail/clip assembly is RIGID and must not
+ * not. Thule's Shield pannier, "This rail/clip assembly is RIGID and must not
  * be run through the soft-bag deform pass, even though the bag body it's bonded
- * to is soft" — would be classified backwards by any grep for /rigid/, and
+ * to is soft", would be classified backwards by any grep for /rigid/, and
  * Thule's Shield bags are exactly the drybag-limp panniers that most need the
  * deform pass.
  *
  * So: work sentence by sentence, require a claim about the BODY's shape rather
  * than the mere word "rigid", and let a negative in the same sentence veto a
- * positive in it. Default is `soft` — the state the renderer has always
- * assumed — so a record that says nothing changes nothing.
+ * positive in it. Default is `soft`, the state the renderer has always
+ * assumed, so a record that says nothing changes nothing.
  *
  * This is a bootstrap, not the destination. The destination is
  * `details.structure_class` written deliberately by a reviewer; where that
@@ -76,7 +76,7 @@ const SOFT_SIDED = [
 ];
 
 // Full rigidity. Only a renderer-facing directive or an unqualified whole-body
-// claim gets here. `no sag` deliberately is NOT in this list — in these records
+// claim gets here. `no sag` deliberately is NOT in this list, in these records
 // it almost always describes how the MOUNT holds the bag still, not whether the
 // fabric deforms, and it fired on a Blackburn top tube bag that "straps down
 // flush with no sag" and on every Tailfin bag whose rack simply doesn't move.

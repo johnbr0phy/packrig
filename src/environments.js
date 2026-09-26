@@ -5,8 +5,8 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 export const ENV_NAMES = ['mountain', 'lake', 'forest', 'desert', 'night'];
 
 /**
- * Each environment is a hand-built 3D world — layered ridges, water, forests,
- * mesas, a camp — under a per-env gradient sky dome. A real CC0 HDRI (Poly
+ * Each environment is a hand-built 3D world, layered ridges, water, forests,
+ * mesas, a camp, under a per-env gradient sky dome. A real CC0 HDRI (Poly
  * Haven, 2k) is still loaded per env but only as the PBR light source
  * (PMREM → scene.environment); the visible background is all geometry, so the
  * scene has genuine parallax when the camera orbits.
@@ -14,12 +14,12 @@ export const ENV_NAMES = ['mountain', 'lake', 'forest', 'desert', 'night'];
  * Framing note that drives every size below: main.js shoots a 27° vertical
  * lens from ~3 m out at 0.9 m, pitched down ~6°, so only about 7° of sky sits
  * above the horizon and anything in the 10–30 m band is enormous on screen.
- * Hence the layout law — tiny detail inside 18 m, mid scrub to 50 m, and all
+ * Hence the layout law, tiny detail inside 18 m, mid scrub to 50 m, and all
  * the drama (trees, ridges, buttes) beyond 40 m at low angular height.
  *
  * Everything renders through main.js's EffectComposer, i.e. into a half-float
  * render target, so material shaders here output LINEAR colour and OutputPass
- * does the ACES tonemap. Colours above 1.0 are intentional — they feed bloom.
+ * does the ACES tonemap. Colours above 1.0 are intentional, they feed bloom.
  */
 
 // ---------------------------------------------------------------- utilities
@@ -230,7 +230,7 @@ function bushGeo(rnd, { r = 0.5, a = 0x4e6f2e, b = 0x7d9b3c, blobs = 3 }) {
   return mergeGeometries(parts, false);
 }
 
-/** A clump of tapered blades — cheap stand-in for grass / reeds / scrub. */
+/** A clump of tapered blades, cheap stand-in for grass / reeds / scrub. */
 function bladeClump(rnd, { n = 7, h = 0.5, w = 0.055, bend = 0.35, spread = 0.12, a = 0x6c8f3a, b = 0xb2c455 }) {
   const pos = [], cols = [];
   const cA = new THREE.Color(a), cB = new THREE.Color(b);
@@ -766,7 +766,7 @@ export class Environments {
    * Disc in the XZ plane displaced by terrainH, uv-matched across both variants.
    * The innermost ring collapses to the origin (a fan, not an annulus) so there
    * is no pinhole under the bike, and normals come from the height field
-   * analytically — computeVertexNormals would produce garbage on the sliver
+   * analytically, computeVertexNormals would produce garbage on the sliver
    * triangles at the centre.
    */
   _relief(rOut, radSegs, angSegs) {
@@ -877,7 +877,7 @@ export class Environments {
   // ---- mountain: four ridge layers out to 430 m, alpine dawn --------------
   _wMountain({ def, group, anim }) {
     this._ridges(group, [
-      // the far range deliberately runs off the top of frame — that is what
+      // the far range deliberately runs off the top of frame, that is what
       // makes a 27° lens read "mountains" rather than "hills"
       { radius: 432, height: 145, segs: 300, seed: 3, slope: 0.85, rJitter: 0.12, hMin: 0.26, sharp: 1.5, freq: 0.75,
         low: 0x51648f, mid: 0x7186ad, high: 0xa8b4d6, snow: 0xfdf9ff, snowLine: 0.42, shade: 0.14 },
@@ -970,7 +970,7 @@ export class Environments {
     });
 
     this._ridges(group, [
-      // far shore tree wall — high-frequency profile reads as canopy, not rock
+      // far shore tree wall, high-frequency profile reads as canopy, not rock
       { radius: 192, height: 16, segs: 340, seed: 5, slope: 0.5, rJitter: 0.1, hMin: 0.36, sharp: 1.25, freq: 4.0,
         low: 0x0e3320, mid: 0x1a552b, high: 0x3f8636, shade: 0.26 },
       { radius: 305, height: 58, segs: 260, seed: 23, slope: 0.9, rJitter: 0.15, hMin: 0.24, sharp: 1.5, freq: 1.4,
@@ -1412,7 +1412,7 @@ export class Environments {
         flames.push(m);
       }
       // firelight spilling onto the ground, as a flat disc rather than a
-      // billboard — a big Sprite here breaks main.js's GTAO prepass
+      // billboard, a big Sprite here breaks main.js's GTAO prepass
       const emb = new THREE.Mesh(
         new THREE.CircleGeometry(1.9, 40),
         new THREE.MeshBasicMaterial({
@@ -1511,7 +1511,7 @@ export class Environments {
     this.current = name;
     const token = ++this.loadToken;
 
-    // STUDIO MODE (default): worlds hidden for speed — clean tinted backdrop,
+    // STUDIO MODE (default): worlds hidden for speed, clean tinted backdrop,
     // HDRI still lights the bike. Re-enable the 3D worlds with ?world=1.
     this.studio = !new URLSearchParams(location.search).has('world');
     const STUDIO_TINT = { mountain: 0xb9bec6, lake: 0xb2bfba, forest: 0xaab5a5, desert: 0xccbaa2, night: 0x22252b };

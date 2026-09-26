@@ -52,7 +52,7 @@ export function initLoadouts(app, hooks) {
       btn('btn sm', 'Copy as spreadsheet', async (e) => {
         const text = P.exportText();
         const ok = await copy(text);
-        e.target.textContent = ok ? 'Copied — paste into Sheets' : 'Copy failed';
+        e.target.textContent = ok ? 'Copied. Paste it into Sheets.' : 'Copy failed';
         setTimeout(() => { e.target.textContent = 'Copy as spreadsheet'; }, 2200);
       }),
       btn('btn sm', 'Download .tsv', () => download(`${(P.active()?.name || 'trip').replace(/[^\w-]+/g, '-')}.tsv`, P.exportText())),
@@ -111,7 +111,7 @@ export function initLoadouts(app, hooks) {
       const r = el('div', 'pkg-cmp-r' + (big ? ' is-big' : ''));
       const d = b - a;
       r.append(el('span', 'pkg-cmp-k', label), el('span', 'num', fmtWeight(a, u, { big })), el('span', 'num', fmtWeight(b, u, { big })),
-        el('span', 'num pkg-delta' + (d > 0.5 ? ' up' : d < -0.5 ? ' down' : ''), Math.abs(d) < 0.5 ? '—' : `${d > 0 ? '+' : '−'}${fmtWeight(Math.abs(d), u)}`));
+        el('span', 'num pkg-delta' + (d > 0.5 ? ' up' : d < -0.5 ? ' down' : ''), Math.abs(d) < 0.5 ? '–' : `${d > 0 ? '+' : '−'}${fmtWeight(Math.abs(d), u)}`));
       return r;
     };
     const hd = el('div', 'pkg-cmp-r is-h');
@@ -147,7 +147,7 @@ export function initLoadouts(app, hooks) {
   function paintImport(body, h) {
     body.replaceChildren();
     const wrap = el('div', 'pkg-import');
-    wrap.append(el('p', 'pkg-why', 'Copy the rows from Google Sheets or Excel and paste them here: item, category, weight, then a column per bag with an X — or a single “where it goes” column. Totals rows for gear, bike and bags are read too.'));
+    wrap.append(el('p', 'pkg-why', 'Copy the rows from Google Sheets or Excel and paste them here: item, category, weight, then a column per bag with an X, or a single “where it goes” column. Totals rows for gear, bike and bags are read too.'));
     const name = el('input', 'input');
     name.placeholder = 'Name this trip';
     name.setAttribute('aria-label', 'Trip name');

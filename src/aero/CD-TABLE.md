@@ -9,7 +9,7 @@ involved, adjusted for where on the bike each shape sits, then calibrated so
 that the whole-bike answers land on published CdA figures for a bare bike, a
 rider, a handlebar roll and a set of panniers. Where a value is my own judgement
 with no source behind it, this document says so in as many words. That happens
-often, and it is the honest state of the art for bikepacking luggage — I could
+often, and it is the honest state of the art for bikepacking luggage, I could
 not find a wind-tunnel dataset for bikepacking bags that I can cite with
 confidence, and I have not invented one.
 
@@ -19,14 +19,14 @@ rig costs 17 watts" to three significant figures is not.
 
 ---
 
-## 1. Reference area — the thing everything else depends on
+## 1. Reference area, the thing everything else depends on
 
 A drag coefficient is meaningless without the area it is referenced to.
 
 These coefficients are referenced to each part's **marginal frontal area**: the
 silhouette that part adds which was not already blocked by the bike or rider,
 measured on the GPU from the real geometry by `aero/measure.js`. This is the
-definition that makes the contract's promise work — that `parts` sums to
+definition that makes the contract's promise work, that `parts` sums to
 `cdaHeadOn`. Every part accounts for exactly the air it is the first thing to
 meet.
 
@@ -51,7 +51,7 @@ the dynamic pressure is a fraction of freestream.
 
 **This used to be handled inside the Cd, and no longer is.** The base table is
 still keyed on slot first and shape class second, and the slot still carries
-*some* position — a pannier hung out beside the wheel is genuinely blunter in
+*some* position, a pannier hung out beside the wheel is genuinely blunter in
 the flow than a top tube bag tucked against the frame. But **being in something
 else's shadow is now measured and priced separately**, by `wakeDiscount` (§ 9),
 because the engine can see exactly which pixels of a bag are shielded and which
@@ -77,25 +77,25 @@ about exposure, not measurement.
 
 | Key | Cd | Reasoning |
 |---|---|---|
-| `bike` | 0.90 | Frame, fork, bars and cranks are round tubes. A lone smooth cylinder in crossflow sits at Cd ≈ 1.1–1.2 subcritical (Hoerner, *Fluid-Dynamic Drag*, 1965 — the standard reference for all the bluff-body numbers in this document). The counted silhouette is well below that because much of it is tube standing in another tube's wake: the down tube behind the front wheel, the seat tube behind the down tube, the whole rear triangle behind all of it. A body in a wake does not pay full price. |
+| `bike` | 0.90 | Frame, fork, bars and cranks are round tubes. A lone smooth cylinder in crossflow sits at Cd ≈ 1.1–1.2 subcritical (Hoerner, *Fluid-Dynamic Drag*, 1965, the standard reference for all the bluff-body numbers in this document). The counted silhouette is well below that because much of it is tube standing in another tube's wake: the down tube behind the front wheel, the seat tube behind the down tube, the whole rear triangle behind all of it. A body in a wake does not pay full price. |
 | `wheels` | 0.85 | Slightly *below* the frame, which is not the obvious guess. Head-on a wheel is mostly tyre band and genuinely bluff, but the silhouette also counts 32 spokes and a hub that block far less than their pixel count implies, and the rear wheel sits in the front wheel's wake. Rotational drag, which no silhouette can see, is folded back in here. |
 | `rider` | 0.82 | A human bluff body runs Cd ≈ 0.9 sitting up and ≈ 0.7 in a deep tuck. Hoods sit between. |
-| `racks` | 0.90 | Deliberately identical to `bike` — same round alloy tubing, same family, and a distinct number would be judgement with nothing behind it. Two effects roughly cancel: a rack's 10 mm tube sits at a lower Reynolds number, where a smooth cylinder's Cd is if anything *higher*, while an open rack lattice shields itself less than a frame does. Written out rather than left to fall through, so it survives someone later changing `bike`, and because without the entry `cdOf` returns a **top tube bag's** 0.58 for it. |
+| `racks` | 0.90 | Deliberately identical to `bike`, same round alloy tubing, same family, and a distinct number would be judgement with nothing behind it. Two effects roughly cancel: a rack's 10 mm tube sits at a lower Reynolds number, where a smooth cylinder's Cd is if anything *higher*, while an open rack lattice shields itself less than a frame does. Written out rather than left to fall through, so it survives someone later changing `bike`, and because without the entry `cdOf` returns a **top tube bag's** 0.58 for it. |
 
 A rack is a reserved part, so it gets **no wake discount** despite living deep in
 the rider's shadow. That over-charges it slightly, which is the right
-conservative direction and is deliberate — a rack is the one part of fitting
+conservative direction and is deliberate, a rack is the one part of fitting
 panniers you cannot take off, and it belongs on the pannier's bill.
 
 Source for the CdA targets these are tuned against: the standard figures in
 Wilson & Papadopoulos, *Bicycling Science* (MIT Press), and the road-cycling
-power literature — bike alone ≈ 0.08–0.10 m², bike plus rider on the hoods
+power literature, bike alone ≈ 0.08–0.10 m², bike plus rider on the hoods
 ≈ 0.36 m², dropping to ≈ 0.30 m² in the drops.
 
 **These two were revised down** from 1.00 and 1.10 once the measurement engine
 existed. They were originally set against my *estimate* of the frontal areas;
 the engine reports 0.0675 m² of frame and 0.0354 m² of wheel, and against those
-real numbers the old pair produced 0.1065 m² for a bare bike — 18% above the
+real numbers the old pair produced 0.1065 m² for a bare bike, 18% above the
 anchor. 0.90 and 0.85 land it on **0.0909 m²**. The revision changed the ratio
 as well as the scale: I had wheels above the frame, on the argument that spokes
 churn air they do not block. That argument is about *yaw*, where the spoke area
@@ -127,7 +127,7 @@ never grades better than a documented one.
 | `trunk` | 0.52 | 0.56 | 0.66 | – | – | 0.62 |
 
 † **Re-based upward when `wakeDiscount` landed.** These three used to carry the
-rider's or the wheel's wake inside the coefficient — `seatpack` wedge read 0.34
+rider's or the wheel's wake inside the coefficient, `seatpack` wedge read 0.34
 against `saddlebag`'s 0.42 for the identical shape. Shadow is now measured and
 priced by § 9, so these had to become clean freestream values or the wake would
 be charged twice. The *effective* coefficient on a fully shadowed seat pack is
@@ -139,7 +139,7 @@ reasoning below.
 **Why a wedge is ~0.42.** A body with a blunt rounded nose and a long taper into
 its own wake is the classic low-drag bluff form; a hemisphere-nosed streamlined
 body is Cd ≈ 0.2–0.4 depending how far the tail is carried. A seat pack is a
-short, fat, fabric version of that — softer-edged and bulging, so above the
+short, fat, fabric version of that, softer-edged and bulging, so above the
 ideal. This is the lowest shape class in the table outside the frame bags, and
 it deserves to be. Note this is now a **clean-air** figure: the reason a seat
 pack ends up the cheapest big-volume bag on a bike is the wake it sits in, and
@@ -148,7 +148,7 @@ that is applied separately in § 9.
 **Why a roll end is ~0.45.** A handlebar roll is a finite cylinder with its axis
 *across* the flow, which taken alone would be Cd ≈ 1.1. It is not alone: it sits
 in the gap between the rider's arms, ahead of the head tube, partly filling a
-region that was already turbulent. It is also the calibration anchor — 0.45 is
+region that was already turbulent. It is also the calibration anchor, 0.45 is
 the number that puts a big roll at the published 0.02–0.03 m². *Judgement,
 calibrated rather than derived.*
 
@@ -180,7 +180,7 @@ This is the most interesting true result in bikepacking aero, and the one most
 easily faked, so here is exactly what the model does.
 
 **The bag's own Cd is 0.26 (full) / 0.30 (half).** A frame bag is a tall, thin,
-streamwise-aligned panel with a rounded leading edge — geometrically much closer
+streamwise-aligned panel with a rounded leading edge, geometrically much closer
 to a faired strut than to a box. Streamlined bodies aligned with the flow are
 Cd ≈ 0.04–0.1; a fabric panel that bulges and has a zip down it is nowhere near
 that good, but it is a long way below anything blunt. Full reads lower than half
@@ -204,7 +204,7 @@ wheels                       unchanged, as expected
 
 **+0.00207 m² is the answer.** A full frame bag costs under a watt. That IS the
 "frame bags are essentially free" result, and it now falls out of measured
-geometry instead of out of a constant chosen to produce it — which is a far
+geometry instead of out of a constant chosen to produce it, which is a far
 stronger claim, and the standard the rest of this document is held to.
 
 Applying the −0.002 would have landed the net on 0.00007 m², suspiciously
@@ -217,14 +217,14 @@ fabricated headline this whole exercise existed to avoid.
 There is a real argument the other way, and it deserves stating: the
 flow-quality effect (b) below is genuine physics, and −0.002 is a defensible
 size for it. Setting it to zero asserts it is exactly zero, which is also a
-claim. On the measurement alone the two choices are indistinguishable — +0.00207
+claim. On the measurement alone the two choices are indistinguishable, +0.00207
 and +0.0003 are both comfortably "within noise of zero", which was the
 calibration anchor.
 
 What breaks the tie is **which way each fails**. With no credit, the reported
 figure is a positive measured area times a positive Cd: it cannot go negative,
 for any frame, any bag, any size. With −0.002 applied, the net sits at
-+0.0003 — about 3 parts in 10,000 of the whole-bike CdA — so a slightly smaller
++0.0003, about 3 parts in 10,000 of the whole-bike CdA, so a slightly smaller
 bag, a smaller frame, or a different product flips the sign and the HUD tells
 the rider a frame bag makes them faster. The credit's uncertainty (±100%, by my
 own estimate) is six times the margin it leaves.
@@ -239,7 +239,7 @@ panel. Zero is chosen because it cannot produce the second failure.
 **The area swap barely happens, and the reason is interesting.** It was expected
 to: a frame bag occluding the down tube should move pixels from the `bike` part
 to the bag, where they are priced at a much lower Cd. Measured, the bike part
-gives up 0.00028 m² — nothing. Head-on there is almost no frame *behind* the
+gives up 0.00028 m², nothing. Head-on there is almost no frame *behind* the
 bag to swap, because the bag sits in the narrow slot **between** the tubes that
 form the silhouette rather than in front of them. It is tucked inside the frame,
 not covering it. Its own measured area is only about 94 cm², which is right for
@@ -252,7 +252,7 @@ seat pack behind the rider reads 0.0001 m².
 **The flow-quality effect is real physics and is deliberately not modelled.**
 Capping the triangle genuinely does stop air spilling through it and stop the
 down tube and seat tube shear layers interacting. But it is below what this rig
-can resolve — smaller than the +0.00207 the measurement already carries — and
+can resolve, smaller than the +0.00207 the measurement already carries, and
 putting a number on it would be asserting precision the apparatus does not have.
 It is left unmodelled on purpose, not forgotten.
 
@@ -263,8 +263,8 @@ no-op, and the mechanism is there for a future measurement that earns it.
 
 The +0.00207 above was measured before a baseline bug was fixed: a full frame
 bag hides the bottles in **both** the baseline and the loaded pass, so getting
-your bottles out of the wind — a genuine and frequently-cited benefit of a frame
-bag — was invisible to the comparison. It is worth roughly 4% of the baseline.
+your bottles out of the wind, a genuine and frequently-cited benefit of a frame
+bag, was invisible to the comparison. It is worth roughly 4% of the baseline.
 
 So expect this figure to move down once that lands, and possibly to cross zero.
 **That is fine, and it is the opposite of the situation this section warns
@@ -276,7 +276,7 @@ does, and say which measurement produced them.
 
 ### The limit of the claim: this is head-on only
 
-The frame bag is cheap here partly because it is *shielded* — tucked between the
+The frame bag is cheap here partly because it is *shielded*, tucked between the
 tubes and behind the front wheel. At yaw it stops being shielded, its silhouette
 grows 3.05× by 20° (§ 8.5), and its cost rises with it: measured, a full frame
 bag runs **1.78× its own head-on CdA at 20°**. "Nearly free" is a head-on
@@ -297,7 +297,7 @@ published fabric string.
 
 A ±3% band, and it should stay small. **Be clear about what this represents:** on
 a body whose drag is dominated by where the flow separates, surface finish is a
-second-order effect — the separation point is set by the geometry, not the
+second-order effect, the separation point is set by the geometry, not the
 weave. What actually differs between these fabrics is how tautly the panel sits
 and whether it flutters. That is a real effect and it correlates with fabric, so
 the modifier is keyed on fabric; but it is a proxy, and the whole row is
@@ -305,7 +305,7 @@ the modifier is keyed on fabric; but it is a proxy, and the whole row is
 
 One genuine nuance the model does **not** capture: on a large rounded body near
 its critical Reynolds number, surface roughness can trip the boundary layer and
-*reduce* pressure drag — the golf-ball effect. A 20 cm handlebar roll at 8 m/s
+*reduce* pressure drag, the golf-ball effect. A 20 cm handlebar roll at 8 m/s
 is around Re 10⁵, which is in the neighbourhood where that starts to matter. So
 it is not impossible that rough Cordura beats smooth laminate on a big bar roll.
 Modelling that properly needs a tunnel, so the model takes the simple, more
@@ -321,7 +321,7 @@ prints. Final Cd is clamped to [0.15, 1.40].
 
 | Feature | Penalty | Reasoning |
 |---|---|---|
-| Daisy-chain webbing (`daisyChains`) | +0.030 | Rows of webbing loops standing proud of the shell. Each loop is a small bluff step in the boundary layer, and the loops flutter. Genuinely draggy — a real and frequently-noted cost of a lash-everything bag. |
+| Daisy-chain webbing (`daisyChains`) | +0.030 | Rows of webbing loops standing proud of the shell. Each loop is a small bluff step in the boundary layer, and the loops flutter. Genuinely draggy, a real and frequently-noted cost of a lash-everything bag. |
 | Bungee lattice (`cord`) | +0.040 | The largest single penalty. Criss-cross cord stands well proud, sheds vortices along its whole length, and vibrates. |
 | External mesh / stretch / open pocket | +0.030 each, cap +0.060 | Porous and fuzzy, and an open pocket mouth is a cavity that traps and dumps flow. |
 | External zip / slip pocket | +0.010 each, cap +0.020 | A modest applied step on an otherwise smooth face. |
@@ -333,7 +333,7 @@ prints. Final Cd is clamped to [0.15, 1.40].
 | Zips, magnetic and hard lids | 0 | Flush. Nothing to charge for. |
 
 **All of these magnitudes are my judgement.** The *direction* of each is not in
-doubt — none of these features can possibly reduce drag — but nothing here is
+doubt, none of these features can possibly reduce drag, but nothing here is
 calibrated against a measurement of that specific feature. They are sized
 relative to one another and to the base coefficient so that a maximally
 festooned bag ends up roughly 25–35% worse than the same bag clean, which is the
@@ -349,13 +349,13 @@ already separating everywhere.
 
 ### 8.1 How much time is spent at each angle
 
-`YAW_WEIGHTS` — 30 / 27 / 20 / 14 / 9 percent across 0°, 5°, 10°, 15°, 20°.
+`YAW_WEIGHTS`, 30 / 27 / 20 / 14 / 9 percent across 0°, 5°, 10°, 15°, 20°.
 
 Real riding almost never happens at exactly zero yaw and rarely reaches 20°. The
 *shape* of this distribution follows FLO Cycling's published real-world yaw
 measurements, which found most riding time falls under 10° of apparent yaw with
 a long thin tail beyond that. **The five specific numbers are my own smoothing of
-that shape onto a 5° grid, not their data** — do not cite them as such.
+that shape onto a 5° grid, not their data**, do not cite them as such.
 
 ### 8.2 Turning projected area into drag along the road
 
@@ -385,8 +385,8 @@ of **cos(y)**. This is exact geometry, not a judgement call, and nothing in the
 original model applied it.
 
 **(2) The newly exposed area is not as draggy as the front face was.** The extra
-silhouette appearing at yaw is *lengthwise* area — tubes turning broadside,
-wheel discs seen obliquely — and it does not develop bluff-body drag in
+silhouette appearing at yaw is *lengthwise* area, tubes turning broadside,
+wheel discs seen obliquely, and it does not develop bluff-body drag in
 proportion to its projected area. For a yawed cylinder the **independence
 principle** (Hoerner again) gives a normal force set by the velocity component
 normal to the axis: force ∝ sin²Λ while projected area ∝ sinΛ, so the
@@ -406,7 +406,7 @@ yawFactor = cos(y) · [f_head + σ·f_side] / r
 
 **Every limit is checked in the code's test.** At y = 0 it is exactly 1. At
 σ = 1 it is exactly cos(y), so nothing can ever be draggier than a fully bluff
-body resolved onto the road — the factor is provably bounded by cos(y) and never
+body resolved onto the road, the factor is provably bounded by cos(y) and never
 negative. At σ = 0 it is cos²(y)/r. A part that *shrinks* at yaw because
 something moved in front of it (r < cos y) takes f_side = 0 and simply keeps its
 own coefficient, so an occluded part is never inflated. A part hidden at 0° that
@@ -421,7 +421,7 @@ luggage < a pannier's slab.
 
 | Part | σ | Reasoning |
 |---|---|---|
-| `wheels` | 0.10 | Two-thirds of the bare bike's yaw growth is wheels, and a spoked wheel seen obliquely is mostly air — 32 spokes of 1.15 mm radius counted as solid pixels. What disc-like area it gains generates side force, not axial drag. Lowest in the table by a distance. |
+| `wheels` | 0.10 | Two-thirds of the bare bike's yaw growth is wheels, and a spoked wheel seen obliquely is mostly air, 32 spokes of 1.15 mm radius counted as solid pixels. What disc-like area it gains generates side force, not axial drag. Lowest in the table by a distance. |
 | `bike` | 0.25 | Tubes turning broadside. The independence-principle value Cd_n·sin(Λ)/Cd_0 runs 0.11 at 5° to 0.42 at 20°; 0.25 is roughly its yaw-weighted mean, nudged up because not all of the frame's new area is ideal streamwise tube. |
 | `rider` | 0.65 | A torso is bluff from any angle and barely grows in silhouette at yaw. |
 | `pannier` | 0.95 | A flat slab whose side face is its biggest. When the wind comes at 20° that slab is genuinely presented and genuinely bluff. |
@@ -437,7 +437,7 @@ luggage < a pannier's slab.
 
 Real side force. A wind tunnel resolves axial force from *both* drag and side
 force, and for an aerofoil-like section the side force tilts forward and can
-drive axial force negative — the sail effect that makes deep-section rims
+drive axial force negative, the sail effect that makes deep-section rims
 genuinely faster at some yaw angles. Silhouette area carries no information
 about side force whatsoever, so all of it is folded into σ. **σ is therefore an
 effective coefficient, not a measured one**, and a part that really does sail
@@ -457,15 +457,15 @@ It rises 17% out to a peak at 15° and eases back by 20°, which is what a stock
 wheels show is a sail effect this model cannot produce (§ 8.4); the slight dip
 here comes only from the cos(y) resolution finally outrunning the area growth.
 
-And the contrast that makes the feature worth having survives intact — per-part
+And the contrast that makes the feature worth having survives intact, per-part
 CdA at 20° relative to each part's own head-on figure:
 
 | Windward pannier | Frame bag | Frame | Bar roll | Stem bag | Leeward pannier |
 |---|---|---|---|---|---|
 | **2.42×** | 1.78× | 1.11× | 0.90× | 0.84× | 0.41× (occluded) |
 
-Panniers are punished hard at yaw, exactly as they should be. A bar roll —
-a cylinder that presents the same face whatever the angle — very slightly
+Panniers are punished hard at yaw, exactly as they should be. A bar roll,
+a cylinder that presents the same face whatever the angle, very slightly
 improves.
 
 ## 9. The wake discount
@@ -476,7 +476,7 @@ than in clean air.
 ### Why this section exists
 
 Running all six modules together produced a full kit measuring **lower** CdA
-than the bare bike — the tool reporting that fitting luggage makes you 3 W
+than the bare bike, the tool reporting that fitting luggage makes you 3 W
 faster. The cause was occlusion being treated as mutual replacement: bags
 occluded 0.060 m² of rider and frame priced at Cd 0.82–1.00 and replaced it with
 bag priced at 0.26–0.71. That is legitimate for a frame bag capping the triangle
@@ -484,7 +484,7 @@ bag priced at 0.26–0.71. That is legitimate for a frame bag capping the triang
 
 The engine's accounting now fixes the numerator: reserved parts are measured
 with bags absent and are never discounted for being shielded. That leaves the
-question this section answers — what does a bag in the *baseline's* wake cost?
+question this section answers, what does a bag in the *baseline's* wake cost?
 
 The old answer was zero. A seat pack behind a rider measured exactly
 0.00000 m² of visible area and was reported free. It is not free. It is cheap,
@@ -516,11 +516,11 @@ values sit at the top of that band rather than in its middle:
 - Wake turbulence intensity runs 25–35%, and the mean-square velocity that
   actually loads a body sits above the mean velocity squared.
 - A body in separated, recirculating flow does not load in proportion to local
-  mean q at all — unsteady vortex impingement does work on it.
+  mean q at all, unsteady vortex impingement does work on it.
 - **The strongest real calibration available is drafting.** A cyclist tucked
   directly behind another still pays 60–75% of solo drag. That is a large body
   sticking well out of the wake core, so a small fully-immersed bag should be
-  cheaper than that — but it bounds how aggressive any discount can be.
+  cheaper than that, but it bounds how aggressive any discount can be.
 
 ### What is judgement
 
@@ -531,12 +531,12 @@ numbers I would not defend to two significant figures.
 |---|---|---|
 | `seatpack`, `saddlebag` | **0.65** | Directly behind the rider's torso, close in, deep in the near wake where the deficit is largest and recovery has barely begun. Set just below the drafting floor rather than at the bottom of the mean-q band. |
 | `trunk`, `toptube_rear` | 0.68 | Same shadow, further back and higher, so slightly better recovered. |
-| `pannier` | 0.70 | Outboard and low — at the *edge* of the rider's wake rather than in its core, and partly in the rear wheel's. |
+| `pannier` | 0.70 | Outboard and low, at the *edge* of the rider's wake rather than in its core, and partly in the rear wheel's. |
 | `framebag_*`, `toptube`, `stem`, `downtube`, `fork` | 0.75 | Shadowed only by things that are thin, moving or porous. A frame bag is in the rider's **leg** shadow and the legs are pedalling, so it is in clean air for a good fraction of every stroke. A down tube bag hides behind a rotating spoked wheel, which sheds a far weaker wake than a solid body. Bars, arms and fork blades are thin and their wakes recover fast. |
 | `barroll`, `barbag`, `randobag` | 0.80 | Rarely shadowed by anything; the value applies only to whatever slice hides behind bars or a front wheel. |
 | default | 0.70 | Middle of the range. |
 
-The spread is narrow — 0.65 to 0.80 — and that is honest. The physics does not
+The spread is narrow, 0.65 to 0.80, and that is honest. The physics does not
 strongly distinguish these cases, and a single constant for every slot would
 have been a defensible answer too.
 
@@ -544,7 +544,7 @@ have been a defensible answer too.
 
 `wakeDiscount` weakens toward 1.0 by 30° of yaw, linearly.
 
-This is **not** the geometric effect of a bag swinging clear of the rider — the
+This is **not** the geometric effect of a bag swinging clear of the rider, the
 engine already measures that, because `wake` area shrinks and `exposed` area
 grows on its own as the angle opens. This is the separate *flow* effect: at yaw
 the wake is blown sideways relative to the bike's axis, so a pixel still
@@ -557,7 +557,7 @@ endpoints. Its shape is my judgement and nothing more.
 A bag can also change the drag of the body **shielding** it, by filling the
 low-pressure base region behind the rider like a boat-tail. This is the same
 class of effect as the frame-bag fairing credit, it is real, and it could be
-*negative* — a seat pack partly closing the rider's wake. There is no way to
+*negative*, a seat pack partly closing the rider's wake. There is no way to
 bound it here, and the engine's rule that reserved parts are never discounted
 for being shielded is the right conservative choice. Noted so that a future
 measurement knows where to look.
@@ -579,7 +579,7 @@ A large seat pack (Apidura Expedition 9L, 15 × 16 cm face = 0.024 m²,
 ### The one calibration deliberately left unmet
 
 **This was decided, not overlooked.** A real-world target was named during
-development — that a large seat pack should cost "roughly a third to a half of
+development, that a large seat pack should cost "roughly a third to a half of
 an equivalent bar bag". The model produces **0.29**, a shade under a third. It
 was left there.
 
@@ -613,7 +613,7 @@ coefficient on essentially zero area.
 
 | Input | Value | Source |
 |---|---|---|
-| Air density | 1.225 kg/m³ | ISA barometric pressure formula plus the ideal gas law, evaluated at 15 °C and sea level. Not a constant in the code — `airDensity()` recomputes it from temperature and altitude, which is a real effect: 2500 m cuts aero drag about 22%. |
+| Air density | 1.225 kg/m³ | ISA barometric pressure formula plus the ideal gas law, evaluated at 15 °C and sea level. Not a constant in the code, `airDensity()` recomputes it from temperature and altitude, which is a real effect: 2500 m cuts aero drag about 22%. |
 | Rider / bike / load | 78 / 11 / 6 kg | Plausible defaults, exposed and adjustable. Mass is identical on both sides of every comparison, so it never contaminates the drag figure. |
 | Crr | 0.006 | A 40–45 mm gravel tyre at moderate pressure on smooth tarmac. Public rolling-resistance testing (bicyclerollingresistance.com publishes Crr for specific tyres) puts gravel tyres in roughly the 0.005–0.008 band; **0.006 is my selection from that range**, not a specific tyre's measured figure. |
 | Drivetrain efficiency | 97.6% | A clean, well-aligned chain in a middle sprocket. This is the standard figure in the road-cycling power literature (Martin et al.'s validated road-cycling power model uses a chain efficiency in the 97.5–98% band, consistent with Kyle and Berto's drivetrain measurements). |
@@ -642,7 +642,7 @@ The areas are estimates standing in for what `measure.js` will report; the
 coefficients are the shipped ones.
 
 Areas marked **(measured)** come from `tools/aero-check.mjs` running the real
-engine on the real geometry. The rider's area is still an estimate — the
+engine on the real geometry. The rider's area is still an estimate, the
 measured runs are rider-off.
 
 | Anchor | Target CdA | This table | |
@@ -655,14 +655,14 @@ measured runs are rider-off.
 
 All five now close against real measured areas, the frame bag included: its own
 cost came out at +0.00225 m², the flow credit takes −0.002, and the net is
-+0.0003 m² — neutral to three decimal places. That is a better agreement than
++0.0003 m², neutral to three decimal places. That is a better agreement than
 the model deserves and should not be over-read; it is one product on one frame.
 
 **One piece is still unmeasured.** The figure above is the bag's own cost plus
 the flow credit. It does *not* include the occlusion area swap (§ 5 half (a)),
 which the pipeline applies on top and which pushes the net slightly negative.
 The bike part measures 0.0675 m² bare and 0.0502 m² under a full kit, so the
-swap is worth up to −0.017 m² of area — but that is *all* the bags occluding the
+swap is worth up to −0.017 m² of area, but that is *all* the bags occluding the
 frame at once, not the frame bag alone, and isolating it needs a measurement
 nobody has run yet. The four-number diagnostic in § 5 is still the way to settle
 it.
@@ -676,7 +676,7 @@ rider anchor:
 | Everything, panniers included | 0.36 → 0.48 | **+37 W** | −2.33 km/h | +20 min | E "Billboard" |
 
 Panniers are the expensive choice and everything else on a bikepacking bike is
-comparatively cheap — and that gap widens further in crosswind, which is what
+comparatively cheap, and that gap widens further in crosswind, which is what
 § 8 exists to capture.
 
 Caveat on both rows: the bag areas are measured with the rider off, and a rider
@@ -686,7 +686,7 @@ upper bound.
 ## 12. What would improve this document
 
 An actual measurement. If a wind-tunnel dataset for bikepacking luggage surfaces
-— Tour magazine has run luggage tests in the past, and manufacturers
-occasionally publish — the base table in §4 should be recalibrated against it
+Tour magazine has run luggage tests in the past, and manufacturers
+occasionally publish, the base table in §4 should be recalibrated against it
 and this section deleted. Until then every value marked *judgement* above stays
 marked.

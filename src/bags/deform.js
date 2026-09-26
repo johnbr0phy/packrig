@@ -1,5 +1,5 @@
 // Soft-goods deformation: value noise, welded-normal displacement, panel
-// bulge falloffs and baked occlusion. Pure geometry — no materials, no THREE
+// bulge falloffs and baked occlusion. Pure geometry, no materials, no THREE
 // scene objects beyond BufferGeometry.
 
 import * as THREE from 'three';
@@ -93,7 +93,7 @@ function smoothNormals(geo, groups) {
  * `rigid` is 0, and callers must read that as **skip `stuffed` entirely**, not
  * as "displace by zero". The two are different: `stuffed` welds and re-derives
  * smooth normals as a side effect, which is exactly the wrong thing for a
- * moulded shell — it would round the shading of the creases on Topeak's
+ * moulded shell, it would round the shading of the creases on Topeak's
  * faceted DryShell while moving no vertex at all.
  */
 export const DEFORM_SCALE = { soft: 1, semi: 0.4, rigid: 0 };
@@ -101,7 +101,7 @@ export const deformScale = (s) => DEFORM_SCALE[s] ?? 1;
 
 /**
  * Push vertices out along their (welded) normals with a few octaves of value
- * noise — the difference between a smooth primitive and a packed dry bag.
+ * noise, the difference between a smooth primitive and a packed dry bag.
  * `flatAxis` restricts displacement to the two big faces of an extrusion.
  */
 export function stuffed(geometry, { amp = 3, freq = 0.03, seed = 1, octaves = 3, flatAxis = null, bulge = null } = {}) {

@@ -1,4 +1,4 @@
-# Packrig — Handover
+# Packrig, Handover
 
 Run: `node tools/serve.mjs` → http://localhost:8735 (no build step; refresh picks up `src/`).
 
@@ -7,18 +7,18 @@ Run: `node tools/serve.mjs` → http://localhost:8735 (no build step; refresh pi
 A lot was fixed, but a meaningful share of the errors found were introduced by
 THIS session, not inherited. Counted honestly:
 
-- **4 self-inflicted regressions** — `buildToptube` given `anchorName` in the
+- **4 self-inflicted regressions**, `buildToptube` given `anchorName` in the
   `side` slot (crashed "Surprise me" whenever it rolled a top tube bag); a TDZ
   crash in ui.js; the seat-pack tyre clamp that measured at the nose only; the
   roll-range rule specified wrongly in the first place.
-- **3 silent data losses in `apply-verified.mjs`** — alphabetical file order let
+- **3 silent data losses in `apply-verified.mjs`**, alphabetical file order let
   later passes overwrite corrections; the backup clobbered itself on re-run;
   slot-only records were dropped because `dims_cm` was required.
 - **2 identical axis fumbles by me** (Carradice SQR, AGU pannier): swapped two
   of three axes and left the third, producing `wid == len`. Caught on readback
   both times, which was luck. **Always rewrite a dims triple whole, never as
   two swaps.**
-- **My validator thresholds caused more "failures" than the data did** — 21 of
+- **My validator thresholds caused more "failures" than the data did**, 21 of
   33 in one chunk, 30 of 37 in another.
 
 Fixes verified individually by render are solid. Changes touching SHARED
@@ -28,7 +28,7 @@ if something seems off.
 ## TOP PRIORITY: audit axis mapping in all 13 builders
 
 `p.mm.len` / `wid` / `hgt` do NOT mean the same world axis in every slot, and
-three builders mapped them wrongly — each producing a completely different
+three builders mapped them wrongly, each producing a completely different
 visual symptom, each found only because the user spotted it:
 
 | Builder | Wrong assumption | Symptom |
@@ -46,7 +46,7 @@ check it against a maker photo in `assets/products/`. This is a couple of hours
 of work that would end the whack-a-mole.
 
 Related and nearly as common: geometry positioned by a hard-coded offset, or
-rotated onto the wrong axis, instead of derived from the bike — see below.
+rotated onto the wrong axis, instead of derived from the bike, see below.
 
 ## The pattern behind most visual bugs
 
@@ -63,22 +63,22 @@ cage rail drawn as a cross (two stray 90° rotations); cage on the wrong side of
 the bottle (`flip = -1` inverts which local axis faces the tube).
 
 **The highest-value next task is a placement + orientation audit across all 13
-builders** — check each against the bike geometry it should derive from.
+builders**, check each against the bike geometry it should derive from.
 
 ## Open bugs, most actionable first
 
 1. **Downtube bag hits the front wheel.** Measured: down tube is 621mm; anchor at
    310mm along it leaves only **55mm** to the tyre, but downtube bags run to
-   400mm. No anchor position works while the bag is *centred* on the anchor —
+   400mm. No anchor position works while the bag is *centred* on the anchor,
    `buildDowntube` must anchor the bag's FRONT edge and extend it backward
    toward the BB. Clearances: 250mm→86mm, 310mm→55mm, 360mm→34mm.
 2. **Drop bars intersect the bar roll** now that it sits correctly at the bar.
    Clamp bag length against usable bar span, or move the mount forward of the hooks.
-3. **Seat pack silhouette** — `assets/products/apidura/expedition-saddle-pack-16l-1.jpg`
+3. **Seat pack silhouette**, `assets/products/apidura/expedition-saddle-pack-16l-1.jpg`
    shows a hard wedge; ours renders as a fat tube. `tailWid` (0.34–0.46) is far
    too weak and the nose needs a squared shoulder.
-4. **Frame pack taper direction** unverified — the maker photo will settle it.
-5. **Front fork styling** — user asked for it to "feel cleaner". Not started.
+4. **Frame pack taper direction** unverified, the maker photo will settle it.
+5. **Front fork styling**, user asked for it to "feel cleaner". Not started.
 
 ## Fitment: the catalogue has no model of what a bag mounts to
 
@@ -87,18 +87,18 @@ being offered (now `fits: "brompton"`, filtered in `catalog.js`), the Rear TT
 Sack having no matching mount (now `toptube_rear`), and the Many Things Sack
 slotted `forkbag` when it sells only as a pair.
 
-**Many Things Sack — RESOLVED (7 Aug).** It is a fork bag; `slot: forkbag` is
+**Many Things Sack, RESOLVED (7 Aug).** It is a fork bag; `slot: forkbag` is
 correct. The photo shows an upright tapered sack with a fold-down triangular
-flap, one vertical buckle strap and side webbing loops for cage retention — no
+flap, one vertical buckle strap and side webbing loops for cage retention, no
 rack hooks, no rail clips, no flat back panel. It slides over a King Many Things
 Cage on a single fork leg. "Sold as a pair" is a purchase quantity (one per fork
 leg), not a two-compartment product, and the 3.4L capacity is **per bag**. Its
-long axis is `hgt` 25.4cm — treating `len` as the long axis is what previously
+long axis is `hgt` 25.4cm, treating `len` as the long axis is what previously
 collapsed it to a sphere. Closure is a flap-and-buckle, not the roll-top the
 source data claimed.
 
 **Still undecided:** 7 bags need a front BASKET (Wald 137/139, Manivelle), not
-just the rack we draw — Swift Sugarloaf, Outer Shell 137 + Rack Bag, Wizard
+just the rack we draw, Swift Sugarloaf, Outer Shell 137 + Rack Bag, Wizard
 Works Alakazam ×2, Rockgeist Meanwhile ×2. Either mark them `fits: "basket"`
 or model a basket on the front rack.
 
@@ -112,7 +112,7 @@ crank angle (-12°), crank Z (62), pedal Z offset (52), and hood rise (13).
 **It has already drifted once.** `HOOD_RISE` was derived as "forward and slightly
 up from the bar tops" → 20mm. The hood capsule's actual axis is 12–14. Seven
 millimetres put the rider's hands ON TOP of the hoods instead of around them, and
-it **survived a numeric clearance check** — the hand read 1.3mm from the bar,
+it **survived a numeric clearance check**, the hand read 1.3mm from the bar,
 which looks like contact. It took a second person looking at a picture to catch
 it. Same failure class as "the pattern behind most visual bugs" above, through a
 new door.
@@ -146,7 +146,7 @@ the feet follow, because the rider reads `crankAngle` instead of hard-coding
 | `tools/_rand.mjs` | Stress harness: 25x "Surprise me", reports page errors + panel/bike mismatch |
 | `tools/_focus.mjs` | Drives hover/click focus headlessly and asserts panel sync |
 
-**Two traps already hit — don't repeat them:**
+**Two traps already hit, don't repeat them:**
 - `apply-verified` reads files alphabetically and later files OVERWRITE earlier.
   `dimfix-*.json` are now forced to load last. Any new correction pass must too.
 - An early automated pass **fabricated** a dimension (SILCA Grinta `len`,
@@ -157,7 +157,7 @@ the feet follow, because the rider reads `crankAngle` instead of hard-coding
 unrolled maxima · fully-extended maxima · pair volumes quoted as single ·
 flat-laid panel figures · transposed/duplicated axes · **flat-folded**
 measurements (Lezyne) · specs published only inside images (Outer Shell,
-Apidura SVGs with numerals as outlines — render them to read them).
+Apidura SVGs with numerals as outlines, render them to read them).
 
 ## State
 
@@ -182,7 +182,7 @@ deleting unplaceable bags.
 against the local product photos. Chunks 1 and 2 are merged. When they report:
 `node tools/apply-verified.mjs && node tools/export-csv.mjs`.
 
-**Calibration note — the validator was the main source of noise.** In chunk 1,
+**Calibration note, the validator was the main source of noise.** In chunk 1,
 21 of 33 "failures" were my thresholds; in chunk 3 it was 30 of 37. Now
 recalibrated against maker-confirmed evidence: the `framebag_full`,
 `framebag_half`, `toptube` and `downtube` elongation rules are REMOVED (a main
@@ -191,16 +191,16 @@ Revelate wedge family sits 1.25-1.95). Only `seatpack` 1.6 and `barroll` 1.5
 remain. If you add a threshold, calibrate it against published figures first.
 
 **Three fabricated dimensions found so far** (SILCA Grinta `len`, WOHO XTouring
-UL Pannier, and Randi Jo Jeff 'n Joan's `wid`) — all back-computed from volume by
+UL Pannier, and Randi Jo Jeff 'n Joan's `wid`), all back-computed from volume by
 an early automated pass and all caught only by comparing against the maker.
 Treat any dimension with no traceable source as suspect.
 
 **`dims_verified: "maker"` does not mean what it says.** The Jeff 'n Joan's
 `wid` of 7.6cm was back-calculated from volume *and carried
-`dims_verified: "maker"`* — the maker publishes 5.5 in / 14.0 cm directly, an
+`dims_verified: "maker"`*, the maker publishes 5.5 in / 14.0 cm directly, an
 84% error on that axis. **444 of 702 products carry that flag**, so it cannot be
 used as evidence that a figure was checked. Only a per-product `evidence` entry
 naming a photo or a page means anything.
 
 **Still unresolved by design:** Revelate Rifter depth (3.8cm cannot reconcile
-with the rated capacity; no maker or retailer publishes it — ask Revelate).
+with the rated capacity; no maker or retailer publishes it, ask Revelate).

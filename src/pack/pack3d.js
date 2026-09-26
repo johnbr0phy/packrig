@@ -9,7 +9,7 @@
  *  - The centre of mass of bike + bags + gear is marked on the bike.
  *
  * Items are built only when a bag opens (and dropped when it closes); the
- * geometry is cached in kit3d.js, so reopening is free. Every move is eased —
+ * geometry is cached in kit3d.js, so reopening is free. Every move is eased,
  * opening, adding and the solver re-settling all slide rather than jump.
  */
 import * as THREE from 'three';
@@ -34,7 +34,7 @@ export function createPack3D(app) {
   /**
    * Materials are shared across a bag's meshes (and fabric textures across
    * bags), so they are cloned per bag the first time it opens and swapped
-   * back when it closes — never mutated in place, or opening one bag would
+   * back when it closes, never mutated in place, or opening one bag would
    * fade every bag of the same brand.
    */
   function setShell(rec, open) {
@@ -204,7 +204,7 @@ export function createPack3D(app) {
   /**
    * `list` = [{ uid, it (resolved), place (parsed) }]. Lashed items sit on top
    * of the bag's body at its far end; dangling ones hang below its tail;
-   * frame items go to a mount on the bike. Built fresh each call — there are
+   * frame items go to a mount on the bike. Built fresh each call, there are
    * only ever a handful.
    */
   function showOutside(list) {

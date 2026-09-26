@@ -1,12 +1,12 @@
 // Drag coefficients and the power maths behind the wind tunnel.
 //
-// Pure data and arithmetic — no Three.js, no DOM, every function pure. The
+// Pure data and arithmetic, no Three.js, no DOM, every function pure. The
 // measurement engine supplies real frontal areas measured off the actual
 // geometry; this module supplies the coefficients those areas get multiplied
 // by, and turns the resulting CdA into watts, km/h and minutes.
 //
 // Every coefficient in here is sourced and argued in ./CD-TABLE.md. If you
-// change a number, change the reasoning next to it too — the credibility of
+// change a number, change the reasoning next to it too, the credibility of
 // the whole feature rests on that document being true.
 
 // ---- physical constants --------------------------------------------------
@@ -36,7 +36,7 @@ export const RIDE_DEFAULTS = {
  * 22% cut in aero drag and a real reason a loaded bike feels different up high.
  *
  * Pressure comes from the ISA barometric formula (which assumes the standard
- * lapse rate above the launch point — good to a percent or so for real days),
+ * lapse rate above the launch point, good to a percent or so for real days),
  * density then from the ideal gas law at the *actual* temperature, so a cold
  * morning at sea level and a hot afternoon at altitude are both handled.
  */
@@ -59,7 +59,7 @@ export function rideAt(ride = {}) {
 /**
  * Merge caller options over the defaults and settle on a density.
  * Precedence is deliberately boring: an explicit `rhoKgM3` always wins, and
- * only if it is absent do `tempC`/`altitudeM` get used. No hidden magic — a
+ * only if it is absent do `tempC`/`altitudeM` get used. No hidden magic, a
  * caller that spreads RIDE_DEFAULTS keeps 1.225 unless it says otherwise.
  */
 function resolveRide(opts = {}) {
@@ -82,14 +82,14 @@ const massOf = (r) => Math.max(1, num(r.riderKg, 0) + num(r.bikeKg, 0) + num(r.l
 // areas, so nothing in here may assume a size. Two things they DO fold in,
 // both documented in CD-TABLE.md:
 //
-//   1. Shape class — a tapered wedge is not a flat slab.
+//   1. Shape class, a tapered wedge is not a flat slab.
 //   2. Where on the bike the thing sits. The base table is keyed on slot, and
 //      the slot IS a position: a fork bag stands in clean air while a seat
 //      pack lives in the rider's wake at maybe half the dynamic pressure. The
 //      area measurement cannot know that; the coefficient can.
 //
-// They are referenced to the part's MARGINAL frontal area — the silhouette it
-// adds that was not already blocked by the bike or rider — because that is
+// They are referenced to the part's MARGINAL frontal area, the silhouette it
+// adds that was not already blocked by the bike or rider, because that is
 // what makes `parts` sum to the whole-bike CdA. See CD-TABLE.md § Reference
 // area, and the note in the report to the lead.
 
@@ -104,13 +104,13 @@ export const BODY_CD = {
   // Frame, fork, bars and cranks are a bundle of round tubes. A lone smooth
   // cylinder at these Reynolds numbers sits near Cd 1.1, but the counted
   // silhouette includes a great deal of tube that is standing in another
-  // tube's wake — the down tube behind the front wheel, the seat tube behind
+  // tube's wake, the down tube behind the front wheel, the seat tube behind
   // the down tube, the whole rear triangle behind all of it. A body in a wake
   // does not pay full price, so the effective coefficient on the counted area
   // is below the textbook cylinder value.
   bike: 0.90,
   // Slightly below the frame, which is the opposite of what you might guess.
-  // Head-on a wheel is mostly tyre band — genuinely bluff — but the silhouette
+  // Head-on a wheel is mostly tyre band, genuinely bluff, but the silhouette
   // also counts 32 spokes and a hub that block far less than their pixels
   // suggest, and the rear wheel sits in the front wheel's wake. Rotational
   // drag, which no silhouette can see, is folded back in here.
@@ -120,27 +120,27 @@ export const BODY_CD = {
   rider: 0.82,
   // Racks. DELIBERATELY equal to `bike` rather than absent: same round alloy
   // tubing, same family, and a distinct number would be judgement with nothing
-  // behind it. Two effects roughly cancel — a rack's 10 mm tube sits at a lower
+  // behind it. Two effects roughly cancel, a rack's 10 mm tube sits at a lower
   // Reynolds number than a frame tube, where a smooth cylinder's Cd is if
   // anything higher, while an open rack lattice shields itself less than a
   // frame does.
   //
   // Written out rather than left to fall through, for two reasons. It survives
   // someone later changing `bike` for a bike-specific reason. And without the
-  // entry `cdOf(_, _, 'racks')` returns 0.58 — the unknown-slot fallback to a
-  // TOP TUBE BAG's coefficient — which is silently wrong for a piece of frame
+  // entry `cdOf(_, _, 'racks')` returns 0.58, the unknown-slot fallback to a
+  // TOP TUBE BAG's coefficient, which is silently wrong for a piece of frame
   // hardware and is exactly the sort of thing that never gets noticed.
   racks: 0.90,
 };
 
 /**
  * Base Cd by slot, then by shape class. `default` is what an unclassifiable
- * or missing `features.shape` gets, and is deliberately a little pessimistic —
+ * or missing `features.shape` gets, and is deliberately a little pessimistic,
  * unknown bags should not grade better than known ones.
  */
 export const BASE_CD = {
   // NOTE seatpack, toptube_rear and downtube were re-based UPWARD when
-  // `wakeDiscount` landed. They used to carry a wake discount inside the Cd —
+  // `wakeDiscount` landed. They used to carry a wake discount inside the Cd,
   // a seat pack read 0.34 where a saddlebag of the same wedge shape read 0.42,
   // and that 0.08 gap WAS the rider's wake. Now that the engine measures
   // shadowed area and prices it explicitly, these must be clean freestream
@@ -184,19 +184,19 @@ export function cdSlotKey(slot) {
  * from the brand's published fabric string). Small on purpose: on a body whose
  * drag is separation-dominated, surface finish is a second-order effect. What
  * actually differs between these fabrics is how tautly the panel sits between
- * its mounting points — a welded laminate holds its shape, waxed canvas sags
+ * its mounting points, a welded laminate holds its shape, waxed canvas sags
  * and flaps. That is what these few percent really represent.
  */
 export const FABRIC_MOD = {
   tpu: 0.97,      // welded TPU laminate: no exposed stitching, holds its form
   xpac: 0.98,     // X-Pac / EcoPak sailcloth laminate: smooth, stiff face
-  cordura: 1.00,  // 500–1000D textured nylon — the reference
+  cordura: 1.00,  // 500–1000D textured nylon, the reference
   waxed: 1.02,    // waxed canvas / cotton duck: heavy weave, sags between mounts
 };
 
 /**
  * Feature penalties, additive on Cd. Every one of these is a real drag source
- * — flapping webbing and open cavities genuinely cost watts — but each is kept
+ *, flapping webbing and open cavities genuinely cost watts, but each is kept
  * modest, and the total is capped, so a heavily featured bag cannot run away
  * from its own shape. Argued individually in CD-TABLE.md.
  */
@@ -220,7 +220,7 @@ const CD_MIN = 0.15, CD_MAX = 1.40;
 /**
  * Classify a catalogue `features.shape` string. The strings are free text
  * written by whoever researched the product, so this matches loosely and
- * returns null rather than guessing — an unmatched shape falls back to the
+ * returns null rather than guessing, an unmatched shape falls back to the
  * slot's own default, which is the safe answer.
  */
 export function shapeClassOf(shape) {
@@ -262,7 +262,7 @@ function pocketPenalty(raw) {
 
 /**
  * Closure penalty and the label for it. The catalogue's `closure` strings are
- * free prose — "flap with front bungee cord for volume adjustment" — so match
+ * free prose, "flap with front bungee cord for volume adjustment", so match
  * loosely but return a fixed label, or the UI ends up printing a sentence
  * where it wants two words.
  */
@@ -328,13 +328,13 @@ export function cdOf(product, brand, slotKey) {
 // ---- the frame-bag fairing credit ----------------------------------------
 //
 // The one genuinely interesting result in bikepacking aero. An empty main
-// triangle is not "clean" — it is a hole bounded by round tubes, with air
+// triangle is not "clean", it is a hole bounded by round tubes, with air
 // spilling through it and two shear layers flapping off the down tube and seat
 // tube. A full frame bag caps that hole with an attached, smooth surface, and
 // the flow leaves the bike more tidily than it did without it.
 //
 // The credit is a reduction in the FRAME's drag, not a property of the bag, so
-// it cannot live in the bag's Cd — that would be charging one body for another
+// it cannot live in the bag's Cd, that would be charging one body for another
 // body's behaviour, and it would fight the measured area (a low Cd × a real
 // area can never go negative). It is returned here as an absolute ΔCdA in m²
 // for the caller to apply once, to the reserved `bike` part.
@@ -353,7 +353,7 @@ export function cdOf(product, brand, slotKey) {
 // +0.00207 m² is about +0.8 W at 28 km/h. THAT is the "a frame bag is very
 // nearly free" result, and it now falls out of measured geometry instead of out
 // of a constant chosen to produce it. Applying the -0.002 would have landed the
-// net on 0.00007 — suspiciously perfect. The original -0.006 would have made it
+// net on 0.00007, suspiciously perfect. The original -0.006 would have made it
 // net negative, i.e. the tool claiming a frame bag makes you faster, which is
 // exactly the fabricated headline this whole exercise existed to avoid.
 //
@@ -361,11 +361,11 @@ export function cdOf(product, brand, slotKey) {
 //
 //   The AREA SWAP barely happens. It was expected to: a frame bag occluding the
 //   down tube should move pixels from the `bike` part to the bag. Measured, the
-//   bike part gives up 0.00028 m² — nothing. Head-on there is almost no frame
+//   bike part gives up 0.00028 m², nothing. Head-on there is almost no frame
 //   behind the bag to swap, because the bag sits in the narrow slot BETWEEN the
 //   tubes that form the silhouette rather than in front of them. It is tucked
 //   inside the frame, not covering it. (The pipeline is definitely
-//   occlusion-aware — the occluded-plate test reads 0.000000 — so this is
+//   occlusion-aware, the occluded-plate test reads 0.000000, so this is
 //   geometry, not a measurement failure.)
 //
 //   The FLOW-QUALITY effect is real physics and is deliberately NOT modelled.
@@ -387,7 +387,7 @@ export const FAIRING_CREDIT_FLOOR = 0.6;
 /**
  * ΔCdA (m², negative) to apply to the `bike` part. Pass the equipped ui-slot
  * keys; the two frame bags are mutually exclusive so the largest single credit
- * wins rather than summing — there is no way to fit both and earn both.
+ * wins rather than summing, there is no way to fit both and earn both.
  */
 export function fairingCredit(slotKeys = [], bikeCda = Infinity) {
   let credit = 0;
@@ -403,7 +403,7 @@ export function fairingCredit(slotKeys = [], bikeCda = Infinity) {
 // 20°. This is the probability mass the yaw sweep gets averaged with. The
 // shape follows FLO Cycling's published real-world yaw measurements (most time
 // under 10°, a long thin tail); the exact five numbers are my own smoothing of
-// that shape onto a 5° grid, not their data — see CD-TABLE.md.
+// that shape onto a 5° grid, not their data, see CD-TABLE.md.
 export const YAW_WEIGHTS = [
   { deg: 0,  w: 0.30 },
   { deg: 5,  w: 0.27 },
@@ -419,8 +419,8 @@ export const YAW_WEIGHTS = [
 //
 //     A(y) ≈ A_front·cos(y) + A_side·sin(y)
 //
-// A bicycle has an enormous side profile — a long thin frame and two full wheel
-// discs — so that second term dominates fast. Measured on this model, the frame
+// A bicycle has an enormous side profile, a long thin frame and two full wheel
+// discs, so that second term dominates fast. Measured on this model, the frame
 // silhouette doubles by 20° of yaw and the WHEELS grow four and a half times.
 // The projected area really does grow like that; the drag does not, for two
 // separate reasons, and without both of them a bare bike appears to triple its
@@ -431,8 +431,8 @@ export const YAW_WEIGHTS = [
 //     factor of cos(y). This part is exact and is not a judgement call.
 //
 // (2) THE NEWLY EXPOSED AREA IS NOT AS DRAGGY AS THE FRONT WAS. The extra
-//     silhouette that appears at yaw is lengthwise area — tubes turning
-//     broadside, wheel discs seen obliquely — and it does not develop
+//     silhouette that appears at yaw is lengthwise area, tubes turning
+//     broadside, wheel discs seen obliquely, and it does not develop
 //     bluff-body drag in proportion to its projected area. For a yawed
 //     cylinder the independence principle gives a normal force set by the
 //     NORMAL velocity component, so force ∝ sin²Λ while projected area ∝ sinΛ:
@@ -455,12 +455,12 @@ export const YAW_WEIGHTS = [
 // SHRINKS at yaw because something moved in front of it (r < cos y) takes
 // f_side = 0 and simply keeps its own coefficient, which is why the formula
 // never inflates an occluded part. And a part hidden at 0° that swings into
-// clear air — a seat pack coming out of the bike's shadow — has r → ∞ and
+// clear air, a seat pack coming out of the bike's shadow, has r → ∞ and
 // tends to cos(y)·σ, exactly the coefficient its newly exposed face deserves.
 //
 // WHAT THIS DOES NOT MODEL: real side force. A tunnel resolves axial force from
 // both drag and side force, and for an aerofoil-like section the side force
-// tilts forward and can drive axial force NEGATIVE — the sail effect that makes
+// tilts forward and can drive axial force NEGATIVE, the sail effect that makes
 // deep rims genuinely faster at yaw. Silhouette area carries no information
 // about side force, so all of it is folded into σ, which is why σ is an
 // effective coefficient rather than a measured one.
@@ -512,7 +512,7 @@ export const YAW_SIGMA = {
  * @param {string} partKey    ui-slot or 'bike' | 'wheels' | 'rider'
  * @param {number} [areaRatio] A(deg) / A(0) for THIS part, from the engine
  *
- * `areaRatio` is what makes this principled rather than assumed — it lets the
+ * `areaRatio` is what makes this principled rather than assumed, it lets the
  * factor respond to how much this particular part actually grew. Without it
  * there is no way to tell a pannier's slab from a bar roll's cylinder, so the
  * fallback returns the bare cos(deg) resolution: still a strict improvement on
@@ -524,8 +524,8 @@ export function yawFactor(deg, partKey, areaRatio) {
   const key = cdSlotKey(partKey);
   const sigma = clamp(num(YAW_SIGMA[key], YAW_SIGMA.default), 0, 1);
 
-  // A part with NO area head-on that has some now — a top tube bag completely
-  // buried at 0° — has an infinite ratio. Everything it presents is newly
+  // A part with NO area head-on that has some now, a top tube bag completely
+  // buried at 0°, has an infinite ratio. Everything it presents is newly
   // exposed lengthwise area, which is the σ limit of the formula below.
   if (areaRatio === Infinity) return c * sigma;
   // No ratio supplied: the caller has not wired it, so fall back to the bare
@@ -533,7 +533,7 @@ export function yawFactor(deg, partKey, areaRatio) {
   if (!Number.isFinite(areaRatio)) return c;
 
   const r = areaRatio;
-  // No area at this yaw either — contributes nothing whatever we return, so
+  // No area at this yaw either, contributes nothing whatever we return, so
   // just avoid dividing by zero.
   if (!(r > 1e-6)) return c;
 
@@ -547,9 +547,9 @@ export function yawFactor(deg, partKey, areaRatio) {
 // What a square metre of luggage costs when it sits in the rig's shadow rather
 // than in clean air.
 //
-// The engine measures two areas per bag per yaw — `exposed`, where the bag is
+// The engine measures two areas per bag per yaw, `exposed`, where the bag is
 // genuinely the frontmost thing, and `wake`, where a bag pixel is there but
-// bike/wheels/rider is in front of it — and charges
+// bike/wheels/rider is in front of it, and charges
 //
 //     (exposed + wake · wakeDiscount) · Cd · yawFactor
 //
@@ -570,7 +570,7 @@ export function yawFactor(deg, partKey, areaRatio) {
 //   - The strongest real calibration available is drafting: a cyclist tucked
 //     directly behind another still pays 60–75% of solo drag. That is a large
 //     body sticking out of the wake core, so a small fully-immersed bag should
-//     be cheaper than that — but it bounds how aggressive a discount can be.
+//     be cheaper than that, but it bounds how aggressive a discount can be.
 //
 // The alternative to modelling this is what the tool did before: a seat pack
 // behind a rider measured exactly 0.00000 m² and was reported as free. It is
@@ -585,13 +585,13 @@ export function yawFactor(deg, partKey, areaRatio) {
 
 /**
  * Discount at zero yaw, by slot. Two tiers plus a default, because the honest
- * distinction is what is doing the shielding — not which bag it is.
+ * distinction is what is doing the shielding, not which bag it is.
  */
 export const WAKE_DISCOUNT = {
   // Tier 1: directly behind the rider's torso, close in, deep in the near wake
   // where the velocity deficit is largest and recovery has barely begun. Set
   // just below the drafting floor rather than at the bottom of the mean-q band
-  // — a fully immersed bag should be cheaper than a drafting rider, but not by
+  //, a fully immersed bag should be cheaper than a drafting rider, but not by
   // as much as mean velocity alone suggests, because the three effects above
   // (turbulence, recirculation, unsteady loading) all load it harder than a
   // quiet 0.5·q_∞ would.
@@ -601,7 +601,7 @@ export const WAKE_DISCOUNT = {
   toptube_rear: 0.68,
 
   // Tier 2: shadowed only by things that are thin, moving or porous. A frame
-  // bag is in the rider's LEG shadow, and the legs are pedalling — it is in
+  // bag is in the rider's LEG shadow, and the legs are pedalling, it is in
   // clean air for a good fraction of every stroke. A down tube bag hides behind
   // a rotating spoked wheel, which sheds a far weaker wake than a solid body.
   // Bars, arms and fork blades are thin, so their wakes recover fast.
@@ -635,7 +635,7 @@ export const WAKE_YAW_FULL = 30;
 // bodies.
 //
 // The accounting rule that reserved parts are never discounted for being
-// shielded is right for the case it was written for — a bar bag in front of a
+// shielded is right for the case it was written for, a bar bag in front of a
 // rider who is still there, still displacing exactly as much air. It is wrong
 // for a frame bag. A frame bag is laced into the main triangle, in contact with
 // the down tube and seat tube along their whole length. Those tubes genuinely
@@ -659,7 +659,7 @@ export const WAKE_YAW_FULL = 30;
 // Why it matters right now: under the old accounting a full frame bag measured
 // 0.0090 m² of marginal area and cost +0.0023 CdA, and the whole-bike
 // experiment agreed (+0.00207 net). Under the new accounting it measures its
-// full 0.057 m² own silhouette and costs +0.0143 — six times more — because the
+// full 0.057 m² own silhouette and costs +0.0143, six times more, because the
 // frame it is stretched over is being charged again underneath it. The wake
 // discount only claws back a tenth of that, because most of a frame bag is not
 // in shadow at all; it IS the frontmost thing. This is the term that closes
@@ -690,7 +690,7 @@ export const MERGE_FRACTION = {
  *
  *     bikeArea -= overlapWith(bag) * mergeFraction(bag.slotKey)
  *
- * Never apply it to `rider` or `wheels`. That is the whole point of the rule —
+ * Never apply it to `rider` or `wheels`. That is the whole point of the rule,
  * it is what keeps a bar bag from deleting the rider it sits in front of.
  *
  * The values are engineering judgement, ordered by how flush the mounting is.
@@ -737,7 +737,7 @@ export function mergeCredit(slotKey, overlapAreaM2, bagCdaM2, bikeCd = BODY_CD.b
  * @param {number} [yawDeg] apparent yaw, degrees
  *
  * The discount weakens as yaw opens. Note this is NOT the geometric effect of a
- * bag swinging clear of the rider — the engine already measures that, because
+ * bag swinging clear of the rider, the engine already measures that, because
  * `wake` area shrinks and `exposed` area grows on its own. This is the separate
  * flow effect: at yaw the wake is blown sideways relative to the bike's axis, so
  * a pixel still geometrically behind the rider sits nearer the shear layer than
@@ -820,7 +820,7 @@ export function power(opts = {}) {
  * Newton–Raphson, seeded from min(aero-only, rolling-only) speed. Both of
  * those ignore one resistance term, so both are strictly ABOVE the true root
  * and f is positive there; f is convex for v > 0 (f'' = 6Av), so Newton from
- * above descends monotonically to the root — typically four or five
+ * above descends monotonically to the root, typically four or five
  * iterations, and it cannot overshoot into a negative root.
  *
  * On a descent steep enough to make B negative that seed is not available, so
@@ -840,7 +840,7 @@ export function speedAtPower(opts = {}) {
 
   // Nothing to solve: no power and no gravity to fall down.
   if (P <= 0 && B >= 0) return 0;
-  // No drag term at all — degenerate, but do not divide by zero.
+  // No drag term at all, degenerate, but do not divide by zero.
   if (A <= 0) return B > 0 ? (P / B) * KPH : 0;
 
   const f = (v) => A * v * v * v + B * v - P;
@@ -882,7 +882,7 @@ export function speedAtPower(opts = {}) {
 
 /**
  * What the luggage costs. Both sides carry the same mass and ride the same
- * road — only CdA differs — so `addedW` isolates drag from weight.
+ * road, only CdA differs, so `addedW` isolates drag from weight.
  *
  * `kphLost` is measured at CONSTANT POWER, not constant speed: a rider does
  * not hold 28 km/h and quietly pay more, they hold their effort and go slower.
@@ -905,7 +905,7 @@ export function compare(baselineCda, loadedCda, ride = {}) {
 
   // Identical CdA on both sides leaves floating-point crumbs, and a residue of
   // -1e-16 formats as "-0.0 min". Snap anything below display resolution to a
-  // true zero — `Math.abs` catches negative zero itself too.
+  // true zero, `Math.abs` catches negative zero itself too.
   const snap = (x) => (Math.abs(x) < 1e-9 ? 0 : x);
 
   return {
@@ -925,7 +925,7 @@ export function compare(baselineCda, loadedCda, ride = {}) {
 // the same rig would grade A at a dawdle and D at a sprint; `grade` therefore
 // rescales to the reference speed first, which makes the letter a property of
 // the RIG rather than of how hard you happen to be riding. It is still purely
-// a function of the watts — the bands are just quoted at a fixed speed.
+// a function of the watts, the bands are just quoted at a fixed speed.
 export const GRADE_REF_KPH = RIDE_DEFAULTS.speedKph;
 
 export const GRADES = [
@@ -961,13 +961,13 @@ export function grade(addedW, { speedKph = GRADE_REF_KPH } = {}) {
 // Every input that moves the answer but never appears on screen. The panel's
 // "how this is calculated" block renders this array verbatim, so it is the
 // user's only route to knowing what they are being told. Keep it complete and
-// keep it honest — if a number changes above, change it here.
+// keep it honest, if a number changes above, change it here.
 
 export const ASSUMPTIONS = [
   {
     label: 'Air density',
     value: `${RIDE_DEFAULTS.rhoKgM3.toFixed(3)} kg/m³`,
-    note: '15 °C at sea level. Derived from the ISA barometric pressure formula and the ideal gas law, so the temperature and altitude controls move it for real — 2500 m of altitude cuts aero drag by roughly a fifth.',
+    note: '15 °C at sea level. Derived from the ISA barometric pressure formula and the ideal gas law, so the temperature and altitude controls move it for real, 2500 m of altitude cuts aero drag by roughly a fifth.',
   },
   {
     label: 'Rider + bike + load',
@@ -977,7 +977,7 @@ export const ASSUMPTIONS = [
   {
     label: 'Rolling resistance',
     value: `Crr ${RIDE_DEFAULTS.crr}`,
-    note: 'A 40–45 mm gravel tyre at moderate pressure on smooth tarmac. Rough chipseal or a loaded touring tyre is nearer 0.008, and dirt is far worse — but Crr is identical on both sides of the comparison, so it barely touches the drag figure.',
+    note: 'A 40–45 mm gravel tyre at moderate pressure on smooth tarmac. Rough chipseal or a loaded touring tyre is nearer 0.008, and dirt is far worse, but Crr is identical on both sides of the comparison, so it barely touches the drag figure.',
   },
   {
     label: 'Drivetrain efficiency',
@@ -987,7 +987,7 @@ export const ASSUMPTIONS = [
   {
     label: 'Rider position',
     value: 'On the hoods',
-    note: 'Bike and rider together come out near CdA 0.36 m² here. The drops are roughly 0.30, and the rider is by far the largest single object in the picture — every bag on the bike is a small correction to a body.',
+    note: 'Bike and rider together come out near CdA 0.36 m² here. The drops are roughly 0.30, and the rider is by far the largest single object in the picture, every bag on the bike is a small correction to a body.',
   },
   {
     label: 'Yaw weighting',
@@ -997,12 +997,12 @@ export const ASSUMPTIONS = [
   {
     label: 'Crosswind drag',
     value: 'Resolved onto the direction of travel',
-    note: 'A bike turned side-on to the wind shows a far bigger silhouette, but it does not gain drag in proportion: the force acts along the wind, not along the road, and the extra area is lengthwise — tubes and spokes seen obliquely — which is much less draggy than the face that was already meeting the air. Both effects are modelled. Flat-sided luggage still gets worse at yaw, which is real; a pannier costs roughly two and a half times as much at 20° as it does head-on.',
+    note: 'A bike turned side-on to the wind shows a far bigger silhouette, but it does not gain drag in proportion: the force acts along the wind, not along the road, and the extra area is lengthwise, tubes and spokes seen obliquely, which is much less draggy than the face that was already meeting the air. Both effects are modelled. Flat-sided luggage still gets worse at yaw, which is real; a pannier costs roughly two and a half times as much at 20° as it does head-on.',
   },
   {
     label: 'Frontal areas',
     value: 'Measured off the geometry',
-    note: 'Each part’s area is the silhouette it ADDS to the bike — what it blocks that was not already blocked — measured on the GPU from the model you are looking at, not estimated from the catalogue dimensions.',
+    note: 'Each part’s area is the silhouette it ADDS to the bike, what it blocks that was not already blocked, measured on the GPU from the model you are looking at, not estimated from the catalogue dimensions.',
   },
   {
     label: 'Drag coefficients',
@@ -1012,7 +1012,7 @@ export const ASSUMPTIONS = [
   {
     label: 'Luggage in the rig’s shadow',
     value: 'Charged at 65–80% of clean-air cost',
-    note: 'A bag hidden behind you is cheap, not free. A seat pack sits in the rider’s wake where the air is slower and messier, so it is charged a fraction of what the same bag would cost out in clean air — which is exactly why seat packs are the cheapest way to carry volume on a bike. Which pixels are actually shadowed is measured, not assumed, and the discount fades as crosswind blows the wake sideways.',
+    note: 'A bag hidden behind you is cheap, not free. A seat pack sits in the rider’s wake where the air is slower and messier, so it is charged a fraction of what the same bag would cost out in clean air, which is exactly why seat packs are the cheapest way to carry volume on a bike. Which pixels are actually shadowed is measured, not assumed, and the discount fades as crosswind blows the wake sideways.',
   },
   {
     label: 'Not modelled',

@@ -10,15 +10,15 @@ const brands = JSON.parse(readFileSync(root + 'data/brands.json'));
 // taper, roll-down). Ratios far outside this band mean a dimension is wrong.
 const VOL_LO = 0.75, VOL_HI = 4.0;
 
-// Slots whose bags are inherently elongated — a near-cube here is a red flag.
-// Calibrated against makers' own published figures — earlier guesses caused
+// Slots whose bags are inherently elongated, a near-cube here is a red flag.
+// Calibrated against makers' own published figures, earlier guesses caused
 // 30 of 37 "failures" in one chunk. Removed entirely: framebag_full (a main
 // triangle cannot exceed ~1.45), framebag_half (front-corner triangles are
-// legitimately ~1.0 — Fairweather ADV, Revelate Cranny/Nook), toptube (the
+// legitimately ~1.0, Fairweather ADV, Revelate Cranny/Nook), toptube (the
 // whole Revelate wedge family sits at 1.25-1.95), downtube. barroll relaxed to
 // 1.5: the Fairweather ADV is a structured box, not a cylinder.
 // Earlier note: framebag_full was
-// 1.5, which a main triangle (~4:3) can never satisfy — it failed every full
+// 1.5, which a main triangle (~4:3) can never satisfy, it failed every full
 // frame pack by construction. framebag_half was 2.2; Apidura's own diagrams
 // cluster at 1.5-2.1. Rear top-tube packs are genuinely stubby and are exempt.
 const ELONGATED = { seatpack: 1.6, barroll: 1.5 };
@@ -55,14 +55,14 @@ for (const b of brands) {
     if (Number.isFinite(L) && L > 0) {
       const boxL = (axes[0] * axes[1] * axes[2]) / 1000;
       const ratio = boxL / L;
-      if (ratio < VOL_LO) push('volume-too-small', `box ${boxL.toFixed(1)}L vs stated ${L}L (ratio ${ratio.toFixed(2)}) — dims too small for the capacity`);
-      else if (ratio > VOL_HI) push('volume-too-big', `box ${boxL.toFixed(1)}L vs stated ${L}L (ratio ${ratio.toFixed(2)}) — a dimension is probably an unrolled/flat figure`);
+      if (ratio < VOL_LO) push('volume-too-small', `box ${boxL.toFixed(1)}L vs stated ${L}L (ratio ${ratio.toFixed(2)}), dims too small for the capacity`);
+      else if (ratio > VOL_HI) push('volume-too-big', `box ${boxL.toFixed(1)}L vs stated ${L}L (ratio ${ratio.toFixed(2)}), a dimension is probably an unrolled/flat figure`);
     }
 
     // 2. shape sanity for slots that are inherently long
     const need = ELONGATED[p.slot];
     if (need && hi / mid < need) {
-      push('too-cubic', `${p.slot} should be elongated (longest/middle >= ${need}) but is ${(hi / mid).toFixed(2)} — ${axes.join(' x ')}cm`, 'medium');
+      push('too-cubic', `${p.slot} should be elongated (longest/middle >= ${need}) but is ${(hi / mid).toFixed(2)}, ${axes.join(' x ')}cm`, 'medium');
     }
 
     // 3. physically impossible on this frame
@@ -75,22 +75,22 @@ for (const b of brands) {
       if (cap.hgt && Number(d.hgt) * 10 > cap.hgt * TOL) push('too-big-for-frame', `hgt ${d.hgt}cm exceeds ${(cap.hgt / 10)}cm for ${p.slot}`);
     }
 
-    // 4. a duplicated axis — len carrying the height verbatim showed up
+    // 4. a duplicated axis, len carrying the height verbatim showed up
     //    repeatedly in Apidura entries and draws a fat blob instead of a tube
     const L2 = Number(d.len), H2 = Number(d.hgt), W2 = Number(d.wid);
     const dup = [['len', 'hgt', L2, H2], ['len', 'wid', L2, W2], ['hgt', 'wid', H2, W2]]
-      .find(([, , a, b2]) => Number.isFinite(a) && Number.isFinite(b2) && a > 0 && Math.abs(a - b2) < 0.05);
+      .find(([, a, b2]) => Number.isFinite(a) && Number.isFinite(b2) && a > 0 && Math.abs(a - b2) < 0.05);
     // A square cross-section (the two SMALLEST axes equal) is normal on tubes
     // and pouches. The error signature is a duplicate involving the LONGEST
-    // axis — that is where a height got copied into the length.
+    // axis, that is where a height got copied into the length.
     const dupTouchesLongest = dup && (Math.abs(dup[2] - hi) < 0.05);
     if (dup && dupTouchesLongest && p.slot !== 'stembag' && p.slot !== 'forkbag') {
-      push('duplicated-axis', `${dup[0]} and ${dup[1]} are both ${dup[2]}cm — one was probably copied from the other`, 'medium');
+      push('duplicated-axis', `${dup[0]} and ${dup[1]} are both ${dup[2]}cm, one was probably copied from the other`, 'medium');
     }
 
-    // 5. degenerate — a builder given these will produce a blob
+    // 5. degenerate, a builder given these will produce a blob
     if (hi / lo < 1.15 && p.slot !== 'stembag') {
-      push('near-cube', `all three axes within 15% (${axes.join(' x ')}cm) — renders as a ball`, 'medium');
+      push('near-cube', `all three axes within 15% (${axes.join(' x ')}cm), renders as a ball`, 'medium');
     }
   }
 }

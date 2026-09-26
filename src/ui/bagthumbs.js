@@ -49,21 +49,21 @@ function build(app, brand, product, cw) {
  * Promise of a data URL for a bag, drawn from its model.
  * `app` is needed for the bike: frame bags take their shape from the frame.
  */
-export function bagThumb(app, brand, product, cw = 0, size = 176) {
-  const key = keyOf(brand, product, cw) + `|${size}`;
+export function bagThumb(app, brand, product, cw = 0, size = 176, aspect = 1) {
+  const key = keyOf(brand, product, cw) + `|${size}|${aspect}`;
   const hit = cachedThumb(key);
   if (hit !== undefined) return Promise.resolve(hit);
   return queueThumb(key, () => {
     const node = build(app, brand, product, cw);
     return node ? { node, dispose: () => disposeObject(node) } : null;
-  }, { size });
+  }, { size, aspect });
 }
 
 /**
  * An <img> for a bag: the maker's photo when it loads, the model when it
  * doesn't or there isn't one. Never blank for long, never broken.
  */
-export function bagImg(app, brand, product, { cls = 'bag-img', cw = 0, photo = true, lazy = true, size = 176 } = {}) {
+export function bagImg(app, brand, product, { cls = 'bag-img', cw = 0, photo = true, lazy = true, size = 176, aspect = 1 } = {}) {
   const img = document.createElement('img');
   img.className = cls;
   img.alt = '';
@@ -76,9 +76,9 @@ export function bagImg(app, brand, product, { cls = 'bag-img', cw = 0, photo = t
     img.classList.remove('is-photo');
     img.classList.add('is-model');
     img.removeAttribute('src');
-    const hit = cachedThumb(keyOf(brand, product, cw) + `|${size}`);
+    const hit = cachedThumb(keyOf(brand, product, cw) + `|${size}|${aspect}`);
     if (hit) { img.src = hit; return; }
-    const go = () => bagThumb(app, brand, product, cw, size).then((u) => { if (u) img.src = u; });
+    const go = () => bagThumb(app, brand, product, cw, size, aspect).then((u) => { if (u) img.src = u; });
     if (lazy && io) { waiting.set(img, go); io.observe(img); } else go();
   };
   if (shot && !product.rendered) {

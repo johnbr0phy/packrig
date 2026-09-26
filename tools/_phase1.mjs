@@ -1,5 +1,5 @@
 /**
- * Phase 1 smoke test — REDESIGN.md §15.
+ * Phase 1 smoke test, REDESIGN.md §15.
  * Boots the app, opens each surface, and asserts the things the plan says must
  * hold: no veil survives, one sheet at a time, no horizontal overflow, no two
  * panels overlapping, and a clean console.

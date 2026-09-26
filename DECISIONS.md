@@ -1,4 +1,4 @@
-# Packrig v2 — decisions
+# Packrig v2, decisions
 
 Plan of record for the "bags + packing" run (started 25 Sep 2026). Written
 BEFORE the code, then kept current as the run makes calls. Each entry says what
@@ -23,7 +23,7 @@ The owner was not available for questions. Where a call was a guess it says so.
   distinctive products per slot, exactly as the brief asks.
 - **Maker photography is unreachable from this environment.** The egress policy
   blocks every maker and retailer CDN (`cdn.shopify.com`, `medias.apidura.com`,
-  `media.tailfin.cc`, `rockgeist.com`, … — 1,423 of 1,430 image fetches were
+  `media.tailfin.cc`, `rockgeist.com`, …, 1,423 of 1,430 image fetches were
   refused; 7 Revelate photos on S3 got through). `WebFetch` is blocked for the
   same hosts; only `WebSearch` (result snippets) works. Consequences:
   - Photo-vs-render comparison uses what the repo already holds from the
@@ -99,7 +99,7 @@ shares `toptube.js`.)
 - Clearance contract unchanged: zero CLASH, touches what it mounts to, ≥15 mm to
   either tyre, rendered size within tolerance of spec.
 
-## 3. Gear catalogue schema — `data/gear.json`
+## 3. Gear catalogue schema, `data/gear.json`
 
 One array of items. Research lands per category in `data/gear/src/*.json`
 (same shape) and `tools/build-gear.mjs` validates and merges them.
@@ -123,7 +123,7 @@ One array of items. Research lands per category in `data/gear/src/*.json`
   "color": "#3b4a5c",
   "rigid": false,              // shorthand: compress < 0.1
   "fragile": false,
-  "access": "camp",            // ride | day | camp  — how often you reach for it
+  "access": "camp",            // ride | day | camp , how often you reach for it
   "worn": false,               // usually worn rather than packed
   "places": [                  // where experienced riders put it, best first
     { "at": "seatpack", "why": "light and bulky; fills the pack and keeps weight off the bars" }
@@ -188,12 +188,12 @@ scanned mesh at 2k triangles.
 **Items belong to a person; placements belong to a loadout.** That is the
 owner's spreadsheet: rows are things owned once, each tab is an arrangement.
 
-- **Locker** — `{ items: [Item] }`. An item is either a catalogue reference
+- **Locker**, `{ items: [Item] }`. An item is either a catalogue reference
   (`ref: "quilt-3s"`, with optional overrides of name / weight / colour) or a
   custom item (all fields inline). Each has a locker-local `uid`.
 - **Loadout** = a rig (bike + bags) + `bike_g` + placements. It is the same
   object the app already saves and shares, extended. A saved rig *is* a loadout.
-- **Placement** — one per item in the loadout, one of:
+- **Placement**, one per item in the loadout, one of:
 
   | `loc` | Meaning | Sheet spelling |
   |---|---|---|
@@ -238,8 +238,8 @@ Units g/kg or oz/lb, toggle, persisted.
 the sum of every row, the 2.0 oz water filter included; 302.1 + 398 + 304 =
 1004.1). Packrig reproduces that number exactly in the sheet-format export
 (its totals row is the same SUM), and the import report reconciles it in one
-line. In the app, all-up counts only what is coming — leaving the filter at
-home is the point of "not packed" — so the app reads 1,002.1 oz and says why.
+line. In the app, all-up counts only what is coming, leaving the filter at
+home is the point of "not packed", so the app reads 1,002.1 oz and says why.
 
 ### 5.3 Solver
 
@@ -263,7 +263,7 @@ home is the point of "not packed" — so the app reads 1,002.1 oz and says why.
 ### 5.4 Balance
 
 Every placed item has a world position (its solved spot in its bag, or a
-fixed spot for frame/body). CoM of bike + bags + gear (worn excluded — the
+fixed spot for frame/body). CoM of bike + bags + gear (worn excluded, the
 rider is not part of the bike) is marked on the bike. Front/rear is the lever
 split between the axles; left/right and high/low are shown as offsets.
 
@@ -302,13 +302,13 @@ split between the axles; left/right and high/low are shown as offsets.
 
 ## 7. Spreadsheet import / export
 
-- Import accepts (a) the owner's matrix form — header row, then item |
+- Import accepts (a) the owner's matrix form, header row, then item |
   category | oz | one column per bag with `X`, `X (on top)`, `X (dangle)`,
-  `X (Left)` — and (b) the flat form (item | category | oz | where), and total
+  `X (Left)`, and (b) the flat form (item | category | oz | where), and total
   rows (`gear`, `bike`, `bags`, `all up`/`total`) anywhere. Tab or comma
   separated, as Google Sheets puts on the clipboard.
 - Items are matched to the catalogue by alias; unmatched rows become custom
-  items with the sheet's weight (the sheet's weight always wins — it is the
+  items with the sheet's weight (the sheet's weight always wins, it is the
   owner's scale).
 - Export writes the matrix form back, same column names, same X spellings,
   same totals rows, oz with lb beside them.
@@ -353,7 +353,7 @@ the rest is:
 - **Soft bags stretch, hard ones don't.** A rigid item may exceed a bag's
   drawn section by 50% (soft), 25% (semi) or 5% (rigid shell, from
   `stiffnessOf`). Fitting only by stretching is allowed and reported as a
-  bulge — on a frame, top tube or stem bag that means knee rub. Length never
+  bulge, on a frame, top tube or stem bag that means knee rub. Length never
   stretches: poles longer than the bag are refused, in centimetres.
 - **Rigid things pack in shelves from the floor up**, lanes across, outward
   from the mount; if my shelving runs out before the volume does, the item
@@ -362,7 +362,7 @@ the rest is:
 - **A two-sided frame bag** = a side pocket (the "(Left)" items, a third to a
   half of the width) plus the main compartment at full width, sharing the
   bag's litres. Not two halves: that refused a gas canister he really carries.
-- **The Therm-a-Rest Compressible Pillow** compresses 0.7, not 0.5 — it is
+- **The Therm-a-Rest Compressible Pillow** compresses 0.7, not 0.5, it is
   shredded foam sold on exactly that property. Changed on review with a note.
 - **Carriers are luggage**: a rear rack (650 g), front rack (480 g) and a
   fork cage per fork bag that doesn't include one (110 g) are added to "Bags".
@@ -370,7 +370,7 @@ the rest is:
   modelled); editable per loadout, and the sheet's "Bike" row sets it.
 - **Load ratings** (warnings only): fork cage 1.5 kg, stem 1 kg, top tube
   1.5 kg, seat pack 5 kg, bar roll 5 kg, frame bag 5 kg, pannier 10 kg, trunk
-  8 kg — typical published limits (Salsa Anything cage 3 kg is the HD
+  8 kg, typical published limits (Salsa Anything cage 3 kg is the HD
   exception; the warning says "most are rated for").
 - **A first-timer's bare bike gets "First overnighter"**: Apidura Expedition
   saddle pack 13 L, handlebar pack 14 L, half frame pack 4.3 L, top tube pack.
@@ -384,7 +384,7 @@ the rest is:
   Apidura Expedition saddle pack 16 L, handlebar pack 14 L, front accessory
   pack, frame pack 5.7 L (half), top tube pack 1 L; Andrew The Maker Rear TT
   Sack; a Many Things Sack on each fork leg. His sheet's bag weight (304 oz)
-  overrides the catalogue sum — it includes his cages and harness.
+  overrides the catalogue sum, it includes his cages and harness.
 - **Build-loadouts was already broken** by the 635-bag cut (two curated rigs
   named removed products). Fixed by substitution, noted in LOG.md.
 - **Full frame bags fill the triangle, not the catalogue size.** The owner's
@@ -408,3 +408,136 @@ the rest is:
   notice, as the Carradice SQR Slim is. Fit is shown honestly, not faked.
 - **Front rack deck** is sized from the tyre (`max(360, tireR + 45)`), as the
   rear rack already was.
+
+---
+
+## 9. The UI and UX pass (26 Sep 2026)
+
+Plan of record for the "make it a pleasure to use" run. One line of why
+for each call. `UX-WRITEUP.md` is the short version; `LOG.md` has what broke.
+
+### 9.1 Model and names
+
+- **Rig** is a bike with bags; **kit** is what you own and carry ("My kit");
+  a **trip** is one packing list for one ride (was "loadout" inside packing).
+  "Trip" is the word riders use; "loadout" was also the name of the example
+  gallery, which is what made the model impossible to hold.
+- **The start screen's gallery is "Examples".** Distinct from anything in
+  packing, and says what the rigs are for.
+- **Bags and kit are one list, not two tabs.** Every bag row carries its fill
+  meter, weight and a strip of what is inside; kit not in a bag sits under
+  the bags ("Not packed", "On the frame", "On you"). The question is one
+  question ("will my stuff fit on my bike?"), so the screen is one screen.
+- **The packing layer (outside items, centre of mass) is always on.** There
+  is no Gear mode to switch it on; the centre of mass shows only once there
+  is kit on the bike.
+- **The data keeps the word "loadout".** Share links, Firestore and the
+  spreadsheet round trip use it; renaming stored keys would break every saved
+  rig for no visible gain.
+
+### 9.2 Layout
+
+- **Desktop layout keys on width (901px and up), not on `pointer: fine`.**
+  Headless Chrome reports no pointer at all, and a touchscreen laptop is
+  still a desktop; the old CSS keyed on width too.
+- **Desktop panel is 400px, the bike gets the rest.** Wide enough for real
+  type sizes and a picture per bag; `framing.js` fits the bike into the
+  remaining area, so nothing sits behind a gradient.
+- **A sheet takes the panel's column** (440px, 600px for a catalogue) rather
+  than appearing on the right. One surface at a time; the bike is framed
+  into whatever is left.
+- **Phone: one bottom sheet, three heights.** Peek (the numbers), half, full.
+  Dragging the header moves it, a tap on the handle steps it, there is one
+  Close. The old chevron-plus-Close pairs are gone.
+- **The phone camera starts from the front quarter and a little above**
+  (`CAMS.phone`). Side on, a 1.8 m bike in a 393 px wide screen can only be
+  a quarter of its height; from the quarter it presents nearly square and is
+  framed at 51% of the height with the sheet at its peek. The angle still
+  shows the frame triangle and every mount.
+- **Header: wordmark, Log in, More.** More holds Frame the bike, Turn the
+  bike, Bike (size and colours), Wind tunnel, Share, Units and Clear the bike,
+  each a labelled row. Four unlabelled icons were four guesses.
+- **The wind tunnel is a chip on the rig: "+11 W at 28 km/h".** The number
+  is measured by the tunnel's own meter in the background (one yaw per frame)
+  after the bags change, so the chip and the tunnel agree (checked: +11 W on
+  the First overnighter in both).
+
+### 9.3 Adding bags
+
+- **Mounts are chosen on the bike.** Pulsing rings on an empty bike and after
+  "Add a bag"; tapping one opens that place's catalogue. The rings are
+  buttons (Tab reaches them, a screen reader reads "Seat pack: 78 bags"), and
+  "Choose from a list" is the same choice as a list.
+- **Mounts that share a spot share a ring** (bar roll, bar bag, rando bag;
+  seat pack, saddle bag; half and full frame bag; fork and stem sides; rack).
+  The catalogue offers the choice between them as chips. Eighteen targets on
+  a phone-sized bike overlap; ten do not, and the rings push apart if two
+  still land within 46 px.
+- **Filling an empty place from a ring moves the catalogue on to the next
+  place a first build fills** (seat pack, handlebar, frame, top tube, fork,
+  stem), with "Next: handlebar roll" and Undo in the toast. Replacing a bag
+  does not move on. It cuts three bags from six taps to four and follows the
+  order nearly every overnighter is built in; any other place is one tap on
+  its ring.
+- **Build a rig goes straight to the bike.** Name, size and colours were a
+  form in front of the first bag; the name is generated and editable in
+  place, size and colours are in More > Bike. The set-up screen stays for
+  adopting an example.
+- **No prices in the catalogue:** no product record carries one.
+- **A bag with no photo, or whose photo fails, shows its own model**
+  (`bagthumbs.js`), rendered by its builder in its colourway through the
+  shared thumbnail renderer. Maker CDNs are unreachable from this
+  environment, so every screenshot here shows models; on the live site the
+  photos load first and the model is the fallback.
+- **The product sheet frames the whole bag with the bike around it**: the bag
+  fills about 40% of the free area (`framing.focusBag`), instead of the old
+  close-up where the bike stopped being recognisable.
+
+### 9.4 Packing
+
+- **"What are you bringing?" tiles live in the rig panel when the kit is
+  empty, and pack as you tap.** Each tile says where its thing went; tapping
+  again takes it off the list; the toast has Undo. The quick-pick sheet
+  (Pack my kit on the start screen) keeps its Pack button, because there the
+  bike has no bags yet and packing fits the starter bags.
+- **Warnings live on the row they concern.** "55 cm won't fit this 23 cm bag.
+  Move to the handlebar roll?" is on the tent poles' row with a Move button;
+  bag-wide ones (load, bulge, tight) sit under the meter they explain; the
+  bag row in the panel carries the most serious one in a line.
+- **A pasted list that names bags the bike does not have offers to fit
+  them** ("Fit the 8 bags your list uses"): per place, the product the
+  example rigs use there, else the median-size bag that fits.
+- **Numbers block: all-up big, then Bike, Bags, Kit, Food in four fixed
+  columns, kg | lb at the top right.** It never wraps. Worn weight moved to
+  the trip comparison, where it is compared; capacity in litres heads the
+  bag list.
+
+### 9.5 Accounts, saving, sharing
+
+- **Saving still needs an account.** The owner made that call (rigstore.js,
+  "Saves now live on an account"); this pass keeps it. Save is one button in
+  the rig's header with state: Save, Save changes, Saved. Signed out it opens
+  the account sheet with the reason, and saves once you are in. Everything
+  else, including share links, works signed out.
+- **Log in is a sheet beside the bike**, the scene live and undimmed.
+- **Share opens a sheet**: the link, Copy link, and what the link carries
+  (bags, frame and colours, the packing list, that it opens with no account).
+  Copying stays an explicit tap: the clipboard is the person's.
+
+### 9.6 Visual system
+
+- **Glass is neutral.** The brown was the desert sampled through a blur with
+  `saturate(150%)`. The glass now samples through `saturate(45 to 70%)
+  brightness(0.55 to 0.8)`: the scene still shows through, its colour does
+  not. `DESIGN-SYSTEM.md` §3.2 changed to match.
+- **One type ramp of eight integer sizes**: 56 (40 on a phone), 32, 24, 20,
+  16, 15, 13, 11. Body is 15 (13 for secondary), labels 11. No half pixels.
+- **No slashed zero.** In Inter it reads as a code font next to prose; the
+  figures stay tabular.
+- **Ink-3 raised from 0.48 to 0.56 alpha** so 13 px metadata passes 4.5:1
+  over every environment (see the contrast check in LOG.md).
+- **The stylesheets are one per surface on one token file**: tokens, base,
+  shell, rig, bags, pack, menu, aero. `ui.css`, `theme.css`, `sheet.css`,
+  `builder.css` and the dead `rigs.css` are deleted; `menu.css` and
+  `aero.css` were rewritten.
+- **Desktop and phone breakpoints stay MOBILE.md's**: 560 and 900.

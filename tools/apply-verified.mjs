@@ -10,7 +10,7 @@ const brands = JSON.parse(readFileSync(root + 'data/brands.json'));
 const vdir = root + 'data/verified/';
 const recs = new Map();
 if (existsSync(vdir)) {
-  // Later files overwrite earlier ones, and readdir is alphabetical — which
+  // Later files overwrite earlier ones, and readdir is alphabetical, which
   // silently let midsize.json clobber the dimfix-*.json corrections written to
   // fix it. Load the correction passes LAST so they win.
   const files = readdirSync(vdir).filter((x) => x.endsWith('.json'))
@@ -33,7 +33,7 @@ for (const b of brands) {
     // so provenance is recorded per product rather than flattened to a boolean.
     const fromRetailer = r?.dims_source === 'retailer';
     if (!r || (!r.verified && !fromRetailer)) continue;
-    // slot-only corrections carry no dims — apply the slot and move on, or
+    // slot-only corrections carry no dims, apply the slot and move on, or
     // every finding from the slot audit is silently dropped here
     if (!r.dims_cm) {
       if (r.slot_should_be && r.slot_should_be !== p.slot) {
@@ -63,7 +63,7 @@ for (const b of brands) {
     if (r.dims_raw) p.dims_raw = r.dims_raw;
     if (r.dims_note) p.dims_note = r.dims_note;
     if (r.capacity_l !== undefined) p.liters = r.capacity_l;
-    // A product researched into the wrong mount moves slot too — the VAUDE
+    // A product researched into the wrong mount moves slot too, the VAUDE
     // Trailfront is a bar-clamped cage + dry bag, i.e. a barroll, not a barbag.
     if (r.slot_should_be && r.slot_should_be !== p.slot) {
       console.log(`  slot: ${b.name} ${p.name} ${p.size || ''}: ${p.slot} -> ${r.slot_should_be}`);
@@ -85,7 +85,7 @@ for (const c of changes) {
   console.log(`  ${c.who}\n    ${f(c.before)}  →  ${f({ ...c.before, ...c.after })}${c.state && c.state !== 'unknown' ? `   [${c.state}]` : ''}`);
   if (c.note) console.log(`    ${c.note}`);
 }
-if (dry) { console.log('\n(dry run — nothing written)'); process.exit(0); }
+if (dry) { console.log('\n(dry run, nothing written)'); process.exit(0); }
 // Only snapshot the FIRST time: this tool is idempotent and gets re-run as more
 // verification lands, so copying every time would overwrite the pristine
 // catalogue with an already-modified one.

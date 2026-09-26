@@ -1,6 +1,6 @@
 /**
- * Renders the link-preview card — the image X, Slack, Discord, iMessage and
- * LinkedIn show when somebody pastes the site — into assets/social/og.png.
+ * Renders the link-preview card, the image X, Slack, Discord, iMessage and
+ * LinkedIn show when somebody pastes the site, into assets/social/og.png.
  *
  * WHY IT IS A SCRIPT AND NOT AN EXPORT FROM A DESIGN TOOL. The card's hero is
  * the wind tunnel itself: a real rig, really measured, with the streamlines the
@@ -10,9 +10,9 @@
  * re-states the truth; a PNG exported once would quietly start lying.
  *
  * Two passes:
- *   1. Drive the live app headlessly — apply a curated loadout, open the
+ *   1. Drive the live app headlessly, apply a curated loadout, open the
  *      tunnel, wait for the measurement, frame the camera so the bike sits in
- *      the right third — and screenshot the scene with the UI hidden.
+ *      the right third, and screenshot the scene with the UI hidden.
  *   2. Load tools/og-card.html, inject that plate as a data URI, screenshot
  *      1200x630 at 2x and downsample. Supersampling is what keeps the type
  *      crisp; unfurlers re-encode, so we hand them the cleanest source we can.
@@ -20,7 +20,7 @@
  *   node tools/serve.mjs &            # the app must be served
  *   node tools/og-card.mjs [--loadout expedition] [--variant dark|light]
  *
- * The result is 1200x630 — the size every unfurler documents — and is copied
+ * The result is 1200x630, the size every unfurler documents, and is copied
  * into the deploy by tools/build-pages.mjs, which also writes the meta tags
  * that point at it.
  */
@@ -42,7 +42,7 @@ mkdirSync(OUT_DIR, { recursive: true });
 
 const loadouts = JSON.parse(readFileSync(join(root, 'data/loadouts.json'), 'utf8'));
 const pick = loadouts.find((l) => l.id === LOADOUT);
-if (!pick) throw new Error(`no loadout "${LOADOUT}" — have ${loadouts.map((l) => l.id).join(', ')}`);
+if (!pick) throw new Error(`no loadout "${LOADOUT}", have ${loadouts.map((l) => l.id).join(', ')}`);
 
 // The framing. Twelve degrees off pure profile is enough to show that the bags
 // have depth without turning the silhouette into a foreshortened blob, and the
@@ -71,14 +71,14 @@ try {
   await wait(3000);
 
   // The tunnel measures on a debounce behind a sequence number, and the entry
-  // is a 1.5s dissolve on top of that. Give it room rather than racing it —
+  // is a 1.5s dissolve on top of that. Give it room rather than racing it,
   // this is the same wait tools/measure-loadouts.mjs settled on.
   console.log('· wind tunnel');
   await page.evaluate(() => window.app.openWindTunnel());
   await wait(15000);
 
   const readout = await page.evaluate(() => window.app.__aeroReadout?.());
-  if (!readout) throw new Error('the tunnel returned no readout — nothing to print on the card');
+  if (!readout) throw new Error('the tunnel returned no readout, nothing to print on the card');
   console.log(`   CdA ${readout.cda.toFixed(3)} m² · ${Math.round(readout.totalW)} W `
     + `at ${readout.speedKph} km/h · +${Math.round(readout.addedW)} W for the bags`);
 
@@ -124,4 +124,4 @@ try {
 // Shot at 2x for the type, delivered at 1x: 1200x630 is what the unfurlers
 // document, and every one of them re-encodes anyway.
 execFileSync('sips', ['-z', '630', '1200', OUT, '--out', OUT], { stdio: 'ignore' });
-console.log(`\nwrote ${OUT.replace(root + '/', '')} — 1200x630, ${(statSync(OUT).size / 1024).toFixed(0)}KB`);
+console.log(`\nwrote ${OUT.replace(root + '/', '')}, 1200x630, ${(statSync(OUT).size / 1024).toFixed(0)}KB`);

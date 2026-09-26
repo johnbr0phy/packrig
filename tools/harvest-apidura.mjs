@@ -66,7 +66,7 @@ const original = (u) => u.replace(RESIZE, '');
 
 // Everything on the page that is NOT this product: nav thumbnails, the blog
 // rail, feature icons, related products. Matching on the page slug is blunt
-// and it is right — Apidura names its media after the product.
+// and it is right, Apidura names its media after the product.
 //
 // Careful with "feature": `-feature-image-` is a blog thumbnail, while
 // `-feature-strap-attachment-` is a close-up of the hardware, which is one of
@@ -77,7 +77,7 @@ const looksLikeChrome = (base) =>
 const KINDS = [
   [/clearance-diagram/i, 'clearance'],
   [/dimension-diagram/i, 'dimensions'],
-  // Every SVG on this site is a technical drawing — there is no such thing as
+  // Every SVG on this site is a technical drawing, there is no such thing as
   // a lifestyle vector. The front rack pack names its diagrams
   // `...-20l-cm.svg`, with no `dimension-diagram` in the name at all, and was
   // being filed as a studio photo.
@@ -105,7 +105,7 @@ const kindOf = (base) => KINDS.find(([re]) => re.test(base))[1];
  * So: try the whole slug with separators removed, then fall back to requiring
  * every MEANINGFUL token to appear. `apidura`, `x` and `v2` are dropped
  * because they are page-URL furniture, and the fallback demands ALL remaining
- * tokens — which is what keeps the Racing saddle pack's clearance diagram, sat
+ * tokens, which is what keeps the Racing saddle pack's clearance diagram, sat
  * on the Canyon page as a related product, from being hoovered up: it has
  * `saddle` and `pack` but not `canyon`.
  */
@@ -136,8 +136,8 @@ function belongsToPage(stem, pageSlug, isSvg = false) {
   //
   // The relaxation is: most tokens, AND at least one token that actually
   // identifies the product. Without that second clause the Racing saddle
-  // pack's clearance diagram — which sits on the Canyon page as a related
-  // product and shares `saddle` and `pack` — would come along too.
+  // pack's clearance diagram, which sits on the Canyon page as a related
+  // product and shares `saddle` and `pack`, would come along too.
   if (!isSvg) return false;
   const distinctive = tokens.filter((t) => !GENERIC.has(t));
   if (!distinctive.length || !distinctive.some(hit)) return false;
@@ -195,7 +195,7 @@ for (const url of pageList) {
     keep.set(o, { url: o, base, kind: kindOf(base), size: sizeOf(stem) });
   }
 
-  // inches duplicates of every diagram add nothing — keep the cm ones
+  // inches duplicates of every diagram add nothing, keep the cm ones
   const items = [...keep.values()].filter((i) => !/diagram-in\./i.test(i.base));
 
   const dir = join(OUT, pageSlug);

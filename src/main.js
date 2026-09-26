@@ -36,7 +36,7 @@ const canvas = document.getElementById('scene');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: SHOT_MODE });
 // Decide the device profile BEFORE the post chain is built: `post` says which
 // passes to construct at all, and a GTAOPass that is merely disabled still
-// allocates its render targets — memory a phone has better uses for. On a
+// allocates its render targets, memory a phone has better uses for. On a
 // desktop pointer this returns today's exact settings.
 const profile = applyRendererProfile(renderer);
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -118,6 +118,29 @@ controls.maxDistance = 9;
 controls.maxPolarAngle = Math.PI / 2 - 0.02;
 controls.autoRotate = false;
 controls.autoRotateSpeed = STILL ? 0 : 0.9;   // `?still`: the start menu's idle orbit holds for screenshots
+
+// The bike from a keyboard: Tab reaches the canvas, arrows turn the bike,
+// + and - zoom, Home frames it again (DESIGN-SYSTEM.md 9.2).
+canvas.tabIndex = 0;
+canvas.setAttribute('role', 'application');
+canvas.setAttribute('aria-roledescription', '3D view');
+canvas.setAttribute('aria-label', 'The bike. Arrow keys turn it, plus and minus zoom, Home frames it.');
+canvas.addEventListener('keydown', (e) => {
+  const off = camera.position.clone().sub(controls.target);
+  const sph = new THREE.Spherical().setFromVector3(off);
+  const step = e.shiftKey ? 0.35 : 0.14;
+  if (e.key === 'ArrowLeft') sph.theta -= step;
+  else if (e.key === 'ArrowRight') sph.theta += step;
+  else if (e.key === 'ArrowUp') sph.phi = Math.max(0.15, sph.phi - step * 0.6);
+  else if (e.key === 'ArrowDown') sph.phi = Math.min(controls.maxPolarAngle, sph.phi + step * 0.6);
+  else if (e.key === '+' || e.key === '=') sph.radius = Math.max(controls.minDistance, sph.radius * 0.88);
+  else if (e.key === '-' || e.key === '_') sph.radius = Math.min(controls.maxDistance, sph.radius * 1.14);
+  else if (e.key === 'Home') { app.framing?.frameBike({ reset: true }); e.preventDefault(); return; }
+  else return;
+  e.preventDefault();
+  camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(sph));
+  controls.update();
+});
 
 // ---- Environments ------------------------------------------------------
 const envs = new Environments(scene, renderer);
@@ -235,7 +258,7 @@ initPack(app);
 attachLockerSync(app);
 if (app.auth.enabled) app.auth.hydrate();
 
-// A shared rig arrives in the URL. `?r=` is the durable form — it names the
+// A shared rig arrives in the URL. `?r=` is the durable form, it names the
 // maker and model of every bag, so it still resolves the same bike after the
 // catalogue is re-sorted. `?kit=` is the old positional form and is still read,
 // because it is the only one in anyone's history.
@@ -325,18 +348,18 @@ app.openWindTunnel = async () => {
 /**
  * The view offset shifts the bike right of the DESKTOP kit panel. On a phone
  * both panels are bottom sheets, there is nothing to the left to clear, and a
- * fixed 165px is over a third of a 393px viewport — it shoved the bike off the
+ * fixed 165px is over a third of a 393px viewport, it shoved the bike off the
  * right edge and left the render cropped to a rear wheel.
  *
  * This is the single owner of the offset. It is re-evaluated on resize and on
  * the media query itself changing, so a device rotation cannot leave a stale
- * offset behind. The query mirrors COMPACT in ui.js — keep them in step.
+ * offset behind. The query mirrors COMPACT in ui.js, keep them in step.
  */
 const DESKTOP_LAYOUT = window.matchMedia('(min-width: 901px) and (pointer: fine)');
 
 /**
  * Camera framing is owned by src/mobile.js. It knows the sheet lift, and it
- * raises `controls.maxDistance` alongside the fit — the default ceiling of 9 is
+ * raises `controls.maxDistance` alongside the fit, the default ceiling of 9 is
  * BELOW the portrait fit distance, so without that the clamp silently re-crops
  * the bike and the fix looks like it did not work.
  */

@@ -30,8 +30,9 @@ export function initPackUI(app, { notify, selectBag }) {
     openQuick: () => quick.open(),
     openBagSheet: (slot) => selectBag(slot),
     openExample: () => openExample(),
-    afterPack: () => showPacked(),
-    afterImport: () => showPacked(),
+    // after packing or importing, the list is the news: show it
+    afterPack: () => { showPacked(); app.rigPanel?.detent('half'); },
+    afterImport: () => { showPacked(); app.rigPanel?.detent('half'); },
   });
 
   // The packing layer (items outside bags, the centre of mass) is always on

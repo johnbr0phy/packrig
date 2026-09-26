@@ -67,12 +67,12 @@ console.log(`   ${hotlinked} products hot-link a photo (${restored} URLs restore
 writeFileSync(join(docs, 'data/brands.json'), JSON.stringify(brands));
 
 // The measured silhouettes. src/catalog.js fetches BOTH of these and falls back
-// to the builders' parametric curves when a fetch 404s — silently, because a
+// to the builders' parametric curves when a fetch 404s, silently, because a
 // missing profile is a legitimate state for the 201 products that have none.
 // So shipping without them does not break the build or log anything: it just
 // quietly serves the old guessed shapes, and every bag that was fixed by
 // measuring the maker's engineering drawing reverts on the live site only.
-// `diagram-profiles.json` is the one that matters most — it is what took the
+// `diagram-profiles.json` is the one that matters most, it is what took the
 // seat packs from back-to-front to correct.
 // `loadouts.json` is not optional in the same way the profile files are: the
 // Loadouts level of the menu is a whole section of the app, and without this
@@ -86,14 +86,14 @@ copyFileSync(join(root, 'data/loadouts.json'), join(docs, 'data/loadouts.json'))
 
 for (const f of ['profiles.json', 'diagram-profiles.json', 'portraits.json']) {
   const src = join(root, 'data', f);
-  if (!existsSync(src)) { console.log(`   (no data/${f} — skipping)`); continue; }
+  if (!existsSync(src)) { console.log(`   (no data/${f}, skipping)`); continue; }
   writeFileSync(join(docs, 'data', f), JSON.stringify(JSON.parse(readFileSync(src, 'utf8'))));
   console.log(`   data/${f}: ${(readFileSync(join(docs, 'data', f)).length / 1024).toFixed(0)}KB`);
 }
 
 // DESIGN-SYSTEM.md §12 step 1. tokens.css sits at src/ui/tokens.css in the
-// repo and at docs/tokens.css in the deploy, so its @font-face URL — which is
-// resolved relative to the STYLESHEET, not the page — has to be rewritten for
+// repo and at docs/tokens.css in the deploy, so its @font-face URL, which is
+// resolved relative to the STYLESHEET, not the page, has to be rewritten for
 // the shallower path. Getting this wrong fails silently: the page renders in
 // the system fallback and looks nearly right.
 // The rendered portraits for the 201 products that ship no photograph. Without
@@ -109,7 +109,7 @@ for (const f of ['profiles.json', 'diagram-profiles.json', 'portraits.json']) {
       .reduce((t, f) => t + statSync(join(docs, 'assets/portraits', f)).size, 0) / 1024;
     console.log(`   portraits: ${n} files, ${kb.toFixed(0)}KB`);
   } else {
-    console.log('   (no assets/portraits — run tools/bag-portraits.mjs)');
+    console.log('   (no assets/portraits, run tools/bag-portraits.mjs)');
   }
 }
 
@@ -125,10 +125,10 @@ copyFileSync(join(root, 'assets/fonts/Inter-LICENSE.txt'), join(docs, 'assets/fo
 copyFileSync(join(root, 'src/ui/sheet.css'), join(docs, 'sheet.css'));
 
 copyFileSync(join(root, 'src/ui.css'), join(docs, 'ui.css'));
-// `src/rigs.css` is gone with rigsui.js — the account is a dialogue in
+// `src/rigs.css` is gone with rigsui.js, the account is a dialogue in
 // ui/v2/builder.css and saved rigs are a menu view.
 // The wind tunnel's HUD styles live in their own file. index.html below must
-// link BOTH — the panel renders unstyled if this is copied and not linked, or
+// link BOTH, the panel renders unstyled if this is copied and not linked, or
 // missing entirely if neither, and nothing in the bundle would complain.
 copyFileSync(join(root, 'src/aero/aero.css'), join(docs, 'aero.css'));
 // Last in the cascade, so it re-skins everything the others set.
@@ -144,7 +144,7 @@ copyFileSync(join(root, 'src/pack/pack.css'), join(docs, 'pack.css'));
 copyFileSync(join(root, 'data/gear.json'), join(docs, 'data/gear.json'));
 
 // The link-preview image the meta tags below point at. Built by
-// tools/og-card.mjs from a real measured rig — see that file — and copied
+// tools/og-card.mjs from a real measured rig, see that file, and copied
 // rather than generated here, because making it needs a GPU pass through the
 // wind tunnel and this build must stay a pure transform of the tree.
 copyFileSync(join(root, 'assets/social/og.png'), join(docs, 'og.png'));
@@ -155,25 +155,25 @@ writeFileSync(join(docs, 'index.html'), `<!DOCTYPE html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAzMiAzMic+PHJlY3Qgd2lkdGg9JzMyJyBoZWlnaHQ9JzMyJyByeD0nNycgZmlsbD0nIzEyMTIxMicvPjxnIHN0cm9rZT0nI0ZGN0E0NScgc3Ryb2tlLXdpZHRoPScyLjYnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgZmlsbD0nbm9uZSc+PHBhdGggZD0nTTYgMTJoMTNhMy4yIDMuMiAwIDEgMC0zLjItMy4yJy8+PHBhdGggZD0nTTYgMThoMTZhMy4yIDMuMiAwIDEgMS0zLjIgMy4yJy8+PHBhdGggZD0nTTYgMjRoOScvPjwvZz48L3N2Zz4=" />
-<title>Packrig — Bikepacking Bag Configurator</title>
+<title>Packrig, Bikepacking Bag Configurator</title>
 <meta name="description" content="Build a bikepacking rig in 3D from a catalogue of 635 real bags across 50 makers that fit Checkpoint-class S/M/L." />
 <!-- The link preview: what X, Slack, iMessage and LinkedIn show when the URL
      is pasted. The image is built by tools/og-card.mjs from a real measured rig
-     in the wind tunnel, and og:image MUST stay absolute — crawlers do not
+     in the wind tunnel, and og:image MUST stay absolute, crawlers do not
      resolve relative paths. -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Packrig" />
 <meta property="og:url" content="https://johnbr0phy.github.io/packrig/" />
-<meta property="og:title" content="Packrig — 635 real bikepacking bags, one wind tunnel" />
-<meta property="og:description" content="Build a bikepacking rig in 3D from bags that actually exist — 635 of them, across 50 makers — then put it in the wind tunnel and find out what they cost you in watts." />
+<meta property="og:title" content="Packrig, 635 real bikepacking bags, one wind tunnel" />
+<meta property="og:description" content="Build a bikepacking rig in 3D from bags that actually exist, 635 of them, across 50 makers, then put it in the wind tunnel and find out what they cost you in watts." />
 <meta property="og:image" content="https://johnbr0phy.github.io/packrig/og.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="A loaded bikepacking bike in Packrig's wind tunnel, airflow streamlining past it, beside its measured numbers: CdA 0.458 m², 180 W to hold 28 km/h, +28 W for the bags." />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Packrig — 635 real bikepacking bags, one wind tunnel" />
-<meta name="twitter:description" content="Build a bikepacking rig in 3D from bags that actually exist — 635 of them, across 50 makers — then put it in the wind tunnel and find out what they cost you in watts." />
+<meta name="twitter:title" content="Packrig, 635 real bikepacking bags, one wind tunnel" />
+<meta name="twitter:description" content="Build a bikepacking rig in 3D from bags that actually exist, 635 of them, across 50 makers, then put it in the wind tunnel and find out what they cost you in watts." />
 <meta name="twitter:image" content="https://johnbr0phy.github.io/packrig/og.png" />
 <meta name="twitter:image:alt" content="A loaded bikepacking bike in Packrig's wind tunnel, airflow streamlining past it, beside its measured numbers: CdA 0.458 m², 180 W to hold 28 km/h, +28 W for the bags." />
 <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />

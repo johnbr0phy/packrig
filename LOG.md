@@ -1,4 +1,4 @@
-# Packrig v2 run — the log
+# Packrig v2 run, the log
 
 What broke, why, and what stops it happening again. Newest last. Anything
 here that is a trap for the next agent is also in `src/bags/BUILDER-BRIEF.md`

@@ -25,7 +25,7 @@ export class BagSystem {
 
   /**
    * Subscribe to kit changes. Fired from resolveCollisions, which is the one
-   * funnel every equip/remove/clear/randomise already passes through — so a
+   * funnel every equip/remove/clear/randomise already passes through, so a
    * listener cannot miss a change by way of some path that forgot to notify.
    */
   onChange(fn) {
@@ -53,7 +53,7 @@ export class BagSystem {
 
     // A slot with `mountsTo` hangs off another BAG, not off the bike. If no
     // host is fitted there is nothing to clip to, so the pocket is unfitted
-    // rather than silently strapped to the handlebar — which is what it used
+    // rather than silently strapped to the handlebar, which is what it used
     // to do, and why it rendered floating in front of the bars attached to
     // nothing.
     const host = slotDef.mountsTo && slotDef.mountsTo.map((s) => this.equipped[s]).find(Boolean);
@@ -71,7 +71,7 @@ export class BagSystem {
       //
       // Everything here is in the HOST'S LOCAL space. Measuring the host with
       // Box3.setFromObject gives WORLD coordinates, and assigning those to
-      // `mesh.position` — which is local — put the pocket 43 metres down the
+      // `mesh.position`, which is local, put the pocket 43 metres down the
       // road with a bounding box a tenth of a unit across. Bag meshes are
       // mm-local under an anchor that is not, so the two spaces differ by
       // three orders of magnitude and the error is silent: the bag equips, the
@@ -348,7 +348,7 @@ export class BagSystem {
     for (const slot of doomed) {
       const rec = this.equipped[slot];
       // Drawing a bag that intersects the frame is wrong, but so is deleting it
-      // with no trace — the user picked a product and it silently never appeared.
+      // with no trace, the user picked a product and it silently never appeared.
       // Remove the mesh, KEEP the choice, and let the UI say it doesn't fit.
       console.warn(`[bags] does not fit ${slot}: ${rec.brand?.name} ${rec.product?.name} ${rec.product?.size || ''}`);
       rec.mesh.parent?.remove(rec.mesh);
@@ -362,7 +362,7 @@ export class BagSystem {
 
   /**
    * Straps that wrap a frame tube are aimed at a fixed point on the bike, not
-   * at a fixed spot on the bag — so they are re-aimed once the bag has settled.
+   * at a fixed spot on the bag, so they are re-aimed once the bag has settled.
    */
   _reseatStraps() {
     const m = new THREE.Matrix4();
@@ -454,7 +454,7 @@ export class BagSystem {
         if (rnd() > step.roll) continue;
         let uiSlot = pick(step.slots);
         // The exclusion table would let a trunk bag evict the seat pack chosen
-        // in the first step — correct, but it silently throws away a bag the
+        // in the first step, correct, but it silently throws away a bag the
         // plan already committed to and leaves the rack area empty-looking.
         // Rear carrying is either/or, so take the panniers instead.
         if (uiSlot === 'trunk' && (this.equipped.seatpack || this.equipped.saddlebag)) {

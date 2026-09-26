@@ -3,9 +3,9 @@
  *
  * What Google Sheets puts on the clipboard is tab-separated rows. The owner's
  * tabs are a MATRIX: item | category | oz | one column per bag, with an X where
- * the item goes and the X carrying detail — "X (on top)", "X (dangle)",
- * "X (Left)". Some people keep the flat form instead — item | category | oz |
- * where — so both are read. Totals rows ("Gear", "Bike", "Bags", "All up") can
+ * the item goes and the X carrying detail, "X (on top)", "X (dangle)",
+ * "X (Left)". Some people keep the flat form instead, item | category | oz |
+ * where, so both are read. Totals rows ("Gear", "Bike", "Bags", "All up") can
  * sit anywhere; the bike and bags figures are the only place those weights
  * exist, so they are kept.
  *
@@ -185,7 +185,7 @@ export function importSheet(text, { gear = null, name = '' } = {}) {
     const hasX = placeCols.some(([i]) => /^x/i.test(r[i] || ''));
     const wt = num(r[cWt]);
     if (tk && !hasX) {
-      // "Bike | | 398 | 24.9 lb" — the first number after the label is the total
+      // "Bike | | 398 | 24.9 lb", the first number after the label is the total
       const n = Number.isFinite(wt) ? wt : num(r.slice(1).find((c) => Number.isFinite(num(c))));
       if (Number.isFinite(n)) totals[tk] = unit === 'g' ? r2(gToOz(n)) : n;
       continue;
@@ -256,7 +256,7 @@ export function sheetTotals(locker, loadout, weightOf) {
 // ---- export -------------------------------------------------------------------
 /**
  * The loadout as the owner's matrix, tab-separated, ready to paste into a
- * sheet. `rows` is the list of locker items that belong on this tab — for an
+ * sheet. `rows` is the list of locker items that belong on this tab, for an
  * imported tab, every row it had (home items included, as "not packed").
  */
 export function exportSheet({ locker, loadout, resolve, rows = null, bagsG = null }) {

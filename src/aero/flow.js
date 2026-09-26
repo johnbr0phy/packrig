@@ -20,8 +20,8 @@
 // matters:
 //
 //   CHUNKS  a body split into up to three boxes. Deflection has to follow the
-//           real silhouette — flow goes over the top of a long bar roll, not
-//           diagonally off its centre — so it reads the chunks.
+//           real silhouette, flow goes over the top of a long bar roll, not
+//           diagonally off its centre, so it reads the chunks.
 //   HULLS   one box per body. A wake belongs to the whole body: chopping a
 //           wheel into three slabs gave three stubby wakes that had died out
 //           before they were a metre behind the bike, when a wheel sheds for
@@ -37,7 +37,7 @@ import * as THREE from 'three';
 const DEFLECT_K = 1.5;    // stagnation push, only on faces the wind runs into
 // Streamline displacement: a body pushes air aside all around itself, not just
 // where the wind hits it square. The stagnation term above is weighted by how
-// directly the flow meets the surface, which is ZERO on a horizontal top face —
+// directly the flow meets the surface, which is ZERO on a horizontal top face,
 // so threads passing over a bag were running dead straight, and the whole
 // picture read as parallel lines that happened to have a bicycle behind them.
 // This term is facing-blind and is what makes smoke visibly lift over a bag.
@@ -45,20 +45,20 @@ const DEFLECT_K = 1.5;    // stagnation push, only on faces the wind runs into
 // the freestream itself: threads were thrown a metre wide of the bike, sailed
 // over everything and never came back, so almost none of them ever entered a
 // wake (0.4% of particles in turbulent air, with 29% of the volume turbulent).
-// Keeping a thread OUT of a solid is the WALL term's job below — that one is
+// Keeping a thread OUT of a solid is the WALL term's job below, that one is
 // local, 55mm thick, and cannot fling anything across the frame.
 const DISPLACE_K = 0.35;
 const SQUEEZE_K = 0.55;   // tangential speed-up at the shoulder of an obstacle
 // Deflection falls off as (R/(R+d))^2 where R is the chunk's OWN cross-stream
 // radius: a doublet-like 1/d^2 tail that is also size-aware. A fixed distance
-// scale was tried first and is wrong twice over — a 40mm stem bag threw the
+// scale was tried first and is wrong twice over, a 40mm stem bag threw the
 // same weight around as a pannier, and since a bag is three chunks, every bag
 // pushed three times as hard as it should. Threads bent a metre and a half
 // before they reached the bike and crossed each other on the way in.
 const REACH = 2.4;        // multiples of R at which a chunk stops mattering
 const REACH_PAD = 0.1;    // m; floor on that, so small chunks still have an edge
 // Absolute ceiling on that reach. The ghost rider's torso is big enough that
-// 2.4 radii is ~0.8m — it pushed every thread clear of the entire bike, the
+// 2.4 radii is ~0.8m, it pushed every thread clear of the entire bike, the
 // bags sat inside a bubble no smoke ever entered, and a full kit measured the
 // same turbulence at the threads as a bare bike (0.034 either way). Physically
 // a big body does reach further; for a visualisation whose whole job is to show
@@ -85,7 +85,7 @@ const SHED_K = 0.5;       // Karman street amplitude
 const STROUHAL = 0.21;    // fSt = St · U / d, the textbook bluff-body value
 const NOISE_K = 1.15;      // curl-noise amplitude, scaled by turbulence
 const NOISE_SCALE = 3.4;  // 1/m; feature size of the turbulent eddies
-const NOISE_GATE = 0.05;  // below this turbulence we skip the noise entirely —
+const NOISE_GATE = 0.05;  // below this turbulence we skip the noise entirely,
                           //    this gate is most of the performance budget
 const MIN_DRIFT = 0.12;   // fraction of U that always survives downwind, so no
                           //    particle can be trapped in a recirculation cell
@@ -218,12 +218,12 @@ function bagBodies(bags) {
 
 /**
  * The ghost rider, if one has been built. Its meshes are limbs and a torso, so
- * per-mesh AABBs already give a body-shaped set of blockers — far better than
+ * per-mesh AABBs already give a body-shaped set of blockers, far better than
  * one box around the whole person, which would put a wall where the gap between
  * the arms is.
  */
 function riderBodies(riderGroup, explicit) {
-  // An auto-discovered rider is only counted when it is actually on screen —
+  // An auto-discovered rider is only counted when it is actually on screen,
   // outside the tunnel the ghost exists but is hidden, and the air should not
   // be flowing around a person who is not there. A rider passed in explicitly
   // is counted regardless: rider.js hides the group below alpha 0.002, and the
@@ -452,7 +452,7 @@ export function buildFlowField(bike, bags, opts = {}) {
     U = field.speed;
 
     // two unit vectors spanning the plane across the wind, for each body's
-    // cross-stream footprint — the thing that actually sets wake width
+    // cross-stream footprint, the thing that actually sets wake width
     const ux = 0, uy = 1, uz = 0;
     const wx = -fz, wy = 0, wz = fx;   // dir × up, already unit (dir is level)
     for (let i = 0; i < hullCount; i++) {
@@ -476,8 +476,8 @@ export function buildFlowField(bike, bags, opts = {}) {
       const sw = Math.abs(hx * wx) + Math.abs(hz * wz);
       const rB = Math.max(0.5 * (su + sw), 0.02);
       cData[o + 8] = rB;
-      // squared rejection radius, so the common case — a chunk listed in this
-      // cell but too far to matter — costs no square root
+      // squared rejection radius, so the common case, a chunk listed in this
+      // cell but too far to matter, costs no square root
       const rej = Math.min(rB * REACH + REACH_PAD, REACH_MAX) + cData[o + 6];
       cData[o + 9] = rej * rej;
     }
@@ -641,7 +641,7 @@ export function buildFlowField(bike, bags, opts = {}) {
         // wake term takes over. This gate has to be SHARP: at 2.5 radii it was
         // still pushing air outward well behind each body, threads skirted the
         // whole bike without entering a single wake, and nothing ever went
-        // turbulent — a fully loaded bike measured the same clean white as a
+        // turbulent, a fully loaded bike measured the same clean white as a
         // bare one.
         const along = dx * fx + dy * fy + dz * fz;
         const lee = along > 0 ? clamp01(along / (rB * 0.6)) : 0;
@@ -744,8 +744,8 @@ export function buildFlowField(bike, bags, opts = {}) {
     }
 
     // Soft saturation instead of a hard clamp. `turb` is a SUM over every wake
-    // covering this point, and clamping it meant the ghost rider's wake — which
-    // blankets the same volume the bags' wakes do — pegged the value at 1 on its
+    // covering this point, and clamping it meant the ghost rider's wake, which
+    // blankets the same volume the bags' wakes do, pegged the value at 1 on its
     // own. Adding a full kit then changed the picture by 0.15%: measurably, but
     // not visibly, which defeats the entire point of the mode. This curve is
     // strictly increasing, so another wake always shows up.
@@ -820,7 +820,7 @@ export function buildFlowField(bike, bags, opts = {}) {
 
   /**
    * True when no obstacle and no wake can reach this point, so the field there
-   * is EXACTLY the freestream — not approximately, exactly: evaluate() would
+   * is EXACTLY the freestream, not approximately, exactly: evaluate() would
    * run two empty loops and return the vector it started with.
    *
    * Most of a streakline's life is spent in air like that, out at the edge of

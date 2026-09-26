@@ -2,7 +2,7 @@
  * data/weights/<brand>.json → data/brands.json (`weight_g`, `weight_basis`,
  * `weight_src`, `weight_note`). Idempotent; `--dry` previews.
  *
- * Joined on brand + line + name + size exactly as the worklist wrote them —
+ * Joined on brand + line + name + size exactly as the worklist wrote them,
  * the research passes copied those keys verbatim for this reason. Anything
  * that does not join is printed by name, never counted silently (the lesson of
  * apply-models.mjs: three brands were once dropped without a word).
@@ -42,7 +42,7 @@ for (const b of brands) {
     p.weight_g = Math.round(w.weight_g);
     p.weight_basis = w.basis;
     if (w.source) p.weight_src = w.source; else delete p.weight_src;
-    const note = [w.quote ? `"${w.quote}"` : null, w.note || null].filter(Boolean).join(' — ');
+    const note = [w.quote ? `"${w.quote}"` : null, w.note || null].filter(Boolean).join(', ');
     if (note) p.weight_note = note.slice(0, 400); else delete p.weight_note;
     counts[w.basis] = (counts[w.basis] || 0) + 1;
   }

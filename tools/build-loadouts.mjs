@@ -1,18 +1,18 @@
 /**
- * Curated example rigs — the "Loadouts" level of the v2 menu.
+ * Curated example rigs, the "Loadouts" level of the v2 menu.
  *
  * WHY THIS FILE EXISTS RATHER THAN A HAND-WRITTEN JSON. A loadout names real
  * products by (brand, line, name, size), which is the same durable identity
  * src/rig.js uses. Hand-writing those quadruples is how you get a loadout that
  * silently loads five bags instead of eight the next time somebody tidies a
- * product name — the exact failure rig.js was built to prevent. So the specs
+ * product name, the exact failure rig.js was built to prevent. So the specs
  * live here as source, this script RESOLVES every one of them against
  * data/brands.json, and it FAILS LOUDLY if a single product cannot be found.
  * Re-run it after any catalogue change:
  *
  *   node tools/build-loadouts.mjs
  *
- * Output: data/loadouts.json — read by src/ui/v2/loadouts.js and shipped by
+ * Output: data/loadouts.json, read by src/ui/v2/loadouts.js and shipped by
  * tools/build-pages.mjs.
  *
  * The litre totals in the output are COMPUTED, never typed. A curated rig that
@@ -31,8 +31,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 /*
  * The mount slots, read out of the one file that defines them.
  *
- * `package.json` declares `"type": "commonjs"`, so `src/bags/slots.js` — which
- * is ESM, and is only ever loaded by the browser — cannot be `import`ed from a
+ * `package.json` declares `"type": "commonjs"`, so `src/bags/slots.js`, which
+ * is ESM, and is only ever loaded by the browser, cannot be `import`ed from a
  * Node `.mjs` script: node resolves it as CJS and the named export is not
  * there. Parsing the keys is the alternative, and it is fine for this purpose:
  * the point is to catch a TYPO in a slot name in the table below, so the check
@@ -59,7 +59,7 @@ const SLOT_NAMES = (() => {
 const LOADOUTS = [
   {
     // What a first-timer's bike gets when they tap "What are you bringing?"
-    // on a bare frame: the four bags nearly every first overnighter uses —
+    // on a bare frame: the four bags nearly every first overnighter uses,
     // seat pack for the soft stuff, bar roll for the sleep system, a half
     // frame bag for the heavy small things, a top tube bag for snacks.
     id: 'first-overnighter',
@@ -107,7 +107,7 @@ const LOADOUTS = [
     name: 'The Expedition',
     kicker: 'All Apidura',
     note: 'One maker, one line, every mount filled. This is the shape of a bike '
-        + 'crossing a continent unsupported — bar to fork to frame to tail.',
+        + 'crossing a continent unsupported, bar to fork to frame to tail.',
     tags: ['Apidura', 'Expedition', 'Self-supported'],
     paint: 'Slate',
     env: 'mountain',
@@ -145,7 +145,7 @@ const LOADOUTS = [
     name: 'Heavy Load',
     kicker: 'Ortlieb, fully loaded',
     note: 'Racks, rollers and welded seams. The touring answer to the same '
-        + 'question the soft bags ask — carry it all, and keep it dry.',
+        + 'question the soft bags ask, carry it all, and keep it dry.',
     tags: ['Ortlieb', 'Touring', 'Waterproof'],
     paint: 'Forest',
     env: 'lake',
@@ -278,7 +278,7 @@ const out = LOADOUTS.map((spec) => {
      * The slot is checked as hard as the product is.
      *
      * A mistyped slot, or the same slot twice, used to survive into the output
-     * and get counted in `stats.bags` — and a duplicate is the bad one: the
+     * and get counted in `stats.bags`, and a duplicate is the bad one: the
      * bike can only equip one bag per mount, so the card advertised ten bags
      * and mounted nine, which is the precise failure this file exists to make
      * impossible.
@@ -292,7 +292,7 @@ const out = LOADOUTS.map((spec) => {
 
     /*
      * And the capacity. `Number(x) || 0` turns undefined, "" and NaN into zero
-     * — so a product whose litres never got measured would quietly subtract
+     *, so a product whose litres never got measured would quietly subtract
      * itself from a total the card then presents as fact. A loadout that
      * cannot state its own capacity is a loadout that does not ship.
      */
@@ -347,7 +347,7 @@ function packOf(spec) {
 }
 
 if (errors.length) {
-  console.error('LOADOUT RESOLUTION FAILED — refusing to write a broken file:');
+  console.error('LOADOUT RESOLUTION FAILED, refusing to write a broken file:');
   for (const e of errors) console.error('  ·', e);
   process.exit(1);
 }
@@ -358,7 +358,7 @@ if (errors.length) {
  * `stats.cda`, `watts`, `addedW` and `grade` are produced by
  * tools/measure-loadouts.mjs, which mounts each rig in a real browser and reads
  * the wind tunnel's GPU measurement back. They are expensive, they are build
- * output, and this script rewrites the file they live in — so without this it
+ * output, and this script rewrites the file they live in, so without this it
  * would silently erase them on every run, including the one inside
  * tools/build-pages.mjs that fires on every deploy.
  *
@@ -382,14 +382,14 @@ try {
     kept++;
   }
   if (kept) console.log(`   carried forward measured aero for ${kept} loadout${kept === 1 ? '' : 's'}`);
-  if (stale) console.log(`   DROPPED aero for ${stale} changed loadout${stale === 1 ? '' : 's'} — re-run tools/measure-loadouts.mjs`);
+  if (stale) console.log(`   DROPPED aero for ${stale} changed loadout${stale === 1 ? '' : 's'}, re-run tools/measure-loadouts.mjs`);
 } catch {
-  console.log('   (no previous data/loadouts.json — run tools/measure-loadouts.mjs to add aero)');
+  console.log('   (no previous data/loadouts.json, run tools/measure-loadouts.mjs to add aero)');
 }
 
 const unmeasured = out.filter((l) => l.stats.watts == null).map((l) => l.id);
 if (unmeasured.length) {
-  console.log(`   NOT MEASURED: ${unmeasured.join(', ')} — run tools/measure-loadouts.mjs`);
+  console.log(`   NOT MEASURED: ${unmeasured.join(', ')}, run tools/measure-loadouts.mjs`);
 }
 
 // fold the packing list into the rig: v2, exactly what captureRig would write
@@ -401,7 +401,7 @@ for (const l of out) {
   delete l.rigPack; delete l.packStats;
 }
 writeFileSync(join(root, 'data/loadouts.json'), JSON.stringify(out, null, 2) + '\n');
-console.log(`wrote data/loadouts.json — ${out.length} loadouts`);
+console.log(`wrote data/loadouts.json, ${out.length} loadouts`);
 for (const l of out) {
   console.log(`  ${l.name.padEnd(18)} ${String(l.stats.bags).padStart(2)} bags · `
     + `${String(l.stats.litres).padStart(5)} L · ${l.stats.makers} maker${l.stats.makers === 1 ? '' : 's'}`);

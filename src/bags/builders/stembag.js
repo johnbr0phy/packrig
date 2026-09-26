@@ -23,7 +23,7 @@
 //   body      a soft upright cylinder: a superellipse section (round / oval /
 //             D flat INBOARD against the stem / flat back, from the record's
 //             crossSection), a barrel that slumps a little below its middle and
-//             rounds under at the base — no box, no crease, no lid slab
+//             rounds under at the base, no box, no crease, no lid slab
 //   top       drawcord (33 of 38 records): a gathered collar of a second tone,
 //             cinched to a puckered mouth, with a cord round it and a toggle
 //             cord-lock hanging on the outboard front. Flap records (Apidura
@@ -40,7 +40,7 @@
 // ---- PLACEMENT (derived from the bike, Rule 1) ----------------------------------
 //   mouth     at bar-centre height (points.barCenter), front face 1 mm behind
 //             the back of the bar
-//   across    the inboard face frameEdgeR[2] + 16 mm off the centre plane —
+//   across    the inboard face frameEdgeR[2] + 16 mm off the centre plane,
 //             clear of the headset cups (frameEdgeR[2] + 2.5), and of the top
 //             tube bag's nose, which sits between the two stem bags
 //   straps    stem loop on points.steererTop → barCenter, head loop on
@@ -377,7 +377,7 @@ export function buildStembag(p, brand, main, accent, ctx, side = 1) {
   } else if (pkText) {
     pockets = /external|outer|mesh pocket/i.test(pkText) ? ['out', 'front'] : [];
   } else {
-    // silent record: the class as the owner describes it — but not on a
+    // silent record: the class as the owner describes it, but not on a
     // flat slab or a flap/roll-top pack, which are other constructions
     pockets = !isFlap && !isRoll && geom.form !== 'slab' ? ['out', 'front'] : [];
   }

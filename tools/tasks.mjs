@@ -60,11 +60,21 @@ for (const [name, flow] of Object.entries(FLOWS)) {
       page: p, device, sheet: SHEET,
       async tap(sel, text, note) {
         const h = await find(sel, text);
-        const off = await h.evaluate((n) => { const r = n.getBoundingClientRect(); return r.bottom > innerHeight || r.top < 0 || r.right > innerWidth || r.left < 0; });
-        if (off) { hes.push(`scroll to find "${text || sel}"`); await h.evaluate((n) => n.scrollIntoView({ block: 'center' })); await new Promise((r) => setTimeout(r, 300)); }
+        // a person scrolls the list until the control is in view: if that
+        // took a scroll, it is a hesitation (they had to look for it)
+        const moved = await h.evaluate((n) => { const a = n.getBoundingClientRect().top; n.scrollIntoView({ block: 'nearest' }); return Math.abs(n.getBoundingClientRect().top - a) > 4; });
+        if (moved) { hes.push(`scroll to find "${text || sel}"`); await new Promise((r) => setTimeout(r, 300)); }
         // a finger lands on the middle of the control; if something else is on top, it hits that
-        const hit = await h.evaluate((n) => { const r = n.getBoundingClientRect(); const x = r.left + r.width / 2, y = r.top + r.height / 2; const top = document.elementFromPoint(x, y); return !top || n === top || n.contains(top); });
-        if (!hit) hes.push(`"${text || sel}" was covered by something else`);
+        // a person waits for a sheet to finish arriving: give it 2.5 s to be on top
+        let hit = false;
+        for (let i = 0; i < 25 && !hit; i++) {
+          hit = await h.evaluate((n) => { const r = n.getBoundingClientRect(); const x = r.left + r.width / 2, y = r.top + r.height / 2; const top = document.elementFromPoint(x, y); return !top || n === top || n.contains(top); });
+          if (!hit) await new Promise((r) => setTimeout(r, 100));
+        }
+        if (!hit) {
+          const by = await h.evaluate((n) => { const r = n.getBoundingClientRect(); const t = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2); return t ? `${t.tagName.toLowerCase()}.${String(t.className).split(' ')[0]}` : 'nothing'; });
+          hes.push(`"${text || sel}" was covered by ${by}`);
+        }
         await h.click();
         taps++;
         steps.push(`${taps}. ${note || text || sel}`);

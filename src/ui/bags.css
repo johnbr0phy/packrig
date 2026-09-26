@@ -13,10 +13,7 @@
 .cat-facets .chip svg { margin-right: -2px; opacity: 0.7; }
 .cat-sort { margin-left: auto; }
 .cat-count { display: flex; align-items: center; justify-content: space-between; min-height: 36px; font-size: var(--fs-caption); color: var(--ink-3); }
-.cat-pop {
-  position: absolute; z-index: 5; top: calc(100% + 4px); left: 0;
-  min-width: 220px; max-height: 320px; overflow-y: auto; padding: var(--s-1);
-}
+.cat-pop { max-height: 280px; overflow-y: auto; padding: var(--s-1); }
 .cat-opt { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); width: 100%; min-height: var(--target); padding: 0 var(--s-3); border-radius: var(--r-chip); font-size: var(--fs-body); text-align: left; }
 .cat-opt:hover { background: var(--fill-2); }
 .cat-opt.on { background: var(--fill-3); }
@@ -85,3 +82,15 @@
 .bs-spec-v.is-warn { color: var(--warn); }
 .bs-feats { display: flex; flex-direction: column; gap: var(--s-1); font-size: var(--fs-body); color: var(--ink-2); padding-left: var(--s-4); list-style: disc; }
 .bs-nolink { font-size: var(--fs-caption); color: var(--ink-3); text-align: center; }
+.cat-search-chip { display: none; }
+@media (max-width: 560px), (pointer: coarse) and (max-height: 480px) {
+  .cat { gap: var(--s-2); }
+  .cat-search { display: none; }
+  .cat-search.is-open { display: flex; }
+  .cat-search-chip { display: inline-flex; }
+  .cat-kinds, .cat-facets { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--s-4)); padding: 2px var(--s-4); }
+  .cat-kinds::-webkit-scrollbar, .cat-facets::-webkit-scrollbar { display: none; }
+  .cat-kinds .chip, .cat-facets .chip { flex: none; }
+  .cat-facets { position: static; }
+  .cat-count { min-height: 24px; }
+}

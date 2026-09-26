@@ -2,14 +2,14 @@
  * A portrait for every bag that has no photograph.
  *
  *
- * 201 of 702 products ship no image — small makers, discontinued models, and a
+ * 201 of 702 products ship no image, small makers, discontinued models, and a
  * long tail nobody has photographed. Everywhere the app shows a bag it has had
  * to show a coloured plate instead, which is the one place a configurator
  * cannot afford to shrug: a catalogue of blank rectangles is not a catalogue.
  *
  * We already own a picture of every one of them. Each product has a measured
  * record and a builder that draws it, so this renders the bag from the app
- * itself — mounted on the bike it belongs on, in the app's own lighting — and
+ * itself, mounted on the bike it belongs on, in the app's own lighting, and
  * crops to it. Not a photograph, and not pretending to be one: a render of the
  * model, which is what the rest of the screen is showing anyway.
  *
@@ -34,7 +34,7 @@ const CHROME = (await import('./lib/chrome.mjs')).CHROME;
 /*
  * `?shot=1` is not optional. It sets `preserveDrawingBuffer` on the renderer,
  * and without it a screenshot of the WebGL canvas returns whatever frame the
- * compositor happened to keep — which is why every portrait came out framed on
+ * compositor happened to keep, which is why every portrait came out framed on
  * the whole bicycle no matter where the camera actually was. The camera was
  * correct at capture time; the pixels were stale. MOBILE.md has this trap
  * written down, and it has now cost two sessions.
@@ -76,7 +76,7 @@ const page = await browser.newPage();
 /*
  * Deliberately deviceScaleFactor 1. At 2 the portraits came out 1200x800 and
  * ~78KB each; 201 of those is 15MB, on a deploy that is currently 4.4MB in
- * total. These are shown at 432x288 at the very largest — the bag sheet hero —
+ * total. These are shown at 432x288 at the very largest, the bag sheet hero,
  * and at 48px in the rig panel, so a 600x400 render is already generous.
  */
 await page.setViewport({ width: 900, height: 600, deviceScaleFactor: 1 });
@@ -129,7 +129,7 @@ for (const j of todo) {
     const c = bb.getCenter(new THREE.Vector3());
     const r = Math.max(0.06, bb.getBoundingSphere(new THREE.Sphere()).radius);
     const cam = app.camera, ctr = app.controls;
-    // The app is still driving this camera — auto-rotate, damping, and the
+    // The app is still driving this camera, auto-rotate, damping, and the
     // sheet's view offset all fight a one-shot position. Turn them off, clear
     // the offset, then place it; otherwise every portrait comes out as the same
     // wide shot of the whole bicycle.

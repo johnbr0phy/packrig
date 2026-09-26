@@ -1,4 +1,4 @@
-# Slot briefs — September run
+# Slot briefs, September run
 
 Read `src/bags/BUILDER-BRIEF.md` first (all of it, including §9). This file
 adds, per slot, what the owner said the bag should look like, what he said is
@@ -18,13 +18,13 @@ traced outline disagree, **his words win** and you say so in your header.
    dimensions), `geomOf(p)` (form, crossSection, shoulder, taperRatio) and
    `stiffnessOf(p)`, falling back to narrow `vr.range()` only where the record is
    silent. Variation from the data and `variantOf()`, never `Math.random()`.
-4. **Hardware.** Straps from `src/bags/straps.js` only — thin, flat, visibly
+4. **Hardware.** Straps from `src/bags/straps.js` only, thin, flat, visibly
    wrapping what they hold. Zips where the record has them (`zipperRun` in
    features.js). Pockets that change the outline. Flag every non-body mesh
    `userData.noCollide = true` (the packing layer measures the body).
 5. **Clearance.** `node tools/bagshot-q.mjs --slot <slot> --no-shots` →
    zero CLASH, zero dropped; touches what it mounts to; ≥15 mm to either tyre;
-   body within ~10% of spec on each axis (straps excluded — bagshot now prints
+   body within ~10% of spec on each axis (straps excluded, bagshot now prints
    the body box and the bag's own-axis size).
 6. **Look.** Render the same seven again into `shots/slots/<slot>/after/`,
    build `after.png`, rescore into `shots/sil/after-<slot>`, and LOOK at the
@@ -35,29 +35,29 @@ traced outline disagree, **his words win** and you say so in your header.
 
 Rules of the road: edit ONLY your builder file(s). You may add helpers inside
 your file. Do not change `straps.js`, `hardware.js`, `features.js`,
-`materials.js`, `deform.js`, `identity.js`, `resolve.js`, `system.js` — if one
+`materials.js`, `deform.js`, `identity.js`, `resolve.js`, `system.js`, if one
 is wrong, say so in your report. Do **not** `git commit` (the lead commits).
-Renders go through the lock; if you see "waiting — pid N", wait.
+Renders go through the lock; if you see "waiting, pid N", wait.
 
 ## Per slot
 
-### barroll (`barroll.js`) — and `barpocket` via `barbag.js`
+### barroll (`barroll.js`), and `barpocket` via `barbag.js`
 Owner: "A bar roll is a cylinder under the bar, about bar width, with roll
 closures at both ends and spacers behind it, clear of the tyre and the cables,
 and harness systems carry it in a cradle." Wrong today: "Bar rolls end in domed
 caps that make them look like kegs or pumpkins, when a real dry bag ends in a
 flattened roll of fabric cinched by straps." The ends are a flat pinched lip
-rolled 2–3 times, standing up across the end, with a buckle strap over it — not
+rolled 2–3 times, standing up across the end, with a buckle strap over it, not
 a dome, not a disc. Spacers (foam blocks or a stiff back panel) sit between
 the roll and the bar/head tube. Harness systems (Revelate Sweetroll, Apidura
 Expedition Handlebar with harness, Salsa, Ortlieb harness) show the cradle.
 Accessory pocket (`barpocket`): "sits on the front of the roll like a lozenge,
-never jutting forward like a shelf" — a slim rounded pouch strapped flat to the
+never jutting forward like a shelf", a slim rounded pouch strapped flat to the
 roll's front face, its depth 5–8 cm, following the roll's curve.
 
 ### barbag (`barbag.js`)
 Handlebar bags that are NOT rolls: Swift Zeitgeist/Kestrel, Fairweather, Rapha,
-Ortlieb Handlebar-Bag, Wizard Works Lil' Pickle — drum/box bags on the bar,
+Ortlieb Handlebar-Bag, Wizard Works Lil' Pickle, drum/box bags on the bar,
 often with a lid or drawcord. Avoid the known "lid jutting forward as a shelf"
 (BUILDER-BRIEF Rule 2 table). Bar width is the constraint; clear the stem bags.
 

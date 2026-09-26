@@ -4,8 +4,8 @@
  * The existing suites checked that no two PANELS overlapped and that the
  * document did not scroll sideways. Both passed while, inside the panel, FRAME
  * and BIDONS printed straight through "BAGS ON BIKE", six swatches ran off the
- * right edge, and Save rig — the one control the plan says must always be
- * visible — hung off the end of the top bar. Every one of those failures is
+ * right edge, and Save rig, the one control the plan says must always be
+ * visible, hung off the end of the top bar. Every one of those failures is
  * INSIDE a container whose own rect was fine.
  *
  * So this checks the inside:
@@ -18,7 +18,7 @@
  */
 import puppeteer from 'puppeteer-core';
 
-const [, , URL, W = '390', H = '700'] = process.argv;
+const [, URL, W = '390', H = '700'] = process.argv;
 const b = await puppeteer.launch({
   executablePath: (await import('./lib/chrome.mjs')).CHROME,
   headless: true, args: ['--hide-scrollbars', '--enable-unsafe-swiftshader'],

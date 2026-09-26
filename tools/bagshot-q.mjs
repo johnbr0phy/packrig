@@ -4,7 +4,7 @@
  * Why this exists: every bagshot run launches a headless Chrome that peaks
  * around 0.76 GB. This machine has 8 GB total and the user's own browser
  * routinely holds ~3 GB of it. Three geometry agents each calling bagshot
- * directly is enough to push the box into swap and kill the session — which is
+ * directly is enough to push the box into swap and kill the session, which is
  * exactly what happened on 7 Aug.
  *
  * Agents cannot be trusted to coordinate with each other, so this does not ask
@@ -73,7 +73,7 @@ async function acquire() {
     }
     if (!announced) {
       const age = Math.round((Date.now() - owner.at) / 1000);
-      console.error(`[bagshot-q] waiting — pid ${owner.pid} has been rendering ${age}s (${(owner.argv || []).join(' ')})`);
+      console.error(`[bagshot-q] waiting, pid ${owner.pid} has been rendering ${age}s (${(owner.argv || []).join(' ')})`);
       announced = true;
     }
     if (Date.now() - started > TIMEOUT_MS) {
@@ -92,12 +92,12 @@ for (const sig of ['SIGINT', 'SIGTERM', 'SIGHUP']) {
 }
 process.on('exit', release);
 
-// Hold the lock while waiting for memory too — starting a second Chrome the
+// Hold the lock while waiting for memory too, starting a second Chrome the
 // moment the first one frees its pages is how you thrash.
 for (let i = 0; i < 45; i++) {
   const mb = freeMB();
   if (mb >= MIN_FREE_MB) break;
-  if (i === 0) console.error(`[bagshot-q] only ${mb} MB free, need ${MIN_FREE_MB} — waiting (close browser tabs to speed this up)`);
+  if (i === 0) console.error(`[bagshot-q] only ${mb} MB free, need ${MIN_FREE_MB}, waiting (close browser tabs to speed this up)`);
   await sleep(4000);
 }
 

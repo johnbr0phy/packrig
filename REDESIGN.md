@@ -1,4 +1,4 @@
-# Packrig — the menu redesign
+# Packrig, the menu redesign
 
 **The single plan of record.** If another document disagrees with this one, this
 one wins. `MENUS.md` was folded in here and deleted; `DESIGN-SYSTEM.md` §6, §10
@@ -7,7 +7,7 @@ and §12 moved here; `NEXT-RUN.md` §5 Track C now points here.
 **Status: plan, not built.**
 
 What stays elsewhere, and why: `DESIGN-SYSTEM.md` §2–5, §7–9 and §11 keep the
-*values* — type ramp, colour, the scrim well, spacing, motion curves, icons,
+*values*, type ramp, colour, the scrim well, spacing, motion curves, icons,
 imagery rules, accessibility, and the token block. Those are a stylesheet, and
 copying a stylesheet into a plan is how the two start disagreeing. Everything
 about **what to build and in what order** is here. `src/MOBILE.md` keeps the
@@ -23,9 +23,9 @@ device contract (breakpoints, safe areas, the puppeteer assertions);
    making an account is simple.** §6
 3. **Getting your own rig back is easy.** §7
 4. **The gallery is worth scrolling.** §8
-5. **It feels extremely functional and very premium — because it says less.** §1.1
+5. **It feels extremely functional and very premium, because it says less.** §1.1
 
-### 1.1 Voice — functional, premium, quiet
+### 1.1 Voice, functional, premium, quiet
 
 Premium tools are terse. This one explains itself constantly: nearly every panel
 carries a subtitle telling you what the title already said, and the empty states
@@ -47,28 +47,28 @@ The cuts, concretely:
 
 | Today | Becomes |
 |---|---|
-| `Bikepacking configurator`, under the wordmark | — (§14.3) |
+| `Bikepacking configurator`, under the wordmark |, (§14.3) |
 | `Drag to orbit · scroll to zoom · add a bag from the panel` | first-session coach, gone on first drag (§14.5) |
 | `My rigs` + `ON YOUR ACCOUNT` | `My rigs` |
 | `See what other people are riding` + `Browse the gallery` | `Gallery` |
-| `Rigs people have published. Load any one and make it yours.` | — (the grid says it) |
-| `Anyone can browse this` | — |
+| `Rigs people have published. Load any one and make it yours.` |, (the grid says it) |
+| `Anyone can browse this` |, |
 | `No saved rigs yet. Build a bike, name it, and hit save.` | `No saved rigs yet` |
-| `Nothing published yet. Save a bike, then hit Publish — yours would be the first.` | `Nothing published yet` |
+| `Nothing published yet. Save a bike, then hit Publish, yours would be the first.` | `Nothing published yet` |
 | `Nothing mounted yet.` + `Add a bag to start building your rig.` | `Start with a seat pack` (§4) |
-| `Where on the bike does this bag go?` | — (§9) |
-| `FRAME` · `BIDONS` · `SCENE` | — (§10) |
-| `Name this build — "Highland overnighter"` | `Name this rig` |
-| `Frame · bidons · scene` (Appearance sub) | — |
+| `Where on the bike does this bag go?` |, (§9) |
+| `FRAME` · `BIDONS` · `SCENE` |, (§10) |
+| `Name this build, "Highland overnighter"` | `Name this rig` |
+| `Frame · bidons · scene` (Appearance sub) |, |
 
-**What stays, and why — the rule is cut what describes, keep what persuades or
+**What stays, and why, the rule is cut what describes, keep what persuades or
 warns:**
 
-- The *why* before a signup ask — "so your rigs follow you between devices" (§6).
+- The *why* before a signup ask, "so your rigs follow you between devices" (§6).
   This is the one place a sentence earns its space.
 - Error sentences. The `HUMAN` maps in `auth.js` and `rigstore.js` are correct: a
   failure is exactly when someone needs a full sentence.
-- `Too long for this frame — 42 cm needs 38 cm`. That is data, not chatter.
+- `Too long for this frame, 42 cm needs 38 cm`. That is data, not chatter.
 - The wind tunnel's explanations. They defend a number people will not otherwise
   believe.
 
@@ -108,7 +108,7 @@ Mobile rules get written twice. The save button lives in one world and the bike
 lives in another.
 
 **Phase 1 is therefore plumbing, not design: everything goes through
-`openSheet()`.** The success criterion is *no content redesign* — the bodies of
+`openSheet()`.** The success criterion is *no content redesign*, the bodies of
 the pickers move across untouched, and only the shell around them changes. That
 shell change is not cosmetic: it deletes `.picker-veil` (§14.1), so every
 surface stops dimming the 3D scene. Do phase 1 first or every later phase gets
@@ -123,7 +123,7 @@ never a modal, never a veil over the 3D scene.
 |---|---|
 | `clamp(420px, 34vw, 560px)` → 480 @ 1440 | Bag sheet (§5), rig sheet, account sheet |
 | `clamp(560px, 50vw, 760px)` → 720 @ 1440 | Catalogue (§9) |
-| 56 | Rail — the rig panel collapsed while a sheet is open |
+| 56 | Rail, the rig panel collapsed while a sheet is open |
 
 `right: 24, top: 24, bottom: 24`, E3 + scrim well, radius 20, `overflow: hidden`,
 flex column. Under 900px every one of them becomes a bottom sheet with detents
@@ -145,10 +145,10 @@ targetCentre = centre of freeArea, in NDC
 Animate the orbit target's screen-space anchor so the bike's projected bounding
 box centres on `targetCentre`; dolly out only if the bbox would exceed
 `freeArea − 40px`. `--d-camera` / `--ease-camera`, starting on the same frame as
-the sheet. **Never rotate on a sheet open** — only pan and dolly. Rotation while
+the sheet. **Never rotate on a sheet open**, only pan and dolly. Rotation while
 reading a spec sheet is nauseating.
 
-On close, reverse — but if the user has orbited manually since opening, respect
+On close, reverse, but if the user has orbited manually since opening, respect
 their camera and only undo the pan offset.
 
 ---
@@ -179,10 +179,10 @@ permanently whether or not anything else is open.
 - Width **280** (was 320). Thumbnail 48×48, `object-fit: cover`.
 - **The whole row is one hit target and opens the bag sheet** (§5). Remove, swap
   and buy live in the sheet, not as 22px hover buttons. `min-height: 64px`.
-- Capacity bar: track `--ink-4`, fill `--ink-1` at 0.85. Not Ember — a total is
+- Capacity bar: track `--ink-4`, fill `--ink-1` at 0.85. Not Ember, a total is
   not an action.
 - A bag that will not fit: full opacity, a left 2px `--bad` edge, and a second
-  line `Too long for this frame — 42 cm needs 38 cm` in `--t-micro` / `--warn`.
+  line `Too long for this frame, 42 cm needs 38 cm` in `--t-micro` / `--warn`.
   Do not grey it out; greyed text is the least legible thing over a bright scene.
 - Overflow `⋯` in the header holds `Clear bike`, `Share kit`, `Copy link`.
   Destructive actions do not live at the top level.
@@ -194,12 +194,12 @@ permanently whether or not anything else is open.
 
 ---
 
-## 5. The bag sheet — one surface, two states
+## 5. The bag sheet, one surface, two states
 
 **Tapping a bag opens it. From the rig panel, or on the bike itself.**
 
 Today, tapping a bag on the model selects it, rings it and zooms the camera
-(`focus.js` → `ui.setSelected()`) — and then nothing. That dead end is the
+(`focus.js` → `ui.setSelected()`), and then nothing. That dead end is the
 cheapest high-value thing in this plan to fix, because everything behind it
 already works.
 
@@ -235,7 +235,7 @@ already works.
  │  FEATURES                                          │
  │  Reflective side panels                            │  --t-body ink-2, 22px
  ├────────────────────────────────────────────────────┤  hairline + 24px fade
- │              [ footer — §5.1 ]                     │  sticky, never scrolls
+ │              [ footer \u2014 §5.1 ]                     │  sticky, never scrolls
  └────────────────────────────────────────────────────┘
 ```
 
@@ -252,7 +252,7 @@ If a product has no `dims_verified`, still show the `Dimensions` row with an
 
 ### 5.1 The footers
 
-Catalogue state — two buttons, 76h:
+Catalogue state, two buttons, 76h:
 
 ```
  ┌─────────────────────┐ ┌──────────────────────┐
@@ -260,7 +260,7 @@ Catalogue state — two buttons, 76h:
  └─────────────────────┘ └──────────────────────┘   Ember pill | --fill-2 r10
 ```
 
-Fitted state — **three actions, two rows, 132h**:
+Fitted state, **three actions, two rows, 132h**:
 
 ```
  ┌────────────────────────┐ ┌─────────────────┐
@@ -272,17 +272,17 @@ Fitted state — **three actions, two rows, 132h**:
 ```
 
 - **Replace it** is the Ember, because it is the action that keeps you in the
-  app. It opens the catalogue pre-filtered to that mount slot —
+  app. It opens the catalogue pre-filtered to that mount slot,
   `openBrandPicker(uiSlot)` already does precisely this and only needs to be
   reachable from here. Coming back swaps in place, keeping the colourway index
   where the new product has one.
 - **Remove it** does not get an Ember. Destructive actions do not get the loud
-  fill. `app.bags.remove(uiSlot)` exists; add **undo** — removal is one tap with
-  no confirm, and a `Removed — Undo` line in the rig panel for ~6s costs nothing.
+  fill. `app.bags.remove(uiSlot)` exists; add **undo**, removal is one tap with
+  no confirm, and a `Removed, Undo` line in the rig panel for ~6s costs nothing.
 - **Buy** goes last, on its own row, because it leaves the app. Href from
   `product.src`, `target="_blank" rel="noopener noreferrer"`. When `src` is
   missing the button is replaced by a `--t-micro` ink-3 line "No maker link on
-  file" — **never a dead button**.
+  file", **never a dead button**.
 - `Add to bike` and `Replace it` are the only Ember fills in the sheet.
 - The footer is sticky and never scrolls away. Above it, a 24px
   `linear-gradient(transparent, var(--e3-bg))` so content dissolves rather than
@@ -292,7 +292,7 @@ Fitted state — **three actions, two rows, 132h**:
 
 **The model layer is already finished.** `bags.setColorway(uiSlot, i)`,
 `BagSystem.colorwayCount(product)` and `colorwayFor(brand, product, i)` all
-exist, and `captureRig()` already persists `cw` per bag — so a colourway
+exist, and `captureRig()` already persists `cw` per bag, so a colourway
 survives save, share link and reload *today*. This is purely a missing control.
 
 Wire the COLOURWAY row to `setColorway`: 28px dots, 10px gap, ring on the active
@@ -300,7 +300,7 @@ one, instant. The data carries `{name, hex}`, so show the name to the right of
 the label.
 
 When a product has one colourway, show the row with the name and no picker
-rather than hiding it — a row that vanishes on some bags and not others reads as
+rather than hiding it, a row that vanishes on some bags and not others reads as
 a bug.
 
 ### 5.3 The bigger image
@@ -315,13 +315,13 @@ Same offscreen target as the gallery thumbnails (§11), so it is one piece of wo
 | State | Scene | UI echo |
 |---|---|---|
 | Hover a bag | Other bags exposure ×0.75, saturation ×0.6 over 140ms. Hovered bag gains a 1.5px screen-space Ember outline at 0.7. Label chip (E1, 28h, `Swift · Zeitgeist 12 L`) 10px above its projected bbox, clamped on screen | Rig row `--fill-2` |
-| Selected | Outline solid, 1.5px Ember + 1px black inner. Chip persists. **Other bags return to full exposure** — selection is a pin, not a spotlight | Rig row `--fill-3` + 2px Ember left edge; **bag sheet opens** |
+| Selected | Outline solid, 1.5px Ember + 1px black inner. Chip persists. **Other bags return to full exposure**, selection is a pin, not a spotlight | Rig row `--fill-3` + 2px Ember left edge; **bag sheet opens** |
 | Empty mount, add-mode | 24px ring, `--ink-1` at 0.35, pulsing 1.0→1.12 over 1600ms | Rig panel: "Pick a mount point on the bike" |
-| Empty mount, hovered | Ring → 36px, Ember, no pulse, chip `Handlebar · 73 bags` | — |
-| Won't fit here | Ring `--warn` at 0.5, cursor `not-allowed`, chip explains | — |
+| Empty mount, hovered | Ring → 36px, Ember, no pulse, chip `Handlebar · 73 bags` |, |
+| Won't fit here | Ring `--warn` at 0.5, cursor `not-allowed`, chip explains |, |
 
 - Screen-space outline pass (mesh IDs to a mask, then a Sobel edge at 1.5 device
-  px). **Do not** use a scaled duplicate mesh — bag geometry is thin and it
+  px). **Do not** use a scaled duplicate mesh, bag geometry is thin and it
   produces artefacts at the straps.
 - Click empty space or `Esc`: deselect, close sheet, ring fades over `--d-sheet-out`.
 - Cursor: `grab` idle, `grabbing` orbiting, `pointer` over a bag or mount ring.
@@ -330,7 +330,7 @@ Same offscreen target as the gallery thumbnails (§11), so it is one piece of wo
 
 ---
 
-## 6. Goal 2 — an always-visible save CTA, and easy accounts
+## 6. Goal 2, an always-visible save CTA, and easy accounts
 
 Saving is buried behind `☰ My rigs` in the bottom bar. Nothing on screen says
 the bike is unsaved, or savable.
@@ -343,26 +343,26 @@ A persistent control in the dock:
 
 | State | Shows | Does |
 |---|---|---|
-| Empty bike | nothing | — |
+| Empty bike | nothing |, |
 | Bags on, signed out | **Save this rig** | Saves to this browser *immediately*, then offers an account to keep it |
 | Bags on, signed in | **Save** | Saves to the account |
 | Saved, unchanged | `Saved ✓` | Quiet; flips back to **Save** the moment anything changes |
 
-The last row needs dirty-tracking against the last saved rig — compare the
+The last row needs dirty-tracking against the last saved rig, compare the
 `captureRig()` output, which is already a plain serialisable object.
 
 **Account creation** simplifies in the same pass: Google as one large button,
 email and password demoted behind "or use email". The copy answers *why* before
-asking for anything — "so your rigs follow you between devices". The `HUMAN`
+asking for anything, "so your rigs follow you between devices". The `HUMAN`
 error mapping in `auth.js` is good and stays.
 
 ---
 
-## 7. Goal 3 — getting your rig back
+## 7. Goal 3, getting your rig back
 
 Today: a text list. Name, bag count, litres, date.
 
-- **Thumbnails on every card** — same capture as the gallery (§11), taken at
+- **Thumbnails on every card**, same capture as the gallery (§11), taken at
   save, not only at publish.
 - **Current-rig marker.** If what is on screen is a saved rig, say so on that
   card, and show whether it has drifted since.
@@ -371,7 +371,7 @@ Today: a text list. Name, bag count, litres, date.
 
 ---
 
-## 8. Goal 4 — a gallery worth scrolling
+## 8. Goal 4, a gallery worth scrolling
 
 Today: text cards, and the query silently returns nothing because its composite
 index does not exist (§12).
@@ -389,7 +389,7 @@ New Firestore collection, `profiles/{uid}`:
 ```
 display_name  string, ≤ 40
 avatar_url    string, Cloud Storage URL
-bio           string, ≤ 280 — words about their bikes
+bio           string, ≤ 280, words about their bikes
 links         [{label ≤ 24, url}], max 3
 club          string, ≤ 40, freeform
 ```
@@ -398,7 +398,7 @@ Rules: **anyone reads, only the owner writes.** Same shape as the rig rules in
 `FIREBASE.md`.
 
 **Denormalise for the gallery.** At publish time, copy `display_name`,
-`avatar_url` and `club` onto the rig document — otherwise every gallery page
+`avatar_url` and `club` onto the rig document, otherwise every gallery page
 costs 12 extra profile reads. The copies go stale when someone edits their
 profile; accept that, and refresh them on their next publish.
 
@@ -406,7 +406,7 @@ profile; accept that, and refresh them on their next publish.
 
 ---
 
-## 9. Goal 1 — the catalogue
+## 9. Goal 1, the catalogue
 
 **The information architecture, in one sentence: the mount point is the primary
 facet, and it is free, because you always add a bag *to somewhere*.** That single
@@ -423,7 +423,7 @@ answer yet.
 - Click `+ Add a bag` → the bike enters mount-picking mode (§5.4): empty mounts
   get pulsing rings, **no list appears**. Pick one on the bike.
 - Click a fitted bag, then `Replace it` (§5.1) → pre-filtered to that slot.
-- **Starter kits** — three or four named loadouts (overnighter, race setup, full
+- **Starter kits**, three or four named loadouts (overnighter, race setup, full
   tour), one tap from the empty state. `Surprise me` proves the machinery works;
   this is the same thing with intent instead of randomness.
 
@@ -453,26 +453,26 @@ data supports.
 |---|---|---|
 | Brand | multi-select popover (E4), live counts, A–Z | derived from the filtered set; search box once > 12 brands |
 | Capacity | single-select range chips | `<1 L` · `1–3` · `3–8` · `8–15` · `15 L+`, rebanded per slot (a stem bag gets `<0.5 / 0.5–1 / 1–2 / 2 L+`) |
-| Fabric | multi-select | `X-Pac` · `Cordura` · `Welded TPU` · `Waxed canvas` — already computed by `FABRIC_KEY` in `catalog.js` |
+| Fabric | multi-select | `X-Pac` · `Cordura` · `Welded TPU` · `Waxed canvas`, already computed by `FABRIC_KEY` in `catalog.js` |
 | Fits my frame | toggle, **on by default** | off reveals non-fitting bags, greyed with the reason |
 
 Every facet shows a live count; every applied one becomes a removable pill;
 `Clear all` is present whenever ≥1 is on; facet state persists per slot for the
 session.
 
-**Sort.** `Fit` (default — best dimensional match, then capacity descending),
+**Sort.** `Fit` (default, best dimensional match, then capacity descending),
 `Capacity ↑`, `Capacity ↓`, `Brand A–Z`.
 
 **Search.** Matches `brand.name + product.line + product.name + size`, debounce
 120ms. The empty state names what to relax: "No X-Pac handlebar bags under 3 L.
-**Clear fabric** or **widen capacity**" — both are buttons.
+**Clear fabric** or **widen capacity**", both are buttons.
 
 **Brand index**, for people who shop by maker: a `Slot | Brand` segmented control
-swaps the body to a grid of 50 brand cards (164×108 — name, origin, five 9px
+swaps the body to a grid of 50 brand cards (164×108, name, origin, five 9px
 palette swatches, `18 bags`). Selecting one applies it as a Brand facet and
 returns to the slot view. **The two routes converge; they are not separate trees.**
 
-**Performance** — 103 cards is not free:
+**Performance**, 103 cards is not free:
 
 - `loading="lazy" decoding="async"` on every thumbnail.
 - `content-visibility: auto; contain-intrinsic-size: 200px 236px;` on grid items.
@@ -501,7 +501,7 @@ returns to the slot view. **The two routes converge; they are not separate trees
   circles, scene = 36×26 rounded rects showing a real HDRI crop. Meaning comes
   from `aria-label` and a 400ms-delay tooltip.
 - Selected swatch: `box-shadow: 0 0 0 2px rgba(0,0,0,.6), 0 0 0 4px var(--ink-1)`.
-  A white ring, not Ember — appearance is not the app's primary action.
+  A white ring, not Ember, appearance is not the app's primary action.
 - **Camera tools move from the top-right into the dock.** One floating cluster
   beats two; the top-right corner then belongs entirely to the scene.
 - `Surprise me` stays quiet `--fill-2`. It is a novelty and does not get the
@@ -511,13 +511,13 @@ returns to the slot view. **The two routes converge; they are not separate trees
   `Appearance` │ camera tools, where `Appearance` is a quiet pill carrying a
   3-swatch overlapped stack (16px circles, −5px overlap) that opens an E4
   popover, 280px, anchored above it. Crossfade on `--d-sheet`, **measuring the
-  free strip — never guessing from a breakpoint alone.**
+  free strip, never guessing from a breakpoint alone.**
 - The **save CTA** (§6) lives here too, and is the collision risk on phone: it
   must coexist with the bottom bar, the wind-tunnel HUD and the home indicator.
 
 ### 10.1 Under 900px
 
-Per `src/MOBILE.md`, which stays the device contract — breakpoints 560 / 900,
+Per `src/MOBILE.md`, which stays the device contract, breakpoints 560 / 900,
 `(pointer: coarse)` treated as touch regardless of width.
 
 Every sheet becomes a bottom sheet with detents:
@@ -529,14 +529,14 @@ Every sheet becomes a bottom sheet with detents:
 ```
 
 - The camera lifts the bike into the region above whichever detent is active.
-- At `full`, the hero photo **scrolls with the content** — a pinned hero on a
+- At `full`, the hero photo **scrolls with the content**, a pinned hero on a
   short viewport leaves ~200px for the spec table.
 - **A 132px fitted footer (§5.1) is the entire peek** at 393×852. At peek, show
   Replace and Remove only; Buy appears at half and full.
 - Rig panel becomes a bottom-left FAB (56×56, E2) when a sheet is open.
 - **One sheet open at a time**, enforced by `openSheet()` now that everything
   routes through it.
-- 44px minimum targets. The colourway dots (28px — they need a 44px hit area
+- 44px minimum targets. The colourway dots (28px, they need a 44px hit area
   around them), the gallery filter chips and the rig card actions are where this
   will be tempting to shave.
 - `env(safe-area-inset-*)` on anything touching an edge.
@@ -545,13 +545,13 @@ Every sheet becomes a bottom sheet with detents:
 
 ---
 
-## 11. Images — capture, storage, and the obligations that come with them
+## 11. Images, capture, storage, and the obligations that come with them
 
 **Capture.** Render the rig offscreen, `canvas.toBlob('image/jpeg', .7)`, upload.
 
 > **Trap, already paid for once:** canvas readback returns **all black** unless
 > `preserveDrawingBuffer` is set, and `main.js:31` only sets it under `?shot=1`.
-> Do not flip that flag on globally — it costs frame time everywhere. Render into
+> Do not flip that flag on globally, it costs frame time everywhere. Render into
 > a dedicated target instead. The same target serves the §5.3 hero fallback.
 
 **Storage layout and rules** (new `storage.rules`, alongside the Firestore ones):
@@ -562,7 +562,7 @@ avatars/{uid}.jpg               read: public   write: own uid, ≤ 200KB, image/
 ```
 
 **Avatar upload** resizes to 256² through a canvas before sending. Re-encoding
-through a canvas drops EXIF as a side effect — which is how the GPS coordinates
+through a canvas drops EXIF as a side effect, which is how the GPS coordinates
 in a phone photo stop being a problem. Do not skip the resize and upload the
 original.
 
@@ -574,13 +574,13 @@ user-uploaded images to a public page with *no* path at all is worse.
 
 ---
 
-## 12. Prerequisites — console work, before any code
+## 12. Prerequisites, console work, before any code
 
 1. **The gallery composite index.** `rigs`: `published` Ascending, `published_at`
    Descending. Outstanding since accounts shipped; the gallery is empty without
    it. `FIREBASE.md` step 4.
 2. **Enable Cloud Storage**, add `storageBucket` to `config.js`, deploy
-   `storage.rules`. Public-by-design, same reasoning as the web API key — but a
+   `storage.rules`. Public-by-design, same reasoning as the web API key, but a
    bucket with open read is worth a second look before it goes live.
 
 ---
@@ -589,15 +589,15 @@ user-uploaded images to a public page with *no* path at all is worse.
 
 | # | Phase | Depends on | Delivers |
 |---|---|---|---|
-| 0 | Console prereqs (§12) | — | Gallery can return rows; bucket exists |
-| 1 | **Sheet unification** — everything onto `openSheet()`; rail + dock reposition + camera reframe on one tick | — | No visual change. Delete `openOverlay()` and the `rigsui.js` veil |
+| 0 | Console prereqs (§12) |, | Gallery can return rows; bucket exists |
+| 1 | **Sheet unification**, everything onto `openSheet()`; rail + dock reposition + camera reframe on one tick |, | No visual change. Delete `openOverlay()` and the `rigsui.js` veil |
 | 2 | **Bag sheet, fitted state** (§5) + rig panel rework (§4) | 1 | Tap a bag → replace, remove, recolour, buy |
 | 3 | Save CTA, local-first save, simplified auth sheet (§6) | 1 | Goal 2 |
 | 4 | Thumbnail capture + upload (§11) | 0, 1 | Unblocks 5 and 7 |
-| 5 | My rigs — thumbnails, dirty state, inline rename (§7) | 4 | Goal 3 |
+| 5 | My rigs, thumbnails, dirty state, inline rename (§7) | 4 | Goal 3 |
 | 6 | Profiles and clubs (§8.1) | 0, 1 | Author identity |
 | 7 | Gallery grid, filters, rig detail sheet (§8) | 4, 6 | Goal 4 |
-| 8 | **Catalogue** — facets, search, brand index, image derivatives (§9) + 3D selection pass (§5.4) | 1, 2 | Goal 1. Largest phase; runs parallel to 3–7 |
+| 8 | **Catalogue**, facets, search, brand index, image derivatives (§9) + 3D selection pass (§5.4) | 1, 2 | Goal 1. Largest phase; runs parallel to 3–7 |
 | 9 | The deletions (§14) | everything | Removes what these replace |
 
 Phase 1 is the only hard gate. Phase 2 is deliberately second: cheapest phase
@@ -609,15 +609,15 @@ sheet body phase 8 then reuses wholesale.
 ## 14. What to delete
 
 Opinionated. Each of these makes the product worse today. Do them last so
-nothing breaks mid-flight — but do all of them.
+nothing breaks mid-flight, but do all of them.
 
-1. **`.picker-veil`** — a full-screen `rgba(5,7,10,.58)` + blur over the 3D
+1. **`.picker-veil`**, a full-screen `rgba(5,7,10,.58)` + blur over the 3D
    scene. The single biggest contradiction in the app. The side sheet replaces
    every use.
-2. **`.top-scrim`** — the 400×190 radial black blob behind the wordmark. It is
+2. **`.top-scrim`**, the 400×190 radial black blob behind the wordmark. It is
    visibly a grey smudge on bright scenes. Use the scrim well at reduced
    strength, or a real E1 chip.
-3. **"BIKEPACKING CONFIGURATOR"** — a tracked-caps subtitle under a tracked-caps
+3. **"BIKEPACKING CONFIGURATOR"**, a tracked-caps subtitle under a tracked-caps
    wordmark, telling the user nothing the screen does not already say.
 4. **The wordmark's `0.34em` tracking** → `0.10em`, weight 700 not 800, 18px.
    Extreme tracking is the loudest dated signal in the current UI.
@@ -629,9 +629,9 @@ nothing breaks mid-flight — but do all of them.
 8. **`Clear bike` at top level** → rig-panel overflow.
 9. **`.bag-act` hover-reveal micro buttons** (22×22, `opacity: 0` until hover).
    Half the hit-target floor and undiscoverable. The row opens the sheet.
-10. **The labelled `.env-chip` photo-card variant** — dead, superseded by
+10. **The labelled `.env-chip` photo-card variant**, dead, superseded by
     `.envs.compact`. Also dead: the `.peak` clip-path mountain hack.
-11. **All emoji/text-glyph icons** — `⟳ ⌂ ⚡ ⧉ ×` → the SVG sprite in
+11. **All emoji/text-glyph icons**, `⟳ ⌂ ⚡ ⧉ ×` → the SVG sprite in
     `DESIGN-SYSTEM.md` §7.
 12. **The duplicate rule blocks at the bottom of `ui.css`.** `.bottom-bar`,
     `.dock`, `.group-label`, `.divider`, `.paint-group` are each declared twice,
@@ -640,14 +640,14 @@ nothing breaks mid-flight — but do all of them.
 13. **`--radius: 16px` as a single global radius** → the ladder in
     `DESIGN-SYSTEM.md` §4.2. One radius for a 480px sheet and a 22px button is
     why the current UI reads soft rather than crisp.
-14. **`.card.est` italic** — italic at 11px is illegible. `--t-micro` in
+14. **`.card.est` italic**, italic at 11px is illegible. `--t-micro` in
     `--warn` with the word `est.`
 
 ---
 
 ## 15. How we know it worked
 
-Assert, do not eyeball — both of these caught real bugs already:
+Assert, do not eyeball, both of these caught real bugs already:
 
 - `document.documentElement.scrollWidth <= clientWidth` at every breakpoint.
 - No two panel bounding rects intersect.
@@ -665,7 +665,7 @@ Then, by hand, on a phone and a desktop:
 2. Tap a bag on the bike. The sheet opens, the bag stays ringed, a bigger photo
    is there, and a different colourway changes the model instantly.
 3. Replace that bag from inside the sheet; remove another; undo the removal.
-4. Signed out, save the rig, close the tab, come back — it is still there.
+4. Signed out, save the rig, close the tab, come back, it is still there.
 5. Create an account after that save; the local rig arrives in it.
 6. Publish; the rig appears in the gallery with a thumbnail, name and club.
 7. Scroll the gallery past 12 cards; more load.

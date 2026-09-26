@@ -1,14 +1,14 @@
 /**
  * The numbers people argue about, split the way the owner's sheet splits them.
  *
- *   gear          everything coming that isn't food or water — packed, bolted
+ *   gear          everything coming that isn't food or water, packed, bolted
  *                 on, and worn (the sheet counts clothes you ride in)
  *     worn        the part of gear that is on the rider
  *   food & water  consumables coming; changes day to day, so kept apart
  *   bags          the bags on the rig, plus the racks and cages they need
  *   bike          the bike itself
  *   all-up        all of the above
- *   on the bike   all-up minus worn — what the wheels actually carry
+ *   on the bike   all-up minus worn, what the wheels actually carry
  *   home          owned and listed, not coming (the sheet's "not packed")
  *
  * Pure: pass in resolved items and bag weights. The 3D view, the list and the
@@ -48,8 +48,8 @@ export function computeTotals(resolved, loadout, { bagsG = 0, bikeG = 0 } = {}) 
 
 /**
  * Balance from point masses in the bike's frame (mm, +x forward, +y up,
- * +z drive side). Front/rear is the static lever split between the axles —
- * what each tyre actually carries — not "how much is in front of the BB".
+ * +z drive side). Front/rear is the static lever split between the axles,
+ * what each tyre actually carries, not "how much is in front of the BB".
  */
 export function computeBalance(masses, { rearAxleX, frontAxleX, groundY = 0 }) {
   let m = 0, x = 0, y = 0, z = 0, left = 0, right = 0;

@@ -1,11 +1,11 @@
 // The wind-tunnel HUD: a glass panel on the right that reports what the
-// measurement engine found. Built against CONTRACT.md — see AeroResult there.
+// measurement engine found. Built against CONTRACT.md, see AeroResult there.
 //
 // index.js pre-computes `grade` and `totalW` and folds them into the
 // `comparison` object passed to update(), so this module only reads them.
 // The one thing it still derives itself is the per-part watts breakdown for
-// the waterfall — index.js has no reason to compute that, only the panel
-// needs it — via model.js's `power()`. `ASSUMPTIONS` is also pulled straight
+// the waterfall, index.js has no reason to compute that, only the panel
+// needs it, via model.js's `power()`. `ASSUMPTIONS` is also pulled straight
 // from model.js since it's a static list nothing else needs to touch.
 import { power, ASSUMPTIONS } from './model.js';
 import { icon } from '../ui/v2/icons.js';
@@ -17,7 +17,7 @@ const el = (tag, cls, html) => {
   return e;
 };
 
-/** Same as el() but sets textContent — use for anything numeric or catalog-derived. */
+/** Same as el() but sets textContent, use for anything numeric or catalog-derived. */
 const elt = (tag, cls, text) => {
   const e = document.createElement(tag);
   if (cls) e.className = cls;
@@ -56,7 +56,7 @@ function tweenText(node, to, fmt) {
 }
 
 /**
- * Sign a number from the number itself — never a hardcoded glyph, which
+ * Sign a number from the number itself, never a hardcoded glyph, which
  * double-signs the moment the value can go negative (a kit that measures as
  * reducing drag, e.g. a lone frame bag near zero). Rounds before deciding the
  * sign so 0 (and -0) always render as a plain "0" / "0.0", never "-0"/"+0",
@@ -71,7 +71,7 @@ function signInfo(v, decimals = 0) {
 
 /**
  * A tweenText formatter for a delta-item: writes the signed number and, as a
- * side effect, flips the item's label to match — every frame, same as the
+ * side effect, flips the item's label to match, every frame, same as the
  * number, so a value crossing zero mid-tween never leaves a stale label
  * ("less power" sitting under a number that already ticked back positive).
  */
@@ -126,11 +126,11 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   root.append(head);
 
   // ---- mobile peek summary --------------------------------------------
-  // Phone bottom sheet opens collapsed to just this row — the two things
+  // Phone bottom sheet opens collapsed to just this row, the two things
   // that matter at a glance: the kit's watts cost and the single biggest
   // offender you could actually leave at home. Everything else (the full
   // CdA readout, waterfall, yaw slider, assumptions) is a tap away. This
-  // module doesn't know the viewport width — aero.css hides the whole bar
+  // module doesn't know the viewport width, aero.css hides the whole bar
   // outside the phone/coarse-pointer breakpoint, so it's built unconditionally.
   const peekBar = el('div', 'aero-peek');
   peekBar.setAttribute('role', 'button');
@@ -139,7 +139,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   peekBar.setAttribute('aria-expanded', 'false');
   const peekHandle = el('div', 'peek-handle');
   const peekGrade = el('div', 'peek-grade');
-  const peekLetter = elt('span', 'peek-grade-letter', '—');
+  const peekLetter = elt('span', 'peek-grade-letter', '–');
   const peekName = elt('span', 'peek-grade-name', '');
   peekGrade.append(peekLetter, peekName);
   const peekBlurb = elt('p', 'peek-grade-blurb', '');
@@ -184,11 +184,11 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
 
   // ---- 0. the grade, up top ----------------------------------------------
   // This is the headline: every other figure here moves when you change speed,
-  // and the letter does not — `grade()` normalises to a reference speed, so it
+  // and the letter does not, `grade()` normalises to a reference speed, so it
   // describes the RIG. That makes it the one line worth reading first.
   const gradeSec = el('section', 'aero-sec aero-grade');
   const gradeBadge = el('div', 'grade-badge');
-  const gradeLetter = elt('span', 'grade-letter', '—');
+  const gradeLetter = elt('span', 'grade-letter', '–');
   gradeBadge.append(gradeLetter);
   const gradeCopy = el('div', 'grade-copy');
   const gradeName = elt('div', 'grade-name', '');
@@ -212,7 +212,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   cdaSec.append(
     cdaRow,
     elt('p', 'cda-explainer',
-      'CdA — drag area. The size of a flat wall of still air that would take the same power to push through. Smaller is faster.'),
+      'CdA is drag area: the size of a flat wall of still air that would take the same power to push through. Smaller is faster.'),
   );
   body.append(cdaSec);
 
@@ -259,7 +259,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   const deltaSec = el('section', 'aero-sec aero-delta');
   deltaSec.append(elt('h3', 'aero-sec-label', 'Cost of the bags'));
   const deltaGrid = el('div', 'delta-grid');
-  // label flips with the value's sign — "less power" reads as self-contradictory
+  // label flips with the value's sign, "less power" reads as self-contradictory
   // sitting under a positive number, and after the occlusion fix lands a lone
   // frame bag can still legitimately land a hair either side of zero
   function deltaItem(unit, posLabel, negLabel) {
@@ -280,7 +280,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   const wfSec = el('section', 'aero-sec aero-waterfall');
   wfSec.append(elt('h3', 'aero-sec-label', 'Where the watts go'));
   const wfList = el('div', 'wf-list');
-  // shown only when result.fairingCredit is present — explained where it's set
+  // shown only when result.fairingCredit is present, explained where it's set
   const wfFairingNote = elt('p', 'wf-fairing-note', '');
   wfFairingNote.hidden = true;
   wfSec.append(wfList, wfFairingNote);
@@ -290,7 +290,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
   let highlightedKey = null;
 
   // Label + value share the top line (label wraps to 2 lines rather than
-  // truncating — the bag's name is the whole point of this chart, so it
+  // truncating, the bag's name is the whole point of this chart, so it
   // cannot be the thing that loses the fight for space); the bar runs the
   // full row width underneath.
   function buildWfRow(key) {
@@ -300,7 +300,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     const labelWrap = el('div', 'wf-label-wrap');
     const labelEl = elt('span', 'wf-label', '');
     // 'fixed' for the reserved bodies, 'sheltered' for a bag hidden in
-    // another part's wake — mutually exclusive, so one span does both
+    // another part's wake, mutually exclusive, so one span does both
     const tagEl = elt('span', 'wf-tag', '');
     labelWrap.append(labelEl, tagEl);
     const valueEl = elt('span', 'wf-value', '0 W');
@@ -309,7 +309,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     const fill = el('div', 'wf-fill');
     track.append(fill);
     // explains a near-zero reading that is a real wake-shielding result, not
-    // a bug — see shieldingNote()
+    // a bug, see shieldingNote()
     const noteEl = elt('p', 'wf-row-note', '');
     noteEl.hidden = true;
     row.append(top, track, noteEl);
@@ -322,19 +322,19 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
 
   /**
    * A bag whose silhouette sits almost entirely inside another part's wake
-   * measures near zero — a real result of the shielding rule, not a bug, but
+   * measures near zero, a real result of the shielding rule, not a bug, but
    * indistinguishable from one unless it says so.
    *
    * This deliberately does NOT try to name which part is doing the
-   * shielding. The obvious approach — take result.parts' order and pick the
-   * largest-frontalArea part ahead of this one — was tried and empirically
+   * shielding. The obvious approach, take result.parts' order and pick the
+   * largest-frontalArea part ahead of this one, was tried and empirically
    * fails on the exact case in the report: it names the rider or the bare
    * frame (both large silhouettes, both often listed first) instead of the
    * actual bar roll sitting directly in front of the bag, because aggregate
    * frontal area has no notion of local adjacency. There is no field on
    * AeroResult that says WHICH part contributed to another part's wakeArea,
    * so any name picked from what IS here would be a guess dressed as a fact
-   * — exactly the "confident but wrong" failure mode to avoid. If measure.js
+   *, exactly the "confident but wrong" failure mode to avoid. If measure.js
    * starts publishing a per-part shadowedBy/occludedBy key, this can name
    * names; until then it says only what's actually known to be true.
    */
@@ -343,7 +343,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     const wakeFrac = frontal > 0 ? (part.wakeArea || 0) / frontal : 0;
     const nearZero = Math.abs(part.cda) < 0.0005;
     if (wakeFrac < 0.9 && !nearZero) return null;
-    return 'Sheltered by the bag ahead of it on the rig — a real result, not a bug.';
+    return 'Sheltered by the bag ahead of it on the rig, a real result, not a bug.';
   }
 
   function renderWaterfall(result, ride) {
@@ -354,13 +354,13 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
       .map((p) => ({ ...p, watts: power({ ...ride, cda: p.cda }).aeroW }))
       .sort((a, b) => b.watts - a.watts);
     const maxW = ranked.length ? ranked[0].watts : 1;
-    // the "biggest offender" callout should point at something removable —
+    // the "biggest offender" callout should point at something removable,
     // the frame is often the single largest bar, but you can't leave it home
     const topPart = ranked.find((p) => !RESERVED.has(p.key));
     const topKey = topPart?.key;
     const seen = new Set();
 
-    // Mirrors the same callout into the phone peek row (see aero.css) — an
+    // Mirrors the same callout into the phone peek row (see aero.css), an
     // empty kit has no removable part at all, which is a real state (nothing
     // fitted yet), not a bug, so it reads as an empty dash rather than a
     // stale or misleading name.
@@ -377,7 +377,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
       const row = wfRows.get(p.key) || buildWfRow(p.key);
       row.labelEl.textContent = p.label;
       const isBaseline = RESERVED.has(p.key);
-      // bodies (wakeArea always 0 for them) are never "sheltered" — only a
+      // bodies (wakeArea always 0 for them) are never "sheltered", only a
       // bag can be hidden in another part's wake
       const note = isBaseline ? null : shieldingNote(p);
       row.row.classList.toggle('baseline', isBaseline);
@@ -398,14 +398,14 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     }
 
     // The frame-bag fairing credit already lives inside `bike`'s cda by the
-    // time it reaches us (index.js applies it once, upstream) — so the bike's
+    // time it reaches us (index.js applies it once, upstream), so the bike's
     // bar is already honestly smaller. All we add is the explanation, or a
     // near-zero-cost frame bag reads as a bug rather than as the nicest
     // result the whole feature produces.
     if (typeof result.fairingCredit === 'number' && result.fairingCredit !== 0) {
       const creditW = power({ ...ride, cda: Math.abs(result.fairingCredit) }).aeroW;
       wfFairingNote.textContent =
-        `Closing off the frame's open triangle claws back about ${Math.round(creditW)} W from the frame's own figure above — a full frame bag rarely costs what its size suggests.`;
+        `Closing off the frame's open triangle claws back about ${Math.round(creditW)} W from the frame's own figure above, a full frame bag rarely costs what its size suggests.`;
       wfFairingNote.hidden = false;
     } else {
       wfFairingNote.hidden = true;
@@ -474,7 +474,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
    * One way out, not two.
    *
    * The panel carried a bare ✕ at the top AND a full-width "Exit wind tunnel"
-   * button at the bottom, plus the toolbar toggle that opened it — three
+   * button at the bottom, plus the toolbar toggle that opened it, three
    * exits for one state, and the full-width one was the largest control in a
    * panel whose subject is a number. The ✕ is labelled now (builder.css gives
    * `.sheet-close` and this one the menu's grammar), so the button has nothing
@@ -510,7 +510,7 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
 
     renderWaterfall(result, ride);
 
-    const g = comparison.grade || { letter: '—', name: '', blurb: '' };
+    const g = comparison.grade || { letter: '–', name: '', blurb: '' };
     gradeLetter.textContent = g.letter;
     gradeName.textContent = g.name;
     gradeBlurb.textContent = g.blurb;
@@ -553,12 +553,12 @@ export function createAeroPanel({ onSpeedChange, onYawChange, onExit, onHoverPar
     root.remove();
   }
 
-  // Not in CONTRACT.md's Panel shape — added for the mobile bottom-sheet:
+  // Not in CONTRACT.md's Panel shape, added for the mobile bottom-sheet:
   // forces the phone sheet back to its collapsed peek row (kit cost + biggest
   // offender only). A no-op on desktop, where `.expanded` has no CSS effect.
   // Exposed so the lead can reset this panel to its quiet state from outside
   // (e.g. re-collapsing on re-entry) without reaching into this module's
-  // internals — see report for why nothing here calls it itself.
+  // internals, see report for why nothing here calls it itself.
   function collapse() {
     setExpanded(false);
   }

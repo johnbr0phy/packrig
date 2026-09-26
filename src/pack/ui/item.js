@@ -1,7 +1,7 @@
 /**
  * One item: what it is, what it weighs, and where it goes.
  *
- * "Where it goes" is every placement the bike allows, as one row of choices —
+ * "Where it goes" is every placement the bike allows, as one row of choices,
  * the bags that are on the bike, strapped outside, hanging off, on the frame,
  * on you, at home. It is also the keyboard path for everything drag-and-drop
  * does on a desktop.

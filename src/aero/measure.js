@@ -4,7 +4,7 @@
 // offscreen target, every material swapped for a flat unlit colour that
 // identifies the PART that surface belongs to. Orthographic + a square frustum
 // means one pixel is one exact patch of world area, so counting a part's pixels
-// IS its frontal area in m² — real silhouette, real occlusion, real shielding,
+// IS its frontal area in m², real silhouette, real occlusion, real shielding,
 // all of it falling out of the depth buffer. Multiply each part's area by its Cd
 // and sum: that is the integral of Cd over frontal area, i.e. CdA.
 //
@@ -49,7 +49,7 @@ import { BODY_CD, YAW_WEIGHTS, cdOf, weightedCda } from './model.js';
 import * as model from './model.js';
 import { SLOTS } from '../bags/slots.js';
 
-// Every Cd and every yaw weight comes from model.js by name — nothing is
+// Every Cd and every yaw weight comes from model.js by name, nothing is
 // mirrored here. Named imports on purpose: if that table ever loses one of
 // these, the module fails to link loudly instead of quietly measuring the whole
 // bike against a stand-in number nobody would ever spot in the readout.
@@ -61,7 +61,7 @@ const RIDER_NAME = 'ghostRider';
  * Per-yaw Cd correction, owned by model.js.
  *
  * What this engine measures at yaw is the true projected silhouette, and a
- * bike's side profile is enormous next to its frontal one — the bare bike
+ * bike's side profile is enormous next to its frontal one, the bare bike
  * genuinely triples its projected area by 20°. Turning that into drag needs two
  * things this module has no business deciding: a Cd that is not the zero-yaw
  * one, and the resolution of the yawed force back onto the direction of travel.
@@ -78,13 +78,13 @@ function yawFactor() {
 /**
  * What a square metre of luggage costs when it sits in the rig's shadow rather
  * than in clean air, as a multiplier on that bag's Cd. Also model.js's to own:
- * the geometry here is exact — a seat pack behind a rider is measured, not
- * guessed — but pricing the wake is fluid dynamics, not rendering.
+ * the geometry here is exact, a seat pack behind a rider is measured, not
+ * guessed, but pricing the wake is fluid dynamics, not rendering.
  *
  * Soft-imported like yawFactor. Both have shipped, so neither fallback is on the
  * live path; they stay because the engine linking is what lets aero-check RUN
  * and report a missing export, rather than the whole page going blank. The
- * fallback is 1.0 — a shadowed square metre charged in FULL — deliberately the
+ * fallback is 1.0, a shadowed square metre charged in FULL, deliberately the
  * pessimistic end, because 0 is what produced the net-negative kit this pass
  * structure exists to kill.
  */
@@ -93,8 +93,8 @@ function wakeDiscount() {
 }
 
 /**
- * A bag SKINNED onto a tube merges with it — no gap, no two shear layers, one
- * object — so charging full price for both double-counts the frame underneath.
+ * A bag SKINNED onto a tube merges with it, no gap, no two shear layers, one
+ * object, so charging full price for both double-counts the frame underneath.
  * This is the mirror of the bug the three-pass split fixed: that one let a bag
  * delete a body it merely stood in front of, this one bills a tube twice for
  * being wrapped.
@@ -109,7 +109,7 @@ function mergeCredit() {
   return typeof model.mergeCredit === 'function' ? model.mergeCredit : () => 0;
 }
 
-// Parts are either bodies — the bike and whoever is riding it — or bags. The
+// Parts are either bodies, the bike and whoever is riding it, or bags. The
 // distinction drives the whole accounting above, so it is carried per part.
 const BODY = 'body';
 const BAG = 'bag';
@@ -120,8 +120,8 @@ const LAYER_BODY = 1;
 const LAYER_BAG = 2;
 
 // Part ids live in the red channel, spaced 4 apart. Rendering into a render
-// target skips tone mapping and output encoding — three only applies those when
-// the target is the default framebuffer — and the id colour is set in the
+// target skips tone mapping and output encoding, three only applies those when
+// the target is the default framebuffer, and the id colour is set in the
 // working (linear) space, so the byte we read back is the byte we asked for. The
 // spacing is free insurance against a driver that dithers, and 63 ids is three
 // times the number of mount slots the bike has.
@@ -129,14 +129,14 @@ const ID_STEP = 4;
 const MAX_PARTS = 63;
 
 /**
- * The contract also passes `scene`; the pass deliberately does not use it — see
- * idScene below — and the bike goes back to whatever parent it actually had.
+ * The contract also passes `scene`; the pass deliberately does not use it, see
+ * idScene below, and the bike goes back to whatever parent it actually had.
  * @param {{renderer: THREE.WebGLRenderer, bike: object, bags: object}} deps
  */
 export function createAeroMeter({ renderer, bike, bags }) {
   // A private scene, not the app's. The bike is moved into it for the duration
   // of a pass, which excludes the sky, ground, HDRI background, fog, smoke and
-  // every light in one move — and means the shadow pass has nothing to draw.
+  // every light in one move, and means the shadow pass has nothing to draw.
   // Both scenes are untransformed roots, so the bike's world matrix is identical
   // in either one.
   const idScene = new THREE.Scene();
@@ -193,13 +193,13 @@ export function createAeroMeter({ renderer, bike, bags }) {
   /**
    * The ground contact-shadow planes: flat sprites painted under each wheel that
    * have no physical frontal area at all. They are recognised by not writing
-   * depth, and this test is applied ONLY when walking the frame — never to the
+   * depth, and this test is applied ONLY when walking the frame, never to the
    * rider and never to a bag.
    *
    * That narrowing is the whole point. `depthWrite === false` is not a statement
    * that a surface is a decal; it is a flag that translucency sets for unrelated
    * reasons. rider.js clears it while the ghost is faded out, so a rider that was
-   * mid-fade — which is exactly when index.js measures — was being classified as
+   * mid-fade, which is exactly when index.js measures, was being classified as
    * a decal and silently dropped out of the drag, taking the largest single
    * contributor in the whole rig with it. A bag using a translucent panel or a
    * reflective strip would have gone the same way, and been free.
@@ -222,7 +222,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
     const parts = [];
     const claimed = new Set();
     // Visibility changes are recorded here and applied in enter(), never during
-    // the walk — enter() is what saves the value it has to put back.
+    // the walk, enter() is what saves the value it has to put back.
     const visibility = [];
     const hide = (obj) => visibility.push({ obj, next: false, prev: true });
 
@@ -269,7 +269,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
       if (includeRider) {
         // The rider is faded in and out with material opacity, and the tunnel
         // may be measuring while that fade is mid-flight. Drag must not depend
-        // on an animation, so it is forced visible for the pass — unlike a bag,
+        // on an animation, so it is forced visible for the pass, unlike a bag,
         // where a hidden mesh is the caller deliberately taking it off the bike.
         const wasVisible = riderRoot.visible;
         riderRoot.visible = true;
@@ -284,7 +284,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
 
     // Racks are FIXTURES, not frame. updateFixtures() raises the rear rack only
     // because a pannier or trunk was fitted, and the front rack only for a
-    // randobag — so a rack is part of the cost of choosing that luggage, not
+    // randobag, so a rack is part of the cost of choosing that luggage, not
     // part of the bike you started with.
     //
     // Leaving them inside `bike` put them in the BASELINE as well as the loaded
@@ -349,7 +349,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
       : null;
 
     // Collect with the bottles PRESENT, so their meshes are in the frame's mesh
-    // list even when the current kit hides them — pass 0 has to be able to draw
+    // list even when the current kit hides them, pass 0 has to be able to draw
     // something pass 1 will not.
     if (bottles) setBottleState(bottles.bare);
     const { parts, visibility } = collect(opts.includeRider !== false);
@@ -488,10 +488,10 @@ export function createAeroMeter({ renderer, bike, bags }) {
     camera.layers.set(LAYER_BODY);
     renderer.autoClear = true;
 
-    // Pass 0 — the bodies with the BOTTLES put back. A full frame bag swallows
+    // Pass 0, the bodies with the BOTTLES put back. A full frame bag swallows
     // both bidons, so the bike underneath a frame bag is not the bike you would
     // ride without one, and measuring the baseline in the loaded fixture state
-    // hid that saving completely — the mirror of the rack bug, and biased
+    // hid that saving completely, the mirror of the rack bug, and biased
     // against the one result this feature is proudest of. Only rendered when the
     // kit has actually moved a bottle; every other kit pays nothing for it.
     if (job.bottles) {
@@ -501,7 +501,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
       setBottleState(job.bottles.live);
     }
 
-    // Pass 1 — the bodies as the rig actually stands, and the depth buffer the
+    // Pass 1, the bodies as the rig actually stands, and the depth buffer the
     // bag passes need. Re-taken every measurement rather than cached: fitting
     // panniers makes updateFixtures() raise the rear rack, so the bike's own
     // silhouette does depend on the kit.
@@ -509,7 +509,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
     tally(job.body, job, yawIndex, job.bagCount > 0);
     if (!job.bagCount) return;
 
-    // Pass 2 — the bags, keeping the depth buffer pass 1 just wrote and clearing
+    // Pass 2, the bags, keeping the depth buffer pass 1 just wrote and clearing
     // colour only. A bag fragment survives exactly where it is in front of the
     // rig, so what lands here is the bag standing in clean air.
     camera.layers.set(LAYER_BAG);
@@ -517,12 +517,12 @@ export function createAeroMeter({ renderer, bike, bags }) {
     renderer.clear(true, false, false);
     renderer.render(idScene, camera);
     // Cross-referenced against pass 1's buffer, still held, to get each bag's
-    // overlap with the FRAME specifically — the area where it is skinned onto a
+    // overlap with the FRAME specifically, the area where it is skinned onto a
     // tube. That is what mergeCredit prices, and it needs the joint answer (this
     // bag, over that body), which no single pass carries.
     tally(job.exposed, job, yawIndex, false, job.overlap);
 
-    // Pass 3 — the same bags with the bodies' depth thrown away, giving each
+    // Pass 3, the same bags with the bodies' depth thrown away, giving each
     // bag its whole silhouette. Bags still resolve against each OTHER in both
     // passes, so bag-on-bag shielding survives; the difference between the two
     // is the part of the bag sitting in the rig's wake.
@@ -554,7 +554,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
       if (index >= 0) {
         acc[index]++;
         // Only the frame merges. A bag standing in front of a rider or a wheel
-        // gets nothing here — that restriction is exactly what stops a bar bag
+        // gets nothing here, that restriction is exactly what stops a bar bag
         // deleting the torso behind it.
         if (over && lut[bodyPixels[i]] === bikeId) over[index]++;
       } else unmatched++;
@@ -564,7 +564,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
     if (keep) bodyPixels.set(pixels);
     if (!warnedIds && unmatched > size * size * 0.001) {
       warnedIds = true;
-      console.warn(`[aero] ${unmatched} pixels carried no readable part id — ` +
+      console.warn(`[aero] ${unmatched} pixels carried no readable part id, ` +
         'the id colours are not surviving the round trip on this driver.');
     }
   }
@@ -583,7 +583,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
     // the ratio below would be silently wrong.
     // `src` picks which body pass the bodies are read from: the rig as it stands
     // (pass 1) or with the bottles put back (pass 0). Bags are identical either
-    // way — they were not in the body pass at all.
+    // way, they were not in the body pass at all.
     const areaFrom = (src) => job.parts.map((p, i) => job.yaws.map((deg, y) => {
       const px = p.kind !== BAG
         ? src[i][y]
@@ -594,14 +594,14 @@ export function createAeroMeter({ renderer, bike, bags }) {
     }));
     const areaOf = areaFrom(job.body);
 
-    // yawFactor needs how much this part's own area GREW as the rig turned —
+    // yawFactor needs how much this part's own area GREW as the rig turned,
     // the term carrying the shape information, telling a pannier's slab from a
     // bar roll's cylinder. Without it model.js degrades to a bare cosine and
     // every part yaws identically.
     //
     // It is the ratio of TOTAL silhouette, deliberately NOT of the charged area
     // above. The wake discount ramps with yaw, so a bag that is fully shadowed
-    // at every angle — constant silhouette, contributing nothing new — would
+    // at every angle, constant silhouette, contributing nothing new, would
     // show a charged area that grows purely because the discount is easing off,
     // and the yaw term would read that as newly-revealed lengthwise area. The
     // two multipliers describe independent effects and are meant to compose,
@@ -624,7 +624,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
     // otherwise billed twice. The give-back comes off the BAG's row rather than
     // the frame's: mergeCredit caps it at the bag's own charge, which only means
     // anything if it is the bag being reduced, and taking it off `bike` would
-    // pull it out of cdaBaseline too — crediting a bare bike for a frame bag it
+    // pull it out of cdaBaseline too, crediting a bare bike for a frame bag it
     // is not wearing.
     const merge = mergeCredit();
     const creditOf = job.parts.map((p, i) => job.yaws.map((deg, y) => (p.kind !== BAG ? 0
@@ -651,12 +651,12 @@ export function createAeroMeter({ renderer, bike, bags }) {
         cda: bodyCda(i, headOn),
         cdaWeighted: weightedCda(job.yaws.map((deg, y) => ({ deg, cda: bodyCda(i, y) }))),
         // The whole silhouette the part presents. For a bag, cda is NOT
-        // frontalArea x cd any more — the wake fraction is discounted and a
-        // merge credit may have come off — so wakeArea is published alongside
+        // frontalArea x cd any more, the wake fraction is discounted and a
+        // merge credit may have come off, so wakeArea is published alongside
         // rather than left to be inferred.
         frontalArea: silhouette * job.areaPerPixel[headOn],
         wakeArea: shadowed * job.areaPerPixel[headOn],
-        // How much of this bag is skinned onto the frame — the area mergeCredit
+        // How much of this bag is skinned onto the frame, the area mergeCredit
         // is priced on. Published so the give-back can be audited rather than
         // taken on faith, since it is the one term that REDUCES a total.
         mergeArea: p.kind === BAG ? job.overlap[i][headOn] * job.areaPerPixel[headOn] : 0,
@@ -718,7 +718,7 @@ export function createAeroMeter({ renderer, bike, bags }) {
     /**
      * Same measurement, one yaw per animation frame, so the stalls are spread
      * out instead of landing in a single burst. The scene is restored at the end
-     * of every slice — the bike is never missing from a frame the app draws.
+     * of every slice, the bike is never missing from a frame the app draws.
      */
     async measureAsync(opts) {
       const job = plan(opts);

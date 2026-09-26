@@ -1,4 +1,4 @@
-// node tools/_probe.mjs "<query>" — load, print errors and readiness
+// node tools/_probe.mjs "<query>", load, print errors and readiness
 import puppeteer from 'puppeteer-core';
 import { CHROME } from './lib/chrome.mjs';
 import { takeRenderLock } from './lib/renderlock.mjs';

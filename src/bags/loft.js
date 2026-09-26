@@ -1,7 +1,7 @@
 // Lofted panel bodies: a bag built as flat panels meeting at piped seams,
 // rather than a surface of revolution.
 //
-// Why this exists. Almost every builder drew its body with LatheGeometry — a
+// Why this exists. Almost every builder drew its body with LatheGeometry, a
 // solid of revolution, i.e. round in section. The fidelity records disagree:
 // of the 699 products carrying `geometry.crossSection`, only 97 say `round`.
 // 602 say rounded_rect, flat_back, d_shape, flat_bottom, oval or teardrop, and
@@ -10,7 +10,7 @@
 // not flat bits sewn together."
 //
 // A sewn bag is flat panels with a small radius where they join, not a
-// mathematical crease — so the sections here have genuinely straight runs and
+// mathematical crease, so the sections here have genuinely straight runs and
 // tight corners. Smooth normals over a tight corner already read as an edge;
 // what sells it beyond that is the seam piping, which is why loftBody hands
 // back the corner polylines for the caller to run tape along.
@@ -29,7 +29,7 @@ const TAU = Math.PI * 2;
  * down the length axis) and every shape returns the SAME point count, because
  * a loft needs matching rings.
  *
- * `corners` marks the indices that sit at the middle of a corner radius — the
+ * `corners` marks the indices that sit at the middle of a corner radius, the
  * seam lines. flat-sided shapes have four; round ones have none.
  */
 export function sectionUnit(shape, { detail = 5 } = {}) {
@@ -58,7 +58,7 @@ export function sectionUnit(shape, { detail = 5 } = {}) {
   const pts = [], corners = [];
   const push = (fn) => { const before = pts.length; fn(pts); return before; };
 
-  // r[0..3] = corner radii at (+u+v), (+u−v), (−u−v), (−u+v) — i.e. the first
+  // r[0..3] = corner radii at (+u+v), (+u−v), (−u−v), (−u+v), i.e. the first
   // pair is the +u end of the section and the second pair the −u end, which is
   // what makes `d_shape` and `flat_bottom` come out round on top and flat
   // underneath.
@@ -92,7 +92,7 @@ export function sectionUnit(shape, { detail = 5 } = {}) {
   // Each run ends exactly where the corner after it begins, and each corner
   // ends exactly where the next run begins, so the ring is one simple closed
   // polygon. Get an angle range backwards, or centre a corner on the wrong
-  // quadrant, and the ring crosses itself — which the loft then sweeps into a
+  // quadrant, and the ring crosses itself, which the loft then sweeps into a
   // facet slicing straight through the bag.
   const H = Math.PI / 2;
   // top run (+u), from −v side to +v side
@@ -175,7 +175,7 @@ export function loftBody({ len, rings = 26, shape = 'rounded_rect', sectionAt, c
   geo.setIndex(idx);
   geo.computeVertexNormals();
 
-  // Winding is easy to get backwards and the symptom — a bag lit from inside —
+  // Winding is easy to get backwards and the symptom, a bag lit from inside,
   // is subtle enough to ship. Check one side vertex against its own outward
   // direction and flip the whole index buffer if it points inward.
   const nor = geo.attributes.normal;
@@ -197,8 +197,8 @@ export function loftBody({ len, rings = 26, shape = 'rounded_rect', sectionAt, c
  * The product's own silhouette, measured off the maker's photograph by
  * tools/silhouette.mjs, as a sampler over t in [0,1].
  *
- * Returns null where nothing was measured — a lifestyle shot the segmenter
- * refused, or a product with no local photograph — and every builder falls back
+ * Returns null where nothing was measured, a lifestyle shot the segmenter
+ * refused, or a product with no local photograph, and every builder falls back
  * to its parametric curve. That is what lets this arrive one slot at a time
  * instead of as a rewrite.
  *
