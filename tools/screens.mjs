@@ -172,6 +172,8 @@ async function shoot(id, state, device, setup, suffix = '') {
   p.on('pageerror', (e) => errs.push(e.message));
   p.on('console', (m) => { if (m.type() === 'error' && !/Failed to load resource|ERR_TUNNEL|net::ERR/.test(m.text())) errs.push(m.text()); });
   await p.setViewport(DEVICES[device]);
+  // random rig names and the like: the same seed every run, so two runs match
+  await p.evaluateOnNewDocument(() => { let t = 0x9e3779b9; Math.random = () => { t = (t + 0x6d2b79f5) | 0; let x = Math.imul(t ^ (t >>> 15), 1 | t); x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x; return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; });
   await p.goto('http://localhost:8735/?still', { waitUntil: 'load', timeout: 120000 });
   await p.waitForFunction('window.__READY_DONE', { timeout: 120000 });
   await p.evaluate(`window.__SHEET = ${JSON.stringify(SHEET)};` + HELPERS);
