@@ -2,7 +2,7 @@
 
 26 Sep 2026. Branch `claude/packrig-ui-ux-redesign-w4dq7s`. The screens are
 in `SCREENS.md`, the calls in `DECISIONS.md` section 9, the dead ends in
-`LOG.md` 17 to 31, the values in `DESIGN-SYSTEM.md`, and what each screen
+`LOG.md` 17 to 35, the values in `DESIGN-SYSTEM.md`, and what each screen
 is now in `REDESIGN.md`.
 
 ## The short version
@@ -52,8 +52,8 @@ a stylesheet you can actually reason about.
 | Open a shared link signed out and copy the kit, taps | 2 | 1 |
 | Stylesheets | 8 files, 6305 lines | 8 files, 1276 lines |
 | Distinct hex colours | 64 | 10 |
-| Distinct font sizes declared in CSS (px) | 35, 7 half-pixel | 9, none half-pixel |
-| Text under its contrast floor, 5 environments x 2 devices x 4 scenes | not measured | 0 (worst 4.92:1) |
+| Distinct font-size values in the CSS | 35 (27 pixel sizes, 7 of them half-pixel) | 17 (9 pixel sizes, none half-pixel) |
+| Text under its contrast floor, 5 environments x 2 devices x 4 scenes | not measured | 0 (worst 4.92:1, Remove it over the desert) |
 | Bike height on a phone, no sheet or at peek (min over screens) | 25% | 50% (goal 45%) |
 | Bike height on a phone, sheet at half | 25% | 42% (goal 35%) |
 | Bike height with a bag open (the camera frames the bag on purpose) | 26% | 31% |
@@ -83,9 +83,16 @@ out, everything but Save works, as before.
 - **Keeping the old theme file.** It redefined the core tokens as a light
   theme that another file re-darkened. I stripped each legacy rule as its
   class was replaced, then deleted the files.
-- **Two of my own mistakes**: I saved a token file while the before shoot
-  ran (the dev server serves live; one shot re-taken), and the em dash
-  sweep rewrote its own regexes. Both are in `LOG.md`.
+- **Trusting my own test tools too early.** The shot tool first flagged
+  noise as change (a random rig name, the rings' pulse, single pixels on
+  spoke edges, wind tunnel smoke on wall-clock time), and the task runner
+  once tapped a row that was still below the screen. Each fix is in
+  `LOG.md` 32 to 35; one of them (a refit sampling items mid-move) was a
+  real if tiny app bug.
+- **Three of my own mistakes**: I saved a token file while the before shoot
+  ran and `tunnel.js` while the final one did (the dev server serves live;
+  the shots involved were re-taken), and the em dash sweep rewrote its own
+  regexes. All are in `LOG.md`.
 
 ## Next
 
