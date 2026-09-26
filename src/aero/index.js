@@ -198,6 +198,8 @@ export function initAero(app, { scene, camera, renderer, controls, composer, pas
     onKitChange,
     tick(dt) { tunnel.tick(dt); },
     get active() { return tunnel.active; },
+    /** The crossfade in or out is still playing (the shot tools wait on it). */
+    get transitioning() { return tunnel._dir !== 0; },
     /** Panel → scene highlight mirroring, matching focus.js's two-way binding. */
     setHighlight(key) { panel.setHighlight(key); },
     /**
