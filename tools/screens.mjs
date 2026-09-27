@@ -205,7 +205,7 @@ async function shoot(id, state, device, setup, suffix = '') {
       const r = im.getBoundingClientRect();
       return r.width > 0 && r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth;
     });
-    for (let i = 0; i < 600 && (thumbsPending() || emptyVisible() || app.watts?.pending || app.framing?.animating || app.pack?.refitPending); i++) await new Promise((r) => setTimeout(r, 100));
+    for (let i = 0; i < 600 && (thumbsPending() || emptyVisible() || app.watts?.pending || app.framing?.animating || app.pack?.refitPending || app.aero?.transitioning); i++) await new Promise((r) => setTimeout(r, 100));
     await new Promise((r) => setTimeout(r, 300));
   }).catch((e) => errs.push('thumbs: ' + e.message));
   // the camera eases (damping, focus glides): shoot once it has stopped, or

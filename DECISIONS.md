@@ -547,3 +547,21 @@ for each call. `UX-WRITEUP.md` is the short version; `LOG.md` has what broke.
   sheet), because what is in the bag is the point of that screen.
 - **Someone else's rig opens at half**, not peek, so Copy to my kit is in
   reach without a drag; the bike is 42% of the height there.
+- **Fork bags sit level (owner's call, after the pass).** The brake-side bag
+  used to stand 62 mm higher to clear the rotor and caliper from above. Both
+  now take the drive side's height; the brake-side bag clears the caliper
+  across the bike (nearest point 2.4 mm from its box, nothing inside it).
+  The one builder change: `src/bags/builders/forkbag.js` reads the floor on
+  the drive side for both legs.
+- **Andrew The Maker Many Things Sack sits flat on the fork.** Its record had
+  the 16.5 cm width across the bike and the 8.9 cm depth fore-aft, so the
+  bag stood side-on to the cage. The maker's figures (6.5 to 5.5 in tapered
+  width x 3.5 in depth) put the width against the cage: `axes` is now width
+  fore-aft, depth across, in `data/models/andrew-the-maker.json` and the
+  applied `data/brands.json`.
+- **Three more fork bags sit flat on the fork** (owner's go-ahead after the
+  Many Things Sack): Swift Industries Gemini Cargo Pack (maker: 5 in wide x
+  3 in deep), Restrap Fork Bag 5L (190 mm roll-top width) and VAUDE Trailfork
+  (18 x 11 cm; no maker figure in the record, so this one is by analogy:
+  the wider face against the cage). Each had its width across the bike;
+  `axes` now puts it fore-aft, in `data/models/` and `data/brands.json`.

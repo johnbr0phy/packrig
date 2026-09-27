@@ -3452,8 +3452,8 @@
    },
    "mount": {
     "axes": {
-     "len": "z",
-     "wid": "x",
+     "len": "x",
+     "wid": "z",
      "hgt": "along_forkleg"
     },
     "attachesTo": [

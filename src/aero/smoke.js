@@ -27,6 +27,9 @@ import { disposeObject, tubeAlong } from '../lib.js';
 const STILL = typeof location !== 'undefined' && new URLSearchParams(location.search).has('still');
 function seeded(a) { return () => { a = (a + 0x6d2b79f5) | 0; let x = Math.imul(a ^ (a >>> 15), 1 | a); x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x; return ((x ^ (x >>> 14)) >>> 0) / 4294967296; }; }
 let rand = Math.random;
+// ...and the threads are always the seed plus this many 60 Hz steps, however
+// the enter, rebuild and re-seed calls happen to interleave
+const STILL_STEPS = 120;
 const STACKS = 9;          // vertical nozzle tubes across the rake
 // Ports up each tube. 28 was the first try and from the side, where all nine
 // stacks project on top of each other, the threads merged into a solid white
@@ -535,7 +538,13 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
   }
 
   // ---- seeding ------------------------------------------------------------
+  let stillSteps = 0, live = false;   // live: switched on at least once (the tunnel opened)
+  function settle() {
+    if (!STILL || !live || !enabled || !spec) return;
+    while (stillSteps < STILL_STEPS) { tick(1 / 60); stillSteps++; }
+  }
   function seed() {
+    stillSteps = 0;
     // Fill every thread by integrating it all the way downstream once, so the
     // very first frame already shows finished streaklines. Growing them in
     // would mean the first second of the tunnel, and every screenshot, is a
@@ -628,7 +637,9 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
     // next second, which is what air would do; only a real change, different
     // kit, a big jump, is worth the visible discontinuity of a re-seed.
     const moved = prev ? prev.dir.distanceTo(spec.dir) * spec.runLength : Infinity;
-    const reseed = !sameRig || moved > 0.25;
+    // (screenshots always re-seed: the picture must come from the final field,
+    // not from whichever field the threads happened to be stepped in first)
+    const reseed = STILL || !sameRig || moved > 0.25;
 
     // nozzle world positions, from the same table the geometry was built from
     const o = spec.origin, d = spec.dir, sd = spec.side;
@@ -645,6 +656,7 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
 
     if (reseed) seed();
     writeGeometry();
+    settle();
     return api;
   }
 
@@ -840,6 +852,8 @@ export function createSmoke({ flow, bounds, renderer } = {}) {
     setEnabled(b) {
       enabled = !!b;
       group.visible = enabled;
+      if (enabled) live = true;
+      settle();
       return api;
     },
     get enabled() { return enabled; },
